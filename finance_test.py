@@ -1,34 +1,24 @@
 import yfinance as yf
 
-codes = [
-    ("9984.T", "ソフトバンクG"),
-    ("9101.T", "日本郵船"),
-    ("7203.T", "トヨタ")
-]
+ticker = yf.Ticker("9984.T")
 
-for code, name in codes:
+print("===== INFO =====")
 
-    print("\n======================")
-    print(name)
-    print("======================")
+info = ticker.info
 
-    try:
+for key in [
+    "trailingPE",
+    "priceToBook",
+    "dividendYield",
+    "returnOnEquity",
+    "marketCap",
+]:
+    print(key, "=", info.get(key))
 
-        ticker = yf.Ticker(code)
+print()
+print("===== CASHFLOW =====")
+print(ticker.cashflow.head(10))
 
-        info = ticker.info
-
-        print("PER:", info.get("trailingPE"))
-        print("PBR:", info.get("priceToBook"))
-        print("配当利回り:", info.get("dividendYield"))
-        print("ROE:", info.get("returnOnEquity"))
-
-        print()
-
-        print("BS取得:", not ticker.balance_sheet.empty)
-        print("PL取得:", not ticker.financials.empty)
-        print("CF取得:", not ticker.cashflow.empty)
-
-    except Exception as e:
-
-        print("エラー:", e)
+print()
+print("===== BALANCE SHEET =====")
+print(ticker.balance_sheet.head(10))
