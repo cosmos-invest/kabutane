@@ -2,51 +2,106 @@ import csv
 import yfinance as yf
 
 codes = [
-    ("9984.T", "ソフトバンクG"),
-    ("9101.T", "日本郵船"),
-    ("7203.T", "トヨタ")
+    ("7203.T", "トヨタ"),
+    ("8927.T", "明豊エンタープライズ"),
+    ("7120.T", "SHINKO"),
+    ("5253.T", "カバー"),
+    ("4412.T", "サイエンスアーツ"),
+    ("5595.T", "QPS研究所")
+]
+
+target_fields = [
+    "trailingPE",
+    "forwardPE",
+    "priceToBook",
+    "bookValue",
+    "dividendYield",
+    "payoutRatio",
+    "returnOnEquity",
+    "returnOnAssets",
+    "profitMargins",
+    "operatingMargins",
+    "revenueGrowth",
+    "earningsGrowth",
+    "currentRatio",
+    "quickRatio",
+    "debtToEquity",
+    "freeCashflow",
+    "operatingCashflow",
+    "ebitda",
+    "enterpriseValue",
+    "marketCap",
+    "beta",
+    "sharesOutstanding",
+    "totalCash",
+    "totalDebt"
 ]
 
 results = []
 
 for code, name in codes:
 
-    print(f"取得中: {name}")
+    print(f"調査中: {name}")
 
     try:
 
         ticker = yf.Ticker(code)
-
         info = ticker.info
 
-        results.append({
+        row = {
             "code": code,
-            "name": name,
+            "name": name
+        }
 
-            "per": info.get("trailingPE"),
-            "pbr": info.get("priceToBook"),
-            "dividend_yield": info.get("dividendYield"),
-            "roe": info.get("returnOnEquity"),
-            "market_cap": info.get("marketCap")
-        })
+        for field in target_fields:
+
+            value = info.get(field)
+
+            if value is None:
+                row[field] = "NG"
+            else:
+                row[field] = "OK"
+
+        row["balance_sheet"] = (
+            "OK"
+            if not ticker.balance_sheet.empty
+            else "NG"
+        )
+
+        row["financials"] = (
+            "OK"
+            if not ticker.financials.empty
+            else "NG"
+        )
+
+        row["cashflow"] = (
+            "OK"
+            if not ticker.cashflow.empty
+            else "NG"
+        )
+
+        results.append(row)
 
     except Exception as e:
 
         print(f"エラー: {name} {e}")
 
-        results.append({
+        row = {
             "code": code,
-            "name": name,
+            "name": name
+        }
 
-            "per": None,
-            "pbr": None,
-            "dividend_yield": None,
-            "roe": None,
-            "market_cap": None
-        })
+        for field in target_fields:
+            row[field] = "ERROR"
+
+        row["balance_sheet"] = "ERROR"
+        row["financials"] = "ERROR"
+        row["cashflow"] = "ERROR"
+
+        results.append(row)
 
 with open(
-    "finance_result.csv",
+    "finance_availability.csv",
     "w",
     newline="",
     encoding="utf-8-sig"
@@ -54,18 +109,10 @@ with open(
 
     writer = csv.DictWriter(
         f,
-        fieldnames=[
-            "code",
-            "name",
-            "per",
-            "pbr",
-            "dividend_yield",
-            "roe",
-            "market_cap"
-        ]
+        fieldnames=results[0].keys()
     )
 
     writer.writeheader()
     writer.writerows(results)
 
-print("\nfinance_result.csv 出力完了")
+print("\nfinance_availability.csv 出力完了")
