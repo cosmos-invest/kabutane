@@ -33,6 +33,13 @@ class ScannerLogicTests(unittest.TestCase):
     def test_json_safe_nan(self):
         self.assertIsNone(scanner.json_safe(float("nan")))
 
+    def test_fundamental_fields_start_with_per(self):
+        self.assertEqual(scanner.FUNDAMENTAL_FIELDS[0], "per")
+        self.assertEqual(
+            scanner.FUNDAMENTAL_FIELDS,
+            scanner.RESULT_FIELDS[scanner.RESULT_FIELDS.index("per"):],
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

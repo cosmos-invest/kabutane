@@ -79,6 +79,8 @@ RESULT_FIELDS = [
     "data_completeness_pct",
 ]
 
+FUNDAMENTAL_FIELDS = RESULT_FIELDS[RESULT_FIELDS.index("per"):]
+
 
 # -----------------------------
 # General helpers
@@ -692,7 +694,9 @@ def main() -> None:
         record["change_from_signal_month_pct"] = rounded(((current_price / signal_close) - 1) * 100) if current_price and signal_close else None
         record["return_since_gc_pct"] = rounded(((current_price / gc_price) - 1) * 100) if current_price and gc_price else None
 
-    enrich_fundamentals(latest_records, errors)
+    # Both sides of the latest signal transition are shown in the current
+    # downloads, so keep their company profiles and financials equally useful.
+    enrich_fundamentals(latest_records + latest_out_records, errors)
 
     for record in latest_records:
         if not record.get("name") or record["name"] == record["code"]:
@@ -712,7 +716,12 @@ def main() -> None:
         "rsi14", "rsi5", "diff", "gc_month", "gc_price", "signal_month_close",
         "period_price", "return_since_gc_pct",
     ]
-    out_fields = historical_fields + ["exit_month", "exit_price", "return_at_exit_pct"]
+    out_fields = (
+        historical_fields
+        + ["sector", "industry", "quote_type"]
+        + ["exit_month", "exit_price", "return_at_exit_pct"]
+        + FUNDAMENTAL_FIELDS
+    )
 
     for month in reversed(months):
         month_records = records_by_month.get(month, [])
