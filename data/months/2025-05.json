@@ -1,0 +1,81 @@
+{
+  "month": "2025-05",
+  "summary": {
+    "active_count": 3,
+    "new_count": 1,
+    "out_count": 1,
+    "up_count": 3,
+    "down_count": 0
+  },
+  "records": [
+    {
+      "code": "8058",
+      "ticker": "8058.T",
+      "name": "三菱商事",
+      "signal_month": "2025-05",
+      "status": "CONTINUE",
+      "months_active": 2,
+      "rsi14": 34.93,
+      "rsi5": 79.55,
+      "diff": 44.62,
+      "gc_month": "2025-04",
+      "gc_price": 2712.0,
+      "signal_month_close": 2935.0,
+      "period_price": 2935.0,
+      "return_since_gc_pct": 8.22
+    },
+    {
+      "code": "9432",
+      "ticker": "9432.T",
+      "name": "NTT",
+      "signal_month": "2025-05",
+      "status": "CONTINUE",
+      "months_active": 7,
+      "rsi14": 39.23,
+      "rsi5": 54.14,
+      "diff": 14.91,
+      "gc_month": "2024-11",
+      "gc_price": 153.4,
+      "signal_month_close": 160.4,
+      "period_price": 160.4,
+      "return_since_gc_pct": 4.56
+    },
+    {
+      "code": "2914",
+      "ticker": "2914.T",
+      "name": "JT",
+      "signal_month": "2025-05",
+      "status": "NEW",
+      "months_active": 1,
+      "rsi14": 58.89,
+      "rsi5": 67.58,
+      "diff": 8.69,
+      "gc_month": "2025-05",
+      "gc_price": 4438.0,
+      "signal_month_close": 4438.0,
+      "period_price": 4438.0,
+      "return_since_gc_pct": 0.0
+    }
+  ],
+  "out_records": [
+    {
+      "code": "7203",
+      "ticker": "7203.T",
+      "name": "トヨタ",
+      "signal_month": "2025-04",
+      "status": "OUT",
+      "months_active": 5,
+      "rsi14": 34.85,
+      "rsi5": 57.17,
+      "diff": 22.33,
+      "gc_month": "2024-12",
+      "gc_price": 3146.0,
+      "signal_month_close": 2729.0,
+      "period_price": 2729.0,
+      "return_since_gc_pct": -13.25,
+      "exit_month": "2025-05",
+      "exit_price": 2769.0,
+      "return_at_exit_pct": -11.98
+    }
+  ]
+}

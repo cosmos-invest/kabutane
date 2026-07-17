@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="日本株の月足RSI5がRSI14を上回る銘柄を追跡する無料スキャナー">
+  <title>月足RSIクロス・スキャナー</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div>
+        <p class="eyebrow">Japan Stock Monthly RSI</p>
+        <h1>月足RSIクロス・スキャナー</h1>
+        <p class="subtitle">月足RSI5 &gt; RSI14 の銘柄、その出入り、GC後の株価実績を追跡します。</p>
+      </div>
+      <div class="header-meta">
+        <span id="generatedAt">更新日時を取得中…</span>
+        <span class="badge neutral" id="signalMonth">判定月 —</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="stats-grid" aria-label="集計">
+      <article class="stat-card"><span>現在対象</span><strong id="activeCount">—</strong></article>
+      <article class="stat-card new"><span>NEW</span><strong id="newCount">—</strong></article>
+      <article class="stat-card out"><span>OUT</span><strong id="outCount">—</strong></article>
+      <article class="stat-card up"><span>GC後上昇</span><strong id="upCount">—</strong></article>
+      <article class="stat-card down"><span>GC後下落</span><strong id="downCount">—</strong></article>
+      <article class="stat-card"><span>取得エラー</span><strong id="errorCount">—</strong></article>
+    </section>
+
+    <section class="panel controls-panel">
+      <div class="control-group grow">
+        <label for="searchInput">銘柄検索</label>
+        <input id="searchInput" type="search" placeholder="コードまたは銘柄名">
+      </div>
+      <div class="control-group">
+        <label for="monthSelect">表示月</label>
+        <select id="monthSelect"></select>
+      </div>
+      <div class="control-group">
+        <label for="statusFilter">状態</label>
+        <select id="statusFilter">
+          <option value="ALL">すべて</option>
+          <option value="NEW">NEWのみ</option>
+          <option value="CONTINUE">継続のみ</option>
+          <option value="OUT">OUTのみ</option>
+        </select>
+      </div>
+      <div class="control-group">
+        <label for="performanceFilter">GC後実績</label>
+        <select id="performanceFilter">
+          <option value="ALL">すべて</option>
+          <option value="UP">上昇</option>
+          <option value="DOWN">下落</option>
+        </select>
+      </div>
+      <div class="control-group">
+        <label for="rsiFilter">RSI14</label>
+        <select id="rsiFilter">
+          <option value="ALL">すべて</option>
+          <option value="OVER50">50以上</option>
+          <option value="UNDER50">50未満</option>
+        </select>
+      </div>
+      <div class="control-group compact">
+        <label for="pageSize">表示件数</label>
+        <select id="pageSize">
+          <option value="25">25</option>
+          <option value="50" selected>50</option>
+          <option value="100">100</option>
+          <option value="500">500</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="panel tabs-panel">
+      <div class="tabs" role="tablist">
+        <button class="tab active" data-tab="active">現在対象</button>
+        <button class="tab" data-tab="new">NEW</button>
+        <button class="tab" data-tab="out">OUT</button>
+        <button class="tab" data-tab="up">GC後上昇</button>
+        <button class="tab" data-tab="down">GC後下落</button>
+      </div>
+      <div class="table-toolbar">
+        <p id="resultSummary">読み込み中…</p>
+        <a id="csvDownload" class="button secondary" href="result.csv" download>CSVを開く</a>
+      </div>
+
+      <div class="table-wrap">
+        <table id="resultTable">
+          <thead>
+            <tr>
+              <th data-key="code">コード</th>
+              <th data-key="name">銘柄名</th>
+              <th data-key="status">状態</th>
+              <th data-key="months_active" class="num">継続月</th>
+              <th data-key="rsi14" class="num">RSI14</th>
+              <th data-key="rsi5" class="num">RSI5</th>
+              <th data-key="diff" class="num">乖離</th>
+              <th data-key="gc_month">GC月</th>
+              <th data-key="gc_price" class="num">GC価格</th>
+              <th data-key="current_price" class="num">現在/期末</th>
+              <th data-key="return_since_gc_pct" class="num">GC後騰落</th>
+              <th data-key="per" class="num">PER</th>
+              <th data-key="pbr" class="num">PBR</th>
+              <th data-key="dividend_yield_pct" class="num">配当%</th>
+              <th data-key="roe_pct" class="num">ROE%</th>
+              <th data-key="equity_ratio_pct" class="num">自己資本%</th>
+              <th data-key="market_cap_oku" class="num">時価総額(億)</th>
+              <th data-key="operating_cashflow_oku" class="num">営業CF(億)</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <div class="pagination">
+        <button id="prevPage" class="button secondary">前へ</button>
+        <span id="pageInfo">—</span>
+        <button id="nextPage" class="button secondary">次へ</button>
+      </div>
+    </section>
+
+    <section class="panel note-panel">
+      <h2>このサイトの見方</h2>
+      <p><strong>NEW</strong> は、前月まで RSI5 ≤ RSI14 だった銘柄が、判定月に RSI5 &gt; RSI14 へ入った状態です。<strong>OUT</strong> はその逆です。</p>
+      <p>GC後騰落率は、GC判定月の月足終値を起点に計算します。現在月は直近の日足終値を使用します。</p>
+      <p class="disclaimer">本サイトは情報提供・研究を目的とし、特定銘柄の売買を推奨するものではありません。データ欠損・遅延・計算差異があり得ます。</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Monthly RSI Scanner / Data source: Yahoo Finance via yfinance</p>
+  </footer>
+  <script src="assets/app.js" defer></script>
+</body>
+</html>

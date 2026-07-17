@@ -1,485 +1,770 @@
+from __future__ import annotations
+
 import csv
-import yfinance as yf
+import json
+import math
+import os
+import time
+from bisect import bisect_right
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Any, Iterable
+
+import numpy as np
 import pandas as pd
+import yfinance as yf
+
+ROOT = Path(__file__).resolve().parent
+DATA_DIR = ROOT / "data"
+CHART_DIR = DATA_DIR / "charts"
+MONTH_DIR = DATA_DIR / "months"
+HISTORY_DIR = ROOT / "history"
+STOCKS_FILE = ROOT / "stocks.csv"
+CACHE_FILE = DATA_DIR / "fundamentals_cache.json"
+
+HISTORY_MONTHS = int(os.getenv("HISTORY_MONTHS", "36"))
+MONTHLY_PERIOD = os.getenv("MONTHLY_PERIOD", "10y")
+DAILY_PERIOD = os.getenv("DAILY_PERIOD", "3y")
+BATCH_SIZE = int(os.getenv("YF_BATCH_SIZE", "80"))
+DOWNLOAD_RETRIES = int(os.getenv("YF_DOWNLOAD_RETRIES", "3"))
+FUNDAMENTALS_WORKERS = int(os.getenv("FUNDAMENTALS_WORKERS", "3"))
+FUNDAMENTALS_CACHE_DAYS = int(os.getenv("FUNDAMENTALS_CACHE_DAYS", "25"))
+SKIP_FUNDAMENTALS = os.getenv("SKIP_FUNDAMENTALS", "0") == "1"
+
+RESULT_FIELDS = [
+    "code",
+    "ticker",
+    "name",
+    "sector",
+    "industry",
+    "quote_type",
+    "signal_month",
+    "status",
+    "months_active",
+    "rsi14",
+    "rsi5",
+    "diff",
+    "gc_month",
+    "gc_price",
+    "signal_month_close",
+    "current_price",
+    "change_from_signal_month_pct",
+    "return_since_gc_pct",
+    "per",
+    "forward_per",
+    "pbr",
+    "book_value",
+    "dividend_yield_pct",
+    "payout_ratio_pct",
+    "roe_pct",
+    "roa_pct",
+    "profit_margin_pct",
+    "operating_margin_pct",
+    "revenue_growth_pct",
+    "earnings_growth_pct",
+    "current_ratio",
+    "quick_ratio",
+    "debt_to_equity_pct",
+    "equity_ratio_pct",
+    "market_cap_oku",
+    "enterprise_value_oku",
+    "operating_cashflow_oku",
+    "free_cashflow_oku",
+    "total_cash_oku",
+    "total_debt_oku",
+    "ebitda_oku",
+    "beta",
+    "shares_outstanding_million",
+    "data_completeness_pct",
+]
 
 
-def calc_rsi(series, period):
-    delta = series.diff()
+# -----------------------------
+# General helpers
+# -----------------------------
 
-    gain = delta.clip(lower=0)
-    loss = -delta.clip(upper=0)
-
-    avg_gain = gain.rolling(period).mean()
-    avg_loss = loss.rolling(period).mean()
-
-    rs = avg_gain / avg_loss
-
-    return 100 - (100 / (1 + rs))
+def ensure_dirs() -> None:
+    for directory in (DATA_DIR, CHART_DIR, MONTH_DIR, HISTORY_DIR):
+        directory.mkdir(parents=True, exist_ok=True)
 
 
-def safe_round(value, digits=2):
-
+def json_safe(value: Any) -> Any:
     if value is None:
         return None
+    if isinstance(value, (np.integer,)):
+        return int(value)
+    if isinstance(value, (np.floating, float)):
+        if math.isnan(float(value)) or math.isinf(float(value)):
+            return None
+        return float(value)
+    if isinstance(value, (pd.Timestamp, datetime)):
+        return value.isoformat()
+    if isinstance(value, pd.Period):
+        return str(value)
+    if isinstance(value, dict):
+        return {str(k): json_safe(v) for k, v in value.items()}
+    if isinstance(value, (list, tuple)):
+        return [json_safe(v) for v in value]
+    return value
 
-    try:
-        return round(float(value), digits)
-    except:
+
+def write_json(path: Path, payload: Any) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8") as fh:
+        json.dump(json_safe(payload), fh, ensure_ascii=False, indent=2)
+
+
+def write_csv(path: Path, rows: list[dict[str, Any]], fields: list[str]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", newline="", encoding="utf-8-sig") as fh:
+        writer = csv.DictWriter(fh, fieldnames=fields, extrasaction="ignore")
+        writer.writeheader()
+        writer.writerows([{key: json_safe(row.get(key)) for key in fields} for row in rows])
+
+
+def to_float(value: Any) -> float | None:
+    if value is None:
         return None
-
-
-def get_balance_sheet_value(bs, candidates):
-
     try:
+        number = float(value)
+    except (TypeError, ValueError):
+        return None
+    if math.isnan(number) or math.isinf(number):
+        return None
+    return number
 
-        for name in candidates:
 
-            if name in bs.index:
-                value = bs.loc[name].iloc[0]
+def rounded(value: Any, digits: int = 2) -> float | None:
+    number = to_float(value)
+    return round(number, digits) if number is not None else None
 
-                if pd.notna(value):
-                    return float(value)
 
-    except:
-        pass
+def percentage(value: Any) -> float | None:
+    number = to_float(value)
+    return round(number * 100, 2) if number is not None else None
 
+
+def dividend_percentage(value: Any) -> float | None:
+    """Yahoo may return either 0.035 or 3.5 depending on endpoint/version."""
+    number = to_float(value)
+    if number is None:
+        return None
+    return round(number * 100 if abs(number) <= 1 else number, 2)
+
+
+def oku(value: Any) -> float | None:
+    number = to_float(value)
+    return round(number / 100_000_000, 2) if number is not None else None
+
+
+def million(value: Any) -> float | None:
+    number = to_float(value)
+    return round(number / 1_000_000, 2) if number is not None else None
+
+
+def normalize_ticker(code: str) -> str:
+    cleaned = str(code).replace("\ufeff", "").strip().upper()
+    if not cleaned:
+        return ""
+    return cleaned if "." in cleaned else f"{cleaned}.T"
+
+
+def display_code(ticker: str) -> str:
+    return ticker[:-2] if ticker.upper().endswith(".T") else ticker
+
+
+def chunked(items: list[str], size: int) -> Iterable[list[str]]:
+    for index in range(0, len(items), size):
+        yield items[index:index + size]
+
+
+# -----------------------------
+# Input
+# -----------------------------
+
+def read_stocks(path: Path = STOCKS_FILE) -> list[dict[str, str]]:
+    if not path.exists():
+        raise FileNotFoundError("stocks.csv がありません。code列を持つCSVを作成してください。")
+
+    with path.open("r", encoding="utf-8-sig", newline="") as fh:
+        reader = csv.DictReader(fh)
+        if not reader.fieldnames:
+            raise ValueError("stocks.csv にヘッダーがありません。最低限 code 列が必要です。")
+
+        normalized = {str(name).strip().lower(): name for name in reader.fieldnames}
+        code_key = normalized.get("code") or normalized.get("コード") or reader.fieldnames[0]
+        name_key = normalized.get("name") or normalized.get("銘柄名") or normalized.get("会社名")
+
+        stocks: list[dict[str, str]] = []
+        seen: set[str] = set()
+        for row in reader:
+            raw_code = str(row.get(code_key, "")).strip()
+            if not raw_code or raw_code.startswith("#"):
+                continue
+            ticker = normalize_ticker(raw_code)
+            if not ticker or ticker in seen:
+                continue
+            seen.add(ticker)
+            stocks.append({
+                "code": display_code(ticker),
+                "ticker": ticker,
+                "name": str(row.get(name_key, "")).strip() if name_key else "",
+            })
+
+    if not stocks:
+        raise ValueError("stocks.csv に有効な銘柄コードがありません。")
+    return stocks
+
+
+# -----------------------------
+# Price data and RSI
+# -----------------------------
+
+def calc_rsi(series: pd.Series, period: int) -> pd.Series:
+    """Simple-moving-average RSI, matching the prototype used in this project."""
+    values = pd.to_numeric(series, errors="coerce")
+    delta = values.diff()
+    gain = delta.clip(lower=0)
+    loss = -delta.clip(upper=0)
+    avg_gain = gain.rolling(period, min_periods=period).mean()
+    avg_loss = loss.rolling(period, min_periods=period).mean()
+    rs = avg_gain / avg_loss.replace(0, np.nan)
+    rsi = 100 - (100 / (1 + rs))
+    rsi = rsi.where(~((avg_loss == 0) & (avg_gain > 0)), 100.0)
+    rsi = rsi.where(~((avg_loss == 0) & (avg_gain == 0)), 50.0)
+    return rsi
+
+
+def download_batch(tickers: list[str], period: str, interval: str) -> pd.DataFrame:
+    last_error: Exception | None = None
+    for attempt in range(1, DOWNLOAD_RETRIES + 1):
+        try:
+            return yf.download(
+                tickers=tickers,
+                period=period,
+                interval=interval,
+                group_by="ticker",
+                auto_adjust=False,
+                actions=False,
+                threads=True,
+                progress=False,
+                timeout=60,
+            )
+        except Exception as exc:  # network/API failures must not kill the whole run
+            last_error = exc
+            time.sleep(attempt * 2)
+    raise RuntimeError(f"Yahoo Finance batch download failed: {last_error}")
+
+
+def split_batch_frame(batch: pd.DataFrame, ticker: str, ticker_count: int) -> pd.DataFrame:
+    if batch is None or batch.empty:
+        return pd.DataFrame()
+
+    if isinstance(batch.columns, pd.MultiIndex):
+        level0 = set(batch.columns.get_level_values(0))
+        level1 = set(batch.columns.get_level_values(1))
+        if ticker in level0:
+            frame = batch[ticker].copy()
+        elif ticker in level1:
+            frame = batch.xs(ticker, level=1, axis=1).copy()
+        else:
+            return pd.DataFrame()
+    elif ticker_count == 1:
+        frame = batch.copy()
+    else:
+        return pd.DataFrame()
+
+    if "Close" not in frame.columns:
+        return pd.DataFrame()
+    frame = frame.loc[:, ~frame.columns.duplicated()].copy()
+    frame.index = pd.to_datetime(frame.index, errors="coerce")
+    frame = frame[~frame.index.isna()].sort_index()
+    return frame
+
+
+def download_frames(
+    tickers: list[str],
+    period: str,
+    interval: str,
+    errors: list[dict[str, Any]],
+    stage: str,
+) -> dict[str, pd.DataFrame]:
+    frames: dict[str, pd.DataFrame] = {}
+    chunks = list(chunked(tickers, BATCH_SIZE))
+    for chunk_number, chunk in enumerate(chunks, start=1):
+        print(f"{stage}: batch {chunk_number}/{len(chunks)} ({len(chunk)} symbols)")
+        try:
+            batch = download_batch(chunk, period=period, interval=interval)
+        except Exception as exc:
+            for ticker in chunk:
+                errors.append({"ticker": ticker, "stage": stage, "message": str(exc)})
+            continue
+
+        for ticker in chunk:
+            frame = split_batch_frame(batch, ticker, len(chunk))
+            if frame.empty:
+                errors.append({"ticker": ticker, "stage": stage, "message": "価格データなし"})
+            else:
+                frames[ticker] = frame
+    return frames
+
+
+def prepare_monthly(frame: pd.DataFrame, current_period: pd.Period) -> pd.DataFrame:
+    close = pd.to_numeric(frame.get("Close"), errors="coerce").dropna()
+    if close.empty:
+        return pd.DataFrame()
+
+    work = pd.DataFrame({"close": close})
+    if getattr(work.index, "tz", None) is not None:
+        work.index = work.index.tz_localize(None)
+    work["month"] = work.index.to_period("M")
+    work = work[work["month"] < current_period]
+    if work.empty:
+        return pd.DataFrame()
+
+    monthly = work.groupby("month", sort=True).last()
+    monthly["rsi14"] = calc_rsi(monthly["close"], 14)
+    monthly["rsi5"] = calc_rsi(monthly["close"], 5)
+    monthly["condition"] = (monthly["rsi5"] > monthly["rsi14"]) & monthly["rsi5"].notna() & monthly["rsi14"].notna()
+    previous = monthly["condition"].shift(1, fill_value=False).astype(bool)
+    monthly["new"] = monthly["condition"] & ~previous
+    monthly["out"] = ~monthly["condition"] & previous
+    return monthly
+
+
+def consecutive_active(monthly: pd.DataFrame, month: pd.Period) -> int:
+    count = 0
+    for value in reversed(monthly.loc[:month, "condition"].tolist()):
+        if bool(value):
+            count += 1
+        else:
+            break
+    return count
+
+
+def last_gc_month(monthly: pd.DataFrame, month: pd.Period) -> pd.Period | None:
+    candidates = monthly.loc[:month]
+    candidates = candidates[candidates["new"]]
+    return candidates.index[-1] if not candidates.empty else None
+
+
+def build_month_record(
+    stock: dict[str, str],
+    monthly: pd.DataFrame,
+    month: pd.Period,
+) -> dict[str, Any] | None:
+    if month not in monthly.index or not bool(monthly.at[month, "condition"]):
+        return None
+    gc_month = last_gc_month(monthly, month)
+    if gc_month is None:
+        return None
+    close = to_float(monthly.at[month, "close"])
+    gc_price = to_float(monthly.at[gc_month, "close"])
+    return_pct = ((close / gc_price) - 1) * 100 if close and gc_price else None
+    return {
+        "code": stock["code"],
+        "ticker": stock["ticker"],
+        "name": stock["name"] or stock["code"],
+        "signal_month": str(month),
+        "status": "NEW" if bool(monthly.at[month, "new"]) else "CONTINUE",
+        "months_active": consecutive_active(monthly, month),
+        "rsi14": rounded(monthly.at[month, "rsi14"]),
+        "rsi5": rounded(monthly.at[month, "rsi5"]),
+        "diff": rounded(monthly.at[month, "rsi5"] - monthly.at[month, "rsi14"]),
+        "gc_month": str(gc_month),
+        "gc_price": rounded(gc_price),
+        "signal_month_close": rounded(close),
+        "period_price": rounded(close),
+        "return_since_gc_pct": rounded(return_pct),
+    }
+
+
+def build_out_record(
+    previous_record: dict[str, Any],
+    monthly: pd.DataFrame | None,
+    month: pd.Period,
+) -> dict[str, Any]:
+    exit_price = None
+    if monthly is not None and month in monthly.index:
+        exit_price = to_float(monthly.at[month, "close"])
+    if exit_price is None:
+        exit_price = to_float(previous_record.get("period_price"))
+    gc_price = to_float(previous_record.get("gc_price"))
+    return_pct = ((exit_price / gc_price) - 1) * 100 if exit_price and gc_price else None
+    return {
+        **previous_record,
+        "status": "OUT",
+        "exit_month": str(month),
+        "exit_price": rounded(exit_price),
+        "return_at_exit_pct": rounded(return_pct),
+    }
+
+
+# -----------------------------
+# Fundamentals
+# -----------------------------
+
+def balance_sheet_value(balance_sheet: pd.DataFrame, candidates: list[str]) -> float | None:
+    if balance_sheet is None or balance_sheet.empty:
+        return None
+    for candidate in candidates:
+        if candidate in balance_sheet.index:
+            values = pd.to_numeric(balance_sheet.loc[candidate], errors="coerce").dropna()
+            if not values.empty:
+                return to_float(values.iloc[0])
     return None
 
 
-def main():
+def load_cache() -> dict[str, Any]:
+    if not CACHE_FILE.exists():
+        return {}
+    try:
+        with CACHE_FILE.open("r", encoding="utf-8") as fh:
+            value = json.load(fh)
+        return value if isinstance(value, dict) else {}
+    except Exception:
+        return {}
 
-    # ------------------------------------
-    # 銘柄一覧読込
-    # ------------------------------------
-    codes = []
 
-    with open(
-        "stocks.csv",
-        encoding="utf-8"
-    ) as f:
+def cache_is_fresh(entry: dict[str, Any]) -> bool:
+    try:
+        fetched = datetime.fromisoformat(entry["fetched_at"].replace("Z", "+00:00"))
+        age = datetime.now(timezone.utc) - fetched.astimezone(timezone.utc)
+        return age.days < FUNDAMENTALS_CACHE_DAYS
+    except Exception:
+        return False
 
-        reader = csv.DictReader(f)
 
-        for row in reader:
+def fetch_fundamental(ticker_symbol: str) -> dict[str, Any]:
+    ticker = yf.Ticker(ticker_symbol)
+    info = ticker.get_info() or {}
+    balance_sheet = ticker.balance_sheet
+    assets = balance_sheet_value(balance_sheet, ["Total Assets", "TotalAssets"])
+    equity = balance_sheet_value(
+        balance_sheet,
+        ["Stockholders Equity", "Total Equity Gross Minority Interest", "Common Stock Equity"],
+    )
+    equity_ratio = (equity / assets * 100) if equity is not None and assets not in (None, 0) else None
 
-            codes.append(
-                (
-                    row["code"].strip(),
-                    row["name"].strip()
-                )
-            )
+    fields = {
+        "name": info.get("shortName") or info.get("longName"),
+        "sector": info.get("sector"),
+        "industry": info.get("industry"),
+        "quote_type": info.get("quoteType"),
+        "per": rounded(info.get("trailingPE")),
+        "forward_per": rounded(info.get("forwardPE")),
+        "pbr": rounded(info.get("priceToBook")),
+        "book_value": rounded(info.get("bookValue")),
+        "dividend_yield_pct": dividend_percentage(info.get("dividendYield")),
+        "payout_ratio_pct": percentage(info.get("payoutRatio")),
+        "roe_pct": percentage(info.get("returnOnEquity")),
+        "roa_pct": percentage(info.get("returnOnAssets")),
+        "profit_margin_pct": percentage(info.get("profitMargins")),
+        "operating_margin_pct": percentage(info.get("operatingMargins")),
+        "revenue_growth_pct": percentage(info.get("revenueGrowth")),
+        "earnings_growth_pct": percentage(info.get("earningsGrowth")),
+        "current_ratio": rounded(info.get("currentRatio")),
+        "quick_ratio": rounded(info.get("quickRatio")),
+        "debt_to_equity_pct": rounded(info.get("debtToEquity")),
+        "equity_ratio_pct": rounded(equity_ratio),
+        "market_cap_oku": oku(info.get("marketCap")),
+        "enterprise_value_oku": oku(info.get("enterpriseValue")),
+        "operating_cashflow_oku": oku(info.get("operatingCashflow")),
+        "free_cashflow_oku": oku(info.get("freeCashflow")),
+        "total_cash_oku": oku(info.get("totalCash")),
+        "total_debt_oku": oku(info.get("totalDebt")),
+        "ebitda_oku": oku(info.get("ebitda")),
+        "beta": rounded(info.get("beta")),
+        "shares_outstanding_million": million(info.get("sharesOutstanding")),
+    }
+    completeness_fields = [key for key in fields if key not in {"name", "sector", "industry", "quote_type"}]
+    available = sum(fields.get(key) is not None for key in completeness_fields)
+    fields["data_completeness_pct"] = round(available / len(completeness_fields) * 100, 1)
+    return fields
 
-    # ------------------------------------
-    # RSI条件成立銘柄
-    # ------------------------------------
-    results = []
 
-    print("\n処理開始\n")
+def enrich_fundamentals(
+    records: list[dict[str, Any]],
+    errors: list[dict[str, Any]],
+) -> None:
+    if not records or SKIP_FUNDAMENTALS:
+        return
 
-    for code, name in codes:
+    cache = load_cache()
+    now_iso = datetime.now(timezone.utc).isoformat()
+    pending: list[str] = []
+    by_ticker = {record["ticker"]: record for record in records}
 
-        print(f"処理中: {name} ({code})")
+    for ticker_symbol, record in by_ticker.items():
+        cached = cache.get(ticker_symbol)
+        if isinstance(cached, dict) and cache_is_fresh(cached):
+            record.update(cached.get("data", {}))
+        else:
+            pending.append(ticker_symbol)
 
-        try:
-
-            ticker = yf.Ticker(code)
-
-            # --------------------------------
-            # 月足
-            # --------------------------------
-            monthly = ticker.history(
-                period="5y",
-                interval="1mo"
-            )
-
-            if len(monthly) == 0:
-
-                print("  → データなし\n")
-                continue
-
-            if len(monthly) < 14:
-
-                print("  → データ不足\n")
-                continue
-
-            monthly["RSI14"] = calc_rsi(
-                monthly["Close"],
-                14
-            )
-
-            monthly["RSI5"] = calc_rsi(
-                monthly["Close"],
-                5
-            )
-
-            latest = monthly.iloc[-1]
-
-            rsi14 = float(latest["RSI14"])
-            rsi5 = float(latest["RSI5"])
-
-            diff = rsi5 - rsi14
-
-            # --------------------------------
-            # 前月終値
-            # --------------------------------
-            if len(monthly) >= 2:
-
-                monthly_close = float(
-                    monthly["Close"].iloc[-2]
-                )
-
-            else:
-
-                monthly_close = float(
-                    monthly["Close"].iloc[-1]
-                )
-
-            # --------------------------------
-            # 日足
-            # --------------------------------
-            daily = ticker.history(
-                period="10d",
-                interval="1d"
-            )
-
-            if len(daily) > 0:
-
-                current_price = float(
-                    daily["Close"]
-                    .dropna()
-                    .iloc[-1]
-                )
-
-            else:
-
-                current_price = monthly_close
-
-            change_pct = (
-                (current_price - monthly_close)
-                / monthly_close
-            ) * 100
-
-            # --------------------------------
-            # 財務情報
-            # --------------------------------
-            info = ticker.info
-
-            per = info.get(
-                "trailingPE"
-            )
-
-            pbr = info.get(
-                "priceToBook"
-            )
-
-            dividend_yield = info.get(
-                "dividendYield"
-            )
-
-            roe = info.get(
-                "returnOnEquity"
-            )
-
-            market_cap = info.get(
-                "marketCap"
-            )
-
-            current_ratio = info.get(
-                "currentRatio"
-            )
-
-            debt_to_equity = info.get(
-                "debtToEquity"
-            )
-
-            revenue_growth = info.get(
-                "revenueGrowth"
-            )
-
-            earnings_growth = info.get(
-                "earningsGrowth"
-            )
-
-            free_cashflow = info.get(
-                "freeCashflow"
-            )
-
-            operating_cashflow = info.get(
-                "operatingCashflow"
-            )
-
-            total_cash = info.get(
-                "totalCash"
-            )
-
-            total_debt = info.get(
-                "totalDebt"
-            )
-
-            profit_margins = info.get(
-                "profitMargins"
-            )
-
-            operating_margins = info.get(
-                "operatingMargins"
-            )
-
-            enterprise_value = info.get(
-                "enterpriseValue"
-            )
-
-            beta = info.get(
-                "beta"
-            )
-
-            shares_outstanding = info.get(
-                "sharesOutstanding"
-            )
-
-            # --------------------------------
-            # 自己資本比率計算
-            # --------------------------------
-            equity_ratio = None
-
+    if pending:
+        print(f"財務情報: {len(pending)}銘柄を取得")
+    with ThreadPoolExecutor(max_workers=max(1, FUNDAMENTALS_WORKERS)) as executor:
+        futures = {executor.submit(fetch_fundamental, ticker): ticker for ticker in pending}
+        for future in as_completed(futures):
+            ticker_symbol = futures[future]
             try:
+                data = future.result()
+                by_ticker[ticker_symbol].update(data)
+                cache[ticker_symbol] = {"fetched_at": now_iso, "data": data}
+            except Exception as exc:
+                errors.append({"ticker": ticker_symbol, "stage": "fundamentals", "message": str(exc)})
+                by_ticker[ticker_symbol].setdefault("data_completeness_pct", 0)
 
-                bs = ticker.balance_sheet
+    write_json(CACHE_FILE, cache)
 
-                total_assets = get_balance_sheet_value(
-                    bs,
-                    [
-                        "Total Assets",
-                        "TotalAssets"
-                    ]
-                )
 
-                shareholders_equity = get_balance_sheet_value(
-                    bs,
-                    [
-                        "Stockholders Equity",
-                        "Total Equity Gross Minority Interest",
-                        "Common Stock Equity"
-                    ]
-                )
+# -----------------------------
+# Charts and historical episodes
+# -----------------------------
 
-                if (
-                    total_assets is not None
-                    and shareholders_equity is not None
-                    and total_assets > 0
-                ):
+def build_episodes(
+    monthly: pd.DataFrame,
+    current_price: float | None,
+) -> list[dict[str, Any]]:
+    episodes: list[dict[str, Any]] = []
+    months = list(monthly.index)
+    new_positions = [index for index, month in enumerate(months) if bool(monthly.at[month, "new"])]
 
-                    equity_ratio = (
-                        shareholders_equity
-                        / total_assets
-                    ) * 100
+    for start_pos in new_positions:
+        start_month = months[start_pos]
+        start_price = to_float(monthly.at[start_month, "close"])
+        end_pos = None
+        for position in range(start_pos + 1, len(months)):
+            if bool(monthly.at[months[position], "out"]):
+                end_pos = position
+                break
 
-            except:
-                pass
+        last_pos = end_pos if end_pos is not None else len(months) - 1
+        section = pd.to_numeric(monthly.iloc[start_pos:last_pos + 1]["close"], errors="coerce").dropna()
+        end_month = months[end_pos] if end_pos is not None else None
+        end_price = to_float(monthly.at[end_month, "close"]) if end_month is not None else current_price
+        return_pct = ((end_price / start_price) - 1) * 100 if start_price and end_price else None
+        max_pct = ((section.max() / start_price) - 1) * 100 if start_price and not section.empty else None
+        min_pct = ((section.min() / start_price) - 1) * 100 if start_price and not section.empty else None
+        episodes.append({
+            "start_month": str(start_month),
+            "start_price": rounded(start_price),
+            "end_month": str(end_month) if end_month is not None else None,
+            "end_price": rounded(end_price),
+            "status": "CLOSED" if end_month is not None else "ACTIVE",
+            "return_pct": rounded(return_pct),
+            "max_return_pct": rounded(max_pct),
+            "min_return_pct": rounded(min_pct),
+            "duration_months": last_pos - start_pos + 1,
+        })
+    return episodes[-20:]
 
-            # --------------------------------
-            # RSI条件判定
-            # --------------------------------
-            if rsi14 < rsi5:
 
-                results.append({
+def build_chart_payload(
+    record: dict[str, Any],
+    daily: pd.DataFrame,
+    monthly: pd.DataFrame,
+) -> dict[str, Any]:
+    closes = pd.to_numeric(daily.get("Close"), errors="coerce").dropna()
+    if getattr(closes.index, "tz", None) is not None:
+        closes.index = closes.index.tz_localize(None)
+    closes = closes.sort_index()
 
-                    "code": code,
-                    "name": name,
+    monthly_valid = monthly[["rsi14", "rsi5"]].dropna(how="all")
+    periods = list(monthly_valid.index)
+    period_ordinals = [period.ordinal for period in periods]
+    latest_period = periods[-1] if periods else None
 
-                    "rsi14": safe_round(
-                        rsi14
-                    ),
+    daily_rows: list[dict[str, Any]] = []
+    for date, close in closes.items():
+        day_period = pd.Period(date, freq="M")
+        lookup_period = latest_period if latest_period is not None and day_period > latest_period else day_period
+        position = bisect_right(period_ordinals, lookup_period.ordinal) - 1 if periods else -1
+        rsi14 = monthly_valid.iloc[position]["rsi14"] if position >= 0 else None
+        rsi5 = monthly_valid.iloc[position]["rsi5"] if position >= 0 else None
+        daily_rows.append({
+            "date": date.strftime("%Y-%m-%d"),
+            "close": rounded(close),
+            "rsi14": rounded(rsi14),
+            "rsi5": rounded(rsi5),
+        })
 
-                    "rsi5": safe_round(
-                        rsi5
-                    ),
+    gc_events = []
+    for month in monthly.index[monthly["new"]]:
+        gc_events.append({
+            "month": str(month),
+            "price": rounded(monthly.at[month, "close"]),
+        })
 
-                    "diff": safe_round(
-                        diff
-                    ),
+    current_price = to_float(record.get("current_price"))
+    return {
+        "code": record["code"],
+        "ticker": record["ticker"],
+        "name": record.get("name") or record["code"],
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "record": record,
+        "daily": daily_rows,
+        "gc_events": gc_events[-20:],
+        "episodes": build_episodes(monthly, current_price),
+    }
 
-                    "monthly_close": safe_round(
-                        monthly_close
-                    ),
 
-                    "current_price": safe_round(
-                        current_price
-                    ),
+# -----------------------------
+# Main pipeline
+# -----------------------------
 
-                    "change_pct": safe_round(
-                        change_pct
-                    ),
+def main() -> None:
+    ensure_dirs()
+    errors: list[dict[str, Any]] = []
+    stocks = read_stocks()
+    stock_by_ticker = {stock["ticker"]: stock for stock in stocks}
+    tickers = list(stock_by_ticker)
+    print(f"対象銘柄: {len(tickers)}")
 
-                    "per": safe_round(
-                        per
-                    ),
+    now_jst = pd.Timestamp.now(tz="Asia/Tokyo")
+    current_period = pd.Period(now_jst.strftime("%Y-%m"), freq="M")
 
-                    "pbr": safe_round(
-                        pbr
-                    ),
-
-                    "dividend_yield": safe_round(
-                        dividend_yield
-                    ),
-
-                    "roe": safe_round(
-                        roe
-                    ),
-
-                    "market_cap": market_cap,
-
-                    "current_ratio": safe_round(
-                        current_ratio
-                    ),
-
-                    "debt_to_equity": safe_round(
-                        debt_to_equity
-                    ),
-
-                    "revenue_growth": safe_round(
-                        revenue_growth
-                    ),
-
-                    "earnings_growth": safe_round(
-                        earnings_growth
-                    ),
-
-                    "free_cashflow": free_cashflow,
-
-                    "operating_cashflow": operating_cashflow,
-
-                    "total_cash": total_cash,
-
-                    "total_debt": total_debt,
-
-                    "profit_margins": safe_round(
-                        profit_margins
-                    ),
-
-                    "operating_margins": safe_round(
-                        operating_margins
-                    ),
-
-                    "enterprise_value": enterprise_value,
-
-                    "beta": safe_round(
-                        beta
-                    ),
-
-                    "shares_outstanding": shares_outstanding,
-
-                    "equity_ratio": safe_round(
-                        equity_ratio
-                    )
-                })
-
-                print("  → 条件成立\n")
-
-            else:
-
-                print("  → 条件不成立\n")
-
-        except Exception as e:
-
-            print(
-                f"  → エラー: {e}\n"
-            )
-
-            continue
-
-    # ------------------------------------
-    # 差分順ソート
-    # ------------------------------------
-    results.sort(
-        key=lambda x: x["diff"],
-        reverse=True
+    monthly_raw = download_frames(
+        tickers,
+        period=MONTHLY_PERIOD,
+        interval="1mo",
+        errors=errors,
+        stage="monthly",
     )
 
-    # ------------------------------------
-    # CSV出力
-    # ------------------------------------
-    with open(
-        "result.csv",
-        "w",
-        newline="",
-        encoding="utf-8-sig"
-    ) as f:
+    monthly_by_ticker: dict[str, pd.DataFrame] = {}
+    for ticker_symbol, frame in monthly_raw.items():
+        monthly = prepare_monthly(frame, current_period)
+        if len(monthly) < 15:
+            errors.append({"ticker": ticker_symbol, "stage": "monthly", "message": "RSI計算に必要な月足が不足"})
+            continue
+        monthly_by_ticker[ticker_symbol] = monthly
 
-        writer = csv.DictWriter(
-            f,
-            fieldnames=[
+    if not monthly_by_ticker:
+        raise RuntimeError("有効な月足データを1銘柄も取得できませんでした。")
 
-                "code",
-                "name",
+    latest_month = max(frame.index[-1] for frame in monthly_by_ticker.values())
+    months = list(pd.period_range(end=latest_month, periods=HISTORY_MONTHS, freq="M"))
+    records_by_month: dict[pd.Period, list[dict[str, Any]]] = {}
+    out_by_month: dict[pd.Period, list[dict[str, Any]]] = {}
 
-                "rsi14",
-                "rsi5",
-                "diff",
+    previous_map: dict[str, dict[str, Any]] = {}
+    for month in months:
+        current_records: list[dict[str, Any]] = []
+        current_map: dict[str, dict[str, Any]] = {}
+        for ticker_symbol, monthly in monthly_by_ticker.items():
+            record = build_month_record(stock_by_ticker[ticker_symbol], monthly, month)
+            if record is not None:
+                current_records.append(record)
+                current_map[ticker_symbol] = record
 
-                "monthly_close",
-                "current_price",
-                "change_pct",
+        out_records: list[dict[str, Any]] = []
+        for ticker_symbol in sorted(set(previous_map) - set(current_map)):
+            out_records.append(build_out_record(previous_map[ticker_symbol], monthly_by_ticker.get(ticker_symbol), month))
 
-                "per",
-                "pbr",
-                "dividend_yield",
-                "roe",
+        current_records.sort(key=lambda row: (row.get("diff") is None, -(row.get("diff") or 0)))
+        out_records.sort(key=lambda row: row.get("code", ""))
+        records_by_month[month] = current_records
+        out_by_month[month] = out_records
+        previous_map = current_map
 
-                "market_cap",
+    latest_records = records_by_month.get(latest_month, [])
+    latest_out_records = out_by_month.get(latest_month, [])
+    active_tickers = [record["ticker"] for record in latest_records]
 
-                "current_ratio",
-                "debt_to_equity",
+    daily_frames = download_frames(
+        active_tickers,
+        period=DAILY_PERIOD,
+        interval="1d",
+        errors=errors,
+        stage="daily",
+    ) if active_tickers else {}
 
-                "revenue_growth",
-                "earnings_growth",
+    for record in latest_records:
+        daily = daily_frames.get(record["ticker"], pd.DataFrame())
+        closes = pd.to_numeric(daily.get("Close"), errors="coerce").dropna() if not daily.empty else pd.Series(dtype=float)
+        current_price = to_float(closes.iloc[-1]) if not closes.empty else to_float(record.get("signal_month_close"))
+        signal_close = to_float(record.get("signal_month_close"))
+        gc_price = to_float(record.get("gc_price"))
+        record["current_price"] = rounded(current_price)
+        record["change_from_signal_month_pct"] = rounded(((current_price / signal_close) - 1) * 100) if current_price and signal_close else None
+        record["return_since_gc_pct"] = rounded(((current_price / gc_price) - 1) * 100) if current_price and gc_price else None
 
-                "free_cashflow",
-                "operating_cashflow",
+    enrich_fundamentals(latest_records, errors)
 
-                "total_cash",
-                "total_debt",
+    for record in latest_records:
+        if not record.get("name") or record["name"] == record["code"]:
+            record["name"] = record.get("name") or record["code"]
 
-                "profit_margins",
-                "operating_margins",
+    # Generate chart/detail JSON for all currently active signals.
+    for record in latest_records:
+        daily = daily_frames.get(record["ticker"], pd.DataFrame())
+        monthly = monthly_by_ticker[record["ticker"]]
+        payload = build_chart_payload(record, daily, monthly)
+        write_json(CHART_DIR / f"{record['code']}.json", payload)
 
-                "enterprise_value",
+    # Write 36 monthly snapshots and downloadable CSVs.
+    month_index: list[dict[str, Any]] = []
+    historical_fields = [
+        "code", "ticker", "name", "signal_month", "status", "months_active",
+        "rsi14", "rsi5", "diff", "gc_month", "gc_price", "signal_month_close",
+        "period_price", "return_since_gc_pct",
+    ]
+    out_fields = historical_fields + ["exit_month", "exit_price", "return_at_exit_pct"]
 
-                "beta",
+    for month in reversed(months):
+        month_records = records_by_month.get(month, [])
+        month_out = out_by_month.get(month, [])
+        month_payload = {
+            "month": str(month),
+            "summary": {
+                "active_count": len(month_records),
+                "new_count": sum(row.get("status") == "NEW" for row in month_records),
+                "out_count": len(month_out),
+                "up_count": sum((row.get("return_since_gc_pct") or 0) >= 0 for row in month_records),
+                "down_count": sum((row.get("return_since_gc_pct") or 0) < 0 for row in month_records),
+            },
+            "records": month_records,
+            "out_records": month_out,
+        }
+        write_json(MONTH_DIR / f"{month}.json", month_payload)
+        write_csv(HISTORY_DIR / f"{month}.csv", month_records, historical_fields)
+        write_csv(HISTORY_DIR / f"{month}-out.csv", month_out, out_fields)
+        month_index.append({"month": str(month), **month_payload["summary"]})
 
-                "shares_outstanding",
+    write_json(MONTH_DIR / "index.json", month_index)
 
-                "equity_ratio"
-            ]
-        )
+    latest_records.sort(key=lambda row: (row.get("diff") is None, -(row.get("diff") or 0)))
+    latest_out_records.sort(key=lambda row: row.get("code", ""))
+    summary = {
+        "active_count": len(latest_records),
+        "new_count": sum(row.get("status") == "NEW" for row in latest_records),
+        "out_count": len(latest_out_records),
+        "up_count": sum((row.get("return_since_gc_pct") or 0) >= 0 for row in latest_records),
+        "down_count": sum((row.get("return_since_gc_pct") or 0) < 0 for row in latest_records),
+        "error_count": len(errors),
+    }
+    latest_payload = {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "signal_month": str(latest_month),
+        "rsi_method": "SMA RSI: monthly RSI5 > monthly RSI14",
+        "summary": summary,
+        "records": latest_records,
+        "out_records": latest_out_records,
+        "errors": errors,
+    }
+    write_json(DATA_DIR / "latest.json", latest_payload)
+    write_json(DATA_DIR / "errors.json", errors)
+    write_csv(ROOT / "result.csv", latest_records, RESULT_FIELDS)
+    write_csv(ROOT / "out.csv", latest_out_records, out_fields)
+    write_csv(DATA_DIR / "errors.csv", errors, ["ticker", "stage", "message"])
 
-        writer.writeheader()
-        writer.writerows(results)
-
-    # ------------------------------------
-    # 結果表示
-    # ------------------------------------
-    print("\n====================================")
-    print("RSI14 < RSI5 条件成立銘柄")
-    print("====================================\n")
-
-    if len(results) == 0:
-
-        print("対象銘柄なし")
-
-    else:
-
-        for stock in results:
-
-            print(
-                f"{stock['name']} "
-                f"({stock['code']}) "
-                f"RSI14={stock['rsi14']} "
-                f" RSI5={stock['rsi5']} "
-                f" 差分={stock['diff']}"
-            )
-
-    print(f"\n合計 {len(results)} 件")
-    print("result.csv 出力完了")
+    print("\n完了")
+    print(f"シグナル月: {latest_month}")
+    print(f"対象: {summary['active_count']} / NEW: {summary['new_count']} / OUT: {summary['out_count']}")
+    print(f"上昇: {summary['up_count']} / 下落: {summary['down_count']} / エラー: {summary['error_count']}")
 
 
 if __name__ == "__main__":

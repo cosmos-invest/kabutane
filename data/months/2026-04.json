@@ -1,0 +1,81 @@
+{
+  "month": "2026-04",
+  "summary": {
+    "active_count": 3,
+    "new_count": 1,
+    "out_count": 1,
+    "up_count": 3,
+    "down_count": 0
+  },
+  "records": [
+    {
+      "code": "9101",
+      "ticker": "9101.T",
+      "name": "日本郵船",
+      "signal_month": "2026-04",
+      "status": "CONTINUE",
+      "months_active": 3,
+      "rsi14": 55.99,
+      "rsi5": 88.7,
+      "diff": 32.71,
+      "gc_month": "2026-02",
+      "gc_price": 5369.0,
+      "signal_month_close": 5669.0,
+      "period_price": 5669.0,
+      "return_since_gc_pct": 5.59
+    },
+    {
+      "code": "9984",
+      "ticker": "9984.T",
+      "name": "ソフトバンクG",
+      "signal_month": "2026-04",
+      "status": "NEW",
+      "months_active": 1,
+      "rsi14": 64.98,
+      "rsi5": 68.74,
+      "diff": 3.75,
+      "gc_month": "2026-04",
+      "gc_price": 5219.0,
+      "signal_month_close": 5219.0,
+      "period_price": 5219.0,
+      "return_since_gc_pct": 0.0
+    },
+    {
+      "code": "8031",
+      "ticker": "8031.T",
+      "name": "三井物産",
+      "signal_month": "2026-04",
+      "status": "CONTINUE",
+      "months_active": 11,
+      "rsi14": 95.72,
+      "rsi5": 96.64,
+      "diff": 0.92,
+      "gc_month": "2025-06",
+      "gc_price": 2947.0,
+      "signal_month_close": 5896.0,
+      "period_price": 5896.0,
+      "return_since_gc_pct": 100.07
+    }
+  ],
+  "out_records": [
+    {
+      "code": "8591",
+      "ticker": "8591.T",
+      "name": "オリックス",
+      "signal_month": "2026-03",
+      "status": "OUT",
+      "months_active": 9,
+      "rsi14": 65.17,
+      "rsi5": 65.58,
+      "diff": 0.41,
+      "gc_month": "2025-07",
+      "gc_price": 3400.0,
+      "signal_month_close": 4607.0,
+      "period_price": 4607.0,
+      "return_since_gc_pct": 35.5,
+      "exit_month": "2026-04",
+      "exit_price": 5275.0,
+      "return_at_exit_pct": 55.15
+    }
+  ]
+}

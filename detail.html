@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>銘柄詳細 | 月足RSIクロス・スキャナー</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header detail-header">
+    <div class="header-inner">
+      <div>
+        <a class="back-link" href="index.html">← 一覧へ戻る</a>
+        <p class="eyebrow">Daily Price × Monthly RSI</p>
+        <h1 id="detailTitle">銘柄詳細</h1>
+        <p class="subtitle" id="detailSubtitle">データを読み込んでいます…</p>
+      </div>
+      <div class="header-meta">
+        <span class="badge neutral" id="detailStatus">—</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="stats-grid detail-stats" id="detailStats"></section>
+
+    <section class="panel chart-panel">
+      <div class="section-heading">
+        <div>
+          <h2>日足終値</h2>
+          <p>緑の縦線は、月足RSI5がRSI14を上抜いた月です。</p>
+        </div>
+      </div>
+      <div class="chart-box price-chart-box">
+        <canvas id="priceChart"></canvas>
+      </div>
+    </section>
+
+    <section class="panel chart-panel">
+      <div class="section-heading">
+        <div>
+          <h2>月足RSIを日足軸で表示</h2>
+          <p>1か月ごとに値が切り替わる階段状の表示です。</p>
+        </div>
+      </div>
+      <div class="chart-box rsi-chart-box">
+        <canvas id="rsiChart"></canvas>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div>
+          <h2>過去のゴールデンクロス実績</h2>
+          <p>GC月終値から、OUT月または現在値までの実績です。</p>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table id="episodeTable">
+          <thead>
+            <tr>
+              <th>GC月</th>
+              <th class="num">GC価格</th>
+              <th>終了月</th>
+              <th class="num">終了/現在価格</th>
+              <th class="num">騰落率</th>
+              <th class="num">最大上昇</th>
+              <th class="num">最大下落</th>
+              <th class="num">期間</th>
+              <th>状態</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div>
+          <h2>財務・バリュー情報</h2>
+          <p>取得できない項目は「—」で表示します。</p>
+        </div>
+      </div>
+      <dl class="fundamentals-grid" id="fundamentalsGrid"></dl>
+    </section>
+  </main>
+
+  <footer>
+    <p>月足RSIは月次データ、株価は日足終値です。</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <script src="assets/detail.js" defer></script>
+</body>
+</html>

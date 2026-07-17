@@ -1,0 +1,55 @@
+name: Update monthly RSI data
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 毎月2日 12:15 JST（前月の月足確定後）
+    - cron: "15 3 2 * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-monthly-rsi
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run unit tests
+        run: python -m unittest discover -s tests -v
+
+      - name: Generate data
+        env:
+          HISTORY_MONTHS: "36"
+          MONTHLY_PERIOD: "10y"
+          DAILY_PERIOD: "3y"
+          YF_BATCH_SIZE: "80"
+          FUNDAMENTALS_WORKERS: "3"
+        run: python test.py
+
+      - name: Commit generated files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add result.csv out.csv data history
+          if git diff --cached --quiet; then
+            echo "No data changes"
+          else
+            git commit -m "chore: update monthly RSI data"
+            git push
+          fi

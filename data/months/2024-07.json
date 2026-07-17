@@ -1,0 +1,81 @@
+{
+  "month": "2024-07",
+  "summary": {
+    "active_count": 3,
+    "new_count": 1,
+    "out_count": 1,
+    "up_count": 3,
+    "down_count": 0
+  },
+  "records": [
+    {
+      "code": "8001",
+      "ticker": "8001.T",
+      "name": "伊藤忠商事",
+      "signal_month": "2024-07",
+      "status": "NEW",
+      "months_active": 1,
+      "rsi14": 83.86,
+      "rsi5": 92.21,
+      "diff": 8.35,
+      "gc_month": "2024-07",
+      "gc_price": 1556.6,
+      "signal_month_close": 1556.6,
+      "period_price": 1556.6,
+      "return_since_gc_pct": 0.0
+    },
+    {
+      "code": "8306",
+      "ticker": "8306.T",
+      "name": "三菱UFJ",
+      "signal_month": "2024-07",
+      "status": "CONTINUE",
+      "months_active": 7,
+      "rsi14": 93.88,
+      "rsi5": 100.0,
+      "diff": 6.12,
+      "gc_month": "2024-01",
+      "gc_price": 1395.0,
+      "signal_month_close": 1750.0,
+      "period_price": 1750.0,
+      "return_since_gc_pct": 25.45
+    },
+    {
+      "code": "8591",
+      "ticker": "8591.T",
+      "name": "オリックス",
+      "signal_month": "2024-07",
+      "status": "CONTINUE",
+      "months_active": 6,
+      "rsi14": 87.58,
+      "rsi5": 90.11,
+      "diff": 2.53,
+      "gc_month": "2024-02",
+      "gc_price": 3137.0,
+      "signal_month_close": 3664.0,
+      "period_price": 3664.0,
+      "return_since_gc_pct": 16.8
+    }
+  ],
+  "out_records": [
+    {
+      "code": "9984",
+      "ticker": "9984.T",
+      "name": "ソフトバンクG",
+      "signal_month": "2024-06",
+      "status": "OUT",
+      "months_active": 5,
+      "rsi14": 77.04,
+      "rsi5": 82.84,
+      "diff": 5.8,
+      "gc_month": "2024-02",
+      "gc_price": 2197.5,
+      "signal_month_close": 2597.5,
+      "period_price": 2597.5,
+      "return_since_gc_pct": 18.2,
+      "exit_month": "2024-07",
+      "exit_price": 2290.5,
+      "return_at_exit_pct": 4.23
+    }
+  ]
+}
