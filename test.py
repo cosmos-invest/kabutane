@@ -498,10 +498,16 @@ def enrich_fundamentals(
     pending: list[str] = []
     by_ticker = {record["ticker"]: record for record in records}
 
+    def merge_fundamentals(record: dict[str, Any], data: dict[str, Any]) -> None:
+        configured_name = record.get("name")
+        record.update(data)
+        if configured_name and not record.get("name"):
+            record["name"] = configured_name
+
     for ticker_symbol, record in by_ticker.items():
         cached = cache.get(ticker_symbol)
         if isinstance(cached, dict) and cache_is_fresh(cached):
-            record.update(cached.get("data", {}))
+            merge_fundamentals(record, cached.get("data", {}))
         else:
             pending.append(ticker_symbol)
 
@@ -513,7 +519,7 @@ def enrich_fundamentals(
             ticker_symbol = futures[future]
             try:
                 data = future.result()
-                by_ticker[ticker_symbol].update(data)
+                merge_fundamentals(by_ticker[ticker_symbol], data)
                 cache[ticker_symbol] = {"fetched_at": now_iso, "data": data}
             except Exception as exc:
                 errors.append({"ticker": ticker_symbol, "stage": "fundamentals", "message": str(exc)})
