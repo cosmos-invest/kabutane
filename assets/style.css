@@ -233,11 +233,15 @@ footer { padding: 20px 16px 34px; color: var(--muted); text-align: center; font-
     --text: #132238;
     --muted: #5c6d83;
     --line: #cad7e6;
+    --accent: #0369a1;
+    --positive: #047857;
+    --negative: #be123c;
     --shadow: 0 18px 45px rgba(42, 64, 92, .12);
   }
   .site-header { background: rgba(238, 244, 251, .88); }
   .stat-card { background: linear-gradient(150deg, #fff, #f4f8fc); }
+  .panel { background: #fff; }
   th { color: #263a54; background: #eaf2fb; }
-  .badge.new { color: #063325; }
-  .badge.out { color: #4b0a14; }
+  .badge.new, .badge.out, .badge.continue { color: #fff; }
+  .error-banner { color: #9f1239; }
 }

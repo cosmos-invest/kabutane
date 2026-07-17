@@ -1,6 +1,7 @@
 import sys
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 import pandas as pd
 
@@ -32,6 +33,32 @@ class ScannerLogicTests(unittest.TestCase):
 
     def test_json_safe_nan(self):
         self.assertIsNone(scanner.json_safe(float("nan")))
+
+    def test_fundamental_fields_start_with_per(self):
+        self.assertEqual(scanner.FUNDAMENTAL_FIELDS[0], "per")
+        self.assertEqual(
+            scanner.FUNDAMENTAL_FIELDS,
+            scanner.RESULT_FIELDS[scanner.RESULT_FIELDS.index("per"):],
+        )
+
+    def test_enrich_fundamentals_preserves_name_when_cached_name_is_blank(self):
+        records = [{"ticker": "7203.T", "name": "Toyota"}]
+        cache = {
+            "7203.T": {
+                "data": {"name": None, "per": 10.5},
+            },
+        }
+
+        with (
+            patch.object(scanner, "SKIP_FUNDAMENTALS", False),
+            patch.object(scanner, "load_cache", return_value=cache),
+            patch.object(scanner, "cache_is_fresh", return_value=True),
+            patch.object(scanner, "write_json"),
+        ):
+            scanner.enrich_fundamentals(records, [])
+
+        self.assertEqual(records[0]["name"], "Toyota")
+        self.assertEqual(records[0]["per"], 10.5)
 
 
 if __name__ == "__main__":
