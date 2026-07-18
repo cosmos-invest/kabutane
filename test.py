@@ -504,11 +504,12 @@ def prepare_daily_analysis(frame: pd.DataFrame) -> pd.DataFrame:
     """Calculate daily indicators used to describe a NEW signal at month-end."""
     if frame is None or frame.empty:
         return pd.DataFrame()
+    open_price = pd.to_numeric(frame.get("Open"), errors="coerce")
     close = pd.to_numeric(frame.get("Close"), errors="coerce")
     high = pd.to_numeric(frame.get("High"), errors="coerce")
     low = pd.to_numeric(frame.get("Low"), errors="coerce")
     volume = pd.to_numeric(frame.get("Volume"), errors="coerce")
-    work = pd.DataFrame({"close": close, "high": high, "low": low, "volume": volume}).dropna(subset=["close"])
+    work = pd.DataFrame({"open": open_price, "close": close, "high": high, "low": low, "volume": volume}).dropna(subset=["close"])
     if work.empty:
         return work
     if getattr(work.index, "tz", None) is not None:
@@ -621,11 +622,11 @@ def daily_metrics_at_month(daily_analysis: pd.DataFrame, month: pd.Period) -> di
 def enrich_new_records_with_technicals(
     records_by_month: dict[pd.Period, list[dict[str, Any]]],
     daily_frames: dict[str, pd.DataFrame],
+    prepared_daily: dict[str, pd.DataFrame] | None = None,
 ) -> None:
     """Attach NEW-time technical values without recalculating per episode."""
-    prepared = {
-        ticker: prepare_daily_analysis(frame)
-        for ticker, frame in daily_frames.items()
+    prepared = prepared_daily or {
+        ticker: prepare_daily_analysis(frame) for ticker, frame in daily_frames.items()
     }
     for month, records in records_by_month.items():
         for record in records:
@@ -700,6 +701,7 @@ def build_analysis_episodes(
     latest_month: pd.Period,
     valuation_date: str | None = None,
     monthly_by_ticker: dict[str, pd.DataFrame] | None = None,
+    daily_analysis_by_ticker: dict[str, pd.DataFrame] | None = None,
 ) -> list[dict[str, Any]]:
     """Build NEW-origin episodes and ignore OUT events without an in-range NEW."""
     episodes: list[dict[str, Any]] = []
@@ -785,6 +787,9 @@ def build_analysis_episodes(
             end_month = pd.Period(episode.get("end_month") or latest_month, freq="M")
             path: list[dict[str, Any]] = []
             discontinuity = False
+            start_price = to_float(episode.get("start_price"))
+            peak_price = start_price
+            daily_analysis = (daily_analysis_by_ticker or {}).get(ticker, pd.DataFrame())
             return_months = list(pd.period_range(start=start_month + 1, end=end_month, freq="M"))
             for month in return_months:
                 previous_month = month - 1
@@ -798,11 +803,29 @@ def build_analysis_episodes(
                 if not MIN_VALID_MONTHLY_PRICE_RATIO <= price_ratio <= MAX_VALID_MONTHLY_PRICE_RATIO:
                     discontinuity = True
                     break
+                peak_price = max(peak_price or current_close, current_close)
+                metrics = daily_metrics_at_month(daily_analysis, month)
                 path.append({
                     "month": str(month),
                     "return_pct": rounded((price_ratio - 1) * 100),
                     "entry": not path,
                     "exit": episode.get("status") == "CLOSED" and month == end_month,
+                    "close": rounded(current_close),
+                    "cumulative_return_pct": rounded(
+                        (current_close / start_price - 1) * 100 if start_price else None
+                    ),
+                    "drawdown_from_peak_pct": rounded(
+                        (current_close / peak_price - 1) * 100 if peak_price else None
+                    ),
+                    "price_above_sma25": metrics.get("price_above_sma25"),
+                    "price_above_sma75": metrics.get("price_above_sma75"),
+                    "price_above_sma200": metrics.get("price_above_sma200"),
+                    "perfect_order": metrics.get("perfect_order"),
+                    "sma25_up": metrics.get("sma25_up"),
+                    "sma75_up": metrics.get("sma75_up"),
+                    "sma200_up": metrics.get("sma200_up"),
+                    "supertrend_up": metrics.get("supertrend_up"),
+                    "stage": metrics.get("stage"),
                 })
             if discontinuity:
                 episode["analysis_excluded"] = True
@@ -824,6 +847,373 @@ def build_analysis_episodes(
         key=lambda row: (row.get("start_month", ""), row.get("code", "")),
         reverse=True,
     )
+
+
+EXIT_STRATEGIES = [
+    {"id": "DC", "name": "月足RSIデッドクロス", "rule": "RSI5がRSI14以下"},
+    {"id": "SMA25_BREAK", "name": "株価SMA25割れ", "rule": "日足終値がSMA25を下回る"},
+    {"id": "SMA25_TURN", "name": "SMA25割れ＋下向き", "rule": "株価がSMA25未満かつSMA25が下向き"},
+    {"id": "SMA75_BREAK", "name": "株価SMA75割れ", "rule": "日足終値がSMA75を下回る"},
+    {"id": "ORDER_BREAK", "name": "パーフェクトオーダー崩れ", "rule": "一度成立したSMA25＞75＞200が崩れる"},
+    {"id": "SUPERTREND_DOWN", "name": "Supertrend反転", "rule": "Supertrendが下向き"},
+    {"id": "FAST_ROTATION", "name": "高速回転", "rule": "SMA25割れ・SMA25下向き・ST反転のいずれか"},
+    {"id": "BALANCED_TREND", "name": "トレンド防衛", "rule": "SMA75割れ、またはSMA25割れ＋下向き、またはST反転"},
+    {"id": "TRAIL10", "name": "10%トレーリング", "rule": "日足終値が保有中ピークから10%下落"},
+    {"id": "PROFIT_LOCK", "name": "利益ロック", "rule": "+10%後のSMA25割れ／8%反落、または−10%撤退"},
+]
+
+
+def episode_is_cosmos_focus(episode: dict[str, Any]) -> bool:
+    """Apply the same frozen entry conditions as the 🌸 sign."""
+    rsi5 = to_float(episode.get("start_rsi5"))
+    common = rsi5 is not None and rsi5 >= 60 and episode.get("start_rsi14_up") is True
+    accelerator = episode.get("start_sma200_up") is True and episode.get("start_mvp_signal") is True
+    breakout = episode.get("start_perfect_order") is True and episode.get("start_high52_breakout") is True
+    return common and (accelerator or breakout)
+
+
+def simulate_exit_path(episode: dict[str, Any], strategy_id: str) -> list[dict[str, Any]]:
+    """Truncate an RSI episode when the selected month-end exit rule fires."""
+    result: list[dict[str, Any]] = []
+    order_armed = episode.get("start_perfect_order") is True
+    profit_armed = False
+
+    for source in episode.get("monthly_returns", []):
+        point = dict(source)
+        cumulative = to_float(point.get("cumulative_return_pct"))
+        drawdown = to_float(point.get("drawdown_from_peak_pct"))
+        if cumulative is None:
+            # Older test fixtures and partial data can still use the DC path.
+            cumulative = 0.0
+        profit_armed = profit_armed or cumulative >= 10
+        if point.get("perfect_order") is True:
+            order_armed = True
+
+        price_below_25 = point.get("price_above_sma25") is False
+        price_below_75 = point.get("price_above_sma75") is False
+        sma25_down = point.get("sma25_up") is False
+        supertrend_down = point.get("supertrend_up") is False
+        triggered = bool(point.get("exit"))  # RSI DC remains the final fallback.
+
+        if strategy_id == "SMA25_BREAK":
+            triggered = triggered or price_below_25
+        elif strategy_id == "SMA25_TURN":
+            triggered = triggered or (price_below_25 and sma25_down)
+        elif strategy_id == "SMA75_BREAK":
+            triggered = triggered or price_below_75
+        elif strategy_id == "ORDER_BREAK":
+            triggered = triggered or (order_armed and point.get("perfect_order") is False)
+        elif strategy_id == "SUPERTREND_DOWN":
+            triggered = triggered or supertrend_down
+        elif strategy_id == "FAST_ROTATION":
+            triggered = triggered or price_below_25 or sma25_down or supertrend_down
+        elif strategy_id == "BALANCED_TREND":
+            triggered = triggered or price_below_75 or (price_below_25 and sma25_down) or supertrend_down
+        elif strategy_id == "TRAIL10":
+            triggered = triggered or (drawdown is not None and drawdown <= -10)
+        elif strategy_id == "PROFIT_LOCK":
+            triggered = (
+                triggered
+                or cumulative <= -10
+                or (profit_armed and (price_below_25 or (drawdown is not None and drawdown <= -8)))
+                or (price_below_75 and supertrend_down)
+            )
+
+        point["exit"] = triggered
+        result.append(point)
+        if triggered:
+            break
+    return result
+
+
+def daily_exit_trigger(
+    row: pd.Series,
+    strategy_id: str,
+    entry_price: float,
+    peak_price: float,
+    order_armed: bool,
+    profit_armed: bool,
+) -> tuple[bool, bool, bool]:
+    """Evaluate one daily close and return trigger plus updated armed states."""
+    close = to_float(row.get("close"))
+    sma25 = to_float(row.get("sma25"))
+    sma75 = to_float(row.get("sma75"))
+    sma200 = to_float(row.get("sma200"))
+    if close is None:
+        return False, order_armed, profit_armed
+
+    perfect_order = (
+        sma25 > sma75 > sma200
+        if sma25 is not None and sma75 is not None and sma200 is not None
+        else None
+    )
+    order_armed = order_armed or perfect_order is True
+    cumulative = (close / entry_price - 1) * 100
+    drawdown = (close / peak_price - 1) * 100 if peak_price else 0
+    profit_armed = profit_armed or cumulative >= 10
+    price_below_25 = sma25 is not None and close < sma25
+    price_below_75 = sma75 is not None and close < sma75
+    sma25_down = optional_bool(row.get("sma25_up")) is False
+    supertrend_down = optional_bool(row.get("supertrend_up")) is False
+
+    triggered = False
+    if strategy_id == "SMA25_BREAK":
+        triggered = price_below_25
+    elif strategy_id == "SMA25_TURN":
+        triggered = price_below_25 and sma25_down
+    elif strategy_id == "SMA75_BREAK":
+        triggered = price_below_75
+    elif strategy_id == "ORDER_BREAK":
+        triggered = order_armed and perfect_order is False
+    elif strategy_id == "SUPERTREND_DOWN":
+        triggered = supertrend_down
+    elif strategy_id == "FAST_ROTATION":
+        triggered = price_below_25 or sma25_down or supertrend_down
+    elif strategy_id == "BALANCED_TREND":
+        triggered = price_below_75 or (price_below_25 and sma25_down) or supertrend_down
+    elif strategy_id == "TRAIL10":
+        triggered = drawdown <= -10
+    elif strategy_id == "PROFIT_LOCK":
+        triggered = (
+            cumulative <= -10
+            or (profit_armed and (price_below_25 or drawdown <= -8))
+            or (price_below_75 and supertrend_down)
+        )
+    return triggered, order_armed, profit_armed
+
+
+def simulate_daily_exit_path(
+    episode: dict[str, Any],
+    strategy_id: str,
+    daily_analysis: pd.DataFrame,
+) -> list[dict[str, Any]]:
+    """Apply daily exit signals and execute at the next trading day's open.
+
+    The monthly RSI dead cross remains the fallback end point.  Returning a
+    monthly path keeps the portfolio comparison aligned with the benchmarks,
+    while the exit price itself can occur between month ends.
+    """
+    fallback = simulate_exit_path(episode, "DC")
+    if strategy_id == "DC" or daily_analysis is None or daily_analysis.empty or not fallback:
+        return fallback
+    entry_price = to_float(episode.get("start_price"))
+    if not entry_price:
+        return fallback
+
+    start_month = pd.Period(episode["start_month"], freq="M")
+    final_month = pd.Period(
+        episode.get("end_month") or fallback[-1].get("month") or start_month,
+        freq="M",
+    )
+    frame = daily_analysis.sort_index()
+    eligible = frame[(frame.index > start_month.end_time) & (frame.index <= final_month.end_time)]
+    if len(eligible) < 2:
+        return fallback
+
+    order_armed = episode.get("start_perfect_order") is True
+    profit_armed = False
+    peak_price = entry_price
+    exit_date: pd.Timestamp | None = None
+    exit_price: float | None = None
+    signal_date: pd.Timestamp | None = None
+    rows = list(eligible.iterrows())
+    for position, (date, row) in enumerate(rows[:-1]):
+        close = to_float(row.get("close"))
+        if close is None:
+            continue
+        peak_price = max(peak_price, close)
+        triggered, order_armed, profit_armed = daily_exit_trigger(
+            row, strategy_id, entry_price, peak_price, order_armed, profit_armed
+        )
+        if not triggered:
+            continue
+        next_date, next_row = rows[position + 1]
+        candidate_price = to_float(next_row.get("open")) or to_float(next_row.get("close"))
+        if candidate_price is None:
+            continue
+        signal_date = pd.Timestamp(date)
+        exit_date = pd.Timestamp(next_date)
+        exit_price = candidate_price
+        break
+
+    if exit_date is None or exit_price is None:
+        return fallback
+
+    exit_month = exit_date.to_period("M")
+    result = [
+        {**point, "exit": False}
+        for point in fallback
+        if pd.Period(str(point.get("month")), freq="M") < exit_month
+    ]
+    previous_price = entry_price if not result else to_float(result[-1].get("close"))
+    if not previous_price:
+        return fallback
+    result.append({
+        "month": str(exit_month),
+        "return_pct": rounded((exit_price / previous_price - 1) * 100),
+        "entry": not result,
+        "exit": True,
+        "close": rounded(exit_price),
+        "cumulative_return_pct": rounded((exit_price / entry_price - 1) * 100),
+        "drawdown_from_peak_pct": rounded((exit_price / peak_price - 1) * 100),
+        "signal_date": signal_date.date().isoformat() if signal_date is not None else None,
+        "exit_date": exit_date.date().isoformat(),
+        "execution_basis": "翌営業日始値",
+    })
+    return result
+
+
+def portfolio_exit_metrics(
+    episodes: list[dict[str, Any]],
+    strategy_id: str,
+    start_month: str,
+    end_month: str,
+    cost_bps: float = 20,
+    daily_analysis_by_ticker: dict[str, pd.DataFrame] | None = None,
+) -> dict[str, Any]:
+    """Calculate monthly equal-weight results with entry and exit costs."""
+    grouped: dict[str, list[float]] = {}
+    trade_returns: list[float] = []
+    holding_months: list[int] = []
+    cost_pct = cost_bps / 100
+
+    for episode in episodes:
+        daily = (daily_analysis_by_ticker or {}).get(str(episode.get("ticker")), pd.DataFrame())
+        points = simulate_daily_exit_path(episode, strategy_id, daily)
+        if not points:
+            continue
+        trade_wealth = 1.0
+        for point in points:
+            value = to_float(point.get("return_pct"))
+            if value is None:
+                continue
+            adjusted = value
+            if point.get("entry"):
+                adjusted -= cost_pct
+            if point.get("exit"):
+                adjusted -= cost_pct
+            trade_wealth *= 1 + adjusted / 100
+            month = str(point.get("month"))
+            if start_month < month <= end_month:
+                grouped.setdefault(month, []).append(adjusted)
+        trade_returns.append((trade_wealth - 1) * 100)
+        holding_months.append(len(points))
+
+    wealth = 1.0
+    peak = 1.0
+    max_drawdown = 0.0
+    for month in sorted(grouped):
+        values = grouped[month]
+        wealth *= 1 + (sum(values) / len(values)) / 100
+        peak = max(peak, wealth)
+        max_drawdown = min(max_drawdown, (wealth / peak - 1) * 100)
+
+    return {
+        "cumulative_return_pct": rounded((wealth - 1) * 100) if grouped else None,
+        "max_drawdown_pct": rounded(max_drawdown) if grouped else None,
+        "months": len(grouped),
+        "entries": len(episodes),
+        "average_trade_pct": rounded(sum(trade_returns) / len(trade_returns)) if trade_returns else None,
+        "win_rate_pct": rounded(sum(value > 0 for value in trade_returns) / len(trade_returns) * 100, 1) if trade_returns else None,
+        "average_holding_months": rounded(sum(holding_months) / len(holding_months), 1) if holding_months else None,
+    }
+
+
+def benchmark_metrics(points: list[dict[str, Any]], start_month: str, end_month: str) -> dict[str, Any]:
+    wealth = 1.0
+    peak = 1.0
+    max_drawdown = 0.0
+    months = 0
+    for point in points:
+        month = str(point.get("month"))
+        value = to_float(point.get("return_pct"))
+        if value is None or not (start_month < month <= end_month):
+            continue
+        wealth *= 1 + value / 100
+        peak = max(peak, wealth)
+        max_drawdown = min(max_drawdown, (wealth / peak - 1) * 100)
+        months += 1
+    return {
+        "cumulative_return_pct": rounded((wealth - 1) * 100) if months else None,
+        "max_drawdown_pct": rounded(max_drawdown) if months else None,
+        "months": months,
+    }
+
+
+def build_exit_strategy_results(
+    episodes: list[dict[str, Any]],
+    benchmarks: dict[str, dict[str, Any]],
+    first_month: pd.Period,
+    validation_start: pd.Period,
+    last_month: pd.Period,
+    cost_bps: float = 20,
+    daily_analysis_by_ticker: dict[str, pd.DataFrame] | None = None,
+) -> dict[str, Any]:
+    """Compare exit rules with the entry universe held constant."""
+    usable = [episode for episode in episodes if not episode.get("analysis_excluded")]
+    universes = {
+        "ALL": usable,
+        "COSMOS": [episode for episode in usable if episode_is_cosmos_focus(episode)],
+    }
+    benchmark_key = next(
+        (key for key in ("TOPIX", "NIKKEI225") if benchmarks.get(key, {}).get("returns")),
+        None,
+    )
+    benchmark_points = benchmarks.get(benchmark_key, {}).get("returns", []) if benchmark_key else []
+    train_end = validation_start - 1
+    periods = {
+        "train": {"entry_start": first_month, "return_start": first_month, "end": train_end},
+        "validation": {"entry_start": validation_start, "return_start": validation_start - 1, "end": last_month},
+        "all": {"entry_start": first_month, "return_start": first_month, "end": last_month},
+    }
+    result: dict[str, Any] = {
+        "cost_bps": cost_bps,
+        "signal_basis": "日足終値",
+        "execution_basis": "シグナル翌営業日始値（始値欠損時は終値）",
+        "benchmark_key": benchmark_key,
+        "benchmark_name": benchmarks.get(benchmark_key, {}).get("name") if benchmark_key else None,
+        "periods": {
+            key: {"start": str(period["entry_start"]), "end": str(period["end"])}
+            for key, period in periods.items()
+        },
+        "universes": {},
+    }
+
+    for universe_key, rows in universes.items():
+        strategies: list[dict[str, Any]] = []
+        for strategy in EXIT_STRATEGIES:
+            strategy_result = {**strategy, "metrics": {}}
+            for period_key, period in periods.items():
+                entry_start = period["entry_start"]
+                return_start = period["return_start"]
+                end = period["end"]
+                period_rows = [
+                    row for row in rows
+                    if entry_start <= pd.Period(row["start_month"], freq="M") <= end
+                ]
+                metrics = portfolio_exit_metrics(
+                    period_rows,
+                    strategy["id"],
+                    str(return_start),
+                    str(end),
+                    cost_bps,
+                    daily_analysis_by_ticker,
+                )
+                benchmark = benchmark_metrics(benchmark_points, str(return_start), str(end))
+                strategy_return = to_float(metrics.get("cumulative_return_pct"))
+                benchmark_return = to_float(benchmark.get("cumulative_return_pct"))
+                metrics["benchmark_return_pct"] = benchmark_return
+                metrics["benchmark_excess_pct"] = rounded(
+                    strategy_return - benchmark_return
+                    if strategy_return is not None and benchmark_return is not None else None
+                )
+                strategy_result["metrics"][period_key] = metrics
+            strategies.append(strategy_result)
+        result["universes"][universe_key] = {
+            "entry_count": len(rows),
+            "strategies": strategies,
+        }
+    return result
 
 
 def build_benchmark_series(
@@ -1257,7 +1647,10 @@ def main() -> None:
         stage="daily",
     ) if daily_tickers else {}
 
-    enrich_new_records_with_technicals(records_by_month, daily_frames)
+    prepared_daily = {
+        ticker: prepare_daily_analysis(frame) for ticker, frame in daily_frames.items()
+    }
+    enrich_new_records_with_technicals(records_by_month, daily_frames, prepared_daily)
     propagate_signal_technicals(records_by_month)
     benchmark_series = build_benchmark_series(daily_frames, months)
 
@@ -1365,9 +1758,19 @@ def main() -> None:
         latest_month,
         latest_payload["generated_at"][:10],
         monthly_by_ticker,
+        prepared_daily,
     )
     split_index = max(1, len(months) // 2)
     validation_start_month = months[split_index]
+    exit_strategy_results = build_exit_strategy_results(
+        analysis_episodes,
+        benchmark_series,
+        min(months),
+        validation_start_month,
+        max(months),
+        cost_bps=20,
+        daily_analysis_by_ticker=prepared_daily,
+    )
     analysis_payload = {
         "generated_at": latest_payload["generated_at"],
         "latest_month": str(latest_month),
@@ -1379,6 +1782,7 @@ def main() -> None:
         "portfolio_basis": "NEW月末からOUT月末まで、月次等金額で保有（売買費用は画面で設定）",
         "validation_start_month": str(validation_start_month),
         "benchmarks": benchmark_series,
+        "exit_strategy_results": exit_strategy_results,
         "quality_excluded_count": sum(
             1 for episode in analysis_episodes if episode.get("analysis_excluded")
         ),
