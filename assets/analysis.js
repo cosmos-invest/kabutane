@@ -1,6 +1,9 @@
 const state = {
   data: null, rows: [], pattern: "ALL", sortKey: "start_month", sortDirection: "desc", page: 1, pageSize: 50,
+  defaultColumnOrder: [], columnOrder: [], hiddenColumns: new Set(), draggedColumn: null, suppressSortUntil: 0,
 };
+
+const COLUMN_STORAGE_KEY = "monthlyRsiAnalysisColumnsV1";
 
 const els = {};
 function $(id) { return document.getElementById(id); }
@@ -8,6 +11,20 @@ function finite(value) {
   if (value === null || value === undefined || value === "") return null;
   const parsed = Number(value);
   return Number.isFinite(parsed) ? parsed : null;
+}
+function normaliseEpisode(row) {
+  const discontinuity = (row.monthly_returns || []).some((point) => {
+    const value = finite(point.return_pct); return value !== null && (value < -80 || value > 400);
+  });
+  if (!row.analysis_excluded && !discontinuity) return row;
+  return {
+    ...row,
+    analysis_excluded: true,
+    data_quality_issue: row.data_quality_issue || "価格不連続（株式併合・上場廃止・再上場等の可能性）",
+    end_price: null,
+    return_pct: null,
+    monthly_returns: [],
+  };
 }
 function escapeHtml(value) { return String(value ?? "—").replace(/[&<>'"]/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" })[char]); }
 function number(value, digits = 2) { const parsed = finite(value); return parsed === null ? "—" : parsed.toLocaleString("ja-JP", { maximumFractionDigits: digits }); }
@@ -55,12 +72,66 @@ function cacheElements() {
     "marketCapMin", "marketCapMax", "volumeMin", "volumeMax", "presetArticle", "resetFilters",
     "allAverage", "allDetail", "closedAverage", "closedDetail", "activeAverage", "activeDetail",
     "statCount", "statAverage", "statMedian", "statWinRate", "statMax", "statMin", "returnBuckets", "distributionCaption",
-    "benchmarkNotice", "benchmarkCards", "performanceChart", "costBps", "strategyRankingBody", "rankingPeriodCaption",
-    "cohortBody", "resultSummary", "pageSize", "episodeTable", "prevPage", "nextPage", "pageInfo",
+    "benchmarkNotice", "benchmarkCards", "performanceChart", "costBps", "strategyRankingBody", "rankingPeriodCaption", "rankingTrainHeader", "rankingValidateHeader",
+    "qualityNotice", "cohortBody", "resultSummary", "statusFilter", "pageSize", "episodeTable", "prevPage", "nextPage", "pageInfo",
+    "columnSettingsButton", "columnSettingsPanel", "columnSettingsList", "resetColumns",
   ].forEach((id) => { els[id] = $(id); });
   els.tbody = els.episodeTable.querySelector("tbody");
   els.headers = [...els.episodeTable.querySelectorAll("th[data-key]")];
   els.patternCards = [...document.querySelectorAll("[data-pattern]")];
+}
+
+function loadColumnLayout() {
+  state.defaultColumnOrder = els.headers.map((header) => header.dataset.key);
+  const valid = new Set(state.defaultColumnOrder);
+  let saved = null;
+  try { saved = JSON.parse(localStorage.getItem(COLUMN_STORAGE_KEY)); } catch (_) { saved = null; }
+  const savedOrder = Array.isArray(saved?.order) ? saved.order.filter((key) => valid.has(key)) : [];
+  state.columnOrder = [...savedOrder, ...state.defaultColumnOrder.filter((key) => !savedOrder.includes(key))];
+  state.hiddenColumns = new Set(Array.isArray(saved?.hidden) ? saved.hidden.filter((key) => valid.has(key)) : []);
+  els.headers.forEach((header) => {
+    header.draggable = true;
+    header.title = "クリックで並べ替え／ドラッグで列を移動";
+  });
+  renderColumnSettings();
+  applyColumnLayout();
+}
+
+function saveColumnLayout() {
+  try { localStorage.setItem(COLUMN_STORAGE_KEY, JSON.stringify({ order: state.columnOrder, hidden: [...state.hiddenColumns] })); } catch (_) { /* Continue without persistence when storage is unavailable. */ }
+}
+
+function renderColumnSettings() {
+  const labels = new Map(els.headers.map((header) => [header.dataset.key, header.textContent.trim()]));
+  els.columnSettingsList.innerHTML = state.columnOrder.map((key) => `
+    <label class="column-toggle"><input type="checkbox" data-column-toggle="${escapeHtml(key)}" ${state.hiddenColumns.has(key) ? "" : "checked"}><span>${escapeHtml(labels.get(key) || key)}</span></label>`).join("");
+  els.columnSettingsList.querySelectorAll("[data-column-toggle]").forEach((input) => input.addEventListener("change", () => {
+    if (input.checked) state.hiddenColumns.delete(input.dataset.columnToggle); else state.hiddenColumns.add(input.dataset.columnToggle);
+    saveColumnLayout(); applyColumnLayout();
+  }));
+}
+
+function applyColumnLayout() {
+  const headerRow = els.episodeTable.tHead.rows[0];
+  const headerMap = new Map(els.headers.map((header) => [header.dataset.key, header]));
+  state.columnOrder.forEach((key) => { if (headerMap.has(key)) headerRow.appendChild(headerMap.get(key)); });
+  [...els.tbody.rows].forEach((row) => {
+    if (row.cells.length === 1 && row.cells[0].classList.contains("empty-state")) {
+      row.cells[0].colSpan = Math.max(1, state.columnOrder.length - state.hiddenColumns.size); return;
+    }
+    [...row.cells].forEach((cell, index) => { if (!cell.dataset.column) cell.dataset.column = state.defaultColumnOrder[index]; });
+    const cellMap = new Map([...row.cells].map((cell) => [cell.dataset.column, cell]));
+    state.columnOrder.forEach((key) => { if (cellMap.has(key)) row.appendChild(cellMap.get(key)); });
+    [...row.cells].forEach((cell) => cell.classList.toggle("column-hidden", state.hiddenColumns.has(cell.dataset.column)));
+  });
+  els.headers.forEach((header) => header.classList.toggle("column-hidden", state.hiddenColumns.has(header.dataset.key)));
+}
+
+function moveColumn(source, target) {
+  if (!source || !target || source === target) return;
+  const next = state.columnOrder.filter((key) => key !== source);
+  next.splice(next.indexOf(target), 0, source);
+  state.columnOrder = next; saveColumnLayout(); applyColumnLayout(); renderColumnSettings();
 }
 
 function populateMonths() {
@@ -148,6 +219,13 @@ function renderComparison(rows) {
     detailElement.textContent = `${result.count.toLocaleString("ja-JP")}件 / プラス ${result.winRate === null ? "—" : `${number(result.winRate, 1)}%`}`;
   });
 }
+function renderQualityNotice() {
+  const excluded = state.rows.filter((row) => row.analysis_excluded);
+  if (!excluded.length) { els.qualityNotice.hidden = true; els.qualityNotice.textContent = ""; return; }
+  const examples = excluded.slice(0, 4).map((row) => `${row.code} ${row.name}`).join("、");
+  els.qualityNotice.hidden = false;
+  els.qualityNotice.textContent = `データ品質による分析除外 ${excluded.length.toLocaleString("ja-JP")}件：${examples}${excluded.length > 4 ? " ほか" : ""}。株式併合・上場廃止・再上場などによる価格不連続は、平均・チャート・ランキングに含めません。`;
+}
 function renderStats(rows) {
   const result = stats(rows); els.statCount.textContent = result.count.toLocaleString("ja-JP"); els.statAverage.textContent = signed(result.average); els.statAverage.className = performanceClass(result.average);
   els.statMedian.textContent = signed(result.median); els.statWinRate.textContent = result.winRate === null ? "—" : `${number(result.winRate, 1)}%`; els.statMax.textContent = signed(result.max); els.statMin.textContent = signed(result.min);
@@ -182,6 +260,11 @@ function benchmarkSeries(key, start, end) {
   const points = state.data?.benchmarks?.[key]?.returns || [];
   return points.filter((point) => point.month > start && point.month <= end).map((point) => ({ ...point, holdings: null }));
 }
+function availableBenchmarkKey() {
+  if ((state.data?.benchmarks?.TOPIX?.returns || []).length) return "TOPIX";
+  if ((state.data?.benchmarks?.NIKKEI225?.returns || []).length) return "NIKKEI225";
+  return null;
+}
 function portfolioMetrics(series) {
   let wealth = 1; let peak = 1; let maxDrawdown = 0;
   const path = series.map((point) => { wealth *= 1 + point.return_pct / 100; peak = Math.max(peak, wealth); maxDrawdown = Math.min(maxDrawdown, (wealth / peak - 1) * 100); return { month: point.month, cumulative: (wealth - 1) * 100 }; });
@@ -203,12 +286,14 @@ function chartSvg(seriesList) {
   return `${grid}${lines}${legends}${xLabels}`;
 }
 function renderBenchmark() {
-  const hasPaths = state.rows.some((row) => Array.isArray(row.monthly_returns)); const hasBenchmarks = (state.data?.benchmarks?.TOPIX?.returns || []).length > 0;
+  const hasPaths = state.rows.some((row) => Array.isArray(row.monthly_returns) && row.monthly_returns.length); const hasBenchmarks = availableBenchmarkKey() !== null;
   if (!hasPaths || !hasBenchmarks) {
-    els.benchmarkNotice.textContent = "新しい検証データは未生成です。コード反映後に『Update monthly RSI data』を実行すると表示されます。";
+    const missing = !hasPaths ? "銘柄の月次経路" : "比較指数";
+    els.benchmarkNotice.textContent = `${missing}を取得できなかったため、比較チャートを表示できません。データ更新ログを確認してください。`;
     els.benchmarkCards.innerHTML = ""; els.performanceChart.innerHTML = chartSvg([]); return;
   }
-  els.benchmarkNotice.textContent = "比較成績にはNEW時点で確定した項目だけを使用。財務・結果の騰落率・銘柄検索は除外し、月次等金額で計算します。";
+  const missingBenchmarks = ["TOPIX", "NIKKEI225"].filter((key) => !(state.data?.benchmarks?.[key]?.returns || []).length).map((key) => state.data?.benchmarks?.[key]?.name || key);
+  els.benchmarkNotice.textContent = `比較成績にはNEW時点で確定した項目だけを使用。財務・結果の騰落率・銘柄検索は除外し、月次等金額で計算します。${missingBenchmarks.length ? ` 未取得: ${missingBenchmarks.join("・")}` : ""}`;
   const start = els.startMonth.value; const end = els.endMonth.value; const costBps = Math.max(0, finite(els.costBps.value) || 0);
   const configs = [
     { label: "月足RSIのみ", color: "#94a3b8", series: portfolioSeries(baselineRows(start, end), start, end, costBps) },
@@ -235,15 +320,19 @@ const CANDIDATES = [
   { name: "第2ステージ高値圏", condition: "Stage2・高値−10%以内・ST上向き", test: (r) => finite(r.start_stage) === 2 && finite(r.start_high52_distance_pct) !== null && finite(r.start_high52_distance_pct) >= -10 && r.start_supertrend_up === true },
 ];
 function renderStrategyRanking() {
-  if (!state.rows.some((row) => Array.isArray(row.monthly_returns)) || !(state.data?.benchmarks?.TOPIX?.returns || []).length) {
+  const benchmarkKey = availableBenchmarkKey();
+  if (!state.rows.some((row) => Array.isArray(row.monthly_returns) && row.monthly_returns.length) || !benchmarkKey) {
     els.strategyRankingBody.innerHTML = `<tr><td colspan="7" class="empty-state">データ更新後に検証結果を表示します。</td></tr>`; return;
   }
+  const benchmarkName = state.data?.benchmarks?.[benchmarkKey]?.name || benchmarkKey;
+  els.rankingTrainHeader.textContent = `前半${benchmarkName}超過`;
+  els.rankingValidateHeader.textContent = `後半${benchmarkName}超過`;
   const first = state.data.available_start_month; const validation = state.data.validation_start_month; const trainEnd = previousMonth(validation); const last = state.data.available_end_month; const costBps = Math.max(0, finite(els.costBps.value) || 0);
-  const topixTrain = portfolioMetrics(benchmarkSeries("TOPIX", first, trainEnd)); const topixValidate = portfolioMetrics(benchmarkSeries("TOPIX", validation, last));
+  const benchmarkTrain = portfolioMetrics(benchmarkSeries(benchmarkKey, first, trainEnd)); const benchmarkValidate = portfolioMetrics(benchmarkSeries(benchmarkKey, validation, last));
   const results = CANDIDATES.map((candidate) => {
-    const rows = state.rows.filter(candidate.test); const trainRows = rows.filter((row) => row.start_month >= first && row.start_month <= trainEnd); const validationRows = rows.filter((row) => row.start_month >= validation && row.start_month <= last);
+    const rows = state.rows.filter((row) => !row.analysis_excluded).filter(candidate.test); const trainRows = rows.filter((row) => row.start_month >= first && row.start_month <= trainEnd); const validationRows = rows.filter((row) => row.start_month >= validation && row.start_month <= last);
     const train = portfolioMetrics(portfolioSeries(trainRows, first, trainEnd, costBps)); const validate = portfolioMetrics(portfolioSeries(validationRows, validation, last, costBps));
-    return { ...candidate, trainExcess: train.cumulative === null || topixTrain.cumulative === null ? null : train.cumulative - topixTrain.cumulative, validateExcess: validate.cumulative === null || topixValidate.cumulative === null ? null : validate.cumulative - topixValidate.cumulative, validateReturn: validate.cumulative, entries: validationRows.length };
+    return { ...candidate, trainExcess: train.cumulative === null || benchmarkTrain.cumulative === null ? null : train.cumulative - benchmarkTrain.cumulative, validateExcess: validate.cumulative === null || benchmarkValidate.cumulative === null ? null : validate.cumulative - benchmarkValidate.cumulative, validateReturn: validate.cumulative, entries: validationRows.length };
   }).sort((a, b) => (finite(b.validateExcess) ?? -Infinity) - (finite(a.validateExcess) ?? -Infinity));
   els.strategyRankingBody.innerHTML = results.map((result, index) => `<tr><td>${index + 1}</td><td><strong>${escapeHtml(result.name)}</strong></td><td>${escapeHtml(result.condition)}</td><td class="num ${performanceClass(result.trainExcess)}">${signed(result.trainExcess)}</td><td class="num ${performanceClass(result.validateExcess)}">${signed(result.validateExcess)}</td><td class="num ${performanceClass(result.validateReturn)}">${signed(result.validateReturn)}</td><td class="num">${result.entries.toLocaleString("ja-JP")}</td></tr>`).join("");
 }
@@ -255,7 +344,7 @@ function sortedRows(rows) {
 }
 function renderRows(rows) {
   const totalPages = Math.max(1, Math.ceil(rows.length / state.pageSize)); state.page = Math.min(state.page, totalPages); const start = (state.page - 1) * state.pageSize; const pageRows = rows.slice(start, start + state.pageSize);
-  els.tbody.innerHTML = pageRows.map((row) => { const status = row.status === "CLOSED" ? `<span class="badge out">OUT済み</span>` : `<span class="badge continue">継続中</span>`; return `<tr>
+  els.tbody.innerHTML = pageRows.map((row) => { const status = row.status === "CLOSED" ? `<span class="badge out">OUT済み</span>` : `<span class="badge continue">継続中</span>`; const quality = row.analysis_excluded ? `<span class="badge quality" title="${escapeHtml(row.data_quality_issue)}">分析除外</span>` : signed(row.return_pct); return `<tr class="${row.analysis_excluded ? "quality-excluded-row" : ""}">
     <td>${escapeHtml(row.start_month)}</td><td>${escapeHtml(row.code)}</td><td class="company-name">${escapeHtml(row.name)}</td><td>${status}</td>
     <td class="num">${number(row.start_rsi5)}</td><td class="num">${number(row.start_rsi14)}</td><td class="${booleanClass(row.start_rsi5_up)}">${directionLabel(row.start_rsi5_up)}</td><td class="${booleanClass(row.start_rsi14_up)}">${directionLabel(row.start_rsi14_up)}</td>
     <td class="num">${number(row.start_price)}</td><td class="num">${number(row.start_sma25)}</td><td class="num">${number(row.start_sma75)}</td><td class="num">${number(row.start_sma200)}</td>
@@ -264,18 +353,25 @@ function renderRows(rows) {
     <td class="num ${performanceClass(row.start_high52_distance_pct)}">${signed(row.start_high52_distance_pct)}</td><td class="${booleanClass(row.start_high52_breakout)}">${row.start_high52_breakout === true ? "更新" : row.start_high52_breakout === false ? "未更新" : "—"}</td><td class="num">${number(row.start_volume_ratio_5_30)}</td>
     <td class="num">${number(row.start_atr14_pct)}</td><td class="num">${number(row.start_atr_ratio_10_20)}</td><td class="${booleanClass(row.start_vcp_tight)}">${yesNoLabel(row.start_vcp_tight)}</td><td class="num">${number(row.start_stage, 0)}</td><td class="${booleanClass(row.start_supertrend_up)}">${row.start_supertrend_up === true ? "上" : row.start_supertrend_up === false ? "下" : "—"}</td><td class="num ${performanceClass(row.start_rsr_momentum)}">${number(row.start_rsr_momentum)}</td><td class="${booleanClass(row.start_mvp_signal)}">${row.start_mvp_signal === true ? "点火" : row.start_mvp_signal === false ? "平常" : "—"}</td>
     <td class="num">${number(row.roe_pct)}</td><td class="num">${number(row.revenue_growth_pct)}</td><td class="num">${number(row.equity_ratio_pct)}</td><td class="num ${performanceClass(row.operating_cashflow_oku)}">${number(row.operating_cashflow_oku)}</td><td class="num ${performanceClass(row.free_cashflow_oku)}">${number(row.free_cashflow_oku)}</td><td class="num">${number(row.market_cap_oku)}</td>
-    <td>${escapeHtml(row.end_month || row.valuation_date || "最新")}</td><td class="num">${number(row.end_price)}</td><td class="num">${number(row.duration_months, 0)}</td><td class="num ${performanceClass(row.return_pct)}">${signed(row.return_pct)}</td></tr>`; }).join("") || `<tr><td colspan="38" class="empty-state">条件に合う実績がありません。</td></tr>`;
+    <td>${escapeHtml(row.end_month || row.valuation_date || "最新")}</td><td class="num">${number(row.end_price)}</td><td class="num">${number(row.duration_months, 0)}</td><td class="num ${performanceClass(row.return_pct)}">${quality}</td></tr>`; }).join("") || `<tr><td colspan="40" class="empty-state">条件に合う実績がありません。</td></tr>`;
   els.resultSummary.textContent = `${rows.length.toLocaleString("ja-JP")}件（${state.pattern === "ALL" ? "全体" : state.pattern === "CLOSED" ? "OUT済み" : "継続中"}）`; els.pageInfo.textContent = `${state.page} / ${totalPages}`; els.prevPage.disabled = state.page <= 1; els.nextPage.disabled = state.page >= totalPages;
   els.headers.forEach((header) => { header.classList.remove("sort-asc", "sort-desc"); if (header.dataset.key === state.sortKey) header.classList.add(state.sortDirection === "asc" ? "sort-asc" : "sort-desc"); });
+  applyColumnLayout();
 }
 function render() {
-  const base = baseRows(); const selected = sortedRows(patternRows(base)); renderComparison(base); renderStats(selected); renderBuckets(selected); renderCohorts(selected); renderRows(selected); renderBenchmark(); renderStrategyRanking();
+  const base = baseRows(); const selected = sortedRows(patternRows(base)); renderComparison(base); renderStats(selected); renderBuckets(selected); renderCohorts(selected); renderRows(selected); renderQualityNotice(); renderBenchmark(); renderStrategyRanking();
 }
 
 const numberInputs = ["rsi5Min", "rsi5Max", "rsi14Min", "rsi14Max", "returnMin", "returnMax", "searchInput", "high52DistanceMin", "high52DistanceMax", "volumeRatioMin", "volumeRatioMax", "atrPctMin", "atrPctMax", "atrRatioMin", "atrRatioMax", "roeMin", "roeMax", "revenueGrowthMin", "revenueGrowthMax", "equityRatioMin", "equityRatioMax", "marketCapMin", "marketCapMax", "volumeMin", "volumeMax"];
 const selectInputs = ["rsi5Trend", "rsi14Trend", "priceVsSma25", "priceVsSma75", "priceVsSma200", "perfectOrder", "sma25Trend", "sma75Trend", "sma200Trend", "high52Breakout", "vcpTight", "stageFilter", "supertrendFilter", "mvpFilter", "operatingCf", "freeCf"];
+function setPattern(pattern) {
+  state.pattern = pattern; els.statusFilter.value = pattern;
+  els.patternCards.forEach((card) => card.classList.toggle("active", card.dataset.pattern === pattern));
+  state.page = 1; render();
+}
 function resetFilters() {
-  populateMonths(); els.researchPeriod.value = "all"; numberInputs.forEach((id) => { els[id].value = ""; }); selectInputs.forEach((id) => { els[id].value = "all"; }); state.page = 1; render();
+  populateMonths(); els.researchPeriod.value = "all"; numberInputs.forEach((id) => { els[id].value = ""; }); selectInputs.forEach((id) => { els[id].value = "all"; });
+  state.pattern = "ALL"; els.statusFilter.value = "ALL"; els.patternCards.forEach((card) => card.classList.toggle("active", card.dataset.pattern === "ALL")); state.page = 1; render();
 }
 function resetMomentum() { ["high52DistanceMin", "high52DistanceMax", "volumeRatioMin", "volumeRatioMax", "atrPctMin", "atrPctMax", "atrRatioMin", "atrRatioMax"].forEach((id) => { els[id].value = ""; }); ["high52Breakout", "vcpTight", "stageFilter", "supertrendFilter", "mvpFilter"].forEach((id) => { els[id].value = "all"; }); }
 function applyArticlePreset() { resetFilters(); els.roeMin.value = "10"; els.revenueGrowthMin.value = "5"; els.equityRatioMin.value = "50"; els.operatingCf.value = "positive"; els.freeCf.value = "positive"; els.perfectOrder.value = "yes"; els.priceVsSma200.value = "above"; els.priceVsSma25.value = "below"; els.volumeMin.value = "100000"; els.marketCapMin.value = "300"; render(); }
@@ -291,15 +387,28 @@ function bindEvents() {
   numberInputs.forEach((id) => els[id].addEventListener("input", () => { state.page = 1; render(); }));
   els.researchPeriod.addEventListener("change", () => { applyResearchPeriod(); state.page = 1; render(); }); els.costBps.addEventListener("input", render);
   els.presetArticle.addEventListener("click", applyArticlePreset); els.resetFilters.addEventListener("click", resetFilters); els.presetHighZone.addEventListener("click", () => applyMomentumPreset("high")); els.presetBreakout.addEventListener("click", () => applyMomentumPreset("breakout")); els.presetVcpTrend.addEventListener("click", () => applyMomentumPreset("vcp"));
-  els.patternCards.forEach((card) => card.addEventListener("click", () => { els.patternCards.forEach((item) => item.classList.remove("active")); card.classList.add("active"); state.pattern = card.dataset.pattern; state.page = 1; render(); }));
+  els.patternCards.forEach((card) => card.addEventListener("click", () => setPattern(card.dataset.pattern)));
+  els.statusFilter.addEventListener("change", () => setPattern(els.statusFilter.value));
   els.pageSize.addEventListener("change", () => { state.pageSize = Number(els.pageSize.value); state.page = 1; render(); }); els.prevPage.addEventListener("click", () => { state.page -= 1; render(); }); els.nextPage.addEventListener("click", () => { state.page += 1; render(); });
-  els.headers.forEach((header) => header.addEventListener("click", () => { const key = header.dataset.key; if (state.sortKey === key) state.sortDirection = state.sortDirection === "asc" ? "desc" : "asc"; else { state.sortKey = key; state.sortDirection = ["code", "name", "status", "start_month", "end_month"].includes(key) ? "asc" : "desc"; } render(); }));
+  els.headers.forEach((header) => {
+    header.addEventListener("click", () => { if (Date.now() < state.suppressSortUntil) return; const key = header.dataset.key; if (state.sortKey === key) state.sortDirection = state.sortDirection === "asc" ? "desc" : "asc"; else { state.sortKey = key; state.sortDirection = ["code", "name", "status", "start_month", "end_month"].includes(key) ? "asc" : "desc"; } render(); });
+    header.addEventListener("dragstart", (event) => { state.draggedColumn = header.dataset.key; header.classList.add("column-dragging"); event.dataTransfer.effectAllowed = "move"; event.dataTransfer.setData("text/plain", state.draggedColumn); });
+    header.addEventListener("dragover", (event) => { event.preventDefault(); header.classList.add("column-drag-over"); event.dataTransfer.dropEffect = "move"; });
+    header.addEventListener("dragleave", () => header.classList.remove("column-drag-over"));
+    header.addEventListener("drop", (event) => { event.preventDefault(); moveColumn(state.draggedColumn || event.dataTransfer.getData("text/plain"), header.dataset.key); });
+    header.addEventListener("dragend", () => { state.draggedColumn = null; state.suppressSortUntil = Date.now() + 250; els.headers.forEach((item) => item.classList.remove("column-dragging", "column-drag-over")); });
+  });
+  els.columnSettingsButton.addEventListener("click", () => { const open = els.columnSettingsPanel.hidden; els.columnSettingsPanel.hidden = !open; els.columnSettingsButton.setAttribute("aria-expanded", String(open)); });
+  els.resetColumns.addEventListener("click", () => { state.columnOrder = [...state.defaultColumnOrder]; state.hiddenColumns.clear(); saveColumnLayout(); applyColumnLayout(); renderColumnSettings(); });
+  document.addEventListener("click", (event) => { if (!event.target.closest(".column-settings")) { els.columnSettingsPanel.hidden = true; els.columnSettingsButton.setAttribute("aria-expanded", "false"); } });
+  document.addEventListener("keydown", (event) => { if (event.key === "Escape") { els.columnSettingsPanel.hidden = true; els.columnSettingsButton.setAttribute("aria-expanded", "false"); } });
 }
 function showError(error) { const banner = document.createElement("div"); banner.className = "error-banner"; banner.textContent = `分析データを読み込めませんでした: ${error.message}`; document.querySelector("main").prepend(banner); }
 async function init() {
   cacheElements();
+  loadColumnLayout();
   try {
-    state.data = await fetchJson("data/analysis.json"); const profiles = state.data.profiles || {}; state.rows = (state.data.episodes || []).map((row) => ({ ...(profiles[row.ticker] || {}), ...row }));
+    state.data = await fetchJson("data/analysis.json"); const profiles = state.data.profiles || {}; state.rows = (state.data.episodes || []).map((row) => normaliseEpisode({ ...(profiles[row.ticker] || {}), ...row }));
     els.generatedAt.textContent = `データ生成: ${formatDate(state.data.generated_at)}`; els.priceBasis.textContent = state.data.price_basis || "判定月の月末終値"; els.technicalBasis.textContent = state.data.technical_basis || "NEW判定月末の日足"; els.fundamentalBasis.textContent = state.data.fundamental_basis || "データ生成時点の最新財務情報";
     if (state.data.validation_start_month) els.rankingPeriodCaption.textContent = `条件探し ${state.data.available_start_month}〜${previousMonth(state.data.validation_start_month)} / 答え合わせ ${state.data.validation_start_month}〜${state.data.available_end_month}`;
     populateMonths(); bindEvents(); render();

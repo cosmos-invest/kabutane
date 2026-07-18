@@ -139,6 +139,35 @@ class ScannerLogicTests(unittest.TestCase):
         self.assertEqual(by_ticker["2222.T"]["monthly_returns"][0]["return_pct"], -10.0)
         self.assertNotIn("9999.T", by_ticker)
 
+    def test_analysis_episodes_exclude_price_discontinuity(self):
+        may = pd.Period("2023-05", freq="M")
+        june = pd.Period("2023-06", freq="M")
+        records = {
+            may: [{
+                "code": "8303", "ticker": "8303.T", "name": "SBI新生銀行",
+                "status": "NEW", "gc_price": 2_809, "rsi14": 60,
+                "rsi5": 80, "diff": 20,
+            }],
+            june: [],
+        }
+        outs = {may: [], june: [{"ticker": "8303.T", "exit_price": 55_320_000_000}]}
+        monthly = {
+            "8303.T": pd.DataFrame(
+                {"close": [2_809, 55_320_000_000]},
+                index=pd.PeriodIndex([may, june], freq="M"),
+            ),
+        }
+
+        episode = scanner.build_analysis_episodes(
+            records, outs, [], june, monthly_by_ticker=monthly,
+        )[0]
+
+        self.assertTrue(episode["analysis_excluded"])
+        self.assertIn("価格不連続", episode["data_quality_issue"])
+        self.assertIsNone(episode["return_pct"])
+        self.assertIsNone(episode["end_price"])
+        self.assertEqual(episode["monthly_returns"], [])
+
     def test_build_benchmark_series_aligns_month_end_returns(self):
         dates = pd.to_datetime(["2025-01-31", "2025-02-28", "2025-03-31"])
         frames = {
@@ -150,6 +179,7 @@ class ScannerLogicTests(unittest.TestCase):
 
         self.assertEqual(result["TOPIX"]["returns"][0]["return_pct"], 10.0)
         self.assertEqual(result["TOPIX"]["returns"][1]["return_pct"], -10.0)
+        self.assertEqual(result["TOPIX"]["source_ticker"], "^TOPX")
         self.assertEqual(result["NIKKEI225"]["returns"][1]["return_pct"], 10.0)
 
 

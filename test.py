@@ -34,9 +34,18 @@ FUNDAMENTALS_CACHE_DAYS = int(os.getenv("FUNDAMENTALS_CACHE_DAYS", "25"))
 SKIP_FUNDAMENTALS = os.getenv("SKIP_FUNDAMENTALS", "0") == "1"
 
 BENCHMARKS = {
-    "TOPIX": {"ticker": "^TOPX", "name": "TOPIX"},
+    # Yahoo! JAPAN's TOPIX symbol is more reliable in yfinance than ^TOPX.
+    # Keep ^TOPX as a fallback because the available symbol can differ by endpoint.
+    "TOPIX": {"ticker": "998405.T", "fallback_tickers": ["^TOPX"], "name": "TOPIX"},
     "NIKKEI225": {"ticker": "^N225", "name": "日経平均"},
 }
+
+# Treat a one-month price jump outside this range as a discontinuity instead of
+# an investment return. This catches delisting/relisting and extreme reverse
+# splits such as SBI Shinsei Bank's 20,000,000-to-1 consolidation in 2023.
+MIN_VALID_MONTHLY_PRICE_RATIO = 0.2
+MAX_VALID_MONTHLY_PRICE_RATIO = 5.0
+PRICE_DISCONTINUITY_REASON = "価格不連続（株式併合・上場廃止・再上場等の可能性）"
 
 RESULT_FIELDS = [
     "code",
@@ -715,8 +724,9 @@ def build_analysis_episodes(
             start_month = pd.Period(episode["start_month"], freq="M")
             end_month = pd.Period(episode.get("end_month") or latest_month, freq="M")
             path: list[dict[str, Any]] = []
+            discontinuity = False
             return_months = list(pd.period_range(start=start_month + 1, end=end_month, freq="M"))
-            for position, month in enumerate(return_months):
+            for month in return_months:
                 previous_month = month - 1
                 if previous_month not in monthly.index or month not in monthly.index:
                     continue
@@ -724,12 +734,29 @@ def build_analysis_episodes(
                 current_close = to_float(monthly.at[month, "close"])
                 if not previous_close or current_close is None:
                     continue
+                price_ratio = current_close / previous_close
+                if not MIN_VALID_MONTHLY_PRICE_RATIO <= price_ratio <= MAX_VALID_MONTHLY_PRICE_RATIO:
+                    discontinuity = True
+                    break
                 path.append({
                     "month": str(month),
-                    "return_pct": rounded((current_close / previous_close - 1) * 100),
-                    "entry": position == 0,
+                    "return_pct": rounded((price_ratio - 1) * 100),
+                    "entry": not path,
                     "exit": episode.get("status") == "CLOSED" and month == end_month,
                 })
+            if discontinuity:
+                episode["analysis_excluded"] = True
+                episode["data_quality_issue"] = PRICE_DISCONTINUITY_REASON
+                episode["end_price"] = None
+                episode["return_pct"] = None
+                episode["monthly_returns"] = []
+                continue
+            if episode.get("status") == "CLOSED" and path and not any(point["exit"] for point in path):
+                # Charge the exit cost on the last valid observation even when
+                # the exact OUT month is missing from the downloaded series.
+                path[-1]["exit"] = True
+            episode["analysis_excluded"] = False
+            episode["data_quality_issue"] = None
             episode["monthly_returns"] = path
 
     return sorted(
@@ -746,9 +773,18 @@ def build_benchmark_series(
     """Build month-end price-return series aligned to the strategy months."""
     result: dict[str, dict[str, Any]] = {}
     for key, definition in BENCHMARKS.items():
-        frame = daily_frames.get(definition["ticker"], pd.DataFrame())
+        candidates = [definition["ticker"], *definition.get("fallback_tickers", [])]
+        source_ticker = next(
+            (
+                ticker
+                for ticker in candidates
+                if daily_frames.get(ticker) is not None and not daily_frames[ticker].empty
+            ),
+            definition["ticker"],
+        )
+        frame = daily_frames.get(source_ticker, pd.DataFrame())
         if frame is None or frame.empty:
-            result[key] = {**definition, "returns": []}
+            result[key] = {**definition, "source_ticker": None, "returns": []}
             continue
         close = pd.to_numeric(frame.get("Close"), errors="coerce").dropna()
         if getattr(close.index, "tz", None) is not None:
@@ -767,7 +803,7 @@ def build_benchmark_series(
                 "month": str(month),
                 "return_pct": rounded((current_close / previous_close - 1) * 100),
             })
-        result[key] = {**definition, "returns": rows}
+        result[key] = {**definition, "source_ticker": source_ticker, "returns": rows}
     return result
 
 
@@ -1073,7 +1109,11 @@ def main() -> None:
         if record.get("status") == "NEW"
     })
     analysis_ticker_set = set(analysis_tickers)
-    benchmark_tickers = {definition["ticker"] for definition in BENCHMARKS.values()}
+    benchmark_tickers = {
+        ticker
+        for definition in BENCHMARKS.values()
+        for ticker in [definition["ticker"], *definition.get("fallback_tickers", [])]
+    }
     daily_tickers = sorted(set(active_tickers) | analysis_ticker_set | benchmark_tickers)
 
     daily_frames = download_frames(
@@ -1203,6 +1243,9 @@ def main() -> None:
         "portfolio_basis": "NEW月末からOUT月末まで、月次等金額で保有（売買費用は画面で設定）",
         "validation_start_month": str(validation_start_month),
         "benchmarks": benchmark_series,
+        "quality_excluded_count": sum(
+            1 for episode in analysis_episodes if episode.get("analysis_excluded")
+        ),
         "profiles": {
             ticker: {
                 field: profile.get(field)
