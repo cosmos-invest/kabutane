@@ -111,7 +111,8 @@ function updateHeader() {
   els.outCount.textContent = number(summary.out_count, 0);
   els.upCount.textContent = number(summary.up_count, 0);
   els.downCount.textContent = number(summary.down_count, 0);
-  els.cosmosFocusCount.textContent = number(summary.cosmos_focus_count, 0);
+  const focusReady = Object.prototype.hasOwnProperty.call(summary, "cosmos_focus_count");
+  els.cosmosFocusCount.textContent = focusReady ? number(summary.cosmos_focus_count, 0) : "更新待ち";
   els.errorCount.textContent = number(state.latest?.summary?.error_count, 0);
 }
 
@@ -170,7 +171,12 @@ function renderRows(rows) {
 
   if (!pageRows.length) {
     const tr = document.createElement("tr");
-    tr.innerHTML = `<td colspan="19" class="empty-state">条件に合う銘柄がありません。</td>`;
+    const data = state.monthData || state.latest || {};
+    const focusReady = (data.records || []).some((row) => Object.prototype.hasOwnProperty.call(row, "cosmos_focus"));
+    const message = state.tab === "cosmos" && !focusReady
+      ? "🌸判定データは更新待ちです。マージ後に Update monthly RSI data を実行してください。"
+      : "条件に合う銘柄がありません。";
+    tr.innerHTML = `<td colspan="19" class="empty-state">${message}</td>`;
     els.tbody.appendChild(tr);
     return;
   }
