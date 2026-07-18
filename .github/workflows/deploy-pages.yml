@@ -9,6 +9,7 @@ on:
     paths:
       - "index.html"
       - "detail.html"
+      - "analysis.html"
       - "assets/**"
       - "data/**"
       - "history/**"
@@ -41,7 +42,7 @@ jobs:
       - name: Prepare site
         run: |
           mkdir -p _site
-          cp index.html detail.html .nojekyll result.csv out.csv _site/
+          cp index.html detail.html analysis.html .nojekyll result.csv out.csv _site/
           cp -R assets data history _site/
 
       - name: Configure Pages

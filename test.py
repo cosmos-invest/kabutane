@@ -403,6 +403,89 @@ def build_out_record(
     }
 
 
+def build_analysis_episodes(
+    records_by_month: dict[pd.Period, list[dict[str, Any]]],
+    out_by_month: dict[pd.Period, list[dict[str, Any]]],
+    latest_records: list[dict[str, Any]],
+    latest_month: pd.Period,
+    valuation_date: str | None = None,
+) -> list[dict[str, Any]]:
+    """Build NEW-origin episodes and ignore OUT events without an in-range NEW."""
+    episodes: list[dict[str, Any]] = []
+    open_by_ticker: dict[str, dict[str, Any]] = {}
+
+    for month in sorted(records_by_month):
+        for record in records_by_month.get(month, []):
+            if record.get("status") != "NEW":
+                continue
+            start_price = to_float(record.get("gc_price") or record.get("signal_month_close"))
+            if start_price is None:
+                continue
+            episode = {
+                "code": record.get("code"),
+                "ticker": record.get("ticker"),
+                "name": record.get("name") or record.get("code"),
+                "status": "ACTIVE",
+                "start_month": str(month),
+                # The signal is published in the following month, so this is
+                # that publication month's previous-month closing price.
+                "start_price": rounded(start_price),
+                "start_rsi14": rounded(record.get("rsi14")),
+                "start_rsi5": rounded(record.get("rsi5")),
+                "start_rsi_strength": rounded(record.get("diff")),
+                "end_month": None,
+                "end_price": None,
+                "valuation_date": valuation_date,
+                "return_pct": None,
+                "duration_months": latest_month.ordinal - month.ordinal + 1,
+            }
+            episodes.append(episode)
+            open_by_ticker[str(record.get("ticker"))] = episode
+
+        for out_record in out_by_month.get(month, []):
+            ticker = str(out_record.get("ticker"))
+            episode = open_by_ticker.pop(ticker, None)
+            if episode is None:
+                # The NEW occurred before the retained analysis window.
+                continue
+            start_price = to_float(episode.get("start_price"))
+            end_price = to_float(out_record.get("exit_price") or out_record.get("period_price"))
+            episode["status"] = "CLOSED"
+            episode["end_month"] = str(month)
+            episode["end_price"] = rounded(end_price)
+            episode["valuation_date"] = None
+            episode["return_pct"] = rounded(
+                ((end_price / start_price) - 1) * 100
+                if start_price and end_price else None
+            )
+            episode["duration_months"] = max(
+                1,
+                month.ordinal - pd.Period(episode["start_month"], freq="M").ordinal,
+            )
+
+    latest_by_ticker = {str(record.get("ticker")): record for record in latest_records}
+    for ticker, episode in open_by_ticker.items():
+        latest = latest_by_ticker.get(ticker, {})
+        start_price = to_float(episode.get("start_price"))
+        end_price = to_float(
+            latest.get("current_price")
+            or latest.get("period_price")
+            or latest.get("signal_month_close")
+        )
+        episode["name"] = latest.get("name") or episode.get("name")
+        episode["end_price"] = rounded(end_price)
+        episode["return_pct"] = rounded(
+            ((end_price / start_price) - 1) * 100
+            if start_price and end_price else None
+        )
+
+    return sorted(
+        episodes,
+        key=lambda row: (row.get("start_month", ""), row.get("code", "")),
+        reverse=True,
+    )
+
+
 # -----------------------------
 # Fundamentals
 # -----------------------------
@@ -772,7 +855,23 @@ def main() -> None:
         "out_records": latest_out_records,
         "errors": errors,
     }
+    analysis_episodes = build_analysis_episodes(
+        records_by_month,
+        out_by_month,
+        latest_records,
+        latest_month,
+        latest_payload["generated_at"][:10],
+    )
+    analysis_payload = {
+        "generated_at": latest_payload["generated_at"],
+        "latest_month": str(latest_month),
+        "available_start_month": str(min(months)),
+        "available_end_month": str(max(months)),
+        "price_basis": "判定月の月末終値（公開月から見た前月終値）",
+        "episodes": analysis_episodes,
+    }
     write_json(DATA_DIR / "latest.json", latest_payload)
+    write_json(DATA_DIR / "analysis.json", analysis_payload)
     write_json(DATA_DIR / "errors.json", errors)
     write_csv(ROOT / "result.csv", latest_records, RESULT_FIELDS)
     write_csv(ROOT / "out.csv", latest_out_records, out_fields)

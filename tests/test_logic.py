@@ -60,6 +60,45 @@ class ScannerLogicTests(unittest.TestCase):
         self.assertEqual(records[0]["name"], "ソフトバンクグループ")
         self.assertEqual(records[0]["per"], 10.5)
 
+    def test_analysis_episodes_exclude_out_without_new_and_track_both_states(self):
+        may = pd.Period("2026-05", freq="M")
+        june = pd.Period("2026-06", freq="M")
+        records = {
+            may: [
+                {
+                    "code": "1111", "ticker": "1111.T", "name": "完了銘柄",
+                    "status": "NEW", "gc_price": 100, "rsi14": 40,
+                    "rsi5": 50, "diff": 10,
+                },
+                {
+                    "code": "2222", "ticker": "2222.T", "name": "継続銘柄",
+                    "status": "NEW", "gc_price": 200, "rsi14": 35,
+                    "rsi5": 55, "diff": 20,
+                },
+            ],
+            june: [],
+        }
+        outs = {
+            may: [],
+            june: [
+                {"ticker": "1111.T", "exit_price": 120},
+                {"ticker": "9999.T", "exit_price": 80},
+            ],
+        }
+        latest = [
+            {"ticker": "2222.T", "name": "継続銘柄", "current_price": 180},
+        ]
+
+        episodes = scanner.build_analysis_episodes(records, outs, latest, june)
+
+        self.assertEqual(len(episodes), 2)
+        by_ticker = {row["ticker"]: row for row in episodes}
+        self.assertEqual(by_ticker["1111.T"]["status"], "CLOSED")
+        self.assertEqual(by_ticker["1111.T"]["return_pct"], 20.0)
+        self.assertEqual(by_ticker["2222.T"]["status"], "ACTIVE")
+        self.assertEqual(by_ticker["2222.T"]["return_pct"], -10.0)
+        self.assertNotIn("9999.T", by_ticker)
+
 
 if __name__ == "__main__":
     unittest.main()
