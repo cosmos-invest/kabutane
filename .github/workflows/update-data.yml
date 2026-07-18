@@ -35,7 +35,7 @@ jobs:
 
       - name: Generate data
         env:
-          HISTORY_MONTHS: "36"
+          HISTORY_MONTHS: "48"
           MONTHLY_PERIOD: "10y"
           DAILY_PERIOD: "3y"
           ANALYSIS_DAILY_PERIOD: "5y"
