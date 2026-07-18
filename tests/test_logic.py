@@ -41,11 +41,11 @@ class ScannerLogicTests(unittest.TestCase):
             scanner.RESULT_FIELDS[scanner.RESULT_FIELDS.index("per"):],
         )
 
-    def test_enrich_fundamentals_preserves_name_when_cached_name_is_blank(self):
-        records = [{"ticker": "7203.T", "name": "Toyota"}]
+    def test_enrich_fundamentals_prefers_configured_japanese_name(self):
+        records = [{"ticker": "9984.T", "name": "ソフトバンクグループ"}]
         cache = {
-            "7203.T": {
-                "data": {"name": None, "per": 10.5},
+            "9984.T": {
+                "data": {"name": "SoftBank Group Corp.", "per": 10.5},
             },
         }
 
@@ -57,7 +57,7 @@ class ScannerLogicTests(unittest.TestCase):
         ):
             scanner.enrich_fundamentals(records, [])
 
-        self.assertEqual(records[0]["name"], "Toyota")
+        self.assertEqual(records[0]["name"], "ソフトバンクグループ")
         self.assertEqual(records[0]["per"], 10.5)
 
 
