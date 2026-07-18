@@ -31,6 +31,7 @@ BATCH_SIZE = int(os.getenv("YF_BATCH_SIZE", "80"))
 DOWNLOAD_RETRIES = int(os.getenv("YF_DOWNLOAD_RETRIES", "3"))
 FUNDAMENTALS_WORKERS = int(os.getenv("FUNDAMENTALS_WORKERS", "3"))
 FUNDAMENTALS_CACHE_DAYS = int(os.getenv("FUNDAMENTALS_CACHE_DAYS", "25"))
+FUNDAMENTALS_CACHE_VERSION = 2
 SKIP_FUNDAMENTALS = os.getenv("SKIP_FUNDAMENTALS", "0") == "1"
 
 BENCHMARKS = {
@@ -92,9 +93,16 @@ RESULT_FIELDS = [
     "beta",
     "shares_outstanding_million",
     "data_completeness_pct",
+    "next_earnings_date",
+    "earnings_date_start",
+    "earnings_date_end",
+    "ex_dividend_date",
+    "last_dividend_date",
+    "cosmos_focus",
+    "cosmos_focus_type",
 ]
 
-FUNDAMENTAL_FIELDS = RESULT_FIELDS[RESULT_FIELDS.index("per"):]
+FUNDAMENTAL_FIELDS = RESULT_FIELDS[RESULT_FIELDS.index("per"):RESULT_FIELDS.index("cosmos_focus")]
 ANALYSIS_FUNDAMENTAL_FIELDS = [
     "roe_pct",
     "revenue_growth_pct",
@@ -103,6 +111,8 @@ ANALYSIS_FUNDAMENTAL_FIELDS = [
     "operating_cashflow_oku",
     "free_cashflow_oku",
 ]
+
+COSMOS_FOCUS_FIELDS = ["cosmos_focus", "cosmos_focus_type"]
 
 
 # -----------------------------
@@ -163,6 +173,17 @@ def to_float(value: Any) -> float | None:
 def rounded(value: Any, digits: int = 2) -> float | None:
     number = to_float(value)
     return round(number, digits) if number is not None else None
+
+
+def unix_date(value: Any) -> str | None:
+    """Convert Yahoo's Unix timestamp fields to a Tokyo calendar date."""
+    number = to_float(value)
+    if number is None:
+        return None
+    try:
+        return pd.Timestamp(number, unit="s", tz="UTC").tz_convert("Asia/Tokyo").strftime("%Y-%m-%d")
+    except Exception:
+        return None
 
 
 def optional_bool(value: Any) -> bool | None:
@@ -277,7 +298,8 @@ def download_batch(tickers: list[str], period: str, interval: str) -> pd.DataFra
                 interval=interval,
                 group_by="ticker",
                 auto_adjust=False,
-                actions=False,
+                # Dividends and stock splits are reused on the detail chart.
+                actions=True,
                 threads=True,
                 progress=False,
                 timeout=60,
@@ -612,6 +634,44 @@ def enrich_new_records_with_technicals(
             record.update(daily_metrics_at_month(prepared.get(record["ticker"], pd.DataFrame()), month))
 
 
+def cosmos_focus_type(record: dict[str, Any]) -> str | None:
+    """Classify the frozen monthly-RSI strategy selected by the 2022-2026 study."""
+    rsi5 = to_float(record.get("rsi5"))
+    common = rsi5 is not None and rsi5 >= 60 and record.get("rsi14_up") is True
+    if not common:
+        return None
+    accelerator = record.get("sma200_up") is True and record.get("mvp_signal") is True
+    breakout = record.get("perfect_order") is True and record.get("high52_breakout") is True
+    if accelerator and breakout:
+        return "BOTH"
+    if accelerator:
+        return "MVP"
+    if breakout:
+        return "BREAKOUT"
+    return None
+
+
+def propagate_signal_technicals(records_by_month: dict[pd.Period, list[dict[str, Any]]]) -> None:
+    """Keep each active episode's NEW-time metrics and focus sign until OUT."""
+    latest_signal: dict[str, dict[str, Any]] = {}
+    for month in sorted(records_by_month):
+        for record in records_by_month[month]:
+            ticker = record["ticker"]
+            if record.get("status") == "NEW":
+                focus_type = cosmos_focus_type(record)
+                record["cosmos_focus"] = focus_type is not None
+                record["cosmos_focus_type"] = focus_type
+                latest_signal[ticker] = {
+                    field: record.get(field)
+                    for field in ANALYSIS_TECHNICAL_FIELDS + COSMOS_FOCUS_FIELDS
+                }
+            elif ticker in latest_signal:
+                record.update(latest_signal[ticker])
+            else:
+                record["cosmos_focus"] = False
+                record["cosmos_focus_type"] = None
+
+
 def build_out_record(
     previous_record: dict[str, Any],
     monthly: pd.DataFrame | None,
@@ -835,6 +895,8 @@ def load_cache() -> dict[str, Any]:
 
 def cache_is_fresh(entry: dict[str, Any]) -> bool:
     try:
+        if entry.get("version") != FUNDAMENTALS_CACHE_VERSION:
+            return False
         fetched = datetime.fromisoformat(entry["fetched_at"].replace("Z", "+00:00"))
         age = datetime.now(timezone.utc) - fetched.astimezone(timezone.utc)
         return age.days < FUNDAMENTALS_CACHE_DAYS
@@ -883,8 +945,18 @@ def fetch_fundamental(ticker_symbol: str) -> dict[str, Any]:
         "ebitda_oku": oku(info.get("ebitda")),
         "beta": rounded(info.get("beta")),
         "shares_outstanding_million": million(info.get("sharesOutstanding")),
+        "next_earnings_date": unix_date(info.get("earningsTimestamp")),
+        "earnings_date_start": unix_date(info.get("earningsTimestampStart")),
+        "earnings_date_end": unix_date(info.get("earningsTimestampEnd")),
+        "ex_dividend_date": unix_date(info.get("exDividendDate")),
+        "last_dividend_date": unix_date(info.get("lastDividendDate")),
     }
-    completeness_fields = [key for key in fields if key not in {"name", "sector", "industry", "quote_type"}]
+    completeness_excluded = {
+        "name", "sector", "industry", "quote_type",
+        "next_earnings_date", "earnings_date_start", "earnings_date_end",
+        "ex_dividend_date", "last_dividend_date",
+    }
+    completeness_fields = [key for key in fields if key not in completeness_excluded]
     available = sum(fields.get(key) is not None for key in completeness_fields)
     fields["data_completeness_pct"] = round(available / len(completeness_fields) * 100, 1)
     return fields
@@ -926,7 +998,11 @@ def enrich_fundamentals(
             try:
                 data = future.result()
                 merge_fundamentals(by_ticker[ticker_symbol], data)
-                cache[ticker_symbol] = {"fetched_at": now_iso, "data": data}
+                cache[ticker_symbol] = {
+                    "version": FUNDAMENTALS_CACHE_VERSION,
+                    "fetched_at": now_iso,
+                    "data": data,
+                }
             except Exception as exc:
                 errors.append({"ticker": ticker_symbol, "stage": "fundamentals", "message": str(exc)})
                 by_ticker[ticker_symbol].setdefault("data_completeness_pct", 0)
@@ -981,36 +1057,90 @@ def build_chart_payload(
     daily: pd.DataFrame,
     monthly: pd.DataFrame,
 ) -> dict[str, Any]:
-    closes = pd.to_numeric(daily.get("Close"), errors="coerce").dropna()
-    if getattr(closes.index, "tz", None) is not None:
-        closes.index = closes.index.tz_localize(None)
-    closes = closes.sort_index()
+    if daily is None or daily.empty:
+        chart_frame = pd.DataFrame()
+    else:
+        chart_frame = daily.copy()
+        chart_frame.index = pd.to_datetime(chart_frame.index, errors="coerce")
+        chart_frame = chart_frame[~chart_frame.index.isna()].sort_index()
+        if getattr(chart_frame.index, "tz", None) is not None:
+            chart_frame.index = chart_frame.index.tz_localize(None)
+    analysis = prepare_daily_analysis(chart_frame)
 
     monthly_valid = monthly[["rsi14", "rsi5"]].dropna(how="all")
     periods = list(monthly_valid.index)
     period_ordinals = [period.ordinal for period in periods]
-    latest_period = periods[-1] if periods else None
 
     daily_rows: list[dict[str, Any]] = []
-    for date, close in closes.items():
-        day_period = pd.Period(date, freq="M")
-        lookup_period = latest_period if latest_period is not None and day_period > latest_period else day_period
+    for date, row in chart_frame.iterrows():
+        close = to_float(row.get("Close"))
+        if close is None:
+            continue
+        # A monthly RSI is known only after its month closes.  Showing the
+        # completed prior-month value from the next month avoids look-ahead.
+        lookup_period = pd.Period(date, freq="M") - 1
         position = bisect_right(period_ordinals, lookup_period.ordinal) - 1 if periods else -1
         rsi14 = monthly_valid.iloc[position]["rsi14"] if position >= 0 else None
         rsi5 = monthly_valid.iloc[position]["rsi5"] if position >= 0 else None
+        metric = analysis.loc[date] if date in analysis.index else pd.Series(dtype=float)
         daily_rows.append({
             "date": date.strftime("%Y-%m-%d"),
+            "open": rounded(row.get("Open")),
+            "high": rounded(row.get("High")),
+            "low": rounded(row.get("Low")),
             "close": rounded(close),
+            "volume": rounded(row.get("Volume"), 0),
+            "sma25": rounded(metric.get("sma25")),
+            "sma75": rounded(metric.get("sma75")),
+            "sma200": rounded(metric.get("sma200")),
             "rsi14": rounded(rsi14),
             "rsi5": rounded(rsi5),
         })
 
-    gc_events = []
-    for month in monthly.index[monthly["new"]]:
-        gc_events.append({
-            "month": str(month),
-            "price": rounded(monthly.at[month, "close"]),
+    dates = list(chart_frame.index)
+
+    def visible_date_after(month: pd.Period) -> str | None:
+        position = chart_frame.index.searchsorted(month.end_time, side="right") if dates else 0
+        return dates[position].strftime("%Y-%m-%d") if position < len(dates) else None
+
+    cross_events: list[dict[str, Any]] = []
+    for event_type, column in (("GC", "new"), ("DC", "out")):
+        for month in monthly.index[monthly[column]]:
+            cross_events.append({
+                "type": event_type,
+                "month": str(month),
+                "date": visible_date_after(month),
+                "price": rounded(monthly.at[month, "close"]),
+            })
+    cross_events = [event for event in cross_events if event.get("date")][-40:]
+
+    corporate_events: list[dict[str, Any]] = []
+    for date, row in chart_frame.iterrows():
+        dividend = to_float(row.get("Dividends"))
+        split = to_float(row.get("Stock Splits"))
+        if dividend not in (None, 0):
+            corporate_events.append({
+                "date": date.strftime("%Y-%m-%d"), "type": "DIVIDEND",
+                "label": "配当", "detail": f"1株 {dividend:g}円",
+            })
+        if split not in (None, 0):
+            corporate_events.append({
+                "date": date.strftime("%Y-%m-%d"), "type": "SPLIT",
+                "label": "株式分割・併合", "detail": f"比率 {split:g}",
+            })
+
+    earnings_date = record.get("next_earnings_date") or record.get("earnings_date_start")
+    if earnings_date:
+        corporate_events.append({
+            "date": earnings_date, "type": "EARNINGS", "label": "決算予定",
+            "detail": "Yahoo Finance掲載予定日",
         })
+    if record.get("ex_dividend_date"):
+        corporate_events.append({
+            "date": record["ex_dividend_date"], "type": "RIGHTS",
+            "label": "権利落ち予定", "detail": "権利確定日そのものではありません",
+        })
+    corporate_events.sort(key=lambda event: event.get("date") or "")
 
     current_price = to_float(record.get("current_price"))
     return {
@@ -1020,7 +1150,10 @@ def build_chart_payload(
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "record": record,
         "daily": daily_rows,
-        "gc_events": gc_events[-20:],
+        "cross_events": cross_events,
+        "gc_events": [event for event in cross_events if event["type"] == "GC"],
+        "dc_events": [event for event in cross_events if event["type"] == "DC"],
+        "corporate_events": corporate_events,
         "episodes": build_episodes(monthly, current_price),
     }
 
@@ -1125,6 +1258,7 @@ def main() -> None:
     ) if daily_tickers else {}
 
     enrich_new_records_with_technicals(records_by_month, daily_frames)
+    propagate_signal_technicals(records_by_month)
     benchmark_series = build_benchmark_series(daily_frames, months)
 
     for record in latest_records:
@@ -1173,7 +1307,7 @@ def main() -> None:
         "code", "ticker", "name", "signal_month", "status", "months_active",
         "rsi14", "rsi5", "rsi14_up", "rsi5_up", "diff", "gc_month", "gc_price", "signal_month_close",
         "period_price", "return_since_gc_pct",
-    ] + ANALYSIS_TECHNICAL_FIELDS
+    ] + ANALYSIS_TECHNICAL_FIELDS + COSMOS_FOCUS_FIELDS
     out_fields = (
         historical_fields
         + ["sector", "industry", "quote_type"]
@@ -1192,6 +1326,7 @@ def main() -> None:
                 "out_count": len(month_out),
                 "up_count": sum((row.get("return_since_gc_pct") or 0) >= 0 for row in month_records),
                 "down_count": sum((row.get("return_since_gc_pct") or 0) < 0 for row in month_records),
+                "cosmos_focus_count": sum(row.get("cosmos_focus") is True for row in month_records),
             },
             "records": month_records,
             "out_records": month_out,
@@ -1211,6 +1346,7 @@ def main() -> None:
         "out_count": len(latest_out_records),
         "up_count": sum((row.get("return_since_gc_pct") or 0) >= 0 for row in latest_records),
         "down_count": sum((row.get("return_since_gc_pct") or 0) < 0 for row in latest_records),
+        "cosmos_focus_count": sum(row.get("cosmos_focus") is True for row in latest_records),
         "error_count": len(errors),
     }
     latest_payload = {
