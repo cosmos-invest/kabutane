@@ -127,11 +127,16 @@
       <article class="stat-card up"><span>最大</span><strong id="statMax">—</strong></article>
       <article class="stat-card down"><span>最小</span><strong id="statMin">—</strong></article>
     </section>
+    <p id="qualityNotice" class="analysis-disclosure quality-notice" hidden></p>
 
     <section class="panel analysis-section benchmark-section">
       <div class="section-heading benchmark-heading">
         <div><h2>月次ポートフォリオ比較</h2><p>月足RSIだけ・選択したテクニカル条件・TOPIX・日経平均を同じ月で比較</p></div>
-        <div class="control-group compact"><label for="costBps">片道コスト（bp）</label><input id="costBps" type="number" min="0" step="5" value="20"></div>
+        <div class="control-group compact cost-control">
+          <label for="costBps">片道コスト（bp）</label>
+          <input id="costBps" type="number" min="0" step="5" value="20">
+          <small>20bp＝片道0.20%、往復約0.40%</small>
+        </div>
       </div>
       <p id="benchmarkNotice" class="analysis-disclosure">比較成績にはNEW時点で確定した項目だけを使用します。財務・結果の騰落率・銘柄検索は反映しません。</p>
       <div id="benchmarkCards" class="benchmark-grid"></div>
@@ -144,7 +149,7 @@
       </div>
       <div class="table-wrap ranking-wrap">
         <table class="analysis-table ranking-table">
-          <thead><tr><th>順位</th><th>組み合わせ</th><th>条件</th><th class="num">前半TOPIX超過</th><th class="num">後半TOPIX超過</th><th class="num">後半累積</th><th class="num">対象NEW</th></tr></thead>
+          <thead><tr><th>順位</th><th>組み合わせ</th><th>条件</th><th id="rankingTrainHeader" class="num">前半TOPIX超過</th><th id="rankingValidateHeader" class="num">後半TOPIX超過</th><th class="num">後半累積</th><th class="num">対象NEW</th></tr></thead>
           <tbody id="strategyRankingBody"></tbody>
         </table>
       </div>
@@ -161,7 +166,7 @@
       <div class="section-heading">
         <div><h2>NEW月別の実績</h2><p>開始月ごとのOUT済み・継続中と平均騰落率</p></div>
       </div>
-      <div class="table-wrap">
+      <div class="table-wrap sticky-table-wrap cohort-table-wrap" tabindex="0" aria-label="NEW月別実績。上下にスクロールできます">
         <table class="analysis-table cohort-table">
           <thead><tr><th>NEW月</th><th class="num">全体</th><th class="num">OUT済み</th><th class="num">継続中</th><th class="num">平均騰落率</th><th class="num">プラス比率</th></tr></thead>
           <tbody id="cohortBody"></tbody>
@@ -170,14 +175,28 @@
     </section>
 
     <section class="panel analysis-section">
-      <div class="section-heading">
+      <div class="section-heading individual-heading">
         <div><h2>個別実績</h2><p id="resultSummary">読み込み中…</p></div>
-        <div class="control-group compact">
-          <label for="pageSize">表示件数</label>
-          <select id="pageSize"><option>25</option><option selected>50</option><option>100</option><option>500</option></select>
+        <div class="table-view-controls">
+          <div class="control-group compact">
+            <label for="statusFilter">状態</label>
+            <select id="statusFilter"><option value="ALL">すべて</option><option value="CLOSED">OUT済み</option><option value="ACTIVE">継続中</option></select>
+          </div>
+          <div class="control-group compact">
+            <label for="pageSize">表示件数</label>
+            <select id="pageSize"><option>25</option><option selected>50</option><option>100</option><option>500</option></select>
+          </div>
+          <div class="column-settings">
+            <button id="columnSettingsButton" class="button secondary" type="button" aria-expanded="false" aria-controls="columnSettingsPanel">表示列を選ぶ</button>
+            <div id="columnSettingsPanel" class="column-settings-panel" hidden>
+              <div class="column-settings-heading"><strong>表示する列</strong><small>見出しはドラッグして左右に移動できます</small></div>
+              <div id="columnSettingsList" class="column-settings-list"></div>
+              <button id="resetColumns" class="button secondary" type="button">並びと表示を初期化</button>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="table-wrap">
+      <div class="table-wrap sticky-table-wrap episode-table-wrap" tabindex="0" aria-label="個別実績一覧。上下左右にスクロールできます">
         <table id="episodeTable" class="analysis-table">
           <thead><tr>
             <th data-key="start_month">NEW月</th><th data-key="code">コード</th><th data-key="name">銘柄名</th><th data-key="status">状態</th>
@@ -207,6 +226,8 @@
       <p>SMA・出来高・RSIの向きはNEW判定月末時点です。SMAの上向き判定は20取引日前との比較、RSIの上向き判定は前月との比較です。</p>
       <p>52週高値はNEW当日を除く直前252取引日の高値です。VCPはATR10＜ATR20、SupertrendはATR10・倍率3で判定します。MVPは株価上昇・出来高20日平均の1.5倍超・独自RSRモメンタムプラスの同時成立です。</p>
       <p>ポートフォリオ比較は月次等金額、月足RSIだけを基準線とし、片道コストを最初とOUT時に控除します。配当・税金・月中の約定差は含みません。</p>
+      <p>1か月で5倍超または80%以上下落する価格不連続は、株式併合・上場廃止・再上場等の可能性があるため分析から除外し、個別実績では「分析除外」と表示します。</p>
+      <p>個別実績は表内をスクロールしている間だけ見出しを固定します。見出しをドラッグすると列を移動でき、「表示列を選ぶ」から非表示・再表示できます。設定はこの端末に保存されます。</p>
       <p>財務項目はデータ生成時点の最新値です。過去のNEW当時の決算値ではないため、過去実績を見る際は参考条件として利用してください。</p>
     </section>
   </main>
