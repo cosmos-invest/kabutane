@@ -31,6 +31,18 @@ class ScannerLogicTests(unittest.TestCase):
         self.assertIn("new", monthly.columns)
         self.assertGreaterEqual(int(monthly["new"].sum()), 1)
 
+    def test_short_rsi_can_rise_while_long_rsi_falls(self):
+        # JINS-like sequence: the 5-month window loses an older large decline,
+        # while the 14-month window loses an older large gain.
+        closes = pd.Series([
+            6940, 8960, 8520, 8540, 8050, 7970, 9160, 7780,
+            6130, 5530, 5180, 5320, 5110, 6630, 8260, 8050,
+        ], dtype=float)
+        rsi5 = scanner.calc_rsi(closes, 5)
+        rsi14 = scanner.calc_rsi(closes, 14)
+        self.assertGreater(rsi5.iloc[-1], rsi5.iloc[-2])
+        self.assertLess(rsi14.iloc[-1], rsi14.iloc[-2])
+
     def test_daily_analysis_builds_article_screening_conditions(self):
         dates = pd.bdate_range("2025-01-01", periods=280)
         closes = pd.Series(range(100, 380), index=dates, dtype=float)
@@ -64,8 +76,58 @@ class ScannerLogicTests(unittest.TestCase):
         self.assertEqual(scanner.FUNDAMENTAL_FIELDS[0], "per")
         self.assertEqual(
             scanner.FUNDAMENTAL_FIELDS,
-            scanner.RESULT_FIELDS[scanner.RESULT_FIELDS.index("per"):],
+            scanner.RESULT_FIELDS[
+                scanner.RESULT_FIELDS.index("per"):scanner.RESULT_FIELDS.index("cosmos_focus")
+            ],
         )
+
+    def test_cosmos_focus_and_signal_metrics_propagate(self):
+        may = pd.Period("2026-05", freq="M")
+        june = pd.Period("2026-06", freq="M")
+        records = {
+            may: [{
+                "ticker": "1111.T", "status": "NEW", "rsi5": 68,
+                "rsi14_up": True, "sma200_up": True, "mvp_signal": True,
+                "perfect_order": False, "high52_breakout": False,
+            }],
+            june: [{
+                # The sign belongs to the entry episode and remains until OUT,
+                # even if a later month's RSI slope changes.
+                "ticker": "1111.T", "status": "CONTINUE", "rsi5": 45,
+                "rsi14_up": False,
+            }],
+        }
+        scanner.propagate_signal_technicals(records)
+        self.assertTrue(records[may][0]["cosmos_focus"])
+        self.assertEqual(records[may][0]["cosmos_focus_type"], "MVP")
+        self.assertTrue(records[june][0]["sma200_up"])
+        self.assertTrue(records[june][0]["mvp_signal"])
+        self.assertTrue(records[june][0]["cosmos_focus"])
+
+    def test_chart_payload_has_ohlc_crosses_and_corporate_events(self):
+        dates = pd.to_datetime(["2024-02-01", "2024-04-01"])
+        daily = pd.DataFrame({
+            "Open": [100, 110], "High": [112, 122], "Low": [98, 108],
+            "Close": [108, 120], "Volume": [100_000, 160_000],
+            "Dividends": [5.0, 0.0], "Stock Splits": [0.0, 2.0],
+        }, index=dates)
+        periods = pd.period_range("2024-01", "2024-03", freq="M")
+        monthly = pd.DataFrame({
+            "close": [100, 108, 120], "rsi5": [55, 40, 65], "rsi14": [45, 50, 52],
+            "new": [True, False, True], "out": [False, True, False],
+        }, index=periods)
+        record = {
+            "code": "1111", "ticker": "1111.T", "name": "テスト",
+            "current_price": 120, "next_earnings_date": "2024-05-10",
+            "ex_dividend_date": "2024-05-28",
+        }
+        payload = scanner.build_chart_payload(record, daily, monthly)
+        self.assertEqual(payload["daily"][0]["open"], 100)
+        self.assertEqual(payload["daily"][0]["rsi5"], 55)
+        self.assertEqual(payload["cross_events"][0]["type"], "GC")
+        self.assertIn("DC", {event["type"] for event in payload["cross_events"]})
+        event_types = {event["type"] for event in payload["corporate_events"]}
+        self.assertTrue({"DIVIDEND", "SPLIT", "EARNINGS", "RIGHTS"} <= event_types)
 
     def test_enrich_fundamentals_prefers_configured_japanese_name(self):
         records = [{"ticker": "9984.T", "name": "ソフトバンクグループ"}]
