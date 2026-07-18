@@ -16,6 +16,7 @@
         <p class="subtitle" id="detailSubtitle">データを読み込んでいます…</p>
       </div>
       <div class="header-meta">
+        <span class="badge cosmos-focus" id="detailFocus" hidden>🌸 コスモス注目</span>
         <span class="badge neutral" id="detailStatus">—</span>
       </div>
     </div>
@@ -27,8 +28,12 @@
     <section class="panel chart-panel">
       <div class="section-heading">
         <div>
-          <h2>日足終値</h2>
-          <p>緑の縦線は、月足RSI5がRSI14を上抜いた月です。</p>
+          <h2>日足チャート</h2>
+          <p>ローソク足または平均足、出来高、SMA25・75・200を表示します。緑線はGC、赤線はDCです。</p>
+        </div>
+        <div class="chart-mode-switch" role="group" aria-label="チャート表示">
+          <button id="candleMode" class="button chart-mode active" type="button">ローソク足</button>
+          <button id="heikinMode" class="button secondary chart-mode" type="button">平均足</button>
         </div>
       </div>
       <div class="chart-box price-chart-box">
@@ -40,12 +45,24 @@
       <div class="section-heading">
         <div>
           <h2>月足RSIを日足軸で表示</h2>
-          <p>1か月ごとに値が切り替わる階段状の表示です。</p>
+          <p>月末に確定した値を、翌月最初の日足から表示します。緑線はGC、赤線はDCです。</p>
         </div>
       </div>
       <div class="chart-box rsi-chart-box">
         <canvas id="rsiChart"></canvas>
       </div>
+      <p class="rsi-explanation" id="rsiExplanation"></p>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div>
+          <h2>企業イベント</h2>
+          <p>決算予定・権利落ち・配当・株式分割／併合を、取得できた範囲で表示します。</p>
+        </div>
+      </div>
+      <div class="event-list" id="corporateEvents"></div>
+      <p class="event-source-note">決算予定・権利落ちはYahoo Financeの予定情報、配当・分割は株価履歴を利用しています。権利落ち日は権利確定日そのものではありません。自社株買いはYahoo Financeから安定取得できないため、<a href="https://www.release.tdnet.info/inbs/I_main_00.html" target="_blank" rel="noopener">TDnetの適時開示</a>で確認してください。</p>
     </section>
 
     <section class="panel">
@@ -87,7 +104,7 @@
   </main>
 
   <footer>
-    <p>月足RSIは月次データ、株価は日足終値です。</p>
+    <p>月足RSIは月次データ、株価・出来高・移動平均線は日足データです。</p>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
