@@ -34,7 +34,7 @@ class ScannerLogicTests(unittest.TestCase):
     def test_daily_analysis_builds_article_screening_conditions(self):
         dates = pd.bdate_range("2025-01-01", periods=280)
         closes = pd.Series(range(100, 380), index=dates, dtype=float)
-        frame = pd.DataFrame({"Close": closes, "Volume": 150_000}, index=dates)
+        frame = pd.DataFrame({"Close": closes, "High": closes, "Low": closes - 2, "Volume": 150_000}, index=dates)
 
         prepared = scanner.prepare_daily_analysis(frame)
         metrics = scanner.daily_metrics_at_month(prepared, dates[-1].to_period("M"))
@@ -47,6 +47,15 @@ class ScannerLogicTests(unittest.TestCase):
         self.assertTrue(metrics["sma75_up"])
         self.assertTrue(metrics["sma200_up"])
         self.assertEqual(metrics["avg_volume30"], 150_000)
+        self.assertGreater(metrics["high52_distance_pct"], 0)
+        self.assertTrue(metrics["high52_breakout"])
+        self.assertEqual(metrics["volume_ratio_5_30"], 1.0)
+        self.assertGreater(metrics["atr14_pct"], 0)
+        self.assertFalse(metrics["vcp_tight"])
+        self.assertEqual(metrics["stage"], 2)
+        self.assertTrue(metrics["supertrend_up"])
+        self.assertIsNotNone(metrics["rsr_momentum"])
+        self.assertFalse(metrics["mvp_signal"])
 
     def test_json_safe_nan(self):
         self.assertIsNone(scanner.json_safe(float("nan")))
@@ -108,7 +117,11 @@ class ScannerLogicTests(unittest.TestCase):
             {"ticker": "2222.T", "name": "継続銘柄", "current_price": 180},
         ]
 
-        episodes = scanner.build_analysis_episodes(records, outs, latest, june)
+        monthly_by_ticker = {
+            "1111.T": pd.DataFrame({"close": [100, 120]}, index=pd.PeriodIndex([may, june], freq="M")),
+            "2222.T": pd.DataFrame({"close": [200, 180]}, index=pd.PeriodIndex([may, june], freq="M")),
+        }
+        episodes = scanner.build_analysis_episodes(records, outs, latest, june, monthly_by_ticker=monthly_by_ticker)
 
         self.assertEqual(len(episodes), 2)
         by_ticker = {row["ticker"]: row for row in episodes}
@@ -118,9 +131,26 @@ class ScannerLogicTests(unittest.TestCase):
         self.assertFalse(by_ticker["1111.T"]["start_rsi5_up"])
         self.assertTrue(by_ticker["1111.T"]["start_perfect_order"])
         self.assertEqual(by_ticker["1111.T"]["start_sma25"], 110)
+        self.assertEqual(by_ticker["1111.T"]["monthly_returns"][0]["return_pct"], 20.0)
+        self.assertTrue(by_ticker["1111.T"]["monthly_returns"][0]["entry"])
+        self.assertTrue(by_ticker["1111.T"]["monthly_returns"][0]["exit"])
         self.assertEqual(by_ticker["2222.T"]["status"], "ACTIVE")
         self.assertEqual(by_ticker["2222.T"]["return_pct"], -10.0)
+        self.assertEqual(by_ticker["2222.T"]["monthly_returns"][0]["return_pct"], -10.0)
         self.assertNotIn("9999.T", by_ticker)
+
+    def test_build_benchmark_series_aligns_month_end_returns(self):
+        dates = pd.to_datetime(["2025-01-31", "2025-02-28", "2025-03-31"])
+        frames = {
+            "^TOPX": pd.DataFrame({"Close": [100, 110, 99]}, index=dates),
+            "^N225": pd.DataFrame({"Close": [200, 220, 242]}, index=dates),
+        }
+        months = list(pd.period_range("2025-01", "2025-03", freq="M"))
+        result = scanner.build_benchmark_series(frames, months)
+
+        self.assertEqual(result["TOPIX"]["returns"][0]["return_pct"], 10.0)
+        self.assertEqual(result["TOPIX"]["returns"][1]["return_pct"], -10.0)
+        self.assertEqual(result["NIKKEI225"]["returns"][1]["return_pct"], 10.0)
 
 
 if __name__ == "__main__":
