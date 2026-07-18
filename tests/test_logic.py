@@ -46,11 +46,15 @@ class ScannerLogicTests(unittest.TestCase):
     def test_daily_analysis_builds_article_screening_conditions(self):
         dates = pd.bdate_range("2025-01-01", periods=280)
         closes = pd.Series(range(100, 380), index=dates, dtype=float)
-        frame = pd.DataFrame({"Close": closes, "High": closes, "Low": closes - 2, "Volume": 150_000}, index=dates)
+        frame = pd.DataFrame({
+            "Open": closes - 1, "Close": closes, "High": closes,
+            "Low": closes - 2, "Volume": 150_000,
+        }, index=dates)
 
         prepared = scanner.prepare_daily_analysis(frame)
         metrics = scanner.daily_metrics_at_month(prepared, dates[-1].to_period("M"))
 
+        self.assertEqual(prepared.iloc[-1]["open"], closes.iloc[-1] - 1)
         self.assertTrue(metrics["perfect_order"])
         self.assertTrue(metrics["price_above_sma25"])
         self.assertTrue(metrics["price_above_sma75"])
@@ -243,6 +247,84 @@ class ScannerLogicTests(unittest.TestCase):
         self.assertEqual(result["TOPIX"]["returns"][1]["return_pct"], -10.0)
         self.assertEqual(result["TOPIX"]["source_ticker"], "^TOPX")
         self.assertEqual(result["NIKKEI225"]["returns"][1]["return_pct"], 10.0)
+
+    def test_profit_lock_exits_before_monthly_rsi_dc(self):
+        episode = {
+            "start_perfect_order": True,
+            "monthly_returns": [
+                {
+                    "month": "2025-02", "return_pct": 12, "entry": True, "exit": False,
+                    "cumulative_return_pct": 12, "drawdown_from_peak_pct": 0,
+                    "price_above_sma25": True, "price_above_sma75": True,
+                    "sma25_up": True, "supertrend_up": True, "perfect_order": True,
+                },
+                {
+                    "month": "2025-03", "return_pct": -9, "entry": False, "exit": False,
+                    "cumulative_return_pct": 1.92, "drawdown_from_peak_pct": -9,
+                    "price_above_sma25": False, "price_above_sma75": True,
+                    "sma25_up": False, "supertrend_up": True, "perfect_order": False,
+                },
+                {
+                    "month": "2025-04", "return_pct": -5, "entry": False, "exit": True,
+                    "cumulative_return_pct": -3, "drawdown_from_peak_pct": -13,
+                },
+            ],
+        }
+
+        dc_path = scanner.simulate_exit_path(episode, "DC")
+        locked_path = scanner.simulate_exit_path(episode, "PROFIT_LOCK")
+
+        self.assertEqual(len(dc_path), 3)
+        self.assertEqual(len(locked_path), 2)
+        self.assertTrue(locked_path[-1]["exit"])
+
+    def test_order_break_waits_until_perfect_order_has_formed(self):
+        episode = {
+            "start_perfect_order": False,
+            "monthly_returns": [
+                {"month": "2025-02", "return_pct": 1, "entry": True, "exit": False, "perfect_order": False},
+                {"month": "2025-03", "return_pct": 2, "entry": False, "exit": False, "perfect_order": True},
+                {"month": "2025-04", "return_pct": -2, "entry": False, "exit": False, "perfect_order": False},
+            ],
+        }
+
+        path = scanner.simulate_exit_path(episode, "ORDER_BREAK")
+
+        self.assertEqual(len(path), 3)
+        self.assertTrue(path[-1]["exit"])
+
+    def test_daily_sma_exit_executes_at_next_trading_day_open(self):
+        episode = {
+            "ticker": "1111.T",
+            "start_month": "2025-01",
+            "start_price": 100,
+            "start_perfect_order": True,
+            "end_month": "2025-03",
+            "monthly_returns": [
+                {"month": "2025-02", "return_pct": 5, "entry": True, "exit": False, "close": 105},
+                {"month": "2025-03", "return_pct": -5, "entry": False, "exit": True, "close": 99.75},
+            ],
+        }
+        dates = pd.to_datetime(["2025-02-03", "2025-02-04", "2025-02-05"])
+        daily = pd.DataFrame({
+            "open": [101, 109, 97],
+            "close": [110, 98, 96],
+            "sma25": [100, 100, 100],
+            "sma75": [95, 95, 95],
+            "sma200": [90, 90, 90],
+            "sma25_up": [True, False, False],
+            "supertrend_up": [True, True, False],
+        }, index=dates)
+
+        path = scanner.simulate_daily_exit_path(episode, "SMA25_BREAK", daily)
+
+        self.assertEqual(len(path), 1)
+        self.assertTrue(path[0]["entry"])
+        self.assertTrue(path[0]["exit"])
+        self.assertEqual(path[0]["return_pct"], -3.0)
+        self.assertEqual(path[0]["signal_date"], "2025-02-04")
+        self.assertEqual(path[0]["exit_date"], "2025-02-05")
+        self.assertEqual(path[0]["execution_basis"], "翌営業日始値")
 
 
 if __name__ == "__main__":

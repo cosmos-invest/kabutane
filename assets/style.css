@@ -204,6 +204,8 @@ footer { padding: 20px 16px 34px; color: var(--muted); text-align: center; font-
 .chart-mode-switch { display: flex; gap: 8px; flex-wrap: wrap; }
 .chart-mode { font-weight: 800; }
 .chart-mode.active { color: #fff; background: linear-gradient(135deg, #0284c7, #7c3aed); border-color: transparent; }
+.chart-mode:disabled { cursor: not-allowed; opacity: .5; }
+.chart-data-notice { margin: 0 0 14px; }
 .chart-box { position: relative; width: 100%; }
 .price-chart-box { height: 430px; }
 .rsi-chart-box { height: 310px; }
@@ -292,6 +294,7 @@ footer { padding: 20px 16px 34px; color: var(--muted); text-align: center; font-
 .chart-label, .chart-legend, .chart-empty { fill: var(--muted); font-size: 12px; }
 .ranking-wrap { margin-top: 0 !important; }
 .ranking-table { min-width: 980px; }
+.exit-strategy-table { min-width: 1280px; }
 .ranking-table th { cursor: default; }
 .ranking-table th::after { content: none; }
 

@@ -157,6 +157,26 @@
 
     <section class="panel analysis-section">
       <div class="section-heading">
+        <div>
+          <h2>🌸入口を固定した出口戦略の検証</h2>
+          <p id="exitStrategyCaption">コスモス注目条件で入った銘柄を、どのタイミングで手放すと資金効率が上がるか比較します。</p>
+        </div>
+      </div>
+      <p id="exitStrategyNotice" class="analysis-disclosure">次回のデータ更新後に、日足のSMA・Supertrend・トレーリング利確を翌営業日始値で比較します。</p>
+      <div class="table-wrap ranking-wrap">
+        <table class="analysis-table ranking-table exit-strategy-table">
+          <thead><tr>
+            <th>順位</th><th>出口</th><th>ルール</th>
+            <th class="num">前半累積</th><th class="num">後半累積</th><th class="num">後半指数超過</th>
+            <th class="num">全期間累積</th><th class="num">最大下落</th><th class="num">平均保有</th><th class="num">勝率</th>
+          </tr></thead>
+          <tbody id="exitStrategyBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel analysis-section">
+      <div class="section-heading">
         <div><h2>騰落率分布</h2><p id="distributionCaption">選択中のパターンを集計</p></div>
       </div>
       <div id="returnBuckets" class="bucket-grid"></div>
