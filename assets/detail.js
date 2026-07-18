@@ -227,9 +227,17 @@ function renderCharts(payload) {
   if (priceChart) priceChart.destroy();
   if (rsiChart) rsiChart.destroy();
 
-  const priceRows = priceMode === "heikin" ? heikinAshi(daily) : daily;
-  const highs = priceRows.map((row) => finite(row.high)).filter((value) => value !== null);
-  const lows = priceRows.map((row) => finite(row.low)).filter((value) => value !== null);
+  const ohlcRows = daily.filter((row) => [row.open, row.high, row.low, row.close].every((value) => finite(value) !== null));
+  const hasOhlc = daily.length > 0 && ohlcRows.length >= daily.length * 0.9;
+  const notice = document.getElementById("chartDataNotice");
+  notice.hidden = hasOhlc;
+  notice.textContent = hasOhlc ? "" : "旧形式のチャートデータです。現在は終値ラインで表示しています。Update monthly RSI data の完了後にローソク足・平均足・出来高・SMAへ切り替わります。";
+  document.getElementById("candleMode").disabled = !hasOhlc;
+  document.getElementById("heikinMode").disabled = !hasOhlc;
+
+  const priceRows = hasOhlc && priceMode === "heikin" ? heikinAshi(daily) : daily;
+  const highs = priceRows.map((row) => finite(hasOhlc ? row.high : row.close)).filter((value) => value !== null);
+  const lows = priceRows.map((row) => finite(hasOhlc ? row.low : row.close)).filter((value) => value !== null);
   const volumes = daily.map((row) => finite(row.volume) || 0);
   const priceMin = lows.length ? Math.min(...lows) : undefined;
   const priceMax = highs.length ? Math.max(...highs) : undefined;
@@ -238,11 +246,12 @@ function renderCharts(payload) {
   const priceOptions = commonOptions(theme);
   priceOptions.plugins.crossMarker = { events: payload.cross_events || [] };
   priceOptions.plugins.corporateMarker = { events: payload.corporate_events || [] };
-  priceOptions.plugins.candles = { rows: priceRows };
+  priceOptions.plugins.candles = { rows: hasOhlc ? priceRows : [] };
   priceOptions.plugins.tooltip.callbacks.label = (context) => {
     const row = priceRows[context.dataIndex] || {};
     if (context.dataset.yAxisID === "volume") return `出来高: ${number(row.volume, 0)}`;
     if (String(context.dataset.label).startsWith("SMA")) return `${context.dataset.label}: ${number(context.parsed.y)}円`;
+    if (!hasOhlc) return `終値: ${number(row.close)}円`;
     return [`始値: ${number(row.open)}円`, `高値: ${number(row.high)}円`, `安値: ${number(row.low)}円`, `終値: ${number(row.close)}円`];
   };
   priceOptions.scales.y.suggestedMin = priceMin === undefined ? undefined : priceMin - pricePadding;
@@ -261,10 +270,13 @@ function renderCharts(payload) {
       labels,
       datasets: [
         {
-          label: priceMode === "heikin" ? "平均足" : "ローソク足",
+          label: hasOhlc ? (priceMode === "heikin" ? "平均足" : "ローソク足") : "日足終値",
           data: priceRows.map((row) => row.close),
-          borderColor: "rgba(0,0,0,0)", backgroundColor: "rgba(0,0,0,0)", borderWidth: 0,
+          borderColor: hasOhlc ? "rgba(0,0,0,0)" : theme.accent,
+          backgroundColor: hasOhlc ? "rgba(0,0,0,0)" : "rgba(125,211,252,.10)",
+          borderWidth: hasOhlc ? 0 : 1.6,
           pointRadius: 0, pointHitRadius: 8,
+          fill: !hasOhlc,
         },
         { label: "SMA25", data: daily.map((row) => row.sma25), borderColor: "#f59e0b", borderWidth: 1.4, pointRadius: 0, spanGaps: true },
         { label: "SMA75", data: daily.map((row) => row.sma75), borderColor: "#3b82f6", borderWidth: 1.4, pointRadius: 0, spanGaps: true },
