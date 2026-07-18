@@ -38,6 +38,7 @@ jobs:
           HISTORY_MONTHS: "36"
           MONTHLY_PERIOD: "10y"
           DAILY_PERIOD: "3y"
+          ANALYSIS_DAILY_PERIOD: "5y"
           YF_BATCH_SIZE: "80"
           FUNDAMENTALS_WORKERS: "3"
         run: python test.py

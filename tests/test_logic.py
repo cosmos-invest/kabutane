@@ -31,6 +31,23 @@ class ScannerLogicTests(unittest.TestCase):
         self.assertIn("new", monthly.columns)
         self.assertGreaterEqual(int(monthly["new"].sum()), 1)
 
+    def test_daily_analysis_builds_article_screening_conditions(self):
+        dates = pd.bdate_range("2025-01-01", periods=280)
+        closes = pd.Series(range(100, 380), index=dates, dtype=float)
+        frame = pd.DataFrame({"Close": closes, "Volume": 150_000}, index=dates)
+
+        prepared = scanner.prepare_daily_analysis(frame)
+        metrics = scanner.daily_metrics_at_month(prepared, dates[-1].to_period("M"))
+
+        self.assertTrue(metrics["perfect_order"])
+        self.assertTrue(metrics["price_above_sma25"])
+        self.assertTrue(metrics["price_above_sma75"])
+        self.assertTrue(metrics["price_above_sma200"])
+        self.assertTrue(metrics["sma25_up"])
+        self.assertTrue(metrics["sma75_up"])
+        self.assertTrue(metrics["sma200_up"])
+        self.assertEqual(metrics["avg_volume30"], 150_000)
+
     def test_json_safe_nan(self):
         self.assertIsNone(scanner.json_safe(float("nan")))
 
@@ -68,7 +85,9 @@ class ScannerLogicTests(unittest.TestCase):
                 {
                     "code": "1111", "ticker": "1111.T", "name": "完了銘柄",
                     "status": "NEW", "gc_price": 100, "rsi14": 40,
-                    "rsi5": 50, "diff": 10,
+                    "rsi5": 50, "rsi14_up": True, "rsi5_up": False, "diff": 10,
+                    "sma25": 110, "sma75": 105, "sma200": 90,
+                    "perfect_order": True, "price_above_sma200": True,
                 },
                 {
                     "code": "2222", "ticker": "2222.T", "name": "継続銘柄",
@@ -95,6 +114,10 @@ class ScannerLogicTests(unittest.TestCase):
         by_ticker = {row["ticker"]: row for row in episodes}
         self.assertEqual(by_ticker["1111.T"]["status"], "CLOSED")
         self.assertEqual(by_ticker["1111.T"]["return_pct"], 20.0)
+        self.assertTrue(by_ticker["1111.T"]["start_rsi14_up"])
+        self.assertFalse(by_ticker["1111.T"]["start_rsi5_up"])
+        self.assertTrue(by_ticker["1111.T"]["start_perfect_order"])
+        self.assertEqual(by_ticker["1111.T"]["start_sma25"], 110)
         self.assertEqual(by_ticker["2222.T"]["status"], "ACTIVE")
         self.assertEqual(by_ticker["2222.T"]["return_pct"], -10.0)
         self.assertNotIn("9999.T", by_ticker)

@@ -26,6 +26,7 @@ CACHE_FILE = DATA_DIR / "fundamentals_cache.json"
 HISTORY_MONTHS = int(os.getenv("HISTORY_MONTHS", "36"))
 MONTHLY_PERIOD = os.getenv("MONTHLY_PERIOD", "10y")
 DAILY_PERIOD = os.getenv("DAILY_PERIOD", "3y")
+ANALYSIS_DAILY_PERIOD = os.getenv("ANALYSIS_DAILY_PERIOD", "5y")
 BATCH_SIZE = int(os.getenv("YF_BATCH_SIZE", "80"))
 DOWNLOAD_RETRIES = int(os.getenv("YF_DOWNLOAD_RETRIES", "3"))
 FUNDAMENTALS_WORKERS = int(os.getenv("FUNDAMENTALS_WORKERS", "3"))
@@ -80,6 +81,14 @@ RESULT_FIELDS = [
 ]
 
 FUNDAMENTAL_FIELDS = RESULT_FIELDS[RESULT_FIELDS.index("per"):]
+ANALYSIS_FUNDAMENTAL_FIELDS = [
+    "roe_pct",
+    "revenue_growth_pct",
+    "equity_ratio_pct",
+    "market_cap_oku",
+    "operating_cashflow_oku",
+    "free_cashflow_oku",
+]
 
 
 # -----------------------------
@@ -140,6 +149,12 @@ def to_float(value: Any) -> float | None:
 def rounded(value: Any, digits: int = 2) -> float | None:
     number = to_float(value)
     return round(number, digits) if number is not None else None
+
+
+def optional_bool(value: Any) -> bool | None:
+    if value is None or pd.isna(value):
+        return None
+    return bool(value)
 
 
 def percentage(value: Any) -> float | None:
@@ -328,6 +343,8 @@ def prepare_monthly(frame: pd.DataFrame, current_period: pd.Period) -> pd.DataFr
     monthly = work.groupby("month", sort=True).last()
     monthly["rsi14"] = calc_rsi(monthly["close"], 14)
     monthly["rsi5"] = calc_rsi(monthly["close"], 5)
+    monthly["rsi14_up"] = (monthly["rsi14"] > monthly["rsi14"].shift(1)).where(monthly["rsi14"].shift(1).notna())
+    monthly["rsi5_up"] = (monthly["rsi5"] > monthly["rsi5"].shift(1)).where(monthly["rsi5"].shift(1).notna())
     monthly["condition"] = (monthly["rsi5"] > monthly["rsi14"]) & monthly["rsi5"].notna() & monthly["rsi14"].notna()
     previous = monthly["condition"].shift(1, fill_value=False).astype(bool)
     monthly["new"] = monthly["condition"] & ~previous
@@ -373,6 +390,8 @@ def build_month_record(
         "months_active": consecutive_active(monthly, month),
         "rsi14": rounded(monthly.at[month, "rsi14"]),
         "rsi5": rounded(monthly.at[month, "rsi5"]),
+        "rsi14_up": optional_bool(monthly.at[month, "rsi14_up"]),
+        "rsi5_up": optional_bool(monthly.at[month, "rsi5_up"]),
         "diff": rounded(monthly.at[month, "rsi5"] - monthly.at[month, "rsi14"]),
         "gc_month": str(gc_month),
         "gc_price": rounded(gc_price),
@@ -380,6 +399,91 @@ def build_month_record(
         "period_price": rounded(close),
         "return_since_gc_pct": rounded(return_pct),
     }
+
+
+ANALYSIS_TECHNICAL_FIELDS = [
+    "sma25",
+    "sma75",
+    "sma200",
+    "price_above_sma25",
+    "price_above_sma75",
+    "price_above_sma200",
+    "perfect_order",
+    "sma25_up",
+    "sma75_up",
+    "sma200_up",
+    "avg_volume30",
+]
+
+
+def prepare_daily_analysis(frame: pd.DataFrame) -> pd.DataFrame:
+    """Calculate daily indicators used to describe a NEW signal at month-end."""
+    if frame is None or frame.empty:
+        return pd.DataFrame()
+    close = pd.to_numeric(frame.get("Close"), errors="coerce")
+    volume = pd.to_numeric(frame.get("Volume"), errors="coerce")
+    work = pd.DataFrame({"close": close, "volume": volume}).dropna(subset=["close"])
+    if work.empty:
+        return work
+    if getattr(work.index, "tz", None) is not None:
+        work.index = work.index.tz_localize(None)
+    work = work.sort_index()
+    for length in (25, 75, 200):
+        column = f"sma{length}"
+        work[column] = work["close"].rolling(length, min_periods=length).mean()
+        # One trading month smooths out a noisy one-day direction change.
+        prior = work[column].shift(20)
+        work[f"{column}_up"] = (work[column] > prior).where(prior.notna())
+    work["avg_volume30"] = work["volume"].rolling(30, min_periods=30).mean()
+    return work
+
+
+def daily_metrics_at_month(daily_analysis: pd.DataFrame, month: pd.Period) -> dict[str, Any]:
+    """Return the last available daily indicator values inside the signal month."""
+    if daily_analysis is None or daily_analysis.empty:
+        return {field: None for field in ANALYSIS_TECHNICAL_FIELDS}
+    eligible = daily_analysis.loc[:month.end_time]
+    if eligible.empty:
+        return {field: None for field in ANALYSIS_TECHNICAL_FIELDS}
+    row = eligible.iloc[-1]
+    price = to_float(row.get("close"))
+    values = {f"sma{length}": to_float(row.get(f"sma{length}")) for length in (25, 75, 200)}
+
+    def compare_above(value: float | None) -> bool | None:
+        return price > value if price is not None and value is not None else None
+
+    perfect_order = None
+    if all(values.values()):
+        perfect_order = values["sma25"] > values["sma75"] > values["sma200"]
+    return {
+        "sma25": rounded(values["sma25"]),
+        "sma75": rounded(values["sma75"]),
+        "sma200": rounded(values["sma200"]),
+        "price_above_sma25": compare_above(values["sma25"]),
+        "price_above_sma75": compare_above(values["sma75"]),
+        "price_above_sma200": compare_above(values["sma200"]),
+        "perfect_order": perfect_order,
+        "sma25_up": optional_bool(row.get("sma25_up")),
+        "sma75_up": optional_bool(row.get("sma75_up")),
+        "sma200_up": optional_bool(row.get("sma200_up")),
+        "avg_volume30": rounded(row.get("avg_volume30"), 0),
+    }
+
+
+def enrich_new_records_with_technicals(
+    records_by_month: dict[pd.Period, list[dict[str, Any]]],
+    daily_frames: dict[str, pd.DataFrame],
+) -> None:
+    """Attach NEW-time technical values without recalculating per episode."""
+    prepared = {
+        ticker: prepare_daily_analysis(frame)
+        for ticker, frame in daily_frames.items()
+    }
+    for month, records in records_by_month.items():
+        for record in records:
+            if record.get("status") != "NEW":
+                continue
+            record.update(daily_metrics_at_month(prepared.get(record["ticker"], pd.DataFrame()), month))
 
 
 def build_out_record(
@@ -432,6 +536,8 @@ def build_analysis_episodes(
                 "start_price": rounded(start_price),
                 "start_rsi14": rounded(record.get("rsi14")),
                 "start_rsi5": rounded(record.get("rsi5")),
+                "start_rsi14_up": record.get("rsi14_up"),
+                "start_rsi5_up": record.get("rsi5_up"),
                 "start_rsi_strength": rounded(record.get("diff")),
                 "end_month": None,
                 "end_price": None,
@@ -439,6 +545,8 @@ def build_analysis_episodes(
                 "return_pct": None,
                 "duration_months": latest_month.ordinal - month.ordinal + 1,
             }
+            for field in ANALYSIS_TECHNICAL_FIELDS:
+                episode[f"start_{field}"] = record.get(field)
             episodes.append(episode)
             open_by_ticker[str(record.get("ticker"))] = episode
 
@@ -704,6 +812,21 @@ def build_chart_payload(
     }
 
 
+def trim_daily_for_chart(frame: pd.DataFrame) -> pd.DataFrame:
+    """Keep chart JSON at its existing size while analysis uses a longer lookback."""
+    if frame is None or frame.empty or not DAILY_PERIOD.endswith("y"):
+        return frame
+    try:
+        years = int(DAILY_PERIOD[:-1])
+    except ValueError:
+        return frame
+    index = pd.to_datetime(frame.index, errors="coerce")
+    if index.isna().all():
+        return frame
+    cutoff = index.max() - pd.DateOffset(years=years)
+    return frame.loc[index >= cutoff]
+
+
 # -----------------------------
 # Main pipeline
 # -----------------------------
@@ -766,17 +889,27 @@ def main() -> None:
     latest_records = records_by_month.get(latest_month, [])
     latest_out_records = out_by_month.get(latest_month, [])
     active_tickers = [record["ticker"] for record in latest_records]
+    analysis_tickers = sorted({
+        record["ticker"]
+        for records in records_by_month.values()
+        for record in records
+        if record.get("status") == "NEW"
+    })
+    analysis_ticker_set = set(analysis_tickers)
+    daily_tickers = sorted(set(active_tickers) | analysis_ticker_set)
 
     daily_frames = download_frames(
-        active_tickers,
-        period=DAILY_PERIOD,
+        daily_tickers,
+        period=ANALYSIS_DAILY_PERIOD,
         interval="1d",
         errors=errors,
         stage="daily",
-    ) if active_tickers else {}
+    ) if daily_tickers else {}
+
+    enrich_new_records_with_technicals(records_by_month, daily_frames)
 
     for record in latest_records:
-        daily = daily_frames.get(record["ticker"], pd.DataFrame())
+        daily = trim_daily_for_chart(daily_frames.get(record["ticker"], pd.DataFrame()))
         closes = pd.to_numeric(daily.get("Close"), errors="coerce").dropna() if not daily.empty else pd.Series(dtype=float)
         current_price = to_float(closes.iloc[-1]) if not closes.empty else to_float(record.get("signal_month_close"))
         signal_close = to_float(record.get("signal_month_close"))
@@ -785,9 +918,24 @@ def main() -> None:
         record["change_from_signal_month_pct"] = rounded(((current_price / signal_close) - 1) * 100) if current_price and signal_close else None
         record["return_since_gc_pct"] = rounded(((current_price / gc_price) - 1) * 100) if current_price and gc_price else None
 
-    # Both sides of the latest signal transition are shown in the current
-    # downloads, so keep their company profiles and financials equally useful.
-    enrich_fundamentals(latest_records + latest_out_records, errors)
+    # Financial filters use the latest profile available at generation time.
+    # This is intentionally stored separately from NEW-time technical values so
+    # the analysis page can disclose the different time bases clearly.
+    profile_tickers = sorted(
+        analysis_ticker_set
+        | {record["ticker"] for record in latest_records + latest_out_records}
+    )
+    profile_records = [dict(stock_by_ticker[ticker]) for ticker in profile_tickers]
+    enrich_fundamentals(profile_records, errors)
+    profiles_by_ticker = {record["ticker"]: record for record in profile_records}
+
+    for record in latest_records + latest_out_records:
+        configured_name = record.get("name")
+        profile = profiles_by_ticker.get(record["ticker"], {})
+        for field in FUNDAMENTAL_FIELDS:
+            record[field] = profile.get(field)
+        if configured_name:
+            record["name"] = configured_name
 
     for record in latest_records:
         if not record.get("name") or record["name"] == record["code"]:
@@ -795,7 +943,7 @@ def main() -> None:
 
     # Generate chart/detail JSON for all currently active signals.
     for record in latest_records:
-        daily = daily_frames.get(record["ticker"], pd.DataFrame())
+        daily = trim_daily_for_chart(daily_frames.get(record["ticker"], pd.DataFrame()))
         monthly = monthly_by_ticker[record["ticker"]]
         payload = build_chart_payload(record, daily, monthly)
         write_json(CHART_DIR / f"{record['code']}.json", payload)
@@ -804,9 +952,9 @@ def main() -> None:
     month_index: list[dict[str, Any]] = []
     historical_fields = [
         "code", "ticker", "name", "signal_month", "status", "months_active",
-        "rsi14", "rsi5", "diff", "gc_month", "gc_price", "signal_month_close",
+        "rsi14", "rsi5", "rsi14_up", "rsi5_up", "diff", "gc_month", "gc_price", "signal_month_close",
         "period_price", "return_since_gc_pct",
-    ]
+    ] + ANALYSIS_TECHNICAL_FIELDS
     out_fields = (
         historical_fields
         + ["sector", "industry", "quote_type"]
@@ -868,6 +1016,16 @@ def main() -> None:
         "available_start_month": str(min(months)),
         "available_end_month": str(max(months)),
         "price_basis": "判定月の月末終値（公開月から見た前月終値）",
+        "technical_basis": "NEW判定月末の日足（SMAの向きは20取引日前と比較）",
+        "fundamental_basis": "データ生成時点の最新財務情報（過去のNEW当時の決算値ではありません）",
+        "profiles": {
+            ticker: {
+                field: profile.get(field)
+                for field in ANALYSIS_FUNDAMENTAL_FIELDS
+            }
+            for ticker, profile in profiles_by_ticker.items()
+            if ticker in analysis_ticker_set
+        },
         "episodes": analysis_episodes,
     }
     write_json(DATA_DIR / "latest.json", latest_payload)
