@@ -23,7 +23,7 @@ HISTORY_DIR = ROOT / "history"
 STOCKS_FILE = ROOT / "stocks.csv"
 CACHE_FILE = DATA_DIR / "fundamentals_cache.json"
 
-HISTORY_MONTHS = int(os.getenv("HISTORY_MONTHS", "36"))
+HISTORY_MONTHS = int(os.getenv("HISTORY_MONTHS", "48"))
 MONTHLY_PERIOD = os.getenv("MONTHLY_PERIOD", "10y")
 DAILY_PERIOD = os.getenv("DAILY_PERIOD", "3y")
 ANALYSIS_DAILY_PERIOD = os.getenv("ANALYSIS_DAILY_PERIOD", "5y")
@@ -32,6 +32,11 @@ DOWNLOAD_RETRIES = int(os.getenv("YF_DOWNLOAD_RETRIES", "3"))
 FUNDAMENTALS_WORKERS = int(os.getenv("FUNDAMENTALS_WORKERS", "3"))
 FUNDAMENTALS_CACHE_DAYS = int(os.getenv("FUNDAMENTALS_CACHE_DAYS", "25"))
 SKIP_FUNDAMENTALS = os.getenv("SKIP_FUNDAMENTALS", "0") == "1"
+
+BENCHMARKS = {
+    "TOPIX": {"ticker": "^TOPX", "name": "TOPIX"},
+    "NIKKEI225": {"ticker": "^N225", "name": "日経平均"},
+}
 
 RESULT_FIELDS = [
     "code",
@@ -413,7 +418,55 @@ ANALYSIS_TECHNICAL_FIELDS = [
     "sma75_up",
     "sma200_up",
     "avg_volume30",
+    "high52_price",
+    "high52_distance_pct",
+    "high52_breakout",
+    "volume_ratio_5_30",
+    "atr14_pct",
+    "atr_ratio_10_20",
+    "vcp_tight",
+    "stage",
+    "supertrend_up",
+    "rsr_score",
+    "rsr_momentum",
+    "mvp_signal",
 ]
+
+
+def calculate_supertrend(work: pd.DataFrame, period: int = 10, multiplier: float = 3.0) -> pd.Series:
+    """Return the Pine-compatible Supertrend direction (1 up, -1 down)."""
+    atr = work["true_range"].rolling(period, min_periods=period).mean()
+    source = (work["high"] + work["low"]) / 2
+    basic_up = (source - multiplier * atr).to_numpy(dtype=float)
+    basic_down = (source + multiplier * atr).to_numpy(dtype=float)
+    final_up = basic_up.copy()
+    final_down = basic_down.copy()
+    close = work["close"].to_numpy(dtype=float)
+    trend = np.ones(len(work), dtype=np.int8)
+
+    for position in range(1, len(work)):
+        if np.isnan(basic_up[position]) or np.isnan(basic_down[position]):
+            trend[position] = trend[position - 1]
+            continue
+        previous_up = final_up[position - 1]
+        previous_down = final_down[position - 1]
+        if np.isnan(previous_up):
+            previous_up = basic_up[position]
+        if np.isnan(previous_down):
+            previous_down = basic_down[position]
+        previous_close = close[position - 1]
+        final_up[position] = max(basic_up[position], previous_up) if previous_close > previous_up else basic_up[position]
+        final_down[position] = min(basic_down[position], previous_down) if previous_close < previous_down else basic_down[position]
+
+        previous_trend = int(trend[position - 1])
+        current_close = close[position]
+        if previous_trend == -1 and current_close > previous_down:
+            trend[position] = 1
+        elif previous_trend == 1 and current_close < previous_up:
+            trend[position] = -1
+        else:
+            trend[position] = previous_trend
+    return pd.Series(trend, index=work.index)
 
 
 def prepare_daily_analysis(frame: pd.DataFrame) -> pd.DataFrame:
@@ -421,20 +474,72 @@ def prepare_daily_analysis(frame: pd.DataFrame) -> pd.DataFrame:
     if frame is None or frame.empty:
         return pd.DataFrame()
     close = pd.to_numeric(frame.get("Close"), errors="coerce")
+    high = pd.to_numeric(frame.get("High"), errors="coerce")
+    low = pd.to_numeric(frame.get("Low"), errors="coerce")
     volume = pd.to_numeric(frame.get("Volume"), errors="coerce")
-    work = pd.DataFrame({"close": close, "volume": volume}).dropna(subset=["close"])
+    work = pd.DataFrame({"close": close, "high": high, "low": low, "volume": volume}).dropna(subset=["close"])
     if work.empty:
         return work
     if getattr(work.index, "tz", None) is not None:
         work.index = work.index.tz_localize(None)
     work = work.sort_index()
-    for length in (25, 75, 200):
+    for length in (25, 50, 75, 150, 200):
         column = f"sma{length}"
         work[column] = work["close"].rolling(length, min_periods=length).mean()
-        # One trading month smooths out a noisy one-day direction change.
-        prior = work[column].shift(20)
-        work[f"{column}_up"] = (work[column] > prior).where(prior.notna())
+        if length in (25, 75, 200):
+            # One trading month smooths out a noisy one-day direction change.
+            prior = work[column].shift(20)
+            work[f"{column}_up"] = (work[column] > prior).where(prior.notna())
+    work["avg_volume5"] = work["volume"].rolling(5, min_periods=5).mean()
+    work["avg_volume20"] = work["volume"].rolling(20, min_periods=20).mean()
     work["avg_volume30"] = work["volume"].rolling(30, min_periods=30).mean()
+    work["volume_ratio_5_30"] = work["avg_volume5"] / work["avg_volume30"].replace(0, np.nan)
+
+    # Exclude the current day from the 52-week high so a breakout is unambiguous.
+    work["high52_price"] = work["high"].shift(1).rolling(252, min_periods=252).max()
+    work["high52_distance_pct"] = (work["close"] / work["high52_price"] - 1) * 100
+    work["high52_breakout"] = (work["close"] > work["high52_price"]).where(work["high52_price"].notna())
+
+    previous_close = work["close"].shift(1)
+    work["true_range"] = pd.concat(
+        [
+            work["high"] - work["low"],
+            (work["high"] - previous_close).abs(),
+            (work["low"] - previous_close).abs(),
+        ],
+        axis=1,
+    ).max(axis=1)
+    atr10 = work["true_range"].rolling(10, min_periods=10).mean()
+    atr14 = work["true_range"].rolling(14, min_periods=14).mean()
+    atr20 = work["true_range"].rolling(20, min_periods=20).mean()
+    work["atr14_pct"] = atr14 / work["close"].replace(0, np.nan) * 100
+    work["atr_ratio_10_20"] = atr10 / atr20.replace(0, np.nan)
+    work["vcp_tight"] = (work["atr_ratio_10_20"] < 1).where(work["atr_ratio_10_20"].notna())
+    work["supertrend_up"] = calculate_supertrend(work).eq(1)
+
+    work["rsr_score"] = (
+        work["close"].pct_change(63, fill_method=None) * 100 * 0.4
+        + work["close"].pct_change(126, fill_method=None) * 100 * 0.2
+        + work["close"].pct_change(189, fill_method=None) * 100 * 0.2
+        + work["close"].pct_change(252, fill_method=None) * 100 * 0.2
+    )
+    work["rsr_momentum"] = work["rsr_score"].ewm(span=8, adjust=False, min_periods=8).mean() - work["rsr_score"].rolling(21, min_periods=21).mean()
+    work["mvp_signal"] = (
+        (work["close"].pct_change(fill_method=None) > 0)
+        & (work["volume"] > work["avg_volume20"] * 1.5)
+        & (work["rsr_momentum"] > 0)
+    ).where(work["rsr_momentum"].notna() & work["avg_volume20"].notna())
+
+    ma200_rising = work["sma200"] > work["sma200"].shift(21)
+    ma200_falling = work["sma200"] < work["sma200"].shift(5)
+    crossunder_ma50 = (work["close"] < work["sma50"]) & (work["close"].shift(1) >= work["sma50"].shift(1))
+    stage2 = (work["close"] > work["sma200"]) & (work["sma150"] > work["sma200"]) & ma200_rising
+    stage4 = (work["close"] < work["sma200"]) & (work["sma150"] < work["sma200"])
+    stage3 = (work["close"] > work["sma200"]) & (ma200_falling | crossunder_ma50)
+    work["stage"] = 1
+    work.loc[stage3, "stage"] = 3
+    work.loc[stage4, "stage"] = 4
+    work.loc[stage2, "stage"] = 2
     return work
 
 
@@ -467,6 +572,18 @@ def daily_metrics_at_month(daily_analysis: pd.DataFrame, month: pd.Period) -> di
         "sma75_up": optional_bool(row.get("sma75_up")),
         "sma200_up": optional_bool(row.get("sma200_up")),
         "avg_volume30": rounded(row.get("avg_volume30"), 0),
+        "high52_price": rounded(row.get("high52_price")),
+        "high52_distance_pct": rounded(row.get("high52_distance_pct")),
+        "high52_breakout": optional_bool(row.get("high52_breakout")),
+        "volume_ratio_5_30": rounded(row.get("volume_ratio_5_30")),
+        "atr14_pct": rounded(row.get("atr14_pct")),
+        "atr_ratio_10_20": rounded(row.get("atr_ratio_10_20")),
+        "vcp_tight": optional_bool(row.get("vcp_tight")),
+        "stage": int(row.get("stage")) if pd.notna(row.get("stage")) else None,
+        "supertrend_up": optional_bool(row.get("supertrend_up")),
+        "rsr_score": rounded(row.get("rsr_score")),
+        "rsr_momentum": rounded(row.get("rsr_momentum")),
+        "mvp_signal": optional_bool(row.get("mvp_signal")),
     }
 
 
@@ -513,6 +630,7 @@ def build_analysis_episodes(
     latest_records: list[dict[str, Any]],
     latest_month: pd.Period,
     valuation_date: str | None = None,
+    monthly_by_ticker: dict[str, pd.DataFrame] | None = None,
 ) -> list[dict[str, Any]]:
     """Build NEW-origin episodes and ignore OUT events without an in-range NEW."""
     episodes: list[dict[str, Any]] = []
@@ -587,11 +705,70 @@ def build_analysis_episodes(
             if start_price and end_price else None
         )
 
+    if monthly_by_ticker:
+        for episode in episodes:
+            ticker = str(episode.get("ticker"))
+            monthly = monthly_by_ticker.get(ticker)
+            if monthly is None or monthly.empty:
+                episode["monthly_returns"] = []
+                continue
+            start_month = pd.Period(episode["start_month"], freq="M")
+            end_month = pd.Period(episode.get("end_month") or latest_month, freq="M")
+            path: list[dict[str, Any]] = []
+            return_months = list(pd.period_range(start=start_month + 1, end=end_month, freq="M"))
+            for position, month in enumerate(return_months):
+                previous_month = month - 1
+                if previous_month not in monthly.index or month not in monthly.index:
+                    continue
+                previous_close = to_float(monthly.at[previous_month, "close"])
+                current_close = to_float(monthly.at[month, "close"])
+                if not previous_close or current_close is None:
+                    continue
+                path.append({
+                    "month": str(month),
+                    "return_pct": rounded((current_close / previous_close - 1) * 100),
+                    "entry": position == 0,
+                    "exit": episode.get("status") == "CLOSED" and month == end_month,
+                })
+            episode["monthly_returns"] = path
+
     return sorted(
         episodes,
         key=lambda row: (row.get("start_month", ""), row.get("code", "")),
         reverse=True,
     )
+
+
+def build_benchmark_series(
+    daily_frames: dict[str, pd.DataFrame],
+    months: list[pd.Period],
+) -> dict[str, dict[str, Any]]:
+    """Build month-end price-return series aligned to the strategy months."""
+    result: dict[str, dict[str, Any]] = {}
+    for key, definition in BENCHMARKS.items():
+        frame = daily_frames.get(definition["ticker"], pd.DataFrame())
+        if frame is None or frame.empty:
+            result[key] = {**definition, "returns": []}
+            continue
+        close = pd.to_numeric(frame.get("Close"), errors="coerce").dropna()
+        if getattr(close.index, "tz", None) is not None:
+            close.index = close.index.tz_localize(None)
+        monthly_close = close.groupby(close.index.to_period("M")).last()
+        rows: list[dict[str, Any]] = []
+        for month in months[1:]:
+            previous_month = month - 1
+            if previous_month not in monthly_close.index or month not in monthly_close.index:
+                continue
+            previous_close = to_float(monthly_close.loc[previous_month])
+            current_close = to_float(monthly_close.loc[month])
+            if not previous_close or current_close is None:
+                continue
+            rows.append({
+                "month": str(month),
+                "return_pct": rounded((current_close / previous_close - 1) * 100),
+            })
+        result[key] = {**definition, "returns": rows}
+    return result
 
 
 # -----------------------------
@@ -896,7 +1073,8 @@ def main() -> None:
         if record.get("status") == "NEW"
     })
     analysis_ticker_set = set(analysis_tickers)
-    daily_tickers = sorted(set(active_tickers) | analysis_ticker_set)
+    benchmark_tickers = {definition["ticker"] for definition in BENCHMARKS.values()}
+    daily_tickers = sorted(set(active_tickers) | analysis_ticker_set | benchmark_tickers)
 
     daily_frames = download_frames(
         daily_tickers,
@@ -907,6 +1085,7 @@ def main() -> None:
     ) if daily_tickers else {}
 
     enrich_new_records_with_technicals(records_by_month, daily_frames)
+    benchmark_series = build_benchmark_series(daily_frames, months)
 
     for record in latest_records:
         daily = trim_daily_for_chart(daily_frames.get(record["ticker"], pd.DataFrame()))
@@ -1009,15 +1188,21 @@ def main() -> None:
         latest_records,
         latest_month,
         latest_payload["generated_at"][:10],
+        monthly_by_ticker,
     )
+    split_index = max(1, len(months) // 2)
+    validation_start_month = months[split_index]
     analysis_payload = {
         "generated_at": latest_payload["generated_at"],
         "latest_month": str(latest_month),
         "available_start_month": str(min(months)),
         "available_end_month": str(max(months)),
         "price_basis": "判定月の月末終値（公開月から見た前月終値）",
-        "technical_basis": "NEW判定月末の日足（SMAの向きは20取引日前と比較）",
+        "technical_basis": "NEW判定月末の日足（52週高値は当日を除く252取引日、SMAの向きは20取引日前と比較）",
         "fundamental_basis": "データ生成時点の最新財務情報（過去のNEW当時の決算値ではありません）",
+        "portfolio_basis": "NEW月末からOUT月末まで、月次等金額で保有（売買費用は画面で設定）",
+        "validation_start_month": str(validation_start_month),
+        "benchmarks": benchmark_series,
         "profiles": {
             ticker: {
                 field: profile.get(field)
