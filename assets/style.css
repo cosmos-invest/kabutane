@@ -82,6 +82,8 @@ h2 { margin-bottom: 8px; font-size: 1.2rem; }
 .stat-card.out { border-color: rgba(255, 128, 143, .4); }
 .stat-card.up strong { color: var(--positive); }
 .stat-card.down strong { color: var(--negative); }
+.stat-card.cosmos { border-color: rgba(244, 114, 182, .55); }
+.stat-card.cosmos strong { color: #f9a8d4; }
 
 .panel {
   border: 1px solid var(--line);
@@ -122,6 +124,8 @@ input:focus, select:focus { border-color: var(--accent); box-shadow: 0 0 0 3px r
   font-weight: 800;
 }
 .tab.active { color: var(--text); background: var(--surface-3); }
+.cosmos-tab { color: #f9a8d4; }
+.cosmos-tab.active { color: #fff; background: linear-gradient(135deg, rgba(219, 39, 119, .45), rgba(168, 85, 247, .38)); }
 .table-toolbar { padding: 14px; display: flex; justify-content: space-between; align-items: center; gap: 14px; border-top: 1px solid var(--line); }
 .table-toolbar p { margin: 0; color: var(--muted); }
 
@@ -180,6 +184,9 @@ tbody tr.clickable { cursor: pointer; }
 .badge.continue { color: #071f39; background: var(--accent); }
 .badge.neutral { color: var(--text); background: rgba(158, 176, 200, .18); border: 1px solid var(--line); }
 .badge.quality { color: #3d2500; background: #fbbf24; }
+.badge.cosmos-focus { color: #4a1233; background: linear-gradient(135deg, #fbcfe8, #f9a8d4); border: 1px solid rgba(244, 114, 182, .7); }
+.cosmos-focus-row { background: linear-gradient(90deg, rgba(244, 114, 182, .11), transparent 48%); }
+.cosmos-focus-row:hover { background: linear-gradient(90deg, rgba(244, 114, 182, .18), rgba(125, 211, 252, .07)); }
 .quality-excluded-row { opacity: .72; background: rgba(251, 191, 36, .045); }
 
 .pagination { display: flex; align-items: center; justify-content: center; gap: 14px; padding-top: 14px; }
@@ -194,9 +201,25 @@ footer { padding: 20px 16px 34px; color: var(--muted); text-align: center; font-
 .chart-panel { padding: 20px; }
 .section-heading { display: flex; justify-content: space-between; gap: 18px; align-items: end; margin-bottom: 14px; }
 .section-heading p { color: var(--muted); margin-bottom: 0; }
+.chart-mode-switch { display: flex; gap: 8px; flex-wrap: wrap; }
+.chart-mode { font-weight: 800; }
+.chart-mode.active { color: #fff; background: linear-gradient(135deg, #0284c7, #7c3aed); border-color: transparent; }
 .chart-box { position: relative; width: 100%; }
 .price-chart-box { height: 430px; }
 .rsi-chart-box { height: 310px; }
+.rsi-explanation { margin: 15px 0 0; padding: 13px 15px; color: var(--muted); background: var(--surface-2); border: 1px solid var(--line); border-radius: 12px; line-height: 1.7; }
+.rsi-explanation strong { color: var(--text); }
+.event-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; padding: 0 20px 18px; }
+.event-card { min-height: 118px; padding: 14px; display: grid; grid-template-columns: auto 1fr; gap: 6px 10px; align-content: start; border: 1px solid var(--line); border-radius: 13px; background: var(--surface-2); }
+.event-card time { color: var(--muted); font-size: .8rem; }
+.event-card span { justify-self: end; padding: 2px 7px; border-radius: 999px; color: var(--text); background: rgba(125,211,252,.15); font-size: .7rem; font-weight: 900; }
+.event-card strong, .event-card small { grid-column: 1 / -1; }
+.event-card small { color: var(--muted); line-height: 1.5; }
+.event-earnings { border-color: rgba(245, 158, 11, .5); }
+.event-rights, .event-dividend { border-color: rgba(16, 185, 129, .45); }
+.event-split { border-color: rgba(168, 85, 247, .5); }
+.event-source-note { margin: 0; padding: 15px 20px 18px; color: var(--muted); border-top: 1px solid var(--line); font-size: .8rem; line-height: 1.7; }
+.event-source-note a { color: var(--accent); }
 .fundamentals-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 0; }
 .fundamentals-grid > div { min-height: 94px; padding: 18px; border-top: 1px solid var(--line); border-right: 1px solid var(--line); }
 .fundamentals-grid dt { color: var(--muted); font-size: .78rem; margin-bottom: 8px; }
@@ -427,6 +450,9 @@ footer { padding: 20px 16px 34px; color: var(--muted); text-align: center; font-
   .control-group.grow { flex-basis: 100%; }
   .table-toolbar { align-items: flex-start; flex-direction: column; }
   .fundamentals-grid { grid-template-columns: repeat(2, 1fr); }
+  .section-heading { align-items: flex-start; flex-direction: column; }
+  .chart-mode-switch { width: 100%; }
+  .chart-mode-switch .button { flex: 1 1 120px; }
   .price-chart-box { height: 340px; }
   .rsi-chart-box { height: 260px; }
   .comparison-grid { grid-template-columns: 1fr; gap: 9px; }

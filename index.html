@@ -30,6 +30,7 @@
       <article class="stat-card out"><span>OUT</span><strong id="outCount">—</strong></article>
       <article class="stat-card up"><span>GC後上昇</span><strong id="upCount">—</strong></article>
       <article class="stat-card down"><span>GC後下落</span><strong id="downCount">—</strong></article>
+      <article class="stat-card cosmos"><span>🌸 コスモス注目</span><strong id="cosmosFocusCount">—</strong></article>
       <article class="stat-card"><span>取得エラー</span><strong id="errorCount">—</strong></article>
     </section>
 
@@ -82,6 +83,7 @@
       <div class="tabs" role="tablist">
         <button class="tab active" data-tab="active">現在対象</button>
         <button class="tab" data-tab="new">NEW</button>
+        <button class="tab cosmos-tab" data-tab="cosmos">🌸 コスモス注目</button>
         <button class="tab" data-tab="out">OUT</button>
         <button class="tab" data-tab="up">GC後上昇</button>
         <button class="tab" data-tab="down">GC後下落</button>
@@ -98,6 +100,7 @@
               <th data-key="code">コード</th>
               <th data-key="name">銘柄名</th>
               <th data-key="status">状態</th>
+              <th data-key="cosmos_focus">注目サイン</th>
               <th data-key="months_active" class="num">継続月</th>
               <th data-key="rsi14" class="num">RSI14</th>
               <th data-key="rsi5" class="num">RSI5</th>
@@ -129,6 +132,7 @@
     <section class="panel note-panel">
       <h2>このサイトの見方</h2>
       <p><strong>NEW</strong> は、前月まで RSI5 ≤ RSI14 だった銘柄が、判定月に RSI5 &gt; RSI14 へ入った状態です。<strong>OUT</strong> はその逆です。</p>
+      <p><strong>🌸 コスモス注目</strong> は、NEW時点で「RSI5が60以上・RSI14が上向き」を満たし、MVP加速型または新高値トレンド型に該当した銘柄です。ボタンを押すとワンクリックで抽出できます。</p>
       <p>GC後騰落率は、GC判定月の月足終値を起点に計算します。現在月は直近の日足終値を使用します。</p>
       <p class="disclaimer">本サイトは情報提供・研究を目的とし、特定銘柄の売買を推奨するものではありません。データ欠損・遅延・計算差異があり得ます。</p>
     </section>
