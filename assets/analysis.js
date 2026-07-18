@@ -73,6 +73,7 @@ function cacheElements() {
     "allAverage", "allDetail", "closedAverage", "closedDetail", "activeAverage", "activeDetail",
     "statCount", "statAverage", "statMedian", "statWinRate", "statMax", "statMin", "returnBuckets", "distributionCaption",
     "benchmarkNotice", "benchmarkCards", "performanceChart", "costBps", "strategyRankingBody", "rankingPeriodCaption", "rankingTrainHeader", "rankingValidateHeader",
+    "exitStrategyCaption", "exitStrategyNotice", "exitStrategyBody",
     "qualityNotice", "cohortBody", "resultSummary", "statusFilter", "pageSize", "episodeTable", "prevPage", "nextPage", "pageInfo",
     "columnSettingsButton", "columnSettingsPanel", "columnSettingsList", "resetColumns",
   ].forEach((id) => { els[id] = $(id); });
@@ -337,6 +338,36 @@ function renderStrategyRanking() {
   els.strategyRankingBody.innerHTML = results.map((result, index) => `<tr><td>${index + 1}</td><td><strong>${escapeHtml(result.name)}</strong></td><td>${escapeHtml(result.condition)}</td><td class="num ${performanceClass(result.trainExcess)}">${signed(result.trainExcess)}</td><td class="num ${performanceClass(result.validateExcess)}">${signed(result.validateExcess)}</td><td class="num ${performanceClass(result.validateReturn)}">${signed(result.validateReturn)}</td><td class="num">${result.entries.toLocaleString("ja-JP")}</td></tr>`).join("");
 }
 
+function renderExitStrategyRanking() {
+  const lab = state.data?.exit_strategy_results;
+  const cosmos = lab?.universes?.COSMOS;
+  if (!cosmos?.strategies?.length) {
+    els.exitStrategyBody.innerHTML = `<tr><td colspan="10" class="empty-state">Update monthly RSI data の実行後に出口戦略を表示します。</td></tr>`;
+    return;
+  }
+  const benchmark = lab.benchmark_name || "比較指数";
+  els.exitStrategyNotice.textContent = `入口は🌸コスモス注目条件で固定。${lab.signal_basis || "日足終値"}で判定し、${lab.execution_basis || "翌営業日始値"}で退出。片道${number(lab.cost_bps, 0)}bp、月次等金額で計算し、後半${benchmark}超過を優先して順位付けしています。`;
+  els.exitStrategyCaption.textContent = `${cosmos.entry_count.toLocaleString("ja-JP")}件のNEWを、同じ入口のまま出口だけ変更して比較します。`;
+  const rows = [...cosmos.strategies].sort((a, b) => {
+    const left = finite(a.metrics?.validation?.benchmark_excess_pct) ?? -Infinity;
+    const right = finite(b.metrics?.validation?.benchmark_excess_pct) ?? -Infinity;
+    return right - left;
+  });
+  els.exitStrategyBody.innerHTML = rows.map((row, index) => {
+    const train = row.metrics?.train || {}; const validate = row.metrics?.validation || {}; const all = row.metrics?.all || {};
+    return `<tr>
+      <td>${index + 1}</td><td><strong>${escapeHtml(row.name)}</strong></td><td>${escapeHtml(row.rule)}</td>
+      <td class="num ${performanceClass(train.cumulative_return_pct)}">${signed(train.cumulative_return_pct)}</td>
+      <td class="num ${performanceClass(validate.cumulative_return_pct)}">${signed(validate.cumulative_return_pct)}</td>
+      <td class="num ${performanceClass(validate.benchmark_excess_pct)}">${signed(validate.benchmark_excess_pct)}</td>
+      <td class="num ${performanceClass(all.cumulative_return_pct)}">${signed(all.cumulative_return_pct)}</td>
+      <td class="num ${performanceClass(all.max_drawdown_pct)}">${signed(all.max_drawdown_pct)}</td>
+      <td class="num">${number(validate.average_holding_months, 1)}か月</td>
+      <td class="num">${validate.win_rate_pct === null || validate.win_rate_pct === undefined ? "—" : `${number(validate.win_rate_pct, 1)}%`}</td>
+    </tr>`;
+  }).join("");
+}
+
 function sortableValue(row, key) { const value = key === "end_month" ? (row.end_month || row.valuation_date) : row[key]; const numeric = finite(value); return numeric === null ? String(value ?? "").toLowerCase() : numeric; }
 function sortedRows(rows) {
   const direction = state.sortDirection === "asc" ? 1 : -1;
@@ -359,7 +390,7 @@ function renderRows(rows) {
   applyColumnLayout();
 }
 function render() {
-  const base = baseRows(); const selected = sortedRows(patternRows(base)); renderComparison(base); renderStats(selected); renderBuckets(selected); renderCohorts(selected); renderRows(selected); renderQualityNotice(); renderBenchmark(); renderStrategyRanking();
+  const base = baseRows(); const selected = sortedRows(patternRows(base)); renderComparison(base); renderStats(selected); renderBuckets(selected); renderCohorts(selected); renderRows(selected); renderQualityNotice(); renderBenchmark(); renderStrategyRanking(); renderExitStrategyRanking();
 }
 
 const numberInputs = ["rsi5Min", "rsi5Max", "rsi14Min", "rsi14Max", "returnMin", "returnMax", "searchInput", "high52DistanceMin", "high52DistanceMax", "volumeRatioMin", "volumeRatioMax", "atrPctMin", "atrPctMax", "atrRatioMin", "atrRatioMax", "roeMin", "roeMax", "revenueGrowthMin", "revenueGrowthMax", "equityRatioMin", "equityRatioMax", "marketCapMin", "marketCapMax", "volumeMin", "volumeMax"];
