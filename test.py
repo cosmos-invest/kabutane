@@ -701,7 +701,6 @@ def build_analysis_episodes(
     latest_month: pd.Period,
     valuation_date: str | None = None,
     monthly_by_ticker: dict[str, pd.DataFrame] | None = None,
-    daily_analysis_by_ticker: dict[str, pd.DataFrame] | None = None,
 ) -> list[dict[str, Any]]:
     """Build NEW-origin episodes and ignore OUT events without an in-range NEW."""
     episodes: list[dict[str, Any]] = []
@@ -789,7 +788,6 @@ def build_analysis_episodes(
             discontinuity = False
             start_price = to_float(episode.get("start_price"))
             peak_price = start_price
-            daily_analysis = (daily_analysis_by_ticker or {}).get(ticker, pd.DataFrame())
             return_months = list(pd.period_range(start=start_month + 1, end=end_month, freq="M"))
             for month in return_months:
                 previous_month = month - 1
@@ -804,7 +802,6 @@ def build_analysis_episodes(
                     discontinuity = True
                     break
                 peak_price = max(peak_price or current_close, current_close)
-                metrics = daily_metrics_at_month(daily_analysis, month)
                 path.append({
                     "month": str(month),
                     "return_pct": rounded((price_ratio - 1) * 100),
@@ -817,15 +814,6 @@ def build_analysis_episodes(
                     "drawdown_from_peak_pct": rounded(
                         (current_close / peak_price - 1) * 100 if peak_price else None
                     ),
-                    "price_above_sma25": metrics.get("price_above_sma25"),
-                    "price_above_sma75": metrics.get("price_above_sma75"),
-                    "price_above_sma200": metrics.get("price_above_sma200"),
-                    "perfect_order": metrics.get("perfect_order"),
-                    "sma25_up": metrics.get("sma25_up"),
-                    "sma75_up": metrics.get("sma75_up"),
-                    "sma200_up": metrics.get("sma200_up"),
-                    "supertrend_up": metrics.get("supertrend_up"),
-                    "stage": metrics.get("stage"),
                 })
             if discontinuity:
                 episode["analysis_excluded"] = True
@@ -1151,8 +1139,9 @@ def build_exit_strategy_results(
 ) -> dict[str, Any]:
     """Compare exit rules with the entry universe held constant."""
     usable = [episode for episode in episodes if not episode.get("analysis_excluded")]
+    # The screen compares exits only. Keeping the 🌸 entry fixed avoids both
+    # data-mining a second entry and repeatedly scanning every RSI episode.
     universes = {
-        "ALL": usable,
         "COSMOS": [episode for episode in usable if episode_is_cosmos_focus(episode)],
     }
     benchmark_key = next(
@@ -1758,7 +1747,6 @@ def main() -> None:
         latest_month,
         latest_payload["generated_at"][:10],
         monthly_by_ticker,
-        prepared_daily,
     )
     split_index = max(1, len(months) // 2)
     validation_start_month = months[split_index]
