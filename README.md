@@ -15,6 +15,8 @@
 - 欠損や取得エラーがあっても処理継続
 - `result.csv`、`out.csv`、月別CSV、JSONを生成
 - Webで検索、ソート、月切替、NEW/OUT、上昇/下落、RSI50以上/未満の絞り込み
+- NEW起点の過去実績を、全体・OUT済み・継続中の3分類で分析
+- NEW発生月、開始時RSI強度、騰落率を自由範囲で絞り込み
 - 銘柄詳細で日足終値と階段状の月足RSIを表示
 - 過去のGC実績を銘柄別に表示
 - GitHub Actionsで毎月自動更新
@@ -32,12 +34,15 @@
 ├── out.csv                         # 最新OUT
 ├── index.html                      # 一覧サイト
 ├── detail.html                     # 銘柄詳細
+├── analysis.html                   # NEW起点の過去実績分析
 ├── assets/
 │   ├── app.js
+│   ├── analysis.js
 │   ├── detail.js
 │   └── style.css
 ├── data/
 │   ├── latest.json
+│   ├── analysis.json
 │   ├── errors.csv
 │   ├── fundamentals_cache.json
 │   ├── charts/{code}.json

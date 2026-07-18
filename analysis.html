@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="月足RSIクロス後の継続・OUT実績を期間とRSI強度で分析">
+  <title>月足RSI 過去実績分析</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div>
+        <p class="eyebrow">Monthly RSI Research</p>
+        <h1>過去実績分析ツール</h1>
+        <p class="subtitle">期間内にNEWになった銘柄だけを起点に、OUT済みと継続中の騰落実績を比較します。</p>
+      </div>
+      <div class="header-meta">
+        <span id="generatedAt">更新日時を取得中…</span>
+        <a class="button secondary" href="index.html">スキャナーへ戻る</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container analysis-container">
+    <section class="panel analysis-guide">
+      <strong>価格基準</strong>
+      <span id="priceBasis">判定月の月末終値</span>
+      <p>例：7月に確認できる6月判定は、6月末終値をGC開始価格として集計します。</p>
+    </section>
+
+    <section class="panel controls-panel analysis-controls" aria-label="分析条件">
+      <div class="control-group">
+        <label for="startMonth">NEW発生月・開始</label>
+        <select id="startMonth"></select>
+      </div>
+      <div class="control-group">
+        <label for="endMonth">NEW発生月・終了</label>
+        <select id="endMonth"></select>
+      </div>
+      <div class="control-group range-group">
+        <label>開始時RSI強度（RSI5−RSI14）</label>
+        <div class="range-inputs">
+          <input id="rsiMin" type="number" step="0.1" placeholder="最小">
+          <span>～</span>
+          <input id="rsiMax" type="number" step="0.1" placeholder="最大">
+        </div>
+      </div>
+      <div class="control-group range-group">
+        <label>騰落率（%）</label>
+        <div class="range-inputs">
+          <input id="returnMin" type="number" step="0.1" placeholder="最小">
+          <span>～</span>
+          <input id="returnMax" type="number" step="0.1" placeholder="最大">
+        </div>
+      </div>
+      <div class="control-group grow">
+        <label for="searchInput">銘柄検索</label>
+        <input id="searchInput" type="search" placeholder="コードまたは銘柄名">
+      </div>
+      <button id="resetFilters" class="button secondary" type="button">条件をリセット</button>
+    </section>
+
+    <section class="comparison-grid" aria-label="3パターン比較">
+      <article class="analysis-summary-card active" data-pattern="ALL">
+        <span>全体</span><strong id="allAverage">—</strong>
+        <small id="allDetail">—</small>
+      </article>
+      <article class="analysis-summary-card" data-pattern="CLOSED">
+        <span>NEW → OUT済み</span><strong id="closedAverage">—</strong>
+        <small id="closedDetail">—</small>
+      </article>
+      <article class="analysis-summary-card" data-pattern="ACTIVE">
+        <span>NEW → 継続中</span><strong id="activeAverage">—</strong>
+        <small id="activeDetail">—</small>
+      </article>
+    </section>
+
+    <section class="stats-grid analysis-stats" aria-label="選択パターンの統計">
+      <article class="stat-card"><span>対象件数</span><strong id="statCount">—</strong></article>
+      <article class="stat-card up"><span>平均騰落率</span><strong id="statAverage">—</strong></article>
+      <article class="stat-card"><span>中央値</span><strong id="statMedian">—</strong></article>
+      <article class="stat-card"><span>プラス比率</span><strong id="statWinRate">—</strong></article>
+      <article class="stat-card up"><span>最大</span><strong id="statMax">—</strong></article>
+      <article class="stat-card down"><span>最小</span><strong id="statMin">—</strong></article>
+    </section>
+
+    <section class="panel analysis-section">
+      <div class="section-heading">
+        <div><h2>騰落率分布</h2><p id="distributionCaption">選択中のパターンを集計</p></div>
+      </div>
+      <div id="returnBuckets" class="bucket-grid"></div>
+    </section>
+
+    <section class="panel analysis-section">
+      <div class="section-heading">
+        <div><h2>NEW月別の実績</h2><p>開始月ごとのOUT済み・継続中と平均騰落率</p></div>
+      </div>
+      <div class="table-wrap">
+        <table class="analysis-table cohort-table">
+          <thead><tr><th>NEW月</th><th class="num">全体</th><th class="num">OUT済み</th><th class="num">継続中</th><th class="num">平均騰落率</th><th class="num">プラス比率</th></tr></thead>
+          <tbody id="cohortBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel analysis-section">
+      <div class="section-heading">
+        <div><h2>個別実績</h2><p id="resultSummary">読み込み中…</p></div>
+        <div class="control-group compact">
+          <label for="pageSize">表示件数</label>
+          <select id="pageSize"><option>25</option><option selected>50</option><option>100</option><option>500</option></select>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table id="episodeTable" class="analysis-table">
+          <thead><tr>
+            <th data-key="start_month">NEW月</th><th data-key="code">コード</th><th data-key="name">銘柄名</th><th data-key="status">状態</th>
+            <th data-key="start_price" class="num">開始価格</th><th data-key="end_month">OUT/評価月</th><th data-key="end_price" class="num">終了/現在価格</th>
+            <th data-key="start_rsi14" class="num">開始RSI14</th><th data-key="start_rsi5" class="num">開始RSI5</th><th data-key="start_rsi_strength" class="num">RSI強度</th>
+            <th data-key="duration_months" class="num">経過月</th><th data-key="return_pct" class="num">騰落率</th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="pagination">
+        <button id="prevPage" class="button secondary">前へ</button><span id="pageInfo">—</span><button id="nextPage" class="button secondary">次へ</button>
+      </div>
+    </section>
+
+    <section class="panel note-panel">
+      <h2>集計上の注意</h2>
+      <p>選択した期間内にNEWが確認できたエピソードだけを対象にします。期間開始前から継続し、期間内にOUTだけ記録されたものは含みません。</p>
+      <p>継続中は最新取得価格、OUT済みはOUT判定月の月末終値で評価します。データ取得日による差異があり得ます。</p>
+    </section>
+  </main>
+
+  <footer><p>Monthly RSI Scanner / Research use only</p></footer>
+  <script src="assets/analysis.js" defer></script>
+</body>
+</html>
