@@ -13,7 +13,11 @@ const state = {
 const els = {};
 
 function $(id) { return document.getElementById(id); }
-function finite(value) { const number = Number(value); return Number.isFinite(number) ? number : null; }
+function finite(value) {
+  if (value === null || value === undefined || value === "") return null;
+  const number = Number(value);
+  return Number.isFinite(number) ? number : null;
+}
 function text(value, fallback = "—") { return value === null || value === undefined || value === "" ? fallback : String(value); }
 function number(value, digits = 2) {
   const parsed = finite(value);
@@ -36,6 +40,11 @@ function statusBadge(status) {
   const label = normalized === "CONTINUE" ? "継続" : normalized;
   return `<span class="badge ${css}">${label}</span>`;
 }
+function cosmosFocusBadge(row) {
+  if (row.cosmos_focus !== true) return "";
+  const type = row.cosmos_focus_type === "MVP" ? "MVP加速型" : row.cosmos_focus_type === "BREAKOUT" ? "新高値型" : "両方適合";
+  return `<span class="badge cosmos-focus" title="月足RSIツインエンジン戦略：${type}">🌸 コスモス注目</span>`;
+}
 function performanceClass(value) {
   const parsed = finite(value);
   if (parsed === null || parsed === 0) return "";
@@ -56,7 +65,7 @@ async function fetchJson(path) {
 
 function cacheElements() {
   [
-    "generatedAt", "signalMonth", "activeCount", "newCount", "outCount", "upCount", "downCount", "errorCount",
+    "generatedAt", "signalMonth", "activeCount", "newCount", "outCount", "upCount", "downCount", "cosmosFocusCount", "errorCount",
     "searchInput", "monthSelect", "statusFilter", "performanceFilter", "rsiFilter", "pageSize", "resultSummary",
     "csvDownload", "resultTable", "prevPage", "nextPage", "pageInfo",
   ].forEach((id) => { els[id] = $(id); });
@@ -102,6 +111,7 @@ function updateHeader() {
   els.outCount.textContent = number(summary.out_count, 0);
   els.upCount.textContent = number(summary.up_count, 0);
   els.downCount.textContent = number(summary.down_count, 0);
+  els.cosmosFocusCount.textContent = number(summary.cosmos_focus_count, 0);
   els.errorCount.textContent = number(state.latest?.summary?.error_count, 0);
 }
 
@@ -112,6 +122,7 @@ function sourceRows() {
   let rows = wantsOut ? [...(data.out_records || [])] : [...(data.records || [])];
 
   if (state.tab === "new") rows = rows.filter((row) => row.status === "NEW");
+  if (state.tab === "cosmos") rows = rows.filter((row) => row.cosmos_focus === true);
   if (state.tab === "up") rows = rows.filter((row) => (performanceValue(row) ?? -Infinity) >= 0);
   if (state.tab === "down") rows = rows.filter((row) => (performanceValue(row) ?? Infinity) < 0);
 
@@ -159,7 +170,7 @@ function renderRows(rows) {
 
   if (!pageRows.length) {
     const tr = document.createElement("tr");
-    tr.innerHTML = `<td colspan="18" class="empty-state">条件に合う銘柄がありません。</td>`;
+    tr.innerHTML = `<td colspan="19" class="empty-state">条件に合う銘柄がありません。</td>`;
     els.tbody.appendChild(tr);
     return;
   }
@@ -176,10 +187,12 @@ function renderRows(rows) {
         window.location.href = `detail.html?code=${encodeURIComponent(code)}`;
       });
     }
+    if (row.cosmos_focus === true) tr.classList.add("cosmos-focus-row");
     tr.innerHTML = `
       <td>${detailAllowed ? `<a class="code-link" href="detail.html?code=${encodeURIComponent(code)}">${code}</a>` : code}</td>
-      <td class="company-name">${text(row.name)}</td>
+      <td class="company-name">${row.cosmos_focus === true ? "🌸 " : ""}${text(row.name)}</td>
       <td>${statusBadge(row.status)}</td>
+      <td>${cosmosFocusBadge(row)}</td>
       <td class="num">${number(row.months_active, 0)}</td>
       <td class="num">${number(row.rsi14)}</td>
       <td class="num">${number(row.rsi5)}</td>
