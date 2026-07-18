@@ -1,8 +1,8 @@
 const characterGuide = (() => {
   const characters = {
-    cosmos: { name: "コスモス🌸", label: "整理する案内役" },
-    lumo: { name: "ルーモ✨", label: "元気な発見役" },
-    aile: { name: "エール💜", label: "読者目線の確認役" },
+    cosmos: { name: "コスモス🌸" },
+    lumo: { name: "ルーモ✨" },
+    aile: { name: "エール💜" },
   };
 
   const messages = {
@@ -13,9 +13,11 @@ const characterGuide = (() => {
     ],
     analysis: [
       { character: "cosmos", text: "RSI5とRSI14は別々に範囲を決められるよ。差だけでは見えなかった月足の温度を、一緒に比べてみよう🌸" },
-      { character: "lumo", text: "『記事の条件を適用』なら、いつもの3段階のふるいを一度に試せるよ！ そのあと数字を変えて遊んでみよう✨" },
-      { character: "aile", text: "テクニカルはNEW当時、財務は現在の最新値です。同じ時点の数字ではないから、過去成績を見る時は混ぜすぎないでね。" },
-      { character: "cosmos", text: "対象が0件になったら、条件をひとつずつ戻してみよう。どの条件で銘柄が減ったのかも、大切な発見だよ。" },
+      { character: "lumo", text: "ねえねえ、52週高値やVCPも試せるよ！ 前半で面白い条件を見つけたら、後半でも続くか確かめてみよう✨" },
+      { character: "aile", text: "平均が高くても、少数の大幅上昇に引っぱられることがあります。中央値と最大下落も一緒に見れば、私にも落ち着いて比べられそう。" },
+      { character: "cosmos", text: "TOPIXや日経平均に勝った月だけでなく、負けた時の下がり方も大切だよ。つまり、成績と守りを一緒に見るということだね🌸" },
+      { character: "aile", text: "財務は現在の最新値だから、過去の比較成績には入れていません。結果を先に知っていたことにならないようにしているよ。" },
+      { character: "cosmos", text: "対象が少なすぎたら条件をひとつずつ戻してみよう。どの条件で銘柄が減ったのかも、大切な発見だよ。" },
     ],
     detail: [
       { character: "cosmos", text: "上段は株価、下段は月足RSIだよ。月ごとの大きな流れと、その後の株価を並べて観察してみよう🌸" },
@@ -45,7 +47,7 @@ const characterGuide = (() => {
         <div class="character-avatar-rail">${avatarButtons}</div>
         <div class="character-speech">
           <div class="character-speech-heading">
-            <div><strong id="characterName"></strong><small id="characterRole"></small></div>
+            <div><strong id="characterName"></strong></div>
             <button class="character-close" type="button" aria-label="ヒントを小さくする">×</button>
           </div>
           <p id="characterMessage"></p>
@@ -65,7 +67,6 @@ const characterGuide = (() => {
     const character = characters[message.character];
     root.dataset.activeCharacter = message.character;
     root.querySelector("#characterName").textContent = character.name;
-    root.querySelector("#characterRole").textContent = character.label;
     root.querySelector("#characterMessage").textContent = message.text;
     root.querySelector("#characterCount").textContent = `${current + 1} / ${pageMessages.length}`;
     root.querySelectorAll(".character-avatar").forEach((button) => {
@@ -79,7 +80,6 @@ const characterGuide = (() => {
       const profile = characters[character];
       root.dataset.activeCharacter = character;
       root.querySelector("#characterName").textContent = profile.name;
-      root.querySelector("#characterRole").textContent = profile.label;
       root.querySelector("#characterMessage").textContent = text;
       root.querySelector("#characterCount").textContent = "操作ヒント";
       root.querySelectorAll(".character-avatar").forEach((button) => button.classList.toggle("active", button.dataset.character === character));
@@ -95,6 +95,11 @@ const characterGuide = (() => {
     if (page === "analysis") {
       document.getElementById("presetArticle")?.addEventListener("click", () => {
         showCharacter("lumo", "いつもの条件を入れたよ！ ここからRSIや移動平均線を少しずつ変えると、条件ごとの成績を比べられるよ✨");
+      });
+      document.getElementById("presetHighZone")?.addEventListener("click", () => showCharacter("lumo", "52週高値から−10%以内に絞ったよ！ 高値圏にいる会社の、その後を見てみよう✨"));
+      document.getElementById("presetVcpTrend")?.addEventListener("click", () => showCharacter("cosmos", "VCP・第2ステージ・Supertrend上向きを重ねたよ。条件を増やした分、対象件数も確認しようね🌸"));
+      document.getElementById("researchPeriod")?.addEventListener("change", (event) => {
+        if (event.target.value === "validate") showCharacter("aile", "ここは後半の答え合わせです。前半で良かった条件が、別の期間でも続いたかを見てみよう。");
       });
       ["operatingCf", "freeCf", "roeMin", "revenueGrowthMin", "equityRatioMin"].forEach((id) => {
         document.getElementById(id)?.addEventListener("change", () => showCharacter("aile"));
