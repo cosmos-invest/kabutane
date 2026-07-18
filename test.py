@@ -501,7 +501,9 @@ def enrich_fundamentals(
     def merge_fundamentals(record: dict[str, Any], data: dict[str, Any]) -> None:
         configured_name = record.get("name")
         record.update(data)
-        if configured_name and not record.get("name"):
+        # stocks.csv is the curated Japanese company-name source.  Yahoo's
+        # profile data is still useful for financials, but must not replace it.
+        if configured_name:
             record["name"] = configured_name
 
     for ticker_symbol, record in by_ticker.items():
