@@ -47,12 +47,33 @@
         <div class="filter-grid">
           <div class="control-group"><label for="startMonth">NEW発生月・開始</label><select id="startMonth"></select></div>
           <div class="control-group"><label for="endMonth">NEW発生月・終了</label><select id="endMonth"></select></div>
+          <div class="control-group"><label for="researchPeriod">研究期間</label><select id="researchPeriod"><option value="all">全期間</option><option value="train">前半：条件探し</option><option value="validate">後半：答え合わせ</option></select></div>
           <div class="control-group range-group"><label>月足RSI5</label><div class="range-inputs"><input id="rsi5Min" type="number" step="0.1" placeholder="最小"><span>～</span><input id="rsi5Max" type="number" step="0.1" placeholder="最大"></div></div>
           <div class="control-group range-group"><label>月足RSI14</label><div class="range-inputs"><input id="rsi14Min" type="number" step="0.1" placeholder="最小"><span>～</span><input id="rsi14Max" type="number" step="0.1" placeholder="最大"></div></div>
           <div class="control-group"><label for="rsi5Trend">RSI5の向き</label><select id="rsi5Trend"><option value="all">すべて</option><option value="up">上向き</option><option value="down">横ばい・下向き</option></select></div>
           <div class="control-group"><label for="rsi14Trend">RSI14の向き</label><select id="rsi14Trend"><option value="all">すべて</option><option value="up">上向き</option><option value="down">横ばい・下向き</option></select></div>
           <div class="control-group range-group"><label>騰落率（%）</label><div class="range-inputs"><input id="returnMin" type="number" step="0.1" placeholder="最小"><span>～</span><input id="returnMax" type="number" step="0.1" placeholder="最大"></div></div>
           <div class="control-group grow"><label for="searchInput">銘柄検索</label><input id="searchInput" type="search" placeholder="コードまたは銘柄名"></div>
+        </div>
+      </details>
+
+      <details class="filter-group" open>
+        <summary>52週高値・出来高・ATR・トレンド</summary>
+        <div class="momentum-presets">
+          <button id="presetHighZone" class="button secondary" type="button">高値圏（−10%以内）</button>
+          <button id="presetBreakout" class="button secondary" type="button">新高値＋出来高</button>
+          <button id="presetVcpTrend" class="button secondary" type="button">VCP＋上昇トレンド</button>
+        </div>
+        <div class="filter-grid">
+          <div class="control-group range-group"><label>52週高値との距離（%）</label><div class="range-inputs"><input id="high52DistanceMin" type="number" step="0.1" placeholder="例 -10"><span>～</span><input id="high52DistanceMax" type="number" step="0.1" placeholder="最大"></div></div>
+          <div class="control-group"><label for="high52Breakout">52週高値更新</label><select id="high52Breakout"><option value="all">すべて</option><option value="yes">更新した</option><option value="no">未更新</option></select></div>
+          <div class="control-group range-group"><label>出来高倍率（5日÷30日）</label><div class="range-inputs"><input id="volumeRatioMin" type="number" step="0.05" placeholder="例 1.2"><span>～</span><input id="volumeRatioMax" type="number" step="0.05" placeholder="最大"></div></div>
+          <div class="control-group range-group"><label>ATR14÷株価（%）</label><div class="range-inputs"><input id="atrPctMin" type="number" step="0.1" placeholder="最小"><span>～</span><input id="atrPctMax" type="number" step="0.1" placeholder="最大"></div></div>
+          <div class="control-group range-group"><label>ATR10÷ATR20</label><div class="range-inputs"><input id="atrRatioMin" type="number" step="0.01" placeholder="最小"><span>～</span><input id="atrRatioMax" type="number" step="0.01" placeholder="例 1.0"></div></div>
+          <div class="control-group"><label for="vcpTight">VCP収束</label><select id="vcpTight"><option value="all">すべて</option><option value="yes">ATR10＜ATR20</option><option value="no">収束外</option></select></div>
+          <div class="control-group"><label for="stageFilter">ステージ</label><select id="stageFilter"><option value="all">すべて</option><option value="1">第1</option><option value="2">第2（上昇局面）</option><option value="3">第3</option><option value="4">第4</option></select></div>
+          <div class="control-group"><label for="supertrendFilter">Supertrend</label><select id="supertrendFilter"><option value="all">すべて</option><option value="up">上向き</option><option value="down">下向き</option></select></div>
+          <div class="control-group"><label for="mvpFilter">MVP</label><select id="mvpFilter"><option value="all">すべて</option><option value="yes">点火</option><option value="no">平常</option></select></div>
         </div>
       </details>
 
@@ -107,6 +128,28 @@
       <article class="stat-card down"><span>最小</span><strong id="statMin">—</strong></article>
     </section>
 
+    <section class="panel analysis-section benchmark-section">
+      <div class="section-heading benchmark-heading">
+        <div><h2>月次ポートフォリオ比較</h2><p>月足RSIだけ・選択したテクニカル条件・TOPIX・日経平均を同じ月で比較</p></div>
+        <div class="control-group compact"><label for="costBps">片道コスト（bp）</label><input id="costBps" type="number" min="0" step="5" value="20"></div>
+      </div>
+      <p id="benchmarkNotice" class="analysis-disclosure">比較成績にはNEW時点で確定した項目だけを使用します。財務・結果の騰落率・銘柄検索は反映しません。</p>
+      <div id="benchmarkCards" class="benchmark-grid"></div>
+      <div class="performance-chart-wrap"><svg id="performanceChart" class="performance-chart" viewBox="0 0 960 360" role="img" aria-label="累積騰落率比較チャート"></svg></div>
+    </section>
+
+    <section class="panel analysis-section">
+      <div class="section-heading">
+        <div><h2>事前に決めた組み合わせの検証</h2><p id="rankingPeriodCaption">前半で条件を観察し、後半の答え合わせ成績を優先して表示します。</p></div>
+      </div>
+      <div class="table-wrap ranking-wrap">
+        <table class="analysis-table ranking-table">
+          <thead><tr><th>順位</th><th>組み合わせ</th><th>条件</th><th class="num">前半TOPIX超過</th><th class="num">後半TOPIX超過</th><th class="num">後半累積</th><th class="num">対象NEW</th></tr></thead>
+          <tbody id="strategyRankingBody"></tbody>
+        </table>
+      </div>
+    </section>
+
     <section class="panel analysis-section">
       <div class="section-heading">
         <div><h2>騰落率分布</h2><p id="distributionCaption">選択中のパターンを集計</p></div>
@@ -142,6 +185,8 @@
             <th data-key="start_price" class="num">開始価格</th><th data-key="start_sma25" class="num">SMA25</th><th data-key="start_sma75" class="num">SMA75</th><th data-key="start_sma200" class="num">SMA200</th>
             <th data-key="start_price_above_sma25">株価/SMA25</th><th data-key="start_price_above_sma75">株価/SMA75</th><th data-key="start_price_above_sma200">株価/SMA200</th><th data-key="start_perfect_order">PO</th>
             <th data-key="start_sma25_up">SMA25向き</th><th data-key="start_sma75_up">SMA75向き</th><th data-key="start_sma200_up">SMA200向き</th><th data-key="start_avg_volume30" class="num">平均出来高30日</th>
+            <th data-key="start_high52_distance_pct" class="num">52週高値距離%</th><th data-key="start_high52_breakout">新高値</th><th data-key="start_volume_ratio_5_30" class="num">出来高倍率</th>
+            <th data-key="start_atr14_pct" class="num">ATR%</th><th data-key="start_atr_ratio_10_20" class="num">ATR比</th><th data-key="start_vcp_tight">VCP</th><th data-key="start_stage" class="num">Stage</th><th data-key="start_supertrend_up">ST</th><th data-key="start_rsr_momentum" class="num">RSR Mom</th><th data-key="start_mvp_signal">MVP</th>
             <th data-key="roe_pct" class="num">ROE%</th><th data-key="revenue_growth_pct" class="num">売上成長%</th><th data-key="equity_ratio_pct" class="num">自己資本%</th>
             <th data-key="operating_cashflow_oku" class="num">営業CF(億)</th><th data-key="free_cashflow_oku" class="num">FCF(億)</th><th data-key="market_cap_oku" class="num">時価総額(億)</th>
             <th data-key="end_month">OUT/評価月</th><th data-key="end_price" class="num">終了/現在価格</th>
@@ -160,6 +205,8 @@
       <p>選択した期間内にNEWが確認できたエピソードだけを対象にします。期間開始前から継続し、期間内にOUTだけ記録されたものは含みません。</p>
       <p>継続中は最新取得価格、OUT済みはOUT判定月の月末終値で評価します。データ取得日による差異があり得ます。</p>
       <p>SMA・出来高・RSIの向きはNEW判定月末時点です。SMAの上向き判定は20取引日前との比較、RSIの上向き判定は前月との比較です。</p>
+      <p>52週高値はNEW当日を除く直前252取引日の高値です。VCPはATR10＜ATR20、SupertrendはATR10・倍率3で判定します。MVPは株価上昇・出来高20日平均の1.5倍超・独自RSRモメンタムプラスの同時成立です。</p>
+      <p>ポートフォリオ比較は月次等金額、月足RSIだけを基準線とし、片道コストを最初とOUT時に控除します。配当・税金・月中の約定差は含みません。</p>
       <p>財務項目はデータ生成時点の最新値です。過去のNEW当時の決算値ではないため、過去実績を見る際は参考条件として利用してください。</p>
     </section>
   </main>
