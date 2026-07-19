@@ -1477,9 +1477,10 @@ def build_chart_payload(
         })
 
     dates = list(chart_frame.index)
+    calendar_dates = [pd.Timestamp(date).date() for date in dates]
 
     def visible_date_after(month: pd.Period) -> str | None:
-        position = chart_frame.index.searchsorted(month.end_time, side="right") if dates else 0
+        position = bisect_right(calendar_dates, month.end_time.date()) if calendar_dates else 0
         return dates[position].strftime("%Y-%m-%d") if position < len(dates) else None
 
     cross_events: list[dict[str, Any]] = []
