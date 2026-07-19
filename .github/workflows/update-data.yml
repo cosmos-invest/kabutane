@@ -5,9 +5,9 @@ on:
   schedule:
     # 毎月2日 12:15 JST（前月の月足確定後）
     - cron: "15 3 2 * *"
-  push:
+  pull_request:
     paths:
-      - ".github/workflows/update-data.yml"
+      - ".github/hotfix-datetime-precision.md"
 
 permissions:
   contents: write
@@ -18,11 +18,14 @@ concurrency:
 
 jobs:
   update:
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     timeout-minutes: 330
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -53,9 +56,11 @@ jobs:
                   position = bisect_right(calendar_dates, month.end_time.date()) if calendar_dates else 0
                   return dates[position].strftime("%Y-%m-%d") if position < len(dates) else None
           '''.replace("              ", "    ")
-          if old_source not in source:
+          if old_source in source:
+              source = source.replace(old_source, new_source, 1)
+          elif new_source not in source:
               raise SystemExit("visible_date_after target block was not found")
-          source_path.write_text(source.replace(old_source, new_source, 1), encoding="utf-8")
+          source_path.write_text(source, encoding="utf-8")
 
           test_path = Path("tests/test_logic.py")
           tests = test_path.read_text(encoding="utf-8")
@@ -78,6 +83,18 @@ jobs:
           python -m py_compile test.py tests/test_logic.py
           git diff --check
 
+      - name: Commit source fix
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add test.py tests/test_logic.py
+          if git diff --cached --quiet; then
+            echo "No source changes"
+          else
+            git commit -m "fix: handle datetime precision in chart events"
+            git push origin HEAD:"${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
+          fi
+
       - name: Generate data
         env:
           HISTORY_MONTHS: "48"
@@ -88,14 +105,14 @@ jobs:
           FUNDAMENTALS_WORKERS: "3"
         run: python test.py
 
-      - name: Commit source fix and generated files
+      - name: Commit generated files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add test.py tests/test_logic.py result.csv out.csv data history
+          git add result.csv out.csv data history
           if git diff --cached --quiet; then
-            echo "No changes"
+            echo "No data changes"
           else
-            git commit -m "fix: handle datetime precision in chart events"
-            git push
+            git commit -m "chore: update monthly RSI data"
+            git push origin HEAD:"${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
           fi
