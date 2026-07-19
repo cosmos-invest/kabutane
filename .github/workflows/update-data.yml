@@ -43,51 +43,39 @@ jobs:
 
           source_path = Path("test.py")
           source = source_path.read_text(encoding="utf-8")
-          old_source = '''    dates = list(chart_frame.index)
+          old_source = """    dates = list(chart_frame.index)
 
               def visible_date_after(month: pd.Period) -> str | None:
-                  position = chart_frame.index.searchsorted(month.end_time, side="right") if dates else 0
-                  return dates[position].strftime("%Y-%m-%d") if position < len(dates) else None
-          '''.replace("              ", "    ")
-          new_source = '''    dates = list(chart_frame.index)
+                  position = chart_frame.index.searchsorted(month.end_time, side=\"right\") if dates else 0
+                  return dates[position].strftime(\"%Y-%m-%d\") if position < len(dates) else None
+          """.replace("              ", "    ")
+          new_source = """    dates = list(chart_frame.index)
               calendar_dates = [pd.Timestamp(date).date() for date in dates]
 
               def visible_date_after(month: pd.Period) -> str | None:
                   position = bisect_right(calendar_dates, month.end_time.date()) if calendar_dates else 0
-                  return dates[position].strftime("%Y-%m-%d") if position < len(dates) else None
-          '''.replace("              ", "    ")
+                  return dates[position].strftime(\"%Y-%m-%d\") if position < len(dates) else None
+          """.replace("              ", "    ")
           if old_source in source:
               source = source.replace(old_source, new_source, 1)
           elif new_source not in source:
               raise SystemExit("visible_date_after target block was not found")
           source_path.write_text(source, encoding="utf-8")
-
-          test_path = Path("tests/test_logic.py")
-          tests = test_path.read_text(encoding="utf-8")
-          old_test = '        dates = pd.to_datetime(["2024-02-01", "2024-04-01"])'
-          new_test = '''        # yfinance/pandas can return a second-resolution DatetimeIndex while
-              # Period.end_time is nanosecond-resolution. Keep this as a regression case.
-              dates = pd.to_datetime(["2024-02-01", "2024-04-01"]).as_unit("s")'''.replace("              ", "        ")
-          if old_test in tests:
-              tests = tests.replace(old_test, new_test, 1)
-          elif new_test not in tests:
-              raise SystemExit("chart payload regression-test target was not found")
-          test_path.write_text(tests, encoding="utf-8")
           PY
-
-      - name: Run unit tests
-        run: python -m unittest discover -s tests -v
 
       - name: Validate source
         run: |
           python -m py_compile test.py tests/test_logic.py
           git diff --check
 
+      - name: Run unit tests
+        run: python -m unittest discover -s tests -v
+
       - name: Commit source fix
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add test.py tests/test_logic.py
+          git add test.py
           if git diff --cached --quiet; then
             echo "No source changes"
           else
