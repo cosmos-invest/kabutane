@@ -10,6 +10,7 @@ on:
       - "index.html"
       - "detail.html"
       - "analysis.html"
+      - "howto.html"
       - "assets/**"
       - "data/**"
       - "history/**"
@@ -42,7 +43,7 @@ jobs:
       - name: Prepare site
         run: |
           mkdir -p _site
-          cp index.html detail.html analysis.html .nojekyll result.csv out.csv _site/
+          cp index.html detail.html analysis.html howto.html .nojekyll result.csv out.csv _site/
           cp -R assets data history _site/
 
       - name: Configure Pages
