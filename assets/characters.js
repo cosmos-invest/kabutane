@@ -1,3 +1,13 @@
+function ensurePastelThemeStyles() {
+  if (document.querySelector('link[href="assets/pastel.css"]')) return;
+  const link = document.createElement("link");
+  link.rel = "stylesheet";
+  link.href = "assets/pastel.css";
+  document.head.appendChild(link);
+}
+
+ensurePastelThemeStyles();
+
 const characterGuide = (() => {
   const characters = {
     cosmos: { name: "コスモス🌸" },
@@ -7,23 +17,29 @@ const characterGuide = (() => {
 
   const messages = {
     index: [
-      { character: "cosmos", text: "まずはNEWとOUTを分けて見てみよう。NEWは月足RSI5がRSI14を上抜けた最初の月だよ🌸" },
+      { character: "cosmos", text: "まずはNEWと🌸コスモス注目から候補を探そう。最初から全部の数字を追わず、入口を絞ると見やすいよ🌸" },
       { character: "lumo", text: "銘柄コードでも会社名でも検索できるよ！ 気になる会社を見つけたら、名前をタップして詳しく見てみよう✨" },
       { character: "aile", text: "数字が『—』の項目は取得できなかったデータです。0とは意味が違うから、そこだけ気をつけてね。" },
+      { character: "cosmos", text: "一覧は候補を見つける場所。買うかどうかは、詳細ページのチャート・企業イベント・財務を見てから考えよう🌸" },
     ],
     analysis: [
-      { character: "cosmos", text: "RSI5とRSI14は別々に範囲を決められるよ。差だけでは見えなかった月足の温度を、一緒に比べてみよう🌸" },
-      { character: "lumo", text: "ねえねえ、52週高値やVCPも試せるよ！ 前半で面白い条件を見つけたら、後半でも続くか確かめてみよう✨" },
-      { character: "aile", text: "平均が高くても、少数の大幅上昇に引っぱられることがあります。中央値と最大下落も一緒に見れば、私にも落ち着いて比べられそう。" },
-      { character: "cosmos", text: "TOPIXや日経平均に勝った月だけでなく、負けた時の下がり方も大切だよ。つまり、成績と守りを一緒に見るということだね🌸" },
-      { character: "aile", text: "財務は現在の最新値だから、過去の比較成績には入れていません。結果を先に知っていたことにならないようにしているよ。" },
-      { character: "cosmos", text: "対象が少なすぎたら条件をひとつずつ戻してみよう。どの条件で銘柄が減ったのかも、大切な発見だよ。" },
+      { character: "cosmos", text: "分析は『前半で条件探し、後半で答え合わせ』が基本だよ。同じ期間だけで良く見える条件を作りすぎないようにしよう🌸" },
+      { character: "lumo", text: "52週高値やVCPも試せるよ！ 条件を一つずつ足して、対象件数が急に減っていないかも見よう✨" },
+      { character: "aile", text: "平均が高くても、少数の大幅上昇に引っぱられることがあります。中央値・最大下落・対象件数を一緒に確認してね。" },
+      { character: "cosmos", text: "TOPIXや日経平均に勝ったかだけでなく、負けた時の下がり方も大切。リターンと守りをセットで見よう🌸" },
+      { character: "aile", text: "財務は現在の最新値です。過去のNEW当時の情報ではないため、過去実績の原因として断定しないようにしましょう。" },
+      { character: "cosmos", text: "出口戦略は最大利益だけでなく、最大下落と平均保有期間も比較しよう。資金効率まで含めて見るのがコツだよ🌸" },
     ],
     detail: [
-      { character: "cosmos", text: "上段は株価、下段は月足RSIだよ。月ごとの大きな流れと、その後の株価を並べて観察してみよう🌸" },
-      { character: "lumo", text: "GC実績の表では、始まった月からOUTまでの動きを追えるよ。継続中の銘柄もちゃんと残ってるよ！✨" },
-      { character: "aile", text: "これは売買サインではなく、研究用の見える化です。数字だけで急いで結論を出さなくて大丈夫。" },
-      { character: "cosmos", text: "財務情報に『—』があっても、会社が悪いという意味ではないよ。取得元にデータがない場合もあります。" },
+      { character: "cosmos", text: "上から株価チャート、月足RSI、企業イベント、過去実績、財務の順に見ると迷いにくいよ🌸" },
+      { character: "lumo", text: "ローソク足で値動きを確認して、平均足でトレンドの続きやすさを見ると分かりやすいよ✨" },
+      { character: "aile", text: "決算予定や権利落ちの直前は値動きが大きくなることがあります。チャートだけでなく日付も確認してね。" },
+      { character: "cosmos", text: "過去のGC実績は参考になるけれど、同じ結果を保証するものではないよ。ワーストケースも一緒に想定しよう🌸" },
+    ],
+    howto: [
+      { character: "cosmos", text: "このサイトは『一覧で探す → 詳細で確認 → 分析で検証』の3ステップで使うと分かりやすいよ🌸" },
+      { character: "lumo", text: "最初は条件を盛りすぎなくて大丈夫！ NEWか🌸注目を選んで、気になる会社を3〜5社だけ開いてみよう✨" },
+      { character: "aile", text: "最後に必ず、損失をどこまで許容するかと、どの条件で撤退するかを決めておくと落ち着いて使えます。" },
     ],
   };
 
@@ -32,9 +48,68 @@ const characterGuide = (() => {
   let root;
 
   function detectPage() {
-    if (document.getElementById("episodeTable")) return "analysis";
+    if (document.body.dataset.page) return document.body.dataset.page;
     if (document.getElementById("priceChart")) return "detail";
+    if (document.querySelector(".analysis-controls")) return "analysis";
     return "index";
+  }
+
+  function injectPetals() {
+    if (document.querySelector(".petal-layer")) return;
+    const layer = document.createElement("div");
+    layer.className = "petal-layer";
+    layer.setAttribute("aria-hidden", "true");
+    layer.innerHTML = Array.from({ length: 14 }, (_, index) => `<span style="--petal-index:${index}"></span>`).join("");
+    document.body.prepend(layer);
+  }
+
+  function injectNavigation() {
+    const headerMeta = document.querySelector(".header-meta");
+    if (!headerMeta || headerMeta.querySelector(".site-nav")) return;
+
+    const currentFile = window.location.pathname.split("/").pop() || "index.html";
+    const nav = document.createElement("nav");
+    nav.className = "site-nav";
+    nav.setAttribute("aria-label", "サイト内ナビゲーション");
+    nav.innerHTML = [
+      ["index.html", "銘柄を探す"],
+      ["analysis.html", "実績を分析"],
+      ["howto.html", "使い方"],
+    ].map(([href, label]) => `<a href="${href}"${currentFile === href ? ' class="active" aria-current="page"' : ""}>${label}</a>`).join("");
+    headerMeta.prepend(nav);
+  }
+
+  function quickStartTemplate() {
+    if (page === "index") {
+      return `
+        <section class="quickstart-banner panel" aria-label="おすすめの使い方">
+          <div><span class="quickstart-label">はじめての方へ</span><strong>一覧 → 詳細 → 分析の3ステップで使えます</strong><p>まずはNEWまたは🌸コスモス注目から、気になる銘柄を3〜5社に絞りましょう。</p></div>
+          <a class="button quickstart-button" href="howto.html#first-route">使い方を見る</a>
+        </section>`;
+    }
+    if (page === "detail") {
+      return `
+        <section class="quickstart-banner compact panel" aria-label="詳細ページの見方">
+          <div><span class="quickstart-label">見る順番</span><strong>チャート → イベント → 過去実績 → 財務</strong><p>トレンド、直近の変動要因、再現性、企業体力を順番に確認します。</p></div>
+          <a class="button quickstart-button" href="howto.html#detail-guide">詳しい見方</a>
+        </section>`;
+    }
+    if (page === "analysis") {
+      return `
+        <section class="quickstart-banner compact panel" aria-label="分析ページの基本">
+          <div><span class="quickstart-label">分析の基本</span><strong>前半で条件を探し、後半で答え合わせ</strong><p>平均だけでなく、中央値・最大下落・対象件数・指数超過をセットで確認します。</p></div>
+          <a class="button quickstart-button" href="howto.html#analysis-guide">分析の使い方</a>
+        </section>`;
+    }
+    return "";
+  }
+
+  function injectQuickStart(main) {
+    const markup = quickStartTemplate();
+    if (!markup || main.querySelector(".quickstart-banner")) return;
+    const holder = document.createElement("div");
+    holder.innerHTML = markup.trim();
+    main.prepend(holder.firstElementChild);
   }
 
   function template() {
@@ -61,7 +136,7 @@ const characterGuide = (() => {
   }
 
   function show(index) {
-    const pageMessages = messages[page];
+    const pageMessages = messages[page] || messages.index;
     current = (index + pageMessages.length) % pageMessages.length;
     const message = pageMessages[current];
     const character = characters[message.character];
@@ -86,20 +161,21 @@ const characterGuide = (() => {
       root.classList.remove("collapsed");
       return;
     }
-    const nextIndex = messages[page].findIndex((message, index) => index > current && message.character === character);
-    const firstIndex = messages[page].findIndex((message) => message.character === character);
+    const pageMessages = messages[page] || messages.index;
+    const nextIndex = pageMessages.findIndex((message, index) => index > current && message.character === character);
+    const firstIndex = pageMessages.findIndex((message) => message.character === character);
     show(nextIndex >= 0 ? nextIndex : firstIndex);
   }
 
   function bindPageEvents() {
     if (page === "analysis") {
       document.getElementById("presetArticle")?.addEventListener("click", () => {
-        showCharacter("lumo", "いつもの条件を入れたよ！ ここからRSIや移動平均線を少しずつ変えると、条件ごとの成績を比べられるよ✨");
+        showCharacter("lumo", "いつもの条件を入れたよ！ ここからRSIや移動平均線を一つずつ変えると、何が効いているか分かりやすいよ✨");
       });
       document.getElementById("presetHighZone")?.addEventListener("click", () => showCharacter("lumo", "52週高値から−10%以内に絞ったよ！ 高値圏にいる会社の、その後を見てみよう✨"));
       document.getElementById("presetVcpTrend")?.addEventListener("click", () => showCharacter("cosmos", "VCP・第2ステージ・Supertrend上向きを重ねたよ。条件を増やした分、対象件数も確認しようね🌸"));
       document.getElementById("researchPeriod")?.addEventListener("change", (event) => {
-        if (event.target.value === "validate") showCharacter("aile", "ここは後半の答え合わせです。前半で良かった条件が、別の期間でも続いたかを見てみよう。");
+        if (event.target.value === "validate") showCharacter("aile", "ここは後半の答え合わせです。前半で良かった条件が、別の期間でも続いたかを確認しましょう。");
       });
       ["operatingCf", "freeCf", "roeMin", "revenueGrowthMin", "equityRatioMin"].forEach((id) => {
         document.getElementById(id)?.addEventListener("change", () => showCharacter("aile"));
@@ -120,13 +196,22 @@ const characterGuide = (() => {
   }
 
   function init() {
+    document.body.classList.add("pastel-theme");
+    injectPetals();
+    injectNavigation();
+
     const main = document.querySelector("main.container");
     if (!main) return;
     page = detectPage();
+    injectQuickStart(main);
+
     const holder = document.createElement("div");
     holder.innerHTML = template().trim();
     root = holder.firstElementChild;
-    main.prepend(root);
+    const quickstart = main.querySelector(".quickstart-banner");
+    if (quickstart) quickstart.insertAdjacentElement("afterend", root);
+    else main.prepend(root);
+
     root.querySelector(".character-next").addEventListener("click", () => show(current + 1));
     root.querySelector(".character-close").addEventListener("click", () => root.classList.add("collapsed"));
     root.querySelector(".character-reopen").addEventListener("click", () => root.classList.remove("collapsed"));
