@@ -1,0 +1,85 @@
+[hidden], #detailFocus[hidden] { display: none !important; }
+
+.event-sections {
+  padding: 0 20px 18px;
+  display: grid;
+  gap: 18px;
+}
+
+.event-subsection {
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--surface-2) 88%, transparent);
+}
+
+.event-subheading {
+  padding: 14px 16px;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.event-subheading span {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--accent);
+  font-size: .66rem;
+  font-weight: 900;
+  letter-spacing: .1em;
+}
+
+.event-subheading h3 { margin: 0; font-size: 1rem; }
+.event-subheading small { color: var(--muted); font-size: .72rem; }
+
+.future-event-grid,
+.past-event-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 10px;
+  padding: 14px;
+}
+
+.future-event-card {
+  min-height: 132px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  border: 1px solid rgba(125, 211, 252, .34);
+  border-radius: 13px;
+  background: linear-gradient(145deg, rgba(125, 211, 252, .09), rgba(167, 139, 250, .07));
+}
+
+.future-event-card strong { font-size: 1.35rem; line-height: 1.25; }
+.future-event-card time { color: var(--text); font-size: .78rem; font-weight: 800; }
+.future-event-card small { margin-top: auto; color: var(--muted); line-height: 1.45; }
+.future-event-label { color: var(--muted); font-size: .75rem; font-weight: 800; }
+.future-earnings { border-color: rgba(245, 158, 11, .55); }
+.future-rights,
+.future-dividend_forecast,
+.future-dividend_change { border-color: rgba(16, 185, 129, .48); }
+.future-dividend_change strong.positive { color: var(--positive); }
+.future-dividend_change strong.negative { color: var(--negative); }
+
+.compact-empty {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 24px;
+}
+
+@media (max-width: 720px) {
+  .event-sections { padding: 0 12px 14px; }
+  .event-subheading { align-items: flex-start; flex-direction: column; }
+  .future-event-grid,
+  .past-event-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 10px; }
+  .future-event-card { min-height: 124px; padding: 12px; }
+  .future-event-card strong { font-size: 1.08rem; }
+}
+
+@media (max-width: 440px) {
+  .future-event-grid,
+  .past-event-grid { grid-template-columns: 1fr; }
+}
