@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>銘柄詳細 | 月足RSIクロス・スキャナー</title>
   <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/detail-enhancements.css">
 </head>
 <body>
   <header class="site-header detail-header">
@@ -16,7 +17,7 @@
         <p class="subtitle" id="detailSubtitle">データを読み込んでいます…</p>
       </div>
       <div class="header-meta">
-        <span class="badge cosmos-focus" id="detailFocus" hidden>🌸 コスモス注目</span>
+        <span class="badge cosmos-focus" id="detailFocus" hidden aria-hidden="true"></span>
         <span class="badge neutral" id="detailStatus">—</span>
         <a id="replayLink" class="button" href="replay.html">過去チャートで練習</a>
       </div>
@@ -65,11 +66,11 @@
       <div class="section-heading">
         <div>
           <h2>企業イベント</h2>
-          <p>決算予定・権利落ち・配当・株式分割／併合を、取得できた範囲で表示します。</p>
+          <p>次回決算・権利落ち・予想年間配当・増配率を先に表示し、その下に過去の配当や分割実績をまとめます。</p>
         </div>
       </div>
       <div class="event-list" id="corporateEvents"></div>
-      <p class="event-source-note">決算予定・権利落ちはYahoo Financeの予定情報、配当・分割は株価履歴を利用しています。権利落ち日は権利確定日そのものではありません。自社株買いはYahoo Financeから安定取得できないため、<a href="https://www.release.tdnet.info/inbs/I_main_00.html" target="_blank" rel="noopener">TDnetの適時開示</a>で確認してください。</p>
+      <p class="event-source-note">決算予定・権利落ち・予想年間配当はYahoo Financeの予定・予想情報、過去の配当・分割は株価履歴を利用しています。予想値は変更される場合があり、権利落ち日は権利確定日そのものではありません。自社株買いはYahoo Financeから安定取得できないため、<a href="https://www.release.tdnet.info/inbs/I_main_00.html" target="_blank" rel="noopener">TDnetの適時開示</a>で確認してください。</p>
     </section>
 
     <section class="panel">
@@ -127,6 +128,7 @@
   </script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
   <script src="assets/detail.js" defer></script>
+  <script src="assets/detail-enhancements.js" defer></script>
   <script src="assets/characters.js" defer></script>
 </body>
 </html>
