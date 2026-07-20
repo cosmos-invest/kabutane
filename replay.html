@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="未来の値動きを隠し、日足を1日ずつ進めながら分割購入・部分利確・全利確を練習する売買シミュレーター">
+  <title>売買練習シミュレーター | 月足RSIスキャナー</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/pastel.css">
+  <link rel="stylesheet" href="assets/replay.css">
+</head>
+<body class="pastel-theme replay-page" data-page="replay">
+  <header class="site-header replay-header">
+    <div class="header-inner">
+      <div>
+        <a id="detailBackLink" class="back-link" href="index.html">← 銘柄詳細へ戻る</a>
+        <p class="eyebrow">Daily Trading Replay</p>
+        <h1 id="replayTitle">売買練習シミュレーター🌸</h1>
+        <p id="replaySubtitle" class="subtitle">過去の日足を、未来を隠したまま1日ずつ進めます。</p>
+      </div>
+      <div class="header-meta">
+        <span class="badge neutral" id="sessionState">準備中</span>
+        <a class="button secondary" href="backtest.html">運用バックテスト</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container replay-container">
+    <section class="panel replay-intro">
+      <div>
+        <span class="replay-label">練習ルール</span>
+        <h2>チャートの先は見えません</h2>
+        <p>表示された日の終値で売買したものとして計算します。購入は最大5回。部分利確・半分利確・全利確を組み合わせて、出口戦略を練習できます。</p>
+      </div>
+      <button id="newSessionButton" class="button secondary" type="button">条件を選び直す</button>
+    </section>
+
+    <section id="setupPanel" class="panel setup-panel">
+      <div class="section-heading">
+        <div><span class="step-number">STEP 1</span><h2>練習条件を決める</h2><p>開始日はランダムにも指定にもできます。開始後は未来の日付を表示しません。</p></div>
+      </div>
+      <div class="setup-grid">
+        <label>開始方法
+          <select id="startMode"><option value="random">ランダムに開始</option><option value="date">開始日を指定</option></select>
+        </label>
+        <label>開始日
+          <input id="startDate" type="date" disabled>
+        </label>
+        <label>初期資金
+          <select id="initialCapital"><option value="1000000">100万円</option><option value="3000000" selected>300万円</option><option value="5000000">500万円</option><option value="10000000">1,000万円</option></select>
+        </label>
+        <label>売買単位
+          <select id="lotSize"><option value="100" selected>100株単位</option><option value="1">1株単位</option></select>
+        </label>
+        <label>片道コスト
+          <select id="costBps"><option value="0">0%</option><option value="10" selected>0.10%</option><option value="20">0.20%</option><option value="30">0.30%</option></select>
+        </label>
+        <label>自動再生速度
+          <select id="playSpeed"><option value="1000">ゆっくり</option><option value="500" selected>標準</option><option value="180">速い</option></select>
+        </label>
+      </div>
+      <button id="startSessionButton" class="button primary-action" type="button">この条件で練習を始める</button>
+      <p id="setupNotice" class="replay-note">SMA200を表示でき、開始後に十分な日数が残る範囲から開始します。</p>
+    </section>
+
+    <section id="practiceArea" hidden>
+      <section class="replay-stats" aria-label="口座状況">
+        <article><span>現在日</span><strong id="currentDate">—</strong></article>
+        <article><span>終値</span><strong id="currentPrice">—</strong></article>
+        <article><span>現金</span><strong id="cashValue">—</strong></article>
+        <article><span>保有株</span><strong id="shareValue">—</strong></article>
+        <article><span>平均取得</span><strong id="averagePrice">—</strong></article>
+        <article><span>評価損益</span><strong id="unrealizedValue">—</strong></article>
+        <article><span>実現損益</span><strong id="realizedValue">—</strong></article>
+        <article><span>総資産</span><strong id="totalValue">—</strong></article>
+      </section>
+
+      <section class="panel replay-chart-panel">
+        <div class="section-heading replay-chart-heading">
+          <div><span class="step-number">STEP 2</span><h2>日足を進めて判断する</h2><p id="dayProgress">—</p></div>
+          <div class="indicator-strip"><span id="indicatorRsi">RSI —</span><span id="indicatorSma">SMA —</span><span id="indicatorVolume">出来高 —</span></div>
+        </div>
+        <div class="replay-chart-box"><canvas id="replayChart"></canvas></div>
+        <div class="playback-controls">
+          <button id="stepOneButton" class="button" type="button">1日進む</button>
+          <button id="stepFiveButton" class="button secondary" type="button">5日進む</button>
+          <button id="playButton" class="button secondary" type="button">▶ 再生</button>
+          <button id="finishButton" class="button ghost-button" type="button">ここで終了</button>
+        </div>
+      </section>
+
+      <section class="trade-layout">
+        <section class="panel order-panel">
+          <div class="section-heading"><div><span class="step-number">STEP 3</span><h2>分割売買する</h2><p>買いは最大5回。注文は表示中の日の終値で成立します。</p></div></div>
+          <div class="stage-status"><span>購入回数</span><strong id="buyStageStatus">0 / 5</strong></div>
+          <label class="memo-label">判断メモ<input id="tradeMemo" type="text" maxlength="80" placeholder="例：SMA25反発を確認"></label>
+          <div class="order-group buy-group">
+            <h3>購入</h3>
+            <button id="buyChunkButton" class="order-button buy" type="button">資金の1/5で購入</button>
+            <div class="custom-order"><input id="customBuyShares" type="number" min="1" step="1" placeholder="株数"><button id="buyCustomButton" class="order-button buy" type="button">指定株数を購入</button></div>
+          </div>
+          <div class="order-group sell-group">
+            <h3>利確・損切り</h3>
+            <div class="sell-buttons">
+              <button id="sellQuarterButton" class="order-button sell" type="button">25%売却</button>
+              <button id="sellHalfButton" class="order-button sell" type="button">半分売却</button>
+              <button id="sellAllButton" class="order-button sell danger" type="button">全株売却</button>
+            </div>
+          </div>
+          <p id="orderMessage" class="order-message" aria-live="polite">まだ売買していません。</p>
+        </section>
+
+        <section class="panel account-panel">
+          <h2>現在の成績</h2>
+          <dl class="account-grid">
+            <div><dt>総損益率</dt><dd id="totalReturn">—</dd></div>
+            <div><dt>総損益額</dt><dd id="totalProfit">—</dd></div>
+            <div><dt>投資中金額</dt><dd id="marketValue">—</dd></div>
+            <div><dt>残り購入回数</dt><dd id="remainingBuys">5回</dd></div>
+            <div><dt>最高総資産</dt><dd id="peakValue">—</dd></div>
+            <div><dt>最大下落</dt><dd id="maxDrawdown">—</dd></div>
+          </dl>
+          <div id="finishSummary" class="finish-summary" hidden></div>
+        </section>
+      </section>
+
+      <section class="panel trade-history-panel">
+        <div class="section-heading"><div><h2>売買履歴</h2><p>チャート上のB1〜B5、S1〜がこの履歴に対応します。</p></div></div>
+        <div class="table-wrap"><table><thead><tr><th>日付</th><th>操作</th><th class="num">価格</th><th class="num">株数</th><th class="num">実現損益</th><th>メモ</th></tr></thead><tbody id="tradeHistoryBody"></tbody></table></div>
+      </section>
+    </section>
+
+    <section class="replay-disclaimer"><p>この機能は過去データを使った練習用です。実際の約定価格、手数料、税金、スリッページ、ストップ高・安などは完全には再現していません。</p></section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <script src="assets/replay.js" defer></script>
+</body>
+</html>
