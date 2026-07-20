@@ -74,6 +74,10 @@ function manualSell(ratio) {
 function armBracket() {
   recalculatePlan();
   const plan = currentPositionPlan();
+  if (state.account.shares > 0) {
+    message("自動エントリー注文は保有株がない状態で待機してください。現在の保有株は手動で管理できます。", true);
+    return;
+  }
   if (state.plan.entry === null || state.plan.initialStop === null || state.plan.initialStop >= state.plan.entry) return;
   if (plan.slotShares <= 0 || plan.recommendedShares <= 0) {
     message("現在の資産・売買単位では自動注文株数を作れません。", true);
@@ -90,11 +94,10 @@ function armBracket() {
 
 function cancelBracket() {
   state.plan.armed = false;
-  if (state.account.shares === 0) {
-    state.plan.entryDate = null;
-    state.plan.hitTargets = [false, false, false, false];
-    state.plan.activeStop = state.plan.initialStop;
-  }
+  state.plan.entryDate = null;
+  state.plan.initialAutoShares = 0;
+  state.plan.hitTargets = [false, false, false, false];
+  state.plan.activeStop = state.plan.initialStop;
   els.sessionState.textContent = state.account.shares > 0 ? "手動管理" : "練習中";
   message("自動注文を解除しました。保有株は手動で管理できます。");
   renderAll();
