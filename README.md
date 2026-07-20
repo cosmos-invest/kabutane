@@ -1,77 +1,190 @@
-# 月足RSIクロス・スキャナー
+# 月足RSI14・5か月MAクロス・スキャナー
 
-日本株の **月足RSI5 > 月足RSI14** を満たす銘柄を抽出し、毎月の NEW / OUT、GC後の株価実績、財務情報、日足株価と階段状の月足RSIを無料のGitHub Pagesで公開するプロジェクトです。
+日本株の**完成済み月足**からTradingView互換のWilder RSI14を計算し、**月足RSI14 > RSI14の5か月単純移動平均**を満たす銘柄を抽出するプロジェクトです。
 
-## 実装済み
+現在対象、毎月のNEW / OUT、GC後の株価実績、財務情報、日足チャート、過去5年の分析・バックテスト、売買練習シミュレーターをGitHub Pagesで公開します。
 
-- `stocks.csv` から銘柄コードを読み込み
-- 日本株コードへ `.T` を自動付与（英字コードにも対応）
-- 月足RSI5 / RSI14を計算
-- `RSI5 > RSI14` の現在対象、NEW、OUTを判定
-- 直近48か月の月別履歴を生成
-- GC月終値からの上昇・下落実績を計算
-- 現在対象を「GC後上昇」「GC後下落」に分類
+## 正式なシグナル定義
+
+計算バージョン：`tv_wilder_rsi14_sma5_v1`
+
+1. 月末確定済み終値から、TradingViewの `ta.rsi(close, 14)` と同じWilder RMA方式で月足RSI14を計算
+2. 月足RSI14の直近5か月単純移動平均を計算
+3. `月足RSI14 > RSI14の5か月SMA` を対象状態とする
+4. 前月まで対象外で当月に上抜けたものを `NEW`
+5. 上回った状態を維持しているものを `CONTINUE`
+6. 前月まで対象で当月に5か月SMA以下へ戻ったものを `OUT`
+
+進行中の当月は使用しません。月末確定値は、個別画面の日足軸では翌月最初の取引日から表示します。
+
+詳しい計算方法は `signal-method.html` にまとめています。
+
+## 旧方式からの移行
+
+旧版は、単純平均方式の期間5 RSIと期間14 RSIを別々に計算し、`RSI5 > RSI14` を判定していました。これは正式な投資KING／TradingView側の考え方とは異なっていたため廃止しました。
+
+方式変更時には旧JSON・CSV・履歴を削除し、新方式で全期間を再生成します。公開JSONには必ず次を記録します。
+
+```json
+{
+  "signal_version": "tv_wilder_rsi14_sma5_v1"
+}
+```
+
+既存フロントエンドを安全に移行するため、当面は次の旧キーも互換エイリアスとして出力します。ただし意味は新方式へ固定されています。
+
+| 互換キー | 正式な意味 |
+|---|---|
+| `rsi5` | `monthly_rsi14` |
+| `rsi14` | `monthly_rsi_ma5` |
+| `rsi5_up` | `monthly_rsi14_up` |
+| `rsi14_up` | `monthly_rsi_ma5_up` |
+| `diff` | `monthly_rsi_spread` |
+
+新しい実装では、正式フィールドを優先してください。
+
+## RSI計算
+
+### Wilder RMA
+
+最初の14期間は単純平均で初期化し、その後は次の再帰式で更新します。
+
+```text
+今月RMA ＝（前月RMA × 13 ＋ 今月の値）÷ 14
+```
+
+### RSI14
+
+```text
+変化額      ＝ 今月終値 − 前月終値
+上昇幅      ＝ max(変化額, 0)
+下落幅      ＝ max(−変化額, 0)
+平均上昇幅  ＝ RMA(上昇幅, 14)
+平均下落幅  ＝ RMA(下落幅, 14)
+RS          ＝ 平均上昇幅 ÷ 平均下落幅
+RSI14       ＝ 100 − 100 ÷ (1 ＋ RS)
+```
+
+### RSI14の5か月SMA
+
+```text
+RSI14・5か月MA
+＝（今月 + 1か月前 + 2か月前 + 3か月前 + 4か月前のRSI14）÷ 5
+```
+
+Pine Scriptの考え方は次の形です。
+
+```pine
+rsi14 = ta.rsi(close, 14)
+rsiMa5 = ta.sma(rsi14, 5)
+active = rsi14 > rsiMa5
+```
+
+## データ生成
+
+正式な生成エントリーポイントは `generate_tradingview.py` です。
+
+```bash
+pip install -r requirements.txt
+python -m unittest discover -s tests -v
+python generate_tradingview.py
+```
+
+`generate_tradingview.py` は次の順番で処理します。
+
+1. `test.py` の既存データ生成基盤へ正式シグナルを組み込む
+2. 旧方式で生成された公開履歴を削除
+3. 全銘柄・全履歴を新方式で再生成
+4. JSON・CSVへ正式フィールドと `signal_version` を付与
+
+RMAは過去値を引き継ぐため、GitHub Actionsでは月足を取得可能な最長期間から計算します。公開分析期間は直近60か月です。
+
+財務取得を一時的に省略して価格・RSIだけ確認する場合：
+
+```bash
+SKIP_FUNDAMENTALS=1 python generate_tradingview.py
+```
+
+## 主な機能
+
+- `stocks.csv` から日本株コードを読み込み、`.T` を自動付与
+- TradingView互換の月足Wilder RSI14を計算
+- RSI14の5か月SMA、NEW、CONTINUE、OUTを判定
+- 直近60か月の月別履歴を生成
+- GC月終値からの騰落実績を計算
 - PER、PBR、配当利回り、ROE、自己資本比率、CFなどを取得
-- 欠損や取得エラーがあっても処理継続
-- `result.csv`、`out.csv`、月別CSV、JSONを生成
-- Webで検索、ソート、月切替、NEW/OUT、上昇/下落、RSI50以上/未満の絞り込み
-- NEW起点の過去実績を、全体・OUT済み・継続中の3分類で分析
-- 月足RSI5・RSI14を独立した自由範囲で絞り込み
-- NEW時点のSMA25・75・200、株価位置、パーフェクトオーダー、線の向きで分析
-- NEW時点の52週高値距離・高値更新・出来高倍率・ATR・VCP・ステージ・Supertrendで分析
-- 月足RSIのみ／選択条件／TOPIX／日経平均の月次等金額ポートフォリオを比較
-- 前半の条件探しと後半の答え合わせを分け、事前に固定した12パターンを検証
-- 株式併合・上場廃止・再上場等による価格不連続を検知し、統計・比較・ランキングから除外
-- 個別実績の固定ヘッダー、状態フィルター、列のドラッグ入替、表示・非表示設定に対応
-- ROE、売上成長率、自己資本比率、営業CF、FCF、時価総額、出来高で絞り込み
-- 記事掲載条件を一度に設定するプリセットを搭載
-- 検証で選んだ「月足RSIツインエンジン」適合銘柄へ🌸コスモス注目サインを付け、一覧からワンクリック抽出
-- 🌸の入口を固定し、日足SMA割れ・パーフェクトオーダー崩れ・Supertrend反転・トレーリング利確など10種類の出口を比較
-- 日足の出口シグナルは終値で確定し、翌営業日始値（欠損時は終値）で約定する前提で片道20bpを控除
-- コスモス🌸・ルーモ✨・エール💜が、役割表示を付けずに各画面の使い方と注意点を案内
-- 銘柄詳細でローソク足／平均足、出来高、SMA25・75・200、階段状の月足RSIを表示
-- GC・DC、決算予定・権利落ち・配当・株式分割／併合のタイミングを表示
-- 過去のGC実績を銘柄別に表示
+- 一覧で検索、ソート、月切替、NEW / OUT、🌸コスモス注目を表示
+- 個別詳細でローソク足／平均足、出来高、SMA25・75・200、月足RSI14と5か月MAを表示
+- NEW起点の過去実績を、OUT済み・継続中に分けて分析
+- 52週高値、出来高、ATR、VCP、MVP、Supertrend、財務条件を追加検証
+- TOPIX・日経平均との月次ポートフォリオ比較
+- 入口プリセットと1・3・6か月／DC出口を組み合わせた5年バックテスト
+- 個別銘柄の日足を未来非表示で進める売買練習
+- 8分割エントリー、部分利確、資金管理、リスクリワード計算
+- 日足RSI14、MACD、ストキャスティクス、ATR、ボリンジャーバンドを練習画面に表示
 - GitHub Actionsで毎月自動更新
 - GitHub Pagesへ自動デプロイ
+
+## 🌸コスモス注目
+
+🌸コスモス注目は、正式なNEWシグナル発生時点の追加テクニカル条件を満たした銘柄へ付けます。
+
+基本条件は、互換フィールドではなく次の正式な意味で評価されます。
+
+- 月足RSI14が60以上
+- RSI14の5か月MAが上向き
+- さらにMVP加速型または新高値型の条件を満たす
+
+注目判定はNEW時点で固定し、OUTまで維持します。方式移行後の件数は、全データ再生成後に改めて確定します。旧方式の25銘柄と同数になる保証はありません。
 
 ## ファイル構成
 
 ```text
 .
-├── test.py                         # データ生成本体
-├── stocks.csv                      # 対象銘柄（既存ファイルをそのまま利用）
-├── stocks.example.csv              # 入力例
+├── test.py                         # 既存データ生成基盤
+├── tradingview_signal.py           # 正式なRSI・シグナル定義
+├── generate_tradingview.py         # 本番用生成エントリーポイント
+├── stocks.csv                      # 対象銘柄
 ├── requirements.txt
 ├── result.csv                      # 現在対象
 ├── out.csv                         # 最新OUT
-├── index.html                      # 一覧サイト
+├── index.html                      # 銘柄一覧
 ├── detail.html                     # 銘柄詳細
-├── analysis.html                   # NEW起点の過去実績分析
+├── analysis.html                   # かんたん条件抽出
+├── analysis-lab.html               # 詳細分析
+├── backtest.html                   # 5年運用バックテスト
+├── replay.html                     # 日足売買練習
+├── signal-method.html              # 正式な計算方法
+├── howto.html                      # 使い方
 ├── assets/
 │   ├── app.js
-│   ├── analysis.js
 │   ├── detail.js
+│   ├── analysis.js
+│   ├── backtest.js
+│   ├── replay.js
+│   ├── signal-v2.js               # 表示名・データ方式の統一
 │   └── style.css
 ├── data/
 │   ├── latest.json
 │   ├── analysis.json
-│   ├── errors.csv
-│   ├── fundamentals_cache.json
 │   ├── charts/{code}.json
 │   └── months/{YYYY-MM}.json
 ├── history/{YYYY-MM}.csv
-├── tests/test_logic.py
+├── tests/
+│   ├── test_logic.py
+│   ├── test_tradingview_signal.py
+│   ├── test_backtest_engine.js
+│   ├── test_replay_engine.js
+│   └── test_signal_v2.js
 └── .github/workflows/
     ├── update-data.yml
+    ├── ui-checks.yml
     └── deploy-pages.yml
 ```
 
 ## stocks.csv
 
-配布ZIPは既存の `stocks.csv` を上書きしません。リポジトリ内の現在のファイルをそのまま利用してください。
-
-銘柄名は省略できます。大量のコードを使う場合は次の形で十分です。
+銘柄名は省略できます。次の形でコードだけ指定できます。
 
 ```csv
 code
@@ -82,75 +195,39 @@ code
 9984
 ```
 
-`7203.T` のようにサフィックス付きでも動きます。重複コードは自動で除外します。
+`7203.T` のようなサフィックス付きコードにも対応します。重複コードは自動で除外します。
 
 ETF・REIT・赤字企業・新規上場銘柄もRSI判定対象にできますが、財務項目は空欄になることがあります。
 
-## 手動実行
-
-```bash
-pip install -r requirements.txt
-python -m unittest discover -s tests -v
-python test.py
-```
-
-大量銘柄では時間がかかります。途中の銘柄でエラーが出ても、エラーを記録して次へ進みます。
-
-財務取得を一時的に省略して価格・RSIだけ確認する場合：
-
-```bash
-SKIP_FUNDAMENTALS=1 python test.py
-```
-
 ## GitHub Actions
 
-### データ更新
+### Update monthly RSI data
 
-`.github/workflows/update-data.yml` は次のタイミングで動きます。
+次のタイミングで動きます。
 
 - Actions画面から手動実行
 - 毎月2日 12:15 JST
+- 正式シグナルのソースまたは生成ワークフローがmainへ変更されたとき
 
-生成された `result.csv`、`data/`、`history/` を自動コミットします。
+ワークフローは単体テスト後、`python generate_tradingview.py` で全データを生成し、`signal_version` を検証してからコミットします。
 
-ソースだけをマージしても、公開中のJSONは自動では新形式になりません。🌸マークやローソク足などデータ項目を追加した直後は、手動で一度 `Update monthly RSI data` を実行してください。
+### Deploy GitHub Pages
 
-### Pages公開
+データ更新ワークフローが成功するとPagesをデプロイします。公開画面は `data/latest.json` の `signal_version` を確認し、旧方式データが残っている間は数値画面を操作不可にして「更新待ち」と表示します。
 
-`.github/workflows/deploy-pages.yml` がWebファイルとデータをGitHub Pagesへ公開します。
+## 参考資料
 
-初回のみ、GitHubのリポジトリで：
-
-1. `Settings`
-2. `Pages`
-3. `Build and deployment`
-4. `Source` を **GitHub Actions** に設定
-
-その後、Actions画面から `Deploy GitHub Pages` を手動実行します。
-
-## RSIの定義
-
-このプロジェクトは、試作段階から使用している単純移動平均方式のRSIを継続使用しています。
-
-- 月足RSI5
-- 月足RSI14
-- `RSI5 > RSI14` を対象状態
-- 前月まで対象外で当月対象になったものを `NEW`
-- 前月対象で当月対象外になったものを `OUT`
-
-月足RSIは月末に確定するため、個別画面の日足軸では翌月最初の取引日から表示します。RSI5とRSI14は計算期間が異なるので、RSI5が上昇しながらRSI14が低下することもあります。
-
-一般的なWilder方式のRSIとは数値が異なる場合があります。方式を変更すると過去判定も変わるため、運用開始後は定義を固定してください。
+- 株おじさん「一生使えるテクニカル分析」  
+  https://note.com/kabu_ojisan/n/n995f24384ab7
+- TradingView公式 RSI  
+  https://www.tradingview.com/support/solutions/43000502338-relative-strength-index-rsi/
 
 ## 注意事項
 
 - yfinanceは非公式データ取得ライブラリで、欠損、遅延、仕様変更、アクセス制限があり得ます。
-- 全銘柄を一度に処理するとYahoo Finance側の制限を受ける可能性があります。
-- 財務データは銘柄種別によって意味が異なり、ETF・REITでは空欄が正常です。
-- 比較成績はNEW時点に確定していたテクニカルだけで計算し、現在時点の財務値は使用しません。
-- 現在の `stocks.csv` を過去にも使うため、上場廃止・市場変更銘柄を含まない生存者バイアスがあります。
-- 1か月の価格比が0.2倍未満または5倍超になった実績は、企業行動による価格不連続の可能性があるため分析対象外として表示します。
-- ポートフォリオ比較は配当・税金・月中約定差を含まない研究用の概算です。
-- 出口戦略比較は各NEWを独立した等金額取引として集計するため、実際の現金残高・同時保有上限・売却後の即時再投資までは再現していません。
-- 決算予定・権利落ち予定はYahoo Finance掲載値であり、変更・欠損があり得ます。自社株買いは安定取得できないためTDnetで確認してください。
-- 本サイトは投資助言ではありません。
+- TradingViewとYahoo Financeで月足終値の調整方法・欠損・企業行動処理が異なると、わずかな数値差が出る可能性があります。
+- 比較時は同じ銘柄、同じ取引所、月足、確定済み月、RSI期間14、SMA期間5で確認してください。
+- 現在の `stocks.csv` を過去にも使うため、生存者バイアスがあります。
+- 現在の財務値を過去時点のバックテスト条件には使用しません。
+- 配当、税金、スリッページ、月中の約定差を完全には再現していません。
+- シグナルは将来の値上がりを保証せず、本サイトは投資助言ではありません。
