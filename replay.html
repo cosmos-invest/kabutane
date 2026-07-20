@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="未来の値動きを隠し、日足を1日ずつ進めながら分割購入・部分利確・全利確を練習する売買シミュレーター">
+  <meta name="description" content="未来の値動きを隠し、8分割エントリー、部分利確、資金管理、リスクリワード、テクニカル指標を使って練習する売買シミュレーター">
   <title>売買練習シミュレーター | 月足RSIスキャナー</title>
   <link rel="stylesheet" href="assets/style.css">
   <link rel="stylesheet" href="assets/pastel.css">
@@ -28,16 +28,16 @@
   <main class="container replay-container">
     <section class="panel replay-intro">
       <div>
-        <span class="replay-label">練習ルール</span>
-        <h2>チャートの先は見えません</h2>
-        <p>表示された日の終値で売買したものとして計算します。購入は最大5回。部分利確・半分利確・全利確を組み合わせて、出口戦略を練習できます。</p>
+        <span class="replay-label">実践ルール</span>
+        <h2>8分割で入り、売却した分だけ次の機会を作る</h2>
+        <p>1枠ずつ最大8分割で購入します。25%売却で2枠、50%売却で4枠、全売却で8枠までエントリー枠が復活します。</p>
       </div>
       <button id="newSessionButton" class="button secondary" type="button">条件を選び直す</button>
     </section>
 
     <section id="setupPanel" class="panel setup-panel">
       <div class="section-heading">
-        <div><span class="step-number">STEP 1</span><h2>練習条件を決める</h2><p>開始日はランダムにも指定にもできます。開始後は未来の日付を表示しません。</p></div>
+        <div><span class="step-number">STEP 1</span><h2>練習条件と資金管理を決める</h2><p>保有資産のうち、この1銘柄へ何%まで配分するか、1回の失敗で何%まで許容するかを設定します。</p></div>
       </div>
       <div class="setup-grid">
         <label>開始方法
@@ -46,8 +46,14 @@
         <label>開始日
           <input id="startDate" type="date" disabled>
         </label>
-        <label>初期資金
-          <select id="initialCapital"><option value="1000000">100万円</option><option value="3000000" selected>300万円</option><option value="5000000">500万円</option><option value="10000000">1,000万円</option></select>
+        <label>保有資産額
+          <input id="totalAssets" type="number" min="100000" step="100000" value="3000000">
+        </label>
+        <label>この銘柄への上限割合
+          <div class="input-suffix"><input id="allocationPct" type="number" min="1" max="100" step="1" value="20"><span>%</span></div>
+        </label>
+        <label>1回の許容損失
+          <div class="input-suffix"><input id="riskPct" type="number" min="0.1" max="20" step="0.1" value="1"><span>%</span></div>
         </label>
         <label>売買単位
           <select id="lotSize"><option value="100" selected>100株単位</option><option value="1">1株単位</option></select>
@@ -59,8 +65,13 @@
           <select id="playSpeed"><option value="1000">ゆっくり</option><option value="500" selected>標準</option><option value="180">速い</option></select>
         </label>
       </div>
+      <div class="setup-formula">
+        <strong>資金管理の基準</strong>
+        <span>銘柄上限額 ＝ 保有資産 × 配分割合</span>
+        <span>リスク上限株数 ＝ 許容損失額 ÷（現在値 − 損切り価格）</span>
+      </div>
       <button id="startSessionButton" class="button primary-action" type="button">この条件で練習を始める</button>
-      <p id="setupNotice" class="replay-note">SMA200を表示でき、開始後に十分な日数が残る範囲から開始します。</p>
+      <p id="setupNotice" class="replay-note">開始後の現在値に合わせて、最大購入株数と8分割時の1枠株数を自動計算します。</p>
     </section>
 
     <section id="practiceArea" hidden>
@@ -69,18 +80,53 @@
         <article><span>終値</span><strong id="currentPrice">—</strong></article>
         <article><span>現金</span><strong id="cashValue">—</strong></article>
         <article><span>保有株</span><strong id="shareValue">—</strong></article>
-        <article><span>平均取得</span><strong id="averagePrice">—</strong></article>
+        <article class="average-card"><span>平均約定単価</span><strong id="averagePrice">—</strong><small id="averageCostNote">手数料込 —</small></article>
         <article><span>評価損益</span><strong id="unrealizedValue">—</strong></article>
         <article><span>実現損益</span><strong id="realizedValue">—</strong></article>
         <article><span>総資産</span><strong id="totalValue">—</strong></article>
       </section>
 
+      <section class="panel risk-panel">
+        <div class="section-heading risk-heading">
+          <div><span class="step-number">STEP 2</span><h2>リスクリワード計画</h2><p>損切りと目標価格を置くと、配分上限と許容損失の両方から購入可能株数を計算します。</p></div>
+          <span id="riskRewardBadge" class="rr-badge">R:R —</span>
+        </div>
+        <div class="risk-inputs">
+          <label>想定エントリー<input id="plannedEntryPrice" type="number" step="0.1" readonly></label>
+          <label>損切り価格<input id="stopPrice" type="number" min="0" step="0.1"></label>
+          <label>目標価格<input id="targetPrice" type="number" min="0" step="0.1"></label>
+          <button id="resetRiskPrices" class="button ghost-button" type="button">現在値から再設定</button>
+        </div>
+        <div class="risk-metrics">
+          <article><span>銘柄上限額</span><strong id="positionBudget">—</strong></article>
+          <article><span>配分上限株数</span><strong id="allocationMaxShares">—</strong></article>
+          <article><span>許容損失額</span><strong id="riskBudget">—</strong></article>
+          <article><span>リスク上限株数</span><strong id="riskMaxShares">—</strong></article>
+          <article class="recommended"><span>推奨最大株数</span><strong id="recommendedShares">—</strong></article>
+          <article><span>1枠の購入株数</span><strong id="slotShares">—</strong></article>
+          <article><span>想定最大損失</span><strong id="plannedLoss">—</strong></article>
+          <article><span>想定利益</span><strong id="plannedReward">—</strong></article>
+        </div>
+        <p id="riskPlanNotice" class="replay-note">損切り価格は現在値より低く設定してください。</p>
+      </section>
+
       <section class="panel replay-chart-panel">
         <div class="section-heading replay-chart-heading">
-          <div><span class="step-number">STEP 2</span><h2>日足を進めて判断する</h2><p id="dayProgress">—</p></div>
+          <div><span class="step-number">STEP 3</span><h2>日足を進めて判断する</h2><p id="dayProgress">—</p></div>
           <div class="indicator-strip"><span id="indicatorRsi">RSI —</span><span id="indicatorSma">SMA —</span><span id="indicatorVolume">出来高 —</span></div>
         </div>
+        <div class="indicator-controls" aria-label="テクニカル指標設定">
+          <label><input id="showSma" type="checkbox" checked> SMA25・75・200</label>
+          <label><input id="showEma" type="checkbox"> EMA20・50</label>
+          <label><input id="showBollinger" type="checkbox"> ボリンジャーバンド</label>
+          <label><input id="showAverage" type="checkbox" checked> 平均約定線</label>
+          <label><input id="showRiskLines" type="checkbox" checked> 損切り・目標線</label>
+          <label>オシレーター
+            <select id="oscillatorSelect"><option value="rsi">日足RSI14</option><option value="macd">MACD</option><option value="stochastic">ストキャスティクス</option><option value="atr">ATR%</option></select>
+          </label>
+        </div>
         <div class="replay-chart-box"><canvas id="replayChart"></canvas></div>
+        <div class="oscillator-chart-box"><canvas id="oscillatorChart"></canvas></div>
         <div class="playback-controls">
           <button id="stepOneButton" class="button" type="button">1日進む</button>
           <button id="stepFiveButton" class="button secondary" type="button">5日進む</button>
@@ -91,20 +137,25 @@
 
       <section class="trade-layout">
         <section class="panel order-panel">
-          <div class="section-heading"><div><span class="step-number">STEP 3</span><h2>分割売買する</h2><p>買いは最大5回。注文は表示中の日の終値で成立します。</p></div></div>
-          <div class="stage-status"><span>購入回数</span><strong id="buyStageStatus">0 / 5</strong></div>
-          <label class="memo-label">判断メモ<input id="tradeMemo" type="text" maxlength="80" placeholder="例：SMA25反発を確認"></label>
+          <div class="section-heading"><div><span class="step-number">STEP 4</span><h2>8分割で売買する</h2><p>通常購入は1枠分。株数指定では注文金額に応じた数の枠を使います。</p></div></div>
+          <div class="slot-board">
+            <div><span>利用中の枠</span><strong id="buyStageStatus">0 / 8</strong></div>
+            <div id="slotDots" class="slot-dots" aria-label="エントリー枠"></div>
+            <small>25%売却で2枠、50%売却で4枠、全売却で全8枠が復活</small>
+          </div>
+          <label class="memo-label">判断メモ<input id="tradeMemo" type="text" maxlength="80" placeholder="例：SMA25反発、R:R 2以上"></label>
           <div class="order-group buy-group">
-            <h3>購入</h3>
-            <button id="buyChunkButton" class="order-button buy" type="button">資金の1/5で購入</button>
+            <h3>エントリー</h3>
+            <button id="buyChunkButton" class="order-button buy" type="button">1枠分を購入</button>
             <div class="custom-order"><input id="customBuyShares" type="number" min="1" step="1" placeholder="株数"><button id="buyCustomButton" class="order-button buy" type="button">指定株数を購入</button></div>
+            <small id="buyAssist">現在の価格で購入可能株数を計算中です。</small>
           </div>
           <div class="order-group sell-group">
             <h3>利確・損切り</h3>
             <div class="sell-buttons">
-              <button id="sellQuarterButton" class="order-button sell" type="button">25%売却</button>
-              <button id="sellHalfButton" class="order-button sell" type="button">半分売却</button>
-              <button id="sellAllButton" class="order-button sell danger" type="button">全株売却</button>
+              <button id="sellQuarterButton" class="order-button sell" type="button">25%売却<br><small>枠＋2</small></button>
+              <button id="sellHalfButton" class="order-button sell" type="button">50%売却<br><small>枠＋4</small></button>
+              <button id="sellAllButton" class="order-button sell danger" type="button">全株売却<br><small>枠を全復活</small></button>
             </div>
           </div>
           <p id="orderMessage" class="order-message" aria-live="polite">まだ売買していません。</p>
@@ -116,21 +167,23 @@
             <div><dt>総損益率</dt><dd id="totalReturn">—</dd></div>
             <div><dt>総損益額</dt><dd id="totalProfit">—</dd></div>
             <div><dt>投資中金額</dt><dd id="marketValue">—</dd></div>
-            <div><dt>残り購入回数</dt><dd id="remainingBuys">5回</dd></div>
+            <div><dt>空きエントリー枠</dt><dd id="remainingBuys">8枠</dd></div>
+            <div><dt>手数料込平均単価</dt><dd id="averageCost">—</dd></div>
             <div><dt>最高総資産</dt><dd id="peakValue">—</dd></div>
             <div><dt>最大下落</dt><dd id="maxDrawdown">—</dd></div>
+            <div><dt>累計手数料</dt><dd id="feeValue">—</dd></div>
           </dl>
           <div id="finishSummary" class="finish-summary" hidden></div>
         </section>
       </section>
 
       <section class="panel trade-history-panel">
-        <div class="section-heading"><div><h2>売買履歴</h2><p>チャート上のB1〜B5、S1〜がこの履歴に対応します。</p></div></div>
-        <div class="table-wrap"><table><thead><tr><th>日付</th><th>操作</th><th class="num">価格</th><th class="num">株数</th><th class="num">実現損益</th><th>メモ</th></tr></thead><tbody id="tradeHistoryBody"></tbody></table></div>
+        <div class="section-heading"><div><h2>売買履歴</h2><p>チャート上のB1〜、S1〜が履歴に対応します。購入時に使用した枠、売却時に復活した枠も記録します。</p></div></div>
+        <div class="table-wrap"><table><thead><tr><th>日付</th><th>操作</th><th class="num">価格</th><th class="num">株数</th><th class="num">枠</th><th class="num">実現損益</th><th>メモ</th></tr></thead><tbody id="tradeHistoryBody"></tbody></table></div>
       </section>
     </section>
 
-    <section class="replay-disclaimer"><p>この機能は過去データを使った練習用です。実際の約定価格、手数料、税金、スリッページ、ストップ高・安などは完全には再現していません。</p></section>
+    <section class="replay-disclaimer"><p>この機能は過去データを使った練習用です。指標は表示済みの日足だけから計算します。実際の約定価格、税金、スリッページ、ストップ高・安などは完全には再現していません。</p></section>
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
