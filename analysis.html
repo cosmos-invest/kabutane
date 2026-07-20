@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="assets/style.css">
   <link rel="stylesheet" href="assets/pastel.css">
   <link rel="stylesheet" href="assets/simple-analysis.css">
+  <link rel="stylesheet" href="assets/simple-analysis-cosmos.css">
 </head>
 <body data-page="analysis" class="pastel-theme analysis-simple-page">
   <header class="site-header simple-header">
@@ -47,7 +48,8 @@
         <button id="resetSimpleFilters" class="button ghost-button" type="button">すべてリセット</button>
       </div>
       <div id="purposeCards" class="purpose-grid" role="list">
-        <button class="purpose-card active" type="button" data-purpose="starter" role="listitem"><span class="purpose-icon">🌸</span><strong>まずは基本</strong><small>RSIの勢いから探す</small></button>
+        <button class="purpose-card" type="button" data-purpose="cosmos" role="listitem"><span class="purpose-icon">🌸</span><strong>コスモス注目25</strong><small>一覧と同じ公式ラベル</small></button>
+        <button class="purpose-card active" type="button" data-purpose="starter" role="listitem"><span class="purpose-icon">🔰</span><strong>まずは基本</strong><small>RSIの勢いから探す</small></button>
         <button class="purpose-card" type="button" data-purpose="trend" role="listitem"><span class="purpose-icon">📈</span><strong>王道トレンド</strong><small>RSI ＋ SEPA型</small></button>
         <button class="purpose-card" type="button" data-purpose="vcp" role="listitem"><span class="purpose-icon">🎀</span><strong>収束から狙う</strong><small>SEPA型 ＋ VCP</small></button>
         <button class="purpose-card" type="button" data-purpose="mvp" role="listitem"><span class="purpose-icon">🚀</span><strong>勢いを狙う</strong><small>RSI ＋ MVP</small></button>
@@ -72,6 +74,7 @@
         <button class="condition-card" type="button" data-condition="high" aria-pressed="false"><span class="priority">優先 5</span><strong>高値からの位置</strong><small>52週高値から10%以内</small><span class="condition-check">＋</span></button>
         <button class="condition-card" type="button" data-condition="finance" aria-pressed="false"><span class="priority">優先 6</span><strong>財務条件</strong><small>営業CFプラス・自己資本40%以上</small><span class="condition-check">＋</span></button>
       </div>
+      <p class="condition-note"><strong>ラベルの違い：</strong>「🌸コスモス注目」は一覧と同じ <code>cosmos_focus=true</code> の公式25銘柄です。RSI・SEPA型などの小さなバッジは、簡単分析で各条件に一致したことを示す別の表示です。</p>
       <p class="condition-note"><strong>SEPA型について：</strong>このサイトで取得できる移動平均線・第2ステージ・Supertrendを使った簡易判定であり、SEPAの全条件を完全再現したものではありません。</p>
     </section>
 
@@ -104,6 +107,7 @@
 
   <footer><p>Monthly RSI Scanner / Research use only</p></footer>
   <script src="assets/simple-analysis.js" defer></script>
+  <script src="assets/simple-analysis-cosmos.js" defer></script>
   <script src="assets/characters.js" defer></script>
 </body>
 </html>
