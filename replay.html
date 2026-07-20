@@ -113,7 +113,7 @@
       <section class="panel replay-chart-panel">
         <div class="section-heading replay-chart-heading">
           <div><span class="step-number">STEP 3</span><h2>日足を進めて判断する</h2><p id="dayProgress">—</p></div>
-          <div class="indicator-strip"><span id="indicatorRsi">RSI —</span><span id="indicatorSma">SMA —</span><span id="indicatorVolume">出来高 —</span></div>
+          <div class="indicator-strip"><span id="indicatorRsi">月足RSI14 / 5か月MA —</span><span id="indicatorSma">SMA —</span><span id="indicatorVolume">出来高 —</span></div>
         </div>
         <div class="indicator-controls" aria-label="テクニカル指標設定">
           <label><input id="showSma" type="checkbox" checked> SMA25・75・200</label>
@@ -183,10 +183,11 @@
       </section>
     </section>
 
-    <section class="replay-disclaimer"><p>この機能は過去データを使った練習用です。指標は表示済みの日足だけから計算します。実際の約定価格、税金、スリッページ、ストップ高・安などは完全には再現していません。</p></section>
+    <section class="replay-disclaimer"><p>この機能は過去データを使った練習用です。月足シグナルはTradingView方式のRSI14と5か月MA、日足オシレーターは表示済みの日足だけから計算します。実際の約定価格、税金、スリッページ、ストップ高・安などは完全には再現していません。</p></section>
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <script src="assets/signal-v2.js" defer></script>
   <script src="assets/replay.js" defer></script>
 </body>
 </html>
