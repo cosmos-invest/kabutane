@@ -10,7 +10,10 @@ import pandas as pd
 
 from tradingview_signal import (
     SIGNAL_VERSION,
+    calculate_dividend_change,
     canonicalize_payload,
+    enhance_chart_payload,
+    normalize_dividend_yield,
     postprocess_json,
     prepare_monthly_compat,
     rewrite_signal_text,
@@ -108,6 +111,57 @@ class TradingViewSignalTests(unittest.TestCase):
             rewrite_signal_text("RSI5≥60・RSI14上向き"),
             "月足RSI14≥60・5か月MA上向き",
         )
+        self.assertEqual(
+            rewrite_signal_text("SMA RSI: monthly RSI5 > monthly RSI14"),
+            "TradingView Wilder RSI14 > RSI14 5-month SMA",
+        )
+
+    def test_dividend_yield_prefers_annual_dividend_over_ambiguous_raw_unit(self) -> None:
+        self.assertEqual(normalize_dividend_yield(0.82, 90, 11035), 0.82)
+        self.assertEqual(normalize_dividend_yield(0.82), 0.82)
+        self.assertEqual(normalize_dividend_yield(0.035), 3.5)
+        self.assertEqual(calculate_dividend_change(100, 90), 11.11)
+
+    def test_chart_enhancement_keeps_only_visible_gc_and_dc(self) -> None:
+        payload = {
+            "record": {
+                "next_earnings_date": "2026-08-05",
+                "ex_dividend_date": "2026-09-29",
+                "forward_annual_dividend": 100,
+                "trailing_annual_dividend": 90,
+                "dividend_change_pct": 11.11,
+            },
+            "daily": [
+                {"date": "2024-01-04"},
+                {"date": "2024-02-01"},
+                {"date": "2024-03-01"},
+                {"date": "2024-04-01"},
+                {"date": "2024-05-01"},
+            ],
+            "episodes": [
+                {
+                    "start_month": "2020-01", "start_price": 80,
+                    "end_month": "2020-02", "end_price": 75, "status": "CLOSED",
+                },
+                {
+                    "start_month": "2024-01", "start_price": 100,
+                    "end_month": "2024-03", "end_price": 120, "status": "CLOSED",
+                },
+                {
+                    "start_month": "2024-04", "start_price": 130,
+                    "end_month": None, "end_price": 140, "status": "ACTIVE",
+                },
+            ],
+        }
+        enhanced = enhance_chart_payload(payload)
+        self.assertEqual(
+            [(event["type"], event["date"]) for event in enhanced["cross_events"]],
+            [("GC", "2024-02-01"), ("DC", "2024-04-01"), ("GC", "2024-05-01")],
+        )
+        self.assertEqual(len(enhanced["gc_events"]), 2)
+        self.assertEqual(len(enhanced["dc_events"]), 1)
+        labels = {item["label"] for item in enhanced["future_highlights"]}
+        self.assertTrue({"次回決算予定日", "権利落ち予定日", "予想年間配当", "増配率"} <= labels)
 
 
 if __name__ == "__main__":
