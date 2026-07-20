@@ -3,257 +3,164 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="月足RSIクロス後の継続・OUT実績を期間とRSI強度で分析">
-  <title>月足RSI 過去実績分析</title>
+  <meta name="description" content="RSI・SEPA・VCP・MVP・高値位置・財務条件を選ぶだけで、日本株の候補をかんたんに絞り込める月足RSIスキャナー">
+  <title>かんたん銘柄抽出 | 月足RSIクロス・スキャナー</title>
   <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/pastel.css">
+  <link rel="stylesheet" href="assets/simple-analysis.css">
 </head>
-<body>
-  <header class="site-header">
+<body data-page="analysis" class="pastel-theme analysis-simple-page">
+  <header class="site-header simple-header">
     <div class="header-inner">
       <div>
-        <p class="eyebrow">Monthly RSI Research</p>
-        <h1>過去実績分析ツール</h1>
-        <p class="subtitle">期間内にNEWになった銘柄だけを起点に、OUT済みと継続中の騰落実績を比較します。</p>
+        <p class="eyebrow">Cosmos Easy Screening</p>
+        <h1>わたしの条件で、やさしく銘柄探し🌸</h1>
+        <p class="subtitle">難しい数値入力は不要です。目的と条件を選ぶだけで、現在の対象銘柄を自動で絞り込みます。</p>
       </div>
       <div class="header-meta">
         <span id="generatedAt">更新日時を取得中…</span>
-        <a class="button secondary" href="index.html">スキャナーへ戻る</a>
+        <span id="signalMonth" class="badge neutral">判定月 —</span>
       </div>
     </div>
   </header>
 
-  <main class="container analysis-container">
-    <section class="panel analysis-guide">
-      <strong>価格基準</strong>
-      <span id="priceBasis">判定月の月末終値</span>
-      <p>例：7月に確認できる6月判定は、6月末終値をGC開始価格として集計します。</p>
-      <strong>テクニカル基準</strong>
-      <span id="technicalBasis">NEW判定月末の日足</span>
-      <strong>財務基準</strong>
-      <span id="fundamentalBasis">データ生成時点の最新財務情報</span>
-    </section>
-
-    <section class="panel analysis-controls" aria-label="分析条件">
-      <div class="filter-actions">
-        <div><h2>抽出条件</h2><p>各項目を組み合わせて、NEW後の成績を比較できます。</p></div>
-        <div class="filter-buttons">
-          <button id="presetArticle" class="button" type="button">記事の条件を適用</button>
-          <button id="resetFilters" class="button secondary" type="button">すべてリセット</button>
-        </div>
+  <main class="container simple-analysis-container">
+    <section class="simple-intro" aria-label="使い方">
+      <div class="intro-copy">
+        <span class="soft-label">3ステップ</span>
+        <h2>①目的を選ぶ　②条件を足す　③気になる銘柄を開く</h2>
+        <p>一覧では必要な情報だけを表示します。財務の詳しい数値、チャート、決算予定は銘柄詳細で確認できます。</p>
       </div>
-
-      <details class="filter-group" open>
-        <summary>基本・RSI条件</summary>
-        <div class="filter-grid">
-          <div class="control-group"><label for="startMonth">NEW発生月・開始</label><select id="startMonth"></select></div>
-          <div class="control-group"><label for="endMonth">NEW発生月・終了</label><select id="endMonth"></select></div>
-          <div class="control-group"><label for="researchPeriod">研究期間</label><select id="researchPeriod"><option value="all">全期間</option><option value="train">前半：条件探し</option><option value="validate">後半：答え合わせ</option></select></div>
-          <div class="control-group range-group"><label>月足RSI5</label><div class="range-inputs"><input id="rsi5Min" type="number" step="0.1" placeholder="最小"><span>～</span><input id="rsi5Max" type="number" step="0.1" placeholder="最大"></div></div>
-          <div class="control-group range-group"><label>月足RSI14</label><div class="range-inputs"><input id="rsi14Min" type="number" step="0.1" placeholder="最小"><span>～</span><input id="rsi14Max" type="number" step="0.1" placeholder="最大"></div></div>
-          <div class="control-group"><label for="rsi5Trend">RSI5の向き</label><select id="rsi5Trend"><option value="all">すべて</option><option value="up">上向き</option><option value="down">横ばい・下向き</option></select></div>
-          <div class="control-group"><label for="rsi14Trend">RSI14の向き</label><select id="rsi14Trend"><option value="all">すべて</option><option value="up">上向き</option><option value="down">横ばい・下向き</option></select></div>
-          <div class="control-group range-group"><label>騰落率（%）</label><div class="range-inputs"><input id="returnMin" type="number" step="0.1" placeholder="最小"><span>～</span><input id="returnMax" type="number" step="0.1" placeholder="最大"></div></div>
-          <div class="control-group grow"><label for="searchInput">銘柄検索</label><input id="searchInput" type="search" placeholder="コードまたは銘柄名"></div>
-        </div>
-      </details>
-
-      <details class="filter-group" open>
-        <summary>52週高値・出来高・ATR・トレンド</summary>
-        <div class="momentum-presets">
-          <button id="presetHighZone" class="button secondary" type="button">高値圏（−10%以内）</button>
-          <button id="presetBreakout" class="button secondary" type="button">新高値＋出来高</button>
-          <button id="presetVcpTrend" class="button secondary" type="button">VCP＋上昇トレンド</button>
-        </div>
-        <div class="filter-grid">
-          <div class="control-group range-group"><label>52週高値との距離（%）</label><div class="range-inputs"><input id="high52DistanceMin" type="number" step="0.1" placeholder="例 -10"><span>～</span><input id="high52DistanceMax" type="number" step="0.1" placeholder="最大"></div></div>
-          <div class="control-group"><label for="high52Breakout">52週高値更新</label><select id="high52Breakout"><option value="all">すべて</option><option value="yes">更新した</option><option value="no">未更新</option></select></div>
-          <div class="control-group range-group"><label>出来高倍率（5日÷30日）</label><div class="range-inputs"><input id="volumeRatioMin" type="number" step="0.05" placeholder="例 1.2"><span>～</span><input id="volumeRatioMax" type="number" step="0.05" placeholder="最大"></div></div>
-          <div class="control-group range-group"><label>ATR14÷株価（%）</label><div class="range-inputs"><input id="atrPctMin" type="number" step="0.1" placeholder="最小"><span>～</span><input id="atrPctMax" type="number" step="0.1" placeholder="最大"></div></div>
-          <div class="control-group range-group"><label>ATR10÷ATR20</label><div class="range-inputs"><input id="atrRatioMin" type="number" step="0.01" placeholder="最小"><span>～</span><input id="atrRatioMax" type="number" step="0.01" placeholder="例 1.0"></div></div>
-          <div class="control-group"><label for="vcpTight">VCP収束</label><select id="vcpTight"><option value="all">すべて</option><option value="yes">ATR10＜ATR20</option><option value="no">収束外</option></select></div>
-          <div class="control-group"><label for="stageFilter">ステージ</label><select id="stageFilter"><option value="all">すべて</option><option value="1">第1</option><option value="2">第2（上昇局面）</option><option value="3">第3</option><option value="4">第4</option></select></div>
-          <div class="control-group"><label for="supertrendFilter">Supertrend</label><select id="supertrendFilter"><option value="all">すべて</option><option value="up">上向き</option><option value="down">下向き</option></select></div>
-          <div class="control-group"><label for="mvpFilter">MVP</label><select id="mvpFilter"><option value="all">すべて</option><option value="yes">点火</option><option value="no">平常</option></select></div>
-        </div>
-      </details>
-
-      <details class="filter-group" open>
-        <summary>移動平均線・株価位置</summary>
-        <div class="filter-grid">
-          <div class="control-group"><label for="priceVsSma25">株価とSMA25</label><select id="priceVsSma25"><option value="all">すべて</option><option value="above">株価が上</option><option value="below">株価が下</option></select></div>
-          <div class="control-group"><label for="priceVsSma75">株価とSMA75</label><select id="priceVsSma75"><option value="all">すべて</option><option value="above">株価が上</option><option value="below">株価が下</option></select></div>
-          <div class="control-group"><label for="priceVsSma200">株価とSMA200</label><select id="priceVsSma200"><option value="all">すべて</option><option value="above">株価が上</option><option value="below">株価が下</option></select></div>
-          <div class="control-group"><label for="perfectOrder">パーフェクトオーダー</label><select id="perfectOrder"><option value="all">すべて</option><option value="yes">SMA25＞75＞200</option><option value="no">条件外</option></select></div>
-          <div class="control-group"><label for="sma25Trend">SMA25の向き</label><select id="sma25Trend"><option value="all">すべて</option><option value="up">上向き</option><option value="down">横ばい・下向き</option></select></div>
-          <div class="control-group"><label for="sma75Trend">SMA75の向き</label><select id="sma75Trend"><option value="all">すべて</option><option value="up">上向き</option><option value="down">横ばい・下向き</option></select></div>
-          <div class="control-group"><label for="sma200Trend">SMA200の向き</label><select id="sma200Trend"><option value="all">すべて</option><option value="up">上向き</option><option value="down">横ばい・下向き</option></select></div>
-        </div>
-      </details>
-
-      <details class="filter-group" open>
-        <summary>財務・規模・流動性</summary>
-        <div class="filter-grid">
-          <div class="control-group range-group"><label>ROE（%）</label><div class="range-inputs"><input id="roeMin" type="number" step="0.1" placeholder="最小"><span>～</span><input id="roeMax" type="number" step="0.1" placeholder="最大"></div></div>
-          <div class="control-group range-group"><label>売上成長率（%）</label><div class="range-inputs"><input id="revenueGrowthMin" type="number" step="0.1" placeholder="最小"><span>～</span><input id="revenueGrowthMax" type="number" step="0.1" placeholder="最大"></div></div>
-          <div class="control-group range-group"><label>自己資本比率（%）</label><div class="range-inputs"><input id="equityRatioMin" type="number" step="0.1" placeholder="最小"><span>～</span><input id="equityRatioMax" type="number" step="0.1" placeholder="最大"></div></div>
-          <div class="control-group"><label for="operatingCf">営業CF</label><select id="operatingCf"><option value="all">すべて</option><option value="positive">プラス</option><option value="nonpositive">0以下</option></select></div>
-          <div class="control-group"><label for="freeCf">FCF</label><select id="freeCf"><option value="all">すべて</option><option value="positive">プラス</option><option value="nonpositive">0以下</option></select></div>
-          <div class="control-group range-group"><label>時価総額（億円）</label><div class="range-inputs"><input id="marketCapMin" type="number" step="1" placeholder="最小"><span>～</span><input id="marketCapMax" type="number" step="1" placeholder="最大"></div></div>
-          <div class="control-group range-group"><label>30日平均出来高</label><div class="range-inputs"><input id="volumeMin" type="number" step="1000" placeholder="最小"><span>～</span><input id="volumeMax" type="number" step="1000" placeholder="最大"></div></div>
-        </div>
-      </details>
+      <a class="button lab-link" href="analysis-lab.html">詳しい過去検証を開く</a>
     </section>
 
-    <section class="comparison-grid" aria-label="3パターン比較">
-      <article class="analysis-summary-card active" data-pattern="ALL">
-        <span>全体</span><strong id="allAverage">—</strong>
-        <small id="allDetail">—</small>
-      </article>
-      <article class="analysis-summary-card" data-pattern="CLOSED">
-        <span>NEW → OUT済み</span><strong id="closedAverage">—</strong>
-        <small id="closedDetail">—</small>
-      </article>
-      <article class="analysis-summary-card" data-pattern="ACTIVE">
-        <span>NEW → 継続中</span><strong id="activeAverage">—</strong>
-        <small id="activeDetail">—</small>
-      </article>
-    </section>
-
-    <section class="stats-grid analysis-stats" aria-label="選択パターンの統計">
-      <article class="stat-card"><span>対象件数</span><strong id="statCount">—</strong></article>
-      <article class="stat-card up"><span>平均騰落率</span><strong id="statAverage">—</strong></article>
-      <article class="stat-card"><span>中央値</span><strong id="statMedian">—</strong></article>
-      <article class="stat-card"><span>プラス比率</span><strong id="statWinRate">—</strong></article>
-      <article class="stat-card up"><span>最大</span><strong id="statMax">—</strong></article>
-      <article class="stat-card down"><span>最小</span><strong id="statMin">—</strong></article>
-    </section>
-    <p id="qualityNotice" class="analysis-disclosure quality-notice" hidden></p>
-
-    <section class="panel analysis-section benchmark-section">
-      <div class="section-heading benchmark-heading">
-        <div><h2>月次ポートフォリオ比較</h2><p>月足RSIだけ・選択したテクニカル条件・TOPIX・日経平均を同じ月で比較</p></div>
-        <div class="control-group compact cost-control">
-          <label for="costBps">片道コスト（bp）</label>
-          <input id="costBps" type="number" min="0" step="5" value="20">
-          <small>20bp＝片道0.20%、往復約0.40%</small>
-        </div>
-      </div>
-      <p id="benchmarkNotice" class="analysis-disclosure">比較成績にはNEW時点で確定した項目だけを使用します。財務・結果の騰落率・銘柄検索は反映しません。</p>
-      <div id="benchmarkCards" class="benchmark-grid"></div>
-      <div class="performance-chart-wrap"><svg id="performanceChart" class="performance-chart" viewBox="0 0 960 360" role="img" aria-label="累積騰落率比較チャート"></svg></div>
-    </section>
-
-    <section class="panel analysis-section">
-      <div class="section-heading">
-        <div><h2>事前に決めた組み合わせの検証</h2><p id="rankingPeriodCaption">前半で条件を観察し、後半の答え合わせ成績を優先して表示します。</p></div>
-      </div>
-      <div class="table-wrap ranking-wrap">
-        <table class="analysis-table ranking-table">
-          <thead><tr><th>順位</th><th>組み合わせ</th><th>条件</th><th id="rankingTrainHeader" class="num">前半TOPIX超過</th><th id="rankingValidateHeader" class="num">後半TOPIX超過</th><th class="num">後半累積</th><th class="num">対象NEW</th></tr></thead>
-          <tbody id="strategyRankingBody"></tbody>
-        </table>
-      </div>
-    </section>
-
-    <section class="panel analysis-section">
-      <div class="section-heading">
+    <section class="panel purpose-panel" aria-labelledby="purposeTitle">
+      <div class="simple-section-heading">
         <div>
-          <h2>🌸入口を固定した出口戦略の検証</h2>
-          <p id="exitStrategyCaption">コスモス注目条件で入った銘柄を、どのタイミングで手放すと資金効率が上がるか比較します。</p>
+          <span class="step-number">STEP 1</span>
+          <h2 id="purposeTitle">どんな銘柄を探したい？</h2>
+          <p>目的を1つ選ぶと、おすすめ条件が自動で入ります。</p>
+        </div>
+        <button id="resetSimpleFilters" class="button ghost-button" type="button">すべてリセット</button>
+      </div>
+      <div id="purposeCards" class="purpose-grid" role="list">
+        <button class="purpose-card active" type="button" data-purpose="starter" role="listitem">
+          <span class="purpose-icon">🌸</span><strong>まずは基本</strong><small>RSIの勢いから探す</small>
+        </button>
+        <button class="purpose-card" type="button" data-purpose="trend" role="listitem">
+          <span class="purpose-icon">📈</span><strong>王道トレンド</strong><small>RSI ＋ SEPA型</small>
+        </button>
+        <button class="purpose-card" type="button" data-purpose="vcp" role="listitem">
+          <span class="purpose-icon">🎀</span><strong>収束から狙う</strong><small>SEPA型 ＋ VCP</small>
+        </button>
+        <button class="purpose-card" type="button" data-purpose="mvp" role="listitem">
+          <span class="purpose-icon">🚀</span><strong>勢いを狙う</strong><small>RSI ＋ MVP</small>
+        </button>
+        <button class="purpose-card" type="button" data-purpose="high" role="listitem">
+          <span class="purpose-icon">✨</span><strong>高値圏の強さ</strong><small>SEPA型 ＋ 高値位置</small>
+        </button>
+        <button class="purpose-card" type="button" data-purpose="balance" role="listitem">
+          <span class="purpose-icon">🫧</span><strong>安心バランス</strong><small>トレンド ＋ 財務</small>
+        </button>
+      </div>
+    </section>
+
+    <section class="panel condition-panel" aria-labelledby="conditionTitle">
+      <div class="simple-section-heading">
+        <div>
+          <span class="step-number">STEP 2</span>
+          <h2 id="conditionTitle">優先したい条件を選ぶ</h2>
+          <p>上から優先度順です。選択した条件はすべて満たす銘柄だけを表示します。</p>
         </div>
       </div>
-      <p id="exitStrategyNotice" class="analysis-disclosure">次回のデータ更新後に、日足のSMA・Supertrend・トレーリング利確を翌営業日始値で比較します。</p>
-      <div class="table-wrap ranking-wrap">
-        <table class="analysis-table ranking-table exit-strategy-table">
-          <thead><tr>
-            <th>順位</th><th>出口</th><th>ルール</th>
-            <th class="num">前半累積</th><th class="num">後半累積</th><th class="num">後半指数超過</th>
-            <th class="num">全期間累積</th><th class="num">最大下落</th><th class="num">平均保有</th><th class="num">勝率</th>
-          </tr></thead>
-          <tbody id="exitStrategyBody"></tbody>
-        </table>
+      <div id="conditionButtons" class="condition-grid">
+        <button class="condition-card selected" type="button" data-condition="rsi" aria-pressed="true">
+          <span class="priority">優先 1</span><strong>RSI</strong><small>RSI5が60以上・RSI14が上向き</small><span class="condition-check">✓</span>
+        </button>
+        <button class="condition-card" type="button" data-condition="sepa" aria-pressed="false">
+          <span class="priority">優先 2</span><strong>SEPA型</strong><small>上昇トレンドの簡易判定</small><span class="condition-check">＋</span>
+        </button>
+        <button class="condition-card" type="button" data-condition="vcp" aria-pressed="false">
+          <span class="priority">優先 3</span><strong>VCP</strong><small>値動きが収束・上向き</small><span class="condition-check">＋</span>
+        </button>
+        <button class="condition-card" type="button" data-condition="mvp" aria-pressed="false">
+          <span class="priority">優先 4</span><strong>MVP</strong><small>株価・出来高・勢いが同時点火</small><span class="condition-check">＋</span>
+        </button>
+        <button class="condition-card" type="button" data-condition="high" aria-pressed="false">
+          <span class="priority">優先 5</span><strong>高値からの位置</strong><small>52週高値から10%以内</small><span class="condition-check">＋</span>
+        </button>
+        <button class="condition-card" type="button" data-condition="finance" aria-pressed="false">
+          <span class="priority">優先 6</span><strong>財務条件</strong><small>営業CFプラス・自己資本40%以上</small><span class="condition-check">＋</span>
+        </button>
       </div>
+      <p class="condition-note"><strong>SEPA型について：</strong>このサイトで取得できる移動平均線・第2ステージ・Supertrendを使った簡易判定であり、SEPAの全条件を完全再現したものではありません。</p>
     </section>
 
-    <section class="panel analysis-section">
-      <div class="section-heading">
-        <div><h2>騰落率分布</h2><p id="distributionCaption">選択中のパターンを集計</p></div>
-      </div>
-      <div id="returnBuckets" class="bucket-grid"></div>
-    </section>
-
-    <section class="panel analysis-section">
-      <div class="section-heading">
-        <div><h2>NEW月別の実績</h2><p>開始月ごとのOUT済み・継続中と平均騰落率</p></div>
-      </div>
-      <div class="table-wrap sticky-table-wrap cohort-table-wrap" tabindex="0" aria-label="NEW月別実績。上下にスクロールできます">
-        <table class="analysis-table cohort-table">
-          <thead><tr><th>NEW月</th><th class="num">全体</th><th class="num">OUT済み</th><th class="num">継続中</th><th class="num">平均騰落率</th><th class="num">プラス比率</th></tr></thead>
-          <tbody id="cohortBody"></tbody>
-        </table>
-      </div>
-    </section>
-
-    <section class="panel analysis-section">
-      <div class="section-heading individual-heading">
-        <div><h2>個別実績</h2><p id="resultSummary">読み込み中…</p></div>
-        <div class="table-view-controls">
-          <div class="control-group compact">
-            <label for="statusFilter">状態</label>
-            <select id="statusFilter"><option value="ALL">すべて</option><option value="CLOSED">OUT済み</option><option value="ACTIVE">継続中</option></select>
-          </div>
-          <div class="control-group compact">
-            <label for="pageSize">表示件数</label>
-            <select id="pageSize"><option>25</option><option selected>50</option><option>100</option><option>500</option></select>
-          </div>
-          <div class="column-settings">
-            <button id="columnSettingsButton" class="button secondary" type="button" aria-expanded="false" aria-controls="columnSettingsPanel">表示列を選ぶ</button>
-            <div id="columnSettingsPanel" class="column-settings-panel" hidden>
-              <div class="column-settings-heading"><strong>表示する列</strong><small>見出しはドラッグして左右に移動できます</small></div>
-              <div id="columnSettingsList" class="column-settings-list"></div>
-              <button id="resetColumns" class="button secondary" type="button">並びと表示を初期化</button>
-            </div>
-          </div>
+    <section class="panel result-panel" aria-labelledby="resultTitle">
+      <div class="simple-section-heading result-heading">
+        <div>
+          <span class="step-number">STEP 3</span>
+          <h2 id="resultTitle">条件に合う銘柄</h2>
+          <p id="resultSummary">データを読み込んでいます…</p>
+        </div>
+        <div class="simple-toolbar">
+          <label for="statusFilter">状態
+            <select id="statusFilter">
+              <option value="ALL">NEW・継続すべて</option>
+              <option value="NEW">NEWのみ</option>
+              <option value="CONTINUE">継続中のみ</option>
+            </select>
+          </label>
+          <label for="sortSelect">並び順
+            <select id="sortSelect">
+              <option value="recommended">おすすめ順</option>
+              <option value="newest">NEWが新しい順</option>
+              <option value="rsi">RSI5が高い順</option>
+              <option value="high">52週高値に近い順</option>
+              <option value="return">GC後騰落が高い順</option>
+              <option value="finance">財務安心度順</option>
+            </select>
+          </label>
+          <label class="search-label" for="searchInput">銘柄検索
+            <input id="searchInput" type="search" placeholder="コードまたは銘柄名">
+          </label>
         </div>
       </div>
-      <div class="table-wrap sticky-table-wrap episode-table-wrap" tabindex="0" aria-label="個別実績一覧。上下左右にスクロールできます">
-        <table id="episodeTable" class="analysis-table">
-          <thead><tr>
-            <th data-key="start_month">NEW月</th><th data-key="code">コード</th><th data-key="name">銘柄名</th><th data-key="status">状態</th>
-            <th data-key="start_rsi5" class="num">RSI5</th><th data-key="start_rsi14" class="num">RSI14</th><th data-key="start_rsi5_up">RSI5向き</th><th data-key="start_rsi14_up">RSI14向き</th>
-            <th data-key="start_price" class="num">開始価格</th><th data-key="start_sma25" class="num">SMA25</th><th data-key="start_sma75" class="num">SMA75</th><th data-key="start_sma200" class="num">SMA200</th>
-            <th data-key="start_price_above_sma25">株価/SMA25</th><th data-key="start_price_above_sma75">株価/SMA75</th><th data-key="start_price_above_sma200">株価/SMA200</th><th data-key="start_perfect_order">PO</th>
-            <th data-key="start_sma25_up">SMA25向き</th><th data-key="start_sma75_up">SMA75向き</th><th data-key="start_sma200_up">SMA200向き</th><th data-key="start_avg_volume30" class="num">平均出来高30日</th>
-            <th data-key="start_high52_distance_pct" class="num">52週高値距離%</th><th data-key="start_high52_breakout">新高値</th><th data-key="start_volume_ratio_5_30" class="num">出来高倍率</th>
-            <th data-key="start_atr14_pct" class="num">ATR%</th><th data-key="start_atr_ratio_10_20" class="num">ATR比</th><th data-key="start_vcp_tight">VCP</th><th data-key="start_stage" class="num">Stage</th><th data-key="start_supertrend_up">ST</th><th data-key="start_rsr_momentum" class="num">RSR Mom</th><th data-key="start_mvp_signal">MVP</th>
-            <th data-key="roe_pct" class="num">ROE%</th><th data-key="revenue_growth_pct" class="num">売上成長%</th><th data-key="equity_ratio_pct" class="num">自己資本%</th>
-            <th data-key="operating_cashflow_oku" class="num">営業CF(億)</th><th data-key="free_cashflow_oku" class="num">FCF(億)</th><th data-key="market_cap_oku" class="num">時価総額(億)</th>
-            <th data-key="end_month">OUT/評価月</th><th data-key="end_price" class="num">終了/現在価格</th>
-            <th data-key="duration_months" class="num">経過月</th><th data-key="return_pct" class="num">騰落率</th>
-          </tr></thead>
-          <tbody></tbody>
-        </table>
+
+      <div class="selected-summary" aria-live="polite">
+        <span>選択中</span><div id="selectedConditions" class="selected-chips"></div>
       </div>
-      <div class="pagination">
-        <button id="prevPage" class="button secondary">前へ</button><span id="pageInfo">—</span><button id="nextPage" class="button secondary">次へ</button>
+
+      <section class="simple-stats" aria-label="抽出結果の概要">
+        <article><span>候補数</span><strong id="candidateCount">—</strong></article>
+        <article><span>NEW</span><strong id="newCount">—</strong></article>
+        <article><span>GC後中央値</span><strong id="medianReturn">—</strong></article>
+      </section>
+
+      <div id="candidateGrid" class="candidate-grid"></div>
+      <div class="simple-pagination">
+        <button id="prevPage" class="button ghost-button" type="button">前へ</button>
+        <span id="pageInfo">—</span>
+        <button id="nextPage" class="button ghost-button" type="button">次へ</button>
       </div>
     </section>
 
-    <section class="panel note-panel">
-      <h2>集計上の注意</h2>
-      <p>選択した期間内にNEWが確認できたエピソードだけを対象にします。期間開始前から継続し、期間内にOUTだけ記録されたものは含みません。</p>
-      <p>継続中は最新取得価格、OUT済みはOUT判定月の月末終値で評価します。データ取得日による差異があり得ます。</p>
-      <p>SMA・出来高・RSIの向きはNEW判定月末時点です。SMAの上向き判定は20取引日前との比較、RSIの上向き判定は前月との比較です。</p>
-      <p>52週高値はNEW当日を除く直前252取引日の高値です。VCPはATR10＜ATR20、SupertrendはATR10・倍率3で判定します。MVPは株価上昇・出来高20日平均の1.5倍超・独自RSRモメンタムプラスの同時成立です。</p>
-      <p>ポートフォリオ比較は月次等金額、月足RSIだけを基準線とし、片道コストを最初とOUT時に控除します。配当・税金・月中の約定差は含みません。</p>
-      <p>1か月で5倍超または80%以上下落する価格不連続は、株式併合・上場廃止・再上場等の可能性があるため分析から除外し、個別実績では「分析除外」と表示します。</p>
-      <p>個別実績は表内をスクロールしている間だけ見出しを固定します。見出しをドラッグすると列を移動でき、「表示列を選ぶ」から非表示・再表示できます。設定はこの端末に保存されます。</p>
-      <p>財務項目はデータ生成時点の最新値です。過去のNEW当時の決算値ではないため、過去実績を見る際は参考条件として利用してください。</p>
+    <details class="panel advanced-door">
+      <summary>もっと詳しく検証したい方へ</summary>
+      <div>
+        <h2>過去実績・指数比較・出口戦略は研究ページへ</h2>
+        <p>前半と後半の検証、TOPIX・日経平均との比較、月別実績、出口戦略ランキングなど、従来の詳細機能は残しています。</p>
+        <a class="button lab-link" href="analysis-lab.html">詳細分析ラボを開く</a>
+      </div>
+    </details>
+
+    <section class="simple-disclaimer">
+      <p>本ページの「おすすめ順」は条件への適合度を見やすく並べるためのもので、売買推奨や将来の利益を示すものではありません。候補を開き、チャート・企業イベント・財務情報を必ず確認してください。</p>
     </section>
   </main>
 
   <footer><p>Monthly RSI Scanner / Research use only</p></footer>
-  <script src="assets/analysis.js" defer></script>
+  <script src="assets/simple-analysis.js" defer></script>
   <script src="assets/characters.js" defer></script>
 </body>
 </html>
