@@ -12,7 +12,7 @@ function processAutomaticOrders(row) {
   });
   if (first.action === "ENTRY") {
     const plan = currentPositionPlan();
-    const desired = plan.slotShares * state.plan.autoSlots;
+    const desired = automaticOrderShares(plan);
     const result = executeBuy(desired, first.price, `自動エントリー ${state.plan.autoSlots}枠`, state.plan.autoSlots);
     if (!result.ok) {
       state.plan.armed = false;
