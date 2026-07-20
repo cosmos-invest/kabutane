@@ -16,7 +16,7 @@ assert.strictEqual(
 );
 assert.strictEqual(signal.rewriteText("日足RSI14"), "日足RSI14");
 assert.ok(
-  signal.rewriteText("RSI5とRSI14は独立した計算窓です").includes("Wilder方式"),
+  signal.rewriteText("RSI5とRSI14は独立した計算窓です").includes("ワイルダー方式"),
 );
 
 const legacy = { rsi5: 64.2, rsi14: 58.4, diff: 5.8 };
