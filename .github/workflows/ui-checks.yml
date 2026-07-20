@@ -13,6 +13,8 @@ on:
       - "assets/backtest.css"
       - "assets/replay.js"
       - "assets/replay.css"
+      - "assets/detail-enhancements.js"
+      - "assets/detail-enhancements.css"
       - "assets/simple-analysis-cosmos.js"
       - "assets/simple-analysis-cosmos.css"
       - "assets/signal-v2.js"
@@ -21,6 +23,7 @@ on:
       - "generate_tradingview.py"
       - "tests/test_backtest_engine.js"
       - "tests/test_replay_engine.js"
+      - "tests/test_detail_enhancements.js"
       - "tests/test_signal_v2.js"
       - "tests/test_tradingview_signal.py"
       - ".github/workflows/ui-checks.yml"
@@ -55,6 +58,7 @@ jobs:
         run: |
           node --check assets/backtest.js
           node --check assets/replay.js
+          node --check assets/detail-enhancements.js
           node --check assets/simple-analysis-cosmos.js
           node --check assets/signal-v2.js
           node --check assets/characters.js
@@ -63,6 +67,7 @@ jobs:
         run: |
           node tests/test_backtest_engine.js
           node tests/test_replay_engine.js
+          node tests/test_detail_enhancements.js
 
       - name: Test signal migration UI
         run: node tests/test_signal_v2.js
@@ -82,7 +87,10 @@ jobs:
           ):
               Parser().feed(Path(name).read_text(encoding="utf-8"))
 
-          for name in ("assets/backtest.css", "assets/replay.css", "assets/simple-analysis-cosmos.css"):
+          for name in (
+              "assets/backtest.css", "assets/replay.css", "assets/detail-enhancements.css",
+              "assets/simple-analysis-cosmos.css",
+          ):
               css = Path(name).read_text(encoding="utf-8")
               if css.count("{") != css.count("}"):
                   raise SystemExit(f"CSS braces are not balanced: {name}")
@@ -97,6 +105,7 @@ jobs:
           characters = Path("assets/characters.js").read_text(encoding="utf-8")
           backtest = Path("backtest.html").read_text(encoding="utf-8")
           replay = Path("replay.html").read_text(encoding="utf-8")
+          detail = Path("detail.html").read_text(encoding="utf-8")
           workflow = Path(".github/workflows/update-data.yml").read_text(encoding="utf-8")
 
           if 'assets/signal-v2.js' not in characters:
@@ -104,6 +113,8 @@ jobs:
           for name, source in (("backtest", backtest), ("replay", replay)):
               if 'assets/signal-v2.js' not in source:
                   raise SystemExit(f"{name} does not load signal-v2.js")
+          if 'assets/detail-enhancements.js' not in detail:
+              raise SystemExit("Detail page does not load detail enhancements")
           if "python generate_tradingview.py" not in workflow:
               raise SystemExit("Production workflow is not using the canonical generator")
           print("Canonical signal wiring passed")
