@@ -1,0 +1,114 @@
+.replay-pro-container { max-width: 1320px; }
+.bracket-panel { position: relative; }
+.drawing-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 14px;
+  margin: 16px 0;
+  border: 1px solid #e8cfe0;
+  border-radius: 14px;
+  background: linear-gradient(110deg, #fff7fb, #f5f1ff);
+}
+.drawing-toolbar small { color: #856f7e; line-height: 1.5; }
+.drawing-tool { color: #765d70; background: #fff; font-weight: 850; }
+.drawing-tool.active { color: #fff; background: linear-gradient(135deg, #9763d0, #df6da5); border-color: transparent; }
+.pro-risk-inputs { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.pro-risk-inputs select,
+.tp-grid input,
+.subchart-heading select {
+  width: 100%;
+  min-height: 42px;
+  margin-top: 6px;
+  color: #523f4d;
+  background: #fff;
+  border: 1px solid #e9c6d8;
+  border-radius: 11px;
+}
+.tp-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin: 15px 0;
+}
+.tp-grid article {
+  padding: 14px;
+  border: 1px solid #ecd0df;
+  border-radius: 15px;
+  background: linear-gradient(145deg, #fff, #fff3f8);
+}
+.tp-grid article:nth-child(even) { background: linear-gradient(145deg, #fff, #f5f1ff); border-color: #dfd3ef; }
+.tp-grid label { color: #806778; font-size: .78rem; font-weight: 900; }
+.tp-grid input { margin-bottom: 8px; }
+.tp-grid strong { display: block; color: #a24777; font-size: 1.12rem; }
+.tp-grid small { display: block; margin-top: 7px; color: #8b7584; line-height: 1.45; }
+.pro-risk-metrics { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+.bracket-actions { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; margin-top: 15px; }
+.bracket-actions .primary-action { min-height: 46px; }
+.pro-chart-panel { overflow: visible; }
+.pro-main-chart { height: 560px; cursor: crosshair; }
+.pro-indicator-strip { max-width: 680px; }
+.pro-indicator-controls { justify-content: flex-start; }
+.mode-switch { display: inline-flex; gap: 5px; padding-right: 7px; border-right: 1px solid #ebcfdd; }
+.mode-switch .button { min-height: 34px; padding: 4px 10px; font-size: .74rem; font-weight: 900; }
+.mode-switch .button.active { color: #fff; background: linear-gradient(135deg, #d75f99, #8a69ce); border-color: transparent; }
+.subchart-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 14px;
+  margin: 18px 2px 8px;
+}
+.subchart-heading div { display: flex; flex-direction: column; gap: 4px; }
+.subchart-heading strong { color: #5d4354; }
+.subchart-heading small { color: #8a7483; }
+.subchart-heading label { color: #826a7b; font-size: .75rem; font-weight: 850; }
+.subchart-heading select { width: auto; min-width: 150px; margin: 0 0 0 7px; padding: 4px 9px; }
+.monthly-rsi-chart-box {
+  height: 230px;
+  padding: 8px;
+  border: 1px solid #e4d5eb;
+  border-radius: 15px;
+  background: rgba(255,255,255,.72);
+}
+.execution-policy {
+  margin: 13px 0 0;
+  padding: 11px 13px;
+  border-radius: 12px;
+  color: #796272;
+  background: #f8f2f7;
+  border: 1px solid #ecd5e1;
+  font-size: .76rem;
+  line-height: 1.65;
+}
+.trade-history-table { min-width: 930px; }
+
+@media (max-width: 1000px) {
+  .pro-risk-inputs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tp-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pro-risk-metrics { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .pro-main-chart { height: 500px; }
+}
+
+@media (max-width: 680px) {
+  .drawing-toolbar .button { flex: 1 1 160px; }
+  .pro-risk-inputs { grid-template-columns: 1fr 1fr; }
+  .tp-grid { grid-template-columns: 1fr 1fr; }
+  .pro-risk-metrics { grid-template-columns: 1fr 1fr; }
+  .bracket-actions { grid-template-columns: 1fr; }
+  .pro-main-chart { height: 430px; padding: 4px; }
+  .monthly-rsi-chart-box { height: 210px; }
+  .subchart-heading { align-items: flex-start; flex-direction: column; }
+  .subchart-heading label { width: 100%; display: flex; align-items: center; justify-content: space-between; }
+  .pro-indicator-strip { justify-content: flex-start; }
+}
+
+@media (max-width: 430px) {
+  .pro-risk-inputs { grid-template-columns: 1fr; }
+  .tp-grid { grid-template-columns: 1fr 1fr; gap: 7px; }
+  .tp-grid article { padding: 10px; }
+  .pro-main-chart { height: 390px; }
+  .mode-switch { width: 100%; border-right: 0; padding-right: 0; }
+  .mode-switch .button { flex: 1; }
+}
