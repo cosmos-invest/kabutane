@@ -48,7 +48,7 @@
         <button id="resetSimpleFilters" class="button ghost-button" type="button">すべてリセット</button>
       </div>
       <div id="purposeCards" class="purpose-grid" role="list">
-        <button class="purpose-card" type="button" data-purpose="cosmos" role="listitem"><span class="purpose-icon">🌸</span><strong>コスモス注目25</strong><small>一覧と同じ公式ラベル</small></button>
+        <button class="purpose-card" type="button" data-purpose="cosmos" role="listitem"><span class="purpose-icon">🌸</span><strong>コスモス注目</strong><small>一覧と同じ公式ラベル</small></button>
         <button class="purpose-card active" type="button" data-purpose="starter" role="listitem"><span class="purpose-icon">🔰</span><strong>まずは基本</strong><small>RSIの勢いから探す</small></button>
         <button class="purpose-card" type="button" data-purpose="trend" role="listitem"><span class="purpose-icon">📈</span><strong>王道トレンド</strong><small>RSI ＋ SEPA型</small></button>
         <button class="purpose-card" type="button" data-purpose="vcp" role="listitem"><span class="purpose-icon">🎀</span><strong>収束から狙う</strong><small>SEPA型 ＋ VCP</small></button>
@@ -67,14 +67,14 @@
         </div>
       </div>
       <div id="conditionButtons" class="condition-grid">
-        <button class="condition-card selected" type="button" data-condition="rsi" aria-pressed="true"><span class="priority">優先 1</span><strong>RSI</strong><small>RSI5が60以上・RSI14が上向き</small><span class="condition-check">✓</span></button>
+        <button class="condition-card selected" type="button" data-condition="rsi" aria-pressed="true"><span class="priority">優先 1</span><strong>RSI</strong><small>月足RSI14が60以上・5か月MAが上向き</small><span class="condition-check">✓</span></button>
         <button class="condition-card" type="button" data-condition="sepa" aria-pressed="false"><span class="priority">優先 2</span><strong>SEPA型</strong><small>上昇トレンドの簡易判定</small><span class="condition-check">＋</span></button>
         <button class="condition-card" type="button" data-condition="vcp" aria-pressed="false"><span class="priority">優先 3</span><strong>VCP</strong><small>値動きが収束・上向き</small><span class="condition-check">＋</span></button>
         <button class="condition-card" type="button" data-condition="mvp" aria-pressed="false"><span class="priority">優先 4</span><strong>MVP</strong><small>株価・出来高・勢いが同時点火</small><span class="condition-check">＋</span></button>
         <button class="condition-card" type="button" data-condition="high" aria-pressed="false"><span class="priority">優先 5</span><strong>高値からの位置</strong><small>52週高値から10%以内</small><span class="condition-check">＋</span></button>
         <button class="condition-card" type="button" data-condition="finance" aria-pressed="false"><span class="priority">優先 6</span><strong>財務条件</strong><small>営業CFプラス・自己資本40%以上</small><span class="condition-check">＋</span></button>
       </div>
-      <p class="condition-note"><strong>ラベルの違い：</strong>「🌸コスモス注目」は一覧と同じ <code>cosmos_focus=true</code> の公式25銘柄です。RSI・SEPA型などの小さなバッジは、簡単分析で各条件に一致したことを示す別の表示です。</p>
+      <p class="condition-note"><strong>ラベルの違い：</strong>「🌸コスモス注目」は一覧と同じ <code>cosmos_focus=true</code> の公式ラベル対象銘柄です。対象数は毎月の条件判定で変わります。RSI・SEPA型などの小さなバッジは、簡単分析で各条件に一致したことを示す別の表示です。</p>
       <p class="condition-note"><strong>SEPA型について：</strong>このサイトで取得できる移動平均線・第2ステージ・Supertrendを使った簡易判定であり、SEPAの全条件を完全再現したものではありません。</p>
     </section>
 
@@ -83,7 +83,7 @@
         <div><span class="step-number">STEP 3</span><h2 id="resultTitle">条件に合う銘柄</h2><p id="resultSummary">データを読み込んでいます…</p></div>
         <div class="simple-toolbar">
           <label for="statusFilter">状態<select id="statusFilter"><option value="ALL">NEW・継続すべて</option><option value="NEW">NEWのみ</option><option value="CONTINUE">継続中のみ</option></select></label>
-          <label for="sortSelect">並び順<select id="sortSelect"><option value="recommended">おすすめ順</option><option value="newest">NEWが新しい順</option><option value="rsi">RSI5が高い順</option><option value="high">52週高値に近い順</option><option value="return">GC後騰落が高い順</option><option value="finance">財務安心度順</option></select></label>
+          <label for="sortSelect">並び順<select id="sortSelect"><option value="recommended">おすすめ順</option><option value="newest">NEWが新しい順</option><option value="rsi">月足RSI14が高い順</option><option value="high">52週高値に近い順</option><option value="return">GC後騰落が高い順</option><option value="finance">財務安心度順</option></select></label>
           <label class="search-label" for="searchInput">銘柄検索<input id="searchInput" type="search" placeholder="コードまたは銘柄名"></label>
         </div>
       </div>
