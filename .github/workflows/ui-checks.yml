@@ -7,14 +7,22 @@ on:
       - "replay.html"
       - "detail.html"
       - "analysis.html"
+      - "analysis-lab.html"
+      - "signal-method.html"
       - "assets/backtest.js"
       - "assets/backtest.css"
       - "assets/replay.js"
       - "assets/replay.css"
       - "assets/simple-analysis-cosmos.js"
       - "assets/simple-analysis-cosmos.css"
+      - "assets/signal-v2.js"
+      - "assets/characters.js"
+      - "tradingview_signal.py"
+      - "generate_tradingview.py"
       - "tests/test_backtest_engine.js"
       - "tests/test_replay_engine.js"
+      - "tests/test_signal_v2.js"
+      - "tests/test_tradingview_signal.py"
       - ".github/workflows/ui-checks.yml"
   workflow_dispatch:
 
@@ -29,13 +37,30 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Validate Python signal engine
+        run: |
+          python -m py_compile tradingview_signal.py generate_tradingview.py tests/test_tradingview_signal.py
+          python -m unittest tests.test_tradingview_signal -v
+
       - name: Validate JavaScript
         run: |
           node --check assets/backtest.js
           node --check assets/replay.js
           node --check assets/simple-analysis-cosmos.js
+          node --check assets/signal-v2.js
+          node --check assets/characters.js
           node tests/test_backtest_engine.js
           node tests/test_replay_engine.js
+          node tests/test_signal_v2.js
 
       - name: Validate HTML and CSS
         run: |
@@ -46,7 +71,10 @@ jobs:
           class Parser(HTMLParser):
               pass
 
-          for name in ("backtest.html", "replay.html", "detail.html", "analysis.html"):
+          for name in (
+              "backtest.html", "replay.html", "detail.html", "analysis.html",
+              "analysis-lab.html", "signal-method.html",
+          ):
               Parser().feed(Path(name).read_text(encoding="utf-8"))
 
           for name in ("assets/backtest.css", "assets/replay.css", "assets/simple-analysis-cosmos.css"):
@@ -54,4 +82,24 @@ jobs:
               if css.count("{") != css.count("}"):
                   raise SystemExit(f"CSS braces are not balanced: {name}")
           print("HTML/CSS validation passed")
+          PY
+
+      - name: Audit canonical signal wiring
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          characters = Path("assets/characters.js").read_text(encoding="utf-8")
+          backtest = Path("backtest.html").read_text(encoding="utf-8")
+          replay = Path("replay.html").read_text(encoding="utf-8")
+          workflow = Path(".github/workflows/update-data.yml").read_text(encoding="utf-8")
+
+          if 'assets/signal-v2.js' not in characters:
+              raise SystemExit("Common pages do not load signal-v2.js")
+          for name, source in (("backtest", backtest), ("replay", replay)):
+              if 'assets/signal-v2.js' not in source:
+                  raise SystemExit(f"{name} does not load signal-v2.js")
+          if "python generate_tradingview.py" not in workflow:
+              raise SystemExit("Production workflow is not using the canonical generator")
+          print("Canonical signal wiring passed")
           PY
