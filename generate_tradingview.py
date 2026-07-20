@@ -1,6 +1,15 @@
 from __future__ import annotations
 
+import os
 from pathlib import Path
+
+# Keep local/manual generation consistent with the production workflow. These
+# values must be set before importing the legacy pipeline because it reads its
+# configuration into module-level constants at import time.
+os.environ.setdefault("HISTORY_MONTHS", "60")
+os.environ.setdefault("MONTHLY_PERIOD", "max")
+os.environ.setdefault("DAILY_PERIOD", "3y")
+os.environ.setdefault("ANALYSIS_DAILY_PERIOD", "5y")
 
 import test as legacy_pipeline
 
