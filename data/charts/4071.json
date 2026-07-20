@@ -2,7 +2,7 @@
   "code": "4071",
   "ticker": "4071.T",
   "name": "プラスアルファ・コンサルティング",
-  "generated_at": "2026-07-20T11:19:33.177923+00:00",
+  "generated_at": "2026-07-20T13:01:30.030956+00:00",
   "record": {
     "code": "4071",
     "ticker": "4071.T",
@@ -51,6 +51,9 @@
     "forward_per": 18.93,
     "pbr": 6.31,
     "book_value": 379.47,
+    "forward_annual_dividend": 50.0,
+    "trailing_annual_dividend": 29.0,
+    "dividend_change_pct": 72.41,
     "dividend_yield_pct": 2.09,
     "payout_ratio_pct": 30.99,
     "roe_pct": 29.79,
@@ -72,7 +75,7 @@
     "ebitda_oku": 76.5,
     "beta": 0.75,
     "shares_outstanding_million": 42.4,
-    "data_completeness_pct": 96.0,
+    "data_completeness_pct": 96.4,
     "next_earnings_date": null,
     "earnings_date_start": "2025-05-15",
     "earnings_date_end": "2025-05-15",
@@ -11098,10 +11101,10 @@
   ],
   "cross_events": [
     {
-      "type": "GC",
-      "month": "2022-12",
-      "date": "2023-07-18",
-      "price": 2720.0
+      "type": "DC",
+      "month": "2023-07",
+      "date": "2023-08-01",
+      "price": 2795.0
     },
     {
       "type": "GC",
@@ -11110,40 +11113,16 @@
       "price": 2719.0
     },
     {
-      "type": "GC",
-      "month": "2024-09",
-      "date": "2024-10-01",
-      "price": 2183.0
-    },
-    {
-      "type": "GC",
-      "month": "2024-12",
-      "date": "2025-01-06",
-      "price": 1909.0
-    },
-    {
-      "type": "GC",
-      "month": "2025-04",
-      "date": "2025-05-01",
-      "price": 1666.0
-    },
-    {
-      "type": "GC",
-      "month": "2026-05",
-      "date": "2026-06-01",
-      "price": 2622.0
-    },
-    {
-      "type": "DC",
-      "month": "2023-07",
-      "date": "2023-08-01",
-      "price": 2795.0
-    },
-    {
       "type": "DC",
       "month": "2024-01",
       "date": "2024-02-01",
       "price": 2600.0
+    },
+    {
+      "type": "GC",
+      "month": "2024-09",
+      "date": "2024-10-01",
+      "price": 2183.0
     },
     {
       "type": "DC",
@@ -11152,25 +11131,37 @@
       "price": 1643.0
     },
     {
+      "type": "GC",
+      "month": "2024-12",
+      "date": "2025-01-06",
+      "price": 1909.0
+    },
+    {
       "type": "DC",
       "month": "2025-01",
       "date": "2025-02-03",
       "price": 1801.0
     },
     {
+      "type": "GC",
+      "month": "2025-04",
+      "date": "2025-05-01",
+      "price": 1666.0
+    },
+    {
       "type": "DC",
       "month": "2025-10",
       "date": "2025-11-04",
       "price": 2369.0
+    },
+    {
+      "type": "GC",
+      "month": "2026-05",
+      "date": "2026-06-01",
+      "price": 2622.0
     }
   ],
   "gc_events": [
-    {
-      "type": "GC",
-      "month": "2022-12",
-      "date": "2023-07-18",
-      "price": 2720.0
-    },
     {
       "type": "GC",
       "month": "2023-11",
@@ -11332,6 +11323,38 @@
       "max_return_pct": 1.95,
       "min_return_pct": 0.0,
       "duration_months": 2
+    }
+  ],
+  "future_highlights": [
+    {
+      "type": "EARNINGS",
+      "date": "2025-05-15",
+      "label": "次回決算予定日",
+      "value": "2025-05-15",
+      "detail": "Yahoo Finance掲載予定日"
+    },
+    {
+      "type": "RIGHTS",
+      "date": "2026-09-29",
+      "label": "権利落ち予定日",
+      "value": "2026-09-29",
+      "detail": "権利確定日そのものではありません"
+    },
+    {
+      "type": "DIVIDEND_FORECAST",
+      "date": "2026-09-29",
+      "label": "予想年間配当",
+      "value": 50.0,
+      "unit": "円",
+      "detail": "Yahoo Financeの年間配当予想"
+    },
+    {
+      "type": "DIVIDEND_CHANGE",
+      "date": "2026-09-29",
+      "label": "増配率",
+      "value": 72.41,
+      "unit": "%",
+      "detail": "直近年間配当 29円との比較"
     }
   ],
   "signal_version": "tv_wilder_rsi14_sma5_v1",

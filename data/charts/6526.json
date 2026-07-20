@@ -2,7 +2,7 @@
   "code": "6526",
   "ticker": "6526.T",
   "name": "ソシオネクスト",
-  "generated_at": "2026-07-20T11:19:55.576339+00:00",
+  "generated_at": "2026-07-20T13:01:46.953576+00:00",
   "record": {
     "code": "6526",
     "ticker": "6526.T",
@@ -47,37 +47,40 @@
     "cosmos_focus_type": null,
     "current_price": 2266.0,
     "change_from_signal_month_pct": -11.19,
-    "per": 45.87,
-    "forward_per": 15.86,
-    "pbr": 2.99,
-    "book_value": 759.11,
-    "dividend_yield_pct": 2.21,
-    "payout_ratio_pct": 101.13,
-    "roe_pct": 6.47,
-    "roa_pct": 4.57,
-    "profit_margin_pct": 4.35,
-    "operating_margin_pct": 8.77,
-    "revenue_growth_pct": 35.6,
-    "earnings_growth_pct": 28.2,
-    "current_ratio": 3.78,
-    "quick_ratio": 2.64,
+    "per": null,
+    "forward_per": null,
+    "pbr": null,
+    "book_value": null,
+    "forward_annual_dividend": null,
+    "trailing_annual_dividend": null,
+    "dividend_change_pct": null,
+    "dividend_yield_pct": null,
+    "payout_ratio_pct": null,
+    "roe_pct": null,
+    "roa_pct": null,
+    "profit_margin_pct": null,
+    "operating_margin_pct": null,
+    "revenue_growth_pct": null,
+    "earnings_growth_pct": null,
+    "current_ratio": null,
+    "quick_ratio": null,
     "debt_to_equity_pct": null,
-    "equity_ratio_pct": 79.38,
-    "market_cap_oku": 3972.05,
-    "enterprise_value_oku": 3526.64,
-    "operating_cashflow_oku": 76.93,
-    "free_cashflow_oku": -218.6,
-    "total_cash_oku": 445.41,
-    "total_debt_oku": 0.0,
-    "ebitda_oku": 292.56,
-    "beta": 0.61,
-    "shares_outstanding_million": 175.29,
-    "data_completeness_pct": 96.0,
-    "next_earnings_date": "2026-07-29",
-    "earnings_date_start": "2026-07-29",
-    "earnings_date_end": "2026-07-29",
-    "ex_dividend_date": "2026-09-29",
-    "last_dividend_date": "2027-03-30",
+    "equity_ratio_pct": null,
+    "market_cap_oku": null,
+    "enterprise_value_oku": null,
+    "operating_cashflow_oku": null,
+    "free_cashflow_oku": null,
+    "total_cash_oku": null,
+    "total_debt_oku": null,
+    "ebitda_oku": null,
+    "beta": null,
+    "shares_outstanding_million": null,
+    "data_completeness_pct": 0,
+    "next_earnings_date": null,
+    "earnings_date_start": null,
+    "earnings_date_end": null,
+    "ex_dividend_date": null,
+    "last_dividend_date": null,
     "monthly_rsi14": 52.12,
     "monthly_rsi_ma5": 47.88,
     "monthly_rsi14_up": false,
@@ -11104,28 +11107,28 @@
       "price": 4691.0
     },
     {
-      "type": "GC",
-      "month": "2025-05",
-      "date": "2025-06-02",
-      "price": 2143.0
-    },
-    {
-      "type": "GC",
-      "month": "2026-05",
-      "date": "2026-06-01",
-      "price": 2635.0
-    },
-    {
       "type": "DC",
       "month": "2024-06",
       "date": "2024-07-01",
       "price": 3809.0
     },
     {
+      "type": "GC",
+      "month": "2025-05",
+      "date": "2025-06-02",
+      "price": 2143.0
+    },
+    {
       "type": "DC",
       "month": "2025-11",
       "date": "2025-12-01",
       "price": 2226.0
+    },
+    {
+      "type": "GC",
+      "month": "2026-05",
+      "date": "2026-06-01",
+      "price": 2635.0
     }
   ],
   "gc_events": [
@@ -11204,18 +11207,6 @@
       "type": "DIVIDEND",
       "label": "配当",
       "detail": "1株 25円"
-    },
-    {
-      "date": "2026-07-29",
-      "type": "EARNINGS",
-      "label": "決算予定",
-      "detail": "Yahoo Finance掲載予定日"
-    },
-    {
-      "date": "2026-09-29",
-      "type": "RIGHTS",
-      "label": "権利落ち予定",
-      "detail": "権利確定日そのものではありません"
     }
   ],
   "episodes": [
@@ -11253,6 +11244,7 @@
       "duration_months": 2
     }
   ],
+  "future_highlights": [],
   "signal_version": "tv_wilder_rsi14_sma5_v1",
   "signal_name": "月足RSI14 × RSI14の5か月SMA",
   "signal_definition": {

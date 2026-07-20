@@ -2,7 +2,7 @@
   "code": "7366",
   "ticker": "7366.T",
   "name": "LITALICO",
-  "generated_at": "2026-07-20T11:19:32.894598+00:00",
+  "generated_at": "2026-07-20T13:01:29.833515+00:00",
   "record": {
     "code": "7366",
     "ticker": "7366.T",
@@ -47,37 +47,40 @@
     "cosmos_focus_type": null,
     "current_price": 1620.0,
     "change_from_signal_month_pct": 2.53,
-    "per": 19.53,
-    "forward_per": 19.02,
-    "pbr": 3.92,
-    "book_value": 413.74,
-    "dividend_yield_pct": 93.0,
-    "payout_ratio_pct": 13.27,
-    "roe_pct": 26.49,
-    "roa_pct": 10.66,
-    "profit_margin_pct": 5.26,
-    "operating_margin_pct": 13.34,
+    "per": null,
+    "forward_per": null,
+    "pbr": null,
+    "book_value": null,
+    "forward_annual_dividend": null,
+    "trailing_annual_dividend": null,
+    "dividend_change_pct": null,
+    "dividend_yield_pct": null,
+    "payout_ratio_pct": null,
+    "roe_pct": null,
+    "roa_pct": null,
+    "profit_margin_pct": null,
+    "operating_margin_pct": null,
     "revenue_growth_pct": null,
     "earnings_growth_pct": null,
-    "current_ratio": 1.57,
-    "quick_ratio": 1.44,
-    "debt_to_equity_pct": 145.61,
-    "equity_ratio_pct": 32.79,
-    "market_cap_oku": 552.26,
-    "enterprise_value_oku": 680.19,
+    "current_ratio": null,
+    "quick_ratio": null,
+    "debt_to_equity_pct": null,
+    "equity_ratio_pct": null,
+    "market_cap_oku": null,
+    "enterprise_value_oku": null,
     "operating_cashflow_oku": null,
     "free_cashflow_oku": null,
-    "total_cash_oku": 80.95,
-    "total_debt_oku": 209.1,
-    "ebitda_oku": 11.84,
-    "beta": -0.34,
-    "shares_outstanding_million": 34.09,
-    "data_completeness_pct": 84.0,
+    "total_cash_oku": null,
+    "total_debt_oku": null,
+    "ebitda_oku": null,
+    "beta": null,
+    "shares_outstanding_million": null,
+    "data_completeness_pct": 0,
     "next_earnings_date": null,
-    "earnings_date_start": "2025-07-28",
-    "earnings_date_end": "2025-08-01",
-    "ex_dividend_date": "2027-03-30",
-    "last_dividend_date": "2027-03-30",
+    "earnings_date_start": null,
+    "earnings_date_end": null,
+    "ex_dividend_date": null,
+    "last_dividend_date": null,
     "monthly_rsi14": 54.15,
     "monthly_rsi_ma5": 47.67,
     "monthly_rsi14_up": false,
@@ -11099,63 +11102,9 @@
   "cross_events": [
     {
       "type": "GC",
-      "month": "2022-10",
-      "date": "2023-07-18",
-      "price": 3150.0
-    },
-    {
-      "type": "GC",
-      "month": "2023-03",
-      "date": "2023-07-18",
-      "price": 2574.0
-    },
-    {
-      "type": "GC",
       "month": "2023-11",
       "date": "2023-12-01",
       "price": 2141.0
-    },
-    {
-      "type": "GC",
-      "month": "2024-01",
-      "date": "2024-02-01",
-      "price": 2162.0
-    },
-    {
-      "type": "GC",
-      "month": "2025-01",
-      "date": "2025-02-03",
-      "price": 1107.0
-    },
-    {
-      "type": "GC",
-      "month": "2025-12",
-      "date": "2026-01-05",
-      "price": 1294.0
-    },
-    {
-      "type": "GC",
-      "month": "2026-02",
-      "date": "2026-03-02",
-      "price": 1345.0
-    },
-    {
-      "type": "GC",
-      "month": "2026-04",
-      "date": "2026-05-01",
-      "price": 1202.0
-    },
-    {
-      "type": "DC",
-      "month": "2022-11",
-      "date": "2023-07-18",
-      "price": 2338.0
-    },
-    {
-      "type": "DC",
-      "month": "2023-04",
-      "date": "2023-07-18",
-      "price": 2428.0
     },
     {
       "type": "DC",
@@ -11164,10 +11113,22 @@
       "price": 2062.0
     },
     {
+      "type": "GC",
+      "month": "2024-01",
+      "date": "2024-02-01",
+      "price": 2162.0
+    },
+    {
       "type": "DC",
       "month": "2024-03",
       "date": "2024-04-01",
       "price": 2121.0
+    },
+    {
+      "type": "GC",
+      "month": "2025-01",
+      "date": "2025-02-03",
+      "price": 1107.0
     },
     {
       "type": "DC",
@@ -11176,31 +11137,37 @@
       "price": 1234.0
     },
     {
+      "type": "GC",
+      "month": "2025-12",
+      "date": "2026-01-05",
+      "price": 1294.0
+    },
+    {
       "type": "DC",
       "month": "2026-01",
       "date": "2026-02-02",
       "price": 1189.0
     },
     {
+      "type": "GC",
+      "month": "2026-02",
+      "date": "2026-03-02",
+      "price": 1345.0
+    },
+    {
       "type": "DC",
       "month": "2026-03",
       "date": "2026-04-01",
       "price": 1133.0
+    },
+    {
+      "type": "GC",
+      "month": "2026-04",
+      "date": "2026-05-01",
+      "price": 1202.0
     }
   ],
   "gc_events": [
-    {
-      "type": "GC",
-      "month": "2022-10",
-      "date": "2023-07-18",
-      "price": 3150.0
-    },
-    {
-      "type": "GC",
-      "month": "2023-03",
-      "date": "2023-07-18",
-      "price": 2574.0
-    },
     {
       "type": "GC",
       "month": "2023-11",
@@ -11239,18 +11206,6 @@
     }
   ],
   "dc_events": [
-    {
-      "type": "DC",
-      "month": "2022-11",
-      "date": "2023-07-18",
-      "price": 2338.0
-    },
-    {
-      "type": "DC",
-      "month": "2023-04",
-      "date": "2023-07-18",
-      "price": 2428.0
-    },
     {
       "type": "DC",
       "month": "2023-12",
@@ -11296,22 +11251,10 @@
       "detail": "1株 9円"
     },
     {
-      "date": "2025-07-28",
-      "type": "EARNINGS",
-      "label": "決算予定",
-      "detail": "Yahoo Finance掲載予定日"
-    },
-    {
       "date": "2026-03-30",
       "type": "DIVIDEND",
       "label": "配当",
       "detail": "1株 11円"
-    },
-    {
-      "date": "2027-03-30",
-      "type": "RIGHTS",
-      "label": "権利落ち予定",
-      "detail": "権利確定日そのものではありません"
     }
   ],
   "episodes": [
@@ -11404,6 +11347,7 @@
       "duration_months": 3
     }
   ],
+  "future_highlights": [],
   "signal_version": "tv_wilder_rsi14_sma5_v1",
   "signal_name": "月足RSI14 × RSI14の5か月SMA",
   "signal_definition": {

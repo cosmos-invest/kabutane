@@ -2,7 +2,7 @@
   "code": "6098",
   "ticker": "6098.T",
   "name": "リクルートホールディングス",
-  "generated_at": "2026-07-20T11:19:05.778688+00:00",
+  "generated_at": "2026-07-20T13:01:10.500830+00:00",
   "record": {
     "code": "6098",
     "ticker": "6098.T",
@@ -51,7 +51,10 @@
     "forward_per": 42.36,
     "pbr": 11.31,
     "book_value": 1134.01,
-    "dividend_yield_pct": 20.0,
+    "forward_annual_dividend": 26.0,
+    "trailing_annual_dividend": 25.0,
+    "dividend_change_pct": 4.0,
+    "dividend_yield_pct": 0.2,
     "payout_ratio_pct": 7.19,
     "roe_pct": 30.83,
     "roa_pct": 15.04,
@@ -11098,76 +11101,10 @@
   ],
   "cross_events": [
     {
-      "type": "GC",
-      "month": "2016-05",
-      "date": "2023-07-18",
-      "price": 1258.33
-    },
-    {
-      "type": "GC",
-      "month": "2017-08",
-      "date": "2023-07-18",
-      "price": 2191.0
-    },
-    {
-      "type": "GC",
-      "month": "2018-05",
-      "date": "2023-07-18",
-      "price": 3030.0
-    },
-    {
-      "type": "GC",
-      "month": "2019-02",
-      "date": "2023-07-18",
-      "price": 3114.0
-    },
-    {
-      "type": "GC",
-      "month": "2019-10",
-      "date": "2023-07-18",
-      "price": 3611.0
-    },
-    {
-      "type": "GC",
-      "month": "2020-05",
-      "date": "2023-07-18",
-      "price": 3710.0
-    },
-    {
-      "type": "GC",
-      "month": "2020-08",
-      "date": "2023-07-18",
-      "price": 4026.0
-    },
-    {
-      "type": "GC",
-      "month": "2021-05",
-      "date": "2023-07-18",
-      "price": 5555.0
-    },
-    {
-      "type": "GC",
-      "month": "2021-07",
-      "date": "2023-07-18",
-      "price": 5629.0
-    },
-    {
-      "type": "GC",
-      "month": "2022-07",
-      "date": "2023-07-18",
-      "price": 4953.0
-    },
-    {
-      "type": "GC",
-      "month": "2022-10",
-      "date": "2023-07-18",
-      "price": 4590.0
-    },
-    {
-      "type": "GC",
-      "month": "2023-05",
-      "date": "2023-07-18",
-      "price": 4290.0
+      "type": "DC",
+      "month": "2023-09",
+      "date": "2023-10-02",
+      "price": 4609.0
     },
     {
       "type": "GC",
@@ -11176,106 +11113,16 @@
       "price": 5505.0
     },
     {
-      "type": "GC",
-      "month": "2024-10",
-      "date": "2024-11-01",
-      "price": 9533.0
-    },
-    {
-      "type": "GC",
-      "month": "2025-06",
-      "date": "2025-07-01",
-      "price": 8535.0
-    },
-    {
-      "type": "GC",
-      "month": "2025-12",
-      "date": "2026-01-05",
-      "price": 8847.0
-    },
-    {
-      "type": "GC",
-      "month": "2026-05",
-      "date": "2026-06-01",
-      "price": 10570.0
-    },
-    {
-      "type": "DC",
-      "month": "2017-06",
-      "date": "2023-07-18",
-      "price": 1931.0
-    },
-    {
-      "type": "DC",
-      "month": "2017-11",
-      "date": "2023-07-18",
-      "price": 2647.0
-    },
-    {
-      "type": "DC",
-      "month": "2018-10",
-      "date": "2023-07-18",
-      "price": 3037.0
-    },
-    {
-      "type": "DC",
-      "month": "2019-08",
-      "date": "2023-07-18",
-      "price": 3219.0
-    },
-    {
-      "type": "DC",
-      "month": "2020-02",
-      "date": "2023-07-18",
-      "price": 3758.0
-    },
-    {
-      "type": "DC",
-      "month": "2020-07",
-      "date": "2023-07-18",
-      "price": 3268.0
-    },
-    {
-      "type": "DC",
-      "month": "2021-04",
-      "date": "2023-07-18",
-      "price": 4939.0
-    },
-    {
-      "type": "DC",
-      "month": "2021-06",
-      "date": "2023-07-18",
-      "price": 5470.0
-    },
-    {
-      "type": "DC",
-      "month": "2021-11",
-      "date": "2023-07-18",
-      "price": 6901.0
-    },
-    {
-      "type": "DC",
-      "month": "2022-08",
-      "date": "2023-07-18",
-      "price": 4483.0
-    },
-    {
-      "type": "DC",
-      "month": "2022-11",
-      "date": "2023-07-18",
-      "price": 4329.0
-    },
-    {
-      "type": "DC",
-      "month": "2023-09",
-      "date": "2023-10-02",
-      "price": 4609.0
-    },
-    {
       "type": "DC",
       "month": "2024-09",
       "date": "2024-10-01",
       "price": 8705.0
+    },
+    {
+      "type": "GC",
+      "month": "2024-10",
+      "date": "2024-11-01",
+      "price": 9533.0
     },
     {
       "type": "DC",
@@ -11284,91 +11131,37 @@
       "price": 8800.0
     },
     {
+      "type": "GC",
+      "month": "2025-06",
+      "date": "2025-07-01",
+      "price": 8535.0
+    },
+    {
       "type": "DC",
       "month": "2025-08",
       "date": "2025-09-01",
       "price": 8579.0
     },
     {
+      "type": "GC",
+      "month": "2025-12",
+      "date": "2026-01-05",
+      "price": 8847.0
+    },
+    {
       "type": "DC",
       "month": "2026-01",
       "date": "2026-02-02",
       "price": 8100.0
+    },
+    {
+      "type": "GC",
+      "month": "2026-05",
+      "date": "2026-06-01",
+      "price": 10570.0
     }
   ],
   "gc_events": [
-    {
-      "type": "GC",
-      "month": "2016-05",
-      "date": "2023-07-18",
-      "price": 1258.33
-    },
-    {
-      "type": "GC",
-      "month": "2017-08",
-      "date": "2023-07-18",
-      "price": 2191.0
-    },
-    {
-      "type": "GC",
-      "month": "2018-05",
-      "date": "2023-07-18",
-      "price": 3030.0
-    },
-    {
-      "type": "GC",
-      "month": "2019-02",
-      "date": "2023-07-18",
-      "price": 3114.0
-    },
-    {
-      "type": "GC",
-      "month": "2019-10",
-      "date": "2023-07-18",
-      "price": 3611.0
-    },
-    {
-      "type": "GC",
-      "month": "2020-05",
-      "date": "2023-07-18",
-      "price": 3710.0
-    },
-    {
-      "type": "GC",
-      "month": "2020-08",
-      "date": "2023-07-18",
-      "price": 4026.0
-    },
-    {
-      "type": "GC",
-      "month": "2021-05",
-      "date": "2023-07-18",
-      "price": 5555.0
-    },
-    {
-      "type": "GC",
-      "month": "2021-07",
-      "date": "2023-07-18",
-      "price": 5629.0
-    },
-    {
-      "type": "GC",
-      "month": "2022-07",
-      "date": "2023-07-18",
-      "price": 4953.0
-    },
-    {
-      "type": "GC",
-      "month": "2022-10",
-      "date": "2023-07-18",
-      "price": 4590.0
-    },
-    {
-      "type": "GC",
-      "month": "2023-05",
-      "date": "2023-07-18",
-      "price": 4290.0
-    },
     {
       "type": "GC",
       "month": "2023-11",
@@ -11401,72 +11194,6 @@
     }
   ],
   "dc_events": [
-    {
-      "type": "DC",
-      "month": "2017-06",
-      "date": "2023-07-18",
-      "price": 1931.0
-    },
-    {
-      "type": "DC",
-      "month": "2017-11",
-      "date": "2023-07-18",
-      "price": 2647.0
-    },
-    {
-      "type": "DC",
-      "month": "2018-10",
-      "date": "2023-07-18",
-      "price": 3037.0
-    },
-    {
-      "type": "DC",
-      "month": "2019-08",
-      "date": "2023-07-18",
-      "price": 3219.0
-    },
-    {
-      "type": "DC",
-      "month": "2020-02",
-      "date": "2023-07-18",
-      "price": 3758.0
-    },
-    {
-      "type": "DC",
-      "month": "2020-07",
-      "date": "2023-07-18",
-      "price": 3268.0
-    },
-    {
-      "type": "DC",
-      "month": "2021-04",
-      "date": "2023-07-18",
-      "price": 4939.0
-    },
-    {
-      "type": "DC",
-      "month": "2021-06",
-      "date": "2023-07-18",
-      "price": 5470.0
-    },
-    {
-      "type": "DC",
-      "month": "2021-11",
-      "date": "2023-07-18",
-      "price": 6901.0
-    },
-    {
-      "type": "DC",
-      "month": "2022-08",
-      "date": "2023-07-18",
-      "price": 4483.0
-    },
-    {
-      "type": "DC",
-      "month": "2022-11",
-      "date": "2023-07-18",
-      "price": 4329.0
-    },
     {
       "type": "DC",
       "month": "2023-09",
@@ -11735,6 +11462,38 @@
       "max_return_pct": 7.19,
       "min_return_pct": 0.0,
       "duration_months": 2
+    }
+  ],
+  "future_highlights": [
+    {
+      "type": "EARNINGS",
+      "date": "2026-08-07",
+      "label": "次回決算予定日",
+      "value": "2026-08-07",
+      "detail": "Yahoo Finance掲載予定日"
+    },
+    {
+      "type": "RIGHTS",
+      "date": "2026-09-29",
+      "label": "権利落ち予定日",
+      "value": "2026-09-29",
+      "detail": "権利確定日そのものではありません"
+    },
+    {
+      "type": "DIVIDEND_FORECAST",
+      "date": "2026-09-29",
+      "label": "予想年間配当",
+      "value": 26.0,
+      "unit": "円",
+      "detail": "Yahoo Financeの年間配当予想"
+    },
+    {
+      "type": "DIVIDEND_CHANGE",
+      "date": "2026-09-29",
+      "label": "増配率",
+      "value": 4.0,
+      "unit": "%",
+      "detail": "直近年間配当 25円との比較"
     }
   ],
   "signal_version": "tv_wilder_rsi14_sma5_v1",

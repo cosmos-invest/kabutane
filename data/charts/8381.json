@@ -2,7 +2,7 @@
   "code": "8381",
   "ticker": "8381.T",
   "name": "山陰合同銀行",
-  "generated_at": "2026-07-20T11:19:40.857730+00:00",
+  "generated_at": "2026-07-20T13:01:35.480006+00:00",
   "record": {
     "code": "8381",
     "ticker": "8381.T",
@@ -47,37 +47,40 @@
     "cosmos_focus_type": null,
     "current_price": 2341.0,
     "change_from_signal_month_pct": 2.72,
-    "per": 15.6,
+    "per": null,
     "forward_per": null,
-    "pbr": 1.1,
-    "book_value": 2136.56,
-    "dividend_yield_pct": 2.9,
-    "payout_ratio_pct": 40.01,
-    "roe_pct": 7.17,
-    "roa_pct": 0.26,
-    "profit_margin_pct": 18.56,
-    "operating_margin_pct": 28.67,
-    "revenue_growth_pct": 57.5,
-    "earnings_growth_pct": 7.0,
+    "pbr": null,
+    "book_value": null,
+    "forward_annual_dividend": null,
+    "trailing_annual_dividend": null,
+    "dividend_change_pct": null,
+    "dividend_yield_pct": null,
+    "payout_ratio_pct": null,
+    "roe_pct": null,
+    "roa_pct": null,
+    "profit_margin_pct": null,
+    "operating_margin_pct": null,
+    "revenue_growth_pct": null,
+    "earnings_growth_pct": null,
     "current_ratio": null,
     "quick_ratio": null,
     "debt_to_equity_pct": null,
-    "equity_ratio_pct": 3.55,
-    "market_cap_oku": 3504.02,
-    "enterprise_value_oku": 4084.0,
-    "operating_cashflow_oku": -709.4,
+    "equity_ratio_pct": null,
+    "market_cap_oku": null,
+    "enterprise_value_oku": null,
+    "operating_cashflow_oku": null,
     "free_cashflow_oku": null,
-    "total_cash_oku": 16309.7,
-    "total_debt_oku": 16873.82,
+    "total_cash_oku": null,
+    "total_debt_oku": null,
     "ebitda_oku": null,
-    "beta": 0.19,
-    "shares_outstanding_million": 149.68,
-    "data_completeness_pct": 76.0,
-    "next_earnings_date": "2026-07-31",
-    "earnings_date_start": "2026-07-31",
-    "earnings_date_end": "2026-07-31",
-    "ex_dividend_date": "2026-09-29",
-    "last_dividend_date": "2027-03-30",
+    "beta": null,
+    "shares_outstanding_million": null,
+    "data_completeness_pct": 0,
+    "next_earnings_date": null,
+    "earnings_date_start": null,
+    "earnings_date_end": null,
+    "ex_dividend_date": null,
+    "last_dividend_date": null,
     "monthly_rsi14": 84.95,
     "monthly_rsi_ma5": 79.31,
     "monthly_rsi14_up": true,
@@ -11098,22 +11101,10 @@
   ],
   "cross_events": [
     {
-      "type": "GC",
-      "month": "2021-03",
-      "date": "2023-07-18",
-      "price": 561.0
-    },
-    {
-      "type": "GC",
-      "month": "2022-06",
-      "date": "2023-07-18",
-      "price": 654.0
-    },
-    {
-      "type": "GC",
-      "month": "2023-06",
-      "date": "2023-07-18",
-      "price": 806.0
+      "type": "DC",
+      "month": "2023-11",
+      "date": "2023-12-01",
+      "price": 958.0
     },
     {
       "type": "GC",
@@ -11122,241 +11113,31 @@
       "price": 1046.0
     },
     {
-      "type": "GC",
-      "month": "2025-01",
-      "date": "2025-02-03",
-      "price": 1333.0
-    },
-    {
-      "type": "GC",
-      "month": "2025-07",
-      "date": "2025-08-01",
-      "price": 1279.0
-    },
-    {
-      "type": "DC",
-      "month": "2002-11",
-      "date": "2023-07-18",
-      "price": 619.0
-    },
-    {
-      "type": "DC",
-      "month": "2003-08",
-      "date": "2023-07-18",
-      "price": 801.0
-    },
-    {
-      "type": "DC",
-      "month": "2004-01",
-      "date": "2023-07-18",
-      "price": 803.0
-    },
-    {
-      "type": "DC",
-      "month": "2004-05",
-      "date": "2023-07-18",
-      "price": 861.0
-    },
-    {
-      "type": "DC",
-      "month": "2005-05",
-      "date": "2023-07-18",
-      "price": 1040.0
-    },
-    {
-      "type": "DC",
-      "month": "2005-11",
-      "date": "2023-07-18",
-      "price": 1111.0
-    },
-    {
-      "type": "DC",
-      "month": "2006-04",
-      "date": "2023-07-18",
-      "price": 1165.0
-    },
-    {
-      "type": "DC",
-      "month": "2007-06",
-      "date": "2023-07-18",
-      "price": 1177.0
-    },
-    {
-      "type": "DC",
-      "month": "2007-12",
-      "date": "2023-07-18",
-      "price": 893.0
-    },
-    {
-      "type": "DC",
-      "month": "2008-08",
-      "date": "2023-07-18",
-      "price": 848.0
-    },
-    {
-      "type": "DC",
-      "month": "2009-09",
-      "date": "2023-07-18",
-      "price": 765.0
-    },
-    {
-      "type": "DC",
-      "month": "2010-05",
-      "date": "2023-07-18",
-      "price": 649.0
-    },
-    {
-      "type": "DC",
-      "month": "2011-04",
-      "date": "2023-07-18",
-      "price": 598.0
-    },
-    {
-      "type": "DC",
-      "month": "2011-11",
-      "date": "2023-07-18",
-      "price": 551.0
-    },
-    {
-      "type": "DC",
-      "month": "2012-04",
-      "date": "2023-07-18",
-      "price": 576.0
-    },
-    {
-      "type": "DC",
-      "month": "2012-10",
-      "date": "2023-07-18",
-      "price": 552.0
-    },
-    {
-      "type": "DC",
-      "month": "2013-05",
-      "date": "2023-07-18",
-      "price": 748.0
-    },
-    {
-      "type": "DC",
-      "month": "2013-10",
-      "date": "2023-07-18",
-      "price": 711.0
-    },
-    {
-      "type": "DC",
-      "month": "2014-01",
-      "date": "2023-07-18",
-      "price": 716.0
-    },
-    {
-      "type": "DC",
-      "month": "2015-03",
-      "date": "2023-07-18",
-      "price": 991.0
-    },
-    {
-      "type": "DC",
-      "month": "2015-08",
-      "date": "2023-07-18",
-      "price": 1082.0
-    },
-    {
-      "type": "DC",
-      "month": "2016-09",
-      "date": "2023-07-18",
-      "price": 686.0
-    },
-    {
-      "type": "DC",
-      "month": "2017-03",
-      "date": "2023-07-18",
-      "price": 892.0
-    },
-    {
-      "type": "DC",
-      "month": "2017-07",
-      "date": "2023-07-18",
-      "price": 897.0
-    },
-    {
-      "type": "DC",
-      "month": "2018-02",
-      "date": "2023-07-18",
-      "price": 1014.0
-    },
-    {
-      "type": "DC",
-      "month": "2018-08",
-      "date": "2023-07-18",
-      "price": 936.0
-    },
-    {
-      "type": "DC",
-      "month": "2020-01",
-      "date": "2023-07-18",
-      "price": 608.0
-    },
-    {
-      "type": "DC",
-      "month": "2020-07",
-      "date": "2023-07-18",
-      "price": 491.0
-    },
-    {
-      "type": "DC",
-      "month": "2020-12",
-      "date": "2023-07-18",
-      "price": 492.0
-    },
-    {
-      "type": "DC",
-      "month": "2022-03",
-      "date": "2023-07-18",
-      "price": 627.0
-    },
-    {
-      "type": "DC",
-      "month": "2023-03",
-      "date": "2023-07-18",
-      "price": 739.0
-    },
-    {
-      "type": "DC",
-      "month": "2023-11",
-      "date": "2023-12-01",
-      "price": 958.0
-    },
-    {
       "type": "DC",
       "month": "2024-08",
       "date": "2024-09-02",
       "price": 1307.0
     },
     {
+      "type": "GC",
+      "month": "2025-01",
+      "date": "2025-02-03",
+      "price": 1333.0
+    },
+    {
       "type": "DC",
       "month": "2025-02",
       "date": "2025-03-03",
       "price": 1252.0
+    },
+    {
+      "type": "GC",
+      "month": "2025-07",
+      "date": "2025-08-01",
+      "price": 1279.0
     }
   ],
   "gc_events": [
-    {
-      "type": "GC",
-      "month": "2021-03",
-      "date": "2023-07-18",
-      "price": 561.0
-    },
-    {
-      "type": "GC",
-      "month": "2022-06",
-      "date": "2023-07-18",
-      "price": 654.0
-    },
-    {
-      "type": "GC",
-      "month": "2023-06",
-      "date": "2023-07-18",
-      "price": 806.0
-    },
     {
       "type": "GC",
       "month": "2024-01",
@@ -11377,192 +11158,6 @@
     }
   ],
   "dc_events": [
-    {
-      "type": "DC",
-      "month": "2002-11",
-      "date": "2023-07-18",
-      "price": 619.0
-    },
-    {
-      "type": "DC",
-      "month": "2003-08",
-      "date": "2023-07-18",
-      "price": 801.0
-    },
-    {
-      "type": "DC",
-      "month": "2004-01",
-      "date": "2023-07-18",
-      "price": 803.0
-    },
-    {
-      "type": "DC",
-      "month": "2004-05",
-      "date": "2023-07-18",
-      "price": 861.0
-    },
-    {
-      "type": "DC",
-      "month": "2005-05",
-      "date": "2023-07-18",
-      "price": 1040.0
-    },
-    {
-      "type": "DC",
-      "month": "2005-11",
-      "date": "2023-07-18",
-      "price": 1111.0
-    },
-    {
-      "type": "DC",
-      "month": "2006-04",
-      "date": "2023-07-18",
-      "price": 1165.0
-    },
-    {
-      "type": "DC",
-      "month": "2007-06",
-      "date": "2023-07-18",
-      "price": 1177.0
-    },
-    {
-      "type": "DC",
-      "month": "2007-12",
-      "date": "2023-07-18",
-      "price": 893.0
-    },
-    {
-      "type": "DC",
-      "month": "2008-08",
-      "date": "2023-07-18",
-      "price": 848.0
-    },
-    {
-      "type": "DC",
-      "month": "2009-09",
-      "date": "2023-07-18",
-      "price": 765.0
-    },
-    {
-      "type": "DC",
-      "month": "2010-05",
-      "date": "2023-07-18",
-      "price": 649.0
-    },
-    {
-      "type": "DC",
-      "month": "2011-04",
-      "date": "2023-07-18",
-      "price": 598.0
-    },
-    {
-      "type": "DC",
-      "month": "2011-11",
-      "date": "2023-07-18",
-      "price": 551.0
-    },
-    {
-      "type": "DC",
-      "month": "2012-04",
-      "date": "2023-07-18",
-      "price": 576.0
-    },
-    {
-      "type": "DC",
-      "month": "2012-10",
-      "date": "2023-07-18",
-      "price": 552.0
-    },
-    {
-      "type": "DC",
-      "month": "2013-05",
-      "date": "2023-07-18",
-      "price": 748.0
-    },
-    {
-      "type": "DC",
-      "month": "2013-10",
-      "date": "2023-07-18",
-      "price": 711.0
-    },
-    {
-      "type": "DC",
-      "month": "2014-01",
-      "date": "2023-07-18",
-      "price": 716.0
-    },
-    {
-      "type": "DC",
-      "month": "2015-03",
-      "date": "2023-07-18",
-      "price": 991.0
-    },
-    {
-      "type": "DC",
-      "month": "2015-08",
-      "date": "2023-07-18",
-      "price": 1082.0
-    },
-    {
-      "type": "DC",
-      "month": "2016-09",
-      "date": "2023-07-18",
-      "price": 686.0
-    },
-    {
-      "type": "DC",
-      "month": "2017-03",
-      "date": "2023-07-18",
-      "price": 892.0
-    },
-    {
-      "type": "DC",
-      "month": "2017-07",
-      "date": "2023-07-18",
-      "price": 897.0
-    },
-    {
-      "type": "DC",
-      "month": "2018-02",
-      "date": "2023-07-18",
-      "price": 1014.0
-    },
-    {
-      "type": "DC",
-      "month": "2018-08",
-      "date": "2023-07-18",
-      "price": 936.0
-    },
-    {
-      "type": "DC",
-      "month": "2020-01",
-      "date": "2023-07-18",
-      "price": 608.0
-    },
-    {
-      "type": "DC",
-      "month": "2020-07",
-      "date": "2023-07-18",
-      "price": 491.0
-    },
-    {
-      "type": "DC",
-      "month": "2020-12",
-      "date": "2023-07-18",
-      "price": 492.0
-    },
-    {
-      "type": "DC",
-      "month": "2022-03",
-      "date": "2023-07-18",
-      "price": 627.0
-    },
-    {
-      "type": "DC",
-      "month": "2023-03",
-      "date": "2023-07-18",
-      "price": 739.0
-    },
     {
       "type": "DC",
       "month": "2023-11",
@@ -11618,18 +11213,6 @@
       "type": "DIVIDEND",
       "label": "配当",
       "detail": "1株 32円"
-    },
-    {
-      "date": "2026-07-31",
-      "type": "EARNINGS",
-      "label": "決算予定",
-      "detail": "Yahoo Finance掲載予定日"
-    },
-    {
-      "date": "2026-09-29",
-      "type": "RIGHTS",
-      "label": "権利落ち予定",
-      "detail": "権利確定日そのものではありません"
     }
   ],
   "episodes": [
@@ -11854,6 +11437,7 @@
       "duration_months": 12
     }
   ],
+  "future_highlights": [],
   "signal_version": "tv_wilder_rsi14_sma5_v1",
   "signal_name": "月足RSI14 × RSI14の5か月SMA",
   "signal_definition": {

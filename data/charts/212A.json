@@ -2,7 +2,7 @@
   "code": "212A",
   "ticker": "212A.T",
   "name": "フィットイージー",
-  "generated_at": "2026-07-20T11:20:33.160760+00:00",
+  "generated_at": "2026-07-20T13:02:12.623750+00:00",
   "record": {
     "code": "212A",
     "ticker": "212A.T",
@@ -51,6 +51,9 @@
     "forward_per": null,
     "pbr": 7.55,
     "book_value": 360.83,
+    "forward_annual_dividend": 45.0,
+    "trailing_annual_dividend": 25.0,
+    "dividend_change_pct": 80.0,
     "dividend_yield_pct": 1.65,
     "payout_ratio_pct": 39.43,
     "roe_pct": 36.91,
@@ -72,7 +75,7 @@
     "ebitda_oku": 26.72,
     "beta": null,
     "shares_outstanding_million": 16.69,
-    "data_completeness_pct": 84.0,
+    "data_completeness_pct": 85.7,
     "next_earnings_date": null,
     "earnings_date_start": "2025-06-13",
     "earnings_date_end": "2025-06-13",
@@ -7421,6 +7424,38 @@
       "max_return_pct": 0.0,
       "min_return_pct": 0.0,
       "duration_months": 1
+    }
+  ],
+  "future_highlights": [
+    {
+      "type": "EARNINGS",
+      "date": "2025-06-13",
+      "label": "次回決算予定日",
+      "value": "2025-06-13",
+      "detail": "Yahoo Finance掲載予定日"
+    },
+    {
+      "type": "RIGHTS",
+      "date": "2026-10-29",
+      "label": "権利落ち予定日",
+      "value": "2026-10-29",
+      "detail": "権利確定日そのものではありません"
+    },
+    {
+      "type": "DIVIDEND_FORECAST",
+      "date": "2026-10-29",
+      "label": "予想年間配当",
+      "value": 45.0,
+      "unit": "円",
+      "detail": "Yahoo Financeの年間配当予想"
+    },
+    {
+      "type": "DIVIDEND_CHANGE",
+      "date": "2026-10-29",
+      "label": "増配率",
+      "value": 80.0,
+      "unit": "%",
+      "detail": "直近年間配当 25円との比較"
     }
   ],
   "signal_version": "tv_wilder_rsi14_sma5_v1",

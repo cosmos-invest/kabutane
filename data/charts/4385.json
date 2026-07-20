@@ -2,7 +2,7 @@
   "code": "4385",
   "ticker": "4385.T",
   "name": "メルカリ",
-  "generated_at": "2026-07-20T11:21:35.013827+00:00",
+  "generated_at": "2026-07-20T13:02:57.014442+00:00",
   "record": {
     "code": "4385",
     "ticker": "4385.T",
@@ -51,6 +51,9 @@
     "forward_per": 45.87,
     "pbr": 6.34,
     "book_value": 727.99,
+    "forward_annual_dividend": null,
+    "trailing_annual_dividend": 0.0,
+    "dividend_change_pct": null,
     "dividend_yield_pct": null,
     "payout_ratio_pct": 0.0,
     "roe_pct": 32.97,
@@ -72,7 +75,7 @@
     "ebitda_oku": 444.04,
     "beta": 1.06,
     "shares_outstanding_million": 165.22,
-    "data_completeness_pct": 96.0,
+    "data_completeness_pct": 89.3,
     "next_earnings_date": "2026-08-05",
     "earnings_date_start": "2026-08-05",
     "earnings_date_end": "2026-08-05",
@@ -11098,52 +11101,10 @@
   ],
   "cross_events": [
     {
-      "type": "GC",
-      "month": "2020-02",
-      "date": "2023-07-18",
-      "price": 2443.0
-    },
-    {
-      "type": "GC",
-      "month": "2020-11",
-      "date": "2023-07-18",
-      "price": 4780.0
-    },
-    {
-      "type": "GC",
-      "month": "2021-01",
-      "date": "2023-07-18",
-      "price": 5040.0
-    },
-    {
-      "type": "GC",
-      "month": "2021-06",
-      "date": "2023-07-18",
-      "price": 5900.0
-    },
-    {
-      "type": "GC",
-      "month": "2021-09",
-      "date": "2023-07-18",
-      "price": 6160.0
-    },
-    {
-      "type": "GC",
-      "month": "2022-07",
-      "date": "2023-07-18",
-      "price": 2285.0
-    },
-    {
-      "type": "GC",
-      "month": "2022-10",
-      "date": "2023-07-18",
-      "price": 2475.0
-    },
-    {
-      "type": "GC",
-      "month": "2023-05",
-      "date": "2023-07-18",
-      "price": 2852.0
+      "type": "DC",
+      "month": "2023-09",
+      "date": "2023-10-02",
+      "price": 3226.0
     },
     {
       "type": "GC",
@@ -11152,76 +11113,16 @@
       "price": 1997.5
     },
     {
-      "type": "GC",
-      "month": "2025-02",
-      "date": "2025-03-03",
-      "price": 2339.0
-    },
-    {
-      "type": "GC",
-      "month": "2025-08",
-      "date": "2025-09-01",
-      "price": 2501.0
-    },
-    {
-      "type": "GC",
-      "month": "2025-11",
-      "date": "2025-12-01",
-      "price": 2655.0
-    },
-    {
-      "type": "DC",
-      "month": "2020-10",
-      "date": "2023-07-18",
-      "price": 4400.0
-    },
-    {
-      "type": "DC",
-      "month": "2020-12",
-      "date": "2023-07-18",
-      "price": 4575.0
-    },
-    {
-      "type": "DC",
-      "month": "2021-05",
-      "date": "2023-07-18",
-      "price": 5190.0
-    },
-    {
-      "type": "DC",
-      "month": "2021-08",
-      "date": "2023-07-18",
-      "price": 5440.0
-    },
-    {
-      "type": "DC",
-      "month": "2021-12",
-      "date": "2023-07-18",
-      "price": 5860.0
-    },
-    {
-      "type": "DC",
-      "month": "2022-09",
-      "date": "2023-07-18",
-      "price": 1934.0
-    },
-    {
-      "type": "DC",
-      "month": "2023-02",
-      "date": "2023-07-18",
-      "price": 2418.0
-    },
-    {
-      "type": "DC",
-      "month": "2023-09",
-      "date": "2023-10-02",
-      "price": 3226.0
-    },
-    {
       "type": "DC",
       "month": "2024-10",
       "date": "2024-11-01",
       "price": 2159.5
+    },
+    {
+      "type": "GC",
+      "month": "2025-02",
+      "date": "2025-03-03",
+      "price": 2339.0
     },
     {
       "type": "DC",
@@ -11230,61 +11131,25 @@
       "price": 2330.5
     },
     {
+      "type": "GC",
+      "month": "2025-08",
+      "date": "2025-09-01",
+      "price": 2501.0
+    },
+    {
       "type": "DC",
       "month": "2025-09",
       "date": "2025-10-01",
       "price": 2276.0
+    },
+    {
+      "type": "GC",
+      "month": "2025-11",
+      "date": "2025-12-01",
+      "price": 2655.0
     }
   ],
   "gc_events": [
-    {
-      "type": "GC",
-      "month": "2020-02",
-      "date": "2023-07-18",
-      "price": 2443.0
-    },
-    {
-      "type": "GC",
-      "month": "2020-11",
-      "date": "2023-07-18",
-      "price": 4780.0
-    },
-    {
-      "type": "GC",
-      "month": "2021-01",
-      "date": "2023-07-18",
-      "price": 5040.0
-    },
-    {
-      "type": "GC",
-      "month": "2021-06",
-      "date": "2023-07-18",
-      "price": 5900.0
-    },
-    {
-      "type": "GC",
-      "month": "2021-09",
-      "date": "2023-07-18",
-      "price": 6160.0
-    },
-    {
-      "type": "GC",
-      "month": "2022-07",
-      "date": "2023-07-18",
-      "price": 2285.0
-    },
-    {
-      "type": "GC",
-      "month": "2022-10",
-      "date": "2023-07-18",
-      "price": 2475.0
-    },
-    {
-      "type": "GC",
-      "month": "2023-05",
-      "date": "2023-07-18",
-      "price": 2852.0
-    },
     {
       "type": "GC",
       "month": "2024-06",
@@ -11311,48 +11176,6 @@
     }
   ],
   "dc_events": [
-    {
-      "type": "DC",
-      "month": "2020-10",
-      "date": "2023-07-18",
-      "price": 4400.0
-    },
-    {
-      "type": "DC",
-      "month": "2020-12",
-      "date": "2023-07-18",
-      "price": 4575.0
-    },
-    {
-      "type": "DC",
-      "month": "2021-05",
-      "date": "2023-07-18",
-      "price": 5190.0
-    },
-    {
-      "type": "DC",
-      "month": "2021-08",
-      "date": "2023-07-18",
-      "price": 5440.0
-    },
-    {
-      "type": "DC",
-      "month": "2021-12",
-      "date": "2023-07-18",
-      "price": 5860.0
-    },
-    {
-      "type": "DC",
-      "month": "2022-09",
-      "date": "2023-07-18",
-      "price": 1934.0
-    },
-    {
-      "type": "DC",
-      "month": "2023-02",
-      "date": "2023-07-18",
-      "price": 2418.0
-    },
     {
       "type": "DC",
       "month": "2023-09",
@@ -11518,6 +11341,15 @@
       "max_return_pct": 59.66,
       "min_return_pct": 0.0,
       "duration_months": 8
+    }
+  ],
+  "future_highlights": [
+    {
+      "type": "EARNINGS",
+      "date": "2026-08-05",
+      "label": "次回決算予定日",
+      "value": "2026-08-05",
+      "detail": "Yahoo Finance掲載予定日"
     }
   ],
   "signal_version": "tv_wilder_rsi14_sma5_v1",

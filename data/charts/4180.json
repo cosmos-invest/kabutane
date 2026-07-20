@@ -2,7 +2,7 @@
   "code": "4180",
   "ticker": "4180.T",
   "name": "APPIER GROUP",
-  "generated_at": "2026-07-20T11:21:50.368893+00:00",
+  "generated_at": "2026-07-20T13:03:07.109390+00:00",
   "record": {
     "code": "4180",
     "ticker": "4180.T",
@@ -51,7 +51,10 @@
     "forward_per": 19.66,
     "pbr": 2.46,
     "book_value": 369.41,
-    "dividend_yield_pct": 25.0,
+    "forward_annual_dividend": 2.3,
+    "trailing_annual_dividend": 2.25,
+    "dividend_change_pct": 2.22,
+    "dividend_yield_pct": 0.25,
     "payout_ratio_pct": 9.0,
     "roe_pct": 7.37,
     "roa_pct": 3.55,
@@ -11098,22 +11101,10 @@
   ],
   "cross_events": [
     {
-      "type": "GC",
-      "month": "2022-09",
-      "date": "2023-07-18",
-      "price": 1214.0
-    },
-    {
-      "type": "GC",
-      "month": "2023-01",
-      "date": "2023-07-18",
-      "price": 1642.0
-    },
-    {
-      "type": "GC",
-      "month": "2023-06",
-      "date": "2023-07-18",
-      "price": 1749.0
+      "type": "DC",
+      "month": "2023-09",
+      "date": "2023-10-02",
+      "price": 1599.0
     },
     {
       "type": "GC",
@@ -11122,52 +11113,16 @@
       "price": 1640.0
     },
     {
-      "type": "GC",
-      "month": "2024-08",
-      "date": "2024-09-02",
-      "price": 1642.0
-    },
-    {
-      "type": "GC",
-      "month": "2025-01",
-      "date": "2025-02-03",
-      "price": 1621.0
-    },
-    {
-      "type": "GC",
-      "month": "2025-05",
-      "date": "2025-06-02",
-      "price": 1548.0
-    },
-    {
-      "type": "GC",
-      "month": "2026-04",
-      "date": "2026-05-01",
-      "price": 886.0
-    },
-    {
-      "type": "DC",
-      "month": "2022-12",
-      "date": "2023-07-18",
-      "price": 1358.0
-    },
-    {
-      "type": "DC",
-      "month": "2023-04",
-      "date": "2023-07-18",
-      "price": 1533.0
-    },
-    {
-      "type": "DC",
-      "month": "2023-09",
-      "date": "2023-10-02",
-      "price": 1599.0
-    },
-    {
       "type": "DC",
       "month": "2024-03",
       "date": "2024-04-01",
       "price": 1569.0
+    },
+    {
+      "type": "GC",
+      "month": "2024-08",
+      "date": "2024-09-02",
+      "price": 1642.0
     },
     {
       "type": "DC",
@@ -11176,37 +11131,37 @@
       "price": 1429.0
     },
     {
+      "type": "GC",
+      "month": "2025-01",
+      "date": "2025-02-03",
+      "price": 1621.0
+    },
+    {
       "type": "DC",
       "month": "2025-02",
       "date": "2025-03-03",
       "price": 1484.0
     },
     {
+      "type": "GC",
+      "month": "2025-05",
+      "date": "2025-06-02",
+      "price": 1548.0
+    },
+    {
       "type": "DC",
       "month": "2025-09",
       "date": "2025-10-01",
       "price": 1550.0
+    },
+    {
+      "type": "GC",
+      "month": "2026-04",
+      "date": "2026-05-01",
+      "price": 886.0
     }
   ],
   "gc_events": [
-    {
-      "type": "GC",
-      "month": "2022-09",
-      "date": "2023-07-18",
-      "price": 1214.0
-    },
-    {
-      "type": "GC",
-      "month": "2023-01",
-      "date": "2023-07-18",
-      "price": 1642.0
-    },
-    {
-      "type": "GC",
-      "month": "2023-06",
-      "date": "2023-07-18",
-      "price": 1749.0
-    },
     {
       "type": "GC",
       "month": "2023-11",
@@ -11239,18 +11194,6 @@
     }
   ],
   "dc_events": [
-    {
-      "type": "DC",
-      "month": "2022-12",
-      "date": "2023-07-18",
-      "price": 1358.0
-    },
-    {
-      "type": "DC",
-      "month": "2023-04",
-      "date": "2023-07-18",
-      "price": 1533.0
-    },
     {
       "type": "DC",
       "month": "2023-09",
@@ -11396,6 +11339,38 @@
       "max_return_pct": 7.22,
       "min_return_pct": -8.92,
       "duration_months": 3
+    }
+  ],
+  "future_highlights": [
+    {
+      "type": "EARNINGS",
+      "date": "2026-05-13",
+      "label": "次回決算予定日",
+      "value": "2026-05-13",
+      "detail": "Yahoo Finance掲載予定日"
+    },
+    {
+      "type": "RIGHTS",
+      "date": "2026-12-29",
+      "label": "権利落ち予定日",
+      "value": "2026-12-29",
+      "detail": "権利確定日そのものではありません"
+    },
+    {
+      "type": "DIVIDEND_FORECAST",
+      "date": "2026-12-29",
+      "label": "予想年間配当",
+      "value": 2.3,
+      "unit": "円",
+      "detail": "Yahoo Financeの年間配当予想"
+    },
+    {
+      "type": "DIVIDEND_CHANGE",
+      "date": "2026-12-29",
+      "label": "増配率",
+      "value": 2.22,
+      "unit": "%",
+      "detail": "直近年間配当 2.25円との比較"
     }
   ],
   "signal_version": "tv_wilder_rsi14_sma5_v1",

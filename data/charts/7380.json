@@ -2,7 +2,7 @@
   "code": "7380",
   "ticker": "7380.T",
   "name": "十六フィナンシャルグループ",
-  "generated_at": "2026-07-20T11:21:23.199507+00:00",
+  "generated_at": "2026-07-20T13:02:48.737974+00:00",
   "record": {
     "code": "7380",
     "ticker": "7380.T",
@@ -47,37 +47,40 @@
     "cosmos_focus_type": null,
     "current_price": 2312.0,
     "change_from_signal_month_pct": -0.86,
-    "per": 15.08,
+    "per": null,
     "forward_per": null,
-    "pbr": 0.87,
-    "book_value": 2645.11,
-    "dividend_yield_pct": 2.16,
-    "payout_ratio_pct": 31.33,
-    "roe_pct": 6.19,
-    "roa_pct": 0.37,
-    "profit_margin_pct": 18.23,
-    "operating_margin_pct": 33.36,
-    "revenue_growth_pct": 31.4,
-    "earnings_growth_pct": 77.2,
+    "pbr": null,
+    "book_value": null,
+    "forward_annual_dividend": null,
+    "trailing_annual_dividend": null,
+    "dividend_change_pct": null,
+    "dividend_yield_pct": null,
+    "payout_ratio_pct": null,
+    "roe_pct": null,
+    "roa_pct": null,
+    "profit_margin_pct": null,
+    "operating_margin_pct": null,
+    "revenue_growth_pct": null,
+    "earnings_growth_pct": null,
     "current_ratio": null,
     "quick_ratio": null,
     "debt_to_equity_pct": null,
-    "equity_ratio_pct": 5.52,
-    "market_cap_oku": 4094.67,
-    "enterprise_value_oku": -1327.63,
-    "operating_cashflow_oku": -2039.18,
+    "equity_ratio_pct": null,
+    "market_cap_oku": null,
+    "enterprise_value_oku": null,
+    "operating_cashflow_oku": null,
     "free_cashflow_oku": null,
-    "total_cash_oku": 11010.07,
-    "total_debt_oku": 5539.65,
+    "total_cash_oku": null,
+    "total_debt_oku": null,
     "ebitda_oku": null,
-    "beta": 0.44,
-    "shares_outstanding_million": 177.11,
-    "data_completeness_pct": 76.0,
+    "beta": null,
+    "shares_outstanding_million": null,
+    "data_completeness_pct": 0,
     "next_earnings_date": null,
-    "earnings_date_start": "2025-05-09",
-    "earnings_date_end": "2025-05-09",
-    "ex_dividend_date": "2026-09-29",
-    "last_dividend_date": "2027-03-30",
+    "earnings_date_start": null,
+    "earnings_date_end": null,
+    "ex_dividend_date": null,
+    "last_dividend_date": null,
     "monthly_rsi14": 81.96,
     "monthly_rsi_ma5": 81.15,
     "monthly_rsi14_up": true,
@@ -11104,40 +11107,16 @@
       "price": 703.0
     },
     {
-      "type": "GC",
-      "month": "2024-02",
-      "date": "2024-03-01",
-      "price": 889.0
-    },
-    {
-      "type": "GC",
-      "month": "2024-07",
-      "date": "2024-08-01",
-      "price": 973.0
-    },
-    {
-      "type": "GC",
-      "month": "2024-12",
-      "date": "2025-01-06",
-      "price": 856.0
-    },
-    {
-      "type": "GC",
-      "month": "2025-07",
-      "date": "2025-08-01",
-      "price": 1048.0
-    },
-    {
-      "type": "GC",
-      "month": "2026-06",
-      "date": "2026-07-01",
-      "price": 2332.0
-    },
-    {
       "type": "DC",
       "month": "2023-11",
       "date": "2023-12-01",
       "price": 766.0
+    },
+    {
+      "type": "GC",
+      "month": "2024-02",
+      "date": "2024-03-01",
+      "price": 889.0
     },
     {
       "type": "DC",
@@ -11146,10 +11125,22 @@
       "price": 953.0
     },
     {
+      "type": "GC",
+      "month": "2024-07",
+      "date": "2024-08-01",
+      "price": 973.0
+    },
+    {
       "type": "DC",
       "month": "2024-08",
       "date": "2024-09-02",
       "price": 853.0
+    },
+    {
+      "type": "GC",
+      "month": "2024-12",
+      "date": "2025-01-06",
+      "price": 856.0
     },
     {
       "type": "DC",
@@ -11158,10 +11149,22 @@
       "price": 969.0
     },
     {
+      "type": "GC",
+      "month": "2025-07",
+      "date": "2025-08-01",
+      "price": 1048.0
+    },
+    {
       "type": "DC",
       "month": "2026-03",
       "date": "2026-04-01",
       "price": 1776.0
+    },
+    {
+      "type": "GC",
+      "month": "2026-06",
+      "date": "2026-07-01",
+      "price": 2332.0
     }
   ],
   "gc_events": [
@@ -11260,12 +11263,6 @@
       "detail": "1株 20円"
     },
     {
-      "date": "2025-05-09",
-      "type": "EARNINGS",
-      "label": "決算予定",
-      "detail": "Yahoo Finance掲載予定日"
-    },
-    {
       "date": "2025-09-29",
       "type": "DIVIDEND",
       "label": "配当",
@@ -11282,12 +11279,6 @@
       "type": "SPLIT",
       "label": "株式分割・併合",
       "detail": "比率 5"
-    },
-    {
-      "date": "2026-09-29",
-      "type": "RIGHTS",
-      "label": "権利落ち予定",
-      "detail": "権利確定日そのものではありません"
     }
   ],
   "episodes": [
@@ -11358,6 +11349,7 @@
       "duration_months": 1
     }
   ],
+  "future_highlights": [],
   "signal_version": "tv_wilder_rsi14_sma5_v1",
   "signal_name": "月足RSI14 × RSI14の5か月SMA",
   "signal_definition": {

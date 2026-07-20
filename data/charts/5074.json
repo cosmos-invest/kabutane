@@ -2,7 +2,7 @@
   "code": "5074",
   "ticker": "5074.T",
   "name": "テスホールディングス",
-  "generated_at": "2026-07-20T11:20:40.260219+00:00",
+  "generated_at": "2026-07-20T13:02:17.567146+00:00",
   "record": {
     "code": "5074",
     "ticker": "5074.T",
@@ -51,7 +51,10 @@
     "forward_per": 27.78,
     "pbr": 1.06,
     "book_value": 702.14,
-    "dividend_yield_pct": 78.0,
+    "forward_annual_dividend": 5.8,
+    "trailing_annual_dividend": 5.12,
+    "dividend_change_pct": 13.28,
+    "dividend_yield_pct": 0.78,
     "payout_ratio_pct": 39.02,
     "roe_pct": 2.07,
     "roa_pct": 1.39,
@@ -72,7 +75,7 @@
     "ebitda_oku": 89.95,
     "beta": 1.15,
     "shares_outstanding_million": 70.63,
-    "data_completeness_pct": 88.0,
+    "data_completeness_pct": 89.3,
     "next_earnings_date": null,
     "earnings_date_start": "2025-05-15",
     "earnings_date_end": "2025-05-15",
@@ -11099,39 +11102,9 @@
   "cross_events": [
     {
       "type": "GC",
-      "month": "2022-11",
-      "date": "2023-07-18",
-      "price": 1112.0
-    },
-    {
-      "type": "GC",
       "month": "2024-01",
       "date": "2024-02-01",
       "price": 460.0
-    },
-    {
-      "type": "GC",
-      "month": "2024-06",
-      "date": "2024-07-01",
-      "price": 436.0
-    },
-    {
-      "type": "GC",
-      "month": "2025-03",
-      "date": "2025-04-01",
-      "price": 272.0
-    },
-    {
-      "type": "GC",
-      "month": "2026-01",
-      "date": "2026-02-02",
-      "price": 368.0
-    },
-    {
-      "type": "DC",
-      "month": "2023-05",
-      "date": "2023-07-18",
-      "price": 997.0
     },
     {
       "type": "DC",
@@ -11140,25 +11113,37 @@
       "price": 433.0
     },
     {
+      "type": "GC",
+      "month": "2024-06",
+      "date": "2024-07-01",
+      "price": 436.0
+    },
+    {
       "type": "DC",
       "month": "2024-07",
       "date": "2024-08-01",
       "price": 409.0
     },
     {
+      "type": "GC",
+      "month": "2025-03",
+      "date": "2025-04-01",
+      "price": 272.0
+    },
+    {
       "type": "DC",
       "month": "2025-10",
       "date": "2025-11-04",
       "price": 349.0
+    },
+    {
+      "type": "GC",
+      "month": "2026-01",
+      "date": "2026-02-02",
+      "price": 368.0
     }
   ],
   "gc_events": [
-    {
-      "type": "GC",
-      "month": "2022-11",
-      "date": "2023-07-18",
-      "price": 1112.0
-    },
     {
       "type": "GC",
       "month": "2024-01",
@@ -11185,12 +11170,6 @@
     }
   ],
   "dc_events": [
-    {
-      "type": "DC",
-      "month": "2023-05",
-      "date": "2023-07-18",
-      "price": 997.0
-    },
     {
       "type": "DC",
       "month": "2024-04",
@@ -11297,6 +11276,38 @@
       "max_return_pct": 188.04,
       "min_return_pct": 0.0,
       "duration_months": 6
+    }
+  ],
+  "future_highlights": [
+    {
+      "type": "EARNINGS",
+      "date": "2025-05-15",
+      "label": "次回決算予定日",
+      "value": "2025-05-15",
+      "detail": "Yahoo Finance掲載予定日"
+    },
+    {
+      "type": "RIGHTS",
+      "date": "2026-06-29",
+      "label": "権利落ち予定日",
+      "value": "2026-06-29",
+      "detail": "権利確定日そのものではありません"
+    },
+    {
+      "type": "DIVIDEND_FORECAST",
+      "date": "2026-06-29",
+      "label": "予想年間配当",
+      "value": 5.8,
+      "unit": "円",
+      "detail": "Yahoo Financeの年間配当予想"
+    },
+    {
+      "type": "DIVIDEND_CHANGE",
+      "date": "2026-06-29",
+      "label": "増配率",
+      "value": 13.28,
+      "unit": "%",
+      "detail": "直近年間配当 5.12円との比較"
     }
   ],
   "signal_version": "tv_wilder_rsi14_sma5_v1",

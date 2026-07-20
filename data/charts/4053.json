@@ -2,7 +2,7 @@
   "code": "4053",
   "ticker": "4053.T",
   "name": "SUN ASTERISK",
-  "generated_at": "2026-07-20T11:21:38.098463+00:00",
+  "generated_at": "2026-07-20T13:02:59.167448+00:00",
   "record": {
     "code": "4053",
     "ticker": "4053.T",
@@ -51,6 +51,9 @@
     "forward_per": 10.99,
     "pbr": 1.59,
     "book_value": 287.53,
+    "forward_annual_dividend": 10.0,
+    "trailing_annual_dividend": 0.0,
+    "dividend_change_pct": null,
     "dividend_yield_pct": 2.19,
     "payout_ratio_pct": 0.0,
     "roe_pct": 6.24,
@@ -72,7 +75,7 @@
     "ebitda_oku": 15.61,
     "beta": 0.06,
     "shares_outstanding_million": 39.03,
-    "data_completeness_pct": 92.0,
+    "data_completeness_pct": 89.3,
     "next_earnings_date": null,
     "earnings_date_start": "2025-08-12",
     "earnings_date_end": "2025-08-18",
@@ -11098,16 +11101,10 @@
   ],
   "cross_events": [
     {
-      "type": "GC",
-      "month": "2022-11",
-      "date": "2023-07-18",
-      "price": 1199.0
-    },
-    {
-      "type": "GC",
-      "month": "2023-05",
-      "date": "2023-07-18",
-      "price": 1255.0
+      "type": "DC",
+      "month": "2023-10",
+      "date": "2023-11-01",
+      "price": 1258.0
     },
     {
       "type": "GC",
@@ -11116,46 +11113,16 @@
       "price": 917.0
     },
     {
-      "type": "GC",
-      "month": "2024-11",
-      "date": "2024-12-02",
-      "price": 700.0
-    },
-    {
-      "type": "GC",
-      "month": "2025-07",
-      "date": "2025-08-01",
-      "price": 534.0
-    },
-    {
-      "type": "GC",
-      "month": "2025-11",
-      "date": "2025-12-01",
-      "price": 492.0
-    },
-    {
-      "type": "GC",
-      "month": "2026-05",
-      "date": "2026-06-01",
-      "price": 445.0
-    },
-    {
-      "type": "DC",
-      "month": "2023-03",
-      "date": "2023-07-18",
-      "price": 1111.0
-    },
-    {
-      "type": "DC",
-      "month": "2023-10",
-      "date": "2023-11-01",
-      "price": 1258.0
-    },
-    {
       "type": "DC",
       "month": "2024-08",
       "date": "2024-09-02",
       "price": 613.0
+    },
+    {
+      "type": "GC",
+      "month": "2024-11",
+      "date": "2024-12-02",
+      "price": 700.0
     },
     {
       "type": "DC",
@@ -11164,31 +11131,37 @@
       "price": 542.0
     },
     {
+      "type": "GC",
+      "month": "2025-07",
+      "date": "2025-08-01",
+      "price": 534.0
+    },
+    {
       "type": "DC",
       "month": "2025-08",
       "date": "2025-09-01",
       "price": 465.0
     },
     {
+      "type": "GC",
+      "month": "2025-11",
+      "date": "2025-12-01",
+      "price": 492.0
+    },
+    {
       "type": "DC",
       "month": "2026-02",
       "date": "2026-03-02",
       "price": 417.0
+    },
+    {
+      "type": "GC",
+      "month": "2026-05",
+      "date": "2026-06-01",
+      "price": 445.0
     }
   ],
   "gc_events": [
-    {
-      "type": "GC",
-      "month": "2022-11",
-      "date": "2023-07-18",
-      "price": 1199.0
-    },
-    {
-      "type": "GC",
-      "month": "2023-05",
-      "date": "2023-07-18",
-      "price": 1255.0
-    },
     {
       "type": "GC",
       "month": "2024-07",
@@ -11221,12 +11194,6 @@
     }
   ],
   "dc_events": [
-    {
-      "type": "DC",
-      "month": "2023-03",
-      "date": "2023-07-18",
-      "price": 1111.0
-    },
     {
       "type": "DC",
       "month": "2023-10",
@@ -11349,6 +11316,30 @@
       "max_return_pct": 0.0,
       "min_return_pct": -4.49,
       "duration_months": 2
+    }
+  ],
+  "future_highlights": [
+    {
+      "type": "EARNINGS",
+      "date": "2025-08-12",
+      "label": "次回決算予定日",
+      "value": "2025-08-12",
+      "detail": "Yahoo Finance掲載予定日"
+    },
+    {
+      "type": "RIGHTS",
+      "date": "2026-12-29",
+      "label": "権利落ち予定日",
+      "value": "2026-12-29",
+      "detail": "権利確定日そのものではありません"
+    },
+    {
+      "type": "DIVIDEND_FORECAST",
+      "date": "2026-12-29",
+      "label": "予想年間配当",
+      "value": 10.0,
+      "unit": "円",
+      "detail": "Yahoo Financeの年間配当予想"
     }
   ],
   "signal_version": "tv_wilder_rsi14_sma5_v1",

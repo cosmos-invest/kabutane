@@ -2,7 +2,7 @@
   "code": "4373",
   "ticker": "4373.T",
   "name": "シンプレクス・ホールディングス",
-  "generated_at": "2026-07-20T11:21:35.618405+00:00",
+  "generated_at": "2026-07-20T13:02:57.435627+00:00",
   "record": {
     "code": "4373",
     "ticker": "4373.T",
@@ -51,6 +51,9 @@
     "forward_per": 7.03,
     "pbr": 4.67,
     "book_value": 230.0,
+    "forward_annual_dividend": 24.0,
+    "trailing_annual_dividend": 18.0,
+    "dividend_change_pct": 33.33,
     "dividend_yield_pct": 2.23,
     "payout_ratio_pct": 39.85,
     "roe_pct": 21.02,
@@ -11098,10 +11101,10 @@
   ],
   "cross_events": [
     {
-      "type": "GC",
-      "month": "2023-03",
-      "date": "2023-07-18",
-      "price": 609.0
+      "type": "DC",
+      "month": "2023-09",
+      "date": "2023-10-02",
+      "price": 677.0
     },
     {
       "type": "GC",
@@ -11110,40 +11113,16 @@
       "price": 685.75
     },
     {
-      "type": "GC",
-      "month": "2024-03",
-      "date": "2024-04-01",
-      "price": 707.75
-    },
-    {
-      "type": "GC",
-      "month": "2024-06",
-      "date": "2024-07-01",
-      "price": 708.75
-    },
-    {
-      "type": "GC",
-      "month": "2024-10",
-      "date": "2024-11-01",
-      "price": 625.0
-    },
-    {
-      "type": "GC",
-      "month": "2026-05",
-      "date": "2026-06-01",
-      "price": 1064.0
-    },
-    {
-      "type": "DC",
-      "month": "2023-09",
-      "date": "2023-10-02",
-      "price": 677.0
-    },
-    {
       "type": "DC",
       "month": "2024-02",
       "date": "2024-03-01",
       "price": 638.25
+    },
+    {
+      "type": "GC",
+      "month": "2024-03",
+      "date": "2024-04-01",
+      "price": 707.75
     },
     {
       "type": "DC",
@@ -11152,25 +11131,37 @@
       "price": 642.0
     },
     {
+      "type": "GC",
+      "month": "2024-06",
+      "date": "2024-07-01",
+      "price": 708.75
+    },
+    {
       "type": "DC",
       "month": "2024-07",
       "date": "2024-08-01",
       "price": 541.75
     },
     {
+      "type": "GC",
+      "month": "2024-10",
+      "date": "2024-11-01",
+      "price": 625.0
+    },
+    {
       "type": "DC",
       "month": "2025-09",
       "date": "2025-10-01",
       "price": 1086.25
+    },
+    {
+      "type": "GC",
+      "month": "2026-05",
+      "date": "2026-06-01",
+      "price": 1064.0
     }
   ],
   "gc_events": [
-    {
-      "type": "GC",
-      "month": "2023-03",
-      "date": "2023-07-18",
-      "price": 609.0
-    },
     {
       "type": "GC",
       "month": "2023-12",
@@ -11338,6 +11329,38 @@
       "max_return_pct": 0.0,
       "min_return_pct": -11.94,
       "duration_months": 2
+    }
+  ],
+  "future_highlights": [
+    {
+      "type": "EARNINGS",
+      "date": "2026-07-27",
+      "label": "次回決算予定日",
+      "value": "2026-07-27",
+      "detail": "Yahoo Finance掲載予定日"
+    },
+    {
+      "type": "RIGHTS",
+      "date": "2027-03-30",
+      "label": "権利落ち予定日",
+      "value": "2027-03-30",
+      "detail": "権利確定日そのものではありません"
+    },
+    {
+      "type": "DIVIDEND_FORECAST",
+      "date": "2027-03-30",
+      "label": "予想年間配当",
+      "value": 24.0,
+      "unit": "円",
+      "detail": "Yahoo Financeの年間配当予想"
+    },
+    {
+      "type": "DIVIDEND_CHANGE",
+      "date": "2027-03-30",
+      "label": "増配率",
+      "value": 33.33,
+      "unit": "%",
+      "detail": "直近年間配当 18円との比較"
     }
   ],
   "signal_version": "tv_wilder_rsi14_sma5_v1",
