@@ -16,6 +16,7 @@ const SignalV2 = (() => {
       DAILY: "@@SIGNAL_DAILY_RSI14@@",
       FAST: "@@SIGNAL_MONTHLY_RSI14@@",
       SLOW: "@@SIGNAL_MONTHLY_RSI_MA5@@",
+      RAW: "@@SIGNAL_RAW_RSI14@@",
       CONDITION: "@@SIGNAL_CONDITION@@",
     };
 
@@ -24,10 +25,16 @@ const SignalV2 = (() => {
       .replaceAll("月足RSI14 × RSI14の5か月SMA", tokens.CONDITION)
       .replaceAll("月足RSI14 > RSI14の5か月SMA", tokens.CONDITION)
       .replaceAll("月足RSI5 > 月足RSI14", tokens.CONDITION)
+      .replaceAll("RSI14・5か月MA", tokens.SLOW)
+      .replaceAll("RSI14の5か月SMA", tokens.SLOW)
+      .replaceAll("RSI14の5か月MA", tokens.SLOW)
+      .replaceAll("Wilder RSI14", `Wilder ${tokens.RAW}`)
+      .replaceAll("ワイルダー方式のRSI14", `ワイルダー方式の${tokens.RAW}`)
+      .replaceAll("TradingView方式のRSI14", `TradingView方式の${tokens.RAW}`)
       .replaceAll("月足RSI5 / RSI14", `${tokens.FAST} / ${tokens.SLOW}`)
       .replaceAll("月足RSI5・RSI14", `${tokens.FAST}・${tokens.SLOW}`)
       .replaceAll("月足RSI5", tokens.FAST)
-      .replaceAll("月足RSI14", tokens.SLOW)
+      .replaceAll("月足RSI14", tokens.FAST)
       .replaceAll("RSI5がRSI14以下", `${tokens.FAST}が5か月MA以下`)
       .replaceAll("RSI5がRSI14を上回る", `${tokens.FAST}が5か月MAを上回る`)
       .replaceAll("RSI5がRSI14", `${tokens.FAST}が5か月MA`)
@@ -46,7 +53,8 @@ const SignalV2 = (() => {
       .replaceAll(tokens.CONDITION, "月足RSI14 > RSI14の5か月SMA")
       .replaceAll(tokens.FAST, FAST_LABEL)
       .replaceAll(tokens.SLOW, SLOW_LABEL)
-      .replaceAll(tokens.DAILY, "日足RSI14");
+      .replaceAll(tokens.DAILY, "日足RSI14")
+      .replaceAll(tokens.RAW, "RSI14");
   }
 
   function canonicalValue(row, key) {
@@ -75,6 +83,7 @@ const SignalV2 = (() => {
     if (node.nodeType !== Node.ELEMENT_NODE) return;
     const element = node;
     if (["SCRIPT", "STYLE", "TEXTAREA"].includes(element.tagName)) return;
+    if (element.hasAttribute("data-signal-canonical")) return;
     ["title", "aria-label", "placeholder"].forEach((attribute) => {
       if (!element.hasAttribute(attribute)) return;
       const current = element.getAttribute(attribute);
@@ -82,6 +91,26 @@ const SignalV2 = (() => {
       if (next !== current) element.setAttribute(attribute, next);
     });
     [...element.childNodes].forEach(rewriteNode);
+  }
+
+  function setControlLabel(id, text) {
+    const control = document.getElementById(id);
+    if (!control) return;
+    const group = control.closest(".control-group") || control.closest("label");
+    const label = group?.matches("label") ? group : group?.querySelector("label");
+    if (!label) return;
+    const textNode = [...label.childNodes].find((node) => node.nodeType === Node.TEXT_NODE && node.nodeValue.trim());
+    if (textNode) textNode.nodeValue = text;
+  }
+
+  function normalizeKnownControls() {
+    document.querySelectorAll('[data-key="rsi5"]').forEach((element) => { element.textContent = FAST_LABEL; });
+    document.querySelectorAll('[data-key="rsi14"]').forEach((element) => { element.textContent = "5か月MA"; });
+    setControlLabel("rsi5Min", FAST_LABEL);
+    setControlLabel("rsi14Min", SLOW_LABEL);
+    setControlLabel("rsi5Trend", `${FAST_LABEL}の向き`);
+    setControlLabel("rsi14Trend", "5か月MAの向き");
+    setControlLabel("requireRsi14Up", "5か月MAが上向き");
   }
 
   function rewriteCharts() {
@@ -93,6 +122,8 @@ const SignalV2 = (() => {
         if (!dataset.label) return;
         let next;
         if (canvasId === "oscillatorChart" && dataset.label === "RSI14") next = "日足RSI14";
+        else if (dataset.label === "RSI5" || dataset.label === "月足RSI5") next = FAST_LABEL;
+        else if (dataset.label === "RSI14" || dataset.label === "月足RSI14") next = SLOW_LABEL;
         else next = rewriteText(dataset.label);
         if (next !== dataset.label) {
           dataset.label = next;
@@ -119,6 +150,7 @@ const SignalV2 = (() => {
     if (!main || document.querySelector(".signal-method-card")) return null;
     const section = document.createElement("section");
     section.className = "signal-method-card";
+    section.setAttribute("data-signal-canonical", "true");
     section.innerHTML = `
       <div>
         <span class="signal-method-kicker">OFFICIAL SIGNAL DEFINITION</span>
@@ -172,18 +204,23 @@ const SignalV2 = (() => {
     }
   }
 
-  function startObserver() {
+  function refreshUi() {
     rewriteNode(document.body);
+    normalizeKnownControls();
     rewriteCharts();
+  }
+
+  function startObserver() {
+    refreshUi();
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => mutation.addedNodes.forEach(rewriteNode));
+      normalizeKnownControls();
       rewriteCharts();
     });
     observer.observe(document.body, { childList: true, subtree: true });
     let attempts = 0;
     const timer = setInterval(() => {
-      rewriteNode(document.body);
-      rewriteCharts();
+      refreshUi();
       attempts += 1;
       if (attempts >= 20) clearInterval(timer);
     }, 350);
