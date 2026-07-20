@@ -1,0 +1,46 @@
+name: Validate site UI
+
+on:
+  pull_request:
+    paths:
+      - "backtest.html"
+      - "analysis.html"
+      - "assets/backtest.js"
+      - "assets/backtest.css"
+      - "tests/test_backtest_engine.js"
+      - ".github/workflows/ui-checks.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate JavaScript
+        run: |
+          node --check assets/backtest.js
+          node tests/test_backtest_engine.js
+
+      - name: Validate HTML and CSS
+        run: |
+          python - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+
+          class Parser(HTMLParser):
+              pass
+
+          for name in ("backtest.html", "analysis.html"):
+              Parser().feed(Path(name).read_text(encoding="utf-8"))
+
+          css = Path("assets/backtest.css").read_text(encoding="utf-8")
+          if css.count("{") != css.count("}"):
+              raise SystemExit("CSS braces are not balanced")
+          print("HTML/CSS validation passed")
+          PY
