@@ -5,6 +5,11 @@ on:
   schedule:
     # 毎月2日 12:15 JST（前月の月足確定後）
     - cron: "15 3 2 * *"
+  push:
+    branches: ["main"]
+    paths:
+      - ".github/workflows/update-data.yml"
+      - "test.py"
   pull_request:
     paths:
       - ".github/hotfix-datetime-precision.md"
@@ -85,7 +90,7 @@ jobs:
 
       - name: Generate data
         env:
-          HISTORY_MONTHS: "48"
+          HISTORY_MONTHS: "60"
           MONTHLY_PERIOD: "10y"
           DAILY_PERIOD: "3y"
           ANALYSIS_DAILY_PERIOD: "5y"
