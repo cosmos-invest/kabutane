@@ -108,10 +108,13 @@ const DetailEnhancements = (() => {
       : finite(rawValue) !== null && item.unit
         ? `${number(rawValue)}${item.unit}`
         : text(rawValue ?? item.label);
+    const trendClass = item.type === "DIVIDEND_CHANGE" && finite(rawValue) !== null
+      ? (finite(rawValue) >= 0 ? "positive" : "negative")
+      : "";
     return `
       <article class="future-event-card future-${String(item.type || "info").toLowerCase()}">
         <span class="future-event-label">${text(item.label, "今後の予定")}</span>
-        <strong>${formatted}</strong>
+        <strong class="${trendClass}">${formatted}</strong>
         <time datetime="${text(item.date, "")}">${text(item.date, "日付未定")}</time>
         <small>${text(item.detail, "取得できた予定情報です")}</small>
       </article>`;
@@ -192,13 +195,24 @@ const DetailEnhancements = (() => {
     return response.json();
   }
 
+  function applyPayload(payload) {
+    renderFocus(payload.record || {});
+    renderEvents(payload);
+    repairRsiExplanation();
+  }
+
   async function init() {
     repairRsiExplanation();
     try {
       const payload = await fetchPayload();
       if (!payload) return;
-      renderFocus(payload.record || {});
-      renderEvents(payload);
+      let attempts = 0;
+      const applyAfterBaseRenderer = () => {
+        applyPayload(payload);
+        attempts += 1;
+        if (attempts < 6) window.setTimeout(applyAfterBaseRenderer, 180);
+      };
+      applyAfterBaseRenderer();
     } catch (error) {
       console.error("detail enhancement failed", error);
     }
