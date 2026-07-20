@@ -51,10 +51,11 @@ function renderPlan() {
   els.riskRewardBadge.textContent = `TP ${ratios.map((ratio) => `${ratio.toFixed(1)}R`).join(" / ")}`;
   const valid = state.plan.entry !== null && state.plan.initialStop !== null && state.plan.initialStop < state.plan.entry
     && ratios.every((ratio, index) => index === 0 || ratio > ratios[index - 1]);
-  els.armBracketButton.disabled = !valid || state.ended;
+  els.armBracketButton.disabled = !valid || state.ended || state.account.shares > 0;
   if (!valid) els.riskPlanNotice.textContent = "エントリーより下に損切りを置き、TP1〜TP4を1.5〜5.0Rの昇順で設定してください。";
   else if (state.plan.armed) els.riskPlanNotice.textContent = `待機中：日足の高値・安値が${yen(state.plan.entry)}へ触れたら自動エントリーします。`;
-  else if (state.account.shares > 0) els.riskPlanNotice.textContent = `保有中：現在の自動損切りは${yen(state.plan.activeStop)}です。同一足で損切りと利確へ触れた場合は、保守的に損切りを先に処理します。`;
+  else if (state.account.shares > 0 && state.plan.entryDate) els.riskPlanNotice.textContent = `自動管理中：現在の損切りは${yen(state.plan.activeStop)}です。同一足で損切りと利確へ触れた場合は、保守的に損切りを先に処理します。`;
+  else if (state.account.shares > 0) els.riskPlanNotice.textContent = "手動保有中です。新しい自動エントリー注文は全株売却後に待機できます。";
   else els.riskPlanNotice.textContent = `推奨最大${plan.recommendedShares.toLocaleString("ja-JP")}株。自動注文は${state.plan.autoSlots}枠分で発注します。`;
 }
 
@@ -86,7 +87,7 @@ function renderButtons() {
   els.buyCustomButton.disabled = state.ended || state.availableSlots <= 0;
   [els.sellQuarterButton, els.sellHalfButton, els.sellAllButton].forEach((button) => { button.disabled = state.ended || noShares; });
   [els.stepOneButton, els.stepFiveButton, els.playButton].forEach((button) => { button.disabled = state.ended || noFuture; });
-  els.cancelBracketButton.disabled = !state.plan.armed && state.account.shares <= 0;
+  els.cancelBracketButton.disabled = !state.plan.armed && !state.plan.entryDate;
 }
 
 function renderAll() {
