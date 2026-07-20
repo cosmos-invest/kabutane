@@ -8,6 +8,13 @@ function slotsForShares(shares, plan) {
   return ReplayPro.clamp(Math.ceil(shares / plan.slotShares), 1, ReplayPro.MAX_SLOTS);
 }
 
+function automaticOrderShares(plan) {
+  return ReplayPro.roundToLot(
+    plan.recommendedShares * state.plan.autoSlots / ReplayPro.MAX_SLOTS,
+    state.lotSize,
+  );
+}
+
 function executeBuy(shares, price, reason = "手動", explicitSlots = null) {
   const plan = currentPositionPlan();
   let quantity = ReplayPro.roundToLot(shares, state.lotSize);
@@ -79,8 +86,10 @@ function armBracket() {
     return;
   }
   if (state.plan.entry === null || state.plan.initialStop === null || state.plan.initialStop >= state.plan.entry) return;
-  if (plan.slotShares <= 0 || plan.recommendedShares <= 0) {
-    message("現在の資産・売買単位では自動注文株数を作れません。", true);
+  const desiredShares = automaticOrderShares(plan);
+  const minimumForFourTargets = state.lotSize * ReplayPro.TP_COUNT;
+  if (desiredShares < minimumForFourTargets) {
+    message(`TP1〜TP4へ分割するには最低${minimumForFourTargets.toLocaleString("ja-JP")}株必要です。自動エントリー枠・配分・売買単位を見直してください。`, true);
     return;
   }
   state.plan.armed = true;
@@ -88,7 +97,7 @@ function armBracket() {
   state.plan.hitTargets = [false, false, false, false];
   state.plan.entryDate = null;
   els.sessionState.textContent = "自動注文待機";
-  message(`${yen(state.plan.entry)}でエントリー待機。損切り${yen(state.plan.activeStop)}、TP1〜TP4を自動監視します。`);
+  message(`${yen(state.plan.entry)}で${desiredShares.toLocaleString("ja-JP")}株のエントリー待機。損切り${yen(state.plan.activeStop)}、TP1〜TP4を自動監視します。`);
   renderAll();
 }
 
