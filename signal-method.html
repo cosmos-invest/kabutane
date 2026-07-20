@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="このサイトで正式採用するTradingView方式の月足RSI14と、RSI14の5か月単純移動平均の計算方法・NEW・CONTINUE・OUT判定を説明します。">
+  <title>月足RSIの計算方法 | 月足RSIクロス・スキャナー</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/pastel.css">
+  <style>
+    .method-page{background:radial-gradient(circle at 12% 5%,rgba(255,197,225,.62),transparent 28%),radial-gradient(circle at 88% 16%,rgba(213,203,255,.5),transparent 29%),linear-gradient(145deg,#fffafd,#fff1f8 52%,#f3f6ff);color:#594552}.method-page .site-header{background:linear-gradient(120deg,rgba(255,250,253,.97),rgba(255,232,245,.95),rgba(241,238,255,.95));border-bottom:1px solid #edc9dc}.method-container{max-width:1040px;padding-top:25px}.method-container .panel{padding:24px;margin-bottom:18px;background:rgba(255,255,255,.91);border:1px solid rgba(229,151,190,.38);box-shadow:0 16px 42px rgba(177,104,146,.11)}.method-lead{background:linear-gradient(120deg,#fff,#ffeaf5,#f1edff)!important}.method-kicker{display:inline-flex;padding:5px 10px;border-radius:999px;background:#ffe3f1;color:#a44677;font-size:.72rem;font-weight:900;letter-spacing:.06em}.method-container h2{margin:9px 0;color:#563c4e}.method-container h3{color:#704d64}.method-container p,.method-container li{line-height:1.8}.formula{padding:18px;margin:15px 0;border-radius:16px;background:linear-gradient(130deg,#fff7fb,#f4efff);border:1px solid #eacddd;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;line-height:1.8;overflow-x:auto}.flow-grid,.rule-grid,.compare-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.flow-grid article,.rule-grid article,.compare-grid article{padding:17px;border-radius:16px;background:#fff8fb;border:1px solid #efd4e1}.flow-grid strong,.rule-grid strong,.compare-grid strong{display:block;margin-bottom:7px;color:#9e4574}.rule-grid article:nth-child(2){background:#f5efff;border-color:#ddd0ed}.rule-grid article:nth-child(3){background:#eef8fd;border-color:#cde5f1}.definition-table{width:100%;border-collapse:collapse}.definition-table th,.definition-table td{padding:12px;border-bottom:1px solid #efdbe5;text-align:left;vertical-align:top}.definition-table th{width:31%;color:#8c4f70}.warning-box{padding:16px 18px;border-radius:15px;background:#fff3dd;border:1px solid #edcc94;color:#815111;line-height:1.7}.source-box a{color:#a94378;font-weight:800}.code-block{white-space:pre-wrap}.method-nav{display:flex;flex-wrap:wrap;gap:8px}.method-nav a{display:inline-flex;padding:8px 12px;border-radius:999px;text-decoration:none;background:#fff;color:#8f4a70;border:1px solid #e6c8d8;font-weight:850;font-size:.78rem}@media(max-width:760px){.flow-grid,.rule-grid,.compare-grid{grid-template-columns:1fr}.method-container .panel{padding:18px}.definition-table th{width:39%}}
+  </style>
+</head>
+<body class="pastel-theme method-page" data-page="method">
+  <header class="site-header">
+    <div class="header-inner">
+      <div>
+        <p class="eyebrow">Official Signal Methodology</p>
+        <h1>月足RSI14と5か月移動平均の計算方法🌸</h1>
+        <p class="subtitle">TradingViewのRSI計算と同じWilder方式へ統一し、完成済み月足だけで判定します。</p>
+      </div>
+      <div class="header-meta">
+        <nav class="site-nav" aria-label="サイト内ナビゲーション">
+          <a href="index.html">銘柄を探す</a>
+          <a href="analysis.html">実績を分析</a>
+          <a href="signal-method.html" class="active" aria-current="page">RSI計算方法</a>
+          <a href="howto.html">使い方</a>
+        </nav>
+        <span class="badge neutral">方式 v1</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container method-container">
+    <section class="panel method-lead">
+      <span class="method-kicker">正式な判定定義</span>
+      <h2>月足RSI14が、自身の5か月SMAを上回っているか</h2>
+      <p>このサイトの中心シグナルは、期間5のRSIと期間14のRSIを比べるものではありません。月足終値から計算した<strong>Wilder方式のRSI14本体</strong>と、そのRSI14を直近5か月で単純平均した<strong>RSI14・5か月MA</strong>を比較します。</p>
+      <div class="formula">対象状態 ＝ 月足RSI14 &gt; RSI14の5か月SMA</div>
+      <div class="method-nav"><a href="#calculation">計算式</a><a href="#rules">NEW・OUT</a><a href="#timing">確定タイミング</a><a href="#migration">旧方式との違い</a></div>
+    </section>
+
+    <section id="calculation" class="panel">
+      <span class="method-kicker">STEP 1</span>
+      <h2>TradingView方式のRSI14</h2>
+      <p>各月の終値と前月終値の差を、上昇幅と下落幅へ分けます。平均上昇幅と平均下落幅には、TradingViewの <code>ta.rsi()</code> と同じWilder RMAを使用します。</p>
+      <div class="formula code-block">変化額      ＝ 今月終値 − 前月終値
+上昇幅      ＝ max(変化額, 0)
+下落幅      ＝ max(−変化額, 0)
+平均上昇幅  ＝ RMA(上昇幅, 14)
+平均下落幅  ＝ RMA(下落幅, 14)
+RS          ＝ 平均上昇幅 ÷ 平均下落幅
+RSI14       ＝ 100 − 100 ÷ (1 ＋ RS)</div>
+      <h3>Wilder RMAの更新</h3>
+      <p>最初の値は14期間の単純平均で作り、その後は前月までの平均を引き継いで更新します。</p>
+      <div class="formula">今月RMA ＝（前月RMA × 13 ＋ 今月の値）÷ 14</div>
+      <p>単純移動平均のように古い1か月が突然すべて消えるのではなく、影響が徐々に小さくなるため、値動きが滑らかになります。</p>
+    </section>
+
+    <section class="panel">
+      <span class="method-kicker">STEP 2</span>
+      <h2>RSI14の5か月単純移動平均</h2>
+      <p>2本目の線は「期間5のRSI」ではありません。完成したRSI14を5個並べ、その単純平均を取ります。</p>
+      <div class="formula code-block">RSI14・5か月MA
+＝（今月のRSI14
+ ＋ 1か月前のRSI14
+ ＋ 2か月前のRSI14
+ ＋ 3か月前のRSI14
+ ＋ 4か月前のRSI14）÷ 5</div>
+      <p>TradingViewのPine Scriptで表すと、考え方は次の形です。</p>
+      <div class="formula code-block">rsi14 = ta.rsi(close, 14)
+rsiMa5 = ta.sma(rsi14, 5)</div>
+    </section>
+
+    <section id="rules" class="panel">
+      <span class="method-kicker">STEP 3</span>
+      <h2>NEW・CONTINUE・OUT</h2>
+      <div class="rule-grid">
+        <article><strong>NEW</strong><p>前月はRSI14が5か月MA以下で、当月に上抜けた状態。新しいゴールデンクロスです。</p></article>
+        <article><strong>CONTINUE</strong><p>RSI14が5か月MAより上の状態を翌月以降も維持しています。</p></article>
+        <article><strong>OUT</strong><p>前月まで上にあったRSI14が、5か月MA以下へ戻った状態です。</p></article>
+      </div>
+      <p>この判定は売買命令ではありません。中長期モメンタムの状態変化を見つける入口として利用し、日足トレンド、出来高、財務、損切り位置、資金配分を重ねて判断します。</p>
+    </section>
+
+    <section id="timing" class="panel">
+      <span class="method-kicker">確定値だけを使用</span>
+      <h2>進行中の当月は計算対象にしません</h2>
+      <div class="flow-grid">
+        <article><strong>月末</strong><p>その月の最終取引日の終値で月足が完成します。</p></article>
+        <article><strong>翌月初</strong><p>確定したRSI値とクロスを初めて利用可能にします。</p></article>
+        <article><strong>毎月更新</strong><p>月途中の一時的なクロスで対象銘柄が出入りすることを防ぎます。</p></article>
+      </div>
+      <p>詳細画面の日足チャートでも、確定した前月のRSIを翌月最初の取引日から表示します。これにより、過去チャート上で月末確定前の情報を先に見せることを避けます。</p>
+    </section>
+
+    <section id="migration" class="panel">
+      <span class="method-kicker">2026年7月 定義統一</span>
+      <h2>旧方式との違い</h2>
+      <div class="compare-grid">
+        <article><strong>旧方式</strong><p>単純平均方式の期間5 RSIと期間14 RSIを別々に計算し、RSI5 &gt; RSI14で判定していました。</p></article>
+        <article><strong>新しい正式方式</strong><p>Wilder方式の月足RSI14と、同じRSI14の5か月SMAを比較します。</p></article>
+        <article><strong>影響範囲</strong><p>対象銘柄、NEW、OUT、継続月、🌸注目、過去実績、分析、バックテストがすべて変わります。</p></article>
+      </div>
+      <div class="warning-box"><strong>履歴は混在させません。</strong><br>旧方式で生成したJSON・CSV・チャート履歴を削除し、正式方式で全期間を再計算します。公開データには <code>signal_version: tv_wilder_rsi14_sma5_v1</code> を記録します。</div>
+      <table class="definition-table">
+        <tbody>
+          <tr><th>正式フィールド</th><td><code>monthly_rsi14</code> / <code>monthly_rsi_ma5</code></td></tr>
+          <tr><th>内部計算</th><td>TradingView互換Wilder RMA + RSI14の5か月SMA</td></tr>
+          <tr><th>分析期間</th><td>公開分析は直近5年。RMAの初期値安定のため、計算自体は取得可能な長期月足から開始します。</td></tr>
+          <tr><th>互換フィールド</th><td>既存画面の移行中だけ旧キーを残しますが、意味は正式フィールドへ固定します。</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="panel source-box">
+      <span class="method-kicker">参考資料</span>
+      <h2>この考え方の出典</h2>
+      <p>本サイトの運用思想は、株おじさんの記事「一生使えるテクニカル分析」を参考にしています。記事では、月足RSIとその5か月移動平均を長期保有の判断材料として扱っています。</p>
+      <p><a href="https://note.com/kabu_ojisan/n/n995f24384ab7" target="_blank" rel="noopener">参考記事を開く</a></p>
+      <p><a href="https://www.tradingview.com/support/solutions/43000502338-relative-strength-index-rsi/" target="_blank" rel="noopener">TradingView公式 RSI説明</a></p>
+    </section>
+
+    <section class="simple-disclaimer"><p>本ページは計算方法を明確にするための資料です。シグナルは将来の値上がりを保証せず、売買推奨を目的としません。</p></section>
+  </main>
+
+  <footer><p>Monthly RSI Scanner / Signal version tv_wilder_rsi14_sma5_v1</p></footer>
+</body>
+</html>

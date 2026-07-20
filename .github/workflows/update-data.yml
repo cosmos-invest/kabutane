@@ -10,9 +10,10 @@ on:
     paths:
       - ".github/workflows/update-data.yml"
       - "test.py"
-  pull_request:
-    paths:
-      - ".github/hotfix-datetime-precision.md"
+      - "tradingview_signal.py"
+      - "generate_tradingview.py"
+      - "tests/test_logic.py"
+      - "tests/test_tradingview_signal.py"
 
 permissions:
   contents: write
@@ -41,71 +42,50 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Apply datetime precision hotfix
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-
-          source_path = Path("test.py")
-          source = source_path.read_text(encoding="utf-8")
-          old_source = """    dates = list(chart_frame.index)
-
-              def visible_date_after(month: pd.Period) -> str | None:
-                  position = chart_frame.index.searchsorted(month.end_time, side=\"right\") if dates else 0
-                  return dates[position].strftime(\"%Y-%m-%d\") if position < len(dates) else None
-          """.replace("              ", "    ")
-          new_source = """    dates = list(chart_frame.index)
-              calendar_dates = [pd.Timestamp(date).date() for date in dates]
-
-              def visible_date_after(month: pd.Period) -> str | None:
-                  position = bisect_right(calendar_dates, month.end_time.date()) if calendar_dates else 0
-                  return dates[position].strftime(\"%Y-%m-%d\") if position < len(dates) else None
-          """.replace("              ", "    ")
-          if old_source in source:
-              source = source.replace(old_source, new_source, 1)
-          elif new_source not in source:
-              raise SystemExit("visible_date_after target block was not found")
-          source_path.write_text(source, encoding="utf-8")
-          PY
-
       - name: Validate source
         run: |
-          python -m py_compile test.py tests/test_logic.py
+          python -m py_compile test.py tradingview_signal.py generate_tradingview.py tests/test_logic.py tests/test_tradingview_signal.py
           git diff --check
 
       - name: Run unit tests
         run: python -m unittest discover -s tests -v
 
-      - name: Commit source fix
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add test.py
-          if git diff --cached --quiet; then
-            echo "No source changes"
-          else
-            git commit -m "fix: handle datetime precision in chart events"
-            git push origin HEAD:"${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
-          fi
-
-      - name: Generate data
+      - name: Generate all data with canonical signal
         env:
           HISTORY_MONTHS: "60"
-          MONTHLY_PERIOD: "10y"
+          # RMA inherits older observations. Use the longest available monthly
+          # history, then publish only the configured five-year analysis window.
+          MONTHLY_PERIOD: "max"
           DAILY_PERIOD: "3y"
           ANALYSIS_DAILY_PERIOD: "5y"
           YF_BATCH_SIZE: "80"
           FUNDAMENTALS_WORKERS: "3"
-        run: python test.py
+        run: python generate_tradingview.py
+
+      - name: Verify generated signal version
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          expected = "tv_wilder_rsi14_sma5_v1"
+          targets = [Path("data/latest.json"), Path("data/analysis.json")]
+          for path in targets:
+              payload = json.loads(path.read_text(encoding="utf-8"))
+              actual = payload.get("signal_version")
+              if actual != expected:
+                  raise SystemExit(f"{path}: expected {expected}, got {actual}")
+          print("Canonical signal version verified")
+          PY
 
       - name: Commit generated files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add result.csv out.csv data history
+          git add -A result.csv out.csv data history
           if git diff --cached --quiet; then
             echo "No data changes"
           else
-            git commit -m "chore: update monthly RSI data"
+            git commit -m "chore: rebuild data with TradingView RSI14 signal"
             git push origin HEAD:"${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
           fi
