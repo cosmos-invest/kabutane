@@ -6,7 +6,16 @@ function ensurePastelThemeStyles() {
   document.head.appendChild(link);
 }
 
+function ensureSignalV2Script() {
+  if (document.querySelector('script[src="assets/signal-v2.js"]')) return;
+  const script = document.createElement("script");
+  script.src = "assets/signal-v2.js";
+  script.defer = true;
+  document.head.appendChild(script);
+}
+
 ensurePastelThemeStyles();
+ensureSignalV2Script();
 
 const characterGuide = (() => {
   const characters = {
@@ -17,7 +26,7 @@ const characterGuide = (() => {
 
   const messages = {
     index: [
-      { character: "cosmos", text: "まずはNEWと🌸コスモス注目から候補を探そう。最初から全部の数字を追わず、入口を絞ると見やすいよ🌸" },
+      { character: "cosmos", text: "まずはNEWと🌸コスモス注目から候補を探そう。NEWは、月足RSI14が自身の5か月移動平均を上抜けた銘柄だよ🌸" },
       { character: "lumo", text: "銘柄コードでも会社名でも検索できるよ！ 気になる会社を見つけたら、名前をタップして詳しく見てみよう✨" },
       { character: "aile", text: "数字が『—』の項目は取得できなかったデータです。0とは意味が違うから、そこだけ気をつけてね。" },
       { character: "cosmos", text: "一覧は候補を見つける場所。買うかどうかは、詳細ページのチャート・企業イベント・財務を見てから考えよう🌸" },
@@ -31,7 +40,7 @@ const characterGuide = (() => {
       { character: "cosmos", text: "出口戦略は最大利益だけでなく、最大下落と平均保有期間も比較しよう。資金効率まで含めて見るのがコツだよ🌸" },
     ],
     detail: [
-      { character: "cosmos", text: "上から株価チャート、月足RSI、企業イベント、過去実績、財務の順に見ると迷いにくいよ🌸" },
+      { character: "cosmos", text: "上から株価チャート、月足RSI14と5か月MA、企業イベント、過去実績、財務の順に見ると迷いにくいよ🌸" },
       { character: "lumo", text: "ローソク足で値動きを確認して、平均足でトレンドの続きやすさを見ると分かりやすいよ✨" },
       { character: "aile", text: "決算予定や権利落ちの直前は値動きが大きくなることがあります。チャートだけでなく日付も確認してね。" },
       { character: "cosmos", text: "過去のGC実績は参考になるけれど、同じ結果を保証するものではないよ。ワーストケースも一緒に想定しよう🌸" },
@@ -74,6 +83,7 @@ const characterGuide = (() => {
     nav.innerHTML = [
       ["index.html", "銘柄を探す"],
       ["analysis.html", "実績を分析"],
+      ["signal-method.html", "RSI計算方法"],
       ["howto.html", "使い方"],
     ].map(([href, label]) => `<a href="${href}"${currentFile === href ? ' class="active" aria-current="page"' : ""}>${label}</a>`).join("");
     headerMeta.prepend(nav);
@@ -170,7 +180,7 @@ const characterGuide = (() => {
   function bindPageEvents() {
     if (page === "analysis") {
       document.getElementById("presetArticle")?.addEventListener("click", () => {
-        showCharacter("lumo", "いつもの条件を入れたよ！ ここからRSIや移動平均線を一つずつ変えると、何が効いているか分かりやすいよ✨");
+        showCharacter("lumo", "いつもの条件を入れたよ！ ここから月足RSI14や移動平均線を一つずつ変えると、何が効いているか分かりやすいよ✨");
       });
       document.getElementById("presetHighZone")?.addEventListener("click", () => showCharacter("lumo", "52週高値から−10%以内に絞ったよ！ 高値圏にいる会社の、その後を見てみよう✨"));
       document.getElementById("presetVcpTrend")?.addEventListener("click", () => showCharacter("cosmos", "VCP・第2ステージ・Supertrend上向きを重ねたよ。条件を増やした分、対象件数も確認しようね🌸"));
