@@ -114,6 +114,17 @@
     <p>月足RSIは月次データ、株価・出来高・移動平均線は日足データです。</p>
   </footer>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const code = new URLSearchParams(window.location.search).get("code")?.trim() || "";
+      if (!code) return;
+      const href = `replay.html?code=${encodeURIComponent(code)}`;
+      ["replayLink", "replayCardLink"].forEach((id) => {
+        const link = document.getElementById(id);
+        if (link) link.href = href;
+      });
+    });
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
   <script src="assets/detail.js" defer></script>
   <script src="assets/characters.js" defer></script>
