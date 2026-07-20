@@ -49,18 +49,23 @@ jobs:
       - name: Validate Python signal engine
         run: |
           python -m py_compile tradingview_signal.py generate_tradingview.py tests/test_tradingview_signal.py
-          python -m unittest tests.test_tradingview_signal -v
+          python -m unittest discover -s tests -p 'test_tradingview_signal.py' -v
 
-      - name: Validate JavaScript
+      - name: Check JavaScript syntax
         run: |
           node --check assets/backtest.js
           node --check assets/replay.js
           node --check assets/simple-analysis-cosmos.js
           node --check assets/signal-v2.js
           node --check assets/characters.js
+
+      - name: Test existing JavaScript engines
+        run: |
           node tests/test_backtest_engine.js
           node tests/test_replay_engine.js
-          node tests/test_signal_v2.js
+
+      - name: Test signal migration UI
+        run: node tests/test_signal_v2.js
 
       - name: Validate HTML and CSS
         run: |
