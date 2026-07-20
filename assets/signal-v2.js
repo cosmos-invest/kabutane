@@ -64,11 +64,25 @@ const SignalV2 = (() => {
     return null;
   }
 
+  // Setting textContent replaces child nodes even when the displayed value is
+  // unchanged. Inside a MutationObserver that can recursively schedule itself
+  // and freeze the page. All canonical-label writes must therefore be idempotent.
+  function setTextContentIfChanged(element, nextValue) {
+    if (!element || element.textContent === nextValue) return false;
+    element.textContent = nextValue;
+    return true;
+  }
+
+  function setNodeValueIfChanged(node, nextValue) {
+    if (!node || node.nodeValue === nextValue) return false;
+    node.nodeValue = nextValue;
+    return true;
+  }
+
   function rewriteNode(node) {
     if (!node) return;
     if (node.nodeType === Node.TEXT_NODE) {
-      const next = rewriteText(node.nodeValue);
-      if (next !== node.nodeValue) node.nodeValue = next;
+      setNodeValueIfChanged(node, rewriteText(node.nodeValue));
       return;
     }
     if (node.nodeType !== Node.ELEMENT_NODE) return;
@@ -83,18 +97,18 @@ const SignalV2 = (() => {
     [...element.childNodes].forEach(rewriteNode);
   }
 
-  function setControlLabel(id, text) {
+  function setControlLabel(id, nextValue) {
     const control = document.getElementById(id);
     if (!control) return;
     const group = control.closest(".control-group") || control.closest("label");
     const label = group?.matches("label") ? group : group?.querySelector("label");
     const textNode = label && [...label.childNodes].find((node) => node.nodeType === Node.TEXT_NODE && node.nodeValue.trim());
-    if (textNode) textNode.nodeValue = text;
+    setNodeValueIfChanged(textNode, nextValue);
   }
 
   function normalizeKnownControls() {
-    document.querySelectorAll('[data-key="rsi5"]').forEach((element) => { element.textContent = FAST_LABEL; });
-    document.querySelectorAll('[data-key="rsi14"]').forEach((element) => { element.textContent = "5か月MA"; });
+    document.querySelectorAll('[data-key="rsi5"]').forEach((element) => setTextContentIfChanged(element, FAST_LABEL));
+    document.querySelectorAll('[data-key="rsi14"]').forEach((element) => setTextContentIfChanged(element, "5か月MA"));
     setControlLabel("rsi5Min", FAST_LABEL);
     setControlLabel("rsi14Min", SLOW_LABEL);
     setControlLabel("rsi5Trend", `${FAST_LABEL}の向き`);
@@ -162,23 +176,37 @@ const SignalV2 = (() => {
   }
 
   function refreshUi() { rewriteNode(document.body); normalizeKnownControls(); rewriteCharts(); }
+
   function startObserver() {
     refreshUi();
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => mutation.addedNodes.forEach(rewriteNode));
-      normalizeKnownControls(); rewriteCharts();
+      normalizeKnownControls();
+      rewriteCharts();
     });
     observer.observe(document.body, { childList: true, subtree: true });
     let attempts = 0;
-    const timer = setInterval(() => { refreshUi(); if (++attempts >= 20) clearInterval(timer); }, 350);
+    const timer = setInterval(() => {
+      refreshUi();
+      if (++attempts >= 20) clearInterval(timer);
+    }, 350);
   }
 
   async function init() {
-    installStyles(); injectMethodCard();
+    installStyles();
+    injectMethodCard();
     if (await verifyDataVersion()) startObserver();
   }
 
-  return { VERSION, FAST_LABEL, SLOW_LABEL, rewriteText, canonicalValue, init };
+  return {
+    VERSION,
+    FAST_LABEL,
+    SLOW_LABEL,
+    rewriteText,
+    canonicalValue,
+    setTextContentIfChanged,
+    init,
+  };
 })();
 
 if (typeof module !== "undefined" && module.exports) module.exports = SignalV2;
