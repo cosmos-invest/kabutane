@@ -4,10 +4,17 @@ on:
   pull_request:
     paths:
       - "backtest.html"
+      - "replay.html"
+      - "detail.html"
       - "analysis.html"
       - "assets/backtest.js"
       - "assets/backtest.css"
+      - "assets/replay.js"
+      - "assets/replay.css"
+      - "assets/simple-analysis-cosmos.js"
+      - "assets/simple-analysis-cosmos.css"
       - "tests/test_backtest_engine.js"
+      - "tests/test_replay_engine.js"
       - ".github/workflows/ui-checks.yml"
   workflow_dispatch:
 
@@ -25,7 +32,10 @@ jobs:
       - name: Validate JavaScript
         run: |
           node --check assets/backtest.js
+          node --check assets/replay.js
+          node --check assets/simple-analysis-cosmos.js
           node tests/test_backtest_engine.js
+          node tests/test_replay_engine.js
 
       - name: Validate HTML and CSS
         run: |
@@ -36,11 +46,12 @@ jobs:
           class Parser(HTMLParser):
               pass
 
-          for name in ("backtest.html", "analysis.html"):
+          for name in ("backtest.html", "replay.html", "detail.html", "analysis.html"):
               Parser().feed(Path(name).read_text(encoding="utf-8"))
 
-          css = Path("assets/backtest.css").read_text(encoding="utf-8")
-          if css.count("{") != css.count("}"):
-              raise SystemExit("CSS braces are not balanced")
+          for name in ("assets/backtest.css", "assets/replay.css", "assets/simple-analysis-cosmos.css"):
+              css = Path(name).read_text(encoding="utf-8")
+              if css.count("{") != css.count("}"):
+                  raise SystemExit(f"CSS braces are not balanced: {name}")
           print("HTML/CSS validation passed")
           PY
