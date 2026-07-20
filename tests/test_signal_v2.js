@@ -28,4 +28,17 @@ const canonical = { monthly_rsi14: 61.1, monthly_rsi_ma5: 59.9 };
 assert.strictEqual(signal.canonicalValue(canonical, "monthly_rsi14"), 61.1);
 assert.strictEqual(signal.canonicalValue(canonical, "monthly_rsi_ma5"), 59.9);
 
+let writes = 0;
+const fakeElement = {
+  value: "月足RSI14",
+  get textContent() { return this.value; },
+  set textContent(next) { writes += 1; this.value = next; },
+};
+assert.strictEqual(signal.setTextContentIfChanged(fakeElement, "月足RSI14"), false);
+assert.strictEqual(writes, 0, "同じラベルを再設定してMutationObserverを再発火させない");
+assert.strictEqual(signal.setTextContentIfChanged(fakeElement, "5か月MA"), true);
+assert.strictEqual(writes, 1);
+assert.strictEqual(signal.setTextContentIfChanged(fakeElement, "5か月MA"), false);
+assert.strictEqual(writes, 1, "変更済みラベルへの再書き込みを防ぐ");
+
 console.log("Signal v2 UI tests passed");
