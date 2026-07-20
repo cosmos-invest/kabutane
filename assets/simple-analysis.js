@@ -230,7 +230,7 @@ function renderCards(rows) {
         </div>
         <div class="candidate-metrics">
           <div><span>RSI5</span><strong>${number(row.rsi5)}</strong></div>
-          <div><span>52週高値まで</span><strong>${highDistance === null ? "—" : `${number(Math.abs(highDistance))}%`}</strong></div>
+          <div><span>52週高値距離</span><strong class="${metricClass(highDistance)}">${signed(highDistance)}</strong></div>
           <div><span>GC後騰落</span><strong class="${metricClass(returnValue)}">${signed(returnValue)}</strong></div>
         </div>
         <div class="candidate-footer">
