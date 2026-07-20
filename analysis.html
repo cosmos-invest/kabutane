@@ -31,7 +31,10 @@
         <h2>①目的を選ぶ　②条件を足す　③気になる銘柄を開く</h2>
         <p>一覧では必要な情報だけを表示します。財務の詳しい数値、チャート、決算予定は銘柄詳細で確認できます。</p>
       </div>
-      <a class="button lab-link" href="analysis-lab.html">詳しい過去検証を開く</a>
+      <div class="filter-buttons">
+        <a class="button lab-link" href="backtest.html">運用バックテストを開く</a>
+        <a class="button lab-link" href="analysis-lab.html">詳しい過去検証を開く</a>
+      </div>
     </section>
 
     <section class="panel purpose-panel" aria-labelledby="purposeTitle">
@@ -44,24 +47,12 @@
         <button id="resetSimpleFilters" class="button ghost-button" type="button">すべてリセット</button>
       </div>
       <div id="purposeCards" class="purpose-grid" role="list">
-        <button class="purpose-card active" type="button" data-purpose="starter" role="listitem">
-          <span class="purpose-icon">🌸</span><strong>まずは基本</strong><small>RSIの勢いから探す</small>
-        </button>
-        <button class="purpose-card" type="button" data-purpose="trend" role="listitem">
-          <span class="purpose-icon">📈</span><strong>王道トレンド</strong><small>RSI ＋ SEPA型</small>
-        </button>
-        <button class="purpose-card" type="button" data-purpose="vcp" role="listitem">
-          <span class="purpose-icon">🎀</span><strong>収束から狙う</strong><small>SEPA型 ＋ VCP</small>
-        </button>
-        <button class="purpose-card" type="button" data-purpose="mvp" role="listitem">
-          <span class="purpose-icon">🚀</span><strong>勢いを狙う</strong><small>RSI ＋ MVP</small>
-        </button>
-        <button class="purpose-card" type="button" data-purpose="high" role="listitem">
-          <span class="purpose-icon">✨</span><strong>高値圏の強さ</strong><small>SEPA型 ＋ 高値位置</small>
-        </button>
-        <button class="purpose-card" type="button" data-purpose="balance" role="listitem">
-          <span class="purpose-icon">🫧</span><strong>安心バランス</strong><small>トレンド ＋ 財務</small>
-        </button>
+        <button class="purpose-card active" type="button" data-purpose="starter" role="listitem"><span class="purpose-icon">🌸</span><strong>まずは基本</strong><small>RSIの勢いから探す</small></button>
+        <button class="purpose-card" type="button" data-purpose="trend" role="listitem"><span class="purpose-icon">📈</span><strong>王道トレンド</strong><small>RSI ＋ SEPA型</small></button>
+        <button class="purpose-card" type="button" data-purpose="vcp" role="listitem"><span class="purpose-icon">🎀</span><strong>収束から狙う</strong><small>SEPA型 ＋ VCP</small></button>
+        <button class="purpose-card" type="button" data-purpose="mvp" role="listitem"><span class="purpose-icon">🚀</span><strong>勢いを狙う</strong><small>RSI ＋ MVP</small></button>
+        <button class="purpose-card" type="button" data-purpose="high" role="listitem"><span class="purpose-icon">✨</span><strong>高値圏の強さ</strong><small>SEPA型 ＋ 高値位置</small></button>
+        <button class="purpose-card" type="button" data-purpose="balance" role="listitem"><span class="purpose-icon">🫧</span><strong>安心バランス</strong><small>トレンド ＋ 財務</small></button>
       </div>
     </section>
 
@@ -74,89 +65,41 @@
         </div>
       </div>
       <div id="conditionButtons" class="condition-grid">
-        <button class="condition-card selected" type="button" data-condition="rsi" aria-pressed="true">
-          <span class="priority">優先 1</span><strong>RSI</strong><small>RSI5が60以上・RSI14が上向き</small><span class="condition-check">✓</span>
-        </button>
-        <button class="condition-card" type="button" data-condition="sepa" aria-pressed="false">
-          <span class="priority">優先 2</span><strong>SEPA型</strong><small>上昇トレンドの簡易判定</small><span class="condition-check">＋</span>
-        </button>
-        <button class="condition-card" type="button" data-condition="vcp" aria-pressed="false">
-          <span class="priority">優先 3</span><strong>VCP</strong><small>値動きが収束・上向き</small><span class="condition-check">＋</span>
-        </button>
-        <button class="condition-card" type="button" data-condition="mvp" aria-pressed="false">
-          <span class="priority">優先 4</span><strong>MVP</strong><small>株価・出来高・勢いが同時点火</small><span class="condition-check">＋</span>
-        </button>
-        <button class="condition-card" type="button" data-condition="high" aria-pressed="false">
-          <span class="priority">優先 5</span><strong>高値からの位置</strong><small>52週高値から10%以内</small><span class="condition-check">＋</span>
-        </button>
-        <button class="condition-card" type="button" data-condition="finance" aria-pressed="false">
-          <span class="priority">優先 6</span><strong>財務条件</strong><small>営業CFプラス・自己資本40%以上</small><span class="condition-check">＋</span>
-        </button>
+        <button class="condition-card selected" type="button" data-condition="rsi" aria-pressed="true"><span class="priority">優先 1</span><strong>RSI</strong><small>RSI5が60以上・RSI14が上向き</small><span class="condition-check">✓</span></button>
+        <button class="condition-card" type="button" data-condition="sepa" aria-pressed="false"><span class="priority">優先 2</span><strong>SEPA型</strong><small>上昇トレンドの簡易判定</small><span class="condition-check">＋</span></button>
+        <button class="condition-card" type="button" data-condition="vcp" aria-pressed="false"><span class="priority">優先 3</span><strong>VCP</strong><small>値動きが収束・上向き</small><span class="condition-check">＋</span></button>
+        <button class="condition-card" type="button" data-condition="mvp" aria-pressed="false"><span class="priority">優先 4</span><strong>MVP</strong><small>株価・出来高・勢いが同時点火</small><span class="condition-check">＋</span></button>
+        <button class="condition-card" type="button" data-condition="high" aria-pressed="false"><span class="priority">優先 5</span><strong>高値からの位置</strong><small>52週高値から10%以内</small><span class="condition-check">＋</span></button>
+        <button class="condition-card" type="button" data-condition="finance" aria-pressed="false"><span class="priority">優先 6</span><strong>財務条件</strong><small>営業CFプラス・自己資本40%以上</small><span class="condition-check">＋</span></button>
       </div>
       <p class="condition-note"><strong>SEPA型について：</strong>このサイトで取得できる移動平均線・第2ステージ・Supertrendを使った簡易判定であり、SEPAの全条件を完全再現したものではありません。</p>
     </section>
 
     <section class="panel result-panel" aria-labelledby="resultTitle">
       <div class="simple-section-heading result-heading">
-        <div>
-          <span class="step-number">STEP 3</span>
-          <h2 id="resultTitle">条件に合う銘柄</h2>
-          <p id="resultSummary">データを読み込んでいます…</p>
-        </div>
+        <div><span class="step-number">STEP 3</span><h2 id="resultTitle">条件に合う銘柄</h2><p id="resultSummary">データを読み込んでいます…</p></div>
         <div class="simple-toolbar">
-          <label for="statusFilter">状態
-            <select id="statusFilter">
-              <option value="ALL">NEW・継続すべて</option>
-              <option value="NEW">NEWのみ</option>
-              <option value="CONTINUE">継続中のみ</option>
-            </select>
-          </label>
-          <label for="sortSelect">並び順
-            <select id="sortSelect">
-              <option value="recommended">おすすめ順</option>
-              <option value="newest">NEWが新しい順</option>
-              <option value="rsi">RSI5が高い順</option>
-              <option value="high">52週高値に近い順</option>
-              <option value="return">GC後騰落が高い順</option>
-              <option value="finance">財務安心度順</option>
-            </select>
-          </label>
-          <label class="search-label" for="searchInput">銘柄検索
-            <input id="searchInput" type="search" placeholder="コードまたは銘柄名">
-          </label>
+          <label for="statusFilter">状態<select id="statusFilter"><option value="ALL">NEW・継続すべて</option><option value="NEW">NEWのみ</option><option value="CONTINUE">継続中のみ</option></select></label>
+          <label for="sortSelect">並び順<select id="sortSelect"><option value="recommended">おすすめ順</option><option value="newest">NEWが新しい順</option><option value="rsi">RSI5が高い順</option><option value="high">52週高値に近い順</option><option value="return">GC後騰落が高い順</option><option value="finance">財務安心度順</option></select></label>
+          <label class="search-label" for="searchInput">銘柄検索<input id="searchInput" type="search" placeholder="コードまたは銘柄名"></label>
         </div>
       </div>
-
-      <div class="selected-summary" aria-live="polite">
-        <span>選択中</span><div id="selectedConditions" class="selected-chips"></div>
-      </div>
-
-      <section class="simple-stats" aria-label="抽出結果の概要">
-        <article><span>候補数</span><strong id="candidateCount">—</strong></article>
-        <article><span>NEW</span><strong id="newCount">—</strong></article>
-        <article><span>GC後中央値</span><strong id="medianReturn">—</strong></article>
-      </section>
-
+      <div class="selected-summary" aria-live="polite"><span>選択中</span><div id="selectedConditions" class="selected-chips"></div></div>
+      <section class="simple-stats" aria-label="抽出結果の概要"><article><span>候補数</span><strong id="candidateCount">—</strong></article><article><span>NEW</span><strong id="newCount">—</strong></article><article><span>GC後中央値</span><strong id="medianReturn">—</strong></article></section>
       <div id="candidateGrid" class="candidate-grid"></div>
-      <div class="simple-pagination">
-        <button id="prevPage" class="button ghost-button" type="button">前へ</button>
-        <span id="pageInfo">—</span>
-        <button id="nextPage" class="button ghost-button" type="button">次へ</button>
-      </div>
+      <div class="simple-pagination"><button id="prevPage" class="button ghost-button" type="button">前へ</button><span id="pageInfo">—</span><button id="nextPage" class="button ghost-button" type="button">次へ</button></div>
     </section>
 
     <details class="panel advanced-door">
       <summary>もっと詳しく検証したい方へ</summary>
       <div>
-        <h2>過去実績・指数比較・出口戦略は研究ページへ</h2>
-        <p>前半と後半の検証、TOPIX・日経平均との比較、月別実績、出口戦略ランキングなど、従来の詳細機能は残しています。</p>
-        <a class="button lab-link" href="analysis-lab.html">詳細分析ラボを開く</a>
+        <h2>運用バックテストと詳細分析を使い分ける</h2>
+        <p>入口と出口を組み合わせた5年ポートフォリオはバックテスト・サンドボックス、前半と後半の検証や出口戦略ランキングは詳細分析ラボで確認できます。</p>
+        <div class="filter-buttons"><a class="button lab-link" href="backtest.html">運用バックテストを開く</a><a class="button lab-link" href="analysis-lab.html">詳細分析ラボを開く</a></div>
       </div>
     </details>
 
-    <section class="simple-disclaimer">
-      <p>本ページの「おすすめ順」は条件への適合度を見やすく並べるためのもので、売買推奨や将来の利益を示すものではありません。候補を開き、チャート・企業イベント・財務情報を必ず確認してください。</p>
-    </section>
+    <section class="simple-disclaimer"><p>本ページの「おすすめ順」は条件への適合度を見やすく並べるためのもので、売買推奨や将来の利益を示すものではありません。候補を開き、チャート・企業イベント・財務情報を必ず確認してください。</p></section>
   </main>
 
   <footer><p>Monthly RSI Scanner / Research use only</p></footer>
