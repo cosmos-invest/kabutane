@@ -41,6 +41,8 @@ function renderSlots() {
 function renderPlan() {
   const plan = currentPositionPlan();
   const ratios = state.plan.ratios;
+  const autoShares = automaticOrderShares(plan);
+  const minimumForFourTargets = state.lotSize * ReplayPro.TP_COUNT;
   state.plan.tpPrices.forEach((price, index) => { els[`tp${index + 1}Price`].textContent = price === undefined ? "—" : yen(price); });
   els.positionBudget.textContent = yen(plan.allocationBudget);
   els.riskBudget.textContent = yen(plan.riskBudget);
@@ -51,12 +53,14 @@ function renderPlan() {
   els.riskRewardBadge.textContent = `TP ${ratios.map((ratio) => `${ratio.toFixed(1)}R`).join(" / ")}`;
   const valid = state.plan.entry !== null && state.plan.initialStop !== null && state.plan.initialStop < state.plan.entry
     && ratios.every((ratio, index) => index === 0 || ratio > ratios[index - 1]);
-  els.armBracketButton.disabled = !valid || state.ended || state.account.shares > 0;
+  const enoughShares = autoShares >= minimumForFourTargets;
+  els.armBracketButton.disabled = !valid || !enoughShares || state.ended || state.account.shares > 0;
   if (!valid) els.riskPlanNotice.textContent = "エントリーより下に損切りを置き、TP1〜TP4を1.5〜5.0Rの昇順で設定してください。";
-  else if (state.plan.armed) els.riskPlanNotice.textContent = `待機中：日足の高値・安値が${yen(state.plan.entry)}へ触れたら自動エントリーします。`;
+  else if (!enoughShares && state.account.shares === 0) els.riskPlanNotice.textContent = `選択中の${state.plan.autoSlots}枠では${autoShares.toLocaleString("ja-JP")}株です。4段階利確には最低${minimumForFourTargets.toLocaleString("ja-JP")}株必要なため、枠数・配分・売買単位を見直してください。`;
+  else if (state.plan.armed) els.riskPlanNotice.textContent = `待機中：日足の高値・安値が${yen(state.plan.entry)}へ触れたら${autoShares.toLocaleString("ja-JP")}株を自動購入します。`;
   else if (state.account.shares > 0 && state.plan.entryDate) els.riskPlanNotice.textContent = `自動管理中：現在の損切りは${yen(state.plan.activeStop)}です。同一足で損切りと利確へ触れた場合は、保守的に損切りを先に処理します。`;
   else if (state.account.shares > 0) els.riskPlanNotice.textContent = "手動保有中です。新しい自動エントリー注文は全株売却後に待機できます。";
-  else els.riskPlanNotice.textContent = `推奨最大${plan.recommendedShares.toLocaleString("ja-JP")}株。自動注文は${state.plan.autoSlots}枠分で発注します。`;
+  else els.riskPlanNotice.textContent = `推奨最大${plan.recommendedShares.toLocaleString("ja-JP")}株。自動注文は${state.plan.autoSlots}枠分の${autoShares.toLocaleString("ja-JP")}株で発注します。`;
 }
 
 function renderIndicators() {
@@ -83,8 +87,8 @@ function renderButtons() {
   const noShares = state.account.shares <= 0;
   const noFuture = state.cursor >= state.rows.length - 1;
   const plan = currentPositionPlan();
-  els.buyChunkButton.disabled = state.ended || state.availableSlots <= 0 || plan.slotShares <= 0;
-  els.buyCustomButton.disabled = state.ended || state.availableSlots <= 0;
+  els.buyChunkButton.disabled = state.ended || state.plan.armed || state.availableSlots <= 0 || plan.slotShares <= 0;
+  els.buyCustomButton.disabled = state.ended || state.plan.armed || state.availableSlots <= 0;
   [els.sellQuarterButton, els.sellHalfButton, els.sellAllButton].forEach((button) => { button.disabled = state.ended || noShares; });
   [els.stepOneButton, els.stepFiveButton, els.playButton].forEach((button) => { button.disabled = state.ended || noFuture; });
   els.cancelBracketButton.disabled = !state.plan.armed && !state.plan.entryDate;
