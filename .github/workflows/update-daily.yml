@@ -1,0 +1,61 @@
+name: Update daily candidate prices
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 平日21:00 JST。GitHub Actionsの混雑時は開始が遅れる場合があります。
+    - cron: "0 12 * * 1-5"
+  push:
+    branches: ["main"]
+    paths:
+      - "update_daily.py"
+      - "tests/test_update_daily.py"
+      - ".github/workflows/update-daily.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-daily-candidate-prices
+  cancel-in-progress: false
+
+jobs:
+  update:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Validate updater
+        run: |
+          python -m py_compile update_daily.py tests/test_update_daily.py
+          python -m unittest discover -s tests -p 'test_update_daily.py' -v
+
+      - name: Download incremental daily prices
+        env:
+          DAILY_YF_BATCH_SIZE: "80"
+          DAILY_DOWNLOAD_PERIOD: "1mo"
+        run: python update_daily.py
+
+      - name: Commit daily overlays
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/latest.json data/daily result.csv
+          if git diff --cached --quiet; then
+            echo "No daily price changes"
+          else
+            git commit -m "chore: update daily candidate prices"
+            git push origin main
+          fi
