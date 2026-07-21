@@ -30,10 +30,33 @@ function ensureReplayMonthEndScript() {
   document.head.appendChild(script);
 }
 
+function ensurePwaSupport() {
+  if (!document.querySelector('link[rel="manifest"]')) {
+    const manifest = document.createElement("link");
+    manifest.rel = "manifest";
+    manifest.href = "manifest.webmanifest";
+    document.head.appendChild(manifest);
+  }
+  if (document.querySelector('script[src="assets/pwa-register.js"]')) return;
+  const script = document.createElement("script");
+  script.src = "assets/pwa-register.js";
+  document.head.appendChild(script);
+}
+
+function ensureBacktestBenchmarkStatus() {
+  if (!document.body?.classList.contains("backtest-page") && document.body?.dataset.page !== "backtest") return;
+  if (document.querySelector('script[src="assets/backtest-benchmark-status.js"]')) return;
+  const script = document.createElement("script");
+  script.src = "assets/backtest-benchmark-status.js";
+  document.head.appendChild(script);
+}
+
 ensurePastelThemeStyles();
 ensureCharacterImageStyles();
 ensureSignalV2Script();
 ensureReplayMonthEndScript();
+ensurePwaSupport();
+ensureBacktestBenchmarkStatus();
 
 const characterGuide = (() => {
   const characters = {
