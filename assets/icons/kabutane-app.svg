@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="かぶたね">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffb6d4"/>
+      <stop offset="0.55" stop-color="#f26fa6"/>
+      <stop offset="1" stop-color="#9b72d3"/>
+    </linearGradient>
+    <linearGradient id="leaf" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#62b889"/>
+      <stop offset="1" stop-color="#b6e5b3"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="118" fill="url(#bg)"/>
+  <circle cx="256" cy="264" r="150" fill="#fff9fc" opacity=".96"/>
+  <path d="M254 352c-9-71 6-126 44-166" fill="none" stroke="#569f78" stroke-width="24" stroke-linecap="round"/>
+  <path d="M274 231c-66-5-105-42-110-99 68-6 111 29 110 99Z" fill="url(#leaf)"/>
+  <path d="M284 275c62-18 111 2 137 50-57 31-111 14-137-50Z" fill="url(#leaf)"/>
+  <path d="M184 363c27-38 117-39 145 0-29 31-116 31-145 0Z" fill="#df8a57"/>
+  <circle cx="209" cy="118" r="25" fill="#fff" opacity=".9"/>
+  <path d="M209 82v72M173 118h72M184 93l50 50M234 93l-50 50" stroke="#f26fa6" stroke-width="12" stroke-linecap="round"/>
+</svg>

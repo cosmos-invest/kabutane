@@ -2,23 +2,26 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="平均足、月足RSI14と5か月移動平均、複数テクニカル、8分割売買、TP1〜TP4とトレーリングストップを使う売買練習シミュレーター">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="月足RSIとテクニカルを確認し、1〜8段階の分割エントリー、損切り、TPとトレーリングを練習する売買シミュレーター">
+  <meta name="theme-color" content="#f26fa6">
   <title>売買練習シミュレーター | かぶたね</title>
+  <link rel="manifest" href="manifest.webmanifest">
   <link rel="stylesheet" href="assets/style.css">
   <link rel="stylesheet" href="assets/pastel.css">
   <link rel="stylesheet" href="assets/replay.css">
   <link rel="stylesheet" href="assets/replay-v2.css">
+  <link rel="stylesheet" href="assets/replay-workspace.css">
   <link rel="stylesheet" href="assets/kabutane-links.css">
 </head>
 <body class="pastel-theme replay-page replay-pro-page" data-page="replay">
   <header class="site-header replay-header">
     <div class="header-inner">
       <div>
-        <a id="detailBackLink" class="back-link" href="index.html">← 銘柄探しへ戻る</a>
+        <a id="detailBackLink" class="back-link" href="index.html">← 銘柄詳細チャートへ</a>
         <p class="eyebrow">Trading Replay Pro</p>
         <h1 id="replayTitle">売買練習シミュレーター🌸</h1>
-        <p id="replaySubtitle" class="subtitle">未来を隠し、チャート上に注文ラインを置いて検証します。</p>
+        <p id="replaySubtitle" class="subtitle">未来を隠し、損失額を先に固定して分割売買を練習します。</p>
       </div>
       <div class="header-meta">
         <span class="badge neutral" id="sessionState">準備中</span>
@@ -31,15 +34,15 @@
     <section class="panel replay-intro">
       <div>
         <span class="replay-label">実践ルール</span>
-        <h2>8分割＋チャート注文＋4段階利確</h2>
-        <p>ローソク足・平均足、月足RSI14と5か月MA、各種テクニカルを確認し、エントリー・損切り・TP1〜TP4を設計します。</p>
+        <h2>損失額を先に固定する、分割売買トレーニング</h2>
+        <p>1〜8段階の買値を先に決め、予定平均買値と損切りから各段階の株数を自動計算します。</p>
       </div>
       <button id="newSessionButton" class="button secondary" type="button">条件を選び直す</button>
     </section>
 
     <section id="setupPanel" class="panel setup-panel">
       <div class="section-heading">
-        <div><span class="step-number">STEP 1</span><h2>練習する銘柄と資金管理を決める</h2><p>トップページから直接開いた場合も、候補銘柄が自動でセットされます。ここで別の銘柄へ変更できます。</p></div>
+        <div><span class="step-number">STEP 1</span><h2>練習する銘柄と資金管理を決める</h2><p>最初に最大損失と分割数を固定します。開始後はチャートと注文に集中できます。</p></div>
       </div>
       <div class="setup-grid">
         <label class="replay-symbol-label">練習する銘柄<select id="replaySymbolSelect"><option value="">候補を読み込んでいます…</option></select></label>
@@ -55,7 +58,7 @@
         <label>自動再生速度<select id="playSpeed"><option value="1000">ゆっくり</option><option value="500" selected>標準</option><option value="180">速い</option></select></label>
       </div>
       <div class="setup-formula">
-        <strong>資金管理</strong><span>銘柄上限額＝総資産×配分割合</span><span>リスク上限株数＝許容損失額÷（エントリー－損切り）</span><span>小さい方を8枠へ分割</span>
+        <strong>資金を守る計算</strong><span>許容損失額＝総資産×許容損失率</span><span>最大株数＝許容損失額÷（予定平均買値－損切り）</span><span>配分上限株数と比べ、小さい方を分割</span>
       </div>
       <button id="startSessionButton" class="button primary-action" type="button">この条件で練習を始める</button>
       <p id="setupNotice" class="replay-note">開始位置より先の株価は表示されません。</p>
@@ -75,18 +78,18 @@
 
       <section class="panel risk-panel bracket-panel">
         <div class="section-heading risk-heading">
-          <div><span class="step-number">STEP 2</span><h2>チャート注文を設計する</h2><p>エントリーと損切りは数値入力またはチャートクリックで決定します。TPは1.5〜5.0Rを0.1刻みで設定できます。</p></div>
+          <div><span class="step-number">STEP 2</span><h2>買値・損切り・利確を設計する</h2><p>買値は1〜8本、損切りは共通で設定します。TPは1.5〜5.0Rを0.1刻みで設定できます。</p></div>
           <span id="riskRewardBadge" class="rr-badge">TP —</span>
         </div>
 
         <div class="drawing-toolbar" role="group" aria-label="価格ライン設定">
-          <button id="setEntryTool" class="button drawing-tool active" type="button">紫：エントリーを置く</button>
+          <button id="setEntryTool" class="button drawing-tool active" type="button">紫：選択中の買値</button>
           <button id="setStopTool" class="button drawing-tool" type="button">青：損切りを置く</button>
-          <small>ボタンを選び、メインチャート上の価格をタップしてください。</small>
+          <small>買値E1〜E8の行を選んでから、チャート上の価格をタップしてください。</small>
         </div>
 
         <div class="risk-inputs pro-risk-inputs">
-          <label>エントリー価格<input id="entryPrice" type="number" min="0" step="0.1"></label>
+          <label>選択中の買値<input id="entryPrice" type="number" min="0" step="0.1"></label>
           <label>初期損切り価格<input id="stopPrice" type="number" min="0" step="0.1"></label>
           <label>自動エントリー枠<select id="autoEntrySlots"><option value="1">1枠</option><option value="2">2枠</option><option value="4">4枠</option><option value="8" selected>8枠</option></select></label>
           <label>トレーリング<select id="trailMode"><option value="step" selected>段階式：TP到達で押し上げ</option><option value="none">なし：初期損切りを維持</option></select></label>
@@ -103,15 +106,15 @@
           <article><span>銘柄上限額</span><strong id="positionBudget">—</strong></article>
           <article><span>許容損失額</span><strong id="riskBudget">—</strong></article>
           <article class="recommended"><span>推奨最大株数</span><strong id="recommendedShares">—</strong></article>
-          <article><span>1枠の購入株数</span><strong id="slotShares">—</strong></article>
+          <article><span>各段階の株数</span><strong id="slotShares">—</strong></article>
           <article><span>想定最大損失</span><strong id="plannedLoss">—</strong></article>
           <article><span>現在の損切り</span><strong id="activeStopValue">—</strong></article>
         </div>
         <div class="bracket-actions">
-          <button id="armBracketButton" class="button primary-action" type="button">自動注文を待機する</button>
+          <button id="armBracketButton" class="button primary-action" type="button">分割指値を待機する</button>
           <button id="cancelBracketButton" class="button ghost-button" type="button">自動注文を解除</button>
         </div>
-        <p id="riskPlanNotice" class="replay-note">エントリーより下に損切りを置いてください。</p>
+        <p id="riskPlanNotice" class="replay-note">買値より下に損切りを置いてください。</p>
       </section>
 
       <section class="panel replay-chart-panel pro-chart-panel">
@@ -147,11 +150,11 @@
 
       <section class="trade-layout">
         <section class="panel order-panel">
-          <div class="section-heading"><div><span class="step-number">STEP 4</span><h2>8分割で手動売買する</h2><p>自動注文と併用できます。手動注文は当日の終値で約定します。</p></div></div>
-          <div class="slot-board"><div><span>利用中の枠</span><strong id="buyStageStatus">0 / 8</strong></div><div id="slotDots" class="slot-dots" aria-label="エントリー枠"></div><small>部分売却で枠が戻り、全売却で全8枠が復活します。</small></div>
+          <div class="section-heading"><div><span class="step-number">STEP 4</span><h2>手動で売買する</h2><p>成行注文は表示中の日足終値で約定します。</p></div></div>
+          <div class="slot-board"><div><span>利用中の枠</span><strong id="buyStageStatus">0 / 3</strong></div><div id="slotDots" class="slot-dots" aria-label="エントリー枠"></div><small>部分売却で枠が戻り、全売却ですべての枠が復活します。</small></div>
           <label class="memo-label">判断メモ<input id="tradeMemo" type="text" maxlength="100" placeholder="例：平均足陽転、月足RSIが5か月MAより上"></label>
-          <div class="order-group buy-group"><h3>エントリー</h3><button id="buyChunkButton" class="order-button buy" type="button">1枠分を購入</button><div class="custom-order"><input id="customBuyShares" type="number" min="1" step="1" placeholder="株数"><button id="buyCustomButton" class="order-button buy" type="button">指定株数を購入</button></div></div>
-          <div class="order-group sell-group"><h3>利確・損切り</h3><div class="sell-buttons"><button id="sellQuarterButton" class="order-button sell" type="button">25%売却</button><button id="sellHalfButton" class="order-button sell" type="button">50%売却</button><button id="sellAllButton" class="order-button sell danger" type="button">全株売却</button></div></div>
+          <div class="order-group buy-group"><h3>エントリー</h3><button id="buyChunkButton" class="order-button buy" type="button">1枠分を成行購入</button><div class="custom-order"><input id="customBuyShares" type="number" min="1" step="1" placeholder="株数"><button id="buyCustomButton" class="order-button buy" type="button">指定株数を成行購入</button></div></div>
+          <div class="order-group sell-group"><h3>利確・損切り</h3><div class="sell-buttons"><button id="sellQuarterButton" class="order-button sell" type="button">25%成行売却</button><button id="sellHalfButton" class="order-button sell" type="button">50%成行売却</button><button id="sellAllButton" class="order-button sell danger" type="button">全株成行売却</button></div></div>
           <p id="orderMessage" class="order-message" aria-live="polite">まだ売買していません。</p>
         </section>
 
@@ -159,7 +162,7 @@
           <h2>現在の成績</h2>
           <dl class="account-grid">
             <div><dt>総損益率</dt><dd id="totalReturn">—</dd></div><div><dt>総損益</dt><dd id="totalProfit">—</dd></div>
-            <div><dt>株式評価額</dt><dd id="marketValue">—</dd></div><div><dt>空き枠</dt><dd id="remainingBuys">8枠</dd></div>
+            <div><dt>株式評価額</dt><dd id="marketValue">—</dd></div><div><dt>空き枠</dt><dd id="remainingBuys">3枠</dd></div>
             <div><dt>平均取得コスト</dt><dd id="averageCost">—</dd></div><div><dt>資産ピーク</dt><dd id="peakValue">—</dd></div>
             <div><dt>最大DD</dt><dd id="maxDrawdown">—</dd></div><div><dt>累計コスト</dt><dd id="feeValue">—</dd></div>
           </dl>
@@ -177,6 +180,7 @@
   <footer><p>売買練習は研究用です。実際の約定順序、スリッページ、指値・逆指値の仕様とは異なる場合があります。</p></footer>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
   <script src="assets/replay-core-v2.js" defer></script>
+  <script src="assets/replay-risk-ladder.js" defer></script>
   <script src="assets/replay-ui-base-v2.js" defer></script>
   <script src="assets/daily-overlay.js" defer></script>
   <script src="assets/replay-charts-v2.js" defer></script>
@@ -184,7 +188,9 @@
   <script src="assets/replay-orders-basic-v2.js" defer></script>
   <script src="assets/replay-orders-auto-v2.js" defer></script>
   <script src="assets/replay-session-v2.js" defer></script>
+  <script src="assets/replay-workspace.js" defer></script>
   <script src="assets/replay-picker.js" defer></script>
+  <script src="assets/pwa-register.js" defer></script>
   <script src="assets/characters.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,27 @@
+{
+  "id": "./",
+  "name": "かぶたね - コスモスと探す、未来の1株",
+  "short_name": "かぶたね",
+  "description": "月足RSIで候補を探し、チャートと売買練習で判断を育てる投資学習アプリ",
+  "lang": "ja",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#fff7fb",
+  "theme_color": "#f26fa6",
+  "categories": ["finance", "education"],
+  "icons": [
+    {
+      "src": "assets/icons/kabutane-app.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {"name": "銘柄を探す", "url": "./index.html"},
+    {"name": "売買を練習", "url": "./replay.html"},
+    {"name": "運用を試す", "url": "./backtest.html"}
+  ]
+}
