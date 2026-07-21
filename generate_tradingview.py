@@ -13,6 +13,7 @@ os.environ.setdefault("ANALYSIS_DAILY_PERIOD", "5y")
 
 import test as legacy_pipeline
 
+from benchmark_support import install_into as install_benchmark_support
 from tradingview_signal import (
     SIGNAL_NAME,
     SIGNAL_VERSION,
@@ -57,6 +58,7 @@ def main() -> None:
     root = Path(__file__).resolve().parent
     print(f"Installing signal definition: {SIGNAL_NAME} ({SIGNAL_VERSION})")
     install_into(legacy_pipeline)
+    install_benchmark_support(legacy_pipeline)
     install_cache_only_fundamentals()
 
     # The previous RSI5-vs-RSI14 history is not comparable with the new
