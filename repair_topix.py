@@ -11,13 +11,16 @@ import yfinance as yf
 ROOT = Path(__file__).resolve().parent
 ANALYSIS_PATH = ROOT / "data" / "analysis.json"
 
-# yfinance availability varies by endpoint. Prefer the true TOPIX index, then
-# Yahoo Japan's domestic symbol. 1306.T is used only as an explicitly marked
-# price proxy when neither index symbol provides enough history.
+# yfinance availability varies by endpoint. Prefer a true TOPIX index. When
+# index symbols are unavailable, test several TOPIX ETFs independently and use
+# only a split-adjusted series that passes the abnormal-return guard.
 CANDIDATES = [
     {"ticker": "^TOPX", "name": "TOPIX", "proxy": False},
     {"ticker": "998405.T", "name": "TOPIX", "proxy": False},
     {"ticker": "1306.T", "name": "TOPIX連動ETF（代替）", "proxy": True},
+    {"ticker": "1308.T", "name": "TOPIX連動ETF（代替）", "proxy": True},
+    {"ticker": "1348.T", "name": "TOPIX連動ETF（代替）", "proxy": True},
+    {"ticker": "1475.T", "name": "TOPIX連動ETF（代替）", "proxy": True},
 ]
 MAX_REASONABLE_MONTHLY_MOVE_PCT = 45.0
 
@@ -39,8 +42,6 @@ def extract_close(frame: pd.DataFrame, ticker: str) -> pd.Series:
             data = data[ticker]
         elif ticker in data.columns.get_level_values(1):
             data = data.xs(ticker, level=1, axis=1)
-    # auto_adjust=True normally exposes the adjusted series as Close. Keep the
-    # Adj Close preference for compatibility with cached/older yfinance output.
     column = "Adj Close" if "Adj Close" in data.columns else "Close"
     if column not in data.columns:
         return pd.Series(dtype=float)
@@ -85,13 +86,12 @@ def validate_returns(rows: list[dict[str, Any]]) -> tuple[bool, str | None]:
 
 def download_candidate(candidate: dict[str, Any], start_month: str, end_month: str) -> dict[str, Any]:
     ticker = candidate["ticker"]
+    reason: str | None = None
     try:
         frame = yf.download(
             ticker,
             period="10y",
             interval="1d",
-            # Critical for the ETF fallback: 1306.T had a unit/split change that
-            # produced -91%/+961% moves when raw Close was used.
             auto_adjust=True,
             actions=False,
             progress=False,
@@ -104,7 +104,7 @@ def download_candidate(candidate: dict[str, Any], start_month: str, end_month: s
         if not valid:
             print(f"{ticker}: rejected: {reason}")
             returns = []
-    except Exception as exc:  # keep other candidates available
+    except Exception as exc:
         print(f"{ticker}: download failed: {exc}")
         returns = []
         reason = str(exc)
@@ -161,8 +161,6 @@ def main() -> None:
         raise SystemExit("analysis period is missing")
 
     candidates = [download_candidate(candidate, start_month, end_month) for candidate in CANDIDATES]
-    # Choose the candidate with the largest amount of usable aligned history.
-    # On equal coverage, prefer a true index over the ETF proxy.
     candidates.sort(key=lambda item: (len(item["returns"]), not item["proxy"]), reverse=True)
     chosen = candidates[0]
     expected = max(0, len(pd.period_range(start=start_month, end=end_month, freq="M")) - 1)
@@ -177,7 +175,7 @@ def main() -> None:
 
     benchmark = {
         "ticker": "^TOPX",
-        "fallback_tickers": ["998405.T", "1306.T"],
+        "fallback_tickers": [item["ticker"] for item in CANDIDATES[1:]],
         "name": chosen["name"],
         "source_ticker": chosen["ticker"],
         "is_proxy": chosen["proxy"],
