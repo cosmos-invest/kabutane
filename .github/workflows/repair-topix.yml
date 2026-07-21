@@ -1,0 +1,54 @@
+name: Repair TOPIX benchmark
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "repair_topix.py"
+      - ".github/workflows/repair-topix.yml"
+  workflow_run:
+    workflows: ["Update monthly RSI data"]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: repair-topix-benchmark
+  cancel-in-progress: false
+
+jobs:
+  repair:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install pandas numpy yfinance
+
+      - name: Repair TOPIX benchmark
+        run: python repair_topix.py
+
+      - name: Commit repaired benchmark
+        run: |
+          if git diff --quiet -- data/analysis.json; then
+            echo "TOPIX benchmark is already current."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/analysis.json
+          git commit -m "chore: repair TOPIX benchmark data"
+          git push origin main
