@@ -64,9 +64,6 @@ const SignalV2 = (() => {
     return null;
   }
 
-  // Setting textContent replaces child nodes even when the displayed value is
-  // unchanged. Inside a MutationObserver that can recursively schedule itself
-  // and freeze the page. All canonical-label writes must therefore be idempotent.
   function setTextContentIfChanged(element, nextValue) {
     if (!element || element.textContent === nextValue) return false;
     element.textContent = nextValue;
@@ -142,6 +139,21 @@ const SignalV2 = (() => {
     document.head.appendChild(style);
   }
 
+  function installGlobalUiAssets() {
+    if (!document.querySelector('link[href="assets/global-ui-fixes.css"]')) {
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = "assets/global-ui-fixes.css";
+      document.head.appendChild(link);
+    }
+    if (!document.querySelector('script[src="assets/global-ui-fixes.js"]')) {
+      const script = document.createElement("script");
+      script.src = "assets/global-ui-fixes.js";
+      script.defer = true;
+      document.head.appendChild(script);
+    }
+  }
+
   function injectMethodCard() {
     const main = document.querySelector("main");
     if (!main || document.querySelector(".signal-method-card")) return;
@@ -175,7 +187,11 @@ const SignalV2 = (() => {
     }
   }
 
-  function refreshUi() { rewriteNode(document.body); normalizeKnownControls(); rewriteCharts(); }
+  function refreshUi() {
+    rewriteNode(document.body);
+    normalizeKnownControls();
+    rewriteCharts();
+  }
 
   function startObserver() {
     refreshUi();
@@ -194,6 +210,7 @@ const SignalV2 = (() => {
 
   async function init() {
     installStyles();
+    installGlobalUiAssets();
     injectMethodCard();
     if (await verifyDataVersion()) startObserver();
   }
