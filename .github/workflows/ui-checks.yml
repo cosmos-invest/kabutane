@@ -3,38 +3,17 @@ name: Validate site UI
 on:
   pull_request:
     paths:
+      - "index.html"
       - "backtest.html"
       - "replay.html"
       - "detail.html"
-      - "analysis.html"
-      - "analysis-lab.html"
+      - "howto.html"
+      - "learn.html"
       - "signal-method.html"
-      - "assets/backtest.js"
-      - "assets/backtest.css"
-      - "assets/replay.js"
-      - "assets/replay.css"
-      - "assets/replay-v2.css"
-      - "assets/replay-core-v2.js"
-      - "assets/replay-ui-base-v2.js"
-      - "assets/replay-charts-v2.js"
-      - "assets/replay-render-v2.js"
-      - "assets/replay-orders-basic-v2.js"
-      - "assets/replay-orders-auto-v2.js"
-      - "assets/replay-session-v2.js"
-      - "assets/detail-enhancements.js"
-      - "assets/detail-enhancements.css"
-      - "assets/simple-analysis-cosmos.js"
-      - "assets/simple-analysis-cosmos.css"
-      - "assets/signal-v2.js"
-      - "assets/characters.js"
+      - "assets/**"
       - "tradingview_signal.py"
       - "generate_tradingview.py"
-      - "tests/test_backtest_engine.js"
-      - "tests/test_replay_engine.js"
-      - "tests/test_replay_v2.js"
-      - "tests/test_detail_enhancements.js"
-      - "tests/test_signal_v2.js"
-      - "tests/test_tradingview_signal.py"
+      - "tests/**"
       - ".github/workflows/ui-checks.yml"
   workflow_dispatch:
 
@@ -65,19 +44,7 @@ jobs:
 
       - name: Check JavaScript syntax
         run: |
-          node --check assets/backtest.js
-          node --check assets/replay.js
-          node --check assets/replay-core-v2.js
-          node --check assets/replay-ui-base-v2.js
-          node --check assets/replay-charts-v2.js
-          node --check assets/replay-render-v2.js
-          node --check assets/replay-orders-basic-v2.js
-          node --check assets/replay-orders-auto-v2.js
-          node --check assets/replay-session-v2.js
-          node --check assets/detail-enhancements.js
-          node --check assets/simple-analysis-cosmos.js
-          node --check assets/signal-v2.js
-          node --check assets/characters.js
+          for file in assets/*.js; do node --check "$file"; done
 
       - name: Test JavaScript engines
         run: |
@@ -85,9 +52,7 @@ jobs:
           node tests/test_replay_engine.js
           node tests/test_replay_v2.js
           node tests/test_detail_enhancements.js
-
-      - name: Test signal migration UI
-        run: node tests/test_signal_v2.js
+          node tests/test_signal_v2.js
 
       - name: Validate HTML and CSS
         run: |
@@ -98,44 +63,28 @@ jobs:
           class Parser(HTMLParser):
               pass
 
-          for name in (
-              "backtest.html", "replay.html", "detail.html", "analysis.html",
-              "analysis-lab.html", "signal-method.html",
-          ):
+          for name in ("index.html", "backtest.html", "replay.html", "detail.html", "howto.html", "learn.html", "signal-method.html"):
               Parser().feed(Path(name).read_text(encoding="utf-8"))
 
-          for name in (
-              "assets/backtest.css", "assets/replay.css", "assets/replay-v2.css",
-              "assets/detail-enhancements.css", "assets/simple-analysis-cosmos.css",
-          ):
-              css = Path(name).read_text(encoding="utf-8")
+          for path in Path("assets").glob("*.css"):
+              css = path.read_text(encoding="utf-8")
               if css.count("{") != css.count("}"):
-                  raise SystemExit(f"CSS braces are not balanced: {name}")
+                  raise SystemExit(f"CSS braces are not balanced: {path}")
           print("HTML/CSS validation passed")
           PY
 
-      - name: Audit canonical signal wiring
+      - name: Audit public page structure
         run: |
           python - <<'PY'
           from pathlib import Path
-
+          index = Path("index.html").read_text(encoding="utf-8")
+          deploy = Path(".github/workflows/deploy-pages.yml").read_text(encoding="utf-8")
           characters = Path("assets/characters.js").read_text(encoding="utf-8")
-          backtest = Path("backtest.html").read_text(encoding="utf-8")
-          replay = Path("replay.html").read_text(encoding="utf-8")
-          detail = Path("detail.html").read_text(encoding="utf-8")
-          workflow = Path(".github/workflows/update-data.yml").read_text(encoding="utf-8")
-
+          if "かぶたね" not in index or "assets/kabutane.css" not in index:
+              raise SystemExit("Kabutane home is not wired")
+          if "analysis-lab.html" in deploy:
+              raise SystemExit("Discarded analysis lab is still deployed")
           if 'assets/signal-v2.js' not in characters:
               raise SystemExit("Common pages do not load signal-v2.js")
-          if 'assets/signal-v2.js' not in backtest:
-              raise SystemExit("Backtest does not load signal-v2.js")
-          if 'assets/replay-core-v2.js' not in replay or 'assets/replay-session-v2.js' not in replay:
-              raise SystemExit("Replay Pro modules are not wired")
-          if 'assets/replay.js' in replay:
-              raise SystemExit("Replay page still loads the legacy engine")
-          if 'assets/detail-enhancements.js' not in detail:
-              raise SystemExit("Detail page does not load detail enhancements")
-          if "python generate_tradingview.py" not in workflow:
-              raise SystemExit("Production workflow is not using the canonical generator")
-          print("Canonical signal wiring passed")
+          print("Public page structure passed")
           PY

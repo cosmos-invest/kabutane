@@ -3,146 +3,130 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="日本株の月足RSI5がRSI14を上回る銘柄を追跡する無料スキャナー">
-  <title>月足RSIクロス・スキャナー</title>
+  <meta name="description" content="かぶたねは、コスモスたちと日本株の候補を見つけ、確かめ、練習する初心者向け株式投資サポートサイトです。">
+  <title>かぶたね 〜コスモスと探す、未来の1株〜</title>
   <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/pastel.css">
+  <link rel="stylesheet" href="assets/simple-analysis.css">
+  <link rel="stylesheet" href="assets/simple-analysis-cosmos.css">
+  <link rel="stylesheet" href="assets/kabutane.css">
 </head>
-<body>
-  <!-- pages-build: simple-screening-link -->
-  <header class="site-header">
+<body data-page="index" class="pastel-theme kabutane-page">
+  <header class="site-header kabutane-header">
     <div class="header-inner">
-      <div>
-        <p class="eyebrow">Japan Stock Monthly RSI</p>
-        <h1>月足RSIクロス・スキャナー</h1>
-        <p class="subtitle">月足RSI5 &gt; RSI14 の銘柄、その出入り、GC後の株価実績を追跡します。</p>
-      </div>
+      <a class="kabutane-logo" href="index.html" aria-label="かぶたね ホーム">
+        <span class="kabutane-logo-mark">🌱</span>
+        <span><strong>かぶたね</strong><small>コスモスと探す、未来の1株</small></span>
+      </a>
       <div class="header-meta">
-        <span id="generatedAt">更新日時を取得中…</span>
-        <span class="badge neutral" id="signalMonth">判定月 —</span>
-        <a class="button secondary" href="analysis.html">🌸 かんたん条件で探す</a>
+        <nav class="site-nav" aria-label="サイト内ナビゲーション">
+          <a href="index.html" class="active" aria-current="page">銘柄を探す</a>
+          <a href="backtest.html">運用を試す</a>
+          <a href="replay.html">売買を練習</a>
+          <a href="howto.html">使い方</a>
+          <a href="learn.html">学び・FAQ</a>
+        </nav>
+        <div class="kabutane-update-line"><span id="generatedAt">更新日時を取得中…</span><span id="signalMonth" class="badge neutral">判定月 —</span></div>
       </div>
     </div>
   </header>
 
-  <main class="container">
-    <section class="stats-grid" aria-label="集計">
-      <article class="stat-card"><span>現在対象</span><strong id="activeCount">—</strong></article>
-      <article class="stat-card new"><span>NEW</span><strong id="newCount">—</strong></article>
-      <article class="stat-card out"><span>OUT</span><strong id="outCount">—</strong></article>
-      <article class="stat-card up"><span>GC後上昇</span><strong id="upCount">—</strong></article>
-      <article class="stat-card down"><span>GC後下落</span><strong id="downCount">—</strong></article>
-      <article class="stat-card cosmos"><span>🌸 コスモス注目</span><strong id="cosmosFocusCount">—</strong></article>
-      <article class="stat-card"><span>取得エラー</span><strong id="errorCount">—</strong></article>
-    </section>
-
-    <section class="panel controls-panel">
-      <div class="control-group grow">
-        <label for="searchInput">銘柄検索</label>
-        <input id="searchInput" type="search" placeholder="コードまたは銘柄名">
+  <main class="container simple-analysis-container kabutane-container">
+    <section class="kabutane-hero panel" aria-labelledby="heroTitle">
+      <div class="kabutane-hero-copy">
+        <span class="kabutane-kicker">はじめての株探しを、もっとやさしく。</span>
+        <h1 id="heroTitle">未来の1株の<br><em>“たね”</em>を見つけよう。</h1>
+        <p>難しい数字を全部覚えなくても大丈夫。コスモス、ルーモ、エールと一緒に、候補を見つけ、理由を確かめ、自信がつくまで練習できます。</p>
+        <div class="kabutane-hero-actions">
+          <a class="button kabutane-primary" href="#search-start">銘柄を探しにいく</a>
+          <a class="button secondary" href="howto.html">はじめての使い方</a>
+        </div>
+        <p class="kabutane-safety-note">ここで表示する銘柄は「調べる候補」です。買い推奨ではありません。</p>
       </div>
-      <div class="control-group">
-        <label for="monthSelect">表示月</label>
-        <select id="monthSelect"></select>
-      </div>
-      <div class="control-group">
-        <label for="statusFilter">状態</label>
-        <select id="statusFilter">
-          <option value="ALL">すべて</option>
-          <option value="NEW">NEWのみ</option>
-          <option value="CONTINUE">継続のみ</option>
-          <option value="OUT">OUTのみ</option>
-        </select>
-      </div>
-      <div class="control-group">
-        <label for="performanceFilter">GC後実績</label>
-        <select id="performanceFilter">
-          <option value="ALL">すべて</option>
-          <option value="UP">上昇</option>
-          <option value="DOWN">下落</option>
-        </select>
-      </div>
-      <div class="control-group">
-        <label for="rsiFilter">RSI14</label>
-        <select id="rsiFilter">
-          <option value="ALL">すべて</option>
-          <option value="OVER50">50以上</option>
-          <option value="UNDER50">50未満</option>
-        </select>
-      </div>
-      <div class="control-group compact">
-        <label for="pageSize">表示件数</label>
-        <select id="pageSize">
-          <option value="25">25</option>
-          <option value="50" selected>50</option>
-          <option value="100">100</option>
-          <option value="500">500</option>
-        </select>
+      <div class="kabutane-hero-visual" aria-hidden="true">
+        <img src="assets/cosmos-trio.webp" alt="">
+        <span class="hero-speech">一緒に探してみよう🌸</span>
       </div>
     </section>
 
-    <section class="panel tabs-panel">
-      <div class="tabs" role="tablist">
-        <button class="tab active" data-tab="active">現在対象</button>
-        <button class="tab" data-tab="new">NEW</button>
-        <button class="tab cosmos-tab" data-tab="cosmos">🌸 コスモス注目</button>
-        <button class="tab" data-tab="out">OUT</button>
-        <button class="tab" data-tab="up">GC後上昇</button>
-        <button class="tab" data-tab="down">GC後下落</button>
-      </div>
-      <div class="table-toolbar">
-        <p id="resultSummary">読み込み中…</p>
-        <a id="csvDownload" class="button secondary" href="result.csv" download>CSVを開く</a>
-      </div>
+    <section class="kabutane-route" aria-label="かぶたねでできること">
+      <article><span class="route-number">1</span><div><strong>見つける</strong><p>今、勢いが出ている銘柄をやさしい条件から探します。</p></div></article>
+      <article><span class="route-number">2</span><div><strong>確かめる</strong><p>チャート、企業予定、財務を見て「なぜ気になるか」を整理します。</p></div></article>
+      <article><span class="route-number">3</span><div><strong>練習する</strong><p>未来を隠した過去チャートで、入口・損切り・利確を何度でも試します。</p></div></article>
+    </section>
 
-      <div class="table-wrap">
-        <table id="resultTable">
-          <thead>
-            <tr>
-              <th data-key="code">コード</th>
-              <th data-key="name">銘柄名</th>
-              <th data-key="status">状態</th>
-              <th data-key="cosmos_focus">注目サイン</th>
-              <th data-key="months_active" class="num">継続月</th>
-              <th data-key="rsi14" class="num">RSI14</th>
-              <th data-key="rsi5" class="num">RSI5</th>
-              <th data-key="diff" class="num">乖離</th>
-              <th data-key="gc_month">GC月</th>
-              <th data-key="gc_price" class="num">GC価格</th>
-              <th data-key="current_price" class="num">現在/期末</th>
-              <th data-key="return_since_gc_pct" class="num">GC後騰落</th>
-              <th data-key="per" class="num">PER</th>
-              <th data-key="pbr" class="num">PBR</th>
-              <th data-key="dividend_yield_pct" class="num">配当%</th>
-              <th data-key="roe_pct" class="num">ROE%</th>
-              <th data-key="equity_ratio_pct" class="num">自己資本%</th>
-              <th data-key="market_cap_oku" class="num">時価総額(億)</th>
-              <th data-key="operating_cashflow_oku" class="num">営業CF(億)</th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
-      </div>
-
-      <div class="pagination">
-        <button id="prevPage" class="button secondary">前へ</button>
-        <span id="pageInfo">—</span>
-        <button id="nextPage" class="button secondary">次へ</button>
+    <section class="kabutane-cast panel" aria-labelledby="castTitle">
+      <div class="kabutane-section-title"><span>WITH THREE GUIDES</span><h2 id="castTitle">3人と進める、かぶたねの旅</h2></div>
+      <div class="kabutane-cast-grid">
+        <article class="cast-card cosmos"><div class="cast-portrait" aria-hidden="true"></div><div><span>コスモス🌸</span><strong>候補を見つける案内役</strong><p>月足の勢いと長期トレンドから、次に詳しく調べたい会社を一緒に探します。</p></div></article>
+        <article class="cast-card lumo"><div class="cast-portrait" aria-hidden="true"></div><div><span>ルーモ✨</span><strong>チャート練習の相棒</strong><p>実際のお金を動かす前に、何度でも失敗できる練習場所へ連れていきます。</p></div></article>
+        <article class="cast-card aile"><div class="cast-portrait" aria-hidden="true"></div><div><span>エール💜</span><strong>初心者目線の質問役</strong><p>難しい言葉をそのままにせず、「それってどういうこと？」を一緒に確認します。</p></div></article>
       </div>
     </section>
 
-    <section class="panel note-panel">
-      <h2>このサイトの見方</h2>
-      <p><strong>NEW</strong> は、前月まで RSI5 ≤ RSI14 だった銘柄が、判定月に RSI5 &gt; RSI14 へ入った状態です。<strong>OUT</strong> はその逆です。</p>
-      <p><strong>🌸 コスモス注目</strong> は、NEW時点で「RSI5が60以上・RSI14が上向き」を満たし、MVP加速型または新高値トレンド型に該当した銘柄です。ボタンを押すとワンクリックで抽出できます。</p>
-      <p>GC後騰落率は、GC判定月の月足終値を起点に計算します。現在月は直近の日足終値を使用します。</p>
-      <p class="disclaimer">本サイトは情報提供・研究を目的とし、特定銘柄の売買を推奨するものではありません。データ欠損・遅延・計算差異があり得ます。</p>
+    <section id="search-start" class="panel purpose-panel kabutane-search-panel" aria-labelledby="purposeTitle">
+      <div class="simple-section-heading">
+        <div><span class="step-number">STEP 1</span><h2 id="purposeTitle">どんな会社の“たね”を探したい？</h2><p>まずは気になる探し方を1つ選びます。迷ったら「まずは基本」で大丈夫です。</p></div>
+        <button id="resetSimpleFilters" class="button ghost-button" type="button">最初に戻す</button>
+      </div>
+      <div id="purposeCards" class="purpose-grid kabutane-purpose-grid" role="list">
+        <button class="purpose-card cosmos-purpose" type="button" data-purpose="cosmos" role="listitem"><span class="purpose-icon">🌸</span><strong>コスモス注目</strong><small>勢いと長期の強さを両方確認</small></button>
+        <button class="purpose-card active" type="button" data-purpose="starter" role="listitem"><span class="purpose-icon">🔰</span><strong>まずは基本</strong><small>月足の勢いから探す</small></button>
+        <button class="purpose-card" type="button" data-purpose="trend" role="listitem"><span class="purpose-icon">📈</span><strong>上昇トレンド</strong><small>長く上向きの会社</small></button>
+        <button class="purpose-card" type="button" data-purpose="vcp" role="listitem"><span class="purpose-icon">🎀</span><strong>力をためている</strong><small>値動きが小さくなった会社</small></button>
+        <button class="purpose-card" type="button" data-purpose="mvp" role="listitem"><span class="purpose-icon">🚀</span><strong>勢いが加速</strong><small>株価と出来高が動いた会社</small></button>
+        <button class="purpose-card" type="button" data-purpose="high" role="listitem"><span class="purpose-icon">✨</span><strong>高値に挑戦</strong><small>強い価格帯にいる会社</small></button>
+        <button class="purpose-card" type="button" data-purpose="balance" role="listitem"><span class="purpose-icon">🫧</span><strong>財務も確認</strong><small>値動きと会社の体力を見る</small></button>
+      </div>
     </section>
+
+    <details class="panel condition-panel kabutane-more-conditions">
+      <summary><span>STEP 2</span><strong>もう少しだけ条件を足す</strong><small>慣れてからで大丈夫です</small></summary>
+      <div class="conditions-inner">
+        <div id="conditionButtons" class="condition-grid">
+          <button class="condition-card selected" type="button" data-condition="rsi" aria-pressed="true"><span class="priority">基本</span><strong>月足の勢い</strong><small>最近の上昇の力が強まっている</small><span class="condition-check">✓</span></button>
+          <button class="condition-card" type="button" data-condition="sepa" aria-pressed="false"><span class="priority">流れ</span><strong>上昇トレンド</strong><small>株価と移動平均線が上向き</small><span class="condition-check">＋</span></button>
+          <button class="condition-card" type="button" data-condition="vcp" aria-pressed="false"><span class="priority">準備</span><strong>値動きの収束</strong><small>値幅が小さくなり上向きを保つ</small><span class="condition-check">＋</span></button>
+          <button class="condition-card" type="button" data-condition="mvp" aria-pressed="false"><span class="priority">加速</span><strong>勢いの点火</strong><small>株価・出来高・強さが同時に動く</small><span class="condition-check">＋</span></button>
+          <button class="condition-card" type="button" data-condition="high" aria-pressed="false"><span class="priority">強さ</span><strong>高値への近さ</strong><small>過去1年の高値付近にいる</small><span class="condition-check">＋</span></button>
+          <button class="condition-card" type="button" data-condition="finance" aria-pressed="false"><span class="priority">体力</span><strong>財務の安定</strong><small>現金を生み、自己資本も確認できる</small><span class="condition-check">＋</span></button>
+        </div>
+        <p class="condition-note">詳しい計算方法やSEPA・VCP・モメンタムなどの用語は、<a href="learn.html">学び・FAQ</a>にまとめています。</p>
+      </div>
+    </details>
+
+    <section class="kabutane-cosmos-rule panel" aria-labelledby="cosmosRuleTitle">
+      <div class="cosmos-rule-mark">🌸</div>
+      <div><span>コスモス注目の考え方</span><h2 id="cosmosRuleTitle">「上向き」だけでなく、その先へ進む力があるかを見る。</h2><p>月足の勢いが上向き、長期の上昇トレンドが保たれている会社の中から、<strong>出来高を伴って加速している</strong>、または<strong>高値を更新する強さが見える</strong>銘柄を候補にしています。具体的な数式ではなく、まずはこの考え方を覚えれば十分です。</p></div>
+    </section>
+
+    <section class="panel result-panel kabutane-results" aria-labelledby="resultTitle">
+      <div class="simple-section-heading result-heading">
+        <div><span class="step-number">STEP 3</span><h2 id="resultTitle">見つかった“たね”を見てみよう</h2><p id="resultSummary">データを読み込んでいます…</p></div>
+        <div class="simple-toolbar">
+          <label for="statusFilter">状態<select id="statusFilter"><option value="ALL">NEW・継続すべて</option><option value="NEW">今月NEWのみ</option><option value="CONTINUE">継続中のみ</option></select></label>
+          <label for="sortSelect">並び順<select id="sortSelect"><option value="recommended">条件への適合順</option><option value="newest">NEWが新しい順</option><option value="rsi">月足の勢い順</option><option value="high">高値に近い順</option><option value="return">シグナル後の上昇順</option><option value="finance">財務の安定順</option></select></label>
+          <label class="search-label" for="searchInput">会社を検索<input id="searchInput" type="search" placeholder="コードまたは会社名"></label>
+        </div>
+      </div>
+      <div class="selected-summary" aria-live="polite"><span>選択中</span><div id="selectedConditions" class="selected-chips"></div></div>
+      <section class="simple-stats" aria-label="抽出結果の概要"><article><span>見つかった候補</span><strong id="candidateCount">—</strong></article><article><span>今月NEW</span><strong id="newCount">—</strong></article><article><span>シグナル後中央値</span><strong id="medianReturn">—</strong></article></section>
+      <div id="candidateGrid" class="candidate-grid"></div>
+      <div class="simple-pagination"><button id="prevPage" class="button ghost-button" type="button">前へ</button><span id="pageInfo">—</span><button id="nextPage" class="button ghost-button" type="button">次へ</button></div>
+    </section>
+
+    <section class="kabutane-practice panel">
+      <div><span>BEFORE USING REAL MONEY</span><h2>自分の言葉で理由を説明できるまで、何度でも練習しよう。</h2><p>候補を見つけたら、すぐに買うのではなく、過去チャートで入口・損切り・利確を試してください。失敗しても資金が減らない場所で、自分のルールを育てます。</p></div>
+      <a class="button kabutane-primary" href="replay.html">売買練習を開く</a>
+    </section>
+
+    <section class="simple-disclaimer"><p>かぶたねは情報提供・学習・練習を目的としたサイトです。表示結果は売買推奨や将来の利益を示すものではありません。企業の公式開示とご自身の判断を必ず確認してください。</p></section>
   </main>
 
-  <footer>
-    <p>Monthly RSI Scanner / Data source: Yahoo Finance via yfinance</p>
-  </footer>
-  <script src="assets/app.js" defer></script>
+  <footer class="kabutane-footer"><strong>かぶたね 🌱</strong><p>コスモスと探す、未来の1株</p></footer>
+  <script src="assets/simple-analysis.js" defer></script>
+  <script src="assets/simple-analysis-cosmos.js" defer></script>
+  <script src="assets/kabutane-screening.js" defer></script>
   <script src="assets/characters.js" defer></script>
 </body>
 </html>
