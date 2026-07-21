@@ -1,0 +1,524 @@
+{
+  "generated_at": "2026-07-21T08:38:53.373875+00:00",
+  "source_generated_at": "2026-07-20T13:03:14.407776+00:00",
+  "signal_month": "2026-06",
+  "summary": {
+    "raw_error_count": 785,
+    "unique_error_tickers": 785,
+    "current_active_records": 548,
+    "active_zero_fundamentals": 285
+  },
+  "by_stage": [
+    {
+      "stage": "fundamentals",
+      "count": 776
+    },
+    {
+      "stage": "monthly",
+      "count": 9
+    }
+  ],
+  "by_reason": [
+    {
+      "reason": "rate_limited",
+      "label": "取得元のアクセス制限",
+      "error_count": 776,
+      "unique_tickers": 776,
+      "samples": [
+        {
+          "ticker": "6254.T",
+          "code": "6254",
+          "name": "野村マイクロ・サイエンス",
+          "stage": "fundamentals",
+          "message": "Too Many Requests. Rate limited. Try after a while."
+        },
+        {
+          "ticker": "6258.T",
+          "code": "6258",
+          "name": "平田機工",
+          "stage": "fundamentals",
+          "message": "Too Many Requests. Rate limited. Try after a while."
+        },
+        {
+          "ticker": "6264.T",
+          "code": "6264",
+          "name": "マルマエ",
+          "stage": "fundamentals",
+          "message": "Too Many Requests. Rate limited. Try after a while."
+        },
+        {
+          "ticker": "6266.T",
+          "code": "6266",
+          "name": "タツモ",
+          "stage": "fundamentals",
+          "message": "Too Many Requests. Rate limited. Try after a while."
+        },
+        {
+          "ticker": "6268.T",
+          "code": "6268",
+          "name": "ナブテスコ",
+          "stage": "fundamentals",
+          "message": "Too Many Requests. Rate limited. Try after a while."
+        },
+        {
+          "ticker": "6269.T",
+          "code": "6269",
+          "name": "三井海洋開発",
+          "stage": "fundamentals",
+          "message": "Too Many Requests. Rate limited. Try after a while."
+        },
+        {
+          "ticker": "6272.T",
+          "code": "6272",
+          "name": "レオン自動機",
+          "stage": "fundamentals",
+          "message": "Too Many Requests. Rate limited. Try after a while."
+        },
+        {
+          "ticker": "6273.T",
+          "code": "6273",
+          "name": "ＳＭＣ",
+          "stage": "fundamentals",
+          "message": "Too Many Requests. Rate limited. Try after a while."
+        },
+        {
+          "ticker": "6277.T",
+          "code": "6277",
+          "name": "ホソカワミクロン",
+          "stage": "fundamentals",
+          "message": "Too Many Requests. Rate limited. Try after a while."
+        },
+        {
+          "ticker": "6278.T",
+          "code": "6278",
+          "name": "ユニオンツール",
+          "stage": "fundamentals",
+          "message": "Too Many Requests. Rate limited. Try after a while."
+        },
+        {
+          "ticker": "6279.T",
+          "code": "6279",
+          "name": "瑞光",
+          "stage": "fundamentals",
+          "message": "Too Many Requests. Rate limited. Try after a while."
+        },
+        {
+          "ticker": "6282.T",
+          "code": "6282",
+          "name": "オイレス工業",
+          "stage": "fundamentals",
+          "message": "Too Many Requests. Rate limited. Try after a while."
+        },
+        {
+          "ticker": "6284.T",
+          "code": "6284",
+          "name": "日精エー  ･エス  ･ビー機械",
+          "stage": "fundamentals",
+          "message": "Too Many Requests. Rate limited. Try after a while."
+        },
+        {
+          "ticker": "6287.T",
+          "code": "6287",
+          "name": "サトー",
+          "stage": "fundamentals",
+          "message": "Too Many Requests. Rate limited. Try after a while."
+        },
+        {
+          "ticker": "6294.T",
+          "code": "6294",
+          "name": "オカダアイヨン",
+          "stage": "fundamentals",
+          "message": "Too Many Requests. Rate limited. Try after a while."
+        },
+        {
+          "ticker": "6289.T",
+          "code": "6289",
+          "name": "技研製作所",
+          "stage": "fundamentals",
+          "message": "Too Many Requests. Rate limited. Try after a while."
+        },
+        {
+          "ticker": "6301.T",
+          "code": "6301",
+          "name": "小松製作所",
+          "stage": "fundamentals",
+          "message": "Too Many Requests. Rate limited. Try after a while."
+        },
+        {
+          "ticker": "6298.T",
+          "code": "6298",
+          "name": "ワイエイシイホールディングス",
+          "stage": "fundamentals",
+          "message": "Too Many Requests. Rate limited. Try after a while."
+        },
+        {
+          "ticker": "6305.T",
+          "code": "6305",
+          "name": "日立建機",
+          "stage": "fundamentals",
+          "message": "Too Many Requests. Rate limited. Try after a while."
+        },
+        {
+          "ticker": "6302.T",
+          "code": "6302",
+          "name": "住友重機械工業",
+          "stage": "fundamentals",
+          "message": "Too Many Requests. Rate limited. Try after a while."
+        },
+        {
+          "ticker": "6306.T",
+          "code": "6306",
+          "name": "日工",
+          "stage": "fundamentals",
+          "message": "Too Many Requests. Rate limited. Try after a while."
+        },
+        {
+          "ticker": "6309.T",
+          "code": "6309",
+          "name": "巴工業",
+          "stage": "fundamentals",
+          "message": "Too Many Requests. Rate limited. Try after a while."
+        },
+        {
+          "ticker": "6310.T",
+          "code": "6310",
+          "name": "井関農機",
+          "stage": "fundamentals",
+          "message": "Too Many Requests. Rate limited. Try after a while."
+        },
+        {
+          "ticker": "6315.T",
+          "code": "6315",
+          "name": "ＴＯＷＡ",
+          "stage": "fundamentals",
+          "message": "Too Many Requests. Rate limited. Try after a while."
+        },
+        {
+          "ticker": "6323.T",
+          "code": "6323",
+          "name": "ローツェ",
+          "stage": "fundamentals",
+          "message": "Too Many Requests. Rate limited. Try after a while."
+        },
+        {
+          "ticker": "6324.T",
+          "code": "6324",
+          "name": "ハーモニック・ドライブ・システムズ",
+          "stage": "fundamentals",
+          "message": "Too Many Requests. Rate limited. Try after a while."
+        },
+        {
+          "ticker": "6326.T",
+          "code": "6326",
+          "name": "クボタ",
+          "stage": "fundamentals",
+          "message": "Too Many Requests. Rate limited. Try after a while."
+        },
+        {
+          "ticker": "6328.T",
+          "code": "6328",
+          "name": "荏原実業",
+          "stage": "fundamentals",
+          "message": "Too Many Requests. Rate limited. Try after a while."
+        },
+        {
+          "ticker": "6330.T",
+          "code": "6330",
+          "name": "東洋エンジニアリング",
+          "stage": "fundamentals",
+          "message": "Too Many Requests. Rate limited. Try after a while."
+        },
+        {
+          "ticker": "6332.T",
+          "code": "6332",
+          "name": "月島ホールディングス",
+          "stage": "fundamentals",
+          "message": "Too Many Requests. Rate limited. Try after a while."
+        }
+      ]
+    },
+    {
+      "reason": "history_short",
+      "label": "上場期間・履歴が短く計算期間不足",
+      "error_count": 9,
+      "unique_tickers": 9,
+      "samples": [
+        {
+          "ticker": "368A.T",
+          "code": "368A",
+          "name": "北里コーポレーション",
+          "stage": "monthly",
+          "message": "RSI計算に必要な月足が不足"
+        },
+        {
+          "ticker": "409A.T",
+          "code": "409A",
+          "name": "オリオンビール",
+          "stage": "monthly",
+          "message": "RSI計算に必要な月足が不足"
+        },
+        {
+          "ticker": "429A.T",
+          "code": "429A",
+          "name": "テクセンドフォトマスク",
+          "stage": "monthly",
+          "message": "RSI計算に必要な月足が不足"
+        },
+        {
+          "ticker": "471A.T",
+          "code": "471A",
+          "name": "NSグループ",
+          "stage": "monthly",
+          "message": "RSI計算に必要な月足が不足"
+        },
+        {
+          "ticker": "544A.T",
+          "code": "544A",
+          "name": "GMSグループ",
+          "stage": "monthly",
+          "message": "RSI計算に必要な月足が不足"
+        },
+        {
+          "ticker": "545A.T",
+          "code": "545A",
+          "name": "トランヴィア",
+          "stage": "monthly",
+          "message": "RSI計算に必要な月足が不足"
+        },
+        {
+          "ticker": "546A.T",
+          "code": "546A",
+          "name": "MIRAINI ホールディングス",
+          "stage": "monthly",
+          "message": "RSI計算に必要な月足が不足"
+        },
+        {
+          "ticker": "575A.T",
+          "code": "575A",
+          "name": "前澤ホールディングス",
+          "stage": "monthly",
+          "message": "RSI計算に必要な月足が不足"
+        },
+        {
+          "ticker": "8729.T",
+          "code": "8729",
+          "name": "ソニーフィナンシャルグループ",
+          "stage": "monthly",
+          "message": "RSI計算に必要な月足が不足"
+        }
+      ]
+    }
+  ],
+  "top_messages": [
+    {
+      "message": "Too Many Requests. Rate limited. Try after a while.",
+      "count": 776
+    },
+    {
+      "message": "RSI計算に必要な月足が不足",
+      "count": 9
+    }
+  ],
+  "active_zero_fundamental_samples": [
+    {
+      "code": "6976",
+      "name": "太陽誘電"
+    },
+    {
+      "code": "6997",
+      "name": "日本ケミコン"
+    },
+    {
+      "code": "8173",
+      "name": "Ｊｏｓｈｉｎ"
+    },
+    {
+      "code": "6779",
+      "name": "日本電波工業"
+    },
+    {
+      "code": "6981",
+      "name": "村田製作所"
+    },
+    {
+      "code": "7600",
+      "name": "日本エム・ディ・エム"
+    },
+    {
+      "code": "6266",
+      "name": "タツモ"
+    },
+    {
+      "code": "7717",
+      "name": "ブイ・テクノロジー"
+    },
+    {
+      "code": "9616",
+      "name": "共立メンテナンス"
+    },
+    {
+      "code": "8035",
+      "name": "東京エレクトロン"
+    },
+    {
+      "code": "8283",
+      "name": "ＰＡＬＴＡＣ"
+    },
+    {
+      "code": "6340",
+      "name": "澁谷工業"
+    },
+    {
+      "code": "7715",
+      "name": "長野計器"
+    },
+    {
+      "code": "7956",
+      "name": "ピジョン"
+    },
+    {
+      "code": "7245",
+      "name": "大同メタル工業"
+    },
+    {
+      "code": "6479",
+      "name": "ミネベアミツミ"
+    },
+    {
+      "code": "7735",
+      "name": "ＳＣＲＥＥＮホールディングス"
+    },
+    {
+      "code": "9247",
+      "name": "TREホールディングス"
+    },
+    {
+      "code": "7979",
+      "name": "松風"
+    },
+    {
+      "code": "6525",
+      "name": "KOKUSAI ELECTRIC"
+    },
+    {
+      "code": "6996",
+      "name": "ニチコン"
+    },
+    {
+      "code": "6963",
+      "name": "ローム"
+    },
+    {
+      "code": "6723",
+      "name": "ルネサスエレクトロニクス"
+    },
+    {
+      "code": "6324",
+      "name": "ハーモニック・ドライブ・システムズ"
+    },
+    {
+      "code": "6707",
+      "name": "サンケン電気"
+    },
+    {
+      "code": "6866",
+      "name": "日置電機"
+    },
+    {
+      "code": "6620",
+      "name": "宮越ホールディングス"
+    },
+    {
+      "code": "7537",
+      "name": "丸文"
+    },
+    {
+      "code": "8008",
+      "name": "ヨンドシーホールディングス"
+    },
+    {
+      "code": "6724",
+      "name": "セイコーエプソン"
+    },
+    {
+      "code": "6752",
+      "name": "パナソニックホールディングス"
+    },
+    {
+      "code": "6845",
+      "name": "アズビル"
+    },
+    {
+      "code": "6264",
+      "name": "マルマエ"
+    },
+    {
+      "code": "6800",
+      "name": "ヨコオ"
+    },
+    {
+      "code": "6823",
+      "name": "リオン"
+    },
+    {
+      "code": "6367",
+      "name": "ダイキン工業"
+    },
+    {
+      "code": "6999",
+      "name": "ＫＯＡ"
+    },
+    {
+      "code": "7731",
+      "name": "ニコン"
+    },
+    {
+      "code": "8233",
+      "name": "高島屋"
+    },
+    {
+      "code": "6464",
+      "name": "ツバキ・ナカシマ"
+    },
+    {
+      "code": "6861",
+      "name": "キーエンス"
+    },
+    {
+      "code": "6323",
+      "name": "ローツェ"
+    },
+    {
+      "code": "6254",
+      "name": "野村マイクロ・サイエンス"
+    },
+    {
+      "code": "6925",
+      "name": "ウシオ電機"
+    },
+    {
+      "code": "6742",
+      "name": "京三製作所"
+    },
+    {
+      "code": "6952",
+      "name": "カシオ計算機"
+    },
+    {
+      "code": "8242",
+      "name": "エイチ・ツー・オー   リテイリング"
+    },
+    {
+      "code": "7366",
+      "name": "LITALICO"
+    },
+    {
+      "code": "9831",
+      "name": "ヤマダホールディングス"
+    },
+    {
+      "code": "6806",
+      "name": "ヒロセ電機"
+    }
+  ]
+}
