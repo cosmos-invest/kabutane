@@ -44,7 +44,7 @@ jobs:
 
       - name: Commit diagnostic result
         run: |
-          if git diff --quiet -- data/diagnostics/incomplete-retry.json; then
+          if [ -z "$(git status --porcelain -- data/diagnostics/incomplete-retry.json)" ]; then
             echo "No diagnostic changes."
             exit 0
           fi
