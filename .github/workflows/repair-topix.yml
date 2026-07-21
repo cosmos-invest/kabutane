@@ -14,14 +14,16 @@ on:
 permissions:
   contents: write
 
+# 月次・日次・市場別診断と同じYahooアクセス枠を共有し、同時実行を避ける。
 concurrency:
-  group: repair-topix-benchmark
+  group: market-data-writes
   cancel-in-progress: false
 
 jobs:
   repair:
     if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
+    timeout-minutes: 90
     steps:
       - name: Checkout main
         uses: actions/checkout@v4
@@ -38,8 +40,40 @@ jobs:
       - name: Install dependencies
         run: pip install pandas numpy yfinance
 
-      - name: Repair TOPIX benchmark
-        run: python repair_topix.py
+      - name: Wait for Yahoo rate limit recovery
+        # 全市場の大量取得直後に実行すると、TOPIX候補だけ429になることがある。
+        run: sleep 180
+
+      - name: Repair TOPIX benchmark with retries
+        run: |
+          set +e
+          for attempt in 1 2 3 4; do
+            echo "TOPIX repair attempt ${attempt}/4"
+            python repair_topix.py
+            code=$?
+            if [ "$code" -eq 0 ]; then
+              exit 0
+            fi
+            wait_seconds=$((attempt * 180))
+            echo "TOPIX repair failed. Waiting ${wait_seconds}s before retry."
+            sleep "$wait_seconds"
+          done
+          exit 1
+
+      - name: Verify repaired TOPIX series
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          payload = json.loads(Path("data/analysis.json").read_text(encoding="utf-8"))
+          topix = (payload.get("benchmarks") or {}).get("TOPIX") or {}
+          returns = topix.get("returns") or []
+          source = topix.get("source_ticker")
+          if not source or len(returns) < 36:
+              raise SystemExit(f"TOPIX repair verification failed: source={source}, returns={len(returns)}")
+          print(f"TOPIX verified: {source}, {len(returns)} monthly returns")
+          PY
 
       - name: Commit repaired benchmark
         run: |
@@ -51,4 +85,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/analysis.json
           git commit -m "chore: repair TOPIX benchmark data"
+          git pull --rebase origin main
           git push origin main
