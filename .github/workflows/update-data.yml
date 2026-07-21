@@ -5,9 +5,6 @@ on:
   schedule:
     # 毎月2日 12:15 JST（前月の月足確定後）
     - cron: "15 3 2 * *"
-  workflow_run:
-    workflows: ["Refresh TSE stock universe"]
-    types: [completed]
   push:
     branches: ["main"]
     paths:
@@ -22,13 +19,13 @@ on:
 permissions:
   contents: write
 
+# 月次・日次・銘柄マスター更新を直列化し、同じデータへの同時pushを防ぐ。
 concurrency:
-  group: update-monthly-rsi
+  group: market-data-writes
   cancel-in-progress: false
 
 jobs:
   update:
-    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 360
     steps:
