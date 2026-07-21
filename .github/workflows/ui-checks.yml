@@ -123,6 +123,7 @@ jobs:
           index = Path("index.html").read_text(encoding="utf-8")
           detail = Path("detail.html").read_text(encoding="utf-8")
           replay = Path("replay.html").read_text(encoding="utf-8")
+          replay_workspace = Path("assets/replay-workspace.js").read_text(encoding="utf-8")
           characters = Path("assets/characters.js").read_text(encoding="utf-8")
           workflow = Path(".github/workflows/update-data.yml").read_text(encoding="utf-8")
 
@@ -134,9 +135,12 @@ jobs:
               raise SystemExit("Daily overlay is not wired to detail and replay")
           if "assets/replay-picker.js" not in replay or "replaySymbolSelect" not in replay:
               raise SystemExit("Replay candidate picker is not wired")
-          for marker in ("assets/replay-risk-ladder.js", "assets/replay-workspace.js", "entryStageCount", "detailChartLink"):
-              if marker not in replay and marker != "entryStageCount":
+          for marker in ("assets/replay-risk-ladder.js", "assets/replay-workspace.js"):
+              if marker not in replay:
                   raise SystemExit(f"Replay workspace is missing: {marker}")
+          for marker in ("entryStageCount", "detailChartLink", "workspace-tabs", "manualLimitPrice"):
+              if marker not in replay_workspace:
+                  raise SystemExit(f"Replay workspace UI is missing: {marker}")
           if "assets/replay-month-end.js" not in characters:
               raise SystemExit("Replay month-end skip is not wired")
           if "assets/pwa-register.js" not in characters or "manifest.webmanifest" not in Path("assets/pwa-register.js").read_text(encoding="utf-8"):
