@@ -2,6 +2,9 @@ name: Update monthly RSI data
 
 on:
   workflow_dispatch:
+  workflow_run:
+    workflows: ["Refresh TSE stock universe"]
+    types: [completed]
   schedule:
     # 毎月2日 12:15 JST（前月の月足確定後）
     - cron: "15 3 2 * *"
@@ -26,6 +29,8 @@ concurrency:
 
 jobs:
   update:
+    # 銘柄マスター更新が失敗した場合は全データ生成へ進まない。
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 360
     steps:
