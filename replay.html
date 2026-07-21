@@ -4,17 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="平均足、月足RSI14と5か月移動平均、複数テクニカル、8分割売買、TP1〜TP4とトレーリングストップを使う売買練習シミュレーター">
-  <title>売買練習シミュレーター | 月足RSIスキャナー</title>
+  <title>売買練習シミュレーター | かぶたね</title>
   <link rel="stylesheet" href="assets/style.css">
   <link rel="stylesheet" href="assets/pastel.css">
   <link rel="stylesheet" href="assets/replay.css">
   <link rel="stylesheet" href="assets/replay-v2.css">
+  <link rel="stylesheet" href="assets/kabutane-links.css">
 </head>
 <body class="pastel-theme replay-page replay-pro-page" data-page="replay">
   <header class="site-header replay-header">
     <div class="header-inner">
       <div>
-        <a id="detailBackLink" class="back-link" href="index.html">← 銘柄詳細へ戻る</a>
+        <a id="detailBackLink" class="back-link" href="index.html">← 銘柄探しへ戻る</a>
         <p class="eyebrow">Trading Replay Pro</p>
         <h1 id="replayTitle">売買練習シミュレーター🌸</h1>
         <p id="replaySubtitle" class="subtitle">未来を隠し、チャート上に注文ラインを置いて検証します。</p>
@@ -38,9 +39,10 @@
 
     <section id="setupPanel" class="panel setup-panel">
       <div class="section-heading">
-        <div><span class="step-number">STEP 1</span><h2>練習条件と資金管理を決める</h2><p>1銘柄への配分上限と、1回の失敗で許容する損失額を設定します。</p></div>
+        <div><span class="step-number">STEP 1</span><h2>練習する銘柄と資金管理を決める</h2><p>トップページから直接開いた場合も、候補銘柄が自動でセットされます。ここで別の銘柄へ変更できます。</p></div>
       </div>
       <div class="setup-grid">
+        <label class="replay-symbol-label">練習する銘柄<select id="replaySymbolSelect"><option value="">候補を読み込んでいます…</option></select></label>
         <label>開始方法
           <select id="startMode"><option value="random">ランダムに開始</option><option value="date">開始日を指定</option></select>
         </label>
@@ -176,11 +178,13 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
   <script src="assets/replay-core-v2.js" defer></script>
   <script src="assets/replay-ui-base-v2.js" defer></script>
+  <script src="assets/daily-overlay.js" defer></script>
   <script src="assets/replay-charts-v2.js" defer></script>
   <script src="assets/replay-render-v2.js" defer></script>
   <script src="assets/replay-orders-basic-v2.js" defer></script>
   <script src="assets/replay-orders-auto-v2.js" defer></script>
   <script src="assets/replay-session-v2.js" defer></script>
+  <script src="assets/replay-picker.js" defer></script>
   <script src="assets/characters.js" defer></script>
 </body>
 </html>
