@@ -1,0 +1,223 @@
+name: Diagnose Standard market refresh
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["main"]
+    paths:
+      - "ops/run-standard-refresh.txt"
+
+permissions:
+  contents: write
+
+# 公開データ更新と同時にYahooへ大量アクセスしない。
+concurrency:
+  group: market-data-writes
+  cancel-in-progress: false
+
+jobs:
+  diagnose-standard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Prepare isolated Standard universe
+        run: |
+          rm -rf /tmp/standard-run
+          mkdir -p /tmp/standard-run data/diagnostics
+          tar --exclude=.git -cf - . | tar -xf - -C /tmp/standard-run
+          python - <<'PY'
+          import csv
+          import json
+          from pathlib import Path
+
+          source = Path("stocks.csv")
+          target = Path("/tmp/standard-run/stocks.csv")
+          with source.open(encoding="utf-8-sig", newline="") as fh:
+              rows = list(csv.DictReader(fh))
+          selected = [row for row in rows if "スタンダード" in str(row.get("market", ""))]
+          if not selected:
+              raise SystemExit("スタンダード銘柄をstocks.csvから抽出できませんでした")
+          with target.open("w", encoding="utf-8-sig", newline="") as fh:
+              writer = csv.DictWriter(fh, fieldnames=list(rows[0]))
+              writer.writeheader()
+              writer.writerows(selected)
+          Path("data/diagnostics/standard-universe.json").write_text(
+              json.dumps({"market": "STANDARD", "count": len(selected)}, ensure_ascii=False, indent=2),
+              encoding="utf-8",
+          )
+          print(f"Standard universe: {len(selected)}")
+          PY
+
+      - name: Check TOPIX candidates independently
+        id: topix
+        continue-on-error: true
+        run: |
+          python - <<'PY'
+          import json
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          import pandas as pd
+          import yfinance as yf
+
+          candidates = ["998405.T", "^TOPX", "1308.T", "1306.T"]
+          results = []
+          selected = None
+          for ticker in candidates:
+              item = {"ticker": ticker, "ok": False, "daily_rows": 0, "monthly_returns": 0, "max_abs_monthly_return_pct": None, "error": None}
+              try:
+                  frame = yf.download(
+                      ticker,
+                      period="5y",
+                      interval="1d",
+                      auto_adjust=True,
+                      actions=False,
+                      progress=False,
+                      threads=False,
+                      timeout=60,
+                  )
+                  if frame is None or frame.empty:
+                      raise RuntimeError("empty response")
+                  close = frame["Close"]
+                  if isinstance(close, pd.DataFrame):
+                      close = close.iloc[:, 0]
+                  close = pd.to_numeric(close, errors="coerce").dropna()
+                  item["daily_rows"] = int(len(close))
+                  monthly = close.groupby(close.index.to_period("M")).last().pct_change().dropna() * 100
+                  item["monthly_returns"] = int(len(monthly))
+                  item["max_abs_monthly_return_pct"] = round(float(monthly.abs().max()), 4) if len(monthly) else None
+                  item["ok"] = len(monthly) >= 36 and bool((monthly.abs() <= 45).all())
+                  if item["ok"] and selected is None:
+                      selected = ticker
+              except Exception as exc:
+                  item["error"] = f"{type(exc).__name__}: {exc}"
+              results.append(item)
+
+          payload = {
+              "checked_at": datetime.now(timezone.utc).isoformat(),
+              "selected": selected,
+              "candidates": results,
+              "fatal_to_stock_generation": False,
+              "note": "TOPIX候補が全滅しても現行パイプラインは空のベンチマークとして継続する設計",
+          }
+          Path("data/diagnostics/topix-preflight.json").write_text(
+              json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8"
+          )
+          print(json.dumps(payload, ensure_ascii=False, indent=2))
+          PY
+
+      - name: Run Standard-only generator in isolation
+        id: generate
+        env:
+          HISTORY_MONTHS: "60"
+          MONTHLY_PERIOD: "max"
+          DAILY_PERIOD: "3y"
+          ANALYSIS_DAILY_PERIOD: "5y"
+          YF_BATCH_SIZE: "80"
+          YF_DOWNLOAD_RETRIES: "2"
+          SKIP_FUNDAMENTALS: "1"
+        run: |
+          set +e
+          cd /tmp/standard-run
+          python generate_tradingview.py > "$GITHUB_WORKSPACE/data/diagnostics/standard-refresh.log" 2>&1
+          code=$?
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          echo "Generator exit code: $code"
+          tail -n 100 "$GITHUB_WORKSPACE/data/diagnostics/standard-refresh.log" || true
+          exit 0
+
+      - name: Build diagnostic summary
+        if: always()
+        env:
+          GENERATOR_EXIT_CODE: ${{ steps.generate.outputs.exit_code }}
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          workspace = Path.cwd()
+          run_root = Path("/tmp/standard-run")
+          log_path = workspace / "data/diagnostics/standard-refresh.log"
+          universe = json.loads((workspace / "data/diagnostics/standard-universe.json").read_text(encoding="utf-8"))
+          topix_path = workspace / "data/diagnostics/topix-preflight.json"
+          topix = json.loads(topix_path.read_text(encoding="utf-8")) if topix_path.exists() else None
+          exit_code = int(os.getenv("GENERATOR_EXIT_CODE") or 999)
+
+          summary = {
+              "generated_at": datetime.now(timezone.utc).isoformat(),
+              "market": "STANDARD",
+              "universe_count": universe["count"],
+              "status": "success" if exit_code == 0 else "failed",
+              "exit_code": exit_code,
+              "topix_selected": topix.get("selected") if isinstance(topix, dict) else None,
+              "topix_fatal": False,
+          }
+
+          latest_path = run_root / "data/latest.json"
+          analysis_path = run_root / "data/analysis.json"
+          if latest_path.exists():
+              latest = json.loads(latest_path.read_text(encoding="utf-8"))
+              summary["signal_month"] = latest.get("signal_month")
+              summary["result_summary"] = latest.get("summary")
+              summary["error_samples"] = (latest.get("errors") or [])[:20]
+          else:
+              summary["signal_month"] = None
+              summary["result_summary"] = None
+              summary["error_samples"] = []
+
+          if analysis_path.exists():
+              analysis = json.loads(analysis_path.read_text(encoding="utf-8"))
+              summary["benchmark_summary"] = {
+                  key: {
+                      "source_ticker": value.get("source_ticker"),
+                      "return_count": len(value.get("returns") or []),
+                  }
+                  for key, value in (analysis.get("benchmarks") or {}).items()
+              }
+          else:
+              summary["benchmark_summary"] = None
+
+          if log_path.exists():
+              lines = log_path.read_text(encoding="utf-8", errors="replace").splitlines()
+              summary["log_tail"] = lines[-120:]
+          else:
+              summary["log_tail"] = []
+
+          output = workspace / "data/diagnostics/standard-refresh.json"
+          output.write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
+          print(json.dumps(summary, ensure_ascii=False, indent=2))
+          PY
+
+      - name: Commit diagnostic result
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/diagnostics
+          if git diff --cached --quiet; then
+            echo "No diagnostic changes"
+          else
+            git commit -m "diagnostics: record Standard market refresh result"
+            git pull --rebase origin main
+            git push origin main
+          fi
+
+      - name: Mark failed Standard generation
+        if: always() && steps.generate.outputs.exit_code != '0'
+        run: exit 1
