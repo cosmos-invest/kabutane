@@ -26,29 +26,33 @@ const characterGuide = (() => {
 
   const messages = {
     index: [
-      { character: "cosmos", text: "まずはNEWと🌸コスモス注目から候補を探そう。NEWは、月足RSI14が自身の5か月移動平均を上抜けた銘柄だよ🌸" },
-      { character: "lumo", text: "銘柄コードでも会社名でも検索できるよ！ 気になる会社を見つけたら、名前をタップして詳しく見てみよう✨" },
-      { character: "aile", text: "数字が『—』の項目は取得できなかったデータです。0とは意味が違うから、そこだけ気をつけてね。" },
-      { character: "cosmos", text: "一覧は候補を見つける場所。買うかどうかは、詳細ページのチャート・企業イベント・財務を見てから考えよう🌸" },
-    ],
-    analysis: [
-      { character: "cosmos", text: "分析は『前半で条件探し、後半で答え合わせ』が基本だよ。同じ期間だけで良く見える条件を作りすぎないようにしよう🌸" },
-      { character: "lumo", text: "52週高値やVCPも試せるよ！ 条件を一つずつ足して、対象件数が急に減っていないかも見よう✨" },
-      { character: "aile", text: "平均が高くても、少数の大幅上昇に引っぱられることがあります。中央値・最大下落・対象件数を一緒に確認してね。" },
-      { character: "cosmos", text: "TOPIXや日経平均に勝ったかだけでなく、負けた時の下がり方も大切。リターンと守りをセットで見よう🌸" },
-      { character: "aile", text: "財務は現在の最新値です。過去のNEW当時の情報ではないため、過去実績の原因として断定しないようにしましょう。" },
-      { character: "cosmos", text: "出口戦略は最大利益だけでなく、最大下落と平均保有期間も比較しよう。資金効率まで含めて見るのがコツだよ🌸" },
+      { character: "cosmos", text: "ここに並ぶのは、買う銘柄ではなく『次に調べる候補』だよ。まずは気になる会社を3〜5社だけ開いてみよう🌸" },
+      { character: "lumo", text: "会社名の一部や証券コードで検索できるよ！ 詳細を見たら、今度は過去チャートで練習しよう✨" },
+      { character: "aile", text: "難しい条件を全部選ばなくても大丈夫です。最初は『月足の勢い』だけで、どんな会社が出てくるか見てみましょう。" },
+      { character: "cosmos", text: "🌸コスモス注目も売買推奨ではないよ。勢いと長期トレンドの両方を詳しく確認したい候補です🌸" },
     ],
     detail: [
-      { character: "cosmos", text: "上から株価チャート、月足RSI14と5か月MA、企業イベント、過去実績、財務の順に見ると迷いにくいよ🌸" },
-      { character: "lumo", text: "ローソク足で値動きを確認して、平均足でトレンドの続きやすさを見ると分かりやすいよ✨" },
-      { character: "aile", text: "決算予定や権利落ちの直前は値動きが大きくなることがあります。チャートだけでなく日付も確認してね。" },
-      { character: "cosmos", text: "過去のGC実績は参考になるけれど、同じ結果を保証するものではないよ。ワーストケースも一緒に想定しよう🌸" },
+      { character: "cosmos", text: "詳細は、株価チャート → 月足RSI → 企業イベント → 財務の順に見ると迷いにくいよ🌸" },
+      { character: "lumo", text: "ローソク足で値動きを見て、平均足でトレンドの続きやすさを確認してみよう✨" },
+      { character: "aile", text: "決算予定や権利落ちの近くは値動きが大きくなることがあります。日付も一緒に確認してください。" },
+      { character: "cosmos", text: "過去の成績は未来の保証ではないよ。良かった場面だけでなく、一番下がった場面も想像しよう🌸" },
     ],
     howto: [
-      { character: "cosmos", text: "このサイトは『一覧で探す → 詳細で確認 → 分析で検証』の3ステップで使うと分かりやすいよ🌸" },
-      { character: "lumo", text: "最初は条件を盛りすぎなくて大丈夫！ NEWか🌸注目を選んで、気になる会社を3〜5社だけ開いてみよう✨" },
-      { character: "aile", text: "最後に必ず、損失をどこまで許容するかと、どの条件で撤退するかを決めておくと落ち着いて使えます。" },
+      { character: "cosmos", text: "見つける → 確かめる → 練習する。この順番なら、焦らず自分の判断を作れるよ🌸" },
+      { character: "lumo", text: "練習では失敗してOK！ 入口、損切り、利確の理由をメモして、同じルールでもう一度試そう✨" },
+      { character: "aile", text: "自分のお金を動かす前に、なぜ買うのか、どこで撤退するのかを説明できるまで練習してください。" },
+    ],
+    backtest: [
+      { character: "cosmos", text: "成績が一番高い条件だけでなく、最大下落と取引数も一緒に確認しよう🌸" },
+      { character: "aile", text: "バックテストには実際の約定との差や将来情報の混入リスクがあります。前提条件を確認して使いましょう。" },
+    ],
+    replay: [
+      { character: "lumo", text: "ここは何度失敗しても大丈夫な場所！ まず損切りを決めてから、1回分の株数を考えよう✨" },
+      { character: "aile", text: "良い結果だけでなく、判断メモがルール通りだったかも振り返ってください。" },
+    ],
+    learn: [
+      { character: "aile", text: "分からない言葉があったら、ここで一つずつ確認しましょう。全部を一度に覚える必要はありません。" },
+      { character: "cosmos", text: "知識は銘柄を当てるためではなく、リスクを理解して落ち着いて判断するために使おう🌸" },
     ],
   };
 
@@ -59,7 +63,8 @@ const characterGuide = (() => {
   function detectPage() {
     if (document.body.dataset.page) return document.body.dataset.page;
     if (document.getElementById("priceChart")) return "detail";
-    if (document.querySelector(".analysis-controls")) return "analysis";
+    if (document.querySelector(".backtest-page")) return "backtest";
+    if (document.querySelector(".replay-page")) return "replay";
     return "index";
   }
 
@@ -68,166 +73,86 @@ const characterGuide = (() => {
     const layer = document.createElement("div");
     layer.className = "petal-layer";
     layer.setAttribute("aria-hidden", "true");
-    layer.innerHTML = Array.from({ length: 14 }, (_, index) => `<span style="--petal-index:${index}"></span>`).join("");
+    layer.innerHTML = Array.from({ length: 12 }, (_, index) => `<span style="--petal-index:${index}"></span>`).join("");
     document.body.prepend(layer);
   }
 
   function injectNavigation() {
     const headerMeta = document.querySelector(".header-meta");
     if (!headerMeta || headerMeta.querySelector(".site-nav")) return;
-
     const currentFile = window.location.pathname.split("/").pop() || "index.html";
     const nav = document.createElement("nav");
     nav.className = "site-nav";
     nav.setAttribute("aria-label", "サイト内ナビゲーション");
     nav.innerHTML = [
       ["index.html", "銘柄を探す"],
-      ["analysis.html", "実績を分析"],
-      ["signal-method.html", "RSI計算方法"],
+      ["backtest.html", "運用を試す"],
+      ["replay.html", "売買を練習"],
       ["howto.html", "使い方"],
+      ["learn.html", "学び・FAQ"],
     ].map(([href, label]) => `<a href="${href}"${currentFile === href ? ' class="active" aria-current="page"' : ""}>${label}</a>`).join("");
     headerMeta.prepend(nav);
   }
 
+  function injectBrand() {
+    const header = document.querySelector(".site-header .header-inner");
+    if (!header || header.querySelector(".kabutane-mini-brand")) return;
+    const brand = document.createElement("a");
+    brand.className = "kabutane-mini-brand";
+    brand.href = "index.html";
+    brand.innerHTML = "<span>🌱</span><strong>かぶたね</strong>";
+    header.prepend(brand);
+  }
+
   function quickStartTemplate() {
-    if (page === "index") {
-      return `
-        <section class="quickstart-banner panel" aria-label="おすすめの使い方">
-          <div><span class="quickstart-label">はじめての方へ</span><strong>一覧 → 詳細 → 分析の3ステップで使えます</strong><p>まずはNEWまたは🌸コスモス注目から、気になる銘柄を3〜5社に絞りましょう。</p></div>
-          <a class="button quickstart-button" href="howto.html#first-route">使い方を見る</a>
-        </section>`;
-    }
-    if (page === "detail") {
-      return `
-        <section class="quickstart-banner compact panel" aria-label="詳細ページの見方">
-          <div><span class="quickstart-label">見る順番</span><strong>チャート → イベント → 過去実績 → 財務</strong><p>トレンド、直近の変動要因、再現性、企業体力を順番に確認します。</p></div>
-          <a class="button quickstart-button" href="howto.html#detail-guide">詳しい見方</a>
-        </section>`;
-    }
-    if (page === "analysis") {
-      return `
-        <section class="quickstart-banner compact panel" aria-label="分析ページの基本">
-          <div><span class="quickstart-label">分析の基本</span><strong>前半で条件を探し、後半で答え合わせ</strong><p>平均だけでなく、中央値・最大下落・対象件数・指数超過をセットで確認します。</p></div>
-          <a class="button quickstart-button" href="howto.html#analysis-guide">分析の使い方</a>
-        </section>`;
-    }
+    if (page === "detail") return `<section class="quickstart-banner compact panel"><div><span class="quickstart-label">次に見る順番</span><strong>チャート → 企業予定 → 財務 → 練習</strong><p>気になった理由と、想定が崩れる条件をメモしてから練習へ進みます。</p></div><a class="button quickstart-button" href="howto.html#detail-guide">見方を確認</a></section>`;
     return "";
   }
 
-  function injectQuickStart(main) {
-    const markup = quickStartTemplate();
-    if (!markup || main.querySelector(".quickstart-banner")) return;
-    const holder = document.createElement("div");
-    holder.innerHTML = markup.trim();
-    main.prepend(holder.firstElementChild);
-  }
-
   function template() {
-    const avatarButtons = Object.entries(characters).map(([key, value]) => `
-      <button class="character-avatar" type="button" data-character="${key}" aria-label="${value.name}のヒントを表示">
-        <span class="character-avatar-image ${key}" aria-hidden="true"></span>
-      </button>`).join("");
-    return `
-      <section class="character-guide panel" aria-label="コスモス・ルーモ・エールの使い方ヒント">
-        <div class="character-avatar-rail">${avatarButtons}</div>
-        <div class="character-speech">
-          <div class="character-speech-heading">
-            <div><strong id="characterName"></strong></div>
-            <button class="character-close" type="button" aria-label="ヒントを小さくする">×</button>
-          </div>
-          <p id="characterMessage"></p>
-          <div class="character-actions">
-            <span id="characterCount"></span>
-            <button class="character-next button secondary" type="button">次のヒント</button>
-          </div>
-        </div>
-        <button class="character-reopen" type="button">3人のヒントを開く</button>
-      </section>`;
+    const avatars = Object.entries(characters).map(([key, value]) => `<button class="character-avatar" type="button" data-character="${key}" aria-label="${value.name}のヒント"><span class="character-avatar-image ${key}" aria-hidden="true"></span></button>`).join("");
+    return `<section class="character-guide panel" aria-label="3人の使い方ヒント"><div class="character-avatar-rail">${avatars}</div><div class="character-speech"><div class="character-speech-heading"><strong id="characterName"></strong><button class="character-close" type="button" aria-label="ヒントを閉じる">×</button></div><p id="characterMessage"></p><div class="character-actions"><span id="characterCount"></span><button class="character-next button secondary" type="button">次のヒント</button></div></div><button class="character-reopen" type="button">3人のヒントを開く</button></section>`;
   }
 
   function show(index) {
     const pageMessages = messages[page] || messages.index;
     current = (index + pageMessages.length) % pageMessages.length;
     const message = pageMessages[current];
-    const character = characters[message.character];
     root.dataset.activeCharacter = message.character;
-    root.querySelector("#characterName").textContent = character.name;
+    root.querySelector("#characterName").textContent = characters[message.character].name;
     root.querySelector("#characterMessage").textContent = message.text;
     root.querySelector("#characterCount").textContent = `${current + 1} / ${pageMessages.length}`;
-    root.querySelectorAll(".character-avatar").forEach((button) => {
-      button.classList.toggle("active", button.dataset.character === message.character);
-    });
+    root.querySelectorAll(".character-avatar").forEach((button) => button.classList.toggle("active", button.dataset.character === message.character));
   }
 
-  function showCharacter(character, text = null) {
-    if (!root) return;
-    if (text) {
-      const profile = characters[character];
-      root.dataset.activeCharacter = character;
-      root.querySelector("#characterName").textContent = profile.name;
-      root.querySelector("#characterMessage").textContent = text;
-      root.querySelector("#characterCount").textContent = "操作ヒント";
-      root.querySelectorAll(".character-avatar").forEach((button) => button.classList.toggle("active", button.dataset.character === character));
-      root.classList.remove("collapsed");
-      return;
-    }
+  function showCharacter(character) {
     const pageMessages = messages[page] || messages.index;
-    const nextIndex = pageMessages.findIndex((message, index) => index > current && message.character === character);
-    const firstIndex = pageMessages.findIndex((message) => message.character === character);
-    show(nextIndex >= 0 ? nextIndex : firstIndex);
-  }
-
-  function bindPageEvents() {
-    if (page === "analysis") {
-      document.getElementById("presetArticle")?.addEventListener("click", () => {
-        showCharacter("lumo", "いつもの条件を入れたよ！ ここから月足RSI14や移動平均線を一つずつ変えると、何が効いているか分かりやすいよ✨");
-      });
-      document.getElementById("presetHighZone")?.addEventListener("click", () => showCharacter("lumo", "52週高値から−10%以内に絞ったよ！ 高値圏にいる会社の、その後を見てみよう✨"));
-      document.getElementById("presetVcpTrend")?.addEventListener("click", () => showCharacter("cosmos", "VCP・第2ステージ・Supertrend上向きを重ねたよ。条件を増やした分、対象件数も確認しようね🌸"));
-      document.getElementById("researchPeriod")?.addEventListener("change", (event) => {
-        if (event.target.value === "validate") showCharacter("aile", "ここは後半の答え合わせです。前半で良かった条件が、別の期間でも続いたかを確認しましょう。");
-      });
-      ["operatingCf", "freeCf", "roeMin", "revenueGrowthMin", "equityRatioMin"].forEach((id) => {
-        document.getElementById(id)?.addEventListener("change", () => showCharacter("aile"));
-      });
-      document.querySelectorAll("[data-pattern]").forEach((card) => card.addEventListener("click", () => {
-        const label = card.dataset.pattern === "CLOSED" ? "OUT済み" : card.dataset.pattern === "ACTIVE" ? "継続中" : "全体";
-        showCharacter("cosmos", `${label}の実績に切り替えたよ。平均だけでなく、中央値とプラス比率も一緒に見てみよう🌸`);
-      }));
-    }
-    if (page === "index") {
-      let timer;
-      document.getElementById("searchInput")?.addEventListener("input", (event) => {
-        clearTimeout(timer);
-        if (!event.target.value.trim()) return;
-        timer = setTimeout(() => showCharacter("lumo", "検索できたかな？ 会社名を全部入力しなくても、一部の文字や4桁コードで探せるよ✨"), 500);
-      });
-    }
+    const index = pageMessages.findIndex((message) => message.character === character);
+    if (index >= 0) show(index);
+    root.classList.remove("collapsed");
   }
 
   function init() {
     document.body.classList.add("pastel-theme");
     injectPetals();
     injectNavigation();
-
+    if (!document.querySelector(".kabutane-logo")) injectBrand();
     const main = document.querySelector("main.container");
     if (!main) return;
     page = detectPage();
-    injectQuickStart(main);
-
+    const quickMarkup = quickStartTemplate();
+    if (quickMarkup && !main.querySelector(".quickstart-banner")) main.insertAdjacentHTML("afterbegin", quickMarkup);
     const holder = document.createElement("div");
-    holder.innerHTML = template().trim();
+    holder.innerHTML = template();
     root = holder.firstElementChild;
-    const quickstart = main.querySelector(".quickstart-banner");
-    if (quickstart) quickstart.insertAdjacentElement("afterend", root);
-    else main.prepend(root);
-
+    const anchor = main.querySelector(".quickstart-banner") || main.firstElementChild;
+    anchor?.insertAdjacentElement("afterend", root);
+    if (!anchor) main.prepend(root);
     root.querySelector(".character-next").addEventListener("click", () => show(current + 1));
     root.querySelector(".character-close").addEventListener("click", () => root.classList.add("collapsed"));
     root.querySelector(".character-reopen").addEventListener("click", () => root.classList.remove("collapsed"));
     root.querySelectorAll(".character-avatar").forEach((button) => button.addEventListener("click", () => showCharacter(button.dataset.character)));
     show(0);
-    bindPageEvents();
   }
 
   return { init, showCharacter };
