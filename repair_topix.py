@@ -19,6 +19,7 @@ CANDIDATES = [
     {"ticker": "998405.T", "name": "TOPIX", "proxy": False},
     {"ticker": "1306.T", "name": "TOPIX連動ETF（代替）", "proxy": True},
 ]
+MAX_REASONABLE_MONTHLY_MOVE_PCT = 45.0
 
 
 def finite(value: Any) -> float | None:
@@ -38,7 +39,9 @@ def extract_close(frame: pd.DataFrame, ticker: str) -> pd.Series:
             data = data[ticker]
         elif ticker in data.columns.get_level_values(1):
             data = data.xs(ticker, level=1, axis=1)
-    column = "Close"
+    # auto_adjust=True normally exposes the adjusted series as Close. Keep the
+    # Adj Close preference for compatibility with cached/older yfinance output.
+    column = "Adj Close" if "Adj Close" in data.columns else "Close"
     if column not in data.columns:
         return pd.Series(dtype=float)
     close = pd.to_numeric(data[column], errors="coerce").dropna()
@@ -63,11 +66,21 @@ def aligned_returns(close: pd.Series, start_month: str, end_month: str) -> list[
         current_close = finite(monthly.loc[month])
         if not previous_close or current_close is None:
             continue
-        rows.append({
-            "month": str(month),
-            "return_pct": round((current_close / previous_close - 1) * 100, 2),
-        })
+        return_pct = (current_close / previous_close - 1) * 100
+        rows.append({"month": str(month), "return_pct": round(return_pct, 2)})
     return rows
+
+
+def validate_returns(rows: list[dict[str, Any]]) -> tuple[bool, str | None]:
+    abnormal = [
+        point for point in rows
+        if finite(point.get("return_pct")) is not None
+        and abs(float(point["return_pct"])) > MAX_REASONABLE_MONTHLY_MOVE_PCT
+    ]
+    if abnormal:
+        sample = ", ".join(f"{point['month']}={point['return_pct']}%" for point in abnormal[:3])
+        return False, f"abnormal monthly movement ({sample})"
+    return True, None
 
 
 def download_candidate(candidate: dict[str, Any], start_month: str, end_month: str) -> dict[str, Any]:
@@ -77,7 +90,9 @@ def download_candidate(candidate: dict[str, Any], start_month: str, end_month: s
             ticker,
             period="10y",
             interval="1d",
-            auto_adjust=False,
+            # Critical for the ETF fallback: 1306.T had a unit/split change that
+            # produced -91%/+961% moves when raw Close was used.
+            auto_adjust=True,
             actions=False,
             progress=False,
             threads=False,
@@ -85,10 +100,15 @@ def download_candidate(candidate: dict[str, Any], start_month: str, end_month: s
         )
         close = extract_close(frame, ticker)
         returns = aligned_returns(close, start_month, end_month)
+        valid, reason = validate_returns(returns)
+        if not valid:
+            print(f"{ticker}: rejected: {reason}")
+            returns = []
     except Exception as exc:  # keep other candidates available
         print(f"{ticker}: download failed: {exc}")
         returns = []
-    return {**candidate, "returns": returns}
+        reason = str(exc)
+    return {**candidate, "returns": returns, "validation_error": reason if not returns else None}
 
 
 def cumulative_return(points: list[dict[str, Any]], start_month: str, end_month: str) -> float | None:
@@ -148,7 +168,11 @@ def main() -> None:
     expected = max(0, len(pd.period_range(start=start_month, end=end_month, freq="M")) - 1)
     minimum = min(12, max(1, expected // 2))
     if len(chosen["returns"]) < minimum:
-        details = ", ".join(f"{item['ticker']}={len(item['returns'])}" for item in candidates)
+        details = ", ".join(
+            f"{item['ticker']}={len(item['returns'])}"
+            + (f" ({item['validation_error']})" if item.get("validation_error") else "")
+            for item in candidates
+        )
         raise SystemExit(f"TOPIX history is insufficient ({details})")
 
     benchmark = {
@@ -157,6 +181,7 @@ def main() -> None:
         "name": chosen["name"],
         "source_ticker": chosen["ticker"],
         "is_proxy": chosen["proxy"],
+        "price_basis": "株式分割・分配金を調整した価格系列",
         "coverage_months": len(chosen["returns"]),
         "expected_months": expected,
         "returns": chosen["returns"],
@@ -166,7 +191,7 @@ def main() -> None:
     ANALYSIS_PATH.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     print(
         f"TOPIX benchmark repaired: {chosen['ticker']} "
-        f"({len(chosen['returns'])}/{expected} monthly returns)"
+        f"({len(chosen['returns'])}/{expected} monthly returns, adjusted prices)"
     )
 
 
