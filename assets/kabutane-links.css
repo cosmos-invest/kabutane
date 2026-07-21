@@ -1,0 +1,95 @@
+.kabutane-hero-visual img.kabutane-cosmos-main {
+  width: min(560px, 105%);
+  right: 1%;
+  object-position: center 18%;
+}
+
+.site-nav .note-nav-link {
+  color: #b24e82;
+  background: rgba(255, 242, 248, .86);
+  border-color: rgba(224, 92, 151, .25);
+}
+
+.candidate-footer {
+  flex-wrap: wrap;
+}
+
+.candidate-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 7px;
+}
+
+.candidate-actions .practice-button {
+  color: #fff;
+  background: linear-gradient(135deg, #66ad82, #58a9ce);
+  border-color: transparent;
+}
+
+.kabutane-note-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 20px;
+  padding: 25px;
+  border-color: rgba(231, 98, 162, .26);
+  background: linear-gradient(120deg, #fff, #fff4f9 48%, #f2efff);
+}
+
+.kabutane-note-mark {
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, .88);
+  box-shadow: 0 12px 26px rgba(175, 83, 130, .12);
+  font-size: 2rem;
+}
+
+.kabutane-note-card span {
+  color: #b44d82;
+  font-size: .7rem;
+  font-weight: 900;
+  letter-spacing: .12em;
+}
+
+.kabutane-note-card h2 {
+  margin: 5px 0 7px;
+  font-size: 1.25rem;
+}
+
+.kabutane-note-card p {
+  margin: 0;
+  color: #75677c;
+  line-height: 1.75;
+}
+
+.kabutane-footer a {
+  color: #b24e82;
+  font-weight: 850;
+}
+
+.replay-symbol-label {
+  grid-column: span 2;
+}
+
+@media (max-width: 680px) {
+  .kabutane-hero-visual img.kabutane-cosmos-main {
+    width: 100%;
+    right: 0;
+    object-position: center 16%;
+  }
+  .kabutane-note-card {
+    grid-template-columns: auto 1fr;
+    padding: 18px;
+  }
+  .kabutane-note-card .button {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+  .replay-symbol-label {
+    grid-column: auto;
+  }
+}

@@ -5,10 +5,14 @@ on:
   schedule:
     # 毎月2日 12:15 JST（前月の月足確定後）
     - cron: "15 3 2 * *"
+  workflow_run:
+    workflows: ["Refresh TSE stock universe"]
+    types: [completed]
   push:
     branches: ["main"]
     paths:
       - ".github/workflows/update-data.yml"
+      - "stocks.csv"
       - "test.py"
       - "tradingview_signal.py"
       - "generate_tradingview.py"
@@ -24,14 +28,14 @@ concurrency:
 
 jobs:
   update:
-    if: github.actor != 'github-actions[bot]'
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
-    timeout-minutes: 330
+    timeout-minutes: 360
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.head_ref || github.ref_name }}
+          ref: main
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -53,14 +57,15 @@ jobs:
       - name: Generate all data with canonical signal
         env:
           HISTORY_MONTHS: "60"
-          # RMA inherits older observations. Use the longest available monthly
-          # history, then publish only the configured five-year analysis window.
           MONTHLY_PERIOD: "max"
           DAILY_PERIOD: "3y"
           ANALYSIS_DAILY_PERIOD: "5y"
-          YF_BATCH_SIZE: "80"
-          FUNDAMENTALS_WORKERS: "3"
-        run: python generate_tradingview.py
+          YF_BATCH_SIZE: "100"
+          SKIP_FUNDAMENTALS: "1"
+        run: |
+          python generate_tradingview.py
+          # 月次チャートへ最新日足が取り込まれたため、小さな日次差分をリセット。
+          rm -rf data/daily
 
       - name: Verify generated signal version
         run: |
@@ -78,14 +83,17 @@ jobs:
           print("Canonical signal version verified")
           PY
 
+      - name: Build data quality report
+        run: python diagnose_errors.py
+
       - name: Commit generated files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A result.csv out.csv data history
+          git add -A result.csv out.csv data history DATA_QUALITY.md
           if git diff --cached --quiet; then
             echo "No data changes"
           else
-            git commit -m "chore: rebuild data with TradingView RSI14 signal"
-            git push origin HEAD:"${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
+            git commit -m "chore: rebuild zero-cost Yahoo market data"
+            git push origin main
           fi

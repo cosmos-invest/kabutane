@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="assets/simple-analysis.css">
   <link rel="stylesheet" href="assets/simple-analysis-cosmos.css">
   <link rel="stylesheet" href="assets/kabutane.css">
+  <link rel="stylesheet" href="assets/kabutane-characters.css">
+  <link rel="stylesheet" href="assets/kabutane-links.css">
 </head>
 <body data-page="index" class="pastel-theme kabutane-page">
   <header class="site-header kabutane-header">
@@ -22,9 +24,10 @@
         <nav class="site-nav" aria-label="サイト内ナビゲーション">
           <a href="index.html" class="active" aria-current="page">銘柄を探す</a>
           <a href="backtest.html">運用を試す</a>
-          <a href="replay.html">売買を練習</a>
+          <a id="navPracticeLink" href="replay.html">売買を練習</a>
           <a href="howto.html">使い方</a>
           <a href="learn.html">学び・FAQ</a>
+          <a class="note-nav-link" href="https://note.com/cosmos_invest" target="_blank" rel="noopener noreferrer">note ↗</a>
         </nav>
         <div class="kabutane-update-line"><span id="generatedAt">更新日時を取得中…</span><span id="signalMonth" class="badge neutral">判定月 —</span></div>
       </div>
@@ -44,14 +47,14 @@
         <p class="kabutane-safety-note">ここで表示する銘柄は「調べる候補」です。買い推奨ではありません。</p>
       </div>
       <div class="kabutane-hero-visual" aria-hidden="true">
-        <img src="assets/cosmos-trio.webp" alt="">
+        <img class="kabutane-cosmos-main" src="assets/characters/cosmos-hero.webp" alt="">
         <span class="hero-speech">一緒に探してみよう🌸</span>
       </div>
     </section>
 
     <section class="kabutane-route" aria-label="かぶたねでできること">
       <article><span class="route-number">1</span><div><strong>見つける</strong><p>今、勢いが出ている銘柄をやさしい条件から探します。</p></div></article>
-      <article><span class="route-number">2</span><div><strong>確かめる</strong><p>チャート、企業予定、財務を見て「なぜ気になるか」を整理します。</p></div></article>
+      <article><span class="route-number">2</span><div><strong>確かめる</strong><p>チャート、配当・分割、財務を見て「なぜ気になるか」を整理します。</p></div></article>
       <article><span class="route-number">3</span><div><strong>練習する</strong><p>未来を隠した過去チャートで、入口・損切り・利確を何度でも試します。</p></div></article>
     </section>
 
@@ -116,14 +119,20 @@
     </section>
 
     <section class="kabutane-practice panel">
-      <div><span>BEFORE USING REAL MONEY</span><h2>自分の言葉で理由を説明できるまで、何度でも練習しよう。</h2><p>候補を見つけたら、すぐに買うのではなく、過去チャートで入口・損切り・利確を試してください。失敗しても資金が減らない場所で、自分のルールを育てます。</p></div>
-      <a class="button kabutane-primary" href="replay.html">売買練習を開く</a>
+      <div><span>BEFORE USING REAL MONEY</span><h2>候補を1つ選んでから、何度でも練習しよう。</h2><p>下のボタンは、現在表示している候補の先頭銘柄を自動でセットします。練習ページでも別の銘柄へ変更できます。</p></div>
+      <a id="homePracticeLink" class="button kabutane-primary" href="replay.html">候補をセットして練習する</a>
     </section>
 
-    <section class="simple-disclaimer"><p>かぶたねは情報提供・学習・練習を目的としたサイトです。表示結果は売買推奨や将来の利益を示すものではありません。企業の公式開示とご自身の判断を必ず確認してください。</p></section>
+    <section class="kabutane-note-card panel" aria-labelledby="noteTitle">
+      <div class="kabutane-note-mark" aria-hidden="true">🌸</div>
+      <div><span>COSMOS NOTE</span><h2 id="noteTitle">投資とAI創作の舞台裏は、noteで。</h2><p>銘柄を調べて考えたこと、コスモス・ルーモ・エールの物語、サイトづくりの記録を発信しています。</p></div>
+      <a class="button secondary" href="https://note.com/cosmos_invest" target="_blank" rel="noopener noreferrer">コスモスのnoteへ ↗</a>
+    </section>
+
+    <section class="simple-disclaimer"><p>かぶたねは情報提供・学習・練習を目的としたサイトです。表示結果は売買推奨や将来の利益を示すものではありません。企業の公式情報とご自身の判断を必ず確認してください。</p></section>
   </main>
 
-  <footer class="kabutane-footer"><strong>かぶたね 🌱</strong><p>コスモスと探す、未来の1株</p></footer>
+  <footer class="kabutane-footer"><strong>かぶたね 🌱</strong><p>コスモスと探す、未来の1株</p><p><a href="https://note.com/cosmos_invest" target="_blank" rel="noopener noreferrer">note.com/cosmos_invest ↗</a></p></footer>
   <script src="assets/simple-analysis.js" defer></script>
   <script src="assets/simple-analysis-cosmos.js" defer></script>
   <script src="assets/kabutane-screening.js" defer></script>
