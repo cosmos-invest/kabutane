@@ -2,18 +2,17 @@ name: Deploy GitHub Pages
 
 on:
   workflow_run:
-    workflows: ["Update monthly RSI data"]
+    workflows: ["Update monthly RSI data", "Audit data quality"]
     types: [completed]
   push:
     branches: ["main"]
     paths:
       - "index.html"
       - "detail.html"
-      - "analysis.html"
-      - "analysis-lab.html"
       - "backtest.html"
       - "replay.html"
       - "howto.html"
+      - "learn.html"
       - "signal-method.html"
       - "assets/**"
       - "data/**"
@@ -47,7 +46,7 @@ jobs:
       - name: Prepare site
         run: |
           mkdir -p _site
-          cp index.html detail.html analysis.html analysis-lab.html backtest.html replay.html howto.html signal-method.html .nojekyll result.csv out.csv _site/
+          cp index.html detail.html backtest.html replay.html howto.html learn.html signal-method.html .nojekyll result.csv out.csv _site/
           cp -R assets data history _site/
 
       - name: Configure Pages
