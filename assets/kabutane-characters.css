@@ -4,17 +4,36 @@
   background-position: center !important;
 }
 
-.cast-card.cosmos .cast-portrait {
-  background-image: url("characters/cosmos-hero.webp");
-  background-position: center 23% !important;
+.kabutane-hero-visual img.kabutane-cosmos-main {
+  object-position: center 24% !important;
 }
 
-.cast-card.lumo .cast-portrait {
-  background-image: url("characters/lumo-guide.webp");
-  background-position: center 20% !important;
+.cast-card.cosmos .cast-portrait,
+.character-avatar-image.cosmos,
+.howto-character.cosmos {
+  background-image: url("characters/cosmos-hero.webp") !important;
+  background-size: cover !important;
+  background-position: center !important;
 }
 
-.cast-card.aile .cast-portrait {
-  background-image: url("characters/aile-guide.webp");
-  background-position: 72% center !important;
+.cast-card.lumo .cast-portrait,
+.character-avatar-image.lumo,
+.howto-character.lumo {
+  background-image: url("characters/lumo-guide.webp") !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.cast-card.aile .cast-portrait,
+.character-avatar-image.aile,
+.howto-character.aile {
+  background-image: url("characters/aile-guide.webp") !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+@media (max-width: 680px) {
+  .kabutane-hero-visual img.kabutane-cosmos-main {
+    object-position: center 20% !important;
+  }
 }

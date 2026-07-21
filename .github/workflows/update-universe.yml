@@ -5,6 +5,11 @@ on:
   schedule:
     # JPXの前月末一覧が公開された後に、毎月8日 09:30 JSTで更新。
     - cron: "30 0 8 * *"
+  push:
+    branches: ["main"]
+    paths:
+      # このファイルを更新すると、全市場更新を手動起動できる。
+      - "ops/run-full-market-refresh.txt"
 
 permissions:
   contents: write
