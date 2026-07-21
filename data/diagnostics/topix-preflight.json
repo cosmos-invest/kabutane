@@ -1,0 +1,40 @@
+{
+  "checked_at": "2026-07-21T16:15:27.374932+00:00",
+  "selected": "1308.T",
+  "candidates": [
+    {
+      "ticker": "998405.T",
+      "ok": false,
+      "daily_rows": 0,
+      "monthly_returns": 0,
+      "max_abs_monthly_return_pct": null,
+      "error": "RuntimeError: empty response"
+    },
+    {
+      "ticker": "^TOPX",
+      "ok": false,
+      "daily_rows": 0,
+      "monthly_returns": 0,
+      "max_abs_monthly_return_pct": null,
+      "error": "RuntimeError: empty response"
+    },
+    {
+      "ticker": "1308.T",
+      "ok": true,
+      "daily_rows": 1220,
+      "monthly_returns": 60,
+      "max_abs_monthly_return_pct": 10.3769,
+      "error": null
+    },
+    {
+      "ticker": "1306.T",
+      "ok": false,
+      "daily_rows": 1221,
+      "monthly_returns": 60,
+      "max_abs_monthly_return_pct": 961.1201,
+      "error": null
+    }
+  ],
+  "fatal_to_stock_generation": false,
+  "note": "TOPIX候補が全滅しても現行パイプラインは空のベンチマークとして継続する設計"
+}

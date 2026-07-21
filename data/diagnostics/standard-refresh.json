@@ -1,0 +1,189 @@
+{
+  "generated_at": "2026-07-21T16:26:53.923515+00:00",
+  "market": "STANDARD",
+  "universe_count": 1563,
+  "status": "success",
+  "exit_code": 0,
+  "topix_selected": "1308.T",
+  "topix_fatal": false,
+  "signal_month": "2026-06",
+  "result_summary": {
+    "active_count": 360,
+    "new_count": 146,
+    "out_count": 151,
+    "up_count": 249,
+    "down_count": 111,
+    "cosmos_focus_count": 10,
+    "error_count": 20
+  },
+  "error_samples": [
+    {
+      "ticker": "365A.T",
+      "stage": "monthly",
+      "message": "RSI計算に必要な月足が不足"
+    },
+    {
+      "ticker": "3670.T",
+      "stage": "monthly",
+      "message": "RSI計算に必要な月足が不足"
+    },
+    {
+      "ticker": "367A.T",
+      "stage": "monthly",
+      "message": "RSI計算に必要な月足が不足"
+    },
+    {
+      "ticker": "372A.T",
+      "stage": "monthly",
+      "message": "RSI計算に必要な月足が不足"
+    },
+    {
+      "ticker": "386A.T",
+      "stage": "monthly",
+      "message": "RSI計算に必要な月足が不足"
+    },
+    {
+      "ticker": "407A.T",
+      "stage": "monthly",
+      "message": "RSI計算に必要な月足が不足"
+    },
+    {
+      "ticker": "423A.T",
+      "stage": "monthly",
+      "message": "RSI計算に必要な月足が不足"
+    },
+    {
+      "ticker": "428A.T",
+      "stage": "monthly",
+      "message": "RSI計算に必要な月足が不足"
+    },
+    {
+      "ticker": "475A.T",
+      "stage": "monthly",
+      "message": "RSI計算に必要な月足が不足"
+    },
+    {
+      "ticker": "476A.T",
+      "stage": "monthly",
+      "message": "RSI計算に必要な月足が不足"
+    },
+    {
+      "ticker": "483A.T",
+      "stage": "monthly",
+      "message": "RSI計算に必要な月足が不足"
+    },
+    {
+      "ticker": "500A.T",
+      "stage": "monthly",
+      "message": "RSI計算に必要な月足が不足"
+    },
+    {
+      "ticker": "505A.T",
+      "stage": "monthly",
+      "message": "RSI計算に必要な月足が不足"
+    },
+    {
+      "ticker": "548A.T",
+      "stage": "monthly",
+      "message": "RSI計算に必要な月足が不足"
+    },
+    {
+      "ticker": "549A.T",
+      "stage": "monthly",
+      "message": "RSI計算に必要な月足が不足"
+    },
+    {
+      "ticker": "550A.T",
+      "stage": "monthly",
+      "message": "RSI計算に必要な月足が不足"
+    },
+    {
+      "ticker": "559A.T",
+      "stage": "monthly",
+      "message": "RSI計算に必要な月足が不足"
+    },
+    {
+      "ticker": "7851.T",
+      "stage": "monthly",
+      "message": "RSI計算に必要な月足が不足"
+    },
+    {
+      "ticker": "7985.T",
+      "stage": "monthly",
+      "message": "RSI計算に必要な月足が不足"
+    },
+    {
+      "ticker": "9914.T",
+      "stage": "monthly",
+      "message": "RSI計算に必要な月足が不足"
+    }
+  ],
+  "benchmark_summary": {
+    "TOPIX": {
+      "source_ticker": "998405.T",
+      "return_count": 0
+    },
+    "NIKKEI225": {
+      "source_ticker": "^N225",
+      "return_count": 59
+    }
+  },
+  "log_tail": [
+    "$^TOPX: possibly delisted; no price data found  (period=5y)",
+    "HTTP Error 404: {\"quoteSummary\":{\"result\":null,\"error\":{\"code\":\"Not Found\",\"description\":\"Quote not found for symbol: 998405.T\"}}}",
+    "$998405.T: possibly delisted; no price data found  (period=5y) (Yahoo error = \"No data found, symbol may be delisted\")",
+    "",
+    "2 Failed downloads:",
+    "['^TOPX']: possibly delisted; no price data found  (period=5y)",
+    "['998405.T']: possibly delisted; no price data found  (period=5y) (Yahoo error = \"No data found, symbol may be delisted\")",
+    "Installing signal definition: 月足RSI14 × RSI14の5か月SMA (tv_wilder_rsi14_sma5_v1)",
+    "対象銘柄: 1563",
+    "monthly: batch 1/20 (80 symbols)",
+    "monthly: batch 2/20 (80 symbols)",
+    "monthly: batch 3/20 (80 symbols)",
+    "monthly: batch 4/20 (80 symbols)",
+    "monthly: batch 5/20 (80 symbols)",
+    "monthly: batch 6/20 (80 symbols)",
+    "monthly: batch 7/20 (80 symbols)",
+    "monthly: batch 8/20 (80 symbols)",
+    "monthly: batch 9/20 (80 symbols)",
+    "monthly: batch 10/20 (80 symbols)",
+    "monthly: batch 11/20 (80 symbols)",
+    "monthly: batch 12/20 (80 symbols)",
+    "monthly: batch 13/20 (80 symbols)",
+    "monthly: batch 14/20 (80 symbols)",
+    "monthly: batch 15/20 (80 symbols)",
+    "monthly: batch 16/20 (80 symbols)",
+    "monthly: batch 17/20 (80 symbols)",
+    "monthly: batch 18/20 (80 symbols)",
+    "monthly: batch 19/20 (80 symbols)",
+    "monthly: batch 20/20 (43 symbols)",
+    "daily: batch 1/20 (80 symbols)",
+    "daily: batch 2/20 (80 symbols)",
+    "daily: batch 3/20 (80 symbols)",
+    "daily: batch 4/20 (80 symbols)",
+    "daily: batch 5/20 (80 symbols)",
+    "daily: batch 6/20 (80 symbols)",
+    "daily: batch 7/20 (80 symbols)",
+    "daily: batch 8/20 (80 symbols)",
+    "daily: batch 9/20 (80 symbols)",
+    "daily: batch 10/20 (80 symbols)",
+    "daily: batch 11/20 (80 symbols)",
+    "daily: batch 12/20 (80 symbols)",
+    "daily: batch 13/20 (80 symbols)",
+    "daily: batch 14/20 (80 symbols)",
+    "daily: batch 15/20 (80 symbols)",
+    "daily: batch 16/20 (80 symbols)",
+    "daily: batch 17/20 (80 symbols)",
+    "daily: batch 18/20 (80 symbols)",
+    "daily: batch 19/20 (80 symbols)",
+    "daily: batch 20/20 (20 symbols)",
+    "財務情報: Yahooキャッシュのみ利用（0/1537銘柄、外部再取得なし）",
+    "",
+    "完了",
+    "シグナル月: 2026-06",
+    "対象: 360 / NEW: 146 / OUT: 151",
+    "上昇: 249 / 下落: 111 / エラー: 20",
+    "Generated all public data with signal_version=tv_wilder_rsi14_sma5_v1"
+  ]
+}
