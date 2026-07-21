@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>銘柄詳細 | 月足RSIクロス・スキャナー</title>
+  <title>銘柄詳細 | かぶたね</title>
   <link rel="stylesheet" href="assets/style.css">
   <link rel="stylesheet" href="assets/detail-enhancements.css">
 </head>
@@ -11,7 +11,7 @@
   <header class="site-header detail-header">
     <div class="header-inner">
       <div>
-        <a class="back-link" href="index.html">← 一覧へ戻る</a>
+        <a class="back-link" href="index.html">← 銘柄探しへ戻る</a>
         <p class="eyebrow">Daily Price × Monthly RSI</p>
         <h1 id="detailTitle">銘柄詳細</h1>
         <p class="subtitle" id="detailSubtitle">データを読み込んでいます…</p>
@@ -34,86 +34,45 @@
 
     <section class="panel chart-panel">
       <div class="section-heading">
-        <div>
-          <h2>日足チャート</h2>
-          <p>ローソク足または平均足、出来高、SMA25・75・200を表示します。緑線はGC、赤線はDCです。</p>
-        </div>
+        <div><h2>日足チャート</h2><p>ローソク足または平均足、出来高、SMA25・75・200を表示します。緑線はGC、赤線はDCです。</p></div>
         <div class="chart-mode-switch" role="group" aria-label="チャート表示">
           <button id="candleMode" class="button chart-mode active" type="button">ローソク足</button>
           <button id="heikinMode" class="button secondary chart-mode" type="button">平均足</button>
         </div>
       </div>
       <p id="chartDataNotice" class="analysis-disclosure chart-data-notice" hidden></p>
-      <div class="chart-box price-chart-box">
-        <canvas id="priceChart"></canvas>
-      </div>
+      <div class="chart-box price-chart-box"><canvas id="priceChart"></canvas></div>
     </section>
 
     <section class="panel chart-panel">
-      <div class="section-heading">
-        <div>
-          <h2>月足RSIを日足軸で表示</h2>
-          <p>月末に確定した値を、翌月最初の日足から表示します。緑線はGC、赤線はDCです。</p>
-        </div>
-      </div>
-      <div class="chart-box rsi-chart-box">
-        <canvas id="rsiChart"></canvas>
-      </div>
+      <div class="section-heading"><div><h2>月足RSIを日足軸で表示</h2><p>月末に確定した値を、翌月最初の日足から表示します。緑線はGC、赤線はDCです。</p></div></div>
+      <div class="chart-box rsi-chart-box"><canvas id="rsiChart"></canvas></div>
       <p class="rsi-explanation" id="rsiExplanation"></p>
     </section>
 
     <section class="panel">
-      <div class="section-heading">
-        <div>
-          <h2>企業イベント</h2>
-          <p>次回決算・権利落ち・予想年間配当・増配率を先に表示し、その下に過去の配当や分割実績をまとめます。</p>
-        </div>
-      </div>
+      <div class="section-heading"><div><h2>配当・株式分割</h2><p>Yahoo Financeの株価履歴から取得できた配当と株式分割・併合を表示します。</p></div></div>
       <div class="event-list" id="corporateEvents"></div>
-      <p class="event-source-note">決算予定・権利落ち・予想年間配当はYahoo Financeの予定・予想情報、過去の配当・分割は株価履歴を利用しています。予想値は変更される場合があり、権利落ち日は権利確定日そのものではありません。自社株買いはYahoo Financeから安定取得できないため、<a href="https://www.release.tdnet.info/inbs/I_main_00.html" target="_blank" rel="noopener">TDnetの適時開示</a>で確認してください。</p>
+      <p class="event-source-note">有料APIやTDnetには接続していません。決算予定は自動更新せず、配当・分割の履歴だけをYahoo Finance経由で確認します。</p>
     </section>
 
     <section class="panel">
-      <div class="section-heading">
-        <div>
-          <h2>過去のゴールデンクロス実績</h2>
-          <p>GC月終値から、OUT月または現在値までの実績です。</p>
-        </div>
-      </div>
+      <div class="section-heading"><div><h2>過去のゴールデンクロス実績</h2><p>GC月終値から、OUT月または現在値までの実績です。</p></div></div>
       <div class="table-wrap">
         <table id="episodeTable">
-          <thead>
-            <tr>
-              <th>GC月</th>
-              <th class="num">GC価格</th>
-              <th>終了月</th>
-              <th class="num">終了/現在価格</th>
-              <th class="num">騰落率</th>
-              <th class="num">最大上昇</th>
-              <th class="num">最大下落</th>
-              <th class="num">期間</th>
-              <th>状態</th>
-            </tr>
-          </thead>
+          <thead><tr><th>GC月</th><th class="num">GC価格</th><th>終了月</th><th class="num">終了/現在価格</th><th class="num">騰落率</th><th class="num">最大上昇</th><th class="num">最大下落</th><th class="num">期間</th><th>状態</th></tr></thead>
           <tbody></tbody>
         </table>
       </div>
     </section>
 
     <section class="panel">
-      <div class="section-heading">
-        <div>
-          <h2>財務・バリュー情報</h2>
-          <p>取得できない項目は「—」で表示します。</p>
-        </div>
-      </div>
+      <div class="section-heading"><div><h2>財務・バリュー情報</h2><p>Yahoo Financeから過去に取得できたキャッシュ情報を表示します。取得できない項目は「—」です。</p></div></div>
       <dl class="fundamentals-grid" id="fundamentalsGrid"></dl>
     </section>
   </main>
 
-  <footer>
-    <p>月足RSIは月次データ、株価・出来高・移動平均線は日足データです。</p>
-  </footer>
+  <footer><p>月足RSIは月次データ、株価・出来高・移動平均線は日足データです。</p></footer>
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
@@ -128,6 +87,7 @@
   </script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
   <script src="assets/detail.js" defer></script>
+  <script src="assets/daily-overlay.js" defer></script>
   <script src="assets/detail-enhancements.js" defer></script>
   <script src="assets/characters.js" defer></script>
 </body>
