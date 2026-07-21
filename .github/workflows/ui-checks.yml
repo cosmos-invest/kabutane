@@ -10,9 +10,12 @@ on:
       - "howto.html"
       - "learn.html"
       - "signal-method.html"
+      - "manifest.webmanifest"
+      - "sw.js"
       - "assets/**"
       - "update_daily.py"
       - "update_universe.py"
+      - "retry_incomplete.py"
       - "generate_tradingview.py"
       - "requirements.txt"
       - "tests/**"
@@ -41,7 +44,7 @@ jobs:
 
       - name: Validate Python signal and update engines
         run: |
-          python -m py_compile tradingview_signal.py generate_tradingview.py update_daily.py update_universe.py
+          python -m py_compile tradingview_signal.py generate_tradingview.py update_daily.py update_universe.py retry_incomplete.py
           python -m unittest discover -s tests -p 'test_tradingview_signal.py' -v
           python -m unittest discover -s tests -p 'test_update_daily.py' -v
           python -m unittest discover -s tests -p 'test_update_universe.py' -v
@@ -49,13 +52,16 @@ jobs:
       - name: Check JavaScript syntax
         run: |
           node --check assets/backtest.js
+          node --check assets/backtest-benchmark-status.js
           node --check assets/replay-core-v2.js
+          node --check assets/replay-risk-ladder.js
           node --check assets/replay-ui-base-v2.js
           node --check assets/replay-charts-v2.js
           node --check assets/replay-render-v2.js
           node --check assets/replay-orders-basic-v2.js
           node --check assets/replay-orders-auto-v2.js
           node --check assets/replay-session-v2.js
+          node --check assets/replay-workspace.js
           node --check assets/replay-picker.js
           node --check assets/replay-month-end.js
           node --check assets/daily-overlay.js
@@ -63,20 +69,24 @@ jobs:
           node --check assets/simple-analysis-cosmos.js
           node --check assets/kabutane-screening.js
           node --check assets/signal-v2.js
+          node --check assets/pwa-register.js
           node --check assets/characters.js
+          node --check sw.js
 
       - name: Test JavaScript engines
         run: |
           node tests/test_backtest_engine.js
           node tests/test_replay_v2.js
+          node tests/test_replay_risk_ladder.js
           node tests/test_replay_month_end.js
           node tests/test_detail_enhancements.js
           node tests/test_daily_overlay.js
           node tests/test_signal_v2.js
 
-      - name: Validate HTML and CSS
+      - name: Validate HTML CSS and manifest
         run: |
           python - <<'PY'
+          import json
           from html.parser import HTMLParser
           from pathlib import Path
 
@@ -91,13 +101,18 @@ jobs:
 
           for name in (
               "assets/backtest.css", "assets/replay.css", "assets/replay-v2.css",
-              "assets/detail-enhancements.css", "assets/simple-analysis-cosmos.css",
+              "assets/replay-workspace.css", "assets/detail-enhancements.css", "assets/simple-analysis-cosmos.css",
               "assets/kabutane.css", "assets/kabutane-characters.css", "assets/kabutane-links.css",
           ):
               css = Path(name).read_text(encoding="utf-8")
               if css.count("{") != css.count("}"):
                   raise SystemExit(f"CSS braces are not balanced: {name}")
-          print("HTML/CSS validation passed")
+
+          manifest = json.loads(Path("manifest.webmanifest").read_text(encoding="utf-8"))
+          for key in ("name", "short_name", "start_url", "display", "icons"):
+              if not manifest.get(key):
+                  raise SystemExit(f"PWA manifest missing: {key}")
+          print("HTML/CSS/PWA validation passed")
           PY
 
       - name: Audit public page structure
@@ -119,8 +134,13 @@ jobs:
               raise SystemExit("Daily overlay is not wired to detail and replay")
           if "assets/replay-picker.js" not in replay or "replaySymbolSelect" not in replay:
               raise SystemExit("Replay candidate picker is not wired")
+          for marker in ("assets/replay-risk-ladder.js", "assets/replay-workspace.js", "entryStageCount", "detailChartLink"):
+              if marker not in replay and marker != "entryStageCount":
+                  raise SystemExit(f"Replay workspace is missing: {marker}")
           if "assets/replay-month-end.js" not in characters:
               raise SystemExit("Replay month-end skip is not wired")
+          if "assets/pwa-register.js" not in characters or "manifest.webmanifest" not in Path("assets/pwa-register.js").read_text(encoding="utf-8"):
+              raise SystemExit("PWA bootstrap is not wired")
           if "SKIP_FUNDAMENTALS: \"1\"" not in workflow:
               raise SystemExit("Monthly workflow may issue bulk fundamental requests")
 
