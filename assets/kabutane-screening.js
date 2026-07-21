@@ -1,4 +1,11 @@
 (() => {
+  if (!document.querySelector('link[href="assets/kabutane-characters.css"]')) {
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = "assets/kabutane-characters.css";
+    document.head.appendChild(link);
+  }
+
   if (typeof CONDITION_LABELS !== "undefined") {
     Object.assign(CONDITION_LABELS, {
       rsi: "月足の勢い",
