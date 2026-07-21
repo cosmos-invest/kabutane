@@ -1,0 +1,51 @@
+name: Refresh TSE stock universe
+
+on:
+  workflow_dispatch:
+  schedule:
+    # JPXの前月末一覧が公開された後に、毎月8日 09:30 JSTで更新。
+    - cron: "30 0 8 * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-tse-universe
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Validate universe updater
+        run: |
+          python -m py_compile update_universe.py tests/test_update_universe.py
+          python -m unittest discover -s tests -p 'test_update_universe.py' -v
+
+      - name: Download Prime, Standard and Growth list
+        run: python update_universe.py
+
+      - name: Commit stock universe
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add stocks.csv data/universe-status.json
+          if git diff --cached --quiet; then
+            echo "No universe changes"
+          else
+            git commit -m "chore: refresh TSE Prime Standard Growth universe"
+            git push origin main
+          fi
