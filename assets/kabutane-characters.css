@@ -1,0 +1,20 @@
+.cast-portrait {
+  background-repeat: no-repeat;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.cast-card.cosmos .cast-portrait {
+  background-image: url("characters/cosmos-hero.webp");
+  background-position: center 23% !important;
+}
+
+.cast-card.lumo .cast-portrait {
+  background-image: url("characters/lumo-guide.webp");
+  background-position: center 20% !important;
+}
+
+.cast-card.aile .cast-portrait {
+  background-image: url("characters/aile-guide.webp");
+  background-position: 72% center !important;
+}
