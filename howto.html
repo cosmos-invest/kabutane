@@ -2,9 +2,11 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="かぶたねの使い方。銘柄を見つけ、詳細を確かめ、過去チャートで売買を練習し、運用バックテストを確認する順番を初心者向けに解説します。">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="かぶたねの使い方。銘柄を見つけ、詳細を確かめ、損失額を先に固定した分割売買を練習し、運用バックテストを確認する順番を初心者向けに解説します。">
+  <meta name="theme-color" content="#f26fa6">
   <title>使い方 | かぶたね</title>
+  <link rel="manifest" href="manifest.webmanifest">
   <link rel="stylesheet" href="assets/style.css">
   <link rel="stylesheet" href="assets/pastel.css">
   <link rel="stylesheet" href="assets/kabutane.css">
@@ -50,7 +52,7 @@
       <div class="journey-grid">
         <article class="journey-card"><span class="step-number">1</span><h3>ホームで候補を見つける</h3><p>目的に近い探し方を1つ選び、気になる会社を3〜5社へ絞ります。</p><a href="#scanner-guide">探し方を見る →</a></article>
         <article class="journey-card"><span class="step-number">2</span><h3>詳細で理由を確かめる</h3><p>日足、月足RSI、配当・分割、財務を上から順に確認します。</p><a href="#detail-guide">詳細の見方へ →</a></article>
-        <article class="journey-card"><span class="step-number">3</span><h3>過去チャートで練習する</h3><p>入口、損切り、TP1〜TP4を決めて、未来を1日ずつ進めます。</p><a href="#practice-guide">練習方法へ →</a></article>
+        <article class="journey-card"><span class="step-number">3</span><h3>過去チャートで練習する</h3><p>最大損失、分割買値、損切り、TPを決めて未来を進めます。</p><a href="#practice-guide">練習方法へ →</a></article>
         <article class="journey-card"><span class="step-number">4</span><h3>運用全体を試す</h3><p>複数銘柄を持った場合の成績と最大下落をバックテストで確認します。</p><a href="#backtest-guide">運用テストへ →</a></article>
       </div>
     </section>
@@ -85,13 +87,20 @@
     </section>
 
     <section id="practice-guide" class="panel howto-section">
-      <div class="howto-section-heading"><p class="eyebrow">STEP 3 — PRACTICE</p><h2>未来を隠したチャートで売買を練習する</h2><p>良い結果を出すことより、決めたルールを守れたかを確認します。</p></div>
+      <div class="howto-section-heading"><p class="eyebrow">STEP 3 — PRACTICE</p><h2>損失額を先に決め、未来を隠して売買を練習する</h2><p>良い結果を出すことより、最大損失を守り、決めたルールで操作できたかを確認します。</p></div>
       <div class="flow-list">
-        <article class="flow-item"><strong>① 銘柄と開始位置を選ぶ</strong><p>トップから直接開いても候補が自動設定されます。練習画面内で別銘柄へ変更できます。</p></article>
-        <article class="flow-item"><strong>② エントリーより先に損切りを決める</strong><p>チャートをタップして入口と損切りを置き、許容損失から株数を確認します。</p></article>
-        <article class="flow-item"><strong>③ TP1〜TP4を設定する</strong><p>1.5R〜5.0Rの範囲で段階利確を設定し、TP到達後はトレーリングで損切りを押し上げます。</p></article>
-        <article class="flow-item"><strong>④ 1日、5日、月末へ進める</strong><p>「次の月末へ」は途中の日足を省略せず、各日の高値・安値で利確・損切りを順番に判定します。</p></article>
-        <article class="flow-item"><strong>⑤ 判断メモを振り返る</strong><p>利益が出たかではなく、入口・損切り・利確の理由が一貫していたかを確認します。</p></article>
+        <article class="flow-item"><strong>① 最初の設定で資金と分割数を固定する</strong><p>総資産、この銘柄への配分上限、許容損失率、売買単位を決めます。分割数は1〜8段階から選べます。初めてなら2〜3段階で十分です。</p></article>
+        <article class="flow-item"><strong>② 「リスク設定」タブで損切りとE1〜E8を置く</strong><p>損切りを先に決め、必要な本数だけ買値ラインを置きます。予定平均買値と損切り幅から総株数を計算し、各段階へほぼ均等に配分します。</p></article>
+        <article class="flow-item"><strong>③ 「チャート」タブで根拠を確認する</strong><p>ローソク足・平均足、SMA、Supertrend、月足RSI、日足オシレーターを確認します。買値の行を選ぶと、チャートタップでそのラインを変更できます。</p></article>
+        <article class="flow-item"><strong>④ 「注文」タブで自動・手動を選ぶ</strong><p>自動発注は複数の指値買いと共通損切り、TPを管理します。手動発注では成行買い・成行売り・1件の指値買いを練習できます。</p></article>
+        <article class="flow-item"><strong>⑤ 1日、5日、月末へ進める</strong><p>「次の月末へ」も途中の日足を省略せず、高値・安値で利確・損切り・指値約定を順番に判定します。同じ足で損切りとTPへ触れた場合は損切り優先です。</p></article>
+        <article class="flow-item"><strong>⑥ 「成績」タブで最大DDまで振り返る</strong><p>総損益だけでなく、最大下落、売買回数、累計コスト、判断メモを確認します。利益が出ても、許容損失を無視した取引は成功扱いにしません。</p></article>
+      </div>
+      <div class="check-grid" style="margin-top:16px">
+        <article class="check-card"><h3>最大株数の考え方</h3><p>「許容損失額÷（予定平均買値－損切り）」と「配分上限で買える株数」を比べ、小さい方を使います。</p></article>
+        <article class="check-card"><h3>複数買値の配分</h3><p>最初に総リスクを固定し、各段階へほぼ均等配分します。下の買値だけへ株数を過度に集中させません。</p></article>
+        <article class="check-card"><h3>少ない株数の場合</h3><p>保有株数が4回の利確に足りなければ、可能な回数だけTPを使い、最後の有効TPで残りを決済します。</p></article>
+        <article class="check-card"><h3>銘柄詳細へ戻る</h3><p>練習画面上部の「銘柄詳細を見る」から、同じ銘柄の日足・月足RSI・企業情報へ戻れます。</p></article>
       </div>
     </section>
 
@@ -100,7 +109,7 @@
       <div class="check-grid">
         <article class="check-card"><h3>累積リターン</h3><p>期間全体で資産がどれだけ増減したかを見ます。</p></article>
         <article class="check-card"><h3>最大下落</h3><p>途中でどこまで資産が減ったかを確認します。利益より先に許容できるか考えます。</p></article>
-        <article class="check-card"><h3>TOPIXとの比較</h3><p>相場全体の追い風を除いても戦略に意味があったかを確認します。</p></article>
+        <article class="check-card"><h3>TOPIXとの比較</h3><p>現在はYahooで取得できるTOPIX連動ETFの調整済み価格を代替使用します。画面に銘柄コードと対象期間を表示します。</p></article>
         <article class="check-card"><h3>最近の取引</h3><p>入口月・出口月・損益・退出理由を見て、どんな場面で結果が出たかを確認します。</p></article>
       </div>
       <p style="margin-top:16px"><a class="button secondary" href="backtest.html">運用バックテストを開く</a></p>
@@ -112,6 +121,7 @@
       <details><summary>どこで想定が崩れるか決めましたか？</summary><p>損切り価格と最大損失額を、購入前に数字で決めます。</p></details>
       <details><summary>利確方法を決めましたか？</summary><p>TP1〜TP4、部分利確、トレーリングのルールを決めます。</p></details>
       <details><summary>同じルールで複数回練習しましたか？</summary><p>一度の成功では判断せず、上昇・下落・横ばいの場面で繰り返します。</p></details>
+      <details><summary>スマホのホーム画面へ追加できますか？</summary><p>PWAに対応しています。ブラウザの「ホーム画面に追加」または「アプリをインストール」から、かぶたねをアプリのように開けます。</p></details>
     </section>
 
     <p class="howto-note">本サイトは情報提供・学習・練習を目的としたツールです。表示結果や過去実績は、将来の利益を保証しません。最終判断では企業の公式情報と、ご自身のリスク許容度を確認してください。</p>
