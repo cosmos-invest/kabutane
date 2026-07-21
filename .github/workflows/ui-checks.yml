@@ -57,6 +57,7 @@ jobs:
           node --check assets/replay-orders-auto-v2.js
           node --check assets/replay-session-v2.js
           node --check assets/replay-picker.js
+          node --check assets/replay-month-end.js
           node --check assets/daily-overlay.js
           node --check assets/detail-enhancements.js
           node --check assets/simple-analysis-cosmos.js
@@ -68,6 +69,7 @@ jobs:
         run: |
           node tests/test_backtest_engine.js
           node tests/test_replay_v2.js
+          node tests/test_replay_month_end.js
           node tests/test_detail_enhancements.js
           node tests/test_daily_overlay.js
           node tests/test_signal_v2.js
@@ -106,6 +108,7 @@ jobs:
           index = Path("index.html").read_text(encoding="utf-8")
           detail = Path("detail.html").read_text(encoding="utf-8")
           replay = Path("replay.html").read_text(encoding="utf-8")
+          characters = Path("assets/characters.js").read_text(encoding="utf-8")
           workflow = Path(".github/workflows/update-data.yml").read_text(encoding="utf-8")
 
           required = ["かぶたね", "cosmos-hero.webp", "homePracticeLink", "note.com/cosmos_invest"]
@@ -116,7 +119,23 @@ jobs:
               raise SystemExit("Daily overlay is not wired to detail and replay")
           if "assets/replay-picker.js" not in replay or "replaySymbolSelect" not in replay:
               raise SystemExit("Replay candidate picker is not wired")
+          if "assets/replay-month-end.js" not in characters:
+              raise SystemExit("Replay month-end skip is not wired")
           if "SKIP_FUNDAMENTALS: \"1\"" not in workflow:
               raise SystemExit("Monthly workflow may issue bulk fundamental requests")
+
+          forbidden_links = ("href=\"analysis.html", "href=\"analysis-lab.html", "release.tdnet.info")
+          for path in list(Path(".").glob("*.html")) + list(Path("assets").glob("*.js")):
+              if path.name in {"analysis.html", "analysis-lab.html"}:
+                  continue
+              text = path.read_text(encoding="utf-8")
+              for marker in forbidden_links:
+                  if marker in text:
+                      raise SystemExit(f"Discarded link remains in {path}: {marker}")
+
+          howto = Path("howto.html").read_text(encoding="utf-8")
+          for stale in ("RSI5がRSI14", "決算予定", "適時開示"):
+              if stale in howto:
+                  raise SystemExit(f"Stale tutorial wording remains: {stale}")
           print("Kabutane public page structure passed")
           PY
