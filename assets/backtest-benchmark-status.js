@@ -1,6 +1,14 @@
 (function () {
   "use strict";
 
+  function installStyles() {
+    if (document.getElementById("benchmarkStatusStyles")) return;
+    const style = document.createElement("style");
+    style.id = "benchmarkStatusStyles";
+    style.textContent = ".benchmark-status{display:block;margin-top:5px;color:#6d7d89;font-size:.66rem;line-height:1.45}.benchmark-status.warning{color:#a05d32}.portfolio-controls option:disabled{color:#aaa}";
+    document.head.appendChild(style);
+  }
+
   function installNotice() {
     const select = document.getElementById("benchmarkSelect");
     if (!select || document.getElementById("benchmarkStatus")) return null;
@@ -46,6 +54,7 @@
     return true;
   }
 
+  installStyles();
   installNotice();
   let attempts = 0;
   const timer = window.setInterval(() => {
