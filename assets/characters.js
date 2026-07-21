@@ -6,6 +6,14 @@ function ensurePastelThemeStyles() {
   document.head.appendChild(link);
 }
 
+function ensureCharacterImageStyles() {
+  if (document.querySelector('link[href="assets/kabutane-characters.css"]')) return;
+  const link = document.createElement("link");
+  link.rel = "stylesheet";
+  link.href = "assets/kabutane-characters.css";
+  document.head.appendChild(link);
+}
+
 function ensureSignalV2Script() {
   if (document.querySelector('script[src="assets/signal-v2.js"]')) return;
   const script = document.createElement("script");
@@ -14,8 +22,18 @@ function ensureSignalV2Script() {
   document.head.appendChild(script);
 }
 
+function ensureReplayMonthEndScript() {
+  if (!document.body?.classList.contains("replay-page")) return;
+  if (document.querySelector('script[src="assets/replay-month-end.js"]')) return;
+  const script = document.createElement("script");
+  script.src = "assets/replay-month-end.js";
+  document.head.appendChild(script);
+}
+
 ensurePastelThemeStyles();
+ensureCharacterImageStyles();
 ensureSignalV2Script();
+ensureReplayMonthEndScript();
 
 const characterGuide = (() => {
   const characters = {
@@ -32,9 +50,9 @@ const characterGuide = (() => {
       { character: "cosmos", text: "🌸コスモス注目も売買推奨ではないよ。勢いと長期トレンドの両方を詳しく確認したい候補です🌸" },
     ],
     detail: [
-      { character: "cosmos", text: "詳細は、株価チャート → 月足RSI → 企業イベント → 財務の順に見ると迷いにくいよ🌸" },
+      { character: "cosmos", text: "詳細は、株価チャート → 月足RSI → 配当・株式分割 → 財務の順に見ると迷いにくいよ🌸" },
       { character: "lumo", text: "ローソク足で値動きを見て、平均足でトレンドの続きやすさを確認してみよう✨" },
-      { character: "aile", text: "決算予定や権利落ちの近くは値動きが大きくなることがあります。日付も一緒に確認してください。" },
+      { character: "aile", text: "有料APIや適時開示には接続していません。重要な企業情報は、投資前に会社の公式IRでも確認してください。" },
       { character: "cosmos", text: "過去の成績は未来の保証ではないよ。良かった場面だけでなく、一番下がった場面も想像しよう🌸" },
     ],
     howto: [
@@ -48,7 +66,8 @@ const characterGuide = (() => {
     ],
     replay: [
       { character: "lumo", text: "ここは何度失敗しても大丈夫な場所！ まず損切りを決めてから、1回分の株数を考えよう✨" },
-      { character: "aile", text: "良い結果だけでなく、判断メモがルール通りだったかも振り返ってください。" },
+      { character: "aile", text: "月足の状態を待ちたい時は『月末へ』で進められます。途中の損切り・利確判定も日足順に処理されます。" },
+      { character: "cosmos", text: "良い結果だけでなく、判断メモがルール通りだったかも振り返ろう🌸" },
     ],
     learn: [
       { character: "aile", text: "分からない言葉があったら、ここで一つずつ確認しましょう。全部を一度に覚える必要はありません。" },
@@ -90,7 +109,8 @@ const characterGuide = (() => {
       ["replay.html", "売買を練習"],
       ["howto.html", "使い方"],
       ["learn.html", "学び・FAQ"],
-    ].map(([href, label]) => `<a href="${href}"${currentFile === href ? ' class="active" aria-current="page"' : ""}>${label}</a>`).join("");
+    ].map(([href, label]) => `<a href="${href}"${currentFile === href ? ' class="active" aria-current="page"' : ""}>${label}</a>`).join("")
+      + '<a class="note-nav-link" href="https://note.com/cosmos_invest" target="_blank" rel="noopener noreferrer">note ↗</a>';
     headerMeta.prepend(nav);
   }
 
@@ -105,7 +125,7 @@ const characterGuide = (() => {
   }
 
   function quickStartTemplate() {
-    if (page === "detail") return `<section class="quickstart-banner compact panel"><div><span class="quickstart-label">次に見る順番</span><strong>チャート → 企業予定 → 財務 → 練習</strong><p>気になった理由と、想定が崩れる条件をメモしてから練習へ進みます。</p></div><a class="button quickstart-button" href="howto.html#detail-guide">見方を確認</a></section>`;
+    if (page === "detail") return `<section class="quickstart-banner compact panel"><div><span class="quickstart-label">次に見る順番</span><strong>チャート → 月足RSI → 配当・分割 → 練習</strong><p>気になった理由と、想定が崩れる条件をメモしてから練習へ進みます。</p></div><a class="button quickstart-button" href="howto.html#detail-guide">見方を確認</a></section>`;
     return "";
   }
 
