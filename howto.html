@@ -3,34 +3,35 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="月足RSIクロス・スキャナーの使い方。銘柄の探し方、詳細画面の見方、過去実績分析の進め方を3ステップで解説します。">
-  <title>使い方ガイド | 月足RSIクロス・スキャナー</title>
+  <meta name="description" content="かぶたねの使い方。銘柄を見つけ、詳細を確かめ、過去チャートで売買を練習し、運用バックテストを確認する順番を初心者向けに解説します。">
+  <title>使い方 | かぶたね</title>
   <link rel="stylesheet" href="assets/style.css">
   <link rel="stylesheet" href="assets/pastel.css">
+  <link rel="stylesheet" href="assets/kabutane.css">
+  <link rel="stylesheet" href="assets/kabutane-links.css">
+  <style>@media (min-width: 901px) { .journey-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }</style>
 </head>
 <body data-page="howto" class="pastel-theme">
   <header class="site-header">
     <div class="header-inner">
       <div>
-        <p class="eyebrow">How to use the scanner</p>
-        <h1>月足RSIスキャナーの使い方</h1>
-        <p class="subtitle">候補探し、個別確認、過去検証まで。数字に迷わず、順番どおりに使いこなすためのガイドです。</p>
+        <p class="eyebrow">KABUTANE TUTORIAL</p>
+        <h1>かぶたねの使い方</h1>
+        <p class="subtitle">見つける、確かめる、練習する。自分のお金を動かす前に、判断の手順を身につけるためのチュートリアルです。</p>
       </div>
-      <div class="header-meta">
-        <span class="badge neutral">はじめての方へ</span>
-      </div>
+      <div class="header-meta"><span class="badge neutral">はじめての方へ</span></div>
     </div>
   </header>
 
   <main class="container howto-container">
     <section class="howto-hero panel">
       <div>
-        <p class="eyebrow">3 steps</p>
-        <h2>「探す・確かめる・検証する」の順で見れば、難しい指標を全部覚える必要はありません。</h2>
-        <p>このサイトは売買を自動で決めるものではなく、月足RSIの変化を入口に、日本株の候補を整理して研究するためのツールです。最初はNEWと🌸コスモス注目だけを見て、気になる銘柄を少数に絞るところから始めましょう。</p>
+        <p class="eyebrow">BEFORE USING REAL MONEY</p>
+        <h2>入口・損切り・利確の理由を、自分の言葉で説明できるまで練習してください。</h2>
+        <p>かぶたねは、銘柄を自動で決めるサイトではありません。候補を見つけ、理由を確かめ、未来を隠したチャートで何度も試し、自分のルールを育てるための場所です。</p>
         <div class="howto-actions">
-          <a class="button" href="index.html">銘柄を探してみる</a>
-          <a class="button secondary" href="analysis.html">過去実績を分析する</a>
+          <a class="button" href="index.html">STEP 1から始める</a>
+          <a class="button secondary" href="replay.html">売買練習を開く</a>
         </div>
       </div>
       <div class="howto-hero-visual" aria-label="コスモス・ルーモ・エール">
@@ -40,141 +41,83 @@
       </div>
     </section>
 
-    <section id="first-route" class="panel howto-section">
+    <section class="panel howto-section">
       <div class="howto-section-heading">
-        <p class="eyebrow">First route</p>
-        <h2>最初に覚える3ステップ</h2>
-        <p>各ページの役割を分けると、情報量が多くても迷いません。</p>
+        <p class="eyebrow">THE WHOLE ROUTE</p>
+        <h2>最初に覚える4ステップ</h2>
+        <p>数字を全部覚える必要はありません。画面を移動する順番だけ先に覚えます。</p>
       </div>
       <div class="journey-grid">
-        <article class="journey-card">
-          <span class="step-number">1</span>
-          <h3>一覧で候補を探す</h3>
-          <p>NEWまたは🌸コスモス注目を選び、銘柄名・RSI・騰落率・財務の概要から3〜5社へ絞ります。</p>
-          <a href="#scanner-guide">一覧の見方へ →</a>
-        </article>
-        <article class="journey-card">
-          <span class="step-number">2</span>
-          <h3>詳細で中身を確かめる</h3>
-          <p>チャート、移動平均線、企業イベント、過去のGC実績、財務を順番に確認します。</p>
-          <a href="#detail-guide">詳細の見方へ →</a>
-        </article>
-        <article class="journey-card">
-          <span class="step-number">3</span>
-          <h3>分析で再現性を検証する</h3>
-          <p>同じ条件の過去成績を、前半の条件探しと後半の答え合わせに分けて確認します。</p>
-          <a href="#analysis-guide">分析の見方へ →</a>
-        </article>
+        <article class="journey-card"><span class="step-number">1</span><h3>ホームで候補を見つける</h3><p>目的に近い探し方を1つ選び、気になる会社を3〜5社へ絞ります。</p><a href="#scanner-guide">探し方を見る →</a></article>
+        <article class="journey-card"><span class="step-number">2</span><h3>詳細で理由を確かめる</h3><p>日足、月足RSI、配当・分割、財務を上から順に確認します。</p><a href="#detail-guide">詳細の見方へ →</a></article>
+        <article class="journey-card"><span class="step-number">3</span><h3>過去チャートで練習する</h3><p>入口、損切り、TP1〜TP4を決めて、未来を1日ずつ進めます。</p><a href="#practice-guide">練習方法へ →</a></article>
+        <article class="journey-card"><span class="step-number">4</span><h3>運用全体を試す</h3><p>複数銘柄を持った場合の成績と最大下落をバックテストで確認します。</p><a href="#backtest-guide">運用テストへ →</a></article>
       </div>
     </section>
 
     <section class="panel howto-section">
-      <div class="howto-section-heading">
-        <p class="eyebrow">Glossary</p>
-        <h2>まず覚える5つの言葉</h2>
-        <p>細かな指標より先に、この5つを押さえると画面全体が読みやすくなります。</p>
-      </div>
+      <div class="howto-section-heading"><p class="eyebrow">BASIC WORDS</p><h2>画面に出る3つの状態</h2></div>
       <div class="term-grid">
-        <article class="term-card"><strong>NEW</strong><p>前月までRSI5がRSI14以下で、判定月に上回った最初の月。新しい候補の入口です。</p></article>
-        <article class="term-card"><strong>CONTINUE</strong><p>RSI5がRSI14を上回る状態が継続中。上昇が続く場合も、勢いが弱まる場合もあります。</p></article>
-        <article class="term-card"><strong>OUT</strong><p>RSI5がRSI14以下へ戻った状態。月足RSI上の区切りであり、必ずしも最適な売却日ではありません。</p></article>
-        <article class="term-card"><strong>🌸 コスモス注目</strong><p>NEW時点でRSI5が60以上、RSI14が上向きで、MVP加速型または新高値トレンド型に該当した候補です。</p></article>
-        <article class="term-card"><strong>GC後騰落</strong><p>GC判定月の月末終値から、現在値またはOUT月末終値までの変化率です。</p></article>
+        <article class="term-card"><strong>NEW</strong><p>月足RSI14が、自身の5か月移動平均を下から上へ抜けた最初の月です。</p></article>
+        <article class="term-card"><strong>CONTINUE</strong><p>月足RSI14が5か月移動平均より上にある状態が続いています。</p></article>
+        <article class="term-card"><strong>OUT / DC</strong><p>月足RSI14が5か月移動平均以下へ戻った状態です。売買練習では弱い期間を「月末へ」で進められます。</p></article>
       </div>
     </section>
 
     <section id="scanner-guide" class="panel howto-section">
-      <div class="howto-section-heading">
-        <p class="eyebrow">Step 1 — Scanner</p>
-        <h2>一覧ページで候補を絞る</h2>
-        <p>一覧は「買う銘柄を決める場所」ではなく、「詳しく調べる候補を見つける場所」です。</p>
-      </div>
+      <div class="howto-section-heading"><p class="eyebrow">STEP 1 — FIND</p><h2>ホームで“未来の1株のたね”を探す</h2><p>ここは買う銘柄を決める場所ではなく、次に詳しく調べる候補を見つける場所です。</p></div>
       <div class="flow-list">
-        <article class="flow-item"><strong>NEWまたは🌸コスモス注目を選ぶ</strong><p>初心者はNEW全体よりも、条件を追加した🌸コスモス注目から始めると候補数を抑えられます。</p></article>
-        <article class="flow-item"><strong>RSIの強さと継続月を見る</strong><p>RSI5が高くRSI14も上向きなら勢いがあります。ただし、数値が高すぎる時は短期的な過熱にも注意します。</p></article>
-        <article class="flow-item"><strong>GC後騰落で飛び乗りを避ける</strong><p>すでに大きく上昇している銘柄は、良い会社でも入口が遅い可能性があります。高値づかみを避ける視点として使います。</p></article>
-        <article class="flow-item"><strong>財務と流動性で最低限の確認をする</strong><p>PER・PBRだけで判断せず、ROE、自己資本比率、営業CF、時価総額も確認します。「—」は0ではなく未取得です。</p></article>
-        <article class="flow-item"><strong>3〜5社に絞って銘柄名を開く</strong><p>候補を増やしすぎず、詳細ページで一社ずつ確認します。比較する会社数を決めると判断が散らかりません。</p></article>
+        <article class="flow-item"><strong>① 探し方を1つ選ぶ</strong><p>迷ったら「まずは基本」。候補を少なくしたい場合は「コスモス注目」から始めます。</p></article>
+        <article class="flow-item"><strong>② NEWか継続中かを見る</strong><p>NEWは始まったばかり、継続は勢いが続いている状態です。どちらが正解という意味ではありません。</p></article>
+        <article class="flow-item"><strong>③ 3〜5社だけ詳細を開く</strong><p>候補を増やしすぎると判断が散らかります。会社名を押して詳細へ進みます。</p></article>
+        <article class="flow-item"><strong>④ 練習したい銘柄はカードから直接開く</strong><p>「この銘柄で練習」を押すと、銘柄コードを設定した状態で売買練習へ移動します。</p></article>
       </div>
     </section>
 
     <section id="detail-guide" class="panel howto-section">
-      <div class="howto-section-heading">
-        <p class="eyebrow">Step 2 — Detail</p>
-        <h2>詳細ページは上から順番に読む</h2>
-        <p>値動き、イベント、再現性、企業体力の4方向から確認します。</p>
-      </div>
+      <div class="howto-section-heading"><p class="eyebrow">STEP 2 — CHECK</p><h2>銘柄詳細は上から順番に読む</h2><p>見る順番を固定すると、情報量が多くても迷いにくくなります。</p></div>
       <div class="reading-grid">
-        <article class="reading-card"><h3>① 日足チャート</h3><p>現在のトレンドと押し目・崩れを確認します。</p><ul><li>株価がSMA25・75・200のどこにあるか</li><li>短期線だけでなくSMA200も上向きか</li><li>出来高を伴った上昇か</li><li>ローソク足と平均足の両方で見る</li></ul></article>
-        <article class="reading-card"><h3>② 月足RSI</h3><p>大きな流れが始まった時期と、勢いの継続を確認します。</p><ul><li>GC直後か、すでに長期間継続しているか</li><li>RSI5だけでなくRSI14も上向きか</li><li>DCが近づいていないか</li><li>月末確定値は翌月の日足から表示される</li></ul></article>
-        <article class="reading-card"><h3>③ 企業イベント</h3><p>決算・権利落ち・配当・分割による急変リスクを確認します。</p><ul><li>決算発表が目前ではないか</li><li>権利落ち前後の値動きではないか</li><li>株式分割・併合で過去価格に段差がないか</li><li>重要事項はTDnetでも再確認する</li></ul></article>
-        <article class="reading-card"><h3>④ 過去実績と財務</h3><p>同じ銘柄の過去傾向と、企業の耐久力を確認します。</p><ul><li>平均利益だけでなく最大下落も見る</li><li>過去GCが一度しかない場合は過信しない</li><li>営業CF・自己資本比率で守りを確認</li><li>PER・PBRは同業他社とも比較する</li></ul></article>
+        <article class="reading-card"><h3>① 日足チャート</h3><p>現在の価格と大きな流れを確認します。</p><ul><li>株価がSMA25・75・200の上か下か</li><li>長期線が上向きか</li><li>出来高を伴っているか</li><li>ローソク足と平均足を切り替える</li></ul></article>
+        <article class="reading-card"><h3>② 月足RSI14と5か月MA</h3><p>月単位の勢いが上向きか、弱まり始めているかを確認します。</p><ul><li>GC直後か、長く継続しているか</li><li>2本の差が広がっているか縮まっているか</li><li>月末確定値は翌月の日足から表示</li></ul></article>
+        <article class="reading-card"><h3>③ 配当・株式分割</h3><p>Yahoo Financeの株価履歴から取得できた実績を確認します。</p><ul><li>過去の配当</li><li>株式分割・併合</li><li>重要な企業情報は会社の公式IRで確認</li></ul></article>
+        <article class="reading-card"><h3>④ 過去GC実績と財務</h3><p>過去の上昇だけでなく、最大下落も確認します。</p><ul><li>過去実績が少ない場合は過信しない</li><li>「—」は0ではなく未取得</li><li>投資前は会社の公式IRも確認する</li></ul></article>
       </div>
     </section>
 
-    <section id="analysis-guide" class="panel howto-section">
-      <div class="howto-section-heading">
-        <p class="eyebrow">Step 3 — Analysis</p>
-        <h2>過去実績は「条件探し」と「答え合わせ」を分ける</h2>
-        <p>過去データに合う条件を作りすぎると、本番では再現しないことがあります。前半と後半を分けて確認します。</p>
-      </div>
-      <div class="analysis-rule">
-        <article class="analysis-rule-card"><strong>前半：条件探し</strong><p>RSI、52週高値、出来高、VCP、移動平均線などを変え、どの特徴が成績に関係していそうか仮説を作ります。</p></article>
-        <div class="analysis-arrow" aria-hidden="true">→</div>
-        <article class="analysis-rule-card"><strong>後半：答え合わせ</strong><p>前半で良かった条件が別期間でも続くか確認します。後半で崩れる条件は採用を慎重にします。</p></article>
-      </div>
-      <div class="check-grid" style="margin-top:14px">
-        <article class="check-card"><h3>対象件数</h3><p>数件だけの好成績は偶然の可能性があります。条件を増やすほど件数が減る点に注意します。</p></article>
-        <article class="check-card"><h3>中央値と勝率</h3><p>平均が一部の急騰銘柄に引っぱられていないか、中央値とプラス比率で確認します。</p></article>
-        <article class="check-card"><h3>最大下落</h3><p>利益だけでなく、途中でどこまで耐える必要があったかを確認します。</p></article>
-        <article class="check-card"><h3>指数超過</h3><p>TOPIXや日経平均を持つより良かったのかを比較します。相場全体の追い風を分離する視点です。</p></article>
-        <article class="check-card"><h3>取引コスト</h3><p>高速回転ほどコストの影響が大きくなります。実際の手数料・スプレッドを想定して調整します。</p></article>
-        <article class="check-card"><h3>出口戦略</h3><p>累積利益だけでなく、最大下落と平均保有期間を見て、資金効率とのバランスを比較します。</p></article>
+    <section id="practice-guide" class="panel howto-section">
+      <div class="howto-section-heading"><p class="eyebrow">STEP 3 — PRACTICE</p><h2>未来を隠したチャートで売買を練習する</h2><p>良い結果を出すことより、決めたルールを守れたかを確認します。</p></div>
+      <div class="flow-list">
+        <article class="flow-item"><strong>① 銘柄と開始位置を選ぶ</strong><p>トップから直接開いても候補が自動設定されます。練習画面内で別銘柄へ変更できます。</p></article>
+        <article class="flow-item"><strong>② エントリーより先に損切りを決める</strong><p>チャートをタップして入口と損切りを置き、許容損失から株数を確認します。</p></article>
+        <article class="flow-item"><strong>③ TP1〜TP4を設定する</strong><p>1.5R〜5.0Rの範囲で段階利確を設定し、TP到達後はトレーリングで損切りを押し上げます。</p></article>
+        <article class="flow-item"><strong>④ 1日、5日、月末へ進める</strong><p>「次の月末へ」は途中の日足を省略せず、各日の高値・安値で利確・損切りを順番に判定します。</p></article>
+        <article class="flow-item"><strong>⑤ 判断メモを振り返る</strong><p>利益が出たかではなく、入口・損切り・利確の理由が一貫していたかを確認します。</p></article>
       </div>
     </section>
 
-    <section class="panel howto-section">
-      <div class="howto-section-heading">
-        <p class="eyebrow">Recipes</p>
-        <h2>目的別の使い方レシピ</h2>
-        <p>最初から全条件を使わず、目的に合わせて見る場所を変えます。</p>
-      </div>
-      <div class="recipe-grid">
-        <article class="recipe-card"><span class="recipe-label">はじめての候補探し</span><h3>🌸注目から少数精鋭</h3><p>候補数を抑え、詳細確認の練習をする使い方です。</p><ul><li>🌸コスモス注目を選択</li><li>GC後騰落が大きすぎない銘柄を優先</li><li>詳細ページを3社程度比較</li></ul></article>
-        <article class="recipe-card"><span class="recipe-label">上昇トレンド研究</span><h3>高値・出来高・移動平均</h3><p>勢いが続きやすい形を過去実績で検証します。</p><ul><li>52週高値圏または新高値</li><li>出来高倍率の上昇</li><li>第2ステージ・Supertrend上向き</li><li>SMA25＞75＞200</li></ul></article>
-        <article class="recipe-card"><span class="recipe-label">守りを重視</span><h3>財務と下落耐性を確認</h3><p>成長条件だけでなく、企業体力とワーストケースを重視します。</p><ul><li>営業CFがプラス</li><li>自己資本比率を確認</li><li>時価総額・出来高で流動性を確保</li><li>最大下落が許容範囲か確認</li></ul></article>
-      </div>
-    </section>
-
-    <section class="panel howto-section">
-      <div class="howto-section-heading">
-        <p class="eyebrow">Decision checklist</p>
-        <h2>最後に投資メモへ残すこと</h2>
-        <p>候補を見つけた後は、入口・出口・リスクを文章にしてから判断します。</p>
-      </div>
+    <section id="backtest-guide" class="panel howto-section">
+      <div class="howto-section-heading"><p class="eyebrow">STEP 4 — PORTFOLIO</p><h2>運用バックテストで全体像を確認する</h2><p>個別の売買練習とは別に、複数銘柄を持った場合の資産推移を確認します。</p></div>
       <div class="check-grid">
-        <article class="check-card"><h3>入口</h3><ul><li>なぜ今この銘柄を見るのか</li><li>どの価格帯で分割して入るか</li><li>決算やイベント前に入るか</li></ul></article>
-        <article class="check-card"><h3>出口</h3><ul><li>ファンダメンタルが崩れた条件</li><li>SMA・Supertrend・トレーリングの基準</li><li>部分利確の価格と割合</li></ul></article>
-        <article class="check-card"><h3>リスク</h3><ul><li>最大許容損失</li><li>保有比率と株数</li><li>ワーストケース時の対応</li></ul></article>
+        <article class="check-card"><h3>累積リターン</h3><p>期間全体で資産がどれだけ増減したかを見ます。</p></article>
+        <article class="check-card"><h3>最大下落</h3><p>途中でどこまで資産が減ったかを確認します。利益より先に許容できるか考えます。</p></article>
+        <article class="check-card"><h3>TOPIXとの比較</h3><p>相場全体の追い風を除いても戦略に意味があったかを確認します。</p></article>
+        <article class="check-card"><h3>最近の取引</h3><p>入口月・出口月・損益・退出理由を見て、どんな場面で結果が出たかを確認します。</p></article>
       </div>
+      <p style="margin-top:16px"><a class="button secondary" href="backtest.html">運用バックテストを開く</a></p>
     </section>
 
     <section class="panel howto-section faq-list">
-      <div class="howto-section-heading">
-        <p class="eyebrow">FAQ</p>
-        <h2>よくある疑問</h2>
-      </div>
-      <details><summary>🌸コスモス注目なら、そのまま買っていいですか？</summary><p>いいえ。条件に合った研究候補です。詳細ページで値動き、決算予定、財務、過去の下落幅を確認し、自分の許容損失に合うか判断してください。</p></details>
-      <details><summary>NEWが多すぎて選べません。</summary><p>🌸コスモス注目へ切り替え、次にGC後騰落・時価総額・営業CFなど一つだけ条件を追加してください。最初から条件を重ねすぎないことが大切です。</p></details>
-      <details><summary>RSIが高いほど良いですか？</summary><p>強い勢いを示す一方、短期的に過熱している可能性もあります。価格位置、出来高、移動平均線、GC後の上昇幅とセットで見てください。</p></details>
-      <details><summary>分析結果で一番成績の良い条件を使えば勝てますか？</summary><p>過去に最適化されただけの可能性があります。後半期間でも成績が続くか、件数が十分か、最大下落が許容できるかを確認してください。</p></details>
-      <details><summary>データが「—」になっています。</summary><p>取得元で欠損している項目です。0や赤字を意味するものではありません。企業IRや決算資料など一次情報で補完してください。</p></details>
+      <div class="howto-section-heading"><p class="eyebrow">READY CHECK</p><h2>実際のお金を動かす前の確認</h2></div>
+      <details open><summary>なぜこの銘柄を見るのか説明できますか？</summary><p>月足の勢い、長期トレンド、価格位置など、候補にした理由を短い文章にします。</p></details>
+      <details><summary>どこで想定が崩れるか決めましたか？</summary><p>損切り価格と最大損失額を、購入前に数字で決めます。</p></details>
+      <details><summary>利確方法を決めましたか？</summary><p>TP1〜TP4、部分利確、トレーリングのルールを決めます。</p></details>
+      <details><summary>同じルールで複数回練習しましたか？</summary><p>一度の成功では判断せず、上昇・下落・横ばいの場面で繰り返します。</p></details>
     </section>
 
-    <p class="howto-note">本サイトは情報提供と研究を目的としたツールです。表示される条件・過去実績・ランキングは、将来の利益を保証するものではありません。最終判断では企業の適時開示、決算資料、流動性、売買コスト、ご自身のリスク許容度を確認してください。</p>
+    <p class="howto-note">本サイトは情報提供・学習・練習を目的としたツールです。表示結果や過去実績は、将来の利益を保証しません。最終判断では企業の公式情報と、ご自身のリスク許容度を確認してください。</p>
   </main>
 
-  <footer><p>Monthly RSI Scanner / How to guide</p></footer>
+  <footer><p>かぶたね 🌱 / 使い方チュートリアル</p></footer>
   <script src="assets/characters.js" defer></script>
 </body>
 </html>
