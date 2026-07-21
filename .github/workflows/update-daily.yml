@@ -15,8 +15,9 @@ on:
 permissions:
   contents: write
 
+# 月次・日次・銘柄マスター更新を直列化し、同じデータへの同時pushを防ぐ。
 concurrency:
-  group: update-daily-candidate-prices
+  group: market-data-writes
   cancel-in-progress: false
 
 jobs:
