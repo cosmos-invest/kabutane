@@ -1,0 +1,53 @@
+name: Validate foundation fixes
+
+on:
+  pull_request:
+    paths:
+      - "assets/global-ui-fixes.css"
+      - "assets/global-ui-fixes.js"
+      - "assets/signal-v2.js"
+      - "repair_topix.py"
+      - ".github/workflows/repair-topix.yml"
+      - ".github/workflows/validate-foundation-fixes.yml"
+  push:
+    branches: [main]
+    paths:
+      - "assets/global-ui-fixes.css"
+      - "assets/global-ui-fixes.js"
+      - "assets/signal-v2.js"
+      - "repair_topix.py"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check JavaScript syntax
+        run: |
+          node --check assets/signal-v2.js
+          node --check assets/global-ui-fixes.js
+
+      - name: Check Python syntax
+        run: python -m py_compile repair_topix.py
+
+      - name: Check CSS braces and wiring
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          css = Path('assets/global-ui-fixes.css').read_text(encoding='utf-8')
+          signal = Path('assets/signal-v2.js').read_text(encoding='utf-8')
+          if css.count('{') != css.count('}'):
+              raise SystemExit('global-ui-fixes.css braces are unbalanced')
+          for asset in ('assets/global-ui-fixes.css', 'assets/global-ui-fixes.js'):
+              if asset not in signal:
+                  raise SystemExit(f'{asset} is not loaded by signal-v2.js')
+          if 'overflow-x: auto !important' not in css:
+              raise SystemExit('horizontal table scrolling rule is missing')
+          if 'event-compact-shell' not in css:
+              raise SystemExit('compact event layout is missing')
+          PY
