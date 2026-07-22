@@ -17,10 +17,27 @@
     document.head.appendChild(meta);
   }
 
+  function ensureReplayDrawingTools() {
+    if (!document.body?.classList.contains("replay-page")) return;
+    if (!document.querySelector('link[href="assets/replay-drawing-tools.css"]')) {
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = "assets/replay-drawing-tools.css";
+      document.head.appendChild(link);
+    }
+    if (!document.querySelector('script[src="assets/replay-drawing-tools.js"]')) {
+      const script = document.createElement("script");
+      script.src = "assets/replay-drawing-tools.js";
+      script.defer = true;
+      document.head.appendChild(script);
+    }
+  }
+
   function keepSelectedReplayEntryInSync() {
     if (!document.body?.classList.contains("replay-page")) return;
     document.addEventListener("pointerup", (event) => {
       if (event.target?.id !== "replayChart") return;
+      if (window.ReplayDrawingTools?.model?.mode !== "cursor") return;
       window.setTimeout(() => {
         const selected = document.querySelector(".entry-ladder-row.selected [data-entry-level]");
         const source = document.getElementById("entryPrice");
@@ -34,6 +51,7 @@
 
   ensureManifest();
   ensureTheme();
+  ensureReplayDrawingTools();
   keepSelectedReplayEntryInSync();
 
   if ("serviceWorker" in navigator && location.protocol === "https:") {

@@ -1,21 +1,27 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="かぶたね">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#ffb6d4"/>
-      <stop offset="0.55" stop-color="#f26fa6"/>
-      <stop offset="1" stop-color="#9b72d3"/>
+      <stop offset="0" stop-color="#ffd1e2"/>
+      <stop offset="0.52" stop-color="#f58ab5"/>
+      <stop offset="1" stop-color="#b990df"/>
     </linearGradient>
-    <linearGradient id="leaf" x1="0" y1="1" x2="1" y2="0">
-      <stop offset="0" stop-color="#62b889"/>
-      <stop offset="1" stop-color="#b6e5b3"/>
-    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#7e5272" flood-opacity=".22"/>
+    </filter>
   </defs>
-  <rect width="512" height="512" rx="118" fill="url(#bg)"/>
-  <circle cx="256" cy="264" r="150" fill="#fff9fc" opacity=".96"/>
-  <path d="M254 352c-9-71 6-126 44-166" fill="none" stroke="#569f78" stroke-width="24" stroke-linecap="round"/>
-  <path d="M274 231c-66-5-105-42-110-99 68-6 111 29 110 99Z" fill="url(#leaf)"/>
-  <path d="M284 275c62-18 111 2 137 50-57 31-111 14-137-50Z" fill="url(#leaf)"/>
-  <path d="M184 363c27-38 117-39 145 0-29 31-116 31-145 0Z" fill="#df8a57"/>
-  <circle cx="209" cy="118" r="25" fill="#fff" opacity=".9"/>
-  <path d="M209 82v72M173 118h72M184 93l50 50M234 93l-50 50" stroke="#f26fa6" stroke-width="12" stroke-linecap="round"/>
+  <rect width="512" height="512" rx="116" fill="url(#bg)"/>
+  <circle cx="76" cy="82" r="24" fill="#fff" opacity=".7"/>
+  <circle cx="434" cy="104" r="15" fill="#fff" opacity=".55"/>
+  <circle cx="424" cy="420" r="28" fill="#fff" opacity=".3"/>
+  <g filter="url(#shadow)">
+    <rect x="62" y="58" width="388" height="388" rx="104" fill="#fffafc"/>
+  </g>
+  <path d="M256 91c-23 24-30 51-24 80 27-4 50-20 61-46-6-18-18-29-37-34Z" fill="#72bf8b"/>
+  <path d="M245 154c-28-20-57-24-87-11 10 28 32 47 62 52 15-10 23-24 25-41Z" fill="#a5d99f"/>
+  <path d="M260 155c28-20 57-24 87-11-10 28-32 47-62 52-15-10-23-24-25-41Z" fill="#8dcd9b"/>
+  <text x="256" y="293" text-anchor="middle" font-family="'Hiragino Maru Gothic ProN','Yu Gothic','Noto Sans JP',sans-serif" font-size="116" font-weight="900" letter-spacing="-6" fill="#7a4965" stroke="#7a4965" stroke-width="2">かぶ</text>
+  <text x="256" y="397" text-anchor="middle" font-family="'Hiragino Maru Gothic ProN','Yu Gothic','Noto Sans JP',sans-serif" font-size="116" font-weight="900" letter-spacing="-6" fill="#d45f93" stroke="#d45f93" stroke-width="2">たね</text>
+  <path d="M112 330c17-19 35-19 52 0M348 330c17-19 35-19 52 0" fill="none" stroke="#f2a0bf" stroke-width="9" stroke-linecap="round" opacity=".78"/>
+  <circle cx="117" cy="357" r="8" fill="#f5b0c8" opacity=".8"/>
+  <circle cx="395" cy="357" r="8" fill="#f5b0c8" opacity=".8"/>
 </svg>
