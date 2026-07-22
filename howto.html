@@ -3,38 +3,39 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="description" content="かぶたねの使い方。銘柄を見つけ、詳細を確かめ、損失額を先に固定した分割売買を練習し、運用バックテストを確認する順番を初心者向けに解説します。">
+  <meta name="description" content="かぶたねの使い方を、実際の画面に沿った番号付き図解とコスモス・ルーモ・エールの掛け声で初心者向けに解説します。銘柄探し、月足RSI、損切り、利確、株数計算、売買練習、SNS共有まで順番に学べます。">
   <meta name="theme-color" content="#f26fa6">
-  <title>使い方 | かぶたね</title>
+  <title>はじめての使い方 | かぶたね</title>
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="stylesheet" href="assets/style.css">
   <link rel="stylesheet" href="assets/pastel.css">
   <link rel="stylesheet" href="assets/kabutane.css">
   <link rel="stylesheet" href="assets/kabutane-links.css">
-  <style>@media (min-width: 901px) { .journey-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }</style>
+  <link rel="stylesheet" href="assets/howto-visual.css">
 </head>
 <body data-page="howto" class="pastel-theme">
   <header class="site-header">
     <div class="header-inner">
       <div>
-        <p class="eyebrow">KABUTANE TUTORIAL</p>
-        <h1>かぶたねの使い方</h1>
-        <p class="subtitle">見つける、確かめる、練習する。自分のお金を動かす前に、判断の手順を身につけるためのチュートリアルです。</p>
+        <p class="eyebrow">KABUTANE BEGINNER GUIDE</p>
+        <h1>3人と一緒に進める、かぶたねの使い方</h1>
+        <p class="subtitle">画面を見ながら「探す → 確かめる → 練習する → 振り返る」の順番を身につけよう。</p>
       </div>
-      <div class="header-meta"><span class="badge neutral">はじめての方へ</span></div>
+      <div class="header-meta"><span class="badge neutral">初心者向け</span></div>
     </div>
   </header>
 
   <main class="container howto-container">
     <section class="howto-hero panel">
-      <div>
+      <div class="howto-hero-copy">
         <p class="eyebrow">BEFORE USING REAL MONEY</p>
-        <h2>入口・損切り・利確の理由を、自分の言葉で説明できるまで練習してください。</h2>
-        <p>かぶたねは、銘柄を自動で決めるサイトではありません。候補を見つけ、理由を確かめ、未来を隠したチャートで何度も試し、自分のルールを育てるための場所です。</p>
+        <h2>買う前に、入口・損切り・利確を自分で決める練習をしよう。</h2>
+        <p>かぶたねは「次に上がる銘柄を当てるサイト」ではありません。候補を探し、理由を確かめ、未来を隠したチャートで失敗も含めて何度も練習する場所です。</p>
         <div class="howto-actions">
-          <a class="button" href="index.html">STEP 1から始める</a>
-          <a class="button secondary" href="replay.html">売買練習を開く</a>
+          <a class="button" href="index.html">候補を探してみる</a>
+          <a class="button secondary" href="replay.html">はじめてモードを開く</a>
         </div>
+        <p class="howto-start-note">最初から全部の機能を覚えなくて大丈夫。まずは、このページの4つの順番だけ覚えよう。</p>
       </div>
       <div class="howto-hero-visual" aria-label="コスモス・ルーモ・エール">
         <div class="howto-character cosmos" aria-hidden="true"></div>
@@ -45,89 +46,190 @@
 
     <section class="panel howto-section">
       <div class="howto-section-heading">
-        <p class="eyebrow">THE WHOLE ROUTE</p>
-        <h2>最初に覚える4ステップ</h2>
-        <p>数字を全部覚える必要はありません。画面を移動する順番だけ先に覚えます。</p>
+        <p class="eyebrow">START HERE</p>
+        <h2>最初は、この4つだけ覚えよう</h2>
+        <p>数字を全部理解してから始める必要はありません。迷ったら、この順番へ戻ります。</p>
       </div>
-      <div class="journey-grid">
-        <article class="journey-card"><span class="step-number">1</span><h3>ホームで候補を見つける</h3><p>目的に近い探し方を1つ選び、気になる会社を3〜5社へ絞ります。</p><a href="#scanner-guide">探し方を見る →</a></article>
-        <article class="journey-card"><span class="step-number">2</span><h3>詳細で理由を確かめる</h3><p>日足、月足RSI、配当・分割、財務を上から順に確認します。</p><a href="#detail-guide">詳細の見方へ →</a></article>
-        <article class="journey-card"><span class="step-number">3</span><h3>過去チャートで練習する</h3><p>最大損失、分割買値、損切り、TPを決めて未来を進めます。</p><a href="#practice-guide">練習方法へ →</a></article>
-        <article class="journey-card"><span class="step-number">4</span><h3>運用全体を試す</h3><p>複数銘柄を持った場合の成績と最大下落をバックテストで確認します。</p><a href="#backtest-guide">運用テストへ →</a></article>
+      <nav class="beginner-route" aria-label="初心者向けの使い方ルート">
+        <a href="#find"><b>1</b><strong>候補を探す</strong><small>ホームから、気になる会社を3〜5社だけ選ぶ。</small></a>
+        <a href="#check"><b>2</b><strong>理由を確かめる</strong><small>日足と月足RSIを見て、勢いと長期の流れを確認する。</small></a>
+        <a href="#practice"><b>3</b><strong>売買を練習する</strong><small>エントリーより先に、損切りと最大損失を決める。</small></a>
+        <a href="#share"><b>4</b><strong>振り返って共有</strong><small>利益だけでなく、決めた手順を守れたか振り返る。</small></a>
+      </nav>
+    </section>
+
+    <section class="panel howto-section">
+      <div class="howto-section-heading">
+        <p class="eyebrow">LET'S GO TOGETHER</p>
+        <h2>3人が、それぞれ違うところを助けるよ</h2>
+      </div>
+      <div class="trio-rally">
+        <article class="trio-callout cosmos"><div class="portrait" aria-hidden="true"></div><div><strong>コスモス🌸</strong><p>情報が多くても大丈夫。見る順番を決めれば、落ち着いて整理できるよ🌸</p></div></article>
+        <article class="trio-callout lumo"><div class="portrait" aria-hidden="true"></div><div><strong>ルーモ✨</strong><p>練習なら何度失敗してもOK！まずは1回、一緒に最後まで進めてみよう✨</p></div></article>
+        <article class="trio-callout aile"><div class="portrait" aria-hidden="true"></div><div><strong>エール💜</strong><p>買う前に逃げ道を決めよう。損切りは失敗じゃなくて、資金を守るための約束だよ。</p></div></article>
       </div>
     </section>
 
     <section class="panel howto-section">
-      <div class="howto-section-heading"><p class="eyebrow">BASIC WORDS</p><h2>画面に出る3つの状態</h2></div>
-      <div class="term-grid">
-        <article class="term-card"><strong>NEW</strong><p>月足RSI14が、自身の5か月移動平均を下から上へ抜けた最初の月です。</p></article>
-        <article class="term-card"><strong>CONTINUE</strong><p>月足RSI14が5か月移動平均より上にある状態が続いています。</p></article>
-        <article class="term-card"><strong>OUT / DC</strong><p>月足RSI14が5か月移動平均以下へ戻った状態です。売買練習では弱い期間を「月末へ」で進められます。</p></article>
+      <div class="howto-section-heading"><p class="eyebrow">BASIC WORDS</p><h2>ホームに出る3つの状態</h2><p>これは買い・売りの指示ではなく、月足の勢いを整理するための表示です。</p></div>
+      <div class="glossary-strip">
+        <article><strong>NEW</strong><p>月足RSI14が、自身の5か月移動平均を下から上へ抜けた最初の月。</p></article>
+        <article><strong>CONTINUE</strong><p>月足RSI14が5か月移動平均より上にあり、勢いが続いている状態。</p></article>
+        <article><strong>OUT / DC</strong><p>月足RSI14が5か月移動平均以下へ戻った状態。弱まりを確認する目印です。</p></article>
       </div>
     </section>
 
-    <section id="scanner-guide" class="panel howto-section">
-      <div class="howto-section-heading"><p class="eyebrow">STEP 1 — FIND</p><h2>ホームで“未来の1株のたね”を探す</h2><p>ここは買う銘柄を決める場所ではなく、次に詳しく調べる候補を見つける場所です。</p></div>
-      <div class="flow-list">
-        <article class="flow-item"><strong>① 探し方を1つ選ぶ</strong><p>迷ったら「まずは基本」。候補を少なくしたい場合は「コスモス注目」から始めます。</p></article>
-        <article class="flow-item"><strong>② NEWか継続中かを見る</strong><p>NEWは始まったばかり、継続は勢いが続いている状態です。どちらが正解という意味ではありません。</p></article>
-        <article class="flow-item"><strong>③ 3〜5社だけ詳細を開く</strong><p>候補を増やしすぎると判断が散らかります。会社名を押して詳細へ進みます。</p></article>
-        <article class="flow-item"><strong>④ 練習したい銘柄はカードから直接開く</strong><p>「この銘柄で練習」を押すと、銘柄コードを設定した状態で売買練習へ移動します。</p></article>
+    <section id="find" class="panel howto-section">
+      <div class="howto-section-heading"><p class="eyebrow">STEP 1 — FIND</p><h2>ホームで“未来の1株のたね”を探す</h2><p>ここでは買う会社を決めません。次に詳しく調べる候補を見つけます。</p></div>
+      <div class="guided-flow">
+        <article><span>1-1</span><h3>探し方を1つ選ぶ</h3><p>迷ったら「まずは基本」。候補を絞りたい時は「コスモス注目」から始めよう。</p></article>
+        <article><span>1-2</span><h3>NEW・継続を見る</h3><p>始まったばかりか、勢いが続いているかを確認する。どちらが正解という意味ではありません。</p></article>
+        <article><span>1-3</span><h3>3〜5社へ絞る</h3><p>候補を増やしすぎると判断が散らかります。会社名を押して詳細へ進もう。</p></article>
+        <article><span>1-4</span><h3>比較して残す</h3><p>知っている会社だけに偏らず、価格・勢い・財務を比較してみよう。</p></article>
+        <article><span>1-5</span><h3>練習へ進む</h3><p>カードの「この銘柄で練習」から、銘柄コードを設定した状態で移動できます。</p></article>
       </div>
+      <p class="mini-dialogue"><strong>コスモス🌸</strong> 候補一覧は「買うリスト」じゃないよ。気になった理由を確かめるための入口だよ🌸</p>
     </section>
 
-    <section id="detail-guide" class="panel howto-section">
-      <div class="howto-section-heading"><p class="eyebrow">STEP 2 — CHECK</p><h2>銘柄詳細は上から順番に読む</h2><p>見る順番を固定すると、情報量が多くても迷いにくくなります。</p></div>
+    <section id="check" class="panel howto-section">
+      <div class="howto-section-heading"><p class="eyebrow">STEP 2 — CHECK</p><h2>銘柄詳細は、上から順番に読む</h2><p>細かい指標を全部見るより、毎回同じ順番で確認する方が判断を比べやすくなります。</p></div>
       <div class="reading-grid">
         <article class="reading-card"><h3>① 日足チャート</h3><p>現在の価格と大きな流れを確認します。</p><ul><li>株価がSMA25・75・200の上か下か</li><li>長期線が上向きか</li><li>出来高を伴っているか</li><li>ローソク足と平均足を切り替える</li></ul></article>
-        <article class="reading-card"><h3>② 月足RSI14と5か月MA</h3><p>月単位の勢いが上向きか、弱まり始めているかを確認します。</p><ul><li>GC直後か、長く継続しているか</li><li>2本の差が広がっているか縮まっているか</li><li>月末確定値は翌月の日足から表示</li></ul></article>
-        <article class="reading-card"><h3>③ 配当・株式分割</h3><p>Yahoo Financeの株価履歴から取得できた実績を確認します。</p><ul><li>過去の配当</li><li>株式分割・併合</li><li>重要な企業情報は会社の公式IRで確認</li></ul></article>
-        <article class="reading-card"><h3>④ 過去GC実績と財務</h3><p>過去の上昇だけでなく、最大下落も確認します。</p><ul><li>過去実績が少ない場合は過信しない</li><li>「—」は0ではなく未取得</li><li>投資前は会社の公式IRも確認する</li></ul></article>
+        <article class="reading-card"><h3>② 月足RSI14と5か月MA</h3><p>月単位の勢いが強まっているか、弱まり始めているかを見ます。</p><ul><li>GC直後か、長く継続しているか</li><li>2本の差が広がっているか</li><li>完成した月足は翌月の日足から表示</li></ul></article>
+        <article class="reading-card"><h3>③ 配当・分割・財務</h3><p>株価だけでなく、会社の状態も確認します。</p><ul><li>配当と株式分割の履歴</li><li>PER・PBR・ROE・自己資本比率</li><li>「—」は0ではなく未取得</li></ul></article>
+        <article class="reading-card"><h3>④ 過去のGC実績</h3><p>上昇率だけでなく、途中の最大下落も確認します。</p><ul><li>実績数が少なければ過信しない</li><li>良かった場面だけを見ない</li><li>投資前は会社の公式IRも確認</li></ul></article>
+      </div>
+      <p class="mini-dialogue"><strong>エール💜</strong> 月足RSIが強くても、必ず上がるわけじゃないよ。価格の位置と、想定が崩れる場所も一緒に見よう。</p>
+    </section>
+
+    <section id="practice" class="panel howto-section">
+      <div class="howto-section-heading"><p class="eyebrow">STEP 3 — PRACTICE</p><h2>はじめてモードは、1つの判断だけを順番に試す</h2><p>チャート上へすべての注文ラインを出し続けず、その時に必要な操作だけが表示されます。</p></div>
+
+      <div class="visual-guide">
+        <article class="visual-step">
+          <figure class="visual-shot">
+            <a href="assets/tutorials/howto-replay-entry.svg" target="_blank" rel="noopener"><img src="assets/tutorials/howto-replay-entry.svg" alt="はじめてモードで、ステップ表示と3人の案内を見ながらエントリー候補を探す画面例" loading="lazy"></a>
+            <figcaption class="visual-caption">タップすると大きな画像で確認できます。</figcaption>
+          </figure>
+          <div class="visual-copy">
+            <span class="step-badge">GUIDE 1</span>
+            <h3>未来を見ずに「ここで入りたい」を選ぶ</h3>
+            <p>1日または5日ずつ進めて、表示中の情報だけでエントリー候補を探します。この時点では、まだ買いません。</p>
+            <ul class="visual-points">
+              <li><b>1</b><span>上のステップで、いま何を決める場面か確認する。</span></li>
+              <li><b>2</b><span>3人のコメントを読み、次の操作を確認する。</span></li>
+              <li><b>3</b><span>入りたい場所を見つけたら「ここで入りたい」を押す。</span></li>
+            </ul>
+            <p class="mini-dialogue"><strong>ルーモ✨</strong> まだ買わないよ！先に逃げ道と利益の受け取り方を決めよう✨</p>
+          </div>
+        </article>
+
+        <article class="visual-step">
+          <figure class="visual-shot">
+            <a href="assets/tutorials/howto-replay-stop.svg" target="_blank" rel="noopener"><img src="assets/tutorials/howto-replay-stop.svg" alt="損切り価格を入力、直近安値ヒント、チャートタップから選ぶ画面例" loading="lazy"></a>
+            <figcaption class="visual-caption">チャートで選ぶ時は、設定パネルが閉じてローソク足を全面表示します。</figcaption>
+          </figure>
+          <div class="visual-copy">
+            <span class="step-badge">GUIDE 2</span>
+            <h3>損切りは、買う前に決める</h3>
+            <p>「今回の予想が外れた」と判断する価格を決めます。価格を入力しても、チャートをタップしても設定できます。</p>
+            <ul class="visual-points">
+              <li><b>1</b><span>自分で考えた価格を入力するか「チャートで選ぶ」を押す。</span></li>
+              <li><b>2</b><span>迷った時だけ「直近安値のヒント」を開く。</span></li>
+              <li><b>3</b><span>近すぎ・遠すぎを確認してから損切りを確定する。</span></li>
+            </ul>
+            <p class="mini-dialogue"><strong>エール💜</strong> 損切りは負けを決める価格じゃないよ。資金を守って、次の練習へ進むための価格だよ。</p>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section id="practice-guide" class="panel howto-section">
-      <div class="howto-section-heading"><p class="eyebrow">STEP 3 — PRACTICE</p><h2>損失額を先に決め、未来を隠して売買を練習する</h2><p>良い結果を出すことより、最大損失を守り、決めたルールで操作できたかを確認します。</p></div>
-      <div class="flow-list">
-        <article class="flow-item"><strong>① 最初の設定で資金と分割数を固定する</strong><p>総資産、この銘柄への配分上限、許容損失率、売買単位を決めます。分割数は1〜8段階から選べます。初めてなら2〜3段階で十分です。</p></article>
-        <article class="flow-item"><strong>② 「リスク設定」タブで損切りとE1〜E8を置く</strong><p>損切りを先に決め、必要な本数だけ買値ラインを置きます。予定平均買値と損切り幅から総株数を計算し、各段階へほぼ均等に配分します。</p></article>
-        <article class="flow-item"><strong>③ 「チャート」タブで根拠を確認する</strong><p>ローソク足・平均足、SMA、Supertrend、月足RSI、日足オシレーターを確認します。買値の行を選ぶと、チャートタップでそのラインを変更できます。</p></article>
-        <article class="flow-item"><strong>④ 「注文」タブで自動・手動を選ぶ</strong><p>自動発注は複数の指値買いと共通損切り、TPを管理します。手動発注では成行買い・成行売り・1件の指値買いを練習できます。</p></article>
-        <article class="flow-item"><strong>⑤ 1日、5日、月末へ進める</strong><p>「次の月末へ」も途中の日足を省略せず、高値・安値で利確・損切り・指値約定を順番に判定します。同じ足で損切りとTPへ触れた場合は損切り優先です。</p></article>
-        <article class="flow-item"><strong>⑥ 「成績」タブで最大DDまで振り返る</strong><p>総損益だけでなく、最大下落、売買回数、累計コスト、判断メモを確認します。利益が出ても、許容損失を無視した取引は成功扱いにしません。</p></article>
+    <section class="panel howto-section">
+      <div class="howto-section-heading"><p class="eyebrow">THE REST OF THE FLOW</p><h2>損切りの後は、この順番で進む</h2></div>
+      <div class="guided-flow">
+        <article><span>GUIDE 3</span><h3>利確位置</h3><p>1.5R・2R・3R、またはチャートから選びます。1R未満では進めません。</p></article>
+        <article><span>GUIDE 4</span><h3>株数・分割</h3><p>許容損失、配分上限、現金、売買単位から安全な上限を自動計算します。</p></article>
+        <article><span>GUIDE 5</span><h3>最終確認</h3><p>エントリー、損切り、利確、株数、最大損失を確認して初めて注文します。</p></article>
+        <article><span>GUIDE 6</span><h3>1日ずつ見守る</h3><p>含み益・含み損ではなく、最初に決めた計画がまだ有効か確認します。</p></article>
+        <article><span>GUIDE 7</span><h3>出口を選ぶ</h3><p>損切りは自動確定。利確到達時は25％・50％・全利確・継続から選びます。</p></article>
       </div>
-      <div class="check-grid" style="margin-top:16px">
-        <article class="check-card"><h3>最大株数の考え方</h3><p>「許容損失額÷（予定平均買値－損切り）」と「配分上限で買える株数」を比べ、小さい方を使います。</p></article>
-        <article class="check-card"><h3>複数買値の配分</h3><p>最初に総リスクを固定し、各段階へほぼ均等配分します。下の買値だけへ株数を過度に集中させません。</p></article>
-        <article class="check-card"><h3>少ない株数の場合</h3><p>保有株数が4回の利確に足りなければ、可能な回数だけTPを使い、最後の有効TPで残りを決済します。</p></article>
-        <article class="check-card"><h3>銘柄詳細へ戻る</h3><p>練習画面上部の「銘柄詳細を見る」から、同じ銘柄の日足・月足RSI・企業情報へ戻れます。</p></article>
+    </section>
+
+    <section class="panel howto-section">
+      <div class="howto-section-heading"><p class="eyebrow">RISK MANAGEMENT</p><h2>株数は「いくら儲けたいか」ではなく「いくらまで失えるか」で決める</h2></div>
+      <div class="risk-lesson">
+        <article class="risk-card">
+          <h3>最大株数の基本</h3>
+          <p>総資産300万円、許容損失1％なら、今回の最大損失は3万円です。</p>
+          <div class="risk-formula"><strong>許容損失額</strong><span>総資産 × 許容損失率</span><strong>1株のリスク</strong><span>エントリー価格 − 損切り価格</span><strong>リスク上限株数</strong><span>許容損失額 ÷ 1株のリスク</span></div>
+        </article>
+        <article class="risk-card">
+          <h3>計算結果をそのまま買わない</h3>
+          <p>かぶたねは、リスク上限に加えて「1銘柄への配分上限」「現金」「100株・1株の売買単位」も比較し、最も小さい株数を推奨します。</p>
+          <p class="mini-dialogue"><strong>コスモス🌸</strong> 分割しても、合計の損失上限は増やさないよ。追加購入のたびに残りリスクを計算するよ🌸</p>
+        </article>
       </div>
+    </section>
+
+    <section class="panel howto-section">
+      <div class="howto-section-heading"><p class="eyebrow">WHILE HOLDING</p><h2>待っている間も、3人が判断を支える</h2><p>毎日励ますのではなく、判断が揺れやすい場面でコメントします。</p></div>
+      <div class="trio-rally">
+        <article class="trio-callout lumo"><div class="portrait" aria-hidden="true"></div><div><strong>エントリー直後</strong><p>当てるゲームじゃなくて、決めたルールを守る練習だよ✨</p></div></article>
+        <article class="trio-callout aile"><div class="portrait" aria-hidden="true"></div><div><strong>損切りが近い時</strong><p>不安でも、損切り価格を下へ動かさないようにしよう。</p></div></article>
+        <article class="trio-callout cosmos"><div class="portrait" aria-hidden="true"></div><div><strong>含み益が出た時</strong><p>早く売りたくなったら、最初に決めた利確理由を確認しよう🌸</p></div></article>
+      </div>
+    </section>
+
+    <section id="share" class="panel howto-section">
+      <div class="howto-section-heading"><p class="eyebrow">STEP 4 — REVIEW & SHARE</p><h2>終了したら、利益より先に「手順を守れたか」を振り返る</h2><p>レポートには売買位置、最大DD、損益、ルール達成、今回の学びが表示されます。</p></div>
+      <div class="share-demo">
+        <div class="share-report-mock" aria-label="売買練習レポートのイメージ">
+          <div class="share-report-head"><div><small>かぶたね｜売買練習レポート</small><h3>練習した銘柄（0000）</h3></div><div class="share-score">5/6</div></div>
+          <div class="share-metrics"><div><span>総損益率</span><strong>+2.10％</strong></div><div><span>最大DD</span><strong>-0.82％</strong></div><div><span>想定最大損失</span><strong>25,000円</strong></div><div><span>売買回数</span><strong>買2 / 売2</strong></div></div>
+          <div class="share-line"><span class="share-mark buy">買</span><span class="share-mark sell">売</span></div>
+        </div>
+        <div class="share-cta-list">
+          <article><strong>X</strong><p>横長画像と短い宣伝文を作成。スマホでは画像と文章を共有メニューへまとめて渡します。</p></article>
+          <article><strong>Threads</strong><p>正方形画像と、練習内容を少し詳しく伝える文章を作成します。</p></article>
+          <article><strong>note</strong><p>結果だけでなく、入口・損切り・利確をどう考えたか振り返る文章を使えます。</p></article>
+          <article><strong>メンション</strong><p>開発者へ知らせたい時だけON。普段はOFFなので、通知負荷を増やしません。</p></article>
+        </div>
+      </div>
+      <p class="mini-dialogue"><strong>ルーモ✨</strong> 利益が出た時だけじゃなく、決めた損切りを守れた練習も立派な成功だよ！つぎつぎー！✨</p>
     </section>
 
     <section id="backtest-guide" class="panel howto-section">
-      <div class="howto-section-heading"><p class="eyebrow">STEP 4 — PORTFOLIO</p><h2>運用バックテストで全体像を確認する</h2><p>個別の売買練習とは別に、複数銘柄を持った場合の資産推移を確認します。</p></div>
+      <div class="howto-section-heading"><p class="eyebrow">PORTFOLIO TEST</p><h2>個別練習に慣れたら、運用全体も試す</h2><p>複数銘柄を持った場合の資産推移と最大下落を、過去データで確認します。</p></div>
       <div class="check-grid">
-        <article class="check-card"><h3>累積リターン</h3><p>期間全体で資産がどれだけ増減したかを見ます。</p></article>
-        <article class="check-card"><h3>最大下落</h3><p>途中でどこまで資産が減ったかを確認します。利益より先に許容できるか考えます。</p></article>
-        <article class="check-card"><h3>TOPIXとの比較</h3><p>現在はYahooで取得できるTOPIX連動ETFの調整済み価格を代替使用します。画面に銘柄コードと対象期間を表示します。</p></article>
-        <article class="check-card"><h3>最近の取引</h3><p>入口月・出口月・損益・退出理由を見て、どんな場面で結果が出たかを確認します。</p></article>
+        <article class="check-card"><h3>累積リターン</h3><p>期間全体で資産がどれだけ増減したかを確認します。</p></article>
+        <article class="check-card"><h3>最大下落</h3><p>途中でどこまで資産が減ったかを見て、自分が続けられるか考えます。</p></article>
+        <article class="check-card"><h3>TOPIXとの比較</h3><p>Yahooで取得できるTOPIX連動ETFの調整済み価格を代替使用します。</p></article>
+        <article class="check-card"><h3>最近の取引</h3><p>入口月・出口月・損益・退出理由を確認します。</p></article>
       </div>
       <p style="margin-top:16px"><a class="button secondary" href="backtest.html">運用バックテストを開く</a></p>
     </section>
 
-    <section class="panel howto-section faq-list">
-      <div class="howto-section-heading"><p class="eyebrow">READY CHECK</p><h2>実際のお金を動かす前の確認</h2></div>
-      <details open><summary>なぜこの銘柄を見るのか説明できますか？</summary><p>月足の勢い、長期トレンド、価格位置など、候補にした理由を短い文章にします。</p></details>
-      <details><summary>どこで想定が崩れるか決めましたか？</summary><p>損切り価格と最大損失額を、購入前に数字で決めます。</p></details>
-      <details><summary>利確方法を決めましたか？</summary><p>TP1〜TP4、部分利確、トレーリングのルールを決めます。</p></details>
-      <details><summary>同じルールで複数回練習しましたか？</summary><p>一度の成功では判断せず、上昇・下落・横ばいの場面で繰り返します。</p></details>
-      <details><summary>スマホのホーム画面へ追加できますか？</summary><p>PWAに対応しています。ブラウザの「ホーム画面に追加」または「アプリをインストール」から、かぶたねをアプリのように開けます。</p></details>
+    <section class="panel howto-section">
+      <div class="howto-section-heading"><p class="eyebrow">READY CHECK</p><h2>実際のお金を動かす前の5項目</h2><p>全部にチェックできない時は、もう一度かぶたねで練習しよう。</p></div>
+      <div class="ready-check-grid">
+        <label><input type="checkbox"><span>なぜこの銘柄を見るのか、自分の言葉で説明できる。</span></label>
+        <label><input type="checkbox"><span>どこで予想が外れたと判断するか、買う前に決めた。</span></label>
+        <label><input type="checkbox"><span>最大損失額から株数を決めた。</span></label>
+        <label><input type="checkbox"><span>利確位置と、部分利確する割合を考えた。</span></label>
+        <label><input type="checkbox"><span>同じルールを、上昇・下落・横ばいの場面で複数回試した。</span></label>
+        <label><input type="checkbox"><span>会社の公式IRと、自分のリスク許容度も確認した。</span></label>
+      </div>
     </section>
 
-    <p class="howto-note">本サイトは情報提供・学習・練習を目的としたツールです。表示結果や過去実績は、将来の利益を保証しません。最終判断では企業の公式情報と、ご自身のリスク許容度を確認してください。</p>
+    <section class="howto-final-cta">
+      <div><h2>説明を読んだら、1回やってみよう。</h2><p>練習では失敗して大丈夫。3人と一緒に最後まで進めよう。</p></div>
+      <div class="howto-final-actions"><a class="button" href="replay.html">はじめてモードで練習</a><a class="button secondary" href="index.html">候補を探す</a></div>
+    </section>
+
+    <p class="howto-note">本サイトは情報提供・学習・練習を目的としたツールです。表示結果や過去実績は将来の利益を保証しません。Yahoo Finance由来のデータは遅延・欠損する場合があります。最終判断では企業の公式情報と、ご自身のリスク許容度を確認してください。</p>
   </main>
 
-  <footer><p>かぶたね 🌱 / 使い方チュートリアル</p></footer>
+  <footer><p>かぶたね 🌱 / 3人と進める初心者ガイド</p></footer>
   <script src="assets/characters.js" defer></script>
 </body>
 </html>
