@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+  <title id="title">入りたい場所を探す画面</title>
+  <desc id="desc">はじめてモードのステップ表示、3人の案内、株価チャートを番号付きで説明した図</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff0f7"/><stop offset="1" stop-color="#f2f4ff"/></linearGradient>
+    <linearGradient id="main" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d95f98"/><stop offset="1" stop-color="#8f69cc"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#70485e" flood-opacity=".18"/></filter>
+  </defs>
+  <rect width="1400" height="900" fill="url(#bg)"/>
+  <text x="64" y="72" font-family="sans-serif" font-size="42" font-weight="800" fill="#593f4f">① 入りたい場所を探す</text>
+  <text x="64" y="118" font-family="sans-serif" font-size="23" fill="#826a79">未来は隠したまま。1日ずつ進めて、自分でエントリー候補を決めます。</text>
+
+  <g filter="url(#shadow)">
+    <rect x="650" y="160" width="680" height="675" rx="28" fill="#fff" stroke="#e5cad9" stroke-width="3"/>
+    <rect x="675" y="185" width="630" height="64" rx="14" fill="#fff8fb" stroke="#ead6e2"/>
+    <g font-family="sans-serif" font-size="15" text-anchor="middle">
+      <g><circle cx="730" cy="215" r="17" fill="#68a27d"/><text x="730" y="220" fill="#fff" font-weight="800">1</text><text x="730" y="244" fill="#63806d">探す</text></g>
+      <g><circle cx="860" cy="215" r="17" fill="#d95f98"/><text x="860" y="220" fill="#fff" font-weight="800">2</text><text x="860" y="244" fill="#8f5573">損切り</text></g>
+      <g><circle cx="990" cy="215" r="17" fill="#e9dfe6"/><text x="990" y="220" fill="#9a8692" font-weight="800">3</text><text x="990" y="244" fill="#9a8692">利確</text></g>
+      <g><circle cx="1120" cy="215" r="17" fill="#e9dfe6"/><text x="1120" y="220" fill="#9a8692" font-weight="800">4</text><text x="1120" y="244" fill="#9a8692">枚数</text></g>
+      <g><circle cx="1250" cy="215" r="17" fill="#e9dfe6"/><text x="1250" y="220" fill="#9a8692" font-weight="800">5</text><text x="1250" y="244" fill="#9a8692">確認</text></g>
+    </g>
+
+    <rect x="675" y="268" width="630" height="112" rx="16" fill="#fff" stroke="#ead6e2"/>
+    <circle cx="724" cy="324" r="34" fill="#eaf3ff" stroke="#9bbce0" stroke-width="3"/>
+    <path d="M705 330 Q724 299 743 330" fill="none" stroke="#78a1ce" stroke-width="6" stroke-linecap="round"/>
+    <text x="774" y="306" font-family="sans-serif" font-size="20" font-weight="800" fill="#705065">ルーモ</text>
+    <text x="774" y="338" font-family="sans-serif" font-size="18" fill="#6f5967">焦らなくて大丈夫！チャートを進めて</text>
+    <text x="774" y="365" font-family="sans-serif" font-size="18" fill="#6f5967">「ここで入りたい」と思う場所を探そう。</text>
+
+    <text x="682" y="423" font-family="sans-serif" font-size="23" font-weight="800" fill="#59414f">足とテクニカルを確認する</text>
+    <text x="682" y="450" font-family="sans-serif" font-size="15" fill="#8a7481">未来の値動きは非表示。表示中の日までで判断します。</text>
+    <rect x="680" y="472" width="620" height="315" rx="16" fill="#fff" stroke="#ead6e2"/>
+    <g stroke="#eee4ea" stroke-width="1"><line x1="710" y1="530" x2="1270" y2="530"/><line x1="710" y1="590" x2="1270" y2="590"/><line x1="710" y1="650" x2="1270" y2="650"/><line x1="710" y1="710" x2="1270" y2="710"/></g>
+    <g stroke-width="3">
+      <path d="M720 650 C780 620 830 640 890 604 S1000 590 1060 605 S1170 570 1260 555" fill="none" stroke="#d95f98"/>
+      <path d="M720 690 C820 676 900 670 980 655 S1130 640 1260 625" fill="none" stroke="#5b9cc3"/>
+      <path d="M720 670 C820 665 890 652 970 646 S1120 620 1260 610" fill="none" stroke="#66a47c"/>
+    </g>
+    <g fill="#d95f98" stroke="#fff" stroke-width="2"><rect x="745" y="615" width="10" height="28"/><rect x="790" y="610" width="10" height="35"/><rect x="835" y="600" width="10" height="42"/><rect x="880" y="610" width="10" height="27"/><rect x="925" y="590" width="10" height="39"/><rect x="970" y="585" width="10" height="32"/><rect x="1015" y="575" width="10" height="34"/><rect x="1060" y="584" width="10" height="27"/><rect x="1105" y="565" width="10" height="36"/><rect x="1150" y="550" width="10" height="39"/><rect x="1195" y="542" width="10" height="32"/><rect x="1240" y="532" width="10" height="37"/></g>
+    <rect x="680" y="798" width="195" height="0" fill="none"/>
+  </g>
+
+  <g font-family="sans-serif" fill="#59414f">
+    <circle cx="104" cy="252" r="28" fill="#d95f98"/><text x="104" y="261" text-anchor="middle" font-size="26" font-weight="800" fill="#fff">1</text>
+    <text x="150" y="245" font-size="26" font-weight="800">上のステップで</text><text x="150" y="279" font-size="26" font-weight="800">今の手順が分かる</text>
+    <path d="M490 260 L690 215" stroke="#c94f8a" stroke-width="6" fill="none"/><path d="M690 215 l-22 -8 l8 22 z" fill="#c94f8a"/>
+
+    <circle cx="104" cy="420" r="28" fill="#d95f98"/><text x="104" y="429" text-anchor="middle" font-size="26" font-weight="800" fill="#fff">2</text>
+    <text x="150" y="414" font-size="26" font-weight="800">3人のひと言で</text><text x="150" y="448" font-size="26" font-weight="800">迷わず進める</text>
+    <path d="M490 430 L690 330" stroke="#c94f8a" stroke-width="6" fill="none"/><path d="M690 330 l-22 -3 l12 20 z" fill="#c94f8a"/>
+
+    <circle cx="104" cy="620" r="28" fill="#d95f98"/><text x="104" y="629" text-anchor="middle" font-size="26" font-weight="800" fill="#fff">3</text>
+    <text x="150" y="604" font-size="26" font-weight="800">チャートを見て</text><text x="150" y="638" font-size="26" font-weight="800">「ここで入りたい」</text><text x="150" y="672" font-size="26" font-weight="800">を選ぶ</text>
+    <path d="M490 638 L760 612" stroke="#c94f8a" stroke-width="6" fill="none"/><path d="M760 612 l-22 -8 l8 22 z" fill="#c94f8a"/>
+  </g>
+
+  <rect x="62" y="744" width="530" height="96" rx="22" fill="#f7efff" stroke="#dfcce9"/>
+  <text x="88" y="782" font-family="sans-serif" font-size="24" font-weight="800" fill="#79569b">ルーモ</text>
+  <text x="88" y="818" font-family="sans-serif" font-size="21" fill="#664f5d">焦らなくて大丈夫！入りたい場所を探そう。</text>
+</svg>
