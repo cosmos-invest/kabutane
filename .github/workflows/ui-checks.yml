@@ -54,6 +54,9 @@ jobs:
           node --check assets/backtest.js
           node --check assets/backtest-benchmark-status.js
           node --check assets/replay-core-v2.js
+          node --check assets/replay-guided-core.js
+          node --check assets/replay-guided-mode.js
+          node --check assets/replay-guided-fixes.js
           node --check assets/replay-risk-ladder.js
           node --check assets/replay-ui-base-v2.js
           node --check assets/replay-charts-v2.js
@@ -82,6 +85,7 @@ jobs:
           node tests/test_replay_v2.js
           node tests/test_replay_risk_ladder.js
           node tests/test_replay_month_end.js
+          node tests/test_replay_guided_core.js
           node tests/test_replay_share_report_core.js
           node tests/test_detail_enhancements.js
           node tests/test_daily_overlay.js
@@ -105,8 +109,8 @@ jobs:
 
           for name in (
               "assets/backtest.css", "assets/replay.css", "assets/replay-v2.css",
-              "assets/replay-workspace.css", "assets/replay-unified.css", "assets/replay-share-report.css",
-              "assets/detail-enhancements.css", "assets/simple-analysis-cosmos.css",
+              "assets/replay-workspace.css", "assets/replay-unified.css", "assets/replay-guided-mode.css",
+              "assets/replay-share-report.css", "assets/detail-enhancements.css", "assets/simple-analysis-cosmos.css",
               "assets/kabutane.css", "assets/kabutane-characters.css", "assets/kabutane-links.css",
           ):
               css = Path(name).read_text(encoding="utf-8")
@@ -130,6 +134,7 @@ jobs:
           replay = Path("replay.html").read_text(encoding="utf-8")
           replay_workspace = Path("assets/replay-workspace.js").read_text(encoding="utf-8")
           replay_unified = Path("assets/replay-unified-workspace.js").read_text(encoding="utf-8")
+          replay_guided = Path("assets/replay-guided-mode.js").read_text(encoding="utf-8")
           replay_share = Path("assets/replay-share-report.js").read_text(encoding="utf-8")
           characters = Path("assets/characters.js").read_text(encoding="utf-8")
           workflow = Path(".github/workflows/update-data.yml").read_text(encoding="utf-8")
@@ -144,8 +149,9 @@ jobs:
               raise SystemExit("Replay candidate picker is not wired")
           for marker in (
               "assets/replay-risk-ladder.js", "assets/replay-workspace.js",
-              "assets/replay-unified-workspace.js", "assets/replay-share-report-core.js",
-              "assets/replay-share-report.js",
+              "assets/replay-unified-workspace.js", "assets/replay-guided-core.js",
+              "assets/replay-guided-mode.js", "assets/replay-guided-fixes.js",
+              "assets/replay-share-report-core.js", "assets/replay-share-report.js",
           ):
               if marker not in replay:
                   raise SystemExit(f"Replay workspace is missing: {marker}")
@@ -155,9 +161,19 @@ jobs:
           for marker in ("unified-main-grid", "open-share", "unified-drawer"):
               if marker not in replay_unified:
                   raise SystemExit(f"Unified replay UI is missing: {marker}")
+          for marker in (
+              "はじめてモード", "損切り価格はどこ", "直近安値のヒント", "ここで入りたい",
+              "損切りできた！つぎつぎー！", "レポート画像を作る",
+          ):
+              if marker not in replay_guided:
+                  raise SystemExit(f"Guided replay is missing: {marker}")
           for marker in ("1200", "1080", "navigator.share", "#かぶたね"):
               if marker not in replay_share:
                   raise SystemExit(f"Replay share report is missing: {marker}")
+          if "Xへ画像つき共有" not in Path("assets/replay-guided-fixes.js").read_text(encoding="utf-8"):
+              raise SystemExit("Image-first X sharing is not wired")
+          if "大丈夫だよ" not in characters or "処理するよ" not in characters:
+              raise SystemExit("Aile's conversational tone is not wired")
           if "assets/replay-month-end.js" not in characters:
               raise SystemExit("Replay month-end skip is not wired")
           if "assets/pwa-register.js" not in characters or "manifest.webmanifest" not in Path("assets/pwa-register.js").read_text(encoding="utf-8"):
