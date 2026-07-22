@@ -21,6 +21,14 @@
 .replay-share-controls textarea { width:100%; min-height:190px; padding:10px; border:1px solid #dfc9d7; border-radius:12px; background:#fff; font:inherit; font-size:.78rem; line-height:1.5; resize:vertical; }
 .replay-share-note { padding:10px; border-radius:11px; color:#765f6e; background:#fff2f8; font-size:.7rem; line-height:1.55; }
 
+.replay-unified .workspace-topbar { top:64px; }
+.replay-unified .replay-stats { display:none; }
+
+@media (min-width:761px) {
+  .unified-drawer-open .unified-drawer-backdrop { display:none; }
+  .unified-drawer-backdrop { pointer-events:none; }
+}
+
 @media (max-width:760px) {
   .replay-share-dialog { width:100vw; max-width:none; height:100dvh; max-height:none; border-radius:0; }
   .replay-share-dialog-body { grid-template-columns:1fr; }
