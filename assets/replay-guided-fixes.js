@@ -7,6 +7,71 @@
     return typeof state !== "undefined" && state.guided?.mode === "guided";
   }
 
+  function injectResponsiveGuidedFixes() {
+    if (document.getElementById("guidedResponsiveFixes")) return;
+    const style = document.createElement("style");
+    style.id = "guidedResponsiveFixes";
+    style.textContent = `
+      .guided-monthly-heading {
+        margin:14px 0 8px;
+        padding:10px 12px;
+        border:1px solid #ead8e3;
+        border-radius:13px 13px 0 0;
+        background:rgba(255,255,255,.86);
+      }
+      .guided-monthly-heading strong { color:#604757; }
+      .guided-monthly-heading small { display:block; margin-top:3px; color:#917987; }
+      .guided-monthly-rsi {
+        display:block !important;
+        height:190px !important;
+        margin:0 0 12px;
+        padding:8px;
+        border:1px solid #ead8e3;
+        border-top:0;
+        border-radius:0 0 13px 13px;
+        background:rgba(255,255,255,.82);
+      }
+      .guided-replay-mode.terminal-session-active .guided-monthly-heading,
+      .guided-replay-mode.terminal-session-active .guided-monthly-rsi {
+        display:block !important;
+      }
+      @media (max-width:1199px), (pointer:coarse) {
+        .guided-sheet {
+          position:relative !important;
+          inset:auto !important;
+          width:100% !important;
+          max-height:none !important;
+          display:none;
+          margin:10px 0 14px;
+          border-radius:16px !important;
+          transform:none !important;
+          transition:none !important;
+          box-shadow:0 10px 28px rgba(60,38,52,.13) !important;
+          backdrop-filter:none !important;
+        }
+        .guided-sheet.open {
+          display:flex !important;
+          transform:none !important;
+        }
+        .guided-sheet-handle { display:none !important; }
+        .guided-sheet-body {
+          overflow:visible !important;
+          max-height:none !important;
+          padding:14px !important;
+        }
+        .guided-replay-mode.terminal-session-active .pro-main-chart {
+          width:100% !important;
+          min-width:0 !important;
+        }
+      }
+      @media (max-width:760px) {
+        .guided-monthly-rsi { height:165px !important; }
+        .guided-monthly-heading { margin-top:10px; }
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
   const baseRecalculatePlan = recalculatePlan;
   recalculatePlan = function recalculateGuidedPlan() {
     baseRecalculatePlan();
@@ -38,6 +103,80 @@
     }
     return datasets;
   };
+
+  let monthlyHeading = null;
+  let monthlyBox = null;
+  let monthlyMarker = null;
+
+  function discoverMonthlyRsi() {
+    monthlyBox ||= document.querySelector(".monthly-rsi-chart-box");
+    if (!monthlyBox) return false;
+    monthlyHeading ||= monthlyBox.previousElementSibling;
+    if (!monthlyHeading) return false;
+    monthlyHeading.classList.add("guided-monthly-heading");
+    monthlyBox.classList.add("guided-monthly-rsi");
+    if (!monthlyMarker) {
+      monthlyMarker = document.createComment("monthly-rsi-original-position");
+      monthlyHeading.parentNode?.insertBefore(monthlyMarker, monthlyHeading);
+    }
+    return true;
+  }
+
+  function syncMonthlyRsiPlacement() {
+    if (!discoverMonthlyRsi()) return;
+    if (guidedActive()) {
+      const mainChart = document.querySelector(".pro-main-chart");
+      if (mainChart && monthlyHeading.parentNode !== mainChart.parentNode) {
+        mainChart.insertAdjacentElement("afterend", monthlyHeading);
+        monthlyHeading.insertAdjacentElement("afterend", monthlyBox);
+      }
+    } else if (monthlyMarker?.parentNode && monthlyHeading.parentNode !== monthlyMarker.parentNode) {
+      monthlyMarker.parentNode.insertBefore(monthlyHeading, monthlyMarker.nextSibling);
+      monthlyHeading.insertAdjacentElement("afterend", monthlyBox);
+    }
+    requestAnimationFrame(() => {
+      if (typeof state !== "undefined") state.rsiChart?.resize?.();
+    });
+  }
+
+  function moveSheetIntoFlow() {
+    const panel = document.getElementById("guidedReplayPanel");
+    const sheet = document.getElementById("guidedSheet");
+    if (panel && sheet && sheet.previousElementSibling !== panel) panel.insertAdjacentElement("afterend", sheet);
+  }
+
+  function closeGuidedSheet() {
+    const sheet = document.getElementById("guidedSheet");
+    if (!sheet) return;
+    sheet.classList.remove("open");
+    sheet.setAttribute("aria-hidden", "true");
+  }
+
+  function setGuidedNotice(text) {
+    const notice = document.getElementById("guidedNotice");
+    if (!notice) return;
+    notice.textContent = text;
+    notice.classList.remove("negative");
+  }
+
+  function beginChartSelection(mode) {
+    if (!guidedActive()) return;
+    state.guided.selectMode = mode;
+    state.guided.showLines = true;
+    closeGuidedSheet();
+    setGuidedNotice(mode === "stop"
+      ? "チャートを全面表示したよ。想定が崩れる損切り価格をタップしてね。"
+      : "チャートを全面表示したよ。利確したい価格をタップしてね。");
+    if (typeof renderMainChart === "function") renderMainChart();
+    requestAnimationFrame(() => document.querySelector(".pro-main-chart")?.scrollIntoView({ behavior: "smooth", block: "center" }));
+  }
+
+  function reopenSelectionSheet(mode) {
+    const action = document.querySelector(`[data-guided-action="open-${mode}"]`);
+    if (!action) return;
+    action.click();
+    setTimeout(() => document.getElementById("guidedSheet")?.scrollIntoView({ behavior: "smooth", block: "nearest" }), 30);
+  }
 
   const portraitSources = {
     cosmos: "assets/characters/cosmos-hero.webp",
@@ -77,7 +216,7 @@
     if (!ctx) return;
     const square = canvas.width === canvas.height;
     const radius = square ? 30 : 27;
-    const cx = square ? canvas.width - 42 : canvas.width - 42;
+    const cx = canvas.width - 42;
     const cy = square ? canvas.height - 43 : canvas.height - 42;
     ctx.save();
     ctx.beginPath();
@@ -151,6 +290,15 @@
   }
 
   document.addEventListener("DOMContentLoaded", () => {
+    injectResponsiveGuidedFixes();
+    moveSheetIntoFlow();
+    syncMonthlyRsiPlacement();
+
+    new MutationObserver(() => {
+      moveSheetIntoFlow();
+      syncMonthlyRsiPlacement();
+    }).observe(document.body, { attributes: true, attributeFilter: ["class"] });
+
     document.getElementById("finishButton")?.addEventListener("click", (event) => {
       if (!guidedActive() || state.guided.step === "finished") return;
       event.preventDefault();
@@ -162,6 +310,22 @@
     if (xButton) xButton.textContent = "Xへ画像つき共有";
 
     document.addEventListener("click", (event) => {
+      const selectButton = event.target.closest('[data-guided-action="select-stop-chart"], [data-guided-action="select-target-chart"]');
+      if (selectButton) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        beginChartSelection(selectButton.dataset.guidedAction === "select-stop-chart" ? "stop" : "target");
+        return;
+      }
+
+      if (event.target.id === "replayChart" && guidedActive() && state.guided.selectMode) {
+        const mode = state.guided.selectMode;
+        setTimeout(() => {
+          const selected = mode === "stop" ? state.guided.pendingStop : state.guided.pendingTarget;
+          if (Number.isFinite(Number(selected))) reopenSelectionSheet(mode);
+        }, 90);
+      }
+
       if (event.target.closest('[data-share-action="x"]')) {
         event.preventDefault();
         event.stopImmediatePropagation();
@@ -169,6 +333,7 @@
         return;
       }
       if (event.target.closest("[data-share-format], [data-share-platform], [data-share-action='open']")) decorateCurrentReport();
+      if (event.target.closest("[data-replay-mode]")) setTimeout(syncMonthlyRsiPlacement, 0);
     }, true);
 
     document.addEventListener("kabutane:open-share-report", decorateCurrentReport);

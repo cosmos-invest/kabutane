@@ -1,4 +1,4 @@
-const CACHE_VERSION = "kabutane-pwa-v6";
+const CACHE_VERSION = "kabutane-pwa-v7";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const CORE_ASSETS = [
   "./",
