@@ -62,6 +62,9 @@ jobs:
           node --check assets/replay-orders-auto-v2.js
           node --check assets/replay-session-v2.js
           node --check assets/replay-workspace.js
+          node --check assets/replay-unified-workspace.js
+          node --check assets/replay-share-report-core.js
+          node --check assets/replay-share-report.js
           node --check assets/replay-picker.js
           node --check assets/replay-month-end.js
           node --check assets/daily-overlay.js
@@ -79,6 +82,7 @@ jobs:
           node tests/test_replay_v2.js
           node tests/test_replay_risk_ladder.js
           node tests/test_replay_month_end.js
+          node tests/test_replay_share_report_core.js
           node tests/test_detail_enhancements.js
           node tests/test_daily_overlay.js
           node tests/test_signal_v2.js
@@ -101,7 +105,8 @@ jobs:
 
           for name in (
               "assets/backtest.css", "assets/replay.css", "assets/replay-v2.css",
-              "assets/replay-workspace.css", "assets/detail-enhancements.css", "assets/simple-analysis-cosmos.css",
+              "assets/replay-workspace.css", "assets/replay-unified.css", "assets/replay-share-report.css",
+              "assets/detail-enhancements.css", "assets/simple-analysis-cosmos.css",
               "assets/kabutane.css", "assets/kabutane-characters.css", "assets/kabutane-links.css",
           ):
               css = Path(name).read_text(encoding="utf-8")
@@ -124,6 +129,8 @@ jobs:
           detail = Path("detail.html").read_text(encoding="utf-8")
           replay = Path("replay.html").read_text(encoding="utf-8")
           replay_workspace = Path("assets/replay-workspace.js").read_text(encoding="utf-8")
+          replay_unified = Path("assets/replay-unified-workspace.js").read_text(encoding="utf-8")
+          replay_share = Path("assets/replay-share-report.js").read_text(encoding="utf-8")
           characters = Path("assets/characters.js").read_text(encoding="utf-8")
           workflow = Path(".github/workflows/update-data.yml").read_text(encoding="utf-8")
 
@@ -135,12 +142,22 @@ jobs:
               raise SystemExit("Daily overlay is not wired to detail and replay")
           if "assets/replay-picker.js" not in replay or "replaySymbolSelect" not in replay:
               raise SystemExit("Replay candidate picker is not wired")
-          for marker in ("assets/replay-risk-ladder.js", "assets/replay-workspace.js"):
+          for marker in (
+              "assets/replay-risk-ladder.js", "assets/replay-workspace.js",
+              "assets/replay-unified-workspace.js", "assets/replay-share-report-core.js",
+              "assets/replay-share-report.js",
+          ):
               if marker not in replay:
                   raise SystemExit(f"Replay workspace is missing: {marker}")
           for marker in ("entryStageCount", "detailChartLink", "workspace-tabs", "manualLimitPrice"):
               if marker not in replay_workspace:
                   raise SystemExit(f"Replay workspace UI is missing: {marker}")
+          for marker in ("unified-main-grid", "open-share", "unified-drawer"):
+              if marker not in replay_unified:
+                  raise SystemExit(f"Unified replay UI is missing: {marker}")
+          for marker in ("1200", "1080", "navigator.share", "#かぶたね"):
+              if marker not in replay_share:
+                  raise SystemExit(f"Replay share report is missing: {marker}")
           if "assets/replay-month-end.js" not in characters:
               raise SystemExit("Replay month-end skip is not wired")
           if "assets/pwa-register.js" not in characters or "manifest.webmanifest" not in Path("assets/pwa-register.js").read_text(encoding="utf-8"):
