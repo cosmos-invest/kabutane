@@ -1,4 +1,4 @@
-const CACHE_VERSION = "kabutane-pwa-v1";
+const CACHE_VERSION = "kabutane-pwa-v2";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const CORE_ASSETS = [
   "./",
@@ -12,8 +12,11 @@ const CORE_ASSETS = [
   "./assets/replay.css",
   "./assets/replay-v2.css",
   "./assets/replay-workspace.css",
+  "./assets/replay-drawing-tools.css",
+  "./assets/replay-drawing-core.js",
+  "./assets/replay-drawing-tools.js",
   "./assets/kabutane-links.css",
-  "./assets/icons/kabutane-app.svg"
+  "./assets/icons/kabutane-wordmark.svg"
 ];
 
 self.addEventListener("install", (event) => {
