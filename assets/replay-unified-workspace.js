@@ -69,6 +69,19 @@
     workspace.dataset.unifiedReady = "true";
   }
 
+  function anchorShareCard() {
+    const result = byId("workspaceResult");
+    const summary = byId("workspaceResultSummary");
+    if (!result || !summary || summary.dataset.shareAnchorObserved === "true") return;
+    summary.dataset.shareAnchorObserved = "true";
+    const moveCard = () => {
+      const card = summary.querySelector(".replay-share-card");
+      if (card) result.insertBefore(card, result.querySelector(".trade-history-panel") || null);
+    };
+    new MutationObserver(moveCard).observe(summary, { childList: true });
+    moveCard();
+  }
+
   function installUnifiedWorkspace() {
     const workspace = byId("replayWorkspace");
     const chart = byId("workspaceChart");
@@ -101,6 +114,7 @@
 
     buildIndicatorDetails(chart.querySelector(".pro-chart-panel"));
     installDrawer(workspace);
+    anchorShareCard();
 
     const orderHeading = order.querySelector(".order-workspace-heading h2");
     if (orderHeading) orderHeading.textContent = "注文";
