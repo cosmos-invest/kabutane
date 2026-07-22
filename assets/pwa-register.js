@@ -33,11 +33,24 @@
     }
   }
 
+  function separateAnalysisFromOrderPlacement() {
+    if (!document.body?.classList.contains("replay-page")) return;
+    document.addEventListener("pointerup", (event) => {
+      if (event.target?.id !== "replayChart") return;
+      if (window.ReplayDrawingTools?.model?.mode !== "cursor") return;
+      if (typeof state === "undefined" || state.workspaceTab !== "chart" || !state.chartView) return;
+      // Keep the viewport pointer lifecycle intact, but mark this tap as an
+      // analysis interaction so the existing entry/stop placement handler skips it.
+      state.chartView.moved = true;
+    }, true);
+  }
+
   function keepSelectedReplayEntryInSync() {
     if (!document.body?.classList.contains("replay-page")) return;
     document.addEventListener("pointerup", (event) => {
       if (event.target?.id !== "replayChart") return;
       if (window.ReplayDrawingTools?.model?.mode !== "cursor") return;
+      if (typeof state !== "undefined" && state.workspaceTab === "chart") return;
       window.setTimeout(() => {
         const selected = document.querySelector(".entry-ladder-row.selected [data-entry-level]");
         const source = document.getElementById("entryPrice");
@@ -52,6 +65,7 @@
   ensureManifest();
   ensureTheme();
   ensureReplayDrawingTools();
+  separateAnalysisFromOrderPlacement();
   keepSelectedReplayEntryInSync();
 
   if ("serviceWorker" in navigator && location.protocol === "https:") {
