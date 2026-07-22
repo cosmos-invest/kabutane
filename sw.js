@@ -1,4 +1,4 @@
-const CACHE_VERSION = "kabutane-pwa-v2";
+const CACHE_VERSION = "kabutane-pwa-v3";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const CORE_ASSETS = [
   "./",
@@ -7,14 +7,17 @@ const CORE_ASSETS = [
   "./backtest.html",
   "./howto.html",
   "./learn.html",
+  "./manifest.webmanifest",
   "./assets/style.css",
   "./assets/pastel.css",
   "./assets/replay.css",
   "./assets/replay-v2.css",
   "./assets/replay-workspace.css",
   "./assets/replay-drawing-tools.css",
+  "./assets/replay-drawing-tools.js",
+  "./assets/pwa-register.js",
   "./assets/kabutane-links.css",
-  "./assets/icons/kabutane-wordmark-v2.svg",
+  "./assets/icons/kabutane-wordmark-v3.svg",
   "./assets/icons/kabutane-192.png?v=1"
 ];
 

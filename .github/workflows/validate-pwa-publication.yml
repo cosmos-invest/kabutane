@@ -1,0 +1,72 @@
+name: Validate PWA publication
+
+on:
+  pull_request:
+    paths:
+      - "replay.html"
+      - "manifest.webmanifest"
+      - "sw.js"
+      - "assets/pwa-register.js"
+      - "assets/replay-drawing-tools.js"
+      - "assets/replay-drawing-tools.css"
+      - "assets/icons/**"
+      - ".github/workflows/deploy-pages.yml"
+      - ".github/workflows/validate-pwa-publication.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Check JavaScript syntax
+        run: |
+          node --check assets/replay-drawing-tools.js
+          node --check assets/pwa-register.js
+          node --check sw.js
+
+      - name: Audit manifest icon and publication
+        run: |
+          python - <<'PY'
+          import json
+          import xml.etree.ElementTree as ET
+          from pathlib import Path
+
+          replay = Path("replay.html").read_text(encoding="utf-8")
+          manifest = json.loads(Path("manifest.webmanifest").read_text(encoding="utf-8"))
+          icon_path = Path("assets/icons/kabutane-wordmark-v3.svg")
+          icon = icon_path.read_text(encoding="utf-8")
+          deploy = Path(".github/workflows/deploy-pages.yml").read_text(encoding="utf-8")
+          worker = Path("sw.js").read_text(encoding="utf-8")
+
+          for marker in ("assets/replay-drawing-tools.css", "assets/replay-drawing-tools.js"):
+              if marker not in replay:
+                  raise SystemExit(f"Replay does not load {marker} directly")
+
+          icon_sources = [item.get("src") for item in manifest.get("icons", [])]
+          if "assets/icons/kabutane-wordmark-v3.svg" not in icon_sources:
+              raise SystemExit("Manifest does not use the v3 Kabutane icon")
+
+          ET.fromstring(icon)
+          for character in "かぶたね":
+              if character not in icon:
+                  raise SystemExit(f"App icon is missing {character}")
+
+          for marker in ("manifest.webmanifest", "sw.js"):
+              if marker not in deploy:
+                  raise SystemExit(f"Pages deployment omits {marker}")
+
+          for marker in ("manifest.webmanifest", "replay-drawing-tools.js", "kabutane-wordmark-v3.svg"):
+              if marker not in worker:
+                  raise SystemExit(f"Service worker cache omits {marker}")
+
+          print("PWA publication and chart drawing tools passed")
+          PY

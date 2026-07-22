@@ -14,6 +14,8 @@ on:
       - "howto.html"
       - "learn.html"
       - "signal-method.html"
+      - "manifest.webmanifest"
+      - "sw.js"
       - "assets/**"
       - "data/**"
       - "history/**"
@@ -46,8 +48,18 @@ jobs:
       - name: Prepare site
         run: |
           mkdir -p _site
-          cp index.html detail.html backtest.html replay.html howto.html learn.html signal-method.html .nojekyll result.csv out.csv _site/
+          cp index.html detail.html backtest.html replay.html howto.html learn.html signal-method.html manifest.webmanifest sw.js .nojekyll result.csv out.csv _site/
           cp -R assets data history _site/
+
+      - name: Verify PWA files
+        run: |
+          test -f _site/manifest.webmanifest
+          test -f _site/sw.js
+          test -f _site/assets/icons/kabutane-wordmark-v3.svg
+          test -f _site/assets/icons/kabutane-192.png
+          test -f _site/assets/replay-drawing-tools.js
+          grep -q 'kabutane-wordmark-v3.svg' _site/manifest.webmanifest
+          grep -q 'assets/replay-drawing-tools.js' _site/replay.html
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
