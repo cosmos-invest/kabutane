@@ -2,15 +2,15 @@
 
 ## 1. ZIPをCodespacesへ入れる
 
-1. このチャットから `rsi-monthly-scanner-site.zip` をスマホへ保存
-2. GitHubで `cosmos-invest/rsi-monthly-scanner` を開く
+1. このチャットから `kabutane-site.zip` をスマホへ保存
+2. GitHubで `cosmos-invest/kabutane` を開く
 3. `Code` → `Codespaces` → 現在のCodespaceを開く
 4. 左のファイル一覧へZIPをアップロード
 5. ターミナルで以下を実行
 
 ```bash
-unzip -o rsi-monthly-scanner-site.zip
-rm rsi-monthly-scanner-site.zip
+unzip -o kabutane-site.zip
+rm kabutane-site.zip
 ```
 
 ZIPには `stocks.csv` を含めていないため、現在の対象銘柄ファイルは上書きされません。
@@ -43,7 +43,7 @@ python test.py
 
 ```bash
 git add .
-git commit -m "月足RSIサイトMVPを追加"
+git commit -m "かぶたねサイトを更新"
 git push
 ```
 
@@ -79,7 +79,7 @@ GitHubリポジトリの次の場所を開きます。
 公開URL：
 
 ```text
-https://cosmos-invest.github.io/rsi-monthly-scanner/
+https://cosmos-invest.github.io/kabutane/
 ```
 
 ## 7. 全銘柄リストへ変更
