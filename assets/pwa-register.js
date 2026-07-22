@@ -17,10 +17,46 @@
     document.head.appendChild(meta);
   }
 
+  function ensureAppIcons() {
+    const href = "assets/icons/kabutane-wordmark.svg";
+    if (!document.querySelector('link[rel="icon"]')) {
+      const favicon = document.createElement("link");
+      favicon.rel = "icon";
+      favicon.type = "image/svg+xml";
+      favicon.href = href;
+      document.head.appendChild(favicon);
+    }
+    if (!document.querySelector('link[rel="apple-touch-icon"]')) {
+      const apple = document.createElement("link");
+      apple.rel = "apple-touch-icon";
+      apple.href = href;
+      document.head.appendChild(apple);
+    }
+  }
+
+  function ensureReplayDrawingTools() {
+    if (!document.body?.classList.contains("replay-page")) return;
+    if (!document.querySelector('link[href="assets/replay-drawing-tools.css"]')) {
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = "assets/replay-drawing-tools.css";
+      document.head.appendChild(link);
+    }
+    ["assets/replay-drawing-core.js", "assets/replay-drawing-tools.js"].forEach((src) => {
+      if (document.querySelector(`script[src="${src}"]`)) return;
+      const script = document.createElement("script");
+      script.src = src;
+      script.async = false;
+      document.head.appendChild(script);
+    });
+  }
+
   function keepSelectedReplayEntryInSync() {
     if (!document.body?.classList.contains("replay-page")) return;
     document.addEventListener("pointerup", (event) => {
       if (event.target?.id !== "replayChart") return;
+      const drawingMode = window.ReplayDrawingTools?.model?.tool || window.ReplayDrawingTools?.model?.mode;
+      if (drawingMode && drawingMode !== "cursor") return;
       window.setTimeout(() => {
         const selected = document.querySelector(".entry-ladder-row.selected [data-entry-level]");
         const source = document.getElementById("entryPrice");
@@ -34,6 +70,8 @@
 
   ensureManifest();
   ensureTheme();
+  ensureAppIcons();
+  ensureReplayDrawingTools();
   keepSelectedReplayEntryInSync();
 
   if ("serviceWorker" in navigator && location.protocol === "https:") {
