@@ -1,0 +1,52 @@
+name: Validate chart drawing tools
+
+on:
+  pull_request:
+    paths:
+      - "assets/replay-drawing-tools.js"
+      - "assets/replay-drawing-tools.css"
+      - "assets/pwa-register.js"
+      - "assets/icons/kabutane-app.svg"
+      - ".github/workflows/validate-drawing-tools.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check JavaScript syntax
+        run: |
+          node --check assets/replay-drawing-tools.js
+          node --check assets/pwa-register.js
+      - name: Audit drawing toolkit and icon
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import xml.etree.ElementTree as ET
+
+          js = Path("assets/replay-drawing-tools.js").read_text(encoding="utf-8")
+          css = Path("assets/replay-drawing-tools.css").read_text(encoding="utf-8")
+          register = Path("assets/pwa-register.js").read_text(encoding="utf-8")
+          icon = Path("assets/icons/kabutane-app.svg").read_text(encoding="utf-8")
+
+          for marker in ("horizontal", "trend", "fibonacci", "riskreward", "FIB_LEVELS", "localStorage"):
+              if marker not in js:
+                  raise SystemExit(f"drawing tool missing: {marker}")
+          for marker in ("legend-order", "legend-analysis", "legend-fib", "legend-rr"):
+              if marker not in css:
+                  raise SystemExit(f"drawing legend missing: {marker}")
+          if "assets/replay-drawing-tools.js" not in register or "assets/replay-drawing-tools.css" not in register:
+              raise SystemExit("drawing toolkit is not loaded by PWA bootstrap")
+          if "かぶ" not in icon or "たね" not in icon:
+              raise SystemExit("app icon does not contain the four-character brand")
+          ET.fromstring(icon)
+          if css.count("{") != css.count("}"):
+              raise SystemExit("drawing CSS braces are unbalanced")
+          print("Drawing tools and Kabutane icon passed")
+          PY
