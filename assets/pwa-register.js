@@ -17,6 +17,23 @@
     document.head.appendChild(meta);
   }
 
+  function ensureAppIcons() {
+    if (!document.querySelector('link[rel="icon"]')) {
+      const favicon = document.createElement("link");
+      favicon.rel = "icon";
+      favicon.type = "image/svg+xml";
+      favicon.href = "assets/icons/kabutane-wordmark-v2.svg";
+      document.head.appendChild(favicon);
+    }
+    if (!document.querySelector('link[rel="apple-touch-icon"]')) {
+      const apple = document.createElement("link");
+      apple.rel = "apple-touch-icon";
+      apple.sizes = "192x192";
+      apple.href = "assets/icons/kabutane-192.png?v=1";
+      document.head.appendChild(apple);
+    }
+  }
+
   function ensureReplayDrawingTools() {
     if (!document.body?.classList.contains("replay-page")) return;
     if (!document.querySelector('link[href="assets/replay-drawing-tools.css"]')) {
@@ -64,6 +81,7 @@
 
   ensureManifest();
   ensureTheme();
+  ensureAppIcons();
   ensureReplayDrawingTools();
   separateAnalysisFromOrderPlacement();
   keepSelectedReplayEntryInSync();
