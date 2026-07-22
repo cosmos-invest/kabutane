@@ -55,6 +55,7 @@ jobs:
           node --check assets/backtest-benchmark-status.js
           node --check assets/replay-core-v2.js
           node --check assets/replay-risk-ladder.js
+          node --check assets/replay-drawing-core.js
           node --check assets/replay-ui-base-v2.js
           node --check assets/replay-charts-v2.js
           node --check assets/replay-render-v2.js
@@ -62,6 +63,7 @@ jobs:
           node --check assets/replay-orders-auto-v2.js
           node --check assets/replay-session-v2.js
           node --check assets/replay-workspace.js
+          node --check assets/replay-drawing-tools.js
           node --check assets/replay-picker.js
           node --check assets/replay-month-end.js
           node --check assets/daily-overlay.js
@@ -78,6 +80,7 @@ jobs:
           node tests/test_backtest_engine.js
           node tests/test_replay_v2.js
           node tests/test_replay_risk_ladder.js
+          node tests/test_replay_drawing_core.js
           node tests/test_replay_month_end.js
           node tests/test_detail_enhancements.js
           node tests/test_daily_overlay.js
@@ -101,7 +104,8 @@ jobs:
 
           for name in (
               "assets/backtest.css", "assets/replay.css", "assets/replay-v2.css",
-              "assets/replay-workspace.css", "assets/detail-enhancements.css", "assets/simple-analysis-cosmos.css",
+              "assets/replay-workspace.css", "assets/replay-drawing-tools.css",
+              "assets/detail-enhancements.css", "assets/simple-analysis-cosmos.css",
               "assets/kabutane.css", "assets/kabutane-characters.css", "assets/kabutane-links.css",
           ):
               css = Path(name).read_text(encoding="utf-8")
@@ -112,6 +116,9 @@ jobs:
           for key in ("name", "short_name", "start_url", "display", "icons"):
               if not manifest.get(key):
                   raise SystemExit(f"PWA manifest missing: {key}")
+          icon = manifest["icons"][0].get("src", "")
+          if "kabutane-wordmark.svg" not in icon or not Path(icon).exists():
+              raise SystemExit("PWA wordmark icon is not wired")
           print("HTML/CSS/PWA validation passed")
           PY
 
@@ -124,6 +131,7 @@ jobs:
           detail = Path("detail.html").read_text(encoding="utf-8")
           replay = Path("replay.html").read_text(encoding="utf-8")
           replay_workspace = Path("assets/replay-workspace.js").read_text(encoding="utf-8")
+          drawing_tools = Path("assets/replay-drawing-tools.js").read_text(encoding="utf-8")
           characters = Path("assets/characters.js").read_text(encoding="utf-8")
           workflow = Path(".github/workflows/update-data.yml").read_text(encoding="utf-8")
 
@@ -135,16 +143,21 @@ jobs:
               raise SystemExit("Daily overlay is not wired to detail and replay")
           if "assets/replay-picker.js" not in replay or "replaySymbolSelect" not in replay:
               raise SystemExit("Replay candidate picker is not wired")
-          for marker in ("assets/replay-risk-ladder.js", "assets/replay-workspace.js"):
+          for marker in ("assets/replay-risk-ladder.js", "assets/replay-workspace.js", "assets/replay-drawing-core.js", "assets/replay-drawing-tools.js", "assets/replay-drawing-tools.css"):
               if marker not in replay:
-                  raise SystemExit(f"Replay workspace is missing: {marker}")
+                  raise SystemExit(f"Replay feature is missing: {marker}")
           for marker in ("entryStageCount", "detailChartLink", "workspace-tabs", "manualLimitPrice"):
               if marker not in replay_workspace:
                   raise SystemExit(f"Replay workspace UI is missing: {marker}")
+          for marker in ("horizontal", "trend", "fibonacci", "riskReward", "drawingUndo", "drawingClear"):
+              if marker not in drawing_tools:
+                  raise SystemExit(f"Replay drawing UI is missing: {marker}")
           if "assets/replay-month-end.js" not in characters:
               raise SystemExit("Replay month-end skip is not wired")
           if "assets/pwa-register.js" not in characters or "manifest.webmanifest" not in Path("assets/pwa-register.js").read_text(encoding="utf-8"):
               raise SystemExit("PWA bootstrap is not wired")
+          if "kabutane-wordmark.svg" not in Path("assets/pwa-register.js").read_text(encoding="utf-8"):
+              raise SystemExit("PWA icon links are not wired")
           if "SKIP_FUNDAMENTALS: \"1\"" not in workflow:
               raise SystemExit("Monthly workflow may issue bulk fundamental requests")
 
