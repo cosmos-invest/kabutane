@@ -22,7 +22,7 @@
       const favicon = document.createElement("link");
       favicon.rel = "icon";
       favicon.type = "image/svg+xml";
-      favicon.href = "assets/icons/kabutane-wordmark-v2.svg";
+      favicon.href = "assets/icons/kabutane-wordmark-v3.svg";
       document.head.appendChild(favicon);
     }
     if (!document.querySelector('link[rel="apple-touch-icon"]')) {
@@ -45,7 +45,6 @@
     if (!document.querySelector('script[src="assets/replay-drawing-tools.js"]')) {
       const script = document.createElement("script");
       script.src = "assets/replay-drawing-tools.js";
-      script.defer = true;
       document.head.appendChild(script);
     }
   }
