@@ -1,4 +1,4 @@
-const CACHE_VERSION = "kabutane-pwa-v3";
+const CACHE_VERSION = "kabutane-pwa-v4";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const CORE_ASSETS = [
   "./",
@@ -13,8 +13,13 @@ const CORE_ASSETS = [
   "./assets/replay.css",
   "./assets/replay-v2.css",
   "./assets/replay-workspace.css",
+  "./assets/replay-unified.css",
+  "./assets/replay-share-report.css",
   "./assets/replay-drawing-tools.css",
   "./assets/replay-drawing-tools.js",
+  "./assets/replay-unified-workspace.js",
+  "./assets/replay-share-report-core.js",
+  "./assets/replay-share-report.js",
   "./assets/pwa-register.js",
   "./assets/kabutane-links.css",
   "./assets/icons/kabutane-wordmark-v3.svg",
