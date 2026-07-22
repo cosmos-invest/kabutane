@@ -174,4 +174,5 @@
   });
 
   installUnifiedWorkspace();
+  byId("finishButton")?.addEventListener("click", () => requestAnimationFrame(() => openDrawer("result")));
 })();
