@@ -55,9 +55,11 @@ jobs:
         run: |
           test -f _site/manifest.webmanifest
           test -f _site/sw.js
-          test -f _site/assets/icons/kabutane-192-v3.png
-          test -f _site/assets/icons/kabutane-512-v3.png
+          test -f _site/assets/icons/kabutane-wordmark-v3.svg
+          test -f _site/assets/icons/kabutane-192.png
           test -f _site/assets/replay-drawing-tools.js
+          grep -q 'kabutane-wordmark-v3.svg' _site/manifest.webmanifest
+          grep -q 'assets/replay-drawing-tools.js' _site/replay.html
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
