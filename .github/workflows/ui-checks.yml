@@ -3,7 +3,7 @@ name: Validate site UI
 on:
   pull_request:
     paths:
-      - "*.html"
+      - "**/*.html"
       - "manifest.webmanifest"
       - "sw.js"
       - "assets/**"
@@ -109,6 +109,7 @@ jobs:
           for name in (
               "index.html", "backtest.html", "replay.html", "detail.html", "howto.html", "learn.html",
               "signal-method.html", "ranking.html", "monthly-report.html", "history.html",
+              "ranking/index.html", "monthly-report/index.html",
           ):
               Parser().feed(Path(name).read_text(encoding="utf-8"))
 
@@ -141,6 +142,7 @@ jobs:
           pwa = Path("assets/pwa-register.js").read_text(encoding="utf-8")
           upgrades = Path("assets/site-upgrades.js").read_text(encoding="utf-8")
           market_pages = Path("assets/market-pages.js").read_text(encoding="utf-8")
+          service_worker = Path("sw.js").read_text(encoding="utf-8")
           workflow = Path(".github/workflows/update-data.yml").read_text(encoding="utf-8")
           daily_workflow = Path(".github/workflows/update-daily.yml").read_text(encoding="utf-8")
 
@@ -156,15 +158,21 @@ jobs:
           for marker in ("site-upgrades.js", "practice-history-core.js", "practice-history.js"):
               if marker not in pwa:
                   raise SystemExit(f"PWA bootstrap is missing: {marker}")
-          for marker in ("note.com/qa/cosmos_invest", "この銘柄が表示された理由", "ranking.html", "monthly-report.html"):
+          for marker in ("note.com/qa/cosmos_invest", "この銘柄が表示された理由", 'href="ranking/"', 'href="monthly-report/"'):
               if marker not in upgrades:
                   raise SystemExit(f"Beginner upgrade is missing: {marker}")
           for marker in ("rank_change", "今月NEW", "節目接近"):
               if marker not in market_pages:
                   raise SystemExit(f"Market page feature is missing: {marker}")
-          for name in ("ranking.html", "monthly-report.html", "history.html"):
+          for name in ("ranking.html", "monthly-report.html", "history.html", "ranking/index.html", "monthly-report/index.html"):
               if not Path(name).exists():
                   raise SystemExit(f"Public page missing: {name}")
+          for name in ("ranking/index.html", "monthly-report/index.html"):
+              if '<base href="../">' not in Path(name).read_text(encoding="utf-8"):
+                  raise SystemExit(f"Nested public route has no root base: {name}")
+          for marker in ('"./ranking/"', '"./ranking/index.html"', '"./monthly-report/"', '"./monthly-report/index.html"', "routeAlternatives"):
+              if marker not in service_worker:
+                  raise SystemExit(f"Service worker route fallback missing: {marker}")
           if "build_market_reports.py --monthly" not in workflow:
               raise SystemExit("Monthly report generator is not wired")
           if "build_market_reports.py" not in daily_workflow:
