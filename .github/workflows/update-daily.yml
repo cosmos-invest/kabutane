@@ -9,7 +9,9 @@ on:
     branches: ["main"]
     paths:
       - "update_daily.py"
+      - "build_market_reports.py"
       - "tests/test_update_daily.py"
+      - "tests/test_market_reports.py"
       - ".github/workflows/update-daily.yml"
 
 permissions:
@@ -40,23 +42,26 @@ jobs:
 
       - name: Validate updater
         run: |
-          python -m py_compile update_daily.py tests/test_update_daily.py
+          python -m py_compile update_daily.py build_market_reports.py tests/test_update_daily.py tests/test_market_reports.py
           python -m unittest discover -s tests -p 'test_update_daily.py' -v
+          python -m unittest discover -s tests -p 'test_market_reports.py' -v
 
       - name: Download incremental daily prices
         env:
           DAILY_YF_BATCH_SIZE: "80"
           DAILY_DOWNLOAD_PERIOD: "1mo"
-        run: python update_daily.py
+        run: |
+          python update_daily.py
+          python build_market_reports.py
 
-      - name: Commit daily overlays
+      - name: Commit daily overlays and observations
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/latest.json data/daily data/daily-update-status.json result.csv
+          git add data/latest.json data/daily data/daily-update-status.json data/ranking.json data/daily-change.json data/monthly-report.json result.csv
           if git diff --cached --quiet; then
             echo "No daily price changes"
           else
-            git commit -m "chore: update daily candidate prices"
+            git commit -m "chore: update daily prices and observation ranking"
             git push origin main
           fi

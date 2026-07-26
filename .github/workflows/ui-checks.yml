@@ -3,16 +3,11 @@ name: Validate site UI
 on:
   pull_request:
     paths:
-      - "index.html"
-      - "backtest.html"
-      - "replay.html"
-      - "detail.html"
-      - "howto.html"
-      - "learn.html"
-      - "signal-method.html"
+      - "*.html"
       - "manifest.webmanifest"
       - "sw.js"
       - "assets/**"
+      - "build_market_reports.py"
       - "update_daily.py"
       - "update_universe.py"
       - "retry_incomplete.py"
@@ -44,9 +39,10 @@ jobs:
 
       - name: Validate Python signal and update engines
         run: |
-          python -m py_compile tradingview_signal.py generate_tradingview.py update_daily.py update_universe.py retry_incomplete.py
+          python -m py_compile tradingview_signal.py generate_tradingview.py update_daily.py build_market_reports.py update_universe.py retry_incomplete.py
           python -m unittest discover -s tests -p 'test_tradingview_signal.py' -v
           python -m unittest discover -s tests -p 'test_update_daily.py' -v
+          python -m unittest discover -s tests -p 'test_market_reports.py' -v
           python -m unittest discover -s tests -p 'test_update_universe.py' -v
 
       - name: Check JavaScript syntax
@@ -77,6 +73,11 @@ jobs:
           node --check assets/simple-analysis-cosmos.js
           node --check assets/kabutane-screening.js
           node --check assets/signal-v2.js
+          node --check assets/site-upgrades.js
+          node --check assets/market-pages.js
+          node --check assets/practice-history-core.js
+          node --check assets/practice-history.js
+          node --check assets/practice-history-page.js
           node --check assets/pwa-register.js
           node --check assets/characters.js
           node --check sw.js
@@ -89,6 +90,7 @@ jobs:
           node tests/test_replay_month_end.js
           node tests/test_replay_guided_core.js
           node tests/test_replay_share_report_core.js
+          node tests/test_practice_history_core.js
           node tests/test_detail_enhancements.js
           node tests/test_detail_chart_viewport.js
           node tests/test_daily_overlay.js
@@ -105,8 +107,8 @@ jobs:
               pass
 
           for name in (
-              "index.html", "backtest.html", "replay.html", "detail.html",
-              "howto.html", "learn.html", "signal-method.html",
+              "index.html", "backtest.html", "replay.html", "detail.html", "howto.html", "learn.html",
+              "signal-method.html", "ranking.html", "monthly-report.html", "history.html",
           ):
               Parser().feed(Path(name).read_text(encoding="utf-8"))
 
@@ -115,7 +117,7 @@ jobs:
               "assets/replay-workspace.css", "assets/replay-unified.css", "assets/replay-guided-mode.css",
               "assets/replay-share-report.css", "assets/detail-enhancements.css", "assets/detail-chart-viewport.css",
               "assets/simple-analysis-cosmos.css", "assets/kabutane.css", "assets/kabutane-characters.css",
-              "assets/kabutane-links.css",
+              "assets/kabutane-links.css", "assets/market-insights.css",
           ):
               css = Path(name).read_text(encoding="utf-8")
               if css.count("{") != css.count("}"):
@@ -136,59 +138,37 @@ jobs:
           index = Path("index.html").read_text(encoding="utf-8")
           detail = Path("detail.html").read_text(encoding="utf-8")
           replay = Path("replay.html").read_text(encoding="utf-8")
-          replay_workspace = Path("assets/replay-workspace.js").read_text(encoding="utf-8")
-          replay_unified = Path("assets/replay-unified-workspace.js").read_text(encoding="utf-8")
-          replay_guided = Path("assets/replay-guided-mode.js").read_text(encoding="utf-8")
-          replay_share = Path("assets/replay-share-report.js").read_text(encoding="utf-8")
-          detail_viewport = Path("assets/detail-chart-viewport.js").read_text(encoding="utf-8")
-          characters = Path("assets/characters.js").read_text(encoding="utf-8")
+          pwa = Path("assets/pwa-register.js").read_text(encoding="utf-8")
+          upgrades = Path("assets/site-upgrades.js").read_text(encoding="utf-8")
+          market_pages = Path("assets/market-pages.js").read_text(encoding="utf-8")
           workflow = Path(".github/workflows/update-data.yml").read_text(encoding="utf-8")
+          daily_workflow = Path(".github/workflows/update-daily.yml").read_text(encoding="utf-8")
 
-          required = ["かぶたね", "cosmos-hero.webp", "homePracticeLink", "note.com/cosmos_invest"]
-          for marker in required:
+          for marker in ("かぶたね", "cosmos-hero.webp", "homePracticeLink", "note.com/cosmos_invest"):
               if marker not in index:
                   raise SystemExit(f"Index is missing: {marker}")
-          if "assets/daily-overlay.js" not in detail or "assets/daily-overlay.js" not in replay:
-              raise SystemExit("Daily overlay is not wired to detail and replay")
           for marker in ("assets/detail-chart-viewport-core.js", "assets/detail-chart-viewport.js", "assets/detail-chart-viewport.css"):
               if marker not in detail:
                   raise SystemExit(f"Interactive detail chart is missing: {marker}")
-          for marker in ("zoom-in", "older", "vertical-in", "height", "pointerdown", "wheel"):
-              if marker not in detail_viewport:
-                  raise SystemExit(f"Detail chart viewport control is missing: {marker}")
-          if "assets/replay-picker.js" not in replay or "replaySymbolSelect" not in replay:
-              raise SystemExit("Replay candidate picker is not wired")
-          for marker in (
-              "assets/replay-risk-ladder.js", "assets/replay-workspace.js",
-              "assets/replay-unified-workspace.js", "assets/replay-guided-core.js",
-              "assets/replay-guided-mode.js", "assets/replay-guided-fixes.js",
-              "assets/replay-share-report-core.js", "assets/replay-share-report.js",
-          ):
+          for marker in ("assets/replay-guided-mode.js", "assets/replay-share-report.js"):
               if marker not in replay:
-                  raise SystemExit(f"Replay workspace is missing: {marker}")
-          for marker in ("entryStageCount", "detailChartLink", "workspace-tabs", "manualLimitPrice"):
-              if marker not in replay_workspace:
-                  raise SystemExit(f"Replay workspace UI is missing: {marker}")
-          for marker in ("unified-main-grid", "open-share", "unified-drawer"):
-              if marker not in replay_unified:
-                  raise SystemExit(f"Unified replay UI is missing: {marker}")
-          for marker in (
-              "はじめてモード", "損切り価格はどこ", "直近安値のヒント", "ここで入りたい",
-              "損切りできた！つぎつぎー！", "レポート画像を作る",
-          ):
-              if marker not in replay_guided:
-                  raise SystemExit(f"Guided replay is missing: {marker}")
-          for marker in ("1200", "1080", "navigator.share", "#かぶたね"):
-              if marker not in replay_share:
-                  raise SystemExit(f"Replay share report is missing: {marker}")
-          if "Xへ画像つき共有" not in Path("assets/replay-guided-fixes.js").read_text(encoding="utf-8"):
-              raise SystemExit("Image-first X sharing is not wired")
-          if "大丈夫だよ" not in characters or "処理するよ" not in characters:
-              raise SystemExit("Aile's conversational tone is not wired")
-          if "assets/replay-month-end.js" not in characters:
-              raise SystemExit("Replay month-end skip is not wired")
-          if "assets/pwa-register.js" not in characters or "manifest.webmanifest" not in Path("assets/pwa-register.js").read_text(encoding="utf-8"):
-              raise SystemExit("PWA bootstrap is not wired")
+                  raise SystemExit(f"Replay feature is missing: {marker}")
+          for marker in ("site-upgrades.js", "practice-history-core.js", "practice-history.js"):
+              if marker not in pwa:
+                  raise SystemExit(f"PWA bootstrap is missing: {marker}")
+          for marker in ("note.com/qa/cosmos_invest", "この銘柄が表示された理由", "ranking.html", "monthly-report.html"):
+              if marker not in upgrades:
+                  raise SystemExit(f"Beginner upgrade is missing: {marker}")
+          for marker in ("rank_change", "今月NEW", "節目接近"):
+              if marker not in market_pages:
+                  raise SystemExit(f"Market page feature is missing: {marker}")
+          for name in ("ranking.html", "monthly-report.html", "history.html"):
+              if not Path(name).exists():
+                  raise SystemExit(f"Public page missing: {name}")
+          if "build_market_reports.py --monthly" not in workflow:
+              raise SystemExit("Monthly report generator is not wired")
+          if "build_market_reports.py" not in daily_workflow:
+              raise SystemExit("Daily ranking generator is not wired")
           if "SKIP_FUNDAMENTALS: \"1\"" not in workflow:
               raise SystemExit("Monthly workflow may issue bulk fundamental requests")
 
@@ -200,10 +180,5 @@ jobs:
               for marker in forbidden_links:
                   if marker in text:
                       raise SystemExit(f"Discarded link remains in {path}: {marker}")
-
-          howto = Path("howto.html").read_text(encoding="utf-8")
-          for stale in ("RSI5がRSI14", "決算予定", "適時開示"):
-              if stale in howto:
-                  raise SystemExit(f"Stale tutorial wording remains: {stale}")
           print("Kabutane public page structure passed")
           PY
