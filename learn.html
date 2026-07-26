@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="かぶたねで使う月足RSI、上昇トレンド、VCP、モメンタム、Yahoo Financeのデータ更新について初心者向けに説明します。">
+  <meta name="description" content="かぶたねで使う月足RSI、確定シグナルと進行中月の暫定値、上昇トレンド、VCP、データ更新について初心者向けに説明します。">
   <title>学び・FAQ | かぶたね</title>
   <link rel="stylesheet" href="assets/style.css">
   <link rel="stylesheet" href="assets/pastel.css">
@@ -15,7 +15,8 @@
     <section class="panel note-panel"><h2>まず覚えるのは3つだけ</h2><p><strong>月足の勢い：</strong>日々の細かな上下ではなく、月単位で上昇の力が強まっているかを見ます。</p><p><strong>上昇トレンド：</strong>株価が長い期間で上向きの流れに乗っているかを確認します。</p><p><strong>出口：</strong>買う理由だけでなく、想定が崩れた時にどこで撤退するかを先に決めます。</p></section>
 
     <section class="panel note-panel"><h2>かぶたねで使う考え方</h2>
-      <details open><summary><strong>月足RSIとは？</strong></summary><p>月末ごとの値動きから、上昇の力と下落の力のバランスを0〜100で表します。かぶたねではTradingView方式の月足RSI14と、その5か月単純移動平均を使います。</p><p><a class="button secondary" href="signal-method.html">計算方法を詳しく見る</a></p></details>
+      <details open><summary><strong>月足RSIとは？</strong></summary><p>月末ごとの値動きから、上昇の力と下落の力のバランスを0〜100で表します。かぶたねではTradingViewと同じWilder方式の月足RSI14と、そのRSI14の5か月単純移動平均を使います。</p><p><a class="button secondary" href="signal-method.html">計算方法を詳しく見る</a></p></details>
+      <details open><summary><strong>確定シグナルと暫定シグナルの違いは？</strong></summary><p><strong>確定NEW・確定継続・確定OUT</strong>は、月末まで完成した月足だけで判定します。ランキング、月初レポート、GC後騰落率には、この確定値だけを使います。</p><p><strong>暫定GC・暫定DC</strong>は、進行中月の最新日足までで計算した観察情報です。月末までに株価が戻ると消える場合があり、正式なNEW・OUTではありません。</p></details>
       <details><summary><strong>上昇トレンドの簡易判定</strong></summary><p>株価と複数の移動平均線の位置・向きから、長期的な流れが上向きかを確認します。SEPAの考え方を参考にしていますが、すべての条件を完全再現するものではありません。</p></details>
       <details><summary><strong>値動きの収束（VCP）</strong></summary><p>値幅が少しずつ小さくなる状態を見ます。力をためている可能性がありますが、上昇を保証する形ではありません。</p></details>
       <details><summary><strong>勢いの点火（モメンタム・MVP）</strong></summary><p>株価、出来高、相対的な強さが同時に動いているかを確認します。すでに上昇した後に点灯する場合もあるため、損切りまでの距離と一緒に見ます。</p></details>
@@ -23,19 +24,20 @@
 
     <section class="panel note-panel"><h2>データと更新</h2>
       <details open><summary><strong>何を取得していますか？</strong></summary><p>Yahoo Finance経由で、株価の始値・高値・安値・終値、出来高、配当、株式分割・併合を取得します。有料API、TDnet、決算予定の自動取得には接続していません。</p></details>
-      <details><summary><strong>いつ更新されますか？</strong></summary><p>月足の銘柄判定は月末確定後に更新します。現在の対象銘柄の日足は平日21時に差分更新します。市場の休場日やGitHub Actionsの混雑時は遅れる場合があります。</p></details>
+      <details><summary><strong>いつ更新されますか？</strong></summary><p>確定NEW・CONTINUE・OUTは月末確定後の月次更新で変わります。現在対象銘柄の日足と進行中月の暫定シグナルは平日21時の日次更新で再計算します。市場の休場日やGitHub Actionsの混雑時は遅れる場合があります。</p></details>
       <details><summary><strong>対象市場は？</strong></summary><p>JPXの上場銘柄一覧を使い、プライム・スタンダード・グロースの国内普通株式を対象にします。新規上場などで月足期間が不足する銘柄は、計算可能になるまで除外されます。</p></details>
       <details><summary><strong>財務情報が「—」になるのはなぜ？</strong></summary><p>大量アクセスを避けるため、財務プロフィールは過去に取得できたYahoo Financeのキャッシュだけを表示します。未取得は0ではなく「情報なし」です。</p></details>
     </section>
 
     <section class="panel note-panel"><h2>FAQ</h2>
+      <details><summary><strong>TradingViewでDCなのに、かぶたねが継続なのはなぜ？</strong></summary><p>TradingViewが進行中月を含めている場合、月途中で先にDCして見えることがあります。かぶたねの確定ステータスは前月末までの完成済み月足なので、その月末までは継続のままです。詳細ページの「進行中月」カードで暫定DCかどうかを確認できます。</p></details>
       <details><summary><strong>🌸コスモス注目は買い推奨ですか？</strong></summary><p>いいえ。勢いと長期トレンドの両方を詳しく確認したい「調査候補」です。会社の公式情報、チャート、許容できる損失を確認して判断してください。</p></details>
-      <details><summary><strong>TOPIXはどのデータですか？</strong></summary><p>指数データが安定取得できない場合は、分割・分配金調整済みのTOPIX連動ETFを代替として使い、画面上でも代替であることを明示します。</p></details>
+      <details><summary><strong>TOPIXはどのデータですか？</strong></summary><p>指数データが安定取得できない場合は、分割・分配金調整済みのTOPIX連動ETFを代替ベンチマークとして使います。その場合はTOPIX指数そのものではないことを画面で明示します。</p></details>
       <details><summary><strong>決算や重要情報はどこで確認しますか？</strong></summary><p>かぶたねでは自動取得しません。実際に投資する前に、対象企業の公式IRページや証券会社の情報で確認してください。</p></details>
       <details><summary><strong>データが最新日までない場合は？</strong></summary><p>Yahoo Finance側の遅延、休場日、通信エラーが考えられます。画面の更新日時と最新株価日を確認してください。</p></details>
     </section>
 
-    <section class="panel note-panel disclaimer"><h2>大切な注意</h2><p>本サイトは情報提供・学習・練習を目的とし、特定銘柄の売買を推奨しません。データの欠損、遅延、訂正、取得元との計算差異があり得ます。投資判断はご自身の責任で行ってください。</p></section>
+    <section class="panel note-panel disclaimer"><h2>大切な注意</h2><p>本サイトは情報提供・学習・練習を目的とし、特定銘柄の売買を推奨しません。暫定シグナルを含め、データの欠損、遅延、訂正、取得元との計算差異があり得ます。投資判断はご自身の責任で行ってください。</p></section>
   </main>
   <footer><p>かぶたね 🌱 / コスモスと探す、未来の1株</p></footer>
   <script src="assets/characters.js" defer></script>
