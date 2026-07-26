@@ -6,6 +6,7 @@
   <title>銘柄詳細 | かぶたね</title>
   <link rel="stylesheet" href="assets/style.css">
   <link rel="stylesheet" href="assets/detail-enhancements.css">
+  <link rel="stylesheet" href="assets/detail-signal-status.css">
   <link rel="stylesheet" href="assets/detail-chart-viewport.css">
 </head>
 <body>
@@ -29,7 +30,7 @@
     <section class="stats-grid detail-stats" id="detailStats"></section>
 
     <section class="quickstart-banner panel" aria-label="売買練習">
-      <div><span class="quickstart-label">日足リプレイ</span><strong>未来を隠して、8分割と自動利確を練習</strong><p>平均足・月足RSI・テクニカルを見ながら、8分割購入、TP1〜TP4、トレーリングストップを試せます。</p></div>
+      <div><span class="quickstart-label">日足リプレイ</span><strong>未来を隠して、資金管理と出口判断を練習</strong><p>はじめてモードでは、エントリーより先に損切り・利確・株数を決めます。自由練習モードでは分割注文や詳細な指標も試せます。</p></div>
       <a id="replayCardLink" class="button quickstart-button" href="replay.html">この銘柄で練習する</a>
     </section>
 
@@ -46,7 +47,7 @@
     </section>
 
     <section class="panel chart-panel">
-      <div class="section-heading"><div><h2>月足RSIを日足軸で表示</h2><p>日足チャートと同じ期間へ連動します。月末に確定した値を、翌月最初の日足から表示します。緑線はGC、赤線はDCです。</p></div></div>
+      <div class="section-heading"><div><h2>月足RSIを日足軸で表示</h2><p>日足チャートと同じ期間へ連動します。実線は月末確定値、点線は進行中月の暫定値です。縦の緑線は確定GC、縦の赤線は確定DCを翌月最初の取引日に表示します。</p></div></div>
       <div class="chart-box rsi-chart-box"><canvas id="rsiChart"></canvas></div>
       <p class="rsi-explanation" id="rsiExplanation"></p>
     </section>
@@ -58,7 +59,7 @@
     </section>
 
     <section class="panel">
-      <div class="section-heading"><div><h2>過去のゴールデンクロス実績</h2><p>GC月終値から、OUT月または現在値までの実績です。</p></div></div>
+      <div class="section-heading"><div><h2>過去のゴールデンクロス実績</h2><p>確定したGC月の終値から、確定したOUT月または最新日足の現在値までを計算した参考実績です。</p></div></div>
       <div class="table-wrap">
         <table id="episodeTable">
           <thead><tr><th>GC月</th><th class="num">GC価格</th><th>終了月</th><th class="num">終了/現在価格</th><th class="num">騰落率</th><th class="num">最大上昇</th><th class="num">最大下落</th><th class="num">期間</th><th>状態</th></tr></thead>
@@ -68,12 +69,12 @@
     </section>
 
     <section class="panel">
-      <div class="section-heading"><div><h2>財務・バリュー情報</h2><p>Yahoo Financeから過去に取得できたキャッシュ情報を表示します。取得できない項目は「—」です。</p></div></div>
+      <div class="section-heading"><div><h2>財務・バリュー情報</h2><p>Yahoo Financeから過去に取得できた財務プロフィールのキャッシュを表示します。取得できない項目は「—」で、0を意味しません。</p></div></div>
       <dl class="fundamentals-grid" id="fundamentalsGrid"></dl>
     </section>
   </main>
 
-  <footer><p>月足RSIは月次データ、株価・出来高・移動平均線は日足データです。</p></footer>
+  <footer><p>確定シグナルは月末確定値、進行中月の暫定シグナルと株価・出来高・移動平均線は最新日足までのデータです。</p></footer>
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
@@ -87,9 +88,12 @@
     });
   </script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <script src="assets/provisional-monthly-rsi-core.js" defer></script>
   <script src="assets/detail-chart-viewport-core.js" defer></script>
   <script src="assets/detail.js" defer></script>
   <script src="assets/daily-overlay.js" defer></script>
+  <script src="assets/detail-signal-status.js" defer></script>
+  <script src="assets/detail-signal-chart-fix.js" defer></script>
   <script src="assets/detail-chart-viewport.js" defer></script>
   <script src="assets/detail-enhancements.js" defer></script>
   <script src="assets/characters.js" defer></script>
