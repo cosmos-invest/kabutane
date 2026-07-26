@@ -14,6 +14,9 @@
   const pointers = new Map();
   let gesture = null;
 
+  function priceInstance() { return typeof Chart !== "undefined" ? Chart.getChart("priceChart") : null; }
+  function rsiInstance() { return typeof Chart !== "undefined" ? Chart.getChart("rsiChart") : null; }
+
   function preferredPoints() {
     if (window.innerWidth <= 520) return 55;
     if (window.innerWidth <= 900) return 80;
@@ -48,13 +51,14 @@
   }
 
   function applyVerticalViewport() {
-    if (!window.priceChart) return;
+    const chart = priceInstance();
+    if (!chart) return;
     const bounds = Core.verticalBounds(priceValues(displayedRows()), yScale, yPan, 0.055);
     if (Number.isFinite(bounds.min) && Number.isFinite(bounds.max)) {
-      window.priceChart.options.scales.y.min = bounds.min;
-      window.priceChart.options.scales.y.max = bounds.max;
+      chart.options.scales.y.min = bounds.min;
+      chart.options.scales.y.max = bounds.max;
     }
-    window.priceChart.update("none");
+    chart.update("none");
   }
 
   function formatDate(value) {
@@ -143,8 +147,8 @@
     document.body.dataset.detailChartHeight = heightMode;
     updateToolbar();
     requestAnimationFrame(() => {
-      window.priceChart?.resize?.();
-      window.rsiChart?.resize?.();
+      priceInstance()?.resize?.();
+      rsiInstance()?.resize?.();
     });
   }
 
@@ -286,8 +290,8 @@
   bindCanvas(document.getElementById("priceChart"));
   bindCanvas(document.getElementById("rsiChart"));
   window.addEventListener("resize", () => {
-    window.priceChart?.resize?.();
-    window.rsiChart?.resize?.();
+    priceInstance()?.resize?.();
+    rsiInstance()?.resize?.();
   });
 
   window.DetailChartViewport = {
