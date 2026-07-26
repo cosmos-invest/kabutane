@@ -1,8 +1,9 @@
-const CACHE_VERSION = "kabutane-pwa-v8";
+const CACHE_VERSION = "kabutane-pwa-v9";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const CORE_ASSETS = [
   "./",
   "./index.html",
+  "./detail.html",
   "./replay.html",
   "./backtest.html",
   "./howto.html",
@@ -14,6 +15,10 @@ const CORE_ASSETS = [
   "./assets/howto-visual.css",
   "./assets/tutorials/howto-replay-entry.svg",
   "./assets/tutorials/howto-replay-stop.svg",
+  "./assets/detail-enhancements.css",
+  "./assets/detail-chart-viewport.css",
+  "./assets/detail-chart-viewport-core.js",
+  "./assets/detail-chart-viewport.js",
   "./assets/replay.css",
   "./assets/replay-v2.css",
   "./assets/replay-workspace.css",
