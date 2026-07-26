@@ -34,6 +34,23 @@
     }
   }
 
+  function loadScript(source) {
+    if (document.querySelector(`script[src="${source}"]`)) return;
+    const script = document.createElement("script");
+    script.src = source;
+    document.head.appendChild(script);
+  }
+
+  function ensureSiteUpgrades() {
+    loadScript("assets/site-upgrades.js");
+  }
+
+  function ensureReplayHistory() {
+    if (!document.body?.classList.contains("replay-page")) return;
+    loadScript("assets/practice-history-core.js");
+    loadScript("assets/practice-history.js");
+  }
+
   function ensureReplayDrawingTools() {
     if (!document.body?.classList.contains("replay-page")) return;
     if (!document.querySelector('link[href="assets/replay-drawing-tools.css"]')) {
@@ -42,11 +59,7 @@
       link.href = "assets/replay-drawing-tools.css";
       document.head.appendChild(link);
     }
-    if (!document.querySelector('script[src="assets/replay-drawing-tools.js"]')) {
-      const script = document.createElement("script");
-      script.src = "assets/replay-drawing-tools.js";
-      document.head.appendChild(script);
-    }
+    loadScript("assets/replay-drawing-tools.js");
   }
 
   function separateAnalysisFromOrderPlacement() {
@@ -55,8 +68,6 @@
       if (event.target?.id !== "replayChart") return;
       if (window.ReplayDrawingTools?.model?.mode !== "cursor") return;
       if (typeof state === "undefined" || state.workspaceTab !== "chart" || !state.chartView) return;
-      // Keep the viewport pointer lifecycle intact, but mark this tap as an
-      // analysis interaction so the existing entry/stop placement handler skips it.
       state.chartView.moved = true;
     }, true);
   }
@@ -81,6 +92,8 @@
   ensureManifest();
   ensureTheme();
   ensureAppIcons();
+  ensureSiteUpgrades();
+  ensureReplayHistory();
   ensureReplayDrawingTools();
   separateAnalysisFromOrderPlacement();
   keepSelectedReplayEntryInSync();
