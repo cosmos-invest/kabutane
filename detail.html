@@ -6,6 +6,7 @@
   <title>銘柄詳細 | かぶたね</title>
   <link rel="stylesheet" href="assets/style.css">
   <link rel="stylesheet" href="assets/detail-enhancements.css">
+  <link rel="stylesheet" href="assets/detail-chart-viewport.css">
 </head>
 <body>
   <header class="site-header detail-header">
@@ -34,7 +35,7 @@
 
     <section class="panel chart-panel">
       <div class="section-heading">
-        <div><h2>日足チャート</h2><p>ローソク足または平均足、出来高、SMA25・75・200を表示します。緑線はGC、赤線はDCです。</p></div>
+        <div><h2>日足チャート</h2><p>平日の日次更新を合成して、最新のローソク足・出来高・SMA25・75・200を表示します。横ドラッグ、ピンチ、表示期間・高さのボタンで見たい範囲へ動かせます。</p></div>
         <div class="chart-mode-switch" role="group" aria-label="チャート表示">
           <button id="candleMode" class="button chart-mode active" type="button">ローソク足</button>
           <button id="heikinMode" class="button secondary chart-mode" type="button">平均足</button>
@@ -45,7 +46,7 @@
     </section>
 
     <section class="panel chart-panel">
-      <div class="section-heading"><div><h2>月足RSIを日足軸で表示</h2><p>月末に確定した値を、翌月最初の日足から表示します。緑線はGC、赤線はDCです。</p></div></div>
+      <div class="section-heading"><div><h2>月足RSIを日足軸で表示</h2><p>日足チャートと同じ期間へ連動します。月末に確定した値を、翌月最初の日足から表示します。緑線はGC、赤線はDCです。</p></div></div>
       <div class="chart-box rsi-chart-box"><canvas id="rsiChart"></canvas></div>
       <p class="rsi-explanation" id="rsiExplanation"></p>
     </section>
@@ -86,8 +87,10 @@
     });
   </script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <script src="assets/detail-chart-viewport-core.js" defer></script>
   <script src="assets/detail.js" defer></script>
   <script src="assets/daily-overlay.js" defer></script>
+  <script src="assets/detail-chart-viewport.js" defer></script>
   <script src="assets/detail-enhancements.js" defer></script>
   <script src="assets/characters.js" defer></script>
 </body>

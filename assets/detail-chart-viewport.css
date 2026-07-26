@@ -1,0 +1,74 @@
+.detail-chart-viewport-toolbar {
+  display:grid;
+  gap:9px;
+  margin:0 0 12px;
+  padding:10px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:color-mix(in srgb,var(--surface-2) 88%,transparent);
+}
+.detail-chart-viewport-actions {
+  display:flex;
+  gap:7px;
+  overflow-x:auto;
+  padding-bottom:2px;
+  scrollbar-width:thin;
+}
+.detail-chart-viewport-actions button {
+  flex:0 0 auto;
+  min-height:44px;
+  padding:0 12px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  color:var(--text);
+  background:var(--surface-3);
+  font-weight:850;
+  cursor:pointer;
+}
+.detail-chart-viewport-actions button:hover,
+.detail-chart-viewport-actions button:focus-visible {
+  border-color:var(--accent);
+  outline:0;
+}
+.detail-chart-viewport-meta {
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  align-items:center;
+  color:var(--muted);
+}
+.detail-chart-viewport-meta strong { color:var(--text); font-size:.76rem; }
+.detail-chart-viewport-meta small { font-size:.7rem; text-align:right; }
+.detail-chart-interactive canvas {
+  touch-action:pan-y;
+  cursor:grab;
+  user-select:none;
+  -webkit-user-select:none;
+}
+.detail-chart-interactive canvas:active { cursor:grabbing; }
+.detail-rsi-sync-status {
+  margin:0 0 10px;
+  color:var(--muted);
+  font-size:.72rem;
+  font-weight:750;
+}
+body[data-detail-chart-height="compact"] .price-chart-box { height:320px; }
+body[data-detail-chart-height="compact"] .rsi-chart-box { height:220px; }
+body[data-detail-chart-height="standard"] .price-chart-box { height:430px; }
+body[data-detail-chart-height="standard"] .rsi-chart-box { height:310px; }
+body[data-detail-chart-height="tall"] .price-chart-box { height:620px; }
+body[data-detail-chart-height="tall"] .rsi-chart-box { height:420px; }
+
+@media (max-width:720px) {
+  .detail-chart-viewport-toolbar { margin-left:-4px; margin-right:-4px; padding:8px; }
+  .detail-chart-viewport-actions { margin:0 -2px; }
+  .detail-chart-viewport-actions button { min-height:46px; padding:0 11px; font-size:.76rem; }
+  .detail-chart-viewport-meta { display:grid; gap:4px; }
+  .detail-chart-viewport-meta small { text-align:left; line-height:1.5; }
+  body[data-detail-chart-height="compact"] .price-chart-box { height:280px; }
+  body[data-detail-chart-height="compact"] .rsi-chart-box { height:190px; }
+  body[data-detail-chart-height="standard"] .price-chart-box { height:390px; }
+  body[data-detail-chart-height="standard"] .rsi-chart-box { height:250px; }
+  body[data-detail-chart-height="tall"] .price-chart-box { height:560px; }
+  body[data-detail-chart-height="tall"] .rsi-chart-box { height:360px; }
+}
