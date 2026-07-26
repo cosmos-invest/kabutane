@@ -2,7 +2,7 @@
   "code": "2222",
   "ticker": "2222.T",
   "name": "寿スピリッツ",
-  "generated_at": "2026-07-24T13:25:20.620126+00:00",
+  "generated_at": "2026-07-26T22:42:30.391148+00:00",
   "price_date": "2026-07-24",
   "record": {
     "current_price": 2434.0,
@@ -66,7 +66,7 @@
       "date": "2026-07-24",
       "open": 2360.0,
       "high": 2434.0,
-      "low": 2352.0,
+      "low": 2352.5,
       "close": 2434.0,
       "volume": 879100.0,
       "sma25": 2501.16,
@@ -76,5 +76,20 @@
       "rsi5": 63.84
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-07",
+    "price_date": "2026-07-24",
+    "monthly_rsi14": 59.66,
+    "monthly_rsi_ma5": 53.31,
+    "spread": 6.35,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-06",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-07-26T22:43:04.299308+00:00"
 }

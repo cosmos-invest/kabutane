@@ -2,7 +2,7 @@
   "code": "3905",
   "ticker": "3905.T",
   "name": "データセクション",
-  "generated_at": "2026-07-24T13:25:20.620126+00:00",
+  "generated_at": "2026-07-26T22:42:30.391148+00:00",
   "price_date": "2026-07-24",
   "record": {
     "current_price": 2328.0,
@@ -76,5 +76,20 @@
       "rsi5": 57.55
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-07",
+    "price_date": "2026-07-24",
+    "monthly_rsi14": 52.16,
+    "monthly_rsi_ma5": 57.31,
+    "spread": -5.15,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
+    "confirmed_month": "2026-06",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-07-26T22:43:04.299308+00:00"
 }
