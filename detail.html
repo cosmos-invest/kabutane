@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>銘柄詳細 | かぶたね</title>
-  <link rel="stylesheet" href="assets/style.css">
-  <link rel="stylesheet" href="assets/detail-enhancements.css">
-  <link rel="stylesheet" href="assets/detail-signal-status.css">
-  <link rel="stylesheet" href="assets/detail-chart-viewport.css">
+  <link rel="stylesheet" href="assets/style.css?v=13">
+  <link rel="stylesheet" href="assets/detail-enhancements.css?v=13">
+  <link rel="stylesheet" href="assets/detail-signal-status.css?v=13">
+  <link rel="stylesheet" href="assets/detail-chart-viewport.css?v=13">
 </head>
 <body>
   <header class="site-header detail-header">
@@ -86,16 +86,27 @@
         if (link) link.href = href;
       });
     });
+    window.addEventListener("load", () => {
+      window.setTimeout(() => {
+        const code = new URLSearchParams(window.location.search).get("code")?.trim() || "";
+        const chart = window.Chart?.getChart?.("priceChart");
+        if (!code || chart || document.querySelector(".detail-boot-warning")) return;
+        const warning = document.createElement("div");
+        warning.className = "error-banner detail-boot-warning";
+        warning.innerHTML = `<strong>チャートの読み込みが完了しませんでした。</strong><br>通信または更新直後のキャッシュが原因の可能性があります。<button type="button" class="button secondary" style="margin-left:8px" onclick="location.reload()">もう一度読み込む</button>`;
+        document.querySelector("main")?.prepend(warning);
+      }, 8000);
+    });
   </script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
-  <script src="assets/provisional-monthly-rsi-core.js" defer></script>
-  <script src="assets/detail-chart-viewport-core.js" defer></script>
-  <script src="assets/detail.js" defer></script>
-  <script src="assets/daily-overlay.js" defer></script>
-  <script src="assets/detail-signal-status.js" defer></script>
-  <script src="assets/detail-signal-chart-fix.js" defer></script>
-  <script src="assets/detail-chart-viewport.js" defer></script>
-  <script src="assets/detail-enhancements.js" defer></script>
-  <script src="assets/characters.js" defer></script>
+  <script src="assets/provisional-monthly-rsi-core.js?v=13" defer></script>
+  <script src="assets/detail-chart-viewport-core.js?v=13" defer></script>
+  <script src="assets/detail.js?v=13" defer></script>
+  <script src="assets/daily-overlay.js?v=13" defer></script>
+  <script src="assets/detail-chart-viewport.js?v=13" defer></script>
+  <script src="assets/detail-enhancements.js?v=13" defer></script>
+  <script src="assets/detail-signal-status.js?v=13" defer></script>
+  <script src="assets/detail-signal-chart-fix.js?v=13" defer></script>
+  <script src="assets/characters.js?v=13" defer></script>
 </body>
 </html>
