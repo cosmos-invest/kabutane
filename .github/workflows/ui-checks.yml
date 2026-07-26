@@ -72,6 +72,8 @@ jobs:
           node --check assets/replay-month-end.js
           node --check assets/daily-overlay.js
           node --check assets/detail-enhancements.js
+          node --check assets/detail-chart-viewport-core.js
+          node --check assets/detail-chart-viewport.js
           node --check assets/simple-analysis-cosmos.js
           node --check assets/kabutane-screening.js
           node --check assets/signal-v2.js
@@ -88,6 +90,7 @@ jobs:
           node tests/test_replay_guided_core.js
           node tests/test_replay_share_report_core.js
           node tests/test_detail_enhancements.js
+          node tests/test_detail_chart_viewport.js
           node tests/test_daily_overlay.js
           node tests/test_signal_v2.js
 
@@ -110,8 +113,9 @@ jobs:
           for name in (
               "assets/backtest.css", "assets/replay.css", "assets/replay-v2.css",
               "assets/replay-workspace.css", "assets/replay-unified.css", "assets/replay-guided-mode.css",
-              "assets/replay-share-report.css", "assets/detail-enhancements.css", "assets/simple-analysis-cosmos.css",
-              "assets/kabutane.css", "assets/kabutane-characters.css", "assets/kabutane-links.css",
+              "assets/replay-share-report.css", "assets/detail-enhancements.css", "assets/detail-chart-viewport.css",
+              "assets/simple-analysis-cosmos.css", "assets/kabutane.css", "assets/kabutane-characters.css",
+              "assets/kabutane-links.css",
           ):
               css = Path(name).read_text(encoding="utf-8")
               if css.count("{") != css.count("}"):
@@ -136,6 +140,7 @@ jobs:
           replay_unified = Path("assets/replay-unified-workspace.js").read_text(encoding="utf-8")
           replay_guided = Path("assets/replay-guided-mode.js").read_text(encoding="utf-8")
           replay_share = Path("assets/replay-share-report.js").read_text(encoding="utf-8")
+          detail_viewport = Path("assets/detail-chart-viewport.js").read_text(encoding="utf-8")
           characters = Path("assets/characters.js").read_text(encoding="utf-8")
           workflow = Path(".github/workflows/update-data.yml").read_text(encoding="utf-8")
 
@@ -145,6 +150,12 @@ jobs:
                   raise SystemExit(f"Index is missing: {marker}")
           if "assets/daily-overlay.js" not in detail or "assets/daily-overlay.js" not in replay:
               raise SystemExit("Daily overlay is not wired to detail and replay")
+          for marker in ("assets/detail-chart-viewport-core.js", "assets/detail-chart-viewport.js", "assets/detail-chart-viewport.css"):
+              if marker not in detail:
+                  raise SystemExit(f"Interactive detail chart is missing: {marker}")
+          for marker in ("zoom-in", "older", "vertical-in", "height", "pointerdown", "wheel"):
+              if marker not in detail_viewport:
+                  raise SystemExit(f"Detail chart viewport control is missing: {marker}")
           if "assets/replay-picker.js" not in replay or "replaySymbolSelect" not in replay:
               raise SystemExit("Replay candidate picker is not wired")
           for marker in (
