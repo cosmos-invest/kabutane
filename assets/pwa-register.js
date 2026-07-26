@@ -38,6 +38,7 @@
     if (document.querySelector(`script[src="${source}"]`)) return;
     const script = document.createElement("script");
     script.src = source;
+    script.async = false;
     document.head.appendChild(script);
   }
 
