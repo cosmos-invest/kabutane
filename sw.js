@@ -1,4 +1,4 @@
-const CACHE_VERSION = "kabutane-pwa-v10";
+const CACHE_VERSION = "kabutane-pwa-v11";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const CORE_ASSETS = [
   "./",
@@ -9,7 +9,11 @@ const CORE_ASSETS = [
   "./howto.html",
   "./learn.html",
   "./ranking.html",
+  "./ranking/",
+  "./ranking/index.html",
   "./monthly-report.html",
+  "./monthly-report/",
+  "./monthly-report/index.html",
   "./history.html",
   "./manifest.webmanifest",
   "./assets/style.css",
@@ -49,7 +53,11 @@ const CORE_ASSETS = [
 ];
 
 self.addEventListener("install", (event) => {
-  event.waitUntil(caches.open(STATIC_CACHE).then((cache) => cache.addAll(CORE_ASSETS)).then(() => self.skipWaiting()));
+  event.waitUntil(
+    caches.open(STATIC_CACHE)
+      .then((cache) => Promise.allSettled(CORE_ASSETS.map((asset) => cache.add(asset))))
+      .then(() => self.skipWaiting())
+  );
 });
 
 self.addEventListener("activate", (event) => {
@@ -60,15 +68,50 @@ self.addEventListener("activate", (event) => {
   );
 });
 
+function routeAlternatives(url) {
+  const pathname = url.pathname.replace(/\/+$/, "");
+  if (pathname.endsWith("/ranking") || pathname.endsWith("/ranking.html")) {
+    return ["./ranking/", "./ranking/index.html", "./ranking.html"];
+  }
+  if (pathname.endsWith("/monthly-report") || pathname.endsWith("/monthly-report.html")) {
+    return ["./monthly-report/", "./monthly-report/index.html", "./monthly-report.html"];
+  }
+  return [];
+}
+
+async function routeFallback(request, cache) {
+  const alternatives = routeAlternatives(new URL(request.url));
+  for (const path of alternatives) {
+    const cached = await cache.match(path);
+    if (cached) return cached;
+    try {
+      const response = await fetch(path, { cache: "no-store" });
+      if (response.ok) {
+        cache.put(path, response.clone());
+        return response;
+      }
+    } catch (_) {
+      // Try the next compatible route.
+    }
+  }
+  return null;
+}
+
 async function networkFirst(request) {
   const cache = await caches.open(STATIC_CACHE);
   try {
     const response = await fetch(request, { cache: "no-store" });
-    if (response.ok) cache.put(request, response.clone());
-    return response;
+    if (response.ok) {
+      cache.put(request, response.clone());
+      return response;
+    }
+    const fallback = await routeFallback(request, cache);
+    return fallback || response;
   } catch (error) {
     const cached = await cache.match(request);
     if (cached) return cached;
+    const fallback = await routeFallback(request, cache);
+    if (fallback) return fallback;
     throw error;
   }
 }
