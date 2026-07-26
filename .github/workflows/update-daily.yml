@@ -9,8 +9,10 @@ on:
     branches: ["main"]
     paths:
       - "update_daily.py"
+      - "provisional_signal.py"
       - "build_market_reports.py"
       - "tests/test_update_daily.py"
+      - "tests/test_provisional_signal.py"
       - "tests/test_market_reports.py"
       - ".github/workflows/update-daily.yml"
 
@@ -42,8 +44,9 @@ jobs:
 
       - name: Validate updater
         run: |
-          python -m py_compile update_daily.py build_market_reports.py tests/test_update_daily.py tests/test_market_reports.py
+          python -m py_compile update_daily.py provisional_signal.py build_market_reports.py tests/test_update_daily.py tests/test_provisional_signal.py tests/test_market_reports.py
           python -m unittest discover -s tests -p 'test_update_daily.py' -v
+          python -m unittest discover -s tests -p 'test_provisional_signal.py' -v
           python -m unittest discover -s tests -p 'test_market_reports.py' -v
 
       - name: Download incremental daily prices
@@ -52,6 +55,7 @@ jobs:
           DAILY_DOWNLOAD_PERIOD: "1mo"
         run: |
           python update_daily.py
+          python provisional_signal.py
           python build_market_reports.py
 
       - name: Commit daily overlays and observations
@@ -62,6 +66,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No daily price changes"
           else
-            git commit -m "chore: update daily prices and observation ranking"
+            git commit -m "chore: update daily prices, provisional signals and observation ranking"
             git push origin main
           fi
