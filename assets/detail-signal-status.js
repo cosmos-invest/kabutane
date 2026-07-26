@@ -2,13 +2,11 @@
   "use strict";
 
   if (typeof window === "undefined" || typeof ProvisionalMonthlyRsiCore === "undefined") return;
-  if (typeof window.renderHeader !== "function" || typeof window.renderCharts !== "function") return;
 
   const Core = ProvisionalMonthlyRsiCore;
-  const baseRenderHeader = window.renderHeader;
-  const baseRenderCharts = window.renderCharts;
-  let latestPayload = null;
-  let explanationObserver = null;
+  let sourcePayload = null;
+  let renderHookInstalled = false;
+  let retryTimer = 0;
 
   function finite(value) {
     return Core.finite(value);
@@ -105,6 +103,7 @@
     const confirmed = formalRecord(record);
     const provisional = Core.fromPayload(payload);
     const cards = document.getElementById("monthlySignalCards");
+    if (!cards) return;
     const confirmedStatus = String(record.status || "CONTINUE").toUpperCase();
     const provisionalMarkup = provisional ? `
       <article class="monthly-signal-card provisional ${statusClass(provisional.status)} ${provisional.changed_from_confirmed ? "signal-changed" : ""}">
@@ -141,11 +140,11 @@
     if (!stats) return;
     const values = formalRecord(record);
     const cards = [...stats.querySelectorAll(".stat-card")];
+    if (cards.length < 6) return;
     const replace = (index, label, value, css = "") => {
       const card = cards[index];
-      if (!card) return;
-      const span = card.querySelector("span");
-      const strong = card.querySelector("strong");
+      const span = card?.querySelector("span");
+      const strong = card?.querySelector("strong");
       if (span) span.textContent = label;
       if (strong) {
         strong.textContent = value;
@@ -166,75 +165,120 @@
     return `${base} 点線は${formatDate(provisional.price_date)}終値までで計算した${formatMonth(provisional.month)}の暫定値で、月末までに変わる場合があります。`;
   }
 
-  function keepExplanationCurrent() {
+  function updateExplanation(payload) {
     const explanation = document.getElementById("rsiExplanation");
-    if (!explanation || !latestPayload) return;
-    const expected = explanationText(latestPayload);
-    if (explanation.textContent !== expected) explanation.textContent = expected;
+    if (!explanation) return;
+    explanation.textContent = explanationText(payload);
+    explanation.dataset.signalCanonical = "true";
     explanation.dataset.provisionalCopy = "true";
-    if (!explanationObserver) {
-      explanationObserver = new MutationObserver(() => {
-        if (!latestPayload) return;
-        const value = explanationText(latestPayload);
-        if (explanation.textContent !== value) explanation.textContent = value;
-      });
-      explanationObserver.observe(explanation, { childList: true, characterData: true, subtree: true });
-    }
   }
 
-  function repairRsiChart(payload) {
-    if (!window.rsiChart) return;
+  function chartRowsForVisibleLabels(chart, payload) {
     const rows = Array.isArray(payload?.daily) ? payload.daily : [];
-    const datasets = window.rsiChart.data.datasets || [];
+    const byDate = new Map(rows.map((row) => [String(row.date), row]));
+    return (chart?.data?.labels || []).map((label) => byDate.get(String(label)) || null);
+  }
+
+  function enhanceRsiChart(visiblePayload, fullPayload = sourcePayload) {
+    const chart = window.Chart?.getChart?.("rsiChart");
+    if (!chart || !fullPayload) return false;
+    const visibleRows = chartRowsForVisibleLabels(chart, visiblePayload || fullPayload);
+    const datasets = (chart.data.datasets || []).filter((dataset) => dataset.kabutaneSignalLayer !== "provisional");
+    chart.data.datasets = datasets;
     if (datasets[0]) {
       datasets[0].label = "月足RSI14（確定）";
-      datasets[0].data = rows.map(formalRowRsi);
+      datasets[0].data = visibleRows.map(formalRowRsi);
     }
     if (datasets[1]) {
       datasets[1].label = "RSI14・5か月MA（確定）";
-      datasets[1].data = rows.map(formalRowMa);
+      datasets[1].data = visibleRows.map(formalRowMa);
     }
-    const provisional = Core.fromPayload(payload);
+    const provisional = Core.fromPayload(fullPayload);
     if (provisional) {
-      const rsiColor = datasets[0]?.borderColor || "#059669";
-      const maColor = datasets[1]?.borderColor || "#8b5cf6";
-      const currentMonth = provisional.month;
+      const month = provisional.month;
       datasets.push({
         label: "月足RSI14（進行中・暫定）",
-        data: rows.map((row) => Core.monthKey(row.date) === currentMonth ? provisional.monthly_rsi14 : null),
-        borderColor: rsiColor,
+        data: visibleRows.map((row) => row && Core.monthKey(row.date) === month ? provisional.monthly_rsi14 : null),
+        borderColor: datasets[0]?.borderColor || "#059669",
         borderWidth: 2.2,
         borderDash: [7, 5],
         pointRadius: 0,
         spanGaps: false,
+        kabutaneSignalLayer: "provisional",
       });
       datasets.push({
         label: "5か月MA（進行中・暫定）",
-        data: rows.map((row) => Core.monthKey(row.date) === currentMonth ? provisional.monthly_rsi_ma5 : null),
-        borderColor: maColor,
+        data: visibleRows.map((row) => row && Core.monthKey(row.date) === month ? provisional.monthly_rsi_ma5 : null),
+        borderColor: datasets[1]?.borderColor || "#8b5cf6",
         borderWidth: 2.2,
         borderDash: [7, 5],
         pointRadius: 0,
         spanGaps: false,
+        kabutaneSignalLayer: "provisional",
       });
     }
-    window.rsiChart.update("none");
+    chart.update("none");
+    return true;
   }
 
-  window.renderHeader = function renderHeaderWithSignalStatus(payload) {
-    latestPayload = payload;
-    baseRenderHeader(payload);
-    updateStatusBadge(payload?.record || {});
-    updateCanonicalStats(payload?.record || {});
+  function applyEnhancements(payload, visiblePayload = payload) {
+    if (!payload) return false;
+    updateStatusBadge(payload.record || {});
+    updateCanonicalStats(payload.record || {});
     renderPanel(payload);
-    keepExplanationCurrent();
-  };
+    updateExplanation(payload);
+    return enhanceRsiChart(visiblePayload, payload);
+  }
 
-  window.renderCharts = function renderChartsWithSignalStatus(payload) {
-    latestPayload = payload;
-    baseRenderCharts(payload);
-    repairRsiChart(payload);
-    renderPanel(payload);
-    keepExplanationCurrent();
-  };
+  function installPostRenderHook() {
+    if (renderHookInstalled || typeof window.renderCharts !== "function") return;
+    const baseRenderCharts = window.renderCharts;
+    window.renderCharts = function renderChartsThenEnhance(payload) {
+      const result = baseRenderCharts(payload);
+      window.setTimeout(() => applyEnhancements(sourcePayload || payload, payload), 0);
+      return result;
+    };
+    renderHookInstalled = true;
+  }
+
+  async function loadPayload() {
+    const code = new URLSearchParams(window.location.search).get("code")?.trim() || "";
+    if (!code) return null;
+    const path = `data/charts/${encodeURIComponent(code)}.json`;
+    if (typeof window.fetchJson === "function") return window.fetchJson(path);
+    const response = await fetch(`${path}?v=${Date.now()}`, { cache: "no-store" });
+    if (!response.ok) throw new Error(`${path} HTTP ${response.status}`);
+    return response.json();
+  }
+
+  function startSafeRetry() {
+    let attempts = 0;
+    retryTimer = window.setInterval(() => {
+      attempts += 1;
+      const chartReady = Boolean(window.Chart?.getChart?.("rsiChart"));
+      const statsReady = document.querySelectorAll("#detailStats .stat-card").length >= 6;
+      if (sourcePayload && (chartReady || statsReady)) applyEnhancements(sourcePayload, sourcePayload);
+      if (chartReady) installPostRenderHook();
+      if ((chartReady && statsReady && attempts >= 8) || attempts >= 40) {
+        window.clearInterval(retryTimer);
+        retryTimer = 0;
+      }
+    }, 180);
+  }
+
+  async function init() {
+    try {
+      sourcePayload = await loadPayload();
+      if (!sourcePayload) return;
+      applyEnhancements(sourcePayload, sourcePayload);
+      startSafeRetry();
+      [500, 1200, 2200].forEach((delay) => window.setTimeout(() => applyEnhancements(sourcePayload, sourcePayload), delay));
+    } catch (error) {
+      console.error("detail signal enhancement failed", error);
+    }
+  }
+
+  window.KabutaneDetailSignalStatus = { applyEnhancements, enhanceRsiChart, init };
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init, { once: true });
+  else init();
 })();

@@ -1,9 +1,29 @@
-const CACHE_VERSION = "kabutane-pwa-v12";
+const CACHE_VERSION = "kabutane-pwa-v13";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
-const CORE_ASSETS = [
+
+// These files are required for the detail page to boot. If even one cannot be
+// cached, the new service worker must not replace the last working version.
+const CRITICAL_ASSETS = [
   "./",
-  "./index.html",
   "./detail.html",
+  "./manifest.webmanifest",
+  "./assets/style.css?v=13",
+  "./assets/detail-enhancements.css?v=13",
+  "./assets/detail-signal-status.css?v=13",
+  "./assets/detail-chart-viewport.css?v=13",
+  "./assets/provisional-monthly-rsi-core.js?v=13",
+  "./assets/detail-chart-viewport-core.js?v=13",
+  "./assets/detail.js?v=13",
+  "./assets/daily-overlay.js?v=13",
+  "./assets/detail-chart-viewport.js?v=13",
+  "./assets/detail-enhancements.js?v=13",
+  "./assets/detail-signal-status.js?v=13",
+  "./assets/detail-signal-chart-fix.js?v=13",
+  "./assets/characters.js?v=13",
+];
+
+const OPTIONAL_ASSETS = [
+  "./index.html",
   "./replay.html",
   "./backtest.html",
   "./howto.html",
@@ -16,8 +36,20 @@ const CORE_ASSETS = [
   "./monthly-report/",
   "./monthly-report/index.html",
   "./history.html",
-  "./manifest.webmanifest",
-  "./assets/style.css",
+  // Compatibility for an already-open detail.html that still requests the
+  // unversioned asset URLs while the v13 worker is activating.
+  "./assets/provisional-monthly-rsi-core.js",
+  "./assets/detail-chart-viewport-core.js",
+  "./assets/detail.js",
+  "./assets/daily-overlay.js",
+  "./assets/detail-chart-viewport.js",
+  "./assets/detail-enhancements.js",
+  "./assets/detail-signal-status.js",
+  "./assets/detail-signal-chart-fix.js",
+  "./assets/characters.js",
+  "./assets/detail-enhancements.css",
+  "./assets/detail-signal-status.css",
+  "./assets/detail-chart-viewport.css",
   "./assets/pastel.css",
   "./assets/kabutane.css",
   "./assets/howto-visual.css",
@@ -30,14 +62,6 @@ const CORE_ASSETS = [
   "./assets/practice-history-page.js",
   "./assets/tutorials/howto-replay-entry.svg",
   "./assets/tutorials/howto-replay-stop.svg",
-  "./assets/detail-enhancements.css",
-  "./assets/detail-signal-status.css",
-  "./assets/provisional-monthly-rsi-core.js",
-  "./assets/detail-signal-status.js",
-  "./assets/detail-signal-chart-fix.js",
-  "./assets/detail-chart-viewport.css",
-  "./assets/detail-chart-viewport-core.js",
-  "./assets/detail-chart-viewport.js",
   "./assets/replay.css",
   "./assets/replay-v2.css",
   "./assets/replay-workspace.css",
@@ -55,13 +79,16 @@ const CORE_ASSETS = [
   "./assets/pwa-register.js",
   "./assets/kabutane-links.css",
   "./assets/icons/kabutane-wordmark-v3.svg",
-  "./assets/icons/kabutane-192.png?v=1"
+  "./assets/icons/kabutane-192.png?v=1",
 ];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(STATIC_CACHE)
-      .then((cache) => Promise.allSettled(CORE_ASSETS.map((asset) => cache.add(asset))))
+      .then(async (cache) => {
+        await cache.addAll(CRITICAL_ASSETS);
+        await Promise.allSettled(OPTIONAL_ASSETS.map((asset) => cache.add(asset)));
+      })
       .then(() => self.skipWaiting())
   );
 });
@@ -112,7 +139,9 @@ async function networkFirst(request) {
       return response;
     }
     const fallback = await routeFallback(request, cache);
-    return fallback || response;
+    if (fallback) return fallback;
+    const cached = await cache.match(request);
+    return cached || response;
   } catch (error) {
     const cached = await cache.match(request);
     if (cached) return cached;
@@ -136,8 +165,10 @@ self.addEventListener("fetch", (event) => {
   const url = new URL(event.request.url);
   if (event.request.method !== "GET" || url.origin !== self.location.origin) return;
 
-  const isFreshData = url.pathname.includes("/data/") || url.pathname.endsWith(".json") || event.request.mode === "navigate";
-  if (isFreshData) {
+  const isNavigation = event.request.mode === "navigate";
+  const isFreshData = url.pathname.includes("/data/") || url.pathname.endsWith(".json");
+  const isRuntimeCode = /\.(?:js|css)$/.test(url.pathname);
+  if (isNavigation || isFreshData || isRuntimeCode) {
     event.respondWith(networkFirst(event.request));
     return;
   }
