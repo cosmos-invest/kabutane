@@ -7,13 +7,7 @@ on:
   push:
     branches: ["main"]
     paths:
-      - "index.html"
-      - "detail.html"
-      - "backtest.html"
-      - "replay.html"
-      - "howto.html"
-      - "learn.html"
-      - "signal-method.html"
+      - "**/*.html"
       - "manifest.webmanifest"
       - "sw.js"
       - "assets/**"
@@ -48,18 +42,29 @@ jobs:
       - name: Prepare site
         run: |
           mkdir -p _site
-          cp index.html detail.html backtest.html replay.html howto.html learn.html signal-method.html manifest.webmanifest sw.js .nojekyll result.csv out.csv _site/
-          cp -R assets data history _site/
+          cp \
+            index.html detail.html backtest.html replay.html howto.html learn.html signal-method.html \
+            ranking.html monthly-report.html history.html \
+            manifest.webmanifest sw.js .nojekyll result.csv out.csv \
+            _site/
+          cp -R assets data history ranking monthly-report _site/
 
-      - name: Verify PWA files
+      - name: Verify public pages and PWA files
         run: |
           test -f _site/manifest.webmanifest
           test -f _site/sw.js
+          test -f _site/ranking.html
+          test -f _site/monthly-report.html
+          test -f _site/history.html
+          test -f _site/ranking/index.html
+          test -f _site/monthly-report/index.html
           test -f _site/assets/icons/kabutane-wordmark-v3.svg
           test -f _site/assets/icons/kabutane-192.png
           test -f _site/assets/replay-drawing-tools.js
           grep -q 'kabutane-wordmark-v3.svg' _site/manifest.webmanifest
           grep -q 'assets/replay-drawing-tools.js' _site/replay.html
+          grep -q 'MONTHLY RSI CROSS RANKING' _site/ranking.html
+          grep -q 'MONTHLY CHANGE REPORT' _site/monthly-report.html
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
