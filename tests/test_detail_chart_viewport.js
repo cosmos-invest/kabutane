@@ -22,9 +22,10 @@ assert.ok((tighter.max - tighter.min) < (bounds.max - bounds.min));
 
 const payload = { daily: Array.from({ length: 20 }, (_, index) => ({ date: `d${index}`, close: index })) };
 const sliced = Viewport.slicePayload(payload, { start: 5, end: 9 });
-assert.equal(sliced.daily.length, 5);
+assert.equal(sliced.daily.length, 12);
 assert.equal(sliced.daily[0].date, "d5");
-assert.equal(sliced.daily.at(-1).date, "d9");
+assert.equal(sliced.daily.at(-1).date, "d16");
+assert.equal(sliced.viewport.span, 12);
 assert.equal(Viewport.nextHeightMode("compact"), "standard");
 assert.equal(Viewport.nextHeightMode("standard"), "tall");
 assert.equal(Viewport.nextHeightMode("tall"), "compact");
