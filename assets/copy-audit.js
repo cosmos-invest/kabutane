@@ -29,7 +29,7 @@
   }
 
   function auditHowto() {
-    if (document.body?.dataset.page !== "howto") return;
+    if (document.body?.dataset.page !== "howto" || document.body.dataset.howtoCopyAudited === "true") return;
 
     const stateSection = [...document.querySelectorAll(".howto-section")]
       .find((section) => section.querySelector("h2")?.textContent.includes("ホームに出る3つの状態"));
@@ -44,8 +44,10 @@
     const monthlyCard = [...document.querySelectorAll(".reading-card")]
       .find((card) => card.querySelector("h3")?.textContent.includes("月足RSI14"));
     if (monthlyCard) {
-      monthlyCard.querySelector("p").textContent = "確定した月足の勢いと、進行中月の暫定変化を分けて確認します。";
-      monthlyCard.querySelector("ul").innerHTML = [
+      const paragraph = monthlyCard.querySelector("p");
+      const list = monthlyCard.querySelector("ul");
+      if (paragraph) paragraph.textContent = "確定した月足の勢いと、進行中月の暫定変化を分けて確認します。";
+      if (list) list.innerHTML = [
         "確定NEW・確定継続・確定OUTのどれか",
         "実線は月末確定値、点線は進行中月の暫定値",
         "暫定GC・暫定DCは月末までに消える場合がある",
@@ -58,14 +60,16 @@
     const heading = ready?.querySelector("h2");
     const count = ready?.querySelectorAll('.ready-check-grid input[type="checkbox"]').length || 0;
     if (heading && count) heading.textContent = `実際のお金を動かす前の${count}項目`;
+    document.body.dataset.howtoCopyAudited = "true";
   }
 
   function auditLearn() {
-    if (document.body?.dataset.page !== "learn") return;
+    if (document.body?.dataset.page !== "learn" || document.body.dataset.learnCopyAudited === "true") return;
     const monthly = [...document.querySelectorAll("details")]
       .find((item) => item.querySelector("summary")?.textContent.includes("月足RSIとは"));
     const paragraph = monthly?.querySelector("p");
     if (paragraph) paragraph.textContent = "月末ごとの値動きから、上昇の力と下落の力のバランスを0〜100で表します。正式なNEW・CONTINUE・OUTは完成済み月足だけで判定し、進行中月は参考用の暫定値として別表示します。";
+    document.body.dataset.learnCopyAudited = "true";
   }
 
   function applyAudit() {
@@ -81,7 +85,7 @@
     scheduled = true;
     window.requestAnimationFrame(() => {
       scheduled = false;
-      applyAudit();
+      replaceAll();
     });
   }
 
