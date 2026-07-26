@@ -57,6 +57,11 @@ def rounded(value: Any, digits: int = 2) -> float | None:
     return round(number, digits) if number is not None else None
 
 
+def parse_sector_code(value: Any) -> int | None:
+    number = to_float(value)
+    return int(number) if number is not None else None
+
+
 def normalize_market(value: str) -> str:
     text = str(value or "").strip()
     if "プライム" in text:
@@ -77,7 +82,7 @@ def load_stock_meta() -> dict[str, dict[str, Any]]:
             code = str(row.get("code") or "").strip().upper()
             if not code:
                 continue
-            sector_code = int(float(row.get("sector") or 0)) if str(row.get("sector") or "").strip() else None
+            sector_code = parse_sector_code(row.get("sector"))
             result[code] = {
                 "market": normalize_market(str(row.get("market") or "")),
                 "jpx_sector_code": sector_code,
@@ -92,8 +97,20 @@ def enrich_records(records: list[dict[str, Any]], metadata: dict[str, dict[str, 
         record.update({key: value for key, value in meta.items() if value is not None})
 
 
+def comparison_snapshot(previous: dict[str, Any], current_price_date: str | None) -> dict[str, Any]:
+    if not previous.get("rows"):
+        return {"price_date": None, "rows": []}
+    if current_price_date and previous.get("price_date") == current_price_date:
+        return {
+            "price_date": previous.get("comparison_price_date"),
+            "rows": previous.get("comparison_rows") or [],
+        }
+    return {"price_date": previous.get("price_date"), "rows": previous.get("rows") or []}
+
+
 def build_ranking(latest: dict[str, Any], previous: dict[str, Any], price_date: str | None) -> dict[str, Any]:
-    previous_by_code = {str(row.get("code")): row for row in previous.get("rows") or []}
+    comparison = comparison_snapshot(previous, price_date)
+    previous_by_code = {str(row.get("code")): row for row in comparison.get("rows") or []}
     ranked = [record for record in latest.get("records") or [] if to_float(record.get("return_since_gc_pct")) is not None]
     ranked.sort(key=lambda row: (-(to_float(row.get("return_since_gc_pct")) or 0), str(row.get("code") or "")))
 
@@ -134,6 +151,8 @@ def build_ranking(latest: dict[str, Any], previous: dict[str, Any], price_date: 
     return {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "price_date": price_date or latest.get("daily_price_date"),
+        "comparison_price_date": comparison.get("price_date"),
+        "comparison_rows": comparison.get("rows") or [],
         "signal_month": latest.get("signal_month"),
         "count": len(rows),
         "rows": rows,
@@ -141,31 +160,31 @@ def build_ranking(latest: dict[str, Any], previous: dict[str, Any], price_date: 
 
 
 def build_daily_change(ranking: dict[str, Any], previous: dict[str, Any]) -> dict[str, Any]:
-    has_previous = bool(previous.get("rows"))
     rows = ranking.get("rows") or []
-    rank_up = sorted(
-        [row for row in rows if to_float(row.get("rank_change")) and row["rank_change"] > 0],
-        key=lambda row: (-row["rank_change"], row["rank"]),
-    )[:10]
+    has_previous = bool(ranking.get("comparison_rows"))
+    rank_up_all = [row for row in rows if (to_float(row.get("rank_change")) or 0) > 0]
+    rank_down_all = [row for row in rows if (to_float(row.get("rank_change")) or 0) < 0]
+    entrants_all = [row for row in rows if row.get("previous_rank") is None] if has_previous else []
+    rank_up = sorted(rank_up_all, key=lambda row: (-row["rank_change"], row["rank"]))[:10]
     price_up = sorted(
         [row for row in rows if to_float(row.get("daily_change_pct")) is not None],
         key=lambda row: -(to_float(row.get("daily_change_pct")) or 0),
     )[:10]
-    entrants = [row for row in rows if row.get("previous_rank") is None][:10] if has_previous else []
     return {
         "generated_at": ranking.get("generated_at"),
         "price_date": ranking.get("price_date"),
+        "comparison_price_date": ranking.get("comparison_price_date"),
         "has_previous_day": has_previous,
         "summary": {
             "ranking_count": len(rows),
-            "rank_up_count": sum(1 for row in rows if (row.get("rank_change") or 0) > 0),
-            "rank_down_count": sum(1 for row in rows if (row.get("rank_change") or 0) < 0),
+            "rank_up_count": len(rank_up_all),
+            "rank_down_count": len(rank_down_all),
             "unchanged_count": sum(1 for row in rows if row.get("rank_change") == 0),
-            "new_entry_count": len(entrants),
+            "new_entry_count": len(entrants_all),
         },
         "rank_up": rank_up,
         "price_up": price_up,
-        "new_entries": entrants,
+        "new_entries": entrants_all[:10],
     }
 
 
@@ -216,7 +235,11 @@ def build_monthly_report(latest: dict[str, Any], metadata: dict[str, dict[str, A
 
     new_rows = [row for row in current_records if row.get("status") == "NEW"]
     out_rows = current_out
-    near_cross = [row for row in current_records if to_float(row.get("diff")) is not None and 0 <= float(row["diff"]) <= 2]
+    near_cross = []
+    for row in current_records:
+        gap = to_float(row.get("diff"))
+        if gap is not None and 0 <= gap <= 2:
+            near_cross.append(row)
     return {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "signal_month": signal_month,
@@ -236,7 +259,7 @@ def build_monthly_report(latest: dict[str, Any], metadata: dict[str, dict[str, A
         "by_market": group_monthly(current_records, out_rows, "market"),
         "by_sector": group_monthly(current_records, out_rows, "jpx_sector_name"),
         "notes": [
-            "NEWは月足RSI14が5か月移動平均を上抜けた銘柄です。",
+            "NEW（IN）は月足RSI14が5か月移動平均を上抜けた銘柄です。",
             "OUTは月足RSI14が5か月移動平均以下へ戻った銘柄です。",
             "節目接近は、両者の差が0〜2ポイントの継続銘柄です。売買推奨ではありません。",
         ],
