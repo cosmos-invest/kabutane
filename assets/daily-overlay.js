@@ -28,6 +28,8 @@
       daily: mergeRows(base.daily, extra.daily),
       record: { ...(base.record || {}), ...(extra.record || {}) },
       corporate_events: mergeEvents(base.corporate_events, extra.corporate_events),
+      provisional_signal: extra.provisional_signal || base.provisional_signal || null,
+      provisional_generated_at: extra.provisional_generated_at || base.provisional_generated_at || null,
       daily_generated_at: extra.generated_at || base.daily_generated_at || null,
       daily_price_date: extra.price_date || base.daily_price_date || null,
     };

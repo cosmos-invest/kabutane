@@ -1,4 +1,4 @@
-const CACHE_VERSION = "kabutane-pwa-v11";
+const CACHE_VERSION = "kabutane-pwa-v12";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const CORE_ASSETS = [
   "./",
@@ -8,6 +8,7 @@ const CORE_ASSETS = [
   "./backtest.html",
   "./howto.html",
   "./learn.html",
+  "./signal-method.html",
   "./ranking.html",
   "./ranking/",
   "./ranking/index.html",
@@ -22,6 +23,7 @@ const CORE_ASSETS = [
   "./assets/howto-visual.css",
   "./assets/market-insights.css",
   "./assets/site-upgrades.js",
+  "./assets/copy-audit.js",
   "./assets/market-pages.js",
   "./assets/practice-history-core.js",
   "./assets/practice-history.js",
@@ -29,6 +31,10 @@ const CORE_ASSETS = [
   "./assets/tutorials/howto-replay-entry.svg",
   "./assets/tutorials/howto-replay-stop.svg",
   "./assets/detail-enhancements.css",
+  "./assets/detail-signal-status.css",
+  "./assets/provisional-monthly-rsi-core.js",
+  "./assets/detail-signal-status.js",
+  "./assets/detail-signal-chart-fix.js",
   "./assets/detail-chart-viewport.css",
   "./assets/detail-chart-viewport-core.js",
   "./assets/detail-chart-viewport.js",

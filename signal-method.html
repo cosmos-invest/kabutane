@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="かぶたねで採用するTradingView方式の月足RSI14と、その5か月単純移動平均の計算方法を説明します。">
+  <meta name="description" content="かぶたねで採用するTradingView方式の月足RSI14と、その5か月単純移動平均、確定シグナルと進行中月の暫定値の違いを説明します。">
   <title>月足RSIの計算方法 | かぶたね</title>
   <link rel="stylesheet" href="assets/style.css">
   <link rel="stylesheet" href="assets/pastel.css">
   <link rel="stylesheet" href="assets/kabutane-links.css">
   <style>
-    .method-container{max-width:1040px;padding-top:25px}.method-container .panel{padding:24px;margin-bottom:18px}.method-kicker{display:inline-flex;padding:5px 10px;border-radius:999px;background:#ffe3f1;color:#a44677;font-size:.72rem;font-weight:900}.formula{padding:18px;margin:15px 0;border-radius:16px;background:linear-gradient(130deg,#fff7fb,#f4efff);border:1px solid #eacddd;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;line-height:1.8;overflow-x:auto;white-space:pre-wrap}.rule-grid,.compare-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.rule-grid article,.compare-grid article{padding:17px;border-radius:16px;background:#fff8fb;border:1px solid #efd4e1}.rule-grid strong,.compare-grid strong{display:block;margin-bottom:7px;color:#9e4574}.warning-box{padding:16px 18px;border-radius:15px;background:#fff3dd;border:1px solid #edcc94;color:#815111;line-height:1.7}@media(max-width:760px){.rule-grid,.compare-grid{grid-template-columns:1fr}.method-container .panel{padding:18px}}
+    .method-container{max-width:1040px;padding-top:25px}.method-container .panel{padding:24px;margin-bottom:18px}.method-kicker{display:inline-flex;padding:5px 10px;border-radius:999px;background:#ffe3f1;color:#a44677;font-size:.72rem;font-weight:900}.formula{padding:18px;margin:15px 0;border-radius:16px;background:linear-gradient(130deg,#fff7fb,#f4efff);border:1px solid #eacddd;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;line-height:1.8;overflow-x:auto;white-space:pre-wrap}.rule-grid,.compare-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.rule-grid article,.compare-grid article{padding:17px;border-radius:16px;background:#fff8fb;border:1px solid #efd4e1}.rule-grid strong,.compare-grid strong{display:block;margin-bottom:7px;color:#9e4574}.warning-box{padding:16px 18px;border-radius:15px;background:#fff3dd;border:1px solid #edcc94;color:#815111;line-height:1.7}.provisional-box{padding:18px;border-radius:16px;background:linear-gradient(135deg,#f5f0ff,#eef8ff);border:1px solid #d8cbed;line-height:1.75}.provisional-box strong{color:#78539d}@media(max-width:760px){.rule-grid,.compare-grid{grid-template-columns:1fr}.method-container .panel{padding:18px}}
   </style>
 </head>
 <body class="pastel-theme" data-page="method">
   <header class="site-header">
     <div class="header-inner">
-      <div><p class="eyebrow">KABUTANE SIGNAL METHOD</p><h1>月足RSI14と5か月移動平均🌸</h1><p class="subtitle">TradingViewと同じWilder方式を使い、完成済みの月足だけで判定します。</p></div>
+      <div><p class="eyebrow">KABUTANE SIGNAL METHOD</p><h1>月足RSI14と5か月移動平均🌸</h1><p class="subtitle">TradingViewと同じWilder方式を使い、正式判定は完成済みの月足だけで行います。</p></div>
       <div class="header-meta">
         <nav class="site-nav" aria-label="サイト内ナビゲーション">
           <a href="index.html">銘柄を探す</a><a href="backtest.html">運用を試す</a><a href="replay.html">売買を練習</a><a href="howto.html">使い方</a><a href="learn.html">学び・FAQ</a><a class="note-nav-link" href="https://note.com/cosmos_invest" target="_blank" rel="noopener noreferrer">note ↗</a>
@@ -57,18 +57,28 @@ rsiMa5 = ta.sma(rsi14, 5)</div>
     </section>
 
     <section class="panel">
-      <span class="method-kicker">STEP 3</span><h2>NEW・CONTINUE・OUT</h2>
+      <span class="method-kicker">STEP 3</span><h2>確定NEW・CONTINUE・OUT</h2>
       <div class="rule-grid">
-        <article><strong>NEW</strong><p>前月はRSI14が5か月MA以下で、当月に上抜けた状態です。</p></article>
-        <article><strong>CONTINUE</strong><p>RSI14が5か月MAより上の状態を維持しています。</p></article>
-        <article><strong>OUT / DC</strong><p>RSI14が5か月MA以下へ戻った状態です。</p></article>
+        <article><strong>NEW</strong><p>前月はRSI14が5か月MA以下で、完成した当月足で上抜けた状態です。</p></article>
+        <article><strong>CONTINUE</strong><p>完成した月足で、RSI14が5か月MAより上の状態を維持しています。</p></article>
+        <article><strong>OUT / DC</strong><p>完成した月足で、RSI14が5か月MA以下へ戻った状態です。</p></article>
       </div>
       <p>これは売買命令ではなく、中長期モメンタムの変化を見つける入口です。日足、出来高、損切り位置、資金配分と組み合わせます。</p>
     </section>
 
     <section class="panel">
-      <span class="method-kicker">確定値だけを使用</span><h2>進行中の当月は判定しません</h2>
-      <p>その月の最終取引日で月足が完成し、確定したRSI値は翌月最初の日足から利用します。月途中の一時的なクロスで対象銘柄が出入りすることを防ぐためです。</p>
+      <span class="method-kicker">確定値だけで正式判定</span><h2>進行中の当月はNEW・OUTを確定しません</h2>
+      <p>その月の最終取引日で月足が完成し、確定したRSI値は翌月最初の日足から利用します。月途中の一時的なクロスで、正式な対象銘柄が出入りすることを防ぐためです。</p>
+      <div class="provisional-box"><strong>進行中月の暫定値</strong><br>銘柄詳細では、最新日足までの終値をその月の仮の月足終値として、暫定RSI14と暫定5か月MAも表示します。暫定GC・暫定DCは観察用で、月末までに消える場合があります。ランキング、月初レポート、確定ステータス、GC後騰落率には反映しません。</div>
+    </section>
+
+    <section class="panel">
+      <span class="method-kicker">画面での見分け方</span><h2>実線・点線・縦線の意味</h2>
+      <div class="compare-grid">
+        <article><strong>実線</strong><p>月末まで完成した月足RSI14と5か月MAです。正式判定に使います。</p></article>
+        <article><strong>点線</strong><p>最新日足までで計算した進行中月の暫定値です。正式判定には使いません。</p></article>
+        <article><strong>縦のGC・DC線</strong><p>月末に確定したクロスを、翌月最初の取引日に表示します。</p></article>
+      </div>
     </section>
 
     <section class="panel">
@@ -87,7 +97,7 @@ rsiMa5 = ta.sma(rsi14, 5)</div>
       <p><a href="https://www.tradingview.com/support/solutions/43000502338-relative-strength-index-rsi/" target="_blank" rel="noopener noreferrer">TradingView公式のRSI説明</a></p>
     </section>
 
-    <section class="simple-disclaimer"><p>本ページは計算方法を明確にするための資料です。シグナルは将来の値上がりを保証せず、売買推奨を目的としません。</p></section>
+    <section class="simple-disclaimer"><p>本ページは計算方法を明確にするための資料です。確定・暫定のどちらのシグナルも将来の値上がりを保証せず、売買推奨を目的としません。</p></section>
   </main>
   <footer><p>かぶたね 🌱 / Signal version tv_wilder_rsi14_sma5_v1</p></footer>
   <script src="assets/characters.js" defer></script>

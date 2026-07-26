@@ -46,6 +46,10 @@
     loadScript("assets/site-upgrades.js");
   }
 
+  function ensureCopyAudit() {
+    loadScript("assets/copy-audit.js");
+  }
+
   function ensureReplayHistory() {
     if (!document.body?.classList.contains("replay-page")) return;
     loadScript("assets/practice-history-core.js");
@@ -94,6 +98,7 @@
   ensureTheme();
   ensureAppIcons();
   ensureSiteUpgrades();
+  ensureCopyAudit();
   ensureReplayHistory();
   ensureReplayDrawingTools();
   separateAnalysisFromOrderPlacement();
