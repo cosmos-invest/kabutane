@@ -3,13 +3,23 @@ name: Validate site UI
 on:
   pull_request:
     paths:
-      - "**/*.html"
+      - "index.html"
+      - "backtest.html"
+      - "replay.html"
+      - "detail.html"
+      - "howto.html"
+      - "learn.html"
+      - "signal-method.html"
+      - "ranking.html"
+      - "monthly-report.html"
+      - "monthly-strategy.html"
+      - "history.html"
+      - "ranking/**"
+      - "monthly-report/**"
       - "manifest.webmanifest"
       - "sw.js"
       - "assets/**"
-      - "build_market_reports.py"
       - "update_daily.py"
-      - "provisional_signal.py"
       - "update_universe.py"
       - "retry_incomplete.py"
       - "generate_tradingview.py"
@@ -40,12 +50,12 @@ jobs:
 
       - name: Validate Python signal and update engines
         run: |
-          python -m py_compile tradingview_signal.py generate_tradingview.py update_daily.py provisional_signal.py build_market_reports.py update_universe.py retry_incomplete.py
+          python -m py_compile tradingview_signal.py generate_tradingview.py update_daily.py update_universe.py retry_incomplete.py provisional_signal.py build_market_reports.py
           python -m unittest discover -s tests -p 'test_tradingview_signal.py' -v
           python -m unittest discover -s tests -p 'test_update_daily.py' -v
-          python -m unittest discover -s tests -p 'test_provisional_signal.py' -v
-          python -m unittest discover -s tests -p 'test_market_reports.py' -v
           python -m unittest discover -s tests -p 'test_update_universe.py' -v
+          python -m unittest discover -s tests -p 'test_provisional_signal.py' -v
+          python -m unittest discover -s tests -p 'test_build_market_reports.py' -v
 
       - name: Check JavaScript syntax
         run: |
@@ -69,12 +79,12 @@ jobs:
           node --check assets/replay-picker.js
           node --check assets/replay-month-end.js
           node --check assets/daily-overlay.js
-          node --check assets/provisional-monthly-rsi-core.js
-          node --check assets/detail-signal-status.js
-          node --check assets/detail-signal-chart-fix.js
           node --check assets/detail-enhancements.js
           node --check assets/detail-chart-viewport-core.js
           node --check assets/detail-chart-viewport.js
+          node --check assets/detail-signal-status.js
+          node --check assets/detail-signal-chart-fix.js
+          node --check assets/provisional-monthly-rsi-core.js
           node --check assets/simple-analysis-cosmos.js
           node --check assets/kabutane-screening.js
           node --check assets/signal-v2.js
@@ -86,6 +96,7 @@ jobs:
           node --check assets/practice-history-page.js
           node --check assets/pwa-register.js
           node --check assets/characters.js
+          node --check assets/kabutane-world.js
           node --check sw.js
 
       - name: Test JavaScript engines
@@ -115,7 +126,7 @@ jobs:
 
           for name in (
               "index.html", "backtest.html", "replay.html", "detail.html", "howto.html", "learn.html",
-              "signal-method.html", "ranking.html", "monthly-report.html", "history.html",
+              "signal-method.html", "ranking.html", "monthly-report.html", "monthly-strategy.html", "history.html",
               "ranking/index.html", "monthly-report/index.html",
           ):
               Parser().feed(Path(name).read_text(encoding="utf-8"))
@@ -126,6 +137,7 @@ jobs:
               "assets/replay-share-report.css", "assets/detail-enhancements.css", "assets/detail-signal-status.css",
               "assets/detail-chart-viewport.css", "assets/simple-analysis-cosmos.css", "assets/kabutane.css",
               "assets/kabutane-characters.css", "assets/kabutane-links.css", "assets/market-insights.css",
+              "assets/monthly-report.css", "assets/monthly-strategy-v16.css", "assets/kabutane-world.css",
           ):
               css = Path(name).read_text(encoding="utf-8")
               if css.count("{") != css.count("}"):
@@ -149,11 +161,14 @@ jobs:
           howto = Path("howto.html").read_text(encoding="utf-8")
           learn = Path("learn.html").read_text(encoding="utf-8")
           method = Path("signal-method.html").read_text(encoding="utf-8")
+          monthly_redirect = Path("monthly-report.html").read_text(encoding="utf-8")
+          monthly_strategy = Path("monthly-strategy.html").read_text(encoding="utf-8")
           pwa = Path("assets/pwa-register.js").read_text(encoding="utf-8")
           upgrades = Path("assets/site-upgrades.js").read_text(encoding="utf-8")
           copy_audit = Path("assets/copy-audit.js").read_text(encoding="utf-8")
           market_pages = Path("assets/market-pages.js").read_text(encoding="utf-8")
           service_worker = Path("sw.js").read_text(encoding="utf-8")
+          deploy = Path(".github/workflows/deploy-pages.yml").read_text(encoding="utf-8")
           workflow = Path(".github/workflows/update-data.yml").read_text(encoding="utf-8")
           daily_workflow = Path(".github/workflows/update-daily.yml").read_text(encoding="utf-8")
 
@@ -187,13 +202,24 @@ jobs:
           for marker in ("進行中月の暫定値", "ランキング、月初レポート、確定ステータス"):
               if marker not in method:
                   raise SystemExit(f"Signal method clarification is missing: {marker}")
-          for marker in ("note.com/qa/cosmos_invest", "この銘柄が表示された理由", 'href="ranking/"', 'href="monthly-report/"'):
+          for marker in ("note.com/qa/cosmos_invest", "この銘柄が表示された理由", 'href="ranking/"', 'href="monthly-strategy.html?v=16"'):
               if marker not in upgrades:
                   raise SystemExit(f"Beginner upgrade is missing: {marker}")
           for marker in ("rank_change", "今月NEW", "節目接近"):
               if marker not in market_pages:
                   raise SystemExit(f"Market page feature is missing: {marker}")
-          for name in ("ranking.html", "monthly-report.html", "history.html", "ranking/index.html", "monthly-report/index.html"):
+          for marker in (
+              "MONTHLY STRATEGY MEETING", 'data-layout-version="16"',
+              "monthly-stock-list", "monthly-strategy-v16.css",
+          ):
+              if marker not in monthly_strategy:
+                  raise SystemExit(f"Monthly strategy page is missing: {marker}")
+          if "monthly-strategy.html" not in monthly_redirect:
+              raise SystemExit("Old monthly report URL does not redirect to the strategy page")
+          for name in (
+              "ranking.html", "monthly-report.html", "monthly-strategy.html", "history.html",
+              "ranking/index.html", "monthly-report/index.html", "assets/monthly-strategy-v16.css",
+          ):
               if not Path(name).exists():
                   raise SystemExit(f"Public page missing: {name}")
           for name in ("ranking/index.html", "monthly-report/index.html"):
@@ -201,10 +227,14 @@ jobs:
                   raise SystemExit(f"Nested public route has no root base: {name}")
           for marker in (
               '"./ranking/"', '"./ranking/index.html"', '"./monthly-report/"', '"./monthly-report/index.html"',
+              '"./monthly-strategy.html"', '"./assets/monthly-strategy-v16.css"',
               '"./assets/provisional-monthly-rsi-core.js"', '"./assets/copy-audit.js"', "routeAlternatives",
           ):
               if marker not in service_worker:
                   raise SystemExit(f"Service worker route/cache item missing: {marker}")
+          for marker in ("monthly-strategy.html", "MONTHLY STRATEGY MEETING", "monthly-strategy-v16.css"):
+              if marker not in deploy:
+                  raise SystemExit(f"Pages deployment is missing: {marker}")
           if "python provisional_signal.py" not in daily_workflow:
               raise SystemExit("Daily provisional signal generator is not wired")
           if "build_market_reports.py --monthly" not in workflow:
