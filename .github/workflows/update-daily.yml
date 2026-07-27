@@ -18,6 +18,8 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 # 月次・日次・銘柄マスター更新を直列化し、同じデータへの同時pushを防ぐ。
 concurrency:
@@ -29,6 +31,9 @@ jobs:
     if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     timeout-minutes: 90
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -69,3 +74,43 @@ jobs:
             git commit -m "chore: update daily prices, provisional signals and observation ranking"
             git push origin main
           fi
+
+      - name: Prepare current data for GitHub Pages
+        run: |
+          rm -rf _site
+          mkdir -p _site
+          cp \
+            index.html detail.html backtest.html replay.html howto.html learn.html signal-method.html \
+            ranking.html monthly-report.html monthly-strategy.html history.html \
+            manifest.webmanifest sw.js .nojekyll result.csv out.csv \
+            _site/
+          cp -R assets data history ranking monthly-report _site/
+          test -f _site/data/latest.json
+          test -f _site/data/daily-update-status.json
+          test -f _site/data/ranking.json
+          test -f _site/data/daily-change.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          latest = json.loads(Path('_site/data/latest.json').read_text(encoding='utf-8'))
+          daily = json.loads(Path('_site/data/daily-update-status.json').read_text(encoding='utf-8'))
+          ranking = json.loads(Path('_site/data/ranking.json').read_text(encoding='utf-8'))
+          if daily.get('price_date') != ranking.get('price_date'):
+              raise SystemExit(f"Daily/ranking date mismatch: {daily.get('price_date')} != {ranking.get('price_date')}")
+          if latest.get('daily_price_date') not in (None, daily.get('price_date')):
+              raise SystemExit(f"Latest/daily date mismatch: {latest.get('daily_price_date')} != {daily.get('price_date')}")
+          print(f"Publishing daily price date: {daily.get('price_date')}")
+          PY
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload current Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy current daily data to Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
