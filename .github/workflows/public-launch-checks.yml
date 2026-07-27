@@ -4,13 +4,17 @@ on:
   pull_request:
     paths:
       - "monthly-report.html"
+      - "monthly-strategy.html"
       - "monthly-report/**"
       - "assets/monthly-report.css"
+      - "assets/monthly-strategy-v16.css"
       - "assets/kabutane-world.css"
       - "assets/kabutane-world.js"
       - "assets/market-pages.js"
       - "assets/characters.js"
       - "sw.js"
+      - ".github/workflows/deploy-pages.yml"
+      - ".github/workflows/public-launch-checks.yml"
   workflow_dispatch:
 
 permissions:
@@ -39,30 +43,60 @@ jobs:
           class Parser(HTMLParser):
               pass
 
-          monthly = Path("monthly-report.html").read_text(encoding="utf-8")
+          redirect = Path("monthly-report.html").read_text(encoding="utf-8")
+          monthly = Path("monthly-strategy.html").read_text(encoding="utf-8")
           nested = Path("monthly-report/index.html").read_text(encoding="utf-8")
           world = Path("assets/kabutane-world.js").read_text(encoding="utf-8")
           characters = Path("assets/characters.js").read_text(encoding="utf-8")
           sw = Path("sw.js").read_text(encoding="utf-8")
+          deploy = Path(".github/workflows/deploy-pages.yml").read_text(encoding="utf-8")
+          Parser().feed(redirect)
           Parser().feed(monthly)
           Parser().feed(nested)
 
-          for css_name in ("assets/monthly-report.css", "assets/kabutane-world.css"):
+          for css_name in (
+              "assets/monthly-report.css",
+              "assets/monthly-strategy-v16.css",
+              "assets/kabutane-world.css",
+          ):
               css = Path(css_name).read_text(encoding="utf-8")
               if css.count("{") != css.count("}"):
                   raise SystemExit(f"Unbalanced CSS: {css_name}")
 
-          for marker in ("月初作戦会議", "monthlyGroupTabs", "monthlyEventSearch", "assets/monthly-report.css"):
+          for marker in (
+              "月初作戦会議",
+              "MONTHLY STRATEGY MEETING",
+              'data-layout-version="16"',
+              "monthlyGroupTabs",
+              "monthlyEventSearch",
+              "monthly-stock-list",
+              "assets/monthly-strategy-v16.css",
+          ):
               if marker not in monthly:
-                  raise SystemExit(f"Monthly report marker missing: {marker}")
+                  raise SystemExit(f"Monthly strategy marker missing: {marker}")
+          if "monthly-strategy.html" not in redirect or "monthly-strategy.html" not in nested:
+              raise SystemExit("Old monthly report routes do not redirect to the v16 strategy page")
           for marker in ("3人に話す", "note.com/qa/cosmos_invest", "monthly-report", "localStorage"):
               if marker not in world:
                   raise SystemExit(f"World conversation marker missing: {marker}")
           for marker in ("ensureKabutaneWorld", "assets/kabutane-world.js", "assets/kabutane-world.css"):
               if marker not in characters:
                   raise SystemExit(f"World loader marker missing: {marker}")
-          for marker in ('"./assets/kabutane-world.js"', '"./assets/kabutane-world.css"', '"./assets/monthly-report.css"'):
+          for marker in (
+              '"./assets/kabutane-world.js"',
+              '"./assets/kabutane-world.css"',
+              '"./assets/monthly-report.css"',
+              '"./assets/monthly-strategy-v16.css"',
+              '"./monthly-strategy.html"',
+          ):
               if marker not in sw:
                   raise SystemExit(f"PWA asset missing: {marker}")
+          for marker in (
+              "monthly-strategy.html",
+              "MONTHLY STRATEGY MEETING",
+              "monthly-strategy-v16.css",
+          ):
+              if marker not in deploy:
+                  raise SystemExit(f"Pages deployment marker missing: {marker}")
           print("Public launch experience validation passed")
           PY
