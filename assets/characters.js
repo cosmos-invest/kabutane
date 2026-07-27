@@ -51,12 +51,27 @@ function ensureBacktestBenchmarkStatus() {
   document.head.appendChild(script);
 }
 
+function ensureKabutaneWorld() {
+  if (!document.querySelector('link[href="assets/kabutane-world.css"]')) {
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = "assets/kabutane-world.css";
+    document.head.appendChild(link);
+  }
+  if (document.querySelector('script[src="assets/kabutane-world.js"]')) return;
+  const script = document.createElement("script");
+  script.src = "assets/kabutane-world.js";
+  script.defer = true;
+  document.head.appendChild(script);
+}
+
 ensurePastelThemeStyles();
 ensureCharacterImageStyles();
 ensureSignalV2Script();
 ensureReplayMonthEndScript();
 ensurePwaSupport();
 ensureBacktestBenchmarkStatus();
+ensureKabutaneWorld();
 
 const characterGuide = (() => {
   const characters = {
@@ -70,7 +85,7 @@ const characterGuide = (() => {
       { character: "cosmos", text: "ここに並ぶのは、買う銘柄ではなく『次に調べる候補』だよ。まずは気になる会社を3〜5社だけ開いてみよう🌸" },
       { character: "lumo", text: "会社名の一部や証券コードで検索できるよ！ 詳細を見たら、今度は過去チャートで練習しよう✨" },
       { character: "aile", text: "難しい条件を全部選ばなくても大丈夫だよ。最初は『月足の勢い』だけで、どんな会社が出てくるか見てみよう。" },
-      { character: "cosmos", text: "🌸コスモス注目も売買推奨ではないよ。勢いと長期トレンドの両方を詳しく確認したい候補です🌸" },
+      { character: "cosmos", text: "🌸コスモス注目も売買推奨ではないよ。勢いと長期トレンドの両方を詳しく確認したい候補だよ🌸" },
     ],
     detail: [
       { character: "cosmos", text: "詳細は、株価チャート → 月足RSI → 配当・株式分割 → 財務の順に見ると迷いにくいよ🌸" },
@@ -95,6 +110,20 @@ const characterGuide = (() => {
     learn: [
       { character: "aile", text: "分からない言葉があったら、ここで一つずつ確認しよう。全部を一度に覚えなくて大丈夫だよ。" },
       { character: "cosmos", text: "知識は銘柄を当てるためではなく、リスクを理解して落ち着いて判断するために使おう🌸" },
+    ],
+    ranking: [
+      { character: "cosmos", text: "順位だけでなく、GCした月と継続月数を一緒に見よう。上位だから買う、ではないよ🌸" },
+      { character: "lumo", text: "順位が動いた銘柄を見つけたら、チャートを開いて理由を探してみよう✨" },
+      { character: "aile", text: "すでに大きく上昇している銘柄もあるよ。入口ではなく観察のきっかけとして使おう。" },
+    ],
+    "monthly-report": [
+      { character: "cosmos", text: "全体 → 市場 → セクター → 銘柄の順で見れば、忙しい月初でも迷いにくいよ🌸" },
+      { character: "lumo", text: "変化が多かった場所を見つけたら、気になる会社を一つだけ開いてみよう✨" },
+      { character: "aile", text: "節目接近は予測じゃないよ。確定月のRSI14と5か月MAの差が0〜2ポイントだった事実だよ。" },
+    ],
+    history: [
+      { character: "lumo", text: "利益が出た回だけじゃなく、損切りやルールを守れた回も立派な成長だよ✨" },
+      { character: "cosmos", text: "前回の判断メモを一つ読み返して、次の練習で直すことを一つ決めよう🌸" },
     ],
   };
 
