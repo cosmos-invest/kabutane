@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="忙しい月初に、確定した月足RSIのNEW・OUTと節目接近を、コスモス・ルーモ・エールと市場別・セクター別に読み解く初心者向けレポートです。">
+  <meta name="theme-color" content="#f26fa6">
+  <title>月初作戦会議 | かぶたね</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="assets/style.css?v=16">
+  <link rel="stylesheet" href="assets/pastel.css?v=16">
+  <link rel="stylesheet" href="assets/kabutane.css?v=16">
+  <link rel="stylesheet" href="assets/kabutane-links.css?v=16">
+  <link rel="stylesheet" href="assets/market-insights.css?v=16">
+  <link rel="stylesheet" href="assets/monthly-report.css?v=16">
+  <link rel="stylesheet" href="assets/kabutane-world.css?v=16">
+</head>
+<body data-page="monthly-report" data-layout-version="16" class="pastel-theme monthly-report-page">
+  <header class="site-header monthly-report-header">
+    <div class="header-inner">
+      <div>
+        <a class="back-link" href="index.html">← 銘柄を探すへ</a>
+        <p class="eyebrow">MONTHLY STRATEGY MEETING</p>
+        <h1>月初作戦会議</h1>
+        <p class="subtitle">月末に確定した変化を、コスモス・ルーモ・エールと順番に整理しよう。</p>
+      </div>
+      <div class="header-meta monthly-header-actions">
+        <span class="badge neutral">新版</span>
+        <span id="reportMonth" class="badge neutral">判定月 —</span>
+        <a class="button secondary" href="ranking/">観察ランキング</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container monthly-report-container">
+    <section class="monthly-command-hero panel" aria-labelledby="monthlyHeroTitle">
+      <div class="monthly-command-copy">
+        <span class="monthly-command-kicker">3人と5分で全体をつかむ</span>
+        <h2 id="monthlyHeroTitle">忙しい月初は、<br><em>全部の銘柄を見なくて大丈夫。</em></h2>
+        <p>最初に全体の数を確認し、変化が多かった市場・セクターから、気になる銘柄だけを開きます。</p>
+        <nav class="monthly-quick-nav" aria-label="月初レポート内の移動">
+          <a href="#monthlyOverview"><b>1</b>全体</a>
+          <a href="#monthlyMap"><b>2</b>市場・業種</a>
+          <a href="#monthlyStocks"><b>3</b>銘柄</a>
+        </nav>
+      </div>
+      <div class="monthly-command-cast" aria-label="月初作戦会議をする3人">
+        <div class="monthly-cast-character cosmos"><i></i><span>全体を整理<br><strong>コスモス🌸</strong></span></div>
+        <div class="monthly-cast-character lumo"><i></i><span>変化を発見<br><strong>ルーモ✨</strong></span></div>
+        <div class="monthly-cast-character aile"><i></i><span>注意点を確認<br><strong>エール💜</strong></span></div>
+      </div>
+    </section>
+
+    <section id="monthlyOverview" class="panel market-insights-panel monthly-overview-panel">
+      <div class="market-insights-heading">
+        <div><span class="eyebrow">STEP 1 — OVERVIEW</span><h2>今月の全体像</h2><p>完成済み月足で確定した事実だけを集計しています。</p></div>
+        <span class="monthly-time-guide">目安 1分</span>
+      </div>
+      <div id="monthlySummary" class="market-summary-grid monthly-summary-grid"></div>
+      <div class="monthly-briefing" aria-label="3人による今月の読み解き">
+        <article class="monthly-brief cosmos"><div class="portrait"></div><div><strong>コスモスの整理</strong><p id="cosmosMonthlyBrief">集計を読み込んでいるよ🌸</p></div></article>
+        <article class="monthly-brief lumo"><div class="portrait"></div><div><strong>ルーモの発見</strong><p id="lumoMonthlyBrief">変化が多い場所を探しているよ✨</p></div></article>
+        <article class="monthly-brief aile"><div class="portrait"></div><div><strong>エールの確認</strong><p id="aileMonthlyBrief">注意点を確認しているよ。</p></div></article>
+      </div>
+      <details class="monthly-meaning-guide">
+        <summary>NEW・OUT・節目接近の意味を確認</summary>
+        <div>
+          <p><strong>NEW</strong>：確定した月足RSI14が、5か月MAを下から上へ抜けた最初の判定月。</p>
+          <p><strong>OUT</strong>：確定した月足RSI14が、5か月MA以下へ戻った判定月。</p>
+          <p><strong>節目接近</strong>：確定月のRSI14と5か月MAの差が0〜2ポイントだった観察対象。次月の変化を予測する表示ではありません。</p>
+        </div>
+      </details>
+    </section>
+
+    <section id="monthlyMap" class="panel market-insights-panel monthly-map-panel">
+      <div class="market-insights-heading">
+        <div><span class="eyebrow">STEP 2 — MAP</span><h2>どこで変化が多かった？</h2><p>数が多い場所を入口にして、個別銘柄へ進みます。</p></div>
+        <span class="monthly-time-guide">目安 2分</span>
+      </div>
+      <div id="monthlyGroupTabs" class="monthly-group-tabs" role="tablist" aria-label="集計単位">
+        <button type="button" class="active" data-group-view="market" role="tab" aria-selected="true">市場別</button>
+        <button type="button" data-group-view="sector" role="tab" aria-selected="false">セクター別</button>
+      </div>
+      <div class="monthly-groups monthly-responsive-groups">
+        <section class="monthly-group active" data-group-panel="market" aria-labelledby="marketGroupTitle">
+          <div class="monthly-group-heading"><div><span>MARKET</span><h3 id="marketGroupTitle">市場別</h3></div><small>プライム・スタンダード・グロースなど</small></div>
+          <div id="marketTable" class="monthly-group-cards"></div>
+        </section>
+        <section class="monthly-group" data-group-panel="sector" aria-labelledby="sectorGroupTitle">
+          <div class="monthly-group-heading"><div><span>SECTOR</span><h3 id="sectorGroupTitle">セクター別</h3></div><small>JPX33業種で集計</small></div>
+          <div id="sectorTable" class="monthly-group-cards"></div>
+        </section>
+      </div>
+    </section>
+
+    <section id="monthlyStocks" class="panel market-insights-panel monthly-stocks-panel">
+      <div class="market-insights-heading">
+        <div><span class="eyebrow">STEP 3 — STOCKS</span><h2>変化した銘柄を確認</h2><p>会社名を横に読み、気になった銘柄だけ詳細チャートを開こう。</p></div>
+        <span class="monthly-time-guide">目安 2分</span>
+      </div>
+      <div class="monthly-stock-controls">
+        <div class="ranking-tabs monthly-event-tabs" id="monthlyTabs" role="tablist">
+          <button data-mode="new" class="active" role="tab" aria-selected="true">NEW <span id="newTabCount">—</span></button>
+          <button data-mode="out" role="tab" aria-selected="false">OUT <span id="outTabCount">—</span></button>
+          <button data-mode="near" role="tab" aria-selected="false">節目接近 <span id="nearTabCount">—</span></button>
+        </div>
+        <label class="monthly-event-search">銘柄を絞る<input id="monthlyEventSearch" type="search" placeholder="コード・会社名・市場・セクター"></label>
+      </div>
+      <div id="monthlyEventIntro" class="monthly-event-intro"></div>
+      <div id="monthlyEvents" class="event-list monthly-event-list monthly-stock-list"></div>
+      <p class="kabutane-safety-note">このレポートは売買推奨ではありません。詳細チャート、進行中月の暫定値、企業の公式情報を確認してください。</p>
+    </section>
+
+    <section class="monthly-next-actions panel">
+      <div><span class="eyebrow">NEXT STEP</span><h2>会議が終わったら、次の一歩へ</h2></div>
+      <div class="monthly-action-grid">
+        <a href="ranking/"><strong>動いた銘柄を比べる</strong><span>観察ランキングへ →</span></a>
+        <a href="replay.html"><strong>過去チャートで試す</strong><span>売買練習へ →</span></a>
+        <a href="learn.html"><strong>言葉を一つ確認する</strong><span>学び・FAQへ →</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer><p>かぶたね 🌱 / コスモス・ルーモ・エールの月初作戦会議</p></footer>
+  <script src="assets/market-pages.js?v=16" defer></script>
+  <script src="assets/characters.js?v=16" defer></script>
+  <script src="assets/kabutane-world.js?v=16" defer></script>
+</body>
+</html>
