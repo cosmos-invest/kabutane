@@ -1,4 +1,4 @@
-const CACHE_VERSION = "kabutane-pwa-v13";
+const CACHE_VERSION = "kabutane-pwa-v14";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 
 // These files are required for the detail page to boot. If even one cannot be
@@ -37,7 +37,7 @@ const OPTIONAL_ASSETS = [
   "./monthly-report/index.html",
   "./history.html",
   // Compatibility for an already-open detail.html that still requests the
-  // unversioned asset URLs while the v13 worker is activating.
+  // unversioned asset URLs while the v14 worker is activating.
   "./assets/provisional-monthly-rsi-core.js",
   "./assets/detail-chart-viewport-core.js",
   "./assets/detail.js",
@@ -47,6 +47,9 @@ const OPTIONAL_ASSETS = [
   "./assets/detail-signal-status.js",
   "./assets/detail-signal-chart-fix.js",
   "./assets/characters.js",
+  "./assets/kabutane-world.js",
+  "./assets/kabutane-world.css",
+  "./assets/monthly-report.css",
   "./assets/detail-enhancements.css",
   "./assets/detail-signal-status.css",
   "./assets/detail-chart-viewport.css",
