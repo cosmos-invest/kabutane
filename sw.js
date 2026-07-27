@@ -1,4 +1,4 @@
-const CACHE_VERSION = "kabutane-pwa-v14";
+const CACHE_VERSION = "kabutane-pwa-v15";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 
 // These files are required for the detail page to boot. If even one cannot be
@@ -32,12 +32,13 @@ const OPTIONAL_ASSETS = [
   "./ranking.html",
   "./ranking/",
   "./ranking/index.html",
+  "./monthly-report.html?layout=15",
   "./monthly-report.html",
   "./monthly-report/",
   "./monthly-report/index.html",
   "./history.html",
   // Compatibility for an already-open detail.html that still requests the
-  // unversioned asset URLs while the v14 worker is activating.
+  // unversioned asset URLs while the v15 worker is activating.
   "./assets/provisional-monthly-rsi-core.js",
   "./assets/detail-chart-viewport-core.js",
   "./assets/detail.js",
@@ -50,13 +51,23 @@ const OPTIONAL_ASSETS = [
   "./assets/kabutane-world.js",
   "./assets/kabutane-world.css",
   "./assets/monthly-report.css",
+  "./assets/market-insights.css",
+  "./assets/style.css?v=15",
+  "./assets/pastel.css?v=15",
+  "./assets/kabutane.css?v=15",
+  "./assets/kabutane-links.css?v=15",
+  "./assets/market-insights.css?v=15",
+  "./assets/monthly-report.css?v=15",
+  "./assets/kabutane-world.css?v=15",
+  "./assets/market-pages.js?v=15",
+  "./assets/characters.js?v=15",
+  "./assets/kabutane-world.js?v=15",
   "./assets/detail-enhancements.css",
   "./assets/detail-signal-status.css",
   "./assets/detail-chart-viewport.css",
   "./assets/pastel.css",
   "./assets/kabutane.css",
   "./assets/howto-visual.css",
-  "./assets/market-insights.css",
   "./assets/site-upgrades.js",
   "./assets/copy-audit.js",
   "./assets/market-pages.js",
@@ -107,10 +118,10 @@ self.addEventListener("activate", (event) => {
 function routeAlternatives(url) {
   const pathname = url.pathname.replace(/\/+$/, "");
   if (pathname.endsWith("/ranking") || pathname.endsWith("/ranking.html")) {
-    return ["./ranking/", "./ranking/index.html", "./ranking.html"];
+    return ["./ranking.html", "./ranking/", "./ranking/index.html"];
   }
   if (pathname.endsWith("/monthly-report") || pathname.endsWith("/monthly-report.html")) {
-    return ["./monthly-report/", "./monthly-report/index.html", "./monthly-report.html"];
+    return ["./monthly-report.html?layout=15", "./monthly-report.html", "./monthly-report/", "./monthly-report/index.html"];
   }
   return [];
 }
