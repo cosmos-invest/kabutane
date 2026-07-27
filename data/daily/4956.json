@@ -2,12 +2,12 @@
   "code": "4956",
   "ticker": "4956.T",
   "name": "コニシ",
-  "generated_at": "2026-07-26T22:42:30.391148+00:00",
-  "price_date": "2026-07-24",
+  "generated_at": "2026-07-27T14:18:43.922205+00:00",
+  "price_date": "2026-07-27",
   "record": {
-    "current_price": 1417.0,
-    "change_from_signal_month_pct": -4.13,
-    "return_since_gc_pct": -4.13
+    "current_price": 1481.0,
+    "change_from_signal_month_pct": 0.2,
+    "return_since_gc_pct": 0.2
   },
   "daily": [
     {
@@ -74,22 +74,35 @@
       "sma200": 1363.97,
       "rsi14": 60.62,
       "rsi5": 63.53
+    },
+    {
+      "date": "2026-07-27",
+      "open": 1419.0,
+      "high": 1497.0,
+      "low": 1417.0,
+      "close": 1481.0,
+      "volume": 195300.0,
+      "sma25": 1455.8,
+      "sma75": 1425.99,
+      "sma200": 1364.87,
+      "rsi14": 60.62,
+      "rsi5": 63.53
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-24",
-    "monthly_rsi14": 58.2,
-    "monthly_rsi_ma5": 59.65,
-    "spread": -1.44,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-07-27",
+    "monthly_rsi14": 62.87,
+    "monthly_rsi_ma5": 60.58,
+    "spread": 2.29,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-06",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-26T22:43:04.299308+00:00"
+  "provisional_generated_at": "2026-07-27T14:19:17.396790+00:00"
 }

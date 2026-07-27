@@ -2,12 +2,12 @@
   "code": "4203",
   "ticker": "4203.T",
   "name": "住友ベークライト",
-  "generated_at": "2026-07-26T22:42:30.391148+00:00",
-  "price_date": "2026-07-24",
+  "generated_at": "2026-07-27T14:18:43.922205+00:00",
+  "price_date": "2026-07-27",
   "record": {
-    "current_price": 6795.0,
-    "change_from_signal_month_pct": -8.84,
-    "return_since_gc_pct": -1.52
+    "current_price": 6645.0,
+    "change_from_signal_month_pct": -10.85,
+    "return_since_gc_pct": -3.7
   },
   "daily": [
     {
@@ -74,22 +74,35 @@
       "sma200": 5697.28,
       "rsi14": 68.07,
       "rsi5": 74.03
+    },
+    {
+      "date": "2026-07-27",
+      "open": 6835.0,
+      "high": 6841.0,
+      "low": 6633.0,
+      "close": 6645.0,
+      "volume": 363600.0,
+      "sma25": 7264.88,
+      "sma75": 6497.37,
+      "sma200": 5705.7,
+      "rsi14": 68.07,
+      "rsi5": 74.03
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-24",
-    "monthly_rsi14": 66.41,
-    "monthly_rsi_ma5": 66.35,
-    "spread": 0.05,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-07-27",
+    "monthly_rsi14": 64.85,
+    "monthly_rsi_ma5": 66.04,
+    "spread": -1.19,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-06",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-26T22:43:04.299308+00:00"
+  "provisional_generated_at": "2026-07-27T14:19:17.396790+00:00"
 }

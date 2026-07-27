@@ -2,12 +2,12 @@
   "code": "3905",
   "ticker": "3905.T",
   "name": "データセクション",
-  "generated_at": "2026-07-26T22:42:30.391148+00:00",
-  "price_date": "2026-07-24",
+  "generated_at": "2026-07-27T14:18:43.922205+00:00",
+  "price_date": "2026-07-27",
   "record": {
-    "current_price": 2328.0,
-    "change_from_signal_month_pct": -32.81,
-    "return_since_gc_pct": -62.08
+    "current_price": 2323.0,
+    "change_from_signal_month_pct": -32.96,
+    "return_since_gc_pct": -62.17
   },
   "daily": [
     {
@@ -74,15 +74,28 @@
       "sma200": 2386.45,
       "rsi14": 57.3,
       "rsi5": 57.55
+    },
+    {
+      "date": "2026-07-27",
+      "open": 2319.0,
+      "high": 2331.0,
+      "low": 2224.0,
+      "close": 2323.0,
+      "volume": 1184500.0,
+      "sma25": 3208.4,
+      "sma75": 3182.52,
+      "sma200": 2386.82,
+      "rsi14": 57.3,
+      "rsi5": 57.55
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-24",
-    "monthly_rsi14": 52.16,
-    "monthly_rsi_ma5": 57.31,
-    "spread": -5.15,
+    "price_date": "2026-07-27",
+    "monthly_rsi14": 52.13,
+    "monthly_rsi_ma5": 57.3,
+    "spread": -5.17,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -91,5 +104,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-26T22:43:04.299308+00:00"
+  "provisional_generated_at": "2026-07-27T14:19:17.396790+00:00"
 }

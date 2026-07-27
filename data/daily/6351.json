@@ -2,12 +2,12 @@
   "code": "6351",
   "ticker": "6351.T",
   "name": "鶴見製作所",
-  "generated_at": "2026-07-26T22:42:30.391148+00:00",
-  "price_date": "2026-07-24",
+  "generated_at": "2026-07-27T14:18:43.922205+00:00",
+  "price_date": "2026-07-27",
   "record": {
-    "current_price": 2171.0,
-    "change_from_signal_month_pct": -6.22,
-    "return_since_gc_pct": -6.22
+    "current_price": 2230.0,
+    "change_from_signal_month_pct": -3.67,
+    "return_since_gc_pct": -3.67
   },
   "daily": [
     {
@@ -74,22 +74,35 @@
       "sma200": 2157.96,
       "rsi14": 59.29,
       "rsi5": 62.13
+    },
+    {
+      "date": "2026-07-27",
+      "open": 2172.0,
+      "high": 2230.0,
+      "low": 2146.0,
+      "close": 2230.0,
+      "volume": 38700.0,
+      "sma25": 2287.36,
+      "sma75": 2199.31,
+      "sma200": 2158.61,
+      "rsi14": 59.29,
+      "rsi5": 62.13
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-24",
-    "monthly_rsi14": 58.01,
-    "monthly_rsi_ma5": 59.54,
-    "spread": -1.54,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-07-27",
+    "monthly_rsi14": 60.03,
+    "monthly_rsi_ma5": 59.95,
+    "spread": 0.08,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-06",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-26T22:43:04.299308+00:00"
+  "provisional_generated_at": "2026-07-27T14:19:17.396790+00:00"
 }

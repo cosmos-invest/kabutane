@@ -2,12 +2,12 @@
   "code": "2676",
   "ticker": "2676.T",
   "name": "高千穂交易",
-  "generated_at": "2026-07-26T22:42:30.391148+00:00",
-  "price_date": "2026-07-24",
+  "generated_at": "2026-07-27T14:18:43.922205+00:00",
+  "price_date": "2026-07-27",
   "record": {
-    "current_price": 2057.0,
-    "change_from_signal_month_pct": -4.46,
-    "return_since_gc_pct": -4.46
+    "current_price": 2094.0,
+    "change_from_signal_month_pct": -2.74,
+    "return_since_gc_pct": -2.74
   },
   "daily": [
     {
@@ -74,22 +74,35 @@
       "sma200": 2052.4,
       "rsi14": 58.54,
       "rsi5": 61.47
+    },
+    {
+      "date": "2026-07-27",
+      "open": 2084.0,
+      "high": 2097.0,
+      "low": 2061.0,
+      "close": 2094.0,
+      "volume": 24000.0,
+      "sma25": 2116.8,
+      "sma75": 2062.96,
+      "sma200": 2053.12,
+      "rsi14": 58.54,
+      "rsi5": 61.47
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-24",
-    "monthly_rsi14": 55.16,
-    "monthly_rsi_ma5": 56.15,
-    "spread": -0.99,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-07-27",
+    "monthly_rsi14": 57.21,
+    "monthly_rsi_ma5": 56.56,
+    "spread": 0.65,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-06",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-26T22:43:04.299308+00:00"
+  "provisional_generated_at": "2026-07-27T14:19:17.396790+00:00"
 }

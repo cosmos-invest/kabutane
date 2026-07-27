@@ -2,12 +2,12 @@
   "code": "6817",
   "ticker": "6817.T",
   "name": "スミダコーポレーション",
-  "generated_at": "2026-07-26T22:42:30.391148+00:00",
-  "price_date": "2026-07-24",
+  "generated_at": "2026-07-27T14:18:43.922205+00:00",
+  "price_date": "2026-07-27",
   "record": {
-    "current_price": 1335.0,
-    "change_from_signal_month_pct": -2.48,
-    "return_since_gc_pct": -0.82
+    "current_price": 1350.0,
+    "change_from_signal_month_pct": -1.39,
+    "return_since_gc_pct": 0.3
   },
   "daily": [
     {
@@ -74,22 +74,35 @@
       "sma200": 1233.4,
       "rsi14": 58.6,
       "rsi5": 59.24
+    },
+    {
+      "date": "2026-07-27",
+      "open": 1346.0,
+      "high": 1357.0,
+      "low": 1324.0,
+      "close": 1350.0,
+      "volume": 203600.0,
+      "sma25": 1372.32,
+      "sma75": 1367.48,
+      "sma200": 1234.64,
+      "rsi14": 58.6,
+      "rsi5": 59.24
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-24",
-    "monthly_rsi14": 55.42,
-    "monthly_rsi_ma5": 55.68,
-    "spread": -0.25,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-07-27",
+    "monthly_rsi14": 56.17,
+    "monthly_rsi_ma5": 55.82,
+    "spread": 0.34,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-06",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-26T22:43:04.299308+00:00"
+  "provisional_generated_at": "2026-07-27T14:19:17.396790+00:00"
 }

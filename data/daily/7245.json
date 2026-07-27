@@ -2,12 +2,12 @@
   "code": "7245",
   "ticker": "7245.T",
   "name": "大同メタル工業",
-  "generated_at": "2026-07-26T22:42:30.391148+00:00",
-  "price_date": "2026-07-24",
+  "generated_at": "2026-07-27T14:18:43.922205+00:00",
+  "price_date": "2026-07-27",
   "record": {
-    "current_price": 1299.0,
-    "change_from_signal_month_pct": -22.49,
-    "return_since_gc_pct": -22.49
+    "current_price": 1337.0,
+    "change_from_signal_month_pct": -20.23,
+    "return_since_gc_pct": -20.23
   },
   "daily": [
     {
@@ -74,22 +74,35 @@
       "sma200": 1072.63,
       "rsi14": 65.86,
       "rsi5": 75.72
+    },
+    {
+      "date": "2026-07-27",
+      "open": 1310.0,
+      "high": 1338.0,
+      "low": 1282.0,
+      "close": 1337.0,
+      "volume": 447800.0,
+      "sma25": 1511.04,
+      "sma75": 1187.99,
+      "sma200": 1074.34,
+      "rsi14": 65.86,
+      "rsi5": 75.72
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-24",
-    "monthly_rsi14": 61.38,
-    "monthly_rsi_ma5": 62.18,
-    "spread": -0.8,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-07-27",
+    "monthly_rsi14": 62.59,
+    "monthly_rsi_ma5": 62.42,
+    "spread": 0.17,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-06",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-26T22:43:04.299308+00:00"
+  "provisional_generated_at": "2026-07-27T14:19:17.396790+00:00"
 }

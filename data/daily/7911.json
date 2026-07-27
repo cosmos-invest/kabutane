@@ -2,12 +2,12 @@
   "code": "7911",
   "ticker": "7911.T",
   "name": "ＴＯＰＰＡＮホールディングス",
-  "generated_at": "2026-07-26T22:42:30.391148+00:00",
-  "price_date": "2026-07-24",
+  "generated_at": "2026-07-27T14:18:43.922205+00:00",
+  "price_date": "2026-07-27",
   "record": {
-    "current_price": 4852.0,
-    "change_from_signal_month_pct": -4.96,
-    "return_since_gc_pct": -4.96
+    "current_price": 4693.0,
+    "change_from_signal_month_pct": -8.07,
+    "return_since_gc_pct": -8.07
   },
   "daily": [
     {
@@ -74,22 +74,35 @@
       "sma200": 4595.42,
       "rsi14": 57.61,
       "rsi5": 59.58
+    },
+    {
+      "date": "2026-07-27",
+      "open": 4880.0,
+      "high": 4892.0,
+      "low": 4590.0,
+      "close": 4693.0,
+      "volume": 1768400.0,
+      "sma25": 5045.4,
+      "sma75": 4759.75,
+      "sma200": 4599.73,
+      "rsi14": 57.61,
+      "rsi5": 59.58
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-24",
-    "monthly_rsi14": 56.38,
-    "monthly_rsi_ma5": 55.21,
-    "spread": 1.17,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-07-27",
+    "monthly_rsi14": 54.61,
+    "monthly_rsi_ma5": 54.86,
+    "spread": -0.25,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-06",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-26T22:43:04.299308+00:00"
+  "provisional_generated_at": "2026-07-27T14:19:17.396790+00:00"
 }

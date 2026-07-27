@@ -2,12 +2,12 @@
   "code": "9846",
   "ticker": "9846.T",
   "name": "天満屋ストア",
-  "generated_at": "2026-07-26T22:42:30.391148+00:00",
-  "price_date": "2026-07-24",
+  "generated_at": "2026-07-27T14:18:43.922205+00:00",
+  "price_date": "2026-07-27",
   "record": {
-    "current_price": 1000.0,
-    "change_from_signal_month_pct": 0.91,
-    "return_since_gc_pct": 2.88
+    "current_price": 1002.0,
+    "change_from_signal_month_pct": 1.11,
+    "return_since_gc_pct": 3.09
   },
   "daily": [
     {
@@ -74,15 +74,28 @@
       "sma200": 971.6,
       "rsi14": 45.28,
       "rsi5": 51.15
+    },
+    {
+      "date": "2026-07-27",
+      "open": 1001.0,
+      "high": 1002.0,
+      "low": 1000.0,
+      "close": 1002.0,
+      "volume": 1100.0,
+      "sma25": 997.6,
+      "sma75": 980.01,
+      "sma200": 971.78,
+      "rsi14": 45.28,
+      "rsi5": 51.15
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-24",
-    "monthly_rsi14": 53.25,
-    "monthly_rsi_ma5": 46.45,
-    "spread": 6.8,
+    "price_date": "2026-07-27",
+    "monthly_rsi14": 53.78,
+    "monthly_rsi_ma5": 46.55,
+    "spread": 7.23,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -91,5 +104,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-26T22:43:04.299308+00:00"
+  "provisional_generated_at": "2026-07-27T14:19:17.396790+00:00"
 }

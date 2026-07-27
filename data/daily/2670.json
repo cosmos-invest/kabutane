@@ -2,12 +2,12 @@
   "code": "2670",
   "ticker": "2670.T",
   "name": "エービーシー・マート",
-  "generated_at": "2026-07-26T22:42:30.391148+00:00",
-  "price_date": "2026-07-24",
+  "generated_at": "2026-07-27T14:18:43.922205+00:00",
+  "price_date": "2026-07-27",
   "record": {
-    "current_price": 2637.0,
-    "change_from_signal_month_pct": -5.84,
-    "return_since_gc_pct": -1.16
+    "current_price": 2714.0,
+    "change_from_signal_month_pct": -3.09,
+    "return_since_gc_pct": 1.72
   },
   "daily": [
     {
@@ -74,22 +74,35 @@
       "sma200": 2664.03,
       "rsi14": 47.84,
       "rsi5": 52.57
+    },
+    {
+      "date": "2026-07-27",
+      "open": 2661.5,
+      "high": 2720.5,
+      "low": 2647.0,
+      "close": 2714.0,
+      "volume": 663300.0,
+      "sma25": 2734.16,
+      "sma75": 2718.08,
+      "sma200": 2662.87,
+      "rsi14": 47.84,
+      "rsi5": 52.57
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-24",
-    "monthly_rsi14": 47.42,
-    "monthly_rsi_ma5": 47.69,
-    "spread": -0.27,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-07-27",
+    "monthly_rsi14": 49.55,
+    "monthly_rsi_ma5": 48.12,
+    "spread": 1.43,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-06",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-26T22:43:04.299308+00:00"
+  "provisional_generated_at": "2026-07-27T14:19:17.396790+00:00"
 }

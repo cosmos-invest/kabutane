@@ -2,12 +2,12 @@
   "code": "6871",
   "ticker": "6871.T",
   "name": "日本マイクロニクス",
-  "generated_at": "2026-07-26T22:42:30.391148+00:00",
-  "price_date": "2026-07-24",
+  "generated_at": "2026-07-27T14:18:43.922205+00:00",
+  "price_date": "2026-07-27",
   "record": {
-    "current_price": 15360.0,
-    "change_from_signal_month_pct": -7.69,
-    "return_since_gc_pct": 18.52
+    "current_price": 14810.0,
+    "change_from_signal_month_pct": -11.0,
+    "return_since_gc_pct": 14.27
   },
   "daily": [
     {
@@ -74,22 +74,35 @@
       "sma200": 10745.85,
       "rsi14": 68.1,
       "rsi5": 72.51
+    },
+    {
+      "date": "2026-07-27",
+      "open": 15070.0,
+      "high": 15230.0,
+      "low": 14320.0,
+      "close": 14810.0,
+      "volume": 961000.0,
+      "sma25": 16056.4,
+      "sma75": 14636.0,
+      "sma200": 10790.95,
+      "rsi14": 68.1,
+      "rsi5": 72.51
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-24",
-    "monthly_rsi14": 68.25,
-    "monthly_rsi_ma5": 67.67,
-    "spread": 0.59,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-07-27",
+    "monthly_rsi14": 66.58,
+    "monthly_rsi_ma5": 67.33,
+    "spread": -0.76,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-06",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-26T22:43:04.299308+00:00"
+  "provisional_generated_at": "2026-07-27T14:19:17.396790+00:00"
 }
