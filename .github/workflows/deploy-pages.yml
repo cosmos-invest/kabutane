@@ -4,6 +4,8 @@ on:
   workflow_run:
     workflows: ["Update monthly RSI data", "Audit data quality"]
     types: [completed]
+  pull_request:
+    types: [closed]
   push:
     branches: ["main"]
     paths:
@@ -30,21 +32,27 @@ concurrency:
 
 jobs:
   deploy:
-    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    if: >-
+      github.event_name == 'push' ||
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'pull_request' && github.event.pull_request.merged == true) ||
+      (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success')
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout main
         uses: actions/checkout@v4
+        with:
+          ref: main
 
       - name: Prepare site
         run: |
           mkdir -p _site
           cp \
             index.html detail.html backtest.html replay.html howto.html learn.html signal-method.html \
-            ranking.html monthly-report.html history.html \
+            ranking.html monthly-report.html monthly-strategy.html history.html \
             manifest.webmanifest sw.js .nojekyll result.csv out.csv \
             _site/
           cp -R assets data history ranking monthly-report _site/
@@ -55,16 +63,21 @@ jobs:
           test -f _site/sw.js
           test -f _site/ranking.html
           test -f _site/monthly-report.html
+          test -f _site/monthly-strategy.html
           test -f _site/history.html
           test -f _site/ranking/index.html
           test -f _site/monthly-report/index.html
+          test -f _site/assets/monthly-strategy-v16.css
           test -f _site/assets/icons/kabutane-wordmark-v3.svg
           test -f _site/assets/icons/kabutane-192.png
           test -f _site/assets/replay-drawing-tools.js
           grep -q 'kabutane-wordmark-v3.svg' _site/manifest.webmanifest
           grep -q 'assets/replay-drawing-tools.js' _site/replay.html
           grep -q 'MONTHLY RSI CROSS RANKING' _site/ranking.html
-          grep -q 'MONTHLY CHANGE REPORT' _site/monthly-report.html
+          grep -q 'monthly-strategy.html' _site/monthly-report.html
+          grep -q 'MONTHLY STRATEGY MEETING' _site/monthly-strategy.html
+          grep -q 'data-layout-version="16"' _site/monthly-strategy.html
+          grep -q 'monthly-strategy-v16.css' _site/monthly-strategy.html
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
