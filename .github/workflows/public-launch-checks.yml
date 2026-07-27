@@ -1,0 +1,68 @@
+name: Validate public launch experience
+
+on:
+  pull_request:
+    paths:
+      - "monthly-report.html"
+      - "monthly-report/**"
+      - "assets/monthly-report.css"
+      - "assets/kabutane-world.css"
+      - "assets/kabutane-world.js"
+      - "assets/market-pages.js"
+      - "assets/characters.js"
+      - "sw.js"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-launch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check launch JavaScript
+        run: |
+          node --check assets/kabutane-world.js
+          node --check assets/market-pages.js
+          node --check assets/characters.js
+          node --check sw.js
+      - name: Check responsive report and world assets
+        run: |
+          python - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+
+          class Parser(HTMLParser):
+              pass
+
+          monthly = Path("monthly-report.html").read_text(encoding="utf-8")
+          nested = Path("monthly-report/index.html").read_text(encoding="utf-8")
+          world = Path("assets/kabutane-world.js").read_text(encoding="utf-8")
+          characters = Path("assets/characters.js").read_text(encoding="utf-8")
+          sw = Path("sw.js").read_text(encoding="utf-8")
+          Parser().feed(monthly)
+          Parser().feed(nested)
+
+          for css_name in ("assets/monthly-report.css", "assets/kabutane-world.css"):
+              css = Path(css_name).read_text(encoding="utf-8")
+              if css.count("{") != css.count("}"):
+                  raise SystemExit(f"Unbalanced CSS: {css_name}")
+
+          for marker in ("月初作戦会議", "monthlyGroupTabs", "monthlyEventSearch", "assets/monthly-report.css"):
+              if marker not in monthly:
+                  raise SystemExit(f"Monthly report marker missing: {marker}")
+          for marker in ("3人に話す", "note.com/qa/cosmos_invest", "monthly-report", "localStorage"):
+              if marker not in world:
+                  raise SystemExit(f"World conversation marker missing: {marker}")
+          for marker in ("ensureKabutaneWorld", "assets/kabutane-world.js", "assets/kabutane-world.css"):
+              if marker not in characters:
+                  raise SystemExit(f"World loader marker missing: {marker}")
+          for marker in ('"./assets/kabutane-world.js"', '"./assets/kabutane-world.css"', '"./assets/monthly-report.css"'):
+              if marker not in sw:
+                  raise SystemExit(f"PWA asset missing: {marker}")
+          print("Public launch experience validation passed")
+          PY
