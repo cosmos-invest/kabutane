@@ -2,12 +2,12 @@
   "code": "6013",
   "ticker": "6013.T",
   "name": "タクマ",
-  "generated_at": "2026-07-27T23:38:16.868850+00:00",
-  "price_date": "2026-07-27",
+  "generated_at": "2026-07-28T13:50:16.202326+00:00",
+  "price_date": "2026-07-28",
   "record": {
-    "current_price": 3475.0,
-    "change_from_signal_month_pct": -4.01,
-    "return_since_gc_pct": 2.36
+    "current_price": 3410.0,
+    "change_from_signal_month_pct": -5.8,
+    "return_since_gc_pct": 0.44
   },
   "daily": [
     {
@@ -87,22 +87,35 @@
       "sma200": 2814.74,
       "rsi14": 76.24,
       "rsi5": 80.32
+    },
+    {
+      "date": "2026-07-28",
+      "open": 3475.0,
+      "high": 3500.0,
+      "low": 3400.0,
+      "close": 3410.0,
+      "volume": 180900.0,
+      "sma25": 3533.0,
+      "sma75": 3252.73,
+      "sma200": 2820.57,
+      "rsi14": 76.24,
+      "rsi5": 80.32
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-27",
-    "monthly_rsi14": 75.04,
-    "monthly_rsi_ma5": 74.11,
-    "spread": 0.93,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-07-28",
+    "monthly_rsi14": 72.97,
+    "monthly_rsi_ma5": 73.69,
+    "spread": -0.72,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-06",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-27T23:38:44.799860+00:00"
+  "provisional_generated_at": "2026-07-28T13:50:49.294914+00:00"
 }

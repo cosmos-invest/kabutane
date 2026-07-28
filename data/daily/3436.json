@@ -2,12 +2,12 @@
   "code": "3436",
   "ticker": "3436.T",
   "name": "ＳＵＭＣＯ",
-  "generated_at": "2026-07-27T23:38:16.868850+00:00",
-  "price_date": "2026-07-27",
+  "generated_at": "2026-07-28T13:50:16.202326+00:00",
+  "price_date": "2026-07-28",
   "record": {
-    "current_price": 3762.0,
-    "change_from_signal_month_pct": -6.63,
-    "return_since_gc_pct": 162.16
+    "current_price": 3140.0,
+    "change_from_signal_month_pct": -22.07,
+    "return_since_gc_pct": 118.82
   },
   "daily": [
     {
@@ -87,22 +87,35 @@
       "sma200": 2288.53,
       "rsi14": 66.93,
       "rsi5": 79.3
+    },
+    {
+      "date": "2026-07-28",
+      "open": 3386.0,
+      "high": 3419.0,
+      "low": 3099.0,
+      "close": 3140.0,
+      "volume": 18184200.0,
+      "sma25": 4298.12,
+      "sma75": 3545.23,
+      "sma200": 2296.35,
+      "rsi14": 66.93,
+      "rsi5": 79.3
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-27",
-    "monthly_rsi14": 74.1,
-    "monthly_rsi_ma5": 70.69,
-    "spread": 3.41,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-07-28",
+    "monthly_rsi14": 63.59,
+    "monthly_rsi_ma5": 68.58,
+    "spread": -5.0,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-06",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-27T23:38:44.799860+00:00"
+  "provisional_generated_at": "2026-07-28T13:50:49.294914+00:00"
 }

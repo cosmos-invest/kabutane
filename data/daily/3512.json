@@ -2,12 +2,12 @@
   "code": "3512",
   "ticker": "3512.T",
   "name": "日本フエルト",
-  "generated_at": "2026-07-27T23:38:16.868850+00:00",
-  "price_date": "2026-07-27",
+  "generated_at": "2026-07-28T13:50:16.202326+00:00",
+  "price_date": "2026-07-28",
   "record": {
-    "current_price": 968.0,
-    "change_from_signal_month_pct": 0.31,
-    "return_since_gc_pct": 0.31
+    "current_price": 933.0,
+    "change_from_signal_month_pct": -3.32,
+    "return_since_gc_pct": -3.32
   },
   "daily": [
     {
@@ -87,22 +87,35 @@
       "sma200": 825.12,
       "rsi14": 84.21,
       "rsi5": 85.85
+    },
+    {
+      "date": "2026-07-28",
+      "open": 964.0,
+      "high": 970.0,
+      "low": 929.0,
+      "close": 933.0,
+      "volume": 19800.0,
+      "sma25": 965.36,
+      "sma75": 904.11,
+      "sma200": 826.82,
+      "rsi14": 84.21,
+      "rsi5": 85.85
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-27",
-    "monthly_rsi14": 86.66,
-    "monthly_rsi_ma5": 84.82,
-    "spread": 1.85,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-07-28",
+    "monthly_rsi14": 80.49,
+    "monthly_rsi_ma5": 83.58,
+    "spread": -3.09,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-06",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-27T23:38:44.799860+00:00"
+  "provisional_generated_at": "2026-07-28T13:50:49.294914+00:00"
 }

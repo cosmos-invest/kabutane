@@ -2,12 +2,12 @@
   "code": "6866",
   "ticker": "6866.T",
   "name": "日置電機",
-  "generated_at": "2026-07-27T23:38:16.868850+00:00",
-  "price_date": "2026-07-27",
+  "generated_at": "2026-07-28T13:50:16.202326+00:00",
+  "price_date": "2026-07-28",
   "record": {
-    "current_price": 11430.0,
-    "change_from_signal_month_pct": -6.16,
-    "return_since_gc_pct": 88.3
+    "current_price": 10640.0,
+    "change_from_signal_month_pct": -12.64,
+    "return_since_gc_pct": 75.29
   },
   "daily": [
     {
@@ -87,22 +87,35 @@
       "sma200": 8354.85,
       "rsi14": 67.63,
       "rsi5": 75.79
+    },
+    {
+      "date": "2026-07-28",
+      "open": 10920.0,
+      "high": 10990.0,
+      "low": 10620.0,
+      "close": 10640.0,
+      "volume": 56600.0,
+      "sma25": 11683.6,
+      "sma75": 11521.07,
+      "sma200": 8377.65,
+      "rsi14": 67.63,
+      "rsi5": 75.79
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-27",
-    "monthly_rsi14": 69.03,
-    "monthly_rsi_ma5": 68.53,
-    "spread": 0.5,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-07-28",
+    "monthly_rsi14": 63.57,
+    "monthly_rsi_ma5": 67.44,
+    "spread": -3.87,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-06",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-27T23:38:44.799860+00:00"
+  "provisional_generated_at": "2026-07-28T13:50:49.294914+00:00"
 }

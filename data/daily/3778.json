@@ -2,12 +2,12 @@
   "code": "3778",
   "ticker": "3778.T",
   "name": "さくらインターネット",
-  "generated_at": "2026-07-27T23:38:16.868850+00:00",
-  "price_date": "2026-07-27",
+  "generated_at": "2026-07-28T13:50:16.202326+00:00",
+  "price_date": "2026-07-28",
   "record": {
-    "current_price": 2900.0,
-    "change_from_signal_month_pct": -1.89,
-    "return_since_gc_pct": -7.35
+    "current_price": 3100.0,
+    "change_from_signal_month_pct": 4.87,
+    "return_since_gc_pct": -0.96
   },
   "daily": [
     {
@@ -87,22 +87,35 @@
       "sma200": 2996.13,
       "rsi14": 47.84,
       "rsi5": 48.27
+    },
+    {
+      "date": "2026-07-28",
+      "open": 2920.0,
+      "high": 3215.0,
+      "low": 2821.0,
+      "close": 3100.0,
+      "volume": 6262300.0,
+      "sma25": 2883.24,
+      "sma75": 3038.72,
+      "sma200": 2995.78,
+      "rsi14": 47.84,
+      "rsi5": 48.27
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-27",
-    "monthly_rsi14": 50.48,
-    "monthly_rsi_ma5": 50.57,
-    "spread": -0.1,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-07-28",
+    "monthly_rsi14": 52.14,
+    "monthly_rsi_ma5": 50.91,
+    "spread": 1.24,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-06",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-27T23:38:44.799860+00:00"
+  "provisional_generated_at": "2026-07-28T13:50:49.294914+00:00"
 }

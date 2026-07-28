@@ -2,12 +2,12 @@
   "code": "6856",
   "ticker": "6856.T",
   "name": "堀場製作所",
-  "generated_at": "2026-07-27T23:38:16.868850+00:00",
-  "price_date": "2026-07-27",
+  "generated_at": "2026-07-28T13:50:16.202326+00:00",
+  "price_date": "2026-07-28",
   "record": {
-    "current_price": 26995.0,
-    "change_from_signal_month_pct": -1.51,
-    "return_since_gc_pct": 2.78
+    "current_price": 24700.0,
+    "change_from_signal_month_pct": -9.89,
+    "return_since_gc_pct": -5.96
   },
   "daily": [
     {
@@ -87,22 +87,35 @@
       "sma200": 19697.6,
       "rsi14": 75.92,
       "rsi5": 79.62
+    },
+    {
+      "date": "2026-07-28",
+      "open": 24550.0,
+      "high": 25300.0,
+      "low": 24485.0,
+      "close": 24700.0,
+      "volume": 278600.0,
+      "sma25": 27222.6,
+      "sma75": 25175.13,
+      "sma200": 19758.4,
+      "rsi14": 75.92,
+      "rsi5": 79.62
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-27",
-    "monthly_rsi14": 77.76,
-    "monthly_rsi_ma5": 74.95,
-    "spread": 2.81,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-07-28",
+    "monthly_rsi14": 70.32,
+    "monthly_rsi_ma5": 73.46,
+    "spread": -3.14,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-06",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-27T23:38:44.799860+00:00"
+  "provisional_generated_at": "2026-07-28T13:50:49.294914+00:00"
 }

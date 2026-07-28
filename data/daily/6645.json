@@ -2,12 +2,12 @@
   "code": "6645",
   "ticker": "6645.T",
   "name": "オムロン",
-  "generated_at": "2026-07-27T23:38:16.868850+00:00",
-  "price_date": "2026-07-27",
+  "generated_at": "2026-07-28T13:50:16.202326+00:00",
+  "price_date": "2026-07-28",
   "record": {
-    "current_price": 5650.0,
-    "change_from_signal_month_pct": -2.59,
-    "return_since_gc_pct": 1.77
+    "current_price": 5165.0,
+    "change_from_signal_month_pct": -10.95,
+    "return_since_gc_pct": -6.97
   },
   "daily": [
     {
@@ -87,22 +87,35 @@
       "sma200": 4774.49,
       "rsi14": 53.25,
       "rsi5": 55.78
+    },
+    {
+      "date": "2026-07-28",
+      "open": 5521.0,
+      "high": 5529.0,
+      "low": 5146.0,
+      "close": 5165.0,
+      "volume": 1429600.0,
+      "sma25": 5695.04,
+      "sma75": 5592.73,
+      "sma200": 4779.97,
+      "rsi14": 53.25,
+      "rsi5": 55.78
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-27",
-    "monthly_rsi14": 52.81,
-    "monthly_rsi_ma5": 51.39,
-    "spread": 1.42,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-07-28",
+    "monthly_rsi14": 48.96,
+    "monthly_rsi_ma5": 50.62,
+    "spread": -1.65,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-06",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-27T23:38:44.799860+00:00"
+  "provisional_generated_at": "2026-07-28T13:50:49.294914+00:00"
 }

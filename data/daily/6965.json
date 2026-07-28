@@ -2,12 +2,12 @@
   "code": "6965",
   "ticker": "6965.T",
   "name": "浜松ホトニクス",
-  "generated_at": "2026-07-27T23:38:16.868850+00:00",
-  "price_date": "2026-07-27",
+  "generated_at": "2026-07-28T13:50:16.202326+00:00",
+  "price_date": "2026-07-28",
   "record": {
-    "current_price": 2367.5,
-    "change_from_signal_month_pct": -11.36,
-    "return_since_gc_pct": 42.53
+    "current_price": 2198.0,
+    "change_from_signal_month_pct": -17.71,
+    "return_since_gc_pct": 32.33
   },
   "daily": [
     {
@@ -87,22 +87,35 @@
       "sma200": 2005.39,
       "rsi14": 54.09,
       "rsi5": 60.03
+    },
+    {
+      "date": "2026-07-28",
+      "open": 2303.0,
+      "high": 2304.5,
+      "low": 2181.5,
+      "close": 2198.0,
+      "volume": 3681000.0,
+      "sma25": 2508.02,
+      "sma75": 2440.81,
+      "sma200": 2008.36,
+      "rsi14": 54.09,
+      "rsi5": 60.03
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-27",
-    "monthly_rsi14": 52.46,
-    "monthly_rsi_ma5": 52.37,
-    "spread": 0.09,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-07-28",
+    "monthly_rsi14": 49.81,
+    "monthly_rsi_ma5": 51.84,
+    "spread": -2.04,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-06",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-27T23:38:44.799860+00:00"
+  "provisional_generated_at": "2026-07-28T13:50:49.294914+00:00"
 }

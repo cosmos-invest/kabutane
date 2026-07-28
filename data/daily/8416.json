@@ -2,12 +2,12 @@
   "code": "8416",
   "ticker": "8416.T",
   "name": "高知銀行",
-  "generated_at": "2026-07-27T23:38:16.868850+00:00",
-  "price_date": "2026-07-27",
+  "generated_at": "2026-07-28T13:50:16.202326+00:00",
+  "price_date": "2026-07-28",
   "record": {
-    "current_price": 1205.0,
-    "change_from_signal_month_pct": -2.98,
-    "return_since_gc_pct": -1.23
+    "current_price": 1140.0,
+    "change_from_signal_month_pct": -8.21,
+    "return_since_gc_pct": -6.56
   },
   "daily": [
     {
@@ -87,22 +87,35 @@
       "sma200": 1075.69,
       "rsi14": 64.87,
       "rsi5": 67.26
+    },
+    {
+      "date": "2026-07-28",
+      "open": 1189.0,
+      "high": 1194.0,
+      "low": 1140.0,
+      "close": 1140.0,
+      "volume": 104100.0,
+      "sma25": 1209.4,
+      "sma75": 1190.21,
+      "sma200": 1076.83,
+      "rsi14": 64.87,
+      "rsi5": 67.26
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-27",
-    "monthly_rsi14": 63.56,
-    "monthly_rsi_ma5": 62.16,
-    "spread": 1.4,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-07-28",
+    "monthly_rsi14": 58.95,
+    "monthly_rsi_ma5": 61.24,
+    "spread": -2.29,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-06",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-27T23:38:44.799860+00:00"
+  "provisional_generated_at": "2026-07-28T13:50:49.294914+00:00"
 }

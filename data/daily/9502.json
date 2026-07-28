@@ -2,12 +2,12 @@
   "code": "9502",
   "ticker": "9502.T",
   "name": "中部電力",
-  "generated_at": "2026-07-27T23:38:16.868850+00:00",
-  "price_date": "2026-07-27",
+  "generated_at": "2026-07-28T13:50:16.202326+00:00",
+  "price_date": "2026-07-28",
   "record": {
-    "current_price": 3005.0,
-    "change_from_signal_month_pct": -1.8,
-    "return_since_gc_pct": 11.69
+    "current_price": 2866.0,
+    "change_from_signal_month_pct": -6.34,
+    "return_since_gc_pct": 6.52
   },
   "daily": [
     {
@@ -87,22 +87,35 @@
       "sma200": 2539.51,
       "rsi14": 72.96,
       "rsi5": 77.18
+    },
+    {
+      "date": "2026-07-28",
+      "open": 2905.5,
+      "high": 2934.0,
+      "low": 2857.5,
+      "close": 2866.0,
+      "volume": 6020100.0,
+      "sma25": 3047.92,
+      "sma75": 2864.09,
+      "sma200": 2543.55,
+      "rsi14": 72.96,
+      "rsi5": 77.18
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-27",
-    "monthly_rsi14": 74.12,
-    "monthly_rsi_ma5": 72.96,
-    "spread": 1.16,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-07-28",
+    "monthly_rsi14": 68.47,
+    "monthly_rsi_ma5": 71.83,
+    "spread": -3.37,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-06",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-27T23:38:44.799860+00:00"
+  "provisional_generated_at": "2026-07-28T13:50:49.294914+00:00"
 }

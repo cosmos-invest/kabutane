@@ -2,12 +2,12 @@
   "code": "6370",
   "ticker": "6370.T",
   "name": "栗田工業",
-  "generated_at": "2026-07-27T23:38:16.868850+00:00",
-  "price_date": "2026-07-27",
+  "generated_at": "2026-07-28T13:50:16.202326+00:00",
+  "price_date": "2026-07-28",
   "record": {
-    "current_price": 8978.0,
-    "change_from_signal_month_pct": -1.89,
-    "return_since_gc_pct": 6.51
+    "current_price": 8301.0,
+    "change_from_signal_month_pct": -9.29,
+    "return_since_gc_pct": -1.52
   },
   "daily": [
     {
@@ -87,22 +87,35 @@
       "sma200": 7532.96,
       "rsi14": 66.54,
       "rsi5": 68.34
+    },
+    {
+      "date": "2026-07-28",
+      "open": 8739.0,
+      "high": 8759.0,
+      "low": 8268.0,
+      "close": 8301.0,
+      "volume": 778700.0,
+      "sma25": 9050.48,
+      "sma75": 8707.24,
+      "sma200": 7549.22,
+      "rsi14": 66.54,
+      "rsi5": 68.34
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-27",
-    "monthly_rsi14": 66.47,
-    "monthly_rsi_ma5": 64.99,
-    "spread": 1.47,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-07-28",
+    "monthly_rsi14": 60.75,
+    "monthly_rsi_ma5": 63.85,
+    "spread": -3.1,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-06",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-27T23:38:44.799860+00:00"
+  "provisional_generated_at": "2026-07-28T13:50:49.294914+00:00"
 }
