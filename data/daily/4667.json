@@ -2,12 +2,12 @@
   "code": "4667",
   "ticker": "4667.T",
   "name": "アイサンテクノロジー",
-  "generated_at": "2026-07-28T13:50:16.202326+00:00",
-  "price_date": "2026-07-28",
+  "generated_at": "2026-07-29T13:55:23.583239+00:00",
+  "price_date": "2026-07-29",
   "record": {
-    "current_price": 1800.0,
-    "change_from_signal_month_pct": -10.04,
-    "return_since_gc_pct": -10.04
+    "current_price": 1762.0,
+    "change_from_signal_month_pct": -11.94,
+    "return_since_gc_pct": -11.94
   },
   "daily": [
     {
@@ -100,22 +100,35 @@
       "sma200": 1840.22,
       "rsi14": 55.69,
       "rsi5": 58.84
+    },
+    {
+      "date": "2026-07-29",
+      "open": 1802.0,
+      "high": 1817.0,
+      "low": 1744.0,
+      "close": 1762.0,
+      "volume": 73700.0,
+      "sma25": 2019.8,
+      "sma75": 1810.07,
+      "sma200": 1841.43,
+      "rsi14": 55.69,
+      "rsi5": 58.84
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-28",
-    "monthly_rsi14": 49.51,
-    "monthly_rsi_ma5": 48.96,
-    "spread": 0.55,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-07-29",
+    "monthly_rsi14": 48.54,
+    "monthly_rsi_ma5": 48.77,
+    "spread": -0.23,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-06",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-28T13:50:49.294914+00:00"
+  "provisional_generated_at": "2026-07-29T13:55:59.224622+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "7915",
   "ticker": "7915.T",
   "name": "ＮＩＳＳＨＡ",
-  "generated_at": "2026-07-28T13:50:16.202326+00:00",
-  "price_date": "2026-07-28",
+  "generated_at": "2026-07-29T13:55:23.583239+00:00",
+  "price_date": "2026-07-29",
   "record": {
-    "current_price": 1353.0,
-    "change_from_signal_month_pct": -0.81,
-    "return_since_gc_pct": 7.64
+    "current_price": 1325.0,
+    "change_from_signal_month_pct": -2.86,
+    "return_since_gc_pct": 5.41
   },
   "daily": [
     {
@@ -100,22 +100,35 @@
       "sma200": 1329.8,
       "rsi14": 46.39,
       "rsi5": 47.54
+    },
+    {
+      "date": "2026-07-29",
+      "open": 1363.0,
+      "high": 1363.0,
+      "low": 1299.0,
+      "close": 1325.0,
+      "volume": 272700.0,
+      "sma25": 1351.36,
+      "sma75": 1406.48,
+      "sma200": 1329.52,
+      "rsi14": 46.39,
+      "rsi5": 47.54
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-28",
-    "monthly_rsi14": 47.18,
-    "monthly_rsi_ma5": 46.69,
-    "spread": 0.5,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-07-29",
+    "monthly_rsi14": 46.39,
+    "monthly_rsi_ma5": 46.53,
+    "spread": -0.14,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-06",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-28T13:50:49.294914+00:00"
+  "provisional_generated_at": "2026-07-29T13:55:59.224622+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "4536",
   "ticker": "4536.T",
   "name": "参天製薬",
-  "generated_at": "2026-07-28T13:50:16.202326+00:00",
-  "price_date": "2026-07-28",
+  "generated_at": "2026-07-29T13:55:23.583239+00:00",
+  "price_date": "2026-07-29",
   "record": {
-    "current_price": 1960.0,
-    "change_from_signal_month_pct": -8.11,
-    "return_since_gc_pct": 2.32
+    "current_price": 2020.5,
+    "change_from_signal_month_pct": -5.27,
+    "return_since_gc_pct": 5.48
   },
   "daily": [
     {
@@ -100,22 +100,35 @@
       "sma200": 1747.93,
       "rsi14": 60.15,
       "rsi5": 67.92
+    },
+    {
+      "date": "2026-07-29",
+      "open": 1980.0,
+      "high": 2039.5,
+      "low": 1968.0,
+      "close": 2020.5,
+      "volume": 1591300.0,
+      "sma25": 2097.96,
+      "sma75": 1915.87,
+      "sma200": 1749.83,
+      "rsi14": 60.15,
+      "rsi5": 67.92
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-28",
-    "monthly_rsi14": 61.58,
-    "monthly_rsi_ma5": 62.44,
-    "spread": -0.86,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-07-29",
+    "monthly_rsi14": 64.16,
+    "monthly_rsi_ma5": 62.95,
+    "spread": 1.2,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-06",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-28T13:50:49.294914+00:00"
+  "provisional_generated_at": "2026-07-29T13:55:59.224622+00:00"
 }

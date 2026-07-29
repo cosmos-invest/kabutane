@@ -2,12 +2,12 @@
   "code": "2376",
   "ticker": "2376.T",
   "name": "サイネックス",
-  "generated_at": "2026-07-28T13:50:16.202326+00:00",
-  "price_date": "2026-07-27",
+  "generated_at": "2026-07-29T13:55:23.583239+00:00",
+  "price_date": "2026-07-29",
   "record": {
-    "current_price": 790.0,
-    "change_from_signal_month_pct": -3.54,
-    "return_since_gc_pct": 0.0
+    "current_price": 766.0,
+    "change_from_signal_month_pct": -6.47,
+    "return_since_gc_pct": -3.04
   },
   "daily": [
     {
@@ -74,15 +74,41 @@
       "sma200": 747.48,
       "rsi14": 49.53,
       "rsi5": 56.37
+    },
+    {
+      "date": "2026-07-28",
+      "open": 790.0,
+      "high": 790.0,
+      "low": 790.0,
+      "close": 790.0,
+      "volume": 0.0,
+      "sma25": 806.28,
+      "sma75": 741.87,
+      "sma200": 747.62,
+      "rsi14": 49.53,
+      "rsi5": 56.37
+    },
+    {
+      "date": "2026-07-29",
+      "open": 775.0,
+      "high": 775.0,
+      "low": 765.0,
+      "close": 766.0,
+      "volume": 600.0,
+      "sma25": 804.96,
+      "sma75": 743.13,
+      "sma200": 747.67,
+      "rsi14": 49.53,
+      "rsi5": 56.37
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-27",
-    "monthly_rsi14": 54.66,
-    "monthly_rsi_ma5": 52.61,
-    "spread": 2.05,
+    "price_date": "2026-07-29",
+    "monthly_rsi14": 52.47,
+    "monthly_rsi_ma5": 52.17,
+    "spread": 0.3,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -91,5 +117,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-28T13:50:49.294914+00:00"
+  "provisional_generated_at": "2026-07-29T13:55:59.224622+00:00"
 }
