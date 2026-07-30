@@ -47,13 +47,14 @@
           <i class="cosmos" aria-hidden="true"></i><i class="lumo" aria-hidden="true"></i><i class="aile" aria-hidden="true"></i>
         </div>
         <h3>コスモス🌸</h3>
-        <p>有料noteに書いてある、夏号の合言葉を入れてね。正解したら20社の観察室が開くよ🌸</p>
+        <p>有料noteに書いてある、夏号の合言葉を入れてね。半角英数字と「_」だけだから、スマホでもそのまま入力できるよ🌸</p>
         <form id="shikihoGateForm">
           <label for="shikihoPassphrase">夏号の合言葉</label>
           <div class="shikiho-pass-row">
-            <input id="shikihoPassphrase" type="password" autocomplete="current-password" inputmode="text" placeholder="合言葉を入力" aria-describedby="shikihoGateError">
+            <input id="shikihoPassphrase" type="password" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" inputmode="text" enterkeyhint="go" placeholder="半角英数字で入力" aria-describedby="shikihoPassphraseHint shikihoGateError">
             <button id="shikihoTogglePassword" type="button">表示</button>
           </div>
+          <small id="shikihoPassphraseHint">半角英数字とアンダースコア（_）で入力してね。</small>
           <label class="shikiho-remember"><input id="shikihoRemember" type="checkbox" checked>この端末で30日間覚えておく</label>
           <button id="shikihoUnlockButton" class="shikiho-gate-submit" type="submit">観察室へ入る</button>
           <p id="shikihoGateError" class="shikiho-gate-error" role="alert"></p>
