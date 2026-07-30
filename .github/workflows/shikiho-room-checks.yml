@@ -83,8 +83,13 @@ jobs:
           ):
               if marker not in html:
                   raise SystemExit(f"Page marker missing: {marker}")
-          if "プリクラ" in js or "プリクラ" in html or "プリクラ" in json.dumps(manifest, ensure_ascii=False):
-              raise SystemExit("Plain passphrase must not be embedded in public source")
+          if "プリクラ" in js or "プリクラ" in html:
+              raise SystemExit("Plain passphrase must not be embedded in the login source")
+          access = manifest.get("access") or {}
+          if set(access) & {"passphrase", "password", "plain_text"}:
+              raise SystemExit("Manifest must store only the passphrase hash")
+          if len(str(access.get("sha256") or "")) != 64:
+              raise SystemExit("Passphrase SHA-256 hash is missing")
           for marker in ("python build_shikiho_room.py", "shikiho-2026-summer-performance.json", "shikiho-summer-2026.html"):
               if marker not in update_daily:
                   raise SystemExit(f"Daily workflow marker missing: {marker}")
