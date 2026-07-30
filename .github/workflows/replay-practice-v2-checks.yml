@@ -3,6 +3,7 @@ name: Validate replay practice v2
 on:
   pull_request:
     paths:
+      - "assets/replay-picker.js"
       - "assets/replay-practice-score-v2.js"
       - "assets/replay-practice-ux-v2.js"
       - "assets/replay-practice-ux-v2-stability.js"
@@ -30,6 +31,7 @@ jobs:
 
       - name: Check JavaScript syntax
         run: |
+          node --check assets/replay-picker.js
           node --check assets/replay-practice-score-v2.js
           node --check assets/replay-practice-ux-v2.js
           node --check assets/replay-practice-ux-v2-stability.js
@@ -51,6 +53,7 @@ jobs:
           ux = Path("assets/replay-practice-ux-v2.js").read_text(encoding="utf-8")
           stability = Path("assets/replay-practice-ux-v2-stability.js").read_text(encoding="utf-8")
           report = Path("assets/replay-score-report-v2.js").read_text(encoding="utf-8")
+          picker = Path("assets/replay-picker.js").read_text(encoding="utf-8")
           css = Path("assets/replay-practice-ux-v2.css").read_text(encoding="utf-8")
           pwa = Path("assets/pwa-register.js").read_text(encoding="utf-8")
           sw = Path("sw.js").read_text(encoding="utf-8")
@@ -96,6 +99,18 @@ jobs:
           for marker in ("運用実践スコア", "scoreVersion", "decorate"):
               if marker not in report:
                   raise SystemExit(f"Score report marker missing: {marker}")
+
+          for marker in (
+              "RESULT_LIMIT = 24",
+              'type="search"',
+              "matchingRecords",
+              "window.location.assign(replayUrl",
+              "select.innerHTML = selected",
+          ):
+              if marker not in picker:
+                  raise SystemExit(f"Searchable replay picker marker missing: {marker}")
+          if "sorted.map((row)" in picker or "select.innerHTML = sorted.map" in picker:
+              raise SystemExit("Replay picker must not render every stock into a native select")
 
           ordered = [
               "replay-practice-score-v2.js",
