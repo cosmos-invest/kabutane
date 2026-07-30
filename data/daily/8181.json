@@ -2,12 +2,12 @@
   "code": "8181",
   "ticker": "8181.T",
   "name": "東天紅",
-  "generated_at": "2026-07-30T13:46:09.896401+00:00",
-  "price_date": "2026-07-30",
+  "generated_at": "2026-07-30T15:26:04.660527+00:00",
+  "price_date": "2026-07-29",
   "record": {
-    "current_price": 1015.0,
-    "change_from_signal_month_pct": -2.78,
-    "return_since_gc_pct": -2.78
+    "current_price": 1024.0,
+    "change_from_signal_month_pct": -1.92,
+    "return_since_gc_pct": -1.92
   },
   "daily": [
     {
@@ -113,35 +113,22 @@
       "sma200": 1071.88,
       "rsi14": 55.33,
       "rsi5": 55.92
-    },
-    {
-      "date": "2026-07-30",
-      "open": 1015.0,
-      "high": 1015.0,
-      "low": 996.0,
-      "close": 1015.0,
-      "volume": 7100.0,
-      "sma25": 1028.0,
-      "sma75": 1016.4,
-      "sma200": 1071.27,
-      "rsi14": 55.33,
-      "rsi5": 55.92
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-30",
-    "monthly_rsi14": 54.12,
-    "monthly_rsi_ma5": 54.76,
-    "spread": -0.64,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-07-29",
+    "monthly_rsi14": 55.02,
+    "monthly_rsi_ma5": 54.94,
+    "spread": 0.08,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-06",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T13:46:38.471365+00:00"
+  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
 }

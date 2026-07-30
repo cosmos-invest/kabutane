@@ -2,12 +2,12 @@
   "code": "5139",
   "ticker": "5139.T",
   "name": "オープンワーク",
-  "generated_at": "2026-07-30T13:46:09.896401+00:00",
-  "price_date": "2026-07-30",
+  "generated_at": "2026-07-30T15:26:04.660527+00:00",
+  "price_date": "2026-07-29",
   "record": {
-    "current_price": 903.0,
-    "change_from_signal_month_pct": -3.32,
-    "return_since_gc_pct": -3.32
+    "current_price": 908.0,
+    "change_from_signal_month_pct": -2.78,
+    "return_since_gc_pct": -2.78
   },
   "daily": [
     {
@@ -113,35 +113,22 @@
       "sma200": 977.85,
       "rsi14": 48.95,
       "rsi5": 49.7
-    },
-    {
-      "date": "2026-07-30",
-      "open": 908.0,
-      "high": 909.0,
-      "low": 898.0,
-      "close": 903.0,
-      "volume": 16500.0,
-      "sma25": 915.84,
-      "sma75": 922.91,
-      "sma200": 977.13,
-      "rsi14": 48.95,
-      "rsi5": 49.7
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-30",
-    "monthly_rsi14": 46.74,
-    "monthly_rsi_ma5": 46.79,
-    "spread": -0.06,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-07-29",
+    "monthly_rsi14": 46.95,
+    "monthly_rsi_ma5": 46.84,
+    "spread": 0.11,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-06",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T13:46:38.471365+00:00"
+  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
 }

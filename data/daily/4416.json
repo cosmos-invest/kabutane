@@ -2,12 +2,12 @@
   "code": "4416",
   "ticker": "4416.T",
   "name": "Ｔｒｕｅ　Ｄａｔａ",
-  "generated_at": "2026-07-30T13:46:09.896401+00:00",
-  "price_date": "2026-07-30",
+  "generated_at": "2026-07-30T15:26:04.660527+00:00",
+  "price_date": "2026-07-29",
   "record": {
-    "current_price": 408.0,
-    "change_from_signal_month_pct": -7.69,
-    "return_since_gc_pct": -7.69
+    "current_price": 391.0,
+    "change_from_signal_month_pct": -11.54,
+    "return_since_gc_pct": -11.54
   },
   "daily": [
     {
@@ -113,35 +113,22 @@
       "sma200": 590.0,
       "rsi14": 37.48,
       "rsi5": 38.44
-    },
-    {
-      "date": "2026-07-30",
-      "open": 399.0,
-      "high": 408.0,
-      "low": 399.0,
-      "close": 408.0,
-      "volume": 600.0,
-      "sma25": 436.92,
-      "sma75": 424.12,
-      "sma200": 588.04,
-      "rsi14": 37.48,
-      "rsi5": 38.44
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-30",
-    "monthly_rsi14": 37.93,
-    "monthly_rsi_ma5": 37.89,
-    "spread": 0.05,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-07-29",
+    "monthly_rsi14": 37.2,
+    "monthly_rsi_ma5": 37.74,
+    "spread": -0.54,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-06",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T13:46:38.471365+00:00"
+  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "3964",
   "ticker": "3964.T",
   "name": "オークネット",
-  "generated_at": "2026-07-30T13:46:09.896401+00:00",
-  "price_date": "2026-07-30",
+  "generated_at": "2026-07-30T15:26:04.660527+00:00",
+  "price_date": "2026-07-29",
   "record": {
-    "current_price": 1340.0,
-    "change_from_signal_month_pct": -1.76,
-    "return_since_gc_pct": 73.58
+    "current_price": 1380.0,
+    "change_from_signal_month_pct": 1.17,
+    "return_since_gc_pct": 78.76
   },
   "daily": [
     {
@@ -113,35 +113,22 @@
       "sma200": 1177.27,
       "rsi14": 82.04,
       "rsi5": 83.76
-    },
-    {
-      "date": "2026-07-30",
-      "open": 1360.0,
-      "high": 1370.0,
-      "low": 1335.0,
-      "close": 1340.0,
-      "volume": 600900.0,
-      "sma25": 1394.64,
-      "sma75": 1364.48,
-      "sma200": 1179.44,
-      "rsi14": 82.04,
-      "rsi5": 83.76
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-30",
-    "monthly_rsi14": 81.87,
-    "monthly_rsi_ma5": 82.78,
-    "spread": -0.91,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-07-29",
+    "monthly_rsi14": 85.18,
+    "monthly_rsi_ma5": 83.44,
+    "spread": 1.74,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-06",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T13:46:38.471365+00:00"
+  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
 }
