@@ -1,0 +1,73 @@
+name: Build Shikiho preview data
+
+on:
+  push:
+    branches:
+      - feature/shikiho-summer-2026-room
+    paths:
+      - "build_shikiho_room.py"
+      - "data/curated/shikiho-2026-summer.json"
+      - ".github/workflows/build-shikiho-preview.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: shikiho-preview-data
+  cancel-in-progress: true
+
+jobs:
+  build-preview-data:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout preview branch
+        uses: actions/checkout@v4
+        with:
+          ref: feature/shikiho-summer-2026-room
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Build 20-company preview data
+        run: python build_shikiho_room.py
+
+      - name: Validate generated data
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path('data/curated/shikiho-2026-summer-performance.json')
+          data = json.loads(path.read_text(encoding='utf-8'))
+          if data.get('record_count') != 20:
+              raise SystemExit(f"record_count must be 20: {data.get('record_count')}")
+          if data.get('complete_count', 0) < 18:
+              raise SystemExit(f"too few completed prices: {data.get('complete_count')}")
+          if not data.get('latest_price_date'):
+              raise SystemExit('latest_price_date is missing')
+          print(
+              f"Preview ready: complete={data.get('complete_count')}, "
+              f"errors={data.get('error_count')}, latest={data.get('latest_price_date')}"
+          )
+          PY
+
+      - name: Commit preview data to feature branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/curated/shikiho-2026-summer-performance.json
+          if git diff --cached --quiet; then
+            echo "Preview data is already current"
+          else
+            git commit -m "chore: generate Shikiho summer preview data"
+            git push origin HEAD:feature/shikiho-summer-2026-room
+          fi
