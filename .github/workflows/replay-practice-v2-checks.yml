@@ -1,0 +1,125 @@
+name: Validate replay practice v2
+
+on:
+  pull_request:
+    paths:
+      - "assets/replay-practice-score-v2.js"
+      - "assets/replay-practice-ux-v2.js"
+      - "assets/replay-practice-ux-v2-stability.js"
+      - "assets/replay-practice-ux-v2.css"
+      - "assets/replay-score-report-v2.js"
+      - "assets/practice-history.js"
+      - "assets/practice-history-page.js"
+      - "assets/pwa-register.js"
+      - "tests/test_replay_practice_score_v2.js"
+      - "sw.js"
+      - ".github/workflows/replay-practice-v2-checks.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Check JavaScript syntax
+        run: |
+          node --check assets/replay-practice-score-v2.js
+          node --check assets/replay-practice-ux-v2.js
+          node --check assets/replay-practice-ux-v2-stability.js
+          node --check assets/replay-score-report-v2.js
+          node --check assets/practice-history.js
+          node --check assets/practice-history-page.js
+          node --check assets/pwa-register.js
+          node --check sw.js
+
+      - name: Test operation score v2
+        run: node tests/test_replay_practice_score_v2.js
+
+      - name: Validate UX, scoring and PWA wiring
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          score = Path("assets/replay-practice-score-v2.js").read_text(encoding="utf-8")
+          ux = Path("assets/replay-practice-ux-v2.js").read_text(encoding="utf-8")
+          stability = Path("assets/replay-practice-ux-v2-stability.js").read_text(encoding="utf-8")
+          report = Path("assets/replay-score-report-v2.js").read_text(encoding="utf-8")
+          css = Path("assets/replay-practice-ux-v2.css").read_text(encoding="utf-8")
+          pwa = Path("assets/pwa-register.js").read_text(encoding="utf-8")
+          sw = Path("sw.js").read_text(encoding="utf-8")
+          history = Path("assets/practice-history.js").read_text(encoding="utf-8")
+
+          if css.count("{") != css.count("}"):
+              raise SystemExit("Replay practice v2 CSS braces are not balanced")
+
+          for marker in (
+              'category("事前計画", 15',
+              'category("リスク・資金管理", 25',
+              'category("エントリー・追加判断", 20',
+              'category("保有中の規律", 15',
+              'category("利確・撤退判断", 15',
+              'category("振り返り", 5',
+              'category("タイミングボーナス", 5',
+              "SCORE_VERSION = 2",
+          ):
+              if marker not in score:
+                  raise SystemExit(f"Score marker missing: {marker}")
+
+          if "70 + gain" in score or "drawdown * 1.5" in score:
+              raise SystemExit("Legacy profit/DD formula leaked into score v2")
+
+          for marker in (
+              'data-chart-shape="tall"',
+              'data-chart-shape="wide"',
+              'data-price-pan="up"',
+              'data-stop-adjust="down"',
+              "practiceStopHandleV2",
+              "earnings_cross",
+              "rights_cross",
+              "運用実践スコア v2",
+              "includePlan",
+          ):
+              if marker not in ux:
+                  raise SystemExit(f"Replay UX marker missing: {marker}")
+
+          for marker in ("replaceSummaryToDropInternalObservers", "renderAfterFinish", "resetBeforeStart"):
+              if marker not in stability:
+                  raise SystemExit(f"Stability marker missing: {marker}")
+
+          for marker in ("運用実践スコア", "scoreVersion", "decorate"):
+              if marker not in report:
+                  raise SystemExit(f"Score report marker missing: {marker}")
+
+          ordered = [
+              "replay-practice-score-v2.js",
+              "replay-practice-ux-v2.js",
+              "replay-practice-ux-v2-stability.js",
+              "replay-score-report-v2.js",
+          ]
+          positions = [pwa.find(name) for name in ordered]
+          if any(position < 0 for position in positions) or positions != sorted(positions):
+              raise SystemExit("Replay v2 scripts are not loaded in deterministic order")
+
+          for name in (
+              "replay-practice-ux-v2.css",
+              "replay-practice-score-v2.js",
+              "replay-practice-ux-v2.js",
+              "replay-practice-ux-v2-stability.js",
+              "replay-score-report-v2.js",
+          ):
+              if name not in sw:
+                  raise SystemExit(f"PWA cache item missing: {name}")
+
+          for marker in ("scoreVersion", "operationScore", "timingBonus", "decision"):
+              if marker not in history:
+                  raise SystemExit(f"Practice history v2 marker missing: {marker}")
+
+          print("Replay practice UX and score v2 validation passed")
+          PY
