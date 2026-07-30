@@ -42,6 +42,14 @@
     document.head.appendChild(script);
   }
 
+  function loadStyle(source) {
+    if (document.querySelector(`link[href="${source}"]`)) return;
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = source;
+    document.head.appendChild(link);
+  }
+
   function ensureSiteUpgrades() {
     loadScript("assets/site-upgrades.js");
   }
@@ -58,13 +66,15 @@
 
   function ensureReplayDrawingTools() {
     if (!document.body?.classList.contains("replay-page")) return;
-    if (!document.querySelector('link[href="assets/replay-drawing-tools.css"]')) {
-      const link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.href = "assets/replay-drawing-tools.css";
-      document.head.appendChild(link);
-    }
+    loadStyle("assets/replay-drawing-tools.css");
     loadScript("assets/replay-drawing-tools.js");
+  }
+
+  function ensureReplayPracticeV2() {
+    if (!document.body?.classList.contains("replay-page")) return;
+    loadStyle("assets/replay-practice-ux-v2.css");
+    loadScript("assets/replay-practice-score-v2.js");
+    loadScript("assets/replay-practice-ux-v2.js");
   }
 
   function separateAnalysisFromOrderPlacement() {
@@ -101,6 +111,7 @@
   ensureCopyAudit();
   ensureReplayHistory();
   ensureReplayDrawingTools();
+  ensureReplayPracticeV2();
   separateAnalysisFromOrderPlacement();
   keepSelectedReplayEntryInSync();
 
