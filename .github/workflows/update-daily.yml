@@ -11,9 +11,14 @@ on:
       - "update_daily.py"
       - "provisional_signal.py"
       - "build_market_reports.py"
+      - "build_shikiho_room.py"
+      - "build_shikiho_room_v2.py"
+      - "data/curated/shikiho-2026-summer.json"
       - "tests/test_update_daily.py"
       - "tests/test_provisional_signal.py"
       - "tests/test_market_reports.py"
+      - "tests/test_shikiho_room.py"
+      - "tests/test_shikiho_room_v2.py"
       - ".github/workflows/update-daily.yml"
 
 permissions:
@@ -49,10 +54,12 @@ jobs:
 
       - name: Validate updater
         run: |
-          python -m py_compile update_daily.py provisional_signal.py build_market_reports.py tests/test_update_daily.py tests/test_provisional_signal.py tests/test_market_reports.py
+          python -m py_compile update_daily.py provisional_signal.py build_market_reports.py build_shikiho_room.py build_shikiho_room_v2.py tests/test_update_daily.py tests/test_provisional_signal.py tests/test_market_reports.py tests/test_shikiho_room.py tests/test_shikiho_room_v2.py
           python -m unittest discover -s tests -p 'test_update_daily.py' -v
           python -m unittest discover -s tests -p 'test_provisional_signal.py' -v
           python -m unittest discover -s tests -p 'test_market_reports.py' -v
+          python -m unittest discover -s tests -p 'test_shikiho_room.py' -v
+          python -m unittest discover -s tests -p 'test_shikiho_room_v2.py' -v
 
       - name: Download incremental daily prices
         env:
@@ -62,16 +69,17 @@ jobs:
           python update_daily.py
           python provisional_signal.py
           python build_market_reports.py
+          python build_shikiho_room_v2.py
 
       - name: Commit daily overlays and observations
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/latest.json data/daily data/daily-update-status.json data/ranking.json data/daily-change.json data/monthly-report.json result.csv
+          git add data/latest.json data/daily data/daily-update-status.json data/ranking.json data/daily-change.json data/monthly-report.json data/curated/shikiho-2026-summer-performance.json result.csv
           if git diff --cached --quiet; then
             echo "No daily price changes"
           else
-            git commit -m "chore: update daily prices, provisional signals and observation ranking"
+            git commit -m "chore: update daily prices, rankings and Shikiho room"
             git push origin main
           fi
 
@@ -81,7 +89,7 @@ jobs:
           mkdir -p _site
           cp \
             index.html detail.html backtest.html replay.html howto.html learn.html signal-method.html \
-            ranking.html monthly-report.html monthly-strategy.html history.html \
+            ranking.html monthly-report.html monthly-strategy.html history.html shikiho-summer-2026.html \
             manifest.webmanifest sw.js .nojekyll result.csv out.csv \
             _site/
           cp -R assets data history ranking monthly-report _site/
@@ -89,6 +97,9 @@ jobs:
           test -f _site/data/daily-update-status.json
           test -f _site/data/ranking.json
           test -f _site/data/daily-change.json
+          test -f _site/data/curated/shikiho-2026-summer.json
+          test -f _site/data/curated/shikiho-2026-summer-performance.json
+          test -f _site/shikiho-summer-2026.html
           python - <<'PY'
           import json
           from pathlib import Path
@@ -96,11 +107,22 @@ jobs:
           latest = json.loads(Path('_site/data/latest.json').read_text(encoding='utf-8'))
           daily = json.loads(Path('_site/data/daily-update-status.json').read_text(encoding='utf-8'))
           ranking = json.loads(Path('_site/data/ranking.json').read_text(encoding='utf-8'))
+          shikiho = json.loads(Path('_site/data/curated/shikiho-2026-summer-performance.json').read_text(encoding='utf-8'))
           if daily.get('price_date') != ranking.get('price_date'):
               raise SystemExit(f"Daily/ranking date mismatch: {daily.get('price_date')} != {ranking.get('price_date')}")
           if latest.get('daily_price_date') not in (None, daily.get('price_date')):
               raise SystemExit(f"Latest/daily date mismatch: {latest.get('daily_price_date')} != {daily.get('price_date')}")
-          print(f"Publishing daily price date: {daily.get('price_date')}")
+          if shikiho.get('record_count') != 20:
+              raise SystemExit(f"Shikiho room record count mismatch: {shikiho.get('record_count')}")
+          if shikiho.get('baseline_date') != '2026-06-18':
+              raise SystemExit(f"Shikiho baseline mismatch: {shikiho.get('baseline_date')}")
+          suspicious = [
+              row for row in shikiho.get('records', [])
+              if row.get('return_pct') is not None and abs(float(row['return_pct'])) >= 200
+          ]
+          if suspicious:
+              raise SystemExit(f"Suspicious split-adjusted returns: {[(r.get('code'), r.get('return_pct')) for r in suspicious]}")
+          print(f"Publishing daily price date: {daily.get('price_date')}; Shikiho latest: {shikiho.get('latest_price_date')}")
           PY
 
       - name: Configure Pages
