@@ -21,7 +21,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   validate:
@@ -122,15 +122,3 @@ jobs:
                   raise SystemExit(f"PWA cache marker missing: {marker}")
           print("Summer Shikiho room validation passed")
           PY
-      - name: Save refreshed preview data to feature branch
-        if: github.event_name == 'pull_request'
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/curated/shikiho-2026-summer-performance.json
-          if git diff --cached --quiet; then
-            echo "Preview data is already current"
-          else
-            git commit -m "chore: refresh Shikiho preview performance"
-            git push origin HEAD:${{ github.event.pull_request.head.ref }}
-          fi
