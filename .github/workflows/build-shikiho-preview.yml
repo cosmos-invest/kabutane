@@ -6,6 +6,7 @@ on:
       - feature/shikiho-summer-2026-room
     paths:
       - "build_shikiho_room.py"
+      - "build_shikiho_room_v2.py"
       - "data/curated/shikiho-2026-summer.json"
       - ".github/workflows/build-shikiho-preview.yml"
   workflow_dispatch:
@@ -37,8 +38,13 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Validate split-safe calculation
+        run: |
+          python -m py_compile build_shikiho_room.py build_shikiho_room_v2.py tests/test_shikiho_room_v2.py
+          python -m unittest discover -s tests -p 'test_shikiho_room_v2.py' -v
+
       - name: Build 20-company preview data
-        run: python build_shikiho_room.py
+        run: python build_shikiho_room_v2.py
 
       - name: Validate generated data
         run: |
@@ -54,6 +60,12 @@ jobs:
               raise SystemExit(f"too few completed prices: {data.get('complete_count')}")
           if not data.get('latest_price_date'):
               raise SystemExit('latest_price_date is missing')
+          suspicious = [
+              row for row in data.get('records', [])
+              if row.get('return_pct') is not None and abs(float(row['return_pct'])) >= 200
+          ]
+          if suspicious:
+              raise SystemExit(f"suspicious split-adjusted returns: {[(r.get('code'), r.get('return_pct')) for r in suspicious]}")
           print(
               f"Preview ready: complete={data.get('complete_count')}, "
               f"errors={data.get('error_count')}, latest={data.get('latest_price_date')}"
