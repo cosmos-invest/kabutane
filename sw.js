@@ -101,6 +101,7 @@ const OPTIONAL_ASSETS = [
   "./assets/replay-practice-ux-v2.css",
   "./assets/replay-practice-score-v2.js",
   "./assets/replay-practice-ux-v2.js",
+  "./assets/replay-practice-ux-v2-stability.js",
   "./assets/replay-score-report-v2.js",
   "./assets/pwa-register.js",
   "./assets/kabutane-links.css",
