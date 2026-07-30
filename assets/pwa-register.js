@@ -75,6 +75,7 @@
     loadStyle("assets/replay-practice-ux-v2.css");
     loadScript("assets/replay-practice-score-v2.js");
     loadScript("assets/replay-practice-ux-v2.js");
+    loadScript("assets/replay-score-report-v2.js");
   }
 
   function separateAnalysisFromOrderPlacement() {
