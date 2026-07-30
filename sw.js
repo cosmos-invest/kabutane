@@ -1,4 +1,4 @@
-const CACHE_VERSION = "kabutane-pwa-v16";
+const CACHE_VERSION = "kabutane-pwa-v17";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 
 // These files are required for the detail page to boot. If even one cannot be
@@ -38,8 +38,11 @@ const OPTIONAL_ASSETS = [
   "./monthly-report/",
   "./monthly-report/index.html",
   "./history.html",
+  "./shikiho-summer-2026.html",
+  "./data/curated/shikiho-2026-summer.json",
+  "./data/curated/shikiho-2026-summer-performance.json",
   // Compatibility for an already-open detail.html that still requests the
-  // unversioned asset URLs while the v16 worker is activating.
+  // unversioned asset URLs while the v17 worker is activating.
   "./assets/provisional-monthly-rsi-core.js",
   "./assets/detail-chart-viewport-core.js",
   "./assets/detail.js",
@@ -54,6 +57,8 @@ const OPTIONAL_ASSETS = [
   "./assets/monthly-report.css",
   "./assets/monthly-strategy-v16.css",
   "./assets/market-insights.css",
+  "./assets/shikiho-room.css",
+  "./assets/shikiho-room.js",
   "./assets/style.css?v=16",
   "./assets/pastel.css?v=16",
   "./assets/kabutane.css?v=16",
@@ -130,6 +135,9 @@ function routeAlternatives(url) {
     pathname.endsWith("/monthly-strategy.html")
   ) {
     return ["./monthly-strategy.html?v=16", "./monthly-strategy.html", "./monthly-report.html", "./monthly-report/", "./monthly-report/index.html"];
+  }
+  if (pathname.endsWith("/shikiho-summer-2026") || pathname.endsWith("/shikiho-summer-2026.html")) {
+    return ["./shikiho-summer-2026.html"];
   }
   return [];
 }
