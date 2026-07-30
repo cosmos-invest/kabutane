@@ -1,0 +1,98 @@
+name: Validate summer Shikiho room
+
+on:
+  pull_request:
+    paths:
+      - "shikiho-summer-2026.html"
+      - "assets/shikiho-room.css"
+      - "assets/shikiho-room.js"
+      - "assets/site-upgrades.js"
+      - "build_shikiho_room.py"
+      - "data/curated/shikiho-2026-summer.json"
+      - "data/curated/shikiho-2026-summer-performance.json"
+      - "tests/test_shikiho_room.py"
+      - "sw.js"
+      - ".github/workflows/update-daily.yml"
+      - ".github/workflows/deploy-pages.yml"
+      - ".github/workflows/shikiho-room-checks.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Validate Python and calculations
+        run: |
+          python -m py_compile build_shikiho_room.py tests/test_shikiho_room.py
+          python -m unittest discover -s tests -p 'test_shikiho_room.py' -v
+      - name: Validate JavaScript
+        run: |
+          node --check assets/shikiho-room.js
+          node --check assets/site-upgrades.js
+          node --check sw.js
+      - name: Validate page, fixed list and publishing
+        run: |
+          python - <<'PY'
+          import json
+          from html.parser import HTMLParser
+          from pathlib import Path
+
+          class Parser(HTMLParser):
+              pass
+
+          html = Path("shikiho-summer-2026.html").read_text(encoding="utf-8")
+          css = Path("assets/shikiho-room.css").read_text(encoding="utf-8")
+          js = Path("assets/shikiho-room.js").read_text(encoding="utf-8")
+          manifest = json.loads(Path("data/curated/shikiho-2026-summer.json").read_text(encoding="utf-8"))
+          update_daily = Path(".github/workflows/update-daily.yml").read_text(encoding="utf-8")
+          deploy = Path(".github/workflows/deploy-pages.yml").read_text(encoding="utf-8")
+          sw = Path("sw.js").read_text(encoding="utf-8")
+          Parser().feed(html)
+          if css.count("{") != css.count("}"):
+              raise SystemExit("Shikiho room CSS braces are not balanced")
+          if manifest.get("expected_count") != 20 or len(manifest.get("stocks") or []) != 20:
+              raise SystemExit("Summer Shikiho room must contain exactly 20 fixed stocks")
+          counts = {tier: sum(1 for row in manifest["stocks"] if row.get("tier") == tier) for tier in ("S", "A", "B")}
+          if counts != {"S": 5, "A": 5, "B": 10}:
+              raise SystemExit(f"Tier counts are invalid: {counts}")
+          if manifest.get("baseline_date") != "2026-06-18":
+              raise SystemExit("Baseline date must stay fixed at 2026-06-18")
+          if manifest.get("answer_target_date") != "2026-08-31":
+              raise SystemExit("Answer date must stay fixed at 2026-08-31")
+          for marker in (
+              "四季報観察室｜2026年夏号",
+              "合言葉はこの記事に書いてあるよ",
+              "n07501f295da0",
+              "2026-06-18",
+              "shikiho-room.js",
+              "shikiho-room.css",
+          ):
+              if marker not in html:
+                  raise SystemExit(f"Page marker missing: {marker}")
+          if "プリクラ" in js or "プリクラ" in html or "プリクラ" in json.dumps(manifest, ensure_ascii=False):
+              raise SystemExit("Plain passphrase must not be embedded in public source")
+          for marker in ("python build_shikiho_room.py", "shikiho-2026-summer-performance.json", "shikiho-summer-2026.html"):
+              if marker not in update_daily:
+                  raise SystemExit(f"Daily workflow marker missing: {marker}")
+          for marker in ("shikiho-summer-2026.html", "assets/shikiho-room.css", "data/curated/shikiho-2026-summer.json"):
+              if marker not in deploy:
+                  raise SystemExit(f"Pages deployment marker missing: {marker}")
+          for marker in ('"./shikiho-summer-2026.html"', '"./assets/shikiho-room.js"', '"./data/curated/shikiho-2026-summer.json"'):
+              if marker not in sw:
+                  raise SystemExit(f"PWA cache marker missing: {marker}")
+          print("Summer Shikiho room validation passed")
+          PY
