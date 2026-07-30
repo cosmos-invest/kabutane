@@ -2,12 +2,12 @@
   "code": "6040",
   "ticker": "6040.T",
   "name": "日本スキー場開発",
-  "generated_at": "2026-07-29T13:55:23.583239+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-30T13:46:09.896401+00:00",
+  "price_date": "2026-07-30",
   "record": {
-    "current_price": 526.0,
-    "change_from_signal_month_pct": 6.69,
-    "return_since_gc_pct": 11.68
+    "current_price": 480.0,
+    "change_from_signal_month_pct": -2.64,
+    "return_since_gc_pct": 1.91
   },
   "daily": [
     {
@@ -113,15 +113,35 @@
       "sma200": 487.68,
       "rsi14": 53.0,
       "rsi5": 56.15
+    },
+    {
+      "date": "2026-07-30",
+      "open": 503.0,
+      "high": 503.0,
+      "low": 480.0,
+      "close": 480.0,
+      "volume": 128600.0,
+      "sma25": 504.52,
+      "sma75": 473.64,
+      "sma200": 487.25,
+      "rsi14": 53.0,
+      "rsi5": 56.15
     }
   ],
-  "corporate_events": [],
+  "corporate_events": [
+    {
+      "date": "2026-07-30",
+      "type": "DIVIDEND",
+      "label": "配当",
+      "detail": "1株 3.5円"
+    }
+  ],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 58.86,
-    "monthly_rsi_ma5": 53.41,
-    "spread": 5.45,
+    "price_date": "2026-07-30",
+    "monthly_rsi14": 53.86,
+    "monthly_rsi_ma5": 52.41,
+    "spread": 1.45,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -130,5 +150,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-29T13:55:59.224622+00:00"
+  "provisional_generated_at": "2026-07-30T13:46:38.471365+00:00"
 }

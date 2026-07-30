@@ -2,12 +2,12 @@
   "code": "9363",
   "ticker": "9363.T",
   "name": "大運",
-  "generated_at": "2026-07-29T13:55:23.583239+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-30T13:46:09.896401+00:00",
+  "price_date": "2026-07-30",
   "record": {
-    "current_price": 522.0,
-    "change_from_signal_month_pct": 0.58,
-    "return_since_gc_pct": -0.57
+    "current_price": 525.0,
+    "change_from_signal_month_pct": 1.16,
+    "return_since_gc_pct": 0.0
   },
   "daily": [
     {
@@ -113,15 +113,28 @@
       "sma200": 494.52,
       "rsi14": 62.82,
       "rsi5": 63.08
+    },
+    {
+      "date": "2026-07-30",
+      "open": 523.0,
+      "high": 530.0,
+      "low": 522.0,
+      "close": 525.0,
+      "volume": 5500.0,
+      "sma25": 519.8,
+      "sma75": 514.12,
+      "sma200": 494.92,
+      "rsi14": 62.82,
+      "rsi5": 63.08
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 64.17,
-    "monthly_rsi_ma5": 63.15,
-    "spread": 1.02,
+    "price_date": "2026-07-30",
+    "monthly_rsi14": 64.62,
+    "monthly_rsi_ma5": 63.24,
+    "spread": 1.38,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -130,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-29T13:55:59.224622+00:00"
+  "provisional_generated_at": "2026-07-30T13:46:38.471365+00:00"
 }

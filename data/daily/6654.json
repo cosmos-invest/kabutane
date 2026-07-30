@@ -2,12 +2,12 @@
   "code": "6654",
   "ticker": "6654.T",
   "name": "不二電機工業",
-  "generated_at": "2026-07-29T13:55:23.583239+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-30T13:46:09.896401+00:00",
+  "price_date": "2026-07-30",
   "record": {
-    "current_price": 1107.0,
-    "change_from_signal_month_pct": -1.69,
-    "return_since_gc_pct": 1.19
+    "current_price": 1102.0,
+    "change_from_signal_month_pct": -2.13,
+    "return_since_gc_pct": 0.73
   },
   "daily": [
     {
@@ -113,15 +113,35 @@
       "sma200": 1095.45,
       "rsi14": 49.95,
       "rsi5": 53.71
+    },
+    {
+      "date": "2026-07-30",
+      "open": 1085.0,
+      "high": 1110.0,
+      "low": 1083.0,
+      "close": 1102.0,
+      "volume": 129100.0,
+      "sma25": 1117.68,
+      "sma75": 1094.91,
+      "sma200": 1095.59,
+      "rsi14": 49.95,
+      "rsi5": 53.71
     }
   ],
-  "corporate_events": [],
+  "corporate_events": [
+    {
+      "date": "2026-07-30",
+      "type": "DIVIDEND",
+      "label": "配当",
+      "detail": "1株 16円"
+    }
+  ],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 51.41,
-    "monthly_rsi_ma5": 50.04,
-    "spread": 1.37,
+    "price_date": "2026-07-30",
+    "monthly_rsi14": 50.77,
+    "monthly_rsi_ma5": 49.92,
+    "spread": 0.85,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -130,5 +150,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-29T13:55:59.224622+00:00"
+  "provisional_generated_at": "2026-07-30T13:46:38.471365+00:00"
 }

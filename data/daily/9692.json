@@ -2,12 +2,12 @@
   "code": "9692",
   "ticker": "9692.T",
   "name": "シーイーシー",
-  "generated_at": "2026-07-29T13:55:23.583239+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-30T13:46:09.896401+00:00",
+  "price_date": "2026-07-30",
   "record": {
-    "current_price": 2346.0,
-    "change_from_signal_month_pct": 11.55,
-    "return_since_gc_pct": 15.0
+    "current_price": 2305.0,
+    "change_from_signal_month_pct": 9.61,
+    "return_since_gc_pct": 12.99
   },
   "daily": [
     {
@@ -113,15 +113,35 @@
       "sma200": 2141.99,
       "rsi14": 49.27,
       "rsi5": 52.15
+    },
+    {
+      "date": "2026-07-30",
+      "open": 2260.0,
+      "high": 2323.0,
+      "low": 2238.0,
+      "close": 2305.0,
+      "volume": 160600.0,
+      "sma25": 2184.64,
+      "sma75": 2065.56,
+      "sma200": 2142.38,
+      "rsi14": 49.27,
+      "rsi5": 52.15
     }
   ],
-  "corporate_events": [],
+  "corporate_events": [
+    {
+      "date": "2026-07-30",
+      "type": "DIVIDEND",
+      "label": "配当",
+      "detail": "1株 40円"
+    }
+  ],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 57.76,
-    "monthly_rsi_ma5": 50.82,
-    "spread": 6.94,
+    "price_date": "2026-07-30",
+    "monthly_rsi14": 56.86,
+    "monthly_rsi_ma5": 50.64,
+    "spread": 6.22,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -130,5 +150,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-29T13:55:59.224622+00:00"
+  "provisional_generated_at": "2026-07-30T13:46:38.471365+00:00"
 }

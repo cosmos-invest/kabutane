@@ -2,12 +2,12 @@
   "code": "4174",
   "ticker": "4174.T",
   "name": "アピリッツ",
-  "generated_at": "2026-07-29T13:55:23.583239+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-30T13:46:09.896401+00:00",
+  "price_date": "2026-07-30",
   "record": {
-    "current_price": 746.0,
-    "change_from_signal_month_pct": 10.03,
-    "return_since_gc_pct": 19.55
+    "current_price": 712.0,
+    "change_from_signal_month_pct": 5.01,
+    "return_since_gc_pct": 14.1
   },
   "daily": [
     {
@@ -113,15 +113,35 @@
       "sma200": 665.84,
       "rsi14": 36.12,
       "rsi5": 40.35
+    },
+    {
+      "date": "2026-07-30",
+      "open": 726.0,
+      "high": 730.0,
+      "low": 706.0,
+      "close": 712.0,
+      "volume": 23500.0,
+      "sma25": 729.8,
+      "sma75": 670.01,
+      "sma200": 666.01,
+      "rsi14": 36.12,
+      "rsi5": 40.35
     }
   ],
-  "corporate_events": [],
+  "corporate_events": [
+    {
+      "date": "2026-07-30",
+      "type": "DIVIDEND",
+      "label": "配当",
+      "detail": "1株 14.5円"
+    }
+  ],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 48.07,
-    "monthly_rsi_ma5": 40.09,
-    "spread": 7.97,
+    "price_date": "2026-07-30",
+    "monthly_rsi14": 45.36,
+    "monthly_rsi_ma5": 39.55,
+    "spread": 5.81,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -130,5 +150,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-29T13:55:59.224622+00:00"
+  "provisional_generated_at": "2026-07-30T13:46:38.471365+00:00"
 }

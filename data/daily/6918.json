@@ -2,12 +2,12 @@
   "code": "6918",
   "ticker": "6918.T",
   "name": "アバールデータ",
-  "generated_at": "2026-07-29T13:55:23.583239+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-30T13:46:09.896401+00:00",
+  "price_date": "2026-07-30",
   "record": {
-    "current_price": 2916.0,
-    "change_from_signal_month_pct": -11.64,
-    "return_since_gc_pct": -0.58
+    "current_price": 2949.0,
+    "change_from_signal_month_pct": -10.64,
+    "return_since_gc_pct": 0.55
   },
   "daily": [
     {
@@ -113,15 +113,28 @@
       "sma200": 2899.31,
       "rsi14": 49.51,
       "rsi5": 52.64
+    },
+    {
+      "date": "2026-07-30",
+      "open": 2898.0,
+      "high": 3005.0,
+      "low": 2880.0,
+      "close": 2949.0,
+      "volume": 20100.0,
+      "sma25": 3224.8,
+      "sma75": 3234.21,
+      "sma200": 2901.74,
+      "rsi14": 49.51,
+      "rsi5": 52.64
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 48.11,
-    "monthly_rsi_ma5": 49.91,
-    "spread": -1.8,
+    "price_date": "2026-07-30",
+    "monthly_rsi14": 48.49,
+    "monthly_rsi_ma5": 49.99,
+    "spread": -1.49,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -130,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-29T13:55:59.224622+00:00"
+  "provisional_generated_at": "2026-07-30T13:46:38.471365+00:00"
 }

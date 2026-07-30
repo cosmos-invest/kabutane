@@ -2,12 +2,12 @@
   "code": "1444",
   "ticker": "1444.T",
   "name": "ニッソウ",
-  "generated_at": "2026-07-29T13:55:23.583239+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-30T13:46:09.896401+00:00",
+  "price_date": "2026-07-30",
   "record": {
-    "current_price": 2826.0,
-    "change_from_signal_month_pct": -0.88,
-    "return_since_gc_pct": 2.35
+    "current_price": 2580.0,
+    "change_from_signal_month_pct": -9.51,
+    "return_since_gc_pct": -6.56
   },
   "daily": [
     {
@@ -113,22 +113,35 @@
       "sma200": 2800.07,
       "rsi14": 53.81,
       "rsi5": 56.97
+    },
+    {
+      "date": "2026-07-30",
+      "open": 2588.0,
+      "high": 2617.0,
+      "low": 2576.0,
+      "close": 2580.0,
+      "volume": 30400.0,
+      "sma25": 2852.44,
+      "sma75": 2810.55,
+      "sma200": 2799.16,
+      "rsi14": 53.81,
+      "rsi5": 56.97
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 55.7,
-    "monthly_rsi_ma5": 53.95,
-    "spread": 1.75,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-07-30",
+    "monthly_rsi14": 47.34,
+    "monthly_rsi_ma5": 52.28,
+    "spread": -4.94,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-06",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-29T13:55:59.224622+00:00"
+  "provisional_generated_at": "2026-07-30T13:46:38.471365+00:00"
 }

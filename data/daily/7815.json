@@ -2,12 +2,12 @@
   "code": "7815",
   "ticker": "7815.T",
   "name": "東京ボード工業",
-  "generated_at": "2026-07-29T13:55:23.583239+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-30T13:46:09.896401+00:00",
+  "price_date": "2026-07-30",
   "record": {
-    "current_price": 305.0,
-    "change_from_signal_month_pct": -20.98,
-    "return_since_gc_pct": -20.98
+    "current_price": 292.0,
+    "change_from_signal_month_pct": -24.35,
+    "return_since_gc_pct": -24.35
   },
   "daily": [
     {
@@ -113,22 +113,35 @@
       "sma200": 404.64,
       "rsi14": 36.27,
       "rsi5": 41.14
+    },
+    {
+      "date": "2026-07-30",
+      "open": 297.0,
+      "high": 307.0,
+      "low": 291.0,
+      "close": 292.0,
+      "volume": 9700.0,
+      "sma25": 357.52,
+      "sma75": 321.21,
+      "sma200": 403.01,
+      "rsi14": 36.27,
+      "rsi5": 41.14
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 38.63,
-    "monthly_rsi_ma5": 38.32,
-    "spread": 0.3,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-07-30",
+    "monthly_rsi14": 38.06,
+    "monthly_rsi_ma5": 38.21,
+    "spread": -0.15,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-06",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-29T13:55:59.224622+00:00"
+  "provisional_generated_at": "2026-07-30T13:46:38.471365+00:00"
 }

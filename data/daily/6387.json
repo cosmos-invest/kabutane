@@ -2,12 +2,12 @@
   "code": "6387",
   "ticker": "6387.T",
   "name": "サムコ",
-  "generated_at": "2026-07-29T13:55:23.583239+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-30T13:46:09.896401+00:00",
+  "price_date": "2026-07-30",
   "record": {
-    "current_price": 7610.0,
-    "change_from_signal_month_pct": -45.09,
-    "return_since_gc_pct": -45.09
+    "current_price": 7370.0,
+    "change_from_signal_month_pct": -46.83,
+    "return_since_gc_pct": -46.83
   },
   "daily": [
     {
@@ -113,15 +113,35 @@
       "sma200": 7635.1,
       "rsi14": 77.99,
       "rsi5": 80.98
+    },
+    {
+      "date": "2026-07-30",
+      "open": 7410.0,
+      "high": 7880.0,
+      "low": 7130.0,
+      "close": 7370.0,
+      "volume": 178700.0,
+      "sma25": 11546.8,
+      "sma75": 11845.33,
+      "sma200": 7654.02,
+      "rsi14": 77.99,
+      "rsi5": 80.98
     }
   ],
-  "corporate_events": [],
+  "corporate_events": [
+    {
+      "date": "2026-07-30",
+      "type": "DIVIDEND",
+      "label": "配当",
+      "detail": "1株 75円"
+    }
+  ],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 54.32,
-    "monthly_rsi_ma5": 73.26,
-    "spread": -18.95,
+    "price_date": "2026-07-30",
+    "monthly_rsi14": 53.66,
+    "monthly_rsi_ma5": 73.13,
+    "spread": -19.48,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -130,5 +150,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-29T13:55:59.224622+00:00"
+  "provisional_generated_at": "2026-07-30T13:46:38.471365+00:00"
 }

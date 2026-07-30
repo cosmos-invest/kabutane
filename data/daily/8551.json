@@ -2,12 +2,12 @@
   "code": "8551",
   "ticker": "8551.T",
   "name": "北日本銀行",
-  "generated_at": "2026-07-29T13:55:23.583239+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-30T13:46:09.896401+00:00",
+  "price_date": "2026-07-30",
   "record": {
-    "current_price": 6680.0,
-    "change_from_signal_month_pct": 23.7,
-    "return_since_gc_pct": 23.7
+    "current_price": 6500.0,
+    "change_from_signal_month_pct": 20.37,
+    "return_since_gc_pct": 20.37
   },
   "daily": [
     {
@@ -113,15 +113,28 @@
       "sma200": 4813.98,
       "rsi14": 70.99,
       "rsi5": 71.33
+    },
+    {
+      "date": "2026-07-30",
+      "open": 6610.0,
+      "high": 6650.0,
+      "low": 6410.0,
+      "close": 6500.0,
+      "volume": 50700.0,
+      "sma25": 6025.6,
+      "sma75": 5438.27,
+      "sma200": 4828.07,
+      "rsi14": 70.99,
+      "rsi5": 71.33
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 78.81,
-    "monthly_rsi_ma5": 70.72,
-    "spread": 8.09,
+    "price_date": "2026-07-30",
+    "monthly_rsi14": 78.02,
+    "monthly_rsi_ma5": 70.56,
+    "spread": 7.46,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -130,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-29T13:55:59.224622+00:00"
+  "provisional_generated_at": "2026-07-30T13:46:38.471365+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "9166",
   "ticker": "9166.T",
   "name": "ＧＥＮＤＡ",
-  "generated_at": "2026-07-29T13:55:23.583239+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-30T13:46:09.896401+00:00",
+  "price_date": "2026-07-30",
   "record": {
-    "current_price": 587.0,
-    "change_from_signal_month_pct": -2.33,
-    "return_since_gc_pct": -4.4
+    "current_price": 593.0,
+    "change_from_signal_month_pct": -1.33,
+    "return_since_gc_pct": -3.42
   },
   "daily": [
     {
@@ -113,15 +113,35 @@
       "sma200": 650.51,
       "rsi14": 40.83,
       "rsi5": 42.07
+    },
+    {
+      "date": "2026-07-30",
+      "open": 600.0,
+      "high": 605.0,
+      "low": 585.0,
+      "close": 593.0,
+      "volume": 1543700.0,
+      "sma25": 584.92,
+      "sma75": 568.76,
+      "sma200": 649.02,
+      "rsi14": 40.83,
+      "rsi5": 42.07
     }
   ],
-  "corporate_events": [],
+  "corporate_events": [
+    {
+      "date": "2026-07-30",
+      "type": "DIVIDEND",
+      "label": "配当",
+      "detail": "1株 4円"
+    }
+  ],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 41.49,
-    "monthly_rsi_ma5": 40.83,
-    "spread": 0.65,
+    "price_date": "2026-07-30",
+    "monthly_rsi14": 41.74,
+    "monthly_rsi_ma5": 40.88,
+    "spread": 0.85,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -130,5 +150,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-29T13:55:59.224622+00:00"
+  "provisional_generated_at": "2026-07-30T13:46:38.471365+00:00"
 }

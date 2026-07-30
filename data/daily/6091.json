@@ -2,12 +2,12 @@
   "code": "6091",
   "ticker": "6091.T",
   "name": "ウエスコホールディングス",
-  "generated_at": "2026-07-29T13:55:23.583239+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-30T13:46:09.896401+00:00",
+  "price_date": "2026-07-30",
   "record": {
-    "current_price": 898.0,
-    "change_from_signal_month_pct": -1.54,
-    "return_since_gc_pct": -1.54
+    "current_price": 886.0,
+    "change_from_signal_month_pct": -2.85,
+    "return_since_gc_pct": -2.85
   },
   "daily": [
     {
@@ -113,22 +113,42 @@
       "sma200": 863.48,
       "rsi14": 67.3,
       "rsi5": 69.05
+    },
+    {
+      "date": "2026-07-30",
+      "open": 865.0,
+      "high": 889.0,
+      "low": 864.0,
+      "close": 886.0,
+      "volume": 47100.0,
+      "sma25": 927.12,
+      "sma75": 877.52,
+      "sma200": 863.62,
+      "rsi14": 67.3,
+      "rsi5": 69.05
     }
   ],
-  "corporate_events": [],
+  "corporate_events": [
+    {
+      "date": "2026-07-30",
+      "type": "DIVIDEND",
+      "label": "配当",
+      "detail": "1株 28円"
+    }
+  ],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 67.46,
-    "monthly_rsi_ma5": 66.24,
-    "spread": 1.21,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-07-30",
+    "monthly_rsi14": 65.81,
+    "monthly_rsi_ma5": 65.92,
+    "spread": -0.1,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-06",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-29T13:55:59.224622+00:00"
+  "provisional_generated_at": "2026-07-30T13:46:38.471365+00:00"
 }
