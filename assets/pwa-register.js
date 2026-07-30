@@ -42,6 +42,27 @@
     document.head.appendChild(script);
   }
 
+  function loadScriptsInOrder(sources) {
+    return sources.reduce((chain, source) => chain.then(() => new Promise((resolve, reject) => {
+      const existing = document.querySelector(`script[src="${source}"]`);
+      if (existing) {
+        if (existing.dataset.kabutaneLoaded === "true") resolve();
+        else {
+          existing.addEventListener("load", resolve, { once: true });
+          existing.addEventListener("error", reject, { once: true });
+          setTimeout(resolve, 0);
+        }
+        return;
+      }
+      const script = document.createElement("script");
+      script.src = source;
+      script.async = false;
+      script.addEventListener("load", () => { script.dataset.kabutaneLoaded = "true"; resolve(); }, { once: true });
+      script.addEventListener("error", () => reject(new Error(`読み込みに失敗しました: ${source}`)), { once: true });
+      document.head.appendChild(script);
+    })), Promise.resolve());
+  }
+
   function loadStyle(source) {
     if (document.querySelector(`link[href="${source}"]`)) return;
     const link = document.createElement("link");
@@ -60,8 +81,7 @@
 
   function ensureReplayHistory() {
     if (!document.body?.classList.contains("replay-page")) return;
-    loadScript("assets/practice-history-core.js");
-    loadScript("assets/practice-history.js");
+    loadScriptsInOrder(["assets/practice-history-core.js", "assets/practice-history.js"]).catch(console.warn);
   }
 
   function ensureReplayDrawingTools() {
@@ -73,9 +93,12 @@
   function ensureReplayPracticeV2() {
     if (!document.body?.classList.contains("replay-page")) return;
     loadStyle("assets/replay-practice-ux-v2.css");
-    loadScript("assets/replay-practice-score-v2.js");
-    loadScript("assets/replay-practice-ux-v2.js");
-    loadScript("assets/replay-score-report-v2.js");
+    loadScriptsInOrder([
+      "assets/replay-practice-score-v2.js",
+      "assets/replay-practice-ux-v2.js",
+      "assets/replay-practice-ux-v2-stability.js",
+      "assets/replay-score-report-v2.js",
+    ]).catch((error) => console.warn("Kabutane practice v2 loading failed", error));
   }
 
   function separateAnalysisFromOrderPlacement() {
