@@ -12,11 +12,13 @@ on:
       - "provisional_signal.py"
       - "build_market_reports.py"
       - "build_shikiho_room.py"
+      - "build_shikiho_room_v2.py"
       - "data/curated/shikiho-2026-summer.json"
       - "tests/test_update_daily.py"
       - "tests/test_provisional_signal.py"
       - "tests/test_market_reports.py"
       - "tests/test_shikiho_room.py"
+      - "tests/test_shikiho_room_v2.py"
       - ".github/workflows/update-daily.yml"
 
 permissions:
@@ -52,11 +54,12 @@ jobs:
 
       - name: Validate updater
         run: |
-          python -m py_compile update_daily.py provisional_signal.py build_market_reports.py build_shikiho_room.py tests/test_update_daily.py tests/test_provisional_signal.py tests/test_market_reports.py tests/test_shikiho_room.py
+          python -m py_compile update_daily.py provisional_signal.py build_market_reports.py build_shikiho_room.py build_shikiho_room_v2.py tests/test_update_daily.py tests/test_provisional_signal.py tests/test_market_reports.py tests/test_shikiho_room.py tests/test_shikiho_room_v2.py
           python -m unittest discover -s tests -p 'test_update_daily.py' -v
           python -m unittest discover -s tests -p 'test_provisional_signal.py' -v
           python -m unittest discover -s tests -p 'test_market_reports.py' -v
           python -m unittest discover -s tests -p 'test_shikiho_room.py' -v
+          python -m unittest discover -s tests -p 'test_shikiho_room_v2.py' -v
 
       - name: Download incremental daily prices
         env:
@@ -66,7 +69,7 @@ jobs:
           python update_daily.py
           python provisional_signal.py
           python build_market_reports.py
-          python build_shikiho_room.py
+          python build_shikiho_room_v2.py
 
       - name: Commit daily overlays and observations
         run: |
@@ -113,6 +116,12 @@ jobs:
               raise SystemExit(f"Shikiho room record count mismatch: {shikiho.get('record_count')}")
           if shikiho.get('baseline_date') != '2026-06-18':
               raise SystemExit(f"Shikiho baseline mismatch: {shikiho.get('baseline_date')}")
+          suspicious = [
+              row for row in shikiho.get('records', [])
+              if row.get('return_pct') is not None and abs(float(row['return_pct'])) >= 200
+          ]
+          if suspicious:
+              raise SystemExit(f"Suspicious split-adjusted returns: {[(r.get('code'), r.get('return_pct')) for r in suspicious]}")
           print(f"Publishing daily price date: {daily.get('price_date')}; Shikiho latest: {shikiho.get('latest_price_date')}")
           PY
 
