@@ -8,12 +8,15 @@ on:
       - "assets/shikiho-room.js"
       - "assets/site-upgrades.js"
       - "build_shikiho_room.py"
+      - "build_shikiho_room_v2.py"
       - "data/curated/shikiho-2026-summer.json"
       - "data/curated/shikiho-2026-summer-performance.json"
       - "tests/test_shikiho_room.py"
+      - "tests/test_shikiho_room_v2.py"
       - "sw.js"
       - ".github/workflows/update-daily.yml"
       - ".github/workflows/deploy-pages.yml"
+      - ".github/workflows/build-shikiho-preview.yml"
       - ".github/workflows/shikiho-room-checks.yml"
   workflow_dispatch:
 
@@ -37,8 +40,9 @@ jobs:
         run: pip install -r requirements.txt
       - name: Validate Python and calculations
         run: |
-          python -m py_compile build_shikiho_room.py tests/test_shikiho_room.py
+          python -m py_compile build_shikiho_room.py build_shikiho_room_v2.py tests/test_shikiho_room.py tests/test_shikiho_room_v2.py
           python -m unittest discover -s tests -p 'test_shikiho_room.py' -v
+          python -m unittest discover -s tests -p 'test_shikiho_room_v2.py' -v
       - name: Validate JavaScript
         run: |
           node --check assets/shikiho-room.js
@@ -58,8 +62,10 @@ jobs:
           css = Path("assets/shikiho-room.css").read_text(encoding="utf-8")
           js = Path("assets/shikiho-room.js").read_text(encoding="utf-8")
           manifest = json.loads(Path("data/curated/shikiho-2026-summer.json").read_text(encoding="utf-8"))
+          performance = json.loads(Path("data/curated/shikiho-2026-summer-performance.json").read_text(encoding="utf-8"))
           update_daily = Path(".github/workflows/update-daily.yml").read_text(encoding="utf-8")
           deploy = Path(".github/workflows/deploy-pages.yml").read_text(encoding="utf-8")
+          preview = Path(".github/workflows/build-shikiho-preview.yml").read_text(encoding="utf-8")
           sw = Path("sw.js").read_text(encoding="utf-8")
           Parser().feed(html)
           if css.count("{") != css.count("}"):
@@ -78,21 +84,29 @@ jobs:
               "合言葉はこの記事に書いてあるよ",
               "n07501f295da0",
               "2026-06-18",
+              "半角英数字",
               "shikiho-room.js",
               "shikiho-room.css",
           ):
               if marker not in html:
                   raise SystemExit(f"Page marker missing: {marker}")
-          if "プリクラ" in js or "プリクラ" in html:
-              raise SystemExit("Plain passphrase must not be embedded in the login source")
+          for forbidden in ("プリクラ", "cosmos_summer"):
+              if forbidden in js or forbidden in html:
+                  raise SystemExit("Plain passphrase must not be embedded in the login source")
           access = manifest.get("access") or {}
           if set(access) & {"passphrase", "password", "plain_text"}:
               raise SystemExit("Manifest must store only the passphrase hash")
           if len(str(access.get("sha256") or "")) != 64:
               raise SystemExit("Passphrase SHA-256 hash is missing")
-          for marker in ("python build_shikiho_room.py", "shikiho-2026-summer-performance.json", "shikiho-summer-2026.html"):
+          for marker in ("python build_shikiho_room_v2.py", "shikiho-2026-summer-performance.json", "shikiho-summer-2026.html"):
               if marker not in update_daily:
                   raise SystemExit(f"Daily workflow marker missing: {marker}")
+          if "python build_shikiho_room_v2.py" not in preview:
+              raise SystemExit("Preview workflow must use the split-safe builder")
+          if performance.get("records"):
+              suspicious = [row for row in performance["records"] if row.get("return_pct") is not None and abs(float(row["return_pct"])) >= 200]
+              if suspicious:
+                  raise SystemExit(f"Suspicious split-adjusted returns remain: {[(r.get('code'), r.get('return_pct')) for r in suspicious]}")
           for marker in ("shikiho-summer-2026.html", "assets/shikiho-room.css", "data/curated/shikiho-2026-summer.json"):
               if marker not in deploy:
                   raise SystemExit(f"Pages deployment marker missing: {marker}")
