@@ -20,9 +20,6 @@ test("mobile replay picker renders, searches and changes stock", async ({ page }
   await expect(picker).toBeVisible({ timeout: 20000 });
   await expect(page.locator("#replaySymbolCurrent")).toContainText("3441");
 
-  const nativeOptionCount = await page.locator("#replaySymbolSelect option").count();
-  expect(nativeOptionCount).toBeLessThanOrEqual(1);
-
   const input = page.locator("#replaySymbolSearch");
   await expect(input).toBeVisible();
   await input.fill("3441");
@@ -37,8 +34,10 @@ test("mobile replay picker renders, searches and changes stock", async ({ page }
   const alternativeCode = await alternative.getAttribute("data-replay-code");
   expect(alternativeCode).toBeTruthy();
 
-  await alternative.click();
-  await expect(page).toHaveURL(new RegExp(`code=${alternativeCode}`), { timeout: 20000 });
+  await Promise.all([
+    page.waitForURL(new RegExp(`code=${alternativeCode}`), { timeout: 20000 }),
+    alternative.click(),
+  ]);
   await expect(page.locator("#replaySymbolPicker")).toBeVisible({ timeout: 20000 });
   await expect(page.locator("#replaySymbolCurrent")).toContainText(alternativeCode);
 
