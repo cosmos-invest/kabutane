@@ -5,10 +5,17 @@
   if (window.__kabutaneRecalculateStopGuardV3) return;
   window.__kabutaneRecalculateStopGuardV3 = true;
 
+  let stopBeforeButton = null;
+
   function finite(value) {
     if (value === null || value === undefined || value === "") return null;
     const parsed = Number(value);
     return Number.isFinite(parsed) ? parsed : null;
+  }
+
+  function formatPrice(value) {
+    const number = finite(value);
+    return number === null ? "—" : `${number.toLocaleString("ja-JP", { maximumFractionDigits: 2 })}円`;
   }
 
   function activeStop() {
@@ -36,6 +43,24 @@
     if (sharesBefore > 0 && stopBefore !== null) restoreActiveStop(stopBefore);
     return result;
   };
+
+  document.addEventListener("pointerdown", (event) => {
+    if (event.target.closest("[data-stop-adjust]")) stopBeforeButton = activeStop();
+  }, true);
+
+  document.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-stop-adjust]");
+    if (!button || button.disabled) return;
+    const before = stopBeforeButton;
+    setTimeout(() => {
+      const after = activeStop();
+      const feedback = document.getElementById("practiceStopFeedback");
+      if (!feedback || before === null || after === null || Math.abs(after - before) < 0.005) return;
+      const verb = after > before ? "引き上げた" : "引き下げた";
+      feedback.textContent = `SLを${formatPrice(before)}から${formatPrice(after)}へ${verb}よ。次の日も${formatPrice(after)}を維持するよ。`;
+      feedback.dataset.tone = "success";
+    }, 30);
+  });
 
   window.KabutaneStopGuardV3 = {
     activeStop,
