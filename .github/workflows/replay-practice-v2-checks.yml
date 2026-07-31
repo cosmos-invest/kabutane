@@ -3,8 +3,10 @@ name: Validate replay practice v2
 on:
   pull_request:
     paths:
+      - "replay-select.html"
       - "assets/replay-picker.js"
       - "assets/replay-picker.css"
+      - "assets/replay-stock-select.js"
       - "assets/replay-practice-score-v2.js"
       - "assets/replay-practice-ux-v2.js"
       - "assets/replay-practice-ux-v2-stability.js"
@@ -35,6 +37,7 @@ jobs:
       - name: Check JavaScript syntax
         run: |
           node --check assets/replay-picker.js
+          node --check assets/replay-stock-select.js
           node --check assets/replay-practice-score-v2.js
           node --check assets/replay-practice-ux-v2.js
           node --check assets/replay-practice-ux-v2-stability.js
@@ -51,19 +54,26 @@ jobs:
       - name: Validate UX, scoring and PWA wiring
         run: |
           python - <<'PY'
+          from html.parser import HTMLParser
           from pathlib import Path
+
+          class Parser(HTMLParser):
+              pass
 
           score = Path("assets/replay-practice-score-v2.js").read_text(encoding="utf-8")
           ux = Path("assets/replay-practice-ux-v2.js").read_text(encoding="utf-8")
           stability = Path("assets/replay-practice-ux-v2-stability.js").read_text(encoding="utf-8")
           report = Path("assets/replay-score-report-v2.js").read_text(encoding="utf-8")
           picker = Path("assets/replay-picker.js").read_text(encoding="utf-8")
+          selector = Path("assets/replay-stock-select.js").read_text(encoding="utf-8")
+          selector_html = Path("replay-select.html").read_text(encoding="utf-8")
           picker_css = Path("assets/replay-picker.css").read_text(encoding="utf-8")
           css = Path("assets/replay-practice-ux-v2.css").read_text(encoding="utf-8")
           pwa = Path("assets/pwa-register.js").read_text(encoding="utf-8")
           sw = Path("sw.js").read_text(encoding="utf-8")
           history = Path("assets/practice-history.js").read_text(encoding="utf-8")
 
+          Parser().feed(selector_html)
           for name, text in (("practice", css), ("picker", picker_css)):
               if text.count("{") != text.count("}"):
                   raise SystemExit(f"Replay {name} CSS braces are not balanced")
@@ -106,21 +116,20 @@ jobs:
               if marker not in report:
                   raise SystemExit(f"Score report marker missing: {marker}")
 
-          for marker in (
-              "RESULT_LIMIT = 8",
-              'type="search"',
-              "matchingRecords",
-              "window.location.assign(replayUrl",
-              "select.replaceChildren()",
-              "renderResults(\"\")",
-          ):
+          for marker in ("replay-select.html", "replayChangeSymbol", "setup.querySelector(\":scope > .section-heading\")"):
               if marker not in picker:
-                  raise SystemExit(f"Searchable replay picker marker missing: {marker}")
-          for forbidden in ("document.removeEventListener", "originalInit", "sorted.map((row)", "select.innerHTML = sorted.map"):
+                  raise SystemExit(f"Stable replay selection marker missing: {marker}")
+          for forbidden in ("document.removeEventListener", "originalInit", "loadCandidates", "select.replaceChildren", "MutationObserver(updateStopLabel)"):
               if forbidden in picker:
                   raise SystemExit(f"Fragile replay picker implementation returned: {forbidden}")
-          if "position:static!important" not in picker_css or "max-height:245px" not in picker_css:
-              raise SystemExit("Mobile picker must stay inline and height-limited")
+
+          for marker in ("RESULT_LIMIT = 20", "replayStockSearch", "data-stock-filter", "data/latest.json", "replay.html"):
+              if marker not in selector and marker not in selector_html:
+                  raise SystemExit(f"Standalone selector marker missing: {marker}")
+          if "replay-stock-select.js" not in selector_html or "replay-picker.css" not in selector_html:
+              raise SystemExit("Standalone selector assets are not linked")
+          if ".replay-stock-select-page" not in picker_css or ".replay-symbol-selected-card" not in picker_css:
+              raise SystemExit("Standalone selector styles are missing")
           if 'loadStyle("assets/replay-picker.css")' not in pwa:
               raise SystemExit("Replay picker CSS is not loaded")
 
@@ -135,6 +144,10 @@ jobs:
               raise SystemExit("Replay v2 scripts are not loaded in deterministic order")
 
           for name in (
+              "replay-select.html",
+              "replay-picker.css",
+              "replay-picker.js",
+              "replay-stock-select.js",
               "replay-practice-ux-v2.css",
               "replay-practice-score-v2.js",
               "replay-practice-ux-v2.js",
@@ -156,17 +169,17 @@ jobs:
           npm install --no-save @playwright/test@1.55.0
           npx playwright install --with-deps chromium
 
-      - name: Test Android mobile stock picker
+      - name: Test Android mobile stock selection
         run: |
           python3 -m http.server 4173 >/tmp/kabutane-preview.log 2>&1 &
           SERVER_PID=$!
           trap 'kill $SERVER_PID' EXIT
           npx playwright test tests/replay-picker-mobile.spec.js --reporter=line
 
-      - name: Upload mobile screenshot
+      - name: Upload mobile screenshots
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: replay-picker-mobile-preview
-          path: test-results/replay-picker-mobile.png
+          name: replay-mobile-preview
+          path: test-results/*.png
           if-no-files-found: ignore
