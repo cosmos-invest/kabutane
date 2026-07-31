@@ -1,6 +1,14 @@
 (function () {
   "use strict";
 
+  const PRACTICE_V2_SCRIPTS = [
+    "assets/replay-practice-score-v2.js",
+    "assets/replay-practice-ux-v2.js",
+    "assets/replay-practice-ux-v2-stability.js",
+    "assets/replay-score-report-v2.js",
+  ];
+  let practiceV2Promise = null;
+
   function ensureManifest() {
     if (document.querySelector('link[rel="manifest"]')) return;
     const link = document.createElement("link");
@@ -46,18 +54,20 @@
     return sources.reduce((chain, source) => chain.then(() => new Promise((resolve, reject) => {
       const existing = document.querySelector(`script[src="${source}"]`);
       if (existing) {
-        if (existing.dataset.kabutaneLoaded === "true") resolve();
+        if (existing.dataset.kabutaneLoaded === "true" || existing.readyState === "complete") resolve();
         else {
           existing.addEventListener("load", resolve, { once: true });
           existing.addEventListener("error", reject, { once: true });
-          setTimeout(resolve, 0);
         }
         return;
       }
       const script = document.createElement("script");
       script.src = source;
       script.async = false;
-      script.addEventListener("load", () => { script.dataset.kabutaneLoaded = "true"; resolve(); }, { once: true });
+      script.addEventListener("load", () => {
+        script.dataset.kabutaneLoaded = "true";
+        resolve();
+      }, { once: true });
       script.addEventListener("error", () => reject(new Error(`読み込みに失敗しました: ${source}`)), { once: true });
       document.head.appendChild(script);
     })), Promise.resolve());
@@ -90,16 +100,81 @@
     loadScript("assets/replay-drawing-tools.js");
   }
 
+  async function loadReplayPracticeV2() {
+    if (practiceV2Promise) return practiceV2Promise;
+    loadStyle("assets/replay-practice-ux-v2.css");
+
+    practiceV2Promise = (async () => {
+      const NativeMutationObserver = window.MutationObserver;
+      class ScopedMutationObserver extends NativeMutationObserver {
+        constructor(callback) {
+          super(callback);
+          this.kabutaneCallbackName = callback?.name || "";
+        }
+
+        observe(target, options) {
+          const isLegacyWholePageStopWatcher = target === document.body
+            && this.kabutaneCallbackName === "updateStopLabel"
+            && options?.childList === true
+            && options?.subtree === true;
+          if (isLegacyWholePageStopWatcher) return;
+          return super.observe(target, options);
+        }
+      }
+
+      window.MutationObserver = ScopedMutationObserver;
+      try {
+        await loadScriptsInOrder(PRACTICE_V2_SCRIPTS);
+        window.__kabutanePracticeV2Ready = true;
+      } finally {
+        window.MutationObserver = NativeMutationObserver;
+      }
+    })();
+
+    try {
+      await practiceV2Promise;
+    } catch (error) {
+      practiceV2Promise = null;
+      throw error;
+    }
+  }
+
   function ensureReplayPracticeV2() {
     if (!document.body?.classList.contains("replay-page")) return;
     loadStyle("assets/replay-picker.css");
-    loadStyle("assets/replay-practice-ux-v2.css");
-    loadScriptsInOrder([
-      "assets/replay-practice-score-v2.js",
-      "assets/replay-practice-ux-v2.js",
-      "assets/replay-practice-ux-v2-stability.js",
-      "assets/replay-score-report-v2.js",
-    ]).catch((error) => console.warn("Kabutane practice v2 loading failed", error));
+
+    const startButton = document.getElementById("startSessionButton");
+    if (!startButton || startButton.dataset.practiceV2Loader === "true") return;
+    startButton.dataset.practiceV2Loader = "true";
+
+    let loading = false;
+    startButton.addEventListener("click", async (event) => {
+      if (window.__kabutanePracticeV2Ready) return;
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      if (loading) return;
+
+      loading = true;
+      const originalText = startButton.textContent;
+      startButton.disabled = true;
+      startButton.textContent = "練習画面を準備中…";
+      const notice = document.getElementById("setupNotice");
+      if (notice) notice.textContent = "チャート操作と運用実践スコアを読み込んでいるよ。";
+
+      try {
+        await loadReplayPracticeV2();
+        startButton.disabled = false;
+        startButton.textContent = originalText;
+        loading = false;
+        startButton.click();
+      } catch (error) {
+        loading = false;
+        startButton.disabled = false;
+        startButton.textContent = originalText;
+        if (notice) notice.textContent = `練習画面を準備できませんでした。再読み込みしてね：${error.message}`;
+        console.warn("Kabutane practice v2 loading failed", error);
+      }
+    }, true);
   }
 
   function separateAnalysisFromOrderPlacement() {
