@@ -1,4 +1,4 @@
-const CACHE_VERSION = "kabutane-pwa-v18";
+const CACHE_VERSION = "kabutane-pwa-v19";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 
 // These files are required for the detail page to boot. If even one cannot be
@@ -25,6 +25,7 @@ const CRITICAL_ASSETS = [
 const OPTIONAL_ASSETS = [
   "./index.html",
   "./replay.html",
+  "./replay-select.html",
   "./backtest.html",
   "./howto.html",
   "./learn.html",
@@ -42,7 +43,7 @@ const OPTIONAL_ASSETS = [
   "./data/curated/shikiho-2026-summer.json",
   "./data/curated/shikiho-2026-summer-performance.json",
   // Compatibility for an already-open detail.html that still requests the
-  // unversioned asset URLs while the v18 worker is activating.
+  // unversioned asset URLs while the v19 worker is activating.
   "./assets/provisional-monthly-rsi-core.js",
   "./assets/detail-chart-viewport-core.js",
   "./assets/detail.js",
@@ -90,6 +91,9 @@ const OPTIONAL_ASSETS = [
   "./assets/replay-unified.css",
   "./assets/replay-guided-mode.css",
   "./assets/replay-share-report.css",
+  "./assets/replay-picker.css",
+  "./assets/replay-picker.js",
+  "./assets/replay-stock-select.js",
   "./assets/replay-drawing-tools.css",
   "./assets/replay-drawing-tools.js",
   "./assets/replay-unified-workspace.js",
@@ -143,6 +147,9 @@ function routeAlternatives(url) {
   }
   if (pathname.endsWith("/shikiho-summer-2026") || pathname.endsWith("/shikiho-summer-2026.html")) {
     return ["./shikiho-summer-2026.html"];
+  }
+  if (pathname.endsWith("/replay-select") || pathname.endsWith("/replay-select.html")) {
+    return ["./replay-select.html"];
   }
   return [];
 }
