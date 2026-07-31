@@ -2,12 +2,12 @@
   "code": "2801",
   "ticker": "2801.T",
   "name": "キッコーマン",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 1748.0,
-    "change_from_signal_month_pct": 4.8,
-    "return_since_gc_pct": 4.8
+    "current_price": 1647.5,
+    "change_from_signal_month_pct": -1.23,
+    "return_since_gc_pct": -1.23
   },
   "daily": [
     {
@@ -113,15 +113,41 @@
       "sma200": 1443.92,
       "rsi14": 49.58,
       "rsi5": 58.15
+    },
+    {
+      "date": "2026-07-30",
+      "open": 1774.0,
+      "high": 1778.0,
+      "low": 1700.0,
+      "close": 1719.5,
+      "volume": 4512500.0,
+      "sma25": 1647.6,
+      "sma75": 1528.85,
+      "sma200": 1446.38,
+      "rsi14": 49.58,
+      "rsi5": 58.15
+    },
+    {
+      "date": "2026-07-31",
+      "open": 1639.5,
+      "high": 1669.0,
+      "low": 1625.5,
+      "close": 1647.5,
+      "volume": 4126900.0,
+      "sma25": 1648.04,
+      "sma75": 1530.51,
+      "sma200": 1448.38,
+      "rsi14": 49.58,
+      "rsi5": 58.15
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 61.47,
-    "monthly_rsi_ma5": 52.3,
-    "spread": 9.17,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 57.54,
+    "monthly_rsi_ma5": 51.51,
+    "spread": 6.03,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -130,5 +156,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "5331",
   "ticker": "5331.T",
   "name": "ノリタケ",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 3110.0,
-    "change_from_signal_month_pct": -23.77,
-    "return_since_gc_pct": -20.97
+    "current_price": 3400.0,
+    "change_from_signal_month_pct": -16.67,
+    "return_since_gc_pct": -13.6
   },
   "daily": [
     {
@@ -113,15 +113,41 @@
       "sma200": 3190.96,
       "rsi14": 79.85,
       "rsi5": 81.77
+    },
+    {
+      "date": "2026-07-30",
+      "open": 3050.0,
+      "high": 3220.0,
+      "low": 3045.0,
+      "close": 3155.0,
+      "volume": 400700.0,
+      "sma25": 3667.4,
+      "sma75": 3682.07,
+      "sma200": 3195.11,
+      "rsi14": 79.85,
+      "rsi5": 81.77
+    },
+    {
+      "date": "2026-07-31",
+      "open": 3360.0,
+      "high": 3430.0,
+      "low": 3280.0,
+      "close": 3400.0,
+      "volume": 467700.0,
+      "sma25": 3629.8,
+      "sma75": 3684.13,
+      "sma200": 3200.31,
+      "rsi14": 79.85,
+      "rsi5": 81.77
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 58.57,
-    "monthly_rsi_ma5": 74.18,
-    "spread": -15.61,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 64.04,
+    "monthly_rsi_ma5": 75.27,
+    "spread": -11.24,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -130,5 +156,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

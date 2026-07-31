@@ -2,12 +2,12 @@
   "code": "4736",
   "ticker": "4736.T",
   "name": "日本ラッド",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 585.0,
-    "change_from_signal_month_pct": -2.82,
-    "return_since_gc_pct": -7.14
+    "current_price": 635.0,
+    "change_from_signal_month_pct": 5.48,
+    "return_since_gc_pct": 0.79
   },
   "daily": [
     {
@@ -113,15 +113,41 @@
       "sma200": 621.94,
       "rsi14": 43.2,
       "rsi5": 44.33
+    },
+    {
+      "date": "2026-07-30",
+      "open": 581.0,
+      "high": 599.0,
+      "low": 578.0,
+      "close": 599.0,
+      "volume": 3000.0,
+      "sma25": 593.64,
+      "sma75": 580.57,
+      "sma200": 621.41,
+      "rsi14": 43.2,
+      "rsi5": 44.33
+    },
+    {
+      "date": "2026-07-31",
+      "open": 594.0,
+      "high": 640.0,
+      "low": 593.0,
+      "close": 635.0,
+      "volume": 10300.0,
+      "sma25": 594.32,
+      "sma75": 581.52,
+      "sma200": 621.01,
+      "rsi14": 43.2,
+      "rsi5": 44.33
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 44.98,
-    "monthly_rsi_ma5": 44.89,
-    "spread": 0.09,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 48.74,
+    "monthly_rsi_ma5": 45.64,
+    "spread": 3.09,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -130,5 +156,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

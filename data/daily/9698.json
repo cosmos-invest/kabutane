@@ -2,12 +2,12 @@
   "code": "9698",
   "ticker": "9698.T",
   "name": "クレオ",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 1288.0,
-    "change_from_signal_month_pct": 6.89,
-    "return_since_gc_pct": 6.89
+    "current_price": 1265.0,
+    "change_from_signal_month_pct": 4.98,
+    "return_since_gc_pct": 4.98
   },
   "daily": [
     {
@@ -113,15 +113,41 @@
       "sma200": 1207.05,
       "rsi14": 57.17,
       "rsi5": 57.5
+    },
+    {
+      "date": "2026-07-30",
+      "open": 1290.0,
+      "high": 1300.0,
+      "low": 1260.0,
+      "close": 1270.0,
+      "volume": 8000.0,
+      "sma25": 1232.36,
+      "sma75": 1207.61,
+      "sma200": 1207.55,
+      "rsi14": 57.17,
+      "rsi5": 57.5
+    },
+    {
+      "date": "2026-07-31",
+      "open": 1270.0,
+      "high": 1270.0,
+      "low": 1265.0,
+      "close": 1265.0,
+      "volume": 1900.0,
+      "sma25": 1234.64,
+      "sma75": 1208.6,
+      "sma200": 1208.05,
+      "rsi14": 57.17,
+      "rsi5": 57.5
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 67.4,
-    "monthly_rsi_ma5": 60.86,
-    "spread": 6.55,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 65.58,
+    "monthly_rsi_ma5": 60.49,
+    "spread": 5.09,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -130,5 +156,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "5985",
   "ticker": "5985.T",
   "name": "サンコール",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 1092.0,
-    "change_from_signal_month_pct": -36.25,
-    "return_since_gc_pct": -9.98
+    "current_price": 1275.0,
+    "change_from_signal_month_pct": -25.57,
+    "return_since_gc_pct": 5.11
   },
   "daily": [
     {
@@ -113,15 +113,41 @@
       "sma200": 1345.11,
       "rsi14": 77.9,
       "rsi5": 80.69
+    },
+    {
+      "date": "2026-07-30",
+      "open": 1099.0,
+      "high": 1154.0,
+      "low": 1070.0,
+      "close": 1137.0,
+      "volume": 801500.0,
+      "sma25": 1455.96,
+      "sma75": 1620.37,
+      "sma200": 1345.76,
+      "rsi14": 77.9,
+      "rsi5": 80.69
+    },
+    {
+      "date": "2026-07-31",
+      "open": 1246.0,
+      "high": 1310.0,
+      "low": 1204.0,
+      "close": 1275.0,
+      "volume": 1007100.0,
+      "sma25": 1429.32,
+      "sma75": 1618.32,
+      "sma200": 1346.86,
+      "rsi14": 77.9,
+      "rsi5": 80.69
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 54.66,
-    "monthly_rsi_ma5": 74.48,
-    "spread": -19.82,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 60.43,
+    "monthly_rsi_ma5": 75.64,
+    "spread": -15.2,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -130,5 +156,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

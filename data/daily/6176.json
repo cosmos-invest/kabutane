@@ -2,12 +2,12 @@
   "code": "6176",
   "ticker": "6176.T",
   "name": "ブランジスタ",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 921.0,
-    "change_from_signal_month_pct": 2.68,
-    "return_since_gc_pct": 19.15
+    "current_price": 907.0,
+    "change_from_signal_month_pct": 1.11,
+    "return_since_gc_pct": 17.34
   },
   "daily": [
     {
@@ -113,15 +113,41 @@
       "sma200": 828.8,
       "rsi14": 60.02,
       "rsi5": 60.55
+    },
+    {
+      "date": "2026-07-30",
+      "open": 921.0,
+      "high": 921.0,
+      "low": 900.0,
+      "close": 910.0,
+      "volume": 88500.0,
+      "sma25": 916.96,
+      "sma75": 912.91,
+      "sma200": 829.58,
+      "rsi14": 60.02,
+      "rsi5": 60.55
+    },
+    {
+      "date": "2026-07-31",
+      "open": 922.0,
+      "high": 922.0,
+      "low": 903.0,
+      "close": 907.0,
+      "volume": 61600.0,
+      "sma25": 918.24,
+      "sma75": 913.25,
+      "sma200": 830.27,
+      "rsi14": 60.02,
+      "rsi5": 60.55
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 58.2,
-    "monthly_rsi_ma5": 57.4,
-    "spread": 0.8,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 57.46,
+    "monthly_rsi_ma5": 57.25,
+    "spread": 0.21,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -130,5 +156,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "4919",
   "ticker": "4919.T",
   "name": "ミルボン",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 2931.0,
-    "change_from_signal_month_pct": 10.11,
-    "return_since_gc_pct": 15.35
+    "current_price": 2781.0,
+    "change_from_signal_month_pct": 4.47,
+    "return_since_gc_pct": 9.45
   },
   "daily": [
     {
@@ -113,15 +113,41 @@
       "sma200": 2596.22,
       "rsi14": 41.69,
       "rsi5": 42.03
+    },
+    {
+      "date": "2026-07-30",
+      "open": 2931.0,
+      "high": 2936.0,
+      "low": 2876.0,
+      "close": 2896.0,
+      "volume": 115200.0,
+      "sma25": 2788.08,
+      "sma75": 2680.25,
+      "sma200": 2598.51,
+      "rsi14": 41.69,
+      "rsi5": 42.03
+    },
+    {
+      "date": "2026-07-31",
+      "open": 2846.0,
+      "high": 2853.0,
+      "low": 2772.0,
+      "close": 2781.0,
+      "volume": 149700.0,
+      "sma25": 2792.64,
+      "sma75": 2680.52,
+      "sma200": 2600.16,
+      "rsi14": 41.69,
+      "rsi5": 42.03
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 44.88,
-    "monthly_rsi_ma5": 37.81,
-    "spread": 7.07,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 40.82,
+    "monthly_rsi_ma5": 36.99,
+    "spread": 3.82,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -130,5 +156,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

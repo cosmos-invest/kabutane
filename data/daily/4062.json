@@ -2,12 +2,12 @@
   "code": "4062",
   "ticker": "4062.T",
   "name": "イビデン",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 13470.0,
-    "change_from_signal_month_pct": -43.44,
-    "return_since_gc_pct": -0.07
+    "current_price": 16650.0,
+    "change_from_signal_month_pct": -30.09,
+    "return_since_gc_pct": 23.52
   },
   "daily": [
     {
@@ -113,15 +113,41 @@
       "sma200": 11125.02,
       "rsi14": 78.23,
       "rsi5": 86.31
+    },
+    {
+      "date": "2026-07-30",
+      "open": 13475.0,
+      "high": 14700.0,
+      "low": 13095.0,
+      "close": 13650.0,
+      "volume": 10002100.0,
+      "sma25": 19581.0,
+      "sma75": 17943.61,
+      "sma200": 11170.39,
+      "rsi14": 78.23,
+      "rsi5": 86.31
+    },
+    {
+      "date": "2026-07-31",
+      "open": 16650.0,
+      "high": 16650.0,
+      "low": 16650.0,
+      "close": 16650.0,
+      "volume": 1063700.0,
+      "sma25": 19192.2,
+      "sma75": 18033.77,
+      "sma200": 11230.59,
+      "rsi14": 78.23,
+      "rsi5": 86.31
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 58.43,
-    "monthly_rsi_ma5": 73.45,
-    "spread": -15.02,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 64.77,
+    "monthly_rsi_ma5": 74.71,
+    "spread": -9.95,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -130,5 +156,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

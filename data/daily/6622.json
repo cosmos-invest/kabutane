@@ -2,12 +2,12 @@
   "code": "6622",
   "ticker": "6622.T",
   "name": "ダイヘン",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 11900.0,
-    "change_from_signal_month_pct": -34.07,
-    "return_since_gc_pct": -22.63
+    "current_price": 13790.0,
+    "change_from_signal_month_pct": -23.6,
+    "return_since_gc_pct": -10.34
   },
   "daily": [
     {
@@ -113,15 +113,41 @@
       "sma200": 12789.5,
       "rsi14": 69.94,
       "rsi5": 73.49
+    },
+    {
+      "date": "2026-07-30",
+      "open": 11620.0,
+      "high": 12550.0,
+      "low": 11460.0,
+      "close": 12250.0,
+      "volume": 312300.0,
+      "sma25": 15620.4,
+      "sma75": 15805.73,
+      "sma200": 12808.8,
+      "rsi14": 69.94,
+      "rsi5": 73.49
+    },
+    {
+      "date": "2026-07-31",
+      "open": 13500.0,
+      "high": 14020.0,
+      "low": 13190.0,
+      "close": 13790.0,
+      "volume": 366500.0,
+      "sma25": 15414.8,
+      "sma75": 15803.6,
+      "sma200": 12836.7,
+      "rsi14": 69.94,
+      "rsi5": 73.49
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 54.4,
-    "monthly_rsi_ma5": 65.43,
-    "spread": -11.03,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 59.11,
+    "monthly_rsi_ma5": 66.37,
+    "spread": -7.27,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -130,5 +156,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

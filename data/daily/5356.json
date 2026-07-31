@@ -2,12 +2,12 @@
   "code": "5356",
   "ticker": "5356.T",
   "name": "美濃窯業",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 1246.0,
-    "change_from_signal_month_pct": -10.36,
-    "return_since_gc_pct": -5.96
+    "current_price": 1330.0,
+    "change_from_signal_month_pct": -4.32,
+    "return_since_gc_pct": 0.38
   },
   "daily": [
     {
@@ -113,22 +113,48 @@
       "sma200": 1255.62,
       "rsi14": 65.78,
       "rsi5": 68.99
+    },
+    {
+      "date": "2026-07-30",
+      "open": 1250.0,
+      "high": 1269.0,
+      "low": 1250.0,
+      "close": 1265.0,
+      "volume": 2700.0,
+      "sma25": 1310.2,
+      "sma75": 1272.19,
+      "sma200": 1255.82,
+      "rsi14": 65.78,
+      "rsi5": 68.99
+    },
+    {
+      "date": "2026-07-31",
+      "open": 1273.0,
+      "high": 1336.0,
+      "low": 1273.0,
+      "close": 1330.0,
+      "volume": 13500.0,
+      "sma25": 1307.84,
+      "sma75": 1274.11,
+      "sma200": 1256.31,
+      "rsi14": 65.78,
+      "rsi5": 68.99
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 58.87,
-    "monthly_rsi_ma5": 62.93,
-    "spread": -4.06,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 64.38,
+    "monthly_rsi_ma5": 64.04,
+    "spread": 0.34,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-06",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

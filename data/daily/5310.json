@@ -2,12 +2,12 @@
   "code": "5310",
   "ticker": "5310.T",
   "name": "東洋炭素",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 6030.0,
-    "change_from_signal_month_pct": -18.07,
-    "return_since_gc_pct": -0.66
+    "current_price": 6620.0,
+    "change_from_signal_month_pct": -10.05,
+    "return_since_gc_pct": 9.06
   },
   "daily": [
     {
@@ -113,15 +113,41 @@
       "sma200": 5870.38,
       "rsi14": 60.22,
       "rsi5": 63.68
+    },
+    {
+      "date": "2026-07-30",
+      "open": 5950.0,
+      "high": 6180.0,
+      "low": 5940.0,
+      "close": 6070.0,
+      "volume": 113500.0,
+      "sma25": 7017.6,
+      "sma75": 7054.93,
+      "sma200": 5879.32,
+      "rsi14": 60.22,
+      "rsi5": 63.68
+    },
+    {
+      "date": "2026-07-31",
+      "open": 6430.0,
+      "high": 6690.0,
+      "low": 6220.0,
+      "close": 6620.0,
+      "volume": 129900.0,
+      "sma25": 6965.6,
+      "sma75": 7064.4,
+      "sma200": 5890.73,
+      "rsi14": 60.22,
+      "rsi5": 63.68
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 53.39,
-    "monthly_rsi_ma5": 57.44,
-    "spread": -4.05,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 57.11,
+    "monthly_rsi_ma5": 58.18,
+    "spread": -1.07,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -130,5 +156,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

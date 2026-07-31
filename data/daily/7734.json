@@ -2,12 +2,12 @@
   "code": "7734",
   "ticker": "7734.T",
   "name": "理研計器",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 3300.0,
-    "change_from_signal_month_pct": -10.69,
-    "return_since_gc_pct": -1.79
+    "current_price": 3495.0,
+    "change_from_signal_month_pct": -5.41,
+    "return_since_gc_pct": 4.02
   },
   "daily": [
     {
@@ -113,22 +113,48 @@
       "sma200": 3395.2,
       "rsi14": 52.99,
       "rsi5": 55.93
+    },
+    {
+      "date": "2026-07-30",
+      "open": 3335.0,
+      "high": 3395.0,
+      "low": 3280.0,
+      "close": 3360.0,
+      "volume": 109100.0,
+      "sma25": 3499.4,
+      "sma75": 3530.8,
+      "sma200": 3396.05,
+      "rsi14": 52.99,
+      "rsi5": 55.93
+    },
+    {
+      "date": "2026-07-31",
+      "open": 3460.0,
+      "high": 3545.0,
+      "low": 3395.0,
+      "close": 3495.0,
+      "volume": 168100.0,
+      "sma25": 3494.4,
+      "sma75": 3533.27,
+      "sma200": 3397.09,
+      "rsi14": 52.99,
+      "rsi5": 55.93
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 51.36,
-    "monthly_rsi_ma5": 53.29,
-    "spread": -1.92,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 54.22,
+    "monthly_rsi_ma5": 53.86,
+    "spread": 0.36,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-06",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "2121",
   "ticker": "2121.T",
   "name": "ＭＩＸＩ",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 2994.0,
-    "change_from_signal_month_pct": 10.6,
-    "return_since_gc_pct": 13.28
+    "current_price": 2896.0,
+    "change_from_signal_month_pct": 6.98,
+    "return_since_gc_pct": 9.57
   },
   "daily": [
     {
@@ -113,15 +113,41 @@
       "sma200": 2761.12,
       "rsi14": 42.06,
       "rsi5": 45.07
+    },
+    {
+      "date": "2026-07-30",
+      "open": 3015.0,
+      "high": 3025.0,
+      "low": 2952.0,
+      "close": 2991.0,
+      "volume": 350200.0,
+      "sma25": 2862.04,
+      "sma75": 2705.33,
+      "sma200": 2760.12,
+      "rsi14": 42.06,
+      "rsi5": 45.07
+    },
+    {
+      "date": "2026-07-31",
+      "open": 2915.0,
+      "high": 2949.0,
+      "low": 2893.0,
+      "close": 2896.0,
+      "volume": 293200.0,
+      "sma25": 2875.8,
+      "sma75": 2710.24,
+      "sma200": 2758.45,
+      "rsi14": 42.06,
+      "rsi5": 45.07
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 53.39,
-    "monthly_rsi_ma5": 43.94,
-    "spread": 9.44,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 50.72,
+    "monthly_rsi_ma5": 43.41,
+    "spread": 7.31,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -130,5 +156,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

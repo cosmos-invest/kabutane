@@ -2,12 +2,12 @@
   "code": "4461",
   "ticker": "4461.T",
   "name": "第一工業製薬",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 8830.0,
-    "change_from_signal_month_pct": -28.09,
-    "return_since_gc_pct": -28.09
+    "current_price": 12620.0,
+    "change_from_signal_month_pct": 2.77,
+    "return_since_gc_pct": 2.77
   },
   "daily": [
     {
@@ -113,22 +113,48 @@
       "sma200": 9147.4,
       "rsi14": 69.39,
       "rsi5": 70.03
+    },
+    {
+      "date": "2026-07-30",
+      "open": 10300.0,
+      "high": 10330.0,
+      "low": 10010.0,
+      "close": 10330.0,
+      "volume": 230800.0,
+      "sma25": 11086.8,
+      "sma75": 10307.33,
+      "sma200": 9169.85,
+      "rsi14": 69.39,
+      "rsi5": 70.03
+    },
+    {
+      "date": "2026-07-31",
+      "open": 11500.0,
+      "high": 12850.0,
+      "low": 11150.0,
+      "close": 12620.0,
+      "volume": 842200.0,
+      "sma25": 11081.2,
+      "sma75": 10360.27,
+      "sma200": 9201.05,
+      "rsi14": 69.39,
+      "rsi5": 70.03
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 56.98,
-    "monthly_rsi_ma5": 63.24,
-    "spread": -6.26,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 71.2,
+    "monthly_rsi_ma5": 66.08,
+    "spread": 5.11,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-06",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

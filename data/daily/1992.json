@@ -2,12 +2,12 @@
   "code": "1992",
   "ticker": "1992.T",
   "name": "神田通信機",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 3150.0,
-    "change_from_signal_month_pct": 5.04,
-    "return_since_gc_pct": 5.04
+    "current_price": 2945.0,
+    "change_from_signal_month_pct": -1.8,
+    "return_since_gc_pct": -1.8
   },
   "daily": [
     {
@@ -113,15 +113,41 @@
       "sma200": 2793.07,
       "rsi14": 64.68,
       "rsi5": 69.3
+    },
+    {
+      "date": "2026-07-30",
+      "open": 3090.0,
+      "high": 3090.0,
+      "low": 3085.0,
+      "close": 3085.0,
+      "volume": 400.0,
+      "sma25": 2969.72,
+      "sma75": 2846.4,
+      "sma200": 2794.99,
+      "rsi14": 64.68,
+      "rsi5": 69.3
+    },
+    {
+      "date": "2026-07-31",
+      "open": 3085.0,
+      "high": 3085.0,
+      "low": 2945.0,
+      "close": 2945.0,
+      "volume": 300.0,
+      "sma25": 2968.4,
+      "sma75": 2848.61,
+      "sma200": 2796.2,
+      "rsi14": 64.68,
+      "rsi5": 69.3
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 73.58,
-    "monthly_rsi_ma5": 66.93,
-    "spread": 6.65,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 66.25,
+    "monthly_rsi_ma5": 65.46,
+    "spread": 0.79,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -130,5 +156,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

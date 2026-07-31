@@ -2,12 +2,12 @@
   "code": "6544",
   "ticker": "6544.T",
   "name": "ジャパンエレベーターサービスホールディングス",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 1714.0,
-    "change_from_signal_month_pct": -1.44,
-    "return_since_gc_pct": -2.31
+    "current_price": 1693.0,
+    "change_from_signal_month_pct": -2.65,
+    "return_since_gc_pct": -3.51
   },
   "daily": [
     {
@@ -113,22 +113,48 @@
       "sma200": 1728.85,
       "rsi14": 53.74,
       "rsi5": 56.21
+    },
+    {
+      "date": "2026-07-30",
+      "open": 1709.5,
+      "high": 1726.5,
+      "low": 1672.5,
+      "close": 1698.0,
+      "volume": 516500.0,
+      "sma25": 1748.32,
+      "sma75": 1703.35,
+      "sma200": 1728.27,
+      "rsi14": 53.74,
+      "rsi5": 56.21
+    },
+    {
+      "date": "2026-07-31",
+      "open": 1680.0,
+      "high": 1708.0,
+      "low": 1670.0,
+      "close": 1693.0,
+      "volume": 594700.0,
+      "sma25": 1749.28,
+      "sma75": 1705.2,
+      "sma200": 1727.73,
+      "rsi14": 53.74,
+      "rsi5": 56.21
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 56.83,
-    "monthly_rsi_ma5": 56.28,
-    "spread": 0.56,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 55.9,
+    "monthly_rsi_ma5": 56.09,
+    "spread": -0.19,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-06",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

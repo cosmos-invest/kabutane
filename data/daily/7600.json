@@ -2,12 +2,12 @@
   "code": "7600",
   "ticker": "7600.T",
   "name": "日本エム・ディ・エム",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 900.0,
-    "change_from_signal_month_pct": 2.27,
-    "return_since_gc_pct": 84.8
+    "current_price": 862.0,
+    "change_from_signal_month_pct": -2.05,
+    "return_since_gc_pct": 77.0
   },
   "daily": [
     {
@@ -113,15 +113,41 @@
       "sma200": 610.37,
       "rsi14": 50.94,
       "rsi5": 63.61
+    },
+    {
+      "date": "2026-07-30",
+      "open": 900.0,
+      "high": 909.0,
+      "low": 850.0,
+      "close": 869.0,
+      "volume": 449300.0,
+      "sma25": 914.32,
+      "sma75": 767.65,
+      "sma200": 612.25,
+      "rsi14": 50.94,
+      "rsi5": 63.61
+    },
+    {
+      "date": "2026-07-31",
+      "open": 854.0,
+      "high": 899.0,
+      "low": 804.0,
+      "close": 862.0,
+      "volume": 664800.0,
+      "sma25": 911.68,
+      "sma75": 771.8,
+      "sma200": 614.05,
+      "rsi14": 50.94,
+      "rsi5": 63.61
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 65.21,
-    "monthly_rsi_ma5": 53.86,
-    "spread": 11.35,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 62.69,
+    "monthly_rsi_ma5": 53.35,
+    "spread": 9.34,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -130,5 +156,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

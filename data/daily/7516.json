@@ -2,12 +2,12 @@
   "code": "7516",
   "ticker": "7516.T",
   "name": "コーナン商事",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 4375.0,
-    "change_from_signal_month_pct": 4.04,
-    "return_since_gc_pct": 4.04
+    "current_price": 4195.0,
+    "change_from_signal_month_pct": -0.24,
+    "return_since_gc_pct": -0.24
   },
   "daily": [
     {
@@ -113,15 +113,41 @@
       "sma200": 4038.72,
       "rsi14": 56.21,
       "rsi5": 57.29
+    },
+    {
+      "date": "2026-07-30",
+      "open": 4340.0,
+      "high": 4355.0,
+      "low": 4295.0,
+      "close": 4325.0,
+      "volume": 112700.0,
+      "sma25": 4140.0,
+      "sma75": 4111.87,
+      "sma200": 4040.28,
+      "rsi14": 56.21,
+      "rsi5": 57.29
+    },
+    {
+      "date": "2026-07-31",
+      "open": 4290.0,
+      "high": 4320.0,
+      "low": 4195.0,
+      "close": 4195.0,
+      "volume": 90000.0,
+      "sma25": 4147.6,
+      "sma75": 4109.2,
+      "sma200": 4041.18,
+      "rsi14": 56.21,
+      "rsi5": 57.29
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 62.46,
-    "monthly_rsi_ma5": 57.96,
-    "spread": 4.5,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 58.72,
+    "monthly_rsi_ma5": 57.21,
+    "spread": 1.51,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -130,5 +156,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

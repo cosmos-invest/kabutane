@@ -2,12 +2,12 @@
   "code": "7267",
   "ticker": "7267.T",
   "name": "本田技研工業",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 1688.5,
-    "change_from_signal_month_pct": 14.09,
-    "return_since_gc_pct": 16.25
+    "current_price": 1625.5,
+    "change_from_signal_month_pct": 9.83,
+    "return_since_gc_pct": 11.91
   },
   "daily": [
     {
@@ -113,15 +113,41 @@
       "sma200": 1482.56,
       "rsi14": 46.89,
       "rsi5": 50.34
+    },
+    {
+      "date": "2026-07-30",
+      "open": 1688.0,
+      "high": 1688.0,
+      "low": 1643.0,
+      "close": 1670.0,
+      "volume": 21607300.0,
+      "sma25": 1537.88,
+      "sma75": 1421.22,
+      "sma200": 1483.39,
+      "rsi14": 46.89,
+      "rsi5": 50.34
+    },
+    {
+      "date": "2026-07-31",
+      "open": 1605.0,
+      "high": 1646.0,
+      "low": 1603.0,
+      "close": 1625.5,
+      "volume": 23442500.0,
+      "sma25": 1546.34,
+      "sma75": 1425.97,
+      "sma200": 1483.89,
+      "rsi14": 46.89,
+      "rsi5": 50.34
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 57.73,
-    "monthly_rsi_ma5": 47.54,
-    "spread": 10.19,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 55.69,
+    "monthly_rsi_ma5": 47.13,
+    "spread": 8.56,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -130,5 +156,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

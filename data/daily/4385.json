@@ -2,12 +2,12 @@
   "code": "4385",
   "ticker": "4385.T",
   "name": "メルカリ",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 4501.0,
-    "change_from_signal_month_pct": 10.05,
-    "return_since_gc_pct": 69.53
+    "current_price": 4290.0,
+    "change_from_signal_month_pct": 4.89,
+    "return_since_gc_pct": 61.58
   },
   "daily": [
     {
@@ -113,15 +113,41 @@
       "sma200": 3426.11,
       "rsi14": 68.4,
       "rsi5": 68.9
+    },
+    {
+      "date": "2026-07-30",
+      "open": 4550.0,
+      "high": 4619.0,
+      "low": 4314.0,
+      "close": 4372.0,
+      "volume": 1393600.0,
+      "sma25": 4410.32,
+      "sma75": 4099.11,
+      "sma200": 3437.24,
+      "rsi14": 68.4,
+      "rsi5": 68.9
+    },
+    {
+      "date": "2026-07-31",
+      "open": 4302.0,
+      "high": 4391.0,
+      "low": 4244.0,
+      "close": 4290.0,
+      "volume": 1222100.0,
+      "sma25": 4425.6,
+      "sma75": 4108.13,
+      "sma200": 3447.73,
+      "rsi14": 68.4,
+      "rsi5": 68.9
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 71.16,
-    "monthly_rsi_ma5": 67.43,
-    "spread": 3.74,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 69.1,
+    "monthly_rsi_ma5": 67.01,
+    "spread": 2.09,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -130,5 +156,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

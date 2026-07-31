@@ -2,12 +2,12 @@
   "code": "2922",
   "ticker": "2922.T",
   "name": "なとり",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 2037.0,
-    "change_from_signal_month_pct": 5.38,
-    "return_since_gc_pct": 7.83
+    "current_price": 1971.0,
+    "change_from_signal_month_pct": 1.97,
+    "return_since_gc_pct": 4.34
   },
   "daily": [
     {
@@ -113,15 +113,41 @@
       "sma200": 1926.11,
       "rsi14": 41.23,
       "rsi5": 44.63
+    },
+    {
+      "date": "2026-07-30",
+      "open": 2018.0,
+      "high": 2032.0,
+      "low": 1998.0,
+      "close": 2012.0,
+      "volume": 34000.0,
+      "sma25": 1973.28,
+      "sma75": 1915.15,
+      "sma200": 1926.27,
+      "rsi14": 41.23,
+      "rsi5": 44.63
+    },
+    {
+      "date": "2026-07-31",
+      "open": 1998.0,
+      "high": 2000.0,
+      "low": 1971.0,
+      "close": 1971.0,
+      "volume": 21600.0,
+      "sma25": 1975.52,
+      "sma75": 1916.16,
+      "sma200": 1926.22,
+      "rsi14": 41.23,
+      "rsi5": 44.63
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 54.99,
-    "monthly_rsi_ma5": 44.52,
-    "spread": 10.47,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 49.77,
+    "monthly_rsi_ma5": 43.47,
+    "spread": 6.29,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -130,5 +156,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

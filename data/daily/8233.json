@@ -2,12 +2,12 @@
   "code": "8233",
   "ticker": "8233.T",
   "name": "高島屋",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 2377.5,
-    "change_from_signal_month_pct": -5.03,
-    "return_since_gc_pct": -5.03
+    "current_price": 2275.5,
+    "change_from_signal_month_pct": -9.11,
+    "return_since_gc_pct": -9.11
   },
   "daily": [
     {
@@ -113,22 +113,48 @@
       "sma200": 1938.55,
       "rsi14": 73.34,
       "rsi5": 80.49
+    },
+    {
+      "date": "2026-07-30",
+      "open": 2335.0,
+      "high": 2363.0,
+      "low": 2285.5,
+      "close": 2292.5,
+      "volume": 1517200.0,
+      "sma25": 2381.96,
+      "sma75": 2132.87,
+      "sma200": 1941.29,
+      "rsi14": 73.34,
+      "rsi5": 80.49
+    },
+    {
+      "date": "2026-07-31",
+      "open": 2283.0,
+      "high": 2295.0,
+      "low": 2250.5,
+      "close": 2275.5,
+      "volume": 1346600.0,
+      "sma25": 2368.9,
+      "sma75": 2137.07,
+      "sma200": 1943.93,
+      "rsi14": 73.34,
+      "rsi5": 80.49
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 74.11,
-    "monthly_rsi_ma5": 72.6,
-    "spread": 1.51,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 69.96,
+    "monthly_rsi_ma5": 71.77,
+    "spread": -1.81,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-06",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

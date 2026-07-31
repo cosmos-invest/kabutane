@@ -2,12 +2,12 @@
   "code": "6058",
   "ticker": "6058.T",
   "name": "ベクトル",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 1765.0,
-    "change_from_signal_month_pct": 0.91,
-    "return_since_gc_pct": 25.36
+    "current_price": 1776.0,
+    "change_from_signal_month_pct": 1.54,
+    "return_since_gc_pct": 26.14
   },
   "daily": [
     {
@@ -113,15 +113,41 @@
       "sma200": 1344.11,
       "rsi14": 60.34,
       "rsi5": 69.55
+    },
+    {
+      "date": "2026-07-30",
+      "open": 1777.0,
+      "high": 1810.0,
+      "low": 1759.0,
+      "close": 1789.0,
+      "volume": 410700.0,
+      "sma25": 1809.12,
+      "sma75": 1495.31,
+      "sma200": 1347.75,
+      "rsi14": 60.34,
+      "rsi5": 69.55
+    },
+    {
+      "date": "2026-07-31",
+      "open": 1788.0,
+      "high": 1799.0,
+      "low": 1745.0,
+      "close": 1776.0,
+      "volume": 390000.0,
+      "sma25": 1813.0,
+      "sma75": 1501.89,
+      "sma200": 1351.17,
+      "rsi14": 60.34,
+      "rsi5": 69.55
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 69.36,
-    "monthly_rsi_ma5": 60.43,
-    "spread": 8.93,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 69.61,
+    "monthly_rsi_ma5": 60.48,
+    "spread": 9.13,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -130,5 +156,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

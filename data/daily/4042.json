@@ -2,12 +2,12 @@
   "code": "4042",
   "ticker": "4042.T",
   "name": "東ソー",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 2713.5,
-    "change_from_signal_month_pct": -7.29,
-    "return_since_gc_pct": -1.33
+    "current_price": 2710.5,
+    "change_from_signal_month_pct": -7.4,
+    "return_since_gc_pct": -1.44
   },
   "daily": [
     {
@@ -113,15 +113,41 @@
       "sma200": 2505.86,
       "rsi14": 63.64,
       "rsi5": 68.33
+    },
+    {
+      "date": "2026-07-30",
+      "open": 2686.0,
+      "high": 2716.5,
+      "low": 2668.5,
+      "close": 2681.0,
+      "volume": 1025000.0,
+      "sma25": 2794.86,
+      "sma75": 2701.37,
+      "sma200": 2508.42,
+      "rsi14": 63.64,
+      "rsi5": 68.33
+    },
+    {
+      "date": "2026-07-31",
+      "open": 2685.0,
+      "high": 2735.5,
+      "low": 2631.5,
+      "close": 2710.5,
+      "volume": 1883500.0,
+      "sma25": 2785.18,
+      "sma75": 2705.92,
+      "sma200": 2511.1,
+      "rsi14": 63.64,
+      "rsi5": 68.33
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 61.15,
-    "monthly_rsi_ma5": 61.5,
-    "spread": -0.35,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 61.05,
+    "monthly_rsi_ma5": 61.48,
+    "spread": -0.43,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -130,5 +156,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

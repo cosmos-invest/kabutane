@@ -2,12 +2,12 @@
   "code": "5929",
   "ticker": "5929.T",
   "name": "三和ホールディングス",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 3953.0,
-    "change_from_signal_month_pct": 4.33,
-    "return_since_gc_pct": 4.33
+    "current_price": 3442.0,
+    "change_from_signal_month_pct": -9.16,
+    "return_since_gc_pct": -9.16
   },
   "daily": [
     {
@@ -113,22 +113,48 @@
       "sma200": 3851.84,
       "rsi14": 50.13,
       "rsi5": 50.99
+    },
+    {
+      "date": "2026-07-30",
+      "open": 3942.0,
+      "high": 3962.0,
+      "low": 3889.0,
+      "close": 3945.0,
+      "volume": 697100.0,
+      "sma25": 3788.64,
+      "sma75": 3639.95,
+      "sma200": 3850.95,
+      "rsi14": 50.13,
+      "rsi5": 50.99
+    },
+    {
+      "date": "2026-07-31",
+      "open": 3875.0,
+      "high": 3910.0,
+      "low": 3258.0,
+      "close": 3442.0,
+      "volume": 2208600.0,
+      "sma25": 3776.36,
+      "sma75": 3636.63,
+      "sma200": 3847.08,
+      "rsi14": 50.13,
+      "rsi5": 50.99
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 53.86,
-    "monthly_rsi_ma5": 50.47,
-    "spread": 3.38,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 46.99,
+    "monthly_rsi_ma5": 49.1,
+    "spread": -2.11,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-06",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

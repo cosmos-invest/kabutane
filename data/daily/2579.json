@@ -2,12 +2,12 @@
   "code": "2579",
   "ticker": "2579.T",
   "name": "コカ・コーラ　ボトラーズジャパンホールディングス",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 4591.0,
-    "change_from_signal_month_pct": 6.97,
-    "return_since_gc_pct": 6.97
+    "current_price": 3828.0,
+    "change_from_signal_month_pct": -10.81,
+    "return_since_gc_pct": -10.81
   },
   "daily": [
     {
@@ -113,22 +113,48 @@
       "sma200": 3440.39,
       "rsi14": 69.02,
       "rsi5": 71.77
+    },
+    {
+      "date": "2026-07-30",
+      "open": 4660.0,
+      "high": 4660.0,
+      "low": 4444.0,
+      "close": 4491.0,
+      "volume": 1325000.0,
+      "sma25": 4314.8,
+      "sma75": 3807.13,
+      "sma200": 3449.86,
+      "rsi14": 69.02,
+      "rsi5": 71.77
+    },
+    {
+      "date": "2026-07-31",
+      "open": 4055.0,
+      "high": 4121.0,
+      "low": 3792.0,
+      "close": 3828.0,
+      "volume": 3157900.0,
+      "sma25": 4295.64,
+      "sma75": 3810.0,
+      "sma200": 3456.23,
+      "rsi14": 69.02,
+      "rsi5": 71.77
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 74.62,
-    "monthly_rsi_ma5": 68.6,
-    "spread": 6.03,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 63.52,
+    "monthly_rsi_ma5": 66.38,
+    "spread": -2.86,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-06",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

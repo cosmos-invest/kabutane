@@ -2,12 +2,12 @@
   "code": "6091",
   "ticker": "6091.T",
   "name": "ウエスコホールディングス",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 898.0,
-    "change_from_signal_month_pct": -1.54,
-    "return_since_gc_pct": -1.54
+    "current_price": 869.0,
+    "change_from_signal_month_pct": -4.71,
+    "return_since_gc_pct": -4.71
   },
   "daily": [
     {
@@ -113,6 +113,32 @@
       "sma200": 863.48,
       "rsi14": 67.3,
       "rsi5": 69.05
+    },
+    {
+      "date": "2026-07-30",
+      "open": 865.0,
+      "high": 889.0,
+      "low": 864.0,
+      "close": 886.0,
+      "volume": 47100.0,
+      "sma25": 927.12,
+      "sma75": 877.52,
+      "sma200": 863.62,
+      "rsi14": 67.3,
+      "rsi5": 69.05
+    },
+    {
+      "date": "2026-07-31",
+      "open": 871.0,
+      "high": 875.0,
+      "low": 860.0,
+      "close": 869.0,
+      "volume": 25600.0,
+      "sma25": 925.8,
+      "sma75": 877.61,
+      "sma200": 863.78,
+      "rsi14": 67.3,
+      "rsi5": 69.05
     }
   ],
   "corporate_events": [
@@ -125,17 +151,17 @@
   ],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 67.46,
-    "monthly_rsi_ma5": 66.24,
-    "spread": 1.21,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 63.62,
+    "monthly_rsi_ma5": 65.48,
+    "spread": -1.85,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-06",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

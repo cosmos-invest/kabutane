@@ -2,12 +2,12 @@
   "code": "4543",
   "ticker": "4543.T",
   "name": "テルモ",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 2382.5,
-    "change_from_signal_month_pct": 6.65,
-    "return_since_gc_pct": -0.77
+    "current_price": 2324.0,
+    "change_from_signal_month_pct": 4.03,
+    "return_since_gc_pct": -3.21
   },
   "daily": [
     {
@@ -113,15 +113,41 @@
       "sma200": 2237.02,
       "rsi14": 41.15,
       "rsi5": 45.04
+    },
+    {
+      "date": "2026-07-30",
+      "open": 2451.5,
+      "high": 2458.5,
+      "low": 2385.0,
+      "close": 2415.5,
+      "volume": 4730200.0,
+      "sma25": 2240.98,
+      "sma75": 2204.49,
+      "sma200": 2237.17,
+      "rsi14": 41.15,
+      "rsi5": 45.04
+    },
+    {
+      "date": "2026-07-31",
+      "open": 2253.0,
+      "high": 2350.0,
+      "low": 2253.0,
+      "close": 2324.0,
+      "volume": 5158600.0,
+      "sma25": 2246.2,
+      "sma75": 2206.96,
+      "sma200": 2236.57,
+      "rsi14": 41.15,
+      "rsi5": 45.04
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 49.58,
-    "monthly_rsi_ma5": 43.85,
-    "spread": 5.72,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 48.0,
+    "monthly_rsi_ma5": 43.54,
+    "spread": 4.46,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -130,5 +156,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

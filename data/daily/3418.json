@@ -2,12 +2,12 @@
   "code": "3418",
   "ticker": "3418.T",
   "name": "バルニバービ",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 1136.0,
-    "change_from_signal_month_pct": 1.79,
-    "return_since_gc_pct": 1.79
+    "current_price": 1050.0,
+    "change_from_signal_month_pct": -5.91,
+    "return_since_gc_pct": -5.91
   },
   "daily": [
     {
@@ -113,6 +113,32 @@
       "sma200": 1096.13,
       "rsi14": 46.71,
       "rsi5": 48.02
+    },
+    {
+      "date": "2026-07-30",
+      "open": 1026.0,
+      "high": 1059.0,
+      "low": 1026.0,
+      "close": 1050.0,
+      "volume": 173500.0,
+      "sma25": 1131.68,
+      "sma75": 1111.29,
+      "sma200": 1095.74,
+      "rsi14": 46.71,
+      "rsi5": 48.02
+    },
+    {
+      "date": "2026-07-31",
+      "open": 1050.0,
+      "high": 1055.0,
+      "low": 1047.0,
+      "close": 1050.0,
+      "volume": 38900.0,
+      "sma25": 1129.64,
+      "sma75": 1110.59,
+      "sma200": 1095.32,
+      "rsi14": 46.71,
+      "rsi5": 48.02
     }
   ],
   "corporate_events": [
@@ -125,17 +151,17 @@
   ],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 45.46,
-    "monthly_rsi_ma5": 42.51,
-    "spread": 2.95,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 38.53,
+    "monthly_rsi_ma5": 41.13,
+    "spread": -2.6,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-06",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

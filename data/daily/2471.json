@@ -2,12 +2,12 @@
   "code": "2471",
   "ticker": "2471.T",
   "name": "エスプール",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 278.0,
-    "change_from_signal_month_pct": 8.17,
-    "return_since_gc_pct": 8.17
+    "current_price": 271.0,
+    "change_from_signal_month_pct": 5.45,
+    "return_since_gc_pct": 5.45
   },
   "daily": [
     {
@@ -113,15 +113,41 @@
       "sma200": 264.19,
       "rsi14": 34.48,
       "rsi5": 37.07
+    },
+    {
+      "date": "2026-07-30",
+      "open": 278.0,
+      "high": 278.0,
+      "low": 271.0,
+      "close": 273.0,
+      "volume": 901000.0,
+      "sma25": 266.8,
+      "sma75": 250.43,
+      "sma200": 263.9,
+      "rsi14": 34.48,
+      "rsi5": 37.07
+    },
+    {
+      "date": "2026-07-31",
+      "open": 270.0,
+      "high": 273.0,
+      "low": 264.0,
+      "close": 271.0,
+      "volume": 645300.0,
+      "sma25": 267.52,
+      "sma75": 250.55,
+      "sma200": 263.58,
+      "rsi14": 34.48,
+      "rsi5": 37.07
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 40.28,
-    "monthly_rsi_ma5": 34.14,
-    "spread": 6.14,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 38.84,
+    "monthly_rsi_ma5": 33.86,
+    "spread": 4.98,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -130,5 +156,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

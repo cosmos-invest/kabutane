@@ -2,12 +2,12 @@
   "code": "6029",
   "ticker": "6029.T",
   "name": "アトラグループ",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 197.0,
-    "change_from_signal_month_pct": 5.35,
-    "return_since_gc_pct": 11.3
+    "current_price": 194.0,
+    "change_from_signal_month_pct": 3.74,
+    "return_since_gc_pct": 9.6
   },
   "daily": [
     {
@@ -113,15 +113,41 @@
       "sma200": 173.65,
       "rsi14": 50.34,
       "rsi5": 52.91
+    },
+    {
+      "date": "2026-07-30",
+      "open": 194.0,
+      "high": 197.0,
+      "low": 190.0,
+      "close": 197.0,
+      "volume": 23000.0,
+      "sma25": 193.12,
+      "sma75": 190.52,
+      "sma200": 173.73,
+      "rsi14": 50.34,
+      "rsi5": 52.91
+    },
+    {
+      "date": "2026-07-31",
+      "open": 193.0,
+      "high": 196.0,
+      "low": 192.0,
+      "close": 194.0,
+      "volume": 30500.0,
+      "sma25": 193.44,
+      "sma75": 191.07,
+      "sma200": 173.77,
+      "rsi14": 50.34,
+      "rsi5": 52.91
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 55.41,
-    "monthly_rsi_ma5": 52.97,
-    "spread": 2.44,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 54.86,
+    "monthly_rsi_ma5": 52.86,
+    "spread": 2.0,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -130,5 +156,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "8218",
   "ticker": "8218.T",
   "name": "コメリ",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 4065.0,
-    "change_from_signal_month_pct": 14.35,
-    "return_since_gc_pct": 14.35
+    "current_price": 3860.0,
+    "change_from_signal_month_pct": 8.58,
+    "return_since_gc_pct": 8.58
   },
   "daily": [
     {
@@ -113,15 +113,41 @@
       "sma200": 3438.45,
       "rsi14": 55.86,
       "rsi5": 56.56
+    },
+    {
+      "date": "2026-07-30",
+      "open": 4065.0,
+      "high": 4190.0,
+      "low": 4010.0,
+      "close": 4035.0,
+      "volume": 326300.0,
+      "sma25": 3554.4,
+      "sma75": 3511.33,
+      "sma200": 3443.28,
+      "rsi14": 55.86,
+      "rsi5": 56.56
+    },
+    {
+      "date": "2026-07-31",
+      "open": 4030.0,
+      "high": 4035.0,
+      "low": 3845.0,
+      "close": 3860.0,
+      "volume": 228000.0,
+      "sma25": 3568.0,
+      "sma75": 3513.6,
+      "sma200": 3447.12,
+      "rsi14": 55.86,
+      "rsi5": 56.56
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 66.65,
-    "monthly_rsi_ma5": 58.1,
-    "spread": 8.55,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 63.57,
+    "monthly_rsi_ma5": 57.48,
+    "spread": 6.09,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -130,5 +156,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

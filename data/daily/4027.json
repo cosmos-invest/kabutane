@@ -2,12 +2,12 @@
   "code": "4027",
   "ticker": "4027.T",
   "name": "テイカ",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 2148.0,
-    "change_from_signal_month_pct": -8.98,
-    "return_since_gc_pct": 54.42
+    "current_price": 2224.0,
+    "change_from_signal_month_pct": -5.76,
+    "return_since_gc_pct": 59.88
   },
   "daily": [
     {
@@ -113,15 +113,41 @@
       "sma200": 1711.63,
       "rsi14": 68.34,
       "rsi5": 73.72
+    },
+    {
+      "date": "2026-07-30",
+      "open": 2129.0,
+      "high": 2192.0,
+      "low": 2074.0,
+      "close": 2152.0,
+      "volume": 116400.0,
+      "sma25": 2323.92,
+      "sma75": 2180.68,
+      "sma200": 1716.1,
+      "rsi14": 68.34,
+      "rsi5": 73.72
+    },
+    {
+      "date": "2026-07-31",
+      "open": 2179.0,
+      "high": 2256.0,
+      "low": 2156.0,
+      "close": 2224.0,
+      "volume": 60200.0,
+      "sma25": 2319.2,
+      "sma75": 2184.95,
+      "sma200": 1720.93,
+      "rsi14": 68.34,
+      "rsi5": 73.72
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 64.49,
-    "monthly_rsi_ma5": 67.1,
-    "spread": -2.61,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 67.21,
+    "monthly_rsi_ma5": 67.64,
+    "spread": -0.43,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -130,5 +156,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

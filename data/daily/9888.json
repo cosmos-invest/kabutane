@@ -2,12 +2,12 @@
   "code": "9888",
   "ticker": "9888.T",
   "name": "ＵＥＸ",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 1013.0,
-    "change_from_signal_month_pct": 4.22,
-    "return_since_gc_pct": 10.83
+    "current_price": 1025.0,
+    "change_from_signal_month_pct": 5.45,
+    "return_since_gc_pct": 12.14
   },
   "daily": [
     {
@@ -113,15 +113,41 @@
       "sma200": 826.24,
       "rsi14": 47.38,
       "rsi5": 56.31
+    },
+    {
+      "date": "2026-07-30",
+      "open": 1010.0,
+      "high": 1021.0,
+      "low": 1002.0,
+      "close": 1013.0,
+      "volume": 27600.0,
+      "sma25": 994.0,
+      "sma75": 895.91,
+      "sma200": 827.5,
+      "rsi14": 47.38,
+      "rsi5": 56.31
+    },
+    {
+      "date": "2026-07-31",
+      "open": 1013.0,
+      "high": 1033.0,
+      "low": 1006.0,
+      "close": 1025.0,
+      "volume": 46900.0,
+      "sma25": 995.48,
+      "sma75": 899.72,
+      "sma200": 828.86,
+      "rsi14": 47.38,
+      "rsi5": 56.31
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 55.27,
-    "monthly_rsi_ma5": 44.54,
-    "spread": 10.73,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 55.93,
+    "monthly_rsi_ma5": 44.67,
+    "spread": 11.25,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -130,5 +156,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

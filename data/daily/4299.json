@@ -2,12 +2,12 @@
   "code": "4299",
   "ticker": "4299.T",
   "name": "ハイマックス",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 1245.0,
-    "change_from_signal_month_pct": 5.51,
-    "return_since_gc_pct": 5.51
+    "current_price": 1207.0,
+    "change_from_signal_month_pct": 2.29,
+    "return_since_gc_pct": 2.29
   },
   "daily": [
     {
@@ -113,15 +113,41 @@
       "sma200": 1230.91,
       "rsi14": 41.98,
       "rsi5": 41.99
+    },
+    {
+      "date": "2026-07-30",
+      "open": 1247.0,
+      "high": 1247.0,
+      "low": 1222.0,
+      "close": 1235.0,
+      "volume": 12500.0,
+      "sma25": 1199.16,
+      "sma75": 1172.08,
+      "sma200": 1230.99,
+      "rsi14": 41.98,
+      "rsi5": 41.99
+    },
+    {
+      "date": "2026-07-31",
+      "open": 1220.0,
+      "high": 1229.0,
+      "low": 1207.0,
+      "close": 1207.0,
+      "volume": 6000.0,
+      "sma25": 1200.6,
+      "sma75": 1172.08,
+      "sma200": 1230.92,
+      "rsi14": 41.98,
+      "rsi5": 41.99
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 47.01,
-    "monthly_rsi_ma5": 39.7,
-    "spread": 7.31,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 43.28,
+    "monthly_rsi_ma5": 38.96,
+    "spread": 4.32,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -130,5 +156,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

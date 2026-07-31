@@ -2,12 +2,12 @@
   "code": "7096",
   "ticker": "7096.T",
   "name": "ステムセル研究所",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 713.0,
-    "change_from_signal_month_pct": -1.52,
-    "return_since_gc_pct": -1.52
+    "current_price": 710.0,
+    "change_from_signal_month_pct": -1.93,
+    "return_since_gc_pct": -1.93
   },
   "daily": [
     {
@@ -113,15 +113,41 @@
       "sma200": 782.33,
       "rsi14": 33.46,
       "rsi5": 34.07
+    },
+    {
+      "date": "2026-07-30",
+      "open": 700.0,
+      "high": 713.0,
+      "low": 699.0,
+      "close": 701.0,
+      "volume": 9600.0,
+      "sma25": 736.6,
+      "sma75": 712.17,
+      "sma200": 781.27,
+      "rsi14": 33.46,
+      "rsi5": 34.07
+    },
+    {
+      "date": "2026-07-31",
+      "open": 702.0,
+      "high": 716.0,
+      "low": 702.0,
+      "close": 710.0,
+      "volume": 2500.0,
+      "sma25": 737.2,
+      "sma75": 711.61,
+      "sma200": 780.24,
+      "rsi14": 33.46,
+      "rsi5": 34.07
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 27.11,
-    "monthly_rsi_ma5": 25.81,
-    "spread": 1.3,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 27.06,
+    "monthly_rsi_ma5": 25.8,
+    "spread": 1.25,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -130,5 +156,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

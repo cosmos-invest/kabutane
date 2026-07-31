@@ -2,12 +2,12 @@
   "code": "7082",
   "ticker": "7082.T",
   "name": "ジモティー",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 1406.0,
-    "change_from_signal_month_pct": 0.43,
-    "return_since_gc_pct": 50.37
+    "current_price": 1405.0,
+    "change_from_signal_month_pct": 0.36,
+    "return_since_gc_pct": 50.27
   },
   "daily": [
     {
@@ -113,15 +113,41 @@
       "sma200": 1083.73,
       "rsi14": 52.32,
       "rsi5": 60.36
+    },
+    {
+      "date": "2026-07-30",
+      "open": 1406.0,
+      "high": 1406.0,
+      "low": 1405.0,
+      "close": 1405.0,
+      "volume": 12000.0,
+      "sma25": 1404.68,
+      "sma75": 1253.72,
+      "sma200": 1083.52,
+      "rsi14": 52.32,
+      "rsi5": 60.36
+    },
+    {
+      "date": "2026-07-31",
+      "open": 1405.0,
+      "high": 1406.0,
+      "low": 1405.0,
+      "close": 1405.0,
+      "volume": 20800.0,
+      "sma25": 1404.32,
+      "sma75": 1261.03,
+      "sma200": 1083.01,
+      "rsi14": 52.32,
+      "rsi5": 60.36
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 60.13,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 60.11,
     "monthly_rsi_ma5": 54.99,
-    "spread": 5.14,
+    "spread": 5.12,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -130,5 +156,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

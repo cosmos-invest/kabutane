@@ -2,12 +2,12 @@
   "code": "8362",
   "ticker": "8362.T",
   "name": "福井銀行",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 5780.0,
-    "change_from_signal_month_pct": 4.9,
-    "return_since_gc_pct": 54.13
+    "current_price": 5680.0,
+    "change_from_signal_month_pct": 3.09,
+    "return_since_gc_pct": 51.47
   },
   "daily": [
     {
@@ -113,15 +113,41 @@
       "sma200": 3554.24,
       "rsi14": 81.26,
       "rsi5": 87.27
+    },
+    {
+      "date": "2026-07-30",
+      "open": 5680.0,
+      "high": 5760.0,
+      "low": 5460.0,
+      "close": 5480.0,
+      "volume": 74100.0,
+      "sma25": 5847.6,
+      "sma75": 4956.27,
+      "sma200": 3571.17,
+      "rsi14": 81.26,
+      "rsi5": 87.27
+    },
+    {
+      "date": "2026-07-31",
+      "open": 5720.0,
+      "high": 5790.0,
+      "low": 5460.0,
+      "close": 5680.0,
+      "volume": 59300.0,
+      "sma25": 5866.8,
+      "sma75": 4984.6,
+      "sma200": 3589.03,
+      "rsi14": 81.26,
+      "rsi5": 87.27
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 88.51,
-    "monthly_rsi_ma5": 82.55,
-    "spread": 5.96,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 88.21,
+    "monthly_rsi_ma5": 82.49,
+    "spread": 5.73,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -130,5 +156,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

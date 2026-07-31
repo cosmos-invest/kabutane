@@ -2,12 +2,12 @@
   "code": "8181",
   "ticker": "8181.T",
   "name": "東天紅",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 1024.0,
-    "change_from_signal_month_pct": -1.92,
-    "return_since_gc_pct": -1.92
+    "current_price": 1000.0,
+    "change_from_signal_month_pct": -4.21,
+    "return_since_gc_pct": -4.21
   },
   "daily": [
     {
@@ -113,22 +113,48 @@
       "sma200": 1071.88,
       "rsi14": 55.33,
       "rsi5": 55.92
+    },
+    {
+      "date": "2026-07-30",
+      "open": 1015.0,
+      "high": 1015.0,
+      "low": 996.0,
+      "close": 1015.0,
+      "volume": 7100.0,
+      "sma25": 1028.0,
+      "sma75": 1016.4,
+      "sma200": 1071.27,
+      "rsi14": 55.33,
+      "rsi5": 55.92
+    },
+    {
+      "date": "2026-07-31",
+      "open": 1006.0,
+      "high": 1006.0,
+      "low": 997.0,
+      "close": 1000.0,
+      "volume": 5800.0,
+      "sma25": 1027.04,
+      "sma75": 1016.25,
+      "sma200": 1070.26,
+      "rsi14": 55.33,
+      "rsi5": 55.92
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 55.02,
-    "monthly_rsi_ma5": 54.94,
-    "spread": 0.08,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 52.68,
+    "monthly_rsi_ma5": 54.47,
+    "spread": -1.79,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-06",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

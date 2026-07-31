@@ -2,12 +2,12 @@
   "code": "8771",
   "ticker": "8771.T",
   "name": "イー・ギャランティ",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 1880.0,
-    "change_from_signal_month_pct": 9.18,
-    "return_since_gc_pct": 9.18
+    "current_price": 1842.0,
+    "change_from_signal_month_pct": 6.97,
+    "return_since_gc_pct": 6.97
   },
   "daily": [
     {
@@ -113,15 +113,41 @@
       "sma200": 1728.43,
       "rsi14": 49.64,
       "rsi5": 50.37
+    },
+    {
+      "date": "2026-07-30",
+      "open": 1870.0,
+      "high": 1880.0,
+      "low": 1853.0,
+      "close": 1879.0,
+      "volume": 83000.0,
+      "sma25": 1816.08,
+      "sma75": 1742.05,
+      "sma200": 1729.79,
+      "rsi14": 49.64,
+      "rsi5": 50.37
+    },
+    {
+      "date": "2026-07-31",
+      "open": 1865.0,
+      "high": 1865.0,
+      "low": 1828.0,
+      "close": 1842.0,
+      "volume": 111600.0,
+      "sma25": 1822.2,
+      "sma75": 1743.49,
+      "sma200": 1730.84,
+      "rsi14": 49.64,
+      "rsi5": 50.37
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 54.84,
-    "monthly_rsi_ma5": 48.7,
-    "spread": 6.14,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 53.41,
+    "monthly_rsi_ma5": 48.41,
+    "spread": 5.0,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -130,5 +156,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

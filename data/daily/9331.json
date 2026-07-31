@@ -2,12 +2,12 @@
   "code": "9331",
   "ticker": "9331.T",
   "name": "キャスター",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 734.0,
-    "change_from_signal_month_pct": -13.34,
-    "return_since_gc_pct": 5.61
+    "current_price": 724.0,
+    "change_from_signal_month_pct": -14.52,
+    "return_since_gc_pct": 4.17
   },
   "daily": [
     {
@@ -113,15 +113,41 @@
       "sma200": 783.51,
       "rsi14": 32.28,
       "rsi5": 41.58
+    },
+    {
+      "date": "2026-07-30",
+      "open": 739.0,
+      "high": 757.0,
+      "low": 734.0,
+      "close": 751.0,
+      "volume": 1400.0,
+      "sma25": 766.8,
+      "sma75": 795.12,
+      "sma200": 782.91,
+      "rsi14": 32.28,
+      "rsi5": 41.58
+    },
+    {
+      "date": "2026-07-31",
+      "open": 736.0,
+      "high": 741.0,
+      "low": 724.0,
+      "close": 724.0,
+      "volume": 3500.0,
+      "sma25": 762.36,
+      "sma75": 795.29,
+      "sma200": 782.22,
+      "rsi14": 32.28,
+      "rsi5": 41.58
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 36.3,
-    "monthly_rsi_ma5": 33.88,
-    "spread": 2.42,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 35.9,
+    "monthly_rsi_ma5": 33.8,
+    "spread": 2.1,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -130,5 +156,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

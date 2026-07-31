@@ -2,12 +2,12 @@
   "code": "7058",
   "ticker": "7058.T",
   "name": "共栄セキュリティーサービス",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 3250.0,
-    "change_from_signal_month_pct": 5.18,
-    "return_since_gc_pct": 5.18
+    "current_price": 2973.0,
+    "change_from_signal_month_pct": -3.79,
+    "return_since_gc_pct": -3.79
   },
   "daily": [
     {
@@ -113,6 +113,32 @@
       "sma200": 2989.46,
       "rsi14": 59.46,
       "rsi5": 59.86
+    },
+    {
+      "date": "2026-07-30",
+      "open": 3000.0,
+      "high": 3050.0,
+      "low": 2930.0,
+      "close": 2977.0,
+      "volume": 7800.0,
+      "sma25": 3143.08,
+      "sma75": 3061.85,
+      "sma200": 2990.34,
+      "rsi14": 59.46,
+      "rsi5": 59.86
+    },
+    {
+      "date": "2026-07-31",
+      "open": 2968.0,
+      "high": 2999.0,
+      "low": 2955.0,
+      "close": 2973.0,
+      "volume": 2300.0,
+      "sma25": 3141.2,
+      "sma75": 3061.87,
+      "sma200": 2991.21,
+      "rsi14": 59.46,
+      "rsi5": 59.86
     }
   ],
   "corporate_events": [
@@ -125,17 +151,17 @@
   ],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 63.9,
-    "monthly_rsi_ma5": 58.67,
-    "spread": 5.23,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 54.25,
+    "monthly_rsi_ma5": 56.74,
+    "spread": -2.49,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-06",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "6125",
   "ticker": "6125.T",
   "name": "岡本工作機械製作所",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 4495.0,
-    "change_from_signal_month_pct": -19.59,
-    "return_since_gc_pct": -17.52
+    "current_price": 5010.0,
+    "change_from_signal_month_pct": -10.38,
+    "return_since_gc_pct": -8.07
   },
   "daily": [
     {
@@ -113,22 +113,48 @@
       "sma200": 4719.77,
       "rsi14": 52.12,
       "rsi5": 59.22
+    },
+    {
+      "date": "2026-07-30",
+      "open": 4505.0,
+      "high": 4675.0,
+      "low": 4435.0,
+      "close": 4550.0,
+      "volume": 64200.0,
+      "sma25": 5343.0,
+      "sma75": 5005.07,
+      "sma200": 4718.93,
+      "rsi14": 52.12,
+      "rsi5": 59.22
+    },
+    {
+      "date": "2026-07-31",
+      "open": 4850.0,
+      "high": 5080.0,
+      "low": 4770.0,
+      "close": 5010.0,
+      "volume": 70600.0,
+      "sma25": 5314.2,
+      "sma75": 5015.93,
+      "sma200": 4720.3,
+      "rsi14": 52.12,
+      "rsi5": 59.22
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 47.7,
-    "monthly_rsi_ma5": 49.4,
-    "spread": -1.7,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 52.11,
+    "monthly_rsi_ma5": 50.29,
+    "spread": 1.83,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-06",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "7726",
   "ticker": "7726.T",
   "name": "黒田精工",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 1180.0,
-    "change_from_signal_month_pct": -16.43,
-    "return_since_gc_pct": 28.68
+    "current_price": 1267.0,
+    "change_from_signal_month_pct": -10.27,
+    "return_since_gc_pct": 38.17
   },
   "daily": [
     {
@@ -113,22 +113,48 @@
       "sma200": 1089.88,
       "rsi14": 51.24,
       "rsi5": 63.08
+    },
+    {
+      "date": "2026-07-30",
+      "open": 1180.0,
+      "high": 1245.0,
+      "low": 1180.0,
+      "close": 1213.0,
+      "volume": 15700.0,
+      "sma25": 1368.88,
+      "sma75": 1265.01,
+      "sma200": 1091.23,
+      "rsi14": 51.24,
+      "rsi5": 63.08
+    },
+    {
+      "date": "2026-07-31",
+      "open": 1274.0,
+      "high": 1281.0,
+      "low": 1240.0,
+      "close": 1267.0,
+      "volume": 21600.0,
+      "sma25": 1358.48,
+      "sma75": 1268.32,
+      "sma200": 1092.85,
+      "rsi14": 51.24,
+      "rsi5": 63.08
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 51.45,
-    "monthly_rsi_ma5": 53.16,
-    "spread": -1.71,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 55.48,
+    "monthly_rsi_ma5": 53.96,
+    "spread": 1.52,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-06",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

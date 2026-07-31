@@ -2,12 +2,12 @@
   "code": "7438",
   "ticker": "7438.T",
   "name": "コンドーテック",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 1607.0,
-    "change_from_signal_month_pct": 6.14,
-    "return_since_gc_pct": 6.14
+    "current_price": 1534.0,
+    "change_from_signal_month_pct": 1.32,
+    "return_since_gc_pct": 1.32
   },
   "daily": [
     {
@@ -113,15 +113,41 @@
       "sma200": 1530.16,
       "rsi14": 54.37,
       "rsi5": 55.75
+    },
+    {
+      "date": "2026-07-30",
+      "open": 1604.0,
+      "high": 1604.0,
+      "low": 1583.0,
+      "close": 1593.0,
+      "volume": 43500.0,
+      "sma25": 1540.88,
+      "sma75": 1489.01,
+      "sma200": 1529.79,
+      "rsi14": 54.37,
+      "rsi5": 55.75
+    },
+    {
+      "date": "2026-07-31",
+      "open": 1578.0,
+      "high": 1583.0,
+      "low": 1534.0,
+      "close": 1534.0,
+      "volume": 23500.0,
+      "sma25": 1542.64,
+      "sma75": 1489.01,
+      "sma200": 1529.04,
+      "rsi14": 54.37,
+      "rsi5": 55.75
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 60.94,
-    "monthly_rsi_ma5": 54.51,
-    "spread": 6.43,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 56.79,
+    "monthly_rsi_ma5": 53.68,
+    "spread": 3.11,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -130,5 +156,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

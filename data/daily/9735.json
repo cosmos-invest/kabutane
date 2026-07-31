@@ -2,12 +2,12 @@
   "code": "9735",
   "ticker": "9735.T",
   "name": "セコム",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 7172.0,
-    "change_from_signal_month_pct": 11.09,
-    "return_since_gc_pct": 12.94
+    "current_price": 6882.0,
+    "change_from_signal_month_pct": 6.6,
+    "return_since_gc_pct": 8.38
   },
   "daily": [
     {
@@ -113,15 +113,41 @@
       "sma200": 5903.1,
       "rsi14": 67.01,
       "rsi5": 69.93
+    },
+    {
+      "date": "2026-07-30",
+      "open": 7172.0,
+      "high": 7218.0,
+      "low": 7002.0,
+      "close": 7067.0,
+      "volume": 1220700.0,
+      "sma25": 6670.68,
+      "sma75": 6343.52,
+      "sma200": 5911.69,
+      "rsi14": 67.01,
+      "rsi5": 69.93
+    },
+    {
+      "date": "2026-07-31",
+      "open": 6817.0,
+      "high": 6984.0,
+      "low": 6801.0,
+      "close": 6882.0,
+      "volume": 1442400.0,
+      "sma25": 6691.0,
+      "sma75": 6354.57,
+      "sma200": 5919.32,
+      "rsi14": 67.01,
+      "rsi5": 69.93
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 77.24,
-    "monthly_rsi_ma5": 69.18,
-    "spread": 8.05,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 74.89,
+    "monthly_rsi_ma5": 68.71,
+    "spread": 6.18,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -130,5 +156,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "4043",
   "ticker": "4043.T",
   "name": "トクヤマ",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 3911.0,
-    "change_from_signal_month_pct": -20.0,
-    "return_since_gc_pct": -23.42
+    "current_price": 3792.0,
+    "change_from_signal_month_pct": -22.44,
+    "return_since_gc_pct": -25.75
   },
   "daily": [
     {
@@ -113,15 +113,41 @@
       "sma200": 4215.9,
       "rsi14": 69.5,
       "rsi5": 69.72
+    },
+    {
+      "date": "2026-07-30",
+      "open": 3890.0,
+      "high": 3969.0,
+      "low": 3770.0,
+      "close": 3801.0,
+      "volume": 1330600.0,
+      "sma25": 4668.96,
+      "sma75": 4584.01,
+      "sma200": 4216.77,
+      "rsi14": 69.5,
+      "rsi5": 69.72
+    },
+    {
+      "date": "2026-07-31",
+      "open": 3871.0,
+      "high": 3878.0,
+      "low": 3735.0,
+      "close": 3792.0,
+      "volume": 1640100.0,
+      "sma25": 4614.64,
+      "sma75": 4583.37,
+      "sma200": 4216.97,
+      "rsi14": 69.5,
+      "rsi5": 69.72
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 54.31,
-    "monthly_rsi_ma5": 64.22,
-    "spread": -9.91,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 52.89,
+    "monthly_rsi_ma5": 63.93,
+    "spread": -11.05,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -130,5 +156,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

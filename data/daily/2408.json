@@ -2,12 +2,12 @@
   "code": "2408",
   "ticker": "2408.T",
   "name": "ＫＧ情報",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 841.0,
-    "change_from_signal_month_pct": -0.83,
-    "return_since_gc_pct": 10.66
+    "current_price": 846.0,
+    "change_from_signal_month_pct": -0.24,
+    "return_since_gc_pct": 11.32
   },
   "daily": [
     {
@@ -113,22 +113,48 @@
       "sma200": 750.34,
       "rsi14": 69.31,
       "rsi5": 70.66
+    },
+    {
+      "date": "2026-07-30",
+      "open": 827.0,
+      "high": 843.0,
+      "low": 827.0,
+      "close": 835.0,
+      "volume": 7100.0,
+      "sma25": 848.48,
+      "sma75": 819.56,
+      "sma200": 751.16,
+      "rsi14": 69.31,
+      "rsi5": 70.66
+    },
+    {
+      "date": "2026-07-31",
+      "open": 829.0,
+      "high": 851.0,
+      "low": 823.0,
+      "close": 846.0,
+      "volume": 17900.0,
+      "sma25": 849.64,
+      "sma75": 820.67,
+      "sma200": 752.03,
+      "rsi14": 69.31,
+      "rsi5": 70.66
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 70.58,
-    "monthly_rsi_ma5": 71.06,
-    "spread": -0.48,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 71.34,
+    "monthly_rsi_ma5": 71.21,
+    "spread": 0.13,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-06",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "2388",
   "ticker": "2388.T",
   "name": "ウェッジホールディングス",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 36.0,
-    "change_from_signal_month_pct": -44.62,
-    "return_since_gc_pct": -44.62
+    "current_price": 37.0,
+    "change_from_signal_month_pct": -43.08,
+    "return_since_gc_pct": -43.08
   },
   "daily": [
     {
@@ -113,22 +113,48 @@
       "sma200": 57.11,
       "rsi14": 39.58,
       "rsi5": 45.99
+    },
+    {
+      "date": "2026-07-30",
+      "open": 36.0,
+      "high": 36.0,
+      "low": 35.0,
+      "close": 36.0,
+      "volume": 128700.0,
+      "sma25": 40.12,
+      "sma75": 44.96,
+      "sma200": 56.95,
+      "rsi14": 39.58,
+      "rsi5": 45.99
+    },
+    {
+      "date": "2026-07-31",
+      "open": 36.0,
+      "high": 37.0,
+      "low": 35.0,
+      "close": 37.0,
+      "volume": 57100.0,
+      "sma25": 40.24,
+      "sma75": 44.65,
+      "sma200": 56.79,
+      "rsi14": 39.58,
+      "rsi5": 45.99
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 30.35,
-    "monthly_rsi_ma5": 30.45,
-    "spread": -0.1,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 30.59,
+    "monthly_rsi_ma5": 30.5,
+    "spread": 0.09,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-06",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }

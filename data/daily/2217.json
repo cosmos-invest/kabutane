@@ -2,12 +2,12 @@
   "code": "2217",
   "ticker": "2217.T",
   "name": "モロゾフ",
-  "generated_at": "2026-07-30T15:26:04.660527+00:00",
-  "price_date": "2026-07-29",
+  "generated_at": "2026-07-31T13:50:42.841853+00:00",
+  "price_date": "2026-07-31",
   "record": {
-    "current_price": 1621.0,
-    "change_from_signal_month_pct": 5.26,
-    "return_since_gc_pct": 5.26
+    "current_price": 1500.0,
+    "change_from_signal_month_pct": -2.6,
+    "return_since_gc_pct": -2.6
   },
   "daily": [
     {
@@ -113,6 +113,32 @@
       "sma200": 1525.22,
       "rsi14": 50.37,
       "rsi5": 53.26
+    },
+    {
+      "date": "2026-07-30",
+      "open": 1535.0,
+      "high": 1547.0,
+      "low": 1525.0,
+      "close": 1525.0,
+      "volume": 100000.0,
+      "sma25": 1567.12,
+      "sma75": 1520.49,
+      "sma200": 1525.15,
+      "rsi14": 50.37,
+      "rsi5": 53.26
+    },
+    {
+      "date": "2026-07-31",
+      "open": 1525.0,
+      "high": 1528.0,
+      "low": 1500.0,
+      "close": 1500.0,
+      "volume": 40300.0,
+      "sma25": 1566.32,
+      "sma75": 1520.16,
+      "sma200": 1524.93,
+      "rsi14": 50.37,
+      "rsi5": 53.26
     }
   ],
   "corporate_events": [
@@ -120,22 +146,22 @@
       "date": "2026-07-30",
       "type": "DIVIDEND",
       "label": "配当",
-      "detail": "1株 6円"
+      "detail": "1株 5円"
     }
   ],
   "provisional_signal": {
     "month": "2026-07",
-    "price_date": "2026-07-29",
-    "monthly_rsi14": 60.33,
-    "monthly_rsi_ma5": 53.05,
-    "spread": 7.28,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-07-31",
+    "monthly_rsi14": 50.93,
+    "monthly_rsi_ma5": 51.17,
+    "spread": -0.24,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-06",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-07-30T15:26:37.613811+00:00"
+  "provisional_generated_at": "2026-07-31T13:51:12.344153+00:00"
 }
