@@ -61,7 +61,7 @@
 
   function replayUrl(code) {
     const url = new URL("replay.html", location.href);
-    url.searchParams.set("code", code);
+    url.searchParams.set("code", String(code));
     return url.toString();
   }
 
@@ -74,7 +74,7 @@
     const selected = selectedCode();
     holder.innerHTML = visible.length
       ? visible.map((row) => `
-          <a class="replay-stock-result" href="${replayUrl(encodeURIComponent(row.code)).replace(/%25/g, "%")}" data-replay-code="${escapeHtml(row.code)}"${String(row.code) === String(selected) ? ' aria-current="true"' : ""}>
+          <a class="replay-stock-result" href="${replayUrl(row.code)}" data-replay-code="${escapeHtml(row.code)}"${String(row.code) === String(selected) ? ' aria-current="true"' : ""}>
             <span>${row.cosmos_focus ? "🌸" : row.status === "NEW" ? "NEW" : "銘柄"}</span>
             <strong>${escapeHtml(row.code)}</strong>
             <b>${escapeHtml(row.name || "")}</b>
