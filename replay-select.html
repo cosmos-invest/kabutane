@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="かぶたねの売買練習で使う銘柄を、証券コードや会社名から検索して選びます。">
+  <meta name="theme-color" content="#f26fa6">
+  <title>練習する銘柄を選ぶ | かぶたね</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/pastel.css">
+  <link rel="stylesheet" href="assets/replay-picker.css">
+</head>
+<body class="pastel-theme replay-stock-select-page" data-page="replay-select">
+  <header class="site-header">
+    <div class="header-inner">
+      <div>
+        <a class="back-link" href="index.html">← かぶたねトップへ</a>
+        <p class="eyebrow">TRADING PRACTICE</p>
+        <h1>練習する銘柄を選ぼう🌱</h1>
+        <p class="subtitle">証券コードか会社名を入力すると、候補を最大20件だけ表示します。</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="replay-stock-select-main">
+    <section class="replay-stock-select-card">
+      <h1>どの会社で練習する？</h1>
+      <p>大量の銘柄を一度に開かず、検索した候補だけを表示するスマホ向けの選択画面です。</p>
+
+      <div class="replay-stock-search">
+        <input id="replayStockSearch" type="search" inputmode="search" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="例：3441、山王" aria-controls="replayStockResults" disabled>
+        <button id="replayStockClear" type="button" aria-label="検索文字を消す">×</button>
+      </div>
+
+      <div class="replay-stock-filter-row" role="group" aria-label="銘柄の絞り込み">
+        <button type="button" class="active" data-stock-filter="all">すべて</button>
+        <button type="button" data-stock-filter="focus">🌸 コスモス注目</button>
+        <button type="button" data-stock-filter="new">NEW</button>
+      </div>
+
+      <p id="replayStockStatus" aria-live="polite">銘柄一覧を読み込んでいます…</p>
+      <div id="replayStockResults" class="replay-stock-results" role="listbox"></div>
+      <p class="replay-stock-select-note">未来の値動きを隠して練習するための候補です。実際の売買を勧める一覧ではありません。</p>
+    </section>
+  </main>
+
+  <footer><p>かぶたねは学習・練習用です。将来の利益を保証するものではありません。</p></footer>
+  <script src="assets/replay-stock-select.js" defer></script>
+  <script src="assets/pwa-register.js" defer></script>
+</body>
+</html>
