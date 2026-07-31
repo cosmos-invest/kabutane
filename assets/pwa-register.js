@@ -5,6 +5,7 @@
     "assets/replay-practice-score-v2.js",
     "assets/replay-practice-ux-v2.js",
     "assets/replay-practice-ux-v2-stability.js",
+    "assets/replay-stop-guard-v3.js",
     "assets/replay-score-report-v2.js",
   ];
   let practiceV2Promise = null;
