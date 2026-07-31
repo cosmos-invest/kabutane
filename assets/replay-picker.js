@@ -13,8 +13,12 @@
 
   function updateSelectedLabel(node, code) {
     if (!node) return;
+    const fallback = `証券コード ${code}`;
     const title = document.getElementById("replayTitle")?.textContent?.trim() || "";
-    node.textContent = title && !title.includes("シミュレーター") ? title.replace(/売買練習.*$/u, "").trim() : `証券コード ${code}`;
+    const company = title && !title.includes("シミュレーター")
+      ? title.replace(/売買練習.*$/u, "").trim()
+      : "";
+    node.textContent = company || fallback;
   }
 
   function install() {
