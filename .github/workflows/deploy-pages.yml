@@ -51,7 +51,7 @@ jobs:
         run: |
           mkdir -p _site
           cp \
-            index.html detail.html backtest.html replay.html howto.html learn.html signal-method.html \
+            index.html detail.html backtest.html replay.html replay-select.html howto.html learn.html signal-method.html \
             ranking.html monthly-report.html monthly-strategy.html history.html shikiho-summer-2026.html \
             manifest.webmanifest sw.js .nojekyll result.csv out.csv \
             _site/
@@ -61,6 +61,7 @@ jobs:
         run: |
           test -f _site/manifest.webmanifest
           test -f _site/sw.js
+          test -f _site/replay-select.html
           test -f _site/ranking.html
           test -f _site/monthly-report.html
           test -f _site/monthly-strategy.html
@@ -71,6 +72,8 @@ jobs:
           test -f _site/assets/monthly-strategy-v16.css
           test -f _site/assets/shikiho-room.css
           test -f _site/assets/shikiho-room.js
+          test -f _site/assets/replay-stock-select.js
+          test -f _site/assets/replay-picker.css
           test -f _site/data/curated/shikiho-2026-summer.json
           test -f _site/data/curated/shikiho-2026-summer-performance.json
           test -f _site/assets/icons/kabutane-wordmark-v3.svg
@@ -78,6 +81,7 @@ jobs:
           test -f _site/assets/replay-drawing-tools.js
           grep -q 'kabutane-wordmark-v3.svg' _site/manifest.webmanifest
           grep -q 'assets/replay-drawing-tools.js' _site/replay.html
+          grep -q 'replay-stock-select.js' _site/replay-select.html
           grep -q 'MONTHLY RSI CROSS RANKING' _site/ranking.html
           grep -q 'monthly-strategy.html' _site/monthly-report.html
           grep -q 'MONTHLY STRATEGY MEETING' _site/monthly-strategy.html
