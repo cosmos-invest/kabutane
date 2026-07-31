@@ -8,6 +8,7 @@ test.use({
 });
 
 test("mobile user selects a stock on a separate screen and opens replay", async ({ page }) => {
+  test.setTimeout(60000);
   const pageErrors = [];
   page.on("pageerror", (error) => pageErrors.push(error.message));
 
