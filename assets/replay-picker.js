@@ -1,10 +1,7 @@
 (function installReplayPicker() {
   "use strict";
 
-  if (typeof init !== "function") return;
-  const originalInit = init;
-  const RESULT_LIMIT = 24;
-  document.removeEventListener("DOMContentLoaded", originalInit);
+  const RESULT_LIMIT = 8;
 
   function normalize(value) {
     return String(value || "")
@@ -29,10 +26,12 @@
   }
 
   function preferredRecord(records) {
+    const params = new URLSearchParams(window.location.search);
+    const queryCode = params.get("code")?.trim();
     const saved = localStorage.getItem("kabutaneReplayCode");
-    const savedRecord = records.find((row) => String(row.code) === saved);
-    if (savedRecord) return savedRecord;
-    return records.find((row) => row.cosmos_focus === true && row.status === "NEW")
+    return records.find((row) => String(row.code) === String(queryCode))
+      || records.find((row) => String(row.code) === String(saved))
+      || records.find((row) => row.cosmos_focus === true && row.status === "NEW")
       || records.find((row) => row.cosmos_focus === true)
       || records.find((row) => row.status === "NEW")
       || records[0]
@@ -46,9 +45,9 @@
     return (payload.records || []).filter((row) => row && row.code);
   }
 
-  function resultRank(row, query) {
+  function resultRank(row, query, selectedCode) {
     if (!query) {
-      if (row.__selected) return 0;
+      if (String(row.code) === String(selectedCode)) return 0;
       if (row.cosmos_focus && row.status === "NEW") return 1;
       if (row.cosmos_focus) return 2;
       if (row.status === "NEW") return 3;
@@ -67,7 +66,7 @@
   function matchingRecords(records, query, selectedCode) {
     const normalizedQuery = normalize(query);
     return records
-      .map((row) => ({ ...row, __selected: String(row.code) === String(selectedCode), __rank: resultRank(row, normalizedQuery) }))
+      .map((row) => ({ ...row, __rank: resultRank(row, normalizedQuery, selectedCode) }))
       .filter((row) => row.__rank < 99)
       .sort((left, right) => left.__rank - right.__rank
         || Number(Boolean(right.cosmos_focus)) - Number(Boolean(left.cosmos_focus))
@@ -78,138 +77,122 @@
 
   function replayUrl(code) {
     const url = new URL(window.location.href);
-    url.searchParams.set("code", code);
+    url.searchParams.set("code", String(code));
     url.hash = "";
     return url.toString();
   }
 
-  function populateSelect(records, selectedCode) {
+  function openCode(code, input) {
+    if (!code) return;
+    localStorage.setItem("kabutaneReplayCode", String(code));
+    if (input) {
+      input.disabled = true;
+      input.value = "読み込み中…";
+    }
+    window.location.assign(replayUrl(code));
+  }
+
+  function installPicker(records) {
     const select = document.getElementById("replaySymbolSelect");
-    if (!select) return;
-    const selected = records.find((row) => String(row.code) === String(selectedCode)) || preferredRecord(records);
+    const setupGrid = document.querySelector("#setupPanel .setup-grid");
+    if (!select || !setupGrid || document.getElementById("replaySymbolPicker")) return;
 
-    // Keep the original select available to the legacy replay code, but never ask
-    // a mobile browser to render more than a thousand native options.
-    select.innerHTML = selected ? `<option value="${escapeHtml(selected.code)}">${escapeHtml(recordLabel(selected))}</option>` : "";
-    select.value = selected ? String(selected.code) : "";
-    const originalLabel = select.closest("label");
-    if (originalLabel) originalLabel.hidden = true;
+    const selected = preferredRecord(records);
+    if (!selected) throw new Error("検索できる銘柄がありません");
 
-    let picker = document.getElementById("replaySymbolPicker");
-    if (!picker) {
-      picker = document.createElement("div");
-      picker.id = "replaySymbolPicker";
-      picker.className = "replay-symbol-picker-field";
-      picker.innerHTML = `
-        <span class="replay-symbol-picker-label">練習する銘柄</span>
-        <div class="replay-symbol-current" aria-live="polite">
-          <span>選択中</span><strong id="replaySymbolCurrent">—</strong>
-        </div>
-        <div class="replay-symbol-search-wrap">
-          <input id="replaySymbolSearch" type="search" inputmode="search" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="証券コード・会社名で検索" aria-controls="replaySymbolResults" aria-expanded="false">
-          <button id="replaySymbolClear" type="button" aria-label="検索文字を消す">×</button>
-        </div>
-        <div id="replaySymbolResults" class="replay-symbol-results" role="listbox" hidden></div>
-        <small>全銘柄から検索できるよ。表示候補はスマホが固まらないよう最大${RESULT_LIMIT}件に絞っているよ。</small>`;
-      (originalLabel || select).insertAdjacentElement("afterend", picker);
+    const params = new URLSearchParams(window.location.search);
+    const currentCode = params.get("code")?.trim() || "";
+    if (!currentCode || !records.some((row) => String(row.code) === String(currentCode))) {
+      window.location.replace(replayUrl(selected.code));
+      return;
     }
 
-    const current = document.getElementById("replaySymbolCurrent");
+    // The legacy select remains in the DOM for compatibility, but contains only
+    // the current stock. Rendering the full universe in a native Android select
+    // is intentionally avoided because it can freeze the browser UI.
+    select.replaceChildren();
+    const option = document.createElement("option");
+    option.value = String(selected.code);
+    option.textContent = recordLabel(selected);
+    option.selected = true;
+    select.appendChild(option);
+
+    const originalLabel = select.closest("label");
+    const picker = document.createElement("section");
+    picker.id = "replaySymbolPicker";
+    picker.className = "replay-symbol-picker-field";
+    picker.setAttribute("aria-label", "練習する銘柄を検索");
+    picker.innerHTML = `
+      <div class="replay-symbol-picker-heading">
+        <span class="replay-symbol-picker-label">練習する銘柄</span>
+        <div class="replay-symbol-current" aria-live="polite"><span>選択中</span><strong id="replaySymbolCurrent">${escapeHtml(recordLabel(selected))}</strong></div>
+      </div>
+      <div class="replay-symbol-search-wrap">
+        <input id="replaySymbolSearch" type="search" inputmode="search" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="証券コード・会社名で検索" aria-controls="replaySymbolResults">
+        <button id="replaySymbolClear" type="button" aria-label="検索文字を消す">×</button>
+      </div>
+      <p id="replaySymbolStatus" class="replay-symbol-status" aria-live="polite">おすすめと選択中の銘柄を表示しているよ。</p>
+      <div id="replaySymbolResults" class="replay-symbol-results" role="listbox"></div>
+      <small>全銘柄を検索できるよ。スマホが固まらないよう、画面に出す候補は最大${RESULT_LIMIT}件だけ。</small>`;
+
+    (originalLabel || setupGrid.firstElementChild)?.insertAdjacentElement("afterend", picker);
+    if (originalLabel) originalLabel.hidden = true;
+
     const input = document.getElementById("replaySymbolSearch");
     const clear = document.getElementById("replaySymbolClear");
     const results = document.getElementById("replaySymbolResults");
+    const status = document.getElementById("replaySymbolStatus");
     if (!input || !results) return;
-    if (current) current.textContent = selected ? recordLabel(selected) : "未選択";
-
-    let activeIndex = -1;
-    let visible = [];
-
-    function closeResults() {
-      results.hidden = true;
-      input.setAttribute("aria-expanded", "false");
-      activeIndex = -1;
-    }
-
-    function setActive(index) {
-      const buttons = [...results.querySelectorAll("[data-replay-code]")];
-      if (!buttons.length) return;
-      activeIndex = Math.max(0, Math.min(index, buttons.length - 1));
-      buttons.forEach((button, buttonIndex) => button.classList.toggle("active", buttonIndex === activeIndex));
-      buttons[activeIndex]?.scrollIntoView({ block: "nearest" });
-    }
-
-    function openCode(code) {
-      if (!code) return;
-      localStorage.setItem("kabutaneReplayCode", String(code));
-      input.disabled = true;
-      input.value = "読み込み中…";
-      window.location.assign(replayUrl(String(code)));
-    }
 
     function renderResults(query = "") {
-      visible = matchingRecords(records, query, selected?.code || selectedCode);
+      const visible = matchingRecords(records, query, selected.code);
       results.innerHTML = visible.length
-        ? visible.map((row) => `<button type="button" role="option" data-replay-code="${escapeHtml(row.code)}"><span>${row.cosmos_focus ? "🌸" : row.status === "NEW" ? "NEW" : "銘柄"}</span><strong>${escapeHtml(row.code)}</strong><b>${escapeHtml(row.name || "")}</b></button>`).join("")
+        ? visible.map((row) => `
+            <button type="button" role="option" data-replay-code="${escapeHtml(row.code)}"${String(row.code) === String(selected.code) ? ' aria-current="true"' : ""}>
+              <span>${row.cosmos_focus ? "🌸" : row.status === "NEW" ? "NEW" : "銘柄"}</span>
+              <strong>${escapeHtml(row.code)}</strong>
+              <b>${escapeHtml(row.name || "")}</b>
+              <em>${String(row.code) === String(selected.code) ? "選択中" : "変更"}</em>
+            </button>`).join("")
         : `<p class="replay-symbol-empty">該当する銘柄が見つからないよ。コードか会社名の一部を変えてみてね。</p>`;
-      results.hidden = false;
-      input.setAttribute("aria-expanded", "true");
-      activeIndex = -1;
+      if (status) status.textContent = query
+        ? `${visible.length}件の候補を表示中。銘柄をタップするとページを切り替えるよ。`
+        : "おすすめと選択中の銘柄を表示しているよ。";
     }
 
-    input.addEventListener("focus", () => renderResults(input.value));
     input.addEventListener("input", () => renderResults(input.value));
     input.addEventListener("keydown", (event) => {
-      if (event.key === "ArrowDown") {
-        event.preventDefault();
-        if (results.hidden) renderResults(input.value);
-        setActive(activeIndex + 1);
-      } else if (event.key === "ArrowUp") {
-        event.preventDefault();
-        setActive(activeIndex <= 0 ? visible.length - 1 : activeIndex - 1);
-      } else if (event.key === "Enter") {
-        const code = results.querySelectorAll("[data-replay-code]")[activeIndex]?.dataset.replayCode || visible[0]?.code;
-        if (code) {
-          event.preventDefault();
-          openCode(code);
-        }
-      } else if (event.key === "Escape") closeResults();
+      if (event.key !== "Enter") return;
+      const first = results.querySelector("[data-replay-code]");
+      if (!first) return;
+      event.preventDefault();
+      openCode(first.dataset.replayCode, input);
     });
     clear?.addEventListener("click", () => {
       input.value = "";
-      input.focus();
       renderResults("");
+      input.focus();
     });
     results.addEventListener("click", (event) => {
       const button = event.target.closest("[data-replay-code]");
-      if (button) openCode(button.dataset.replayCode);
+      if (!button) return;
+      openCode(button.dataset.replayCode, input);
     });
-    document.addEventListener("pointerdown", (event) => {
-      if (!picker.contains(event.target)) closeResults();
-    });
+
+    renderResults("");
   }
 
-  async function initWithCandidate() {
-    let records = [];
+  async function bootPicker() {
     try {
-      records = await loadCandidates();
-      const params = new URLSearchParams(window.location.search);
-      let code = params.get("code")?.trim() || "";
-      if (!code || !records.some((row) => String(row.code) === code)) {
-        code = preferredRecord(records)?.code || "";
-        if (code) {
-          params.set("code", code);
-          history.replaceState(null, "", `${window.location.pathname}?${params.toString()}`);
-        }
-      }
-      if (code) localStorage.setItem("kabutaneReplayCode", code);
-      await originalInit();
-      populateSelect(records, state.code || code);
+      const records = await loadCandidates();
+      installPicker(records);
     } catch (error) {
-      await originalInit();
+      console.warn("Kabutane replay picker failed:", error);
       const notice = document.getElementById("setupNotice");
-      if (notice && !state.code) notice.textContent = `練習する銘柄を準備できませんでした：${error.message}`;
+      if (notice) notice.textContent = `銘柄検索だけ読み込めませんでした。現在の銘柄では練習できるよ：${error.message}`;
     }
   }
 
-  document.addEventListener("DOMContentLoaded", initWithCandidate);
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", bootPicker, { once: true });
+  else bootPicker();
 })();
