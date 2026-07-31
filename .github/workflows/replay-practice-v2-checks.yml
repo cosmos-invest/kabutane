@@ -10,6 +10,7 @@ on:
       - "assets/replay-practice-score-v2.js"
       - "assets/replay-practice-ux-v2.js"
       - "assets/replay-practice-ux-v2-stability.js"
+      - "assets/replay-stop-guard-v3.js"
       - "assets/replay-practice-ux-v2.css"
       - "assets/replay-score-report-v2.js"
       - "assets/practice-history.js"
@@ -41,6 +42,7 @@ jobs:
           node --check assets/replay-practice-score-v2.js
           node --check assets/replay-practice-ux-v2.js
           node --check assets/replay-practice-ux-v2-stability.js
+          node --check assets/replay-stop-guard-v3.js
           node --check assets/replay-score-report-v2.js
           node --check assets/practice-history.js
           node --check assets/practice-history-page.js
@@ -63,6 +65,7 @@ jobs:
           score = Path("assets/replay-practice-score-v2.js").read_text(encoding="utf-8")
           ux = Path("assets/replay-practice-ux-v2.js").read_text(encoding="utf-8")
           stability = Path("assets/replay-practice-ux-v2-stability.js").read_text(encoding="utf-8")
+          stop_guard = Path("assets/replay-stop-guard-v3.js").read_text(encoding="utf-8")
           report = Path("assets/replay-score-report-v2.js").read_text(encoding="utf-8")
           picker = Path("assets/replay-picker.js").read_text(encoding="utf-8")
           selector = Path("assets/replay-stock-select.js").read_text(encoding="utf-8")
@@ -108,9 +111,21 @@ jobs:
               if marker not in ux:
                   raise SystemExit(f"Replay UX marker missing: {marker}")
 
-          for marker in ("replaceSummaryToDropInternalObservers", "renderAfterFinish", "resetBeforeStart"):
+          for marker in (
+              "replaceSummaryToDropInternalObservers",
+              "renderAfterFinish",
+              "resetBeforeStart",
+              "practiceStopHandleV3",
+              "guidedStopDistance",
+              "processAutomaticOrdersWithLockedStop",
+              "次の日も",
+          ):
               if marker not in stability:
                   raise SystemExit(f"Stability marker missing: {marker}")
+
+          for marker in ("recalculatePlanWithActiveStopGuard", "sharesBefore > 0", "restoreActiveStop"):
+              if marker not in stop_guard:
+                  raise SystemExit(f"Stop guard marker missing: {marker}")
 
           for marker in ("運用実践スコア", "scoreVersion", "decorate"):
               if marker not in report:
@@ -137,6 +152,7 @@ jobs:
               "replay-practice-score-v2.js",
               "replay-practice-ux-v2.js",
               "replay-practice-ux-v2-stability.js",
+              "replay-stop-guard-v3.js",
               "replay-score-report-v2.js",
           ]
           positions = [pwa.find(name) for name in ordered]
