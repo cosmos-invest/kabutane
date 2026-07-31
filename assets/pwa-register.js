@@ -92,6 +92,7 @@
 
   function ensureReplayPracticeV2() {
     if (!document.body?.classList.contains("replay-page")) return;
+    loadStyle("assets/replay-picker.css");
     loadStyle("assets/replay-practice-ux-v2.css");
     loadScriptsInOrder([
       "assets/replay-practice-score-v2.js",
