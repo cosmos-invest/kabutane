@@ -32,8 +32,8 @@ test("mobile user selects a stock on a separate screen and opens replay", async 
   await page.screenshot({ path: "test-results/replay-selector-mobile.png", fullPage: true });
 
   await Promise.all([
-    page.waitForURL(/replay\.html\?code=3441/, { timeout: 20000 }),
-    result.click(),
+    page.waitForURL(/replay\.html\?code=3441/, { waitUntil: "domcontentloaded", timeout: 20000 }),
+    result.click({ noWaitAfter: true }),
   ]);
 
   await expect(page.locator("#replaySymbolPicker")).toBeVisible({ timeout: 20000 });
@@ -43,8 +43,8 @@ test("mobile user selects a stock on a separate screen and opens replay", async 
   await page.screenshot({ path: "test-results/replay-setup-mobile.png", fullPage: true });
 
   await Promise.all([
-    page.waitForURL(/replay-select\.html\?selected=3441/, { timeout: 20000 }),
-    page.locator("#replayChangeSymbol").click(),
+    page.waitForURL(/replay-select\.html\?selected=3441/, { waitUntil: "domcontentloaded", timeout: 20000 }),
+    page.locator("#replayChangeSymbol").click({ noWaitAfter: true }),
   ]);
   await expect(page.locator("#replayStockSearch")).toBeVisible({ timeout: 20000 });
 
