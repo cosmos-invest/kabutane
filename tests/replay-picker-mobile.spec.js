@@ -7,47 +7,47 @@ test.use({
   hasTouch: true,
 });
 
-test("mobile replay picker renders, searches and changes stock", async ({ page }) => {
+test("mobile user selects a stock on a separate screen and opens replay", async ({ page }) => {
   const pageErrors = [];
   page.on("pageerror", (error) => pageErrors.push(error.message));
 
-  await page.goto("http://127.0.0.1:4173/replay.html?code=3441", {
+  await page.goto("http://127.0.0.1:4173/replay-select.html?selected=3441", {
     waitUntil: "domcontentloaded",
     timeout: 30000,
   });
 
-  const picker = page.locator("#replaySymbolPicker");
-  await expect(picker).toBeVisible({ timeout: 20000 });
-  await expect(page.locator("#replaySymbolCurrent")).toContainText("3441");
-
-  const input = page.locator("#replaySymbolSearch");
-  await expect(input).toBeVisible();
+  const input = page.locator("#replayStockSearch");
+  await expect(input).toBeVisible({ timeout: 20000 });
+  await expect(input).toBeEnabled();
   await input.fill("3441");
 
-  const currentResult = page.locator('[data-replay-code="3441"]');
-  await expect(currentResult).toBeVisible();
-  await expect(page.locator("#replaySymbolResults [data-replay-code]")).toHaveCount(1);
+  const result = page.locator('[data-replay-code="3441"]');
+  await expect(result).toBeVisible();
+  await expect(page.locator("#replayStockResults [data-replay-code]")).toHaveCount(1);
 
-  await input.fill("");
-  const alternative = page.locator('#replaySymbolResults [data-replay-code]:not([aria-current="true"])').first();
-  await expect(alternative).toBeVisible();
-  const alternativeCode = await alternative.getAttribute("data-replay-code");
-  expect(alternativeCode).toBeTruthy();
+  const selectBox = await page.locator(".replay-stock-select-card").boundingBox();
+  expect(selectBox).not.toBeNull();
+  expect(selectBox.width).toBeGreaterThan(300);
+  expect(selectBox.width).toBeLessThanOrEqual(390);
+  await page.screenshot({ path: "test-results/replay-selector-mobile.png", fullPage: true });
 
   await Promise.all([
-    page.waitForURL(new RegExp(`code=${alternativeCode}`), { timeout: 20000 }),
-    alternative.click(),
+    page.waitForURL(/replay\.html\?code=3441/, { timeout: 20000 }),
+    result.click(),
   ]);
+
   await expect(page.locator("#replaySymbolPicker")).toBeVisible({ timeout: 20000 });
-  await expect(page.locator("#replaySymbolCurrent")).toContainText(alternativeCode);
+  await expect(page.locator("#replaySymbolCurrent")).toContainText("3441");
+  await expect(page.locator("#replayChangeSymbol")).toBeVisible();
+  await expect(page.locator("#startSessionButton")).toBeVisible();
+  await page.screenshot({ path: "test-results/replay-setup-mobile.png", fullPage: true });
 
-  const box = await page.locator("#replaySymbolPicker").boundingBox();
-  expect(box).not.toBeNull();
-  expect(box.width).toBeGreaterThan(280);
-  expect(box.width).toBeLessThanOrEqual(390);
+  await Promise.all([
+    page.waitForURL(/replay-select\.html\?selected=3441/, { timeout: 20000 }),
+    page.locator("#replayChangeSymbol").click(),
+  ]);
+  await expect(page.locator("#replayStockSearch")).toBeVisible({ timeout: 20000 });
 
-  await page.screenshot({ path: "test-results/replay-picker-mobile.png", fullPage: true });
-
-  const relevantErrors = pageErrors.filter((message) => !/favicon|service worker/i.test(message));
+  const relevantErrors = pageErrors.filter((message) => !/favicon|service worker|chart\.js/i.test(message));
   expect(relevantErrors).toEqual([]);
 });
