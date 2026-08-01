@@ -1,4 +1,4 @@
-const CACHE_VERSION = "kabutane-pwa-v19";
+const CACHE_VERSION = "kabutane-pwa-v20";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 
 // These files are required for the detail page to boot. If even one cannot be
@@ -43,7 +43,7 @@ const OPTIONAL_ASSETS = [
   "./data/curated/shikiho-2026-summer.json",
   "./data/curated/shikiho-2026-summer-performance.json",
   // Compatibility for an already-open detail.html that still requests the
-  // unversioned asset URLs while the v19 worker is activating.
+  // unversioned asset URLs while the v20 worker is activating.
   "./assets/provisional-monthly-rsi-core.js",
   "./assets/detail-chart-viewport-core.js",
   "./assets/detail.js",
@@ -103,10 +103,12 @@ const OPTIONAL_ASSETS = [
   "./assets/replay-share-report-core.js",
   "./assets/replay-share-report.js",
   "./assets/replay-practice-ux-v2.css",
+  "./assets/replay-practice-coach-v3.css",
   "./assets/replay-practice-score-v2.js",
   "./assets/replay-practice-ux-v2.js",
   "./assets/replay-practice-ux-v2-stability.js",
   "./assets/replay-score-report-v2.js",
+  "./assets/replay-practice-coach-v3.js",
   "./assets/pwa-register.js",
   "./assets/kabutane-links.css",
   "./assets/icons/kabutane-wordmark-v3.svg",
