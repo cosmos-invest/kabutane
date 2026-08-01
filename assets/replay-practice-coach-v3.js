@@ -241,33 +241,52 @@
     if (button && button.textContent !== text) button.textContent = text;
   }
 
+  function partialQuantity(shares, ratio, lotSize) {
+    if (shares <= 0) return 0;
+    if (ratio >= 1) return shares;
+    const lot = Math.max(1, Number(lotSize) || 1);
+    const rounded = Math.floor(shares * ratio / lot) * lot;
+    return Math.min(shares, rounded > 0 ? rounded : shares);
+  }
+
   function updateExitGuide() {
     const stateRef = appState();
     const shares = Number(stateRef?.account?.shares || 0);
+    const lot = Math.max(1, Number(stateRef?.lotSize) || 1);
+    const quarterQty = partialQuantity(shares, 0.25, lot);
+    const halfQty = partialQuantity(shares, 0.5, lot);
     const quarter = document.getElementById("sellQuarterButton");
     const half = document.getElementById("sellHalfButton");
     const all = document.getElementById("sellAllButton");
-    setButtonText(quarter, "残りの25%を売る"); setButtonText(half, "残りの50%を売る"); setButtonText(all, "残りを全部売る");
+    setButtonText(quarter, shares > 0 && quarterQty >= shares ? `残り${shares.toLocaleString("ja-JP")}株を全部売る` : `残りの25%を売る${quarterQty > 0 ? `（${quarterQty.toLocaleString("ja-JP")}株）` : ""}`);
+    setButtonText(half, shares > 0 && halfQty >= shares ? `残り${shares.toLocaleString("ja-JP")}株を全部売る` : `残りの50%を売る${halfQty > 0 ? `（${halfQty.toLocaleString("ja-JP")}株）` : ""}`);
+    setButtonText(all, shares > 0 ? `残り${shares.toLocaleString("ja-JP")}株を全部売る` : "残りを全部売る");
     const buttons = all?.closest(".sell-buttons");
     if (buttons) {
       let guide = document.getElementById("practiceExitGuide");
       if (!guide) { guide = document.createElement("div"); guide.id = "practiceExitGuide"; guide.className = "practice-exit-guide"; buttons.insertAdjacentElement("afterend", guide); }
-      const html = shares > 0 ? `<strong>現在 ${shares.toLocaleString("ja-JP")}株。</strong> 50%利確は何度でも使えます。例：100株→50株→25株。最後は「残りを全部売る」でポジション終了です。` : "部分利確後も、残った株数に対して25%・50%を繰り返せます。最後に全株売るとポジション終了です。";
+      const halfDescription = shares > 0 && halfQty >= shares
+        ? "残りが売買単位未満になるため、50%指定でも全株売却になります。"
+        : shares > 0 ? `50%なら約${halfQty.toLocaleString("ja-JP")}株を売却し、残りを保有できます。` : "";
+      const html = shares > 0
+        ? `<strong>現在 ${shares.toLocaleString("ja-JP")}株・売買単位${lot.toLocaleString("ja-JP")}株。</strong> ${halfDescription} 部分利確後は、残った株数に対してもう一度25%・50%を選べます。`
+        : "部分利確後も、残った株数に対して25%・50%を繰り返せます。売買単位より小さくなる場合は全株売却になります。";
       if (guide.innerHTML !== html) guide.innerHTML = html;
     }
 
     const actionArea = document.getElementById("guidedActionArea");
     if (!stateRef || !actionArea || stateRef.guided?.mode !== "guided") return;
     const closeButton = actionArea.querySelector('[data-guided-action="close-position"]');
-    if (closeButton && shares > 0) setButtonText(closeButton, "残りを全部売って振り返る");
+    if (closeButton && shares > 0) setButtonText(closeButton, `残り${shares.toLocaleString("ja-JP")}株を全部売って振り返る`);
     const existing = actionArea.querySelector("#guidedFollowupExit");
     const shouldShow = shares > 0 && stateRef.guided?.step === "observe" && stateRef.guided?.targetTriggered;
     if (!shouldShow) { existing?.remove(); return; }
-    if (existing?.dataset.shares === String(shares)) return;
+    if (existing?.dataset.shares === String(shares) && existing?.dataset.lot === String(lot)) return;
     existing?.remove();
     const helper = document.createElement("div");
-    helper.id = "guidedFollowupExit"; helper.className = "guided-followup-exit"; helper.dataset.shares = String(shares);
-    helper.innerHTML = `<p><strong>部分利確後：残り ${shares.toLocaleString("ja-JP")}株</strong><br>まだ全部売らなくて大丈夫。残った株に対して、さらに半分利確を繰り返せるよ。</p><button type="button" data-practice-exit-action="half">残りの50%を追加利確</button><button type="button" class="primary" data-practice-exit-action="all">残りを全部売って振り返る</button>`;
+    helper.id = "guidedFollowupExit"; helper.className = "guided-followup-exit"; helper.dataset.shares = String(shares); helper.dataset.lot = String(lot);
+    const canHalf = halfQty < shares;
+    helper.innerHTML = `<p><strong>部分利確後：残り ${shares.toLocaleString("ja-JP")}株</strong><br>${canHalf ? `さらに半分の${halfQty.toLocaleString("ja-JP")}株だけ利確して、残りを持つこともできるよ。` : `売買単位が${lot.toLocaleString("ja-JP")}株なので、ここから50%だけ売ることはできないよ。`}</p><button type="button" data-practice-exit-action="${canHalf ? "half" : "all"}">${canHalf ? `残りの50%（${halfQty.toLocaleString("ja-JP")}株）を追加利確` : "残りを全利確"}</button><button type="button" class="primary" data-practice-exit-action="all">残りを全部売って振り返る</button>`;
     actionArea.appendChild(helper);
   }
 
