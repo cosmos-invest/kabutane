@@ -13,6 +13,8 @@ on:
       - "assets/replay-stop-guard-v3.js"
       - "assets/replay-practice-ux-v2.css"
       - "assets/replay-score-report-v2.js"
+      - "assets/replay-practice-coach-v3.js"
+      - "assets/replay-practice-coach-v3.css"
       - "assets/practice-history.js"
       - "assets/practice-history-page.js"
       - "assets/pwa-register.js"
@@ -44,6 +46,7 @@ jobs:
           node --check assets/replay-practice-ux-v2-stability.js
           node --check assets/replay-stop-guard-v3.js
           node --check assets/replay-score-report-v2.js
+          node --check assets/replay-practice-coach-v3.js
           node --check assets/practice-history.js
           node --check assets/practice-history-page.js
           node --check assets/pwa-register.js
@@ -67,17 +70,19 @@ jobs:
           stability = Path("assets/replay-practice-ux-v2-stability.js").read_text(encoding="utf-8")
           stop_guard = Path("assets/replay-stop-guard-v3.js").read_text(encoding="utf-8")
           report = Path("assets/replay-score-report-v2.js").read_text(encoding="utf-8")
+          coach = Path("assets/replay-practice-coach-v3.js").read_text(encoding="utf-8")
           picker = Path("assets/replay-picker.js").read_text(encoding="utf-8")
           selector = Path("assets/replay-stock-select.js").read_text(encoding="utf-8")
           selector_html = Path("replay-select.html").read_text(encoding="utf-8")
           picker_css = Path("assets/replay-picker.css").read_text(encoding="utf-8")
           css = Path("assets/replay-practice-ux-v2.css").read_text(encoding="utf-8")
+          coach_css = Path("assets/replay-practice-coach-v3.css").read_text(encoding="utf-8")
           pwa = Path("assets/pwa-register.js").read_text(encoding="utf-8")
           sw = Path("sw.js").read_text(encoding="utf-8")
           history = Path("assets/practice-history.js").read_text(encoding="utf-8")
 
           Parser().feed(selector_html)
-          for name, text in (("practice", css), ("picker", picker_css)):
+          for name, text in (("practice", css), ("coach", coach_css), ("picker", picker_css)):
               if text.count("{") != text.count("}"):
                   raise SystemExit(f"Replay {name} CSS braces are not balanced")
 
@@ -131,6 +136,22 @@ jobs:
               if marker not in report:
                   raise SystemExit(f"Score report marker missing: {marker}")
 
+          for marker in (
+              'range: "90–100"',
+              '"リスク・資金管理"',
+              "RADAR_AXES",
+              "strongestMiss",
+              "data-practice-exit-action",
+              "残りの50%を追加利確",
+              "六角形の評価レポート画像を表示",
+              "fixMonthlyRsi",
+          ):
+              if marker not in coach:
+                  raise SystemExit(f"Practice coaching marker missing: {marker}")
+          for marker in ("monthly-rsi-chart-box", "min-height:240px", "practice-score-thresholds", "guided-followup-exit"):
+              if marker not in coach_css:
+                  raise SystemExit(f"Practice coaching CSS marker missing: {marker}")
+
           for marker in ("replay-select.html", "replayChangeSymbol", "setup.querySelector(\":scope > .section-heading\")"):
               if marker not in picker:
                   raise SystemExit(f"Stable replay selection marker missing: {marker}")
@@ -147,6 +168,8 @@ jobs:
               raise SystemExit("Standalone selector styles are missing")
           if 'loadStyle("assets/replay-picker.css")' not in pwa:
               raise SystemExit("Replay picker CSS is not loaded")
+          if 'loadStyle("assets/replay-practice-coach-v3.css")' not in pwa:
+              raise SystemExit("Practice coaching CSS is not loaded")
 
           ordered = [
               "replay-practice-score-v2.js",
@@ -154,6 +177,7 @@ jobs:
               "replay-practice-ux-v2-stability.js",
               "replay-stop-guard-v3.js",
               "replay-score-report-v2.js",
+              "replay-practice-coach-v3.js",
           ]
           positions = [pwa.find(name) for name in ordered]
           if any(position < 0 for position in positions) or positions != sorted(positions):
@@ -165,10 +189,12 @@ jobs:
               "replay-picker.js",
               "replay-stock-select.js",
               "replay-practice-ux-v2.css",
+              "replay-practice-coach-v3.css",
               "replay-practice-score-v2.js",
               "replay-practice-ux-v2.js",
               "replay-practice-ux-v2-stability.js",
               "replay-score-report-v2.js",
+              "replay-practice-coach-v3.js",
           ):
               if name not in sw:
                   raise SystemExit(f"PWA cache item missing: {name}")
