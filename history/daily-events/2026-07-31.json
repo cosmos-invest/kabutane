@@ -1,0 +1,39 @@
+{
+  "schema_version": "kabutane_daily_events_v1",
+  "generated_at": "2026-08-02T21:22:20.124609+00:00",
+  "snapshot_date": "2026-07-31",
+  "previous_snapshot_date": null,
+  "comparison_state": "baseline_no_previous",
+  "signal_version": "tv_wilder_rsi14_sma5_v1",
+  "signal_month": "2026-07",
+  "summary": {
+    "event_count": 0,
+    "high_count": 0,
+    "medium_count": 0,
+    "low_count": 0,
+    "signal_count": 0,
+    "ranking_count": 0,
+    "price_count": 0,
+    "performance_count": 0
+  },
+  "events": [],
+  "rules": {
+    "price_move_threshold_pct": 3.0,
+    "rank_move_threshold": 5,
+    "near_cross_threshold_pt": 1.0,
+    "positive_return_milestones_pct": [
+      10.0,
+      20.0,
+      30.0,
+      50.0,
+      100.0
+    ],
+    "negative_return_milestones_pct": [
+      -10.0,
+      -20.0,
+      -30.0,
+      -50.0
+    ]
+  },
+  "cost_policy": "paid_api_disabled"
+}
