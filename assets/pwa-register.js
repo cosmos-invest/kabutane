@@ -7,6 +7,7 @@
     "assets/replay-practice-ux-v2-stability.js",
     "assets/replay-stop-guard-v3.js",
     "assets/replay-score-report-v2.js",
+    "assets/replay-practice-radar-context-compat.js",
     "assets/replay-practice-coach-v3.js",
     "assets/replay-practice-coach-v4.js",
     "assets/replay-practice-desktop-free-v5.js",
