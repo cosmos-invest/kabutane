@@ -11,6 +11,7 @@ on:
       - "update_daily.py"
       - "provisional_signal.py"
       - "build_market_reports.py"
+      - "build_daily_snapshot.py"
       - "build_shikiho_room.py"
       - "build_shikiho_room_v2.py"
       - "validate_data_contract.py"
@@ -18,6 +19,7 @@ on:
       - "tests/test_update_daily.py"
       - "tests/test_provisional_signal.py"
       - "tests/test_market_reports.py"
+      - "tests/test_daily_snapshot.py"
       - "tests/test_shikiho_room.py"
       - "tests/test_shikiho_room_v2.py"
       - "tests/test_data_contract.py"
@@ -28,7 +30,6 @@ permissions:
   pages: write
   id-token: write
 
-# 月次・日次・銘柄マスター更新を直列化し、同じデータへの同時pushを防ぐ。
 concurrency:
   group: market-data-writes
   cancel-in-progress: false
@@ -56,10 +57,11 @@ jobs:
 
       - name: Validate updater
         run: |
-          python -m py_compile update_daily.py provisional_signal.py build_market_reports.py build_shikiho_room.py build_shikiho_room_v2.py validate_data_contract.py tests/test_update_daily.py tests/test_provisional_signal.py tests/test_market_reports.py tests/test_shikiho_room.py tests/test_shikiho_room_v2.py tests/test_data_contract.py
+          python -m py_compile update_daily.py provisional_signal.py build_market_reports.py build_daily_snapshot.py build_shikiho_room.py build_shikiho_room_v2.py validate_data_contract.py tests/test_update_daily.py tests/test_provisional_signal.py tests/test_market_reports.py tests/test_daily_snapshot.py tests/test_shikiho_room.py tests/test_shikiho_room_v2.py tests/test_data_contract.py
           python -m unittest discover -s tests -p 'test_update_daily.py' -v
           python -m unittest discover -s tests -p 'test_provisional_signal.py' -v
           python -m unittest discover -s tests -p 'test_market_reports.py' -v
+          python -m unittest discover -s tests -p 'test_daily_snapshot.py' -v
           python -m unittest discover -s tests -p 'test_shikiho_room.py' -v
           python -m unittest discover -s tests -p 'test_shikiho_room_v2.py' -v
           python -m unittest discover -s tests -p 'test_data_contract.py' -v
@@ -77,11 +79,14 @@ jobs:
       - name: Validate generated data contract
         run: python validate_data_contract.py
 
+      - name: Build compact daily snapshot
+        run: python build_daily_snapshot.py
+
       - name: Commit daily overlays and observations
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/latest.json data/daily data/daily-update-status.json data/ranking.json data/daily-change.json data/monthly-report.json data/curated/shikiho-2026-summer-performance.json result.csv
+          git add data/latest.json data/daily data/daily-update-status.json data/ranking.json data/daily-change.json data/monthly-report.json data/daily-snapshot.json history/daily data/curated/shikiho-2026-summer-performance.json result.csv
           if git diff --cached --quiet; then
             echo "No daily price changes"
           else
@@ -105,6 +110,7 @@ jobs:
           test -f _site/data/daily-update-status.json
           test -f _site/data/ranking.json
           test -f _site/data/daily-change.json
+          test -f _site/data/daily-snapshot.json
           test -f _site/data/curated/shikiho-2026-summer.json
           test -f _site/data/curated/shikiho-2026-summer-performance.json
           test -f _site/shikiho-summer-2026.html
@@ -115,11 +121,14 @@ jobs:
           latest = json.loads(Path('_site/data/latest.json').read_text(encoding='utf-8'))
           daily = json.loads(Path('_site/data/daily-update-status.json').read_text(encoding='utf-8'))
           ranking = json.loads(Path('_site/data/ranking.json').read_text(encoding='utf-8'))
+          snapshot = json.loads(Path('_site/data/daily-snapshot.json').read_text(encoding='utf-8'))
           shikiho = json.loads(Path('_site/data/curated/shikiho-2026-summer-performance.json').read_text(encoding='utf-8'))
           if daily.get('price_date') != ranking.get('price_date'):
               raise SystemExit(f"Daily/ranking date mismatch: {daily.get('price_date')} != {ranking.get('price_date')}")
           if latest.get('daily_price_date') not in (None, daily.get('price_date')):
               raise SystemExit(f"Latest/daily date mismatch: {latest.get('daily_price_date')} != {daily.get('price_date')}")
+          if snapshot.get('price_date') not in (None, daily.get('price_date')):
+              raise SystemExit(f"Snapshot/daily date mismatch: {snapshot.get('price_date')} != {daily.get('price_date')}")
           if shikiho.get('record_count') != 20:
               raise SystemExit(f"Shikiho room record count mismatch: {shikiho.get('record_count')}")
           if shikiho.get('baseline_date') != '2026-06-18':
