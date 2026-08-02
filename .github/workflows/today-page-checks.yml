@@ -1,0 +1,58 @@
+name: Validate Today in Kabutane dashboard
+
+on:
+  pull_request:
+    paths:
+      - "today.html"
+      - "assets/today-kabutane.css"
+      - "assets/today-kabutane.js"
+      - "sw.js"
+      - "tests/test_today_page.py"
+      - "build_daily_snapshot.py"
+      - "build_daily_events.py"
+      - "validate_daily_derived_contract.py"
+      - ".github/workflows/today-page-checks.yml"
+      - ".github/workflows/deploy-pages.yml"
+      - ".github/workflows/update-daily.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  today-page:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate page source
+        run: |
+          python -m py_compile tests/test_today_page.py build_daily_snapshot.py build_daily_events.py validate_daily_derived_contract.py
+          python -m unittest discover -s tests -p 'test_today_page.py' -v
+          node --check assets/today-kabutane.js
+          git diff --check
+
+      - name: Build event feed used by the page
+        run: |
+          python build_daily_snapshot.py
+          python build_daily_events.py
+          python validate_daily_derived_contract.py
+
+      - name: Smoke test public paths
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m http.server 8765 >/tmp/kabutane-today-http.log 2>&1 &
+          server_pid=$!
+          trap 'kill ${server_pid} || true' EXIT
+          sleep 1
+          curl -fsS http://127.0.0.1:8765/today.html | grep -q '今日のかぶたね'
+          curl -fsS http://127.0.0.1:8765/assets/today-kabutane.js | grep -q 'data/daily-events.json'
+          curl -fsS http://127.0.0.1:8765/data/daily-events.json | python -m json.tool >/dev/null
+          curl -fsS http://127.0.0.1:8765/data/daily-snapshot.json | python -m json.tool >/dev/null
