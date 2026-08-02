@@ -18,12 +18,16 @@ on:
       - "generate_tradingview.py"
       - "build_market_reports.py"
       - "build_daily_snapshot.py"
+      - "build_daily_events.py"
       - "validate_data_contract.py"
+      - "validate_daily_derived_contract.py"
       - "tests/test_logic.py"
       - "tests/test_tradingview_signal.py"
       - "tests/test_market_reports.py"
       - "tests/test_daily_snapshot.py"
+      - "tests/test_daily_events.py"
       - "tests/test_data_contract.py"
+      - "tests/test_daily_derived_contract.py"
 
 permissions:
   contents: write
@@ -54,7 +58,7 @@ jobs:
 
       - name: Validate source
         run: |
-          python -m py_compile test.py tradingview_signal.py generate_tradingview.py build_market_reports.py build_daily_snapshot.py validate_data_contract.py tests/test_logic.py tests/test_tradingview_signal.py tests/test_market_reports.py tests/test_daily_snapshot.py tests/test_data_contract.py
+          python -m py_compile test.py tradingview_signal.py generate_tradingview.py build_market_reports.py build_daily_snapshot.py build_daily_events.py validate_data_contract.py validate_daily_derived_contract.py tests/test_logic.py tests/test_tradingview_signal.py tests/test_market_reports.py tests/test_daily_snapshot.py tests/test_daily_events.py tests/test_data_contract.py tests/test_daily_derived_contract.py
           git diff --check
 
       - name: Run unit tests
@@ -100,8 +104,11 @@ jobs:
       - name: Validate generated data contract
         run: python validate_data_contract.py
 
-      - name: Build compact daily snapshot
-        run: python build_daily_snapshot.py
+      - name: Build compact daily snapshot and events
+        run: |
+          python build_daily_snapshot.py
+          python build_daily_events.py
+          python validate_daily_derived_contract.py
 
       - name: Build data quality report
         run: python diagnose_errors.py
