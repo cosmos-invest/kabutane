@@ -13,12 +13,14 @@ on:
       - "build_market_reports.py"
       - "build_shikiho_room.py"
       - "build_shikiho_room_v2.py"
+      - "validate_data_contract.py"
       - "data/curated/shikiho-2026-summer.json"
       - "tests/test_update_daily.py"
       - "tests/test_provisional_signal.py"
       - "tests/test_market_reports.py"
       - "tests/test_shikiho_room.py"
       - "tests/test_shikiho_room_v2.py"
+      - "tests/test_data_contract.py"
       - ".github/workflows/update-daily.yml"
 
 permissions:
@@ -54,12 +56,13 @@ jobs:
 
       - name: Validate updater
         run: |
-          python -m py_compile update_daily.py provisional_signal.py build_market_reports.py build_shikiho_room.py build_shikiho_room_v2.py tests/test_update_daily.py tests/test_provisional_signal.py tests/test_market_reports.py tests/test_shikiho_room.py tests/test_shikiho_room_v2.py
+          python -m py_compile update_daily.py provisional_signal.py build_market_reports.py build_shikiho_room.py build_shikiho_room_v2.py validate_data_contract.py tests/test_update_daily.py tests/test_provisional_signal.py tests/test_market_reports.py tests/test_shikiho_room.py tests/test_shikiho_room_v2.py tests/test_data_contract.py
           python -m unittest discover -s tests -p 'test_update_daily.py' -v
           python -m unittest discover -s tests -p 'test_provisional_signal.py' -v
           python -m unittest discover -s tests -p 'test_market_reports.py' -v
           python -m unittest discover -s tests -p 'test_shikiho_room.py' -v
           python -m unittest discover -s tests -p 'test_shikiho_room_v2.py' -v
+          python -m unittest discover -s tests -p 'test_data_contract.py' -v
 
       - name: Download incremental daily prices
         env:
@@ -70,6 +73,9 @@ jobs:
           python provisional_signal.py
           python build_market_reports.py
           python build_shikiho_room_v2.py
+
+      - name: Validate generated data contract
+        run: python validate_data_contract.py
 
       - name: Commit daily overlays and observations
         run: |
