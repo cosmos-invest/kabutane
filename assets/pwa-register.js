@@ -8,6 +8,7 @@
     "assets/replay-stop-guard-v3.js",
     "assets/replay-score-report-v2.js",
     "assets/replay-practice-coach-v3.js",
+    "assets/replay-practice-coach-v4.js",
   ];
   let practiceV2Promise = null;
 
@@ -106,6 +107,7 @@
     if (practiceV2Promise) return practiceV2Promise;
     loadStyle("assets/replay-practice-ux-v2.css");
     loadStyle("assets/replay-practice-coach-v3.css");
+    loadStyle("assets/replay-practice-coach-v4.css");
 
     practiceV2Promise = (async () => {
       const NativeMutationObserver = window.MutationObserver;
