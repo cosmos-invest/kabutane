@@ -5,10 +5,21 @@ test.use({
   userAgent: "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/150.0.0.0 Safari/537.36",
 });
 
+async function currentReplayCode(page) {
+  const response = await page.request.get("http://127.0.0.1:4173/data/latest.json");
+  expect(response.ok()).toBe(true);
+  const latest = await response.json();
+  const candidate = (latest.records || []).find((record) => record?.code && record?.ticker);
+  expect(candidate, "data/latest.json must contain at least one replay candidate").toBeTruthy();
+  return String(candidate.code);
+}
+
 async function openReplay(page, mode) {
   const pageErrors = [];
   page.on("pageerror", (error) => pageErrors.push({ message: error.message, stack: error.stack || error.message }));
-  await page.goto("http://127.0.0.1:4173/replay.html?code=3441", { waitUntil: "domcontentloaded", timeout: 30000 });
+  const code = await currentReplayCode(page);
+  await page.goto(`http://127.0.0.1:4173/replay.html?code=${encodeURIComponent(code)}`, { waitUntil: "domcontentloaded", timeout: 30000 });
+  await expect(page.locator("#replaySymbolCurrent")).toContainText(code, { timeout: 20000 });
   await expect(page.locator("#replayModeSelector")).toBeVisible({ timeout: 20000 });
   await page.locator(`[data-replay-mode="${mode}"]`).click();
   const start = page.locator("#startSessionButton");
