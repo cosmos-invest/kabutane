@@ -38,6 +38,23 @@ async function openPage(page, path) {
   return assertRuntime;
 }
 
+async function currentCandidateCode(page) {
+  const response = await page.goto(`${BASE_URL}/index.html`, {
+    waitUntil: "domcontentloaded",
+    timeout: 30000,
+  });
+  expect(response).not.toBeNull();
+  expect(response.status()).toBeLessThan(400);
+  await expect.poll(() => page.locator("#candidateGrid > *").count(), { timeout: 20000 }).toBeGreaterThan(0);
+
+  const detailLink = page.locator('#candidateGrid a[href*="detail.html?code="]').first();
+  await expect(detailLink).toBeVisible({ timeout: 20000 });
+  const href = await detailLink.getAttribute("href");
+  const code = new URL(href, `${BASE_URL}/`).searchParams.get("code");
+  expect(code, "Current candidate detail link has no code").toBeTruthy();
+  return code;
+}
+
 async function checkIndex(page) {
   const done = await openPage(page, "index.html");
   await expect(page.locator("#heroTitle")).toBeVisible();
@@ -48,7 +65,8 @@ async function checkIndex(page) {
 }
 
 async function checkDetail(page) {
-  const done = await openPage(page, "detail.html?code=3441");
+  const code = await currentCandidateCode(page);
+  const done = await openPage(page, `detail.html?code=${encodeURIComponent(code)}`);
   await expect(page.locator("#detailTitle")).toBeVisible();
   await expect(page.locator("#detailSubtitle")).not.toContainText("読み込んでいます", { timeout: 20000 });
   await expect(page.locator("#priceChart")).toBeVisible();
@@ -67,25 +85,27 @@ async function checkRanking(page) {
 
 async function checkMonthlyStrategy(page) {
   const done = await openPage(page, "monthly-strategy.html");
-  await expect(page.getByRole("heading", { name: "月初作戦会議", exact: true })).toBeVisible();
+  await expect(page.locator("header h1")).toHaveText("月初作戦会議");
   await expect.poll(() => page.locator("#monthlySummary > *").count(), { timeout: 20000 }).toBeGreaterThan(0);
   await expect(page.locator("#reportMonth")).not.toContainText("—", { timeout: 20000 });
   done();
 }
 
 async function checkReplaySelection(page) {
-  const done = await openPage(page, "replay-select.html?selected=3441");
+  const code = await currentCandidateCode(page);
+  const done = await openPage(page, `replay-select.html?selected=${encodeURIComponent(code)}`);
   const input = page.locator("#replayStockSearch");
   await expect(input).toBeVisible();
   await expect(input).toBeEnabled({ timeout: 20000 });
-  await input.fill("3441");
-  await expect(page.locator('[data-replay-code="3441"]')).toBeVisible({ timeout: 20000 });
+  await input.fill(code);
+  await expect(page.locator(`[data-replay-code="${code}"]`)).toBeVisible({ timeout: 20000 });
   done();
 }
 
 async function checkReplaySetup(page) {
-  const done = await openPage(page, "replay.html?code=3441");
-  await expect(page.locator("#replaySymbolCurrent")).toContainText("3441", { timeout: 20000 });
+  const code = await currentCandidateCode(page);
+  const done = await openPage(page, `replay.html?code=${encodeURIComponent(code)}`);
+  await expect(page.locator("#replaySymbolCurrent")).toContainText(code, { timeout: 20000 });
   await expect(page.locator("#startSessionButton")).toBeVisible();
   await expect(page.locator("#startSessionButton")).toBeEnabled({ timeout: 20000 });
   done();
