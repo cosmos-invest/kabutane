@@ -14,6 +14,9 @@ function watchRuntime(page) {
     const url = response.url();
     if (!url.startsWith(BASE_URL)) return;
     if (/favicon\.ico(?:\?|$)/i.test(url)) return;
+    // 月次バッチ直後は data/daily をリセットするため、次の日次更新まで
+    // 銘柄別日次オーバーレイが存在しないのは正常。画面は月次データへフォールバックする。
+    if (response.status() === 404 && /\/data\/daily\/[^/?]+\.json(?:\?|$)/i.test(url)) return;
     if (response.status() >= 400) {
       badResponses.push(`${response.status()} ${url}`);
     }
