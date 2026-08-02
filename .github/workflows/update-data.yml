@@ -56,7 +56,16 @@ jobs:
           git diff --check
 
       - name: Run unit tests
-        run: python -m unittest discover -s tests -v
+        shell: bash
+        run: |
+          set -euo pipefail
+          # Run each test module in a fresh Python process. This prevents test
+          # state from leaking between modules while still executing every test.
+          for test_file in tests/test_*.py; do
+            echo "::group::${test_file}"
+            python -m unittest discover -s tests -p "$(basename "${test_file}")" -v
+            echo "::endgroup::"
+          done
 
       - name: Generate all data with canonical signal
         env:
