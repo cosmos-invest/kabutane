@@ -120,6 +120,9 @@
       const anchor = actions.querySelector(".guided-finish-score");
       if (anchor) anchor.insertAdjacentElement("afterend", panel); else actions.prepend(panel);
     }
+    const signature = scoreSignature(result);
+    if (panel.dataset.signature === signature) return;
+    panel.dataset.signature = signature;
     const miss = missedPriority(result);
     const timing = result.categories?.find((group) => group.name === "タイミングボーナス");
     panel.innerHTML = `<div class="practice-score-breakdown-title-v4"><div><span>SCORE BREAKDOWN</span><h3>${result.score}点の内訳</h3></div><small>✓ 達成 / ○ 未達成</small></div>${categoryMarkup(result)}<div class="practice-score-next-v4"><strong>${miss ? `次は「${miss.label}」で最大 +${miss.points}点` : "今回の運用ルールをそのまま再現しよう"}</strong><span>${miss ? `${miss.group}を優先すると点数だけでなく、運用の再現性も上げやすいよ。` : "大きな取りこぼしはありません。"}</span></div>${timing ? `<p class="practice-score-timing-v4">タイミングボーナス ${timing.earned}/${timing.max}点（運用6軸とは別枠）</p>` : ""}`;
@@ -136,6 +139,9 @@
       panel.className = "share-score-breakdown-v4";
       preview.insertAdjacentElement("afterend", panel);
     }
+    const signature = scoreSignature(result);
+    if (panel.dataset.signature === signature) return;
+    panel.dataset.signature = signature;
     panel.innerHTML = `<div class="share-score-head-v4"><strong>運用実践スコア ${result.score}点</strong><span>${result.grade}</span></div><p>どの判断軸を守れたか</p>${categoryMarkup(result, true)}<details><summary>達成した判定項目まで見る</summary><div class="share-score-items-v4">${categoryMarkup(result)}</div></details>`;
   }
 
