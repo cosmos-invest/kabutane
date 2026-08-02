@@ -10,7 +10,7 @@ test.use({
 test("mobile user selects a stock, starts practice and controls the stop clearly", async ({ page }) => {
   test.setTimeout(90000);
   const pageErrors = [];
-  page.on("pageerror", (error) => pageErrors.push(error.stack || error.message));
+  page.on("pageerror", (error) => pageErrors.push({ message: error.message, stack: error.stack || error.message }));
 
   await page.goto("http://127.0.0.1:4173/replay-select.html?selected=3441", {
     waitUntil: "domcontentloaded",
@@ -121,7 +121,7 @@ test("mobile user selects a stock, starts practice and controls the stop clearly
   await page.locator("#practiceChartTools").scrollIntoViewIfNeeded();
   await page.screenshot({ path: "test-results/replay-stop-controls-mobile.png", fullPage: true });
 
-  const relevantErrors = pageErrors.filter((message) => !/favicon|service worker|chart\.js/i.test(message));
-  if (relevantErrors.length) console.error("Replay mobile page errors:\n" + relevantErrors.join("\n---\n"));
-  expect(relevantErrors).toEqual([]);
+  const relevantErrors = pageErrors.filter(({ message }) => !/favicon|service worker|chart\.js/i.test(message));
+  if (relevantErrors.length) console.error("Replay mobile page errors:\n" + relevantErrors.map((error) => error.stack).join("\n---\n"));
+  expect(relevantErrors.map((error) => error.message)).toEqual([]);
 });
