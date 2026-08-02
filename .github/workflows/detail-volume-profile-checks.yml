@@ -7,6 +7,7 @@ on:
       - "assets/detail-volume-profile.css"
       - "assets/pwa-register.js"
       - "tests/test_detail_volume_profile_v1.js"
+      - "tests/detail-volume-profile.spec.js"
       - ".github/workflows/detail-volume-profile-checks.yml"
   workflow_dispatch:
 
@@ -29,6 +30,7 @@ jobs:
         run: |
           node --check assets/detail-volume-profile.js
           node --check assets/pwa-register.js
+          node --check tests/detail-volume-profile.spec.js
           git diff --check
 
       - name: Test estimation math
@@ -58,3 +60,17 @@ jobs:
           curl -fsS http://127.0.0.1:8765/detail.html | grep -q 'id="priceChart"'
           curl -fsS http://127.0.0.1:8765/assets/detail-volume-profile.js | grep -q 'estimated_daily_range_v1'
           curl -fsS http://127.0.0.1:8765/assets/detail-volume-profile.css | grep -q 'volume-profile-panel'
+
+      - name: Install Chromium test runner
+        run: |
+          npm install --no-save @playwright/test@1.55.0
+          npx playwright install --with-deps chromium
+
+      - name: Test current detail page integration
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m http.server 4173 >/tmp/kabutane-volume-profile-browser.log 2>&1 &
+          server_pid=$!
+          trap 'kill ${server_pid} || true' EXIT
+          npx playwright test tests/detail-volume-profile.spec.js --reporter=line
