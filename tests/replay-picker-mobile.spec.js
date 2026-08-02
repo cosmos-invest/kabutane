@@ -12,7 +12,14 @@ test("mobile user selects a stock, starts practice and controls the stop clearly
   const pageErrors = [];
   page.on("pageerror", (error) => pageErrors.push({ message: error.message, stack: error.stack || error.message }));
 
-  await page.goto("http://127.0.0.1:4173/replay-select.html?selected=3441", {
+  const latestResponse = await page.request.get("http://127.0.0.1:4173/data/latest.json");
+  expect(latestResponse.ok()).toBe(true);
+  const latest = await latestResponse.json();
+  const candidate = (latest.records || []).find((record) => record?.code && record?.ticker);
+  expect(candidate, "data/latest.json must contain at least one replay candidate").toBeTruthy();
+  const code = String(candidate.code);
+
+  await page.goto(`http://127.0.0.1:4173/replay-select.html?selected=${encodeURIComponent(code)}`, {
     waitUntil: "domcontentloaded",
     timeout: 30000,
   });
@@ -20,9 +27,9 @@ test("mobile user selects a stock, starts practice and controls the stop clearly
   const input = page.locator("#replayStockSearch");
   await expect(input).toBeVisible({ timeout: 20000 });
   await expect(input).toBeEnabled();
-  await input.fill("3441");
+  await input.fill(code);
 
-  const result = page.locator('[data-replay-code="3441"]');
+  const result = page.locator(`[data-replay-code="${code}"]`);
   await expect(result).toBeVisible();
   await expect(page.locator("#replayStockResults [data-replay-code]")).toHaveCount(1);
 
@@ -33,12 +40,15 @@ test("mobile user selects a stock, starts practice and controls the stop clearly
   await page.screenshot({ path: "test-results/replay-selector-mobile.png", fullPage: true });
 
   await Promise.all([
-    page.waitForURL(/replay\.html\?code=3441/, { waitUntil: "domcontentloaded", timeout: 20000 }),
+    page.waitForURL((url) => url.pathname.endsWith("/replay.html") && url.searchParams.get("code") === code, {
+      waitUntil: "domcontentloaded",
+      timeout: 20000,
+    }),
     result.click({ noWaitAfter: true }),
   ]);
 
   await expect(page.locator("#replaySymbolPicker")).toBeVisible({ timeout: 20000 });
-  await expect(page.locator("#replaySymbolCurrent")).toContainText("3441");
+  await expect(page.locator("#replaySymbolCurrent")).toContainText(code);
   await expect(page.locator("#replayChangeSymbol")).toBeVisible();
   const startButton = page.locator("#startSessionButton");
   await expect(startButton).toBeVisible();

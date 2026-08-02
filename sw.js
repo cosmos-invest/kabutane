@@ -1,4 +1,4 @@
-const CACHE_VERSION = "kabutane-pwa-v21";
+const CACHE_VERSION = "kabutane-pwa-v22";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 
 // These files are required for the detail page to boot. If even one cannot be
@@ -24,6 +24,7 @@ const CRITICAL_ASSETS = [
 
 const OPTIONAL_ASSETS = [
   "./index.html",
+  "./today.html",
   "./replay.html",
   "./replay-select.html",
   "./backtest.html",
@@ -43,7 +44,7 @@ const OPTIONAL_ASSETS = [
   "./data/curated/shikiho-2026-summer.json",
   "./data/curated/shikiho-2026-summer-performance.json",
   // Compatibility for an already-open detail.html that still requests the
-  // unversioned asset URLs while the v21 worker is activating.
+  // unversioned asset URLs while the v22 worker is activating.
   "./assets/provisional-monthly-rsi-core.js",
   "./assets/detail-chart-viewport-core.js",
   "./assets/detail.js",
@@ -60,6 +61,8 @@ const OPTIONAL_ASSETS = [
   "./assets/market-insights.css",
   "./assets/shikiho-room.css",
   "./assets/shikiho-room.js",
+  "./assets/today-kabutane.css",
+  "./assets/today-kabutane.js",
   "./assets/style.css?v=16",
   "./assets/pastel.css?v=16",
   "./assets/kabutane.css?v=16",
@@ -154,6 +157,9 @@ function routeAlternatives(url) {
   }
   if (pathname.endsWith("/replay-select") || pathname.endsWith("/replay-select.html")) {
     return ["./replay-select.html"];
+  }
+  if (pathname.endsWith("/today") || pathname.endsWith("/today.html")) {
+    return ["./today.html"];
   }
   return [];
 }
