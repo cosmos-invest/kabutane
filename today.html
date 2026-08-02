@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="今日のかぶたねは、前回更新から変わった正式シグナル・暫定月足・順位・値動きだけをまとめて確認できるページです。">
+  <title>今日のかぶたね｜かぶたね</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/pastel.css">
+  <link rel="stylesheet" href="assets/kabutane.css">
+  <link rel="stylesheet" href="assets/kabutane-characters.css">
+  <link rel="stylesheet" href="assets/today-kabutane.css">
+</head>
+<body data-page="today" class="pastel-theme kabutane-page today-kabutane-page">
+  <header class="site-header kabutane-header">
+    <div class="header-inner">
+      <a class="kabutane-logo" href="index.html" aria-label="かぶたね ホーム">
+        <span class="kabutane-logo-mark">🌱</span>
+        <span><strong>かぶたね</strong><small>コスモスと探す、未来の1株</small></span>
+      </a>
+      <div class="header-meta">
+        <nav class="site-nav" aria-label="サイト内ナビゲーション">
+          <a href="index.html">銘柄を探す</a>
+          <a href="today.html" class="active" aria-current="page">今日の変化</a>
+          <a href="ranking.html">ランキング</a>
+          <a href="replay-select.html">売買を練習</a>
+          <a href="howto.html">使い方</a>
+        </nav>
+        <div class="kabutane-update-line"><span id="todayUpdatedAt">更新データを確認中…</span><span id="todaySignalMonth" class="badge neutral">判定月 —</span></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container kabutane-container today-container">
+    <section class="panel today-hero" aria-labelledby="todayTitle">
+      <div>
+        <span class="today-kicker">WHAT CHANGED?</span>
+        <h1 id="todayTitle">今日のかぶたね</h1>
+        <p>全部を見直さなくても大丈夫。<strong>前回の記録から変わったことだけ</strong>を、重要な順にまとめます。</p>
+        <div class="today-period" aria-live="polite">
+          <span id="comparisonLabel">比較データを読み込んでいます…</span>
+          <span id="sourceStateLabel"></span>
+        </div>
+      </div>
+      <div class="today-hero-guide" aria-hidden="true">
+        <span class="today-seed">🌱</span>
+        <strong>まずは正式シグナルから。</strong>
+        <small>暫定の変化は月末まで参考情報です。</small>
+      </div>
+    </section>
+
+    <section class="today-summary" aria-label="今日の変化の概要">
+      <article class="panel"><span>変化イベント</span><strong id="summaryTotal">—</strong><small>前回比較</small></article>
+      <article class="panel important"><span>重要シグナル</span><strong id="summaryHigh">—</strong><small>正式・暫定クロス</small></article>
+      <article class="panel"><span>シグナル関連</span><strong id="summarySignal">—</strong><small>NEW / OUT / 暫定</small></article>
+      <article class="panel"><span>順位・値動き</span><strong id="summaryMarket">—</strong><small>補助的な変化</small></article>
+    </section>
+
+    <section class="panel today-guide-strip" aria-label="3人の見方ガイド">
+      <article class="cosmos"><span class="guide-face">🌸</span><div><strong>コスモス</strong><p>正式NEW・OUTがあれば、まずそこから詳しく見よう。</p></div></article>
+      <article class="aile"><span class="guide-face">💜</span><div><strong>エール</strong><p>暫定GC・DCはまだ月足未確定。慌てて正式判定と混ぜないでね。</p></div></article>
+      <article class="lumo"><span class="guide-face">✨</span><div><strong>ルーモ</strong><p>順位や値動きの変化は、チャートを開くきっかけとして使おう！</p></div></article>
+    </section>
+
+    <section class="panel today-events-panel" aria-labelledby="eventTitle">
+      <div class="today-heading-row">
+        <div>
+          <span class="today-kicker">DAILY DIFF EVENTS</span>
+          <h2 id="eventTitle">前回から変わったこと</h2>
+          <p id="eventLead">イベントを読み込んでいます…</p>
+        </div>
+        <div id="eventFilters" class="today-filters" role="group" aria-label="イベントの絞り込み">
+          <button type="button" class="active" data-filter="all" aria-pressed="true">すべて</button>
+          <button type="button" data-filter="signal" aria-pressed="false">シグナル</button>
+          <button type="button" data-filter="ranking" aria-pressed="false">順位</button>
+          <button type="button" data-filter="price" aria-pressed="false">値動き</button>
+          <button type="button" data-filter="performance" aria-pressed="false">成績</button>
+        </div>
+      </div>
+      <div id="eventList" class="today-event-list" aria-live="polite"></div>
+    </section>
+
+    <section class="panel today-reading-notes" aria-labelledby="readingTitle">
+      <div>
+        <span class="today-kicker">HOW TO READ</span>
+        <h2 id="readingTitle">この画面で、混ぜないもの</h2>
+      </div>
+      <div class="today-note-grid">
+        <article><strong>正式NEW / OUT</strong><p>完成済み月足で確定した判定です。かぶたねの正式シグナルはこちらを基準にします。</p></article>
+        <article><strong>暫定GC / DC</strong><p>当月途中の最新日足から月足を試算した参考情報です。月末まで変わる可能性があります。</p></article>
+        <article><strong>順位・±3%以上の値動き</strong><p>「何か動いた」を見つける補助情報です。それだけで売買判断にはしません。</p></article>
+      </div>
+    </section>
+
+    <section class="today-footer-actions">
+      <a class="button kabutane-primary" href="index.html">候補銘柄を探す</a>
+      <a class="button secondary" href="ranking.html">ランキングを見る</a>
+      <a class="button secondary" href="replay-select.html">売買を練習する</a>
+    </section>
+  </main>
+
+  <script src="assets/today-kabutane.js" defer></script>
+  <script src="assets/pwa-register.js" defer></script>
+</body>
+</html>
