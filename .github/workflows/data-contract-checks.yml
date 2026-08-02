@@ -1,0 +1,43 @@
+name: Validate generated data contract
+
+on:
+  pull_request:
+    paths:
+      - "validate_data_contract.py"
+      - "tests/test_data_contract.py"
+      - "data/latest.json"
+      - "data/analysis.json"
+      - "data/ranking.json"
+      - "data/daily-change.json"
+      - "data/monthly-report.json"
+      - "data/months/**"
+      - ".github/workflows/update-data.yml"
+      - ".github/workflows/update-daily.yml"
+      - ".github/workflows/deploy-pages.yml"
+      - ".github/workflows/data-contract-checks.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check validator syntax
+        run: python -m py_compile validate_data_contract.py tests/test_data_contract.py
+
+      - name: Test contract failure modes
+        run: python -m unittest discover -s tests -p 'test_data_contract.py' -v
+
+      - name: Validate repository data
+        run: python validate_data_contract.py
