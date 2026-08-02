@@ -1,0 +1,228 @@
+name: Validate replay practice v2
+
+on:
+  pull_request:
+    paths:
+      - "replay-select.html"
+      - "assets/replay-picker.js"
+      - "assets/replay-picker.css"
+      - "assets/replay-stock-select.js"
+      - "assets/replay-practice-score-v2.js"
+      - "assets/replay-practice-ux-v2.js"
+      - "assets/replay-practice-ux-v2-stability.js"
+      - "assets/replay-stop-guard-v3.js"
+      - "assets/replay-practice-ux-v2.css"
+      - "assets/replay-score-report-v2.js"
+      - "assets/replay-practice-coach-v3.js"
+      - "assets/replay-practice-coach-v3.css"
+      - "assets/practice-history.js"
+      - "assets/practice-history-page.js"
+      - "assets/pwa-register.js"
+      - "tests/test_replay_practice_score_v2.js"
+      - "tests/replay-picker-mobile.spec.js"
+      - "sw.js"
+      - ".github/workflows/replay-practice-v2-checks.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Check JavaScript syntax
+        run: |
+          node --check assets/replay-picker.js
+          node --check assets/replay-stock-select.js
+          node --check assets/replay-practice-score-v2.js
+          node --check assets/replay-practice-ux-v2.js
+          node --check assets/replay-practice-ux-v2-stability.js
+          node --check assets/replay-stop-guard-v3.js
+          node --check assets/replay-score-report-v2.js
+          node --check assets/replay-practice-coach-v3.js
+          node --check assets/practice-history.js
+          node --check assets/practice-history-page.js
+          node --check assets/pwa-register.js
+          node --check sw.js
+          node --check tests/replay-picker-mobile.spec.js
+
+      - name: Test operation score v2
+        run: node tests/test_replay_practice_score_v2.js
+
+      - name: Validate UX, scoring and PWA wiring
+        run: |
+          python - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+
+          class Parser(HTMLParser):
+              pass
+
+          score = Path("assets/replay-practice-score-v2.js").read_text(encoding="utf-8")
+          ux = Path("assets/replay-practice-ux-v2.js").read_text(encoding="utf-8")
+          stability = Path("assets/replay-practice-ux-v2-stability.js").read_text(encoding="utf-8")
+          stop_guard = Path("assets/replay-stop-guard-v3.js").read_text(encoding="utf-8")
+          report = Path("assets/replay-score-report-v2.js").read_text(encoding="utf-8")
+          coach = Path("assets/replay-practice-coach-v3.js").read_text(encoding="utf-8")
+          picker = Path("assets/replay-picker.js").read_text(encoding="utf-8")
+          selector = Path("assets/replay-stock-select.js").read_text(encoding="utf-8")
+          selector_html = Path("replay-select.html").read_text(encoding="utf-8")
+          picker_css = Path("assets/replay-picker.css").read_text(encoding="utf-8")
+          css = Path("assets/replay-practice-ux-v2.css").read_text(encoding="utf-8")
+          coach_css = Path("assets/replay-practice-coach-v3.css").read_text(encoding="utf-8")
+          pwa = Path("assets/pwa-register.js").read_text(encoding="utf-8")
+          sw = Path("sw.js").read_text(encoding="utf-8")
+          history = Path("assets/practice-history.js").read_text(encoding="utf-8")
+
+          Parser().feed(selector_html)
+          for name, text in (("practice", css), ("coach", coach_css), ("picker", picker_css)):
+              if text.count("{") != text.count("}"):
+                  raise SystemExit(f"Replay {name} CSS braces are not balanced")
+
+          for marker in (
+              'category("事前計画", 15',
+              'category("リスク・資金管理", 25',
+              'category("エントリー・追加判断", 20',
+              'category("保有中の規律", 15',
+              'category("利確・撤退判断", 15',
+              'category("振り返り", 5',
+              'category("タイミングボーナス", 5',
+              "SCORE_VERSION = 2",
+          ):
+              if marker not in score:
+                  raise SystemExit(f"Score marker missing: {marker}")
+
+          if "70 + gain" in score or "drawdown * 1.5" in score:
+              raise SystemExit("Legacy profit/DD formula leaked into score v2")
+
+          for marker in (
+              'data-chart-shape="tall"',
+              'data-chart-shape="wide"',
+              'data-price-pan="up"',
+              'data-stop-adjust="down"',
+              "practiceStopHandleV2",
+              "earnings_cross",
+              "rights_cross",
+              "運用実践スコア v2",
+              "includePlan",
+          ):
+              if marker not in ux:
+                  raise SystemExit(f"Replay UX marker missing: {marker}")
+
+          for marker in (
+              "replaceSummaryToDropInternalObservers",
+              "renderAfterFinish",
+              "resetBeforeStart",
+              "practiceStopHandleV3",
+              "guidedStopDistance",
+              "processAutomaticOrdersWithLockedStop",
+              "次の日も",
+          ):
+              if marker not in stability:
+                  raise SystemExit(f"Stability marker missing: {marker}")
+
+          for marker in ("recalculatePlanWithActiveStopGuard", "sharesBefore > 0", "restoreActiveStop"):
+              if marker not in stop_guard:
+                  raise SystemExit(f"Stop guard marker missing: {marker}")
+
+          for marker in ("運用実践スコア", "scoreVersion", "decorate"):
+              if marker not in report:
+                  raise SystemExit(f"Score report marker missing: {marker}")
+
+          for marker in (
+              'range: "90–100"',
+              '"リスク・資金管理"',
+              "RADAR_AXES",
+              "strongestMiss",
+              "data-practice-exit-action",
+              "partialQuantity",
+              "売買単位",
+              "六角形の評価レポート画像を表示",
+              "fixMonthlyRsi",
+          ):
+              if marker not in coach:
+                  raise SystemExit(f"Practice coaching marker missing: {marker}")
+          for marker in ("monthly-rsi-chart-box", "min-height:240px", "practice-score-thresholds", "guided-followup-exit"):
+              if marker not in coach_css:
+                  raise SystemExit(f"Practice coaching CSS marker missing: {marker}")
+
+          for marker in ("replay-select.html", "replayChangeSymbol", "setup.querySelector(\":scope > .section-heading\")"):
+              if marker not in picker:
+                  raise SystemExit(f"Stable replay selection marker missing: {marker}")
+          for forbidden in ("document.removeEventListener", "originalInit", "loadCandidates", "select.replaceChildren", "MutationObserver(updateStopLabel)"):
+              if forbidden in picker:
+                  raise SystemExit(f"Fragile replay picker implementation returned: {forbidden}")
+
+          for marker in ("RESULT_LIMIT = 20", "replayStockSearch", "data-stock-filter", "data/latest.json", "replay.html"):
+              if marker not in selector and marker not in selector_html:
+                  raise SystemExit(f"Standalone selector marker missing: {marker}")
+          if "replay-stock-select.js" not in selector_html or "replay-picker.css" not in selector_html:
+              raise SystemExit("Standalone selector assets are not linked")
+          if ".replay-stock-select-page" not in picker_css or ".replay-symbol-selected-card" not in picker_css:
+              raise SystemExit("Standalone selector styles are missing")
+          if 'loadStyle("assets/replay-picker.css")' not in pwa:
+              raise SystemExit("Replay picker CSS is not loaded")
+          if 'loadStyle("assets/replay-practice-coach-v3.css")' not in pwa:
+              raise SystemExit("Practice coaching CSS is not loaded")
+
+          ordered = [
+              "replay-practice-score-v2.js",
+              "replay-practice-ux-v2.js",
+              "replay-practice-ux-v2-stability.js",
+              "replay-stop-guard-v3.js",
+              "replay-score-report-v2.js",
+              "replay-practice-coach-v3.js",
+          ]
+          positions = [pwa.find(name) for name in ordered]
+          if any(position < 0 for position in positions) or positions != sorted(positions):
+              raise SystemExit("Replay v2 scripts are not loaded in deterministic order")
+
+          for name in (
+              "replay-select.html",
+              "replay-picker.css",
+              "replay-picker.js",
+              "replay-stock-select.js",
+              "replay-practice-ux-v2.css",
+              "replay-practice-coach-v3.css",
+              "replay-practice-score-v2.js",
+              "replay-practice-ux-v2.js",
+              "replay-practice-ux-v2-stability.js",
+              "replay-score-report-v2.js",
+              "replay-practice-coach-v3.js",
+          ):
+              if name not in sw:
+                  raise SystemExit(f"PWA cache item missing: {name}")
+
+          for marker in ("scoreVersion", "operationScore", "timingBonus", "decision"):
+              if marker not in history:
+                  raise SystemExit(f"Practice history v2 marker missing: {marker}")
+
+          print("Replay practice UX and score v2 validation passed")
+          PY
+
+      - name: Install Chromium test runner
+        run: |
+          npm install --no-save @playwright/test@1.55.0
+          npx playwright install --with-deps chromium
+
+      - name: Test Android mobile stock selection
+        run: |
+          python3 -m http.server 4173 >/tmp/kabutane-preview.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID' EXIT
+          npx playwright test tests/replay-picker-mobile.spec.js --reporter=line
+
+      - name: Upload mobile screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: replay-mobile-preview
+          path: test-results/*.png
+          if-no-files-found: ignore

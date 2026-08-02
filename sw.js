@@ -1,4 +1,4 @@
-const CACHE_VERSION = "kabutane-pwa-v17";
+const CACHE_VERSION = "kabutane-pwa-v21";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 
 // These files are required for the detail page to boot. If even one cannot be
@@ -25,6 +25,7 @@ const CRITICAL_ASSETS = [
 const OPTIONAL_ASSETS = [
   "./index.html",
   "./replay.html",
+  "./replay-select.html",
   "./backtest.html",
   "./howto.html",
   "./learn.html",
@@ -42,7 +43,7 @@ const OPTIONAL_ASSETS = [
   "./data/curated/shikiho-2026-summer.json",
   "./data/curated/shikiho-2026-summer-performance.json",
   // Compatibility for an already-open detail.html that still requests the
-  // unversioned asset URLs while the v17 worker is activating.
+  // unversioned asset URLs while the v21 worker is activating.
   "./assets/provisional-monthly-rsi-core.js",
   "./assets/detail-chart-viewport-core.js",
   "./assets/detail.js",
@@ -90,6 +91,9 @@ const OPTIONAL_ASSETS = [
   "./assets/replay-unified.css",
   "./assets/replay-guided-mode.css",
   "./assets/replay-share-report.css",
+  "./assets/replay-picker.css",
+  "./assets/replay-picker.js",
+  "./assets/replay-stock-select.js",
   "./assets/replay-drawing-tools.css",
   "./assets/replay-drawing-tools.js",
   "./assets/replay-unified-workspace.js",
@@ -98,6 +102,15 @@ const OPTIONAL_ASSETS = [
   "./assets/replay-guided-fixes.js",
   "./assets/replay-share-report-core.js",
   "./assets/replay-share-report.js",
+  "./assets/replay-practice-ux-v2.css",
+  "./assets/replay-practice-coach-v3.css",
+  "./assets/replay-practice-coach-v4.css",
+  "./assets/replay-practice-score-v2.js",
+  "./assets/replay-practice-ux-v2.js",
+  "./assets/replay-practice-ux-v2-stability.js",
+  "./assets/replay-score-report-v2.js",
+  "./assets/replay-practice-coach-v3.js",
+  "./assets/replay-practice-coach-v4.js",
   "./assets/pwa-register.js",
   "./assets/kabutane-links.css",
   "./assets/icons/kabutane-wordmark-v3.svg",
@@ -138,6 +151,9 @@ function routeAlternatives(url) {
   }
   if (pathname.endsWith("/shikiho-summer-2026") || pathname.endsWith("/shikiho-summer-2026.html")) {
     return ["./shikiho-summer-2026.html"];
+  }
+  if (pathname.endsWith("/replay-select") || pathname.endsWith("/replay-select.html")) {
+    return ["./replay-select.html"];
   }
   return [];
 }

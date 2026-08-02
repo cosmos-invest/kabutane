@@ -1,71 +1,61 @@
-(function installReplayPicker() {
+(function installReplayPickerLink() {
   "use strict";
 
-  if (typeof init !== "function") return;
-  const originalInit = init;
-  document.removeEventListener("DOMContentLoaded", originalInit);
-
-  function preferredRecord(records) {
-    const saved = localStorage.getItem("kabutaneReplayCode");
-    const savedRecord = records.find((row) => String(row.code) === saved);
-    if (savedRecord) return savedRecord;
-    return records.find((row) => row.cosmos_focus === true && row.status === "NEW")
-      || records.find((row) => row.cosmos_focus === true)
-      || records.find((row) => row.status === "NEW")
-      || records[0]
-      || null;
+  function currentCode() {
+    return new URLSearchParams(window.location.search).get("code")?.trim() || "";
   }
 
-  async function loadCandidates() {
-    const response = await fetch(`data/latest.json?v=${Date.now()}`, { cache: "no-store" });
-    if (!response.ok) throw new Error(`候補一覧の読込に失敗しました (${response.status})`);
-    const payload = await response.json();
-    return (payload.records || []).filter((row) => row && row.code);
+  function selectionUrl(code) {
+    const url = new URL("replay-select.html", window.location.href);
+    if (code) url.searchParams.set("selected", code);
+    return url.toString();
   }
 
-  function populateSelect(records, selectedCode) {
-    const select = document.getElementById("replaySymbolSelect");
-    if (!select) return;
-    const sorted = [...records].sort((a, b) => {
-      if (Boolean(a.cosmos_focus) !== Boolean(b.cosmos_focus)) return a.cosmos_focus ? -1 : 1;
-      if (a.status !== b.status) return a.status === "NEW" ? -1 : 1;
-      return String(a.code).localeCompare(String(b.code), "ja");
-    });
-    select.innerHTML = sorted.map((row) => {
-      const flags = `${row.cosmos_focus ? "🌸 " : ""}${row.status === "NEW" ? "NEW " : ""}`;
-      return `<option value="${String(row.code).replace(/"/g, "&quot;")}">${flags}${row.code} ${row.name || ""}</option>`;
-    }).join("");
-    select.value = selectedCode;
-    select.addEventListener("change", () => {
-      const code = select.value;
-      if (!code) return;
-      localStorage.setItem("kabutaneReplayCode", code);
-      window.location.href = `replay.html?code=${encodeURIComponent(code)}`;
-    });
+  function updateSelectedLabel(node, code) {
+    if (!node) return;
+    const fallback = `証券コード ${code}`;
+    const title = document.getElementById("replayTitle")?.textContent?.trim() || "";
+    const company = title && !title.includes("シミュレーター")
+      ? title.replace(/売買練習.*$/u, "").trim()
+      : "";
+    node.textContent = company || fallback;
   }
 
-  async function initWithCandidate() {
-    let records = [];
-    try {
-      records = await loadCandidates();
-      const params = new URLSearchParams(window.location.search);
-      let code = params.get("code")?.trim() || "";
-      if (!code || !records.some((row) => String(row.code) === code)) {
-        code = preferredRecord(records)?.code || "";
-        if (code) {
-          params.set("code", code);
-          history.replaceState(null, "", `${window.location.pathname}?${params.toString()}`);
-        }
-      }
-      if (code) localStorage.setItem("kabutaneReplayCode", code);
-      await originalInit();
-      populateSelect(records, state.code || code);
-    } catch (error) {
-      await originalInit();
-      const notice = document.getElementById("setupNotice");
-      if (notice && !state.code) notice.textContent = `練習する銘柄を準備できませんでした：${error.message}`;
+  function install() {
+    const code = currentCode();
+    if (!code) {
+      window.location.replace(selectionUrl(""));
+      return;
     }
+
+    localStorage.setItem("kabutaneReplayCode", code);
+    const setup = document.getElementById("setupPanel");
+    if (!setup || document.getElementById("replaySymbolPicker")) return;
+
+    const originalLabel = document.getElementById("replaySymbolSelect")?.closest("label");
+    if (originalLabel) originalLabel.hidden = true;
+
+    const picker = document.createElement("section");
+    picker.id = "replaySymbolPicker";
+    picker.className = "replay-symbol-picker-field replay-symbol-selected-card";
+    picker.innerHTML = `
+      <div>
+        <span class="replay-symbol-picker-label">練習する銘柄</span>
+        <strong id="replaySymbolCurrent">証券コード ${code}</strong>
+        <small>この銘柄の日足を使って練習するよ。</small>
+      </div>
+      <a id="replayChangeSymbol" class="button secondary" href="${selectionUrl(code)}">銘柄を選び直す</a>`;
+
+    const heading = setup.querySelector(":scope > .section-heading");
+    if (heading) heading.insertAdjacentElement("afterend", picker);
+    else setup.prepend(picker);
+
+    const current = document.getElementById("replaySymbolCurrent");
+    updateSelectedLabel(current, code);
+    const title = document.getElementById("replayTitle");
+    if (title) new MutationObserver(() => updateSelectedLabel(current, code)).observe(title, { childList: true, subtree: true, characterData: true });
   }
 
-  document.addEventListener("DOMContentLoaded", initWithCandidate);
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", install, { once: true });
+  else install();
 })();
