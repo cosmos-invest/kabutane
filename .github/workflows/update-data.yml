@@ -17,9 +17,11 @@ on:
       - "tradingview_signal.py"
       - "generate_tradingview.py"
       - "build_market_reports.py"
+      - "validate_data_contract.py"
       - "tests/test_logic.py"
       - "tests/test_tradingview_signal.py"
       - "tests/test_market_reports.py"
+      - "tests/test_data_contract.py"
 
 permissions:
   contents: write
@@ -52,7 +54,7 @@ jobs:
 
       - name: Validate source
         run: |
-          python -m py_compile test.py tradingview_signal.py generate_tradingview.py build_market_reports.py tests/test_logic.py tests/test_tradingview_signal.py tests/test_market_reports.py
+          python -m py_compile test.py tradingview_signal.py generate_tradingview.py build_market_reports.py validate_data_contract.py tests/test_logic.py tests/test_tradingview_signal.py tests/test_market_reports.py tests/test_data_contract.py
           git diff --check
 
       - name: Run unit tests
@@ -96,6 +98,9 @@ jobs:
                   raise SystemExit(f"{path}: expected {expected}, got {actual}")
           print("Canonical signal version verified")
           PY
+
+      - name: Validate generated data contract
+        run: python validate_data_contract.py
 
       - name: Build data quality report
         run: python diagnose_errors.py
