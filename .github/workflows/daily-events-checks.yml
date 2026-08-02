@@ -1,0 +1,67 @@
+name: Validate daily diff event foundation
+
+on:
+  pull_request:
+    paths:
+      - "build_daily_snapshot.py"
+      - "build_daily_events.py"
+      - "validate_daily_derived_contract.py"
+      - "tests/test_daily_snapshot.py"
+      - "tests/test_daily_events.py"
+      - "tests/test_daily_derived_contract.py"
+      - ".github/workflows/daily-events-checks.yml"
+      - ".github/workflows/update-data.yml"
+      - ".github/workflows/update-daily.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  events:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check syntax
+        run: |
+          python -m py_compile build_daily_snapshot.py build_daily_events.py validate_daily_derived_contract.py tests/test_daily_snapshot.py tests/test_daily_events.py tests/test_daily_derived_contract.py
+          git diff --check
+
+      - name: Run unit tests
+        run: |
+          python -m unittest discover -s tests -p 'test_daily_snapshot.py' -v
+          python -m unittest discover -s tests -p 'test_daily_events.py' -v
+          python -m unittest discover -s tests -p 'test_daily_derived_contract.py' -v
+
+      - name: Build derived data from current repository data
+        run: |
+          python build_daily_snapshot.py
+          python build_daily_events.py
+          python validate_daily_derived_contract.py
+
+      - name: Verify deterministic zero-cost event feed
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          snapshot = json.loads(Path('data/daily-snapshot.json').read_text(encoding='utf-8'))
+          events = json.loads(Path('data/daily-events.json').read_text(encoding='utf-8'))
+          if events.get('snapshot_date') != snapshot.get('snapshot_date'):
+              raise SystemExit('snapshot/event date mismatch')
+          if events.get('cost_policy') != 'paid_api_disabled':
+              raise SystemExit('paid API policy changed')
+          if events.get('summary', {}).get('event_count') != len(events.get('events') or []):
+              raise SystemExit('event count mismatch')
+          print(
+              f"Derived feed OK: date={events.get('snapshot_date')} "
+              f"comparison={events.get('comparison_state')} events={len(events.get('events') or [])}"
+          )
+          PY
