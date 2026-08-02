@@ -1,0 +1,99 @@
+name: Validate replay desktop and free mode v5
+
+on:
+  pull_request:
+    paths:
+      - "assets/replay-practice-desktop-free-v5.js"
+      - "assets/replay-practice-desktop-free-v5.css"
+      - "assets/replay-practice-coach-v4.js"
+      - "assets/replay-practice-coach-v4.css"
+      - "assets/pwa-register.js"
+      - "replay.html"
+      - "tests/replay-free-desktop.spec.js"
+      - ".github/workflows/replay-desktop-free-v5-checks.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Check JavaScript syntax
+        run: |
+          node --check assets/replay-practice-desktop-free-v5.js
+          node --check assets/pwa-register.js
+          node --check tests/replay-free-desktop.spec.js
+
+      - name: Validate free practice and desktop wiring
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          js = Path("assets/replay-practice-desktop-free-v5.js").read_text(encoding="utf-8")
+          css = Path("assets/replay-practice-desktop-free-v5.css").read_text(encoding="utf-8")
+          pwa = Path("assets/pwa-register.js").read_text(encoding="utf-8")
+
+          if css.count("{") != css.count("}"):
+              raise SystemExit("Replay v5 CSS braces are not balanced")
+
+          for marker in (
+              "freePracticeFlowV5",
+              'data-free-action="entry"',
+              'data-free-action="exit"',
+              'data-free-action="report"',
+              "partialQuantity",
+              "KabutanePracticeV5",
+              "自由練習コックピット",
+          ):
+              if marker not in js:
+                  raise SystemExit(f"Replay v5 JS marker missing: {marker}")
+
+          for marker in (
+              ".free-practice-flow-v5",
+              "@media(min-width:1000px)",
+              "margin-right:370px",
+              ".practice-quick-dock-active-v4.guided-replay-mode .practice-quick-dock-v4",
+              ".free-replay-mode .practice-quick-dock-v4",
+          ):
+              if marker not in css:
+                  raise SystemExit(f"Replay v5 CSS marker missing: {marker}")
+
+          script = '"assets/replay-practice-desktop-free-v5.js"'
+          if script not in pwa:
+              raise SystemExit("Replay v5 JavaScript is not loaded by PWA bootstrap")
+          if 'loadStyle("assets/replay-practice-desktop-free-v5.css")' not in pwa:
+              raise SystemExit("Replay v5 CSS is not loaded by PWA bootstrap")
+          if pwa.find("replay-practice-coach-v4.js") > pwa.find("replay-practice-desktop-free-v5.js"):
+              raise SystemExit("Replay v5 must load after practice coach v4")
+
+          print("Replay desktop/free v5 static validation passed")
+          PY
+
+      - name: Install Chromium test runner
+        run: |
+          npm install --no-save @playwright/test@1.55.0
+          npx playwright install --with-deps chromium
+
+      - name: Test desktop replay flows
+        run: |
+          python3 -m http.server 4173 >/tmp/kabutane-preview.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID' EXIT
+          npx playwright test tests/replay-free-desktop.spec.js --reporter=line
+
+      - name: Upload desktop screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: replay-desktop-v5-preview
+          path: test-results/*.png
+          if-no-files-found: ignore
