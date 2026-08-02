@@ -53,10 +53,12 @@
     const box = document.querySelector(".monthly-rsi-chart-box");
     const canvas = document.getElementById("monthlyRsiChart");
     if (!box || !canvas) return;
-    if (details && document.body.classList.contains("guided-replay-mode")) details.open = true;
-    box.classList.add("monthly-rsi-v4");
+    if (details && document.body.classList.contains("guided-replay-mode") && !details.open) details.open = true;
+    if (!box.classList.contains("monthly-rsi-v4")) box.classList.add("monthly-rsi-v4");
+
     const chart = stateRef()?.rsiChart;
-    if (!chart?.options) return;
+    if (!chart?.options || chart.$kabutaneRsiV4Configured) return;
+    chart.$kabutaneRsiV4Configured = true;
     chart.options.maintainAspectRatio = false;
     chart.options.layout = chart.options.layout || {};
     chart.options.layout.padding = { top: 4, right: 8, bottom: 12, left: 2 };
@@ -75,6 +77,14 @@
         chart.resize();
         chart.update("none");
       } catch (_) {}
+    });
+  }
+
+  function resizeMonthlyRsi() {
+    const chart = stateRef()?.rsiChart;
+    if (!chart) return;
+    requestAnimationFrame(() => {
+      try { chart.resize(); } catch (_) {}
     });
   }
 
@@ -264,18 +274,28 @@
     setTimeout(queueSync, 0);
   }
 
+  function needsScoreUi() {
+    const s = stateRef();
+    const guidedFinished = s?.guided?.step === "finished";
+    const summary = document.getElementById("finishSummary");
+    const summaryVisible = Boolean(summary && !summary.hidden);
+    const dialog = document.getElementById("replayShareDialog");
+    const shareOpen = Boolean(dialog?.open || dialog?.hasAttribute("open"));
+    return guidedFinished || summaryVisible || shareOpen;
+  }
+
   function syncAll() {
     syncQueued = false;
     fixMonthlyRsiLayout();
     updateQuickDock();
+    if (!needsScoreUi()) return;
     const result = currentScore();
-    if (result) {
-      const signature = scoreSignature(result);
-      if (signature !== lastScoreSignature || stateRef()?.guided?.step === "finished") {
-        ensureGuidedScoreBreakdown(result);
-        ensureShareScoreBreakdown(result);
-        lastScoreSignature = signature;
-      }
+    if (!result) return;
+    const signature = scoreSignature(result);
+    if (signature !== lastScoreSignature || stateRef()?.guided?.step === "finished") {
+      ensureGuidedScoreBreakdown(result);
+      ensureShareScoreBreakdown(result);
+      lastScoreSignature = signature;
     }
   }
 
@@ -315,14 +335,18 @@
     if (event.target.closest('[data-share-action="open"], [data-guided-action="share"]')) setTimeout(queueSync, 0);
   });
 
-  window.addEventListener("resize", queueSync);
-  window.addEventListener("orientationchange", () => setTimeout(queueSync, 100));
+  window.addEventListener("resize", () => {
+    resizeMonthlyRsi();
+    queueSync();
+  });
+  window.addEventListener("orientationchange", () => setTimeout(() => {
+    resizeMonthlyRsi();
+    queueSync();
+  }, 100));
   window.addEventListener("kabutane:practice-score", queueSync);
   document.addEventListener("kabutane:practice-score", queueSync);
 
   patchRenderAll();
   ensureQuickDock();
-  const target = document.getElementById("practiceArea") || document.body;
-  new MutationObserver(queueSync).observe(target, { childList: true, subtree: true, attributes: true, attributeFilter: ["hidden", "class", "open"] });
   setTimeout(queueSync, 0);
 })();
