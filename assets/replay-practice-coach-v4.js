@@ -55,37 +55,6 @@
     if (!box || !canvas) return;
     if (details && document.body.classList.contains("guided-replay-mode") && !details.open) details.open = true;
     if (!box.classList.contains("monthly-rsi-v4")) box.classList.add("monthly-rsi-v4");
-
-    const chart = stateRef()?.rsiChart;
-    if (!chart?.options || chart.$kabutaneRsiV4Configured) return;
-    chart.$kabutaneRsiV4Configured = true;
-    chart.options.maintainAspectRatio = false;
-    chart.options.layout = chart.options.layout || {};
-    chart.options.layout.padding = { top: 4, right: 8, bottom: 12, left: 2 };
-    if (chart.options.scales?.x?.ticks) {
-      chart.options.scales.x.ticks.maxTicksLimit = matchMedia("(max-width: 760px)").matches ? 4 : 7;
-      chart.options.scales.x.ticks.maxRotation = 0;
-      chart.options.scales.x.ticks.minRotation = 0;
-      chart.options.scales.x.ticks.padding = 6;
-    }
-    if (chart.options.scales?.y?.ticks) {
-      chart.options.scales.y.ticks.stepSize = 20;
-      chart.options.scales.y.ticks.padding = 6;
-    }
-    requestAnimationFrame(() => {
-      try {
-        chart.resize();
-        chart.update("none");
-      } catch (_) {}
-    });
-  }
-
-  function resizeMonthlyRsi() {
-    const chart = stateRef()?.rsiChart;
-    if (!chart) return;
-    requestAnimationFrame(() => {
-      try { chart.resize(); } catch (_) {}
-    });
   }
 
   function scoreSignature(result) {
@@ -335,14 +304,8 @@
     if (event.target.closest('[data-share-action="open"], [data-guided-action="share"]')) setTimeout(queueSync, 0);
   });
 
-  window.addEventListener("resize", () => {
-    resizeMonthlyRsi();
-    queueSync();
-  });
-  window.addEventListener("orientationchange", () => setTimeout(() => {
-    resizeMonthlyRsi();
-    queueSync();
-  }, 100));
+  window.addEventListener("resize", queueSync);
+  window.addEventListener("orientationchange", () => setTimeout(queueSync, 100));
   window.addEventListener("kabutane:practice-score", queueSync);
   document.addEventListener("kabutane:practice-score", queueSync);
 
