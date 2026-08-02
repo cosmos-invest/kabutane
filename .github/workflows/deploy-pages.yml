@@ -17,6 +17,7 @@ on:
       - "history/**"
       - "result.csv"
       - "out.csv"
+      - "validate_data_contract.py"
       - ".nojekyll"
       - ".github/workflows/deploy-pages.yml"
   workflow_dispatch:
@@ -46,6 +47,9 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: main
+
+      - name: Validate current data contract
+        run: python validate_data_contract.py
 
       - name: Prepare site
         run: |
