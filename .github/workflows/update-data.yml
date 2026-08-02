@@ -17,23 +17,23 @@ on:
       - "tradingview_signal.py"
       - "generate_tradingview.py"
       - "build_market_reports.py"
+      - "build_daily_snapshot.py"
       - "validate_data_contract.py"
       - "tests/test_logic.py"
       - "tests/test_tradingview_signal.py"
       - "tests/test_market_reports.py"
+      - "tests/test_daily_snapshot.py"
       - "tests/test_data_contract.py"
 
 permissions:
   contents: write
 
-# 月次・日次・銘柄マスター更新を直列化し、同じデータへの同時pushを防ぐ。
 concurrency:
   group: market-data-writes
   cancel-in-progress: false
 
 jobs:
   update:
-    # 銘柄マスター更新が失敗した場合は全データ生成へ進まない。
     if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 360
@@ -54,15 +54,13 @@ jobs:
 
       - name: Validate source
         run: |
-          python -m py_compile test.py tradingview_signal.py generate_tradingview.py build_market_reports.py validate_data_contract.py tests/test_logic.py tests/test_tradingview_signal.py tests/test_market_reports.py tests/test_data_contract.py
+          python -m py_compile test.py tradingview_signal.py generate_tradingview.py build_market_reports.py build_daily_snapshot.py validate_data_contract.py tests/test_logic.py tests/test_tradingview_signal.py tests/test_market_reports.py tests/test_daily_snapshot.py tests/test_data_contract.py
           git diff --check
 
       - name: Run unit tests
         shell: bash
         run: |
           set -euo pipefail
-          # Run each test module in a fresh Python process. This prevents test
-          # state from leaking between modules while still executing every test.
           for test_file in tests/test_*.py; do
             echo "::group::${test_file}"
             python -m unittest discover -s tests -p "$(basename "${test_file}")" -v
@@ -101,6 +99,9 @@ jobs:
 
       - name: Validate generated data contract
         run: python validate_data_contract.py
+
+      - name: Build compact daily snapshot
+        run: python build_daily_snapshot.py
 
       - name: Build data quality report
         run: python diagnose_errors.py

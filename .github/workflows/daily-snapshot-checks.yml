@@ -1,0 +1,57 @@
+name: Validate daily snapshot foundation
+
+on:
+  pull_request:
+    paths:
+      - "build_daily_snapshot.py"
+      - "tests/test_daily_snapshot.py"
+      - ".github/workflows/update-data.yml"
+      - ".github/workflows/update-daily.yml"
+      - ".github/workflows/daily-snapshot-checks.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check snapshot builder syntax
+        run: python -m py_compile build_daily_snapshot.py tests/test_daily_snapshot.py
+
+      - name: Test snapshot behavior
+        run: python -m unittest discover -s tests -p 'test_daily_snapshot.py' -v
+
+      - name: Build snapshot from current repository data
+        run: python build_daily_snapshot.py
+
+      - name: Verify snapshot is compact and zero-cost
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path('data/daily-snapshot.json')
+          payload = json.loads(path.read_text(encoding='utf-8'))
+          if payload.get('schema_version') != 'kabutane_daily_snapshot_v1':
+              raise SystemExit('Unexpected snapshot schema version')
+          if payload.get('cost_policy') != 'paid_api_disabled':
+              raise SystemExit('Snapshot must preserve zero-cost policy')
+          if not payload.get('records'):
+              raise SystemExit('Snapshot has no records')
+          latest_size = Path('data/latest.json').stat().st_size
+          snapshot_size = path.stat().st_size
+          if snapshot_size >= latest_size:
+              raise SystemExit(f'Snapshot is not compact: {snapshot_size} >= {latest_size}')
+          print(f'Snapshot size {snapshot_size:,} bytes vs latest {latest_size:,} bytes')
+          PY
