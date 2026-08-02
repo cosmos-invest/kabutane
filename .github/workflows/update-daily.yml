@@ -61,7 +61,7 @@ jobs:
 
       - name: Validate updater
         run: |
-          python -m py_compile update_daily.py provisional_signal.py build_market_reports.py build_daily_snapshot.py build_daily_events.py build_shikiho_room.py build_shikiho_room_v2.py validate_data_contract.py validate_daily_derived_contract.py tests/test_update_daily.py tests/test_provisional_signal.py tests/test_market_reports.py tests/test_daily_snapshot.py tests/test_daily_events.py tests/test_shikiho_room.py tests/test_shikiho_room_v2.py tests/test_data_contract.py tests/test_daily_derived_contract.py
+          python -m py_compile update_daily.py provisional_signal.py build_market_reports.py build_daily_snapshot.py build_daily_events.py build_shikiho_room.py build_shikiho_room_v2.py validate_data_contract.py validate_daily_derived_contract.py tests/test_update_daily.py tests/test_provisional_signal.py tests/test_market_reports.py tests/test_daily_snapshot.py tests/test_daily_events.py tests/test_shikiho_room.py tests/test_shikiho_room_v2.py tests/test_data_contract.py tests/test_daily_derived_contract.py tests/test_today_page.py
           python -m unittest discover -s tests -p 'test_update_daily.py' -v
           python -m unittest discover -s tests -p 'test_provisional_signal.py' -v
           python -m unittest discover -s tests -p 'test_market_reports.py' -v
@@ -71,6 +71,8 @@ jobs:
           python -m unittest discover -s tests -p 'test_shikiho_room_v2.py' -v
           python -m unittest discover -s tests -p 'test_data_contract.py' -v
           python -m unittest discover -s tests -p 'test_daily_derived_contract.py' -v
+          python -m unittest discover -s tests -p 'test_today_page.py' -v
+          node --check assets/today-kabutane.js
 
       - name: Download incremental daily prices
         env:
@@ -109,12 +111,15 @@ jobs:
           mkdir -p _site
           cp \
             index.html detail.html backtest.html replay.html replay-select.html howto.html learn.html signal-method.html \
-            ranking.html monthly-report.html monthly-strategy.html history.html shikiho-summer-2026.html \
+            ranking.html monthly-report.html monthly-strategy.html history.html shikiho-summer-2026.html today.html \
             manifest.webmanifest sw.js .nojekyll result.csv out.csv \
             _site/
           cp -R assets data history ranking monthly-report _site/
           test -f _site/replay-select.html
+          test -f _site/today.html
           test -f _site/assets/replay-stock-select.js
+          test -f _site/assets/today-kabutane.css
+          test -f _site/assets/today-kabutane.js
           test -f _site/data/latest.json
           test -f _site/data/daily-update-status.json
           test -f _site/data/ranking.json
