@@ -2,8 +2,8 @@
   "code": "3148",
   "ticker": "3148.T",
   "name": "クリエイトＳＤホールディングス",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
     "current_price": 3330.0,
     "change_from_signal_month_pct": 0.0,
@@ -22,7 +22,35 @@
       "sma200": 3280.88,
       "rsi14": 51.81,
       "rsi5": 50.46
+    },
+    {
+      "date": "2026-08-03",
+      "open": 3325.0,
+      "high": 3330.0,
+      "low": 3275.0,
+      "close": 3330.0,
+      "volume": 120500.0,
+      "sma25": 3336.0,
+      "sma75": 3274.67,
+      "sma200": 3281.43,
+      "rsi14": 51.81,
+      "rsi5": 50.46
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 51.97,
+    "monthly_rsi_ma5": 50.0,
+    "spread": 1.96,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

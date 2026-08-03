@@ -2,12 +2,12 @@
   "code": "5026",
   "ticker": "5026.T",
   "name": "トリプルアイズ",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 562.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 548.0,
+    "change_from_signal_month_pct": -2.49,
+    "return_since_gc_pct": -2.49
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 680.48,
       "rsi14": 36.74,
       "rsi5": 35.05
+    },
+    {
+      "date": "2026-08-03",
+      "open": 562.0,
+      "high": 562.0,
+      "low": 538.0,
+      "close": 548.0,
+      "volume": 24400.0,
+      "sma25": 585.6,
+      "sma75": 593.24,
+      "sma200": 678.43,
+      "rsi14": 36.74,
+      "rsi5": 35.05
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 38.88,
+    "monthly_rsi_ma5": 39.36,
+    "spread": -0.47,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

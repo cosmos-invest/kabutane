@@ -2,12 +2,12 @@
   "code": "8399",
   "ticker": "8399.T",
   "name": "琉球銀行",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 2943.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 2936.0,
+    "change_from_signal_month_pct": -0.24,
+    "return_since_gc_pct": -0.24
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 2208.76,
       "rsi14": 79.79,
       "rsi5": 79.63
+    },
+    {
+      "date": "2026-08-03",
+      "open": 2943.0,
+      "high": 2979.0,
+      "low": 2809.0,
+      "close": 2936.0,
+      "volume": 174800.0,
+      "sma25": 2808.2,
+      "sma75": 2614.48,
+      "sma200": 2216.22,
+      "rsi14": 79.79,
+      "rsi5": 79.63
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 83.02,
+    "monthly_rsi_ma5": 80.75,
+    "spread": 2.27,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

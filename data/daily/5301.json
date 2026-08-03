@@ -2,8 +2,8 @@
   "code": "5301",
   "ticker": "5301.T",
   "name": "東海カーボン",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
     "current_price": 1537.5,
     "change_from_signal_month_pct": 0.0,
@@ -22,7 +22,35 @@
       "sma200": 1218.7,
       "rsi14": 61.64,
       "rsi5": 72.55
+    },
+    {
+      "date": "2026-08-03",
+      "open": 1538.0,
+      "high": 1561.5,
+      "low": 1510.0,
+      "close": 1537.5,
+      "volume": 1803700.0,
+      "sma25": 1648.44,
+      "sma75": 1554.98,
+      "sma200": 1221.14,
+      "rsi14": 61.64,
+      "rsi5": 72.55
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 62.95,
+    "monthly_rsi_ma5": 65.25,
+    "spread": -2.3,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

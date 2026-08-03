@@ -2,12 +2,12 @@
   "code": "2317",
   "ticker": "2317.T",
   "name": "システナ",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 420.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 424.0,
+    "change_from_signal_month_pct": 0.95,
+    "return_since_gc_pct": 0.95
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 457.89,
       "rsi14": 50.42,
       "rsi5": 46.53
+    },
+    {
+      "date": "2026-08-03",
+      "open": 423.0,
+      "high": 427.0,
+      "low": 418.0,
+      "close": 424.0,
+      "volume": 1540800.0,
+      "sma25": 421.56,
+      "sma75": 418.72,
+      "sma200": 457.43,
+      "rsi14": 50.42,
+      "rsi5": 46.53
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 53.55,
+    "monthly_rsi_ma5": 52.37,
+    "spread": 1.18,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "7164",
   "ticker": "7164.T",
   "name": "全国保証",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 3130.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 3066.0,
+    "change_from_signal_month_pct": -2.04,
+    "return_since_gc_pct": -2.04
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 3108.7,
       "rsi14": 55.28,
       "rsi5": 51.83
+    },
+    {
+      "date": "2026-08-03",
+      "open": 3105.0,
+      "high": 3113.0,
+      "low": 3031.0,
+      "close": 3066.0,
+      "volume": 463700.0,
+      "sma25": 3098.64,
+      "sma75": 3036.36,
+      "sma200": 3107.76,
+      "rsi14": 55.28,
+      "rsi5": 51.83
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 53.49,
+    "monthly_rsi_ma5": 54.51,
+    "spread": -1.02,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

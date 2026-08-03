@@ -2,12 +2,12 @@
   "code": "3861",
   "ticker": "3861.T",
   "name": "王子ホールディングス",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 879.8,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 876.3,
+    "change_from_signal_month_pct": -0.4,
+    "return_since_gc_pct": -0.4
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 846.65,
       "rsi14": 62.23,
       "rsi5": 55.43
+    },
+    {
+      "date": "2026-08-03",
+      "open": 877.9,
+      "high": 877.9,
+      "low": 851.0,
+      "close": 876.3,
+      "volume": 4591200.0,
+      "sma25": 841.98,
+      "sma75": 818.21,
+      "sma200": 847.04,
+      "rsi14": 62.23,
+      "rsi5": 55.43
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 61.93,
+    "monthly_rsi_ma5": 58.78,
+    "spread": 3.15,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

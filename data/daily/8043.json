@@ -2,12 +2,12 @@
   "code": "8043",
   "ticker": "8043.T",
   "name": "スターゼン",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 1347.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 1330.0,
+    "change_from_signal_month_pct": -1.26,
+    "return_since_gc_pct": -1.26
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 1235.77,
       "rsi14": 59.97,
       "rsi5": 56.37
+    },
+    {
+      "date": "2026-08-03",
+      "open": 1350.0,
+      "high": 1350.0,
+      "low": 1320.0,
+      "close": 1330.0,
+      "volume": 191400.0,
+      "sma25": 1290.36,
+      "sma75": 1202.11,
+      "sma200": 1236.5,
+      "rsi14": 59.97,
+      "rsi5": 56.37
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 63.15,
+    "monthly_rsi_ma5": 58.86,
+    "spread": 4.29,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

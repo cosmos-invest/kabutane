@@ -2,12 +2,12 @@
   "code": "5971",
   "ticker": "5971.T",
   "name": "共和工業所",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 8290.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 1.1
+    "current_price": 8010.0,
+    "change_from_signal_month_pct": -3.38,
+    "return_since_gc_pct": -2.32
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 7395.5,
       "rsi14": 67.03,
       "rsi5": 67.72
+    },
+    {
+      "date": "2026-08-03",
+      "open": 8290.0,
+      "high": 8290.0,
+      "low": 7900.0,
+      "close": 8010.0,
+      "volume": 1100.0,
+      "sma25": 8136.0,
+      "sma75": 7625.33,
+      "sma200": 7400.05,
+      "rsi14": 67.03,
+      "rsi5": 67.72
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 65.6,
+    "monthly_rsi_ma5": 66.59,
+    "spread": -0.99,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

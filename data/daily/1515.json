@@ -2,12 +2,12 @@
   "code": "1515",
   "ticker": "1515.T",
   "name": "日鉄鉱業",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 3025.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 3130.0,
+    "change_from_signal_month_pct": 3.47,
+    "return_since_gc_pct": 3.47
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 2549.88,
       "rsi14": 63.49,
       "rsi5": 55.79
+    },
+    {
+      "date": "2026-08-03",
+      "open": 2985.0,
+      "high": 3145.0,
+      "low": 2936.0,
+      "close": 3130.0,
+      "volume": 641800.0,
+      "sma25": 2622.4,
+      "sma75": 2523.44,
+      "sma200": 2556.36,
+      "rsi14": 63.49,
+      "rsi5": 55.79
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 63.45,
+    "monthly_rsi_ma5": 59.03,
+    "spread": 4.42,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

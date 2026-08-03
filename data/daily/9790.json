@@ -2,12 +2,12 @@
   "code": "9790",
   "ticker": "9790.T",
   "name": "福井コンピュータホールディングス",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 3225.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 3090.0,
+    "change_from_signal_month_pct": -4.19,
+    "return_since_gc_pct": -4.19
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 3183.45,
       "rsi14": 53.5,
       "rsi5": 50.06
+    },
+    {
+      "date": "2026-08-03",
+      "open": 3220.0,
+      "high": 3225.0,
+      "low": 3085.0,
+      "close": 3090.0,
+      "volume": 52600.0,
+      "sma25": 3150.0,
+      "sma75": 3174.87,
+      "sma200": 3182.15,
+      "rsi14": 53.5,
+      "rsi5": 50.06
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 50.79,
+    "monthly_rsi_ma5": 52.77,
+    "spread": -1.98,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

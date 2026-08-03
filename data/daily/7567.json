@@ -2,12 +2,12 @@
   "code": "7567",
   "ticker": "7567.T",
   "name": "栄電子",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 541.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 537.0,
+    "change_from_signal_month_pct": -0.74,
+    "return_since_gc_pct": -0.74
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 504.62,
       "rsi14": 57.16,
       "rsi5": 55.25
+    },
+    {
+      "date": "2026-08-03",
+      "open": 537.0,
+      "high": 545.0,
+      "low": 531.0,
+      "close": 537.0,
+      "volume": 10000.0,
+      "sma25": 528.84,
+      "sma75": 529.41,
+      "sma200": 504.92,
+      "rsi14": 57.16,
+      "rsi5": 55.25
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 56.91,
+    "monthly_rsi_ma5": 58.41,
+    "spread": -1.51,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

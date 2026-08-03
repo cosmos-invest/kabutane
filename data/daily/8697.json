@@ -2,12 +2,12 @@
   "code": "8697",
   "ticker": "8697.T",
   "name": "日本取引所グループ",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 2192.5,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 12.38
+    "current_price": 2173.5,
+    "change_from_signal_month_pct": -0.87,
+    "return_since_gc_pct": 11.4
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 1882.81,
       "rsi14": 60.39,
       "rsi5": 61.73
+    },
+    {
+      "date": "2026-08-03",
+      "open": 2162.0,
+      "high": 2173.5,
+      "low": 2115.0,
+      "close": 2173.5,
+      "volume": 4095100.0,
+      "sma25": 2184.6,
+      "sma75": 2036.24,
+      "sma200": 1884.96,
+      "rsi14": 60.39,
+      "rsi5": 61.73
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 65.61,
+    "monthly_rsi_ma5": 62.83,
+    "spread": 2.78,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "9627",
   "ticker": "9627.T",
   "name": "アインホールディングス",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 5883.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 5797.0,
+    "change_from_signal_month_pct": -1.46,
+    "return_since_gc_pct": -1.46
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 6145.06,
       "rsi14": 48.59,
       "rsi5": 46.98
+    },
+    {
+      "date": "2026-08-03",
+      "open": 5851.0,
+      "high": 5872.0,
+      "low": 5732.0,
+      "close": 5797.0,
+      "volume": 229300.0,
+      "sma25": 5757.88,
+      "sma75": 5709.49,
+      "sma200": 6140.19,
+      "rsi14": 48.59,
+      "rsi5": 46.98
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 51.35,
+    "monthly_rsi_ma5": 49.9,
+    "spread": 1.45,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

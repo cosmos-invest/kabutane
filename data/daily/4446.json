@@ -2,12 +2,12 @@
   "code": "4446",
   "ticker": "4446.T",
   "name": "Ｌｉｎｋ－Ｕグループ",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 823.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 804.0,
+    "change_from_signal_month_pct": -2.31,
+    "return_since_gc_pct": -2.31
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 927.54,
       "rsi14": 53.65,
       "rsi5": 53.38
+    },
+    {
+      "date": "2026-08-03",
+      "open": 810.0,
+      "high": 828.0,
+      "low": 790.0,
+      "close": 804.0,
+      "volume": 83400.0,
+      "sma25": 828.56,
+      "sma75": 725.03,
+      "sma200": 927.91,
+      "rsi14": 53.65,
+      "rsi5": 53.38
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 50.84,
+    "monthly_rsi_ma5": 49.62,
+    "spread": 1.22,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "7327",
   "ticker": "7327.T",
   "name": "第四北越フィナンシャルグループ",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 2308.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 8.36
+    "current_price": 2309.0,
+    "change_from_signal_month_pct": 0.04,
+    "return_since_gc_pct": 8.4
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 1876.07,
       "rsi14": 81.49,
       "rsi5": 81.73
+    },
+    {
+      "date": "2026-08-03",
+      "open": 2313.0,
+      "high": 2341.0,
+      "low": 2230.0,
+      "close": 2309.0,
+      "volume": 1636100.0,
+      "sma25": 2268.64,
+      "sma75": 2109.93,
+      "sma200": 1880.53,
+      "rsi14": 81.49,
+      "rsi5": 81.73
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 84.57,
+    "monthly_rsi_ma5": 82.25,
+    "spread": 2.32,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "1780",
   "ticker": "1780.T",
   "name": "ヤマウラ",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 1498.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 1456.0,
+    "change_from_signal_month_pct": -2.8,
+    "return_since_gc_pct": -2.8
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 1485.6,
       "rsi14": 58.79,
       "rsi5": 52.93
+    },
+    {
+      "date": "2026-08-03",
+      "open": 1490.0,
+      "high": 1490.0,
+      "low": 1455.0,
+      "close": 1456.0,
+      "volume": 40500.0,
+      "sma25": 1489.96,
+      "sma75": 1438.99,
+      "sma200": 1485.68,
+      "rsi14": 58.79,
+      "rsi5": 52.93
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 55.18,
+    "monthly_rsi_ma5": 54.77,
+    "spread": 0.4,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "6810",
   "ticker": "6810.T",
   "name": "マクセル",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 2070.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": -2.82
+    "current_price": 2570.0,
+    "change_from_signal_month_pct": 24.15,
+    "return_since_gc_pct": 20.66
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 2166.91,
       "rsi14": 55.45,
       "rsi5": 56.37
+    },
+    {
+      "date": "2026-08-03",
+      "open": 2296.0,
+      "high": 2570.0,
+      "low": 2296.0,
+      "close": 2570.0,
+      "volume": 1255500.0,
+      "sma25": 2118.2,
+      "sma75": 2075.87,
+      "sma200": 2168.96,
+      "rsi14": 55.45,
+      "rsi5": 56.37
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 66.63,
+    "monthly_rsi_ma5": 55.38,
+    "spread": 11.24,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

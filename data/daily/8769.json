@@ -2,12 +2,12 @@
   "code": "8769",
   "ticker": "8769.T",
   "name": "アドバンテッジリスクマネジメント",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 526.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 7.13
+    "current_price": 499.0,
+    "change_from_signal_month_pct": -5.13,
+    "return_since_gc_pct": 1.63
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 551.86,
       "rsi14": 43.42,
       "rsi5": 43.91
+    },
+    {
+      "date": "2026-08-03",
+      "open": 525.0,
+      "high": 525.0,
+      "low": 498.0,
+      "close": 499.0,
+      "volume": 30300.0,
+      "sma25": 507.8,
+      "sma75": 493.29,
+      "sma200": 551.49,
+      "rsi14": 43.42,
+      "rsi5": 43.91
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 43.84,
+    "monthly_rsi_ma5": 43.33,
+    "spread": 0.52,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

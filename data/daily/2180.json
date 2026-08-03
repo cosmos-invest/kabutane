@@ -2,8 +2,8 @@
   "code": "2180",
   "ticker": "2180.T",
   "name": "サニーサイドアップグループ",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
     "current_price": 1307.0,
     "change_from_signal_month_pct": 0.0,
@@ -22,7 +22,35 @@
       "sma200": 1002.55,
       "rsi14": 70.58,
       "rsi5": 75.56
+    },
+    {
+      "date": "2026-08-03",
+      "open": 1307.0,
+      "high": 1309.0,
+      "low": 1307.0,
+      "close": 1307.0,
+      "volume": 4400.0,
+      "sma25": 1306.76,
+      "sma75": 1228.12,
+      "sma200": 1005.28,
+      "rsi14": 70.58,
+      "rsi5": 75.56
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 74.81,
+    "monthly_rsi_ma5": 73.21,
+    "spread": 1.6,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

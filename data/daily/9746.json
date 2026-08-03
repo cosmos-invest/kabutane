@@ -2,12 +2,12 @@
   "code": "9746",
   "ticker": "9746.T",
   "name": "ＴＫＣ",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 3865.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 3855.0,
+    "change_from_signal_month_pct": -0.26,
+    "return_since_gc_pct": -0.26
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 3857.93,
       "rsi14": 42.58,
       "rsi5": 37.91
+    },
+    {
+      "date": "2026-08-03",
+      "open": 3865.0,
+      "high": 3880.0,
+      "low": 3785.0,
+      "close": 3855.0,
+      "volume": 142000.0,
+      "sma25": 3638.2,
+      "sma75": 3544.93,
+      "sma200": 3856.28,
+      "rsi14": 42.58,
+      "rsi5": 37.91
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 49.47,
+    "monthly_rsi_ma5": 42.88,
+    "spread": 6.59,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

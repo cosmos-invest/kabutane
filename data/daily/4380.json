@@ -2,12 +2,12 @@
   "code": "4380",
   "ticker": "4380.T",
   "name": "Ｍマート",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 601.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 610.0,
+    "change_from_signal_month_pct": 1.5,
+    "return_since_gc_pct": 1.5
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 612.99,
       "rsi14": 46.32,
       "rsi5": 42.26
+    },
+    {
+      "date": "2026-08-03",
+      "open": 610.0,
+      "high": 615.0,
+      "low": 603.0,
+      "close": 610.0,
+      "volume": 2500.0,
+      "sma25": 590.2,
+      "sma75": 578.93,
+      "sma200": 612.49,
+      "rsi14": 46.32,
+      "rsi5": 42.26
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 47.24,
+    "monthly_rsi_ma5": 42.88,
+    "spread": 4.36,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

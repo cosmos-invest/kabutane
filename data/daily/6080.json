@@ -2,12 +2,12 @@
   "code": "6080",
   "ticker": "6080.T",
   "name": "Ｍ＆Ａキャピタルパートナーズ",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 3885.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 12.94
+    "current_price": 4020.0,
+    "change_from_signal_month_pct": 3.47,
+    "return_since_gc_pct": 16.86
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 3365.57,
       "rsi14": 54.67,
       "rsi5": 54.96
+    },
+    {
+      "date": "2026-08-03",
+      "open": 3880.0,
+      "high": 4070.0,
+      "low": 3840.0,
+      "close": 4020.0,
+      "volume": 298400.0,
+      "sma25": 3671.2,
+      "sma75": 3494.2,
+      "sma200": 3369.45,
+      "rsi14": 54.67,
+      "rsi5": 54.96
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 63.14,
+    "monthly_rsi_ma5": 57.84,
+    "spread": 5.3,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

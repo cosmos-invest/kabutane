@@ -2,12 +2,12 @@
   "code": "5989",
   "ticker": "5989.T",
   "name": "エイチワン",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 1545.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 1523.0,
+    "change_from_signal_month_pct": -1.42,
+    "return_since_gc_pct": -1.42
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 1412.97,
       "rsi14": 60.65,
       "rsi5": 59.01
+    },
+    {
+      "date": "2026-08-03",
+      "open": 1535.0,
+      "high": 1535.0,
+      "low": 1500.0,
+      "close": 1523.0,
+      "volume": 151300.0,
+      "sma25": 1563.44,
+      "sma75": 1505.57,
+      "sma200": 1413.27,
+      "rsi14": 60.65,
+      "rsi5": 59.01
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 58.21,
+    "monthly_rsi_ma5": 59.68,
+    "spread": -1.46,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "3968",
   "ticker": "3968.T",
   "name": "セグエグループ",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 593.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 6.65
+    "current_price": 583.0,
+    "change_from_signal_month_pct": -1.69,
+    "return_since_gc_pct": 4.86
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 594.08,
       "rsi14": 49.62,
       "rsi5": 51.56
+    },
+    {
+      "date": "2026-08-03",
+      "open": 593.0,
+      "high": 593.0,
+      "low": 578.0,
+      "close": 583.0,
+      "volume": 207900.0,
+      "sma25": 590.08,
+      "sma75": 564.95,
+      "sma200": 593.84,
+      "rsi14": 49.62,
+      "rsi5": 51.56
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 53.37,
+    "monthly_rsi_ma5": 52.25,
+    "spread": 1.12,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

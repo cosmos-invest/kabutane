@@ -2,12 +2,12 @@
   "code": "6545",
   "ticker": "6545.T",
   "name": "インターネットインフィニティー",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 871.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 16.29
+    "current_price": 832.0,
+    "change_from_signal_month_pct": -4.48,
+    "return_since_gc_pct": 11.08
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 704.59,
       "rsi14": 64.63,
       "rsi5": 64.66
+    },
+    {
+      "date": "2026-08-03",
+      "open": 899.0,
+      "high": 899.0,
+      "low": 832.0,
+      "close": 832.0,
+      "volume": 13500.0,
+      "sma25": 794.4,
+      "sma75": 743.99,
+      "sma200": 705.58,
+      "rsi14": 64.63,
+      "rsi5": 64.66
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 66.5,
+    "monthly_rsi_ma5": 64.77,
+    "spread": 1.73,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

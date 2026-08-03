@@ -2,12 +2,12 @@
   "code": "8388",
   "ticker": "8388.T",
   "name": "阿波銀行",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 8340.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 31.55
+    "current_price": 8350.0,
+    "change_from_signal_month_pct": 0.12,
+    "return_since_gc_pct": 31.7
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 5618.85,
       "rsi14": 85.72,
       "rsi5": 87.66
+    },
+    {
+      "date": "2026-08-03",
+      "open": 8490.0,
+      "high": 8590.0,
+      "low": 8060.0,
+      "close": 8350.0,
+      "volume": 134100.0,
+      "sma25": 7907.2,
+      "sma75": 7073.2,
+      "sma200": 5642.43,
+      "rsi14": 85.72,
+      "rsi5": 87.66
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 90.77,
+    "monthly_rsi_ma5": 88.33,
+    "spread": 2.45,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "3352",
   "ticker": "3352.T",
   "name": "バッファロー",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 1770.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 1785.0,
+    "change_from_signal_month_pct": 0.85,
+    "return_since_gc_pct": 0.85
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 1635.99,
       "rsi14": 66.01,
       "rsi5": 58.15
+    },
+    {
+      "date": "2026-08-03",
+      "open": 1810.0,
+      "high": 1823.0,
+      "low": 1780.0,
+      "close": 1785.0,
+      "volume": 3900.0,
+      "sma25": 1683.64,
+      "sma75": 1680.47,
+      "sma200": 1637.52,
+      "rsi14": 66.01,
+      "rsi5": 58.15
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 65.22,
+    "monthly_rsi_ma5": 62.18,
+    "spread": 3.03,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

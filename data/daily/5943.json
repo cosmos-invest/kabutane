@@ -2,12 +2,12 @@
   "code": "5943",
   "ticker": "5943.T",
   "name": "ノーリツ",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 2375.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 2356.0,
+    "change_from_signal_month_pct": -0.8,
+    "return_since_gc_pct": -0.8
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 2200.15,
       "rsi14": 68.75,
       "rsi5": 65.11
+    },
+    {
+      "date": "2026-08-03",
+      "open": 2384.0,
+      "high": 2384.0,
+      "low": 2339.0,
+      "close": 2356.0,
+      "volume": 109300.0,
+      "sma25": 2338.44,
+      "sma75": 2330.71,
+      "sma200": 2201.81,
+      "rsi14": 68.75,
+      "rsi5": 65.11
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 66.38,
+    "monthly_rsi_ma5": 66.37,
+    "spread": 0.02,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "6088",
   "ticker": "6088.T",
   "name": "シグマクシス・ホールディングス",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 597.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 580.0,
+    "change_from_signal_month_pct": -2.85,
+    "return_since_gc_pct": -2.85
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 699.17,
       "rsi14": 36.64,
       "rsi5": 33.19
+    },
+    {
+      "date": "2026-08-03",
+      "open": 598.0,
+      "high": 598.0,
+      "low": 578.0,
+      "close": 580.0,
+      "volume": 583100.0,
+      "sma25": 574.88,
+      "sma75": 578.71,
+      "sma200": 697.54,
+      "rsi14": 36.64,
+      "rsi5": 33.19
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 37.85,
+    "monthly_rsi_ma5": 36.74,
+    "spread": 1.11,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

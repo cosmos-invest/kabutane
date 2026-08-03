@@ -2,8 +2,8 @@
   "code": "7624",
   "ticker": "7624.T",
   "name": "ＮａＩＴＯ",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
     "current_price": 139.0,
     "change_from_signal_month_pct": 0.0,
@@ -22,7 +22,35 @@
       "sma200": 137.99,
       "rsi14": 49.56,
       "rsi5": 55.13
+    },
+    {
+      "date": "2026-08-03",
+      "open": 139.0,
+      "high": 139.0,
+      "low": 138.0,
+      "close": 139.0,
+      "volume": 9600.0,
+      "sma25": 141.4,
+      "sma75": 136.44,
+      "sma200": 137.98,
+      "rsi14": 49.56,
+      "rsi5": 55.13
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 51.26,
+    "monthly_rsi_ma5": 50.35,
+    "spread": 0.92,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

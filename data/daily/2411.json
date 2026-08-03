@@ -2,8 +2,8 @@
   "code": "2411",
   "ticker": "2411.T",
   "name": "ゲンダイエージェンシー",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
     "current_price": 462.0,
     "change_from_signal_month_pct": 0.0,
@@ -22,7 +22,35 @@
       "sma200": 465.09,
       "rsi14": 62.86,
       "rsi5": 58.52
+    },
+    {
+      "date": "2026-08-03",
+      "open": 464.0,
+      "high": 467.0,
+      "low": 461.0,
+      "close": 462.0,
+      "volume": 9800.0,
+      "sma25": 463.0,
+      "sma75": 458.59,
+      "sma200": 465.33,
+      "rsi14": 62.86,
+      "rsi5": 58.52
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 60.01,
+    "monthly_rsi_ma5": 59.64,
+    "spread": 0.37,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

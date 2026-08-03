@@ -2,12 +2,12 @@
   "code": "6103",
   "ticker": "6103.T",
   "name": "オークマ",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 4945.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 6.92
+    "current_price": 4890.0,
+    "change_from_signal_month_pct": -1.11,
+    "return_since_gc_pct": 5.73
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 4074.05,
       "rsi14": 57.96,
       "rsi5": 59.28
+    },
+    {
+      "date": "2026-08-03",
+      "open": 4875.0,
+      "high": 4935.0,
+      "low": 4715.0,
+      "close": 4890.0,
+      "volume": 629100.0,
+      "sma25": 4868.0,
+      "sma75": 4522.33,
+      "sma200": 4081.1,
+      "rsi14": 57.96,
+      "rsi5": 59.28
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 60.37,
+    "monthly_rsi_ma5": 58.4,
+    "spread": 1.97,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

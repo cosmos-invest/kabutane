@@ -2,12 +2,12 @@
   "code": "8386",
   "ticker": "8386.T",
   "name": "百十四銀行",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 2846.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 2792.0,
+    "change_from_signal_month_pct": -1.9,
+    "return_since_gc_pct": -1.9
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 2093.17,
       "rsi14": 80.23,
       "rsi5": 79.64
+    },
+    {
+      "date": "2026-08-03",
+      "open": 2850.0,
+      "high": 2879.0,
+      "low": 2697.0,
+      "close": 2792.0,
+      "volume": 430400.0,
+      "sma25": 2736.48,
+      "sma75": 2544.0,
+      "sma200": 2100.87,
+      "rsi14": 80.23,
+      "rsi5": 79.64
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 80.21,
+    "monthly_rsi_ma5": 79.75,
+    "spread": 0.45,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

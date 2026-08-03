@@ -2,8 +2,8 @@
   "code": "8354",
   "ticker": "8354.T",
   "name": "ふくおかフィナンシャルグループ",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
     "current_price": 7360.0,
     "change_from_signal_month_pct": 0.0,
@@ -22,7 +22,35 @@
       "sma200": 5964.98,
       "rsi14": 71.83,
       "rsi5": 72.02
+    },
+    {
+      "date": "2026-08-03",
+      "open": 7401.0,
+      "high": 7477.0,
+      "low": 7093.0,
+      "close": 7360.0,
+      "volume": 787700.0,
+      "sma25": 7354.2,
+      "sma75": 6865.61,
+      "sma200": 5980.25,
+      "rsi14": 71.83,
+      "rsi5": 72.02
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 74.61,
+    "monthly_rsi_ma5": 71.99,
+    "spread": 2.62,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

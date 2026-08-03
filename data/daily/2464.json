@@ -2,8 +2,8 @@
   "code": "2464",
   "ticker": "2464.T",
   "name": "Ａｏｂａ‐ＢＢＴ",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
     "current_price": 329.0,
     "change_from_signal_month_pct": 0.0,
@@ -22,7 +22,35 @@
       "sma200": 337.06,
       "rsi14": 42.19,
       "rsi5": 35.65
+    },
+    {
+      "date": "2026-08-03",
+      "open": 330.0,
+      "high": 332.0,
+      "low": 329.0,
+      "close": 329.0,
+      "volume": 4400.0,
+      "sma25": 323.84,
+      "sma75": 326.89,
+      "sma200": 336.95,
+      "rsi14": 42.19,
+      "rsi5": 35.65
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 38.46,
+    "monthly_rsi_ma5": 35.55,
+    "spread": 2.91,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

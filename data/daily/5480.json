@@ -2,12 +2,12 @@
   "code": "5480",
   "ticker": "5480.T",
   "name": "日本冶金工業",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 5040.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 4920.0,
+    "change_from_signal_month_pct": -2.38,
+    "return_since_gc_pct": -2.38
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 4629.85,
       "rsi14": 57.49,
       "rsi5": 55.42
+    },
+    {
+      "date": "2026-08-03",
+      "open": 4980.0,
+      "high": 4980.0,
+      "low": 4820.0,
+      "close": 4920.0,
+      "volume": 78700.0,
+      "sma25": 4952.4,
+      "sma75": 4688.67,
+      "sma200": 4632.93,
+      "rsi14": 57.49,
+      "rsi5": 55.42
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 57.56,
+    "monthly_rsi_ma5": 55.54,
+    "spread": 2.02,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "9539",
   "ticker": "9539.T",
   "name": "京葉瓦斯",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 1458.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 7.21
+    "current_price": 1447.0,
+    "change_from_signal_month_pct": -0.75,
+    "return_since_gc_pct": 6.4
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 1289.41,
       "rsi14": 68.2,
       "rsi5": 72.97
+    },
+    {
+      "date": "2026-08-03",
+      "open": 1454.0,
+      "high": 1454.0,
+      "low": 1423.0,
+      "close": 1447.0,
+      "volume": 1000.0,
+      "sma25": 1472.24,
+      "sma75": 1397.87,
+      "sma200": 1290.62,
+      "rsi14": 68.2,
+      "rsi5": 72.97
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 67.31,
+    "monthly_rsi_ma5": 68.4,
+    "spread": -1.09,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "9845",
   "ticker": "9845.T",
   "name": "パーカーコーポレーション",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 1567.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 1624.0,
+    "change_from_signal_month_pct": 3.64,
+    "return_since_gc_pct": 3.64
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 1442.73,
       "rsi14": 64.68,
       "rsi5": 59.79
+    },
+    {
+      "date": "2026-08-03",
+      "open": 1599.0,
+      "high": 1645.0,
+      "low": 1566.0,
+      "close": 1624.0,
+      "volume": 29000.0,
+      "sma25": 1486.68,
+      "sma75": 1408.87,
+      "sma200": 1445.18,
+      "rsi14": 64.68,
+      "rsi5": 59.79
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 67.11,
+    "monthly_rsi_ma5": 62.82,
+    "spread": 4.29,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

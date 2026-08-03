@@ -2,12 +2,12 @@
   "code": "4502",
   "ticker": "4502.T",
   "name": "武田薬品工業",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 5513.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 5408.0,
+    "change_from_signal_month_pct": -1.9,
+    "return_since_gc_pct": -1.9
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 5098.83,
       "rsi14": 65.19,
       "rsi5": 59.19
+    },
+    {
+      "date": "2026-08-03",
+      "open": 5400.0,
+      "high": 5435.0,
+      "low": 5293.0,
+      "close": 5408.0,
+      "volume": 4750600.0,
+      "sma25": 5452.16,
+      "sma75": 5263.01,
+      "sma200": 5104.05,
+      "rsi14": 65.19,
+      "rsi5": 59.19
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 61.1,
+    "monthly_rsi_ma5": 60.36,
+    "spread": 0.75,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

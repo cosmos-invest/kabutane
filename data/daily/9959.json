@@ -2,12 +2,12 @@
   "code": "9959",
   "ticker": "9959.T",
   "name": "アシードホールディングス",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 1006.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 1030.0,
+    "change_from_signal_month_pct": 2.39,
+    "return_since_gc_pct": 2.39
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 860.18,
       "rsi14": 69.79,
       "rsi5": 63.47
+    },
+    {
+      "date": "2026-08-03",
+      "open": 1006.0,
+      "high": 1030.0,
+      "low": 1006.0,
+      "close": 1030.0,
+      "volume": 700.0,
+      "sma25": 956.44,
+      "sma75": 903.99,
+      "sma200": 861.86,
+      "rsi14": 69.79,
+      "rsi5": 63.47
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 70.67,
+    "monthly_rsi_ma5": 65.63,
+    "spread": 5.04,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

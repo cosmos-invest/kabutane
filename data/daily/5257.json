@@ -2,12 +2,12 @@
   "code": "5257",
   "ticker": "5257.T",
   "name": "ノバシステム",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 2649.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 3.48
+    "current_price": 2750.0,
+    "change_from_signal_month_pct": 3.81,
+    "return_since_gc_pct": 7.42
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 2606.02,
       "rsi14": 46.19,
       "rsi5": 47.51
+    },
+    {
+      "date": "2026-08-03",
+      "open": 2738.0,
+      "high": 2750.0,
+      "low": 2706.0,
+      "close": 2750.0,
+      "volume": 9200.0,
+      "sma25": 2535.72,
+      "sma75": 2511.72,
+      "sma200": 2606.99,
+      "rsi14": 46.19,
+      "rsi5": 47.51
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 52.01,
+    "monthly_rsi_ma5": 48.37,
+    "spread": 3.64,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

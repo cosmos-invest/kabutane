@@ -2,12 +2,12 @@
   "code": "3109",
   "ticker": "3109.T",
   "name": "シキボウ",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 1042.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 1027.0,
+    "change_from_signal_month_pct": -1.44,
+    "return_since_gc_pct": -1.44
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 1049.58,
       "rsi14": 53.1,
       "rsi5": 48.11
+    },
+    {
+      "date": "2026-08-03",
+      "open": 1041.0,
+      "high": 1041.0,
+      "low": 1024.0,
+      "close": 1027.0,
+      "volume": 77300.0,
+      "sma25": 1035.16,
+      "sma75": 1033.96,
+      "sma200": 1049.69,
+      "rsi14": 53.1,
+      "rsi5": 48.11
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 49.16,
+    "monthly_rsi_ma5": 49.86,
+    "spread": -0.7,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

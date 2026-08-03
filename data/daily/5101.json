@@ -2,12 +2,12 @@
   "code": "5101",
   "ticker": "5101.T",
   "name": "横浜ゴム",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 7669.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 7332.0,
+    "change_from_signal_month_pct": -4.39,
+    "return_since_gc_pct": -4.39
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 6521.56,
       "rsi14": 68.22,
       "rsi5": 67.25
+    },
+    {
+      "date": "2026-08-03",
+      "open": 7550.0,
+      "high": 7560.0,
+      "low": 7113.0,
+      "close": 7332.0,
+      "volume": 869000.0,
+      "sma25": 7605.52,
+      "sma75": 7095.35,
+      "sma200": 6530.43,
+      "rsi14": 68.22,
+      "rsi5": 67.25
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 65.42,
+    "monthly_rsi_ma5": 65.92,
+    "spread": -0.5,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

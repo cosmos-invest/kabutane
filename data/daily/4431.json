@@ -2,12 +2,12 @@
   "code": "4431",
   "ticker": "4431.T",
   "name": "スマレジ",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 3190.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 18.1
+    "current_price": 3095.0,
+    "change_from_signal_month_pct": -2.98,
+    "return_since_gc_pct": 14.59
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 2646.83,
       "rsi14": 45.14,
       "rsi5": 50.39
+    },
+    {
+      "date": "2026-08-03",
+      "open": 3260.0,
+      "high": 3260.0,
+      "low": 3065.0,
+      "close": 3095.0,
+      "volume": 80100.0,
+      "sma25": 2967.08,
+      "sma75": 2591.08,
+      "sma200": 2647.57,
+      "rsi14": 45.14,
+      "rsi5": 50.39
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 56.08,
+    "monthly_rsi_ma5": 50.68,
+    "spread": 5.4,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

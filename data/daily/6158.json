@@ -2,12 +2,12 @@
   "code": "6158",
   "ticker": "6158.T",
   "name": "和井田製作所",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 977.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 979.0,
+    "change_from_signal_month_pct": 0.2,
+    "return_since_gc_pct": 0.2
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 944.87,
       "rsi14": 54.82,
       "rsi5": 51.99
+    },
+    {
+      "date": "2026-08-03",
+      "open": 970.0,
+      "high": 980.0,
+      "low": 970.0,
+      "close": 979.0,
+      "volume": 2900.0,
+      "sma25": 978.76,
+      "sma75": 982.76,
+      "sma200": 945.3,
+      "rsi14": 54.82,
+      "rsi5": 51.99
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 53.07,
+    "monthly_rsi_ma5": 52.78,
+    "spread": 0.29,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "3397",
   "ticker": "3397.T",
   "name": "トリドールホールディングス",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 4345.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 4305.0,
+    "change_from_signal_month_pct": -0.92,
+    "return_since_gc_pct": -0.92
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 4204.48,
       "rsi14": 50.32,
       "rsi5": 46.14
+    },
+    {
+      "date": "2026-08-03",
+      "open": 4346.0,
+      "high": 4367.0,
+      "low": 4246.0,
+      "close": 4305.0,
+      "volume": 297600.0,
+      "sma25": 4087.08,
+      "sma75": 3947.76,
+      "sma200": 4202.07,
+      "rsi14": 50.32,
+      "rsi5": 46.14
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 54.21,
+    "monthly_rsi_ma5": 49.81,
+    "spread": 4.39,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

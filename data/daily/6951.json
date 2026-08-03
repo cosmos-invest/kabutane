@@ -2,12 +2,12 @@
   "code": "6951",
   "ticker": "6951.T",
   "name": "日本電子",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 8223.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 31.0
+    "current_price": 8148.0,
+    "change_from_signal_month_pct": -0.91,
+    "return_since_gc_pct": 29.81
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 6138.64,
       "rsi14": 59.0,
       "rsi5": 62.76
+    },
+    {
+      "date": "2026-08-03",
+      "open": 8148.0,
+      "high": 8300.0,
+      "low": 8012.0,
+      "close": 8148.0,
+      "volume": 239800.0,
+      "sma25": 7863.64,
+      "sma75": 7096.93,
+      "sma200": 6153.12,
+      "rsi14": 59.0,
+      "rsi5": 62.76
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 67.14,
+    "monthly_rsi_ma5": 63.88,
+    "spread": 3.27,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "7832",
   "ticker": "7832.T",
   "name": "バンダイナムコホールディングス",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 4609.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 4533.0,
+    "change_from_signal_month_pct": -1.65,
+    "return_since_gc_pct": -1.65
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 4136.82,
       "rsi14": 46.77,
       "rsi5": 46.53
+    },
+    {
+      "date": "2026-08-03",
+      "open": 4578.0,
+      "high": 4612.0,
+      "low": 4445.0,
+      "close": 4533.0,
+      "volume": 2609700.0,
+      "sma25": 4164.4,
+      "sma75": 3869.05,
+      "sma200": 4134.35,
+      "rsi14": 46.77,
+      "rsi5": 46.53
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 56.46,
+    "monthly_rsi_ma5": 49.27,
+    "spread": 7.19,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

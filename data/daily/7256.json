@@ -2,12 +2,12 @@
   "code": "7256",
   "ticker": "7256.T",
   "name": "河西工業",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 411.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 204.44
+    "current_price": 431.0,
+    "change_from_signal_month_pct": 4.87,
+    "return_since_gc_pct": 219.26
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 260.29,
       "rsi14": 67.51,
       "rsi5": 71.62
+    },
+    {
+      "date": "2026-08-03",
+      "open": 413.0,
+      "high": 450.0,
+      "low": 400.0,
+      "close": 431.0,
+      "volume": 261800.0,
+      "sma25": 424.56,
+      "sma75": 400.57,
+      "sma200": 262.02,
+      "rsi14": 67.51,
+      "rsi5": 71.62
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 72.72,
+    "monthly_rsi_ma5": 70.72,
+    "spread": 2.0,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

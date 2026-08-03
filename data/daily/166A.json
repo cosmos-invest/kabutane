@@ -2,12 +2,12 @@
   "code": "166A",
   "ticker": "166A.T",
   "name": "タスキホールディングス",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 1109.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 17.73
+    "current_price": 1073.0,
+    "change_from_signal_month_pct": -3.25,
+    "return_since_gc_pct": 13.91
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 863.08,
       "rsi14": 62.55,
       "rsi5": 71.82
+    },
+    {
+      "date": "2026-08-03",
+      "open": 1106.0,
+      "high": 1109.0,
+      "low": 1070.0,
+      "close": 1073.0,
+      "volume": 506400.0,
+      "sma25": 1104.48,
+      "sma75": 988.91,
+      "sma200": 865.06,
+      "rsi14": 62.55,
+      "rsi5": 71.82
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 63.66,
+    "monthly_rsi_ma5": 64.06,
+    "spread": -0.4,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

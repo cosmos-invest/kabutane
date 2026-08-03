@@ -2,12 +2,12 @@
   "code": "8424",
   "ticker": "8424.T",
   "name": "芙蓉総合リース",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 4543.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 4464.0,
+    "change_from_signal_month_pct": -1.74,
+    "return_since_gc_pct": -1.74
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 4303.79,
       "rsi14": 57.24,
       "rsi5": 53.85
+    },
+    {
+      "date": "2026-08-03",
+      "open": 4500.0,
+      "high": 4509.0,
+      "low": 4390.0,
+      "close": 4464.0,
+      "volume": 223200.0,
+      "sma25": 4351.52,
+      "sma75": 4292.0,
+      "sma200": 4304.49,
+      "rsi14": 57.24,
+      "rsi5": 53.85
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 57.48,
+    "monthly_rsi_ma5": 55.55,
+    "spread": 1.92,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

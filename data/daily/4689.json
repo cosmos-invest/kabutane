@@ -2,12 +2,12 @@
   "code": "4689",
   "ticker": "4689.T",
   "name": "ＬＩＮＥヤフー",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 446.8,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 8.37
+    "current_price": 446.5,
+    "change_from_signal_month_pct": -0.07,
+    "return_since_gc_pct": 8.29
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 417.37,
       "rsi14": 44.29,
       "rsi5": 49.25
+    },
+    {
+      "date": "2026-08-03",
+      "open": 441.0,
+      "high": 446.5,
+      "low": 435.1,
+      "close": 446.5,
+      "volume": 24757400.0,
+      "sma25": 444.2,
+      "sma75": 425.11,
+      "sma200": 417.27,
+      "rsi14": 44.29,
+      "rsi5": 49.25
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 52.24,
+    "monthly_rsi_ma5": 49.63,
+    "spread": 2.61,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

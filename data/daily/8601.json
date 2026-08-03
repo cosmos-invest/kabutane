@@ -2,12 +2,12 @@
   "code": "8601",
   "ticker": "8601.T",
   "name": "大和証券グループ本社",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 1807.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 13.26
+    "current_price": 1812.0,
+    "change_from_signal_month_pct": 0.28,
+    "return_since_gc_pct": 13.57
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 1480.45,
       "rsi14": 69.98,
       "rsi5": 70.51
+    },
+    {
+      "date": "2026-08-03",
+      "open": 1796.0,
+      "high": 1814.5,
+      "low": 1741.5,
+      "close": 1812.0,
+      "volume": 7156300.0,
+      "sma25": 1776.1,
+      "sma75": 1609.16,
+      "sma200": 1483.46,
+      "rsi14": 69.98,
+      "rsi5": 70.51
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 77.08,
+    "monthly_rsi_ma5": 72.36,
+    "spread": 4.72,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

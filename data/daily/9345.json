@@ -2,12 +2,12 @@
   "code": "9345",
   "ticker": "9345.T",
   "name": "ビズメイツ",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 649.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 632.0,
+    "change_from_signal_month_pct": -2.62,
+    "return_since_gc_pct": -2.62
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 692.36,
       "rsi14": 25.23,
       "rsi5": 23.89
+    },
+    {
+      "date": "2026-08-03",
+      "open": 649.0,
+      "high": 660.0,
+      "low": 632.0,
+      "close": 632.0,
+      "volume": 2300.0,
+      "sma25": 606.56,
+      "sma75": 588.65,
+      "sma200": 690.57,
+      "rsi14": 25.23,
+      "rsi5": 23.89
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 34.28,
+    "monthly_rsi_ma5": 30.24,
+    "spread": 4.04,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

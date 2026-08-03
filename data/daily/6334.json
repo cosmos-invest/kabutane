@@ -2,12 +2,12 @@
   "code": "6334",
   "ticker": "6334.T",
   "name": "明治機械",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 482.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 8.31
+    "current_price": 506.0,
+    "change_from_signal_month_pct": 4.98,
+    "return_since_gc_pct": 13.71
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 402.82,
       "rsi14": 66.06,
       "rsi5": 72.03
+    },
+    {
+      "date": "2026-08-03",
+      "open": 482.0,
+      "high": 506.0,
+      "low": 482.0,
+      "close": 506.0,
+      "volume": 43900.0,
+      "sma25": 473.72,
+      "sma75": 443.49,
+      "sma200": 403.7,
+      "rsi14": 66.06,
+      "rsi5": 72.03
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 72.88,
+    "monthly_rsi_ma5": 67.17,
+    "spread": 5.71,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

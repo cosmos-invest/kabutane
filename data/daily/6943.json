@@ -2,8 +2,8 @@
   "code": "6943",
   "ticker": "6943.T",
   "name": "ＮＫＫスイッチズ",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
     "current_price": 4980.0,
     "change_from_signal_month_pct": 0.0,
@@ -22,7 +22,35 @@
       "sma200": 4792.02,
       "rsi14": 55.3,
       "rsi5": 55.11
+    },
+    {
+      "date": "2026-08-03",
+      "open": 4935.0,
+      "high": 4980.0,
+      "low": 4925.0,
+      "close": 4980.0,
+      "volume": 400.0,
+      "sma25": 4982.2,
+      "sma75": 4943.13,
+      "sma200": 4794.07,
+      "rsi14": 55.3,
+      "rsi5": 55.11
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 55.52,
+    "monthly_rsi_ma5": 55.48,
+    "spread": 0.04,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

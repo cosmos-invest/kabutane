@@ -2,12 +2,12 @@
   "code": "7433",
   "ticker": "7433.T",
   "name": "伯東",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 4940.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 29.49
+    "current_price": 5030.0,
+    "change_from_signal_month_pct": 1.82,
+    "return_since_gc_pct": 31.85
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 4192.6,
       "rsi14": 53.07,
       "rsi5": 56.66
+    },
+    {
+      "date": "2026-08-03",
+      "open": 4940.0,
+      "high": 5090.0,
+      "low": 4900.0,
+      "close": 5030.0,
+      "volume": 176100.0,
+      "sma25": 4623.8,
+      "sma75": 4483.27,
+      "sma200": 4198.35,
+      "rsi14": 53.07,
+      "rsi5": 56.66
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 61.16,
+    "monthly_rsi_ma5": 53.74,
+    "spread": 7.42,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

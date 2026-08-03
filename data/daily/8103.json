@@ -2,12 +2,12 @@
   "code": "8103",
   "ticker": "8103.T",
   "name": "明和産業",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 902.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 898.0,
+    "change_from_signal_month_pct": -0.44,
+    "return_since_gc_pct": -0.44
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 876.82,
       "rsi14": 58.84,
       "rsi5": 58.37
+    },
+    {
+      "date": "2026-08-03",
+      "open": 896.0,
+      "high": 906.0,
+      "low": 877.0,
+      "close": 898.0,
+      "volume": 283900.0,
+      "sma25": 905.52,
+      "sma75": 873.48,
+      "sma200": 877.1,
+      "rsi14": 58.84,
+      "rsi5": 58.37
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 60.37,
+    "monthly_rsi_ma5": 58.97,
+    "spread": 1.39,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

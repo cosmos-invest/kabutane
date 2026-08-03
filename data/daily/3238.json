@@ -2,8 +2,8 @@
   "code": "3238",
   "ticker": "3238.T",
   "name": "セントラル総合開発",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
     "current_price": 372.0,
     "change_from_signal_month_pct": 0.0,
@@ -22,7 +22,35 @@
       "sma200": 393.15,
       "rsi14": 36.35,
       "rsi5": 36.61
+    },
+    {
+      "date": "2026-08-03",
+      "open": 372.0,
+      "high": 373.0,
+      "low": 370.0,
+      "close": 372.0,
+      "volume": 3500.0,
+      "sma25": 372.08,
+      "sma75": 368.25,
+      "sma200": 392.94,
+      "rsi14": 36.35,
+      "rsi5": 36.61
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 35.1,
+    "monthly_rsi_ma5": 33.64,
+    "spread": 1.47,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

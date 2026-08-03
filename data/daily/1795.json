@@ -2,12 +2,12 @@
   "code": "1795",
   "ticker": "1795.T",
   "name": "マサル",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 5500.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 14.35
+    "current_price": 5520.0,
+    "change_from_signal_month_pct": 0.36,
+    "return_since_gc_pct": 14.76
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 4667.0,
       "rsi14": 71.54,
       "rsi5": 74.26
+    },
+    {
+      "date": "2026-08-03",
+      "open": 5520.0,
+      "high": 5520.0,
+      "low": 5520.0,
+      "close": 5520.0,
+      "volume": 100.0,
+      "sma25": 5197.0,
+      "sma75": 4943.13,
+      "sma200": 4672.15,
+      "rsi14": 71.54,
+      "rsi5": 74.26
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 81.84,
+    "monthly_rsi_ma5": 75.86,
+    "spread": 5.98,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

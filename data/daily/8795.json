@@ -2,12 +2,12 @@
   "code": "8795",
   "ticker": "8795.T",
   "name": "Ｔ＆Ｄホールディングス",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 5088.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 21.32
+    "current_price": 4969.0,
+    "change_from_signal_month_pct": -2.34,
+    "return_since_gc_pct": 18.48
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 3981.83,
       "rsi14": 67.18,
       "rsi5": 72.38
+    },
+    {
+      "date": "2026-08-03",
+      "open": 5020.0,
+      "high": 5047.0,
+      "low": 4868.0,
+      "close": 4969.0,
+      "volume": 1262000.0,
+      "sma25": 4968.32,
+      "sma75": 4474.56,
+      "sma200": 3988.78,
+      "rsi14": 67.18,
+      "rsi5": 72.38
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 71.7,
+    "monthly_rsi_ma5": 68.96,
+    "spread": 2.74,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "4179",
   "ticker": "4179.T",
   "name": "ジーネクスト",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 330.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 12.24
+    "current_price": 342.0,
+    "change_from_signal_month_pct": 3.64,
+    "return_since_gc_pct": 16.33
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 332.81,
       "rsi14": 44.92,
       "rsi5": 66.52
+    },
+    {
+      "date": "2026-08-03",
+      "open": 330.0,
+      "high": 349.0,
+      "low": 315.0,
+      "close": 342.0,
+      "volume": 150400.0,
+      "sma25": 418.76,
+      "sma75": 381.83,
+      "sma200": 333.05,
+      "rsi14": 44.92,
+      "rsi5": 66.52
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 49.91,
+    "monthly_rsi_ma5": 52.89,
+    "spread": -2.98,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

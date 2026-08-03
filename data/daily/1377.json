@@ -2,12 +2,12 @@
   "code": "1377",
   "ticker": "1377.T",
   "name": "サカタのタネ",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 4315.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 4330.0,
+    "change_from_signal_month_pct": 0.35,
+    "return_since_gc_pct": 0.35
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 4172.18,
       "rsi14": 59.62,
       "rsi5": 57.9
+    },
+    {
+      "date": "2026-08-03",
+      "open": 4385.0,
+      "high": 4490.0,
+      "low": 4305.0,
+      "close": 4330.0,
+      "volume": 226100.0,
+      "sma25": 4328.4,
+      "sma75": 4215.53,
+      "sma200": 4175.93,
+      "rsi14": 59.62,
+      "rsi5": 57.9
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 60.53,
+    "monthly_rsi_ma5": 57.97,
+    "spread": 2.56,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

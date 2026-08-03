@@ -2,12 +2,12 @@
   "code": "2652",
   "ticker": "2652.T",
   "name": "まんだらけ",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 417.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 19.48
+    "current_price": 435.0,
+    "change_from_signal_month_pct": 4.32,
+    "return_since_gc_pct": 24.64
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 359.5,
       "rsi14": 50.49,
       "rsi5": 56.87
+    },
+    {
+      "date": "2026-08-03",
+      "open": 413.0,
+      "high": 441.0,
+      "low": 412.0,
+      "close": 435.0,
+      "volume": 268700.0,
+      "sma25": 433.28,
+      "sma75": 383.11,
+      "sma200": 360.02,
+      "rsi14": 50.49,
+      "rsi5": 56.87
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 59.99,
+    "monthly_rsi_ma5": 55.28,
+    "spread": 4.71,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

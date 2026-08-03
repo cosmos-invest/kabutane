@@ -2,12 +2,12 @@
   "code": "3918",
   "ticker": "3918.T",
   "name": "ＰＣＩホールディングス",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 1220.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.91
+    "current_price": 1219.0,
+    "change_from_signal_month_pct": -0.08,
+    "return_since_gc_pct": 0.83
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 1203.17,
       "rsi14": 51.96,
       "rsi5": 56.07
+    },
+    {
+      "date": "2026-08-03",
+      "open": 1220.0,
+      "high": 1221.0,
+      "low": 1188.0,
+      "close": 1219.0,
+      "volume": 19600.0,
+      "sma25": 1223.52,
+      "sma75": 1169.99,
+      "sma200": 1203.01,
+      "rsi14": 51.96,
+      "rsi5": 56.07
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 54.11,
+    "monthly_rsi_ma5": 52.7,
+    "spread": 1.4,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "1766",
   "ticker": "1766.T",
   "name": "東建コーポレーション",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 13370.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 12890.0,
+    "change_from_signal_month_pct": -3.59,
+    "return_since_gc_pct": -3.59
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 13873.5,
       "rsi14": 55.99,
       "rsi5": 49.64
+    },
+    {
+      "date": "2026-08-03",
+      "open": 13370.0,
+      "high": 13370.0,
+      "low": 12870.0,
+      "close": 12890.0,
+      "volume": 27700.0,
+      "sma25": 13024.0,
+      "sma75": 12909.73,
+      "sma200": 13865.9,
+      "rsi14": 55.99,
+      "rsi5": 49.64
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 53.77,
+    "monthly_rsi_ma5": 54.44,
+    "spread": -0.67,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

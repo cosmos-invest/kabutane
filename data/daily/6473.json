@@ -2,12 +2,12 @@
   "code": "6473",
   "ticker": "6473.T",
   "name": "ジェイテクト",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 2216.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 2119.5,
+    "change_from_signal_month_pct": -4.35,
+    "return_since_gc_pct": -4.35
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 1835.97,
       "rsi14": 66.81,
       "rsi5": 62.4
+    },
+    {
+      "date": "2026-08-03",
+      "open": 2210.0,
+      "high": 2238.0,
+      "low": 2088.0,
+      "close": 2119.5,
+      "volume": 2066500.0,
+      "sma25": 2085.48,
+      "sma75": 2001.21,
+      "sma200": 1839.11,
+      "rsi14": 66.81,
+      "rsi5": 62.4
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 62.32,
+    "monthly_rsi_ma5": 63.65,
+    "spread": -1.32,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

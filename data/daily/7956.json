@@ -2,12 +2,12 @@
   "code": "7956",
   "ticker": "7956.T",
   "name": "ピジョン",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 2020.5,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 17.16
+    "current_price": 1984.5,
+    "change_from_signal_month_pct": -1.78,
+    "return_since_gc_pct": 15.08
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 1745.92,
       "rsi14": 52.33,
       "rsi5": 62.29
+    },
+    {
+      "date": "2026-08-03",
+      "open": 2030.0,
+      "high": 2033.0,
+      "low": 1964.0,
+      "close": 1984.5,
+      "volume": 1018100.0,
+      "sma25": 2040.22,
+      "sma75": 1903.0,
+      "sma200": 1747.14,
+      "rsi14": 52.33,
+      "rsi5": 62.29
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 58.35,
+    "monthly_rsi_ma5": 56.92,
+    "spread": 1.43,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

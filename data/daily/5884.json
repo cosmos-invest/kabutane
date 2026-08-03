@@ -2,12 +2,12 @@
   "code": "5884",
   "ticker": "5884.T",
   "name": "クラダシ",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 549.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 19.35
+    "current_price": 542.0,
+    "change_from_signal_month_pct": -1.28,
+    "return_since_gc_pct": 17.83
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 475.96,
       "rsi14": 50.61,
       "rsi5": 52.31
+    },
+    {
+      "date": "2026-08-03",
+      "open": 555.0,
+      "high": 555.0,
+      "low": 541.0,
+      "close": 542.0,
+      "volume": 3800.0,
+      "sma25": 542.28,
+      "sma75": 539.73,
+      "sma200": 476.18,
+      "rsi14": 50.61,
+      "rsi5": 52.31
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 56.38,
+    "monthly_rsi_ma5": 56.6,
+    "spread": -0.21,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

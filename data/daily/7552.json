@@ -2,12 +2,12 @@
   "code": "7552",
   "ticker": "7552.T",
   "name": "ハピネット",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 3315.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 10.13
+    "current_price": 3330.0,
+    "change_from_signal_month_pct": 0.45,
+    "return_since_gc_pct": 10.63
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 2934.88,
       "rsi14": 58.19,
       "rsi5": 60.06
+    },
+    {
+      "date": "2026-08-03",
+      "open": 3305.0,
+      "high": 3350.0,
+      "low": 3260.0,
+      "close": 3330.0,
+      "volume": 243700.0,
+      "sma25": 3129.12,
+      "sma75": 2847.24,
+      "sma200": 2934.62,
+      "rsi14": 58.19,
+      "rsi5": 60.06
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 65.3,
+    "monthly_rsi_ma5": 60.49,
+    "spread": 4.8,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

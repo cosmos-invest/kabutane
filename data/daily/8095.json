@@ -2,8 +2,8 @@
   "code": "8095",
   "ticker": "8095.T",
   "name": "アステナホールディングス",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
     "current_price": 505.0,
     "change_from_signal_month_pct": 0.0,
@@ -22,7 +22,35 @@
       "sma200": 486.32,
       "rsi14": 50.87,
       "rsi5": 52.83
+    },
+    {
+      "date": "2026-08-03",
+      "open": 505.0,
+      "high": 505.0,
+      "low": 500.0,
+      "close": 505.0,
+      "volume": 96900.0,
+      "sma25": 511.52,
+      "sma75": 495.85,
+      "sma200": 486.2,
+      "rsi14": 50.87,
+      "rsi5": 52.83
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 55.74,
+    "monthly_rsi_ma5": 53.8,
+    "spread": 1.94,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

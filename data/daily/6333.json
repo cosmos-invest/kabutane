@@ -2,12 +2,12 @@
   "code": "6333",
   "ticker": "6333.T",
   "name": "ＴＥＩＫＯＫＵ",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 3355.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 7.53
+    "current_price": 3385.0,
+    "change_from_signal_month_pct": 0.89,
+    "return_since_gc_pct": 8.49
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 3042.29,
       "rsi14": 52.99,
       "rsi5": 54.96
+    },
+    {
+      "date": "2026-08-03",
+      "open": 3340.0,
+      "high": 3390.0,
+      "low": 3270.0,
+      "close": 3385.0,
+      "volume": 56700.0,
+      "sma25": 3193.4,
+      "sma75": 3001.93,
+      "sma200": 3042.64,
+      "rsi14": 52.99,
+      "rsi5": 54.96
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 58.94,
+    "monthly_rsi_ma5": 53.22,
+    "spread": 5.72,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

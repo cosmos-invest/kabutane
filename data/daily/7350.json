@@ -2,12 +2,12 @@
   "code": "7350",
   "ticker": "7350.T",
   "name": "おきなわフィナンシャルグループ",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 7350.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 15.75
+    "current_price": 7420.0,
+    "change_from_signal_month_pct": 0.95,
+    "return_since_gc_pct": 16.85
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 5419.3,
       "rsi14": 77.88,
       "rsi5": 78.28
+    },
+    {
+      "date": "2026-08-03",
+      "open": 7290.0,
+      "high": 7420.0,
+      "low": 7050.0,
+      "close": 7420.0,
+      "volume": 86400.0,
+      "sma25": 6958.4,
+      "sma75": 6349.33,
+      "sma200": 5437.7,
+      "rsi14": 77.88,
+      "rsi5": 78.28
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 83.49,
+    "monthly_rsi_ma5": 79.8,
+    "spread": 3.69,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

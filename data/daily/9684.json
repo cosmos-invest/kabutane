@@ -2,12 +2,12 @@
   "code": "9684",
   "ticker": "9684.T",
   "name": "スクウェア・エニックス・ホールディングス",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 2764.5,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 2729.0,
+    "change_from_signal_month_pct": -1.28,
+    "return_since_gc_pct": -1.28
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 2718.43,
       "rsi14": 48.86,
       "rsi5": 46.77
+    },
+    {
+      "date": "2026-08-03",
+      "open": 2758.0,
+      "high": 2762.0,
+      "low": 2680.5,
+      "close": 2729.0,
+      "volume": 1140900.0,
+      "sma25": 2583.14,
+      "sma75": 2549.11,
+      "sma200": 2715.53,
+      "rsi14": 48.86,
+      "rsi5": 46.77
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 52.71,
+    "monthly_rsi_ma5": 49.26,
+    "spread": 3.45,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

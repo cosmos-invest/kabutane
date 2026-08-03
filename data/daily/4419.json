@@ -2,12 +2,12 @@
   "code": "4419",
   "ticker": "4419.T",
   "name": "Ｆｉｎａｔｅｘｔホールディングス",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 1530.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 60.71
+    "current_price": 1489.0,
+    "change_from_signal_month_pct": -2.68,
+    "return_since_gc_pct": 56.41
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 1113.36,
       "rsi14": 54.61,
       "rsi5": 62.22
+    },
+    {
+      "date": "2026-08-03",
+      "open": 1560.0,
+      "high": 1569.0,
+      "low": 1450.0,
+      "close": 1489.0,
+      "volume": 339200.0,
+      "sma25": 1540.04,
+      "sma75": 1325.4,
+      "sma200": 1114.66,
+      "rsi14": 54.61,
+      "rsi5": 62.22
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 64.97,
+    "monthly_rsi_ma5": 62.45,
+    "spread": 2.52,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "8185",
   "ticker": "8185.T",
   "name": "チヨダ",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 998.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 989.0,
+    "change_from_signal_month_pct": -0.9,
+    "return_since_gc_pct": -0.9
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 1025.39,
       "rsi14": 46.19,
       "rsi5": 44.38
+    },
+    {
+      "date": "2026-08-03",
+      "open": 1000.0,
+      "high": 1000.0,
+      "low": 984.0,
+      "close": 989.0,
+      "volume": 208400.0,
+      "sma25": 994.04,
+      "sma75": 971.29,
+      "sma200": 1024.52,
+      "rsi14": 46.19,
+      "rsi5": 44.38
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 43.81,
+    "monthly_rsi_ma5": 43.14,
+    "spread": 0.67,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

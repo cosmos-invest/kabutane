@@ -2,12 +2,12 @@
   "code": "8563",
   "ticker": "8563.T",
   "name": "大東銀行",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 1020.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 1034.0,
+    "change_from_signal_month_pct": 1.37,
+    "return_since_gc_pct": 1.37
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 945.13,
       "rsi14": 63.92,
       "rsi5": 57.46
+    },
+    {
+      "date": "2026-08-03",
+      "open": 1013.0,
+      "high": 1034.0,
+      "low": 993.0,
+      "close": 1034.0,
+      "volume": 68500.0,
+      "sma25": 1002.52,
+      "sma75": 985.6,
+      "sma200": 946.42,
+      "rsi14": 63.92,
+      "rsi5": 57.46
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 63.06,
+    "monthly_rsi_ma5": 60.92,
+    "spread": 2.14,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

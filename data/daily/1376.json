@@ -2,12 +2,12 @@
   "code": "1376",
   "ticker": "1376.T",
   "name": "カネコ種苗",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 1518.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 3.83
+    "current_price": 1522.0,
+    "change_from_signal_month_pct": 0.26,
+    "return_since_gc_pct": 4.1
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 1522.56,
       "rsi14": 48.85,
       "rsi5": 49.82
+    },
+    {
+      "date": "2026-08-03",
+      "open": 1530.0,
+      "high": 1531.0,
+      "low": 1515.0,
+      "close": 1522.0,
+      "volume": 24100.0,
+      "sma25": 1507.12,
+      "sma75": 1451.96,
+      "sma200": 1522.19,
+      "rsi14": 48.85,
+      "rsi5": 49.82
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 54.59,
+    "monthly_rsi_ma5": 49.69,
+    "spread": 4.91,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

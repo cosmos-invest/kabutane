@@ -2,12 +2,12 @@
   "code": "8818",
   "ticker": "8818.T",
   "name": "京阪神ビルディング",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 1149.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 6.09
+    "current_price": 1106.0,
+    "change_from_signal_month_pct": -3.74,
+    "return_since_gc_pct": 2.12
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 991.89,
       "rsi14": 66.37,
       "rsi5": 67.64
+    },
+    {
+      "date": "2026-08-03",
+      "open": 1151.0,
+      "high": 1160.0,
+      "low": 1099.0,
+      "close": 1106.0,
+      "volume": 574700.0,
+      "sma25": 1114.28,
+      "sma75": 1060.31,
+      "sma200": 993.2,
+      "rsi14": 66.37,
+      "rsi5": 67.64
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 67.92,
+    "monthly_rsi_ma5": 68.15,
+    "spread": -0.23,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

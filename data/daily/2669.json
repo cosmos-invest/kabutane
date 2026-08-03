@@ -2,12 +2,12 @@
   "code": "2669",
   "ticker": "2669.T",
   "name": "カネ美食品",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 3990.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 6.54
+    "current_price": 3970.0,
+    "change_from_signal_month_pct": -0.5,
+    "return_since_gc_pct": 6.01
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 3601.2,
       "rsi14": 69.82,
       "rsi5": 76.24
+    },
+    {
+      "date": "2026-08-03",
+      "open": 3990.0,
+      "high": 4000.0,
+      "low": 3970.0,
+      "close": 3970.0,
+      "volume": 5800.0,
+      "sma25": 3999.8,
+      "sma75": 3857.87,
+      "sma200": 3604.6,
+      "rsi14": 69.82,
+      "rsi5": 76.24
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 75.46,
+    "monthly_rsi_ma5": 75.51,
+    "spread": -0.05,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

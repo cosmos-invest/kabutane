@@ -2,12 +2,12 @@
   "code": "9223",
   "ticker": "9223.T",
   "name": "ＡＳＮＯＶＡ",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 441.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 445.0,
+    "change_from_signal_month_pct": 0.91,
+    "return_since_gc_pct": 0.91
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 497.86,
       "rsi14": 32.87,
       "rsi5": 27.05
+    },
+    {
+      "date": "2026-08-03",
+      "open": 445.0,
+      "high": 459.0,
+      "low": 445.0,
+      "close": 445.0,
+      "volume": 11300.0,
+      "sma25": 409.4,
+      "sma75": 410.72,
+      "sma200": 497.03,
+      "rsi14": 32.87,
+      "rsi5": 27.05
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 38.11,
+    "monthly_rsi_ma5": 32.24,
+    "spread": 5.88,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "6436",
   "ticker": "6436.T",
   "name": "アマノ",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 3874.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 3933.0,
+    "change_from_signal_month_pct": 1.52,
+    "return_since_gc_pct": 1.52
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 3927.88,
       "rsi14": 46.0,
       "rsi5": 44.27
+    },
+    {
+      "date": "2026-08-03",
+      "open": 3891.0,
+      "high": 3960.0,
+      "low": 3875.0,
+      "close": 3933.0,
+      "volume": 564500.0,
+      "sma25": 3788.04,
+      "sma75": 3694.52,
+      "sma200": 3926.78,
+      "rsi14": 46.0,
+      "rsi5": 44.27
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 52.02,
+    "monthly_rsi_ma5": 46.64,
+    "spread": 5.38,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

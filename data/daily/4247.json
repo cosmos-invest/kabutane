@@ -2,8 +2,8 @@
   "code": "4247",
   "ticker": "4247.T",
   "name": "ポバール興業",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
     "current_price": 1359.0,
     "change_from_signal_month_pct": 0.0,
@@ -22,7 +22,35 @@
       "sma200": 1323.15,
       "rsi14": 57.87,
       "rsi5": 54.33
+    },
+    {
+      "date": "2026-08-03",
+      "open": 1360.0,
+      "high": 1360.0,
+      "low": 1359.0,
+      "close": 1359.0,
+      "volume": 200.0,
+      "sma25": 1348.64,
+      "sma75": 1305.41,
+      "sma200": 1323.72,
+      "rsi14": 57.87,
+      "rsi5": 54.33
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 58.89,
+    "monthly_rsi_ma5": 55.28,
+    "spread": 3.61,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

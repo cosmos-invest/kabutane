@@ -2,12 +2,12 @@
   "code": "8904",
   "ticker": "8904.T",
   "name": "ＡＶＡＮＴＩＡ",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 864.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 865.0,
+    "change_from_signal_month_pct": 0.12,
+    "return_since_gc_pct": 0.12
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 837.46,
       "rsi14": 51.31,
       "rsi5": 48.6
+    },
+    {
+      "date": "2026-08-03",
+      "open": 864.0,
+      "high": 865.0,
+      "low": 857.0,
+      "close": 865.0,
+      "volume": 25400.0,
+      "sma25": 846.92,
+      "sma75": 830.29,
+      "sma200": 837.76,
+      "rsi14": 51.31,
+      "rsi5": 48.6
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 55.61,
+    "monthly_rsi_ma5": 50.4,
+    "spread": 5.22,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

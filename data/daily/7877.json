@@ -2,8 +2,8 @@
   "code": "7877",
   "ticker": "7877.T",
   "name": "永大化工",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
     "current_price": 2147.0,
     "change_from_signal_month_pct": 0.0,
@@ -22,7 +22,35 @@
       "sma200": 1931.32,
       "rsi14": 68.56,
       "rsi5": 61.75
+    },
+    {
+      "date": "2026-08-03",
+      "open": 2147.0,
+      "high": 2147.0,
+      "low": 2147.0,
+      "close": 2147.0,
+      "volume": 300.0,
+      "sma25": 2109.8,
+      "sma75": 2024.29,
+      "sma200": 1933.46,
+      "rsi14": 68.56,
+      "rsi5": 61.75
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 64.77,
+    "monthly_rsi_ma5": 64.26,
+    "spread": 0.51,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

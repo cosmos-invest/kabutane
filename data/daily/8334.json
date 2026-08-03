@@ -2,12 +2,12 @@
   "code": "8334",
   "ticker": "8334.T",
   "name": "群馬銀行",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 2538.5,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 8.37
+    "current_price": 2527.5,
+    "change_from_signal_month_pct": -0.43,
+    "return_since_gc_pct": 7.9
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 2043.88,
       "rsi14": 80.64,
       "rsi5": 80.7
+    },
+    {
+      "date": "2026-08-03",
+      "open": 2531.0,
+      "high": 2550.0,
+      "low": 2440.0,
+      "close": 2527.5,
+      "volume": 1479800.0,
+      "sma25": 2504.04,
+      "sma75": 2328.05,
+      "sma200": 2048.67,
+      "rsi14": 80.64,
+      "rsi5": 80.7
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 82.74,
+    "monthly_rsi_ma5": 81.03,
+    "spread": 1.72,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

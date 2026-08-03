@@ -2,8 +2,8 @@
   "code": "4265",
   "ticker": "4265.T",
   "name": "Ｉｎｓｔｉｔｕｔｉｏｎ　ｆｏｒ　ａ　Ｇｌｏｂａｌ　Ｓｏｃｉｅｔｙ",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
     "current_price": 295.0,
     "change_from_signal_month_pct": 0.0,
@@ -22,7 +22,35 @@
       "sma200": 319.3,
       "rsi14": 41.46,
       "rsi5": 53.63
+    },
+    {
+      "date": "2026-08-03",
+      "open": 295.0,
+      "high": 303.0,
+      "low": 280.0,
+      "close": 295.0,
+      "volume": 68500.0,
+      "sma25": 347.76,
+      "sma75": 296.39,
+      "sma200": 318.98,
+      "rsi14": 41.46,
+      "rsi5": 53.63
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 46.41,
+    "monthly_rsi_ma5": 46.29,
+    "spread": 0.11,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "5956",
   "ticker": "5956.T",
   "name": "トーソー",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 599.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 585.0,
+    "change_from_signal_month_pct": -2.34,
+    "return_since_gc_pct": -2.34
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 596.95,
       "rsi14": 61.66,
       "rsi5": 55.08
+    },
+    {
+      "date": "2026-08-03",
+      "open": 599.0,
+      "high": 599.0,
+      "low": 585.0,
+      "close": 585.0,
+      "volume": 7900.0,
+      "sma25": 595.96,
+      "sma75": 583.13,
+      "sma200": 597.07,
+      "rsi14": 61.66,
+      "rsi5": 55.08
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 54.1,
+    "monthly_rsi_ma5": 54.74,
+    "spread": -0.64,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

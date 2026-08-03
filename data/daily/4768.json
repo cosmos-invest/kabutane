@@ -2,12 +2,12 @@
   "code": "4768",
   "ticker": "4768.T",
   "name": "大塚商会",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 3274.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 3219.0,
+    "change_from_signal_month_pct": -1.68,
+    "return_since_gc_pct": -1.68
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 3038.57,
       "rsi14": 45.68,
       "rsi5": 40.58
+    },
+    {
+      "date": "2026-08-03",
+      "open": 3240.0,
+      "high": 3260.0,
+      "low": 3160.0,
+      "close": 3219.0,
+      "volume": 1764000.0,
+      "sma25": 3010.9,
+      "sma75": 2952.12,
+      "sma200": 3039.3,
+      "rsi14": 45.68,
+      "rsi5": 40.58
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 54.04,
+    "monthly_rsi_ma5": 47.44,
+    "spread": 6.6,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

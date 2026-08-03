@@ -2,8 +2,8 @@
   "code": "3598",
   "ticker": "3598.T",
   "name": "山喜",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
     "current_price": 163.0,
     "change_from_signal_month_pct": 0.0,
@@ -22,7 +22,35 @@
       "sma200": 166.24,
       "rsi14": 48.29,
       "rsi5": 38.75
+    },
+    {
+      "date": "2026-08-03",
+      "open": 164.0,
+      "high": 164.0,
+      "low": 162.0,
+      "close": 163.0,
+      "volume": 4300.0,
+      "sma25": 160.52,
+      "sma75": 160.28,
+      "sma200": 166.21,
+      "rsi14": 48.29,
+      "rsi5": 38.75
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 50.25,
+    "monthly_rsi_ma5": 48.3,
+    "spread": 1.95,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "5232",
   "ticker": "5232.T",
   "name": "住友大阪セメント",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 5455.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.29
+    "current_price": 5402.0,
+    "change_from_signal_month_pct": -0.97,
+    "return_since_gc_pct": -0.68
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 4419.5,
       "rsi14": 62.17,
       "rsi5": 73.24
+    },
+    {
+      "date": "2026-08-03",
+      "open": 5392.0,
+      "high": 5502.0,
+      "low": 5302.0,
+      "close": 5402.0,
+      "volume": 332600.0,
+      "sma25": 5663.88,
+      "sma75": 5186.55,
+      "sma200": 4427.36,
+      "rsi14": 62.17,
+      "rsi5": 73.24
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 62.73,
+    "monthly_rsi_ma5": 63.46,
+    "spread": -0.73,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

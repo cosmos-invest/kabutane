@@ -2,12 +2,12 @@
   "code": "3771",
   "ticker": "3771.T",
   "name": "システムリサーチ",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 1837.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 1793.0,
+    "change_from_signal_month_pct": -2.4,
+    "return_since_gc_pct": -2.4
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 1865.8,
       "rsi14": 50.45,
       "rsi5": 50.3
+    },
+    {
+      "date": "2026-08-03",
+      "open": 1849.0,
+      "high": 1849.0,
+      "low": 1793.0,
+      "close": 1793.0,
+      "volume": 36700.0,
+      "sma25": 1819.24,
+      "sma75": 1759.64,
+      "sma200": 1864.38,
+      "rsi14": 50.45,
+      "rsi5": 50.3
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 52.76,
+    "monthly_rsi_ma5": 51.61,
+    "spread": 1.15,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

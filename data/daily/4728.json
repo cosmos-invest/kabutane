@@ -2,12 +2,12 @@
   "code": "4728",
   "ticker": "4728.T",
   "name": "トーセ",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 653.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 1.71
+    "current_price": 649.0,
+    "change_from_signal_month_pct": -0.61,
+    "return_since_gc_pct": 1.09
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 642.2,
       "rsi14": 43.44,
       "rsi5": 44.5
+    },
+    {
+      "date": "2026-08-03",
+      "open": 651.0,
+      "high": 657.0,
+      "low": 648.0,
+      "close": 649.0,
+      "volume": 3400.0,
+      "sma25": 643.6,
+      "sma75": 638.79,
+      "sma200": 642.05,
+      "rsi14": 43.44,
+      "rsi5": 44.5
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 44.95,
+    "monthly_rsi_ma5": 42.96,
+    "spread": 1.99,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

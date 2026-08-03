@@ -2,12 +2,12 @@
   "code": "4684",
   "ticker": "4684.T",
   "name": "オービック",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 4525.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 4437.0,
+    "change_from_signal_month_pct": -1.94,
+    "return_since_gc_pct": -1.94
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 4381.49,
       "rsi14": 40.3,
       "rsi5": 38.76
+    },
+    {
+      "date": "2026-08-03",
+      "open": 4532.0,
+      "high": 4538.0,
+      "low": 4370.0,
+      "close": 4437.0,
+      "volume": 1881400.0,
+      "sma25": 4209.24,
+      "sma75": 4102.01,
+      "sma200": 4378.34,
+      "rsi14": 40.3,
+      "rsi5": 38.76
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 48.09,
+    "monthly_rsi_ma5": 43.51,
+    "spread": 4.59,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

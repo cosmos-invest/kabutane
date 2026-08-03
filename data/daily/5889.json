@@ -2,12 +2,12 @@
   "code": "5889",
   "ticker": "5889.T",
   "name": "Ｊａｐａｎ　Ｅｙｅｗｅａｒ　Ｈｏｌｄｉｎｇｓ",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 2521.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 8.29
+    "current_price": 2483.0,
+    "change_from_signal_month_pct": -1.51,
+    "return_since_gc_pct": 6.66
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 2106.25,
       "rsi14": 56.13,
       "rsi5": 59.22
+    },
+    {
+      "date": "2026-08-03",
+      "open": 2520.0,
+      "high": 2521.0,
+      "low": 2409.0,
+      "close": 2483.0,
+      "volume": 101900.0,
+      "sma25": 2425.4,
+      "sma75": 2263.52,
+      "sma200": 2108.11,
+      "rsi14": 56.13,
+      "rsi5": 59.22
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 61.34,
+    "monthly_rsi_ma5": 59.24,
+    "spread": 2.1,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

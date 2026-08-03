@@ -2,12 +2,12 @@
   "code": "7947",
   "ticker": "7947.T",
   "name": "エフピコ",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 2523.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": -2.77
+    "current_price": 2607.0,
+    "change_from_signal_month_pct": 3.33,
+    "return_since_gc_pct": 0.46
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 2542.91,
       "rsi14": 43.87,
       "rsi5": 47.48
+    },
+    {
+      "date": "2026-08-03",
+      "open": 2556.0,
+      "high": 2631.0,
+      "low": 2528.0,
+      "close": 2607.0,
+      "volume": 426600.0,
+      "sma25": 2575.4,
+      "sma75": 2468.96,
+      "sma200": 2543.45,
+      "rsi14": 43.87,
+      "rsi5": 47.48
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 47.94,
+    "monthly_rsi_ma5": 44.3,
+    "spread": 3.64,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

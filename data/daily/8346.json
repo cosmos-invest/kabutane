@@ -2,12 +2,12 @@
   "code": "8346",
   "ticker": "8346.T",
   "name": "東邦銀行",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 860.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 10.82
+    "current_price": 875.0,
+    "change_from_signal_month_pct": 1.74,
+    "return_since_gc_pct": 12.76
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 645.15,
       "rsi14": 79.84,
       "rsi5": 80.46
+    },
+    {
+      "date": "2026-08-03",
+      "open": 850.0,
+      "high": 884.0,
+      "low": 847.0,
+      "close": 875.0,
+      "volume": 1120800.0,
+      "sma25": 842.72,
+      "sma75": 768.33,
+      "sma200": 647.35,
+      "rsi14": 79.84,
+      "rsi5": 80.46
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 84.06,
+    "monthly_rsi_ma5": 80.9,
+    "spread": 3.16,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

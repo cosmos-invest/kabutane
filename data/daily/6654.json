@@ -2,12 +2,12 @@
   "code": "6654",
   "ticker": "6654.T",
   "name": "不二電機工業",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 1111.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 1.55
+    "current_price": 1089.0,
+    "change_from_signal_month_pct": -1.98,
+    "return_since_gc_pct": -0.46
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 1095.77,
       "rsi14": 49.95,
       "rsi5": 53.71
+    },
+    {
+      "date": "2026-08-03",
+      "open": 1103.0,
+      "high": 1104.0,
+      "low": 1086.0,
+      "close": 1089.0,
+      "volume": 18500.0,
+      "sma25": 1118.32,
+      "sma75": 1095.19,
+      "sma200": 1095.81,
+      "rsi14": 49.95,
+      "rsi5": 53.71
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 48.96,
+    "monthly_rsi_ma5": 50.78,
+    "spread": -1.82,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

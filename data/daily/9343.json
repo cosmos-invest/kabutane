@@ -2,12 +2,12 @@
   "code": "9343",
   "ticker": "9343.T",
   "name": "アイビス",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 780.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 13.87
+    "current_price": 779.0,
+    "change_from_signal_month_pct": -0.13,
+    "return_since_gc_pct": 13.72
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 716.39,
       "rsi14": 52.48,
       "rsi5": 54.95
+    },
+    {
+      "date": "2026-08-03",
+      "open": 777.0,
+      "high": 779.0,
+      "low": 769.0,
+      "close": 779.0,
+      "volume": 19700.0,
+      "sma25": 775.28,
+      "sma75": 760.91,
+      "sma200": 716.5,
+      "rsi14": 52.48,
+      "rsi5": 54.95
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 59.78,
+    "monthly_rsi_ma5": 59.1,
+    "spread": 0.69,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

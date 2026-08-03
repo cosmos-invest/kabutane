@@ -2,12 +2,12 @@
   "code": "3877",
   "ticker": "3877.T",
   "name": "中越パルプ工業",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 2091.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 2.75
+    "current_price": 2083.0,
+    "change_from_signal_month_pct": -0.38,
+    "return_since_gc_pct": 2.36
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 1945.22,
       "rsi14": 62.39,
       "rsi5": 62.55
+    },
+    {
+      "date": "2026-08-03",
+      "open": 2090.0,
+      "high": 2090.0,
+      "low": 2050.0,
+      "close": 2083.0,
+      "volume": 37700.0,
+      "sma25": 2090.68,
+      "sma75": 2017.31,
+      "sma200": 1947.25,
+      "rsi14": 62.39,
+      "rsi5": 62.55
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 63.91,
+    "monthly_rsi_ma5": 62.63,
+    "spread": 1.28,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

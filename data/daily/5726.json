@@ -2,12 +2,12 @@
   "code": "5726",
   "ticker": "5726.T",
   "name": "大阪チタニウムテクノロジーズ",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 2836.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 2837.0,
+    "change_from_signal_month_pct": 0.04,
+    "return_since_gc_pct": 0.04
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 2501.29,
       "rsi14": 55.17,
       "rsi5": 54.19
+    },
+    {
+      "date": "2026-08-03",
+      "open": 2789.0,
+      "high": 2856.0,
+      "low": 2705.0,
+      "close": 2837.0,
+      "volume": 552800.0,
+      "sma25": 2661.44,
+      "sma75": 2646.64,
+      "sma200": 2503.01,
+      "rsi14": 55.17,
+      "rsi5": 54.19
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 53.34,
+    "monthly_rsi_ma5": 52.58,
+    "spread": 0.76,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

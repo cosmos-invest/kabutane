@@ -2,12 +2,12 @@
   "code": "5401",
   "ticker": "5401.T",
   "name": "日本製鉄",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 649.6,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 647.0,
+    "change_from_signal_month_pct": -0.4,
+    "return_since_gc_pct": -0.4
   },
   "daily": [
     {
@@ -19,10 +19,38 @@
       "volume": 46837400.0,
       "sma25": 583.66,
       "sma75": 570.04,
-      "sma200": 605.05,
+      "sma200": 605.06,
+      "rsi14": 44.35,
+      "rsi5": 38.58
+    },
+    {
+      "date": "2026-08-03",
+      "open": 645.0,
+      "high": 647.0,
+      "low": 628.2,
+      "close": 647.0,
+      "volume": 44246400.0,
+      "sma25": 587.81,
+      "sma75": 570.73,
+      "sma200": 605.25,
       "rsi14": 44.35,
       "rsi5": 38.58
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 54.23,
+    "monthly_rsi_ma5": 45.7,
+    "spread": 8.53,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

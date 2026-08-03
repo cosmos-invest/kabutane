@@ -2,12 +2,12 @@
   "code": "2222",
   "ticker": "2222.T",
   "name": "寿スピリッツ",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 2543.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 26.36
+    "current_price": 2546.5,
+    "change_from_signal_month_pct": 0.14,
+    "return_since_gc_pct": 26.53
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 2017.62,
       "rsi14": 53.56,
       "rsi5": 63.84
+    },
+    {
+      "date": "2026-08-03",
+      "open": 2585.0,
+      "high": 2590.0,
+      "low": 2495.0,
+      "close": 2546.5,
+      "volume": 909700.0,
+      "sma25": 2543.76,
+      "sma75": 2267.95,
+      "sma200": 2021.1,
+      "rsi14": 53.56,
+      "rsi5": 63.84
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 62.56,
+    "monthly_rsi_ma5": 57.58,
+    "spread": 4.98,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "417A",
   "ticker": "417A.T",
   "name": "ブルーゾーンホールディングス",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 1788.5,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 1767.5,
+    "change_from_signal_month_pct": -1.17,
+    "return_since_gc_pct": -1.17
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 1759.6,
       "rsi14": 51.73,
       "rsi5": 49.08
+    },
+    {
+      "date": "2026-08-03",
+      "open": 1788.5,
+      "high": 1795.5,
+      "low": 1755.0,
+      "close": 1767.5,
+      "volume": 310500.0,
+      "sma25": 1770.56,
+      "sma75": 1765.13,
+      "sma200": 1759.62,
+      "rsi14": 51.73,
+      "rsi5": 49.08
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 50.75,
+    "monthly_rsi_ma5": 50.31,
+    "spread": 0.44,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

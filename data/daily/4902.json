@@ -2,12 +2,12 @@
   "code": "4902",
   "ticker": "4902.T",
   "name": "コニカミノルタ",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 590.8,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 595.5,
+    "change_from_signal_month_pct": 0.8,
+    "return_since_gc_pct": 0.8
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 599.78,
       "rsi14": 50.84,
       "rsi5": 50.34
+    },
+    {
+      "date": "2026-08-03",
+      "open": 570.8,
+      "high": 599.6,
+      "low": 554.7,
+      "close": 595.5,
+      "volume": 6923300.0,
+      "sma25": 609.26,
+      "sma75": 586.9,
+      "sma200": 600.04,
+      "rsi14": 50.84,
+      "rsi5": 50.34
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 53.17,
+    "monthly_rsi_ma5": 51.14,
+    "spread": 2.03,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

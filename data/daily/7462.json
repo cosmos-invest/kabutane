@@ -2,12 +2,12 @@
   "code": "7462",
   "ticker": "7462.T",
   "name": "ＣＡＰＩＴＡ",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 402.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 16.52
+    "current_price": 406.0,
+    "change_from_signal_month_pct": 1.0,
+    "return_since_gc_pct": 17.68
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 293.89,
       "rsi14": 68.5,
       "rsi5": 72.79
+    },
+    {
+      "date": "2026-08-03",
+      "open": 413.0,
+      "high": 413.0,
+      "low": 401.0,
+      "close": 406.0,
+      "volume": 9900.0,
+      "sma25": 377.36,
+      "sma75": 332.15,
+      "sma200": 294.79,
+      "rsi14": 68.5,
+      "rsi5": 72.79
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 78.74,
+    "monthly_rsi_ma5": 72.7,
+    "spread": 6.04,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

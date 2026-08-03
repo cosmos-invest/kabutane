@@ -2,8 +2,8 @@
   "code": "245A",
   "ticker": "245A.T",
   "name": "ＩＮＧＳ",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
     "current_price": 2466.0,
     "change_from_signal_month_pct": 0.0,
@@ -22,7 +22,35 @@
       "sma200": 2735.28,
       "rsi14": 44.71,
       "rsi5": 41.94
+    },
+    {
+      "date": "2026-08-03",
+      "open": 2466.0,
+      "high": 2510.0,
+      "low": 2450.0,
+      "close": 2466.0,
+      "volume": 1200.0,
+      "sma25": 2424.44,
+      "sma75": 2433.75,
+      "sma200": 2730.51,
+      "rsi14": 44.71,
+      "rsi5": 41.94
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 45.33,
+    "monthly_rsi_ma5": 44.25,
+    "spread": 1.07,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

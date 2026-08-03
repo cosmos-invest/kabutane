@@ -2,12 +2,12 @@
   "code": "5572",
   "ticker": "5572.T",
   "name": "Ｒｉｄｇｅ－ｉ",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 2355.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 6.13
+    "current_price": 2418.0,
+    "change_from_signal_month_pct": 2.68,
+    "return_since_gc_pct": 8.97
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 2360.78,
       "rsi14": 45.79,
       "rsi5": 49.45
+    },
+    {
+      "date": "2026-08-03",
+      "open": 2355.0,
+      "high": 2423.0,
+      "low": 2300.0,
+      "close": 2418.0,
+      "volume": 13300.0,
+      "sma25": 2583.0,
+      "sma75": 2557.56,
+      "sma200": 2359.0,
+      "rsi14": 45.79,
+      "rsi5": 49.45
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 50.27,
+    "monthly_rsi_ma5": 50.45,
+    "spread": -0.18,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

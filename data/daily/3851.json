@@ -2,12 +2,12 @@
   "code": "3851",
   "ticker": "3851.T",
   "name": "日本一ソフトウェア",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 1063.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 950.0,
+    "change_from_signal_month_pct": -10.63,
+    "return_since_gc_pct": -10.63
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 831.55,
       "rsi14": 40.36,
       "rsi5": 39.9
+    },
+    {
+      "date": "2026-08-03",
+      "open": 1061.0,
+      "high": 1070.0,
+      "low": 942.0,
+      "close": 950.0,
+      "volume": 142600.0,
+      "sma25": 897.68,
+      "sma75": 851.84,
+      "sma200": 832.04,
+      "rsi14": 40.36,
+      "rsi5": 39.9
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 53.49,
+    "monthly_rsi_ma5": 46.61,
+    "spread": 6.87,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

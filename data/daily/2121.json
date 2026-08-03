@@ -2,12 +2,12 @@
   "code": "2121",
   "ticker": "2121.T",
   "name": "ＭＩＸＩ",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 2896.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 9.57
+    "current_price": 3400.0,
+    "change_from_signal_month_pct": 17.4,
+    "return_since_gc_pct": 28.64
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 2758.45,
       "rsi14": 42.06,
       "rsi5": 45.07
+    },
+    {
+      "date": "2026-08-03",
+      "open": 3200.0,
+      "high": 3400.0,
+      "low": 3175.0,
+      "close": 3400.0,
+      "volume": 1687500.0,
+      "sma25": 2907.04,
+      "sma75": 2721.99,
+      "sma200": 2759.3,
+      "rsi14": 42.06,
+      "rsi5": 45.07
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 62.56,
+    "monthly_rsi_ma5": 48.2,
+    "spread": 14.37,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

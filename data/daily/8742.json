@@ -2,12 +2,12 @@
   "code": "8742",
   "ticker": "8742.T",
   "name": "小林洋行",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 550.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 544.0,
+    "change_from_signal_month_pct": -1.09,
+    "return_since_gc_pct": -1.09
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 478.13,
       "rsi14": 74.0,
       "rsi5": 73.75
+    },
+    {
+      "date": "2026-08-03",
+      "open": 550.0,
+      "high": 550.0,
+      "low": 544.0,
+      "close": 544.0,
+      "volume": 2200.0,
+      "sma25": 549.68,
+      "sma75": 546.28,
+      "sma200": 479.25,
+      "rsi14": 74.0,
+      "rsi5": 73.75
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 72.08,
+    "monthly_rsi_ma5": 72.9,
+    "spread": -0.82,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }

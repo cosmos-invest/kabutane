@@ -2,12 +2,12 @@
   "code": "7780",
   "ticker": "7780.T",
   "name": "メニコン",
-  "generated_at": "2026-08-02T21:21:00.517871+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-03T14:26:41.065577+00:00",
+  "price_date": "2026-08-03",
   "record": {
-    "current_price": 1735.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 1744.0,
+    "change_from_signal_month_pct": 0.52,
+    "return_since_gc_pct": 0.52
   },
   "daily": [
     {
@@ -22,7 +22,35 @@
       "sma200": 1591.43,
       "rsi14": 52.56,
       "rsi5": 51.41
+    },
+    {
+      "date": "2026-08-03",
+      "open": 1739.0,
+      "high": 1755.0,
+      "low": 1700.0,
+      "close": 1744.0,
+      "volume": 272000.0,
+      "sma25": 1700.88,
+      "sma75": 1655.89,
+      "sma200": 1594.34,
+      "rsi14": 52.56,
+      "rsi5": 51.41
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 51.46,
+    "monthly_rsi_ma5": 49.46,
+    "spread": 2.0,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
 }
