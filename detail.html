@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="assets/detail-enhancements.css?v=13">
   <link rel="stylesheet" href="assets/detail-signal-status.css?v=13">
   <link rel="stylesheet" href="assets/detail-chart-viewport.css?v=13">
+  <link rel="stylesheet" href="assets/detail-volume-profile.css?v=1">
 </head>
 <body>
   <header class="site-header detail-header">
@@ -44,6 +45,27 @@
       </div>
       <p id="chartDataNotice" class="analysis-disclosure chart-data-notice" hidden></p>
       <div class="chart-box price-chart-box"><canvas id="priceChart"></canvas></div>
+    </section>
+
+    <section class="panel" id="volumeProfilePanel">
+      <div class="section-heading">
+        <div>
+          <h2>価格帯別出来高</h2>
+          <p>どの価格帯で商いが集中したかを、日足の高値・安値・出来高から推定します。支持・抵抗を考える補助情報として使います。</p>
+        </div>
+      </div>
+      <div class="volume-profile-toolbar">
+        <div class="volume-profile-periods" role="group" aria-label="価格帯別出来高の集計期間">
+          <button class="button chart-mode active" type="button" data-volume-profile-period="1y">1年</button>
+          <button class="button secondary chart-mode" type="button" data-volume-profile-period="3y">3年</button>
+          <button class="button secondary chart-mode" type="button" data-volume-profile-period="all">全期間</button>
+        </div>
+        <span class="volume-profile-status" id="volumeProfileStatus">計算中…</span>
+      </div>
+      <div class="volume-profile-stats" id="volumeProfileStats"></div>
+      <div class="volume-profile-chart" id="volumeProfileChart" aria-label="推定価格帯別出来高"></div>
+      <p class="volume-profile-summary" id="volumeProfileSummary"></p>
+      <p class="volume-profile-disclosure"><strong>推定値です。</strong> 日足1本の出来高を、その日の安値から高値までの価格帯へ均等配分しています。実際の約定価格別出来高とは一致しません。単独で売買判断せず、トレンド・直近出来高・損切り位置と合わせて確認してください。</p>
     </section>
 
     <section class="panel chart-panel">
@@ -107,6 +129,7 @@
   <script src="assets/detail-enhancements.js?v=13" defer></script>
   <script src="assets/detail-signal-status.js?v=13" defer></script>
   <script src="assets/detail-signal-chart-fix.js?v=13" defer></script>
+  <script src="assets/detail-volume-profile.js?v=1" defer></script>
   <script src="assets/characters.js?v=13" defer></script>
 </body>
 </html>
