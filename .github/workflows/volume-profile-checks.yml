@@ -1,0 +1,59 @@
+name: Validate volume profile v1
+
+on:
+  pull_request:
+    paths:
+      - "detail.html"
+      - "assets/detail-volume-profile.js"
+      - "assets/detail-volume-profile.css"
+      - "tests/test_volume_profile.py"
+      - ".github/workflows/volume-profile-checks.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Validate source
+        run: |
+          node --check assets/detail-volume-profile.js
+          python -m unittest tests.test_volume_profile -v
+          git diff --check
+
+      - name: Verify detail data exists
+        run: |
+          test -f data/latest.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          latest = json.loads(Path('data/latest.json').read_text(encoding='utf-8'))
+          records = latest.get('records') or []
+          if not records:
+              raise SystemExit('No detail records available')
+          code = str(records[0].get('code') or '')
+          chart = Path('data/charts') / f'{code}.json'
+          if not chart.exists():
+              raise SystemExit(f'Missing chart fixture: {chart}')
+          payload = json.loads(chart.read_text(encoding='utf-8'))
+          rows = payload.get('daily') or []
+          valid = [row for row in rows if all(row.get(key) is not None for key in ('high', 'low', 'volume'))]
+          if len(valid) < 20:
+              raise SystemExit(f'Insufficient OHLCV rows for volume profile: {len(valid)}')
+          print(f'Volume profile fixture: code={code}, rows={len(valid)}')
+          PY
