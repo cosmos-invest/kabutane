@@ -2,12 +2,12 @@
   "code": "7291",
   "ticker": "7291.T",
   "name": "日本プラスト",
-  "generated_at": "2026-08-03T14:26:41.065577+00:00",
-  "price_date": "2026-08-03",
+  "generated_at": "2026-08-04T13:56:38.741675+00:00",
+  "price_date": "2026-08-04",
   "record": {
-    "current_price": 475.0,
-    "change_from_signal_month_pct": -1.25,
-    "return_since_gc_pct": -1.25
+    "current_price": 479.0,
+    "change_from_signal_month_pct": -0.42,
+    "return_since_gc_pct": -0.42
   },
   "daily": [
     {
@@ -35,15 +35,28 @@
       "sma200": 438.24,
       "rsi14": 54.11,
       "rsi5": 52.96
+    },
+    {
+      "date": "2026-08-04",
+      "open": 475.0,
+      "high": 479.0,
+      "low": 473.0,
+      "close": 479.0,
+      "volume": 11600.0,
+      "sma25": 472.24,
+      "sma75": 457.29,
+      "sma200": 438.54,
+      "rsi14": 54.11,
+      "rsi5": 52.96
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-03",
-    "monthly_rsi14": 56.96,
-    "monthly_rsi_ma5": 55.46,
-    "spread": 1.5,
+    "price_date": "2026-08-04",
+    "monthly_rsi14": 57.59,
+    "monthly_rsi_ma5": 55.58,
+    "spread": 2.0,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -52,5 +65,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
+  "provisional_generated_at": "2026-08-04T13:57:43.349449+00:00"
 }

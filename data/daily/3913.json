@@ -2,12 +2,12 @@
   "code": "3913",
   "ticker": "3913.T",
   "name": "ＧｒｅｅｎＢｅｅ",
-  "generated_at": "2026-08-03T14:26:41.065577+00:00",
-  "price_date": "2026-08-03",
+  "generated_at": "2026-08-04T13:56:38.741675+00:00",
+  "price_date": "2026-08-04",
   "record": {
-    "current_price": 1029.0,
-    "change_from_signal_month_pct": 0.39,
-    "return_since_gc_pct": 0.39
+    "current_price": 1010.0,
+    "change_from_signal_month_pct": -1.46,
+    "return_since_gc_pct": -1.46
   },
   "daily": [
     {
@@ -35,22 +35,35 @@
       "sma200": 1109.16,
       "rsi14": 54.12,
       "rsi5": 50.2
+    },
+    {
+      "date": "2026-08-04",
+      "open": 1029.0,
+      "high": 1033.0,
+      "low": 1004.0,
+      "close": 1010.0,
+      "volume": 7300.0,
+      "sma25": 967.2,
+      "sma75": 1010.95,
+      "sma200": 1108.87,
+      "rsi14": 54.12,
+      "rsi5": 50.2
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-03",
-    "monthly_rsi14": 54.29,
-    "monthly_rsi_ma5": 53.76,
-    "spread": 0.53,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-04",
+    "monthly_rsi14": 53.53,
+    "monthly_rsi_ma5": 53.61,
+    "spread": -0.08,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
+  "provisional_generated_at": "2026-08-04T13:57:43.349449+00:00"
 }

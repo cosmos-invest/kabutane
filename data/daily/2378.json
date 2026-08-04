@@ -2,12 +2,12 @@
   "code": "2378",
   "ticker": "2378.T",
   "name": "ルネサンス",
-  "generated_at": "2026-08-03T14:26:41.065577+00:00",
-  "price_date": "2026-08-03",
+  "generated_at": "2026-08-04T13:56:38.741675+00:00",
+  "price_date": "2026-08-04",
   "record": {
-    "current_price": 1050.0,
-    "change_from_signal_month_pct": -1.5,
-    "return_since_gc_pct": -1.5
+    "current_price": 1034.0,
+    "change_from_signal_month_pct": -3.0,
+    "return_since_gc_pct": -3.0
   },
   "daily": [
     {
@@ -35,15 +35,28 @@
       "sma200": 1055.13,
       "rsi14": 48.67,
       "rsi5": 46.58
+    },
+    {
+      "date": "2026-08-04",
+      "open": 1049.0,
+      "high": 1052.0,
+      "low": 1034.0,
+      "close": 1034.0,
+      "volume": 50000.0,
+      "sma25": 1047.36,
+      "sma75": 1015.35,
+      "sma200": 1054.88,
+      "rsi14": 48.67,
+      "rsi5": 46.58
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-03",
-    "monthly_rsi14": 51.36,
-    "monthly_rsi_ma5": 49.21,
-    "spread": 2.15,
+    "price_date": "2026-08-04",
+    "monthly_rsi14": 49.86,
+    "monthly_rsi_ma5": 48.91,
+    "spread": 0.95,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -52,5 +65,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
+  "provisional_generated_at": "2026-08-04T13:57:43.349449+00:00"
 }

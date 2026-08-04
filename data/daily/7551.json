@@ -2,12 +2,12 @@
   "code": "7551",
   "ticker": "7551.T",
   "name": "ウェッズ",
-  "generated_at": "2026-08-03T14:26:41.065577+00:00",
-  "price_date": "2026-08-03",
+  "generated_at": "2026-08-04T13:56:38.741675+00:00",
+  "price_date": "2026-08-04",
   "record": {
-    "current_price": 717.0,
-    "change_from_signal_month_pct": -1.24,
-    "return_since_gc_pct": -1.24
+    "current_price": 710.0,
+    "change_from_signal_month_pct": -2.2,
+    "return_since_gc_pct": -2.2
   },
   "daily": [
     {
@@ -35,22 +35,35 @@
       "sma200": 673.38,
       "rsi14": 63.8,
       "rsi5": 60.89
+    },
+    {
+      "date": "2026-08-04",
+      "open": 717.0,
+      "high": 717.0,
+      "low": 710.0,
+      "close": 710.0,
+      "volume": 4500.0,
+      "sma25": 701.72,
+      "sma75": 684.79,
+      "sma200": 673.82,
+      "rsi14": 63.8,
+      "rsi5": 60.89
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-03",
-    "monthly_rsi14": 64.08,
-    "monthly_rsi_ma5": 63.87,
-    "spread": 0.22,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-04",
+    "monthly_rsi14": 62.08,
+    "monthly_rsi_ma5": 63.47,
+    "spread": -1.38,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
+  "provisional_generated_at": "2026-08-04T13:57:43.349449+00:00"
 }

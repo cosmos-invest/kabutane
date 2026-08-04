@@ -2,12 +2,12 @@
   "code": "2428",
   "ticker": "2428.T",
   "name": "ウェルネット",
-  "generated_at": "2026-08-03T14:26:41.065577+00:00",
-  "price_date": "2026-08-03",
+  "generated_at": "2026-08-04T13:56:38.741675+00:00",
+  "price_date": "2026-08-04",
   "record": {
-    "current_price": 640.0,
-    "change_from_signal_month_pct": -0.47,
-    "return_since_gc_pct": -0.47
+    "current_price": 637.0,
+    "change_from_signal_month_pct": -0.93,
+    "return_since_gc_pct": -0.93
   },
   "daily": [
     {
@@ -35,15 +35,28 @@
       "sma200": 648.21,
       "rsi14": 44.79,
       "rsi5": 41.78
+    },
+    {
+      "date": "2026-08-04",
+      "open": 640.0,
+      "high": 642.0,
+      "low": 634.0,
+      "close": 637.0,
+      "volume": 21100.0,
+      "sma25": 634.72,
+      "sma75": 627.23,
+      "sma200": 647.84,
+      "rsi14": 44.79,
+      "rsi5": 41.78
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-03",
-    "monthly_rsi14": 46.85,
-    "monthly_rsi_ma5": 45.43,
-    "spread": 1.42,
+    "price_date": "2026-08-04",
+    "monthly_rsi14": 46.5,
+    "monthly_rsi_ma5": 45.36,
+    "spread": 1.14,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -52,5 +65,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
+  "provisional_generated_at": "2026-08-04T13:57:43.349449+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "4783",
   "ticker": "4783.T",
   "name": "ＮＣＤ",
-  "generated_at": "2026-08-03T14:26:41.065577+00:00",
-  "price_date": "2026-08-03",
+  "generated_at": "2026-08-04T13:56:38.741675+00:00",
+  "price_date": "2026-08-04",
   "record": {
-    "current_price": 2460.0,
-    "change_from_signal_month_pct": -1.13,
-    "return_since_gc_pct": -1.13
+    "current_price": 2438.0,
+    "change_from_signal_month_pct": -2.01,
+    "return_since_gc_pct": -2.01
   },
   "daily": [
     {
@@ -35,22 +35,35 @@
       "sma200": 2767.53,
       "rsi14": 54.84,
       "rsi5": 50.16
+    },
+    {
+      "date": "2026-08-04",
+      "open": 2490.0,
+      "high": 2490.0,
+      "low": 2430.0,
+      "close": 2438.0,
+      "volume": 8700.0,
+      "sma25": 2467.6,
+      "sma75": 2443.48,
+      "sma200": 2766.02,
+      "rsi14": 54.84,
+      "rsi5": 50.16
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-03",
-    "monthly_rsi14": 51.32,
-    "monthly_rsi_ma5": 51.24,
-    "spread": 0.08,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-04",
+    "monthly_rsi14": 50.9,
+    "monthly_rsi_ma5": 51.15,
+    "spread": -0.25,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
+  "provisional_generated_at": "2026-08-04T13:57:43.349449+00:00"
 }

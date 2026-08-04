@@ -2,12 +2,12 @@
   "code": "2212",
   "ticker": "2212.T",
   "name": "山崎製パン",
-  "generated_at": "2026-08-03T14:26:41.065577+00:00",
-  "price_date": "2026-08-03",
+  "generated_at": "2026-08-04T13:56:38.741675+00:00",
+  "price_date": "2026-08-04",
   "record": {
-    "current_price": 3307.0,
-    "change_from_signal_month_pct": -1.55,
-    "return_since_gc_pct": -1.55
+    "current_price": 3260.0,
+    "change_from_signal_month_pct": -2.95,
+    "return_since_gc_pct": -2.95
   },
   "daily": [
     {
@@ -35,22 +35,35 @@
       "sma200": 3274.74,
       "rsi14": 54.9,
       "rsi5": 51.86
+    },
+    {
+      "date": "2026-08-04",
+      "open": 3301.0,
+      "high": 3306.0,
+      "low": 3229.0,
+      "close": 3260.0,
+      "volume": 789800.0,
+      "sma25": 3330.16,
+      "sma75": 3210.8,
+      "sma200": 3275.24,
+      "rsi14": 54.9,
+      "rsi5": 51.86
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-03",
-    "monthly_rsi14": 56.0,
-    "monthly_rsi_ma5": 55.43,
-    "spread": 0.57,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-04",
+    "monthly_rsi14": 54.93,
+    "monthly_rsi_ma5": 55.22,
+    "spread": -0.29,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
+  "provisional_generated_at": "2026-08-04T13:57:43.349449+00:00"
 }

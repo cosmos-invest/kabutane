@@ -2,12 +2,12 @@
   "code": "6943",
   "ticker": "6943.T",
   "name": "ＮＫＫスイッチズ",
-  "generated_at": "2026-08-03T14:26:41.065577+00:00",
-  "price_date": "2026-08-03",
+  "generated_at": "2026-08-04T13:56:38.741675+00:00",
+  "price_date": "2026-08-04",
   "record": {
-    "current_price": 4980.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 4965.0,
+    "change_from_signal_month_pct": -0.3,
+    "return_since_gc_pct": -0.3
   },
   "daily": [
     {
@@ -35,22 +35,35 @@
       "sma200": 4794.07,
       "rsi14": 55.3,
       "rsi5": 55.11
+    },
+    {
+      "date": "2026-08-04",
+      "open": 4990.0,
+      "high": 4990.0,
+      "low": 4965.0,
+      "close": 4965.0,
+      "volume": 200.0,
+      "sma25": 4980.8,
+      "sma75": 4943.87,
+      "sma200": 4795.68,
+      "rsi14": 55.3,
+      "rsi5": 55.11
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-03",
-    "monthly_rsi14": 55.52,
-    "monthly_rsi_ma5": 55.48,
-    "spread": 0.04,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-04",
+    "monthly_rsi14": 55.08,
+    "monthly_rsi_ma5": 55.39,
+    "spread": -0.31,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
+  "provisional_generated_at": "2026-08-04T13:57:43.349449+00:00"
 }

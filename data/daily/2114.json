@@ -2,12 +2,12 @@
   "code": "2114",
   "ticker": "2114.T",
   "name": "フジ日本",
-  "generated_at": "2026-08-03T14:26:41.065577+00:00",
-  "price_date": "2026-08-03",
+  "generated_at": "2026-08-04T13:56:38.741675+00:00",
+  "price_date": "2026-08-04",
   "record": {
-    "current_price": 630.0,
-    "change_from_signal_month_pct": -0.94,
-    "return_since_gc_pct": -0.94
+    "current_price": 629.0,
+    "change_from_signal_month_pct": -1.1,
+    "return_since_gc_pct": -1.1
   },
   "daily": [
     {
@@ -35,15 +35,28 @@
       "sma200": 607.26,
       "rsi14": 65.24,
       "rsi5": 62.69
+    },
+    {
+      "date": "2026-08-04",
+      "open": 634.0,
+      "high": 634.0,
+      "low": 629.0,
+      "close": 629.0,
+      "volume": 11600.0,
+      "sma25": 632.6,
+      "sma75": 619.2,
+      "sma200": 607.71,
+      "rsi14": 65.24,
+      "rsi5": 62.69
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-03",
-    "monthly_rsi14": 61.72,
-    "monthly_rsi_ma5": 61.36,
-    "spread": 0.36,
+    "price_date": "2026-08-04",
+    "monthly_rsi14": 61.52,
+    "monthly_rsi_ma5": 61.32,
+    "spread": 0.2,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -52,5 +65,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
+  "provisional_generated_at": "2026-08-04T13:57:43.349449+00:00"
 }

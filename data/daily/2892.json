@@ -2,12 +2,12 @@
   "code": "2892",
   "ticker": "2892.T",
   "name": "日本食品化工",
-  "generated_at": "2026-08-03T14:26:41.065577+00:00",
-  "price_date": "2026-08-03",
+  "generated_at": "2026-08-04T13:56:38.741675+00:00",
+  "price_date": "2026-08-04",
   "record": {
-    "current_price": 4305.0,
-    "change_from_signal_month_pct": -3.15,
-    "return_since_gc_pct": 6.69
+    "current_price": 4245.0,
+    "change_from_signal_month_pct": -4.5,
+    "return_since_gc_pct": 5.2
   },
   "daily": [
     {
@@ -35,22 +35,35 @@
       "sma200": 3901.05,
       "rsi14": 60.56,
       "rsi5": 62.82
+    },
+    {
+      "date": "2026-08-04",
+      "open": 4305.0,
+      "high": 4325.0,
+      "low": 4245.0,
+      "close": 4245.0,
+      "volume": 3500.0,
+      "sma25": 4359.4,
+      "sma75": 4096.13,
+      "sma200": 3904.95,
+      "rsi14": 60.56,
+      "rsi5": 62.82
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-03",
-    "monthly_rsi14": 63.5,
-    "monthly_rsi_ma5": 62.65,
-    "spread": 0.84,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-04",
+    "monthly_rsi14": 62.23,
+    "monthly_rsi_ma5": 62.4,
+    "spread": -0.17,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
+  "provisional_generated_at": "2026-08-04T13:57:43.349449+00:00"
 }

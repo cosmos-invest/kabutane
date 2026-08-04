@@ -2,12 +2,12 @@
   "code": "8410",
   "ticker": "8410.T",
   "name": "セブン銀行",
-  "generated_at": "2026-08-03T14:26:41.065577+00:00",
-  "price_date": "2026-08-03",
+  "generated_at": "2026-08-04T13:56:38.741675+00:00",
+  "price_date": "2026-08-04",
   "record": {
-    "current_price": 318.6,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 13.22
+    "current_price": 315.9,
+    "change_from_signal_month_pct": -0.85,
+    "return_since_gc_pct": 12.26
   },
   "daily": [
     {
@@ -35,15 +35,28 @@
       "sma200": 287.06,
       "rsi14": 47.14,
       "rsi5": 49.09
+    },
+    {
+      "date": "2026-08-04",
+      "open": 321.0,
+      "high": 322.7,
+      "low": 315.8,
+      "close": 315.9,
+      "volume": 6899500.0,
+      "sma25": 304.17,
+      "sma75": 284.01,
+      "sma200": 287.2,
+      "rsi14": 47.14,
+      "rsi5": 49.09
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-03",
-    "monthly_rsi14": 58.13,
-    "monthly_rsi_ma5": 49.43,
-    "spread": 8.71,
+    "price_date": "2026-08-04",
+    "monthly_rsi14": 57.2,
+    "monthly_rsi_ma5": 49.24,
+    "spread": 7.96,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -52,5 +65,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
+  "provisional_generated_at": "2026-08-04T13:57:43.349449+00:00"
 }

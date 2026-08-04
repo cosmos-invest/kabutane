@@ -2,12 +2,12 @@
   "code": "3901",
   "ticker": "3901.T",
   "name": "マークラインズ",
-  "generated_at": "2026-08-03T14:26:41.065577+00:00",
-  "price_date": "2026-08-03",
+  "generated_at": "2026-08-04T13:56:38.741675+00:00",
+  "price_date": "2026-08-04",
   "record": {
-    "current_price": 1351.0,
-    "change_from_signal_month_pct": 0.6,
-    "return_since_gc_pct": 0.6
+    "current_price": 1339.0,
+    "change_from_signal_month_pct": -0.3,
+    "return_since_gc_pct": -0.3
   },
   "daily": [
     {
@@ -35,15 +35,28 @@
       "sma200": 1551.26,
       "rsi14": 31.65,
       "rsi5": 28.01
+    },
+    {
+      "date": "2026-08-04",
+      "open": 1350.0,
+      "high": 1351.0,
+      "low": 1332.0,
+      "close": 1339.0,
+      "volume": 54400.0,
+      "sma25": 1347.64,
+      "sma75": 1365.61,
+      "sma200": 1547.81,
+      "rsi14": 31.65,
+      "rsi5": 28.01
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-03",
-    "monthly_rsi14": 33.87,
-    "monthly_rsi_ma5": 32.11,
-    "spread": 1.76,
+    "price_date": "2026-08-04",
+    "monthly_rsi14": 33.5,
+    "monthly_rsi_ma5": 32.04,
+    "spread": 1.46,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -52,5 +65,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
+  "provisional_generated_at": "2026-08-04T13:57:43.349449+00:00"
 }

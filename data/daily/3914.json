@@ -2,12 +2,12 @@
   "code": "3914",
   "ticker": "3914.T",
   "name": "ＪＩＧ－ＳＡＷ",
-  "generated_at": "2026-08-03T14:26:41.065577+00:00",
-  "price_date": "2026-08-03",
+  "generated_at": "2026-08-04T13:56:38.741675+00:00",
+  "price_date": "2026-08-04",
   "record": {
-    "current_price": 2529.0,
-    "change_from_signal_month_pct": 3.86,
-    "return_since_gc_pct": 3.86
+    "current_price": 2296.0,
+    "change_from_signal_month_pct": -5.71,
+    "return_since_gc_pct": -5.71
   },
   "daily": [
     {
@@ -35,22 +35,35 @@
       "sma200": 2617.28,
       "rsi14": 40.02,
       "rsi5": 39.79
+    },
+    {
+      "date": "2026-08-04",
+      "open": 2329.0,
+      "high": 2369.0,
+      "low": 2291.0,
+      "close": 2296.0,
+      "volume": 124600.0,
+      "sma25": 2410.92,
+      "sma75": 2477.73,
+      "sma200": 2617.3,
+      "rsi14": 40.02,
+      "rsi5": 39.79
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-03",
-    "monthly_rsi14": 40.69,
-    "monthly_rsi_ma5": 39.1,
-    "spread": 1.59,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-04",
+    "monthly_rsi14": 37.76,
+    "monthly_rsi_ma5": 38.52,
+    "spread": -0.76,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
+  "provisional_generated_at": "2026-08-04T13:57:43.349449+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "8283",
   "ticker": "8283.T",
   "name": "ＰＡＬＴＡＣ",
-  "generated_at": "2026-08-03T14:26:41.065577+00:00",
-  "price_date": "2026-08-03",
+  "generated_at": "2026-08-04T13:56:38.741675+00:00",
+  "price_date": "2026-08-04",
   "record": {
-    "current_price": 6630.0,
-    "change_from_signal_month_pct": 0.15,
-    "return_since_gc_pct": 0.0
+    "current_price": 6620.0,
+    "change_from_signal_month_pct": 0.0,
+    "return_since_gc_pct": -0.15
   },
   "daily": [
     {
@@ -35,15 +35,28 @@
       "sma200": 5297.76,
       "rsi14": 63.61,
       "rsi5": 74.25
+    },
+    {
+      "date": "2026-08-04",
+      "open": 6630.0,
+      "high": 6640.0,
+      "low": 6620.0,
+      "close": 6620.0,
+      "volume": 41400.0,
+      "sma25": 6624.24,
+      "sma75": 6213.48,
+      "sma200": 5307.9,
+      "rsi14": 63.61,
+      "rsi5": 74.25
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-03",
-    "monthly_rsi14": 73.49,
-    "monthly_rsi_ma5": 69.06,
-    "spread": 4.43,
+    "price_date": "2026-08-04",
+    "monthly_rsi14": 73.41,
+    "monthly_rsi_ma5": 69.04,
+    "spread": 4.37,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -52,5 +65,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
+  "provisional_generated_at": "2026-08-04T13:57:43.349449+00:00"
 }

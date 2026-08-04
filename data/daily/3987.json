@@ -2,12 +2,12 @@
   "code": "3987",
   "ticker": "3987.T",
   "name": "エコモット",
-  "generated_at": "2026-08-03T14:26:41.065577+00:00",
-  "price_date": "2026-08-03",
+  "generated_at": "2026-08-04T13:56:38.741675+00:00",
+  "price_date": "2026-08-04",
   "record": {
-    "current_price": 641.0,
-    "change_from_signal_month_pct": 0.16,
-    "return_since_gc_pct": 28.71
+    "current_price": 636.0,
+    "change_from_signal_month_pct": -0.62,
+    "return_since_gc_pct": 27.71
   },
   "daily": [
     {
@@ -35,15 +35,28 @@
       "sma200": 516.02,
       "rsi14": 54.38,
       "rsi5": 55.78
+    },
+    {
+      "date": "2026-08-04",
+      "open": 640.0,
+      "high": 641.0,
+      "low": 636.0,
+      "close": 636.0,
+      "volume": 6400.0,
+      "sma25": 596.96,
+      "sma75": 567.31,
+      "sma200": 516.88,
+      "rsi14": 54.38,
+      "rsi5": 55.78
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-03",
-    "monthly_rsi14": 62.63,
-    "monthly_rsi_ma5": 59.08,
-    "spread": 3.55,
+    "price_date": "2026-08-04",
+    "monthly_rsi14": 62.14,
+    "monthly_rsi_ma5": 58.98,
+    "spread": 3.16,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -52,5 +65,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
+  "provisional_generated_at": "2026-08-04T13:57:43.349449+00:00"
 }

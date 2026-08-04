@@ -2,12 +2,12 @@
   "code": "9001",
   "ticker": "9001.T",
   "name": "東武鉄道",
-  "generated_at": "2026-08-03T14:26:41.065577+00:00",
-  "price_date": "2026-08-03",
+  "generated_at": "2026-08-04T13:56:38.741675+00:00",
+  "price_date": "2026-08-04",
   "record": {
-    "current_price": 3016.0,
-    "change_from_signal_month_pct": -2.58,
-    "return_since_gc_pct": 3.16
+    "current_price": 2943.5,
+    "change_from_signal_month_pct": -4.93,
+    "return_since_gc_pct": 0.68
   },
   "daily": [
     {
@@ -35,15 +35,28 @@
       "sma200": 2794.19,
       "rsi14": 52.68,
       "rsi5": 53.31
+    },
+    {
+      "date": "2026-08-04",
+      "open": 3004.0,
+      "high": 3004.0,
+      "low": 2922.5,
+      "close": 2943.5,
+      "volume": 643200.0,
+      "sma25": 2995.82,
+      "sma75": 2887.19,
+      "sma200": 2795.72,
+      "rsi14": 52.68,
+      "rsi5": 53.31
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-03",
-    "monthly_rsi14": 52.47,
-    "monthly_rsi_ma5": 49.92,
-    "spread": 2.54,
+    "price_date": "2026-08-04",
+    "monthly_rsi14": 50.38,
+    "monthly_rsi_ma5": 49.5,
+    "spread": 0.87,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -52,5 +65,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
+  "provisional_generated_at": "2026-08-04T13:57:43.349449+00:00"
 }

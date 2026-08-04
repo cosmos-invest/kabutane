@@ -2,8 +2,8 @@
   "code": "9691",
   "ticker": "9691.T",
   "name": "両毛システムズ",
-  "generated_at": "2026-08-03T14:26:41.065577+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-04T13:56:38.741675+00:00",
+  "price_date": "2026-08-03",
   "record": {
     "current_price": 5150.0,
     "change_from_signal_month_pct": 0.0,
@@ -22,7 +22,35 @@
       "sma200": 4515.75,
       "rsi14": 65.14,
       "rsi5": 69.69
+    },
+    {
+      "date": "2026-08-03",
+      "open": 5150.0,
+      "high": 5150.0,
+      "low": 5150.0,
+      "close": 5150.0,
+      "volume": 800.0,
+      "sma25": 5166.0,
+      "sma75": 4848.6,
+      "sma200": 4519.7,
+      "rsi14": 65.14,
+      "rsi5": 69.69
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-03",
+    "monthly_rsi14": 68.39,
+    "monthly_rsi_ma5": 66.4,
+    "spread": 1.99,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "CONTINUE",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-04T13:57:43.349449+00:00"
 }

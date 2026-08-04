@@ -2,12 +2,12 @@
   "code": "2924",
   "ticker": "2924.T",
   "name": "イフジ産業",
-  "generated_at": "2026-08-03T14:26:41.065577+00:00",
-  "price_date": "2026-08-03",
+  "generated_at": "2026-08-04T13:56:38.741675+00:00",
+  "price_date": "2026-08-04",
   "record": {
-    "current_price": 2050.0,
-    "change_from_signal_month_pct": -0.68,
-    "return_since_gc_pct": -3.35
+    "current_price": 1979.0,
+    "change_from_signal_month_pct": -4.12,
+    "return_since_gc_pct": -6.69
   },
   "daily": [
     {
@@ -35,22 +35,35 @@
       "sma200": 2055.51,
       "rsi14": 55.08,
       "rsi5": 55.26
+    },
+    {
+      "date": "2026-08-04",
+      "open": 1963.0,
+      "high": 1988.0,
+      "low": 1931.0,
+      "close": 1979.0,
+      "volume": 18800.0,
+      "sma25": 2059.4,
+      "sma75": 2046.29,
+      "sma200": 2054.01,
+      "rsi14": 55.08,
+      "rsi5": 55.26
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-03",
-    "monthly_rsi14": 55.97,
-    "monthly_rsi_ma5": 55.74,
-    "spread": 0.23,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-04",
+    "monthly_rsi14": 53.49,
+    "monthly_rsi_ma5": 55.25,
+    "spread": -1.76,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
+  "provisional_generated_at": "2026-08-04T13:57:43.349449+00:00"
 }

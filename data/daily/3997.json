@@ -2,12 +2,12 @@
   "code": "3997",
   "ticker": "3997.T",
   "name": "トレードワークス",
-  "generated_at": "2026-08-03T14:26:41.065577+00:00",
-  "price_date": "2026-08-03",
+  "generated_at": "2026-08-04T13:56:38.741675+00:00",
+  "price_date": "2026-08-04",
   "record": {
-    "current_price": 388.0,
-    "change_from_signal_month_pct": -3.24,
-    "return_since_gc_pct": -3.24
+    "current_price": 405.0,
+    "change_from_signal_month_pct": 1.0,
+    "return_since_gc_pct": 1.0
   },
   "daily": [
     {
@@ -35,22 +35,35 @@
       "sma200": 392.88,
       "rsi14": 67.55,
       "rsi5": 55.41
+    },
+    {
+      "date": "2026-08-04",
+      "open": 389.0,
+      "high": 405.0,
+      "low": 387.0,
+      "close": 405.0,
+      "volume": 123300.0,
+      "sma25": 358.56,
+      "sma75": 364.35,
+      "sma200": 393.6,
+      "rsi14": 67.55,
+      "rsi5": 55.41
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-03",
-    "monthly_rsi14": 60.18,
-    "monthly_rsi_ma5": 61.27,
-    "spread": -1.09,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-04",
+    "monthly_rsi14": 62.01,
+    "monthly_rsi_ma5": 61.64,
+    "spread": 0.37,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
+  "provisional_generated_at": "2026-08-04T13:57:43.349449+00:00"
 }

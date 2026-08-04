@@ -2,12 +2,12 @@
   "code": "6030",
   "ticker": "6030.T",
   "name": "アドベンチャー",
-  "generated_at": "2026-08-03T14:26:41.065577+00:00",
-  "price_date": "2026-08-03",
+  "generated_at": "2026-08-04T13:56:38.741675+00:00",
+  "price_date": "2026-08-04",
   "record": {
-    "current_price": 1522.0,
-    "change_from_signal_month_pct": 1.81,
-    "return_since_gc_pct": 1.81
+    "current_price": 1436.0,
+    "change_from_signal_month_pct": -3.95,
+    "return_since_gc_pct": -3.95
   },
   "daily": [
     {
@@ -35,15 +35,28 @@
       "sma200": 1723.62,
       "rsi14": 31.69,
       "rsi5": 31.39
+    },
+    {
+      "date": "2026-08-04",
+      "open": 1533.0,
+      "high": 1533.0,
+      "low": 1436.0,
+      "close": 1436.0,
+      "volume": 9800.0,
+      "sma25": 1465.64,
+      "sma75": 1403.6,
+      "sma200": 1717.02,
+      "rsi14": 31.69,
+      "rsi5": 31.39
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-03",
-    "monthly_rsi14": 26.76,
-    "monthly_rsi_ma5": 24.8,
-    "spread": 1.96,
+    "price_date": "2026-08-04",
+    "monthly_rsi14": 25.95,
+    "monthly_rsi_ma5": 24.64,
+    "spread": 1.32,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -52,5 +65,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
+  "provisional_generated_at": "2026-08-04T13:57:43.349449+00:00"
 }

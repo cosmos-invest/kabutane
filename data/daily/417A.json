@@ -2,12 +2,12 @@
   "code": "417A",
   "ticker": "417A.T",
   "name": "ブルーゾーンホールディングス",
-  "generated_at": "2026-08-03T14:26:41.065577+00:00",
-  "price_date": "2026-08-03",
+  "generated_at": "2026-08-04T13:56:38.741675+00:00",
+  "price_date": "2026-08-04",
   "record": {
-    "current_price": 1767.5,
-    "change_from_signal_month_pct": -1.17,
-    "return_since_gc_pct": -1.17
+    "current_price": 1716.0,
+    "change_from_signal_month_pct": -4.05,
+    "return_since_gc_pct": -4.05
   },
   "daily": [
     {
@@ -35,22 +35,35 @@
       "sma200": 1759.62,
       "rsi14": 51.73,
       "rsi5": 49.08
+    },
+    {
+      "date": "2026-08-04",
+      "open": 1760.5,
+      "high": 1763.5,
+      "low": 1708.5,
+      "close": 1716.0,
+      "volume": 382400.0,
+      "sma25": 1767.82,
+      "sma75": 1762.81,
+      "sma200": 1759.55,
+      "rsi14": 51.73,
+      "rsi5": 49.08
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-03",
-    "monthly_rsi14": 50.75,
-    "monthly_rsi_ma5": 50.31,
-    "spread": 0.44,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-04",
+    "monthly_rsi14": 48.24,
+    "monthly_rsi_ma5": 49.81,
+    "spread": -1.57,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
+  "provisional_generated_at": "2026-08-04T13:57:43.349449+00:00"
 }

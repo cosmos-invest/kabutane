@@ -2,12 +2,12 @@
   "code": "160A",
   "ticker": "160A.T",
   "name": "アズパートナーズ",
-  "generated_at": "2026-08-03T14:26:41.065577+00:00",
-  "price_date": "2026-08-03",
+  "generated_at": "2026-08-04T13:56:38.741675+00:00",
+  "price_date": "2026-08-04",
   "record": {
-    "current_price": 2007.0,
-    "change_from_signal_month_pct": -1.81,
-    "return_since_gc_pct": -1.81
+    "current_price": 1998.0,
+    "change_from_signal_month_pct": -2.25,
+    "return_since_gc_pct": -2.25
   },
   "daily": [
     {
@@ -35,22 +35,35 @@
       "sma200": 2348.47,
       "rsi14": 47.86,
       "rsi5": 44.89
+    },
+    {
+      "date": "2026-08-04",
+      "open": 2008.0,
+      "high": 2025.0,
+      "low": 1990.0,
+      "close": 1998.0,
+      "volume": 8500.0,
+      "sma25": 2031.24,
+      "sma75": 2031.72,
+      "sma200": 2341.89,
+      "rsi14": 47.86,
+      "rsi5": 44.89
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-03",
-    "monthly_rsi14": 46.29,
-    "monthly_rsi_ma5": 46.27,
-    "spread": 0.03,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-04",
+    "monthly_rsi14": 46.13,
+    "monthly_rsi_ma5": 46.23,
+    "spread": -0.11,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
+  "provisional_generated_at": "2026-08-04T13:57:43.349449+00:00"
 }

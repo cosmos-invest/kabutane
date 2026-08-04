@@ -2,12 +2,12 @@
   "code": "9432",
   "ticker": "9432.T",
   "name": "ＮＴＴ",
-  "generated_at": "2026-08-03T14:26:41.065577+00:00",
-  "price_date": "2026-08-03",
+  "generated_at": "2026-08-04T13:56:38.741675+00:00",
+  "price_date": "2026-08-04",
   "record": {
-    "current_price": 152.5,
-    "change_from_signal_month_pct": 0.07,
-    "return_since_gc_pct": 0.07
+    "current_price": 150.4,
+    "change_from_signal_month_pct": -1.31,
+    "return_since_gc_pct": -1.31
   },
   "daily": [
     {
@@ -35,15 +35,28 @@
       "sma200": 153.32,
       "rsi14": 46.78,
       "rsi5": 41.61
+    },
+    {
+      "date": "2026-08-04",
+      "open": 153.0,
+      "high": 153.2,
+      "low": 150.4,
+      "close": 150.4,
+      "volume": 229208900.0,
+      "sma25": 150.5,
+      "sma75": 149.86,
+      "sma200": 153.3,
+      "rsi14": 46.78,
+      "rsi5": 41.61
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-03",
-    "monthly_rsi14": 48.13,
-    "monthly_rsi_ma5": 45.68,
-    "spread": 2.45,
+    "price_date": "2026-08-04",
+    "monthly_rsi14": 46.43,
+    "monthly_rsi_ma5": 45.34,
+    "spread": 1.09,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -52,5 +65,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
+  "provisional_generated_at": "2026-08-04T13:57:43.349449+00:00"
 }

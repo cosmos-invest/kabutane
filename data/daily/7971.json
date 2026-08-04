@@ -2,12 +2,12 @@
   "code": "7971",
   "ticker": "7971.T",
   "name": "東リ",
-  "generated_at": "2026-08-03T14:26:41.065577+00:00",
-  "price_date": "2026-08-03",
+  "generated_at": "2026-08-04T13:56:38.741675+00:00",
+  "price_date": "2026-08-04",
   "record": {
-    "current_price": 659.0,
-    "change_from_signal_month_pct": -1.35,
-    "return_since_gc_pct": -1.35
+    "current_price": 664.0,
+    "change_from_signal_month_pct": -0.6,
+    "return_since_gc_pct": -0.6
   },
   "daily": [
     {
@@ -35,22 +35,35 @@
       "sma200": 680.12,
       "rsi14": 68.18,
       "rsi5": 63.81
+    },
+    {
+      "date": "2026-08-04",
+      "open": 664.0,
+      "high": 668.0,
+      "low": 659.0,
+      "close": 664.0,
+      "volume": 104000.0,
+      "sma25": 659.4,
+      "sma75": 639.04,
+      "sma200": 680.59,
+      "rsi14": 68.18,
+      "rsi5": 63.81
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-03",
-    "monthly_rsi14": 60.84,
-    "monthly_rsi_ma5": 61.12,
-    "spread": -0.28,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-04",
+    "monthly_rsi14": 61.6,
+    "monthly_rsi_ma5": 61.27,
+    "spread": 0.33,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
+  "provisional_generated_at": "2026-08-04T13:57:43.349449+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "7202",
   "ticker": "7202.T",
   "name": "いすゞ自動車",
-  "generated_at": "2026-08-03T14:26:41.065577+00:00",
-  "price_date": "2026-08-03",
+  "generated_at": "2026-08-04T13:56:38.741675+00:00",
+  "price_date": "2026-08-04",
   "record": {
-    "current_price": 2300.5,
-    "change_from_signal_month_pct": -4.25,
-    "return_since_gc_pct": -4.25
+    "current_price": 2216.5,
+    "change_from_signal_month_pct": -7.74,
+    "return_since_gc_pct": -7.74
   },
   "daily": [
     {
@@ -35,22 +35,35 @@
       "sma200": 2337.49,
       "rsi14": 57.07,
       "rsi5": 50.78
+    },
+    {
+      "date": "2026-08-04",
+      "open": 2210.5,
+      "high": 2252.0,
+      "low": 2176.0,
+      "close": 2216.5,
+      "volume": 5461900.0,
+      "sma25": 2331.72,
+      "sma75": 2266.16,
+      "sma200": 2338.9,
+      "rsi14": 57.07,
+      "rsi5": 50.78
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-03",
-    "monthly_rsi14": 53.42,
-    "monthly_rsi_ma5": 53.3,
-    "spread": 0.12,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-04",
+    "monthly_rsi14": 51.61,
+    "monthly_rsi_ma5": 52.94,
+    "spread": -1.33,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
+  "provisional_generated_at": "2026-08-04T13:57:43.349449+00:00"
 }

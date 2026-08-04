@@ -2,12 +2,12 @@
   "code": "7175",
   "ticker": "7175.T",
   "name": "今村証券",
-  "generated_at": "2026-08-03T14:26:41.065577+00:00",
-  "price_date": "2026-08-03",
+  "generated_at": "2026-08-04T13:56:38.741675+00:00",
+  "price_date": "2026-08-04",
   "record": {
-    "current_price": 1710.0,
-    "change_from_signal_month_pct": 0.12,
-    "return_since_gc_pct": 0.12
+    "current_price": 1660.0,
+    "change_from_signal_month_pct": -2.81,
+    "return_since_gc_pct": -2.81
   },
   "daily": [
     {
@@ -35,15 +35,28 @@
       "sma200": 1307.26,
       "rsi14": 62.64,
       "rsi5": 62.28
+    },
+    {
+      "date": "2026-08-04",
+      "open": 1683.0,
+      "high": 1692.0,
+      "low": 1660.0,
+      "close": 1660.0,
+      "volume": 7400.0,
+      "sma25": 1547.8,
+      "sma75": 1412.75,
+      "sma200": 1309.92,
+      "rsi14": 62.64,
+      "rsi5": 62.28
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-03",
-    "monthly_rsi14": 75.15,
-    "monthly_rsi_ma5": 67.53,
-    "spread": 7.63,
+    "price_date": "2026-08-04",
+    "monthly_rsi14": 71.53,
+    "monthly_rsi_ma5": 66.8,
+    "spread": 4.73,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -52,5 +65,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
+  "provisional_generated_at": "2026-08-04T13:57:43.349449+00:00"
 }

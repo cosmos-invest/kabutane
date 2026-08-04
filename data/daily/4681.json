@@ -2,12 +2,12 @@
   "code": "4681",
   "ticker": "4681.T",
   "name": "リゾートトラスト",
-  "generated_at": "2026-08-03T14:26:41.065577+00:00",
-  "price_date": "2026-08-03",
+  "generated_at": "2026-08-04T13:56:38.741675+00:00",
+  "price_date": "2026-08-04",
   "record": {
-    "current_price": 1770.5,
-    "change_from_signal_month_pct": -1.06,
-    "return_since_gc_pct": -1.06
+    "current_price": 1729.0,
+    "change_from_signal_month_pct": -3.38,
+    "return_since_gc_pct": -3.38
   },
   "daily": [
     {
@@ -35,22 +35,35 @@
       "sma200": 1831.69,
       "rsi14": 57.34,
       "rsi5": 55.28
+    },
+    {
+      "date": "2026-08-04",
+      "open": 1742.0,
+      "high": 1756.5,
+      "low": 1723.0,
+      "close": 1729.0,
+      "volume": 439700.0,
+      "sma25": 1753.68,
+      "sma75": 1735.8,
+      "sma200": 1831.0,
+      "rsi14": 57.34,
+      "rsi5": 55.28
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-03",
-    "monthly_rsi14": 56.79,
-    "monthly_rsi_ma5": 56.19,
-    "spread": 0.6,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-04",
+    "monthly_rsi14": 54.48,
+    "monthly_rsi_ma5": 55.73,
+    "spread": -1.25,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
+  "provisional_generated_at": "2026-08-04T13:57:43.349449+00:00"
 }

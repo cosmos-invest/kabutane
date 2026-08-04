@@ -2,12 +2,12 @@
   "code": "9627",
   "ticker": "9627.T",
   "name": "アインホールディングス",
-  "generated_at": "2026-08-03T14:26:41.065577+00:00",
-  "price_date": "2026-08-03",
+  "generated_at": "2026-08-04T13:56:38.741675+00:00",
+  "price_date": "2026-08-04",
   "record": {
-    "current_price": 5797.0,
-    "change_from_signal_month_pct": -1.46,
-    "return_since_gc_pct": -1.46
+    "current_price": 5600.0,
+    "change_from_signal_month_pct": -4.81,
+    "return_since_gc_pct": -4.81
   },
   "daily": [
     {
@@ -35,22 +35,35 @@
       "sma200": 6140.19,
       "rsi14": 48.59,
       "rsi5": 46.98
+    },
+    {
+      "date": "2026-08-04",
+      "open": 5769.0,
+      "high": 5769.0,
+      "low": 5570.0,
+      "close": 5600.0,
+      "volume": 262600.0,
+      "sma25": 5762.92,
+      "sma75": 5704.19,
+      "sma200": 6134.23,
+      "rsi14": 48.59,
+      "rsi5": 46.98
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-03",
-    "monthly_rsi14": 51.35,
-    "monthly_rsi_ma5": 49.9,
-    "spread": 1.45,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-04",
+    "monthly_rsi14": 49.02,
+    "monthly_rsi_ma5": 49.43,
+    "spread": -0.41,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
+  "provisional_generated_at": "2026-08-04T13:57:43.349449+00:00"
 }

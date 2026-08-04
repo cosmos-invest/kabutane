@@ -2,12 +2,12 @@
   "code": "8511",
   "ticker": "8511.T",
   "name": "日本証券金融",
-  "generated_at": "2026-08-03T14:26:41.065577+00:00",
-  "price_date": "2026-08-03",
+  "generated_at": "2026-08-04T13:56:38.741675+00:00",
+  "price_date": "2026-08-04",
   "record": {
-    "current_price": 2369.0,
-    "change_from_signal_month_pct": -0.8,
-    "return_since_gc_pct": 1.37
+    "current_price": 2344.0,
+    "change_from_signal_month_pct": -1.84,
+    "return_since_gc_pct": 0.3
   },
   "daily": [
     {
@@ -35,15 +35,28 @@
       "sma200": 2143.08,
       "rsi14": 65.61,
       "rsi5": 66.52
+    },
+    {
+      "date": "2026-08-04",
+      "open": 2369.0,
+      "high": 2369.0,
+      "low": 2322.0,
+      "close": 2344.0,
+      "volume": 269500.0,
+      "sma25": 2393.88,
+      "sma75": 2309.19,
+      "sma200": 2145.74,
+      "rsi14": 65.61,
+      "rsi5": 66.52
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-03",
-    "monthly_rsi14": 67.74,
-    "monthly_rsi_ma5": 66.67,
-    "spread": 1.07,
+    "price_date": "2026-08-04",
+    "monthly_rsi14": 66.47,
+    "monthly_rsi_ma5": 66.41,
+    "spread": 0.05,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -52,5 +65,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
+  "provisional_generated_at": "2026-08-04T13:57:43.349449+00:00"
 }

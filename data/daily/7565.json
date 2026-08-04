@@ -2,12 +2,12 @@
   "code": "7565",
   "ticker": "7565.T",
   "name": "萬世電機",
-  "generated_at": "2026-08-03T14:26:41.065577+00:00",
-  "price_date": "2026-07-31",
+  "generated_at": "2026-08-04T13:56:38.741675+00:00",
+  "price_date": "2026-08-04",
   "record": {
-    "current_price": 7090.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 7100.0,
+    "change_from_signal_month_pct": 0.14,
+    "return_since_gc_pct": 0.14
   },
   "daily": [
     {
@@ -22,7 +22,48 @@
       "sma200": 5871.07,
       "rsi14": 67.92,
       "rsi5": 67.77
+    },
+    {
+      "date": "2026-08-03",
+      "open": 7090.0,
+      "high": 7090.0,
+      "low": 7090.0,
+      "close": 7090.0,
+      "volume": 0.0,
+      "sma25": 6593.6,
+      "sma75": 6260.27,
+      "sma200": 5881.8,
+      "rsi14": 67.92,
+      "rsi5": 67.77
+    },
+    {
+      "date": "2026-08-04",
+      "open": 7100.0,
+      "high": 7100.0,
+      "low": 7100.0,
+      "close": 7100.0,
+      "volume": 700.0,
+      "sma25": 6639.2,
+      "sma75": 6275.6,
+      "sma200": 5893.05,
+      "rsi14": 67.92,
+      "rsi5": 67.77
     }
   ],
-  "corporate_events": []
+  "corporate_events": [],
+  "provisional_signal": {
+    "month": "2026-08",
+    "price_date": "2026-08-04",
+    "monthly_rsi14": 77.29,
+    "monthly_rsi_ma5": 72.13,
+    "spread": 5.16,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
+    "confirmed_month": "2026-07",
+    "confirmed_status": "NEW",
+    "source": "latest_daily_close",
+    "is_provisional": true
+  },
+  "provisional_generated_at": "2026-08-04T13:57:43.349449+00:00"
 }

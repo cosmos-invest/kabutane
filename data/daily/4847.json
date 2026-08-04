@@ -2,12 +2,12 @@
   "code": "4847",
   "ticker": "4847.T",
   "name": "インテリジェント　ウェイブ",
-  "generated_at": "2026-08-03T14:26:41.065577+00:00",
-  "price_date": "2026-08-03",
+  "generated_at": "2026-08-04T13:56:38.741675+00:00",
+  "price_date": "2026-08-04",
   "record": {
-    "current_price": 997.0,
-    "change_from_signal_month_pct": -0.3,
-    "return_since_gc_pct": -0.3
+    "current_price": 1003.0,
+    "change_from_signal_month_pct": 0.3,
+    "return_since_gc_pct": 0.3
   },
   "daily": [
     {
@@ -35,15 +35,28 @@
       "sma200": 973.3,
       "rsi14": 46.64,
       "rsi5": 44.34
+    },
+    {
+      "date": "2026-08-04",
+      "open": 1000.0,
+      "high": 1010.0,
+      "low": 1000.0,
+      "close": 1003.0,
+      "volume": 44000.0,
+      "sma25": 972.92,
+      "sma75": 960.11,
+      "sma200": 973.07,
+      "rsi14": 46.64,
+      "rsi5": 44.34
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-03",
-    "monthly_rsi14": 52.39,
-    "monthly_rsi_ma5": 49.77,
-    "spread": 2.62,
+    "price_date": "2026-08-04",
+    "monthly_rsi14": 52.94,
+    "monthly_rsi_ma5": 49.88,
+    "spread": 3.06,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -52,5 +65,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-03T14:27:41.029827+00:00"
+  "provisional_generated_at": "2026-08-04T13:57:43.349449+00:00"
 }
