@@ -94,6 +94,29 @@
     loadScript("assets/copy-audit.js");
   }
 
+  function ensureDetailVolumeProfile() {
+    if (!document.getElementById("priceChart")) return;
+    loadStyle("assets/detail-volume-profile.css");
+
+    if (!document.querySelector(".detail-analysis-menu")) {
+      const quickstart = document.querySelector("main.container .quickstart-banner");
+      const menu = document.createElement("nav");
+      menu.className = "detail-analysis-menu panel";
+      menu.setAttribute("aria-label", "銘柄分析メニュー");
+      menu.innerHTML = [
+        ["#priceChart", "日足チャート"],
+        ["#volumeProfileSection", "価格帯別出来高"],
+        ["#rsiChart", "月足RSI"],
+        ["#corporateEvents", "配当・分割"],
+        ["#fundamentalsGrid", "財務"],
+      ].map(([href, label]) => `<a href="${href}">${label}</a>`).join("");
+      if (quickstart) quickstart.insertAdjacentElement("afterend", menu);
+      else document.querySelector("main.container")?.prepend(menu);
+    }
+
+    loadScript("assets/detail-volume-profile.js");
+  }
+
   function ensureReplayHistory() {
     if (!document.body?.classList.contains("replay-page")) return;
     loadScriptsInOrder(["assets/practice-history-core.js", "assets/practice-history.js"]).catch(console.warn);
@@ -217,6 +240,7 @@
   ensureAppIcons();
   ensureSiteUpgrades();
   ensureCopyAudit();
+  ensureDetailVolumeProfile();
   ensureReplayHistory();
   ensureReplayDrawingTools();
   ensureReplayPracticeV2();

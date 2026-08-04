@@ -1,0 +1,76 @@
+name: Validate estimated volume profile v1
+
+on:
+  pull_request:
+    paths:
+      - "assets/detail-volume-profile.js"
+      - "assets/detail-volume-profile.css"
+      - "assets/pwa-register.js"
+      - "tests/test_detail_volume_profile_v1.js"
+      - "tests/detail-volume-profile.spec.js"
+      - ".github/workflows/detail-volume-profile-checks.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  volume-profile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Check source syntax
+        run: |
+          node --check assets/detail-volume-profile.js
+          node --check assets/pwa-register.js
+          node --check tests/detail-volume-profile.spec.js
+          git diff --check
+
+      - name: Test estimation math
+        run: node tests/test_detail_volume_profile_v1.js
+
+      - name: Verify zero-cost and isolated detail wiring
+        run: |
+          grep -q 'ensureDetailVolumeProfile' assets/pwa-register.js
+          grep -q 'assets/detail-volume-profile.css' assets/pwa-register.js
+          grep -q 'assets/detail-volume-profile.js' assets/pwa-register.js
+          grep -q '価格帯別出来高' assets/pwa-register.js
+          grep -q '約定価格ごとの実出来高ではありません' assets/detail-volume-profile.js
+          grep -q '無料の日足OHLCV' assets/detail-volume-profile.js
+          if grep -Eqi 'j-quants|paid[_ -]?api|subscription|api[_ -]?key' assets/detail-volume-profile.js; then
+            echo 'Paid data dependency detected in volume profile module'
+            exit 1
+          fi
+
+      - name: Smoke test public assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m http.server 8765 >/tmp/kabutane-volume-profile-http.log 2>&1 &
+          server_pid=$!
+          trap 'kill ${server_pid} || true' EXIT
+          sleep 1
+          curl -fsS http://127.0.0.1:8765/detail.html | grep -q 'id="priceChart"'
+          curl -fsS http://127.0.0.1:8765/assets/detail-volume-profile.js | grep -q 'estimated_daily_range_v1'
+          curl -fsS http://127.0.0.1:8765/assets/detail-volume-profile.css | grep -q 'volume-profile-panel'
+
+      - name: Install Chromium test runner
+        run: |
+          npm install --no-save @playwright/test@1.55.0
+          npx playwright install --with-deps chromium
+
+      - name: Test current detail page integration
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m http.server 4173 >/tmp/kabutane-volume-profile-browser.log 2>&1 &
+          server_pid=$!
+          trap 'kill ${server_pid} || true' EXIT
+          npx playwright test tests/detail-volume-profile.spec.js --reporter=line
