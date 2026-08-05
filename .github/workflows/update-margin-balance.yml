@@ -41,7 +41,6 @@ jobs:
           node --check assets/detail-margin-balance.js
 
   collect:
-    if: github.event_name != 'pull_request'
     needs: validate
     runs-on: ubuntu-latest
     steps:
@@ -73,6 +72,7 @@ jobs:
           print(index['latest_date'], index['covered_codes'], shard_count)
           PY
       - name: Commit refreshed margin data
+        if: github.event_name != 'pull_request'
         run: |
           if git diff --quiet -- data/margin && [ -z "$(git ls-files --others --exclude-standard data/margin)" ]; then
             echo "No new JPX margin data."
