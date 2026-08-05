@@ -60,6 +60,8 @@ test("mobile replay follows oscillator-chart-monthly judgment flow and keeps day
   await expect.poll(() => advancedTools.evaluate((element) => element.open)).toBe(false);
   await expect(advancedTools.locator("#chartViewportToolbar")).toHaveCount(1);
   await expect(advancedTools.locator("#practiceChartTools")).toHaveCount(1);
+  const legacyIndicatorDetails = page.locator("#unifiedIndicatorDetails");
+  if (await legacyIndicatorDetails.count()) await expect(legacyIndicatorDetails).toBeHidden();
 
   const oscillatorSettings = page.locator(".oscillator-settings-v6");
   await ensureDetailsOpen(oscillatorSettings);
