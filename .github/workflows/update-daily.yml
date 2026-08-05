@@ -18,7 +18,6 @@ on:
       - "validate_data_contract.py"
       - "validate_daily_derived_contract.py"
       - "scripts/public_core_radar.py"
-      - "scripts/public_detail_boundary.py"
       - "data/curated/shikiho-2026-summer.json"
       - "tests/test_update_daily.py"
       - "tests/test_provisional_signal.py"
@@ -29,7 +28,6 @@ on:
       - "tests/test_shikiho_room_v2.py"
       - "tests/test_data_contract.py"
       - "tests/test_daily_derived_contract.py"
-      - "tests/test_public_detail_boundary.py"
       - ".github/workflows/update-daily.yml"
 
 permissions:
@@ -64,8 +62,7 @@ jobs:
 
       - name: Validate updater
         run: |
-          python -m py_compile update_daily.py provisional_signal.py build_market_reports.py build_daily_snapshot.py build_daily_events.py build_shikiho_room.py build_shikiho_room_v2.py validate_data_contract.py validate_daily_derived_contract.py scripts/public_core_radar.py scripts/public_detail_boundary.py tests/test_public_detail_boundary.py tests/test_update_daily.py tests/test_provisional_signal.py tests/test_market_reports.py tests/test_daily_snapshot.py tests/test_daily_events.py tests/test_shikiho_room.py tests/test_shikiho_room_v2.py tests/test_data_contract.py tests/test_daily_derived_contract.py tests/test_today_page.py
-          python -m unittest tests.test_public_detail_boundary -v
+          python -m py_compile update_daily.py provisional_signal.py build_market_reports.py build_daily_snapshot.py build_daily_events.py build_shikiho_room.py build_shikiho_room_v2.py validate_data_contract.py validate_daily_derived_contract.py scripts/public_core_radar.py tests/test_update_daily.py tests/test_provisional_signal.py tests/test_market_reports.py tests/test_daily_snapshot.py tests/test_daily_events.py tests/test_shikiho_room.py tests/test_shikiho_room_v2.py tests/test_data_contract.py tests/test_daily_derived_contract.py tests/test_today_page.py
           python -m unittest discover -s tests -p 'test_update_daily.py' -v
           python -m unittest discover -s tests -p 'test_provisional_signal.py' -v
           python -m unittest discover -s tests -p 'test_market_reports.py' -v
@@ -77,6 +74,7 @@ jobs:
           python -m unittest discover -s tests -p 'test_today_page.py' -v
           node --check assets/today-kabutane.js
           node --check assets/all-stocks.js
+          node --check assets/core-detail-fallback.js
 
       - name: Download incremental daily prices
         env:
@@ -123,7 +121,9 @@ jobs:
             manifest.webmanifest sw.js .nojekyll result.csv out.csv \
             _site/
           cp -R assets data history ranking monthly-report _site/
-          python -m scripts.public_detail_boundary --site-root _site
+          # The public catalog must not expose a batch list of provisional GC.
+          # Individual detail payloads intentionally keep provisional GC/DC.
+          rm -f _site/data/core/radar.json
           test -f _site/replay-select.html
           test -f _site/today.html
           test -f _site/all-stocks.html
@@ -137,7 +137,6 @@ jobs:
           test -f _site/assets/today-kabutane.css
           test -f _site/assets/today-kabutane.js
           test -f _site/data/core/public-radar.json
-          test -d _site/data/core/public-daily
           test ! -f _site/data/core/radar.json
           test -f _site/data/latest.json
           test -f _site/data/daily-update-status.json
@@ -153,6 +152,7 @@ jobs:
           ! grep -q 'fetch(`data/core/radar.json' _site/assets/all-stocks.js
           ! grep -q '"provisional_status":"GC"' _site/data/core/public-radar.json
           ! grep -q 'monthly_rsi_spread' _site/data/core/public-radar.json
+          grep -q '暫定GC / 暫定DC' _site/detail.html
           python - <<'PY'
           import json
           from pathlib import Path
@@ -183,22 +183,6 @@ jobs:
           ]
           if suspicious:
               raise SystemExit(f"Suspicious split-adjusted returns: {[(r.get('code'), r.get('return_pct')) for r in suspicious]}")
-          for root, shard in [
-              (Path('_site/data/charts'), False),
-              (Path('_site/data/daily'), False),
-              (Path('_site/data/core/daily'), True),
-          ]:
-              if not root.exists():
-                  continue
-              for path in root.glob('*.json'):
-                  payload = json.loads(path.read_text(encoding='utf-8'))
-                  records = payload.get('records', {}).values() if shard else [payload]
-                  for record in records:
-                      if not isinstance(record, dict):
-                          continue
-                      signal = record.get('provisional_signal')
-                      if isinstance(signal, dict) and str(signal.get('status') or '').upper() == 'GC':
-                          raise SystemExit(f'public detail leaked provisional GC: {path}')
           print(f"Publishing daily price date: {daily.get('price_date')}; events: {events.get('summary', {}).get('event_count')}; Shikiho latest: {shikiho.get('latest_price_date')}")
           PY
 
