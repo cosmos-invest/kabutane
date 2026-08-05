@@ -84,8 +84,8 @@
     </section>
 
     <section class="panel note-panel"><h2>データと更新</h2>
-      <details open><summary><strong>何を取得していますか？</strong></summary><p>Yahoo Finance経由で、株価の始値・高値・安値・終値、出来高、配当、株式分割・併合を取得します。信用残高はJPX公表データから取得する仕組みを追加中です。有料API、TDnet、決算予定の自動取得には接続していません。</p></details>
-      <details><summary><strong>いつ更新されますか？</strong></summary><p>確定NEW・CONTINUE・OUTは月末確定後の月次更新で変わります。現在対象銘柄の日足と進行中月の暫定シグナルは平日21時の日次更新で再計算します。市場の休場日やGitHub Actionsの混雑時は遅れる場合があります。</p></details>
+      <details open><summary><strong>何を取得していますか？</strong></summary><p>Yahoo Finance経由で、株価の始値・高値・安値・終値、出来高、配当、株式分割・併合を取得します。信用残高はJPX「銘柄別信用取引週末残高」から週次で取得し、買い残・売り残・前週比・信用倍率を個別銘柄ページへ表示します。有料API、TDnet、決算予定の自動取得には接続していません。</p></details>
+      <details><summary><strong>いつ更新されますか？</strong></summary><p>確定NEW・CONTINUE・OUTは月末確定後の月次更新で変わります。現在対象銘柄の日足と進行中月の暫定シグナルは平日21時の日次更新で再計算します。信用残高はJPXの週次公表後に自動確認し、新しい基準日のデータがあるときだけ更新します。市場の休場日やGitHub Actionsの混雑時は遅れる場合があります。</p></details>
       <details><summary><strong>対象市場は？</strong></summary><p>JPXの上場銘柄一覧を使い、プライム・スタンダード・グロースの国内普通株式を対象にします。新規上場などで月足期間が不足する銘柄は、計算可能になるまで除外されます。</p></details>
       <details><summary><strong>財務情報が「—」になるのはなぜ？</strong></summary><p>大量アクセスを避けるため、財務プロフィールは過去に取得できたYahoo Financeのキャッシュだけを表示します。未取得は0ではなく「情報なし」です。</p></details>
     </section>
