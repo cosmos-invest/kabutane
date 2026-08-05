@@ -47,6 +47,11 @@
     return value === "extended" ? "scope-chip extended" : "scope-chip";
   }
 
+  function candidateHref(item) {
+    const code = encodeURIComponent(item.code || "");
+    return item.scope === "extended" ? `extended-universe.html?code=${code}` : `detail.html?code=${code}`;
+  }
+
   function gradePass(itemGrade, filter) {
     if (filter === "all") return true;
     const rank = { S: 3, A: 2, B: 1 };
@@ -87,7 +92,7 @@
       const reasons = (Array.isArray(item.reasons) ? item.reasons : []).map((reason) => `<span>${reason}</span>`).join("");
       return `<tr>
         <td><span class="grade ${gradeClass(item.grade)}">${item.grade || "B"}</span></td>
-        <td><a class="premium-stock-link" href="detail.html?code=${encodeURIComponent(item.code || "")}">${item.code || "—"} ${item.name || ""}<small>${item.market || item.instrument_type || ""}</small></a></td>
+        <td><a class="premium-stock-link" href="${candidateHref(item)}">${item.code || "—"} ${item.name || ""}<small>${item.market || item.instrument_type || ""}</small></a></td>
         <td><span class="${scopeClass(item.scope)}">${scopeLabel(item.scope)}</span></td>
         <td><span class="premium-score">${finite(item.score)?.toFixed(1) || "—"}</span><br><small>${shares(item.buy_balance)} / ${ratio(item.ratio)}</small></td>
         <td>${pct(item.buy_reduction_pct, true)}</td>
