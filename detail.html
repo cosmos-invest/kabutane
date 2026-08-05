@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="assets/detail-signal-status.css?v=13">
   <link rel="stylesheet" href="assets/detail-chart-viewport.css?v=13">
   <link rel="stylesheet" href="assets/detail-volume-profile.css?v=3">
+  <link rel="stylesheet" href="assets/detail-margin-balance.css?v=1">
 </head>
 <body>
   <header class="site-header detail-header">
@@ -65,6 +66,17 @@
       <p class="volume-profile-bin-detail" id="volumeProfileBinDetail" aria-live="polite">右側の棒に触れると、その価格帯の推定出来高を確認できます。</p>
       <p class="volume-profile-summary" id="volumeProfileSummary"></p>
       <p class="volume-profile-disclosure"><strong>価格帯別出来高は推定値です。</strong> 各日の日足出来高を、その日の安値〜高値と各価格帯が実際に重なる値幅の割合で配分しています。実際の約定価格別出来高とは一致しません。単独で売買判断せず、トレンド・直近出来高・損切り位置と合わせて確認してください。<a href="learn.html#decision-flow">初心者向けの見る順番</a></p>
+    </section>
+
+    <section class="panel chart-panel margin-balance-panel margin-balance-empty" id="marginBalancePanel">
+      <div class="section-heading margin-balance-heading">
+        <div><h2>信用需給（JPX週次）</h2><p>信用買い残・信用売り残・信用倍率の変化を同じチャートで確認します。倍率の高さだけで判断せず、日足チャートの価格・出来高と並べて需給の変化を見ます。<a href="learn.html#margin-balance">信用残高をやさしく解説</a></p></div>
+        <span class="margin-balance-status" id="marginBalanceStatus">データ準備中</span>
+      </div>
+      <div class="margin-balance-stats" id="marginBalanceStats"></div>
+      <div class="margin-balance-chart-box"><canvas id="marginBalanceChart"></canvas></div>
+      <p class="margin-balance-summary" id="marginBalanceSummary">JPXの週次信用残高を読み込みます。</p>
+      <p class="margin-balance-note"><strong>見方：</strong> 買い残は将来の返済売り、売り残は将来の買い戻しにつながる可能性があります。ただし増減の意味は相場環境で変わります。データはJPX「銘柄別信用取引週末残高」を使用し、基準日と前週比を明示します。売り残0株のとき信用倍率は「—（売り残0）」と表示します。</p>
     </section>
 
     <section class="panel chart-panel">
@@ -129,6 +141,7 @@
   <script src="assets/detail-signal-status.js?v=13" defer></script>
   <script src="assets/detail-signal-chart-fix.js?v=13" defer></script>
   <script src="assets/detail-volume-profile.js?v=3" defer></script>
+  <script src="assets/detail-margin-balance.js?v=1" defer></script>
   <script src="assets/characters.js?v=13" defer></script>
 </body>
 </html>
