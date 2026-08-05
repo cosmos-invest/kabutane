@@ -8,6 +8,7 @@ class ReplayDecisionV6Tests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.script = (ROOT / "assets/replay-decision-flow-v6.js").read_text(encoding="utf-8")
+        cls.controls = (ROOT / "assets/replay-decision-controls-v6.js").read_text(encoding="utf-8")
         cls.style = (ROOT / "assets/replay-decision-flow-v6.css").read_text(encoding="utf-8")
         cls.loader = (ROOT / "assets/pwa-register.js").read_text(encoding="utf-8")
         cls.learn = (ROOT / "learn.html").read_text(encoding="utf-8")
@@ -15,10 +16,15 @@ class ReplayDecisionV6Tests(unittest.TestCase):
 
     def test_loader_enables_v6_after_existing_practice_scripts(self):
         self.assertIn('"assets/replay-decision-flow-v6.js"', self.loader)
+        self.assertIn('"assets/replay-decision-controls-v6.js"', self.loader)
         self.assertIn('loadStyle("assets/replay-decision-flow-v6.css")', self.loader)
         self.assertLess(
             self.loader.index('"assets/replay-practice-desktop-free-v5.js"'),
             self.loader.index('"assets/replay-decision-flow-v6.js"'),
+        )
+        self.assertLess(
+            self.loader.index('"assets/replay-decision-flow-v6.js"'),
+            self.loader.index('"assets/replay-decision-controls-v6.js"'),
         )
 
     def test_volume_profile_never_uses_future_rows(self):
@@ -36,8 +42,13 @@ class ReplayDecisionV6Tests(unittest.TestCase):
 
     def test_mobile_keeps_advance_controls_close_to_chart(self):
         self.assertIn('.replay-decision-dock-v6{position:sticky', self.style)
-        self.assertIn('#stepOneButton', self.style)
+        self.assertIn('.replay-decision-actions-v6', self.style)
         self.assertIn('bottom:calc(env(safe-area-inset-bottom) + 6px)', self.style)
+        self.assertIn('data-decision-action="step-one"', self.controls)
+        self.assertIn('data-decision-action="step-five"', self.controls)
+        self.assertIn('data-decision-action="choose-entry"', self.controls)
+        self.assertIn('data-decision-action="finish"', self.controls)
+        self.assertIn('data-guided-action="step-one"', self.controls)
 
     def test_chart_settings_auto_collapse_and_gc_dc_dots_exist(self):
         self.assertIn('details.open = false', self.script)
