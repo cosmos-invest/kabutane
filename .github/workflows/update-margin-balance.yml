@@ -6,6 +6,7 @@ on:
       - 'update_universe.py'
       - 'scripts/update_margin_balance.py'
       - 'scripts/build_supply_demand_screen.py'
+      - 'scripts/build_premium_lab.py'
       - 'assets/detail-margin-balance.js'
       - 'assets/detail-margin-balance.css'
       - 'assets/premium-supply-beta.js'
@@ -15,6 +16,7 @@ on:
       - 'learn.html'
       - 'tests/test_margin_balance.py'
       - 'tests/test_supply_demand_screen.py'
+      - 'tests/test_premium_lab.py'
       - '.github/workflows/update-margin-balance.yml'
   push:
     branches: [main]
@@ -22,6 +24,7 @@ on:
       - 'update_universe.py'
       - 'scripts/update_margin_balance.py'
       - 'scripts/build_supply_demand_screen.py'
+      - 'scripts/build_premium_lab.py'
       - 'premium-supply-beta.html'
       - 'assets/premium-supply-beta.js'
       - 'assets/premium-supply-beta.css'
@@ -34,6 +37,10 @@ on:
 
 permissions:
   contents: write
+
+concurrency:
+  group: market-data-writes
+  cancel-in-progress: false
 
 jobs:
   validate:
@@ -48,7 +55,8 @@ jobs:
           node-version: '22'
       - name: Check collector and UI tests
         run: |
-          python -m unittest tests.test_margin_balance tests.test_supply_demand_screen -v
+          python -m unittest tests.test_margin_balance tests.test_supply_demand_screen tests.test_premium_lab -v
+          python -m py_compile scripts/build_premium_lab.py
           node --check assets/detail-margin-balance.js
           node --check assets/premium-supply-beta.js
 
@@ -72,8 +80,14 @@ jobs:
         run: python scripts/update_margin_balance.py
       - name: Refresh all-listed labels before premium screening
         run: python update_universe.py
-      - name: Build premium supply-demand beta screen
-        run: python scripts/build_supply_demand_screen.py
+      - name: Build supply screen and combined premium radar
+        run: |
+          python scripts/build_supply_demand_screen.py
+          if [ -f data/core/radar.json ]; then
+            python -m scripts.build_premium_lab
+          else
+            echo "data/core/radar.json is not generated yet; combined premium radar will be built by the core-universe workflow."
+          fi
       - name: Validate generated data
         run: |
           python - <<'PY'
@@ -87,13 +101,19 @@ jobs:
           shard_count = len([p for p in Path('data/margin').glob('*.json') if p.name != 'latest.json'])
           if shard_count < 20:
               raise SystemExit(f'shard count is suspiciously low: {shard_count}')
-          premium = json.loads(Path('data/premium/supply-demand-screen.json').read_text(encoding='utf-8'))
-          if int(premium.get('screened_codes') or 0) < 1000:
-              raise SystemExit(f"premium screened_codes is suspiciously low: {premium.get('screened_codes')}")
-          if len(premium.get('candidates') or []) != int(premium.get('candidate_count') or 0):
+          supply = json.loads(Path('data/premium/supply-demand-screen.json').read_text(encoding='utf-8'))
+          if int(supply.get('screened_codes') or 0) < 1000:
+              raise SystemExit(f"premium screened_codes is suspiciously low: {supply.get('screened_codes')}")
+          if len(supply.get('candidates') or []) != int(supply.get('candidate_count') or 0):
               raise SystemExit('premium candidate_count does not match published candidates')
-          unknown = sum(1 for item in premium.get('candidates') or [] if item.get('scope') == 'unknown')
-          print(index['latest_date'], index['covered_codes'], shard_count, premium.get('candidate_count'), 'unknown_scope', unknown)
+          combined_path = Path('data/premium/opportunity-radar.json')
+          if combined_path.exists():
+              combined = json.loads(combined_path.read_text(encoding='utf-8'))
+              non_core = [row for row in combined.get('records') or [] if 'ETF' in str(row.get('market') or '') or 'REIT' in str(row.get('market') or '')]
+              if non_core:
+                  raise SystemExit('combined premium radar contains non-core instruments')
+          unknown = sum(1 for item in supply.get('candidates') or [] if item.get('scope') == 'unknown')
+          print(index['latest_date'], index['covered_codes'], shard_count, supply.get('candidate_count'), 'unknown_scope', unknown)
           PY
       - name: Commit refreshed margin and premium data
         if: github.event_name != 'pull_request'
@@ -105,5 +125,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/margin data/premium
-          git commit -m "data: update JPX margin balances and premium supply screen"
+          git commit -m "data: update JPX margin balances and premium opportunity radar"
+          git pull --rebase origin main
           git push
