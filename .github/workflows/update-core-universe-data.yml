@@ -6,6 +6,7 @@ on:
       - 'scripts/build_core_universe_data.py'
       - 'scripts/build_premium_lab.py'
       - 'scripts/public_core_radar.py'
+      - 'scripts/public_detail_boundary.py'
       - 'assets/core-detail-fallback.js'
       - 'assets/premium-supply-beta.js'
       - 'assets/premium-supply-beta.css'
@@ -15,6 +16,7 @@ on:
       - 'tests/test_core_detail_fallback.js'
       - 'tests/test_premium_lab.py'
       - 'tests/test_public_core_radar.py'
+      - 'tests/test_public_detail_boundary.py'
       - '.github/workflows/update-core-universe-data.yml'
   push:
     branches: [main]
@@ -22,6 +24,7 @@ on:
       - 'scripts/build_core_universe_data.py'
       - 'scripts/build_premium_lab.py'
       - 'scripts/public_core_radar.py'
+      - 'scripts/public_detail_boundary.py'
       - 'assets/core-detail-fallback.js'
       - 'assets/premium-supply-beta.js'
       - 'assets/premium-supply-beta.css'
@@ -52,8 +55,8 @@ jobs:
         run: pip install -r requirements.txt
       - name: Unit and syntax checks
         run: |
-          python -m py_compile scripts/build_core_universe_data.py scripts/build_premium_lab.py scripts/public_core_radar.py tests/test_core_universe_data.py tests/test_premium_lab.py tests/test_public_core_radar.py
-          python -m unittest tests.test_core_universe_data tests.test_premium_lab tests.test_public_core_radar -v
+          python -m py_compile scripts/build_core_universe_data.py scripts/build_premium_lab.py scripts/public_core_radar.py scripts/public_detail_boundary.py tests/test_core_universe_data.py tests/test_premium_lab.py tests/test_public_core_radar.py tests/test_public_detail_boundary.py
+          python -m unittest tests.test_core_universe_data tests.test_premium_lab tests.test_public_core_radar tests.test_public_detail_boundary -v
           node --check assets/core-detail-fallback.js
           node --check assets/premium-supply-beta.js
           node tests/test_core_detail_fallback.js
@@ -77,6 +80,7 @@ jobs:
         run: |
           python -m scripts.build_core_universe_data --codes 5243,5942 --output /tmp/kabutane-core-sample --refresh-base --fundamentals-limit 0
           python -m scripts.public_core_radar --input /tmp/kabutane-core-sample/radar.json --output /tmp/kabutane-core-sample/public-radar.json
+          python -m scripts.public_detail_boundary --core-input-dir /tmp/kabutane-core-sample/daily --core-output-dir /tmp/kabutane-core-sample/public-daily
           python - <<'PY'
           import json
           from pathlib import Path
@@ -89,6 +93,7 @@ jobs:
           if int(radar.get('daily_coverage') or 0) < 1 or int(radar.get('monthly_coverage') or 0) < 1:
               raise SystemExit(f"sample coverage too low: {radar.get('daily_coverage')} / {radar.get('monthly_coverage')}")
           shard = json.loads((root/'charts'/'52.json').read_text(encoding='utf-8'))
+          public_daily = json.loads((root/'public-daily'/'52.json').read_text(encoding='utf-8'))
           if '5243' not in shard.get('records', {}):
               raise SystemExit('5243 chart payload not generated')
           if any(str(row.get('provisional_status') or '') == 'GC' for row in public.get('records') or []):
@@ -96,6 +101,9 @@ jobs:
           if any('monthly_rsi_spread' in row for row in public.get('records') or []):
               raise SystemExit('public sample leaked current-month RSI spread')
           note = next(row for row in radar['records'] if str(row.get('code')) == '5243')
+          note_public_daily = public_daily.get('records', {}).get('5243') or {}
+          if str(note.get('provisional_status') or '') == 'GC' and note_public_daily.get('provisional_signal') is not None:
+              raise SystemExit('public core daily leaked 5243 provisional GC')
           print('5243 premium/raw status:', note.get('provisional_status'), 'spread:', note.get('monthly_rsi_spread'))
           print('public sample safe records:', len(public.get('records') or []))
           PY
@@ -119,6 +127,7 @@ jobs:
         run: |
           python -m scripts.build_core_universe_data --output /tmp/kabutane-core-full --refresh-base --fundamentals-limit 0
           python -m scripts.public_core_radar --input /tmp/kabutane-core-full/radar.json --output /tmp/kabutane-core-full/public-radar.json
+          python -m scripts.public_detail_boundary --core-input-dir /tmp/kabutane-core-full/daily --core-output-dir /tmp/kabutane-core-full/public-daily
           python - <<'PY'
           import json
           from pathlib import Path
@@ -137,6 +146,12 @@ jobs:
               raise SystemExit('public radar record count mismatch')
           if any(str(row.get('provisional_status') or '') == 'GC' for row in public.get('records') or []):
               raise SystemExit('public full-footprint leaked provisional GC')
+          for path in (root/'public-daily').glob('*.json'):
+              shard = json.loads(path.read_text(encoding='utf-8'))
+              for row in (shard.get('records') or {}).values():
+                  signal = row.get('provisional_signal') if isinstance(row, dict) else None
+                  if isinstance(signal, dict) and str(signal.get('status') or '').upper() == 'GC':
+                      raise SystemExit(f'public daily shard leaked provisional GC: {path}')
           if base > 90 * 1024 * 1024:
               raise SystemExit(f'chart footprint too large: {base}')
           print('core', total, 'daily', daily, 'monthly', monthly, 'chart_base_bytes', base)
@@ -184,10 +199,12 @@ jobs:
           fi
           python -m scripts.build_core_universe_data $REFRESH --fundamentals-limit "$FUND_LIMIT"
           printf '%s\n' "$CURRENT_UNIVERSE_HASH" > data/core/universe.sha256
-      - name: Rebuild premium opportunity radar and public-safe catalog
+      - name: Rebuild premium opportunity radar and public-safe data
         run: |
           python scripts/build_supply_demand_screen.py
           python -m scripts.build_premium_lab
+          python -m scripts.public_core_radar
+          python -m scripts.public_detail_boundary
       - name: Validate production coverage
         run: |
           python - <<'PY'
@@ -208,6 +225,12 @@ jobs:
               raise SystemExit('public radar leaked provisional GC')
           if any('monthly_rsi_spread' in row for row in public.get('records') or []):
               raise SystemExit('public radar leaked current-month RSI spread')
+          for path in Path('data/core/public-daily').glob('*.json'):
+              shard = json.loads(path.read_text(encoding='utf-8'))
+              for row in (shard.get('records') or {}).values():
+                  signal = row.get('provisional_signal') if isinstance(row, dict) else None
+                  if isinstance(signal, dict) and str(signal.get('status') or '').upper() == 'GC':
+                      raise SystemExit(f'public daily shard leaked provisional GC: {path}')
           if len(premium.get('records') or []) != total:
               raise SystemExit('premium radar must contain the full core universe')
           if int(manifest.get('daily_coverage') or 0) / total < .90:
