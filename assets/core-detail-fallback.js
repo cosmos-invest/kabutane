@@ -31,40 +31,6 @@
     return Number.isFinite(number) ? number : null;
   }
 
-  function isPremiumOnlyProvisional(signal) {
-    return String(signal?.status || "").toUpperCase() === "GC";
-  }
-
-  function publicProvisional(signal) {
-    return isPremiumOnlyProvisional(signal) ? null : signal || null;
-  }
-
-  function sanitizePublicPayload(payload) {
-    if (!payload || typeof payload !== "object" || !isPremiumOnlyProvisional(payload.provisional_signal)) return payload;
-    const sanitized = { ...payload, provisional_signal: null };
-    if (payload.record && typeof payload.record === "object") {
-      sanitized.record = { ...payload.record };
-      delete sanitized.record.provisional_status;
-      delete sanitized.record.provisional_month;
-    }
-    return sanitized;
-  }
-
-  async function sanitizeResponse(response) {
-    if (!response?.ok) return response;
-    try {
-      const payload = await response.clone().json();
-      const sanitized = sanitizePublicPayload(payload);
-      if (sanitized === payload) return response;
-      const headers = new Headers(response.headers || {});
-      headers.set("Content-Type", "application/json; charset=utf-8");
-      headers.set("X-Kabutane-Public-Boundary", "premium-provisional-gc");
-      return new Response(JSON.stringify(sanitized), { status: response.status, statusText: response.statusText, headers });
-    } catch (_) {
-      return response;
-    }
-  }
-
   function rowsFromCompact(rows) {
     return (Array.isArray(rows) ? rows : []).map((row) => ({
       date: row?.[0] || "",
@@ -143,16 +109,15 @@
     const baseRows = rowsFromCompact(base.daily);
     const overlayRows = rowsFromCompact(daily?.daily);
     const merged = enrichDaily(mergeRows(baseRows, overlayRows), base.monthly || []);
-    const rawProvisional = daily?.provisional_signal || {};
-    const provisional = publicProvisional(rawProvisional);
+    const provisional = daily?.provisional_signal || {};
     const technical = daily?.technical || {};
     const record = {
       ...(base.record || {}),
       ...(finance || {}),
       current_price: technical.current_price ?? base.record?.current_price ?? null,
-      provisional_status: provisional?.status || null,
-      monthly_rsi14: rawProvisional.confirmed_rsi14 ?? base.record?.monthly_rsi14 ?? null,
-      monthly_rsi_ma5: rawProvisional.confirmed_rsi_ma5 ?? base.record?.monthly_rsi_ma5 ?? null,
+      provisional_status: provisional.status || null,
+      monthly_rsi14: provisional.confirmed_rsi14 ?? base.record?.monthly_rsi14 ?? null,
+      monthly_rsi_ma5: provisional.confirmed_rsi_ma5 ?? base.record?.monthly_rsi_ma5 ?? null,
       data_completeness_pct: finance?.data_completeness_pct ?? null,
       core_universe_fallback: true,
     };
@@ -186,7 +151,7 @@
       price_date: daily.price_date,
       daily: rows.slice(-40),
       record: { ...(base.record || {}), ...(finance || {}), ...(daily.technical || {}), core_universe_fallback: true },
-      provisional_signal: publicProvisional(daily.provisional_signal),
+      provisional_signal: daily.provisional_signal || null,
     };
   }
 
@@ -201,14 +166,13 @@
     if (!chartCode && !dailyCode) return nativeFetch(input, init);
 
     const original = await nativeFetch(input, init);
-    if (original.ok) return sanitizeResponse(original);
-    if (original.status !== 404) return original;
+    if (original.ok || original.status !== 404) return original;
 
     // A normal detail page may legitimately have no incremental daily overlay.
     // Do not probe the all-core shards for that case: doing so creates extra
     // 404s before the initial all-core dataset has been deployed. The chart
     // endpoint is the authoritative switch into fallback mode; its synthetic
-    // payload already contains the compact daily overlay and public RSI state.
+    // payload already contains the compact daily overlay and provisional RSI.
     if (dailyCode && !activeFallbackCodes.has(dailyCode)) return original;
 
     const payload = chartCode ? await buildChartPayload(chartCode) : await buildDailyPayload(dailyCode);
@@ -221,7 +185,7 @@
       const notice = document.getElementById("chartDataNotice");
       if (notice) {
         notice.hidden = false;
-        notice.textContent = "全銘柄モード：この銘柄は通常シグナル一覧外のため、全対象銘柄用の1年日足＋最新日次差分から表示しています。月足の確定値と公開対象の進行中月観察情報、財務を同じ銘柄コードで確認できます。";
+        notice.textContent = "全銘柄モード：この銘柄は通常シグナル一覧外のため、全対象銘柄用の1年日足＋最新日次差分から表示しています。進行中月の暫定GC/DC、月足RSI、財務も同じ銘柄コードで確認できます。";
       }
       ["replayLink", "replayCardLink"].forEach((id) => {
         const link = document.getElementById(id);
@@ -233,6 +197,4 @@
       });
     }, 1200);
   });
-
-  window.KabutaneCoreDetailFallback = { sanitizePublicPayload, publicProvisional, isPremiumOnlyProvisional };
 })();
