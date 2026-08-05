@@ -1,0 +1,85 @@
+name: Update JPX margin balance
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/update_margin_balance.py'
+      - 'assets/detail-margin-balance.js'
+      - 'assets/detail-margin-balance.css'
+      - 'detail.html'
+      - 'learn.html'
+      - 'tests/test_margin_balance.py'
+      - '.github/workflows/update-margin-balance.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/update_margin_balance.py'
+      - '.github/workflows/update-margin-balance.yml'
+  schedule:
+    # JPX usually publishes the weekly issue-level balance around 16:30 JST
+    # on the second business day. Tue-Thu covers weeks with Japanese holidays.
+    - cron: '10 8 * * 2-4'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check collector and UI tests
+        run: |
+          python -m unittest tests.test_margin_balance -v
+          node --check assets/detail-margin-balance.js
+
+  collect:
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install PDF text extractor
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y poppler-utils
+      - name: Fetch JPX weekly margin balances
+        run: python scripts/update_margin_balance.py
+      - name: Validate generated data
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          index = json.loads(Path('data/margin/latest.json').read_text(encoding='utf-8'))
+          if not index.get('latest_date'):
+              raise SystemExit('latest_date is missing')
+          if int(index.get('covered_codes') or 0) < 1000:
+              raise SystemExit(f"covered_codes is suspiciously low: {index.get('covered_codes')}")
+          shard_count = len([p for p in Path('data/margin').glob('*.json') if p.name != 'latest.json'])
+          if shard_count < 20:
+              raise SystemExit(f'shard count is suspiciously low: {shard_count}')
+          print(index['latest_date'], index['covered_codes'], shard_count)
+          PY
+      - name: Commit refreshed margin data
+        if: github.event_name != 'pull_request'
+        run: |
+          if git diff --quiet -- data/margin && [ -z "$(git ls-files --others --exclude-standard data/margin)" ]; then
+            echo "No new JPX margin data."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/margin
+          git commit -m "data: update JPX weekly margin balances"
+          git push
