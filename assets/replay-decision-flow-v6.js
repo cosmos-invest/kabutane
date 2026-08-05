@@ -18,6 +18,7 @@
     activeBin: null,
   };
   let lastSyncKey = "";
+  let lastMonthlyKey = "";
   let syncTimer = null;
 
   function stateRef() {
@@ -477,9 +478,9 @@
   function updateProfile(force = false) {
     registerPlugin();
     const source = replayRowsUpToNow();
-    if (!source.currentDate) return;
+    if (!source.currentDate) return false;
     const key = `${source.currentDate}|${profileState.period}|${profileState.enabled}|${source.rows.length}`;
-    if (!force && key === lastSyncKey) return;
+    if (!force && key === lastSyncKey) return false;
     lastSyncKey = key;
     profileState.currentDate = source.currentDate;
     profileState.profile = profileState.enabled ? buildProfile(source.rows) : null;
@@ -491,15 +492,26 @@
     const row = currentRowSafe();
     if (date) date.textContent = source.currentDate || "—";
     if (price) price.textContent = formatPrice(row?.close ?? document.getElementById("currentPrice")?.textContent?.replace(/[^0-9.\-]/g, ""));
+    return true;
+  }
+
+  function monthlyKey() {
+    const chart = window.Chart?.getChart?.("monthlyRsiChart");
+    if (!chart) return "";
+    const sizes = (chart.data?.datasets || []).map((dataset) => dataset?.data?.length || 0).join(",");
+    return `${chart.data?.labels?.length || 0}|${sizes}|${profileState.currentDate}`;
   }
 
   function sync() {
     const practice = document.getElementById("practiceArea");
     if (!practice || practice.hidden) return;
     ensureDecisionLayout();
-    updateProfile(false);
-    const chart = window.Chart?.getChart?.("replayChart");
-    if (chart) chart.draw();
+    const profileChanged = updateProfile(false);
+    const nextMonthlyKey = monthlyKey();
+    if (!profileChanged && nextMonthlyKey && nextMonthlyKey !== lastMonthlyKey) {
+      window.Chart?.getChart?.("replayChart")?.draw();
+    }
+    lastMonthlyKey = nextMonthlyKey;
   }
 
   function boot() {
