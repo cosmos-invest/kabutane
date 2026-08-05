@@ -3,14 +3,34 @@
 
   const BIN_COUNT = 28;
   const VALUE_AREA_RATIO = 0.7;
+  const PERIODS = {
+    "6m": { months: 6, label: "直近6か月" },
+    "1y": { months: 12, label: "直近1年" },
+    "3y": { months: 36, label: "直近3年" },
+  };
+  const state = {
+    enabled: true,
+    period: "1y",
+    profile: null,
+    currentPrice: null,
+    activeBin: null,
+    requestGeneration: 0,
+    dataPromise: null,
+  };
 
   function finite(value) {
+    if (value === null || value === undefined || value === "") return null;
     const number = Number(value);
     return Number.isFinite(number) ? number : null;
   }
 
+  function clamp(value, min, max) {
+    return Math.min(max, Math.max(min, value));
+  }
+
   function formatPrice(value) {
-    return finite(value) === null ? "—" : `${Number(value).toLocaleString("ja-JP", { maximumFractionDigits: 1 })}円`;
+    const number = finite(value);
+    return number === null ? "—" : `${number.toLocaleString("ja-JP", { maximumFractionDigits: 1 })}円`;
   }
 
   function formatVolume(value) {
@@ -39,11 +59,11 @@
   }
 
   function filterPeriod(rows, period) {
-    if (period === "all" || !rows.length) return rows;
+    if (!rows.length) return rows;
+    const config = PERIODS[period] || PERIODS["1y"];
     const latest = new Date(`${rows.at(-1).date}T00:00:00`);
-    const years = period === "1y" ? 1 : 3;
     const cutoff = new Date(latest);
-    cutoff.setFullYear(cutoff.getFullYear() - years);
+    cutoff.setMonth(cutoff.getMonth() - config.months);
     return rows.filter((row) => new Date(`${row.date}T00:00:00`) >= cutoff);
   }
 
@@ -71,13 +91,20 @@
       const low = finite(row.low);
       const high = finite(row.high);
       const volume = finite(row.volume);
-      const first = Math.max(0, Math.min(BIN_COUNT - 1, Math.floor((low - minimum) / step)));
-      const last = Math.max(first, Math.min(BIN_COUNT - 1, Math.floor((high - minimum) / step)));
-      const allocation = volume / (last - first + 1);
-      for (let index = first; index <= last; index += 1) bins[index].volume += allocation;
+      if (high === low) {
+        const index = clamp(Math.floor((low - minimum) / step), 0, BIN_COUNT - 1);
+        bins[index].volume += volume;
+        return;
+      }
+      const range = high - low;
+      bins.forEach((bin) => {
+        const overlap = Math.max(0, Math.min(high, bin.high) - Math.max(low, bin.low));
+        if (overlap > 0) bin.volume += volume * (overlap / range);
+      });
     });
 
     const total = bins.reduce((sum, bin) => sum + bin.volume, 0);
+    if (!(total > 0)) return null;
     const poc = bins.reduce((best, bin) => (bin.volume > best.volume ? bin : best), bins[0]);
     const selected = new Set([poc.index]);
     let accumulated = poc.volume;
@@ -106,6 +133,7 @@
       maxVolume: Math.max(...bins.map((bin) => bin.volume)),
       firstDate: valid[0].date,
       lastDate: valid.at(-1).date,
+      sourceVolume: valid.reduce((sum, row) => sum + finite(row.volume), 0),
     };
   }
 
@@ -116,32 +144,134 @@
     return "商いの中心帯の中";
   }
 
-  function render(profile, currentPrice) {
-    const chart = document.getElementById("volumeProfileChart");
-    const stats = document.getElementById("volumeProfileStats");
-    const note = document.getElementById("volumeProfileSummary");
-    if (!chart || !stats || !note) return;
-    if (!profile) {
-      chart.innerHTML = '<p class="volume-profile-empty">価格帯別出来高を計算できる日足データがありません。</p>';
-      stats.innerHTML = "";
-      note.textContent = "日足の高値・安値・出来高が揃った後に表示されます。";
+  function isValueArea(bin, profile) {
+    return bin.low >= profile.valueLow && bin.high <= profile.valueHigh;
+  }
+
+  function profileGeometry(chart) {
+    if (!state.enabled || !state.profile || !chart?.chartArea) return null;
+    const area = chart.chartArea;
+    const mobile = chart.width <= 760;
+    if (mobile) {
+      const width = clamp((area.right - area.left) * 0.28, 72, 122);
+      return { mobile: true, left: area.right - width, right: area.right - 3, top: area.top, bottom: area.bottom };
+    }
+    const left = area.right + 12;
+    const right = chart.width - 10;
+    if (right - left < 70) return null;
+    return { mobile: false, left, right, top: area.top, bottom: area.bottom };
+  }
+
+  function desiredDesktopPadding(chart) {
+    if (!state.enabled || chart.width <= 760) return 0;
+    return Math.round(clamp(chart.width * 0.22, 150, 220));
+  }
+
+  function applyChartLayout(chart = window.Chart?.getChart?.("priceChart")) {
+    if (!chart) return false;
+    chart.options.layout = chart.options.layout || {};
+    chart.options.layout.padding = chart.options.layout.padding || {};
+    const next = desiredDesktopPadding(chart);
+    if (chart.options.layout.padding.right !== next) {
+      chart.options.layout.padding.right = next;
+      chart.update("none");
+    } else chart.draw();
+    return true;
+  }
+
+  function updateBinDetail(bin) {
+    state.activeBin = bin || null;
+    const detail = document.getElementById("volumeProfileBinDetail");
+    if (!detail) return;
+    if (!bin || !state.profile) {
+      detail.textContent = "棒に触れると、その価格帯の推定出来高を確認できます。";
       return;
     }
+    const suffix = bin.index === state.profile.poc.index
+      ? "・推定POC"
+      : isValueArea(bin, state.profile) ? "・70%バリューエリア内" : "";
+    detail.textContent = `${formatPrice(bin.low)}〜${formatPrice(bin.high)}：${formatVolume(bin.volume)}${suffix}`;
+  }
 
-    chart.innerHTML = "";
-    [...profile.bins].reverse().forEach((bin) => {
-      const row = document.createElement("div");
-      row.className = "volume-profile-row";
-      if (bin.index === profile.poc.index) row.classList.add("is-poc");
-      if (bin.low >= profile.valueLow && bin.high <= profile.valueHigh) row.classList.add("is-value-area");
-      const width = profile.maxVolume > 0 ? Math.max(1.5, (bin.volume / profile.maxVolume) * 100) : 0;
-      row.innerHTML = `
-        <span class="volume-profile-price">${formatPrice(bin.low)}–${formatPrice(bin.high)}</span>
-        <span class="volume-profile-track"><span class="volume-profile-bar" style="width:${width.toFixed(2)}%"></span></span>
-        <span class="volume-profile-volume">${formatVolume(bin.volume)}</span>`;
-      chart.appendChild(row);
-    });
+  const volumeProfilePlugin = {
+    id: "kabutaneVolumeProfile",
+    afterDatasetsDraw(chart) {
+      const profile = state.profile;
+      const yScale = chart?.scales?.y;
+      const geometry = profileGeometry(chart);
+      if (!profile || !yScale || !geometry) return;
+      const ctx = chart.ctx;
+      const fullWidth = geometry.right - geometry.left;
+      ctx.save();
+      if (geometry.mobile) {
+        ctx.fillStyle = "rgba(15,23,42,.18)";
+        ctx.fillRect(geometry.left - 4, geometry.top, fullWidth + 7, geometry.bottom - geometry.top);
+      }
+      ctx.beginPath();
+      ctx.rect(geometry.left - 4, geometry.top, fullWidth + 8, geometry.bottom - geometry.top);
+      ctx.clip();
+      profile.bins.forEach((bin) => {
+        const top = Math.max(geometry.top, yScale.getPixelForValue(bin.high));
+        const bottom = Math.min(geometry.bottom, yScale.getPixelForValue(bin.low));
+        if (!(bottom > top)) return;
+        const ratio = profile.maxVolume > 0 ? bin.volume / profile.maxVolume : 0;
+        const width = Math.max(1, fullWidth * ratio);
+        const left = geometry.right - width;
+        const poc = bin.index === profile.poc.index;
+        const valueArea = isValueArea(bin, profile);
+        ctx.fillStyle = poc
+          ? "rgba(249,115,22,.88)"
+          : valueArea
+            ? "rgba(16,185,129,.56)"
+            : geometry.mobile ? "rgba(99,102,241,.24)" : "rgba(99,102,241,.34)";
+        ctx.fillRect(left, top + 0.5, width, Math.max(1, bottom - top - 1));
+        if (state.activeBin?.index === bin.index) {
+          ctx.strokeStyle = "rgba(255,255,255,.96)";
+          ctx.lineWidth = 1.5;
+          ctx.strokeRect(left, top + 0.5, width, Math.max(1, bottom - top - 1));
+        }
+        if (poc && bottom - top >= 10) {
+          ctx.fillStyle = "rgba(255,255,255,.96)";
+          ctx.font = "700 10px system-ui";
+          ctx.textAlign = "right";
+          ctx.textBaseline = "middle";
+          ctx.fillText("POC", geometry.right - 4, (top + bottom) / 2);
+        }
+      });
+      ctx.restore();
+    },
+    afterEvent(chart, args) {
+      const geometry = profileGeometry(chart);
+      const yScale = chart?.scales?.y;
+      if (!geometry || !yScale || !state.profile) return;
+      const event = args.event;
+      const inside = event.x >= geometry.left - 6 && event.x <= geometry.right + 6
+        && event.y >= geometry.top && event.y <= geometry.bottom;
+      if (!inside) {
+        if (state.activeBin !== null && (event.type === "mouseout" || event.type === "mousemove" || event.type === "click")) {
+          updateBinDetail(null);
+          args.changed = true;
+        }
+        return;
+      }
+      const price = yScale.getValueForPixel(event.y);
+      const bin = state.profile.bins.find((item, index) => price >= item.low && (price < item.high || index === state.profile.bins.length - 1)) || null;
+      if (bin?.index !== state.activeBin?.index) {
+        updateBinDetail(bin);
+        args.changed = true;
+      }
+    },
+  };
 
+  function renderStats(profile, currentPrice) {
+    const stats = document.getElementById("volumeProfileStats");
+    const summary = document.getElementById("volumeProfileSummary");
+    if (!stats || !summary) return;
+    if (!profile) {
+      stats.innerHTML = "";
+      summary.textContent = "価格帯別出来高を計算できる日足データがありません。";
+      return;
+    }
     const cards = [
       ["推定POC", `${formatPrice(profile.poc.low)}–${formatPrice(profile.poc.high)}`],
       ["70%バリューエリア", `${formatPrice(profile.valueLow)}–${formatPrice(profile.valueHigh)}`],
@@ -149,38 +279,99 @@
       ["集計期間", `${profile.firstDate}〜${profile.lastDate}`],
     ];
     stats.innerHTML = cards.map(([label, value]) => `<article><span>${label}</span><strong>${value}</strong></article>`).join("");
-    note.textContent = currentPrice === null
+    summary.textContent = currentPrice === null
       ? "価格の集中帯は、支持・抵抗を考えるための参考情報です。"
-      : `現在値 ${formatPrice(currentPrice)} は「${positionLabel(currentPrice, profile)}」です。集中帯を抜けた事実だけで売買を決めず、トレンド・出来高増減・損切り位置と一緒に確認してください。`;
+      : `現在値 ${formatPrice(currentPrice)} は「${positionLabel(currentPrice, profile)}」です。POCや中心帯だけで売買を決めず、トレンド・直近出来高・損切り位置と合わせて確認してください。`;
   }
 
-  async function load(period = "1y") {
-    const code = new URLSearchParams(location.search).get("code")?.trim();
-    if (!code) return;
-    const status = document.getElementById("volumeProfileStatus");
-    try {
-      status.textContent = "計算中…";
-      const [base, overlay] = await Promise.all([
-        fetchJson(`data/charts/${encodeURIComponent(code)}.json`),
-        fetchJson(`data/daily/${encodeURIComponent(code)}.json`, true),
-      ]);
-      const rows = filterPeriod(rowsByDate(base?.daily || [], overlay?.daily || []), period);
-      const currentPrice = finite(overlay?.record?.current_price ?? base?.record?.current_price ?? rows.at(-1)?.close);
-      render(buildProfile(rows), currentPrice);
-      status.textContent = `${period === "all" ? "全期間" : period === "1y" ? "直近1年" : "直近3年"}・${rows.length.toLocaleString("ja-JP")}営業日`;
-    } catch (error) {
-      status.textContent = "読込失敗";
-      const chart = document.getElementById("volumeProfileChart");
-      if (chart) chart.innerHTML = `<p class="volume-profile-empty">価格帯別出来高を読み込めませんでした。<br>${String(error.message || error)}</p>`;
+  function setActiveControls() {
+    document.querySelectorAll("[data-volume-profile-period]").forEach((button) => {
+      const active = button.dataset.volumeProfilePeriod === state.period;
+      button.classList.toggle("active", active);
+      button.classList.toggle("secondary", !active);
+      button.setAttribute("aria-pressed", active ? "true" : "false");
+    });
+    const toggle = document.getElementById("volumeProfileToggle");
+    if (toggle) {
+      toggle.classList.toggle("active", state.enabled);
+      toggle.classList.toggle("secondary", !state.enabled);
+      toggle.setAttribute("aria-pressed", state.enabled ? "true" : "false");
+      toggle.textContent = state.enabled ? "価格帯別出来高 ON" : "価格帯別出来高 OFF";
     }
   }
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const buttons = [...document.querySelectorAll("[data-volume-profile-period]")];
-    buttons.forEach((button) => button.addEventListener("click", () => {
-      buttons.forEach((item) => item.classList.toggle("active", item === button));
-      load(button.dataset.volumeProfilePeriod);
+  function loadData() {
+    if (state.dataPromise) return state.dataPromise;
+    const code = new URLSearchParams(location.search).get("code")?.trim();
+    if (!code) return Promise.resolve(null);
+    state.dataPromise = Promise.all([
+      fetchJson(`data/charts/${encodeURIComponent(code)}.json`),
+      fetchJson(`data/daily/${encodeURIComponent(code)}.json`, true),
+    ]).then(([base, overlay]) => ({
+      rows: rowsByDate(base?.daily || [], overlay?.daily || []),
+      currentPrice: finite(overlay?.record?.current_price ?? base?.record?.current_price),
     }));
-    load("1y");
-  });
+    return state.dataPromise;
+  }
+
+  async function activatePeriod(period = "1y") {
+    state.period = PERIODS[period] ? period : "1y";
+    const generation = ++state.requestGeneration;
+    const status = document.getElementById("volumeProfileStatus");
+    setActiveControls();
+    if (status) status.textContent = "計算中…";
+    try {
+      const source = await loadData();
+      if (generation !== state.requestGeneration || !source) return;
+      const rows = filterPeriod(source.rows, state.period);
+      state.currentPrice = source.currentPrice ?? finite(rows.at(-1)?.close);
+      state.profile = buildProfile(rows);
+      updateBinDetail(null);
+      renderStats(state.profile, state.currentPrice);
+      if (status) status.textContent = `${PERIODS[state.period].label}・${rows.length.toLocaleString("ja-JP")}営業日`;
+      applyChartLayout();
+    } catch (error) {
+      if (generation !== state.requestGeneration) return;
+      state.profile = null;
+      renderStats(null, null);
+      if (status) status.textContent = `読込失敗：${String(error.message || error)}`;
+      applyChartLayout();
+    }
+  }
+
+  function toggleProfile() {
+    state.enabled = !state.enabled;
+    updateBinDetail(null);
+    setActiveControls();
+    applyChartLayout();
+  }
+
+  function patchRenderCharts() {
+    const base = window.renderCharts;
+    if (typeof base !== "function" || base.__kabutaneVolumeProfileWrapped) return;
+    function renderChartsWithVolumeProfile() {
+      const result = base.apply(this, arguments);
+      window.setTimeout(() => applyChartLayout(), 0);
+      return result;
+    }
+    renderChartsWithVolumeProfile.__kabutaneVolumeProfileWrapped = true;
+    window.renderCharts = renderChartsWithVolumeProfile;
+  }
+
+  function init() {
+    if (window.Chart?.register) window.Chart.register(volumeProfilePlugin);
+    patchRenderCharts();
+    document.querySelectorAll("[data-volume-profile-period]").forEach((button) => {
+      button.addEventListener("click", () => activatePeriod(button.dataset.volumeProfilePeriod));
+    });
+    document.getElementById("volumeProfileToggle")?.addEventListener("click", toggleProfile);
+    window.addEventListener("resize", () => window.requestAnimationFrame(() => applyChartLayout()));
+    setActiveControls();
+    activatePeriod("1y");
+    [250, 700, 1500].forEach((delay) => window.setTimeout(() => applyChartLayout(), delay));
+  }
+
+  window.KabutaneVolumeProfile = { buildProfile, filterPeriod, rowsByDate, activatePeriod };
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init, { once: true });
+  else init();
 })();
