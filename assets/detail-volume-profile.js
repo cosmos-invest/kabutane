@@ -156,14 +156,10 @@
     if (!isPriceChart(chart) || !state.enabled || !state.profile || !chart?.chartArea) return null;
     const area = chart.chartArea;
     const mobile = chart.width <= 760;
-    if (mobile) {
-      const width = clamp((area.right - area.left) * 0.28, 72, 122);
-      return { mobile: true, left: area.right - width, right: area.right - 3, top: area.top, bottom: area.bottom };
-    }
-    const left = area.right + 12;
-    const right = chart.width - 10;
-    if (right - left < 70) return null;
-    return { mobile: false, left, right, top: area.top, bottom: area.bottom };
+    const left = area.right + (mobile ? 6 : 10);
+    const right = chart.width - (mobile ? 5 : 10);
+    if (right - left < (mobile ? 54 : 70)) return null;
+    return { mobile, left, right, top: area.top, bottom: area.bottom };
   }
 
   function chartWidth() {
@@ -171,7 +167,8 @@
   }
 
   function desiredDesktopPadding(width = chartWidth()) {
-    if (!state.enabled || width <= 760) return 0;
+    if (!state.enabled) return 0;
+    if (width <= 760) return Math.round(clamp(width * 0.25, 82, 112));
     return Math.round(clamp(width * 0.22, 150, 220));
   }
 
@@ -198,7 +195,7 @@
     const detail = document.getElementById("volumeProfileBinDetail");
     if (!detail) return;
     if (!bin || !state.profile) {
-      detail.textContent = "棒に触れると、その価格帯の推定出来高を確認できます。";
+      detail.textContent = "右側の棒に触れると、その価格帯の推定出来高を確認できます。";
       return;
     }
     const suffix = bin.index === state.profile.poc.index
@@ -218,12 +215,14 @@
       const ctx = chart.ctx;
       const fullWidth = geometry.right - geometry.left;
       ctx.save();
-      if (geometry.mobile) {
-        ctx.fillStyle = "rgba(15,23,42,.18)";
-        ctx.fillRect(geometry.left - 4, geometry.top, fullWidth + 7, geometry.bottom - geometry.top);
-      }
+      ctx.strokeStyle = "rgba(100,116,139,.24)";
+      ctx.lineWidth = 1;
       ctx.beginPath();
-      ctx.rect(geometry.left - 4, geometry.top, fullWidth + 8, geometry.bottom - geometry.top);
+      ctx.moveTo(geometry.left - 4, geometry.top);
+      ctx.lineTo(geometry.left - 4, geometry.bottom);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.rect(geometry.left, geometry.top, fullWidth, geometry.bottom - geometry.top);
       ctx.clip();
       profile.bins.forEach((bin) => {
         const top = Math.max(geometry.top, yScale.getPixelForValue(bin.high));
@@ -231,26 +230,26 @@
         if (!(bottom > top)) return;
         const ratio = profile.maxVolume > 0 ? bin.volume / profile.maxVolume : 0;
         const width = Math.max(1, fullWidth * ratio);
-        const left = geometry.right - width;
+        const left = geometry.left;
         const poc = bin.index === profile.poc.index;
         const valueArea = isValueArea(bin, profile);
         ctx.fillStyle = poc
           ? "rgba(249,115,22,.88)"
           : valueArea
             ? "rgba(16,185,129,.56)"
-            : geometry.mobile ? "rgba(99,102,241,.24)" : "rgba(99,102,241,.34)";
+            : "rgba(99,102,241,.30)";
         ctx.fillRect(left, top + 0.5, width, Math.max(1, bottom - top - 1));
         if (state.activeBin?.index === bin.index) {
-          ctx.strokeStyle = "rgba(255,255,255,.96)";
-          ctx.lineWidth = 1.5;
+          ctx.strokeStyle = "rgba(71,85,105,.92)";
+          ctx.lineWidth = 1.2;
           ctx.strokeRect(left, top + 0.5, width, Math.max(1, bottom - top - 1));
         }
-        if (poc && bottom - top >= 10) {
-          ctx.fillStyle = "rgba(255,255,255,.96)";
+        if (poc && bottom - top >= 10 && width >= 30) {
+          ctx.fillStyle = "rgba(255,255,255,.98)";
           ctx.font = "700 10px system-ui";
-          ctx.textAlign = "right";
+          ctx.textAlign = "left";
           ctx.textBaseline = "middle";
-          ctx.fillText("POC", geometry.right - 4, (top + bottom) / 2);
+          ctx.fillText("POC", geometry.left + 4, (top + bottom) / 2);
         }
       });
       ctx.restore();
@@ -261,7 +260,7 @@
       const yScale = chart?.scales?.y;
       if (!geometry || !yScale || !state.profile) return;
       const event = args.event;
-      const inside = event.x >= geometry.left - 6 && event.x <= geometry.right + 6
+      const inside = event.x >= geometry.left - 4 && event.x <= geometry.right + 4
         && event.y >= geometry.top && event.y <= geometry.bottom;
       if (!inside) {
         if (state.activeBin !== null && (event.type === "mouseout" || event.type === "mousemove" || event.type === "click")) {

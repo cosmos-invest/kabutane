@@ -3,19 +3,80 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="かぶたねで使う月足RSI、確定シグナルと進行中月の暫定値、上昇トレンド、VCP、データ更新について初心者向けに説明します。">
+  <meta name="description" content="かぶたねで使う月足RSI、価格帯別出来高、POC、70%バリューエリア、信用残高、上昇トレンド、VCPを初心者向けに説明します。">
   <title>学び・FAQ | かぶたね</title>
   <link rel="stylesheet" href="assets/style.css">
   <link rel="stylesheet" href="assets/pastel.css">
   <link rel="stylesheet" href="assets/kabutane.css">
+  <link rel="stylesheet" href="assets/learn.css?v=1">
 </head>
-<body data-page="learn" class="pastel-theme">
-  <header class="site-header"><div class="header-inner"><div><p class="eyebrow">KABUTANE LEARNING GARDEN</p><h1>学び・FAQ</h1><p class="subtitle">難しい仕組みは、必要になった時に少しずつ。銘柄検索の裏側と注意点をまとめます。</p></div><div class="header-meta"></div></div></header>
-  <main class="container">
+<body data-page="learn" class="pastel-theme learn-page">
+  <header class="site-header"><div class="header-inner"><div><p class="eyebrow">KABUTANE LEARNING GARDEN</p><h1>学び・FAQ</h1><p class="subtitle">難しい言葉は暗記しなくてOK。「何を見るための数字か」から、やさしく確認できます。</p></div><div class="header-meta"></div></div></header>
+  <main class="container learn-container">
+    <section class="learn-hero">
+      <p class="eyebrow">初心者向け・まずはここだけ</p>
+      <h1>価格・出来高・需給を、ひとつの流れで見る</h1>
+      <p>チャートの用語を全部覚える必要はありません。「価格はどちらへ向かっているか」「どの価格帯に売買が集まったか」「買いと売りの偏りはどうか」「間違ったらどこで出るか」を順番に見れば十分です。</p>
+      <nav class="learn-nav" aria-label="学習メニュー">
+        <a href="#volume-profile">価格帯別出来高</a>
+        <a href="#poc">POC</a>
+        <a href="#value-area">70%バリューエリア</a>
+        <a href="#margin-balance">信用残高</a>
+        <a href="#monthly-rsi">月足RSI・GC/DC</a>
+        <a href="#decision-flow">判断の順番</a>
+      </nav>
+    </section>
+
     <section class="panel note-panel"><h2>まず覚えるのは3つだけ</h2><p><strong>月足の勢い：</strong>日々の細かな上下ではなく、月単位で上昇の力が強まっているかを見ます。</p><p><strong>上昇トレンド：</strong>株価が長い期間で上向きの流れに乗っているかを確認します。</p><p><strong>出口：</strong>買う理由だけでなく、想定が崩れた時にどこで撤退するかを先に決めます。</p></section>
 
-    <section class="panel note-panel"><h2>かぶたねで使う考え方</h2>
-      <details open><summary><strong>月足RSIとは？</strong></summary><p>月末ごとの値動きから、上昇の力と下落の力のバランスを0〜100で表します。かぶたねではTradingViewと同じWilder方式の月足RSI14と、そのRSI14の5か月単純移動平均を使います。</p><p><a class="button secondary" href="signal-method.html">計算方法を詳しく見る</a></p></details>
+    <section class="learn-section term" id="volume-profile">
+      <h2>価格帯別出来高とは？</h2>
+      <p>普通の出来高は「いつ多く売買されたか」を日付ごとに見ます。価格帯別出来高は逆に、<strong>「どの価格で多く売買されたと考えられるか」</strong>を価格ごとの横棒で表します。</p>
+      <div class="volume-demo" aria-label="価格帯別出来高のイメージ図"><div class="volume-demo-price"></div><div class="volume-demo-bars"><i style="width:34%"></i><i style="width:47%"></i><i class="va" style="width:66%"></i><i class="va" style="width:78%"></i><i class="poc" style="width:100%"></i><i class="va" style="width:72%"></i><i class="va" style="width:58%"></i><i style="width:39%"></i><i style="width:25%"></i></div></div>
+      <div class="learn-simple">
+        <article><span>横棒が長い</span><strong>その価格帯に商いが集中</strong><p>買った人・売った人の記憶が残りやすく、再び意識されることがあります。</p></article>
+        <article><span>横棒が短い</span><strong>商いが薄い価格帯</strong><p>価格が比較的速く通過する場面もありますが、それだけで先の値動きは決まりません。</p></article>
+        <article><span>かぶたねの表示</span><strong>日足OHLCVからの推定</strong><p>実際の約定価格別出来高ではなく、その日の安値〜高値へ出来高を配分した推定値です。</p></article>
+      </div>
+      <p class="learn-callout"><strong>画面ではローソク足と重ねません。</strong> 価格チャート右側の専用スペースに、価格軸を揃えた横棒を左から右へ伸ばして表示します。ローソク足の最新部分を隠さず、「今の株価の横にどれだけ商いが積み上がっているか」を比較しやすくするためです。</p>
+      <p class="learn-callout">価格帯別出来高は「ここで必ず反発する線」ではありません。支持・抵抗の候補を探すための地図として使い、ローソク足、移動平均、直近出来高、損切り位置と一緒に確認します。</p>
+    </section>
+
+    <section class="learn-section term" id="poc">
+      <h2>POC（ピーオーシー）とは？</h2>
+      <p><strong>Point of Control</strong> の略で、集計期間の中で最も出来高が多い価格帯です。かぶたねではオレンジ色の横棒で示します。</p>
+      <table class="learn-table"><tr><th>価格がPOCより上</th><td>多くの参加者が売買した中心価格より上にいる状態。POC付近まで押したときの反応を確認します。</td></tr><tr><th>価格がPOC付近</th><td>売買が集中した中心帯の中。上下どちらへ抜けるか、出来高を伴うかを見ます。</td></tr><tr><th>価格がPOCより下</th><td>中心価格を下回っている状態。POCが上値抵抗になる可能性もあるため、戻り方を確認します。</td></tr></table>
+      <p class="learn-note">POCは集計期間を6か月・1年・3年などに変えると位置も変わります。「どの期間の参加者を見たいか」を意識してください。</p>
+    </section>
+
+    <section class="learn-section term" id="value-area">
+      <h2>70%バリューエリアとは？</h2>
+      <p>POCを中心に、推定出来高のおよそ70%が含まれる連続した価格帯です。かぶたねでは緑色で示します。難しく考えず、<strong>「売買が特に集中していた中心ゾーン」</strong>と捉えてください。</p>
+      <div class="learn-simple"><article><span>ゾーンの中</span><strong>参加者の平均的な居場所</strong><p>上下に振れやすく、方向感が出るまで待つ判断もあります。</p></article><article><span>上へ抜ける</span><strong>中心帯より高く評価</strong><p>出来高を伴うか、抜けた後にゾーン上端を維持できるかを確認します。</p></article><article><span>下へ抜ける</span><strong>中心帯より弱い状態</strong><p>戻してもゾーンへ入れない場合は、上値抵抗として意識されることがあります。</p></article></div>
+    </section>
+
+    <section class="learn-section term" id="margin-balance">
+      <h2>信用残高とは？</h2>
+      <p>信用取引でまだ決済されていない建玉の残高です。一般に<strong>信用買い残</strong>、<strong>信用売り残</strong>、その比率である<strong>信用倍率</strong>を見ます。価格だけでは見えない「将来の売買圧力の候補」を考える材料になります。</p>
+      <table class="learn-table"><tr><th>信用買い残</th><td>信用で買ったまま残っている株数。増え続けると将来の返済売りが増える可能性があります。ただし上昇相場では買い需要の強さを示すこともあります。</td></tr><tr><th>信用売り残</th><td>信用で売ったまま残っている株数。株価が上がると買い戻しが入りやすく、上昇を加速させる場面があります。</td></tr><tr><th>信用倍率</th><td>買い残 ÷ 売り残。高いほど買い残が多い状態ですが、銘柄ごとの普段の水準や貸借区分が違うため、倍率だけで良し悪しは決めません。</td></tr></table>
+      <p class="learn-callout">信用残高は公表にタイムラグがあります。「今日の値動きの原因」を直接示す数字ではなく、数週間の増減傾向を価格・出来高と重ねて使うのが基本です。</p>
+      <p class="learn-note">かぶたねではJPXの公表データを優先して扱います。全銘柄を比較する週次残高と、一部銘柄を対象に日次公表される残高は性質が違うため、画面上でも「基準日」「更新頻度」「対象範囲」を明示します。売り残が0株のときは信用倍率を無限大表示せず「—（売り残0）」とします。</p>
+    </section>
+
+    <section class="learn-section term" id="monthly-rsi">
+      <h2>月足RSIのGC・DCは何を見るの？</h2>
+      <p>かぶたねではTradingViewと同じWilder方式の月足RSI14と、そのRSI14の5か月単純移動平均を使います。RSI14が5か月移動平均を下から上へ抜くと<strong>GC</strong>、上から下へ抜くと<strong>DC</strong>です。</p>
+      <div class="learn-simple"><article><span>緑 ● GC</span><strong>中期の勢いが上向く候補</strong><p>売買練習では価格チャートの下端にも緑丸を簡易表示します。</p></article><article><span>赤 ● DC</span><strong>中期の勢いが弱まる候補</strong><p>赤丸だけで売るのではなく、価格のトレンド崩れと合わせて確認します。</p></article><article><span>重要</span><strong>確定した月足を使う</strong><p>未来を見ないため、月末確定値を翌月から判断材料として使います。</p></article></div>
+      <p><a class="button secondary" href="signal-method.html">月足RSIの計算方法を詳しく見る</a></p>
+    </section>
+
+    <section class="learn-section term" id="decision-flow">
+      <h2>初心者向け：判断はこの順番</h2>
+      <div class="learn-flow"><div>① トレンド<br>価格の方向</div><div>② 価格帯別出来高<br>どこが中心か</div><div>③ 信用残高<br>需給の偏り</div><div>④ 損切り<br>間違った時の出口</div></div>
+      <p>「上がりそう」を探すより、<strong>どこで入るか・どこで間違いと認めるか</strong>を先に決める方が、売買練習として再現しやすくなります。POC、信用倍率、RSIなどは全部その判断を補助する材料です。</p>
+    </section>
+
+    <section class="panel note-panel"><h2>そのほか、かぶたねで使う考え方</h2>
       <details open><summary><strong>確定シグナルと暫定シグナルの違いは？</strong></summary><p><strong>確定NEW・確定継続・確定OUT</strong>は、月末まで完成した月足だけで判定します。ランキング、月初レポート、GC後騰落率には、この確定値だけを使います。</p><p><strong>暫定GC・暫定DC</strong>は、進行中月の最新日足までで計算した観察情報です。月末までに株価が戻ると消える場合があり、正式なNEW・OUTではありません。</p></details>
       <details><summary><strong>上昇トレンドの簡易判定</strong></summary><p>株価と複数の移動平均線の位置・向きから、長期的な流れが上向きかを確認します。SEPAの考え方を参考にしていますが、すべての条件を完全再現するものではありません。</p></details>
       <details><summary><strong>値動きの収束（VCP）</strong></summary><p>値幅が少しずつ小さくなる状態を見ます。力をためている可能性がありますが、上昇を保証する形ではありません。</p></details>
@@ -23,7 +84,7 @@
     </section>
 
     <section class="panel note-panel"><h2>データと更新</h2>
-      <details open><summary><strong>何を取得していますか？</strong></summary><p>Yahoo Finance経由で、株価の始値・高値・安値・終値、出来高、配当、株式分割・併合を取得します。有料API、TDnet、決算予定の自動取得には接続していません。</p></details>
+      <details open><summary><strong>何を取得していますか？</strong></summary><p>Yahoo Finance経由で、株価の始値・高値・安値・終値、出来高、配当、株式分割・併合を取得します。信用残高はJPX公表データから取得する仕組みを追加中です。有料API、TDnet、決算予定の自動取得には接続していません。</p></details>
       <details><summary><strong>いつ更新されますか？</strong></summary><p>確定NEW・CONTINUE・OUTは月末確定後の月次更新で変わります。現在対象銘柄の日足と進行中月の暫定シグナルは平日21時の日次更新で再計算します。市場の休場日やGitHub Actionsの混雑時は遅れる場合があります。</p></details>
       <details><summary><strong>対象市場は？</strong></summary><p>JPXの上場銘柄一覧を使い、プライム・スタンダード・グロースの国内普通株式を対象にします。新規上場などで月足期間が不足する銘柄は、計算可能になるまで除外されます。</p></details>
       <details><summary><strong>財務情報が「—」になるのはなぜ？</strong></summary><p>大量アクセスを避けるため、財務プロフィールは過去に取得できたYahoo Financeのキャッシュだけを表示します。未取得は0ではなく「情報なし」です。</p></details>
@@ -32,12 +93,11 @@
     <section class="panel note-panel"><h2>FAQ</h2>
       <details><summary><strong>TradingViewでDCなのに、かぶたねが継続なのはなぜ？</strong></summary><p>TradingViewが進行中月を含めている場合、月途中で先にDCして見えることがあります。かぶたねの確定ステータスは前月末までの完成済み月足なので、その月末までは継続のままです。詳細ページの「進行中月」カードで暫定DCかどうかを確認できます。</p></details>
       <details><summary><strong>🌸コスモス注目は買い推奨ですか？</strong></summary><p>いいえ。勢いと長期トレンドの両方を詳しく確認したい「調査候補」です。会社の公式情報、チャート、許容できる損失を確認して判断してください。</p></details>
-      <details><summary><strong>TOPIXはどのデータですか？</strong></summary><p>指数データが安定取得できない場合は、分割・分配金調整済みのTOPIX連動ETFを代替ベンチマークとして使います。その場合はTOPIX指数そのものではないことを画面で明示します。</p></details>
       <details><summary><strong>決算や重要情報はどこで確認しますか？</strong></summary><p>かぶたねでは自動取得しません。実際に投資する前に、対象企業の公式IRページや証券会社の情報で確認してください。</p></details>
       <details><summary><strong>データが最新日までない場合は？</strong></summary><p>Yahoo Finance側の遅延、休場日、通信エラーが考えられます。画面の更新日時と最新株価日を確認してください。</p></details>
     </section>
 
-    <section class="panel note-panel disclaimer"><h2>大切な注意</h2><p>本サイトは情報提供・学習・練習を目的とし、特定銘柄の売買を推奨しません。暫定シグナルを含め、データの欠損、遅延、訂正、取得元との計算差異があり得ます。投資判断はご自身の責任で行ってください。</p></section>
+    <section class="panel note-panel disclaimer"><h2>大切な注意</h2><p>本サイトは情報提供・学習・練習を目的とし、特定銘柄の売買を推奨しません。暫定シグナルを含め、データの欠損、遅延、訂正、取得元との計算差異があり得ます。価格帯別出来高は日足OHLCVからの推定で、実際の約定価格別出来高とは異なります。投資判断はご自身の責任で行ってください。</p></section>
   </main>
   <footer><p>かぶたね 🌱 / コスモスと探す、未来の1株</p></footer>
   <script src="assets/characters.js" defer></script>

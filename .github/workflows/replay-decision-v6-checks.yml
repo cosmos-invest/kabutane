@@ -1,0 +1,69 @@
+name: Validate replay decision flow v6
+
+on:
+  pull_request:
+    paths:
+      - 'assets/replay-decision-flow-v6.js'
+      - 'assets/replay-volume-profile-guard-v6.js'
+      - 'assets/replay-decision-controls-v6.js'
+      - 'assets/replay-decision-flow-v6.css'
+      - 'assets/pwa-register.js'
+      - 'detail.html'
+      - 'learn.html'
+      - 'assets/learn.css'
+      - 'tests/test_replay_decision_v6.py'
+      - 'tests/replay-decision-v6.spec.js'
+      - '.github/workflows/replay-decision-v6-checks.yml'
+  push:
+    paths:
+      - 'assets/replay-decision-flow-v6.js'
+      - 'assets/replay-volume-profile-guard-v6.js'
+      - 'assets/replay-decision-controls-v6.js'
+      - 'assets/replay-decision-flow-v6.css'
+      - 'assets/pwa-register.js'
+      - 'detail.html'
+      - 'learn.html'
+      - 'assets/learn.css'
+      - 'tests/test_replay_decision_v6.py'
+      - 'tests/replay-decision-v6.spec.js'
+      - '.github/workflows/replay-decision-v6-checks.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check JavaScript syntax
+        run: |
+          node --check assets/replay-decision-flow-v6.js
+          node --check assets/replay-volume-profile-guard-v6.js
+          node --check assets/replay-decision-controls-v6.js
+          node --check tests/replay-decision-v6.spec.js
+      - name: Run integration checks
+        run: python -m unittest tests.test_replay_decision_v6 -v
+      - name: Install Chromium test runner
+        run: |
+          npm install --no-save @playwright/test@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Test mobile judgment flow
+        run: |
+          python3 -m http.server 4173 >/tmp/kabutane-preview.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID' EXIT
+          npx playwright test tests/replay-decision-v6.spec.js --reporter=line
+      - name: Upload mobile preview
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: replay-decision-v6-mobile-preview
+          path: test-results/*.png
+          if-no-files-found: ignore

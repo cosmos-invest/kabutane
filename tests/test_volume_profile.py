@@ -20,8 +20,10 @@ class VolumeProfileIntegrationTests(unittest.TestCase):
             "推定POC",
             "70%バリューエリア",
             "実際に重なる値幅の割合",
-            "assets/detail-volume-profile.css?v=2",
-            "assets/detail-volume-profile.js?v=2",
+            "ローソク足に重ねず",
+            "右向きの横棒",
+            "assets/detail-volume-profile.css?v=3",
+            "assets/detail-volume-profile.js?v=3",
         ):
             self.assertIn(marker, html)
         self.assertNotIn('data-volume-profile-period="all"', html)
@@ -43,7 +45,9 @@ class VolumeProfileIntegrationTests(unittest.TestCase):
             "kabutaneVolumeProfile",
             "desiredDesktopPadding",
             "width <= 760",
-            "0.28",
+            "width * 0.25",
+            "const left = area.right +",
+            "ctx.fillRect(left, top + 0.5, width",
             "volumeProfileBinDetail",
             "data/charts/",
             "data/daily/",
@@ -54,10 +58,11 @@ class VolumeProfileIntegrationTests(unittest.TestCase):
         self.assertNotIn('period === "all"', script)
         self.assertNotIn("allocation = volume / (last - first + 1)", script)
         self.assertNotIn("chart.options.layout", script)
+        self.assertNotIn("area.right - width", script)
         for forbidden in ("apiKey", "subscription", "J-Quants", "paid_api"):
             self.assertNotIn(forbidden, script)
 
-    def test_styles_cover_desktop_and_mobile_overlay(self) -> None:
+    def test_styles_cover_desktop_and_mobile(self) -> None:
         css = (ROOT / "assets" / "detail-volume-profile.css").read_text(encoding="utf-8")
         self.assertEqual(css.count("{"), css.count("}"))
         self.assertIn("@media(max-width:760px)", css)
