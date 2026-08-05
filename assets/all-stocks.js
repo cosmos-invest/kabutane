@@ -10,13 +10,25 @@
   const summaryEl = document.getElementById("allStocksSummary");
   const searchEl = document.getElementById("allStocksSearch");
   const marketEl = document.getElementById("allStocksMarket");
-  const trendEl = document.getElementById("allStocksTrend");
+  const signalEl = document.getElementById("allStocksSignal");
+  const sma200El = document.getElementById("allStocksSma200");
+  const perfectEl = document.getElementById("allStocksPerfect");
+  const volumeMinEl = document.getElementById("allStocksVolumeMin");
+  const highMinEl = document.getElementById("allStocksHighMin");
+  const financeEl = document.getElementById("allStocksFinance");
+  const roeMinEl = document.getElementById("allStocksRoeMin");
+  const equityMinEl = document.getElementById("allStocksEquityMin");
+  const revenueMinEl = document.getElementById("allStocksRevenueMin");
+  const perMaxEl = document.getElementById("allStocksPerMax");
+  const fcfEl = document.getElementById("allStocksFcf");
   const sortEl = document.getElementById("allStocksSort");
   const moreEl = document.getElementById("allStocksMore");
-  const signalButtons = [...document.querySelectorAll("[data-signal]")];
+  const guideResetEl = document.getElementById("allStocksGuideReset");
+  const expertResetEl = document.getElementById("allStocksExpertReset");
+  const guideButtons = [...document.querySelectorAll("[data-guide]")];
 
   let payload = null;
-  let signalFilter = "ALL";
+  let guideFilter = "all";
   let visibleLimit = 100;
 
   function finite(value) {
@@ -30,7 +42,7 @@
     return n === null ? "—" : n.toLocaleString("ja-JP", { maximumFractionDigits: digits });
   }
 
-  function signed(value, suffix = "pt", digits = 1) {
+  function signed(value, suffix = "%", digits = 1) {
     const n = finite(value);
     if (n === null) return "—";
     return `${n > 0 ? "+" : ""}${n.toFixed(digits)}${suffix}`;
@@ -43,20 +55,30 @@
     }, "");
   }
 
+  // Defense-in-depth: the page normally receives public-radar.json, where the
+  // current-month up-cross state has already been removed. If an old payload is
+  // ever served, do not turn that state back into a public label or filter.
+  function publicStatus(item) {
+    const raw = String(item?.provisional_status || "UNKNOWN").toUpperCase();
+    if (raw === "GC") {
+      const confirmed = String(item?.confirmed_status || "OUT").toUpperCase();
+      return ["NEW", "CONTINUE"].includes(confirmed) ? "CONTINUE" : "OUT";
+    }
+    return ["NEAR_GC", "CONTINUE", "DC", "OUT", "UNKNOWN"].includes(raw) ? raw : "UNKNOWN";
+  }
+
   function signalLabel(value) {
     return ({
-      GC: "暫定GC",
       NEAR_GC: "GC接近",
-      CONTINUE: "暫定継続",
+      CONTINUE: "継続",
       DC: "暫定DC",
       OUT: "OUT側",
       UNKNOWN: "判定待ち",
-    })[value] || value || "判定待ち";
+    })[value] || "判定待ち";
   }
 
   function signalClass(value) {
     return ({
-      GC: "signal-gc",
       NEAR_GC: "signal-near",
       CONTINUE: "signal-continue",
       DC: "signal-dc",
@@ -73,25 +95,77 @@
     return text || "—";
   }
 
-  function trendPass(item, filter) {
-    if (filter === "above200") return item.above_sma200 === true;
-    if (filter === "perfect") return item.perfect_order === true;
-    if (filter === "volume") return (finite(item.volume_ratio_5_30) ?? 0) >= 1.2;
-    if (filter === "finance") return item.fundamentals_available === true;
+  function guidePass(item, guide) {
+    const status = publicStatus(item);
+    const volume = finite(item.volume_ratio_5_30);
+    const high = finite(item.high52_distance_pct);
+
+    if (guide === "cosmos") {
+      return status === "CONTINUE" && item.above_sma200 === true && item.perfect_order === true && high !== null && high >= -15;
+    }
+    if (guide === "lumo") {
+      return ["NEAR_GC", "CONTINUE"].includes(status) && item.above_sma25 === true && item.above_sma75 === true && volume !== null && volume >= 1.2 && high !== null && high >= -12;
+    }
+    if (guide === "aile") {
+      if (item.fundamentals_available !== true || item.above_sma200 !== true) return false;
+      const checks = [
+        finite(item.equity_ratio_pct) !== null && finite(item.equity_ratio_pct) >= 40,
+        finite(item.roe_pct) !== null && finite(item.roe_pct) >= 8,
+        finite(item.free_cashflow_oku) !== null && finite(item.free_cashflow_oku) > 0,
+        finite(item.revenue_growth_pct) !== null && finite(item.revenue_growth_pct) >= 0,
+      ];
+      return checks.filter(Boolean).length >= 3;
+    }
     return true;
+  }
+
+  function expertFilters() {
+    return {
+      market: marketEl?.value || "all",
+      signal: signalEl?.value || "ALL",
+      sma200: sma200El?.value || "all",
+      perfect: perfectEl?.value || "all",
+      volumeMin: finite(volumeMinEl?.value),
+      highMin: finite(highMinEl?.value),
+      finance: financeEl?.value || "all",
+      roeMin: finite(roeMinEl?.value),
+      equityMin: finite(equityMinEl?.value),
+      revenueMin: finite(revenueMinEl?.value),
+      perMax: finite(perMaxEl?.value),
+      fcf: fcfEl?.value || "all",
+      sort: sortEl?.value || "code",
+    };
+  }
+
+  function expertPass(item, filters) {
+    if (filters.market !== "all" && !String(item.market || "").includes(filters.market)) return false;
+    if (filters.signal !== "ALL" && publicStatus(item) !== filters.signal) return false;
+    if (filters.sma200 === "above" && item.above_sma200 !== true) return false;
+    if (filters.sma200 === "below" && item.above_sma200 !== false) return false;
+    if (filters.perfect === "yes" && item.perfect_order !== true) return false;
+    if (filters.perfect === "no" && item.perfect_order === true) return false;
+    if (filters.volumeMin !== null && (finite(item.volume_ratio_5_30) === null || finite(item.volume_ratio_5_30) < filters.volumeMin)) return false;
+    if (filters.highMin !== null && (finite(item.high52_distance_pct) === null || finite(item.high52_distance_pct) < filters.highMin)) return false;
+    if (filters.finance === "yes" && item.fundamentals_available !== true) return false;
+    if (filters.roeMin !== null && (finite(item.roe_pct) === null || finite(item.roe_pct) < filters.roeMin)) return false;
+    if (filters.equityMin !== null && (finite(item.equity_ratio_pct) === null || finite(item.equity_ratio_pct) < filters.equityMin)) return false;
+    if (filters.revenueMin !== null && (finite(item.revenue_growth_pct) === null || finite(item.revenue_growth_pct) < filters.revenueMin)) return false;
+    if (filters.perMax !== null && (finite(item.per) === null || finite(item.per) > filters.perMax)) return false;
+    if (filters.fcf === "positive" && (finite(item.free_cashflow_oku) === null || finite(item.free_cashflow_oku) <= 0)) return false;
+    return true;
+  }
+
+  function currentQuery() {
+    return String(searchEl?.value || "").trim().toLowerCase();
   }
 
   function filteredRows() {
     if (!payload) return [];
-    const query = String(searchEl?.value || "").trim().toLowerCase();
-    const market = marketEl?.value || "all";
-    const trend = trendEl?.value || "all";
-    const sort = sortEl?.value || "code";
-
+    const query = currentQuery();
+    const filters = expertFilters();
     const result = (Array.isArray(payload.records) ? payload.records : []).filter((item) => {
-      if (signalFilter !== "ALL" && String(item.provisional_status || "UNKNOWN") !== signalFilter) return false;
-      if (market !== "all" && !String(item.market || "").includes(market)) return false;
-      if (!trendPass(item, trend)) return false;
+      if (["cosmos", "lumo", "aile"].includes(guideFilter) && !guidePass(item, guideFilter)) return false;
+      if (!expertPass(item, filters)) return false;
       if (query) {
         const haystack = `${item.code || ""} ${item.name || ""} ${item.market || ""} ${item.sector || ""}`.toLowerCase();
         if (!haystack.includes(query)) return false;
@@ -100,20 +174,34 @@
     });
 
     result.sort((a, b) => {
-      if (sort === "spread_desc") return (finite(b.monthly_rsi_spread) ?? -9999) - (finite(a.monthly_rsi_spread) ?? -9999);
-      if (sort === "spread_asc") return (finite(a.monthly_rsi_spread) ?? 9999) - (finite(b.monthly_rsi_spread) ?? 9999);
-      if (sort === "volume") return (finite(b.volume_ratio_5_30) ?? -9999) - (finite(a.volume_ratio_5_30) ?? -9999);
-      if (sort === "high") return (finite(b.high52_distance_pct) ?? -9999) - (finite(a.high52_distance_pct) ?? -9999);
-      if (sort === "price") return (finite(b.current_price) ?? -9999) - (finite(a.current_price) ?? -9999);
+      if (filters.sort === "volume") return (finite(b.volume_ratio_5_30) ?? -9999) - (finite(a.volume_ratio_5_30) ?? -9999);
+      if (filters.sort === "high") return (finite(b.high52_distance_pct) ?? -9999) - (finite(a.high52_distance_pct) ?? -9999);
+      if (filters.sort === "price") return (finite(b.current_price) ?? -9999) - (finite(a.current_price) ?? -9999);
+      if (filters.sort === "roe") return (finite(b.roe_pct) ?? -9999) - (finite(a.roe_pct) ?? -9999);
+      if (filters.sort === "equity") return (finite(b.equity_ratio_pct) ?? -9999) - (finite(a.equity_ratio_pct) ?? -9999);
+      if (filters.sort === "per") return (finite(a.per) ?? 999999) - (finite(b.per) ?? 999999);
       return String(a.code || "").localeCompare(String(b.code || ""), "ja", { numeric: true });
     });
     return result;
   }
 
+  function renderGuideCounts(records) {
+    const mapping = [
+      ["cosmos", "cosmosGuideCount"],
+      ["lumo", "lumoGuideCount"],
+      ["aile", "aileGuideCount"],
+    ];
+    mapping.forEach(([guide, id]) => {
+      const element = document.getElementById(id);
+      if (!element) return;
+      const value = records.filter((item) => guidePass(item, guide)).length;
+      element.textContent = `${value.toLocaleString("ja-JP")}社`;
+    });
+  }
+
   function renderSummary() {
     if (!payload) return;
     const records = Array.isArray(payload.records) ? payload.records : [];
-    const counts = payload.status_counts || {};
     const total = Number(payload.core_count || records.length || 0);
     const monthly = Number(payload.monthly_coverage || 0);
     const daily = Number(payload.daily_coverage || 0);
@@ -122,19 +210,34 @@
     if (totalEl) totalEl.textContent = total.toLocaleString("ja-JP");
     if (coverageEl) coverageEl.textContent = `日足 ${daily.toLocaleString("ja-JP")} / 月足RSI ${monthly.toLocaleString("ja-JP")}`;
     if (dataDateEl) dataDateEl.textContent = `株価 ${priceDate || "—"}`;
+    renderGuideCounts(records);
+
     if (summaryEl) {
+      const counts = { NEAR_GC: 0, CONTINUE: 0, DC: 0, OUT: 0, UNKNOWN: 0 };
+      records.forEach((item) => { counts[publicStatus(item)] = (counts[publicStatus(item)] || 0) + 1; });
       const cards = [
-        ["暫定GC", counts.GC || 0, "signal-gc"],
-        ["GC接近", counts.NEAR_GC || 0, "signal-near"],
-        ["暫定継続", counts.CONTINUE || 0, "signal-continue"],
-        ["暫定DC", counts.DC || 0, "signal-dc"],
-        ["OUT側", counts.OUT || 0, "signal-out"],
+        ["GC接近", counts.NEAR_GC, "NEAR_GC", "signal-near"],
+        ["継続", counts.CONTINUE, "CONTINUE", "signal-continue"],
+        ["暫定DC", counts.DC, "DC", "signal-dc"],
+        ["OUT側", counts.OUT, "OUT", "signal-out"],
+        ["判定待ち", counts.UNKNOWN, "UNKNOWN", "signal-unknown"],
       ];
-      summaryEl.innerHTML = cards.map(([label, value, cls]) => `<button type="button" data-summary-signal="${label === "暫定GC" ? "GC" : label === "GC接近" ? "NEAR_GC" : label === "暫定継続" ? "CONTINUE" : label === "暫定DC" ? "DC" : "OUT"}" class="${cls}"><span>${label}</span><strong>${Number(value).toLocaleString("ja-JP")}</strong></button>`).join("");
+      summaryEl.innerHTML = cards.map(([label, value, signal, cls]) => `<button type="button" data-summary-signal="${signal}" class="${cls}"><span>${label}</span><strong>${Number(value || 0).toLocaleString("ja-JP")}</strong></button>`).join("");
       summaryEl.querySelectorAll("[data-summary-signal]").forEach((button) => {
-        button.addEventListener("click", () => setSignalFilter(button.dataset.summarySignal || "ALL"));
+        button.addEventListener("click", () => {
+          setGuide("custom", false);
+          if (signalEl) signalEl.value = button.dataset.summarySignal || "ALL";
+          visibleLimit = 100;
+          syncUrl();
+          renderRows();
+        });
       });
     }
+  }
+
+  function renderFinance(item) {
+    if (item.fundamentals_available !== true) return '<span class="finance-muted">取得待ち / 取得不可</span>';
+    return `<div class="finance-mini"><span>PER ${number(item.per, 1)}</span><span>ROE ${number(item.roe_pct, 1)}%</span><span>自己資本 ${number(item.equity_ratio_pct, 1)}%</span></div>`;
   }
 
   function renderRows() {
@@ -143,10 +246,9 @@
     const shown = all.slice(0, visibleLimit);
 
     rowsEl.innerHTML = shown.map((item) => {
-      const spread = finite(item.monthly_rsi_spread);
       const volume = finite(item.volume_ratio_5_30);
       const highDistance = finite(item.high52_distance_pct);
-      const signal = String(item.provisional_status || "UNKNOWN");
+      const status = publicStatus(item);
       const trend = [
         item.above_sma200 === true ? "SMA200上" : item.above_sma200 === false ? "SMA200下" : "SMA200 —",
         item.perfect_order === true ? "上昇配列" : "配列未成立",
@@ -155,15 +257,16 @@
         <td class="stock-main"><a class="all-stock-link" href="detail.html?code=${encodeURIComponent(item.code || "")}"><strong>${item.code || "—"} ${item.name || ""}</strong><small>${item.sector || "セクター —"}</small></a></td>
         <td><span class="market-chip">${marketLabel(item.market)}</span></td>
         <td><strong>${number(item.current_price, 2)}円</strong><small class="cell-sub">${item.price_date || "—"}</small></td>
-        <td><span class="signal-chip ${signalClass(signal)}">${signalLabel(signal)}</span><small class="cell-sub">確定 ${item.confirmed_status || "—"} / ${item.confirmed_month || "—"}</small></td>
-        <td><strong>${number(item.monthly_rsi14, 1)}</strong><small class="cell-sub">MA5 ${number(item.monthly_rsi_ma5, 1)} / <span class="${spread !== null && spread < 0 ? "negative" : spread !== null && spread > 0 ? "positive" : ""}">${signed(spread)}</span></small></td>
+        <td><span class="signal-chip ${signalClass(status)}">${signalLabel(status)}</span><small class="cell-sub">確定 ${item.confirmed_status || "—"} / ${item.confirmed_month || "—"}</small></td>
         <td><div class="mini-stack">${trend.map((value) => `<span>${value}</span>`).join("")}</div></td>
         <td><strong class="${volume !== null && volume >= 1.2 ? "positive" : ""}">${volume === null ? "—" : `${volume.toFixed(2)}倍`}</strong><small class="cell-sub">5日 / 30日平均</small></td>
         <td><strong>${highDistance === null ? "—" : signed(highDistance, "%", 1)}</strong><small class="cell-sub">直近52週高値比</small></td>
+        <td>${renderFinance(item)}</td>
       </tr>`;
     }).join("");
 
-    if (resultTextEl) resultTextEl.textContent = `${all.length.toLocaleString("ja-JP")}銘柄に絞り込み / ${Math.min(visibleLimit, all.length).toLocaleString("ja-JP")}件表示`;
+    const guideName = ({ cosmos: "コスモス🌸", lumo: "ルーモ✨", aile: "エール💜", custom: "玄人設定", all: "全銘柄" })[guideFilter] || "全銘柄";
+    if (resultTextEl) resultTextEl.textContent = `${guideName}：${all.length.toLocaleString("ja-JP")}銘柄 / ${Math.min(visibleLimit, all.length).toLocaleString("ja-JP")}件表示`;
     if (emptyEl) emptyEl.hidden = all.length > 0;
     if (moreEl) {
       moreEl.hidden = all.length <= visibleLimit;
@@ -171,40 +274,74 @@
     }
   }
 
-  function setSignalFilter(value) {
-    signalFilter = value || "ALL";
-    signalButtons.forEach((button) => {
-      const active = button.dataset.signal === signalFilter;
+  function updateGuideButtons() {
+    guideButtons.forEach((button) => {
+      const active = button.dataset.guide === guideFilter;
       button.classList.toggle("active", active);
       button.setAttribute("aria-pressed", String(active));
     });
-    visibleLimit = 100;
+  }
+
+  function resetExpertInputs() {
+    if (marketEl) marketEl.value = "all";
+    if (signalEl) signalEl.value = "ALL";
+    if (sma200El) sma200El.value = "all";
+    if (perfectEl) perfectEl.value = "all";
+    if (volumeMinEl) volumeMinEl.value = "";
+    if (highMinEl) highMinEl.value = "";
+    if (financeEl) financeEl.value = "all";
+    if (roeMinEl) roeMinEl.value = "";
+    if (equityMinEl) equityMinEl.value = "";
+    if (revenueMinEl) revenueMinEl.value = "";
+    if (perMaxEl) perMaxEl.value = "";
+    if (fcfEl) fcfEl.value = "all";
+    if (sortEl) sortEl.value = "code";
+  }
+
+  function syncUrl() {
     const url = new URL(location.href);
-    if (signalFilter === "ALL") url.searchParams.delete("signal");
-    else url.searchParams.set("signal", signalFilter);
+    if (["cosmos", "lumo", "aile"].includes(guideFilter)) url.searchParams.set("guide", guideFilter);
+    else url.searchParams.delete("guide");
+    const signal = signalEl?.value || "ALL";
+    if (signal !== "ALL") url.searchParams.set("signal", signal);
+    else url.searchParams.delete("signal");
     history.replaceState(null, "", `${url.pathname}${url.search}${url.hash}`);
-    renderRows();
   }
 
-  function resetVisible() {
+  function setGuide(value, resetExpert = true) {
+    guideFilter = ["cosmos", "lumo", "aile", "custom", "all"].includes(value) ? value : "all";
+    if (resetExpert && guideFilter !== "custom") resetExpertInputs();
+    updateGuideButtons();
     visibleLimit = 100;
+    syncUrl();
     renderRows();
   }
 
-  function initialSignalFromUrl() {
-    const value = new URL(location.href).searchParams.get("signal");
-    return ["GC", "NEAR_GC", "CONTINUE", "DC", "OUT", "UNKNOWN"].includes(value) ? value : "ALL";
+  function onExpertChange() {
+    guideFilter = "custom";
+    updateGuideButtons();
+    visibleLimit = 100;
+    syncUrl();
+    renderRows();
+  }
+
+  function initialStateFromUrl() {
+    const url = new URL(location.href);
+    const guide = url.searchParams.get("guide");
+    const signal = url.searchParams.get("signal");
+    if (["cosmos", "lumo", "aile"].includes(guide)) guideFilter = guide;
+    if (["NEAR_GC", "CONTINUE", "DC", "OUT", "UNKNOWN"].includes(signal)) {
+      if (signalEl) signalEl.value = signal;
+      guideFilter = "custom";
+    }
+    // signal=GC is intentionally ignored; it is not a public filter.
   }
 
   async function init() {
-    signalFilter = initialSignalFromUrl();
-    signalButtons.forEach((button) => {
-      const active = button.dataset.signal === signalFilter;
-      button.classList.toggle("active", active);
-      button.setAttribute("aria-pressed", String(active));
-    });
+    initialStateFromUrl();
+    updateGuideButtons();
     try {
-      const response = await fetch(`data/core/radar.json?v=${Date.now()}`, { cache: "no-store" });
+      const response = await fetch(`data/core/public-radar.json?v=${Date.now()}`, { cache: "no-store" });
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       payload = await response.json();
       renderSummary();
@@ -219,13 +356,18 @@
     }
   }
 
-  signalButtons.forEach((button) => button.addEventListener("click", () => setSignalFilter(button.dataset.signal || "ALL")));
-  searchEl?.addEventListener("input", resetVisible);
-  marketEl?.addEventListener("change", resetVisible);
-  trendEl?.addEventListener("change", resetVisible);
-  sortEl?.addEventListener("change", resetVisible);
+  guideButtons.forEach((button) => button.addEventListener("click", () => setGuide(button.dataset.guide || "all")));
+  guideResetEl?.addEventListener("click", () => setGuide("all"));
+  expertResetEl?.addEventListener("click", () => {
+    resetExpertInputs();
+    setGuide("all", false);
+  });
+  searchEl?.addEventListener("input", () => { visibleLimit = 100; renderRows(); });
+  [marketEl, signalEl, sma200El, perfectEl, volumeMinEl, highMinEl, financeEl, roeMinEl, equityMinEl, revenueMinEl, perMaxEl, fcfEl, sortEl].forEach((element) => {
+    element?.addEventListener(element?.tagName === "INPUT" ? "input" : "change", onExpertChange);
+  });
   moreEl?.addEventListener("click", () => { visibleLimit += 100; renderRows(); });
 
-  window.KabutaneAllStocks = { filteredRows, latestPriceDate, signalLabel, trendPass };
+  window.KabutaneAllStocks = { filteredRows, latestPriceDate, publicStatus, signalLabel, guidePass, expertPass };
   init();
 })();

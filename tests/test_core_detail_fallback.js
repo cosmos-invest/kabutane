@@ -46,6 +46,13 @@ async function fakeFetch(input) {
   const url = String(typeof input === "string" ? input : input.url);
   if (url.includes("data/charts/5243.json")) return response(null, 404);
   if (url.includes("data/daily/5243.json")) return response(null, 404);
+  if (url.includes("data/charts/5942.json")) {
+    return response({
+      code: "5942",
+      record: { status: "OUT", provisional_status: "GC", provisional_month: "2026-08" },
+      provisional_signal: { month: "2026-08", status: "GC", active: true, monthly_rsi14: 55, monthly_rsi_ma5: 54 },
+    });
+  }
   if (url.includes("data/core/charts/52.json")) return response(base);
   if (url.includes("data/core/daily/52.json")) return response(daily);
   if (url.includes("data/core/fundamentals/52.json")) return response(finance);
@@ -73,14 +80,20 @@ vm.runInContext(source, context);
   if (chart.daily.at(-1).close !== 1180) throw new Error("latest daily overlay was not merged");
   if (chart.record.current_price !== 1180) throw new Error("technical current price was not merged");
   if (chart.record.per !== 30.2 || chart.record.roe_pct !== 12.3) throw new Error("fundamentals were not merged");
-  if (chart.provisional_signal.status !== "GC") throw new Error("provisional signal was not preserved");
+  if (chart.provisional_signal?.status !== "GC") throw new Error("provisional GC should remain visible on individual detail");
+  if (chart.record.provisional_status !== "GC") throw new Error("detail record should retain provisional GC status");
 
   const dailyResponse = await window.fetch("data/daily/5243.json?v=1");
   const overlay = await dailyResponse.json();
-  if (!dailyResponse.ok || overlay.provisional_signal.status !== "GC") throw new Error("fallback daily overlay failed");
+  if (!dailyResponse.ok || overlay.provisional_signal?.status !== "GC") throw new Error("fallback daily overlay should retain provisional GC");
   if (overlay.record.per !== 30.2) throw new Error("daily fallback finance merge failed");
 
-  console.log("core detail fallback: ok");
+  const normalResponse = await window.fetch("data/charts/5942.json?v=1");
+  const normal = await normalResponse.json();
+  if (normal.provisional_signal?.status !== "GC") throw new Error("normal detail payload should retain provisional GC");
+  if (normal.record.provisional_status !== "GC") throw new Error("normal detail record should retain provisional status");
+
+  console.log("core detail fallback + individual provisional GC: ok");
 })().catch((error) => {
   console.error(error);
   process.exit(1);

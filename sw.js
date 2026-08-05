@@ -1,4 +1,4 @@
-const CACHE_VERSION = "kabutane-pwa-v24";
+const CACHE_VERSION = "kabutane-pwa-v25";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 
 // These files are required for the detail page to boot. If even one cannot be
@@ -13,9 +13,10 @@ const CRITICAL_ASSETS = [
   "./assets/detail-chart-viewport.css?v=13",
   "./assets/provisional-monthly-rsi-core.js?v=13",
   "./assets/detail-chart-viewport-core.js?v=13",
+  "./assets/core-detail-fallback.js?v=2",
   "./assets/detail.js?v=13",
   "./assets/daily-overlay.js?v=13",
-  "./assets/detail-chart-viewport.js?v=13",
+  "./assets/detail-chart-viewport.js?v=14",
   "./assets/detail-enhancements.js?v=13",
   "./assets/detail-signal-status.js?v=13",
   "./assets/detail-signal-chart-fix.js?v=13",
@@ -45,10 +46,10 @@ const OPTIONAL_ASSETS = [
   "./shikiho-summer-2026.html",
   "./data/curated/shikiho-2026-summer.json",
   "./data/curated/shikiho-2026-summer-performance.json",
-  // Compatibility for an already-open detail.html that still requests the
-  // unversioned asset URLs while the v24 worker is activating.
+  // Compatibility for already-open pages while the v25 worker is activating.
   "./assets/provisional-monthly-rsi-core.js",
   "./assets/detail-chart-viewport-core.js",
+  "./assets/core-detail-fallback.js",
   "./assets/detail.js",
   "./assets/daily-overlay.js",
   "./assets/detail-chart-viewport.js",
@@ -65,6 +66,8 @@ const OPTIONAL_ASSETS = [
   "./assets/shikiho-room.js",
   "./assets/today-kabutane.css",
   "./assets/today-kabutane.js",
+  "./assets/all-stocks.css?v=2",
+  "./assets/all-stocks.js?v=2",
   "./assets/all-stocks.css",
   "./assets/all-stocks.js",
   "./assets/monthly-dc.css",

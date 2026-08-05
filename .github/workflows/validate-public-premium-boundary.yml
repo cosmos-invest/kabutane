@@ -1,0 +1,78 @@
+name: Validate public premium boundary
+
+on:
+  pull_request:
+    paths:
+      - 'AGENTS.md'
+      - 'all-stocks.html'
+      - 'index.html'
+      - 'learn.html'
+      - 'detail.html'
+      - 'assets/all-stocks.js'
+      - 'assets/all-stocks.css'
+      - 'assets/core-detail-fallback.js'
+      - 'assets/premium-supply-beta.js'
+      - 'premium-supply-beta.html'
+      - 'scripts/public_core_radar.py'
+      - 'tests/test_core_detail_fallback.js'
+      - 'tests/test_public_core_radar.py'
+      - 'tests/test_public_stock_universe.py'
+      - '.github/workflows/deploy-pages.yml'
+      - '.github/workflows/update-daily.yml'
+      - '.github/workflows/validate-public-premium-boundary.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'AGENTS.md'
+      - 'all-stocks.html'
+      - 'index.html'
+      - 'learn.html'
+      - 'detail.html'
+      - 'assets/all-stocks.js'
+      - 'assets/all-stocks.css'
+      - 'assets/core-detail-fallback.js'
+      - 'assets/premium-supply-beta.js'
+      - 'premium-supply-beta.html'
+      - 'scripts/public_core_radar.py'
+      - 'tests/test_core_detail_fallback.js'
+      - 'tests/test_public_core_radar.py'
+      - 'tests/test_public_stock_universe.py'
+      - '.github/workflows/deploy-pages.yml'
+      - '.github/workflows/update-daily.yml'
+      - '.github/workflows/validate-public-premium-boundary.yml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate public versus premium discovery boundary
+        run: |
+          python -m py_compile scripts/public_core_radar.py
+          python -m unittest tests.test_public_core_radar tests.test_public_stock_universe -v
+          node --check assets/all-stocks.js
+          node --check assets/core-detail-fallback.js
+          node tests/test_core_detail_fallback.js
+      - name: Assert list hides GC while detail can show it
+        run: |
+          ! grep -q 'value="GC"' all-stocks.html
+          ! grep -q 'data-signal="GC"' all-stocks.html
+          ! grep -q '暫定GC' all-stocks.html
+          grep -q 'data/core/public-radar.json' assets/all-stocks.js
+          ! grep -q 'fetch(`data/core/radar.json' assets/all-stocks.js
+          grep -q 'rm -f _site/data/core/radar.json' .github/workflows/deploy-pages.yml
+          grep -q 'rm -f _site/data/core/radar.json' .github/workflows/update-daily.yml
+          grep -q 'コスモスフィルター' all-stocks.html
+          grep -q 'ルーモフィルター' all-stocks.html
+          grep -q 'エールフィルター' all-stocks.html
+          grep -q '玄人向け設定' all-stocks.html
+          grep -q '暫定GCの「発見」はプレミアム専用' AGENTS.md
+          grep -q '個別銘柄ページは例外' AGENTS.md
+          grep -q '暫定GC / 暫定DC' detail.html
+          grep -q '暫定GC' premium-supply-beta.html

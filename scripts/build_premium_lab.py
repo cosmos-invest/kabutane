@@ -5,6 +5,8 @@ import math
 from pathlib import Path
 from typing import Any
 
+from scripts.public_core_radar import write_public_radar
+
 ROOT = Path(__file__).resolve().parents[1]
 CORE_RADAR = ROOT / "data" / "core" / "radar.json"
 SUPPLY_SCREEN = ROOT / "data" / "premium" / "supply-demand-screen.json"
@@ -194,10 +196,12 @@ def main() -> None:
     text = json.dumps(payload, ensure_ascii=False, separators=(",", ":")) + "\n"
     if not OUTPUT.exists() or OUTPUT.read_text(encoding="utf-8") != text:
         OUTPUT.write_text(text, encoding="utf-8")
+    public_payload = write_public_radar()
     print(
         "Premium opportunity radar: "
         f"core={payload['core_count']} GC={payload['status_counts'].get('GC', 0)} "
-        f"near={payload['status_counts'].get('NEAR_GC', 0)} supply={payload['supply_candidate_count']}"
+        f"near={payload['status_counts'].get('NEAR_GC', 0)} supply={payload['supply_candidate_count']} "
+        f"public={len(public_payload.get('records') or [])}"
     )
 
 

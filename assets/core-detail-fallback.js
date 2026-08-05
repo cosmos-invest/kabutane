@@ -185,7 +185,7 @@
       const notice = document.getElementById("chartDataNotice");
       if (notice) {
         notice.hidden = false;
-        notice.textContent = "全銘柄モード：この銘柄は通常シグナル一覧外のため、全対象銘柄用の1年日足＋最新日次差分から表示しています。月足RSIと財務も同じ銘柄コードで確認できます。";
+        notice.textContent = "全銘柄モード：この銘柄は通常シグナル一覧外のため、全対象銘柄用の1年日足＋最新日次差分から表示しています。進行中月の暫定GC/DC、月足RSI、財務も同じ銘柄コードで確認できます。";
       }
       ["replayLink", "replayCardLink"].forEach((id) => {
         const link = document.getElementById(id);

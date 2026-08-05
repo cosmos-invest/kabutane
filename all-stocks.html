@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="description" content="かぶたねが対象にするプライム・スタンダード・グロースの内国普通株を全銘柄一覧で確認し、月足RSI状態や市場、日足トレンドで絞り込めます。">
+  <meta name="description" content="かぶたねが対象にするプライム・スタンダード・グロースの内国普通株を全銘柄一覧で確認し、3人の案内フィルターや玄人向け条件で絞り込めます。">
   <meta name="theme-color" content="#f26fa6">
   <title>全銘柄一覧 | かぶたね</title>
   <link rel="manifest" href="manifest.webmanifest">
@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="assets/pastel.css">
   <link rel="stylesheet" href="assets/kabutane.css">
   <link rel="stylesheet" href="assets/kabutane-links.css">
-  <link rel="stylesheet" href="assets/all-stocks.css?v=1">
+  <link rel="stylesheet" href="assets/all-stocks.css?v=2">
 </head>
 <body data-page="all-stocks" class="pastel-theme all-stocks-page">
   <header class="site-header">
@@ -20,7 +20,7 @@
         <a class="back-link" href="index.html">← 銘柄を探すへ</a>
         <p class="eyebrow">ALL CORE STOCKS</p>
         <h1>全銘柄一覧 ✨</h1>
-        <p class="subtitle">プライム・スタンダード・グロースの内国普通株を、月足の状態に関係なく全部ここから探せます。</p>
+        <p class="subtitle">プライム・スタンダード・グロースの内国普通株を全部ここから確認できます。迷ったら3人の視点に任せて、慣れたら自分の条件で絞れます。</p>
       </div>
       <div class="header-meta"><span id="allStocksDataDate" class="badge neutral">データ読込中…</span></div>
     </div>
@@ -30,8 +30,8 @@
     <section class="all-stocks-hero" aria-labelledby="allStocksTitle">
       <div>
         <p class="eyebrow">全銘柄搭載 ✨</p>
-        <h1 id="allStocksTitle">まず全部を見る。そこから好きな条件で絞る。</h1>
-        <p>GC銘柄だけの一覧ではありません。かぶたねが取得している通常株を<strong>全件表示</strong>し、必要なときだけ暫定GC・GC接近・継続・暫定DC・OUT、市場、日足トレンドなどで絞り込みます。銘柄名をタップすると個別チャートへ移動します。</p>
+        <h1 id="allStocksTitle">3,000社以上から、最初の1社をどう選ぶ？</h1>
+        <p>まずは<strong>コスモス・ルーモ・エールの3つの見方</strong>から選べます。もちろん「全部見る」もOK。細かい条件を自分で組みたい人は、下の<strong>玄人向け設定</strong>を開いてください。</p>
       </div>
       <div class="all-stocks-total" aria-label="対象銘柄数">
         <span>対象通常株</span>
@@ -40,59 +40,144 @@
       </div>
     </section>
 
-    <section class="panel all-stocks-panel" aria-labelledby="stockListTitle">
+    <section class="panel guide-panel" aria-labelledby="guideTitle">
       <div class="simple-section-heading">
+        <div>
+          <span class="step-number">BEGINNER GUIDE</span>
+          <h2 id="guideTitle">迷ったら、3人の視点で選ぶ</h2>
+          <p>同じ銘柄でも「何を大事にするか」で見え方が変わります。3人の条件は買い推奨ではなく、最初に見る銘柄を減らすための案内です。</p>
+        </div>
+        <button id="allStocksGuideReset" class="button secondary" type="button">✨ 全銘柄に戻す</button>
+      </div>
+
+      <div class="character-filter-grid" role="group" aria-label="初心者向けキャラクターフィルター">
+        <button type="button" class="character-filter cosmos-filter" data-guide="cosmos" aria-pressed="false">
+          <span class="character-filter-icon">🌸</span>
+          <span class="character-filter-copy"><strong>コスモスフィルター</strong><small>王道の上昇トレンド</small><em>長期線より上・移動平均の並び・高値への近さをまとめて見る</em></span>
+          <span class="character-filter-count" id="cosmosGuideCount">—</span>
+        </button>
+        <button type="button" class="character-filter lumo-filter" data-guide="lumo" aria-pressed="false">
+          <span class="character-filter-icon">✨</span>
+          <span class="character-filter-copy"><strong>ルーモフィルター</strong><small>動き出したチャート</small><em>出来高が増え、短中期線より上で、高値へ向かう勢いを重視</em></span>
+          <span class="character-filter-count" id="lumoGuideCount">—</span>
+        </button>
+        <button type="button" class="character-filter aile-filter" data-guide="aile" aria-pressed="false">
+          <span class="character-filter-icon">💜</span>
+          <span class="character-filter-copy"><strong>エールフィルター</strong><small>会社の体力を慎重に</small><em>自己資本・ROE・FCF・売上成長を見て、無理をしにくい候補へ絞る</em></span>
+          <span class="character-filter-count" id="aileGuideCount">—</span>
+        </button>
+      </div>
+      <p class="guide-note">3人のフィルターでは、プレミアム専用の進行中月・上抜け先回り情報を候補条件に使いません。</p>
+    </section>
+
+    <section class="panel all-stocks-panel" aria-labelledby="stockListTitle">
+      <div class="simple-section-heading all-stocks-list-heading">
         <div>
           <span class="step-number">STOCK UNIVERSE</span>
           <h2 id="stockListTitle">全銘柄から探す</h2>
           <p id="allStocksResultText">データを読み込んでいます…</p>
         </div>
-        <a class="button secondary" href="learn.html#monthly-rsi">月足GC / DCの見方</a>
-      </div>
-
-      <div id="allStocksSummary" class="all-stocks-summary" aria-label="月足状態の内訳"></div>
-
-      <div class="all-stocks-quick" aria-label="月足状態のクイックフィルター">
-        <button type="button" class="active" data-signal="ALL" aria-pressed="true">すべて</button>
-        <button type="button" data-signal="GC" aria-pressed="false">🟢 暫定GC</button>
-        <button type="button" data-signal="NEAR_GC" aria-pressed="false">🟡 GC接近</button>
-        <button type="button" data-signal="CONTINUE" aria-pressed="false">継続</button>
-        <button type="button" data-signal="DC" aria-pressed="false">🔴 暫定DC</button>
-        <button type="button" data-signal="OUT" aria-pressed="false">OUT側</button>
-      </div>
-
-      <div class="all-stocks-controls">
-        <label class="all-stocks-search">銘柄検索
+        <label class="all-stocks-search top-search">銘柄検索
           <input id="allStocksSearch" type="search" placeholder="5942 / 日本フイルコン / セクター名">
         </label>
-        <label>市場
-          <select id="allStocksMarket">
-            <option value="all">すべて</option>
-            <option value="プライム">プライム</option>
-            <option value="スタンダード">スタンダード</option>
-            <option value="グロース">グロース</option>
-          </select>
-        </label>
-        <label>日足条件
-          <select id="allStocksTrend">
-            <option value="all">指定なし</option>
-            <option value="above200">SMA200より上</option>
-            <option value="perfect">上昇配列</option>
-            <option value="volume">出来高1.2倍以上</option>
-            <option value="finance">財務データあり</option>
-          </select>
-        </label>
-        <label>並び順
-          <select id="allStocksSort">
-            <option value="code">銘柄コード順</option>
-            <option value="spread_desc">RSI差が強い順</option>
-            <option value="spread_asc">RSI差が弱い順</option>
-            <option value="volume">出来高増加順</option>
-            <option value="high">52週高値に近い順</option>
-            <option value="price">株価が高い順</option>
-          </select>
-        </label>
       </div>
+
+      <div id="allStocksSummary" class="all-stocks-summary" aria-label="公開している月足状態の内訳"></div>
+
+      <details class="expert-settings" id="expertSettings">
+        <summary><span>⚙️</span><strong>玄人向け設定</strong><small>条件を自分で組み合わせる</small></summary>
+        <div class="expert-settings-inner">
+          <p class="expert-intro">ここを変更すると3人の案内フィルターを外し、自分の条件で全銘柄を絞り込みます。複数条件はANDで組み合わせます。</p>
+          <div class="expert-grid">
+            <label>市場
+              <select id="allStocksMarket">
+                <option value="all">すべて</option>
+                <option value="プライム">プライム</option>
+                <option value="スタンダード">スタンダード</option>
+                <option value="グロース">グロース</option>
+              </select>
+            </label>
+            <label>月足状態
+              <select id="allStocksSignal">
+                <option value="ALL">指定なし</option>
+                <option value="NEAR_GC">GC接近</option>
+                <option value="CONTINUE">継続</option>
+                <option value="DC">暫定DC</option>
+                <option value="OUT">OUT側</option>
+                <option value="UNKNOWN">判定待ち</option>
+              </select>
+            </label>
+            <label>SMA200
+              <select id="allStocksSma200">
+                <option value="all">指定なし</option>
+                <option value="above">株価が上</option>
+                <option value="below">株価が下</option>
+              </select>
+            </label>
+            <label>移動平均の並び
+              <select id="allStocksPerfect">
+                <option value="all">指定なし</option>
+                <option value="yes">SMA25 &gt; 75 &gt; 200</option>
+                <option value="no">上昇配列ではない</option>
+              </select>
+            </label>
+            <label>出来高 5日/30日
+              <select id="allStocksVolumeMin">
+                <option value="">指定なし</option>
+                <option value="1">1.0倍以上</option>
+                <option value="1.2">1.2倍以上</option>
+                <option value="1.5">1.5倍以上</option>
+                <option value="2">2.0倍以上</option>
+              </select>
+            </label>
+            <label>52週高値から
+              <select id="allStocksHighMin">
+                <option value="">指定なし</option>
+                <option value="-5">-5%以内</option>
+                <option value="-10">-10%以内</option>
+                <option value="-20">-20%以内</option>
+              </select>
+            </label>
+            <label>財務データ
+              <select id="allStocksFinance">
+                <option value="all">指定なし</option>
+                <option value="yes">取得済みのみ</option>
+              </select>
+            </label>
+            <label>ROE 最低%
+              <input id="allStocksRoeMin" type="number" inputmode="decimal" placeholder="例 8" step="1">
+            </label>
+            <label>自己資本比率 最低%
+              <input id="allStocksEquityMin" type="number" inputmode="decimal" placeholder="例 40" step="1">
+            </label>
+            <label>売上成長率 最低%
+              <input id="allStocksRevenueMin" type="number" inputmode="decimal" placeholder="例 0" step="1">
+            </label>
+            <label>PER 上限
+              <input id="allStocksPerMax" type="number" inputmode="decimal" placeholder="例 20" step="1">
+            </label>
+            <label>FCF
+              <select id="allStocksFcf">
+                <option value="all">指定なし</option>
+                <option value="positive">プラスのみ</option>
+              </select>
+            </label>
+            <label>並び順
+              <select id="allStocksSort">
+                <option value="code">銘柄コード順</option>
+                <option value="volume">出来高増加順</option>
+                <option value="high">52週高値に近い順</option>
+                <option value="price">株価が高い順</option>
+                <option value="roe">ROEが高い順</option>
+                <option value="equity">自己資本比率が高い順</option>
+                <option value="per">PERが低い順</option>
+              </select>
+            </label>
+          </div>
+          <div class="expert-actions"><button id="allStocksExpertReset" class="button secondary" type="button">条件をすべてリセット</button></div>
+          <p class="premium-boundary-note"><strong>プレミアム境界：</strong>進行中月で新たに上抜けた銘柄を特定する先回り判定は、公開一覧・公開フィルター・個別詳細では表示しません。月末確定後の正式な状態は通常どおり反映します。</p>
+        </div>
+      </details>
 
       <div class="all-stocks-table-wrap">
         <table class="all-stocks-table">
@@ -101,10 +186,10 @@
             <th>市場</th>
             <th>現在値</th>
             <th>月足状態</th>
-            <th>月足RSI</th>
             <th>日足トレンド</th>
             <th>出来高</th>
             <th>52週高値比</th>
+            <th>財務</th>
           </tr></thead>
           <tbody id="allStocksRows"></tbody>
         </table>
@@ -112,12 +197,12 @@
       </div>
 
       <div class="all-stocks-more-wrap"><button id="allStocksMore" class="button secondary" type="button" hidden>さらに表示</button></div>
-      <p class="all-stocks-note">初期状態は<strong>全銘柄</strong>です。月足状態は進行中月の暫定判定を含みます。暫定GC・暫定DCは月末までに変わる可能性があり、正式なNEW / OUTではありません。ETF・ETN・REIT・TOKYO PRO・外国株などはこの一覧には含めません。</p>
+      <p class="all-stocks-note">対象は<strong>プライム・スタンダード・グロースの内国普通株</strong>です。ETF・ETN・REIT・TOKYO PRO・外国株などは含めません。進行中月の公開状態は月末までに変わる場合があり、正式なNEW / OUTは月末確定後に更新します。</p>
     </section>
   </main>
 
   <footer><p>かぶたね 🌱 / 全銘柄一覧</p></footer>
-  <script src="assets/all-stocks.js?v=1" defer></script>
+  <script src="assets/all-stocks.js?v=2" defer></script>
   <script src="assets/characters.js" defer></script>
 </body>
 </html>

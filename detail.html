@@ -80,7 +80,7 @@
     </section>
 
     <section class="panel chart-panel">
-      <div class="section-heading"><div><h2>月足RSIを日足軸で表示</h2><p>日足チャートと同じ期間へ連動します。実線は月末確定値、点線は進行中月の暫定値です。縦の緑線は確定GC、縦の赤線は確定DCを翌月最初の取引日に表示します。<a href="learn.html#monthly-rsi">GC・DCをやさしく解説</a></p></div></div>
+      <div class="section-heading"><div><h2>月足RSIを日足軸で表示</h2><p>日足チャートと同じ期間へ連動します。実線は月末確定値、進行中月の観察値は点線で表示します。<strong>銘柄コードを指定して個別ページを開いた場合は、暫定GC / 暫定DCも確認できます。</strong> 縦の緑線は確定GC、縦の赤線は確定DCを翌月最初の取引日に表示します。<a href="learn.html#monthly-rsi">GC・DCをやさしく解説</a></p></div></div>
       <div class="chart-box rsi-chart-box"><canvas id="rsiChart"></canvas></div>
       <p class="rsi-explanation" id="rsiExplanation"></p>
     </section>
@@ -107,7 +107,7 @@
     </section>
   </main>
 
-  <footer><p>確定シグナルは月末確定値、進行中月の暫定シグナルと株価・出来高・移動平均線は最新日足までのデータです。</p></footer>
+  <footer><p>確定シグナルは月末確定値です。個別銘柄ページでは、最新日足までの株価・出来高・移動平均線と、進行中月の暫定GC / 暫定DCを観察情報として表示します。暫定GC銘柄を全銘柄から発見・抽出する一覧機能はプレミアム側に分離しています。</p></footer>
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
@@ -134,7 +134,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
   <script src="assets/provisional-monthly-rsi-core.js?v=13" defer></script>
   <script src="assets/detail-chart-viewport-core.js?v=13" defer></script>
-  <script src="assets/core-detail-fallback.js?v=1" defer></script>
+  <script src="assets/core-detail-fallback.js?v=3" defer></script>
   <script src="assets/detail.js?v=13" defer></script>
   <script src="assets/daily-overlay.js?v=13" defer></script>
   <script src="assets/detail-chart-viewport.js?v=14" defer></script>
