@@ -12,6 +12,7 @@
     "assets/replay-practice-coach-v4.js",
     "assets/replay-practice-desktop-free-v5.js",
     "assets/replay-decision-flow-v6.js",
+    "assets/replay-volume-profile-guard-v6.js",
     "assets/replay-decision-controls-v6.js",
   ];
   let practiceV2Promise = null;
