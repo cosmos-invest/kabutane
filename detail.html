@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="assets/detail-enhancements.css?v=13">
   <link rel="stylesheet" href="assets/detail-signal-status.css?v=13">
   <link rel="stylesheet" href="assets/detail-chart-viewport.css?v=13">
-  <link rel="stylesheet" href="assets/detail-volume-profile.css?v=1">
+  <link rel="stylesheet" href="assets/detail-volume-profile.css?v=2">
 </head>
 <body>
   <header class="site-header detail-header">
@@ -35,37 +35,36 @@
       <a id="replayCardLink" class="button quickstart-button" href="replay.html">この銘柄で練習する</a>
     </section>
 
-    <section class="panel chart-panel">
+    <section class="panel chart-panel" id="volumeProfilePanel">
       <div class="section-heading">
-        <div><h2>日足チャート</h2><p>平日の日次更新を合成して、最新のローソク足・出来高・SMA25・75・200を表示します。横ドラッグ、ピンチ、表示期間・高さのボタンで見たい範囲へ動かせます。</p></div>
+        <div><h2>日足チャート</h2><p>最新のローソク足・出来高・SMA25・75・200に、価格軸と同期した推定価格帯別出来高を重ねて確認できます。PCでは右側、スマホでは右端へ半透明表示します。</p></div>
         <div class="chart-mode-switch" role="group" aria-label="チャート表示">
           <button id="candleMode" class="button chart-mode active" type="button">ローソク足</button>
           <button id="heikinMode" class="button secondary chart-mode" type="button">平均足</button>
         </div>
       </div>
       <p id="chartDataNotice" class="analysis-disclosure chart-data-notice" hidden></p>
-      <div class="chart-box price-chart-box"><canvas id="priceChart"></canvas></div>
-    </section>
-
-    <section class="panel" id="volumeProfilePanel">
-      <div class="section-heading">
-        <div>
-          <h2>価格帯別出来高</h2>
-          <p>どの価格帯で商いが集中したかを、日足の高値・安値・出来高から推定します。支持・抵抗を考える補助情報として使います。</p>
-        </div>
-      </div>
       <div class="volume-profile-toolbar">
         <div class="volume-profile-periods" role="group" aria-label="価格帯別出来高の集計期間">
-          <button class="button chart-mode active" type="button" data-volume-profile-period="1y">1年</button>
-          <button class="button secondary chart-mode" type="button" data-volume-profile-period="3y">3年</button>
-          <button class="button secondary chart-mode" type="button" data-volume-profile-period="all">全期間</button>
+          <button class="button secondary chart-mode" type="button" data-volume-profile-period="6m" aria-pressed="false">6か月</button>
+          <button class="button chart-mode active" type="button" data-volume-profile-period="1y" aria-pressed="true">1年</button>
+          <button class="button secondary chart-mode" type="button" data-volume-profile-period="3y" aria-pressed="false">3年</button>
         </div>
-        <span class="volume-profile-status" id="volumeProfileStatus">計算中…</span>
+        <div class="volume-profile-controls">
+          <button id="volumeProfileToggle" class="button chart-mode active volume-profile-toggle" type="button" aria-pressed="true">価格帯別出来高 ON</button>
+          <span class="volume-profile-status" id="volumeProfileStatus">計算中…</span>
+        </div>
       </div>
       <div class="volume-profile-stats" id="volumeProfileStats"></div>
-      <div class="volume-profile-chart" id="volumeProfileChart" aria-label="推定価格帯別出来高"></div>
+      <div class="volume-profile-legend" aria-label="価格帯別出来高の凡例">
+        <span><i class="volume-profile-dot poc"></i>推定POC</span>
+        <span><i class="volume-profile-dot value-area"></i>70%バリューエリア</span>
+        <span><i class="volume-profile-dot other"></i>その他</span>
+      </div>
+      <div class="chart-box price-chart-box"><canvas id="priceChart"></canvas></div>
+      <p class="volume-profile-bin-detail" id="volumeProfileBinDetail" aria-live="polite">棒に触れると、その価格帯の推定出来高を確認できます。</p>
       <p class="volume-profile-summary" id="volumeProfileSummary"></p>
-      <p class="volume-profile-disclosure"><strong>推定値です。</strong> 日足1本の出来高を、その日の安値から高値までの価格帯へ均等配分しています。実際の約定価格別出来高とは一致しません。単独で売買判断せず、トレンド・直近出来高・損切り位置と合わせて確認してください。</p>
+      <p class="volume-profile-disclosure"><strong>価格帯別出来高は推定値です。</strong> 各日の日足出来高を、その日の安値〜高値と各価格帯が実際に重なる値幅の割合で配分しています。実際の約定価格別出来高とは一致しません。単独で売買判断せず、トレンド・直近出来高・損切り位置と合わせて確認してください。</p>
     </section>
 
     <section class="panel chart-panel">
@@ -129,7 +128,7 @@
   <script src="assets/detail-enhancements.js?v=13" defer></script>
   <script src="assets/detail-signal-status.js?v=13" defer></script>
   <script src="assets/detail-signal-chart-fix.js?v=13" defer></script>
-  <script src="assets/detail-volume-profile.js?v=1" defer></script>
+  <script src="assets/detail-volume-profile.js?v=2" defer></script>
   <script src="assets/characters.js?v=13" defer></script>
 </body>
 </html>
