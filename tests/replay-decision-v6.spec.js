@@ -66,11 +66,18 @@ test("mobile replay follows oscillator-chart-monthly judgment flow and keeps day
   const chart = page.locator(".replay-decision-main-v6 .pro-main-chart");
   await chart.scrollIntoViewIfNeeded();
   const dock = page.locator("#replayDecisionDockV6");
+  const actions = dock.locator(".replay-decision-actions-v6");
   await expect(dock).toBeVisible();
-  await expect(dock.locator("#stepOneButton")).toBeVisible();
-  await expect(dock.locator("#stepFiveButton")).toBeVisible();
-  await expect(dock.locator("#finishButton")).toBeVisible();
-  await expect(dock.locator("#playButton")).toBeHidden();
+  await expect(actions.locator('[data-decision-action="step-one"]')).toBeVisible();
+  await expect(actions.locator('[data-decision-action="step-five"]')).toBeVisible();
+  await expect(actions.locator('[data-decision-action="choose-entry"]')).toBeVisible();
+  await expect(actions.locator('[data-decision-action="finish"]')).toBeVisible();
+  await expect(dock.locator(".playback-controls-v6-source")).toBeHidden();
+
+  const beforeDate = await page.locator("#replayDecisionDateV6").textContent();
+  await actions.locator('[data-decision-action="step-one"]').click();
+  await expect.poll(async () => await page.locator("#replayDecisionDateV6").textContent(), { timeout: 5000 }).not.toBe(beforeDate);
+
   const dockBox = await dock.boundingBox();
   expect(dockBox).not.toBeNull();
   expect(dockBox.y).toBeGreaterThanOrEqual(0);
