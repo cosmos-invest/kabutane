@@ -32,10 +32,6 @@ on:
 permissions:
   contents: write
 
-concurrency:
-  group: market-data-writes
-  cancel-in-progress: false
-
 jobs:
   validate:
     runs-on: ubuntu-latest
@@ -133,6 +129,9 @@ jobs:
     if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     timeout-minutes: 90
+    concurrency:
+      group: market-data-writes
+      cancel-in-progress: false
     steps:
       - uses: actions/checkout@v4
         with:
