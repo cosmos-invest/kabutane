@@ -55,6 +55,12 @@ test("mobile replay follows oscillator-chart-monthly judgment flow and keeps day
     await expect.poll(() => chartSettings.evaluate((element) => element.open), { timeout: 3000 }).toBe(false);
   }
 
+  const advancedTools = page.locator("#replayAdvancedToolsV6");
+  await expect(advancedTools).toBeVisible();
+  await expect.poll(() => advancedTools.evaluate((element) => element.open)).toBe(false);
+  await expect(advancedTools.locator("#chartViewportToolbar")).toHaveCount(1);
+  await expect(advancedTools.locator("#practiceChartTools")).toHaveCount(1);
+
   const oscillatorSettings = page.locator(".oscillator-settings-v6");
   await ensureDetailsOpen(oscillatorSettings);
   const select = page.locator("#oscillatorSelect");
