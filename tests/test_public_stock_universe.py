@@ -36,14 +36,15 @@ class PublicStockUniverseTests(unittest.TestCase):
         self.assertIn('signal=GC is intentionally ignored', js)
         self.assertNotIn('monthly_rsi_spread)', js.split('function filteredRows()', 1)[1].split('function renderGuideCounts', 1)[0])
 
-    def test_public_detail_sanitizes_provisional_gc(self):
+    def test_individual_detail_keeps_provisional_gc(self):
         js = self.text("assets/core-detail-fallback.js")
         detail = self.text("detail.html")
-        self.assertIn('isPremiumOnlyProvisional', js)
-        self.assertIn('provisional_signal: null', js)
-        self.assertIn('publicProvisional(daily.provisional_signal)', js)
-        self.assertIn('core-detail-fallback.js?v=2', detail)
-        self.assertIn('先回り判定はプレミアム観察情報', detail)
+        self.assertIn('provisional_signal: provisional', js)
+        self.assertIn('provisional_status: provisional.status || null', js)
+        self.assertIn('provisional_signal: daily.provisional_signal || null', js)
+        self.assertIn('core-detail-fallback.js?v=3', detail)
+        self.assertIn('暫定GC / 暫定DC', detail)
+        self.assertIn('全銘柄から発見・抽出する一覧機能はプレミアム側', detail)
 
     def test_premium_page_keeps_provisional_gc(self):
         html = self.text("premium-supply-beta.html")
@@ -53,7 +54,8 @@ class PublicStockUniverseTests(unittest.TestCase):
 
     def test_repository_product_rule_is_durable(self):
         rules = self.text("AGENTS.md")
-        self.assertIn("暫定GCはプレミアム専用", rules)
+        self.assertIn('暫定GCの「発見」はプレミアム専用', rules)
+        self.assertIn("個別銘柄ページは例外", rules)
         self.assertIn("コスモス🌸 / ルーモ✨ / エール💜", rules)
         self.assertIn("玄人向け設定", rules)
         self.assertIn("learn.html", rules)
