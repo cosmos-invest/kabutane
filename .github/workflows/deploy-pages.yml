@@ -57,6 +57,7 @@ jobs:
           cp \
             index.html detail.html backtest.html replay.html replay-select.html howto.html learn.html signal-method.html \
             ranking.html monthly-report.html monthly-strategy.html history.html shikiho-summer-2026.html today.html \
+            premium-supply-beta.html \
             manifest.webmanifest sw.js .nojekyll result.csv out.csv \
             _site/
           cp -R assets data history ranking monthly-report _site/
@@ -72,6 +73,7 @@ jobs:
           test -f _site/history.html
           test -f _site/shikiho-summer-2026.html
           test -f _site/today.html
+          test -f _site/premium-supply-beta.html
           test -f _site/ranking/index.html
           test -f _site/monthly-report/index.html
           test -f _site/assets/monthly-strategy-v16.css
@@ -79,6 +81,8 @@ jobs:
           test -f _site/assets/shikiho-room.js
           test -f _site/assets/today-kabutane.css
           test -f _site/assets/today-kabutane.js
+          test -f _site/assets/premium-supply-beta.css
+          test -f _site/assets/premium-supply-beta.js
           test -f _site/assets/replay-stock-select.js
           test -f _site/assets/replay-picker.css
           test -f _site/data/curated/shikiho-2026-summer.json
@@ -99,6 +103,8 @@ jobs:
           grep -q '2026-06-18' _site/data/curated/shikiho-2026-summer.json
           grep -q '今日のかぶたね' _site/today.html
           grep -q 'data/daily-events.json' _site/assets/today-kabutane.js
+          grep -q 'noindex,nofollow,noarchive' _site/premium-supply-beta.html
+          ! grep -R -q 'premium-supply-beta.html' _site/index.html _site/learn.html _site/howto.html
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
