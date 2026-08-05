@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - 'assets/replay-decision-flow-v6.js'
+      - 'assets/replay-volume-profile-guard-v6.js'
       - 'assets/replay-decision-controls-v6.js'
       - 'assets/replay-decision-flow-v6.css'
       - 'assets/pwa-register.js'
@@ -16,6 +17,7 @@ on:
   push:
     paths:
       - 'assets/replay-decision-flow-v6.js'
+      - 'assets/replay-volume-profile-guard-v6.js'
       - 'assets/replay-decision-controls-v6.js'
       - 'assets/replay-decision-flow-v6.css'
       - 'assets/pwa-register.js'
@@ -43,6 +45,7 @@ jobs:
       - name: Check JavaScript syntax
         run: |
           node --check assets/replay-decision-flow-v6.js
+          node --check assets/replay-volume-profile-guard-v6.js
           node --check assets/replay-decision-controls-v6.js
           node --check tests/replay-decision-v6.spec.js
       - name: Run integration checks
