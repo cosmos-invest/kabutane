@@ -22,6 +22,11 @@ async function startReplay(page, mode = "guided") {
   return errors;
 }
 
+async function ensureDetailsOpen(details) {
+  if (!(await details.evaluate((element) => element.open))) await details.locator("summary").click();
+  await expect.poll(() => details.evaluate((element) => element.open)).toBe(true);
+}
+
 test("mobile replay follows oscillator-chart-monthly judgment flow and keeps day controls reachable", async ({ page }) => {
   test.setTimeout(90000);
   const errors = await startReplay(page, "guided");
@@ -43,16 +48,20 @@ test("mobile replay follows oscillator-chart-monthly judgment flow and keeps day
 
   const chartSettings = page.locator("#replayChartSettingsV6");
   await expect(chartSettings).toBeVisible();
-  await chartSettings.locator("summary").click();
-  await expect(chartSettings).toHaveAttribute("open", "");
+  await ensureDetailsOpen(chartSettings);
+  const chartSettingControl = chartSettings.locator("input:not([disabled]), button:not([disabled])").first();
+  if (await chartSettingControl.count()) {
+    await chartSettingControl.click();
+    await expect.poll(() => chartSettings.evaluate((element) => element.open), { timeout: 3000 }).toBe(false);
+  }
 
   const oscillatorSettings = page.locator(".oscillator-settings-v6");
-  await oscillatorSettings.locator("summary").click();
+  await ensureDetailsOpen(oscillatorSettings);
   const select = page.locator("#oscillatorSelect");
   await expect(select).toBeVisible();
   const options = await select.locator("option").count();
   if (options > 1) await select.selectOption({ index: 1 });
-  await expect(oscillatorSettings).not.toHaveAttribute("open", "", { timeout: 3000 });
+  await expect.poll(() => oscillatorSettings.evaluate((element) => element.open), { timeout: 3000 }).toBe(false);
 
   const chart = page.locator(".replay-decision-main-v6 .pro-main-chart");
   await chart.scrollIntoViewIfNeeded();
