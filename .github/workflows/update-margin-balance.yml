@@ -4,16 +4,25 @@ on:
   pull_request:
     paths:
       - 'scripts/update_margin_balance.py'
+      - 'scripts/build_supply_demand_screen.py'
       - 'assets/detail-margin-balance.js'
       - 'assets/detail-margin-balance.css'
+      - 'assets/premium-supply-beta.js'
+      - 'assets/premium-supply-beta.css'
       - 'detail.html'
+      - 'premium-supply-beta.html'
       - 'learn.html'
       - 'tests/test_margin_balance.py'
+      - 'tests/test_supply_demand_screen.py'
       - '.github/workflows/update-margin-balance.yml'
   push:
     branches: [main]
     paths:
       - 'scripts/update_margin_balance.py'
+      - 'scripts/build_supply_demand_screen.py'
+      - 'premium-supply-beta.html'
+      - 'assets/premium-supply-beta.js'
+      - 'assets/premium-supply-beta.css'
       - '.github/workflows/update-margin-balance.yml'
   schedule:
     # JPX usually publishes the weekly issue-level balance around 16:30 JST
@@ -37,8 +46,9 @@ jobs:
           node-version: '22'
       - name: Check collector and UI tests
         run: |
-          python -m unittest tests.test_margin_balance -v
+          python -m unittest tests.test_margin_balance tests.test_supply_demand_screen -v
           node --check assets/detail-margin-balance.js
+          node --check assets/premium-supply-beta.js
 
   collect:
     needs: validate
@@ -56,6 +66,8 @@ jobs:
           sudo apt-get install -y poppler-utils
       - name: Fetch JPX weekly margin balances
         run: python scripts/update_margin_balance.py
+      - name: Build premium supply-demand beta screen
+        run: python scripts/build_supply_demand_screen.py
       - name: Validate generated data
         run: |
           python - <<'PY'
@@ -69,17 +81,20 @@ jobs:
           shard_count = len([p for p in Path('data/margin').glob('*.json') if p.name != 'latest.json'])
           if shard_count < 20:
               raise SystemExit(f'shard count is suspiciously low: {shard_count}')
-          print(index['latest_date'], index['covered_codes'], shard_count)
+          premium = json.loads(Path('data/premium/supply-demand-screen.json').read_text(encoding='utf-8'))
+          if int(premium.get('screened_codes') or 0) < 1000:
+              raise SystemExit(f"premium screened_codes is suspiciously low: {premium.get('screened_codes')}")
+          print(index['latest_date'], index['covered_codes'], shard_count, premium.get('candidate_count'))
           PY
-      - name: Commit refreshed margin data
+      - name: Commit refreshed margin and premium data
         if: github.event_name != 'pull_request'
         run: |
-          if git diff --quiet -- data/margin && [ -z "$(git ls-files --others --exclude-standard data/margin)" ]; then
-            echo "No new JPX margin data."
+          if git diff --quiet -- data/margin data/premium && [ -z "$(git ls-files --others --exclude-standard data/margin data/premium)" ]; then
+            echo "No new JPX margin or premium screen data."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/margin
-          git commit -m "data: update JPX weekly margin balances"
+          git add data/margin data/premium
+          git commit -m "data: update JPX margin balances and premium supply screen"
           git push
