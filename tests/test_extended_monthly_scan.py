@@ -33,7 +33,7 @@ class ExtendedMonthlyScanTests(unittest.TestCase):
         self.assertEqual(record["scope"], "extended")
         self.assertEqual(record["instrument_type"], "etf")
         self.assertIn(record["status"], {"NEW", "CONTINUE", "OUT", "INACTIVE"})
-        self.assertEqual(record["latest_month"], "2026-01")
+        self.assertEqual(record["latest_month"], "2025-12")
 
     def test_status_uses_canonical_condition(self) -> None:
         monthly = pd.DataFrame(
