@@ -42,15 +42,18 @@ class VolumeProfileIntegrationTests(unittest.TestCase):
             "dataPromise",
             "kabutaneVolumeProfile",
             "desiredDesktopPadding",
-            "chart.width <= 760",
+            "width <= 760",
             "0.28",
             "volumeProfileBinDetail",
             "data/charts/",
             "data/daily/",
+            "Chart?.defaults?.layout?.padding",
+            "isPriceChart(chart)",
         ):
             self.assertIn(marker, script)
         self.assertNotIn('period === "all"', script)
         self.assertNotIn("allocation = volume / (last - first + 1)", script)
+        self.assertNotIn("chart.options.layout", script)
         for forbidden in ("apiKey", "subscription", "J-Quants", "paid_api"):
             self.assertNotIn(forbidden, script)
 
