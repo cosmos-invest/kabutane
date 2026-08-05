@@ -10,6 +10,7 @@ on:
       - 'learn.html'
       - 'assets/learn.css'
       - 'tests/test_replay_decision_v6.py'
+      - 'tests/replay-decision-v6.spec.js'
       - '.github/workflows/replay-decision-v6-checks.yml'
   push:
     paths:
@@ -20,6 +21,7 @@ on:
       - 'learn.html'
       - 'assets/learn.css'
       - 'tests/test_replay_decision_v6.py'
+      - 'tests/replay-decision-v6.spec.js'
       - '.github/workflows/replay-decision-v6-checks.yml'
 
 permissions:
@@ -37,6 +39,25 @@ jobs:
         with:
           python-version: '3.12'
       - name: Check JavaScript syntax
-        run: node --check assets/replay-decision-flow-v6.js
+        run: |
+          node --check assets/replay-decision-flow-v6.js
+          node --check tests/replay-decision-v6.spec.js
       - name: Run integration checks
         run: python -m unittest tests.test_replay_decision_v6 -v
+      - name: Install Chromium test runner
+        run: |
+          npm install --no-save @playwright/test@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Test mobile judgment flow
+        run: |
+          python3 -m http.server 4173 >/tmp/kabutane-preview.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID' EXIT
+          npx playwright test tests/replay-decision-v6.spec.js --reporter=line
+      - name: Upload mobile preview
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: replay-decision-v6-mobile-preview
+          path: test-results/*.png
+          if-no-files-found: ignore
