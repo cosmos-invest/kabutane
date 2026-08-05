@@ -1,0 +1,42 @@
+name: Validate replay decision flow v6
+
+on:
+  pull_request:
+    paths:
+      - 'assets/replay-decision-flow-v6.js'
+      - 'assets/replay-decision-flow-v6.css'
+      - 'assets/pwa-register.js'
+      - 'detail.html'
+      - 'learn.html'
+      - 'assets/learn.css'
+      - 'tests/test_replay_decision_v6.py'
+      - '.github/workflows/replay-decision-v6-checks.yml'
+  push:
+    paths:
+      - 'assets/replay-decision-flow-v6.js'
+      - 'assets/replay-decision-flow-v6.css'
+      - 'assets/pwa-register.js'
+      - 'detail.html'
+      - 'learn.html'
+      - 'assets/learn.css'
+      - 'tests/test_replay_decision_v6.py'
+      - '.github/workflows/replay-decision-v6-checks.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check JavaScript syntax
+        run: node --check assets/replay-decision-flow-v6.js
+      - name: Run integration checks
+        run: python -m unittest tests.test_replay_decision_v6 -v
