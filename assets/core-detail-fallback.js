@@ -3,6 +3,7 @@
 
   const nativeFetch = window.fetch.bind(window);
   const cache = new Map();
+  const activeFallbackCodes = new Set();
   let fallbackUsed = false;
 
   function codeFromPath(path, folder) {
@@ -120,6 +121,7 @@
       data_completeness_pct: finance?.data_completeness_pct ?? null,
       core_universe_fallback: true,
     };
+    activeFallbackCodes.add(code);
     fallbackUsed = true;
     window.__kabutaneCoreFallback = { code, provisional, financeAvailable: Boolean(finance?.fundamentals_available) };
     return {
@@ -165,6 +167,14 @@
 
     const original = await nativeFetch(input, init);
     if (original.ok || original.status !== 404) return original;
+
+    // A normal detail page may legitimately have no incremental daily overlay.
+    // Do not probe the all-core shards for that case: doing so creates extra
+    // 404s before the initial all-core dataset has been deployed. The chart
+    // endpoint is the authoritative switch into fallback mode; its synthetic
+    // payload already contains the compact daily overlay and provisional RSI.
+    if (dailyCode && !activeFallbackCodes.has(dailyCode)) return original;
+
     const payload = chartCode ? await buildChartPayload(chartCode) : await buildDailyPayload(dailyCode);
     return payload ? synthetic(payload) : original;
   };
