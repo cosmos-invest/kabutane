@@ -2,7 +2,7 @@
   "code": "297A",
   "ticker": "297A.T",
   "name": "アルピコホールディングス",
-  "generated_at": "2026-08-02T10:31:14.778414+00:00",
+  "generated_at": "2026-08-05T05:56:56.608053+00:00",
   "record": {
     "code": "297A",
     "ticker": "297A.T",
@@ -19,7 +19,7 @@
     "gc_price": 217.0,
     "signal_month_close": 217.0,
     "period_price": 217.0,
-    "return_since_gc_pct": 0.0,
+    "return_since_gc_pct": 0.92,
     "sma25": 216.4,
     "sma75": 217.55,
     "sma200": 227.31,
@@ -45,8 +45,8 @@
     "mvp_signal": false,
     "cosmos_focus": false,
     "cosmos_focus_type": null,
-    "current_price": 217.0,
-    "change_from_signal_month_pct": 0.0,
+    "current_price": 219.0,
+    "change_from_signal_month_pct": 0.92,
     "per": null,
     "forward_per": null,
     "pbr": null,
@@ -5907,10 +5907,69 @@
       "rsi5": 35.42,
       "monthly_rsi14": 35.42,
       "monthly_rsi_ma5": 38.29
+    },
+    {
+      "date": "2026-08-03",
+      "open": 217.0,
+      "high": 217.0,
+      "low": 215.0,
+      "close": 215.0,
+      "volume": 15000.0,
+      "sma25": 216.6,
+      "sma75": 217.31,
+      "sma200": 227.22,
+      "rsi14": 36.78,
+      "rsi5": 37.21,
+      "monthly_rsi14": 37.21,
+      "monthly_rsi_ma5": 36.78
+    },
+    {
+      "date": "2026-08-04",
+      "open": 216.0,
+      "high": 217.0,
+      "low": 215.0,
+      "close": 215.0,
+      "volume": 21200.0,
+      "sma25": 216.64,
+      "sma75": 217.07,
+      "sma200": 227.14,
+      "rsi14": 36.78,
+      "rsi5": 37.21,
+      "monthly_rsi14": 37.21,
+      "monthly_rsi_ma5": 36.78
+    },
+    {
+      "date": "2026-08-05",
+      "open": 215.0,
+      "high": 219.0,
+      "low": 215.0,
+      "close": 219.0,
+      "volume": 43000.0,
+      "sma25": 216.88,
+      "sma75": 216.88,
+      "sma200": 227.07,
+      "rsi14": 36.78,
+      "rsi5": 37.21,
+      "monthly_rsi14": 37.21,
+      "monthly_rsi_ma5": 36.78
     }
   ],
-  "cross_events": [],
-  "gc_events": [],
+  "cross_events": [
+    {
+      "type": "GC",
+      "month": "2026-07",
+      "date": "2026-08-03",
+      "price": 217.0
+    }
+  ],
+  "gc_events": [
+    {
+      "type": "GC",
+      "month": "2026-07",
+      "date": "2026-08-03",
+      "price": 217.0
+    }
+  ],
   "dc_events": [],
   "corporate_events": [
     {
@@ -5931,9 +5990,9 @@
       "start_month": "2026-07",
       "start_price": 217.0,
       "end_month": null,
-      "end_price": 217.0,
+      "end_price": 219.0,
       "status": "ACTIVE",
-      "return_pct": 0.0,
+      "return_pct": 0.92,
       "max_return_pct": 0.0,
       "min_return_pct": 0.0,
       "duration_months": 1

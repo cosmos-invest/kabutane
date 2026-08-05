@@ -2,7 +2,7 @@
   "code": "286A",
   "ticker": "286A.T",
   "name": "ユカリア",
-  "generated_at": "2026-08-02T10:24:38.662180+00:00",
+  "generated_at": "2026-08-05T05:53:19.224532+00:00",
   "record": {
     "code": "286A",
     "ticker": "286A.T",
@@ -19,7 +19,7 @@
     "gc_price": 820.0,
     "signal_month_close": 820.0,
     "period_price": 820.0,
-    "return_since_gc_pct": 0.0,
+    "return_since_gc_pct": -0.61,
     "sma25": 764.2,
     "sma75": 760.31,
     "sma200": 840.74,
@@ -45,8 +45,8 @@
     "mvp_signal": false,
     "cosmos_focus": false,
     "cosmos_focus_type": null,
-    "current_price": 820.0,
-    "change_from_signal_month_pct": 0.0,
+    "current_price": 815.0,
+    "change_from_signal_month_pct": -0.61,
     "per": null,
     "forward_per": null,
     "pbr": null,
@@ -6042,10 +6042,69 @@
       "rsi5": 35.98,
       "monthly_rsi14": 35.98,
       "monthly_rsi_ma5": 42.35
+    },
+    {
+      "date": "2026-08-03",
+      "open": 811.0,
+      "high": 817.0,
+      "low": 800.0,
+      "close": 811.0,
+      "volume": 8800.0,
+      "sma25": 771.76,
+      "sma75": 759.33,
+      "sma200": 839.65,
+      "rsi14": 42.29,
+      "rsi5": 46.68,
+      "monthly_rsi14": 46.68,
+      "monthly_rsi_ma5": 42.29
+    },
+    {
+      "date": "2026-08-04",
+      "open": 811.0,
+      "high": 812.0,
+      "low": 802.0,
+      "close": 811.0,
+      "volume": 5700.0,
+      "sma25": 778.64,
+      "sma75": 757.95,
+      "sma200": 838.62,
+      "rsi14": 42.29,
+      "rsi5": 46.68,
+      "monthly_rsi14": 46.68,
+      "monthly_rsi_ma5": 42.29
+    },
+    {
+      "date": "2026-08-05",
+      "open": 826.0,
+      "high": 826.0,
+      "low": 813.0,
+      "close": 815.0,
+      "volume": 4500.0,
+      "sma25": 784.84,
+      "sma75": 756.28,
+      "sma200": 837.84,
+      "rsi14": 42.29,
+      "rsi5": 46.68,
+      "monthly_rsi14": 46.68,
+      "monthly_rsi_ma5": 42.29
     }
   ],
-  "cross_events": [],
-  "gc_events": [],
+  "cross_events": [
+    {
+      "type": "GC",
+      "month": "2026-07",
+      "date": "2026-08-03",
+      "price": 820.0
+    }
+  ],
+  "gc_events": [
+    {
+      "type": "GC",
+      "month": "2026-07",
+      "date": "2026-08-03",
+      "price": 820.0
+    }
+  ],
   "dc_events": [],
   "corporate_events": [],
   "episodes": [
@@ -6053,9 +6112,9 @@
       "start_month": "2026-07",
       "start_price": 820.0,
       "end_month": null,
-      "end_price": 820.0,
+      "end_price": 815.0,
       "status": "ACTIVE",
-      "return_pct": 0.0,
+      "return_pct": -0.61,
       "max_return_pct": 0.0,
       "min_return_pct": 0.0,
       "duration_months": 1

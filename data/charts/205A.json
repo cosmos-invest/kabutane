@@ -2,7 +2,7 @@
   "code": "205A",
   "ticker": "205A.T",
   "name": "ロゴスホールディングス",
-  "generated_at": "2026-08-02T10:29:42.015777+00:00",
+  "generated_at": "2026-08-05T05:56:07.566644+00:00",
   "record": {
     "code": "205A",
     "ticker": "205A.T",
@@ -19,7 +19,7 @@
     "gc_price": 1817.0,
     "signal_month_close": 1817.0,
     "period_price": 1817.0,
-    "return_since_gc_pct": 0.0,
+    "return_since_gc_pct": -3.36,
     "sma25": 1791.08,
     "sma75": 1808.64,
     "sma200": 1701.08,
@@ -45,8 +45,8 @@
     "mvp_signal": false,
     "cosmos_focus": false,
     "cosmos_focus_type": null,
-    "current_price": 1817.0,
-    "change_from_signal_month_pct": 0.0,
+    "current_price": 1756.0,
+    "change_from_signal_month_pct": -3.36,
     "per": null,
     "forward_per": null,
     "pbr": null,
@@ -7737,6 +7737,51 @@
       "rsi5": 46.78,
       "monthly_rsi14": 46.78,
       "monthly_rsi_ma5": 48.87
+    },
+    {
+      "date": "2026-08-03",
+      "open": 1836.0,
+      "high": 1836.0,
+      "low": 1793.0,
+      "close": 1794.0,
+      "volume": 16000.0,
+      "sma25": 1799.32,
+      "sma75": 1809.77,
+      "sma200": 1701.91,
+      "rsi14": 49.29,
+      "rsi5": 50.44,
+      "monthly_rsi14": 50.44,
+      "monthly_rsi_ma5": 49.29
+    },
+    {
+      "date": "2026-08-04",
+      "open": 1795.0,
+      "high": 1795.0,
+      "low": 1744.0,
+      "close": 1750.0,
+      "volume": 58500.0,
+      "sma25": 1805.96,
+      "sma75": 1811.57,
+      "sma200": 1702.8,
+      "rsi14": 49.29,
+      "rsi5": 50.44,
+      "monthly_rsi14": 50.44,
+      "monthly_rsi_ma5": 49.29
+    },
+    {
+      "date": "2026-08-05",
+      "open": 1808.0,
+      "high": 1808.0,
+      "low": 1736.0,
+      "close": 1756.0,
+      "volume": 37100.0,
+      "sma25": 1812.2,
+      "sma75": 1810.28,
+      "sma200": 1703.65,
+      "rsi14": 49.29,
+      "rsi5": 50.44,
+      "monthly_rsi14": 50.44,
+      "monthly_rsi_ma5": 49.29
     }
   ],
   "cross_events": [
@@ -7763,6 +7808,12 @@
       "month": "2026-06",
       "date": "2026-07-01",
       "price": 1600.0
+    },
+    {
+      "type": "GC",
+      "month": "2026-07",
+      "date": "2026-08-03",
+      "price": 1817.0
     }
   ],
   "gc_events": [
@@ -7777,6 +7828,12 @@
       "month": "2026-04",
       "date": "2026-05-01",
       "price": 2010.0
+    },
+    {
+      "type": "GC",
+      "month": "2026-07",
+      "date": "2026-08-03",
+      "price": 1817.0
     }
   ],
   "dc_events": [
@@ -7834,9 +7891,9 @@
       "start_month": "2026-07",
       "start_price": 1817.0,
       "end_month": null,
-      "end_price": 1817.0,
+      "end_price": 1756.0,
       "status": "ACTIVE",
-      "return_pct": 0.0,
+      "return_pct": -3.36,
       "max_return_pct": 0.0,
       "min_return_pct": 0.0,
       "duration_months": 1

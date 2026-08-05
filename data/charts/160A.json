@@ -2,7 +2,7 @@
   "code": "160A",
   "ticker": "160A.T",
   "name": "アズパートナーズ",
-  "generated_at": "2026-08-02T10:30:52.730359+00:00",
+  "generated_at": "2026-08-05T05:56:44.716298+00:00",
   "record": {
     "code": "160A",
     "ticker": "160A.T",
@@ -19,7 +19,7 @@
     "gc_price": 2044.0,
     "signal_month_close": 2044.0,
     "period_price": 2044.0,
-    "return_since_gc_pct": 0.0,
+    "return_since_gc_pct": -2.01,
     "sma25": 2026.36,
     "sma75": 2035.95,
     "sma200": 2355.31,
@@ -45,8 +45,8 @@
     "mvp_signal": false,
     "cosmos_focus": false,
     "cosmos_focus_type": null,
-    "current_price": 2044.0,
-    "change_from_signal_month_pct": 0.0,
+    "current_price": 2003.0,
+    "change_from_signal_month_pct": -2.01,
     "per": null,
     "forward_per": null,
     "pbr": null,
@@ -8607,10 +8607,69 @@
       "rsi5": 44.89,
       "monthly_rsi14": 44.89,
       "monthly_rsi_ma5": 47.86
+    },
+    {
+      "date": "2026-08-03",
+      "open": 2034.0,
+      "high": 2034.0,
+      "low": 1981.0,
+      "close": 2007.0,
+      "volume": 10500.0,
+      "sma25": 2030.04,
+      "sma75": 2034.12,
+      "sma200": 2348.47,
+      "rsi14": 46.43,
+      "rsi5": 47.0,
+      "monthly_rsi14": 47.0,
+      "monthly_rsi_ma5": 46.43
+    },
+    {
+      "date": "2026-08-04",
+      "open": 2008.0,
+      "high": 2025.0,
+      "low": 1990.0,
+      "close": 1998.0,
+      "volume": 8500.0,
+      "sma25": 2031.24,
+      "sma75": 2031.72,
+      "sma200": 2341.89,
+      "rsi14": 46.43,
+      "rsi5": 47.0,
+      "monthly_rsi14": 47.0,
+      "monthly_rsi_ma5": 46.43
+    },
+    {
+      "date": "2026-08-05",
+      "open": 2010.0,
+      "high": 2030.0,
+      "low": 2003.0,
+      "close": 2003.0,
+      "volume": 3500.0,
+      "sma25": 2033.6,
+      "sma75": 2029.37,
+      "sma200": 2334.62,
+      "rsi14": 46.43,
+      "rsi5": 47.0,
+      "monthly_rsi14": 47.0,
+      "monthly_rsi_ma5": 46.43
     }
   ],
-  "cross_events": [],
-  "gc_events": [],
+  "cross_events": [
+    {
+      "type": "GC",
+      "month": "2026-07",
+      "date": "2026-08-03",
+      "price": 2044.0
+    }
+  ],
+  "gc_events": [
+    {
+      "type": "GC",
+      "month": "2026-07",
+      "date": "2026-08-03",
+      "price": 2044.0
+    }
+  ],
   "dc_events": [],
   "corporate_events": [
     {
@@ -8631,9 +8690,9 @@
       "start_month": "2026-07",
       "start_price": 2044.0,
       "end_month": null,
-      "end_price": 2044.0,
+      "end_price": 2003.0,
       "status": "ACTIVE",
-      "return_pct": 0.0,
+      "return_pct": -2.01,
       "max_return_pct": 0.0,
       "min_return_pct": 0.0,
       "duration_months": 1

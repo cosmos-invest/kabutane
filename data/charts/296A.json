@@ -2,7 +2,7 @@
   "code": "296A",
   "ticker": "296A.T",
   "name": "令和アカウンティング・ホールディングス",
-  "generated_at": "2026-08-02T10:26:09.616010+00:00",
+  "generated_at": "2026-08-05T05:54:09.958297+00:00",
   "record": {
     "code": "296A",
     "ticker": "296A.T",
@@ -19,7 +19,7 @@
     "gc_price": 857.0,
     "signal_month_close": 857.0,
     "period_price": 857.0,
-    "return_since_gc_pct": 0.0,
+    "return_since_gc_pct": 1.87,
     "sma25": 805.52,
     "sma75": 782.15,
     "sma200": 733.76,
@@ -45,8 +45,8 @@
     "mvp_signal": false,
     "cosmos_focus": false,
     "cosmos_focus_type": null,
-    "current_price": 857.0,
-    "change_from_signal_month_pct": 0.0,
+    "current_price": 873.0,
+    "change_from_signal_month_pct": 1.87,
     "per": null,
     "forward_per": null,
     "pbr": null,
@@ -5937,10 +5937,69 @@
       "rsi5": 65.51,
       "monthly_rsi14": 65.51,
       "monthly_rsi_ma5": 65.79
+    },
+    {
+      "date": "2026-08-03",
+      "open": 852.0,
+      "high": 865.0,
+      "low": 852.0,
+      "close": 863.0,
+      "volume": 20800.0,
+      "sma25": 809.8,
+      "sma75": 782.65,
+      "sma200": 734.86,
+      "rsi14": 66.9,
+      "rsi5": 70.12,
+      "monthly_rsi14": 70.12,
+      "monthly_rsi_ma5": 66.9
+    },
+    {
+      "date": "2026-08-04",
+      "open": 861.0,
+      "high": 873.0,
+      "low": 859.0,
+      "close": 870.0,
+      "volume": 36200.0,
+      "sma25": 814.4,
+      "sma75": 782.96,
+      "sma200": 736.02,
+      "rsi14": 66.9,
+      "rsi5": 70.12,
+      "monthly_rsi14": 70.12,
+      "monthly_rsi_ma5": 66.9
+    },
+    {
+      "date": "2026-08-05",
+      "open": 874.0,
+      "high": 886.0,
+      "low": 871.0,
+      "close": 873.0,
+      "volume": 15500.0,
+      "sma25": 819.0,
+      "sma75": 783.35,
+      "sma200": 737.21,
+      "rsi14": 66.9,
+      "rsi5": 70.12,
+      "monthly_rsi14": 70.12,
+      "monthly_rsi_ma5": 66.9
     }
   ],
-  "cross_events": [],
-  "gc_events": [],
+  "cross_events": [
+    {
+      "type": "GC",
+      "month": "2026-07",
+      "date": "2026-08-03",
+      "price": 857.0
+    }
+  ],
+  "gc_events": [
+    {
+      "type": "GC",
+      "month": "2026-07",
+      "date": "2026-08-03",
+      "price": 857.0
+    }
+  ],
   "dc_events": [],
   "corporate_events": [
     {
@@ -5967,9 +6026,9 @@
       "start_month": "2026-07",
       "start_price": 857.0,
       "end_month": null,
-      "end_price": 857.0,
+      "end_price": 873.0,
       "status": "ACTIVE",
-      "return_pct": 0.0,
+      "return_pct": 1.87,
       "max_return_pct": 0.0,
       "min_return_pct": 0.0,
       "duration_months": 1

@@ -2,7 +2,7 @@
   "code": "4811",
   "ticker": "4811.T",
   "name": "ドリーム・アーツ",
-  "generated_at": "2026-08-02T10:26:45.326009+00:00",
+  "generated_at": "2026-08-05T05:54:29.857807+00:00",
   "record": {
     "code": "4811",
     "ticker": "4811.T",
@@ -19,7 +19,7 @@
     "gc_price": 844.0,
     "signal_month_close": 844.0,
     "period_price": 844.0,
-    "return_since_gc_pct": 0.0,
+    "return_since_gc_pct": -4.98,
     "sma25": 821.44,
     "sma75": 783.71,
     "sma200": 992.09,
@@ -45,8 +45,8 @@
     "mvp_signal": false,
     "cosmos_focus": false,
     "cosmos_focus_type": null,
-    "current_price": 844.0,
-    "change_from_signal_month_pct": 0.0,
+    "current_price": 802.0,
+    "change_from_signal_month_pct": -4.98,
     "per": null,
     "forward_per": null,
     "pbr": null,
@@ -10182,6 +10182,51 @@
       "rsi5": 41.11,
       "monthly_rsi14": 41.11,
       "monthly_rsi_ma5": 42.49
+    },
+    {
+      "date": "2026-08-03",
+      "open": 825.0,
+      "high": 830.0,
+      "low": 805.0,
+      "close": 805.0,
+      "volume": 2800.0,
+      "sma25": 824.2,
+      "sma75": 783.92,
+      "sma200": 989.62,
+      "rsi14": 42.78,
+      "rsi5": 45.63,
+      "monthly_rsi14": 45.63,
+      "monthly_rsi_ma5": 42.78
+    },
+    {
+      "date": "2026-08-04",
+      "open": 805.0,
+      "high": 820.0,
+      "low": 797.0,
+      "close": 800.0,
+      "volume": 8800.0,
+      "sma25": 826.36,
+      "sma75": 783.88,
+      "sma200": 986.95,
+      "rsi14": 42.78,
+      "rsi5": 45.63,
+      "monthly_rsi14": 45.63,
+      "monthly_rsi_ma5": 42.78
+    },
+    {
+      "date": "2026-08-05",
+      "open": 793.0,
+      "high": 810.0,
+      "low": 793.0,
+      "close": 802.0,
+      "volume": 2100.0,
+      "sma25": 829.12,
+      "sma75": 783.77,
+      "sma200": 984.31,
+      "rsi14": 42.78,
+      "rsi5": 45.63,
+      "monthly_rsi14": 45.63,
+      "monthly_rsi_ma5": 42.78
     }
   ],
   "cross_events": [
@@ -10196,6 +10241,12 @@
       "month": "2025-09",
       "date": "2025-10-01",
       "price": 1376.67
+    },
+    {
+      "type": "GC",
+      "month": "2026-07",
+      "date": "2026-08-03",
+      "price": 844.0
     }
   ],
   "gc_events": [
@@ -10204,6 +10255,12 @@
       "month": "2025-05",
       "date": "2025-06-02",
       "price": 1048.33
+    },
+    {
+      "type": "GC",
+      "month": "2026-07",
+      "date": "2026-08-03",
+      "price": 844.0
     }
   ],
   "dc_events": [
@@ -10256,9 +10313,9 @@
       "start_month": "2026-07",
       "start_price": 844.0,
       "end_month": null,
-      "end_price": 844.0,
+      "end_price": 802.0,
       "status": "ACTIVE",
-      "return_pct": 0.0,
+      "return_pct": -4.98,
       "max_return_pct": 0.0,
       "min_return_pct": 0.0,
       "duration_months": 1

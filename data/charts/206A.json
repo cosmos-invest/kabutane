@@ -2,7 +2,7 @@
   "code": "206A",
   "ticker": "206A.T",
   "name": "ＰＲＩＳＭ　ＢｉｏＬａｂ",
-  "generated_at": "2026-08-02T10:29:50.607236+00:00",
+  "generated_at": "2026-08-05T05:56:12.235938+00:00",
   "record": {
     "code": "206A",
     "ticker": "206A.T",
@@ -19,7 +19,7 @@
     "gc_price": 155.0,
     "signal_month_close": 155.0,
     "period_price": 155.0,
-    "return_since_gc_pct": 0.0,
+    "return_since_gc_pct": 5.16,
     "sma25": 148.36,
     "sma75": 155.19,
     "sma200": 169.56,
@@ -45,8 +45,8 @@
     "mvp_signal": false,
     "cosmos_focus": false,
     "cosmos_focus_type": null,
-    "current_price": 155.0,
-    "change_from_signal_month_pct": 0.0,
+    "current_price": 163.0,
+    "change_from_signal_month_pct": 5.16,
     "per": null,
     "forward_per": null,
     "pbr": null,
@@ -7707,6 +7707,51 @@
       "rsi5": 24.19,
       "monthly_rsi14": 24.19,
       "monthly_rsi_ma5": 25.9
+    },
+    {
+      "date": "2026-08-03",
+      "open": 157.0,
+      "high": 157.0,
+      "low": 148.0,
+      "close": 157.0,
+      "volume": 121400.0,
+      "sma25": 149.44,
+      "sma75": 154.72,
+      "sma200": 169.51,
+      "rsi14": 25.39,
+      "rsi5": 26.47,
+      "monthly_rsi14": 26.47,
+      "monthly_rsi_ma5": 25.39
+    },
+    {
+      "date": "2026-08-04",
+      "open": 158.0,
+      "high": 158.0,
+      "low": 155.0,
+      "close": 156.0,
+      "volume": 22300.0,
+      "sma25": 150.04,
+      "sma75": 154.24,
+      "sma200": 169.46,
+      "rsi14": 25.39,
+      "rsi5": 26.47,
+      "monthly_rsi14": 26.47,
+      "monthly_rsi_ma5": 25.39
+    },
+    {
+      "date": "2026-08-05",
+      "open": 158.0,
+      "high": 164.0,
+      "low": 158.0,
+      "close": 163.0,
+      "volume": 77700.0,
+      "sma25": 150.8,
+      "sma75": 153.81,
+      "sma200": 169.44,
+      "rsi14": 25.39,
+      "rsi5": 26.47,
+      "monthly_rsi14": 26.47,
+      "monthly_rsi_ma5": 25.39
     }
   ],
   "cross_events": [
@@ -7721,6 +7766,12 @@
       "month": "2026-05",
       "date": "2026-06-01",
       "price": 143.0
+    },
+    {
+      "type": "GC",
+      "month": "2026-07",
+      "date": "2026-08-03",
+      "price": 155.0
     }
   ],
   "gc_events": [
@@ -7729,6 +7780,12 @@
       "month": "2026-01",
       "date": "2026-02-02",
       "price": 191.0
+    },
+    {
+      "type": "GC",
+      "month": "2026-07",
+      "date": "2026-08-03",
+      "price": 155.0
     }
   ],
   "dc_events": [
@@ -7756,9 +7813,9 @@
       "start_month": "2026-07",
       "start_price": 155.0,
       "end_month": null,
-      "end_price": 155.0,
+      "end_price": 163.0,
       "status": "ACTIVE",
-      "return_pct": 0.0,
+      "return_pct": 5.16,
       "max_return_pct": 0.0,
       "min_return_pct": 0.0,
       "duration_months": 1

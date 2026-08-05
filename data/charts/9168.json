@@ -2,7 +2,7 @@
   "code": "9168",
   "ticker": "9168.T",
   "name": "ライズ・コンサルティング・グループ",
-  "generated_at": "2026-08-02T10:31:56.122654+00:00",
+  "generated_at": "2026-08-05T05:57:21.107397+00:00",
   "record": {
     "code": "9168",
     "ticker": "9168.T",
@@ -19,7 +19,7 @@
     "gc_price": 402.0,
     "signal_month_close": 402.0,
     "period_price": 402.0,
-    "return_since_gc_pct": 0.0,
+    "return_since_gc_pct": -1.24,
     "sma25": 397.88,
     "sma75": 399.97,
     "sma200": 590.91,
@@ -45,8 +45,8 @@
     "mvp_signal": false,
     "cosmos_focus": false,
     "cosmos_focus_type": null,
-    "current_price": 402.0,
-    "change_from_signal_month_pct": 0.0,
+    "current_price": 397.0,
+    "change_from_signal_month_pct": -1.24,
     "per": null,
     "forward_per": null,
     "pbr": null,
@@ -10647,6 +10647,51 @@
       "rsi5": 30.79,
       "monthly_rsi14": 30.79,
       "monthly_rsi_ma5": 32.15
+    },
+    {
+      "date": "2026-08-03",
+      "open": 402.0,
+      "high": 402.0,
+      "low": 392.0,
+      "close": 396.0,
+      "volume": 107300.0,
+      "sma25": 398.4,
+      "sma75": 398.79,
+      "sma200": 587.8,
+      "rsi14": 31.6,
+      "rsi5": 31.72,
+      "monthly_rsi14": 31.72,
+      "monthly_rsi_ma5": 31.6
+    },
+    {
+      "date": "2026-08-04",
+      "open": 396.0,
+      "high": 399.0,
+      "low": 394.0,
+      "close": 397.0,
+      "volume": 43600.0,
+      "sma25": 398.72,
+      "sma75": 398.68,
+      "sma200": 584.64,
+      "rsi14": 31.6,
+      "rsi5": 31.72,
+      "monthly_rsi14": 31.72,
+      "monthly_rsi_ma5": 31.6
+    },
+    {
+      "date": "2026-08-05",
+      "open": 400.0,
+      "high": 401.0,
+      "low": 395.0,
+      "close": 397.0,
+      "volume": 61600.0,
+      "sma25": 399.04,
+      "sma75": 398.59,
+      "sma200": 581.42,
+      "rsi14": 31.6,
+      "rsi5": 31.72,
+      "monthly_rsi14": 31.72,
+      "monthly_rsi_ma5": 31.6
     }
   ],
   "cross_events": [
@@ -10661,6 +10706,12 @@
       "month": "2025-08",
       "date": "2025-09-01",
       "price": 1070.0
+    },
+    {
+      "type": "GC",
+      "month": "2026-07",
+      "date": "2026-08-03",
+      "price": 402.0
     }
   ],
   "gc_events": [
@@ -10669,6 +10720,12 @@
       "month": "2025-03",
       "date": "2025-04-01",
       "price": 688.0
+    },
+    {
+      "type": "GC",
+      "month": "2026-07",
+      "date": "2026-08-03",
+      "price": 402.0
     }
   ],
   "dc_events": [
@@ -10709,9 +10766,9 @@
       "start_month": "2026-07",
       "start_price": 402.0,
       "end_month": null,
-      "end_price": 402.0,
+      "end_price": 397.0,
       "status": "ACTIVE",
-      "return_pct": 0.0,
+      "return_pct": -1.24,
       "max_return_pct": 0.0,
       "min_return_pct": 0.0,
       "duration_months": 1

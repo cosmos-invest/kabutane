@@ -2,7 +2,7 @@
   "code": "6209",
   "ticker": "6209.T",
   "name": "リケンＮＰＲ",
-  "generated_at": "2026-08-02T10:28:00.134655+00:00",
+  "generated_at": "2026-08-05T05:55:11.949178+00:00",
   "record": {
     "code": "6209",
     "ticker": "6209.T",
@@ -19,7 +19,7 @@
     "gc_price": 4075.0,
     "signal_month_close": 4075.0,
     "period_price": 4075.0,
-    "return_since_gc_pct": 0.0,
+    "return_since_gc_pct": -0.25,
     "sma25": 3943.0,
     "sma75": 3914.6,
     "sma200": 3719.75,
@@ -45,8 +45,8 @@
     "mvp_signal": true,
     "cosmos_focus": false,
     "cosmos_focus_type": null,
-    "current_price": 4075.0,
-    "change_from_signal_month_pct": 0.0,
+    "current_price": 4065.0,
+    "change_from_signal_month_pct": -0.25,
     "per": 7.35,
     "forward_per": null,
     "pbr": 0.64,
@@ -10452,6 +10452,51 @@
       "rsi5": 66.2,
       "monthly_rsi14": 66.2,
       "monthly_rsi_ma5": 69.67
+    },
+    {
+      "date": "2026-08-03",
+      "open": 4035.0,
+      "high": 4070.0,
+      "low": 3965.0,
+      "close": 4070.0,
+      "volume": 135900.0,
+      "sma25": 3949.8,
+      "sma75": 3917.73,
+      "sma200": 3724.12,
+      "rsi14": 66.42,
+      "rsi5": 68.5,
+      "monthly_rsi14": 68.5,
+      "monthly_rsi_ma5": 66.42
+    },
+    {
+      "date": "2026-08-04",
+      "open": 4040.0,
+      "high": 4065.0,
+      "low": 3995.0,
+      "close": 4035.0,
+      "volume": 110600.0,
+      "sma25": 3954.6,
+      "sma75": 3918.87,
+      "sma200": 3728.25,
+      "rsi14": 66.42,
+      "rsi5": 68.5,
+      "monthly_rsi14": 68.5,
+      "monthly_rsi_ma5": 66.42
+    },
+    {
+      "date": "2026-08-05",
+      "open": 4100.0,
+      "high": 4100.0,
+      "low": 4040.0,
+      "close": 4065.0,
+      "volume": 62600.0,
+      "sma25": 3962.4,
+      "sma75": 3918.4,
+      "sma200": 3732.7,
+      "rsi14": 66.42,
+      "rsi5": 68.5,
+      "monthly_rsi14": 68.5,
+      "monthly_rsi_ma5": 66.42
     }
   ],
   "cross_events": [
@@ -10466,6 +10511,12 @@
       "month": "2026-03",
       "date": "2026-04-01",
       "price": 3720.0
+    },
+    {
+      "type": "GC",
+      "month": "2026-07",
+      "date": "2026-08-03",
+      "price": 4075.0
     }
   ],
   "gc_events": [
@@ -10474,6 +10525,12 @@
       "month": "2025-07",
       "date": "2025-08-01",
       "price": 2549.0
+    },
+    {
+      "type": "GC",
+      "month": "2026-07",
+      "date": "2026-08-03",
+      "price": 4075.0
     }
   ],
   "dc_events": [
@@ -10538,9 +10595,9 @@
       "start_month": "2026-07",
       "start_price": 4075.0,
       "end_month": null,
-      "end_price": 4075.0,
+      "end_price": 4065.0,
       "status": "ACTIVE",
-      "return_pct": 0.0,
+      "return_pct": -0.25,
       "max_return_pct": 0.0,
       "min_return_pct": 0.0,
       "duration_months": 1

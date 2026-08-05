@@ -2,7 +2,7 @@
   "code": "9223",
   "ticker": "9223.T",
   "name": "ＡＳＮＯＶＡ",
-  "generated_at": "2026-08-02T10:23:37.013794+00:00",
+  "generated_at": "2026-08-05T05:52:44.022991+00:00",
   "record": {
     "code": "9223",
     "ticker": "9223.T",
@@ -19,7 +19,7 @@
     "gc_price": 441.0,
     "signal_month_close": 441.0,
     "period_price": 441.0,
-    "return_since_gc_pct": 0.0,
+    "return_since_gc_pct": -0.23,
     "sma25": 407.4,
     "sma75": 411.04,
     "sma200": 497.86,
@@ -45,8 +45,8 @@
     "mvp_signal": false,
     "cosmos_focus": false,
     "cosmos_focus_type": null,
-    "current_price": 441.0,
-    "change_from_signal_month_pct": 0.0,
+    "current_price": 440.0,
+    "change_from_signal_month_pct": -0.23,
     "per": null,
     "forward_per": null,
     "pbr": null,
@@ -9597,6 +9597,51 @@
       "rsi5": 27.05,
       "monthly_rsi14": 27.05,
       "monthly_rsi_ma5": 32.87
+    },
+    {
+      "date": "2026-08-03",
+      "open": 445.0,
+      "high": 459.0,
+      "low": 445.0,
+      "close": 445.0,
+      "volume": 11300.0,
+      "sma25": 409.4,
+      "sma75": 410.72,
+      "sma200": 497.03,
+      "rsi14": 32.02,
+      "rsi5": 37.39,
+      "monthly_rsi14": 37.39,
+      "monthly_rsi_ma5": 32.02
+    },
+    {
+      "date": "2026-08-04",
+      "open": 445.0,
+      "high": 449.0,
+      "low": 438.0,
+      "close": 440.0,
+      "volume": 4600.0,
+      "sma25": 411.36,
+      "sma75": 410.32,
+      "sma200": 496.18,
+      "rsi14": 32.02,
+      "rsi5": 37.39,
+      "monthly_rsi14": 37.39,
+      "monthly_rsi_ma5": 32.02
+    },
+    {
+      "date": "2026-08-05",
+      "open": 439.0,
+      "high": 452.0,
+      "low": 438.0,
+      "close": 440.0,
+      "volume": 6800.0,
+      "sma25": 413.4,
+      "sma75": 410.21,
+      "sma200": 495.35,
+      "rsi14": 32.02,
+      "rsi5": 37.39,
+      "monthly_rsi14": 37.39,
+      "monthly_rsi_ma5": 32.02
     }
   ],
   "cross_events": [
@@ -9611,6 +9656,12 @@
       "month": "2025-09",
       "date": "2025-10-01",
       "price": 611.0
+    },
+    {
+      "type": "GC",
+      "month": "2026-07",
+      "date": "2026-08-03",
+      "price": 441.0
     }
   ],
   "gc_events": [
@@ -9619,6 +9670,12 @@
       "month": "2025-06",
       "date": "2025-07-01",
       "price": 608.0
+    },
+    {
+      "type": "GC",
+      "month": "2026-07",
+      "date": "2026-08-03",
+      "price": 441.0
     }
   ],
   "dc_events": [
@@ -9683,9 +9740,9 @@
       "start_month": "2026-07",
       "start_price": 441.0,
       "end_month": null,
-      "end_price": 441.0,
+      "end_price": 440.0,
       "status": "ACTIVE",
-      "return_pct": 0.0,
+      "return_pct": -0.23,
       "max_return_pct": 0.0,
       "min_return_pct": 0.0,
       "duration_months": 1

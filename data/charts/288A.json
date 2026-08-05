@@ -2,7 +2,7 @@
   "code": "288A",
   "ticker": "288A.T",
   "name": "ラクサス・テクノロジーズ",
-  "generated_at": "2026-08-02T10:31:32.886860+00:00",
+  "generated_at": "2026-08-05T05:57:06.336554+00:00",
   "record": {
     "code": "288A",
     "ticker": "288A.T",
@@ -19,7 +19,7 @@
     "gc_price": 97.0,
     "signal_month_close": 97.0,
     "period_price": 97.0,
-    "return_since_gc_pct": 0.0,
+    "return_since_gc_pct": -1.03,
     "sma25": 93.84,
     "sma75": 101.05,
     "sma200": 122.15,
@@ -45,8 +45,8 @@
     "mvp_signal": true,
     "cosmos_focus": false,
     "cosmos_focus_type": null,
-    "current_price": 97.0,
-    "change_from_signal_month_pct": 0.0,
+    "current_price": 96.0,
+    "change_from_signal_month_pct": -1.03,
     "per": null,
     "forward_per": null,
     "pbr": null,
@@ -6027,10 +6027,69 @@
       "rsi5": 16.1,
       "monthly_rsi14": 16.1,
       "monthly_rsi_ma5": 17.11
+    },
+    {
+      "date": "2026-08-03",
+      "open": 96.0,
+      "high": 97.0,
+      "low": 94.0,
+      "close": 97.0,
+      "volume": 16700.0,
+      "sma25": 94.2,
+      "sma75": 100.8,
+      "sma200": 121.83,
+      "rsi14": 16.9,
+      "rsi5": 17.19,
+      "monthly_rsi14": 17.19,
+      "monthly_rsi_ma5": 16.9
+    },
+    {
+      "date": "2026-08-04",
+      "open": 97.0,
+      "high": 98.0,
+      "low": 94.0,
+      "close": 98.0,
+      "volume": 28400.0,
+      "sma25": 94.52,
+      "sma75": 100.56,
+      "sma200": 121.49,
+      "rsi14": 16.9,
+      "rsi5": 17.19,
+      "monthly_rsi14": 17.19,
+      "monthly_rsi_ma5": 16.9
+    },
+    {
+      "date": "2026-08-05",
+      "open": 97.0,
+      "high": 98.0,
+      "low": 96.0,
+      "close": 96.0,
+      "volume": 7300.0,
+      "sma25": 94.6,
+      "sma75": 100.29,
+      "sma200": 121.17,
+      "rsi14": 16.9,
+      "rsi5": 17.19,
+      "monthly_rsi14": 17.19,
+      "monthly_rsi_ma5": 16.9
     }
   ],
-  "cross_events": [],
-  "gc_events": [],
+  "cross_events": [
+    {
+      "type": "GC",
+      "month": "2026-07",
+      "date": "2026-08-03",
+      "price": 97.0
+    }
+  ],
+  "gc_events": [
+    {
+      "type": "GC",
+      "month": "2026-07",
+      "date": "2026-08-03",
+      "price": 97.0
+    }
+  ],
   "dc_events": [],
   "corporate_events": [],
   "episodes": [
@@ -6038,9 +6097,9 @@
       "start_month": "2026-07",
       "start_price": 97.0,
       "end_month": null,
-      "end_price": 97.0,
+      "end_price": 96.0,
       "status": "ACTIVE",
-      "return_pct": 0.0,
+      "return_pct": -1.03,
       "max_return_pct": 0.0,
       "min_return_pct": 0.0,
       "duration_months": 1

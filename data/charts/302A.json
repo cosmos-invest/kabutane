@@ -2,7 +2,7 @@
   "code": "302A",
   "ticker": "302A.T",
   "name": "ビースタイルホールディングス",
-  "generated_at": "2026-08-02T10:26:04.646686+00:00",
+  "generated_at": "2026-08-05T05:54:07.187706+00:00",
   "record": {
     "code": "302A",
     "ticker": "302A.T",
@@ -19,7 +19,7 @@
     "gc_price": 582.0,
     "signal_month_close": 582.0,
     "period_price": 582.0,
-    "return_since_gc_pct": 0.0,
+    "return_since_gc_pct": 3.09,
     "sma25": 583.36,
     "sma75": 573.28,
     "sma200": 591.84,
@@ -45,8 +45,8 @@
     "mvp_signal": false,
     "cosmos_focus": false,
     "cosmos_focus_type": null,
-    "current_price": 582.0,
-    "change_from_signal_month_pct": 0.0,
+    "current_price": 600.0,
+    "change_from_signal_month_pct": 3.09,
     "per": null,
     "forward_per": null,
     "pbr": null,
@@ -5877,10 +5877,69 @@
       "rsi5": 20.3,
       "monthly_rsi14": 20.3,
       "monthly_rsi_ma5": 21.06
+    },
+    {
+      "date": "2026-08-03",
+      "open": 602.0,
+      "high": 606.0,
+      "low": 599.0,
+      "close": 600.0,
+      "volume": 1900.0,
+      "sma25": 585.76,
+      "sma75": 573.28,
+      "sma200": 591.6,
+      "rsi14": 21.89,
+      "rsi5": 25.14,
+      "monthly_rsi14": 25.14,
+      "monthly_rsi_ma5": 21.89
+    },
+    {
+      "date": "2026-08-04",
+      "open": 592.0,
+      "high": 593.0,
+      "low": 592.0,
+      "close": 592.0,
+      "volume": 1400.0,
+      "sma25": 587.84,
+      "sma75": 573.33,
+      "sma200": 591.27,
+      "rsi14": 21.89,
+      "rsi5": 25.14,
+      "monthly_rsi14": 25.14,
+      "monthly_rsi_ma5": 21.89
+    },
+    {
+      "date": "2026-08-05",
+      "open": 610.0,
+      "high": 610.0,
+      "low": 600.0,
+      "close": 600.0,
+      "volume": 10200.0,
+      "sma25": 590.28,
+      "sma75": 573.32,
+      "sma200": 591.04,
+      "rsi14": 21.89,
+      "rsi5": 25.14,
+      "monthly_rsi14": 25.14,
+      "monthly_rsi_ma5": 21.89
     }
   ],
-  "cross_events": [],
-  "gc_events": [],
+  "cross_events": [
+    {
+      "type": "GC",
+      "month": "2026-07",
+      "date": "2026-08-03",
+      "price": 582.0
+    }
+  ],
+  "gc_events": [
+    {
+      "type": "GC",
+      "month": "2026-07",
+      "date": "2026-08-03",
+      "price": 582.0
+    }
+  ],
   "dc_events": [],
   "corporate_events": [
     {
@@ -5895,9 +5954,9 @@
       "start_month": "2026-07",
       "start_price": 582.0,
       "end_month": null,
-      "end_price": 582.0,
+      "end_price": 600.0,
       "status": "ACTIVE",
-      "return_pct": 0.0,
+      "return_pct": 3.09,
       "max_return_pct": 0.0,
       "min_return_pct": 0.0,
       "duration_months": 1
