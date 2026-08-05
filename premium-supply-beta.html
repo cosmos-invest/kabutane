@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <title>需給改善ラボ β | かぶたね</title>
+  <link rel="stylesheet" href="assets/style.css?v=14">
+  <link rel="stylesheet" href="assets/premium-supply-beta.css?v=1">
+</head>
+<body class="premium-supply-beta-page">
+  <header class="site-header">
+    <div class="header-inner">
+      <div>
+        <p class="eyebrow">KABUTANE PREMIUM LAB / PRIVATE BETA</p>
+        <h1>需給改善ラボ β</h1>
+        <p class="subtitle">JPX週次信用残高を全件走査し、買い残の整理・信用倍率の改善・売り残の変化から「需給改善候補」を拾う実験ページです。</p>
+      </div>
+      <div class="header-meta"><span class="premium-badge">PREMIUM β</span></div>
+    </div>
+  </header>
+
+  <main class="container premium-container">
+    <section class="premium-warning">
+      <strong>このページは非公開導線のβ版です。</strong>
+      <p>URLを通常メニューには掲載せず、検索エンジンにも登録しない設定にしています。ただし現在のGitHub Pagesは認証付きではないため、URLを知っている人のアクセスを技術的に遮断するものではありません。本番の有料提供前には認証・権限制御へ移行します。</p>
+    </section>
+
+    <section class="panel premium-summary-panel">
+      <div class="section-heading"><div><h2>フルスクリーニング状況</h2><p>信用残高データが存在する銘柄を横断して比較します。現在は信用需給だけのβ判定で、価格・出来高・価格帯別出来高は最終判断で個別確認します。</p></div><span id="premiumDataDate" class="premium-date">読込中…</span></div>
+      <div id="premiumSummary" class="premium-summary-grid"></div>
+    </section>
+
+    <section class="panel">
+      <div class="premium-controls">
+        <label>銘柄検索<input id="premiumSearch" type="search" placeholder="コード・銘柄名"></label>
+        <label>対象区分<select id="premiumScope"><option value="all">すべて</option><option value="core">通常対象</option><option value="extended">拡張対象</option><option value="unknown">未分類</option></select></label>
+        <label>評価<select id="premiumGrade"><option value="all">S〜Bすべて</option><option value="S">Sのみ</option><option value="A">A以上</option><option value="B">B以上</option></select></label>
+      </div>
+      <p class="premium-key"><span class="grade grade-s">S</span> 強い改善候補 <span class="grade grade-a">A</span> 改善候補 <span class="grade grade-b">B</span> 観察候補</p>
+      <div class="premium-table-wrap">
+        <table class="premium-table">
+          <thead><tr><th>評価</th><th>銘柄</th><th>区分</th><th>需給改善度</th><th>買い残変化</th><th>売り残変化</th><th>倍率改善</th><th>主な理由</th></tr></thead>
+          <tbody id="premiumRows"></tbody>
+        </table>
+      </div>
+      <p id="premiumEmpty" class="premium-empty" hidden>条件に合う銘柄がありません。</p>
+    </section>
+
+    <section class="panel premium-method-note">
+      <h2>使い方</h2>
+      <p>ここで上位だから買うのではなく、候補を絞るための入口です。個別ページで<strong>株価トレンド → 価格帯別出来高 → 信用残高 → 損切り位置</strong>の順に確認してください。</p>
+      <p>信用残高は週次で公表され、需給改善が株価上昇を保証するものではありません。特に低流動性銘柄や売り残の少ない銘柄では倍率の変化が大きく見えるため、絶対値も確認します。</p>
+    </section>
+  </main>
+
+  <script src="assets/premium-supply-beta.js?v=1" defer></script>
+</body>
+</html>
