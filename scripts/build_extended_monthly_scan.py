@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import math
 import os
+import sys
 import time
 from pathlib import Path
 from typing import Any, Iterable
@@ -10,9 +11,12 @@ from typing import Any, Iterable
 import pandas as pd
 import yfinance as yf
 
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
 from tradingview_signal import SIGNAL_VERSION, prepare_monthly_compat
 
-ROOT = Path(__file__).resolve().parents[1]
 ALL_STOCKS_FILE = ROOT / "stocks-all.csv"
 OUTPUT_DIR = ROOT / "data" / "extended"
 OUTPUT_FILE = OUTPUT_DIR / "latest.json"
