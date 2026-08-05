@@ -148,8 +148,12 @@
     return bin.low >= profile.valueLow && bin.high <= profile.valueHigh;
   }
 
+  function isPriceChart(chart) {
+    return chart?.canvas?.id === "priceChart";
+  }
+
   function profileGeometry(chart) {
-    if (!state.enabled || !state.profile || !chart?.chartArea) return null;
+    if (!isPriceChart(chart) || !state.enabled || !state.profile || !chart?.chartArea) return null;
     const area = chart.chartArea;
     const mobile = chart.width <= 760;
     if (mobile) {
@@ -162,20 +166,30 @@
     return { mobile: false, left, right, top: area.top, bottom: area.bottom };
   }
 
-  function desiredDesktopPadding(chart) {
-    if (!state.enabled || chart.width <= 760) return 0;
-    return Math.round(clamp(chart.width * 0.22, 150, 220));
+  function chartWidth() {
+    return document.querySelector(".price-chart-box")?.clientWidth || window.innerWidth || 0;
   }
 
-  function applyChartLayout(chart = window.Chart?.getChart?.("priceChart")) {
+  function desiredDesktopPadding(width = chartWidth()) {
+    if (!state.enabled || width <= 760) return 0;
+    return Math.round(clamp(width * 0.22, 150, 220));
+  }
+
+  function withProfilePadding(callback) {
+    const padding = window.Chart?.defaults?.layout?.padding;
+    if (!padding || typeof padding !== "object") return callback();
+    const previousRight = padding.right;
+    padding.right = desiredDesktopPadding();
+    try {
+      return callback();
+    } finally {
+      padding.right = previousRight;
+    }
+  }
+
+  function redrawProfile(chart = window.Chart?.getChart?.("priceChart")) {
     if (!chart) return false;
-    chart.options.layout = chart.options.layout || {};
-    chart.options.layout.padding = chart.options.layout.padding || {};
-    const next = desiredDesktopPadding(chart);
-    if (chart.options.layout.padding.right !== next) {
-      chart.options.layout.padding.right = next;
-      chart.update("none");
-    } else chart.draw();
+    chart.draw();
     return true;
   }
 
@@ -196,6 +210,7 @@
   const volumeProfilePlugin = {
     id: "kabutaneVolumeProfile",
     afterDatasetsDraw(chart) {
+      if (!isPriceChart(chart)) return;
       const profile = state.profile;
       const yScale = chart?.scales?.y;
       const geometry = profileGeometry(chart);
@@ -241,6 +256,7 @@
       ctx.restore();
     },
     afterEvent(chart, args) {
+      if (!isPriceChart(chart)) return;
       const geometry = profileGeometry(chart);
       const yScale = chart?.scales?.y;
       if (!geometry || !yScale || !state.profile) return;
@@ -329,13 +345,13 @@
       updateBinDetail(null);
       renderStats(state.profile, state.currentPrice);
       if (status) status.textContent = `${PERIODS[state.period].label}・${rows.length.toLocaleString("ja-JP")}営業日`;
-      applyChartLayout();
+      redrawProfile();
     } catch (error) {
       if (generation !== state.requestGeneration) return;
       state.profile = null;
       renderStats(null, null);
       if (status) status.textContent = `読込失敗：${String(error.message || error)}`;
-      applyChartLayout();
+      redrawProfile();
     }
   }
 
@@ -343,16 +359,15 @@
     state.enabled = !state.enabled;
     updateBinDetail(null);
     setActiveControls();
-    applyChartLayout();
+    redrawProfile();
   }
 
   function patchRenderCharts() {
     const base = window.renderCharts;
     if (typeof base !== "function" || base.__kabutaneVolumeProfileWrapped) return;
     function renderChartsWithVolumeProfile() {
-      const result = base.apply(this, arguments);
-      window.setTimeout(() => applyChartLayout(), 0);
-      return result;
+      const args = arguments;
+      return withProfilePadding(() => base.apply(this, args));
     }
     renderChartsWithVolumeProfile.__kabutaneVolumeProfileWrapped = true;
     window.renderCharts = renderChartsWithVolumeProfile;
@@ -365,13 +380,13 @@
       button.addEventListener("click", () => activatePeriod(button.dataset.volumeProfilePeriod));
     });
     document.getElementById("volumeProfileToggle")?.addEventListener("click", toggleProfile);
-    window.addEventListener("resize", () => window.requestAnimationFrame(() => applyChartLayout()));
+    window.addEventListener("resize", () => window.requestAnimationFrame(() => redrawProfile()));
     setActiveControls();
     activatePeriod("1y");
-    [250, 700, 1500].forEach((delay) => window.setTimeout(() => applyChartLayout(), delay));
+    [250, 700, 1500].forEach((delay) => window.setTimeout(() => redrawProfile(), delay));
   }
 
-  window.KabutaneVolumeProfile = { buildProfile, filterPeriod, rowsByDate, activatePeriod };
+  window.KabutaneVolumeProfile = { buildProfile, filterPeriod, rowsByDate, activatePeriod, desiredDesktopPadding };
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init, { once: true });
   else init();
 })();
