@@ -7,9 +7,9 @@
   <link rel="stylesheet" href="assets/style.css?v=13">
   <link rel="stylesheet" href="assets/detail-enhancements.css?v=13">
   <link rel="stylesheet" href="assets/detail-signal-status.css?v=13">
-  <link rel="stylesheet" href="assets/detail-chart-viewport.css?v=13">
+  <link rel="stylesheet" href="assets/detail-chart-viewport.css?v=14">
   <link rel="stylesheet" href="assets/detail-volume-profile.css?v=3">
-  <link rel="stylesheet" href="assets/detail-margin-balance.css?v=1">
+  <link rel="stylesheet" href="assets/detail-margin-balance.css?v=2">
 </head>
 <body>
   <header class="site-header detail-header">
@@ -70,12 +70,12 @@
 
     <section class="panel chart-panel margin-balance-panel margin-balance-empty" id="marginBalancePanel">
       <div class="section-heading margin-balance-heading">
-        <div><h2>信用需給（JPX週次）</h2><p>信用買い残・信用売り残・信用倍率の変化を同じチャートで確認します。倍率の高さだけで判断せず、日足チャートの価格・出来高と並べて需給の変化を見ます。<a href="learn.html#margin-balance">信用残高をやさしく解説</a></p></div>
-        <span class="margin-balance-status" id="marginBalanceStatus">データ準備中</span>
+        <div><h2>信用需給（JPX週次）</h2><p><strong>日足チャートの表示期間と同期します。</strong> 日足を拡大・縮小・左右移動すると、信用買い残・信用売り残・信用倍率も同じ期間へ連動します。信用残高そのものはJPXの週次公表値なので、日足の間を補間せず週次の点だけ表示します。<a href="learn.html#margin-balance">信用残高をやさしく解説</a></p></div>
+        <span class="margin-balance-status" id="marginBalanceStatus">日足同期を準備中</span>
       </div>
       <div class="margin-balance-stats" id="marginBalanceStats"></div>
       <div class="margin-balance-chart-box"><canvas id="marginBalanceChart"></canvas></div>
-      <p class="margin-balance-summary" id="marginBalanceSummary">JPXの週次信用残高を読み込みます。</p>
+      <p class="margin-balance-summary" id="marginBalanceSummary">JPXの週次信用残高を読み込み、日足と同じ表示期間へ同期します。</p>
       <p class="margin-balance-note"><strong>見方：</strong> 買い残は将来の返済売り、売り残は将来の買い戻しにつながる可能性があります。ただし増減の意味は相場環境で変わります。データはJPX「銘柄別信用取引週末残高」を使用し、基準日と前週比を明示します。売り残0株のとき信用倍率は「—（売り残0）」と表示します。</p>
     </section>
 
@@ -136,12 +136,12 @@
   <script src="assets/detail-chart-viewport-core.js?v=13" defer></script>
   <script src="assets/detail.js?v=13" defer></script>
   <script src="assets/daily-overlay.js?v=13" defer></script>
-  <script src="assets/detail-chart-viewport.js?v=13" defer></script>
+  <script src="assets/detail-chart-viewport.js?v=14" defer></script>
   <script src="assets/detail-enhancements.js?v=13" defer></script>
   <script src="assets/detail-signal-status.js?v=13" defer></script>
   <script src="assets/detail-signal-chart-fix.js?v=13" defer></script>
   <script src="assets/detail-volume-profile.js?v=3" defer></script>
-  <script src="assets/detail-margin-balance.js?v=1" defer></script>
+  <script src="assets/detail-margin-balance.js?v=2" defer></script>
   <script src="assets/characters.js?v=13" defer></script>
 </body>
 </html>

@@ -16,6 +16,7 @@
 
   function priceInstance() { return typeof Chart !== "undefined" ? Chart.getChart("priceChart") : null; }
   function rsiInstance() { return typeof Chart !== "undefined" ? Chart.getChart("rsiChart") : null; }
+  function marginInstance() { return typeof Chart !== "undefined" ? Chart.getChart("marginBalanceChart") : null; }
 
   function preferredPoints() {
     if (window.innerWidth <= 520) return 55;
@@ -82,6 +83,19 @@
     if (rsiStatus) rsiStatus.textContent = `日足チャートと同じ期間を表示中：${formatDate(first)}〜${formatDate(last)}`;
   }
 
+  function emitRangeChange() {
+    const labels = displayedRows().map((row) => String(row?.date || "")).filter(Boolean);
+    window.dispatchEvent(new CustomEvent("kabutane:detail-range-change", {
+      detail: {
+        labels,
+        startDate: labels[0] || null,
+        endDate: labels.at(-1) || null,
+        span: labels.length,
+        total: totalRows(),
+      },
+    }));
+  }
+
   function renderViewport() {
     if (!fullPayload) return;
     ensureRange();
@@ -108,6 +122,7 @@
     baseRenderCharts(sliced);
     applyVerticalViewport();
     updateToolbar();
+    emitRangeChange();
   };
 
   function zoom(factor, anchorRatio = 0.5) {
@@ -149,6 +164,7 @@
     requestAnimationFrame(() => {
       priceInstance()?.resize?.();
       rsiInstance()?.resize?.();
+      marginInstance()?.resize?.();
     });
   }
 
@@ -169,6 +185,7 @@
   function installToolbar() {
     const pricePanel = document.querySelector(".price-chart-box")?.closest(".chart-panel");
     const rsiPanel = document.querySelector(".rsi-chart-box")?.closest(".chart-panel");
+    const marginPanel = document.getElementById("marginBalancePanel");
     if (!pricePanel || document.getElementById("detailChartViewportToolbar")) return;
     const toolbar = document.createElement("div");
     toolbar.id = "detailChartViewportToolbar";
@@ -194,6 +211,7 @@
     pricePanel.insertBefore(toolbar, chartBox);
     pricePanel.classList.add("detail-chart-interactive");
     rsiPanel?.classList.add("detail-chart-interactive", "detail-rsi-synced");
+    marginPanel?.classList.add("detail-chart-interactive", "detail-margin-synced");
     if (rsiPanel) {
       const sync = document.createElement("p");
       sync.id = "detailRsiSyncStatus";
@@ -289,9 +307,11 @@
   installToolbar();
   bindCanvas(document.getElementById("priceChart"));
   bindCanvas(document.getElementById("rsiChart"));
+  bindCanvas(document.getElementById("marginBalanceChart"));
   window.addEventListener("resize", () => {
     priceInstance()?.resize?.();
     rsiInstance()?.resize?.();
+    marginInstance()?.resize?.();
   });
 
   window.DetailChartViewport = {
@@ -301,5 +321,6 @@
     zoomIn: () => zoom(0.72),
     zoomOut: () => zoom(1.38),
     getRange: () => ({ ...ensureRange() }),
+    getVisibleDates: () => displayedRows().map((row) => String(row?.date || "")).filter(Boolean),
   };
 })();
