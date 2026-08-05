@@ -57,23 +57,34 @@ def clean_code(value: Any) -> str:
     return text
 
 
-def classify_issue(market: str) -> tuple[str, str]:
+def classify_issue(market: str, name: str = "") -> tuple[str, str]:
     value = str(market or "").strip()
-    if "ETF" in value:
+    upper = value.upper()
+    issue_name = str(name or "").strip().upper()
+
+    # JPXの上場銘柄一覧ではETFとETNが同じ商品区分でまとまる場合があるため、
+    # 銘柄名のETN/NEXT NOTES表記も使って分類する。
+    if "ETF" in upper or "ETN" in upper:
+        if "ETN" in issue_name or "NEXT NOTES" in issue_name or "ETN" in upper and "ETF" not in upper:
+            return "etn", "extended"
         return "etf", "extended"
-    if "ETN" in value:
-        return "etn", "extended"
-    if "REIT" in value or "不動産投資信託" in value:
+    if "REIT" in upper or "不動産投資信託" in value:
         return "reit", "extended"
     if "インフラ" in value:
         return "infrastructure_fund", "extended"
-    if "TOKYO PRO" in value:
+    if "PRO MARKET" in upper or "TOKYO PRO" in upper:
         return "tokyo_pro", "extended"
+    if "ベンチャーファンド" in value:
+        return "venture_fund", "extended"
+    if "カントリーファンド" in value:
+        return "country_fund", "extended"
+    if "優先出資" in value or "出資証券" in value:
+        return "preferred_equity", "extended"
     if "外国" in value:
         return "foreign_stock", "extended"
-    if any(name in value for name in CORE_MARKETS) and ("内国株式" in value or "内国" not in value):
+    if any(core_name in value for core_name in CORE_MARKETS) and ("内国株式" in value or "内国" not in value):
         return "domestic_common_stock", "core"
-    if any(name in value for name in CORE_MARKETS):
+    if any(core_name in value for core_name in CORE_MARKETS):
         return "other_stock", "extended"
     return "other", "extended"
 
@@ -95,9 +106,9 @@ def build_all_universe(frame: pd.DataFrame) -> pd.DataFrame:
         }
     )
     output = output[output["code"].str.match(r"^[0-9A-Z]{4}$", na=False)].copy()
-    labels = output["market"].map(classify_issue)
-    output["instrument_type"] = labels.map(lambda item: item[0])
-    output["scope"] = labels.map(lambda item: item[1])
+    labels = [classify_issue(market, name) for market, name in zip(output["market"], output["name"])]
+    output["instrument_type"] = [item[0] for item in labels]
+    output["scope"] = [item[1] for item in labels]
     output = output.drop_duplicates(subset=["code"], keep="first").sort_values("code").reset_index(drop=True)
     if len(output) < 4000:
         raise RuntimeError(f"全上場銘柄の抽出件数が少なすぎます: {len(output)}件")
@@ -172,7 +183,7 @@ def main() -> None:
     STATUS_FILE.write_text(json.dumps(status, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(
         f"Universe updated: core={core_total}, all={all_total}, extended={all_total-core_total}, "
-        f"projected monthly batches={status['monthly_price_batch_projection']}"
+        f"categories={category_counts}, projected monthly batches={status['monthly_price_batch_projection']}"
     )
 
 
