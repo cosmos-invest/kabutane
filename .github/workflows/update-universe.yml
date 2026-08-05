@@ -22,9 +22,9 @@ on:
 permissions:
   contents: write
 
-# 月次・日次・銘柄マスター更新を直列化し、同じデータへの同時pushを防ぐ。
+# mainでは月次・日次・銘柄マスター更新を直列化。PR監査は本番データwriteと競合させない。
 concurrency:
-  group: market-data-writes
+  group: ${{ github.event_name == 'pull_request' && format('universe-audit-pr-{0}', github.event.pull_request.number) || 'market-data-writes' }}
   cancel-in-progress: false
 
 jobs:
