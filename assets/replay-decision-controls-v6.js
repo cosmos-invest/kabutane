@@ -99,6 +99,18 @@
     });
   }
 
+  function hideEmptyLegacyIndicatorPanel() {
+    const details = document.getElementById("unifiedIndicatorDetails");
+    if (!details) return;
+    const body = document.getElementById("unifiedIndicatorBody");
+    const hasMeaningfulContent = Boolean(body?.querySelector(".indicator-controls,.monthly-rsi-chart-box,.oscillator-chart-box,canvas"));
+    if (!hasMeaningfulContent) {
+      details.hidden = true;
+      details.style.setProperty("display", "none", "important");
+      details.setAttribute("aria-hidden", "true");
+    }
+  }
+
   function ensureControls() {
     const dock = document.getElementById("replayDecisionDockV6");
     if (!dock) return null;
@@ -129,6 +141,7 @@
     if (!practice || practice.hidden) return;
     compactMonthlyChart();
     compactSecondaryTools();
+    hideEmptyLegacyIndicatorPanel();
     const controls = ensureControls();
     if (!controls) return;
 
