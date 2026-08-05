@@ -55,9 +55,9 @@
     }, "");
   }
 
-  // Product invariant: provisional GC is premium-only. The public list never
-  // labels, filters or ranks a stock by that state. A current GC is shown from
-  // the previous month-end confirmed side instead.
+  // Defense-in-depth: the page normally receives public-radar.json, where the
+  // current-month up-cross state has already been removed. If an old payload is
+  // ever served, do not turn that state back into a public label or filter.
   function publicStatus(item) {
     const raw = String(item?.provisional_status || "UNKNOWN").toUpperCase();
     if (raw === "GC") {
@@ -96,8 +96,6 @@
   }
 
   function guidePass(item, guide) {
-    // Character presets must never become an indirect premium-GC finder.
-    if (String(item?.provisional_status || "").toUpperCase() === "GC") return false;
     const status = publicStatus(item);
     const volume = finite(item.volume_ratio_5_30);
     const high = finite(item.high52_distance_pct);
@@ -343,7 +341,7 @@
     initialStateFromUrl();
     updateGuideButtons();
     try {
-      const response = await fetch(`data/core/radar.json?v=${Date.now()}`, { cache: "no-store" });
+      const response = await fetch(`data/core/public-radar.json?v=${Date.now()}`, { cache: "no-store" });
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       payload = await response.json();
       renderSummary();
