@@ -1,10 +1,38 @@
 {
   "schema_version": 1,
-  "ready": false,
+  "ready": true,
   "source": "JPX 銘柄別信用取引週末残高",
   "source_url": "https://www.jpx.co.jp/markets/statistics-equities/margin/05.html",
   "frequency": "weekly",
-  "latest_date": null,
-  "covered_codes": 0,
-  "reports": []
+  "publication_note": "毎週第2営業日（通常火曜）16:30頃にJPX掲載",
+  "latest_date": "2026-07-31",
+  "covered_codes": 4096,
+  "reports": [
+    {
+      "date": "2026-07-03",
+      "url": "https://www.jpx.co.jp/markets/statistics-equities/margin/tvdivq0000001rnl-att/syumatsu2026070300.pdf",
+      "issues": 4085
+    },
+    {
+      "date": "2026-07-10",
+      "url": "https://www.jpx.co.jp/markets/statistics-equities/margin/tvdivq0000001rnl-att/syumatsu2026071000.pdf",
+      "issues": 4085
+    },
+    {
+      "date": "2026-07-17",
+      "url": "https://www.jpx.co.jp/markets/statistics-equities/margin/tvdivq0000001rnl-att/syumatsu2026071700.pdf",
+      "issues": 4088
+    },
+    {
+      "date": "2026-07-24",
+      "url": "https://www.jpx.co.jp/markets/statistics-equities/margin/tvdivq0000001rnl-att/syumatsu2026072400.pdf",
+      "issues": 4089
+    },
+    {
+      "date": "2026-07-31",
+      "url": "https://www.jpx.co.jp/markets/statistics-equities/margin/tvdivq0000001rnl-att/syumatsu2026073100.pdf",
+      "issues": 4090
+    }
+  ],
+  "generated_at": "2026-08-05T03:21:52+00:00"
 }
