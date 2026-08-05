@@ -25,7 +25,7 @@ on:
       - 'detail.html'
       - '.github/workflows/update-core-universe-data.yml'
   schedule:
-    # Weekdays 21:35 JST, after the ordinary daily update.
+    # 平日21:35 JST。通常の日次更新後に全通常株の暫定月足判定を更新する。
     - cron: '35 12 * * 1-5'
   workflow_dispatch:
 
@@ -74,7 +74,7 @@ jobs:
         run: pip install -r requirements.txt
       - name: Build live sample including note 5243
         run: |
-          python scripts/build_core_universe_data.py --codes 5243,5942 --output /tmp/kabutane-core-sample --refresh-base --fundamentals-limit 0
+          python -m scripts.build_core_universe_data --codes 5243,5942 --output /tmp/kabutane-core-sample --refresh-base --fundamentals-limit 0
           python - <<'PY'
           import json
           from pathlib import Path
@@ -88,7 +88,8 @@ jobs:
           shard = json.loads((root/'charts'/'52.json').read_text(encoding='utf-8'))
           if '5243' not in shard.get('records', {}):
               raise SystemExit('5243 chart payload not generated')
-          print('sample status', next(row for row in radar['records'] if str(row.get('code')) == '5243').get('provisional_status'))
+          note = next(row for row in radar['records'] if str(row.get('code')) == '5243')
+          print('5243 provisional status:', note.get('provisional_status'), 'spread:', note.get('monthly_rsi_spread'))
           PY
 
   full-footprint:
@@ -108,7 +109,7 @@ jobs:
         env:
           CORE_BASE_MAX_BYTES: '94371840'
         run: |
-          python scripts/build_core_universe_data.py --output /tmp/kabutane-core-full --refresh-base --fundamentals-limit 0
+          python -m scripts.build_core_universe_data --output /tmp/kabutane-core-full --refresh-base --fundamentals-limit 0
           python - <<'PY'
           import json
           from pathlib import Path
@@ -124,7 +125,7 @@ jobs:
               raise SystemExit(f'coverage too low: daily={daily}/{total}, monthly={monthly}/{total}')
           if base > 90 * 1024 * 1024:
               raise SystemExit(f'chart footprint too large: {base}')
-          print('core', total, 'daily', daily, 'monthly', monthly, 'base_bytes', base)
+          print('core', total, 'daily', daily, 'monthly', monthly, 'chart_base_bytes', base)
           PY
 
   update:
@@ -149,17 +150,20 @@ jobs:
         run: |
           REFRESH=""
           FUND_LIMIT=600
+          # Initial deployment refreshes the compact one-year base. After that,
+          # only the first Monday of each month rewrites the large chart shards;
+          # weekdays update the small 25-day overlay and provisional signal.
           if [ "${{ github.event_name }}" = "push" ] || [ ! -f data/core/manifest.json ]; then
             REFRESH="--refresh-base"
             FUND_LIMIT=1200
-          elif [ "$(date -u +%u)" = "1" ]; then
+          elif [ "$(date -u +%u)" = "1" ] && [ "$(date -u +%d)" -le 7 ]; then
             REFRESH="--refresh-base"
           fi
-          python scripts/build_core_universe_data.py $REFRESH --fundamentals-limit "$FUND_LIMIT"
+          python -m scripts.build_core_universe_data $REFRESH --fundamentals-limit "$FUND_LIMIT"
       - name: Rebuild premium opportunity radar
         run: |
           python scripts/build_supply_demand_screen.py
-          python scripts/build_premium_lab.py
+          python -m scripts.build_premium_lab
       - name: Validate production coverage
         run: |
           python - <<'PY'
