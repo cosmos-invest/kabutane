@@ -2,21 +2,29 @@ name: Refresh TSE stock universe
 
 on:
   workflow_dispatch:
+  pull_request:
+    paths:
+      - "update_universe.py"
+      - "tests/test_update_universe.py"
+      - ".github/workflows/update-universe.yml"
   schedule:
     # JPXの前月末一覧が公開された後に、毎月8日 09:30 JSTで更新。
     - cron: "30 0 8 * *"
   push:
     branches: ["main"]
     paths:
-      # このファイルを更新すると、全市場更新を手動起動できる。
+      - "update_universe.py"
+      - "tests/test_update_universe.py"
+      - ".github/workflows/update-universe.yml"
+      # 手動で全市場更新を起動する運用マーカー。
       - "ops/run-full-market-refresh.txt"
 
 permissions:
   contents: write
 
-# 月次・日次・銘柄マスター更新を直列化し、同じデータへの同時pushを防ぐ。
+# mainでは月次・日次・銘柄マスター更新を直列化。PR監査は本番データwriteと競合させない。
 concurrency:
-  group: market-data-writes
+  group: ${{ github.event_name == 'pull_request' && format('universe-audit-pr-{0}', github.event.pull_request.number) || 'market-data-writes' }}
   cancel-in-progress: false
 
 jobs:
@@ -41,17 +49,34 @@ jobs:
           python -m py_compile update_universe.py tests/test_update_universe.py
           python -m unittest discover -s tests -p 'test_update_universe.py' -v
 
-      - name: Download Prime, Standard and Growth list
+      - name: Download all TSE listed issues and label scope
         run: python update_universe.py
 
+      - name: Report capacity projection
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          status = json.loads(Path('data/universe-status.json').read_text(encoding='utf-8'))
+          projection = status['monthly_price_batch_projection']
+          print('core issues       :', status['total'])
+          print('all listed issues :', status['all_listed_total'])
+          print('extended issues   :', status['extended_total'])
+          print('category counts   :', status['category_counts'])
+          print('core batches      :', projection['core_batches'])
+          print('all-listed batches:', projection['all_listed_batches'])
+          print('issue growth pct  :', projection['issue_growth_pct'])
+          PY
+
       - name: Commit stock universe
+        if: github.event_name != 'pull_request'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add stocks.csv data/universe-status.json
+          git add stocks.csv stocks-all.csv data/universe-status.json data/universe-all.json
           if git diff --cached --quiet; then
             echo "No universe changes"
           else
-            git commit -m "chore: refresh TSE Prime Standard Growth universe"
+            git commit -m "chore: refresh labeled TSE all-listed universe"
             git push origin main
           fi

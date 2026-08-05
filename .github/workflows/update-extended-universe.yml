@@ -1,0 +1,95 @@
+name: Update extended listed universe
+
+on:
+  pull_request:
+    paths:
+      - 'update_universe.py'
+      - 'scripts/build_extended_monthly_scan.py'
+      - 'tests/test_update_universe.py'
+      - 'tests/test_extended_monthly_scan.py'
+      - 'extended-universe.html'
+      - 'assets/extended-universe.js'
+      - 'assets/extended-universe.css'
+      - '.github/workflows/update-extended-universe.yml'
+  workflow_run:
+    workflows: ["Refresh TSE stock universe", "Update monthly RSI data"]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ${{ github.event_name == 'pull_request' && format('extended-universe-pr-{0}', github.event.pull_request.number) || 'market-data-writes' }}
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    if: >-
+      github.event_name == 'pull_request' ||
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success')
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || 'main' }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Validate extended scan
+        run: |
+          python -m py_compile update_universe.py scripts/build_extended_monthly_scan.py tests/test_update_universe.py tests/test_extended_monthly_scan.py
+          python -m unittest tests.test_update_universe tests.test_extended_monthly_scan -v
+
+      - name: Refresh all-listed catalog for this run
+        run: python update_universe.py
+
+      - name: Fetch monthly prices only for extended issues
+        run: python scripts/build_extended_monthly_scan.py
+
+      - name: Validate coverage and footprint
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          payload = json.loads(Path('data/extended/latest.json').read_text(encoding='utf-8'))
+          requested = int(payload.get('requested') or 0)
+          covered = int(payload.get('covered') or 0)
+          coverage = float(payload.get('coverage_pct') or 0)
+          if requested < 500:
+              raise SystemExit(f'extended requested count too low: {requested}')
+          if coverage < 70:
+              raise SystemExit(f'extended monthly coverage too low: {coverage}% ({covered}/{requested})')
+          size = Path('data/extended/latest.json').stat().st_size
+          print('extended requested:', requested)
+          print('extended covered  :', covered)
+          print('coverage pct      :', coverage)
+          print('batch count       :', payload.get('batch_count'))
+          print('status counts     :', payload.get('status_counts'))
+          print('category counts   :', payload.get('category_counts'))
+          print('json bytes        :', size)
+          PY
+
+      - name: Commit extended monthly data
+        if: github.event_name != 'pull_request'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add stocks.csv stocks-all.csv data/universe-status.json data/universe-all.json data/extended/latest.json
+          if git diff --cached --quiet; then
+            echo 'No extended universe changes.'
+          else
+            git commit -m 'data: refresh extended listed monthly scan'
+            git push origin HEAD:main
+          fi

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>拡張対象銘柄 | かぶたね</title>
+  <link rel="stylesheet" href="assets/style.css?v=14">
+  <link rel="stylesheet" href="assets/extended-universe.css?v=1">
+</head>
+<body class="extended-universe-page">
+  <header class="site-header">
+    <div class="header-inner">
+      <div>
+        <a class="back-link" href="index.html">← いつもの銘柄探しへ戻る</a>
+        <p class="eyebrow">ALL LISTED / EXTENDED SCOPE</p>
+        <h1>拡張対象銘柄</h1>
+        <p class="subtitle">ETF・ETN・REIT・インフラファンド・TOKYO PRO Market・外国株など、通常の内国普通株スクリーナーには混ぜない上場銘柄を別枠で確認します。</p>
+      </div>
+      <div class="header-meta"><span class="extended-badge">通常対象外</span></div>
+    </div>
+  </header>
+
+  <main class="container extended-container">
+    <section class="panel extended-intro">
+      <div class="section-heading">
+        <div><h2>なぜ別ページ？</h2><p>ETFやREITなどは普通株と値動きの性質や評価軸が違います。月足RSIは同じ式で観察できますが、いつものPrime / Standard / Growth内国普通株ランキングとは分けて表示します。</p></div>
+        <span id="extendedUpdated" class="extended-status">読込中…</span>
+      </div>
+      <div id="extendedSummary" class="extended-summary"></div>
+      <p class="extended-note"><strong>データ節約：</strong>この拡張ページは月足だけを取得する軽量スキャンです。5年日足や個別チャートJSONを全731銘柄へ一括生成しません。詳細データは必要になった銘柄だけ段階的に増やす設計です。</p>
+    </section>
+
+    <section class="panel">
+      <div class="extended-controls">
+        <label>検索<input id="extendedSearch" type="search" placeholder="コード・銘柄名"></label>
+        <label>商品区分<select id="extendedType"><option value="all">すべて</option></select></label>
+        <label>月足RSI状態<select id="extendedStatus"><option value="all">すべて</option><option value="NEW">NEW</option><option value="CONTINUE">継続</option><option value="OUT">OUT</option><option value="INACTIVE">対象外</option></select></label>
+      </div>
+      <div class="extended-table-wrap">
+        <table class="extended-table">
+          <thead><tr><th>コード</th><th>銘柄名</th><th>区分</th><th>月足状態</th><th>終値</th><th>RSI14</th><th>5か月MA</th><th>差</th><th>月</th></tr></thead>
+          <tbody id="extendedRows"></tbody>
+        </table>
+      </div>
+      <p id="extendedEmpty" class="extended-empty" hidden>条件に一致する銘柄がありません。</p>
+    </section>
+  </main>
+
+  <footer><p>拡張対象は通常の株式スクリーナーと分離して観察します。ETF等の売買判断では商品固有の仕組み・流動性・連動対象も確認してください。</p></footer>
+  <script src="assets/extended-universe.js?v=1" defer></script>
+</body>
+</html>
