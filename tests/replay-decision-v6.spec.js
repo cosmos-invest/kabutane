@@ -92,14 +92,18 @@ test("mobile replay follows oscillator-chart-monthly judgment flow and keeps day
     const chartInstance = Chart.getChart("replayChart");
     const canvas = document.getElementById("replayChart");
     const rect = canvas.getBoundingClientRect();
-    const area = chartInstance.chartArea;
-    const x = area.right - 12;
+    const area = window.KabutaneReplayProfileGuardV6.geometry(chartInstance);
+    if (!area) throw new Error("replay volume profile gutter is unavailable");
+    const x = (area.left + area.right) / 2;
     const y = (area.top + area.bottom) / 2;
     return {
       x: rect.left + (x / chartInstance.width) * rect.width,
       y: rect.top + (y / chartInstance.height) * rect.height,
+      chartRight: chartInstance.chartArea.right,
+      profileLeft: area.left,
     };
   });
+  expect(profileTap.profileLeft).toBeGreaterThan(profileTap.chartRight);
   await page.touchscreen.tap(profileTap.x, profileTap.y);
   await page.waitForTimeout(250);
   await expect(page.locator("#entryPrice")).toHaveValue("123.45");
