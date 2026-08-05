@@ -8,7 +8,9 @@ test.use({
 async function openReplay(page, mode) {
   const pageErrors = [];
   page.on("pageerror", (error) => pageErrors.push({ message: error.message, stack: error.stack || error.message }));
-  await page.goto("http://127.0.0.1:4173/replay.html?code=3441", { waitUntil: "domcontentloaded", timeout: 30000 });
+  // Keep this fixture aligned with a chart JSON that exists in the current repository.
+  // The previous 3441 fixture was removed by a later data refresh and left the start button disabled.
+  await page.goto("http://127.0.0.1:4173/replay.html?code=5942", { waitUntil: "domcontentloaded", timeout: 30000 });
   await expect(page.locator("#replayModeSelector")).toBeVisible({ timeout: 20000 });
   await page.locator(`[data-replay-mode="${mode}"]`).click();
   const start = page.locator("#startSessionButton");
