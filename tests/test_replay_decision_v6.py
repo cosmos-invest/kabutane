@@ -45,6 +45,14 @@ class ReplayDecisionV6Tests(unittest.TestCase):
         self.assertIn('event.stopImmediatePropagation()', self.profile_guard)
         self.assertIn('showProfileBin(event, chart)', self.profile_guard)
 
+    def test_profile_uses_dedicated_right_gutter_and_rightward_bars(self):
+        self.assertIn('const left = area.right +', self.profile_guard)
+        self.assertIn('width * 0.25', self.profile_guard)
+        self.assertIn('Chart?.defaults?.layout?.padding', self.profile_guard)
+        self.assertIn('ctx.fillRect(area.left, top + 0.5, width', self.profile_guard)
+        self.assertIn('kabutaneReplaySideProfileV7', self.profile_guard)
+        self.assertNotIn('area.right - width', self.profile_guard)
+
     def test_decision_surface_order_is_oscillator_chart_monthly(self):
         expected = 'surface.append(oscillatorShell, mainShell, monthlyShell)'
         self.assertIn(expected, self.script)
@@ -75,6 +83,8 @@ class ReplayDecisionV6Tests(unittest.TestCase):
         self.assertIn('learn.html#poc', self.detail)
         self.assertIn('learn.html#value-area', self.detail)
         self.assertIn('learn.html#monthly-rsi', self.detail)
+        self.assertIn('ローソク足と重ねません', self.learn)
+        self.assertIn('基準日', self.learn)
 
 
 if __name__ == "__main__":
