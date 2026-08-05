@@ -45,6 +45,20 @@
     if (action === "finish") clickButton("#finishButton");
   }
 
+  function ensureControlStyle() {
+    if (document.getElementById("replayDecisionControlStyleV6")) return;
+    const style = document.createElement("style");
+    style.id = "replayDecisionControlStyleV6";
+    style.textContent = `
+      .replay-advanced-tools-v6{order:-1;border:1px solid #eadbe3;border-radius:11px;background:rgba(255,255,255,.74)}
+      .replay-advanced-tools-v6>summary{min-height:34px;display:flex;align-items:center;padding:6px 9px;list-style:none;cursor:pointer;color:#765f6d;font-size:.66rem;font-weight:900}
+      .replay-advanced-tools-v6>summary::-webkit-details-marker{display:none}.replay-advanced-tools-v6>summary:after{content:"＋";margin-left:auto;color:#a6688e}.replay-advanced-tools-v6[open]>summary:after{content:"−"}
+      .replay-advanced-tools-body-v6{display:grid;gap:7px;padding:0 7px 7px}.replay-advanced-tools-body-v6 #chartViewportToolbar,.replay-advanced-tools-body-v6 #practiceChartTools{margin:0!important}
+      @media(max-width:760px){.replay-advanced-tools-v6>summary{min-height:32px;font-size:.62rem}.replay-advanced-tools-body-v6{max-height:46vh;overflow:auto}.replay-advanced-tools-body-v6 #chartViewportToolbar{padding:5px!important}.replay-advanced-tools-body-v6 #practiceChartTools{padding:6px!important}}
+    `;
+    document.head.appendChild(style);
+  }
+
   function compactMonthlyChart() {
     if (window.innerWidth > 760) return;
     const box = document.getElementById("monthlyRsiChart")?.closest(".monthly-rsi-chart-box");
@@ -60,6 +74,28 @@
     canvas.dataset.decisionCompactV6 = "true";
     window.requestAnimationFrame(() => {
       try { window.Chart?.getChart?.("monthlyRsiChart")?.resize(); } catch (_) {}
+    });
+  }
+
+  function compactSecondaryTools() {
+    const main = document.querySelector(".replay-decision-main-v6");
+    if (!main) return;
+    const tools = [document.getElementById("chartViewportToolbar"), document.getElementById("practiceChartTools")].filter(Boolean);
+    if (!tools.length) return;
+    ensureControlStyle();
+    let details = document.getElementById("replayAdvancedToolsV6");
+    if (!details) {
+      details = document.createElement("details");
+      details.id = "replayAdvancedToolsV6";
+      details.className = "replay-advanced-tools-v6";
+      details.innerHTML = '<summary>詳細なチャート操作</summary><div class="replay-advanced-tools-body-v6"></div>';
+      const chartSettings = document.getElementById("replayChartSettingsV6");
+      if (chartSettings?.nextSibling) main.insertBefore(details, chartSettings.nextSibling);
+      else main.prepend(details);
+    }
+    const body = details.querySelector(".replay-advanced-tools-body-v6");
+    tools.forEach((tool) => {
+      if (tool.parentElement !== body) body.appendChild(tool);
     });
   }
 
@@ -92,6 +128,7 @@
     const practice = document.getElementById("practiceArea");
     if (!practice || practice.hidden) return;
     compactMonthlyChart();
+    compactSecondaryTools();
     const controls = ensureControls();
     if (!controls) return;
 
