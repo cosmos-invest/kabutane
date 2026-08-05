@@ -2,7 +2,7 @@ name: Deploy GitHub Pages
 
 on:
   workflow_run:
-    workflows: ["Update daily candidate prices", "Update monthly RSI data", "Audit data quality"]
+    workflows: ["Update daily candidate prices", "Update monthly RSI data", "Audit data quality", "Update JPX margin balance"]
     types: [completed]
   pull_request:
     types: [closed]
