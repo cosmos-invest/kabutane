@@ -1,0 +1,24 @@
+{
+  "schema_version": 2,
+  "generated_at": "2026-08-05T08:44:15.263719+00:00",
+  "scope": "TSE domestic common stocks: Prime, Standard, Growth",
+  "core_count": 3706,
+  "daily_coverage": 3706,
+  "monthly_coverage": 3603,
+  "fundamentals_coverage": 1778,
+  "chart_base_generated_at": "2026-08-05T08:44:15.263719+00:00",
+  "chart_period": "1y",
+  "overlay_days": 25,
+  "shard_rule": "first two characters of security code",
+  "bytes": {
+    "radar": 2921112,
+    "daily_overlay": 7185710,
+    "fundamentals": 3350944,
+    "chart_base": 53486193
+  },
+  "errors": {
+    "daily": 0,
+    "monthly": 0,
+    "fundamentals": 963
+  }
+}

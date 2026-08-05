@@ -1,12 +1,28 @@
 {
-  "generated_at": "2026-07-21T13:56:36.251302+00:00",
+  "generated_at": "2026-08-05T08:44:14.520830+00:00",
   "source_page": "https://www.jpx.co.jp/markets/statistics-equities/misc/01.html",
   "source_file": "https://www.jpx.co.jp/markets/statistics-equities/misc/tvdivq0000001vg2-att/data_j.xls",
-  "total": 3709,
+  "total": 3706,
+  "all_listed_total": 4437,
+  "extended_total": 731,
   "market_counts": {
-    "プライム": 1552,
-    "スタンダード": 1563,
-    "グロース": 594
+    "プライム": 1551,
+    "スタンダード": 1559,
+    "グロース": 596
   },
-  "scope": "TSE domestic common stocks: Prime, Standard, Growth"
+  "category_counts": {
+    "domestic_common_stock": 3706,
+    "etf": 476,
+    "foreign_stock": 5,
+    "preferred_equity": 2,
+    "reit": 63,
+    "tokyo_pro": 185
+  },
+  "scope": "core = TSE domestic common stocks: Prime, Standard, Growth; extended = all other TSE listed issue types",
+  "monthly_price_batch_projection": {
+    "batch_size": 100,
+    "core_batches": 38,
+    "all_listed_batches": 45,
+    "issue_growth_pct": 19.7
+  }
 }
