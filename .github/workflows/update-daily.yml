@@ -111,13 +111,15 @@ jobs:
           mkdir -p _site
           cp \
             index.html detail.html backtest.html replay.html replay-select.html howto.html learn.html signal-method.html \
-            ranking.html monthly-report.html monthly-strategy.html history.html shikiho-summer-2026.html today.html \
+            ranking.html monthly-report.html monthly-strategy.html history.html shikiho-summer-2026.html today.html monthly-dc.html \
             premium-supply-beta.html \
             manifest.webmanifest sw.js .nojekyll result.csv out.csv \
             _site/
           cp -R assets data history ranking monthly-report _site/
           test -f _site/replay-select.html
           test -f _site/today.html
+          test -f _site/monthly-dc.html
+          test -f _site/assets/monthly-dc.js
           test -f _site/premium-supply-beta.html
           test -f _site/assets/premium-supply-beta.js
           test -f _site/assets/core-detail-fallback.js
