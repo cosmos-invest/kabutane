@@ -182,15 +182,23 @@ def build_screen() -> dict[str, Any]:
             eligible += 1
         if result is None:
             continue
-        meta = universe.get(code, {})
+        meta = universe.get(code)
+        if meta is None:
+            meta = {
+                "name": "",
+                "market": "現行JPX一覧外（過去週次残高のみ）",
+                "sector": "",
+                "instrument_type": "legacy_or_delisted",
+                "scope": "extended",
+            }
         candidates.append(
             {
                 "code": code,
                 "name": meta.get("name") or "",
                 "market": meta.get("market") or "",
                 "sector": meta.get("sector") or "",
-                "instrument_type": meta.get("instrument_type") or "unknown",
-                "scope": meta.get("scope") or "unknown",
+                "instrument_type": meta.get("instrument_type") or "legacy_or_delisted",
+                "scope": meta.get("scope") or "extended",
                 **result,
             }
         )
