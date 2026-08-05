@@ -47,7 +47,8 @@ class SupplyDemandScreenTests(unittest.TestCase):
         script = (ROOT / "assets" / "premium-supply-beta.js").read_text(encoding="utf-8")
         self.assertIn('name="robots" content="noindex,nofollow,noarchive"', premium)
         self.assertIn("PRIVATE BETA", premium)
-        self.assertIn("data/premium/supply-demand-screen.json", script)
+        self.assertIn("data/premium/opportunity-radar.json", script)
+        self.assertIn("暫定GC", premium)
         for public_page in ("index.html", "learn.html", "howto.html"):
             text = (ROOT / public_page).read_text(encoding="utf-8")
             self.assertNotIn("premium-supply-beta.html", text, public_page)
