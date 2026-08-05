@@ -50,9 +50,9 @@
     return response.json();
   }
 
-  function renderUnavailable(message) {
+  function renderUnavailable(message, label = "データなし") {
     if (panel) panel.classList.add("margin-balance-empty");
-    if (status) status.textContent = "データなし";
+    if (status) status.textContent = label;
     if (stats) stats.innerHTML = "";
     if (summary) summary.textContent = message;
     if (canvas) canvas.hidden = true;
@@ -184,10 +184,15 @@
     if (!panel || !code || !/^[0-9A-Z]{4}$/.test(code)) return;
     try {
       if (status) status.textContent = "JPX週次データを読込中…";
+      const index = await fetchJson("data/margin/latest.json");
+      if (index?.ready === false || !index?.latest_date) {
+        renderUnavailable("信用残高データは現在準備中です。JPX週次データの初回更新が完了すると自動で表示されます。", "準備中");
+        return;
+      }
       const shard = await fetchJson(`data/margin/${encodeURIComponent(code.slice(0, 2))}.json`);
       const records = Array.isArray(shard?.records?.[code]) ? shard.records[code].slice().sort((a, b) => String(a.date).localeCompare(String(b.date))) : [];
       if (!records.length) {
-        renderUnavailable("この銘柄のJPX週次信用残高はまだ取得できていません。信用取引の対象外・新規掲載直後・データ更新前などの可能性があります。");
+        renderUnavailable("この銘柄のJPX週次信用残高は取得できていません。信用取引の対象外・新規掲載直後などの可能性があります。");
         return;
       }
       panel.classList.remove("margin-balance-empty");
@@ -196,7 +201,7 @@
       renderChart(records);
     } catch (error) {
       if (error.status === 404) {
-        renderUnavailable("信用残高データは現在準備中です。JPX週次データの更新後に自動で表示されます。");
+        renderUnavailable("この銘柄のJPX週次信用残高は取得できていません。対象外または初回データ更新前の可能性があります。");
       } else {
         renderUnavailable(`信用残高を読み込めませんでした（${String(error.message || error)}）。`);
       }
