@@ -214,7 +214,7 @@ def build_screen() -> dict[str, Any]:
         "eligible_codes": eligible,
         "candidate_count": len(candidates),
         "notice": "β版。信用残高だけを使った需給改善候補で、株価・出来高・価格帯別出来高を合わせた最終判断ではありません。",
-        "candidates": candidates[:250],
+        "candidates": candidates,
     }
 
 
