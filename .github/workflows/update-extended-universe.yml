@@ -11,9 +11,10 @@ on:
       - 'assets/extended-universe.js'
       - 'assets/extended-universe.css'
       - '.github/workflows/update-extended-universe.yml'
-  workflow_run:
-    workflows: ["Refresh TSE stock universe", "Update monthly RSI data"]
-    types: [completed]
+  # ETF / ETN / REIT / TOKYO PRO etc. are no longer part of Kabutane's
+  # automatic stock-screening target. Keep this as an explicit maintenance
+  # tool only; the lightweight JPX all-listed catalog is still used to label
+  # core vs non-core instruments correctly.
   workflow_dispatch:
 
 permissions:
@@ -25,10 +26,7 @@ concurrency:
 
 jobs:
   scan:
-    if: >-
-      github.event_name == 'pull_request' ||
-      github.event_name == 'workflow_dispatch' ||
-      (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success')
+    if: github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     timeout-minutes: 90
     steps:

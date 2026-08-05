@@ -92,7 +92,7 @@
     </section>
 
     <section class="panel">
-      <div class="section-heading"><div><h2>過去のゴールデンクロス実績</h2><p>確定したGC月の終値から、確定したOUT月または最新日足の現在値までを計算した参考実績です。</p></div></div>
+      <div class="section-heading"><div><h2>過去のゴールデンクロス実績</h2><p>確定したGC月の終値から、確定したOUT月または最新日足の現在値までを計算した参考実績です。全銘柄モードの軽量データでは、この実績欄は未生成の場合があります。</p></div></div>
       <div class="table-wrap">
         <table id="episodeTable">
           <thead><tr><th>GC月</th><th class="num">GC価格</th><th>終了月</th><th class="num">終了/現在価格</th><th class="num">騰落率</th><th class="num">最大上昇</th><th class="num">最大下落</th><th class="num">期間</th><th>状態</th></tr></thead>
@@ -102,7 +102,7 @@
     </section>
 
     <section class="panel">
-      <div class="section-heading"><div><h2>財務・バリュー情報</h2><p>Yahoo Financeから過去に取得できた財務プロフィールのキャッシュを表示します。取得できない項目は「—」で、0を意味しません。</p></div></div>
+      <div class="section-heading"><div><h2>財務・バリュー情報</h2><p>Yahoo Financeから取得できた財務プロフィールのキャッシュを表示します。通常シグナル一覧外の銘柄も全対象銘柄用キャッシュから確認できます。取得できない項目は「—」で、0を意味しません。</p></div></div>
       <dl class="fundamentals-grid" id="fundamentalsGrid"></dl>
     </section>
   </main>
@@ -134,6 +134,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
   <script src="assets/provisional-monthly-rsi-core.js?v=13" defer></script>
   <script src="assets/detail-chart-viewport-core.js?v=13" defer></script>
+  <script src="assets/core-detail-fallback.js?v=1" defer></script>
   <script src="assets/detail.js?v=13" defer></script>
   <script src="assets/daily-overlay.js?v=13" defer></script>
   <script src="assets/detail-chart-viewport.js?v=14" defer></script>

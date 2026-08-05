@@ -1,0 +1,208 @@
+name: Update core universe data
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/build_core_universe_data.py'
+      - 'scripts/build_premium_lab.py'
+      - 'assets/core-detail-fallback.js'
+      - 'assets/premium-supply-beta.js'
+      - 'assets/premium-supply-beta.css'
+      - 'premium-supply-beta.html'
+      - 'detail.html'
+      - 'tests/test_core_universe_data.py'
+      - 'tests/test_core_detail_fallback.js'
+      - 'tests/test_premium_lab.py'
+      - '.github/workflows/update-core-universe-data.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/build_core_universe_data.py'
+      - 'scripts/build_premium_lab.py'
+      - 'assets/core-detail-fallback.js'
+      - 'assets/premium-supply-beta.js'
+      - 'assets/premium-supply-beta.css'
+      - 'premium-supply-beta.html'
+      - 'detail.html'
+      - '.github/workflows/update-core-universe-data.yml'
+  schedule:
+    # 平日21:35 JST。通常の日次更新後に全通常株の暫定月足判定を更新する。
+    - cron: '35 12 * * 1-5'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Unit and syntax checks
+        run: |
+          python -m py_compile scripts/build_core_universe_data.py scripts/build_premium_lab.py tests/test_core_universe_data.py tests/test_premium_lab.py
+          python -m unittest tests.test_core_universe_data tests.test_premium_lab -v
+          node --check assets/core-detail-fallback.js
+          node --check assets/premium-supply-beta.js
+          node tests/test_core_detail_fallback.js
+          grep -q 'core-detail-fallback.js' detail.html
+          grep -q '暫定GC' premium-supply-beta.html
+          ! grep -q 'extended' premium-supply-beta.html
+
+  live-sample:
+    needs: validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Build live sample including note 5243
+        run: |
+          python -m scripts.build_core_universe_data --codes 5243,5942 --output /tmp/kabutane-core-sample --refresh-base --fundamentals-limit 0
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root = Path('/tmp/kabutane-core-sample')
+          radar = json.loads((root/'radar.json').read_text(encoding='utf-8'))
+          codes = {str(row.get('code')) for row in radar.get('records') or []}
+          if '5243' not in codes:
+              raise SystemExit('5243 note is missing from the core live sample')
+          if int(radar.get('daily_coverage') or 0) < 1 or int(radar.get('monthly_coverage') or 0) < 1:
+              raise SystemExit(f"sample coverage too low: {radar.get('daily_coverage')} / {radar.get('monthly_coverage')}")
+          shard = json.loads((root/'charts'/'52.json').read_text(encoding='utf-8'))
+          if '5243' not in shard.get('records', {}):
+              raise SystemExit('5243 chart payload not generated')
+          note = next(row for row in radar['records'] if str(row.get('code')) == '5243')
+          print('5243 provisional status:', note.get('provisional_status'), 'spread:', note.get('monthly_rsi_spread'))
+          PY
+
+  full-footprint:
+    needs: validate
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Measure all-core price coverage and static footprint
+        env:
+          CORE_BASE_MAX_BYTES: '94371840'
+        run: |
+          python -m scripts.build_core_universe_data --output /tmp/kabutane-core-full --refresh-base --fundamentals-limit 0
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root = Path('/tmp/kabutane-core-full')
+          manifest = json.loads((root/'manifest.json').read_text(encoding='utf-8'))
+          total = int(manifest.get('core_count') or 0)
+          daily = int(manifest.get('daily_coverage') or 0)
+          monthly = int(manifest.get('monthly_coverage') or 0)
+          base = int((manifest.get('bytes') or {}).get('chart_base') or 0)
+          if total < 3500:
+              raise SystemExit(f'core count too low: {total}')
+          if daily / total < .90 or monthly / total < .90:
+              raise SystemExit(f'coverage too low: daily={daily}/{total}, monthly={monthly}/{total}')
+          if base > 90 * 1024 * 1024:
+              raise SystemExit(f'chart footprint too large: {base}')
+          print('core', total, 'daily', daily, 'monthly', monthly, 'chart_base_bytes', base)
+          PY
+
+  update:
+    needs: [validate, live-sample]
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    concurrency:
+      group: market-data-writes
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Refresh core catalog
+        run: python update_universe.py
+      - name: Build all-core radar, chart data and finance cache
+        shell: bash
+        run: |
+          REFRESH=""
+          FUND_LIMIT=600
+          CURRENT_UNIVERSE_HASH="$(sha256sum stocks.csv | awk '{print $1}')"
+          STORED_UNIVERSE_HASH="$(cat data/core/universe.sha256 2>/dev/null || true)"
+          # Initial deployment, a changed core universe, or the first Monday of
+          # a month refreshes the one-year base. Ordinary weekdays update only
+          # the 25-day overlay and provisional signal, limiting repo growth.
+          if [ "${{ github.event_name }}" = "push" ] || [ ! -f data/core/manifest.json ]; then
+            REFRESH="--refresh-base"
+            FUND_LIMIT=1200
+          elif [ "$CURRENT_UNIVERSE_HASH" != "$STORED_UNIVERSE_HASH" ]; then
+            echo "Core universe changed; refreshing chart base."
+            REFRESH="--refresh-base"
+          elif [ "$(date -u +%u)" = "1" ] && [ "$(date -u +%d)" -le 7 ]; then
+            REFRESH="--refresh-base"
+          fi
+          python -m scripts.build_core_universe_data $REFRESH --fundamentals-limit "$FUND_LIMIT"
+          printf '%s\n' "$CURRENT_UNIVERSE_HASH" > data/core/universe.sha256
+      - name: Rebuild premium opportunity radar
+        run: |
+          python scripts/build_supply_demand_screen.py
+          python -m scripts.build_premium_lab
+      - name: Validate production coverage
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          manifest = json.loads(Path('data/core/manifest.json').read_text(encoding='utf-8'))
+          radar = json.loads(Path('data/core/radar.json').read_text(encoding='utf-8'))
+          premium = json.loads(Path('data/premium/opportunity-radar.json').read_text(encoding='utf-8'))
+          total = int(manifest.get('core_count') or 0)
+          if total < 3500:
+              raise SystemExit(f'core count too low: {total}')
+          if len(radar.get('records') or []) != total:
+              raise SystemExit('core radar record count mismatch')
+          if len(premium.get('records') or []) != total:
+              raise SystemExit('premium radar must contain the full core universe')
+          if int(manifest.get('daily_coverage') or 0) / total < .90:
+              raise SystemExit('daily coverage below 90%')
+          if not Path('data/core/universe.sha256').read_text(encoding='utf-8').strip():
+              raise SystemExit('core universe fingerprint is missing')
+          print(json.dumps(manifest, ensure_ascii=False, indent=2))
+          print('premium status', premium.get('status_counts'))
+          PY
+      - name: Commit refreshed all-core data
+        run: |
+          if git diff --quiet -- stocks.csv stocks-all.csv data/universe-all.json data/universe-status.json data/core data/premium data/fundamentals_cache.json && [ -z "$(git ls-files --others --exclude-standard data/core data/premium)" ]; then
+            echo "No core-universe changes"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add stocks.csv stocks-all.csv data/universe-all.json data/universe-status.json data/core data/premium/opportunity-radar.json data/premium/supply-demand-screen.json data/fundamentals_cache.json
+          git commit -m "data: refresh all-core charts, provisional signals and premium radar"
+          git pull --rebase origin main
+          git push origin main
