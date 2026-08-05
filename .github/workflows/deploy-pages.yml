@@ -19,6 +19,7 @@ on:
       - "out.csv"
       - "validate_data_contract.py"
       - "scripts/public_core_radar.py"
+      - "scripts/public_detail_boundary.py"
       - ".nojekyll"
       - ".github/workflows/deploy-pages.yml"
   workflow_dispatch:
@@ -66,6 +67,9 @@ jobs:
             _site/
           cp -R assets data history ranking monthly-report _site/
 
+      - name: Sanitize public detail data before upload
+        run: python -m scripts.public_detail_boundary --site-root _site
+
       - name: Verify public pages and PWA files
         run: |
           test -f _site/manifest.webmanifest
@@ -97,6 +101,8 @@ jobs:
           test -f _site/assets/replay-stock-select.js
           test -f _site/assets/replay-picker.css
           test -f _site/data/core/public-radar.json
+          test -d _site/data/core/public-daily
+          test ! -f _site/data/core/radar.json
           test -f _site/data/curated/shikiho-2026-summer.json
           test -f _site/data/curated/shikiho-2026-summer-performance.json
           test -f _site/assets/icons/kabutane-wordmark-v3.svg
@@ -125,6 +131,26 @@ jobs:
           grep -q '拡張対象銘柄' _site/extended-universe.html
           grep -q 'noindex,nofollow,noarchive' _site/premium-supply-beta.html
           ! grep -R -q 'premium-supply-beta.html' _site/index.html _site/learn.html _site/howto.html
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          for root, shard in [
+              (Path('_site/data/charts'), False),
+              (Path('_site/data/daily'), False),
+              (Path('_site/data/core/daily'), True),
+          ]:
+              if not root.exists():
+                  continue
+              for path in root.glob('*.json'):
+                  payload = json.loads(path.read_text(encoding='utf-8'))
+                  records = payload.get('records', {}).values() if shard else [payload]
+                  for record in records:
+                      if not isinstance(record, dict):
+                          continue
+                      signal = record.get('provisional_signal')
+                      if isinstance(signal, dict) and str(signal.get('status') or '').upper() == 'GC':
+                          raise SystemExit(f'public detail leaked provisional GC: {path}')
+          PY
           node --check _site/assets/all-stocks.js
 
       - name: Configure Pages
