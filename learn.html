@@ -70,7 +70,7 @@
       <div class="learn-simple"><article><span>緑 ● GC</span><strong>中期の勢いが上向く候補</strong><p>確定GCは月末まで完成した月足で判断します。</p></article><article><span>赤 ● DC</span><strong>中期の勢いが弱まる候補</strong><p>赤丸だけで売るのではなく、価格のトレンド崩れと合わせて確認します。</p></article><article><span>重要</span><strong>確定と進行中月を分ける</strong><p>正式判定には月末確定値を使い、進行中月の変化は別の観察情報として扱います。</p></article></div>
       <p><a class="button secondary" href="all-stocks.html">全銘柄一覧を見る</a> <a class="button secondary" href="signal-method.html">月足RSIの計算方法を詳しく見る</a></p>
       <p class="learn-callout"><strong>全銘柄モード：</strong>現在はプライム・スタンダード・グロースの内国普通株を全件走査します。公開一覧ではGC接近・継続・暫定DC・OUTなどを必要に応じて絞れます。ETF・ETN・REITなどは通常株の一覧には混ぜません。</p>
-      <p class="learn-note"><strong>プレミアム境界：</strong>進行中月で新たに上抜けた銘柄を特定する先回り判定は、公開の全銘柄一覧・公開の個別詳細では表示しません。これはプレミアム観察機能として分離します。月末確定後の正式なNEW / CONTINUE / OUTは通常どおり公開側へ反映します。</p>
+      <p class="learn-note"><strong>プレミアム境界：</strong>公開の全銘柄一覧では、進行中月で新たに上抜けた「暫定GC銘柄」を一覧・フィルター・ランキングで発見できる形にはしません。一方、銘柄コードや銘柄名を指定して個別詳細を開いた場合は、その銘柄の暫定GC / 暫定DCと進行中月RSIを確認できます。プレミアムの価値は、全対象銘柄から暫定GCを発見・順位付けし、需給や出来高と組み合わせて観察候補を提示することです。</p>
     </section>
 
     <section class="learn-section term" id="decision-flow">
@@ -81,7 +81,7 @@
 
     <section class="panel note-panel"><h2>そのほか、かぶたねで使う考え方</h2>
       <details open><summary><strong>全銘柄から何を選べばいい？</strong></summary><p><a href="all-stocks.html">全銘柄一覧</a>では、最初に3人の案内フィルターを使えます。<strong>コスモス🌸</strong>は長期の上昇トレンド、<strong>ルーモ✨</strong>は出来高を伴うチャートの動き出し、<strong>エール💜</strong>は自己資本・ROE・FCF・売上成長など会社の体力を重視します。慣れた人は「玄人向け設定」で市場・トレンド・出来高・高値距離・財務条件を自由に組み合わせられます。</p></details>
-      <details><summary><strong>確定シグナルと暫定シグナルの違いは？</strong></summary><p><strong>確定NEW・確定継続・確定OUT</strong>は、月末まで完成した月足だけで判定します。ランキング、月初レポート、GC後騰落率には、この確定値だけを使います。</p><p>進行中月の暫定シグナルは月末までに変わるため、公開画面では確定情報と分けて扱います。暫定DCなど公開する観察情報も、正式なOUTではありません。進行中月で新たに上抜けた銘柄を特定する先回り判定はプレミアム機能へ分離します。</p></details>
+      <details><summary><strong>確定シグナルと暫定シグナルの違いは？</strong></summary><p><strong>確定NEW・確定継続・確定OUT</strong>は、月末まで完成した月足だけで判定します。ランキング、月初レポート、GC後騰落率には、この確定値だけを使います。</p><p>進行中月の暫定シグナルは月末までに変わるため、確定情報と分けて扱います。個別銘柄ページでは暫定GC / 暫定DCを現在の観察情報として確認できますが、正式なNEW / OUTではありません。暫定GCを全銘柄から探し出す一覧・優先順位・需給との複合判定はプレミアム機能へ分離します。</p></details>
       <details><summary><strong>上昇トレンドの簡易判定</strong></summary><p>株価と複数の移動平均線の位置・向きから、長期的な流れが上向きかを確認します。SEPAの考え方を参考にしていますが、すべての条件を完全再現するものではありません。</p></details>
       <details><summary><strong>値動きの収束（VCP）</strong></summary><p>値幅が少しずつ小さくなる状態を見ます。力をためている可能性がありますが、上昇を保証する形ではありません。</p></details>
       <details><summary><strong>勢いの点火（モメンタム・MVP）</strong></summary><p>株価、出来高、相対的な強さが同時に動いているかを確認します。すでに上昇した後に点灯する場合もあるため、損切りまでの距離と一緒に見ます。</p></details>
@@ -95,7 +95,7 @@
     </section>
 
     <section class="panel note-panel"><h2>FAQ</h2>
-      <details><summary><strong>なぜ進行中月の上抜け候補は公開一覧にないの？</strong></summary><p>月末確定前に新たな上抜けを検出する情報は、全銘柄を毎日走査して先回り候補を探すプレミアム機能として分離しています。公開一覧では、その銘柄を特定できる専用フィルター・サマリー・進行中月のクロス値を表示しません。月末に確定したあとは正式シグナルとして通常側へ反映します。</p></details>
+      <details><summary><strong>なぜ進行中月の上抜け候補は公開一覧にないの？</strong></summary><p>月末確定前に新たな上抜けを検出する情報は、全銘柄を毎日走査して先回り候補を探すプレミアム機能として分離しています。公開一覧では、その銘柄を特定できる専用フィルター・サマリー・進行中月のクロス値を表示しません。ただし、すでに気になる銘柄があり個別詳細を開いた場合は、その銘柄の暫定GC / 暫定DCを確認できます。月末に確定したあとは正式シグナルとして通常側へ反映します。</p></details>
       <details><summary><strong>TradingViewでDCなのに、かぶたねが継続なのはなぜ？</strong></summary><p>TradingViewが進行中月を含めている場合、月途中で先にDCして見えることがあります。かぶたねの確定ステータスは前月末までの完成済み月足なので、その月末までは確定状態は変わりません。公開の全銘柄一覧では暫定DCで絞ることもできます。</p></details>
       <details><summary><strong>🌸コスモス注目は買い推奨ですか？</strong></summary><p>いいえ。勢いと長期トレンドの両方を詳しく確認したい「調査候補」です。会社の公式情報、チャート、許容できる損失を確認して判断してください。</p></details>
       <details><summary><strong>決算や重要情報はどこで確認しますか？</strong></summary><p>かぶたねでは自動取得しません。実際に投資する前に、対象企業の公式IRページや証券会社の情報で確認してください。</p></details>
