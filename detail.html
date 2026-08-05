@@ -37,7 +37,7 @@
 
     <section class="panel chart-panel" id="volumeProfilePanel">
       <div class="section-heading">
-        <div><h2>日足チャート</h2><p>最新のローソク足・出来高・SMA25・75・200に、価格軸と同期した推定価格帯別出来高を重ねて確認できます。PCでは右側、スマホでは右端へ半透明表示します。</p></div>
+        <div><h2>日足チャート</h2><p>最新のローソク足・出来高・SMA25・75・200に、価格軸と同期した推定価格帯別出来高を重ねて確認できます。PCでは右側、スマホでは右端へ半透明表示します。<a href="learn.html#volume-profile">価格帯別出来高をやさしく解説</a></p></div>
         <div class="chart-mode-switch" role="group" aria-label="チャート表示">
           <button id="candleMode" class="button chart-mode active" type="button">ローソク足</button>
           <button id="heikinMode" class="button secondary chart-mode" type="button">平均足</button>
@@ -57,18 +57,18 @@
       </div>
       <div class="volume-profile-stats" id="volumeProfileStats"></div>
       <div class="volume-profile-legend" aria-label="価格帯別出来高の凡例">
-        <span><i class="volume-profile-dot poc"></i>推定POC</span>
-        <span><i class="volume-profile-dot value-area"></i>70%バリューエリア</span>
+        <span><i class="volume-profile-dot poc"></i><a href="learn.html#poc">推定POC</a></span>
+        <span><i class="volume-profile-dot value-area"></i><a href="learn.html#value-area">70%バリューエリア</a></span>
         <span><i class="volume-profile-dot other"></i>その他</span>
       </div>
       <div class="chart-box price-chart-box"><canvas id="priceChart"></canvas></div>
       <p class="volume-profile-bin-detail" id="volumeProfileBinDetail" aria-live="polite">棒に触れると、その価格帯の推定出来高を確認できます。</p>
       <p class="volume-profile-summary" id="volumeProfileSummary"></p>
-      <p class="volume-profile-disclosure"><strong>価格帯別出来高は推定値です。</strong> 各日の日足出来高を、その日の安値〜高値と各価格帯が実際に重なる値幅の割合で配分しています。実際の約定価格別出来高とは一致しません。単独で売買判断せず、トレンド・直近出来高・損切り位置と合わせて確認してください。</p>
+      <p class="volume-profile-disclosure"><strong>価格帯別出来高は推定値です。</strong> 各日の日足出来高を、その日の安値〜高値と各価格帯が実際に重なる値幅の割合で配分しています。実際の約定価格別出来高とは一致しません。単独で売買判断せず、トレンド・直近出来高・損切り位置と合わせて確認してください。<a href="learn.html#decision-flow">初心者向けの見る順番</a></p>
     </section>
 
     <section class="panel chart-panel">
-      <div class="section-heading"><div><h2>月足RSIを日足軸で表示</h2><p>日足チャートと同じ期間へ連動します。実線は月末確定値、点線は進行中月の暫定値です。縦の緑線は確定GC、縦の赤線は確定DCを翌月最初の取引日に表示します。</p></div></div>
+      <div class="section-heading"><div><h2>月足RSIを日足軸で表示</h2><p>日足チャートと同じ期間へ連動します。実線は月末確定値、点線は進行中月の暫定値です。縦の緑線は確定GC、縦の赤線は確定DCを翌月最初の取引日に表示します。<a href="learn.html#monthly-rsi">GC・DCをやさしく解説</a></p></div></div>
       <div class="chart-box rsi-chart-box"><canvas id="rsiChart"></canvas></div>
       <p class="rsi-explanation" id="rsiExplanation"></p>
     </section>
