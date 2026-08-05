@@ -67,9 +67,10 @@
     <section class="learn-section term" id="monthly-rsi">
       <h2>月足RSIのGC・DCは何を見るの？</h2>
       <p>かぶたねではTradingViewと同じWilder方式の月足RSI14と、そのRSI14の5か月単純移動平均を使います。RSI14が5か月移動平均を下から上へ抜くと<strong>GC</strong>、上から下へ抜くと<strong>DC</strong>です。</p>
-      <div class="learn-simple"><article><span>緑 ● GC</span><strong>中期の勢いが上向く候補</strong><p>売買練習では価格チャートの下端にも緑丸を簡易表示します。</p></article><article><span>赤 ● DC</span><strong>中期の勢いが弱まる候補</strong><p>赤丸だけで売るのではなく、価格のトレンド崩れと合わせて確認します。</p></article><article><span>重要</span><strong>確定と暫定を分ける</strong><p>正式判定には月末確定値を使い、進行中月は「暫定GC / 暫定DC」として別に観察します。</p></article></div>
-      <p><a class="button secondary" href="all-stocks.html">全銘柄一覧を開く</a> <a class="button secondary" href="all-stocks.html?signal=DC">暫定DCで絞る</a> <a class="button secondary" href="signal-method.html">月足RSIの計算方法を詳しく見る</a></p>
-      <p class="learn-callout"><strong>全銘柄モード：</strong>プライム・スタンダード・グロースの内国普通株を、GCの有無に関係なく<strong>まず全件一覧に表示</strong>します。そこから暫定GC・GC接近・継続・暫定DC・OUT、市場、日足トレンドなどで必要なときだけ絞り込みます。ETF・ETN・REITなどは通常株の一覧には混ぜません。</p>
+      <div class="learn-simple"><article><span>緑 ● GC</span><strong>中期の勢いが上向く候補</strong><p>確定GCは月末まで完成した月足で判断します。</p></article><article><span>赤 ● DC</span><strong>中期の勢いが弱まる候補</strong><p>赤丸だけで売るのではなく、価格のトレンド崩れと合わせて確認します。</p></article><article><span>重要</span><strong>確定と進行中月を分ける</strong><p>正式判定には月末確定値を使い、進行中月の変化は別の観察情報として扱います。</p></article></div>
+      <p><a class="button secondary" href="all-stocks.html">全銘柄一覧を見る</a> <a class="button secondary" href="signal-method.html">月足RSIの計算方法を詳しく見る</a></p>
+      <p class="learn-callout"><strong>全銘柄モード：</strong>現在はプライム・スタンダード・グロースの内国普通株を全件走査します。公開一覧ではGC接近・継続・暫定DC・OUTなどを必要に応じて絞れます。ETF・ETN・REITなどは通常株の一覧には混ぜません。</p>
+      <p class="learn-note"><strong>プレミアム境界：</strong>進行中月で新たに上抜けた銘柄を特定する先回り判定は、公開の全銘柄一覧・公開の個別詳細では表示しません。これはプレミアム観察機能として分離します。月末確定後の正式なNEW / CONTINUE / OUTは通常どおり公開側へ反映します。</p>
     </section>
 
     <section class="learn-section term" id="decision-flow">
@@ -79,7 +80,8 @@
     </section>
 
     <section class="panel note-panel"><h2>そのほか、かぶたねで使う考え方</h2>
-      <details open><summary><strong>確定シグナルと暫定シグナルの違いは？</strong></summary><p><strong>確定NEW・確定継続・確定OUT</strong>は、月末まで完成した月足だけで判定します。ランキング、月初レポート、GC後騰落率には、この確定値だけを使います。</p><p><strong>暫定GC・暫定DC</strong>は、進行中月の最新日足までで計算した観察情報です。月末までに株価が戻ると消える場合があり、正式なNEW・OUTではありません。<a href="all-stocks.html">全銘柄一覧</a>の月足状態フィルターで必要な状態だけ確認できます。</p></details>
+      <details open><summary><strong>全銘柄から何を選べばいい？</strong></summary><p><a href="all-stocks.html">全銘柄一覧</a>では、最初に3人の案内フィルターを使えます。<strong>コスモス🌸</strong>は長期の上昇トレンド、<strong>ルーモ✨</strong>は出来高を伴うチャートの動き出し、<strong>エール💜</strong>は自己資本・ROE・FCF・売上成長など会社の体力を重視します。慣れた人は「玄人向け設定」で市場・トレンド・出来高・高値距離・財務条件を自由に組み合わせられます。</p></details>
+      <details><summary><strong>確定シグナルと進行中月の違いは？</strong></summary><p><strong>確定NEW・確定継続・確定OUT</strong>は、月末まで完成した月足だけで判定します。ランキング、月初レポート、GC後騰落率には、この確定値だけを使います。</p><p>進行中月の状態は月末までに変わるため、公開画面では確定情報と分けて扱います。暫定DCなど公開する観察情報も、正式なOUTではありません。</p></details>
       <details><summary><strong>上昇トレンドの簡易判定</strong></summary><p>株価と複数の移動平均線の位置・向きから、長期的な流れが上向きかを確認します。SEPAの考え方を参考にしていますが、すべての条件を完全再現するものではありません。</p></details>
       <details><summary><strong>値動きの収束（VCP）</strong></summary><p>値幅が少しずつ小さくなる状態を見ます。力をためている可能性がありますが、上昇を保証する形ではありません。</p></details>
       <details><summary><strong>勢いの点火（モメンタム・MVP）</strong></summary><p>株価、出来高、相対的な強さが同時に動いているかを確認します。すでに上昇した後に点灯する場合もあるため、損切りまでの距離と一緒に見ます。</p></details>
@@ -87,19 +89,20 @@
 
     <section class="panel note-panel"><h2>データと更新</h2>
       <details open><summary><strong>何を取得していますか？</strong></summary><p>Yahoo Finance経由で、株価の始値・高値・安値・終値、出来高、配当、株式分割・併合を取得します。信用残高はJPX「銘柄別信用取引週末残高」から週次で取得し、買い残・売り残・前週比・信用倍率を個別銘柄ページへ表示します。有料API、TDnet、決算予定の自動取得には接続していません。</p></details>
-      <details><summary><strong>いつ更新されますか？</strong></summary><p>確定NEW・CONTINUE・OUTは月末確定後の月次更新で変わります。プライム・スタンダード・グロースの内国普通株全体について、日足と進行中月の暫定シグナルを平日夜に再計算します。信用残高はJPXの週次公表後に自動確認し、新しい基準日のデータがあるときだけ更新します。市場の休場日やGitHub Actionsの混雑時は遅れる場合があります。</p></details>
+      <details><summary><strong>いつ更新されますか？</strong></summary><p>確定NEW・CONTINUE・OUTは月末確定後の月次更新で変わります。プライム・スタンダード・グロースの内国普通株全体について、日足と進行中月の観察データを平日夜に再計算します。信用残高はJPXの週次公表後に自動確認し、新しい基準日のデータがあるときだけ更新します。市場の休場日やGitHub Actionsの混雑時は遅れる場合があります。</p></details>
       <details><summary><strong>対象市場は？</strong></summary><p>JPXの上場銘柄一覧を使い、プライム・スタンダード・グロースの国内普通株式を対象にします。ETF・ETN・REIT・TOKYO PRO・外国株などは通常株のスクリーニングへ混ぜません。新規上場などで月足期間が不足する銘柄は、計算可能になるまで判定待ちになります。</p></details>
       <details><summary><strong>財務情報が「—」になるのはなぜ？</strong></summary><p>大量アクセスを避けるため、財務プロフィールは全対象銘柄を一度に取得せず、Yahoo Financeのキャッシュを使いながら未取得・古い銘柄を段階的に補完します。未取得や取得不能は0ではなく「情報なし」です。</p></details>
     </section>
 
     <section class="panel note-panel"><h2>FAQ</h2>
-      <details><summary><strong>TradingViewでDCなのに、かぶたねが継続なのはなぜ？</strong></summary><p>TradingViewが進行中月を含めている場合、月途中で先にDCして見えることがあります。かぶたねの確定ステータスは前月末までの完成済み月足なので、その月末までは継続のままです。詳細ページの「進行中月」カード、または<a href="all-stocks.html?signal=DC">全銘柄一覧を暫定DCで絞り込み</a>、月途中の状態を確認できます。</p></details>
+      <details><summary><strong>なぜ進行中月の上抜け候補は公開一覧にないの？</strong></summary><p>月末確定前に新たな上抜けを検出する情報は、全銘柄を毎日走査して先回り候補を探すプレミアム機能として分離しています。公開一覧では、その銘柄を特定できる専用フィルター・サマリー・進行中月のクロス値を表示しません。月末に確定したあとは正式シグナルとして通常側へ反映します。</p></details>
+      <details><summary><strong>TradingViewでDCなのに、かぶたねが継続なのはなぜ？</strong></summary><p>TradingViewが進行中月を含めている場合、月途中で先にDCして見えることがあります。かぶたねの確定ステータスは前月末までの完成済み月足なので、その月末までは確定状態は変わりません。公開の全銘柄一覧では暫定DCで絞ることもできます。</p></details>
       <details><summary><strong>🌸コスモス注目は買い推奨ですか？</strong></summary><p>いいえ。勢いと長期トレンドの両方を詳しく確認したい「調査候補」です。会社の公式情報、チャート、許容できる損失を確認して判断してください。</p></details>
       <details><summary><strong>決算や重要情報はどこで確認しますか？</strong></summary><p>かぶたねでは自動取得しません。実際に投資する前に、対象企業の公式IRページや証券会社の情報で確認してください。</p></details>
       <details><summary><strong>データが最新日までない場合は？</strong></summary><p>Yahoo Finance側の遅延、休場日、通信エラーが考えられます。画面の更新日時と最新株価日を確認してください。</p></details>
     </section>
 
-    <section class="panel note-panel disclaimer"><h2>大切な注意</h2><p>本サイトは情報提供・学習・練習を目的とし、特定銘柄の売買を推奨しません。暫定シグナルを含め、データの欠損、遅延、訂正、取得元との計算差異があり得ます。価格帯別出来高は日足OHLCVからの推定で、実際の約定価格別出来高とは異なります。投資判断はご自身の責任で行ってください。</p></section>
+    <section class="panel note-panel disclaimer"><h2>大切な注意</h2><p>本サイトは情報提供・学習・練習を目的とし、特定銘柄の売買を推奨しません。進行中月の観察情報を含め、データの欠損、遅延、訂正、取得元との計算差異があり得ます。価格帯別出来高は日足OHLCVからの推定で、実際の約定価格別出来高とは異なります。投資判断はご自身の責任で行ってください。</p></section>
   </main>
   <footer><p>かぶたね 🌱 / コスモスと探す、未来の1株</p></footer>
   <script src="assets/characters.js" defer></script>
