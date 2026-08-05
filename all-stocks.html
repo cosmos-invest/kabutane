@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="かぶたねが対象にするプライム・スタンダード・グロースの内国普通株を全銘柄一覧で確認し、月足RSI状態や市場、日足トレンドで絞り込めます。">
+  <meta name="theme-color" content="#f26fa6">
+  <title>全銘柄一覧 | かぶたね</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/pastel.css">
+  <link rel="stylesheet" href="assets/kabutane.css">
+  <link rel="stylesheet" href="assets/kabutane-links.css">
+  <link rel="stylesheet" href="assets/all-stocks.css?v=1">
+</head>
+<body data-page="all-stocks" class="pastel-theme all-stocks-page">
+  <header class="site-header">
+    <div class="header-inner">
+      <div>
+        <a class="back-link" href="index.html">← 銘柄を探すへ</a>
+        <p class="eyebrow">ALL CORE STOCKS</p>
+        <h1>全銘柄一覧 ✨</h1>
+        <p class="subtitle">プライム・スタンダード・グロースの内国普通株を、月足の状態に関係なく全部ここから探せます。</p>
+      </div>
+      <div class="header-meta"><span id="allStocksDataDate" class="badge neutral">データ読込中…</span></div>
+    </div>
+  </header>
+
+  <main class="container all-stocks-container">
+    <section class="all-stocks-hero" aria-labelledby="allStocksTitle">
+      <div>
+        <p class="eyebrow">全銘柄搭載 ✨</p>
+        <h1 id="allStocksTitle">まず全部を見る。そこから好きな条件で絞る。</h1>
+        <p>GC銘柄だけの一覧ではありません。かぶたねが取得している通常株を<strong>全件表示</strong>し、必要なときだけ暫定GC・GC接近・継続・暫定DC・OUT、市場、日足トレンドなどで絞り込みます。銘柄名をタップすると個別チャートへ移動します。</p>
+      </div>
+      <div class="all-stocks-total" aria-label="対象銘柄数">
+        <span>対象通常株</span>
+        <strong><span id="allStocksTotal">—</span><small>銘柄</small></strong>
+        <small id="allStocksCoverage">日足・月足の取得状況を確認中…</small>
+      </div>
+    </section>
+
+    <section class="panel all-stocks-panel" aria-labelledby="stockListTitle">
+      <div class="simple-section-heading">
+        <div>
+          <span class="step-number">STOCK UNIVERSE</span>
+          <h2 id="stockListTitle">全銘柄から探す</h2>
+          <p id="allStocksResultText">データを読み込んでいます…</p>
+        </div>
+        <a class="button secondary" href="learn.html#monthly-rsi">月足GC / DCの見方</a>
+      </div>
+
+      <div id="allStocksSummary" class="all-stocks-summary" aria-label="月足状態の内訳"></div>
+
+      <div class="all-stocks-quick" aria-label="月足状態のクイックフィルター">
+        <button type="button" class="active" data-signal="ALL" aria-pressed="true">すべて</button>
+        <button type="button" data-signal="GC" aria-pressed="false">🟢 暫定GC</button>
+        <button type="button" data-signal="NEAR_GC" aria-pressed="false">🟡 GC接近</button>
+        <button type="button" data-signal="CONTINUE" aria-pressed="false">継続</button>
+        <button type="button" data-signal="DC" aria-pressed="false">🔴 暫定DC</button>
+        <button type="button" data-signal="OUT" aria-pressed="false">OUT側</button>
+      </div>
+
+      <div class="all-stocks-controls">
+        <label class="all-stocks-search">銘柄検索
+          <input id="allStocksSearch" type="search" placeholder="5942 / 日本フイルコン / セクター名">
+        </label>
+        <label>市場
+          <select id="allStocksMarket">
+            <option value="all">すべて</option>
+            <option value="プライム">プライム</option>
+            <option value="スタンダード">スタンダード</option>
+            <option value="グロース">グロース</option>
+          </select>
+        </label>
+        <label>日足条件
+          <select id="allStocksTrend">
+            <option value="all">指定なし</option>
+            <option value="above200">SMA200より上</option>
+            <option value="perfect">上昇配列</option>
+            <option value="volume">出来高1.2倍以上</option>
+            <option value="finance">財務データあり</option>
+          </select>
+        </label>
+        <label>並び順
+          <select id="allStocksSort">
+            <option value="code">銘柄コード順</option>
+            <option value="spread_desc">RSI差が強い順</option>
+            <option value="spread_asc">RSI差が弱い順</option>
+            <option value="volume">出来高増加順</option>
+            <option value="high">52週高値に近い順</option>
+            <option value="price">株価が高い順</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="all-stocks-table-wrap">
+        <table class="all-stocks-table">
+          <thead><tr>
+            <th>銘柄</th>
+            <th>市場</th>
+            <th>現在値</th>
+            <th>月足状態</th>
+            <th>月足RSI</th>
+            <th>日足トレンド</th>
+            <th>出来高</th>
+            <th>52週高値比</th>
+          </tr></thead>
+          <tbody id="allStocksRows"></tbody>
+        </table>
+        <div id="allStocksEmpty" class="all-stocks-empty" hidden>条件に合う銘柄はありません。</div>
+      </div>
+
+      <div class="all-stocks-more-wrap"><button id="allStocksMore" class="button secondary" type="button" hidden>さらに表示</button></div>
+      <p class="all-stocks-note">初期状態は<strong>全銘柄</strong>です。月足状態は進行中月の暫定判定を含みます。暫定GC・暫定DCは月末までに変わる可能性があり、正式なNEW / OUTではありません。ETF・ETN・REIT・TOKYO PRO・外国株などはこの一覧には含めません。</p>
+    </section>
+  </main>
+
+  <footer><p>かぶたね 🌱 / 全銘柄一覧</p></footer>
+  <script src="assets/all-stocks.js?v=1" defer></script>
+  <script src="assets/characters.js" defer></script>
+</body>
+</html>
