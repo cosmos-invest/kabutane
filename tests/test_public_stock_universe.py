@@ -27,8 +27,10 @@ class PublicStockUniverseTests(unittest.TestCase):
         self.assertIn('value="NEAR_GC"', html)
         self.assertIn('value="DC"', html)
 
-    def test_public_js_maps_gc_back_to_public_confirmed_side(self):
+    def test_public_js_fetches_only_sanitized_radar(self):
         js = self.text("assets/all-stocks.js")
+        self.assertIn("data/core/public-radar.json", js)
+        self.assertNotIn("fetch(`data/core/radar.json", js)
         self.assertIn('if (raw === "GC")', js)
         self.assertIn('return ["NEW", "CONTINUE"].includes(confirmed) ? "CONTINUE" : "OUT"', js)
         self.assertIn('signal=GC is intentionally ignored', js)
