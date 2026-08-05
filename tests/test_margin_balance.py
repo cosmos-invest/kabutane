@@ -82,9 +82,11 @@ class MarginBalanceTests(unittest.TestCase):
             "信用買い残",
             "信用売り残",
             "信用倍率",
+            "日足チャートの表示期間と同期します",
             "learn.html#margin-balance",
-            "assets/detail-margin-balance.css?v=1",
-            "assets/detail-margin-balance.js?v=1",
+            "assets/detail-margin-balance.css?v=2",
+            "assets/detail-margin-balance.js?v=2",
+            "assets/detail-chart-viewport.js?v=14",
         ):
             self.assertIn(marker, html)
 
@@ -102,6 +104,26 @@ class MarginBalanceTests(unittest.TestCase):
             self.assertIn(marker, script)
         self.assertNotIn("Infinity", script)
 
+    def test_margin_chart_uses_same_daily_range_without_fabricating_daily_balances(self):
+        margin = (ROOT / "assets/detail-margin-balance.js").read_text(encoding="utf-8")
+        viewport = (ROOT / "assets/detail-chart-viewport.js").read_text(encoding="utf-8")
+        for marker in (
+            'Chart?.getChart?.("priceChart")',
+            "alignRecordsToLabels",
+            "nearestPriorLabelIndex",
+            'new Array(labels.length).fill(null)',
+            "spanGaps: true",
+            'window.addEventListener("kabutane:detail-range-change"',
+            "表示中${aligned.count}週・日足同期",
+        ):
+            self.assertIn(marker, margin)
+        for marker in (
+            'new CustomEvent("kabutane:detail-range-change"',
+            'bindCanvas(document.getElementById("marginBalanceChart"))',
+            "getVisibleDates",
+        ):
+            self.assertIn(marker, viewport)
+
     def test_learning_page_stays_in_sync_with_margin_source_and_interpretation(self):
         learn = (ROOT / "learn.html").read_text(encoding="utf-8")
         self.assertIn('id="margin-balance"', learn)
@@ -109,6 +131,8 @@ class MarginBalanceTests(unittest.TestCase):
         self.assertIn("売り残0", learn)
         self.assertIn("基準日", learn)
         self.assertIn("倍率だけで良し悪しは決めません", learn)
+        self.assertIn("日足チャートと表示期間を同期します", learn)
+        self.assertIn("週と週の間を日次データのように補間しません", learn)
 
 
 if __name__ == "__main__":
