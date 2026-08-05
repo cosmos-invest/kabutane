@@ -9,6 +9,7 @@ class ReplayDecisionV6Tests(unittest.TestCase):
     def setUpClass(cls):
         cls.script = (ROOT / "assets/replay-decision-flow-v6.js").read_text(encoding="utf-8")
         cls.controls = (ROOT / "assets/replay-decision-controls-v6.js").read_text(encoding="utf-8")
+        cls.profile_guard = (ROOT / "assets/replay-volume-profile-guard-v6.js").read_text(encoding="utf-8")
         cls.style = (ROOT / "assets/replay-decision-flow-v6.css").read_text(encoding="utf-8")
         cls.loader = (ROOT / "assets/pwa-register.js").read_text(encoding="utf-8")
         cls.learn = (ROOT / "learn.html").read_text(encoding="utf-8")
@@ -16,6 +17,7 @@ class ReplayDecisionV6Tests(unittest.TestCase):
 
     def test_loader_enables_v6_after_existing_practice_scripts(self):
         self.assertIn('"assets/replay-decision-flow-v6.js"', self.loader)
+        self.assertIn('"assets/replay-volume-profile-guard-v6.js"', self.loader)
         self.assertIn('"assets/replay-decision-controls-v6.js"', self.loader)
         self.assertIn('loadStyle("assets/replay-decision-flow-v6.css")', self.loader)
         self.assertLess(
@@ -24,6 +26,10 @@ class ReplayDecisionV6Tests(unittest.TestCase):
         )
         self.assertLess(
             self.loader.index('"assets/replay-decision-flow-v6.js"'),
+            self.loader.index('"assets/replay-volume-profile-guard-v6.js"'),
+        )
+        self.assertLess(
+            self.loader.index('"assets/replay-volume-profile-guard-v6.js"'),
             self.loader.index('"assets/replay-decision-controls-v6.js"'),
         )
 
@@ -32,6 +38,12 @@ class ReplayDecisionV6Tests(unittest.TestCase):
         self.assertIn('filterPeriod(rows, currentDate, profileState.period)', self.script)
         self.assertIn('volume * (overlap / range)', self.script)
         self.assertIn('VALUE_AREA_RATIO = 0.7', self.script)
+
+    def test_profile_inspection_does_not_fall_through_to_order_editing(self):
+        self.assertIn('event.target?.id !== "replayChart"', self.profile_guard)
+        self.assertIn('s.chartView.moved = true', self.profile_guard)
+        self.assertIn('event.stopImmediatePropagation()', self.profile_guard)
+        self.assertIn('showProfileBin(event, chart)', self.profile_guard)
 
     def test_decision_surface_order_is_oscillator_chart_monthly(self):
         expected = 'surface.append(oscillatorShell, mainShell, monthlyShell)'
