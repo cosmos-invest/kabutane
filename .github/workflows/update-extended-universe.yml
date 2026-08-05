@@ -20,7 +20,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: market-data-writes
+  group: ${{ github.event_name == 'pull_request' && format('extended-universe-pr-{0}', github.event.pull_request.number) || 'market-data-writes' }}
   cancel-in-progress: false
 
 jobs:
