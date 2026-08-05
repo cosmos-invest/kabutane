@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="プライム・スタンダード・グロースの内国普通株を全銘柄走査し、進行中月で月足RSI14が5か月平均を下抜いた暫定DC銘柄を一覧で確認できます。">
+  <meta name="theme-color" content="#f26fa6">
+  <title>月足DC一覧（暫定） | かぶたね</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/pastel.css">
+  <link rel="stylesheet" href="assets/kabutane.css">
+  <link rel="stylesheet" href="assets/kabutane-links.css">
+  <link rel="stylesheet" href="assets/monthly-dc.css?v=1">
+</head>
+<body data-page="monthly-dc" class="pastel-theme monthly-dc-page">
+  <header class="site-header">
+    <div class="header-inner">
+      <div>
+        <a class="back-link" href="index.html">← 銘柄を探すへ</a>
+        <p class="eyebrow">ALL CORE STOCKS / PROVISIONAL MONTHLY DC</p>
+        <h1>月足DC一覧 <small>（進行中月）</small></h1>
+        <p class="subtitle">プライム・スタンダード・グロースの内国普通株を全件走査し、今月途中で月足RSI14が5か月平均を下抜いた銘柄だけを集めます。</p>
+      </div>
+      <div class="header-meta"><span id="dcDataDate" class="badge neutral">データ読込中…</span></div>
+    </div>
+  </header>
+
+  <main class="container monthly-dc-container">
+    <section class="dc-hero" aria-labelledby="dcTitle">
+      <div class="dc-hero-main">
+        <p class="eyebrow">全銘柄搭載 ✨</p>
+        <h1 id="dcTitle">「弱まり始めた」を、月末より先に見つける。</h1>
+        <p>確定NEW・CONTINUE・OUTとは別に、進行中の今月を最新終値で仮計算した<strong>暫定DC</strong>を一覧化します。銘柄をタップすると、そのまま全銘柄対応の個別チャートへ移動できます。</p>
+      </div>
+      <div class="dc-hero-side" aria-label="暫定DC銘柄数">
+        <span>現在の暫定DC</span>
+        <strong><span id="dcCount">—</span><small>銘柄</small></strong>
+        <small>月末までに株価が戻るとDC判定が消えることがあります。</small>
+      </div>
+    </section>
+
+    <p class="dc-alert"><strong>ここは「確定DC一覧」ではありません。</strong> 前月末まで確定NEW / CONTINUEだった銘柄が、今日までの終値を今月末終値と仮定するとRSI14 ≤ 5か月MAになっている状態です。正式なOUT判定は月末確定後です。</p>
+
+    <section class="panel" aria-labelledby="dcListTitle">
+      <div class="simple-section-heading">
+        <div>
+          <span class="step-number">MONTHLY DC WATCH</span>
+          <h2 id="dcListTitle">暫定DC銘柄を確認</h2>
+          <p>RSI差、日足トレンド、出来高、52週高値との距離を同じ表で見て、どの銘柄から詳細を確認するか整理できます。</p>
+        </div>
+        <a class="button secondary" href="learn.html#monthly-rsi">GC / DCの見方</a>
+      </div>
+
+      <div id="dcSummary" class="dc-summary-grid" aria-label="月足DC一覧の概要"></div>
+
+      <div class="dc-controls">
+        <label>銘柄検索
+          <input id="dcSearch" type="search" placeholder="5243 / note / 銘柄名">
+        </label>
+        <label>市場
+          <select id="dcMarket">
+            <option value="all">3市場すべて</option>
+            <option value="プライム">プライム</option>
+            <option value="スタンダード">スタンダード</option>
+            <option value="グロース">グロース</option>
+          </select>
+        </label>
+        <label>並び順
+          <select id="dcSort">
+            <option value="spread">RSI差が深い順</option>
+            <option value="volume">出来高増加順</option>
+            <option value="high">52週高値に近い順</option>
+            <option value="code">コード順</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="dc-table-wrap">
+        <table class="dc-table">
+          <thead>
+            <tr>
+              <th>月足状態</th>
+              <th>銘柄</th>
+              <th>現在値</th>
+              <th>月足RSI</th>
+              <th>日足トレンド</th>
+              <th>出来高</th>
+              <th>52週高値比</th>
+            </tr>
+          </thead>
+          <tbody id="dcRows"></tbody>
+        </table>
+        <p id="dcEmpty" class="dc-empty" hidden>データを読み込んでいます…</p>
+      </div>
+      <div class="dc-more-wrap"><button id="dcMore" type="button" class="button secondary" hidden>さらに表示</button></div>
+      <p class="dc-data-note">対象はJPX上場銘柄一覧に基づくプライム・スタンダード・グロースの内国普通株です。ETF・ETN・REIT・TOKYO PRO・外国株などは混ぜません。月足RSIの計算に必要な上場期間が足りない銘柄は判定待ちになります。</p>
+    </section>
+
+    <section class="panel note-panel">
+      <h2>DCを見つけた後に確認すること</h2>
+      <p><strong>① 個別チャート：</strong>単なる月足RSIの下抜けか、SMAや価格帯別出来高も含めてトレンドが崩れているかを確認します。</p>
+      <p><strong>② 出来高：</strong>下落に出来高増加が伴っているか、逆に一時的な押しに見えるかを確認します。</p>
+      <p><strong>③ 信用需給：</strong>信用買い残の増減なども同じ時間軸で見て、DCだけで売買判断を完結させません。</p>
+    </section>
+
+    <section class="simple-disclaimer"><p>かぶたねは情報提供・学習・練習を目的としたサイトです。暫定DCは売り推奨ではなく、月途中の観察情報です。投資判断は企業の公式情報とご自身の許容損失を確認して行ってください。</p></section>
+  </main>
+
+  <footer><p>かぶたね 🌱 / 月足DC一覧</p></footer>
+  <script src="assets/monthly-dc.js?v=1" defer></script>
+  <script src="assets/characters.js" defer></script>
+</body>
+</html>
