@@ -13,6 +13,8 @@ from scripts.update_margin_balance import (
     write_shards,
 )
 
+ROOT = Path(__file__).resolve().parents[1]
+
 
 class MarginBalanceTests(unittest.TestCase):
     def test_discovers_and_sorts_weekly_pdf_links(self):
@@ -68,6 +70,45 @@ class MarginBalanceTests(unittest.TestCase):
             shard = json.loads((output / "59.json").read_text(encoding="utf-8"))
             self.assertEqual(shard["records"]["5942"][0]["buy_balance"], 200000)
             self.assertIsNone(shard["records"]["5942"][0]["ratio"])
+
+    def test_detail_page_exposes_margin_supply_demand_panel(self):
+        html = (ROOT / "detail.html").read_text(encoding="utf-8")
+        for marker in (
+            'id="marginBalancePanel"',
+            'id="marginBalanceStats"',
+            'id="marginBalanceChart"',
+            'id="marginBalanceSummary"',
+            'id="marginBalanceStatus"',
+            "信用買い残",
+            "信用売り残",
+            "信用倍率",
+            "learn.html#margin-balance",
+            "assets/detail-margin-balance.css?v=1",
+            "assets/detail-margin-balance.js?v=1",
+        ):
+            self.assertIn(marker, html)
+
+    def test_margin_ui_handles_zero_sell_balance_without_infinity(self):
+        script = (ROOT / "assets/detail-margin-balance.js").read_text(encoding="utf-8")
+        for marker in (
+            'return "—（売り残0）"',
+            "data/margin/",
+            "buy_balance",
+            "sell_balance",
+            "buy_change",
+            "sell_change",
+            "yRatio",
+        ):
+            self.assertIn(marker, script)
+        self.assertNotIn("Infinity", script)
+
+    def test_learning_page_stays_in_sync_with_margin_source_and_interpretation(self):
+        learn = (ROOT / "learn.html").read_text(encoding="utf-8")
+        self.assertIn('id="margin-balance"', learn)
+        self.assertIn("JPX", learn)
+        self.assertIn("売り残0", learn)
+        self.assertIn("基準日", learn)
+        self.assertIn("倍率だけで良し悪しは決めません", learn)
 
 
 if __name__ == "__main__":
