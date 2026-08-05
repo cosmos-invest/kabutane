@@ -7,6 +7,13 @@ test.use({
   hasTouch: true,
 });
 
+async function openAdvancedToolsIfFolded(page) {
+  const advanced = page.locator("#replayAdvancedToolsV6");
+  if (!(await advanced.count())) return;
+  if (!(await advanced.evaluate((element) => element.open))) await advanced.locator("summary").click();
+  await expect.poll(() => advanced.evaluate((element) => element.open)).toBe(true);
+}
+
 test("mobile user selects a stock, starts practice and controls the stop clearly", async ({ page }) => {
   test.setTimeout(90000);
   const pageErrors = [];
@@ -57,8 +64,10 @@ test("mobile user selects a stock, starts practice and controls the stop clearly
 
   await startButton.click();
   await expect(page.locator("#practiceArea")).toBeVisible({ timeout: 30000 });
-  await expect(page.locator("#practiceChartTools")).toBeVisible({ timeout: 30000 });
   await expect(page.locator("#replayChart")).toBeVisible();
+  await expect(page.locator("#replayDecisionSurfaceV6")).toBeVisible({ timeout: 30000 });
+  await openAdvancedToolsIfFolded(page);
+  await expect(page.locator("#practiceChartTools")).toBeVisible({ timeout: 30000 });
   expect(await page.evaluate(() => window.__kabutanePracticeV2Ready === true)).toBe(true);
   expect(await page.evaluate(() => Boolean(Chart.registry?.getPlugin?.("practiceStopHandleV3")))).toBe(true);
   expect(await page.evaluate(() => Boolean(window.KabutaneStopGuardV3))).toBe(true);
@@ -82,7 +91,9 @@ test("mobile user selects a stock, starts practice and controls the stop clearly
     renderAll();
   });
 
+  await openAdvancedToolsIfFolded(page);
   const step = page.locator("#practiceStopStep");
+  await expect(step).toBeVisible();
   await step.selectOption("pct");
   const down = page.locator('[data-stop-adjust="down"]');
   const up = page.locator('[data-stop-adjust="up"]');
@@ -123,6 +134,7 @@ test("mobile user selects a stock, starts practice and controls the stop clearly
     state.guided.mode = "free";
     renderAll();
   });
+  await openAdvancedToolsIfFolded(page);
   await expect(down).toBeEnabled();
   const beforeDown = await page.evaluate(() => state.plan.activeStop);
   await down.click();
