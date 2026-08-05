@@ -1,8 +1,11 @@
 from __future__ import annotations
 
+from pathlib import Path
 import unittest
 
 from scripts.build_supply_demand_screen import score_history
+
+ROOT = Path(__file__).resolve().parents[1]
 
 
 class SupplyDemandScreenTests(unittest.TestCase):
@@ -38,6 +41,16 @@ class SupplyDemandScreenTests(unittest.TestCase):
             {"date": "2026-07-24", "buy_balance": 130000, "sell_balance": 17000, "ratio": 7.65},
         ]
         self.assertIsNone(score_history(history))
+
+    def test_hidden_beta_page_is_noindex_and_not_in_public_navigation(self) -> None:
+        premium = (ROOT / "premium-supply-beta.html").read_text(encoding="utf-8")
+        script = (ROOT / "assets" / "premium-supply-beta.js").read_text(encoding="utf-8")
+        self.assertIn('name="robots" content="noindex,nofollow,noarchive"', premium)
+        self.assertIn("PRIVATE BETA", premium)
+        self.assertIn("data/premium/supply-demand-screen.json", script)
+        for public_page in ("index.html", "learn.html", "howto.html"):
+            text = (ROOT / public_page).read_text(encoding="utf-8")
+            self.assertNotIn("premium-supply-beta.html", text, public_page)
 
 
 if __name__ == "__main__":
