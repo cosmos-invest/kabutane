@@ -11,6 +11,7 @@ on:
       - 'premium-supply-beta.html'
       - 'detail.html'
       - 'tests/test_core_universe_data.py'
+      - 'tests/test_core_detail_fallback.js'
       - 'tests/test_premium_lab.py'
       - '.github/workflows/update-core-universe-data.yml'
   push:
@@ -52,6 +53,7 @@ jobs:
           python -m unittest tests.test_core_universe_data tests.test_premium_lab -v
           node --check assets/core-detail-fallback.js
           node --check assets/premium-supply-beta.js
+          node tests/test_core_detail_fallback.js
           grep -q 'core-detail-fallback.js' detail.html
           grep -q '暫定GC' premium-supply-beta.html
           ! grep -q 'extended' premium-supply-beta.html
@@ -149,16 +151,22 @@ jobs:
         run: |
           REFRESH=""
           FUND_LIMIT=600
-          # Initial deployment refreshes the compact one-year base. After that,
-          # only the first Monday of each month rewrites the large chart shards;
-          # weekdays update the small 25-day overlay and provisional signal.
+          CURRENT_UNIVERSE_HASH="$(sha256sum stocks.csv | awk '{print $1}')"
+          STORED_UNIVERSE_HASH="$(cat data/core/universe.sha256 2>/dev/null || true)"
+          # Initial deployment, a changed core universe, or the first Monday of
+          # a month refreshes the one-year base. Ordinary weekdays update only
+          # the 25-day overlay and provisional signal, limiting repo growth.
           if [ "${{ github.event_name }}" = "push" ] || [ ! -f data/core/manifest.json ]; then
             REFRESH="--refresh-base"
             FUND_LIMIT=1200
+          elif [ "$CURRENT_UNIVERSE_HASH" != "$STORED_UNIVERSE_HASH" ]; then
+            echo "Core universe changed; refreshing chart base."
+            REFRESH="--refresh-base"
           elif [ "$(date -u +%u)" = "1" ] && [ "$(date -u +%d)" -le 7 ]; then
             REFRESH="--refresh-base"
           fi
           python -m scripts.build_core_universe_data $REFRESH --fundamentals-limit "$FUND_LIMIT"
+          printf '%s\n' "$CURRENT_UNIVERSE_HASH" > data/core/universe.sha256
       - name: Rebuild premium opportunity radar
         run: |
           python scripts/build_supply_demand_screen.py
@@ -180,6 +188,8 @@ jobs:
               raise SystemExit('premium radar must contain the full core universe')
           if int(manifest.get('daily_coverage') or 0) / total < .90:
               raise SystemExit('daily coverage below 90%')
+          if not Path('data/core/universe.sha256').read_text(encoding='utf-8').strip():
+              raise SystemExit('core universe fingerprint is missing')
           print(json.dumps(manifest, ensure_ascii=False, indent=2))
           print('premium status', premium.get('status_counts'))
           PY
