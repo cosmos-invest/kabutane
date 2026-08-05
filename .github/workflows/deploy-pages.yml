@@ -18,6 +18,7 @@ on:
       - "result.csv"
       - "out.csv"
       - "validate_data_contract.py"
+      - "scripts/public_core_radar.py"
       - ".nojekyll"
       - ".github/workflows/deploy-pages.yml"
   workflow_dispatch:
@@ -50,6 +51,9 @@ jobs:
 
       - name: Validate current data contract
         run: python validate_data_contract.py
+
+      - name: Build public-safe all-stock radar
+        run: python -m scripts.public_core_radar
 
       - name: Prepare site
         run: |
@@ -92,6 +96,7 @@ jobs:
           test -f _site/assets/premium-supply-beta.js
           test -f _site/assets/replay-stock-select.js
           test -f _site/assets/replay-picker.css
+          test -f _site/data/core/public-radar.json
           test -f _site/data/curated/shikiho-2026-summer.json
           test -f _site/data/curated/shikiho-2026-summer-performance.json
           test -f _site/assets/icons/kabutane-wordmark-v3.svg
@@ -111,7 +116,10 @@ jobs:
           grep -q '今日のかぶたね' _site/today.html
           grep -q 'data/daily-events.json' _site/assets/today-kabutane.js
           grep -q '全銘柄一覧' _site/all-stocks.html
-          grep -q 'data/core/radar.json' _site/assets/all-stocks.js
+          grep -q 'data/core/public-radar.json' _site/assets/all-stocks.js
+          ! grep -q 'fetch(`data/core/radar.json' _site/assets/all-stocks.js
+          ! grep -q '"provisional_status":"GC"' _site/data/core/public-radar.json
+          ! grep -q 'monthly_rsi_spread' _site/data/core/public-radar.json
           grep -q 'all-stocks.html' _site/index.html
           grep -q 'all-stocks.html?signal=DC' _site/monthly-dc.html
           grep -q '拡張対象銘柄' _site/extended-universe.html
