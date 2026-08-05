@@ -7,6 +7,7 @@ on:
       - "assets/detail-volume-profile.js"
       - "assets/detail-volume-profile.css"
       - "tests/test_volume_profile.py"
+      - "tests/test_volume_profile.js"
       - ".github/workflows/volume-profile-checks.yml"
 
 permissions:
@@ -32,6 +33,7 @@ jobs:
       - name: Validate source
         run: |
           node --check assets/detail-volume-profile.js
+          node tests/test_volume_profile.js
           python -m unittest tests.test_volume_profile -v
           git diff --check
 
