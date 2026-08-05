@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import argparse
 import json
-import shutil
 from pathlib import Path
 from typing import Any
 
@@ -68,7 +67,8 @@ def validate_no_gc(payload: dict[str, Any], *, shard: bool = False) -> None:
             continue
         if is_premium_gc(record.get("provisional_signal")):
             raise ValueError("Public detail payload still contains provisional GC")
-        if str((record.get("record") or {}).get("provisional_status") or "").upper() == "GC":
+        nested_record = record.get("record") if isinstance(record.get("record"), dict) else {}
+        if str(nested_record.get("provisional_status") or "").upper() == "GC":
             raise ValueError("Public detail record still contains provisional GC")
 
 
@@ -90,13 +90,14 @@ def build_public_core_daily(input_dir: Path = DEFAULT_CORE_INPUT, output_dir: Pa
     return count
 
 
-def sanitize_directory_in_place(directory: Path) -> int:
+def sanitize_directory_in_place(directory: Path, *, shard: bool = False) -> int:
     if not directory.exists():
         return 0
     count = 0
     for path in sorted(directory.glob("*.json")):
-        public = sanitize_detail_payload(load_json(path))
-        validate_no_gc(public)
+        source = load_json(path)
+        public = sanitize_core_shard(source) if shard else sanitize_detail_payload(source)
+        validate_no_gc(public, shard=shard)
         write_json(path, public)
         count += 1
     return count
@@ -104,21 +105,29 @@ def sanitize_directory_in_place(directory: Path) -> int:
 
 def prepare_site_tree(site_root: Path) -> dict[str, int]:
     core_root = site_root / "data" / "core"
-    core_shards = build_public_core_daily(core_root / "daily", core_root / "public-daily")
+    core_daily = core_root / "daily"
+    core_shards = build_public_core_daily(core_daily, core_root / "public-daily")
+
+    # Existing URLs are kept working, but the files copied into the Pages
+    # artifact are sanitized before upload. This matters because hiding a value
+    # after fetch() is too late: browser devtools would still see the response.
+    core_daily_files = sanitize_directory_in_place(core_daily, shard=True)
     chart_files = sanitize_directory_in_place(site_root / "data" / "charts")
     daily_files = sanitize_directory_in_place(site_root / "data" / "daily")
 
-    # The public site only needs the sanitized catalog and public-daily shards.
-    # Keep the raw all-core provisional feed out of the Pages artifact so a
-    # normal public page cannot discover premium-only provisional GC names.
+    # Public pages consume public-radar.json. Do not publish the raw all-core
+    # provisional catalog on GitHub Pages; the premium page uses its own
+    # opportunity-radar payload instead.
     raw_radar = core_root / "radar.json"
     if raw_radar.exists():
         raw_radar.unlink()
-    raw_daily = core_root / "daily"
-    if raw_daily.exists():
-        shutil.rmtree(raw_daily)
 
-    return {"core_shards": core_shards, "charts": chart_files, "daily": daily_files}
+    return {
+        "core_public_shards": core_shards,
+        "core_daily_sanitized": core_daily_files,
+        "charts": chart_files,
+        "daily": daily_files,
+    }
 
 
 def parse_args() -> argparse.Namespace:
