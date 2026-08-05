@@ -45,6 +45,24 @@
     if (action === "finish") clickButton("#finishButton");
   }
 
+  function compactMonthlyChart() {
+    if (window.innerWidth > 760) return;
+    const box = document.getElementById("monthlyRsiChart")?.closest(".monthly-rsi-chart-box");
+    const canvas = document.getElementById("monthlyRsiChart");
+    if (!box || !canvas || canvas.dataset.decisionCompactV6 === "true") return;
+    box.style.setProperty("height", "175px", "important");
+    box.style.setProperty("min-height", "175px", "important");
+    box.style.setProperty("max-height", "175px", "important");
+    canvas.style.setProperty("height", "159px", "important");
+    canvas.style.setProperty("min-height", "0", "important");
+    canvas.style.setProperty("max-height", "159px", "important");
+    canvas.style.setProperty("width", "100%", "important");
+    canvas.dataset.decisionCompactV6 = "true";
+    window.requestAnimationFrame(() => {
+      try { window.Chart?.getChart?.("monthlyRsiChart")?.resize(); } catch (_) {}
+    });
+  }
+
   function ensureControls() {
     const dock = document.getElementById("replayDecisionDockV6");
     if (!dock) return null;
@@ -73,6 +91,7 @@
   function sync() {
     const practice = document.getElementById("practiceArea");
     if (!practice || practice.hidden) return;
+    compactMonthlyChart();
     const controls = ensureControls();
     if (!controls) return;
 
@@ -109,6 +128,7 @@
   function boot() {
     sync();
     const timer = window.setInterval(sync, 300);
+    window.addEventListener("resize", compactMonthlyChart);
     window.addEventListener("beforeunload", () => window.clearInterval(timer), { once: true });
   }
 
