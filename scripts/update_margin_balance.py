@@ -144,6 +144,31 @@ def merge_history(existing: Iterable[dict], incoming: Iterable[dict]) -> list[di
     return ordered[-HISTORY_LIMIT:]
 
 
+def without_generated_at(payload) -> dict:
+    if not isinstance(payload, dict):
+        return {}
+    return {key: value for key, value in payload.items() if key != "generated_at"}
+
+
+def write_if_meaningfully_changed(path: Path, payload: dict, generated_at: str, *, compact: bool = False) -> bool:
+    """Write only when data/metadata other than generated_at changed.
+
+    The scheduled workflow checks Tue-Thu to tolerate Japanese holidays. Without
+    this guard, the timestamp alone would create duplicate commits for the same
+    JPX report.
+    """
+    existing = load_json(path, {})
+    if without_generated_at(existing) == payload:
+        return False
+    final_payload = {**payload, "generated_at": generated_at}
+    if compact:
+        text = json.dumps(final_payload, ensure_ascii=False, separators=(",", ":"))
+    else:
+        text = json.dumps(final_payload, ensure_ascii=False, indent=2) + "\n"
+    path.write_text(text, encoding="utf-8")
+    return True
+
+
 def write_shards(
     snapshots: list[tuple[str, str, dict[str, dict[str, int | float | str | None]]]],
     output_dir: Path,
@@ -160,6 +185,7 @@ def write_shards(
 
     generated_at = dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat()
     total_codes: set[str] = set()
+    changed_files = 0
     for prefix, incoming_by_code in touched.items():
         path = output_dir / f"{prefix}.json"
         existing = load_json(path, {})
@@ -177,26 +203,26 @@ def write_shards(
             "source": "JPX 銘柄別信用取引週末残高",
             "source_url": JPX_PAGE,
             "frequency": "weekly",
-            "generated_at": generated_at,
             "records": dict(sorted(merged_records.items())),
         }
-        path.write_text(json.dumps(payload, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+        if write_if_meaningfully_changed(path, payload, generated_at, compact=True):
+            changed_files += 1
 
     latest_date = max((item[0] for item in snapshots), default=None)
     index = {
         "schema_version": 1,
+        "ready": True,
         "source": "JPX 銘柄別信用取引週末残高",
         "source_url": JPX_PAGE,
         "frequency": "weekly",
         "publication_note": "毎週第2営業日（通常火曜）16:30頃にJPX掲載",
-        "generated_at": generated_at,
         "latest_date": latest_date,
         "covered_codes": len(total_codes),
         "reports": source_files,
     }
-    (output_dir / "latest.json").write_text(
-        json.dumps(index, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
-    )
+    if write_if_meaningfully_changed(output_dir / "latest.json", index, generated_at):
+        changed_files += 1
+    index["changed_files"] = changed_files
     return index
 
 
@@ -220,7 +246,7 @@ def collect(output_dir: Path) -> dict:
     index = write_shards(snapshots, output_dir)
     print(
         f"latest={index['latest_date']} reports={len(index['reports'])} "
-        f"covered_codes={index['covered_codes']:,}"
+        f"covered_codes={index['covered_codes']:,} changed_files={index['changed_files']}"
     )
     return index
 
