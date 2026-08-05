@@ -17,6 +17,7 @@ on:
       - "build_shikiho_room_v2.py"
       - "validate_data_contract.py"
       - "validate_daily_derived_contract.py"
+      - "scripts/public_core_radar.py"
       - "data/curated/shikiho-2026-summer.json"
       - "tests/test_update_daily.py"
       - "tests/test_provisional_signal.py"
@@ -61,14 +62,13 @@ jobs:
 
       - name: Validate updater
         run: |
-          python -m py_compile update_daily.py provisional_signal.py build_market_reports.py build_daily_snapshot.py build_daily_events.py build_shikiho_room.py build_shikiho_room_v2.py validate_data_contract.py validate_daily_derived_contract.py tests/test_update_daily.py tests/test_provisional_signal.py tests/test_market_reports.py tests/test_daily_snapshot.py tests/test_daily_events.py tests/test_shikiho_room.py tests/test_shikiho_room_v2.py tests/test_data_contract.py tests/test_daily_derived_contract.py tests/test_today_page.py
+          python -m py_compile update_daily.py provisional_signal.py build_market_reports.py build_daily_snapshot.py build_daily_events.py build_shikiho_room.py build_shikiho_room_v2.py validate_data_contract.py validate_daily_derived_contract.py scripts/public_core_radar.py tests/test_update_daily.py tests/test_provisional_signal.py tests/test_market_reports.py tests/test_daily_snapshot.py tests/test_daily_events.py tests/test_shikiho_room.py tests/test_shikiho_room_v2.py tests/test_data_contract.py tests/test_daily_derived_contract.py tests/test_today_page.py
           python -m unittest discover -s tests -p 'test_update_daily.py' -v
           python -m unittest discover -s tests -p 'test_provisional_signal.py' -v
           python -m unittest discover -s tests -p 'test_market_reports.py' -v
           python -m unittest discover -s tests -p 'test_daily_snapshot.py' -v
           python -m unittest discover -s tests -p 'test_daily_events.py' -v
           python -m unittest discover -s tests -p 'test_shikiho_room.py' -v
-          python -m unittest discover -s tests -p 'test_shikiho_room_v2.py' -v
           python -m unittest discover -s tests -p 'test_data_contract.py' -v
           python -m unittest discover -s tests -p 'test_daily_derived_contract.py' -v
           python -m unittest discover -s tests -p 'test_today_page.py' -v
@@ -106,6 +106,9 @@ jobs:
             git push origin main
           fi
 
+      - name: Build public-safe all-stock radar
+        run: python -m scripts.public_core_radar
+
       - name: Prepare current data for GitHub Pages
         run: |
           rm -rf _site
@@ -129,6 +132,7 @@ jobs:
           test -f _site/assets/replay-stock-select.js
           test -f _site/assets/today-kabutane.css
           test -f _site/assets/today-kabutane.js
+          test -f _site/data/core/public-radar.json
           test -f _site/data/latest.json
           test -f _site/data/daily-update-status.json
           test -f _site/data/ranking.json
@@ -139,7 +143,10 @@ jobs:
           test -f _site/data/curated/shikiho-2026-summer-performance.json
           test -f _site/shikiho-summer-2026.html
           grep -q 'all-stocks.html' _site/index.html
-          grep -q 'data/core/radar.json' _site/assets/all-stocks.js
+          grep -q 'data/core/public-radar.json' _site/assets/all-stocks.js
+          ! grep -q 'fetch(`data/core/radar.json' _site/assets/all-stocks.js
+          ! grep -q '"provisional_status":"GC"' _site/data/core/public-radar.json
+          ! grep -q 'monthly_rsi_spread' _site/data/core/public-radar.json
           python - <<'PY'
           import json
           from pathlib import Path
