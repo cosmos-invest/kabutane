@@ -1,4 +1,4 @@
-const CACHE_VERSION = "kabutane-pwa-v23";
+const CACHE_VERSION = "kabutane-pwa-v24";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 
 // These files are required for the detail page to boot. If even one cannot be
@@ -25,6 +25,7 @@ const CRITICAL_ASSETS = [
 const OPTIONAL_ASSETS = [
   "./index.html",
   "./today.html",
+  "./all-stocks.html",
   "./monthly-dc.html",
   "./replay.html",
   "./replay-select.html",
@@ -45,7 +46,7 @@ const OPTIONAL_ASSETS = [
   "./data/curated/shikiho-2026-summer.json",
   "./data/curated/shikiho-2026-summer-performance.json",
   // Compatibility for an already-open detail.html that still requests the
-  // unversioned asset URLs while the v23 worker is activating.
+  // unversioned asset URLs while the v24 worker is activating.
   "./assets/provisional-monthly-rsi-core.js",
   "./assets/detail-chart-viewport-core.js",
   "./assets/detail.js",
@@ -64,6 +65,8 @@ const OPTIONAL_ASSETS = [
   "./assets/shikiho-room.js",
   "./assets/today-kabutane.css",
   "./assets/today-kabutane.js",
+  "./assets/all-stocks.css",
+  "./assets/all-stocks.js",
   "./assets/monthly-dc.css",
   "./assets/monthly-dc.js",
   "./assets/style.css?v=16",
@@ -163,6 +166,9 @@ function routeAlternatives(url) {
   }
   if (pathname.endsWith("/today") || pathname.endsWith("/today.html")) {
     return ["./today.html"];
+  }
+  if (pathname.endsWith("/all-stocks") || pathname.endsWith("/all-stocks.html")) {
+    return ["./all-stocks.html"];
   }
   if (pathname.endsWith("/monthly-dc") || pathname.endsWith("/monthly-dc.html")) {
     return ["./monthly-dc.html"];

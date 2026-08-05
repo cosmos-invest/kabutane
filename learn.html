@@ -68,8 +68,8 @@
       <h2>月足RSIのGC・DCは何を見るの？</h2>
       <p>かぶたねではTradingViewと同じWilder方式の月足RSI14と、そのRSI14の5か月単純移動平均を使います。RSI14が5か月移動平均を下から上へ抜くと<strong>GC</strong>、上から下へ抜くと<strong>DC</strong>です。</p>
       <div class="learn-simple"><article><span>緑 ● GC</span><strong>中期の勢いが上向く候補</strong><p>売買練習では価格チャートの下端にも緑丸を簡易表示します。</p></article><article><span>赤 ● DC</span><strong>中期の勢いが弱まる候補</strong><p>赤丸だけで売るのではなく、価格のトレンド崩れと合わせて確認します。</p></article><article><span>重要</span><strong>確定と暫定を分ける</strong><p>正式判定には月末確定値を使い、進行中月は「暫定GC / 暫定DC」として別に観察します。</p></article></div>
-      <p><a class="button secondary" href="monthly-dc.html">進行中月の暫定DC一覧を見る</a> <a class="button secondary" href="signal-method.html">月足RSIの計算方法を詳しく見る</a></p>
-      <p class="learn-callout"><strong>全銘柄モード：</strong>現在はプライム・スタンダード・グロースの内国普通株を全件走査し、確定GCの有無に関係なく進行中月のGC / DCを計算します。ETF・ETN・REITなどは通常株の一覧には混ぜません。</p>
+      <p><a class="button secondary" href="all-stocks.html">全銘柄一覧を開く</a> <a class="button secondary" href="all-stocks.html?signal=DC">暫定DCで絞る</a> <a class="button secondary" href="signal-method.html">月足RSIの計算方法を詳しく見る</a></p>
+      <p class="learn-callout"><strong>全銘柄モード：</strong>プライム・スタンダード・グロースの内国普通株を、GCの有無に関係なく<strong>まず全件一覧に表示</strong>します。そこから暫定GC・GC接近・継続・暫定DC・OUT、市場、日足トレンドなどで必要なときだけ絞り込みます。ETF・ETN・REITなどは通常株の一覧には混ぜません。</p>
     </section>
 
     <section class="learn-section term" id="decision-flow">
@@ -79,7 +79,7 @@
     </section>
 
     <section class="panel note-panel"><h2>そのほか、かぶたねで使う考え方</h2>
-      <details open><summary><strong>確定シグナルと暫定シグナルの違いは？</strong></summary><p><strong>確定NEW・確定継続・確定OUT</strong>は、月末まで完成した月足だけで判定します。ランキング、月初レポート、GC後騰落率には、この確定値だけを使います。</p><p><strong>暫定GC・暫定DC</strong>は、進行中月の最新日足までで計算した観察情報です。月末までに株価が戻ると消える場合があり、正式なNEW・OUTではありません。<a href="monthly-dc.html">暫定DCは専用一覧</a>から全対象銘柄を確認できます。</p></details>
+      <details open><summary><strong>確定シグナルと暫定シグナルの違いは？</strong></summary><p><strong>確定NEW・確定継続・確定OUT</strong>は、月末まで完成した月足だけで判定します。ランキング、月初レポート、GC後騰落率には、この確定値だけを使います。</p><p><strong>暫定GC・暫定DC</strong>は、進行中月の最新日足までで計算した観察情報です。月末までに株価が戻ると消える場合があり、正式なNEW・OUTではありません。<a href="all-stocks.html">全銘柄一覧</a>の月足状態フィルターで必要な状態だけ確認できます。</p></details>
       <details><summary><strong>上昇トレンドの簡易判定</strong></summary><p>株価と複数の移動平均線の位置・向きから、長期的な流れが上向きかを確認します。SEPAの考え方を参考にしていますが、すべての条件を完全再現するものではありません。</p></details>
       <details><summary><strong>値動きの収束（VCP）</strong></summary><p>値幅が少しずつ小さくなる状態を見ます。力をためている可能性がありますが、上昇を保証する形ではありません。</p></details>
       <details><summary><strong>勢いの点火（モメンタム・MVP）</strong></summary><p>株価、出来高、相対的な強さが同時に動いているかを確認します。すでに上昇した後に点灯する場合もあるため、損切りまでの距離と一緒に見ます。</p></details>
@@ -93,7 +93,7 @@
     </section>
 
     <section class="panel note-panel"><h2>FAQ</h2>
-      <details><summary><strong>TradingViewでDCなのに、かぶたねが継続なのはなぜ？</strong></summary><p>TradingViewが進行中月を含めている場合、月途中で先にDCして見えることがあります。かぶたねの確定ステータスは前月末までの完成済み月足なので、その月末までは継続のままです。詳細ページの「進行中月」カード、または<a href="monthly-dc.html">月足DC一覧</a>で暫定DCかどうかを確認できます。</p></details>
+      <details><summary><strong>TradingViewでDCなのに、かぶたねが継続なのはなぜ？</strong></summary><p>TradingViewが進行中月を含めている場合、月途中で先にDCして見えることがあります。かぶたねの確定ステータスは前月末までの完成済み月足なので、その月末までは継続のままです。詳細ページの「進行中月」カード、または<a href="all-stocks.html?signal=DC">全銘柄一覧を暫定DCで絞り込み</a>、月途中の状態を確認できます。</p></details>
       <details><summary><strong>🌸コスモス注目は買い推奨ですか？</strong></summary><p>いいえ。勢いと長期トレンドの両方を詳しく確認したい「調査候補」です。会社の公式情報、チャート、許容できる損失を確認して判断してください。</p></details>
       <details><summary><strong>決算や重要情報はどこで確認しますか？</strong></summary><p>かぶたねでは自動取得しません。実際に投資する前に、対象企業の公式IRページや証券会社の情報で確認してください。</p></details>
       <details><summary><strong>データが最新日までない場合は？</strong></summary><p>Yahoo Finance側の遅延、休場日、通信エラーが考えられます。画面の更新日時と最新株価日を確認してください。</p></details>
