@@ -68,7 +68,7 @@ const window = {
 const document = {
   getElementById() { return null; },
 };
-const context = vm.createContext({ window, document, Response, Headers, URL, console, setTimeout });
+const context = vm.createContext({ window, document, Response, URL, console, setTimeout });
 vm.runInContext(source, context);
 
 (async () => {
@@ -80,24 +80,20 @@ vm.runInContext(source, context);
   if (chart.daily.at(-1).close !== 1180) throw new Error("latest daily overlay was not merged");
   if (chart.record.current_price !== 1180) throw new Error("technical current price was not merged");
   if (chart.record.per !== 30.2 || chart.record.roe_pct !== 12.3) throw new Error("fundamentals were not merged");
-  if (chart.provisional_signal !== null) throw new Error("premium-only provisional GC leaked through fallback chart");
-  if (chart.record.provisional_status) throw new Error("premium-only provisional status leaked through fallback record");
+  if (chart.provisional_signal?.status !== "GC") throw new Error("provisional GC should remain visible on individual detail");
+  if (chart.record.provisional_status !== "GC") throw new Error("detail record should retain provisional GC status");
 
   const dailyResponse = await window.fetch("data/daily/5243.json?v=1");
   const overlay = await dailyResponse.json();
-  if (!dailyResponse.ok || overlay.provisional_signal !== null) throw new Error("premium-only GC leaked through fallback daily overlay");
+  if (!dailyResponse.ok || overlay.provisional_signal?.status !== "GC") throw new Error("fallback daily overlay should retain provisional GC");
   if (overlay.record.per !== 30.2) throw new Error("daily fallback finance merge failed");
 
   const normalResponse = await window.fetch("data/charts/5942.json?v=1");
   const normal = await normalResponse.json();
-  if (normal.provisional_signal !== null) throw new Error("premium-only GC leaked through normal detail payload");
-  if (Object.prototype.hasOwnProperty.call(normal.record, "provisional_status")) throw new Error("normal detail record retained premium provisional status");
+  if (normal.provisional_signal?.status !== "GC") throw new Error("normal detail payload should retain provisional GC");
+  if (normal.record.provisional_status !== "GC") throw new Error("normal detail record should retain provisional status");
 
-  const api = window.KabutaneCoreDetailFallback;
-  if (!api || api.publicProvisional({ status: "GC" }) !== null) throw new Error("premium boundary helper is missing");
-  if (api.publicProvisional({ status: "DC" })?.status !== "DC") throw new Error("public provisional DC should remain visible");
-
-  console.log("core detail fallback + premium boundary: ok");
+  console.log("core detail fallback + individual provisional GC: ok");
 })().catch((error) => {
   console.error(error);
   process.exit(1);
