@@ -14,10 +14,8 @@ on:
       - 'assets/premium-supply-beta.js'
       - 'premium-supply-beta.html'
       - 'scripts/public_core_radar.py'
-      - 'scripts/public_detail_boundary.py'
       - 'tests/test_core_detail_fallback.js'
       - 'tests/test_public_core_radar.py'
-      - 'tests/test_public_detail_boundary.py'
       - 'tests/test_public_stock_universe.py'
       - '.github/workflows/deploy-pages.yml'
       - '.github/workflows/update-daily.yml'
@@ -36,10 +34,8 @@ on:
       - 'assets/premium-supply-beta.js'
       - 'premium-supply-beta.html'
       - 'scripts/public_core_radar.py'
-      - 'scripts/public_detail_boundary.py'
       - 'tests/test_core_detail_fallback.js'
       - 'tests/test_public_core_radar.py'
-      - 'tests/test_public_detail_boundary.py'
       - 'tests/test_public_stock_universe.py'
       - '.github/workflows/deploy-pages.yml'
       - '.github/workflows/update-daily.yml'
@@ -56,25 +52,27 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Validate public versus premium boundary
+      - name: Validate public versus premium discovery boundary
         run: |
-          python -m py_compile scripts/public_core_radar.py scripts/public_detail_boundary.py
-          python -m unittest tests.test_public_core_radar tests.test_public_detail_boundary tests.test_public_stock_universe -v
+          python -m py_compile scripts/public_core_radar.py
+          python -m unittest tests.test_public_core_radar tests.test_public_stock_universe -v
           node --check assets/all-stocks.js
           node --check assets/core-detail-fallback.js
           node tests/test_core_detail_fallback.js
-      - name: Assert public UI does not advertise provisional GC
+      - name: Assert list hides GC while detail can show it
         run: |
           ! grep -q 'value="GC"' all-stocks.html
           ! grep -q 'data-signal="GC"' all-stocks.html
           ! grep -q '暫定GC' all-stocks.html
           grep -q 'data/core/public-radar.json' assets/all-stocks.js
           ! grep -q 'fetch(`data/core/radar.json' assets/all-stocks.js
-          grep -q 'public_detail_boundary' .github/workflows/deploy-pages.yml
-          grep -q 'public_detail_boundary' .github/workflows/update-daily.yml
+          grep -q 'rm -f _site/data/core/radar.json' .github/workflows/deploy-pages.yml
+          grep -q 'rm -f _site/data/core/radar.json' .github/workflows/update-daily.yml
           grep -q 'コスモスフィルター' all-stocks.html
           grep -q 'ルーモフィルター' all-stocks.html
           grep -q 'エールフィルター' all-stocks.html
           grep -q '玄人向け設定' all-stocks.html
-          grep -q '暫定GCはプレミアム専用' AGENTS.md
+          grep -q '暫定GCの「発見」はプレミアム専用' AGENTS.md
+          grep -q '個別銘柄ページは例外' AGENTS.md
+          grep -q '暫定GC / 暫定DC' detail.html
           grep -q '暫定GC' premium-supply-beta.html
