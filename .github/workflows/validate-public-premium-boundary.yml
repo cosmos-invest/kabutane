@@ -14,9 +14,13 @@ on:
       - 'assets/premium-supply-beta.js'
       - 'premium-supply-beta.html'
       - 'scripts/public_core_radar.py'
+      - 'scripts/public_detail_boundary.py'
       - 'tests/test_core_detail_fallback.js'
       - 'tests/test_public_core_radar.py'
+      - 'tests/test_public_detail_boundary.py'
       - 'tests/test_public_stock_universe.py'
+      - '.github/workflows/deploy-pages.yml'
+      - '.github/workflows/update-daily.yml'
       - '.github/workflows/validate-public-premium-boundary.yml'
   push:
     branches: [main]
@@ -32,9 +36,13 @@ on:
       - 'assets/premium-supply-beta.js'
       - 'premium-supply-beta.html'
       - 'scripts/public_core_radar.py'
+      - 'scripts/public_detail_boundary.py'
       - 'tests/test_core_detail_fallback.js'
       - 'tests/test_public_core_radar.py'
+      - 'tests/test_public_detail_boundary.py'
       - 'tests/test_public_stock_universe.py'
+      - '.github/workflows/deploy-pages.yml'
+      - '.github/workflows/update-daily.yml'
       - '.github/workflows/validate-public-premium-boundary.yml'
 
 jobs:
@@ -50,8 +58,8 @@ jobs:
           node-version: '22'
       - name: Validate public versus premium boundary
         run: |
-          python -m py_compile scripts/public_core_radar.py
-          python -m unittest tests.test_public_core_radar tests.test_public_stock_universe -v
+          python -m py_compile scripts/public_core_radar.py scripts/public_detail_boundary.py
+          python -m unittest tests.test_public_core_radar tests.test_public_detail_boundary tests.test_public_stock_universe -v
           node --check assets/all-stocks.js
           node --check assets/core-detail-fallback.js
           node tests/test_core_detail_fallback.js
@@ -62,6 +70,8 @@ jobs:
           ! grep -q '暫定GC' all-stocks.html
           grep -q 'data/core/public-radar.json' assets/all-stocks.js
           ! grep -q 'fetch(`data/core/radar.json' assets/all-stocks.js
+          grep -q 'public_detail_boundary' .github/workflows/deploy-pages.yml
+          grep -q 'public_detail_boundary' .github/workflows/update-daily.yml
           grep -q 'コスモスフィルター' all-stocks.html
           grep -q 'ルーモフィルター' all-stocks.html
           grep -q 'エールフィルター' all-stocks.html
