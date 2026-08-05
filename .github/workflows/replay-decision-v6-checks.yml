@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - 'assets/replay-decision-flow-v6.js'
+      - 'assets/replay-decision-controls-v6.js'
       - 'assets/replay-decision-flow-v6.css'
       - 'assets/pwa-register.js'
       - 'detail.html'
@@ -15,6 +16,7 @@ on:
   push:
     paths:
       - 'assets/replay-decision-flow-v6.js'
+      - 'assets/replay-decision-controls-v6.js'
       - 'assets/replay-decision-flow-v6.css'
       - 'assets/pwa-register.js'
       - 'detail.html'
@@ -41,6 +43,7 @@ jobs:
       - name: Check JavaScript syntax
         run: |
           node --check assets/replay-decision-flow-v6.js
+          node --check assets/replay-decision-controls-v6.js
           node --check tests/replay-decision-v6.spec.js
       - name: Run integration checks
         run: python -m unittest tests.test_replay_decision_v6 -v
