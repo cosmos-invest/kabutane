@@ -3,9 +3,11 @@
 
   const STORAGE_KEY = "kabutane.watchlist.v1";
   const HISTORY_KEY = "kabutane.watchlist.history.v1";
+  const CODE_PATTERN = /^[0-9]{3}[0-9A-Z]$/;
 
   function normalizeCode(value) {
-    return String(value || "").trim().toUpperCase();
+    const code = String(value || "").trim().toUpperCase();
+    return CODE_PATTERN.test(code) ? code : "";
   }
 
   function safeParse(key, fallback) {
@@ -17,27 +19,34 @@
     }
   }
 
+  function safeName(value) {
+    return String(value || "").replace(/[\u0000-\u001F\u007F]/g, " ").trim().slice(0, 160);
+  }
+
   function load() {
     const rows = safeParse(STORAGE_KEY, []);
     if (!Array.isArray(rows)) return [];
     return rows
       .map((item) => ({
         code: normalizeCode(item?.code),
-        name: String(item?.name || "").trim(),
-        added_at: String(item?.added_at || ""),
+        name: safeName(item?.name),
+        added_at: String(item?.added_at || "").slice(0, 40),
       }))
       .filter((item) => item.code);
   }
 
   function save(rows) {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(rows));
-    window.dispatchEvent(new CustomEvent("kabutane:watchlist-change", { detail: { count: rows.length } }));
-    return rows;
+    const safeRows = (Array.isArray(rows) ? rows : [])
+      .map((item) => ({ code: normalizeCode(item?.code), name: safeName(item?.name), added_at: String(item?.added_at || "").slice(0, 40) }))
+      .filter((item) => item.code);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(safeRows));
+    window.dispatchEvent(new CustomEvent("kabutane:watchlist-change", { detail: { count: safeRows.length } }));
+    return safeRows;
   }
 
   function has(code) {
     const normalized = normalizeCode(code);
-    return load().some((item) => item.code === normalized);
+    return Boolean(normalized) && load().some((item) => item.code === normalized);
   }
 
   function add(code, name = "") {
@@ -46,24 +55,27 @@
     const rows = load();
     const existing = rows.find((item) => item.code === normalized);
     if (existing) {
-      if (name) existing.name = String(name).trim();
+      if (name) existing.name = safeName(name);
       return save(rows);
     }
-    rows.unshift({ code: normalized, name: String(name || "").trim(), added_at: new Date().toISOString() });
+    rows.unshift({ code: normalized, name: safeName(name), added_at: new Date().toISOString() });
     return save(rows);
   }
 
   function remove(code) {
     const normalized = normalizeCode(code);
+    if (!normalized) return load();
     return save(load().filter((item) => item.code !== normalized));
   }
 
   function toggle(code, name = "") {
-    if (has(code)) {
-      remove(code);
+    const normalized = normalizeCode(code);
+    if (!normalized) return false;
+    if (has(normalized)) {
+      remove(normalized);
       return false;
     }
-    add(code, name);
+    add(normalized, name);
     return true;
   }
 
@@ -78,14 +90,22 @@
     const store = history();
     const rows = Array.isArray(store[normalized]) ? store[normalized] : [];
     const next = rows.filter((item) => String(item?.date || "") !== String(observation.date));
-    next.push({ ...observation, date: String(observation.date) });
+    next.push({
+      date: String(observation.date).slice(0, 10),
+      price: observation.price ?? null,
+      status: String(observation.status || "UNKNOWN").slice(0, 16),
+      spread: observation.spread ?? null,
+      volume: observation.volume ?? null,
+    });
     next.sort((a, b) => String(a.date).localeCompare(String(b.date)));
     store[normalized] = next.slice(-30);
     localStorage.setItem(HISTORY_KEY, JSON.stringify(store));
   }
 
   function observations(code) {
-    const rows = history()[normalizeCode(code)];
+    const normalized = normalizeCode(code);
+    if (!normalized) return [];
+    const rows = history()[normalized];
     return Array.isArray(rows) ? rows : [];
   }
 
@@ -99,25 +119,27 @@
   }
 
   function buttonFor(code, name) {
+    const normalized = normalizeCode(code);
+    if (!normalized) return null;
     const button = document.createElement("button");
     button.type = "button";
     button.className = "kabutane-watch-toggle";
-    button.dataset.watchCode = code;
-    button.dataset.watchName = name || "";
+    button.dataset.watchCode = normalized;
+    button.dataset.watchName = safeName(name);
 
-    const currentName = () => String(button.dataset.watchName || name || "").trim();
+    const currentName = () => safeName(button.dataset.watchName || name || "");
     const refresh = () => {
-      const active = has(code);
+      const active = has(normalized);
       const displayName = currentName();
       button.classList.toggle("active", active);
       button.setAttribute("aria-pressed", String(active));
       button.textContent = active ? "★ 気になる" : "☆ 気になる";
-      button.setAttribute("aria-label", `${code} ${displayName}を${active ? "気になる株から外す" : "気になる株に追加"}`);
+      button.setAttribute("aria-label", `${normalized} ${displayName}を${active ? "気になる株から外す" : "気になる株に追加"}`);
     };
     button.addEventListener("click", (event) => {
       event.preventDefault();
       event.stopPropagation();
-      toggle(code, currentName());
+      toggle(normalized, currentName());
       refresh();
       updateFloatingLink();
     });
@@ -138,7 +160,8 @@
         if (!link || !cell || !code) return;
         const strong = link.querySelector("strong")?.textContent || "";
         const name = strong.replace(new RegExp(`^${code}\\s*`), "").trim();
-        cell.appendChild(buttonFor(code, name));
+        const button = buttonFor(code, name);
+        if (button) cell.appendChild(button);
       });
     };
     new MutationObserver(apply).observe(tbody, { childList: true, subtree: true });
@@ -153,9 +176,10 @@
     const title = document.getElementById("detailTitle");
     const getName = () => {
       const raw = String(title?.textContent || "").replace(code, "").trim();
-      return raw === "銘柄詳細" ? "" : raw;
+      return raw === "銘柄詳細" ? "" : safeName(raw);
     };
     const button = buttonFor(code, getName());
+    if (!button) return;
     button.classList.add("detail-watch-toggle");
     meta.insertBefore(button, meta.firstChild);
     if (title) {
@@ -178,7 +202,14 @@
       document.body.appendChild(link);
     }
     const count = load().length;
-    link.innerHTML = `<span>🌱</span><strong>気になる株</strong><em>${count}</em>`;
+    link.replaceChildren();
+    const icon = document.createElement("span");
+    icon.textContent = "🌱";
+    const label = document.createElement("strong");
+    label.textContent = "気になる株";
+    const badge = document.createElement("em");
+    badge.textContent = String(count);
+    link.append(icon, label, badge);
   }
 
   window.KabutaneWatchlist = {
@@ -190,6 +221,7 @@
     has,
     recordObservation,
     observations,
+    normalizeCode,
     storageKey: STORAGE_KEY,
   };
 
