@@ -1,0 +1,239 @@
+name: Apply PR77 stock-split normalization
+
+on:
+  push:
+    branches:
+      - feature/watchlist-premium-research
+    paths:
+      - '.github/workflows/apply-pr77-split-fix.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/watchlist-premium-research
+          fetch-depth: 0
+
+      - name: Apply reviewed stock-split patch
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          def replace_once(path, old, new):
+              p = Path(path)
+              text = p.read_text(encoding='utf-8')
+              count = text.count(old)
+              if count != 1:
+                  raise SystemExit(f'{path}: expected one match, found {count}: {old[:80]!r}')
+              p.write_text(text.replace(old, new, 1), encoding='utf-8')
+
+          replace_once(
+              'scripts/build_core_universe_data.py',
+              '            result.append({"date": date.strftime("%Y-%m-%d"), "type": "SPLIT", "label": "株式分割・併合", "detail": f"比率 {split:g}"})',
+              '            result.append({"date": date.strftime("%Y-%m-%d"), "type": "SPLIT", "label": "株式分割・併合", "detail": f"比率 {split:g}", "ratio": split})',
+          )
+          replace_once(
+              'scripts/build_core_universe_data.py',
+              '''            "daily": compact_daily_rows(daily, OVERLAY_DAYS),
+            "technical": technical,
+            "provisional_signal": signal,
+        }''',
+              '''            "daily": compact_daily_rows(daily, OVERLAY_DAYS),
+            "technical": technical,
+            "provisional_signal": signal,
+            "corporate_events": corporate_events(daily.tail(OVERLAY_DAYS)),
+        }''',
+          )
+
+          replace_once(
+              'scripts/premium_research.py',
+              '''    return result
+
+
+def series_price_on(series: dict[str, tuple[list[str], list[float]]], code: str, target_date: str) -> float | None:''',
+              '''    return result
+
+
+def load_split_events(core_root: Path | None = None) -> dict[str, list[tuple[str, float]]]:
+    core_root = core_root or (ROOT / "data" / "core")
+    merged: dict[str, dict[str, float]] = defaultdict(dict)
+    for folder in ["charts", "daily"]:
+        base = core_root / folder
+        if not base.exists():
+            continue
+        for path in sorted(base.glob("*.json")):
+            payload = load_json(path, {})
+            for code, record in (payload.get("records") or {}).items():
+                for event in record.get("corporate_events") or []:
+                    if event.get("type") != "SPLIT" or not event.get("date"):
+                        continue
+                    ratio = finite(event.get("ratio"))
+                    if ratio is None:
+                        detail = str(event.get("detail") or "").replace("比率", "").strip()
+                        ratio = finite(detail)
+                    if ratio not in (None, 0):
+                        merged[str(code)][str(event["date"])] = float(ratio)
+    return {code: sorted(values.items()) for code, values in merged.items()}
+
+
+def cumulative_split_ratio(
+    split_events: dict[str, list[tuple[str, float]]], code: str, start_date: str, exit_date: str
+) -> float:
+    ratio = 1.0
+    for event_date, event_ratio in split_events.get(code, []):
+        if start_date < event_date <= exit_date:
+            ratio *= event_ratio
+    return ratio
+
+
+def series_price_on(series: dict[str, tuple[list[str], list[float]]], code: str, target_date: str) -> float | None:''',
+          )
+          replace_once(
+              'scripts/premium_research.py',
+              '''                        "exit_price": finite(value[2]),
+                        "return_pct": finite(value[3]),
+                        "reason": str(value[4]),
+                    }''',
+              '''                        "exit_price": finite(value[2]),
+                        "return_pct": finite(value[3]),
+                        "reason": str(value[4]),
+                        "split_ratio": finite(value[5]) if len(value) > 5 else 1.0,
+                    }''',
+          )
+          replace_once(
+              'scripts/premium_research.py',
+              '''    series: dict[str, tuple[list[str], list[float]]],
+    outcomes_root: Path,
+    engine_version: str,
+) -> dict[str, int]:
+    dated_snapshots = latest_snapshot_per_date(snapshots)''',
+              '''    series: dict[str, tuple[list[str], list[float]]],
+    outcomes_root: Path,
+    engine_version: str,
+    split_events: dict[str, list[tuple[str, float]]] | None = None,
+) -> dict[str, int]:
+    split_events = split_events or {}
+    dated_snapshots = latest_snapshot_per_date(snapshots)''',
+          )
+          replace_once(
+              'scripts/premium_research.py',
+              '''                return_pct = (float(exit_price) / float(entry_price) - 1.0) * 100.0
+                horizon_payload[code] = [
+                    target_date,
+                    exit_date,
+                    round(float(exit_price), 4),
+                    round(return_pct, 5),
+                    reason,
+                ]''',
+              '''                split_ratio = cumulative_split_ratio(split_events, code, cohort_date, exit_date)
+                return_pct = (float(exit_price) * split_ratio / float(entry_price) - 1.0) * 100.0
+                horizon_payload[code] = [
+                    target_date,
+                    exit_date,
+                    round(float(exit_price), 4),
+                    round(return_pct, 5),
+                    reason,
+                    round(split_ratio, 8),
+                ]''',
+          )
+          replace_once(
+              'scripts/premium_research.py',
+              '''                    "exit_price": exit_price,
+                    "return_pct": return_pct,
+                    "reason": reason,
+                }''',
+              '''                    "exit_price": exit_price,
+                    "return_pct": return_pct,
+                    "reason": reason,
+                    "split_ratio": split_ratio,
+                }''',
+          )
+          replace_once(
+              'scripts/premium_research.py',
+              '''    series = load_price_series(core_root)
+    finalization = finalize_outcomes(snapshots, series, target_outcomes_root, engine_version)
+    outcome_index = load_outcome_index(target_outcomes_root, engine_version)''',
+              '''    series = load_price_series(core_root)
+    split_events = load_split_events(core_root)
+    finalization = finalize_outcomes(snapshots, series, target_outcomes_root, engine_version, split_events)
+    outcome_index = load_outcome_index(target_outcomes_root, engine_version)''',
+          )
+
+          replace_once(
+              'tests/test_premium_research.py',
+              '''    def test_fallback_can_use_entry_snapshot_when_constituent_disappears(self):
+        snapshot = research.compact_snapshot(self.opportunity("2026-07-03"))
+        observed = research.fallback_observation([snapshot], "1001", "2026-07-03", "2026-07-10")
+        self.assertEqual(observed, ("2026-07-03", 100.0))
+
+    def test_evaluate_tracks_forward_returns_and_market_excess(self):''',
+              '''    def test_fallback_can_use_entry_snapshot_when_constituent_disappears(self):
+        snapshot = research.compact_snapshot(self.opportunity("2026-07-03"))
+        observed = research.fallback_observation([snapshot], "1001", "2026-07-03", "2026-07-10")
+        self.assertEqual(observed, ("2026-07-03", 100.0))
+
+    def test_split_ratio_accumulates_within_return_period(self):
+        events = {"1001": [("2026-07-03", 3.0), ("2026-07-06", 2.0), ("2026-07-08", 0.5), ("2026-07-10", 4.0)]}
+        self.assertEqual(research.cumulative_split_ratio(events, "1001", "2026-07-03", "2026-07-08"), 1.0)
+
+    def test_split_adjusts_outcome_before_it_is_frozen(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            history, outcomes, core = root / "history", root / "outcomes", root / "core"
+            snapshot = research.compact_snapshot(self.opportunity("2026-07-03"))
+            self.write_history(history, [snapshot])
+            self.write_prices(core)
+            chart = core / "charts" / "10.json"
+            payload = json.loads(chart.read_text(encoding="utf-8"))
+            exit_row = next(row for row in payload["records"]["1001"]["daily"] if row[0] == "2026-07-10")
+            exit_row[4] = 52.5
+            payload["records"]["1001"]["corporate_events"] = [{"date": "2026-07-10", "type": "SPLIT", "detail": "比率 2", "ratio": 2.0}]
+            chart.write_text(json.dumps(payload), encoding="utf-8")
+            series = research.load_price_series(core)
+            splits = research.load_split_events(core)
+            research.finalize_outcomes([snapshot], series, outcomes, research.ENGINE_VERSION, splits)
+            ledger = json.loads(next(outcomes.glob("*.json")).read_text(encoding="utf-8"))
+            result = ledger["cohorts"][snapshot["snapshot_id"]]["5d"]["1001"]
+            self.assertEqual(result[3], 5.0)
+            self.assertEqual(result[5], 2.0)
+
+            exit_row[4] = 1.0
+            chart.write_text(json.dumps(payload), encoding="utf-8")
+            research.finalize_outcomes([snapshot], research.load_price_series(core), outcomes, research.ENGINE_VERSION, splits)
+            self.assertEqual(json.loads(next(outcomes.glob("*.json")).read_text(encoding="utf-8")), ledger)
+
+    def test_evaluate_tracks_forward_returns_and_market_excess(self):''',
+          )
+
+          replace_once(
+              'learn.html',
+              '      <p class="learn-note">この仕組みは「過去によく当たった条件へ合わせ続ける」ためではなく、条件変更が本当に再現性を改善したかを確認するためのものです。スコア仕様を変える場合はengine versionを分け、異なる版の履歴を混ぜません。</p>',
+              '      <p class="learn-note">この仕組みは「過去によく当たった条件へ合わせ続ける」ためではなく、条件変更が本当に再現性を改善したかを確認するためのものです。5営業日後・20営業日後の結果は、期間中の株式分割・併合を補正してから変更しない台帳へ固定します。スコア仕様を変える場合はengine versionを分け、異なる版の履歴を混ぜません。</p>',
+          )
+          PY
+
+      - name: Validate patch
+        shell: bash
+        run: |
+          python3 -m py_compile scripts/build_core_universe_data.py scripts/premium_research.py tests/test_premium_research.py
+          python3 -m unittest tests.test_premium_research -v
+          git diff --check
+          grep -q 'cumulative_split_ratio' scripts/premium_research.py
+          grep -q '"ratio": split' scripts/build_core_universe_data.py
+          grep -q '株式分割・併合を補正' learn.html
+
+      - name: Commit patch and remove temporary workflow
+        shell: bash
+        run: |
+          rm .github/workflows/apply-pr77-split-fix.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add scripts/build_core_universe_data.py scripts/premium_research.py tests/test_premium_research.py learn.html .github/workflows/apply-pr77-split-fix.yml
+          git commit -m 'fix: normalize premium outcomes across stock splits'
+          git push origin HEAD:feature/watchlist-premium-research
