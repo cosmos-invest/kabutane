@@ -3,6 +3,9 @@ name: Apply final PR77 review patch
 on:
   pull_request_target:
     types: [reopened]
+  workflow_run:
+    workflows: ["Update JPX margin balance"]
+    types: [completed]
 
 permissions:
   contents: write
@@ -10,7 +13,9 @@ permissions:
 
 jobs:
   patch:
-    if: github.event.pull_request.number == 77
+    if: >-
+      (github.event_name == 'pull_request_target' && github.event.pull_request.number == 77) ||
+      github.event_name == 'workflow_run'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout PR branch
@@ -37,7 +42,6 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git show HEAD^:.github/workflows/update-premium-research.yml > /dev/null 2>&1 || true
           git add learn.html scripts/build_core_universe_data.py scripts/premium_research.py tests/test_premium_research.py
           git commit -m 'fix: normalize premium outcomes across stock splits'
           git push origin HEAD:feature/watchlist-premium-research
