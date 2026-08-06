@@ -134,10 +134,6 @@
     });
     rows.sort((a, b) => {
       if (mode === "code") return String(a.code).localeCompare(String(b.code), "ja", { numeric: true });
-      if (mode === "status") {
-        const rank = { GC: 6, NEAR_GC: 5, CONTINUE: 4, DC: 3, OUT: 2, UNKNOWN: 1 };
-        return (rank[b.provisional_status] || 0) - (rank[a.provisional_status] || 0) || String(a.code).localeCompare(String(b.code));
-      }
       if (mode === "volume") return (finite(b.volume_ratio_5_30) ?? -9999) - (finite(a.volume_ratio_5_30) ?? -9999);
       return String(b.added_at || "").localeCompare(String(a.added_at || ""));
     });
