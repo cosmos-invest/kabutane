@@ -11,6 +11,8 @@ ROOT = Path(__file__).resolve().parents[1]
 CORE_RADAR = ROOT / "data" / "core" / "radar.json"
 SUPPLY_SCREEN = ROOT / "data" / "premium" / "supply-demand-screen.json"
 OUTPUT = ROOT / "data" / "premium" / "opportunity-radar.json"
+ENGINE_VERSION = "priority_v1_44_20_26_10"
+SCORE_CAPS = {"signal": 44, "trend_volume": 20, "supply": 26, "finance": 10}
 
 
 def finite(value: Any) -> float | None:
@@ -164,6 +166,8 @@ def build_payload() -> dict[str, Any]:
     }
     rows = [build_row(row, supply_map.get(str(row.get("code") or ""))) for row in radar.get("records") or []]
     rows.sort(key=lambda item: (-float(item.get("priority_score") or 0), str(item.get("code") or "")))
+    for rank, item in enumerate(rows, start=1):
+        item["priority_rank"] = rank
     status_counts = {
         status: sum(item.get("provisional_status") == status for item in rows)
         for status in ["GC", "NEAR_GC", "CONTINUE", "DC", "OUT", "UNKNOWN"]
@@ -173,8 +177,10 @@ def build_payload() -> dict[str, Any]:
         for item in rows
     )
     return {
-        "schema_version": 2,
+        "schema_version": 3,
         "kind": "kabutane_premium_opportunity_radar",
+        "engine_version": ENGINE_VERSION,
+        "score_caps": SCORE_CAPS,
         "generated_at": radar.get("generated_at"),
         "price_date": max((str(item.get("price_date") or "") for item in rows), default="") or None,
         "margin_date": supply_payload.get("latest_date"),
@@ -199,7 +205,7 @@ def main() -> None:
     public_payload = write_public_radar()
     print(
         "Premium opportunity radar: "
-        f"core={payload['core_count']} GC={payload['status_counts'].get('GC', 0)} "
+        f"engine={payload['engine_version']} core={payload['core_count']} GC={payload['status_counts'].get('GC', 0)} "
         f"near={payload['status_counts'].get('NEAR_GC', 0)} supply={payload['supply_candidate_count']} "
         f"public={len(public_payload.get('records') or [])}"
     )
