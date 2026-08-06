@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import math
 import statistics
@@ -55,12 +56,33 @@ def write_json(path: Path, payload: Any) -> None:
         path.write_text(text, encoding="utf-8")
 
 
+def safe_engine_version(value: Any) -> str:
+    raw = str(value or ENGINE_VERSION).strip() or ENGINE_VERSION
+    return "".join(ch if ch.isalnum() or ch in {"-", "_", "."} else "_" for ch in raw)
+
+
+def resolved_history_root(history_root: Path | None, engine_version: str) -> Path:
+    return history_root if history_root is not None else HISTORY_ROOT / safe_engine_version(engine_version)
+
+
+def snapshot_fingerprint(snapshot: dict[str, Any]) -> str:
+    stable = {
+        "price_date": snapshot.get("price_date"),
+        "engine_version": snapshot.get("engine_version"),
+        "records": snapshot.get("records") or [],
+    }
+    raw = json.dumps(stable, ensure_ascii=False, separators=(",", ":"), sort_keys=True).encode("utf-8")
+    return hashlib.sha256(raw).hexdigest()
+
+
 def compact_snapshot(payload: dict[str, Any]) -> dict[str, Any]:
+    payload_date = str(payload.get("price_date") or "")
     rows = []
     for row in payload.get("records") or []:
         components = row.get("score_components") or {}
         rows.append([
             str(row.get("code") or ""),
+            str(row.get("price_date") or payload_date),
             rounded(row.get("current_price"), 4),
             rounded(row.get("priority_score"), 2),
             rounded(components.get("signal"), 2),
@@ -69,63 +91,121 @@ def compact_snapshot(payload: dict[str, Any]) -> dict[str, Any]:
             rounded(components.get("finance"), 2),
             str(row.get("provisional_status") or "UNKNOWN"),
         ])
-    rows = [row for row in rows if row[0] and row[1] is not None]
-    rows.sort(key=lambda item: (-(item[2] or 0), item[0]))
-    return {
-        "price_date": str(payload.get("price_date") or ""),
+    rows = [row for row in rows if row[0] and row[2] is not None]
+    rows.sort(key=lambda item: (-(item[3] or 0), item[0]))
+    snapshot = {
+        "price_date": payload_date,
         "generated_at": payload.get("generated_at"),
         "engine_version": str(payload.get("engine_version") or ENGINE_VERSION),
         "records": rows,
     }
+    fingerprint = snapshot_fingerprint(snapshot)
+    snapshot["fingerprint"] = fingerprint
+    snapshot["snapshot_id"] = f"{payload_date}:{fingerprint[:16]}"
+    return snapshot
 
 
-def record_snapshot(payload_path: Path = PREMIUM_RADAR, history_root: Path = HISTORY_ROOT) -> dict[str, Any] | None:
+def record_snapshot(payload_path: Path = PREMIUM_RADAR, history_root: Path | None = None) -> dict[str, Any] | None:
     payload = load_json(payload_path, {})
     snapshot = compact_snapshot(payload)
     price_date = snapshot.get("price_date") or ""
+    engine_version = str(snapshot.get("engine_version") or ENGINE_VERSION)
     if len(price_date) < 7 or not snapshot.get("records"):
         return None
+    target_root = resolved_history_root(history_root, engine_version)
     month = price_date[:7]
-    path = history_root / f"{month}.json"
-    current = load_json(path, {"schema_version": 1, "kind": "premium_engine_history_month", "month": month, "snapshots": []})
-    snapshots = [item for item in current.get("snapshots") or [] if str(item.get("price_date") or "") != price_date]
+    path = target_root / f"{month}.json"
+    current = load_json(
+        path,
+        {
+            "schema_version": 2,
+            "kind": "premium_engine_history_month",
+            "engine_version": engine_version,
+            "month": month,
+            "snapshots": [],
+        },
+    )
+    snapshots = list(current.get("snapshots") or [])
+    fingerprint = snapshot["fingerprint"]
+    identical = next((item for item in snapshots if item.get("fingerprint") == fingerprint), None)
+    if identical is not None:
+        return identical
     snapshots.append(snapshot)
-    snapshots.sort(key=lambda item: str(item.get("price_date") or ""))
-    current.update({"schema_version": 1, "kind": "premium_engine_history_month", "month": month, "snapshots": snapshots})
+    snapshots.sort(key=lambda item: (str(item.get("price_date") or ""), str(item.get("generated_at") or ""), str(item.get("snapshot_id") or "")))
+    current.update(
+        {
+            "schema_version": 2,
+            "kind": "premium_engine_history_month",
+            "engine_version": engine_version,
+            "month": month,
+            "snapshots": snapshots,
+        }
+    )
     write_json(path, current)
     return snapshot
 
 
-def load_snapshots(history_root: Path = HISTORY_ROOT) -> list[dict[str, Any]]:
+def load_snapshots(history_root: Path, engine_version: str | None = None) -> list[dict[str, Any]]:
     snapshots: list[dict[str, Any]] = []
     if not history_root.exists():
         return snapshots
     for path in sorted(history_root.glob("20??-??.json")):
         payload = load_json(path, {})
-        snapshots.extend(item for item in payload.get("snapshots") or [] if item.get("price_date"))
-    by_date = {str(item.get("price_date")): item for item in snapshots}
-    return [by_date[key] for key in sorted(by_date)]
+        for item in payload.get("snapshots") or []:
+            if not item.get("price_date"):
+                continue
+            version = str(item.get("engine_version") or payload.get("engine_version") or "")
+            if engine_version and version != engine_version:
+                continue
+            snapshots.append(item)
+    by_id: dict[str, dict[str, Any]] = {}
+    for item in snapshots:
+        key = str(item.get("snapshot_id") or item.get("fingerprint") or "")
+        if not key:
+            key = f"legacy:{item.get('price_date')}:{len(by_id)}"
+        by_id[key] = item
+    return sorted(
+        by_id.values(),
+        key=lambda item: (str(item.get("price_date") or ""), str(item.get("generated_at") or ""), str(item.get("snapshot_id") or "")),
+    )
 
 
 def observation_rows(snapshot: dict[str, Any]) -> list[dict[str, Any]]:
     result = []
     for rank, row in enumerate(snapshot.get("records") or [], start=1):
-        if not isinstance(row, list) or len(row) < 8:
+        if not isinstance(row, list) or len(row) < 9:
             continue
-        result.append({
-            "rank": rank,
-            "code": str(row[0]),
-            "price": finite(row[1]),
-            "score": finite(row[2]) or 0.0,
-            "components": {
-                "signal": finite(row[3]) or 0.0,
-                "trend_volume": finite(row[4]) or 0.0,
-                "supply": finite(row[5]) or 0.0,
-                "finance": finite(row[6]) or 0.0,
-            },
-            "status": str(row[7] or "UNKNOWN"),
-        })
+        result.append(
+            {
+                "rank": rank,
+                "code": str(row[0]),
+                "price_date": str(row[1] or ""),
+                "price": finite(row[2]),
+                "score": finite(row[3]) or 0.0,
+                "components": {
+                    "signal": finite(row[4]) or 0.0,
+                    "trend_volume": finite(row[5]) or 0.0,
+                    "supply": finite(row[6]) or 0.0,
+                    "finance": finite(row[7]) or 0.0,
+                },
+                "status": str(row[8] or "UNKNOWN"),
+            }
+        )
     return result
+
+
+def cohort_rows(snapshot: dict[str, Any]) -> list[dict[str, Any]]:
+    cohort_date = str(snapshot.get("price_date") or "")
+    return [row for row in observation_rows(snapshot) if row.get("price_date") == cohort_date]
+
+
+def latest_snapshot_per_date(snapshots: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    by_date: dict[str, dict[str, Any]] = {}
+    for snapshot in snapshots:
+        key = str(snapshot.get("price_date") or "")
+        if key:
+            by_date[key] = snapshot
+    return [by_date[key] for key in sorted(by_date)]
 
 
 def load_price_series(core_root: Path | None = None) -> dict[str, tuple[list[str], list[float]]]:
@@ -176,7 +256,7 @@ def metric(values: list[float]) -> dict[str, Any]:
 
 def weekly_cohorts(snapshots: list[dict[str, Any]]) -> list[dict[str, Any]]:
     selected: dict[tuple[int, int], dict[str, Any]] = {}
-    for snapshot in snapshots:
+    for snapshot in latest_snapshot_per_date(snapshots):
         try:
             d = date.fromisoformat(str(snapshot.get("price_date")))
         except ValueError:
@@ -203,8 +283,12 @@ def portfolio_members(rows: list[dict[str, Any]], spec: str) -> list[dict[str, A
     return []
 
 
-def evaluate(history_root: Path = HISTORY_ROOT, core_root: Path | None = None, premium_path: Path = PREMIUM_RADAR) -> dict[str, Any]:
-    snapshots = load_snapshots(history_root)
+def evaluate(history_root: Path | None = None, core_root: Path | None = None, premium_path: Path = PREMIUM_RADAR) -> dict[str, Any]:
+    latest_payload = load_json(premium_path, {})
+    engine_version = str(latest_payload.get("engine_version") or ENGINE_VERSION)
+    target_history_root = resolved_history_root(history_root, engine_version)
+    snapshots = load_snapshots(target_history_root, engine_version)
+    dated_snapshots = latest_snapshot_per_date(snapshots)
     cohorts = weekly_cohorts(snapshots)
     series = load_price_series(core_root)
     horizons = {"5d": 5, "20d": 20}
@@ -226,8 +310,13 @@ def evaluate(history_root: Path = HISTORY_ROOT, core_root: Path | None = None, p
 
         for snapshot in cohorts:
             start_date = str(snapshot.get("price_date") or "")
-            rows = observation_rows(snapshot)
-            returns_by_code = {row["code"]: future_return(series, row["code"], start_date, row["price"], horizon) for row in rows}
+            rows = cohort_rows(snapshot)
+            if not rows:
+                continue
+            returns_by_code = {
+                row["code"]: future_return(series, row["code"], row["price_date"], row["price"], horizon)
+                for row in rows
+            }
             baseline = [value for value in returns_by_code.values() if value is not None]
             if not baseline:
                 continue
@@ -246,7 +335,11 @@ def evaluate(history_root: Path = HISTORY_ROOT, core_root: Path | None = None, p
 
             for low, high in bucket_defs:
                 label = f"{int(low)}-{int(high) if high < 100 else 100}"
-                values = [returns_by_code[row["code"]] for row in rows if low <= row["score"] <= high and returns_by_code.get(row["code"]) is not None]
+                values = [
+                    returns_by_code[row["code"]]
+                    for row in rows
+                    if low <= row["score"] <= high and returns_by_code.get(row["code"]) is not None
+                ]
                 bucket_returns[label].extend(values)
 
             for name, weights in WEIGHT_EXPERIMENTS.items():
@@ -286,12 +379,13 @@ def evaluate(history_root: Path = HISTORY_ROOT, core_root: Path | None = None, p
                 "weights": WEIGHT_EXPERIMENTS[name],
             }
 
-    latest_payload = load_json(premium_path, {})
     latest_map = {str(row.get("code") or ""): row for row in latest_payload.get("records") or []}
     movers = []
-    if len(snapshots) >= 2:
-        previous_rows = observation_rows(snapshots[-2])
-        current_rows = observation_rows(snapshots[-1])
+    if len(dated_snapshots) >= 2:
+        previous_snapshot = dated_snapshots[-2]
+        current_snapshot = dated_snapshots[-1]
+        previous_rows = cohort_rows(previous_snapshot)
+        current_rows = cohort_rows(current_snapshot)
         prev = {row["code"]: row for row in previous_rows}
         for row in current_rows[:150]:
             old = prev.get(row["code"])
@@ -302,24 +396,26 @@ def evaluate(history_root: Path = HISTORY_ROOT, core_root: Path | None = None, p
             if rank_delta <= 0 and score_delta <= 0:
                 continue
             info = latest_map.get(row["code"], {})
-            movers.append({
-                "code": row["code"],
-                "name": info.get("name"),
-                "market": info.get("market"),
-                "current_rank": row["rank"],
-                "previous_rank": old["rank"],
-                "rank_delta": rank_delta,
-                "priority_score": round(row["score"], 1),
-                "score_delta": round(score_delta, 1),
-                "provisional_status": row["status"],
-                "tags": info.get("tags") or [],
-                "reasons": info.get("reasons") or [],
-            })
+            movers.append(
+                {
+                    "code": row["code"],
+                    "name": info.get("name"),
+                    "market": info.get("market"),
+                    "current_rank": row["rank"],
+                    "previous_rank": old["rank"],
+                    "rank_delta": rank_delta,
+                    "priority_score": round(row["score"], 1),
+                    "score_delta": round(score_delta, 1),
+                    "provisional_status": row["status"],
+                    "tags": info.get("tags") or [],
+                    "reasons": info.get("reasons") or [],
+                }
+            )
         movers.sort(key=lambda item: (item["current_rank"] > 20, -item["rank_delta"], -item["score_delta"], item["current_rank"]))
         movers = movers[:12]
 
-    start = snapshots[0].get("price_date") if snapshots else None
-    latest = snapshots[-1].get("price_date") if snapshots else None
+    start = dated_snapshots[0].get("price_date") if dated_snapshots else None
+    latest = dated_snapshots[-1].get("price_date") if dated_snapshots else None
     recommendation_ready = mature_counts["20d"] >= 12 and mature_counts["5d"] >= 20
     best_experiment = None
     if recommendation_ready:
@@ -333,12 +429,13 @@ def evaluate(history_root: Path = HISTORY_ROOT, core_root: Path | None = None, p
             _, best_experiment = max(candidates)
 
     return {
-        "schema_version": 1,
+        "schema_version": 2,
         "kind": "premium_engine_research_summary",
-        "engine_version": str(latest_payload.get("engine_version") or ENGINE_VERSION),
+        "engine_version": engine_version,
         "history_start": start,
         "latest_snapshot": latest,
         "snapshot_count": len(snapshots),
+        "snapshot_day_count": len(dated_snapshots),
         "weekly_cohort_count": len(cohorts),
         "mature_cohorts": mature_counts,
         "recommendation_ready": recommendation_ready,
@@ -351,7 +448,12 @@ def evaluate(history_root: Path = HISTORY_ROOT, core_root: Path | None = None, p
     }
 
 
-def run(payload_path: Path = PREMIUM_RADAR, history_root: Path = HISTORY_ROOT, summary_path: Path = SUMMARY_PATH, core_root: Path | None = None) -> dict[str, Any]:
+def run(
+    payload_path: Path = PREMIUM_RADAR,
+    history_root: Path | None = None,
+    summary_path: Path = SUMMARY_PATH,
+    core_root: Path | None = None,
+) -> dict[str, Any]:
     record_snapshot(payload_path, history_root)
     summary = evaluate(history_root, core_root, payload_path)
     write_json(summary_path, summary)
@@ -361,15 +463,15 @@ def run(payload_path: Path = PREMIUM_RADAR, history_root: Path = HISTORY_ROOT, s
 def main() -> None:
     parser = argparse.ArgumentParser(description="Persist and validate Kabutane premium observation-priority engine")
     parser.add_argument("--payload", type=Path, default=PREMIUM_RADAR)
-    parser.add_argument("--history-root", type=Path, default=HISTORY_ROOT)
+    parser.add_argument("--history-root", type=Path, default=None)
     parser.add_argument("--summary", type=Path, default=SUMMARY_PATH)
     parser.add_argument("--core-root", type=Path, default=ROOT / "data" / "core")
     args = parser.parse_args()
     summary = run(args.payload, args.history_root, args.summary, args.core_root)
     print(
         "Premium research: "
-        f"snapshots={summary['snapshot_count']} weekly={summary['weekly_cohort_count']} "
-        f"mature5={summary['mature_cohorts']['5d']} mature20={summary['mature_cohorts']['20d']}"
+        f"engine={summary['engine_version']} generations={summary['snapshot_count']} days={summary['snapshot_day_count']} "
+        f"weekly={summary['weekly_cohort_count']} mature5={summary['mature_cohorts']['5d']} mature20={summary['mature_cohorts']['20d']}"
     )
 
 
