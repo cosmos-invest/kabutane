@@ -304,7 +304,7 @@ def fallback_observation(
 ) -> tuple[str, float] | None:
     for snapshot in reversed(dated_snapshots):
         value_date = str(snapshot.get("price_date") or "")
-        if not value_date or value_date > target_date or value_date <= start_date:
+        if not value_date or value_date > target_date or value_date < start_date:
             continue
         row = next((item for item in cohort_rows(snapshot) if item.get("code") == code), None)
         price = finite(row.get("price")) if row else None
