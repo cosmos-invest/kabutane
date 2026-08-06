@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="かぶたねで気になった銘柄を、このブラウザだけのウォッチリストに保存して追いかけます。">
+  <meta name="theme-color" content="#f26fa6">
+  <title>気になる株 | かぶたね</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/pastel.css">
+  <link rel="stylesheet" href="assets/kabutane.css">
+  <link rel="stylesheet" href="assets/kabutane-links.css">
+  <link rel="stylesheet" href="assets/watchlist.css?v=1">
+</head>
+<body data-page="watchlist" class="pastel-theme watchlist-page">
+  <header class="site-header">
+    <div class="header-inner">
+      <div>
+        <a class="back-link" href="all-stocks.html">← 全銘柄一覧へ</a>
+        <p class="eyebrow">MY KABUTANE WATCHLIST</p>
+        <h1>🌱 気になる株</h1>
+        <p class="subtitle">見つけた銘柄を自分のブラウザに保存して、あとから同じ銘柄だけ追いかけられます。</p>
+      </div>
+      <div class="header-meta"><span id="watchlistUpdated" class="badge neutral">データ読込中…</span></div>
+    </div>
+  </header>
+
+  <main class="container watchlist-container">
+    <section class="watchlist-hero">
+      <div>
+        <p class="eyebrow">SAVE LOCALLY ✨</p>
+        <h1>「これ気になる」を、忘れない。</h1>
+        <p>全銘柄一覧や個別ページの<strong>☆ 気になる</strong>を押すだけ。ログインは不要で、このブラウザのlocalStorageへ保存します。</p>
+      </div>
+      <div class="watchlist-count"><span>保存中</span><strong><span id="watchlistCount">0</span>銘柄</strong><small>このブラウザのみ</small></div>
+    </section>
+
+    <section class="watchlist-info" aria-label="ウォッチリストの特徴">
+      <article><span>🌸 既知銘柄を確認</span><strong>暫定GC / DCも見える</strong><p>自分で登録した銘柄は「発見一覧」ではないため、進行中月の状態も確認できます。</p></article>
+      <article><span>✨ 前回確認と比較</span><strong>見るたびに履歴を保存</strong><p>このブラウザ内で直近30回分の価格・状態を残し、前回確認時からの変化を追います。</p></article>
+      <article><span>💜 アカウント不要</span><strong>端末ごとに独立</strong><p>別のスマホ・PC・ブラウザとは同期されません。共有端末では保存内容が見える点に注意してください。</p></article>
+    </section>
+
+    <section class="panel">
+      <div class="watchlist-toolbar">
+        <label>銘柄検索<input id="watchlistSearch" type="search" placeholder="5243 / note / 銘柄名"></label>
+        <label>並び順<select id="watchlistSort"><option value="added">追加した順</option><option value="status">月足状態</option><option value="volume">出来高</option><option value="code">コード</option></select></label>
+        <a class="button secondary" href="all-stocks.html">＋ 全銘柄から探す</a>
+      </div>
+      <div id="watchlistGrid" class="watchlist-grid"></div>
+      <div id="watchlistEmpty" class="watchlist-empty" hidden><strong>まだ気になる株はありません。</strong><p>全銘柄一覧や個別ページで「☆ 気になる」を押すと、ここに追加されます。</p><a class="button" href="all-stocks.html">全銘柄一覧へ</a></div>
+      <p class="watchlist-note"><strong>保存先について：</strong>ウォッチリストと前回確認履歴はブラウザ内だけに保存します。サーバーや他の利用者へ送信しません。ブラウザのデータ削除・シークレットモードでは消える場合があります。</p>
+    </section>
+  </main>
+
+  <footer><p>かぶたね 🌱 / 気になる株</p></footer>
+  <script src="assets/watchlist.js?v=1" defer></script>
+  <script src="assets/watchlist-page.js?v=1" defer></script>
+</body>
+</html>
