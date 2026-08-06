@@ -67,7 +67,11 @@ jobs:
         with:
           python-version: '3.12'
       - name: Record point-in-time premium snapshot and evaluate matured cohorts
-        run: python -m scripts.premium_research
+        run: |
+          # History lives below the engine version so a future scoring revision
+          # cannot silently mix old and new score distributions.
+          python -m scripts.premium_research \
+            --history-root data/premium/research/history/priority_v1_44_20_26_10
       - name: Validate research output
         run: |
           python - <<'PY'
