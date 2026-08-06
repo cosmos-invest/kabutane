@@ -7,6 +7,7 @@
   <title>先回り・需給ラボ β | かぶたね</title>
   <link rel="stylesheet" href="assets/style.css?v=14">
   <link rel="stylesheet" href="assets/premium-supply-beta.css?v=2">
+  <link rel="stylesheet" href="assets/premium-research.css?v=1">
 </head>
 <body class="premium-supply-beta-page">
   <header class="site-header premium-header">
@@ -36,6 +37,44 @@
       </div>
       <div id="premiumSummary" class="premium-summary-grid"></div>
       <div id="premiumCoverage" class="premium-coverage"></div>
+    </section>
+
+    <section class="panel premium-research-panel" aria-labelledby="researchTitle">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">ENGINE TRACK RECORD</p>
+          <h2 id="researchTitle">🔥 エンジン急上昇 ＆ 観察優先度の検証室</h2>
+          <p>今日上位へ浮上した銘柄だけでなく、<strong>その順位が本当に1週間後・1か月後の成績につながったか</strong>を時系列で残します。</p>
+        </div>
+      </div>
+
+      <div id="premiumResearchStatus" class="research-status-grid"></div>
+
+      <div class="research-subsection">
+        <h3>🔥 昨日より急浮上した銘柄</h3>
+        <p>観察優先度の順位・点数が前回スナップショットから上がった銘柄です。2営業日分たまると表示を開始します。</p>
+        <div id="premiumHotMovers" class="research-hot-grid"></div>
+      </div>
+
+      <div class="research-subsection">
+        <h3>仮想ポートフォリオの追跡</h3>
+        <p>各週の観察優先度を固定し、上位10/20/50銘柄や点数帯を等金額で保有したと仮定して、5営業日後・20営業日後を追跡します。未来の情報で過去スコアを書き換えません。</p>
+        <div id="premiumPortfolioValidation" class="research-table-wrap"></div>
+      </div>
+
+      <div class="research-subsection">
+        <h3>どの点数帯が強かった？</h3>
+        <p>観察優先度の閾値を感覚で決めず、50点台・60点台・70点台・80点台・90点台のその後を比較します。</p>
+        <div id="premiumBucketValidation" class="research-table-wrap"></div>
+      </div>
+
+      <div class="research-subsection">
+        <h3>重みの研究：現行 vs 挑戦者</h3>
+        <p>月足シグナル・日足/出来高・信用需給・財務の比重を複数パターンで並走させます。<strong>本番エンジンは自動変更せず</strong>、十分な検証期間がたまってから研究候補だけを提示します。</p>
+        <div id="premiumWeightExperiments" class="research-table-wrap"></div>
+      </div>
+
+      <p class="research-guardrail"><strong>過学習を避けるためのルール：</strong>正式な見直し候補は週次コホートで評価し、20営業日後の検証が12週以上、5営業日後が20週以上たまるまでは現行の観察優先度を変更しません。市場全体の平均騰落率との差も同時に比較します。</p>
     </section>
 
     <section class="panel premium-finder-panel">
@@ -81,5 +120,6 @@
   </main>
 
   <script src="assets/premium-supply-beta.js?v=2" defer></script>
+  <script src="assets/premium-research.js?v=1" defer></script>
 </body>
 </html>
