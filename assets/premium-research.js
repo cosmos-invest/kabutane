@@ -29,7 +29,7 @@
     const ready = data.recommendation_ready === true;
     status.innerHTML = `
       <article><span>履歴開始</span><strong>${data.history_start || "今日から蓄積"}</strong></article>
-      <article><span>保存スナップショット</span><strong>${Number(data.snapshot_count || 0).toLocaleString("ja-JP")}日</strong></article>
+      <article><span>保存日数</span><strong>${Number(data.snapshot_day_count ?? data.snapshot_count ?? 0).toLocaleString("ja-JP")}日</strong><small>immutable生成 ${Number(data.snapshot_count || 0)}件</small></article>
       <article><span>5営業日後を検証済み</span><strong>${Number(mature["5d"] || 0)}週</strong></article>
       <article><span>20営業日後を検証済み</span><strong>${Number(mature["20d"] || 0)}週</strong></article>
       <article class="${ready ? "research-ready" : "research-wait"}"><span>重み見直し</span><strong>${ready ? "研究候補を比較可能" : "まだ自動変更しない"}</strong></article>`;
