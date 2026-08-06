@@ -87,7 +87,7 @@ class PremiumResearchTests(unittest.TestCase):
     def test_future_return_rejects_entry_outside_retained_window(self):
         series = {"1001": (["2026-08-03", "2026-08-04", "2026-08-05", "2026-08-06", "2026-08-07", "2026-08-10"], [100, 101, 102, 103, 104, 105])}
         self.assertIsNone(research.future_return(series, "1001", "2025-08-01", 80, 5))
-        self.assertEqual(research.future_return(series, "1001", "2026-08-03", 100, 5), 5.0)
+        self.assertAlmostEqual(research.future_return(series, "1001", "2026-08-03", 100, 5), 5.0, places=10)
 
     def test_evaluate_tracks_forward_returns_and_market_excess(self):
         with tempfile.TemporaryDirectory() as tmp:
