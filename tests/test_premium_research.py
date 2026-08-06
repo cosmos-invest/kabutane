@@ -10,15 +10,15 @@ from scripts import premium_research as research
 
 
 class PremiumResearchTests(unittest.TestCase):
-    def opportunity(self, price_date: str, shift: float = 0.0):
+    def opportunity(self, price_date: str, shift: float = 0.0, generated_suffix: str = "12:00:00"):
         return {
             "price_date": price_date,
-            "generated_at": f"{price_date}T12:00:00+00:00",
+            "generated_at": f"{price_date}T{generated_suffix}+00:00",
             "engine_version": research.ENGINE_VERSION,
             "records": [
-                {"code": "1001", "name": "A", "current_price": 100 + shift, "priority_score": 90, "provisional_status": "GC", "score_components": {"signal": 40, "trend_volume": 18, "supply": 24, "finance": 8}},
-                {"code": "1002", "name": "B", "current_price": 100, "priority_score": 70, "provisional_status": "NEAR_GC", "score_components": {"signal": 32, "trend_volume": 14, "supply": 18, "finance": 6}},
-                {"code": "1003", "name": "C", "current_price": 100, "priority_score": 40, "provisional_status": "OUT", "score_components": {"signal": 0, "trend_volume": 16, "supply": 18, "finance": 6}},
+                {"code": "1001", "name": "A", "price_date": price_date, "current_price": 100 + shift, "priority_score": 90, "provisional_status": "GC", "score_components": {"signal": 40, "trend_volume": 18, "supply": 24, "finance": 8}},
+                {"code": "1002", "name": "B", "price_date": price_date, "current_price": 100, "priority_score": 70, "provisional_status": "NEAR_GC", "score_components": {"signal": 32, "trend_volume": 14, "supply": 18, "finance": 6}},
+                {"code": "1003", "name": "C", "price_date": price_date, "current_price": 100, "priority_score": 40, "provisional_status": "OUT", "score_components": {"signal": 0, "trend_volume": 16, "supply": 18, "finance": 6}},
             ],
         }
 
@@ -53,10 +53,27 @@ class PremiumResearchTests(unittest.TestCase):
             first = research.record_snapshot(payload, history)
             second = research.record_snapshot(payload, history)
             self.assertEqual(first["price_date"], "2026-07-03")
+            self.assertEqual(first["snapshot_id"], second["snapshot_id"])
             month = json.loads((history / "2026-07.json").read_text(encoding="utf-8"))
             self.assertEqual(len(month["snapshots"]), 1)
             self.assertEqual(month["snapshots"][0]["records"][0][0], "1001")
-            self.assertEqual(len(month["snapshots"][0]["records"][0]), 8)
+            self.assertEqual(month["snapshots"][0]["records"][0][1], "2026-07-03")
+            self.assertEqual(len(month["snapshots"][0]["records"][0]), 9)
+
+    def test_different_same_date_snapshot_is_not_rewritten(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            payload = root / "opportunity.json"
+            history = root / "history"
+            payload.write_text(json.dumps(self.opportunity("2026-07-03")), encoding="utf-8")
+            first = research.record_snapshot(payload, history)
+            payload.write_text(json.dumps(self.opportunity("2026-07-03", shift=4, generated_suffix="15:00:00")), encoding="utf-8")
+            second = research.record_snapshot(payload, history)
+            month = json.loads((history / "2026-07.json").read_text(encoding="utf-8"))
+            self.assertNotEqual(first["snapshot_id"], second["snapshot_id"])
+            self.assertEqual(len(month["snapshots"]), 2)
+            self.assertEqual(month["snapshots"][0]["records"][0][2], 100.0)
+            self.assertEqual(month["snapshots"][1]["records"][0][2], 104.0)
 
     def test_evaluate_tracks_forward_returns_and_market_excess(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -69,17 +86,52 @@ class PremiumResearchTests(unittest.TestCase):
                 research.compact_snapshot(self.opportunity("2026-07-03")),
                 research.compact_snapshot(self.opportunity("2026-07-10", 5)),
             ]
-            (history / "2026-07.json").write_text(json.dumps({"snapshots": snapshots}), encoding="utf-8")
+            (history / "2026-07.json").write_text(json.dumps({"engine_version": research.ENGINE_VERSION, "snapshots": snapshots}), encoding="utf-8")
             self.write_prices(core)
             premium.write_text(json.dumps(self.opportunity("2026-07-10", 5)), encoding="utf-8")
             summary = research.evaluate(history, core, premium)
             self.assertEqual(summary["snapshot_count"], 2)
+            self.assertEqual(summary["snapshot_day_count"], 2)
             self.assertEqual(summary["weekly_cohort_count"], 2)
             self.assertGreaterEqual(summary["mature_cohorts"]["5d"], 1)
             top10 = summary["portfolios"]["top10"]["5d"]
             self.assertGreater(top10["positions"], 0)
             self.assertIsNotNone(top10["portfolio_mean_pct"])
             self.assertIsNotNone(top10["excess_vs_all_core_pct"])
+
+    def test_stale_constituent_is_excluded_from_cohort(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            history = root / "history"
+            core = root / "core"
+            premium = root / "opportunity.json"
+            history.mkdir()
+            payload = self.opportunity("2026-07-10")
+            payload["records"][0]["price_date"] = "2026-07-03"
+            snapshot = research.compact_snapshot(payload)
+            (history / "2026-07.json").write_text(json.dumps({"engine_version": research.ENGINE_VERSION, "snapshots": [snapshot]}), encoding="utf-8")
+            self.write_prices(core)
+            premium.write_text(json.dumps(payload), encoding="utf-8")
+            rows = research.cohort_rows(snapshot)
+            self.assertEqual({row["code"] for row in rows}, {"1002", "1003"})
+            summary = research.evaluate(history, core, premium)
+            top10 = summary["portfolios"]["top10"]["5d"]
+            self.assertEqual(top10["positions"], 2)
+
+    def test_engine_version_filter_prevents_mixing(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            history = root / "history"
+            history.mkdir()
+            good = research.compact_snapshot(self.opportunity("2026-07-03"))
+            old = dict(good)
+            old["engine_version"] = "old_engine"
+            old["snapshot_id"] = "old:1"
+            old["fingerprint"] = "old"
+            (history / "2026-07.json").write_text(json.dumps({"snapshots": [good, old]}), encoding="utf-8")
+            loaded = research.load_snapshots(history, research.ENGINE_VERSION)
+            self.assertEqual(len(loaded), 1)
+            self.assertEqual(loaded[0]["engine_version"], research.ENGINE_VERSION)
 
     def test_formal_recommendation_waits_for_maturity(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -88,7 +140,7 @@ class PremiumResearchTests(unittest.TestCase):
             core = root / "core"
             premium = root / "opportunity.json"
             history.mkdir()
-            (history / "2026-07.json").write_text(json.dumps({"snapshots": [research.compact_snapshot(self.opportunity("2026-07-03"))]}), encoding="utf-8")
+            (history / "2026-07.json").write_text(json.dumps({"engine_version": research.ENGINE_VERSION, "snapshots": [research.compact_snapshot(self.opportunity("2026-07-03"))]}), encoding="utf-8")
             self.write_prices(core)
             premium.write_text(json.dumps(self.opportunity("2026-07-03")), encoding="utf-8")
             summary = research.evaluate(history, core, premium)
