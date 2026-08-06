@@ -46,7 +46,7 @@
     const rows = load();
     const existing = rows.find((item) => item.code === normalized);
     if (existing) {
-      if (!existing.name && name) existing.name = String(name).trim();
+      if (name) existing.name = String(name).trim();
       return save(rows);
     }
     rows.unshift({ code: normalized, name: String(name || "").trim(), added_at: new Date().toISOString() });
@@ -104,22 +104,24 @@
     button.className = "kabutane-watch-toggle";
     button.dataset.watchCode = code;
     button.dataset.watchName = name || "";
-    button.setAttribute("aria-label", `${code} ${name || ""}を気になる株に追加`);
 
+    const currentName = () => String(button.dataset.watchName || name || "").trim();
     const refresh = () => {
       const active = has(code);
+      const displayName = currentName();
       button.classList.toggle("active", active);
       button.setAttribute("aria-pressed", String(active));
       button.textContent = active ? "★ 気になる" : "☆ 気になる";
-      button.setAttribute("aria-label", `${code} ${name || ""}を${active ? "気になる株から外す" : "気になる株に追加"}`);
+      button.setAttribute("aria-label", `${code} ${displayName}を${active ? "気になる株から外す" : "気になる株に追加"}`);
     };
     button.addEventListener("click", (event) => {
       event.preventDefault();
       event.stopPropagation();
-      toggle(code, name);
+      toggle(code, currentName());
       refresh();
       updateFloatingLink();
     });
+    button.refreshWatchLabel = refresh;
     refresh();
     return button;
   }
@@ -149,13 +151,17 @@
     const meta = document.querySelector(".detail-header .header-meta");
     if (!code || !meta || meta.querySelector(".kabutane-watch-toggle")) return;
     const title = document.getElementById("detailTitle");
-    const getName = () => String(title?.textContent || "").replace(code, "").trim();
+    const getName = () => {
+      const raw = String(title?.textContent || "").replace(code, "").trim();
+      return raw === "銘柄詳細" ? "" : raw;
+    };
     const button = buttonFor(code, getName());
     button.classList.add("detail-watch-toggle");
     meta.insertBefore(button, meta.firstChild);
     if (title) {
       new MutationObserver(() => {
         button.dataset.watchName = getName();
+        button.refreshWatchLabel?.();
       }).observe(title, { childList: true, subtree: true, characterData: true });
     }
   }
