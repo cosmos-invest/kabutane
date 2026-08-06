@@ -136,7 +136,7 @@
       const previous = priorObservation(item.code, item.price_date);
       const price = finite(item.current_price);
       const previousPrice = finite(previous?.price);
-      const priceChange = price !== null && previousPrice not in (null, 0) ? (price / previousPrice - 1) * 100 : null;
+      const priceChange = price !== null && previousPrice !== null && previousPrice !== 0 ? (price / previousPrice - 1) * 100 : null;
       const volume = finite(item.volume_ratio_5_30);
       const spread = finite(item.monthly_rsi_spread);
       return `<article class="watch-card" data-code="${item.code}">
