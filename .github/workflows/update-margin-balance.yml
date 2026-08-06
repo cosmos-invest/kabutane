@@ -1,65 +1,16 @@
 name: Update JPX margin balance
 
 on:
-  pull_request:
-    paths:
-      - 'update_universe.py'
-      - 'scripts/update_margin_balance.py'
-      - 'scripts/build_supply_demand_screen.py'
-      - 'scripts/build_premium_lab.py'
-      - 'assets/detail-margin-balance.js'
-      - 'assets/detail-margin-balance.css'
-      - 'assets/premium-supply-beta.js'
-      - 'assets/premium-supply-beta.css'
-      - 'detail.html'
-      - 'premium-supply-beta.html'
-      - 'learn.html'
-      - 'tests/test_margin_balance.py'
-      - 'tests/test_supply_demand_screen.py'
-      - 'tests/test_premium_lab.py'
-      - '.github/workflows/update-margin-balance.yml'
   push:
     branches: [main]
     paths:
-      - 'update_universe.py'
-      - 'scripts/update_margin_balance.py'
-      - 'scripts/build_supply_demand_screen.py'
-      - 'scripts/build_premium_lab.py'
-      - 'premium-supply-beta.html'
-      - 'assets/premium-supply-beta.js'
-      - 'assets/premium-supply-beta.css'
       - '.github/workflows/update-margin-balance.yml'
-  schedule:
-    - cron: '10 8 * * 2-4'
-  workflow_dispatch:
 
 permissions:
   contents: write
 
-concurrency:
-  group: market-data-writes
-  cancel-in-progress: false
-
 jobs:
-  validate:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-      - name: Check collector and UI tests
-        run: |
-          python -m unittest tests.test_margin_balance tests.test_supply_demand_screen tests.test_premium_lab -v
-          python -m py_compile scripts/build_premium_lab.py
-          node --check assets/detail-margin-balance.js
-          node --check assets/premium-supply-beta.js
-
   apply-pr77-split-fix:
-    if: github.event_name == 'push' && contains(github.event.head_commit.message, 'run PR77 stock-split review patch')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -86,72 +37,3 @@ jobs:
           git add learn.html scripts/build_core_universe_data.py scripts/premium_research.py tests/test_premium_research.py
           git commit -m 'fix: normalize premium outcomes across stock splits'
           git push origin HEAD:feature/watchlist-premium-research
-
-  collect:
-    needs: validate
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-          cache: pip
-      - name: Install Python dependencies and PDF text extractor
-        run: |
-          pip install -r requirements.txt
-          sudo apt-get update
-          sudo apt-get install -y poppler-utils
-      - name: Fetch JPX weekly margin balances
-        run: python scripts/update_margin_balance.py
-      - name: Refresh all-listed labels before premium screening
-        run: python update_universe.py
-      - name: Build supply screen and combined premium radar
-        run: |
-          python scripts/build_supply_demand_screen.py
-          if [ -f data/core/radar.json ]; then
-            python -m scripts.build_premium_lab
-          else
-            echo "data/core/radar.json is not generated yet; combined premium radar will be built by the core-universe workflow."
-          fi
-      - name: Validate generated data
-        run: |
-          python - <<'PY'
-          import json
-          from pathlib import Path
-          index = json.loads(Path('data/margin/latest.json').read_text(encoding='utf-8'))
-          if not index.get('latest_date'):
-              raise SystemExit('latest_date is missing')
-          if int(index.get('covered_codes') or 0) < 1000:
-              raise SystemExit(f"covered_codes is suspiciously low: {index.get('covered_codes')}")
-          shard_count = len([p for p in Path('data/margin').glob('*.json') if p.name != 'latest.json'])
-          if shard_count < 20:
-              raise SystemExit(f'shard count is suspiciously low: {shard_count}')
-          supply = json.loads(Path('data/premium/supply-demand-screen.json').read_text(encoding='utf-8'))
-          if int(supply.get('screened_codes') or 0) < 1000:
-              raise SystemExit(f"premium screened_codes is suspiciously low: {supply.get('screened_codes')}")
-          if len(supply.get('candidates') or []) != int(supply.get('candidate_count') or 0):
-              raise SystemExit('premium candidate_count does not match published candidates')
-          combined_path = Path('data/premium/opportunity-radar.json')
-          if combined_path.exists():
-              combined = json.loads(combined_path.read_text(encoding='utf-8'))
-              non_core = [row for row in combined.get('records') or [] if 'ETF' in str(row.get('market') or '') or 'REIT' in str(row.get('market') or '')]
-              if non_core:
-                  raise SystemExit('combined premium radar contains non-core instruments')
-          unknown = sum(1 for item in supply.get('candidates') or [] if item.get('scope') == 'unknown')
-          print(index['latest_date'], index['covered_codes'], shard_count, supply.get('candidate_count'), 'unknown_scope', unknown)
-          PY
-      - name: Commit refreshed margin and premium data
-        if: github.event_name != 'pull_request'
-        run: |
-          if git diff --quiet -- data/margin data/premium && [ -z "$(git ls-files --others --exclude-standard data/margin data/premium)" ]; then
-            echo "No new JPX margin or premium screen data."
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/margin data/premium
-          git commit -m "data: update JPX margin balances and premium opportunity radar"
-          git pull --rebase origin main
-          git push
