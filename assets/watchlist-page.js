@@ -18,6 +18,16 @@
     return Number.isFinite(n) ? n : null;
   }
 
+  function escapeHtml(value) {
+    return String(value ?? "").replace(/[&<>"']/g, (char) => ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;",
+    })[char]);
+  }
+
   function number(value, digits = 1) {
     const n = finite(value);
     return n === null ? "—" : n.toLocaleString("ja-JP", { maximumFractionDigits: digits });
@@ -38,7 +48,8 @@
   }
 
   function prefix(code) {
-    return String(code || "").slice(0, 2).toUpperCase();
+    const normalized = store?.normalizeCode?.(code) || "";
+    return normalized.slice(0, 2);
   }
 
   async function fetchJson(path) {
@@ -58,13 +69,19 @@
     }));
     const map = new Map();
     shards.forEach((payload) => {
-      Object.entries(payload?.records || {}).forEach(([code, value]) => map.set(String(code).toUpperCase(), value));
+      Object.entries(payload?.records || {}).forEach(([code, value]) => {
+        const normalized = store?.normalizeCode?.(code) || "";
+        if (normalized) map.set(normalized, value);
+      });
     });
     return map;
   }
 
   function publicMap() {
-    return new Map((publicPayload?.records || []).map((item) => [String(item.code || "").toUpperCase(), item]));
+    return new Map((publicPayload?.records || []).flatMap((item) => {
+      const code = store?.normalizeCode?.(item?.code) || "";
+      return code ? [[code, item]] : [];
+    }));
   }
 
   function mergedRows() {
@@ -77,8 +94,10 @@
       return {
         ...saved,
         ...pub,
+        code: saved.code,
+        name: String(pub.name || saved.name || "").slice(0, 160),
         current_price: technical.current_price ?? pub.current_price ?? null,
-        price_date: technical.price_date || detail.price_date || pub.price_date || "",
+        price_date: String(technical.price_date || detail.price_date || pub.price_date || "").slice(0, 10),
         provisional_status: provisional.status || pub.provisional_status || "UNKNOWN",
         monthly_rsi_spread: provisional.spread ?? null,
         volume_ratio_5_30: technical.volume_ratio_5_30 ?? pub.volume_ratio_5_30 ?? null,
@@ -133,20 +152,27 @@
     if (empty) empty.hidden = all.length > 0;
     root.hidden = all.length === 0;
     root.innerHTML = rows.map((item) => {
-      const previous = priorObservation(item.code, item.price_date);
+      const code = store.normalizeCode(item.code);
+      if (!code) return "";
+      const previous = priorObservation(code, item.price_date);
       const price = finite(item.current_price);
       const previousPrice = finite(previous?.price);
       const priceChange = price !== null && previousPrice !== null && previousPrice !== 0 ? (price / previousPrice - 1) * 100 : null;
       const volume = finite(item.volume_ratio_5_30);
       const spread = finite(item.monthly_rsi_spread);
-      return `<article class="watch-card" data-code="${item.code}">
-        <div class="watch-card-main"><a href="detail.html?code=${encodeURIComponent(item.code)}">${item.code} ${item.name || ""}</a><small>${item.market || "市場 —"} / ${item.sector || "セクター —"}</small></div>
+      const safeCode = escapeHtml(code);
+      const safeName = escapeHtml(item.name || "");
+      const safeMarket = escapeHtml(item.market || "市場 —");
+      const safeSector = escapeHtml(item.sector || "セクター —");
+      const safeDate = escapeHtml(item.price_date || "—");
+      return `<article class="watch-card" data-code="${safeCode}">
+        <div class="watch-card-main"><a href="detail.html?code=${encodeURIComponent(code)}">${safeCode} ${safeName}</a><small>${safeMarket} / ${safeSector}</small></div>
         <div class="watch-stat"><span>月足</span><strong class="watch-status ${statusClass(item.provisional_status)}">${statusLabel(item.provisional_status)}</strong>${spread === null ? "" : `<small>RSI差 ${signed(spread, "pt", 1)}</small>`}</div>
-        <div class="watch-stat"><span>現在値</span><strong>${number(price, 2)}円</strong>${priceChange === null ? `<small>${item.price_date || "—"}</small>` : `<small class="${priceChange >= 0 ? "watch-delta-up" : "watch-delta-down"}">前回確認比 ${signed(priceChange, "%", 1)}</small>`}</div>
+        <div class="watch-stat"><span>現在値</span><strong>${number(price, 2)}円</strong>${priceChange === null ? `<small>${safeDate}</small>` : `<small class="${priceChange >= 0 ? "watch-delta-up" : "watch-delta-down"}">前回確認比 ${signed(priceChange, "%", 1)}</small>`}</div>
         <div class="watch-stat"><span>出来高</span><strong>${volume === null ? "—" : `${number(volume, 2)}倍`}</strong><small>5日 / 30日平均</small></div>
         <div class="watch-stat"><span>52週高値比</span><strong>${signed(item.high52_distance_pct, "%", 1)}</strong><small>${item.perfect_order === true ? "上昇配列" : "配列未成立"}</small></div>
         <div class="watch-stat"><span>財務</span><strong>${item.fundamentals_available === true ? `ROE ${number(item.roe_pct, 1)}%` : "取得待ち"}</strong><small>${item.fundamentals_available === true ? `自己資本 ${number(item.equity_ratio_pct, 1)}%` : "—"}</small></div>
-        <button type="button" class="watch-remove" data-remove-code="${item.code}">外す</button>
+        <button type="button" class="watch-remove" data-remove-code="${safeCode}">外す</button>
       </article>`;
     }).join("");
     root.querySelectorAll("[data-remove-code]").forEach((button) => {
