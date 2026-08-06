@@ -3,21 +3,21 @@ name: Apply final PR77 review patch
 on:
   pull_request_target:
     types: [reopened, synchronize]
-  workflow_run:
-    workflows: ["Update JPX margin balance"]
-    types: [completed]
 
 permissions:
   contents: write
   pull-requests: write
+  issues: write
 
 jobs:
   patch:
-    if: >-
-      (github.event_name == 'pull_request_target' && github.event.pull_request.number == 77) ||
-      github.event_name == 'workflow_run'
+    if: github.event.pull_request.number == 77
     runs-on: ubuntu-latest
     steps:
+      - name: Report start
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh pr comment 77 --repo "$GITHUB_REPOSITORY" --body 'PR77 final patcher: started.'
       - name: Checkout PR branch
         uses: actions/checkout@v4
         with:
@@ -32,16 +32,39 @@ jobs:
         with:
           python-version: '3.12'
       - name: Apply and test
+        id: apply
+        shell: bash
         run: |
-          git apply --check _main/.github/pr77-final.patch
-          git apply _main/.github/pr77-final.patch
-          python -m py_compile scripts/build_core_universe_data.py scripts/premium_research.py tests/test_premium_research.py
-          python -m unittest tests.test_premium_research tests.test_logic -v
-          git diff --check
+          set +e
+          {
+            git apply --check _main/.github/pr77-final.patch
+            git apply _main/.github/pr77-final.patch
+            python -m py_compile scripts/build_core_universe_data.py scripts/premium_research.py tests/test_premium_research.py
+            python -m unittest tests.test_premium_research tests.test_logic -v
+            git diff --check
+          } >/tmp/pr77-final.log 2>&1
+          rc=$?
+          cat /tmp/pr77-final.log
+          exit $rc
+      - name: Report failure
+        if: failure() && steps.apply.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          tail -80 /tmp/pr77-final.log > /tmp/pr77-tail.log || true
+          printf 'PR77 final patcher: failed.\n```text\n%s\n```\n' "$(cat /tmp/pr77-tail.log)" > /tmp/pr77-comment.md
+          gh pr comment 77 --repo "$GITHUB_REPOSITORY" --body-file /tmp/pr77-comment.md
       - name: Push corrected branch
+        if: success()
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add learn.html scripts/build_core_universe_data.py scripts/premium_research.py tests/test_premium_research.py
           git commit -m 'fix: normalize premium outcomes across stock splits'
           git push origin HEAD:feature/watchlist-premium-research
+      - name: Report success
+        if: success()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh pr comment 77 --repo "$GITHUB_REPOSITORY" --body 'PR77 final patcher: split normalization applied; targeted tests passed.'
