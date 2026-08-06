@@ -17,6 +17,16 @@ class WatchlistUiTests(unittest.TestCase):
         self.assertIn("別端末・別ブラウザ", html)
         self.assertNotIn("fetch(\"/api/watchlist", js)
 
+    def test_watchlist_restricts_codes_and_escapes_saved_text(self):
+        store = self.text("assets/watchlist.js")
+        page = self.text("assets/watchlist-page.js")
+        self.assertIn("/^[0-9]{3}[0-9A-Z]$/", store)
+        self.assertIn("function escapeHtml", page)
+        self.assertIn("escapeHtml(item.name", page)
+        self.assertIn("escapeHtml(item.market", page)
+        self.assertIn("store.normalizeCode(item.code)", page)
+        self.assertNotIn('${item.code} ${item.name || ""}', page)
+
     def test_all_stock_and_detail_have_watch_controls(self):
         all_stocks = self.text("all-stocks.html")
         detail = self.text("detail.html")
@@ -36,11 +46,14 @@ class WatchlistUiTests(unittest.TestCase):
         premium = self.text("premium-supply-beta.html")
         builder = self.text("scripts/build_premium_lab.py")
         rules = self.text("AGENTS.md")
+        research = self.text("scripts/premium_research.py")
         self.assertIn("観察優先度の検証室", premium)
         self.assertIn("ENGINE_VERSION", builder)
         self.assertIn("5営業日後", rules)
         self.assertIn("20営業日後", rules)
         self.assertIn("自動変更しない", rules)
+        self.assertIn("OUTCOMES_ROOT", research)
+        self.assertIn("last_observed_before_target", research)
 
 
 if __name__ == "__main__":
