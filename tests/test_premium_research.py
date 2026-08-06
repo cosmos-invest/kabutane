@@ -94,6 +94,40 @@ class PremiumResearchTests(unittest.TestCase):
         observed = research.fallback_observation([snapshot], "1001", "2026-07-03", "2026-07-10")
         self.assertEqual(observed, ("2026-07-03", 100.0))
 
+    def test_split_ratio_accumulates_within_return_period(self):
+        events = {"1001": [("2026-07-03", 3.0), ("2026-07-06", 2.0), ("2026-07-08", 0.5), ("2026-07-10", 4.0)]}
+        self.assertEqual(research.cumulative_split_ratio(events, "1001", "2026-07-03", "2026-07-08"), 1.0)
+
+    def test_split_adjusts_outcome_before_it_is_frozen(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            history = root / "history"
+            outcomes = root / "outcomes"
+            core = root / "core"
+            snapshot = research.compact_snapshot(self.opportunity("2026-07-03"))
+            self.write_history(history, [snapshot])
+            self.write_prices(core)
+            chart = core / "charts" / "10.json"
+            payload = json.loads(chart.read_text(encoding="utf-8"))
+            exit_row = next(row for row in payload["records"]["1001"]["daily"] if row[0] == "2026-07-10")
+            exit_row[4] = 52.5
+            payload["records"]["1001"]["corporate_events"] = [
+                {"date": "2026-07-10", "type": "SPLIT", "detail": "比率 2", "ratio": 2.0}
+            ]
+            chart.write_text(json.dumps(payload), encoding="utf-8")
+            series = research.load_price_series(core)
+            splits = research.load_split_events(core)
+            research.finalize_outcomes([snapshot], series, outcomes, research.ENGINE_VERSION, splits)
+            ledger = json.loads(next(outcomes.glob("*.json")).read_text(encoding="utf-8"))
+            result = ledger["cohorts"][snapshot["snapshot_id"]]["5d"]["1001"]
+            self.assertEqual(result[3], 5.0)
+            self.assertEqual(result[5], 2.0)
+
+            exit_row[4] = 1.0
+            chart.write_text(json.dumps(payload), encoding="utf-8")
+            research.finalize_outcomes([snapshot], research.load_price_series(core), outcomes, research.ENGINE_VERSION, splits)
+            self.assertEqual(json.loads(next(outcomes.glob("*.json")).read_text(encoding="utf-8")), ledger)
+
     def test_evaluate_tracks_forward_returns_and_market_excess(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
