@@ -1,9 +1,8 @@
 name: Apply PR77 stock-split normalization
 
 on:
-  push:
-    branches:
-      - feature/watchlist-premium-research
+  pull_request:
+    types: [opened, synchronize, reopened]
     paths:
       - '.github/workflows/apply-pr77-split-fix.yml'
 
