@@ -11,15 +11,6 @@ on:
       - 'tests/test_premium_lab.py'
       - 'tests/test_premium_research.py'
       - '.github/workflows/update-premium-research.yml'
-  push:
-    branches: [main]
-    paths:
-      - 'scripts/build_premium_lab.py'
-      - 'scripts/premium_research.py'
-      - 'assets/premium-research.js'
-      - 'assets/premium-research.css'
-      - 'premium-supply-beta.html'
-      - '.github/workflows/update-premium-research.yml'
   workflow_run:
     workflows: ["Update core universe data", "Update JPX margin balance"]
     types: [completed]
