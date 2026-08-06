@@ -2,12 +2,12 @@
   "code": "3276",
   "ticker": "3276.T",
   "name": "ＪＰＭＣ",
-  "generated_at": "2026-08-05T22:54:06.379558+00:00",
-  "price_date": "2026-08-05",
+  "generated_at": "2026-08-06T13:50:43.199000+00:00",
+  "price_date": "2026-08-06",
   "record": {
-    "current_price": 2245.0,
-    "change_from_signal_month_pct": 23.22,
-    "return_since_gc_pct": 23.22
+    "current_price": 2244.0,
+    "change_from_signal_month_pct": 23.16,
+    "return_since_gc_pct": 23.16
   },
   "daily": [
     {
@@ -22,15 +22,28 @@
       "sma200": 1349.1,
       "rsi14": 61.49,
       "rsi5": 78.13
+    },
+    {
+      "date": "2026-08-06",
+      "open": 2245.0,
+      "high": 2245.0,
+      "low": 2244.0,
+      "close": 2244.0,
+      "volume": 513900.0,
+      "sma25": 1723.4,
+      "sma75": 1447.21,
+      "sma200": 1353.88,
+      "rsi14": 61.49,
+      "rsi5": 78.13
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-05",
-    "monthly_rsi14": 85.05,
+    "price_date": "2026-08-06",
+    "monthly_rsi14": 85.04,
     "monthly_rsi_ma5": 67.4,
-    "spread": 17.65,
+    "spread": 17.64,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -39,5 +52,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-05T22:55:06.399919+00:00"
+  "provisional_generated_at": "2026-08-06T13:51:41.750385+00:00"
 }

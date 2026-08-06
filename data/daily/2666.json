@@ -2,12 +2,12 @@
   "code": "2666",
   "ticker": "2666.T",
   "name": "オートウェーブ",
-  "generated_at": "2026-08-05T22:54:06.379558+00:00",
-  "price_date": "2026-08-05",
+  "generated_at": "2026-08-06T13:50:43.199000+00:00",
+  "price_date": "2026-08-06",
   "record": {
-    "current_price": 193.0,
-    "change_from_signal_month_pct": -0.52,
-    "return_since_gc_pct": 14.2
+    "current_price": 192.0,
+    "change_from_signal_month_pct": -1.03,
+    "return_since_gc_pct": 13.61
   },
   "daily": [
     {
@@ -22,15 +22,28 @@
       "sma200": 164.88,
       "rsi14": 55.64,
       "rsi5": 64.29
+    },
+    {
+      "date": "2026-08-06",
+      "open": 191.0,
+      "high": 193.0,
+      "low": 190.0,
+      "close": 192.0,
+      "volume": 82700.0,
+      "sma25": 182.24,
+      "sma75": 169.04,
+      "sma200": 165.04,
+      "rsi14": 55.64,
+      "rsi5": 64.29
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-05",
-    "monthly_rsi14": 62.32,
-    "monthly_rsi_ma5": 56.3,
-    "spread": 6.02,
+    "price_date": "2026-08-06",
+    "monthly_rsi14": 61.8,
+    "monthly_rsi_ma5": 56.19,
+    "spread": 5.61,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -39,5 +52,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-05T22:55:06.399919+00:00"
+  "provisional_generated_at": "2026-08-06T13:51:41.750385+00:00"
 }

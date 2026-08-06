@@ -2,12 +2,12 @@
   "code": "3955",
   "ticker": "3955.T",
   "name": "イムラ",
-  "generated_at": "2026-08-05T22:54:06.379558+00:00",
-  "price_date": "2026-08-05",
+  "generated_at": "2026-08-06T13:50:43.199000+00:00",
+  "price_date": "2026-08-06",
   "record": {
-    "current_price": 834.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 840.0,
+    "change_from_signal_month_pct": 0.72,
+    "return_since_gc_pct": 0.72
   },
   "daily": [
     {
@@ -22,15 +22,28 @@
       "sma200": 912.2,
       "rsi14": 34.85,
       "rsi5": 36.48
+    },
+    {
+      "date": "2026-08-06",
+      "open": 835.0,
+      "high": 840.0,
+      "low": 830.0,
+      "close": 840.0,
+      "volume": 2600.0,
+      "sma25": 830.36,
+      "sma75": 819.44,
+      "sma200": 911.53,
+      "rsi14": 34.85,
+      "rsi5": 36.48
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-05",
-    "monthly_rsi14": 34.95,
-    "monthly_rsi_ma5": 32.99,
-    "spread": 1.95,
+    "price_date": "2026-08-06",
+    "monthly_rsi14": 35.84,
+    "monthly_rsi_ma5": 33.17,
+    "spread": 2.66,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -39,5 +52,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-05T22:55:06.399919+00:00"
+  "provisional_generated_at": "2026-08-06T13:51:41.750385+00:00"
 }

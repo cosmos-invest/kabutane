@@ -2,12 +2,12 @@
   "code": "9107",
   "ticker": "9107.T",
   "name": "川崎汽船",
-  "generated_at": "2026-08-05T22:54:06.379558+00:00",
-  "price_date": "2026-08-05",
+  "generated_at": "2026-08-06T13:50:43.199000+00:00",
+  "price_date": "2026-08-06",
   "record": {
-    "current_price": 2714.5,
-    "change_from_signal_month_pct": -4.75,
-    "return_since_gc_pct": -4.75
+    "current_price": 2787.0,
+    "change_from_signal_month_pct": -2.21,
+    "return_since_gc_pct": -2.21
   },
   "daily": [
     {
@@ -22,22 +22,35 @@
       "sma200": 2416.97,
       "rsi14": 63.24,
       "rsi5": 67.32
+    },
+    {
+      "date": "2026-08-06",
+      "open": 2691.0,
+      "high": 2788.0,
+      "low": 2685.0,
+      "close": 2787.0,
+      "volume": 5033100.0,
+      "sma25": 2705.3,
+      "sma75": 2598.38,
+      "sma200": 2420.7,
+      "rsi14": 63.24,
+      "rsi5": 67.32
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-05",
-    "monthly_rsi14": 62.83,
-    "monthly_rsi_ma5": 62.91,
-    "spread": -0.08,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-06",
+    "monthly_rsi14": 65.2,
+    "monthly_rsi_ma5": 63.38,
+    "spread": 1.82,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-05T22:55:06.399919+00:00"
+  "provisional_generated_at": "2026-08-06T13:51:41.750385+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "4686",
   "ticker": "4686.T",
   "name": "ジャストシステム",
-  "generated_at": "2026-08-05T22:54:06.379558+00:00",
-  "price_date": "2026-08-05",
+  "generated_at": "2026-08-06T13:50:43.199000+00:00",
+  "price_date": "2026-08-06",
   "record": {
-    "current_price": 4010.0,
-    "change_from_signal_month_pct": -0.5,
-    "return_since_gc_pct": -0.5
+    "current_price": 4070.0,
+    "change_from_signal_month_pct": 0.99,
+    "return_since_gc_pct": 0.99
   },
   "daily": [
     {
@@ -22,15 +22,28 @@
       "sma200": 4227.02,
       "rsi14": 47.69,
       "rsi5": 51.0
+    },
+    {
+      "date": "2026-08-06",
+      "open": 4000.0,
+      "high": 4090.0,
+      "low": 3985.0,
+      "close": 4070.0,
+      "volume": 71000.0,
+      "sma25": 3905.8,
+      "sma75": 3826.87,
+      "sma200": 4224.27,
+      "rsi14": 47.69,
+      "rsi5": 51.0
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-05",
-    "monthly_rsi14": 52.09,
-    "monthly_rsi_ma5": 50.64,
-    "spread": 1.45,
+    "price_date": "2026-08-06",
+    "monthly_rsi14": 52.88,
+    "monthly_rsi_ma5": 50.8,
+    "spread": 2.08,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -39,5 +52,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-05T22:55:06.399919+00:00"
+  "provisional_generated_at": "2026-08-06T13:51:41.750385+00:00"
 }

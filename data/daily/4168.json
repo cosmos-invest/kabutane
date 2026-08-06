@@ -2,12 +2,12 @@
   "code": "4168",
   "ticker": "4168.T",
   "name": "ヤプリ",
-  "generated_at": "2026-08-05T22:54:06.379558+00:00",
-  "price_date": "2026-08-05",
+  "generated_at": "2026-08-06T13:50:43.199000+00:00",
+  "price_date": "2026-08-06",
   "record": {
-    "current_price": 813.0,
-    "change_from_signal_month_pct": 0.12,
-    "return_since_gc_pct": 11.37
+    "current_price": 805.0,
+    "change_from_signal_month_pct": -0.86,
+    "return_since_gc_pct": 10.27
   },
   "daily": [
     {
@@ -22,15 +22,28 @@
       "sma200": 801.46,
       "rsi14": 39.83,
       "rsi5": 43.66
+    },
+    {
+      "date": "2026-08-06",
+      "open": 813.0,
+      "high": 813.0,
+      "low": 797.0,
+      "close": 805.0,
+      "volume": 34200.0,
+      "sma25": 793.16,
+      "sma75": 748.6,
+      "sma200": 800.49,
+      "rsi14": 39.83,
+      "rsi5": 43.66
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-05",
-    "monthly_rsi14": 40.68,
-    "monthly_rsi_ma5": 37.65,
-    "spread": 3.04,
+    "price_date": "2026-08-06",
+    "monthly_rsi14": 40.31,
+    "monthly_rsi_ma5": 37.57,
+    "spread": 2.73,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -39,5 +52,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-05T22:55:06.399919+00:00"
+  "provisional_generated_at": "2026-08-06T13:51:41.750385+00:00"
 }

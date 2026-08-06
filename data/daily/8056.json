@@ -2,12 +2,12 @@
   "code": "8056",
   "ticker": "8056.T",
   "name": "ＢＩＰＲＯＧＹ",
-  "generated_at": "2026-08-05T22:54:06.379558+00:00",
-  "price_date": "2026-08-05",
+  "generated_at": "2026-08-06T13:50:43.199000+00:00",
+  "price_date": "2026-08-06",
   "record": {
-    "current_price": 4736.0,
-    "change_from_signal_month_pct": -2.71,
-    "return_since_gc_pct": -2.71
+    "current_price": 4168.0,
+    "change_from_signal_month_pct": -14.38,
+    "return_since_gc_pct": -14.38
   },
   "daily": [
     {
@@ -22,22 +22,35 @@
       "sma200": 5010.07,
       "rsi14": 44.57,
       "rsi5": 49.78
+    },
+    {
+      "date": "2026-08-06",
+      "open": 4036.0,
+      "high": 4203.0,
+      "low": 4036.0,
+      "close": 4168.0,
+      "volume": 2293000.0,
+      "sma25": 4663.88,
+      "sma75": 4564.6,
+      "sma200": 5000.23,
+      "rsi14": 44.57,
+      "rsi5": 49.78
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-05",
-    "monthly_rsi14": 48.7,
-    "monthly_rsi_ma5": 46.07,
-    "spread": 2.63,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-06",
+    "monthly_rsi14": 42.41,
+    "monthly_rsi_ma5": 44.81,
+    "spread": -2.4,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-05T22:55:06.399919+00:00"
+  "provisional_generated_at": "2026-08-06T13:51:41.750385+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "9948",
   "ticker": "9948.T",
   "name": "アークス",
-  "generated_at": "2026-08-05T22:54:06.379558+00:00",
-  "price_date": "2026-08-05",
+  "generated_at": "2026-08-06T13:50:43.199000+00:00",
+  "price_date": "2026-08-06",
   "record": {
-    "current_price": 3465.0,
-    "change_from_signal_month_pct": -4.15,
-    "return_since_gc_pct": -4.15
+    "current_price": 3530.0,
+    "change_from_signal_month_pct": -2.35,
+    "return_since_gc_pct": -2.35
   },
   "daily": [
     {
@@ -22,22 +22,35 @@
       "sma200": 3463.22,
       "rsi14": 62.35,
       "rsi5": 63.08
+    },
+    {
+      "date": "2026-08-06",
+      "open": 3505.0,
+      "high": 3535.0,
+      "low": 3475.0,
+      "close": 3530.0,
+      "volume": 66700.0,
+      "sma25": 3542.0,
+      "sma75": 3417.53,
+      "sma200": 3465.65,
+      "rsi14": 62.35,
+      "rsi5": 63.08
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-05",
-    "monthly_rsi14": 58.29,
-    "monthly_rsi_ma5": 58.84,
-    "spread": -0.56,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-06",
+    "monthly_rsi14": 60.25,
+    "monthly_rsi_ma5": 59.23,
+    "spread": 1.02,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-05T22:55:06.399919+00:00"
+  "provisional_generated_at": "2026-08-06T13:51:41.750385+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "5971",
   "ticker": "5971.T",
   "name": "共和工業所",
-  "generated_at": "2026-08-05T22:54:06.379558+00:00",
-  "price_date": "2026-08-05",
+  "generated_at": "2026-08-06T13:50:43.199000+00:00",
+  "price_date": "2026-08-06",
   "record": {
-    "current_price": 8160.0,
-    "change_from_signal_month_pct": -1.57,
-    "return_since_gc_pct": -0.49
+    "current_price": 8040.0,
+    "change_from_signal_month_pct": -3.02,
+    "return_since_gc_pct": -1.95
   },
   "daily": [
     {
@@ -22,22 +22,35 @@
       "sma200": 7412.65,
       "rsi14": 66.63,
       "rsi5": 68.28
+    },
+    {
+      "date": "2026-08-06",
+      "open": 8030.0,
+      "high": 8160.0,
+      "low": 8030.0,
+      "close": 8040.0,
+      "volume": 500.0,
+      "sma25": 8130.0,
+      "sma75": 7639.6,
+      "sma200": 7418.4,
+      "rsi14": 66.63,
+      "rsi5": 68.28
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-05",
-    "monthly_rsi14": 67.42,
-    "monthly_rsi_ma5": 66.82,
-    "spread": 0.6,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-06",
+    "monthly_rsi14": 65.86,
+    "monthly_rsi_ma5": 66.5,
+    "spread": -0.65,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-05T22:55:06.399919+00:00"
+  "provisional_generated_at": "2026-08-06T13:51:41.750385+00:00"
 }

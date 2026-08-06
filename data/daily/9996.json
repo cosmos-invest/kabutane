@@ -2,12 +2,12 @@
   "code": "9996",
   "ticker": "9996.T",
   "name": "サトー商会",
-  "generated_at": "2026-08-05T22:54:06.379558+00:00",
-  "price_date": "2026-08-05",
+  "generated_at": "2026-08-06T13:50:43.199000+00:00",
+  "price_date": "2026-08-06",
   "record": {
-    "current_price": 2300.0,
-    "change_from_signal_month_pct": 1.23,
-    "return_since_gc_pct": 1.23
+    "current_price": 2231.0,
+    "change_from_signal_month_pct": -1.8,
+    "return_since_gc_pct": -1.8
   },
   "daily": [
     {
@@ -22,15 +22,28 @@
       "sma200": 2186.45,
       "rsi14": 58.34,
       "rsi5": 59.13
+    },
+    {
+      "date": "2026-08-06",
+      "open": 2200.0,
+      "high": 2231.0,
+      "low": 2200.0,
+      "close": 2231.0,
+      "volume": 1100.0,
+      "sma25": 2177.36,
+      "sma75": 2120.37,
+      "sma200": 2187.81,
+      "rsi14": 58.34,
+      "rsi5": 59.13
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-05",
-    "monthly_rsi14": 61.33,
-    "monthly_rsi_ma5": 59.1,
-    "spread": 2.23,
+    "price_date": "2026-08-06",
+    "monthly_rsi14": 58.96,
+    "monthly_rsi_ma5": 58.62,
+    "spread": 0.34,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -39,5 +52,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-05T22:55:06.399919+00:00"
+  "provisional_generated_at": "2026-08-06T13:51:41.750385+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "7201",
   "ticker": "7201.T",
   "name": "日産自動車",
-  "generated_at": "2026-08-05T22:54:06.379558+00:00",
-  "price_date": "2026-08-05",
+  "generated_at": "2026-08-06T13:50:43.199000+00:00",
+  "price_date": "2026-08-06",
   "record": {
-    "current_price": 329.7,
-    "change_from_signal_month_pct": -1.93,
-    "return_since_gc_pct": -1.93
+    "current_price": 335.1,
+    "change_from_signal_month_pct": -0.33,
+    "return_since_gc_pct": -0.33
   },
   "daily": [
     {
@@ -22,22 +22,35 @@
       "sma200": 366.48,
       "rsi14": 43.32,
       "rsi5": 43.84
+    },
+    {
+      "date": "2026-08-06",
+      "open": 329.0,
+      "high": 337.2,
+      "low": 328.1,
+      "close": 335.1,
+      "volume": 28936000.0,
+      "sma25": 325.3,
+      "sma75": 341.49,
+      "sma200": 366.3,
+      "rsi14": 43.32,
+      "rsi5": 43.84
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-05",
-    "monthly_rsi14": 41.69,
-    "monthly_rsi_ma5": 41.93,
-    "spread": -0.24,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-06",
+    "monthly_rsi14": 42.13,
+    "monthly_rsi_ma5": 42.02,
+    "spread": 0.11,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-05T22:55:06.399919+00:00"
+  "provisional_generated_at": "2026-08-06T13:51:41.750385+00:00"
 }

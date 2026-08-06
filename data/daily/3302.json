@@ -2,12 +2,12 @@
   "code": "3302",
   "ticker": "3302.T",
   "name": "帝国繊維",
-  "generated_at": "2026-08-05T22:54:06.379558+00:00",
-  "price_date": "2026-08-05",
+  "generated_at": "2026-08-06T13:50:43.199000+00:00",
+  "price_date": "2026-08-06",
   "record": {
-    "current_price": 3350.0,
-    "change_from_signal_month_pct": -2.05,
-    "return_since_gc_pct": 6.69
+    "current_price": 3260.0,
+    "change_from_signal_month_pct": -4.68,
+    "return_since_gc_pct": 3.82
   },
   "daily": [
     {
@@ -22,22 +22,35 @@
       "sma200": 3214.64,
       "rsi14": 57.36,
       "rsi5": 62.82
+    },
+    {
+      "date": "2026-08-06",
+      "open": 3190.0,
+      "high": 3335.0,
+      "low": 3150.0,
+      "close": 3260.0,
+      "volume": 167600.0,
+      "sma25": 3360.8,
+      "sma75": 3216.0,
+      "sma200": 3214.52,
+      "rsi14": 57.36,
+      "rsi5": 62.82
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-05",
-    "monthly_rsi14": 61.89,
-    "monthly_rsi_ma5": 60.02,
-    "spread": 1.87,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-06",
+    "monthly_rsi14": 59.5,
+    "monthly_rsi_ma5": 59.54,
+    "spread": -0.04,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-05T22:55:06.399919+00:00"
+  "provisional_generated_at": "2026-08-06T13:51:41.750385+00:00"
 }

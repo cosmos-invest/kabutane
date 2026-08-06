@@ -2,12 +2,12 @@
   "code": "8174",
   "ticker": "8174.T",
   "name": "日本瓦斯",
-  "generated_at": "2026-08-05T22:54:06.379558+00:00",
-  "price_date": "2026-08-05",
+  "generated_at": "2026-08-06T13:50:43.199000+00:00",
+  "price_date": "2026-08-06",
   "record": {
-    "current_price": 2757.5,
-    "change_from_signal_month_pct": -3.28,
-    "return_since_gc_pct": -3.28
+    "current_price": 2765.5,
+    "change_from_signal_month_pct": -3.0,
+    "return_since_gc_pct": -3.0
   },
   "daily": [
     {
@@ -22,15 +22,28 @@
       "sma200": 2900.64,
       "rsi14": 57.25,
       "rsi5": 57.46
+    },
+    {
+      "date": "2026-08-06",
+      "open": 2778.0,
+      "high": 2781.0,
+      "low": 2742.5,
+      "close": 2765.5,
+      "volume": 249700.0,
+      "sma25": 2865.76,
+      "sma75": 2810.32,
+      "sma200": 2900.95,
+      "rsi14": 57.25,
+      "rsi5": 57.46
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-05",
-    "monthly_rsi14": 53.28,
-    "monthly_rsi_ma5": 54.95,
-    "spread": -1.68,
+    "price_date": "2026-08-06",
+    "monthly_rsi14": 53.57,
+    "monthly_rsi_ma5": 55.01,
+    "spread": -1.44,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -39,5 +52,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-05T22:55:06.399919+00:00"
+  "provisional_generated_at": "2026-08-06T13:51:41.750385+00:00"
 }

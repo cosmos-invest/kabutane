@@ -2,12 +2,12 @@
   "code": "8331",
   "ticker": "8331.T",
   "name": "千葉銀行",
-  "generated_at": "2026-08-05T22:54:06.379558+00:00",
-  "price_date": "2026-08-05",
+  "generated_at": "2026-08-06T13:50:43.199000+00:00",
+  "price_date": "2026-08-06",
   "record": {
-    "current_price": 2626.0,
-    "change_from_signal_month_pct": -0.04,
-    "return_since_gc_pct": 6.45
+    "current_price": 2665.0,
+    "change_from_signal_month_pct": 1.45,
+    "return_since_gc_pct": 8.03
   },
   "daily": [
     {
@@ -22,15 +22,28 @@
       "sma200": 2093.66,
       "rsi14": 72.1,
       "rsi5": 76.96
+    },
+    {
+      "date": "2026-08-06",
+      "open": 2649.0,
+      "high": 2684.0,
+      "low": 2634.5,
+      "close": 2665.0,
+      "volume": 3052000.0,
+      "sma25": 2692.54,
+      "sma75": 2444.15,
+      "sma200": 2099.38,
+      "rsi14": 72.1,
+      "rsi5": 76.96
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-05",
-    "monthly_rsi14": 76.83,
-    "monthly_rsi_ma5": 74.15,
-    "spread": 2.68,
+    "price_date": "2026-08-06",
+    "monthly_rsi14": 77.39,
+    "monthly_rsi_ma5": 74.26,
+    "spread": 3.12,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -39,5 +52,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-05T22:55:06.399919+00:00"
+  "provisional_generated_at": "2026-08-06T13:51:41.750385+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "7805",
   "ticker": "7805.T",
   "name": "プリントネット",
-  "generated_at": "2026-08-05T22:54:06.379558+00:00",
-  "price_date": "2026-08-05",
+  "generated_at": "2026-08-06T13:50:43.199000+00:00",
+  "price_date": "2026-08-06",
   "record": {
-    "current_price": 749.0,
-    "change_from_signal_month_pct": -0.66,
-    "return_since_gc_pct": 10.15
+    "current_price": 743.0,
+    "change_from_signal_month_pct": -1.46,
+    "return_since_gc_pct": 9.26
   },
   "daily": [
     {
@@ -22,22 +22,35 @@
       "sma200": 710.22,
       "rsi14": 58.87,
       "rsi5": 60.65
+    },
+    {
+      "date": "2026-08-06",
+      "open": 748.0,
+      "high": 748.0,
+      "low": 739.0,
+      "close": 743.0,
+      "volume": 10300.0,
+      "sma25": 761.88,
+      "sma75": 749.09,
+      "sma200": 710.58,
+      "rsi14": 58.87,
+      "rsi5": 60.65
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-05",
-    "monthly_rsi14": 57.66,
-    "monthly_rsi_ma5": 57.63,
-    "spread": 0.03,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-06",
+    "monthly_rsi14": 56.49,
+    "monthly_rsi_ma5": 57.4,
+    "spread": -0.91,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-05T22:55:06.399919+00:00"
+  "provisional_generated_at": "2026-08-06T13:51:41.750385+00:00"
 }

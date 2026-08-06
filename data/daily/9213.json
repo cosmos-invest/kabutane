@@ -2,12 +2,12 @@
   "code": "9213",
   "ticker": "9213.T",
   "name": "セイファート",
-  "generated_at": "2026-08-05T22:54:06.379558+00:00",
-  "price_date": "2026-08-05",
+  "generated_at": "2026-08-06T13:50:43.199000+00:00",
+  "price_date": "2026-08-06",
   "record": {
-    "current_price": 1023.0,
-    "change_from_signal_month_pct": -2.2,
-    "return_since_gc_pct": 8.83
+    "current_price": 1039.0,
+    "change_from_signal_month_pct": -0.67,
+    "return_since_gc_pct": 10.53
   },
   "daily": [
     {
@@ -22,22 +22,35 @@
       "sma200": 893.0,
       "rsi14": 52.03,
       "rsi5": 54.47
+    },
+    {
+      "date": "2026-08-06",
+      "open": 1023.0,
+      "high": 1039.0,
+      "low": 1023.0,
+      "close": 1039.0,
+      "volume": 300.0,
+      "sma25": 1054.72,
+      "sma75": 1030.04,
+      "sma200": 893.31,
+      "rsi14": 52.03,
+      "rsi5": 54.47
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-05",
-    "monthly_rsi14": 50.85,
-    "monthly_rsi_ma5": 51.16,
-    "spread": -0.31,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-06",
+    "monthly_rsi14": 51.51,
+    "monthly_rsi_ma5": 51.29,
+    "spread": 0.22,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-05T22:55:06.399919+00:00"
+  "provisional_generated_at": "2026-08-06T13:51:41.750385+00:00"
 }

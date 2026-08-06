@@ -2,12 +2,12 @@
   "code": "5202",
   "ticker": "5202.T",
   "name": "日本板硝子",
-  "generated_at": "2026-08-05T22:54:06.379558+00:00",
-  "price_date": "2026-08-05",
+  "generated_at": "2026-08-06T13:50:43.199000+00:00",
+  "price_date": "2026-08-06",
   "record": {
-    "current_price": 483.0,
-    "change_from_signal_month_pct": 0.21,
-    "return_since_gc_pct": 0.21
+    "current_price": 482.0,
+    "change_from_signal_month_pct": 0.0,
+    "return_since_gc_pct": 0.0
   },
   "daily": [
     {
@@ -22,15 +22,28 @@
       "sma200": 518.98,
       "rsi14": 47.56,
       "rsi5": 47.78
+    },
+    {
+      "date": "2026-08-06",
+      "open": 483.0,
+      "high": 483.0,
+      "low": 482.0,
+      "close": 482.0,
+      "volume": 354900.0,
+      "sma25": 482.32,
+      "sma75": 479.17,
+      "sma200": 518.55,
+      "rsi14": 47.56,
+      "rsi5": 47.78
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-05",
-    "monthly_rsi14": 43.35,
-    "monthly_rsi_ma5": 43.09,
-    "spread": 0.26,
+    "price_date": "2026-08-06",
+    "monthly_rsi14": 43.24,
+    "monthly_rsi_ma5": 43.07,
+    "spread": 0.17,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -39,5 +52,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-05T22:55:06.399919+00:00"
+  "provisional_generated_at": "2026-08-06T13:51:41.750385+00:00"
 }

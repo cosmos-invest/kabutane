@@ -2,12 +2,12 @@
   "code": "4331",
   "ticker": "4331.T",
   "name": "テイクアンドギヴ・ニーズ",
-  "generated_at": "2026-08-05T22:54:06.379558+00:00",
-  "price_date": "2026-08-05",
+  "generated_at": "2026-08-06T13:50:43.199000+00:00",
+  "price_date": "2026-08-06",
   "record": {
-    "current_price": 679.0,
-    "change_from_signal_month_pct": -0.15,
-    "return_since_gc_pct": -0.15
+    "current_price": 684.0,
+    "change_from_signal_month_pct": 0.59,
+    "return_since_gc_pct": 0.59
   },
   "daily": [
     {
@@ -22,15 +22,28 @@
       "sma200": 735.97,
       "rsi14": 32.16,
       "rsi5": 33.78
+    },
+    {
+      "date": "2026-08-06",
+      "open": 679.0,
+      "high": 686.0,
+      "low": 677.0,
+      "close": 684.0,
+      "volume": 40800.0,
+      "sma25": 674.48,
+      "sma75": 678.24,
+      "sma200": 735.18,
+      "rsi14": 32.16,
+      "rsi5": 33.78
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-05",
-    "monthly_rsi14": 32.3,
-    "monthly_rsi_ma5": 30.68,
-    "spread": 1.63,
+    "price_date": "2026-08-06",
+    "monthly_rsi14": 32.95,
+    "monthly_rsi_ma5": 30.81,
+    "spread": 2.15,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -39,5 +52,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-05T22:55:06.399919+00:00"
+  "provisional_generated_at": "2026-08-06T13:51:41.750385+00:00"
 }

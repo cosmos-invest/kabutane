@@ -2,12 +2,12 @@
   "code": "7242",
   "ticker": "7242.T",
   "name": "カヤバ",
-  "generated_at": "2026-08-05T22:54:06.379558+00:00",
-  "price_date": "2026-08-05",
+  "generated_at": "2026-08-06T13:50:43.199000+00:00",
+  "price_date": "2026-08-06",
   "record": {
-    "current_price": 4435.0,
-    "change_from_signal_month_pct": -1.88,
-    "return_since_gc_pct": -1.88
+    "current_price": 4500.0,
+    "change_from_signal_month_pct": -0.44,
+    "return_since_gc_pct": -0.44
   },
   "daily": [
     {
@@ -22,15 +22,28 @@
       "sma200": 4362.27,
       "rsi14": 59.43,
       "rsi5": 61.28
+    },
+    {
+      "date": "2026-08-06",
+      "open": 4435.0,
+      "high": 4530.0,
+      "low": 4410.0,
+      "close": 4500.0,
+      "volume": 107900.0,
+      "sma25": 4288.4,
+      "sma75": 4182.73,
+      "sma200": 4365.0,
+      "rsi14": 59.43,
+      "rsi5": 61.28
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-05",
-    "monthly_rsi14": 59.81,
-    "monthly_rsi_ma5": 59.08,
-    "spread": 0.73,
+    "price_date": "2026-08-06",
+    "monthly_rsi14": 60.77,
+    "monthly_rsi_ma5": 59.27,
+    "spread": 1.5,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -39,5 +52,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-05T22:55:06.399919+00:00"
+  "provisional_generated_at": "2026-08-06T13:51:41.750385+00:00"
 }

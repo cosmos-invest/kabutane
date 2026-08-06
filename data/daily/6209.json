@@ -2,12 +2,12 @@
   "code": "6209",
   "ticker": "6209.T",
   "name": "リケンＮＰＲ",
-  "generated_at": "2026-08-05T22:54:06.379558+00:00",
-  "price_date": "2026-08-05",
+  "generated_at": "2026-08-06T13:50:43.199000+00:00",
+  "price_date": "2026-08-06",
   "record": {
-    "current_price": 4060.0,
-    "change_from_signal_month_pct": -0.37,
-    "return_since_gc_pct": -0.37
+    "current_price": 4120.0,
+    "change_from_signal_month_pct": 1.1,
+    "return_since_gc_pct": 1.1
   },
   "daily": [
     {
@@ -22,15 +22,28 @@
       "sma200": 3732.68,
       "rsi14": 66.42,
       "rsi5": 68.5
+    },
+    {
+      "date": "2026-08-06",
+      "open": 4100.0,
+      "high": 4130.0,
+      "low": 4060.0,
+      "close": 4120.0,
+      "volume": 93800.0,
+      "sma25": 3970.6,
+      "sma75": 3918.27,
+      "sma200": 3737.22,
+      "rsi14": 66.42,
+      "rsi5": 68.5
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-05",
-    "monthly_rsi14": 68.14,
-    "monthly_rsi_ma5": 67.09,
-    "spread": 1.05,
+    "price_date": "2026-08-06",
+    "monthly_rsi14": 69.0,
+    "monthly_rsi_ma5": 67.26,
+    "spread": 1.74,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -39,5 +52,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-05T22:55:06.399919+00:00"
+  "provisional_generated_at": "2026-08-06T13:51:41.750385+00:00"
 }
