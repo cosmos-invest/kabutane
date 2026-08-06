@@ -30,8 +30,6 @@ on:
       - 'assets/premium-supply-beta.css'
       - '.github/workflows/update-margin-balance.yml'
   schedule:
-    # JPX usually publishes the weekly issue-level balance around 16:30 JST
-    # on the second business day. Tue-Thu covers weeks with Japanese holidays.
     - cron: '10 8 * * 2-4'
   workflow_dispatch:
 
@@ -59,6 +57,35 @@ jobs:
           python -m py_compile scripts/build_premium_lab.py
           node --check assets/detail-margin-balance.js
           node --check assets/premium-supply-beta.js
+
+  apply-pr77-split-fix:
+    if: github.event_name == 'push' && contains(github.event.head_commit.message, 'run PR77 stock-split review patch')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/watchlist-premium-research
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Apply reviewed patch
+        shell: bash
+        run: |
+          git fetch origin main
+          git show origin/main:.github/pr77-final.patch > /tmp/pr77-final.patch
+          git apply --check /tmp/pr77-final.patch
+          git apply /tmp/pr77-final.patch
+          python -m py_compile scripts/build_core_universe_data.py scripts/premium_research.py tests/test_premium_research.py
+          python -m unittest tests.test_premium_research tests.test_logic -v
+          git diff --check
+      - name: Push corrected PR branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add learn.html scripts/build_core_universe_data.py scripts/premium_research.py tests/test_premium_research.py
+          git commit -m 'fix: normalize premium outcomes across stock splits'
+          git push origin HEAD:feature/watchlist-premium-research
 
   collect:
     needs: validate
