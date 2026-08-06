@@ -1,0 +1,97 @@
+name: Update premium engine research
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/build_premium_lab.py'
+      - 'scripts/premium_research.py'
+      - 'assets/premium-research.js'
+      - 'assets/premium-research.css'
+      - 'premium-supply-beta.html'
+      - 'tests/test_premium_lab.py'
+      - 'tests/test_premium_research.py'
+      - '.github/workflows/update-premium-research.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/build_premium_lab.py'
+      - 'scripts/premium_research.py'
+      - 'assets/premium-research.js'
+      - 'assets/premium-research.css'
+      - 'premium-supply-beta.html'
+      - '.github/workflows/update-premium-research.yml'
+  workflow_run:
+    workflows: ["Update core universe data", "Update JPX margin balance"]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: premium-research-writes
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate premium engine research
+        run: |
+          python -m py_compile scripts/build_premium_lab.py scripts/premium_research.py tests/test_premium_lab.py tests/test_premium_research.py
+          python -m unittest tests.test_premium_lab tests.test_premium_research -v
+          node --check assets/premium-research.js
+          grep -q '観察優先度の検証室' premium-supply-beta.html
+
+  update:
+    if: >-
+      github.event_name != 'pull_request' &&
+      (github.event_name != 'workflow_run' ||
+       (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event != 'pull_request'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Record point-in-time premium snapshot and evaluate matured cohorts
+        run: python -m scripts.premium_research
+      - name: Validate research output
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          premium = json.loads(Path('data/premium/opportunity-radar.json').read_text(encoding='utf-8'))
+          research = json.loads(Path('data/premium/research/summary.json').read_text(encoding='utf-8'))
+          if int(research.get('snapshot_count') or 0) < 1:
+              raise SystemExit('premium research snapshot was not recorded')
+          if research.get('engine_version') != premium.get('engine_version'):
+              raise SystemExit(f"engine version mismatch: {research.get('engine_version')} != {premium.get('engine_version')}")
+          if not research.get('latest_snapshot'):
+              raise SystemExit('latest_snapshot is missing')
+          print('research snapshots', research.get('snapshot_count'), 'mature', research.get('mature_cohorts'))
+          PY
+      - name: Commit research history
+        run: |
+          if git diff --quiet -- data/premium/research && [ -z "$(git ls-files --others --exclude-standard data/premium/research)" ]; then
+            echo "No premium research changes"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/premium/research
+          git commit -m "data: record premium observation-priority research"
+          git pull --rebase origin main
+          git push origin main
