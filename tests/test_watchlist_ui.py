@@ -27,6 +27,14 @@ class WatchlistUiTests(unittest.TestCase):
         self.assertIn("store.normalizeCode(item.code)", page)
         self.assertNotIn('${item.code} ${item.name || ""}', page)
 
+    def test_watchlist_does_not_rank_or_discover_provisional_gc(self):
+        html = self.text("watchlist.html")
+        page = self.text("assets/watchlist-page.js")
+        self.assertNotIn('value="status"', html)
+        self.assertNotIn('mode === "status"', page)
+        self.assertNotIn("GC: 6", page)
+        self.assertIn("statusLabel(item.provisional_status)", page)
+
     def test_all_stock_and_detail_have_watch_controls(self):
         all_stocks = self.text("all-stocks.html")
         detail = self.text("detail.html")
