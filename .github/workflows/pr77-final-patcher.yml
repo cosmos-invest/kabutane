@@ -2,7 +2,7 @@ name: Apply final PR77 review patch
 
 on:
   pull_request_target:
-    types: [reopened]
+    types: [reopened, synchronize]
   workflow_run:
     workflows: ["Update JPX margin balance"]
     types: [completed]
