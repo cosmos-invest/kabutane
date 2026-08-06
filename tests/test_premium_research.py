@@ -89,6 +89,11 @@ class PremiumResearchTests(unittest.TestCase):
         self.assertIsNone(research.future_return(series, "1001", "2025-08-01", 80, 5))
         self.assertAlmostEqual(research.future_return(series, "1001", "2026-08-03", 100, 5), 5.0, places=10)
 
+    def test_fallback_can_use_entry_snapshot_when_constituent_disappears(self):
+        snapshot = research.compact_snapshot(self.opportunity("2026-07-03"))
+        observed = research.fallback_observation([snapshot], "1001", "2026-07-03", "2026-07-10")
+        self.assertEqual(observed, ("2026-07-03", 100.0))
+
     def test_evaluate_tracks_forward_returns_and_market_excess(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
