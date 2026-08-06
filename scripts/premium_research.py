@@ -248,6 +248,38 @@ def load_price_series(core_root: Path | None = None) -> dict[str, tuple[list[str
     return result
 
 
+def load_split_events(core_root: Path | None = None) -> dict[str, list[tuple[str, float]]]:
+    core_root = core_root or (ROOT / "data" / "core")
+    merged: dict[str, dict[str, float]] = defaultdict(dict)
+    for folder in ["charts", "daily"]:
+        base = core_root / folder
+        if not base.exists():
+            continue
+        for path in sorted(base.glob("*.json")):
+            payload = load_json(path, {})
+            for code, record in (payload.get("records") or {}).items():
+                for event in record.get("corporate_events") or []:
+                    if event.get("type") != "SPLIT" or not event.get("date"):
+                        continue
+                    ratio = finite(event.get("ratio"))
+                    if ratio is None:
+                        detail = str(event.get("detail") or "").replace("比率", "").strip()
+                        ratio = finite(detail)
+                    if ratio not in (None, 0):
+                        merged[str(code)][str(event["date"])] = float(ratio)
+    return {code: sorted(values.items()) for code, values in merged.items()}
+
+
+def cumulative_split_ratio(
+    split_events: dict[str, list[tuple[str, float]]], code: str, start_date: str, exit_date: str
+) -> float:
+    ratio = 1.0
+    for event_date, event_ratio in split_events.get(code, []):
+        if start_date < event_date <= exit_date:
+            ratio *= event_ratio
+    return ratio
+
+
 def series_price_on(series: dict[str, tuple[list[str], list[float]]], code: str, target_date: str) -> float | None:
     if code not in series:
         return None
@@ -336,6 +368,7 @@ def load_outcome_index(outcomes_root: Path, engine_version: str) -> dict[tuple[s
                         "exit_price": finite(value[2]),
                         "return_pct": finite(value[3]),
                         "reason": str(value[4]),
+                        "split_ratio": finite(value[5]) if len(value) > 5 else 1.0,
                     }
     return index
 
@@ -345,7 +378,9 @@ def finalize_outcomes(
     series: dict[str, tuple[list[str], list[float]]],
     outcomes_root: Path,
     engine_version: str,
+    split_events: dict[str, list[tuple[str, float]]] | None = None,
 ) -> dict[str, int]:
+    split_events = split_events or {}
     dated_snapshots = latest_snapshot_per_date(snapshots)
     cohorts = weekly_cohorts(snapshots)
     primary_calendar = market_calendar(series)
@@ -405,13 +440,15 @@ def finalize_outcomes(
                     exit_date, exit_price = observed
                     reason = "snapshot_target" if exit_date == target_date else "last_observed_before_target"
 
-                return_pct = (float(exit_price) / float(entry_price) - 1.0) * 100.0
+                split_ratio = cumulative_split_ratio(split_events, code, cohort_date, exit_date)
+                return_pct = (float(exit_price) * split_ratio / float(entry_price) - 1.0) * 100.0
                 horizon_payload[code] = [
                     target_date,
                     exit_date,
                     round(float(exit_price), 4),
                     round(return_pct, 5),
                     reason,
+                    round(split_ratio, 8),
                 ]
                 existing[key] = {
                     "target_date": target_date,
@@ -419,6 +456,7 @@ def finalize_outcomes(
                     "exit_price": exit_price,
                     "return_pct": return_pct,
                     "reason": reason,
+                    "split_ratio": split_ratio,
                 }
                 dirty.add(path)
                 if reason == "market_close":
@@ -476,7 +514,8 @@ def evaluate(
     dated_snapshots = latest_snapshot_per_date(snapshots)
     cohorts = weekly_cohorts(snapshots)
     series = load_price_series(core_root)
-    finalization = finalize_outcomes(snapshots, series, target_outcomes_root, engine_version)
+    split_events = load_split_events(core_root)
+    finalization = finalize_outcomes(snapshots, series, target_outcomes_root, engine_version, split_events)
     outcome_index = load_outcome_index(target_outcomes_root, engine_version)
 
     specs = ["top10", "top20", "top50", "score_60", "score_70", "score_80", "score_90"]
