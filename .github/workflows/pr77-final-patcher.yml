@@ -1,0 +1,43 @@
+name: Apply final PR77 review patch
+
+on:
+  pull_request_target:
+    types: [reopened]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  patch:
+    if: github.event.pull_request.number == 77
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PR branch
+        uses: actions/checkout@v4
+        with:
+          ref: feature/watchlist-premium-research
+          fetch-depth: 0
+      - name: Checkout patch source
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: _main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Apply and test
+        run: |
+          git apply --check _main/.github/pr77-final.patch
+          git apply _main/.github/pr77-final.patch
+          python -m py_compile scripts/build_core_universe_data.py scripts/premium_research.py tests/test_premium_research.py
+          python -m unittest tests.test_premium_research tests.test_logic -v
+          git diff --check
+      - name: Push corrected branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git show HEAD^:.github/workflows/update-premium-research.yml > /dev/null 2>&1 || true
+          git add learn.html scripts/build_core_universe_data.py scripts/premium_research.py tests/test_premium_research.py
+          git commit -m 'fix: normalize premium outcomes across stock splits'
+          git push origin HEAD:feature/watchlist-premium-research
