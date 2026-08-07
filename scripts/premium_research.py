@@ -134,12 +134,20 @@ def record_snapshot(payload_path: Path = PREMIUM_RADAR, history_root: Path | Non
     identical = next((item for item in snapshots if item.get("fingerprint") == fingerprint), None)
     if identical is not None:
         return identical
+    same_day_generations: list[int] = []
+    for item in snapshots:
+        if str(item.get("price_date") or "") != price_date:
+            continue
+        try:
+            generation = int(item.get("generation"))
+        except (TypeError, ValueError):
+            generation = len(same_day_generations) + 1
+        same_day_generations.append(generation)
+    snapshot["generation"] = max(same_day_generations, default=0) + 1
     snapshots.append(snapshot)
-    snapshots.sort(key=lambda item: (
-        str(item.get("price_date") or ""),
-        str(item.get("generated_at") or ""),
-        str(item.get("snapshot_id") or ""),
-    ))
+    # Keep same-date generations in append order. The fingerprint identifies
+    # content, but it must never be used as a chronology surrogate.
+    snapshots.sort(key=lambda item: str(item.get("price_date") or ""))
     current.update({
         "schema_version": 2,
         "kind": "premium_engine_history_month",
@@ -170,11 +178,10 @@ def load_snapshots(history_root: Path, engine_version: str | None = None) -> lis
         if not key:
             key = f"legacy:{item.get('price_date')}:{len(by_id)}"
         by_id[key] = item
-    return sorted(by_id.values(), key=lambda item: (
-        str(item.get("price_date") or ""),
-        str(item.get("generated_at") or ""),
-        str(item.get("snapshot_id") or ""),
-    ))
+    # Month files preserve append order. Stable date-only sorting therefore
+    # keeps generation chronology and remains compatible with legacy entries
+    # that do not yet have an explicit generation field.
+    return sorted(by_id.values(), key=lambda item: str(item.get("price_date") or ""))
 
 
 def observation_rows(snapshot: dict[str, Any]) -> list[dict[str, Any]]:
@@ -500,6 +507,22 @@ def portfolio_members(rows: list[dict[str, Any]], spec: str) -> list[dict[str, A
     return []
 
 
+def selected_returns(
+    selected: list[dict[str, Any]],
+    returns_by_code: dict[str, float | None],
+    *,
+    require_complete: bool = False,
+) -> list[float] | None:
+    if not selected:
+        return None
+    values = [returns_by_code[row["code"]] for row in selected if returns_by_code.get(row["code"]) is not None]
+    required = 1.0 if require_complete else MIN_COHORT_COVERAGE
+    coverage = len(values) / len(selected)
+    if coverage + 1e-12 < required:
+        return None
+    return [float(value) for value in values]
+
+
 def evaluate(
     history_root: Path | None = None,
     core_root: Path | None = None,
@@ -554,8 +577,12 @@ def evaluate(
 
             for spec in specs:
                 selected = portfolio_members(rows, spec)
-                values = [returns_by_code[row["code"]] for row in selected if returns_by_code.get(row["code"]) is not None]
-                if not values:
+                values = selected_returns(
+                    selected,
+                    returns_by_code,
+                    require_complete=spec.startswith("top"),
+                )
+                if values is None:
                     continue
                 spec_position_returns[spec].extend(values)
                 cohort_mean = statistics.fmean(values)
@@ -564,17 +591,15 @@ def evaluate(
 
             for low, high in bucket_defs:
                 label = f"{int(low)}-{int(high) if high < 100 else 100}"
-                values = [
-                    returns_by_code[row["code"]]
-                    for row in rows
-                    if low <= row["score"] <= high and returns_by_code.get(row["code"]) is not None
-                ]
-                bucket_returns[label].extend(values)
+                selected = [row for row in rows if low <= row["score"] <= high]
+                values = selected_returns(selected, returns_by_code)
+                if values is not None:
+                    bucket_returns[label].extend(values)
 
             for name, weights in WEIGHT_EXPERIMENTS.items():
                 ranked = sorted(rows, key=lambda row: (-alt_score(row, weights), row["code"]))[:20]
-                values = [returns_by_code[row["code"]] for row in ranked if returns_by_code.get(row["code"]) is not None]
-                if not values:
+                values = selected_returns(ranked, returns_by_code, require_complete=True)
+                if values is None:
                     continue
                 mean_value = statistics.fmean(values)
                 experiment_cohort_returns[name].append(mean_value)
