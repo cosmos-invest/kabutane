@@ -44,7 +44,7 @@
 - 仮想ポートフォリオは上位N銘柄や点数閾値を固定ルールで組み、5営業日後・20営業日後の騰落率を追跡する。
 - 成熟した5営業日後・20営業日後の結果は `data/premium/research/outcomes/<engine_version>/` の別台帳へ固定し、後日の1年チャート窓更新やユニバース変更で過去成績を再計算・消失させない。
 - `auto_adjust=False` のpoint-in-time価格で期間リターンを測る場合、cohort日の翌日から実際のexit日までに発生した株式分割・併合比率を累積して経済的リターンへ補正してからoutcome台帳へ固定する。補正係数も保存し、分割・併合を投資損益と誤認しない。観測した分割・併合イベントは `data/premium/research/split-events/<engine_version>.json` に保持し、銘柄が後からcurrent shardやcore universeを離れても補正係数を失わない。この研究値は株式分割・併合を補正した価格リターンであり、配当再投資込みのトータルリターンとは区別する。
-- ターゲット日に現行価格shardから銘柄が消えている場合は、point-in-time履歴に残る最後の観測価格を使用したことを `last_observed_before_target` と明記し、単純にポートフォリオ母集団から除外しない。
+- ターゲット日にその銘柄の終値がない場合は、まず現行market seriesから**cohort日より後かつtarget日以前の最後の実市場終値**を使い、`last_market_close_before_target` と明記する。それも取得できない場合だけpoint-in-time履歴の最後の観測価格へfallbackし、`snapshot_target` / `last_observed_before_target` を明記する。単純にエントリー価格へ戻したり、ポートフォリオ母集団から除外したりしない。
 - 成績は市場全体の同期間平均と比較し、単純な上昇相場をエンジンの実力と誤認しない。成熟cohortは原則として構成銘柄の95%以上のoutcomeが確定してから集計し、固定Top10 / Top20 / Top50とchallenger Top20は選択銘柄のoutcomeが全件そろうまで集計しない。
 - 重みの最適化は現行エンジンとは別の challenger として並走させる。検証結果だけで本番重みを自動変更しない。
 - 過学習を避けるため、正式な重み見直し候補は週次コホートで判定し、各challenger自身についてTop20のoutcomeが全件そろった5営業日後コホート20週・20営業日後コホート12週がたまるまでは候補にしない。全体cohortの成熟数だけでchallengerを昇格させず、現行エンジンを自動変更しない。
