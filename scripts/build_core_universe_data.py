@@ -309,7 +309,7 @@ def corporate_events(frame: pd.DataFrame) -> list[dict[str, Any]]:
         if dividend not in (None, 0):
             result.append({"date": date.strftime("%Y-%m-%d"), "type": "DIVIDEND", "label": "配当", "detail": f"1株 {dividend:g}円"})
         if split not in (None, 0):
-            result.append({"date": date.strftime("%Y-%m-%d"), "type": "SPLIT", "label": "株式分割・併合", "detail": f"比率 {split:g}"})
+            result.append({"date": date.strftime("%Y-%m-%d"), "type": "SPLIT", "label": "株式分割・併合", "detail": f"比率 {split:g}", "ratio": split})
     return result
 
 
@@ -468,6 +468,7 @@ def build_core_data(stocks: list[dict[str, str]], *, output: Path, refresh_base:
             "daily": compact_daily_rows(daily, OVERLAY_DAYS),
             "technical": technical,
             "provisional_signal": signal,
+            "corporate_events": corporate_events(daily.tail(OVERLAY_DAYS)),
         }
 
         if refresh_base:

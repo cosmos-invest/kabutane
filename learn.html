@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="かぶたねで使う月足RSI、価格帯別出来高、POC、70%バリューエリア、信用残高、上昇トレンド、VCPを初心者向けに説明します。">
+  <meta name="description" content="かぶたねで使う月足RSI、価格帯別出来高、POC、信用残高、ウォッチリスト、観察優先度の検証を初心者向けに説明します。">
   <title>学び・FAQ | かぶたね</title>
   <link rel="stylesheet" href="assets/style.css">
   <link rel="stylesheet" href="assets/pastel.css">
@@ -23,6 +23,8 @@
         <a href="#value-area">70%バリューエリア</a>
         <a href="#margin-balance">信用残高</a>
         <a href="#monthly-rsi">月足RSI・GC/DC</a>
+        <a href="#watchlist">気になる株</a>
+        <a href="#premium-research">観察優先度の検証</a>
         <a href="#decision-flow">判断の順番</a>
       </nav>
     </section>
@@ -70,7 +72,23 @@
       <div class="learn-simple"><article><span>緑 ● GC</span><strong>中期の勢いが上向く候補</strong><p>確定GCは月末まで完成した月足で判断します。</p></article><article><span>赤 ● DC</span><strong>中期の勢いが弱まる候補</strong><p>赤丸だけで売るのではなく、価格のトレンド崩れと合わせて確認します。</p></article><article><span>重要</span><strong>確定と進行中月を分ける</strong><p>正式判定には月末確定値を使い、進行中月の変化は別の観察情報として扱います。</p></article></div>
       <p><a class="button secondary" href="all-stocks.html">全銘柄一覧を見る</a> <a class="button secondary" href="signal-method.html">月足RSIの計算方法を詳しく見る</a></p>
       <p class="learn-callout"><strong>全銘柄モード：</strong>現在はプライム・スタンダード・グロースの内国普通株を全件走査します。公開一覧ではGC接近・継続・暫定DC・OUTなどを必要に応じて絞れます。ETF・ETN・REITなどは通常株の一覧には混ぜません。</p>
-      <p class="learn-note"><strong>プレミアム境界：</strong>公開の全銘柄一覧では、進行中月で新たに上抜けた「暫定GC銘柄」を一覧・フィルター・ランキングで発見できる形にはしません。一方、銘柄コードや銘柄名を指定して個別詳細を開いた場合は、その銘柄の暫定GC / 暫定DCと進行中月RSIを確認できます。プレミアムの価値は、全対象銘柄から暫定GCを発見・順位付けし、需給や出来高と組み合わせて観察候補を提示することです。</p>
+      <p class="learn-note"><strong>プレミアム境界：</strong>公開の全銘柄一覧では、進行中月で新たに上抜けた「暫定GC銘柄」を一覧・フィルター・ランキングで発見できる形にはしません。一方、銘柄コードや銘柄名を指定して個別詳細を開いた場合や、自分で手動登録した「気になる株」では、その既知銘柄の暫定GC / 暫定DCと進行中月RSIを確認できます。プレミアムの価値は、全対象銘柄から暫定GCを発見・順位付けし、需給や出来高と組み合わせて観察候補を提示することです。</p>
+    </section>
+
+    <section class="learn-section term" id="watchlist">
+      <h2>🌱 「気になる株」はどこに保存される？</h2>
+      <p>全銘柄一覧や個別ページの<strong>「☆ 気になる」</strong>で登録した銘柄は、アカウントではなく<strong>今使っているブラウザのlocalStorage</strong>へ保存します。サーバーへ個人のウォッチリストを送らず、ログインなしですぐ使える設計です。</p>
+      <div class="learn-simple"><article><span>同じブラウザ</span><strong>閉じても残る</strong><p>通常は次回アクセス時も保存済み銘柄を確認できます。</p></article><article><span>別端末・別ブラウザ</span><strong>自動同期しない</strong><p>スマホとPC、Chromeと別ブラウザではそれぞれ別のリストになります。</p></article><article><span>登録済み銘柄</span><strong>暫定GC / DCも確認</strong><p>自分で選んだ既知銘柄を追う場所なので、個別詳細と同じく進行中月の状態を確認できます。</p></article></div>
+      <p class="learn-note">ブラウザのサイトデータを削除した場合やシークレットモードでは消えることがあります。共有端末では同じブラウザを使う人から保存銘柄が見える可能性があります。</p>
+      <p><a class="button secondary" href="watchlist.html">🌱 気になる株を開く</a></p>
+    </section>
+
+    <section class="learn-section term" id="premium-research">
+      <h2>観察優先度は、どうやって良くしていくの？</h2>
+      <p>プレミアムの「観察優先度」は、月足シグナル、日足トレンド・出来高、信用需給、財務を同じ尺度へまとめた<strong>観察順を決めるβスコア</strong>です。点数が高いから将来上がる、と最初から決めつけず、毎日の点数をその時点の株価と一緒に保存して検証します。</p>
+      <div class="learn-simple"><article><span>その日の状態を固定</span><strong>後から書き換えない</strong><p>未来の値動きが分かった後で過去スコアを計算し直す「未来参照」を避けます。</p></article><article><span>仮想ポートフォリオ</span><strong>5日後・20日後を追う</strong><p>上位10/20/50銘柄、60/70/80/90点以上などの固定ルールを等金額ポートフォリオとして追跡します。</p></article><article><span>市場全体とも比較</span><strong>地合いを差し引く</strong><p>同じ期間の全対象銘柄平均との差も見て、単なる全面高をエンジンの実力と誤認しないようにします。</p></article></div>
+      <p class="learn-callout"><strong>重みは自動で変更しません。</strong> 現行スコアとは別に「月足重視」「需給重視」「日足・出来高重視」「財務重視」の挑戦者を同時に計算し、週次コホートで比較します。各挑戦者自身についてTop20の結果が全件そろった5営業日後の検証20週・20営業日後の検証12週がたまるまでは、正式な見直し候補にしません。</p>
+      <p class="learn-note">この仕組みは「過去によく当たった条件へ合わせ続ける」ためではなく、条件変更が本当に再現性を改善したかを確認するためのものです。snapshotには実際に生成した時刻も保存し、後から届いた信用需給を古い株価日の判断材料だったことにはしません。5営業日後・20営業日後の結果は、期間中の株式分割・併合を補正してから変更しない台帳へ固定し、観測済みの分割・併合イベント自体も別に保持するため、銘柄が後で対象外になっても補正を失いにくくしています。目標日にその銘柄の終値がない場合は、まず目標日以前の最後の実市場終値を使い、それも取得できない場合だけ保存済みのpoint-in-time観測へフォールバックします。ここでいう成績は分割・併合を補正した価格リターンで、配当再投資込みのトータルリターンではありません。スコア仕様を変える場合はengine versionを分け、異なる版の履歴を混ぜません。</p>
     </section>
 
     <section class="learn-section term" id="decision-flow">
@@ -81,7 +99,7 @@
 
     <section class="panel note-panel"><h2>そのほか、かぶたねで使う考え方</h2>
       <details open><summary><strong>全銘柄から何を選べばいい？</strong></summary><p><a href="all-stocks.html">全銘柄一覧</a>では、最初に3人の案内フィルターを使えます。<strong>コスモス🌸</strong>は長期の上昇トレンド、<strong>ルーモ✨</strong>は出来高を伴うチャートの動き出し、<strong>エール💜</strong>は自己資本・ROE・FCF・売上成長など会社の体力を重視します。慣れた人は「玄人向け設定」で市場・トレンド・出来高・高値距離・財務条件を自由に組み合わせられます。</p></details>
-      <details><summary><strong>確定シグナルと暫定シグナルの違いは？</strong></summary><p><strong>確定NEW・確定継続・確定OUT</strong>は、月末まで完成した月足だけで判定します。ランキング、月初レポート、GC後騰落率には、この確定値だけを使います。</p><p>進行中月の暫定シグナルは月末までに変わるため、確定情報と分けて扱います。個別銘柄ページでは暫定GC / 暫定DCを現在の観察情報として確認できますが、正式なNEW / OUTではありません。暫定GCを全銘柄から探し出す一覧・優先順位・需給との複合判定はプレミアム機能へ分離します。</p></details>
+      <details><summary><strong>確定シグナルと暫定シグナルの違いは？</strong></summary><p><strong>確定NEW・確定継続・確定OUT</strong>は、月末まで完成した月足だけで判定します。ランキング、月初レポート、GC後騰落率には、この確定値だけを使います。</p><p>進行中月の暫定シグナルは月末までに変わるため、確定情報と分けて扱います。個別銘柄ページと手動ウォッチリストでは暫定GC / 暫定DCを現在の観察情報として確認できますが、正式なNEW / OUTではありません。暫定GCを全銘柄から探し出す一覧・優先順位・需給との複合判定はプレミアム機能へ分離します。</p></details>
       <details><summary><strong>上昇トレンドの簡易判定</strong></summary><p>株価と複数の移動平均線の位置・向きから、長期的な流れが上向きかを確認します。SEPAの考え方を参考にしていますが、すべての条件を完全再現するものではありません。</p></details>
       <details><summary><strong>値動きの収束（VCP）</strong></summary><p>値幅が少しずつ小さくなる状態を見ます。力をためている可能性がありますが、上昇を保証する形ではありません。</p></details>
       <details><summary><strong>勢いの点火（モメンタム・MVP）</strong></summary><p>株価、出来高、相対的な強さが同時に動いているかを確認します。すでに上昇した後に点灯する場合もあるため、損切りまでの距離と一緒に見ます。</p></details>
@@ -89,13 +107,13 @@
 
     <section class="panel note-panel"><h2>データと更新</h2>
       <details open><summary><strong>何を取得していますか？</strong></summary><p>Yahoo Finance経由で、株価の始値・高値・安値・終値、出来高、配当、株式分割・併合を取得します。信用残高はJPX「銘柄別信用取引週末残高」から週次で取得し、買い残・売り残・前週比・信用倍率を個別銘柄ページへ表示します。有料API、TDnet、決算予定の自動取得には接続していません。</p></details>
-      <details><summary><strong>いつ更新されますか？</strong></summary><p>確定NEW・CONTINUE・OUTは月末確定後の月次更新で変わります。プライム・スタンダード・グロースの内国普通株全体について、日足と進行中月の観察データを平日夜に再計算します。信用残高はJPXの週次公表後に自動確認し、新しい基準日のデータがあるときだけ更新します。市場の休場日やGitHub Actionsの混雑時は遅れる場合があります。</p></details>
+      <details><summary><strong>いつ更新されますか？</strong></summary><p>確定NEW・CONTINUE・OUTは月末確定後の月次更新で変わります。プライム・スタンダード・グロースの内国普通株全体について、日足と進行中月の観察データを平日夜に再計算します。信用残高はJPXの週次公表後に自動確認し、新しい基準日のデータがあるときだけ更新します。プレミアム観察優先度の研究履歴は全銘柄レーダーや信用需給の更新後に保存し、実際に生成した時刻も記録します。信用需給の更新が株価基準日より後なら、そのgenerationを古い株価日のcohortには採用しません。市場の休場日やGitHub Actionsの混雑時は遅れる場合があります。</p></details>
       <details><summary><strong>対象市場は？</strong></summary><p>JPXの上場銘柄一覧を使い、プライム・スタンダード・グロースの国内普通株式を対象にします。ETF・ETN・REIT・TOKYO PRO・外国株などは通常株のスクリーニングへ混ぜません。新規上場などで月足期間が不足する銘柄は、計算可能になるまで判定待ちになります。</p></details>
       <details><summary><strong>財務情報が「—」になるのはなぜ？</strong></summary><p>大量アクセスを避けるため、財務プロフィールは全対象銘柄を一度に取得せず、Yahoo Financeのキャッシュを使いながら未取得・古い銘柄を段階的に補完します。未取得や取得不能は0ではなく「情報なし」です。</p></details>
     </section>
 
     <section class="panel note-panel"><h2>FAQ</h2>
-      <details><summary><strong>なぜ進行中月の上抜け候補は公開一覧にないの？</strong></summary><p>月末確定前に新たな上抜けを検出する情報は、全銘柄を毎日走査して先回り候補を探すプレミアム機能として分離しています。公開一覧では、その銘柄を特定できる専用フィルター・サマリー・進行中月のクロス値を表示しません。ただし、すでに気になる銘柄があり個別詳細を開いた場合は、その銘柄の暫定GC / 暫定DCを確認できます。月末に確定したあとは正式シグナルとして通常側へ反映します。</p></details>
+      <details><summary><strong>なぜ進行中月の上抜け候補は公開一覧にないの？</strong></summary><p>月末確定前に新たな上抜けを検出する情報は、全銘柄を毎日走査して先回り候補を探すプレミアム機能として分離しています。公開一覧では、その銘柄を特定できる専用フィルター・サマリー・進行中月のクロス値を表示しません。ただし、すでに気になる銘柄があり個別詳細を開いた場合や、自分で「気になる株」へ登録した場合は、その銘柄の暫定GC / 暫定DCを確認できます。月末に確定したあとは正式シグナルとして通常側へ反映します。</p></details>
       <details><summary><strong>TradingViewでDCなのに、かぶたねが継続なのはなぜ？</strong></summary><p>TradingViewが進行中月を含めている場合、月途中で先にDCして見えることがあります。かぶたねの確定ステータスは前月末までの完成済み月足なので、その月末までは確定状態は変わりません。公開の全銘柄一覧では暫定DCで絞ることもできます。</p></details>
       <details><summary><strong>🌸コスモス注目は買い推奨ですか？</strong></summary><p>いいえ。勢いと長期トレンドの両方を詳しく確認したい「調査候補」です。会社の公式情報、チャート、許容できる損失を確認して判断してください。</p></details>
       <details><summary><strong>決算や重要情報はどこで確認しますか？</strong></summary><p>かぶたねでは自動取得しません。実際に投資する前に、対象企業の公式IRページや証券会社の情報で確認してください。</p></details>
