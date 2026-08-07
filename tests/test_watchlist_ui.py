@@ -35,6 +35,13 @@ class WatchlistUiTests(unittest.TestCase):
         self.assertNotIn("GC: 6", page)
         self.assertIn("statusLabel(item.provisional_status)", page)
 
+    def test_watchlist_never_uses_sanitized_public_status_as_provisional_truth(self):
+        page = self.text("assets/watchlist-page.js")
+        self.assertNotIn("provisional.status || pub.provisional_status", page)
+        self.assertNotIn("pub.provisional_status || \"UNKNOWN\"", page)
+        self.assertIn('provisional_status: provisionalAvailable ? provisional.status : "UNKNOWN"', page)
+        self.assertIn("item.provisional_available !== true", page)
+
     def test_all_stock_and_detail_have_watch_controls(self):
         all_stocks = self.text("all-stocks.html")
         detail = self.text("detail.html")
