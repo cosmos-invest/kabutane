@@ -63,6 +63,7 @@ class PremiumResearchTests(unittest.TestCase):
             second = research.record_snapshot(payload, history)
             self.assertEqual(first["price_date"], "2026-07-03")
             self.assertEqual(first["snapshot_id"], second["snapshot_id"])
+            self.assertEqual(first["generation"], 1)
             month = json.loads((history / "2026-07.json").read_text(encoding="utf-8"))
             self.assertEqual(len(month["snapshots"]), 1)
             self.assertEqual(month["snapshots"][0]["records"][0][0], "1001")
@@ -83,6 +84,32 @@ class PremiumResearchTests(unittest.TestCase):
             self.assertEqual(len(month["snapshots"]), 2)
             self.assertEqual(month["snapshots"][0]["records"][0][2], 100.0)
             self.assertEqual(month["snapshots"][1]["records"][0][2], 104.0)
+            self.assertEqual([item["generation"] for item in month["snapshots"]], [1, 2])
+
+    def test_same_timestamp_generations_keep_append_order(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            payload = root / "opportunity.json"
+            history = root / "history"
+            payload.write_text(json.dumps(self.opportunity("2026-07-03", generated_suffix="12:00:00")), encoding="utf-8")
+            first = research.record_snapshot(payload, history)
+            payload.write_text(json.dumps(self.opportunity("2026-07-03", shift=4, generated_suffix="12:00:00")), encoding="utf-8")
+            second = research.record_snapshot(payload, history)
+            loaded = research.load_snapshots(history, research.ENGINE_VERSION)
+            latest = research.latest_snapshot_per_date(loaded)[0]
+            self.assertEqual(first["generation"], 1)
+            self.assertEqual(second["generation"], 2)
+            self.assertEqual(latest["snapshot_id"], second["snapshot_id"])
+            self.assertEqual(research.cohort_rows(latest)[0]["price"], 104.0)
+
+    def test_fixed_top_selection_requires_complete_coverage(self):
+        selected = [{"code": f"{index:04d}"} for index in range(20)]
+        returns = {row["code"]: 1.0 for row in selected}
+        returns[selected[-1]["code"]] = None
+        self.assertIsNone(research.selected_returns(selected, returns, require_complete=True))
+        covered = research.selected_returns(selected, returns)
+        self.assertIsNotNone(covered)
+        self.assertEqual(len(covered), 19)
 
     def test_future_return_rejects_entry_outside_retained_window(self):
         series = {"1001": (["2026-08-03", "2026-08-04", "2026-08-05", "2026-08-06", "2026-08-07", "2026-08-10"], [100, 101, 102, 103, 104, 105])}
