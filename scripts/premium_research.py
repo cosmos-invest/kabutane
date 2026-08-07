@@ -605,6 +605,14 @@ def experiment_is_mature(values: dict[str, Any]) -> bool:
     return int(result5.get("cohorts") or 0) >= 20 and int(result20.get("cohorts") or 0) >= 12
 
 
+def eligible_challenger_names(experiment_result: dict[str, dict[str, Any]]) -> list[str]:
+    return [
+        name
+        for name, values in experiment_result.items()
+        if name != "baseline" and experiment_is_mature(values)
+    ]
+
+
 def evaluate(
     history_root: Path | None = None,
     core_root: Path | None = None,
@@ -759,7 +767,7 @@ def evaluate(
 
     history_start = dated_snapshots[0].get("price_date") if dated_snapshots else None
     latest_snapshot = dated_snapshots[-1].get("price_date") if dated_snapshots else None
-    eligible_experiments = [name for name, values in experiment_result.items() if experiment_is_mature(values)]
+    eligible_experiments = eligible_challenger_names(experiment_result)
     recommendation_ready = bool(eligible_experiments)
     best_experiment = None
     if recommendation_ready:
