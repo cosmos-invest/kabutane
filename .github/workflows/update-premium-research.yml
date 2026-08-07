@@ -78,6 +78,9 @@ jobs:
           engine_dir = Path('data/premium/research/history') / str(research['engine_version'])
           if not engine_dir.exists():
               raise SystemExit(f'engine-version history directory missing: {engine_dir}')
+          split_archive = Path('data/premium/research/split-events') / f"{research['engine_version']}.json"
+          if not split_archive.exists():
+              raise SystemExit(f'split-event archive missing: {split_archive}')
           print('research snapshots', research.get('snapshot_count'), 'days', research.get('snapshot_day_count'), 'mature', research.get('mature_cohorts'))
           PY
       - name: Commit research history
