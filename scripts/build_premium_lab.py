@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import math
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -157,6 +158,7 @@ def build_row(row: dict[str, Any], supply: dict[str, Any] | None) -> dict[str, A
 
 
 def build_payload() -> dict[str, Any]:
+    recorded_at = datetime.now(timezone.utc).isoformat()
     radar = load_json(CORE_RADAR, {})
     supply_payload = load_json(SUPPLY_SCREEN, {})
     supply_map = {
@@ -181,7 +183,9 @@ def build_payload() -> dict[str, Any]:
         "kind": "kabutane_premium_opportunity_radar",
         "engine_version": ENGINE_VERSION,
         "score_caps": SCORE_CAPS,
-        "generated_at": radar.get("generated_at"),
+        "generated_at": recorded_at,
+        "recorded_at": recorded_at,
+        "source_core_generated_at": radar.get("generated_at"),
         "price_date": max((str(item.get("price_date") or "") for item in rows), default="") or None,
         "margin_date": supply_payload.get("latest_date"),
         "core_count": int(radar.get("core_count") or len(rows)),
