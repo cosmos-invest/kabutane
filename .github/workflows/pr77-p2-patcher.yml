@@ -1,0 +1,82 @@
+name: Apply PR77 final P2 fixes
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/pr77-p2-patcher.yml'
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/watchlist-premium-research
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Patch generation ordering and portfolio coverage
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('scripts/premium_research.py')
+          text = path.read_text(encoding='utf-8')
+
+          old = '''    snapshots.append(snapshot)\n    snapshots.sort(key=lambda item: (\n        str(item.get("price_date") or ""),\n        str(item.get("generated_at") or ""),\n        str(item.get("snapshot_id") or ""),\n    ))\n'''
+          new = '''    same_day_generations = []\n    for index, item in enumerate(snapshots):\n        if str(item.get("price_date") or "") != price_date:\n            continue\n        try:\n            generation = int(item.get("generation"))\n        except (TypeError, ValueError):\n            generation = index + 1\n        same_day_generations.append(generation)\n    snapshot["generation"] = max(same_day_generations, default=0) + 1\n    snapshots.append(snapshot)\n    # Stable date-only sorting preserves append order for same-date generations.\n    # The content hash remains identity/idempotence metadata, never chronology.\n    snapshots.sort(key=lambda item: str(item.get("price_date") or ""))\n'''
+          if old not in text:
+              raise SystemExit('record_snapshot ordering block not found')
+          text = text.replace(old, new, 1)
+
+          old = '''    return sorted(by_id.values(), key=lambda item: (\n        str(item.get("price_date") or ""),\n        str(item.get("generated_at") or ""),\n        str(item.get("snapshot_id") or ""),\n    ))\n'''
+          new = '''    # Month files are append-ordered. Stable date-only sorting keeps that\n    # generation chronology, including legacy snapshots without `generation`.\n    return sorted(by_id.values(), key=lambda item: str(item.get("price_date") or ""))\n'''
+          if old not in text:
+              raise SystemExit('load_snapshots ordering block not found')
+          text = text.replace(old, new, 1)
+
+          marker = '''def portfolio_members(rows: list[dict[str, Any]], spec: str) -> list[dict[str, Any]]:\n    if spec.startswith("top"):\n        return rows[: int(spec[3:])]\n    if spec.startswith("score_"):\n        threshold = float(spec.split("_", 1)[1])\n        return [row for row in rows if row["score"] >= threshold]\n    return []\n\n\n'''
+          replacement = marker + '''def selected_returns(\n    selected: list[dict[str, Any]],\n    returns_by_code: dict[str, float | None],\n    *,\n    require_complete: bool = False,\n) -> list[float] | None:\n    if not selected:\n        return None\n    values = [returns_by_code[row["code"]] for row in selected if returns_by_code.get(row["code"]) is not None]\n    required = 1.0 if require_complete else MIN_COHORT_COVERAGE\n    coverage = len(values) / len(selected)\n    if coverage + 1e-12 < required:\n        return None\n    return [float(value) for value in values]\n\n\n'''
+          if marker not in text:
+              raise SystemExit('portfolio_members marker not found')
+          text = text.replace(marker, replacement, 1)
+
+          old = '''            for spec in specs:\n                selected = portfolio_members(rows, spec)\n                values = [returns_by_code[row["code"]] for row in selected if returns_by_code.get(row["code"]) is not None]\n                if not values:\n                    continue\n                spec_position_returns[spec].extend(values)\n                cohort_mean = statistics.fmean(values)\n                spec_cohort_returns[spec].append(cohort_mean)\n                spec_excess_returns[spec].append(cohort_mean - baseline_mean)\n\n            for low, high in bucket_defs:\n                label = f"{int(low)}-{int(high) if high < 100 else 100}"\n                values = [\n                    returns_by_code[row["code"]]\n                    for row in rows\n                    if low <= row["score"] <= high and returns_by_code.get(row["code"]) is not None\n                ]\n                bucket_returns[label].extend(values)\n\n            for name, weights in WEIGHT_EXPERIMENTS.items():\n                ranked = sorted(rows, key=lambda row: (-alt_score(row, weights), row["code"]))[:20]\n                values = [returns_by_code[row["code"]] for row in ranked if returns_by_code.get(row["code"]) is not None]\n                if not values:\n                    continue\n                mean_value = statistics.fmean(values)\n'''
+          new = '''            for spec in specs:\n                selected = portfolio_members(rows, spec)\n                values = selected_returns(\n                    selected,\n                    returns_by_code,\n                    require_complete=spec.startswith("top"),\n                )\n                if values is None:\n                    continue\n                spec_position_returns[spec].extend(values)\n                cohort_mean = statistics.fmean(values)\n                spec_cohort_returns[spec].append(cohort_mean)\n                spec_excess_returns[spec].append(cohort_mean - baseline_mean)\n\n            for low, high in bucket_defs:\n                label = f"{int(low)}-{int(high) if high < 100 else 100}"\n                selected = [row for row in rows if low <= row["score"] <= high]\n                values = selected_returns(selected, returns_by_code)\n                if values is not None:\n                    bucket_returns[label].extend(values)\n\n            for name, weights in WEIGHT_EXPERIMENTS.items():\n                ranked = sorted(rows, key=lambda row: (-alt_score(row, weights), row["code"]))[:20]\n                values = selected_returns(ranked, returns_by_code, require_complete=True)\n                if values is None:\n                    continue\n                mean_value = statistics.fmean(values)\n'''
+          if old not in text:
+              raise SystemExit('evaluate coverage block not found')
+          text = text.replace(old, new, 1)
+          path.write_text(text, encoding='utf-8')
+
+          test_path = Path('tests/test_premium_research.py')
+          tests = test_path.read_text(encoding='utf-8')
+          marker = '''    def test_future_return_rejects_entry_outside_retained_window(self):\n'''
+          addition = '''    def test_same_timestamp_generations_keep_append_order(self):\n        with tempfile.TemporaryDirectory() as tmp:\n            root = Path(tmp)\n            payload = root / "opportunity.json"\n            history = root / "history"\n            payload.write_text(json.dumps(self.opportunity("2026-07-03", generated_suffix="12:00:00")), encoding="utf-8")\n            first = research.record_snapshot(payload, history)\n            payload.write_text(json.dumps(self.opportunity("2026-07-03", shift=4, generated_suffix="12:00:00")), encoding="utf-8")\n            second = research.record_snapshot(payload, history)\n            loaded = research.load_snapshots(history, research.ENGINE_VERSION)\n            latest = research.latest_snapshot_per_date(loaded)[0]\n            self.assertEqual(first["generation"], 1)\n            self.assertEqual(second["generation"], 2)\n            self.assertEqual(latest["snapshot_id"], second["snapshot_id"])\n            self.assertEqual(research.cohort_rows(latest)[0]["price"], 104.0)\n\n    def test_fixed_top_selection_requires_complete_coverage(self):\n        selected = [{"code": f"{index:04d}"} for index in range(20)]\n        returns = {row["code"]: 1.0 for row in selected}\n        returns[selected[-1]["code"]] = None\n        self.assertIsNone(research.selected_returns(selected, returns, require_complete=True))\n        covered = research.selected_returns(selected, returns)\n        self.assertIsNotNone(covered)\n        self.assertEqual(len(covered), 19)\n\n'''
+          if marker not in tests:
+              raise SystemExit('test insertion marker not found')
+          tests = tests.replace(marker, addition + marker, 1)
+          test_path.write_text(tests, encoding='utf-8')
+          PY
+
+          python -m py_compile scripts/premium_research.py tests/test_premium_research.py
+          python -m unittest tests.test_premium_research tests.test_logic -v
+          git diff --check
+      - name: Commit and push PR branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add scripts/premium_research.py tests/test_premium_research.py
+          git commit -m 'fix: preserve premium generations and portfolio coverage'
+          git push origin HEAD:feature/watchlist-premium-research
+      - name: Report completion
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh pr comment 77 --repo "$GITHUB_REPOSITORY" --body 'PR77 P2 patch: generation chronology and per-selection coverage guards applied; targeted tests passed.'
