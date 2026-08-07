@@ -5,7 +5,7 @@ import hashlib
 import json
 import math
 import statistics
-from bisect import bisect_left
+from bisect import bisect_left, bisect_right
 from collections import defaultdict
 from datetime import date, datetime, timezone
 from pathlib import Path
@@ -153,8 +153,6 @@ def record_snapshot(payload_path: Path = PREMIUM_RADAR, history_root: Path | Non
         same_day_generations.append(generation)
     snapshot["generation"] = max(same_day_generations, default=0) + 1
     snapshots.append(snapshot)
-    # Keep same-date generations in append order. The fingerprint identifies
-    # content, but it must never be used as a chronology surrogate.
     snapshots.sort(key=lambda item: str(item.get("price_date") or ""))
     current.update({
         "schema_version": 2,
@@ -186,8 +184,6 @@ def load_snapshots(history_root: Path, engine_version: str | None = None) -> lis
         if not key:
             key = f"legacy:{item.get('price_date')}:{len(by_id)}"
         by_id[key] = item
-    # Month files preserve append order. Stable date-only sorting therefore
-    # keeps generation chronology and remains compatible with legacy entries.
     return sorted(by_id.values(), key=lambda item: str(item.get("price_date") or ""))
 
 
@@ -229,9 +225,6 @@ def snapshot_recorded_date(snapshot: dict[str, Any]) -> str | None:
 def cohort_rows(snapshot: dict[str, Any]) -> list[dict[str, Any]]:
     cohort_date = str(snapshot.get("price_date") or "")
     recorded_date = snapshot_recorded_date(snapshot)
-    # A margin-triggered generation may use an older core close. Preserve the
-    # generation in history, but never evaluate it as if the later supply data
-    # had been known on that earlier price date.
     if recorded_date and cohort_date and recorded_date > cohort_date:
         return []
     return [row for row in observation_rows(snapshot) if row.get("price_date") == cohort_date]
@@ -334,28 +327,19 @@ def merge_split_events(*sources: dict[str, list[tuple[str, float]]]) -> dict[str
     return {code: sorted(values.items()) for code, values in merged.items()}
 
 
-def archive_split_events(
-    current_events: dict[str, list[tuple[str, float]]],
-    path: Path,
-    engine_version: str,
-) -> dict[str, list[tuple[str, float]]]:
+def archive_split_events(current_events: dict[str, list[tuple[str, float]]], path: Path, engine_version: str) -> dict[str, list[tuple[str, float]]]:
     existing = load_archived_split_events(path, engine_version)
     merged = merge_split_events(existing, current_events)
     write_json(path, {
         "schema_version": 1,
         "kind": "premium_split_event_archive",
         "engine_version": engine_version,
-        "events": {
-            code: [[event_date, round(ratio, 8)] for event_date, ratio in rows]
-            for code, rows in sorted(merged.items())
-        },
+        "events": {code: [[event_date, round(ratio, 8)] for event_date, ratio in rows] for code, rows in sorted(merged.items())},
     })
     return merged
 
 
-def cumulative_split_ratio(
-    split_events: dict[str, list[tuple[str, float]]], code: str, start_date: str, exit_date: str
-) -> float:
+def cumulative_split_ratio(split_events: dict[str, list[tuple[str, float]]], code: str, start_date: str, exit_date: str) -> float:
     ratio = 1.0
     for event_date, event_ratio in split_events.get(code, []):
         if start_date < event_date <= exit_date:
@@ -373,6 +357,18 @@ def series_price_on(series: dict[str, tuple[list[str], list[float]]], code: str,
     return prices[index]
 
 
+def series_last_price_on_or_before(
+    series: dict[str, tuple[list[str], list[float]]], code: str, target_date: str, after_date: str
+) -> tuple[str, float] | None:
+    if code not in series:
+        return None
+    dates, prices = series[code]
+    index = bisect_right(dates, target_date) - 1
+    if index < 0 or dates[index] <= after_date:
+        return None
+    return dates[index], prices[index]
+
+
 def nth_trading_date(calendar: list[str], start_date: str, horizon: int) -> str | None:
     index = bisect_left(calendar, start_date)
     if index >= len(calendar) or calendar[index] != start_date:
@@ -381,13 +377,7 @@ def nth_trading_date(calendar: list[str], start_date: str, horizon: int) -> str 
     return calendar[target] if target < len(calendar) else None
 
 
-def future_return(
-    series: dict[str, tuple[list[str], list[float]]],
-    code: str,
-    start_date: str,
-    entry_price: float | None,
-    horizon: int,
-) -> float | None:
+def future_return(series: dict[str, tuple[list[str], list[float]]], code: str, start_date: str, entry_price: float | None, horizon: int) -> float | None:
     if entry_price in (None, 0) or code not in series:
         return None
     dates, prices = series[code]
@@ -411,12 +401,7 @@ def market_calendar(series: dict[str, tuple[list[str], list[float]]]) -> list[st
     return sorted(dates)
 
 
-def fallback_observation(
-    dated_snapshots: list[dict[str, Any]],
-    code: str,
-    start_date: str,
-    target_date: str,
-) -> tuple[str, float] | None:
+def fallback_observation(dated_snapshots: list[dict[str, Any]], code: str, start_date: str, target_date: str) -> tuple[str, float] | None:
     for snapshot in reversed(dated_snapshots):
         value_date = str(snapshot.get("price_date") or "")
         if not value_date or value_date > target_date or value_date < start_date:
@@ -446,33 +431,22 @@ def load_outcome_index(outcomes_root: Path, engine_version: str) -> dict[tuple[s
                     if not isinstance(value, list) or len(value) < 5:
                         continue
                     index[(str(snapshot_id), horizon_name, str(code))] = {
-                        "target_date": str(value[0]),
-                        "exit_date": str(value[1]),
-                        "exit_price": finite(value[2]),
-                        "return_pct": finite(value[3]),
-                        "reason": str(value[4]),
-                        "split_ratio": finite(value[5]) if len(value) > 5 else 1.0,
+                        "target_date": str(value[0]), "exit_date": str(value[1]), "exit_price": finite(value[2]),
+                        "return_pct": finite(value[3]), "reason": str(value[4]), "split_ratio": finite(value[5]) if len(value) > 5 else 1.0,
                     }
     return index
 
 
-def finalize_outcomes(
-    snapshots: list[dict[str, Any]],
-    series: dict[str, tuple[list[str], list[float]]],
-    outcomes_root: Path,
-    engine_version: str,
-    split_events: dict[str, list[tuple[str, float]]] | None = None,
-) -> dict[str, int]:
+def finalize_outcomes(snapshots: list[dict[str, Any]], series: dict[str, tuple[list[str], list[float]]], outcomes_root: Path, engine_version: str, split_events: dict[str, list[tuple[str, float]]] | None = None) -> dict[str, int]:
     split_events = split_events or {}
     dated_snapshots = latest_snapshot_per_date(snapshots)
     cohorts = weekly_cohorts(snapshots)
     primary_calendar = market_calendar(series)
     fallback_calendar = research_calendar(dated_snapshots)
     existing = load_outcome_index(outcomes_root, engine_version)
-    stats = {"exact": 0, "snapshot": 0, "forced_last_observed": 0, "pending": 0}
+    stats = {"exact": 0, "market_last_observed": 0, "snapshot": 0, "forced_last_observed": 0, "pending": 0}
     cache: dict[Path, dict[str, Any]] = {}
     dirty: set[Path] = set()
-
     for snapshot in cohorts:
         snapshot_id = str(snapshot.get("snapshot_id") or "")
         cohort_date = str(snapshot.get("price_date") or "")
@@ -481,20 +455,9 @@ def finalize_outcomes(
             continue
         path = outcome_file(outcomes_root, cohort_date)
         if path not in cache:
-            cache[path] = load_json(path, {
-                "schema_version": 1,
-                "kind": "premium_engine_outcomes_month",
-                "engine_version": engine_version,
-                "month": cohort_date[:7],
-                "cohorts": {},
-            })
+            cache[path] = load_json(path, {"schema_version": 1, "kind": "premium_engine_outcomes_month", "engine_version": engine_version, "month": cohort_date[:7], "cohorts": {}})
         payload = cache[path]
-        cohort_payload = payload.setdefault("cohorts", {}).setdefault(snapshot_id, {
-            "cohort_date": cohort_date,
-            "5d": {},
-            "20d": {},
-        })
-
+        cohort_payload = payload.setdefault("cohorts", {}).setdefault(snapshot_id, {"cohort_date": cohort_date, "5d": {}, "20d": {}})
         for horizon_name, horizon in HORIZONS.items():
             target_date = nth_trading_date(primary_calendar, cohort_date, horizon)
             if target_date is None:
@@ -511,44 +474,34 @@ def finalize_outcomes(
                 entry_price = finite(row.get("price"))
                 if entry_price in (None, 0):
                     continue
-
                 exit_date = target_date
                 exit_price = series_price_on(series, code, target_date)
                 reason = "market_close"
                 if exit_price is None:
-                    observed = fallback_observation(dated_snapshots, code, cohort_date, target_date)
-                    if observed is None:
-                        stats["pending"] += 1
-                        continue
-                    exit_date, exit_price = observed
-                    reason = "snapshot_target" if exit_date == target_date else "last_observed_before_target"
-
+                    market_observed = series_last_price_on_or_before(series, code, target_date, cohort_date)
+                    if market_observed is not None:
+                        exit_date, exit_price = market_observed
+                        reason = "last_market_close_before_target"
+                    else:
+                        observed = fallback_observation(dated_snapshots, code, cohort_date, target_date)
+                        if observed is None:
+                            stats["pending"] += 1
+                            continue
+                        exit_date, exit_price = observed
+                        reason = "snapshot_target" if exit_date == target_date else "last_observed_before_target"
                 split_ratio = cumulative_split_ratio(split_events, code, cohort_date, exit_date)
                 return_pct = (float(exit_price) * split_ratio / float(entry_price) - 1.0) * 100.0
-                horizon_payload[code] = [
-                    target_date,
-                    exit_date,
-                    round(float(exit_price), 4),
-                    round(return_pct, 5),
-                    reason,
-                    round(split_ratio, 8),
-                ]
-                existing[key] = {
-                    "target_date": target_date,
-                    "exit_date": exit_date,
-                    "exit_price": exit_price,
-                    "return_pct": return_pct,
-                    "reason": reason,
-                    "split_ratio": split_ratio,
-                }
+                horizon_payload[code] = [target_date, exit_date, round(float(exit_price), 4), round(return_pct, 5), reason, round(split_ratio, 8)]
+                existing[key] = {"target_date": target_date, "exit_date": exit_date, "exit_price": exit_price, "return_pct": return_pct, "reason": reason, "split_ratio": split_ratio}
                 dirty.add(path)
                 if reason == "market_close":
                     stats["exact"] += 1
+                elif reason == "last_market_close_before_target":
+                    stats["market_last_observed"] += 1
                 elif reason == "snapshot_target":
                     stats["snapshot"] += 1
                 else:
                     stats["forced_last_observed"] += 1
-
     for path in dirty:
         write_json(path, cache[path])
     return stats
@@ -558,12 +511,7 @@ def metric(values: list[float]) -> dict[str, Any]:
     clean = [float(value) for value in values if finite(value) is not None]
     if not clean:
         return {"count": 0, "mean_pct": None, "median_pct": None, "win_rate_pct": None}
-    return {
-        "count": len(clean),
-        "mean_pct": round(statistics.fmean(clean), 3),
-        "median_pct": round(statistics.median(clean), 3),
-        "win_rate_pct": round(sum(value > 0 for value in clean) / len(clean) * 100, 1),
-    }
+    return {"count": len(clean), "mean_pct": round(statistics.fmean(clean), 3), "median_pct": round(statistics.median(clean), 3), "win_rate_pct": round(sum(value > 0 for value in clean) / len(clean) * 100, 1)}
 
 
 def alt_score(row: dict[str, Any], weights: dict[str, float]) -> float:
@@ -583,12 +531,7 @@ def portfolio_members(rows: list[dict[str, Any]], spec: str) -> list[dict[str, A
     return []
 
 
-def selected_returns(
-    selected: list[dict[str, Any]],
-    returns_by_code: dict[str, float | None],
-    *,
-    require_complete: bool = False,
-) -> list[float] | None:
+def selected_returns(selected: list[dict[str, Any]], returns_by_code: dict[str, float | None], *, require_complete: bool = False) -> list[float] | None:
     if not selected:
         return None
     values = [returns_by_code[row["code"]] for row in selected if returns_by_code.get(row["code"]) is not None]
@@ -606,20 +549,10 @@ def experiment_is_mature(values: dict[str, Any]) -> bool:
 
 
 def eligible_challenger_names(experiment_result: dict[str, dict[str, Any]]) -> list[str]:
-    return [
-        name
-        for name, values in experiment_result.items()
-        if name != "baseline" and experiment_is_mature(values)
-    ]
+    return [name for name, values in experiment_result.items() if name != "baseline" and experiment_is_mature(values)]
 
 
-def evaluate(
-    history_root: Path | None = None,
-    core_root: Path | None = None,
-    premium_path: Path = PREMIUM_RADAR,
-    outcomes_root: Path | None = None,
-    split_archive_path: Path | None = None,
-) -> dict[str, Any]:
+def evaluate(history_root: Path | None = None, core_root: Path | None = None, premium_path: Path = PREMIUM_RADAR, outcomes_root: Path | None = None, split_archive_path: Path | None = None) -> dict[str, Any]:
     latest_payload = load_json(premium_path, {})
     engine_version = str(latest_payload.get("engine_version") or ENGINE_VERSION)
     target_history_root = resolved_history_root(history_root, engine_version)
@@ -629,14 +562,9 @@ def evaluate(
     cohorts = weekly_cohorts(snapshots)
     series = load_price_series(core_root)
     current_split_events = load_split_events(core_root)
-    split_events = (
-        archive_split_events(current_split_events, split_archive_path, engine_version)
-        if split_archive_path is not None
-        else current_split_events
-    )
+    split_events = archive_split_events(current_split_events, split_archive_path, engine_version) if split_archive_path is not None else current_split_events
     finalization = finalize_outcomes(snapshots, series, target_outcomes_root, engine_version, split_events)
     outcome_index = load_outcome_index(target_outcomes_root, engine_version)
-
     specs = ["top10", "top20", "top50", "score_60", "score_70", "score_80", "score_90"]
     portfolio_result: dict[str, dict[str, Any]] = {spec: {} for spec in specs}
     bucket_defs = [(0, 49.999), (50, 59.999), (60, 69.999), (70, 79.999), (80, 89.999), (90, 100.001)]
@@ -644,7 +572,6 @@ def evaluate(
     experiment_result: dict[str, dict[str, Any]] = {name: {} for name in WEIGHT_EXPERIMENTS}
     mature_counts = {"5d": 0, "20d": 0}
     cohort_coverages: dict[str, list[float]] = {"5d": [], "20d": []}
-
     for horizon_name in HORIZONS:
         spec_position_returns: dict[str, list[float]] = defaultdict(list)
         spec_cohort_returns: dict[str, list[float]] = defaultdict(list)
@@ -653,16 +580,12 @@ def evaluate(
         experiment_cohort_returns: dict[str, list[float]] = defaultdict(list)
         experiment_excess_returns: dict[str, list[float]] = defaultdict(list)
         matured = 0
-
         for snapshot in cohorts:
             snapshot_id = str(snapshot.get("snapshot_id") or "")
             rows = cohort_rows(snapshot)
             if not snapshot_id or not rows:
                 continue
-            returns_by_code = {
-                row["code"]: finite(outcome_index.get((snapshot_id, horizon_name, row["code"]), {}).get("return_pct"))
-                for row in rows
-            }
+            returns_by_code = {row["code"]: finite(outcome_index.get((snapshot_id, horizon_name, row["code"]), {}).get("return_pct")) for row in rows}
             baseline = [value for value in returns_by_code.values() if value is not None]
             coverage = len(baseline) / len(rows) if rows else 0.0
             if coverage < MIN_COHORT_COVERAGE:
@@ -670,28 +593,21 @@ def evaluate(
             cohort_coverages[horizon_name].append(coverage)
             matured += 1
             baseline_mean = statistics.fmean(baseline)
-
             for spec in specs:
                 selected = portfolio_members(rows, spec)
-                values = selected_returns(
-                    selected,
-                    returns_by_code,
-                    require_complete=spec.startswith("top"),
-                )
+                values = selected_returns(selected, returns_by_code, require_complete=spec.startswith("top"))
                 if values is None:
                     continue
                 spec_position_returns[spec].extend(values)
                 cohort_mean = statistics.fmean(values)
                 spec_cohort_returns[spec].append(cohort_mean)
                 spec_excess_returns[spec].append(cohort_mean - baseline_mean)
-
             for low, high in bucket_defs:
                 label = f"{int(low)}-{int(high) if high < 100 else 100}"
                 selected = [row for row in rows if low <= row["score"] <= high]
                 values = selected_returns(selected, returns_by_code)
                 if values is not None:
                     bucket_returns[label].extend(values)
-
             for name, weights in WEIGHT_EXPERIMENTS.items():
                 ranked = sorted(rows, key=lambda row: (-alt_score(row, weights), row["code"]))[:20]
                 values = selected_returns(ranked, returns_by_code, require_complete=True)
@@ -700,71 +616,27 @@ def evaluate(
                 mean_value = statistics.fmean(values)
                 experiment_cohort_returns[name].append(mean_value)
                 experiment_excess_returns[name].append(mean_value - baseline_mean)
-
         mature_counts[horizon_name] = matured
         for spec in specs:
-            base = metric(spec_position_returns[spec])
-            cohort = metric(spec_cohort_returns[spec])
-            excess = metric(spec_excess_returns[spec])
-            portfolio_result[spec][horizon_name] = {
-                "cohorts": len(spec_cohort_returns[spec]),
-                "positions": base["count"],
-                "position_mean_pct": base["mean_pct"],
-                "position_median_pct": base["median_pct"],
-                "position_win_rate_pct": base["win_rate_pct"],
-                "portfolio_mean_pct": cohort["mean_pct"],
-                "portfolio_win_rate_pct": cohort["win_rate_pct"],
-                "excess_vs_all_core_pct": excess["mean_pct"],
-            }
+            base = metric(spec_position_returns[spec]); cohort = metric(spec_cohort_returns[spec]); excess = metric(spec_excess_returns[spec])
+            portfolio_result[spec][horizon_name] = {"cohorts": len(spec_cohort_returns[spec]), "positions": base["count"], "position_mean_pct": base["mean_pct"], "position_median_pct": base["median_pct"], "position_win_rate_pct": base["win_rate_pct"], "portfolio_mean_pct": cohort["mean_pct"], "portfolio_win_rate_pct": cohort["win_rate_pct"], "excess_vs_all_core_pct": excess["mean_pct"]}
         for label, values in bucket_returns.items():
             bucket_result.setdefault(label, {})[horizon_name] = metric(values)
         for name in WEIGHT_EXPERIMENTS:
-            cohort = metric(experiment_cohort_returns[name])
-            excess = metric(experiment_excess_returns[name])
-            experiment_result[name][horizon_name] = {
-                "cohorts": len(experiment_cohort_returns[name]),
-                "top20_mean_pct": cohort["mean_pct"],
-                "top20_win_rate_pct": cohort["win_rate_pct"],
-                "excess_vs_all_core_pct": excess["mean_pct"],
-                "weights": WEIGHT_EXPERIMENTS[name],
-            }
-
+            cohort = metric(experiment_cohort_returns[name]); excess = metric(experiment_excess_returns[name])
+            experiment_result[name][horizon_name] = {"cohorts": len(experiment_cohort_returns[name]), "top20_mean_pct": cohort["mean_pct"], "top20_win_rate_pct": cohort["win_rate_pct"], "excess_vs_all_core_pct": excess["mean_pct"], "weights": WEIGHT_EXPERIMENTS[name]}
     latest_map = {str(row.get("code") or ""): row for row in latest_payload.get("records") or []}
     movers = []
     if len(dated_snapshots) >= 2:
-        previous_rows = cohort_rows(dated_snapshots[-2])
-        current_rows = cohort_rows(dated_snapshots[-1])
-        previous = {row["code"]: row for row in previous_rows}
+        previous_rows = cohort_rows(dated_snapshots[-2]); current_rows = cohort_rows(dated_snapshots[-1]); previous = {row["code"]: row for row in previous_rows}
         for row in current_rows[:150]:
             old = previous.get(row["code"])
-            if not old:
-                continue
-            rank_delta = old["rank"] - row["rank"]
-            score_delta = row["score"] - old["score"]
-            if rank_delta <= 0 and score_delta <= 0:
-                continue
+            if not old: continue
+            rank_delta = old["rank"] - row["rank"]; score_delta = row["score"] - old["score"]
+            if rank_delta <= 0 and score_delta <= 0: continue
             info = latest_map.get(row["code"], {})
-            movers.append({
-                "code": row["code"],
-                "name": info.get("name"),
-                "market": info.get("market"),
-                "current_rank": row["rank"],
-                "previous_rank": old["rank"],
-                "rank_delta": rank_delta,
-                "priority_score": round(row["score"], 1),
-                "score_delta": round(score_delta, 1),
-                "provisional_status": row["status"],
-                "tags": info.get("tags") or [],
-                "reasons": info.get("reasons") or [],
-            })
-        movers.sort(key=lambda item: (
-            item["current_rank"] > 20,
-            -item["rank_delta"],
-            -item["score_delta"],
-            item["current_rank"],
-        ))
-        movers = movers[:12]
-
+            movers.append({"code": row["code"], "name": info.get("name"), "market": info.get("market"), "current_rank": row["rank"], "previous_rank": old["rank"], "rank_delta": rank_delta, "priority_score": round(row["score"], 1), "score_delta": round(score_delta, 1), "provisional_status": row["status"], "tags": info.get("tags") or [], "reasons": info.get("reasons") or []})
+        movers.sort(key=lambda item: (item["current_rank"] > 20, -item["rank_delta"], -item["score_delta"], item["current_rank"])); movers = movers[:12]
     history_start = dated_snapshots[0].get("price_date") if dated_snapshots else None
     latest_snapshot = dated_snapshots[-1].get("price_date") if dated_snapshots else None
     eligible_experiments = eligible_challenger_names(experiment_result)
@@ -773,53 +645,16 @@ def evaluate(
     if recommendation_ready:
         candidates = []
         for name in eligible_experiments:
-            result20 = experiment_result[name].get("20d") or {}
-            excess = finite(result20.get("excess_vs_all_core_pct"))
-            if excess is not None:
-                candidates.append((excess, name))
-        if candidates:
-            _, best_experiment = max(candidates)
-
-    coverage_summary = {
-        key: round(statistics.fmean(values) * 100, 2) if values else None
-        for key, values in cohort_coverages.items()
-    }
+            result20 = experiment_result[name].get("20d") or {}; excess = finite(result20.get("excess_vs_all_core_pct"))
+            if excess is not None: candidates.append((excess, name))
+        if candidates: _, best_experiment = max(candidates)
+    coverage_summary = {key: round(statistics.fmean(values) * 100, 2) if values else None for key, values in cohort_coverages.items()}
     outcome_counts = defaultdict(int)
-    for value in outcome_index.values():
-        outcome_counts[str(value.get("reason") or "unknown")] += 1
-
-    return {
-        "schema_version": 3,
-        "kind": "premium_engine_research_summary",
-        "engine_version": engine_version,
-        "history_start": history_start,
-        "latest_snapshot": latest_snapshot,
-        "snapshot_count": len(snapshots),
-        "snapshot_day_count": len(dated_snapshots),
-        "weekly_cohort_count": len(cohorts),
-        "mature_cohorts": mature_counts,
-        "mean_outcome_coverage_pct": coverage_summary,
-        "outcome_counts": dict(outcome_counts),
-        "newly_finalized": finalization,
-        "recommendation_ready": recommendation_ready,
-        "best_challenger": best_experiment,
-        "eligible_challengers": eligible_experiments,
-        "guardrail": "本番の観察優先度は自動変更しません。各challenger自身の完全なTop20週次コホートを蓄積し、5営業日後20週・20営業日後12週がそろってから研究候補を提示します。成熟した将来リターンは別のoutcome台帳へ固定し、後日のユニバース変更や1年価格窓の更新で再計算しません。",
-        "latest_movers": movers,
-        "portfolios": portfolio_result,
-        "score_buckets": bucket_result,
-        "weight_experiments": experiment_result,
-    }
+    for value in outcome_index.values(): outcome_counts[str(value.get("reason") or "unknown")] += 1
+    return {"schema_version": 3, "kind": "premium_engine_research_summary", "engine_version": engine_version, "history_start": history_start, "latest_snapshot": latest_snapshot, "snapshot_count": len(snapshots), "snapshot_day_count": len(dated_snapshots), "weekly_cohort_count": len(cohorts), "mature_cohorts": mature_counts, "mean_outcome_coverage_pct": coverage_summary, "outcome_counts": dict(outcome_counts), "newly_finalized": finalization, "recommendation_ready": recommendation_ready, "best_challenger": best_experiment, "eligible_challengers": eligible_experiments, "guardrail": "本番の観察優先度は自動変更しません。各challenger自身の完全なTop20週次コホートを蓄積し、5営業日後20週・20営業日後12週がそろってから研究候補を提示します。成熟した将来リターンは別のoutcome台帳へ固定し、後日のユニバース変更や1年価格窓の更新で再計算しません。", "latest_movers": movers, "portfolios": portfolio_result, "score_buckets": bucket_result, "weight_experiments": experiment_result}
 
 
-def run(
-    payload_path: Path = PREMIUM_RADAR,
-    history_root: Path | None = None,
-    summary_path: Path = SUMMARY_PATH,
-    core_root: Path | None = None,
-    outcomes_root: Path | None = None,
-    split_archive_path: Path | None = None,
-) -> dict[str, Any]:
+def run(payload_path: Path = PREMIUM_RADAR, history_root: Path | None = None, summary_path: Path = SUMMARY_PATH, core_root: Path | None = None, outcomes_root: Path | None = None, split_archive_path: Path | None = None) -> dict[str, Any]:
     payload = load_json(payload_path, {})
     engine_version = str(payload.get("engine_version") or ENGINE_VERSION)
     target_split_archive = resolved_split_archive_path(split_archive_path, engine_version)
@@ -839,12 +674,7 @@ def main() -> None:
     parser.add_argument("--core-root", type=Path, default=ROOT / "data" / "core")
     args = parser.parse_args()
     summary = run(args.payload, args.history_root, args.summary, args.core_root, args.outcomes_root, args.split_archive)
-    print(
-        "Premium research: "
-        f"engine={summary['engine_version']} generations={summary['snapshot_count']} days={summary['snapshot_day_count']} "
-        f"weekly={summary['weekly_cohort_count']} mature5={summary['mature_cohorts']['5d']} mature20={summary['mature_cohorts']['20d']} "
-        f"outcomes={sum(summary['outcome_counts'].values())}"
-    )
+    print("Premium research: " f"engine={summary['engine_version']} generations={summary['snapshot_count']} days={summary['snapshot_day_count']} " f"weekly={summary['weekly_cohort_count']} mature5={summary['mature_cohorts']['5d']} mature20={summary['mature_cohorts']['20d']} " f"outcomes={sum(summary['outcome_counts'].values())}")
 
 
 if __name__ == "__main__":
