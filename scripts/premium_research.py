@@ -7,9 +7,10 @@ import math
 import statistics
 from bisect import bisect_left
 from collections import defaultdict
-from datetime import date
+from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Any
+from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parents[1]
 PREMIUM_RADAR = ROOT / "data" / "premium" / "opportunity-radar.json"
@@ -17,7 +18,9 @@ RESEARCH_ROOT = ROOT / "data" / "premium" / "research"
 HISTORY_ROOT = RESEARCH_ROOT / "history"
 OUTCOMES_ROOT = RESEARCH_ROOT / "outcomes"
 SUMMARY_PATH = RESEARCH_ROOT / "summary.json"
+SPLIT_ARCHIVE_ROOT = RESEARCH_ROOT / "split-events"
 ENGINE_VERSION = "priority_v1_44_20_26_10"
+TOKYO = ZoneInfo("Asia/Tokyo")
 COMPONENT_MAX = {"signal": 44.0, "trend_volume": 20.0, "supply": 26.0, "finance": 10.0}
 HORIZONS = {"5d": 5, "20d": 20}
 MIN_COHORT_COVERAGE = 0.95
@@ -72,6 +75,10 @@ def resolved_outcomes_root(outcomes_root: Path | None, engine_version: str) -> P
     return outcomes_root if outcomes_root is not None else OUTCOMES_ROOT / safe_engine_version(engine_version)
 
 
+def resolved_split_archive_path(split_archive_path: Path | None, engine_version: str) -> Path:
+    return split_archive_path if split_archive_path is not None else SPLIT_ARCHIVE_ROOT / f"{safe_engine_version(engine_version)}.json"
+
+
 def snapshot_fingerprint(snapshot: dict[str, Any]) -> str:
     stable = {
         "price_date": snapshot.get("price_date"),
@@ -103,6 +110,7 @@ def compact_snapshot(payload: dict[str, Any]) -> dict[str, Any]:
     snapshot = {
         "price_date": payload_date,
         "generated_at": payload.get("generated_at"),
+        "recorded_at": payload.get("recorded_at") or payload.get("generated_at"),
         "engine_version": str(payload.get("engine_version") or ENGINE_VERSION),
         "records": rows,
     }
@@ -179,8 +187,7 @@ def load_snapshots(history_root: Path, engine_version: str | None = None) -> lis
             key = f"legacy:{item.get('price_date')}:{len(by_id)}"
         by_id[key] = item
     # Month files preserve append order. Stable date-only sorting therefore
-    # keeps generation chronology and remains compatible with legacy entries
-    # that do not yet have an explicit generation field.
+    # keeps generation chronology and remains compatible with legacy entries.
     return sorted(by_id.values(), key=lambda item: str(item.get("price_date") or ""))
 
 
@@ -206,14 +213,35 @@ def observation_rows(snapshot: dict[str, Any]) -> list[dict[str, Any]]:
     return result
 
 
+def snapshot_recorded_date(snapshot: dict[str, Any]) -> str | None:
+    raw = str(snapshot.get("recorded_at") or "").strip()
+    if not raw:
+        return None
+    try:
+        value = datetime.fromisoformat(raw.replace("Z", "+00:00"))
+        if value.tzinfo is None:
+            value = value.replace(tzinfo=timezone.utc)
+        return value.astimezone(TOKYO).date().isoformat()
+    except (TypeError, ValueError):
+        return None
+
+
 def cohort_rows(snapshot: dict[str, Any]) -> list[dict[str, Any]]:
     cohort_date = str(snapshot.get("price_date") or "")
+    recorded_date = snapshot_recorded_date(snapshot)
+    # A margin-triggered generation may use an older core close. Preserve the
+    # generation in history, but never evaluate it as if the later supply data
+    # had been known on that earlier price date.
+    if recorded_date and cohort_date and recorded_date > cohort_date:
+        return []
     return [row for row in observation_rows(snapshot) if row.get("price_date") == cohort_date]
 
 
 def latest_snapshot_per_date(snapshots: list[dict[str, Any]]) -> list[dict[str, Any]]:
     by_date: dict[str, dict[str, Any]] = {}
     for snapshot in snapshots:
+        if not cohort_rows(snapshot):
+            continue
         key = str(snapshot.get("price_date") or "")
         if key:
             by_date[key] = snapshot
@@ -275,6 +303,54 @@ def load_split_events(core_root: Path | None = None) -> dict[str, list[tuple[str
                     if ratio not in (None, 0):
                         merged[str(code)][str(event["date"])] = float(ratio)
     return {code: sorted(values.items()) for code, values in merged.items()}
+
+
+def load_archived_split_events(path: Path, engine_version: str) -> dict[str, list[tuple[str, float]]]:
+    payload = load_json(path, {})
+    if payload and str(payload.get("engine_version") or "") != engine_version:
+        return {}
+    result: dict[str, list[tuple[str, float]]] = {}
+    for code, rows in (payload.get("events") or {}).items():
+        values: list[tuple[str, float]] = []
+        for row in rows or []:
+            if not isinstance(row, list) or len(row) < 2:
+                continue
+            ratio = finite(row[1])
+            if row[0] and ratio not in (None, 0):
+                values.append((str(row[0]), float(ratio)))
+        if values:
+            result[str(code)] = sorted(values)
+    return result
+
+
+def merge_split_events(*sources: dict[str, list[tuple[str, float]]]) -> dict[str, list[tuple[str, float]]]:
+    merged: dict[str, dict[str, float]] = defaultdict(dict)
+    for source in sources:
+        for code, rows in source.items():
+            for event_date, ratio in rows:
+                value = finite(ratio)
+                if event_date and value not in (None, 0):
+                    merged[str(code)][str(event_date)] = float(value)
+    return {code: sorted(values.items()) for code, values in merged.items()}
+
+
+def archive_split_events(
+    current_events: dict[str, list[tuple[str, float]]],
+    path: Path,
+    engine_version: str,
+) -> dict[str, list[tuple[str, float]]]:
+    existing = load_archived_split_events(path, engine_version)
+    merged = merge_split_events(existing, current_events)
+    write_json(path, {
+        "schema_version": 1,
+        "kind": "premium_split_event_archive",
+        "engine_version": engine_version,
+        "events": {
+            code: [[event_date, round(ratio, 8)] for event_date, ratio in rows]
+            for code, rows in sorted(merged.items())
+        },
+    })
+    return merged
 
 
 def cumulative_split_ratio(
@@ -523,11 +599,18 @@ def selected_returns(
     return [float(value) for value in values]
 
 
+def experiment_is_mature(values: dict[str, Any]) -> bool:
+    result5 = values.get("5d") or {}
+    result20 = values.get("20d") or {}
+    return int(result5.get("cohorts") or 0) >= 20 and int(result20.get("cohorts") or 0) >= 12
+
+
 def evaluate(
     history_root: Path | None = None,
     core_root: Path | None = None,
     premium_path: Path = PREMIUM_RADAR,
     outcomes_root: Path | None = None,
+    split_archive_path: Path | None = None,
 ) -> dict[str, Any]:
     latest_payload = load_json(premium_path, {})
     engine_version = str(latest_payload.get("engine_version") or ENGINE_VERSION)
@@ -537,7 +620,12 @@ def evaluate(
     dated_snapshots = latest_snapshot_per_date(snapshots)
     cohorts = weekly_cohorts(snapshots)
     series = load_price_series(core_root)
-    split_events = load_split_events(core_root)
+    current_split_events = load_split_events(core_root)
+    split_events = (
+        archive_split_events(current_split_events, split_archive_path, engine_version)
+        if split_archive_path is not None
+        else current_split_events
+    )
     finalization = finalize_outcomes(snapshots, series, target_outcomes_root, engine_version, split_events)
     outcome_index = load_outcome_index(target_outcomes_root, engine_version)
 
@@ -671,12 +759,13 @@ def evaluate(
 
     history_start = dated_snapshots[0].get("price_date") if dated_snapshots else None
     latest_snapshot = dated_snapshots[-1].get("price_date") if dated_snapshots else None
-    recommendation_ready = mature_counts["20d"] >= 12 and mature_counts["5d"] >= 20
+    eligible_experiments = [name for name, values in experiment_result.items() if experiment_is_mature(values)]
+    recommendation_ready = bool(eligible_experiments)
     best_experiment = None
     if recommendation_ready:
         candidates = []
-        for name, values in experiment_result.items():
-            result20 = values.get("20d") or {}
+        for name in eligible_experiments:
+            result20 = experiment_result[name].get("20d") or {}
             excess = finite(result20.get("excess_vs_all_core_pct"))
             if excess is not None:
                 candidates.append((excess, name))
@@ -706,7 +795,8 @@ def evaluate(
         "newly_finalized": finalization,
         "recommendation_ready": recommendation_ready,
         "best_challenger": best_experiment,
-        "guardrail": "本番の観察優先度は自動変更しません。週次コホートを蓄積し、20営業日後の検証が12週以上たまってから研究候補を提示します。成熟した将来リターンは別のoutcome台帳へ固定し、後日のユニバース変更や1年価格窓の更新で再計算しません。",
+        "eligible_challengers": eligible_experiments,
+        "guardrail": "本番の観察優先度は自動変更しません。各challenger自身の完全なTop20週次コホートを蓄積し、5営業日後20週・20営業日後12週がそろってから研究候補を提示します。成熟した将来リターンは別のoutcome台帳へ固定し、後日のユニバース変更や1年価格窓の更新で再計算しません。",
         "latest_movers": movers,
         "portfolios": portfolio_result,
         "score_buckets": bucket_result,
@@ -720,9 +810,13 @@ def run(
     summary_path: Path = SUMMARY_PATH,
     core_root: Path | None = None,
     outcomes_root: Path | None = None,
+    split_archive_path: Path | None = None,
 ) -> dict[str, Any]:
+    payload = load_json(payload_path, {})
+    engine_version = str(payload.get("engine_version") or ENGINE_VERSION)
+    target_split_archive = resolved_split_archive_path(split_archive_path, engine_version)
     record_snapshot(payload_path, history_root)
-    summary = evaluate(history_root, core_root, payload_path, outcomes_root)
+    summary = evaluate(history_root, core_root, payload_path, outcomes_root, target_split_archive)
     write_json(summary_path, summary)
     return summary
 
@@ -732,10 +826,11 @@ def main() -> None:
     parser.add_argument("--payload", type=Path, default=PREMIUM_RADAR)
     parser.add_argument("--history-root", type=Path, default=None)
     parser.add_argument("--outcomes-root", type=Path, default=None)
+    parser.add_argument("--split-archive", type=Path, default=None)
     parser.add_argument("--summary", type=Path, default=SUMMARY_PATH)
     parser.add_argument("--core-root", type=Path, default=ROOT / "data" / "core")
     args = parser.parse_args()
-    summary = run(args.payload, args.history_root, args.summary, args.core_root, args.outcomes_root)
+    summary = run(args.payload, args.history_root, args.summary, args.core_root, args.outcomes_root, args.split_archive)
     print(
         "Premium research: "
         f"engine={summary['engine_version']} generations={summary['snapshot_count']} days={summary['snapshot_day_count']} "
