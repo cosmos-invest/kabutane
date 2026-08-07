@@ -128,6 +128,14 @@ class PremiumResearchTests(unittest.TestCase):
         self.assertFalse(research.experiment_is_mature({"5d": {"cohorts": 19}, "20d": {"cohorts": 12}}))
         self.assertTrue(research.experiment_is_mature({"5d": {"cohorts": 20}, "20d": {"cohorts": 12}}))
 
+    def test_baseline_is_comparison_only_not_challenger(self):
+        mature = {"5d": {"cohorts": 20}, "20d": {"cohorts": 12}}
+        immature = {"5d": {"cohorts": 19}, "20d": {"cohorts": 12}}
+        result = {"baseline": mature, "signal_heavy": immature}
+        self.assertEqual(research.eligible_challenger_names(result), [])
+        result["signal_heavy"] = mature
+        self.assertEqual(research.eligible_challenger_names(result), ["signal_heavy"])
+
     def test_future_return_rejects_entry_outside_retained_window(self):
         series = {"1001": (["2026-08-03", "2026-08-04", "2026-08-05", "2026-08-06", "2026-08-07", "2026-08-10"], [100, 101, 102, 103, 104, 105])}
         self.assertIsNone(research.future_return(series, "1001", "2025-08-01", 80, 5))
