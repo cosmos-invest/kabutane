@@ -91,6 +91,7 @@
       const detail = detailMap.get(saved.code) || {};
       const provisional = detail.provisional_signal || {};
       const technical = detail.technical || {};
+      const provisionalAvailable = Boolean(detailMap.has(saved.code) && provisional.status);
       return {
         ...saved,
         ...pub,
@@ -98,8 +99,9 @@
         name: String(pub.name || saved.name || "").slice(0, 160),
         current_price: technical.current_price ?? pub.current_price ?? null,
         price_date: String(technical.price_date || detail.price_date || pub.price_date || "").slice(0, 10),
-        provisional_status: provisional.status || pub.provisional_status || "UNKNOWN",
-        monthly_rsi_spread: provisional.spread ?? null,
+        provisional_status: provisionalAvailable ? provisional.status : "UNKNOWN",
+        provisional_available: provisionalAvailable,
+        monthly_rsi_spread: provisionalAvailable ? (provisional.spread ?? null) : null,
         volume_ratio_5_30: technical.volume_ratio_5_30 ?? pub.volume_ratio_5_30 ?? null,
         high52_distance_pct: technical.high52_distance_pct ?? pub.high52_distance_pct ?? null,
         perfect_order: technical.perfect_order ?? pub.perfect_order ?? null,
@@ -109,7 +111,10 @@
 
   function record(rows) {
     rows.forEach((item) => {
-      if (!item.price_date) return;
+      // Public radar deliberately sanitizes provisional GC. If the private
+      // detail shard is unavailable, do not persist an UNKNOWN/public fallback
+      // over a previously observed real provisional state for the same date.
+      if (!item.price_date || item.provisional_available !== true) return;
       store.recordObservation(item.code, {
         date: item.price_date,
         price: finite(item.current_price),
