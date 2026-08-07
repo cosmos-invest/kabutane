@@ -111,6 +111,23 @@ class PremiumResearchTests(unittest.TestCase):
         self.assertIsNotNone(covered)
         self.assertEqual(len(covered), 19)
 
+    def test_later_recorded_generation_is_not_backdated_into_old_price_cohort(self):
+        eligible_payload = self.opportunity("2026-07-03")
+        eligible_payload["recorded_at"] = "2026-07-03T07:00:00+00:00"
+        late_payload = self.opportunity("2026-07-03", shift=4)
+        late_payload["recorded_at"] = "2026-07-03T16:00:00+00:00"
+        eligible = research.compact_snapshot(eligible_payload)
+        late = research.compact_snapshot(late_payload)
+        self.assertEqual(research.cohort_rows(late), [])
+        latest = research.latest_snapshot_per_date([eligible, late])
+        self.assertEqual(len(latest), 1)
+        self.assertEqual(research.cohort_rows(latest[0])[0]["price"], 100.0)
+
+    def test_challenger_readiness_uses_its_own_complete_cohorts(self):
+        self.assertFalse(research.experiment_is_mature({"5d": {"cohorts": 20}, "20d": {"cohorts": 11}}))
+        self.assertFalse(research.experiment_is_mature({"5d": {"cohorts": 19}, "20d": {"cohorts": 12}}))
+        self.assertTrue(research.experiment_is_mature({"5d": {"cohorts": 20}, "20d": {"cohorts": 12}}))
+
     def test_future_return_rejects_entry_outside_retained_window(self):
         series = {"1001": (["2026-08-03", "2026-08-04", "2026-08-05", "2026-08-06", "2026-08-07", "2026-08-10"], [100, 101, 102, 103, 104, 105])}
         self.assertIsNone(research.future_return(series, "1001", "2025-08-01", 80, 5))
@@ -154,6 +171,31 @@ class PremiumResearchTests(unittest.TestCase):
             chart.write_text(json.dumps(payload), encoding="utf-8")
             research.finalize_outcomes([snapshot], research.load_price_series(core), outcomes, research.ENGINE_VERSION, splits)
             self.assertEqual(json.loads(next(outcomes.glob("*.json")).read_text(encoding="utf-8")), ledger)
+
+    def test_archived_split_survives_current_shard_removal(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            history = root / "history"
+            outcomes = root / "outcomes"
+            core = root / "core"
+            premium = root / "opportunity.json"
+            archive = root / "split-events.json"
+            first_payload = self.opportunity("2026-07-03")
+            second_payload = self.opportunity("2026-07-10")
+            second_payload["records"][0]["current_price"] = 52.5
+            first = research.compact_snapshot(first_payload)
+            second = research.compact_snapshot(second_payload)
+            self.write_history(history, [first, second])
+            self.write_prices(core, {"1002", "1003"})
+            premium.write_text(json.dumps(second_payload), encoding="utf-8")
+            research.archive_split_events({"1001": [("2026-07-10", 2.0)]}, archive, research.ENGINE_VERSION)
+            retained = research.archive_split_events({}, archive, research.ENGINE_VERSION)
+            self.assertEqual(research.cumulative_split_ratio(retained, "1001", "2026-07-03", "2026-07-10"), 2.0)
+            research.evaluate(history, core, premium, outcomes, archive)
+            ledger = json.loads(next(outcomes.glob("*.json")).read_text(encoding="utf-8"))
+            result = ledger["cohorts"][first["snapshot_id"]]["5d"]["1001"]
+            self.assertEqual(result[3], 5.0)
+            self.assertEqual(result[5], 2.0)
 
     def test_evaluate_tracks_forward_returns_and_market_excess(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -252,6 +294,7 @@ class PremiumResearchTests(unittest.TestCase):
             summary = research.evaluate(history, core, premium, outcomes)
             self.assertFalse(summary["recommendation_ready"])
             self.assertIsNone(summary["best_challenger"])
+            self.assertEqual(summary["eligible_challengers"], [])
 
 
 if __name__ == "__main__":
