@@ -146,6 +146,38 @@ class PremiumResearchTests(unittest.TestCase):
         observed = research.fallback_observation([snapshot], "1001", "2026-07-03", "2026-07-10")
         self.assertEqual(observed, ("2026-07-03", 100.0))
 
+    def test_missing_target_uses_last_market_close_before_snapshot_fallback(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            history = root / "history"
+            outcomes = root / "outcomes"
+            core = root / "core"
+            snapshot = research.compact_snapshot(self.opportunity("2026-07-03"))
+            self.write_history(history, [snapshot])
+            charts = core / "charts"
+            daily = core / "daily"
+            charts.mkdir(parents=True, exist_ok=True)
+            daily.mkdir(parents=True, exist_ok=True)
+            full_dates = ["2026-07-03", "2026-07-06", "2026-07-07", "2026-07-08", "2026-07-09", "2026-07-10"]
+            stopped = [
+                ["2026-07-03", 100, 100, 100, 100, 1000],
+                ["2026-07-06", 101, 101, 101, 101, 1000],
+                ["2026-07-07", 102, 102, 102, 102, 1000],
+                ["2026-07-08", 103, 103, 103, 103, 1000],
+            ]
+            calendar_rows = [[value_date, 100, 100, 100, 100, 1000] for value_date in full_dates]
+            (charts / "10.json").write_text(json.dumps({"records": {"1001": {"daily": stopped}, "1002": {"daily": calendar_rows}}}), encoding="utf-8")
+            (daily / "10.json").write_text(json.dumps({"records": {}}), encoding="utf-8")
+            series = research.load_price_series(core)
+            research.finalize_outcomes([snapshot], series, outcomes, research.ENGINE_VERSION)
+            ledger = json.loads(next(outcomes.glob("*.json")).read_text(encoding="utf-8"))
+            result = ledger["cohorts"][snapshot["snapshot_id"]]["5d"]["1001"]
+            self.assertEqual(result[0], "2026-07-10")
+            self.assertEqual(result[1], "2026-07-08")
+            self.assertEqual(result[2], 103.0)
+            self.assertEqual(result[3], 3.0)
+            self.assertEqual(result[4], "last_market_close_before_target")
+
     def test_split_ratio_accumulates_within_return_period(self):
         events = {"1001": [("2026-07-03", 3.0), ("2026-07-06", 2.0), ("2026-07-08", 0.5), ("2026-07-10", 4.0)]}
         self.assertEqual(research.cumulative_split_ratio(events, "1001", "2026-07-03", "2026-07-08"), 1.0)
