@@ -2,12 +2,12 @@
   "code": "6867",
   "ticker": "6867.T",
   "name": "リーダー電子",
-  "generated_at": "2026-08-06T13:50:43.199000+00:00",
-  "price_date": "2026-08-06",
+  "generated_at": "2026-08-07T12:48:54.447797+00:00",
+  "price_date": "2026-08-07",
   "record": {
-    "current_price": 420.0,
-    "change_from_signal_month_pct": 1.2,
-    "return_since_gc_pct": -0.47
+    "current_price": 412.0,
+    "change_from_signal_month_pct": -0.72,
+    "return_since_gc_pct": -2.37
   },
   "daily": [
     {
@@ -35,22 +35,35 @@
       "sma200": 454.86,
       "rsi14": 38.64,
       "rsi5": 38.84
+    },
+    {
+      "date": "2026-08-07",
+      "open": 412.0,
+      "high": 415.0,
+      "low": 412.0,
+      "close": 412.0,
+      "volume": 5800.0,
+      "sma25": 422.0,
+      "sma75": 417.09,
+      "sma200": 454.41,
+      "rsi14": 38.64,
+      "rsi5": 38.84
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-06",
-    "monthly_rsi14": 38.35,
-    "monthly_rsi_ma5": 37.55,
-    "spread": 0.8,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-07",
+    "monthly_rsi14": 36.92,
+    "monthly_rsi_ma5": 37.27,
+    "spread": -0.34,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-06T13:51:41.750385+00:00"
+  "provisional_generated_at": "2026-08-07T12:49:48.904321+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "9941",
   "ticker": "9941.T",
   "name": "太洋物産",
-  "generated_at": "2026-08-06T13:50:43.199000+00:00",
-  "price_date": "2026-08-06",
+  "generated_at": "2026-08-07T12:48:54.447797+00:00",
+  "price_date": "2026-08-07",
   "record": {
-    "current_price": 1232.0,
-    "change_from_signal_month_pct": -0.4,
-    "return_since_gc_pct": 78.55
+    "current_price": 1222.0,
+    "change_from_signal_month_pct": -1.21,
+    "return_since_gc_pct": 77.1
   },
   "daily": [
     {
@@ -35,22 +35,35 @@
       "sma200": 917.17,
       "rsi14": 62.83,
       "rsi5": 66.67
+    },
+    {
+      "date": "2026-08-07",
+      "open": 1232.0,
+      "high": 1233.0,
+      "low": 1202.0,
+      "close": 1222.0,
+      "volume": 12500.0,
+      "sma25": 1345.16,
+      "sma75": 1222.4,
+      "sma200": 919.55,
+      "rsi14": 62.83,
+      "rsi5": 66.67
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-06",
-    "monthly_rsi14": 65.36,
-    "monthly_rsi_ma5": 64.97,
-    "spread": 0.39,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-07",
+    "monthly_rsi14": 64.63,
+    "monthly_rsi_ma5": 64.82,
+    "spread": -0.19,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-06T13:51:41.750385+00:00"
+  "provisional_generated_at": "2026-08-07T12:49:48.904321+00:00"
 }

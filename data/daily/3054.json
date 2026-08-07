@@ -2,12 +2,12 @@
   "code": "3054",
   "ticker": "3054.T",
   "name": "ハイパー",
-  "generated_at": "2026-08-06T13:50:43.199000+00:00",
-  "price_date": "2026-08-06",
+  "generated_at": "2026-08-07T12:48:54.447797+00:00",
+  "price_date": "2026-08-07",
   "record": {
-    "current_price": 241.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 238.0,
+    "change_from_signal_month_pct": -1.24,
+    "return_since_gc_pct": -1.24
   },
   "daily": [
     {
@@ -35,22 +35,35 @@
       "sma200": 269.05,
       "rsi14": 34.33,
       "rsi5": 34.97
+    },
+    {
+      "date": "2026-08-07",
+      "open": 241.0,
+      "high": 246.0,
+      "low": 237.0,
+      "close": 238.0,
+      "volume": 25200.0,
+      "sma25": 242.8,
+      "sma75": 242.93,
+      "sma200": 268.69,
+      "rsi14": 34.33,
+      "rsi5": 34.97
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-06",
-    "monthly_rsi14": 36.06,
-    "monthly_rsi_ma5": 35.78,
-    "spread": 0.28,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-07",
+    "monthly_rsi14": 35.5,
+    "monthly_rsi_ma5": 35.66,
+    "spread": -0.17,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-06T13:51:41.750385+00:00"
+  "provisional_generated_at": "2026-08-07T12:49:48.904321+00:00"
 }

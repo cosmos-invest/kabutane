@@ -2,12 +2,12 @@
   "code": "6620",
   "ticker": "6620.T",
   "name": "宮越ホールディングス",
-  "generated_at": "2026-08-06T13:50:43.199000+00:00",
-  "price_date": "2026-08-06",
+  "generated_at": "2026-08-07T12:48:54.447797+00:00",
+  "price_date": "2026-08-07",
   "record": {
-    "current_price": 690.0,
-    "change_from_signal_month_pct": 2.68,
-    "return_since_gc_pct": -27.29
+    "current_price": 656.0,
+    "change_from_signal_month_pct": -2.38,
+    "return_since_gc_pct": -30.87
   },
   "daily": [
     {
@@ -35,22 +35,35 @@
       "sma200": 764.47,
       "rsi14": 38.93,
       "rsi5": 40.24
+    },
+    {
+      "date": "2026-08-07",
+      "open": 683.0,
+      "high": 691.0,
+      "low": 644.0,
+      "close": 656.0,
+      "volume": 132700.0,
+      "sma25": 702.44,
+      "sma75": 682.56,
+      "sma200": 763.07,
+      "rsi14": 38.93,
+      "rsi5": 40.24
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-06",
-    "monthly_rsi14": 43.09,
-    "monthly_rsi_ma5": 42.69,
-    "spread": 0.4,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-07",
+    "monthly_rsi14": 42.22,
+    "monthly_rsi_ma5": 42.52,
+    "spread": -0.3,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-06T13:51:41.750385+00:00"
+  "provisional_generated_at": "2026-08-07T12:49:48.904321+00:00"
 }

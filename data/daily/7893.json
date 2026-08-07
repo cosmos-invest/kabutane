@@ -2,12 +2,12 @@
   "code": "7893",
   "ticker": "7893.T",
   "name": "プロネクサス",
-  "generated_at": "2026-08-06T13:50:43.199000+00:00",
-  "price_date": "2026-08-06",
+  "generated_at": "2026-08-07T12:48:54.447797+00:00",
+  "price_date": "2026-08-07",
   "record": {
-    "current_price": 1093.0,
-    "change_from_signal_month_pct": -7.76,
-    "return_since_gc_pct": -7.76
+    "current_price": 1102.0,
+    "change_from_signal_month_pct": -7.0,
+    "return_since_gc_pct": -7.0
   },
   "daily": [
     {
@@ -35,22 +35,35 @@
       "sma200": 1126.66,
       "rsi14": 45.31,
       "rsi5": 52.78
+    },
+    {
+      "date": "2026-08-07",
+      "open": 1093.0,
+      "high": 1109.0,
+      "low": 1085.0,
+      "close": 1102.0,
+      "volume": 34400.0,
+      "sma25": 1142.84,
+      "sma75": 1092.6,
+      "sma200": 1126.71,
+      "rsi14": 45.31,
+      "rsi5": 52.78
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-06",
-    "monthly_rsi14": 46.93,
-    "monthly_rsi_ma5": 46.94,
-    "spread": -0.01,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-07",
+    "monthly_rsi14": 47.56,
+    "monthly_rsi_ma5": 47.07,
+    "spread": 0.49,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-06T13:51:41.750385+00:00"
+  "provisional_generated_at": "2026-08-07T12:49:48.904321+00:00"
 }

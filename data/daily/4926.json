@@ -2,12 +2,12 @@
   "code": "4926",
   "ticker": "4926.T",
   "name": "シーボン",
-  "generated_at": "2026-08-06T13:50:43.199000+00:00",
-  "price_date": "2026-08-06",
+  "generated_at": "2026-08-07T12:48:54.447797+00:00",
+  "price_date": "2026-08-07",
   "record": {
-    "current_price": 1258.0,
-    "change_from_signal_month_pct": 0.72,
-    "return_since_gc_pct": 0.72
+    "current_price": 1231.0,
+    "change_from_signal_month_pct": -1.44,
+    "return_since_gc_pct": -1.44
   },
   "daily": [
     {
@@ -35,15 +35,28 @@
       "sma200": 1239.04,
       "rsi14": 45.89,
       "rsi5": 47.88
+    },
+    {
+      "date": "2026-08-07",
+      "open": 1245.0,
+      "high": 1260.0,
+      "low": 1231.0,
+      "close": 1231.0,
+      "volume": 2500.0,
+      "sma25": 1241.68,
+      "sma75": 1221.91,
+      "sma200": 1239.18,
+      "rsi14": 45.89,
+      "rsi5": 47.88
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-06",
-    "monthly_rsi14": 48.36,
-    "monthly_rsi_ma5": 45.6,
-    "spread": 2.76,
+    "price_date": "2026-08-07",
+    "monthly_rsi14": 45.62,
+    "monthly_rsi_ma5": 45.05,
+    "spread": 0.57,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -52,5 +65,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-06T13:51:41.750385+00:00"
+  "provisional_generated_at": "2026-08-07T12:49:48.904321+00:00"
 }

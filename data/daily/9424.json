@@ -2,12 +2,12 @@
   "code": "9424",
   "ticker": "9424.T",
   "name": "日本通信",
-  "generated_at": "2026-08-06T13:50:43.199000+00:00",
-  "price_date": "2026-08-06",
+  "generated_at": "2026-08-07T12:48:54.447797+00:00",
+  "price_date": "2026-08-07",
   "record": {
-    "current_price": 114.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 106.0,
+    "change_from_signal_month_pct": -7.02,
+    "return_since_gc_pct": -7.02
   },
   "daily": [
     {
@@ -35,22 +35,35 @@
       "sma200": 131.29,
       "rsi14": 31.98,
       "rsi5": 32.69
+    },
+    {
+      "date": "2026-08-07",
+      "open": 112.0,
+      "high": 112.0,
+      "low": 104.0,
+      "close": 106.0,
+      "volume": 4669300.0,
+      "sma25": 113.16,
+      "sma75": 116.17,
+      "sma200": 131.09,
+      "rsi14": 31.98,
+      "rsi5": 32.69
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-06",
-    "monthly_rsi14": 29.89,
-    "monthly_rsi_ma5": 28.51,
-    "spread": 1.38,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-07",
+    "monthly_rsi14": 27.63,
+    "monthly_rsi_ma5": 28.06,
+    "spread": -0.43,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-06T13:51:41.750385+00:00"
+  "provisional_generated_at": "2026-08-07T12:49:48.904321+00:00"
 }

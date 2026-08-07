@@ -2,12 +2,12 @@
   "code": "228A",
   "ticker": "228A.T",
   "name": "オプロ",
-  "generated_at": "2026-08-06T13:50:43.199000+00:00",
-  "price_date": "2026-08-06",
+  "generated_at": "2026-08-07T12:48:54.447797+00:00",
+  "price_date": "2026-08-07",
   "record": {
-    "current_price": 1607.0,
-    "change_from_signal_month_pct": 1.2,
-    "return_since_gc_pct": 0.63
+    "current_price": 1582.0,
+    "change_from_signal_month_pct": -0.38,
+    "return_since_gc_pct": -0.94
   },
   "daily": [
     {
@@ -35,15 +35,28 @@
       "sma200": 1846.24,
       "rsi14": 49.48,
       "rsi5": 49.92
+    },
+    {
+      "date": "2026-08-07",
+      "open": 1636.0,
+      "high": 1636.0,
+      "low": 1580.0,
+      "close": 1582.0,
+      "volume": 3100.0,
+      "sma25": 1658.76,
+      "sma75": 1631.09,
+      "sma200": 1843.26,
+      "rsi14": 49.48,
+      "rsi5": 49.92
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-06",
-    "monthly_rsi14": 50.43,
-    "monthly_rsi_ma5": 49.8,
-    "spread": 0.63,
+    "price_date": "2026-08-07",
+    "monthly_rsi14": 49.77,
+    "monthly_rsi_ma5": 49.66,
+    "spread": 0.1,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -52,5 +65,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-06T13:51:41.750385+00:00"
+  "provisional_generated_at": "2026-08-07T12:49:48.904321+00:00"
 }

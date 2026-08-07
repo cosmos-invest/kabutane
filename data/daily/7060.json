@@ -2,12 +2,12 @@
   "code": "7060",
   "ticker": "7060.T",
   "name": "ギークス",
-  "generated_at": "2026-08-06T13:50:43.199000+00:00",
-  "price_date": "2026-08-06",
+  "generated_at": "2026-08-07T12:48:54.447797+00:00",
+  "price_date": "2026-08-07",
   "record": {
-    "current_price": 600.0,
-    "change_from_signal_month_pct": -1.15,
-    "return_since_gc_pct": 2.56
+    "current_price": 591.0,
+    "change_from_signal_month_pct": -2.64,
+    "return_since_gc_pct": 1.03
   },
   "daily": [
     {
@@ -35,15 +35,28 @@
       "sma200": 586.94,
       "rsi14": 49.67,
       "rsi5": 52.27
+    },
+    {
+      "date": "2026-08-07",
+      "open": 600.0,
+      "high": 610.0,
+      "low": 581.0,
+      "close": 591.0,
+      "volume": 26800.0,
+      "sma25": 606.72,
+      "sma75": 582.16,
+      "sma200": 586.66,
+      "rsi14": 49.67,
+      "rsi5": 52.27
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-06",
-    "monthly_rsi14": 50.86,
-    "monthly_rsi_ma5": 49.23,
-    "spread": 1.63,
+    "price_date": "2026-08-07",
+    "monthly_rsi14": 49.94,
+    "monthly_rsi_ma5": 49.05,
+    "spread": 0.9,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -52,5 +65,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-06T13:51:41.750385+00:00"
+  "provisional_generated_at": "2026-08-07T12:49:48.904321+00:00"
 }

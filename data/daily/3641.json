@@ -2,12 +2,12 @@
   "code": "3641",
   "ticker": "3641.T",
   "name": "パピレス",
-  "generated_at": "2026-08-06T13:50:43.199000+00:00",
-  "price_date": "2026-08-06",
+  "generated_at": "2026-08-07T12:48:54.447797+00:00",
+  "price_date": "2026-08-07",
   "record": {
-    "current_price": 967.0,
-    "change_from_signal_month_pct": 0.21,
-    "return_since_gc_pct": 0.21
+    "current_price": 964.0,
+    "change_from_signal_month_pct": -0.1,
+    "return_since_gc_pct": -0.1
   },
   "daily": [
     {
@@ -35,15 +35,28 @@
       "sma200": 987.59,
       "rsi14": 48.84,
       "rsi5": 49.27
+    },
+    {
+      "date": "2026-08-07",
+      "open": 967.0,
+      "high": 967.0,
+      "low": 961.0,
+      "close": 964.0,
+      "volume": 2700.0,
+      "sma25": 960.68,
+      "sma75": 951.12,
+      "sma200": 987.83,
+      "rsi14": 48.84,
+      "rsi5": 49.27
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-06",
-    "monthly_rsi14": 53.06,
-    "monthly_rsi_ma5": 52.55,
-    "spread": 0.51,
+    "price_date": "2026-08-07",
+    "monthly_rsi14": 52.74,
+    "monthly_rsi_ma5": 52.49,
+    "spread": 0.25,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -52,5 +65,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-06T13:51:41.750385+00:00"
+  "provisional_generated_at": "2026-08-07T12:49:48.904321+00:00"
 }

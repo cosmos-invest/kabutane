@@ -2,12 +2,12 @@
   "code": "7601",
   "ticker": "7601.T",
   "name": "ポプラ",
-  "generated_at": "2026-08-06T13:50:43.199000+00:00",
-  "price_date": "2026-08-06",
+  "generated_at": "2026-08-07T12:48:54.447797+00:00",
+  "price_date": "2026-08-07",
   "record": {
-    "current_price": 166.0,
-    "change_from_signal_month_pct": -1.19,
-    "return_since_gc_pct": -1.19
+    "current_price": 167.0,
+    "change_from_signal_month_pct": -0.6,
+    "return_since_gc_pct": -0.6
   },
   "daily": [
     {
@@ -35,15 +35,28 @@
       "sma200": 172.27,
       "rsi14": 39.24,
       "rsi5": 40.22
+    },
+    {
+      "date": "2026-08-07",
+      "open": 166.0,
+      "high": 168.0,
+      "low": 166.0,
+      "close": 167.0,
+      "volume": 4300.0,
+      "sma25": 166.96,
+      "sma75": 165.51,
+      "sma200": 172.21,
+      "rsi14": 39.24,
+      "rsi5": 40.22
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-06",
-    "monthly_rsi14": 40.9,
-    "monthly_rsi_ma5": 40.58,
-    "spread": 0.32,
+    "price_date": "2026-08-07",
+    "monthly_rsi14": 41.29,
+    "monthly_rsi_ma5": 40.66,
+    "spread": 0.62,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -52,5 +65,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-06T13:51:41.750385+00:00"
+  "provisional_generated_at": "2026-08-07T12:49:48.904321+00:00"
 }

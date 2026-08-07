@@ -2,12 +2,12 @@
   "code": "1905",
   "ticker": "1905.T",
   "name": "テノックス",
-  "generated_at": "2026-08-06T13:50:43.199000+00:00",
-  "price_date": "2026-08-06",
+  "generated_at": "2026-08-07T12:48:54.447797+00:00",
+  "price_date": "2026-08-07",
   "record": {
-    "current_price": 1540.0,
-    "change_from_signal_month_pct": 1.99,
-    "return_since_gc_pct": 3.77
+    "current_price": 1447.0,
+    "change_from_signal_month_pct": -4.17,
+    "return_since_gc_pct": -2.49
   },
   "daily": [
     {
@@ -35,22 +35,35 @@
       "sma200": 1429.36,
       "rsi14": 66.41,
       "rsi5": 67.92
+    },
+    {
+      "date": "2026-08-07",
+      "open": 1524.0,
+      "high": 1532.0,
+      "low": 1436.0,
+      "close": 1447.0,
+      "volume": 12900.0,
+      "sma25": 1510.52,
+      "sma75": 1495.27,
+      "sma200": 1430.07,
+      "rsi14": 66.41,
+      "rsi5": 67.92
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-06",
-    "monthly_rsi14": 66.62,
-    "monthly_rsi_ma5": 64.47,
-    "spread": 2.15,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-07",
+    "monthly_rsi14": 58.79,
+    "monthly_rsi_ma5": 62.91,
+    "spread": -4.12,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-06T13:51:41.750385+00:00"
+  "provisional_generated_at": "2026-08-07T12:49:48.904321+00:00"
 }

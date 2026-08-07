@@ -2,12 +2,12 @@
   "code": "156A",
   "ticker": "156A.T",
   "name": "マテリアルグループ",
-  "generated_at": "2026-08-06T13:50:43.199000+00:00",
-  "price_date": "2026-08-06",
+  "generated_at": "2026-08-07T12:48:54.447797+00:00",
+  "price_date": "2026-08-07",
   "record": {
-    "current_price": 827.0,
-    "change_from_signal_month_pct": -0.84,
-    "return_since_gc_pct": -1.43
+    "current_price": 821.0,
+    "change_from_signal_month_pct": -1.56,
+    "return_since_gc_pct": -2.15
   },
   "daily": [
     {
@@ -35,22 +35,35 @@
       "sma200": 816.62,
       "rsi14": 45.39,
       "rsi5": 46.01
+    },
+    {
+      "date": "2026-08-07",
+      "open": 827.0,
+      "high": 840.0,
+      "low": 821.0,
+      "close": 821.0,
+      "volume": 39300.0,
+      "sma25": 860.76,
+      "sma75": 834.03,
+      "sma200": 816.53,
+      "rsi14": 45.39,
+      "rsi5": 46.01
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-06",
-    "monthly_rsi14": 45.61,
-    "monthly_rsi_ma5": 45.47,
-    "spread": 0.14,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-07",
+    "monthly_rsi14": 45.27,
+    "monthly_rsi_ma5": 45.4,
+    "spread": -0.13,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-06T13:51:41.750385+00:00"
+  "provisional_generated_at": "2026-08-07T12:49:48.904321+00:00"
 }
