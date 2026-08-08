@@ -1,25 +1,25 @@
 {
-  "generated_at": "2026-08-05T06:02:18.641959+00:00",
-  "source_generated_at": "2026-08-05T05:57:37.274796+00:00",
+  "generated_at": "2026-08-08T02:54:32.881863+00:00",
+  "source_generated_at": "2026-08-08T02:51:54.068745+00:00",
   "signal_month": "2026-07",
   "summary": {
-    "raw_error_count": 69,
-    "unique_error_tickers": 69,
-    "current_active_records": 2000,
-    "active_zero_fundamentals": 1042
+    "raw_error_count": 70,
+    "unique_error_tickers": 70,
+    "current_active_records": 1996,
+    "active_zero_fundamentals": 1
   },
   "by_stage": [
     {
       "stage": "monthly",
-      "count": 69
+      "count": 70
     }
   ],
   "by_reason": [
     {
       "reason": "history_short",
       "label": "上場期間・履歴が短く計算期間不足",
-      "error_count": 69,
-      "unique_tickers": 69,
+      "error_count": 70,
+      "unique_tickers": 70,
       "samples": [
         {
           "ticker": "365A.T",
@@ -50,16 +50,9 @@
           "message": "RSI計算に必要な月足が不足"
         },
         {
-          "ticker": "3681.T",
-          "code": "3681",
-          "name": "ブイキューブ",
-          "stage": "monthly",
-          "message": "RSI計算に必要な月足が不足"
-        },
-        {
           "ticker": "368A.T",
           "code": "368A",
-          "name": "北里コーポレーション",
+          "name": "北里",
           "stage": "monthly",
           "message": "RSI計算に必要な月足が不足"
         },
@@ -230,6 +223,13 @@
           "name": "ＦＵＮＤＩＮＮＯ",
           "stage": "monthly",
           "message": "RSI計算に必要な月足が不足"
+        },
+        {
+          "ticker": "469A.T",
+          "code": "469A",
+          "name": "フィットクルー",
+          "stage": "monthly",
+          "message": "RSI計算に必要な月足が不足"
         }
       ]
     }
@@ -237,209 +237,13 @@
   "top_messages": [
     {
       "message": "RSI計算に必要な月足が不足",
-      "count": 69
+      "count": 70
     }
   ],
   "active_zero_fundamental_samples": [
     {
-      "code": "6897",
-      "name": "ツインバード"
-    },
-    {
-      "code": "7957",
-      "name": "フジコピアン"
-    },
-    {
-      "code": "5242",
-      "name": "アイズ"
-    },
-    {
-      "code": "3851",
-      "name": "日本一ソフトウェア"
-    },
-    {
-      "code": "4394",
-      "name": "エクスモーション"
-    },
-    {
-      "code": "7480",
-      "name": "スズデン"
-    },
-    {
-      "code": "4120",
-      "name": "スガイ化学工業"
-    },
-    {
-      "code": "2997",
-      "name": "ストレージ王"
-    },
-    {
-      "code": "4762",
-      "name": "エックスネット"
-    },
-    {
-      "code": "7417",
-      "name": "南陽"
-    },
-    {
-      "code": "4417",
-      "name": "グローバルセキュリティエキスパート"
-    },
-    {
-      "code": "7803",
-      "name": "ブシロード"
-    },
-    {
-      "code": "5126",
-      "name": "ポーターズ"
-    },
-    {
-      "code": "5575",
-      "name": "Ｇｌｏｂｅｅ"
-    },
-    {
-      "code": "2926",
-      "name": "篠崎屋"
-    },
-    {
-      "code": "7175",
-      "name": "今村証券"
-    },
-    {
-      "code": "6570",
-      "name": "共和コーポレーション"
-    },
-    {
-      "code": "3544",
-      "name": "サツドラホールディングス"
-    },
-    {
-      "code": "7041",
-      "name": "ＣＲＧホールディングス"
-    },
-    {
-      "code": "4175",
-      "name": "ｃｏｌｙ"
-    },
-    {
-      "code": "4424",
-      "name": "Ａｍａｚｉａ"
-    },
-    {
-      "code": "5484",
-      "name": "東北特殊鋼"
-    },
-    {
-      "code": "3063",
-      "name": "ジェイグループホールディングス"
-    },
-    {
-      "code": "2483",
-      "name": "翻訳センター"
-    },
-    {
-      "code": "7219",
-      "name": "エッチ・ケー・エス"
-    },
-    {
-      "code": "2305",
-      "name": "スタジオアリス"
-    },
-    {
-      "code": "3306",
-      "name": "日本製麻"
-    },
-    {
-      "code": "4431",
-      "name": "スマレジ"
-    },
-    {
-      "code": "4258",
-      "name": "網屋"
-    },
-    {
-      "code": "4074",
-      "name": "ラキール"
-    },
-    {
-      "code": "9888",
-      "name": "ＵＥＸ"
-    },
-    {
-      "code": "7134",
-      "name": "アップガレージグループ"
-    },
-    {
-      "code": "8254",
-      "name": "さいか屋"
-    },
-    {
-      "code": "4052",
-      "name": "フィーチャ"
-    },
-    {
-      "code": "3173",
-      "name": "Ｃｏｍｉｎｉｘ"
-    },
-    {
-      "code": "5458",
-      "name": "高砂鐵工"
-    },
-    {
-      "code": "3494",
-      "name": "マリオン"
-    },
-    {
-      "code": "3177",
-      "name": "ありがとうサービス"
-    },
-    {
-      "code": "9828",
-      "name": "Ｇｅｎｋｉ　Ｇｌｏｂａｌ　Ｄｉｎｉｎｇ　Ｃｏｎｃｅｐｔｓ"
-    },
-    {
-      "code": "7462",
-      "name": "ＣＡＰＩＴＡ"
-    },
-    {
-      "code": "3131",
-      "name": "シンデン・ハイテックス"
-    },
-    {
-      "code": "7213",
-      "name": "レシップホールディングス"
-    },
-    {
-      "code": "1795",
-      "name": "マサル"
-    },
-    {
-      "code": "2666",
-      "name": "オートウェーブ"
-    },
-    {
-      "code": "4746",
-      "name": "東計電算"
-    },
-    {
-      "code": "2436",
-      "name": "共同ピーアール"
-    },
-    {
-      "code": "3187",
-      "name": "ミラタップ"
-    },
-    {
-      "code": "6549",
-      "name": "ディーエムソリューションズ"
-    },
-    {
-      "code": "4389",
-      "name": "プロパティデータバンク"
-    },
-    {
-      "code": "9720",
-      "name": "ホテル、ニューグランド"
+      "code": "2479",
+      "name": "ジェイテック"
     }
   ]
 }
