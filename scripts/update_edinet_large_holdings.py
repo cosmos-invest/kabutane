@@ -310,6 +310,10 @@ def build_latest_payload(events: list[dict[str, Any]], generated_at: str) -> dic
 
 
 def write_outputs(output_root: Path, incoming: list[dict[str, Any]], generated_at: str, rebuild: bool = False) -> dict[str, Any]:
+    if rebuild and output_root.exists():
+        for path in output_root.glob("*.json"):
+            if path.name != "latest.json" and re.fullmatch(r"[0-9A-Z]{2}\.json", path.name):
+                path.unlink()
     existing_payload = {} if rebuild else load_json(output_root / "latest.json", {})
     events = merge_events(existing_payload.get("records") or [], incoming)
     latest = build_latest_payload(events, generated_at)
