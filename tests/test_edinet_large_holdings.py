@@ -100,6 +100,16 @@ class EdinetLargeHoldingsTests(unittest.TestCase):
             shard = json.loads((output / "12.json").read_text(encoding="utf-8"))
             self.assertEqual(set(shard["records_by_code"]), {"1234", "1299"})
 
+    def test_rebuild_removes_stale_generated_shards(self):
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory)
+            output.mkdir(exist_ok=True)
+            (output / "99.json").write_text("{}\n", encoding="utf-8")
+            event = {**updater.parse_event(metadata("S1"), xbrl_zip(SecurityCode="12340")), "security_code": "1234"}
+            updater.write_outputs(output, [event], "2026-08-10T00:00:00+00:00", rebuild=True)
+            self.assertFalse((output / "99.json").exists())
+            self.assertTrue((output / "12.json").exists())
+
     def test_update_does_not_redownload_known_document(self):
         with tempfile.TemporaryDirectory() as directory:
             output = Path(directory)
