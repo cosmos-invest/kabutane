@@ -9,6 +9,7 @@ usage() {
 使い方:
   bash termux-edinet.sh              # スマホ向けメニューを表示
   bash termux-edinet.sh --days 10    # 直近10日を更新
+  bash termux-edinet.sh --days 10 --rebuild  # 生成データを作り直す
   bash termux-edinet.sh --dry-run    # 通信せず設定だけ確認
 
 このスクリプトはGitHub Actions、git pull、commit、pushを実行しません。
@@ -51,6 +52,7 @@ choose_days() {
 
 DAYS=""
 DRY_RUN=0
+REBUILD=0
 while (($#)); do
   case "$1" in
     --days)
@@ -60,6 +62,10 @@ while (($#)); do
       ;;
     --dry-run)
       DRY_RUN=1
+      shift
+      ;;
+    --rebuild)
+      REBUILD=1
       shift
       ;;
     -h|--help)
@@ -84,6 +90,9 @@ command -v git >/dev/null 2>&1 || die "Gitがありません。Termuxで pkg ins
 [[ -f scripts/update_edinet_large_holdings.py ]] || die "かぶたねのリポジトリ直下で実行してください。"
 
 printf '対象: 直近%s日\n' "$DAYS"
+if ((REBUILD)); then
+  printf '%s\n' 'モード: 生成済みの大量保有JSONを再構築します'
+fi
 printf '%s\n' 'GitHub Actions: 使用しません'
 printf '%s\n' 'Git操作: pull / commit / push は行いません'
 
@@ -110,7 +119,11 @@ cleanup_key() {
 }
 trap cleanup_key EXIT
 
-python -m scripts.update_edinet_large_holdings --days "$DAYS"
+UPDATER_ARGS=(--days "$DAYS")
+if ((REBUILD)); then
+  UPDATER_ARGS+=(--rebuild)
+fi
+python -m scripts.update_edinet_large_holdings "${UPDATER_ARGS[@]}"
 
 if [[ -f data/core/radar.json && -f data/premium/supply-demand-screen.json ]]; then
   python -m scripts.build_premium_lab
