@@ -26,12 +26,22 @@ MAX_GLOBAL_RECORDS = 5000
 MAX_STOCK_RECORDS = 300
 
 FACT_ALIASES = {
-    "security_code": ("SecurityCode", "CodeOfIssuer", "SecuritiesCode"),
+    "security_code": ("SecurityCodeOfIssuer", "SecurityCode", "CodeOfIssuer", "SecuritiesCode"),
     "issuer_name": ("NameOfIssuer", "NameOfCompany"),
-    "filer_name": ("NameOfReportingPersonOrCompany", "NameOfReportingPerson", "NameOfFiler"),
-    "obligation_date": ("DateWhenFilingRequirementArose", "DateOfReportingObligation"),
+    "filer_name": (
+        "FilerNameInJapaneseDEI",
+        "NameOfReportingPersonOrCompany",
+        "NameOfReportingPerson",
+        "NameOfFiler",
+    ),
+    "obligation_date": (
+        "DateWhenFilingRequirementAroseCoverPage",
+        "DateWhenFilingRequirementArose",
+        "DateOfReportingObligation",
+    ),
     "purpose": ("PurposeOfHolding", "PurposeOfHoldingShareCertificatesEtc"),
     "important_proposal_text": (
+        "ActOfMakingImportantProposalEtc",
         "MattersRegardingImportantProposalActEtc",
         "MattersConcerningImportantProposalActEtc",
     ),
@@ -41,6 +51,7 @@ FACT_ALIASES = {
         "RatioOfShareCertificatesEtcHeld",
     ),
     "previous_ratio": (
+        "HoldingRatioOfShareCertificatesEtcPerLastReport",
         "HoldingRatioOfShareCertificatesEtcInLastReport",
         "ShareholdingRatioOfLastReport",
         "RatioOfShareCertificatesEtcHeldInLastReport",
@@ -94,14 +105,28 @@ def local_name(value: str) -> str:
 
 def extract_facts(document: bytes) -> dict[str, list[str]]:
     root = ElementTree.fromstring(document)
-    facts: dict[str, list[str]] = {}
+    dimensional_contexts = {
+        clean_text(element.attrib.get("id"), 200)
+        for element in root.iter()
+        if local_name(str(element.tag)) == "context"
+        and any(local_name(str(child.tag)) in {"explicitMember", "typedMember"} for child in element.iter())
+    }
+    ranked_facts: dict[str, list[tuple[int, int, str]]] = {}
+    order = 0
     for element in root.iter():
         tag = local_name(str(element.tag))
         name = local_name(str(element.attrib.get("name") or "")) if tag in {"nonNumeric", "nonFraction", "fraction"} else tag
         value = clean_text("".join(element.itertext()))
         if name and value:
-            facts.setdefault(name, []).append(value)
-    return facts
+            context_ref = clean_text(element.attrib.get("contextRef"), 200)
+            # 共同保有者別の値より、ディメンションのない総括値を先に選ぶ。
+            rank = 1 if context_ref in dimensional_contexts else 0
+            ranked_facts.setdefault(name, []).append((rank, order, value))
+            order += 1
+    return {
+        name: [value for _, _, value in sorted(values)]
+        for name, values in ranked_facts.items()
+    }
 
 
 def pick_fact(facts: dict[str, list[str]], aliases: Iterable[str]) -> str:
@@ -110,6 +135,15 @@ def pick_fact(facts: dict[str, list[str]], aliases: Iterable[str]) -> str:
             if value:
                 return value
     return ""
+
+
+def pick_facts(facts: dict[str, list[str]], aliases: Iterable[str]) -> list[str]:
+    values: list[str] = []
+    for alias in aliases:
+        for value in facts.get(alias, []):
+            if value and value not in values:
+                values.append(value)
+    return values
 
 
 def document_bytes_from_zip(payload: bytes) -> bytes:
@@ -137,7 +171,13 @@ def is_meaningful_important_proposal(text: str, purpose: str) -> bool:
     if "重要提案" in purpose:
         return True
     compact = re.sub(r"[\s。、・]", "", text)
-    return bool(compact and compact not in {"なし", "該当なし", "該当事項なし", "該当する事項なし"})
+    return bool(compact and compact not in {
+        "なし",
+        "該当なし",
+        "該当事項なし",
+        "該当事項はありません",
+        "該当する事項なし",
+    })
 
 
 def classify_event(kind: str, current: float | None, previous: float | None, important: bool) -> str:
@@ -171,15 +211,20 @@ def parse_event(metadata: dict[str, Any], zip_payload: bytes) -> dict[str, Any]:
     current = ratio_percent(values["current_ratio"])
     previous = ratio_percent(values["previous_ratio"])
     delta = round(current - previous, 4) if current is not None and previous is not None else None
-    purpose = clean_text(values["purpose"], 600)
-    important_text = clean_text(values["important_proposal_text"], 600)
-    important = is_meaningful_important_proposal(important_text, purpose)
+    purposes = pick_facts(facts, FACT_ALIASES["purpose"])
+    important_texts = pick_facts(facts, FACT_ALIASES["important_proposal_text"])
+    purpose = clean_text(" / ".join(purposes), 600)
+    important_text = clean_text(" / ".join(important_texts), 600)
+    important = any(
+        is_meaningful_important_proposal(text, purpose)
+        for text in (important_texts or [""])
+    )
     doc_id = clean_text(metadata.get("docID"), 40)
     return {
         "doc_id": doc_id,
         "security_code": normalize_security_code(values["security_code"] or metadata.get("secCode")),
         "issuer_name": clean_text(values["issuer_name"] or metadata.get("issuerEdinetCode"), 160),
-        "filer_name": clean_text(values["filer_name"] or metadata.get("filerName"), 160),
+        "filer_name": clean_text(metadata.get("filerName") or values["filer_name"], 160),
         "report_type": kind,
         "event_kind": classify_event(kind, current, previous, important),
         "submitted_at": clean_text(metadata.get("submitDateTime"), 30),
