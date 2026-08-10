@@ -60,6 +60,31 @@ class EdinetLargeHoldingsTests(unittest.TestCase):
         self.assertEqual(updater.classify_event("訂正報告書", 8, 7, True), "CORRECTION")
         self.assertEqual(updater.classify_event("変更報告書", 8, 7, True), "IMPORTANT_PROPOSAL")
 
+    def test_2026_taxonomy_uses_summary_ratio_and_new_element_names(self):
+        document = '''<?xml version="1.0" encoding="UTF-8"?>
+        <xbrl xmlns="http://www.xbrl.org/2003/instance"
+              xmlns:xbrldi="http://xbrl.org/2006/xbrldi"
+              xmlns:jplvh="http://example.test/jplvh">
+          <context id="FilingDateInstant"><entity><identifier scheme="test">issuer</identifier></entity><period><instant>2026-08-10</instant></period></context>
+          <context id="Holder1"><entity><identifier scheme="test">issuer</identifier><segment><xbrldi:explicitMember dimension="jplvh:HoldersAxis">jplvh:Holder1Member</xbrldi:explicitMember></segment></entity><period><instant>2026-08-10</instant></period></context>
+          <jplvh:SecurityCodeOfIssuer contextRef="FilingDateInstant">12340</jplvh:SecurityCodeOfIssuer>
+          <jplvh:DateWhenFilingRequirementAroseCoverPage contextRef="FilingDateInstant">2026-08-07</jplvh:DateWhenFilingRequirementAroseCoverPage>
+          <jplvh:HoldingRatioOfShareCertificatesEtc contextRef="Holder1">0.0426</jplvh:HoldingRatioOfShareCertificatesEtc>
+          <jplvh:HoldingRatioOfShareCertificatesEtc contextRef="FilingDateInstant">0.0513</jplvh:HoldingRatioOfShareCertificatesEtc>
+          <jplvh:HoldingRatioOfShareCertificatesEtcPerLastReport contextRef="FilingDateInstant">0.0390</jplvh:HoldingRatioOfShareCertificatesEtcPerLastReport>
+          <jplvh:ActOfMakingImportantProposalEtc contextRef="Holder1">該当事項はありません。</jplvh:ActOfMakingImportantProposalEtc>
+        </xbrl>'''.encode("utf-8")
+        payload = io.BytesIO()
+        with zipfile.ZipFile(payload, "w") as archive:
+            archive.writestr("XBRL/PublicDoc/report.xbrl", document)
+        event = updater.parse_event(metadata(), payload.getvalue())
+        self.assertEqual(event["security_code"], "1234")
+        self.assertEqual(event["obligation_date"], "2026-08-07")
+        self.assertEqual(event["current_ratio_pct"], 5.13)
+        self.assertEqual(event["previous_ratio_pct"], 3.9)
+        self.assertEqual(event["change_pct_point"], 1.23)
+        self.assertFalse(event["important_proposal"])
+
     def test_document_filter_checks_type_and_description(self):
         self.assertTrue(updater.is_large_holding_document(metadata()))
         self.assertFalse(updater.is_large_holding_document({**metadata(), "docTypeCode": "120"}))
