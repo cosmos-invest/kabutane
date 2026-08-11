@@ -45,7 +45,7 @@ jobs:
       - name: Smoke test production on desktop and Android widths
         run: |
           npx playwright test tests/full-regression.spec.js \
-            --grep "^(desktop|android): (home search|stock detail|ranking|monthly strategy|replay selection|replay setup)$" \
+            --grep "(desktop|android): (home search|stock detail|ranking|monthly strategy|replay selection|replay setup)" \
             --reporter=line \
             --trace=retain-on-failure
 
