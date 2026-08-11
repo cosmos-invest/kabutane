@@ -1,4 +1,4 @@
-const CACHE_VERSION = "kabutane-pwa-v25";
+const CACHE_VERSION = "kabutane-pwa-v26";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 
 // These files are required for the detail page to boot. If even one cannot be
@@ -33,6 +33,7 @@ const OPTIONAL_ASSETS = [
   "./backtest.html",
   "./howto.html",
   "./learn.html",
+  "./large-holdings.html",
   "./signal-method.html",
   "./ranking.html",
   "./ranking/",
@@ -72,6 +73,12 @@ const OPTIONAL_ASSETS = [
   "./assets/all-stocks.js",
   "./assets/monthly-dc.css",
   "./assets/monthly-dc.js",
+  "./assets/large-holdings.css",
+  "./assets/large-holdings.js",
+  "./assets/detail-large-holdings.css",
+  "./assets/detail-large-holdings.js",
+  "./assets/detail-fundamentals.css",
+  "./assets/watchlist-large-holdings.css",
   "./assets/style.css?v=16",
   "./assets/pastel.css?v=16",
   "./assets/kabutane.css?v=16",
@@ -175,6 +182,9 @@ function routeAlternatives(url) {
   }
   if (pathname.endsWith("/monthly-dc") || pathname.endsWith("/monthly-dc.html")) {
     return ["./monthly-dc.html"];
+  }
+  if (pathname.endsWith("/large-holdings") || pathname.endsWith("/large-holdings.html")) {
+    return ["./large-holdings.html"];
   }
   return [];
 }

@@ -31,6 +31,19 @@ class PremiumLabTests(unittest.TestCase):
         self.assertEqual(score, 0)
         self.assertEqual(reasons, [])
 
+    def test_large_holding_is_visible_without_changing_score(self):
+        row = {"code": "5243", "provisional_status": "GC", "monthly_rsi_spread": 0.4}
+        baseline = premium.build_row(row, None)
+        with_holder = premium.build_row(row, None, {
+            "doc_id": "S100TEST", "event_kind": "INCREASE", "report_type": "変更報告書", "filer_name": "提出者",
+            "change_pct_point": 1.2, "important_proposal": True,
+        })
+        self.assertEqual(baseline["priority_score"], with_holder["priority_score"])
+        self.assertEqual(baseline["score_components"], with_holder["score_components"])
+        self.assertIn("大口保有増加", with_holder["tags"])
+        self.assertIn("重要提案の可能性", with_holder["tags"])
+        self.assertEqual(with_holder["large_holding"]["filer_name"], "提出者")
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -60,6 +60,57 @@ class EdinetLargeHoldingsTests(unittest.TestCase):
         self.assertEqual(updater.classify_event("訂正報告書", 8, 7, True), "CORRECTION")
         self.assertEqual(updater.classify_event("変更報告書", 8, 7, True), "IMPORTANT_PROPOSAL")
 
+    def test_important_proposal_negative_wording_variants(self):
+        for text in (
+            "該当事項無し",
+            "該当無し",
+            "特にありません。",
+            "該当事項ありません。",
+            "当該事項なし。",
+            "記載事項はありません。",
+            "該当事項無し / 該当事項なし",
+            "本報告書提出日現在、重要提案行為等を行う予定はありません。",
+        ):
+            self.assertFalse(updater.is_meaningful_important_proposal(text, "純投資"), text)
+        self.assertFalse(updater.is_meaningful_important_proposal(
+            "該当事項無し",
+            "純投資（重要提案行為等を行うことを目的とするものではありません。）",
+        ))
+        self.assertTrue(updater.is_meaningful_important_proposal(
+            "該当事項なし",
+            "状況に応じて重要提案行為等を行う可能性がある",
+        ))
+
+    def test_merge_reclassifies_stored_event_with_negative_wording(self):
+        stale = updater.parse_event(metadata(), xbrl_zip(
+            SecurityCodeOfIssuer="12340",
+            HoldingRatioOfShareCertificatesEtc="0.071",
+            HoldingRatioOfShareCertificatesEtcPerLastReport="0.056",
+            PurposeOfHolding="純投資",
+            ActOfMakingImportantProposalEtc="該当事項無し",
+        ))
+        stale["important_proposal"] = True
+        stale["event_kind"] = "IMPORTANT_PROPOSAL"
+        normalized = updater.merge_events([stale], [])[0]
+        self.assertFalse(normalized["important_proposal"])
+        self.assertEqual(normalized["event_kind"], "INCREASE")
+
+    def test_normalize_stored_event_preserves_zero_ratio(self):
+        event = {
+            "doc_id": "ZERO",
+            "security_code": "1234",
+            "report_type": "変更報告書",
+            "current_ratio_pct": 0.0,
+            "previous_ratio_pct": 5.0,
+            "important_proposal_text": "該当なし",
+            "purpose": "純投資",
+        }
+        normalized = updater.normalize_stored_event(event)
+        self.assertEqual(normalized["current_ratio_pct"], 0.0)
+        self.assertEqual(normalized["previous_ratio_pct"], 5.0)
+        self.assertEqual(normalized["change_pct_point"], -5.0)
+        self.assertEqual(normalized["event_kind"], "DECREASE")
+
     def test_2026_taxonomy_uses_summary_ratio_and_new_element_names(self):
         document = '''<?xml version="1.0" encoding="UTF-8"?>
         <xbrl xmlns="http://www.xbrl.org/2003/instance"

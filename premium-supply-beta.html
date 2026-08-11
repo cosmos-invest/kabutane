@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="assets/style.css?v=14">
   <link rel="stylesheet" href="assets/premium-supply-beta.css?v=2">
   <link rel="stylesheet" href="assets/premium-research.css?v=1">
+  <link rel="stylesheet" href="assets/premium-large-holdings.css?v=1">
 </head>
 <body class="premium-supply-beta-page">
   <header class="site-header premium-header">
@@ -15,7 +16,7 @@
       <div>
         <p class="eyebrow">KABUTANE PREMIUM LAB / PRIVATE BETA</p>
         <h1>先回り・需給ラボ β</h1>
-        <p class="subtitle">プライム・スタンダード・グロースの内国普通株を毎日横断し、<strong>暫定GC / GC接近</strong>、日足トレンド・出来高、JPX週次信用残高、財務を同じ画面で比較します。</p>
+        <p class="subtitle">プライム・スタンダード・グロースの内国普通株を横断し、<strong>暫定GC / GC接近</strong>、日足トレンド・出来高、JPX週次信用残高、EDINET大口保有、財務を同じ画面で比較します。</p>
       </div>
       <div class="header-meta"><span class="premium-badge">PREMIUM β</span></div>
     </div>
@@ -82,6 +83,7 @@
         <button type="button" class="premium-quick active" data-premium-mode="early" aria-pressed="true"><strong>暫定GC・接近</strong><small>月末より先に変化を見る</small></button>
         <button type="button" class="premium-quick" data-premium-mode="combo" aria-pressed="false"><strong>GC系 × 需給改善</strong><small>二つの変化が重なる候補</small></button>
         <button type="button" class="premium-quick" data-premium-mode="dc" aria-pressed="false"><strong>暫定DC</strong><small>継続中の注意候補</small></button>
+        <button type="button" class="premium-quick" data-premium-mode="holder" aria-pressed="false"><strong>大口保有の変化</strong><small>EDINET報告あり</small></button>
         <button type="button" class="premium-quick" data-premium-mode="all" aria-pressed="false"><strong>全銘柄</strong><small>検索・比較する</small></button>
       </div>
 
@@ -90,6 +92,7 @@
         <label>途中判定<select id="premiumSignal"><option value="all">すべて</option><option value="GC">暫定GC</option><option value="NEAR_GC">GC接近</option><option value="CONTINUE">暫定継続</option><option value="DC">暫定DC</option><option value="OUT">OUT側</option></select></label>
         <label>市場<select id="premiumMarket"><option value="all">3市場すべて</option><option value="プライム">プライム</option><option value="スタンダード">スタンダード</option><option value="グロース">グロース</option></select></label>
         <label>信用需給<select id="premiumSupply"><option value="all">問わない</option><option value="yes">改善候補のみ</option><option value="S">Sのみ</option><option value="A">A以上</option></select></label>
+        <label>大口保有<select id="premiumLargeHolder"><option value="all">問わない</option><option value="yes">報告あり</option><option value="NEW_OVER_5">新規5%超</option><option value="INCREASE">保有割合 増加</option><option value="DECREASE">保有割合 減少</option><option value="IMPORTANT_PROPOSAL">重要提案の可能性</option></select></label>
         <label>並び順<select id="premiumSort"><option value="priority">観察優先度</option><option value="spread">月足RSI差</option><option value="volume">出来高変化</option><option value="supply">需給改善度</option><option value="code">コード</option></select></label>
       </div>
 
@@ -113,7 +116,8 @@
         <article><span>1</span><strong>暫定GC / 接近</strong><p>月足RSI14が5か月MAを今月途中で上抜いたか、すぐ下まで来ているかを見ます。</p></article>
         <article><span>2</span><strong>日足の形</strong><p>SMA200より上か、移動平均線の並び、直近出来高、52週高値との距離を確認します。</p></article>
         <article><span>3</span><strong>信用需給</strong><p>買い残整理・倍率低下などが同時に起きているかをJPX週次データで確認します。</p></article>
-        <article><span>4</span><strong>財務と詳細</strong><p>PER/PBRだけでなくROE、自己資本、成長率、CFを確認し、最後は個別チャートで位置を見ます。</p></article>
+        <article><span>4</span><strong>大口保有</strong><p>EDINETの大量保有・変更報告を確認します。割合増加を市場での買付とは断定しません。</p></article>
+        <article><span>5</span><strong>財務と詳細</strong><p>PER/PBRだけでなくROE、自己資本、成長率、CFを確認し、最後は個別チャートで位置を見ます。</p></article>
       </div>
       <p><strong>プレミアムの価値は生データではなく、複数の変化を同時に見つける判断軸です。</strong> ただし現在のGitHub Pagesにはログイン認証がないため、このURLは「隠し導線」のβ検証です。本番課金時は認証付き配信へ移します。</p>
     </section>

@@ -378,6 +378,14 @@ function renderEpisodes(episodes) {
 
 function renderFundamentals(record) {
   const grid = document.getElementById("fundamentalsGrid");
+  const highlights = document.getElementById("fundamentalsHighlights");
+  const highlightItems = [
+    ["成長", "売上成長率", `${number(record.revenue_growth_pct)}%`, finite(record.revenue_growth_pct)],
+    ["収益力", "ROE", `${number(record.roe_pct)}%`, finite(record.roe_pct)],
+    ["体力", "自己資本比率", `${number(record.equity_ratio_pct)}%`, finite(record.equity_ratio_pct)],
+    ["現金力", "フリーCF", `${number(record.free_cashflow_oku, 0)}億円`, finite(record.free_cashflow_oku)],
+  ];
+  if (highlights) highlights.innerHTML = highlightItems.map(([group, label, value, raw]) => `<article><span>${group}</span><strong>${label}</strong><em class="${raw === null ? "" : raw >= 0 ? "positive" : "negative"}">${value}</em></article>`).join("");
   const items = [
     ["PER", number(record.per)],
     ["予想PER", number(record.forward_per)],

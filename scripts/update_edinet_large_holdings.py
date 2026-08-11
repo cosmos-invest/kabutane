@@ -64,7 +64,7 @@ def utc_now() -> str:
 
 
 def clean_text(value: Any, limit: int = 1000) -> str:
-    return re.sub(r"\s+", " ", str(value or "")).strip()[:limit]
+    return re.sub(r"\s+", " ", str("" if value is None else value)).strip()[:limit]
 
 
 def finite(value: Any) -> float | None:
@@ -167,17 +167,49 @@ def report_type(description: str) -> str:
     return "大量保有報告書"
 
 
-def is_meaningful_important_proposal(text: str, purpose: str) -> bool:
-    if "重要提案" in purpose:
-        return True
-    compact = re.sub(r"[\s。、・]", "", text)
-    return bool(compact and compact not in {
+def is_negative_important_statement(text: str) -> bool:
+    compact = re.sub(r"[\s。、・｡]", "", text)
+    negative_texts = {
         "なし",
+        "無し",
         "該当なし",
+        "該当無し",
+        "該当ありません",
         "該当事項なし",
+        "該当事項無し",
         "該当事項はありません",
+        "該当事項ありません",
+        "当該事項なし",
+        "当該事項無し",
+        "該等事項はありません",
         "該当する事項なし",
-    })
+        "特になし",
+        "特に無し",
+        "特にありません",
+        "記載事項はありません",
+        "ありません",
+    }
+    if not compact or compact in negative_texts:
+        return True
+    negative_patterns = (
+        r"重要提案行為等?を行う予定(?:は|が)?ありません",
+        r"重要提案行為等?を行う予定(?:は|が)?ない",
+        r"重要提案行為等?を行うことを目的とするものではありません",
+        r"重要提案行為等?を行う意(?:思|図)(?:は|が)?ありません",
+        r"重要提案行為等?は行いません",
+    )
+    return any(re.search(pattern, compact) for pattern in negative_patterns)
+
+
+def is_meaningful_important_proposal(text: str, purpose: str) -> bool:
+    text_parts = [part for part in re.split(r"\s*/\s*", text) if clean_text(part)]
+    text_positive = any(not is_negative_important_statement(part) for part in text_parts)
+    purpose_compact = re.sub(r"[\s。、・｡]", "", purpose)
+    purpose_positive = (
+        "重要提案" in purpose_compact
+        and not is_negative_important_statement(purpose_compact)
+    )
+    return text_positive or purpose_positive
 
 
 def classify_event(kind: str, current: float | None, previous: float | None, important: bool) -> str:
@@ -265,13 +297,37 @@ def event_sort_key(event: dict[str, Any]) -> tuple[str, str]:
     return (str(event.get("submitted_at") or ""), str(event.get("doc_id") or ""))
 
 
+def normalize_stored_event(event: dict[str, Any]) -> dict[str, Any]:
+    kind = clean_text(event.get("report_type"), 30) or report_type(clean_text(event.get("description"), 300))
+    current = finite(event.get("current_ratio_pct"))
+    previous = finite(event.get("previous_ratio_pct"))
+    current = round(current, 4) if current is not None else None
+    previous = round(previous, 4) if previous is not None else None
+    purpose = clean_text(event.get("purpose"), 600)
+    important_text = clean_text(event.get("important_proposal_text"), 600)
+    important = is_meaningful_important_proposal(important_text, purpose)
+    delta = round(current - previous, 4) if current is not None and previous is not None else None
+    return {
+        **event,
+        "report_type": kind,
+        "current_ratio_pct": current,
+        "previous_ratio_pct": previous,
+        "change_pct_point": delta,
+        "purpose": purpose,
+        "important_proposal": important,
+        "important_proposal_text": important_text,
+        "event_kind": classify_event(kind, current, previous, important),
+    }
+
+
 def merge_events(existing: Iterable[dict[str, Any]], incoming: Iterable[dict[str, Any]]) -> list[dict[str, Any]]:
     merged: dict[str, dict[str, Any]] = {}
     for event in [*existing, *incoming]:
-        doc_id = str(event.get("doc_id") or "")
-        code = normalize_security_code(event.get("security_code"))
+        normalized = normalize_stored_event(event)
+        doc_id = str(normalized.get("doc_id") or "")
+        code = normalize_security_code(normalized.get("security_code"))
         if doc_id and code:
-            merged[doc_id] = {**event, "security_code": code}
+            merged[doc_id] = {**normalized, "security_code": code}
     return sorted(merged.values(), key=event_sort_key, reverse=True)
 
 
@@ -296,6 +352,23 @@ def write_json(path: Path, payload: Any) -> None:
 def build_latest_payload(events: list[dict[str, Any]], generated_at: str) -> dict[str, Any]:
     kinds = ("NEW_OVER_5", "INCREASE", "DECREASE", "IMPORTANT_PROPOSAL", "CORRECTION", "CHANGE_OTHER")
     counts = {kind: sum(item.get("event_kind") == kind for item in events) for kind in kinds}
+    facets = {
+        "NEW_OVER_5": sum(item.get("report_type") == "大量保有報告書" for item in events),
+        "INCREASE": sum(
+            item.get("report_type") == "変更報告書" and (finite(item.get("change_pct_point")) or 0) > 0
+            for item in events
+        ),
+        "DECREASE": sum(
+            item.get("report_type") == "変更報告書" and (finite(item.get("change_pct_point")) or 0) < 0
+            for item in events
+        ),
+        "IMPORTANT_PROPOSAL": sum(
+            item.get("report_type") != "訂正報告書" and item.get("important_proposal") is True
+            for item in events
+        ),
+        "CORRECTION": sum(item.get("report_type") == "訂正報告書" for item in events),
+        "CHANGE_OTHER": sum(item.get("event_kind") == "CHANGE_OTHER" for item in events),
+    }
     return {
         "schema_version": 1,
         "kind": "kabutane_edinet_large_holdings",
@@ -305,6 +378,7 @@ def build_latest_payload(events: list[dict[str, Any]], generated_at: str) -> dic
         "source_home": "https://disclosure2.edinet-fsa.go.jp/",
         "notice": "保有割合の増減は報告書記載値の比較であり、売買そのものを断定する表示ではありません。訂正報告書は増減分類から分離しています。",
         "counts": counts,
+        "facets": facets,
         "records": events[:MAX_GLOBAL_RECORDS],
     }
 

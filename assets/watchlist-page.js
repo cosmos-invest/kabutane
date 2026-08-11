@@ -11,6 +11,7 @@
 
   let publicPayload = null;
   let detailMap = new Map();
+  let largeHoldingMap = new Map();
 
   function finite(value) {
     if (value === null || value === undefined || value === "") return null;
@@ -39,6 +40,19 @@
     return `${n > 0 ? "+" : ""}${n.toFixed(digits)}${suffix}`;
   }
 
+  function isNegativeImportantStatement(value) {
+    const compact = String(value || "").replace(/[\s。、・｡]/g, "");
+    const exact = new Set(["なし", "無し", "該当なし", "該当無し", "該当ありません", "該当事項なし", "該当事項無し", "該当事項はありません", "該当事項ありません", "当該事項なし", "当該事項無し", "該等事項はありません", "該当する事項なし", "特になし", "特に無し", "特にありません", "記載事項はありません", "ありません"]);
+    if (!compact || exact.has(compact)) return true;
+    return [/重要提案行為等?を行う予定(?:は|が)?ありません/, /重要提案行為等?を行う予定(?:は|が)?ない/, /重要提案行為等?を行うことを目的とするものではありません/, /重要提案行為等?を行う意(?:思|図)(?:は|が)?ありません/, /重要提案行為等?は行いません/].some((pattern) => pattern.test(compact));
+  }
+
+  function hasImportantProposal(item) {
+    const parts = String(item?.important_proposal_text || "").split(/\s*\/\s*/).filter(Boolean);
+    const purpose = String(item?.purpose || "").replace(/[\s。、・｡]/g, "");
+    return parts.some((part) => !isNegativeImportantStatement(part)) || (purpose.includes("重要提案") && !isNegativeImportantStatement(purpose));
+  }
+
   function statusLabel(value) {
     return ({ GC: "暫定GC", NEAR_GC: "GC接近", CONTINUE: "継続", DC: "暫定DC", OUT: "OUT側", UNKNOWN: "判定待ち" })[value] || "判定待ち";
   }
@@ -53,7 +67,7 @@
   }
 
   async function fetchJson(path) {
-    const response = await fetch(`${path}?v=${Date.now()}`, { cache: "no-store" });
+    const response = await fetch(path, { cache: "no-cache" });
     if (!response.ok) throw new Error(`${response.status} ${path}`);
     return response.json();
   }
@@ -75,6 +89,32 @@
       });
     });
     return map;
+  }
+
+  async function loadLargeHoldings(codes) {
+    const groups = [...new Set(codes.map(prefix).filter(Boolean))];
+    const shards = await Promise.all(groups.map(async (group) => {
+      try { return await fetchJson(`data/large-holdings/${group}.json`); } catch (_) { return null; }
+    }));
+    const map = new Map();
+    shards.forEach((payload) => {
+      Object.entries(payload?.records_by_code || {}).forEach(([rawCode, records]) => {
+        const normalized = store?.normalizeCode?.(rawCode) || "";
+        const latest = (Array.isArray(records) ? records : []).find((item) => item?.event_kind !== "CORRECTION");
+        if (normalized && latest) map.set(normalized, latest);
+      });
+    });
+    return map;
+  }
+
+  function holderLabel(item) {
+    const values = [];
+    const delta = finite(item?.change_pct_point);
+    if (item?.report_type === "大量保有報告書") values.push("新規5%超");
+    if (item?.report_type === "変更報告書" && delta !== null && delta > 0) values.push("保有増加");
+    if (item?.report_type === "変更報告書" && delta !== null && delta < 0) values.push("保有減少");
+    if (hasImportantProposal(item)) values.push("重要提案の可能性");
+    return values.join("・") || "報告あり";
   }
 
   function publicMap() {
@@ -105,6 +145,7 @@
         volume_ratio_5_30: technical.volume_ratio_5_30 ?? pub.volume_ratio_5_30 ?? null,
         high52_distance_pct: technical.high52_distance_pct ?? pub.high52_distance_pct ?? null,
         perfect_order: technical.perfect_order ?? pub.perfect_order ?? null,
+        large_holding: largeHoldingMap.get(saved.code) || null,
       };
     });
   }
@@ -139,6 +180,7 @@
     });
     rows.sort((a, b) => {
       if (mode === "code") return String(a.code).localeCompare(String(b.code), "ja", { numeric: true });
+      if (mode === "holder") return String(b.large_holding?.submitted_at || "").localeCompare(String(a.large_holding?.submitted_at || ""));
       if (mode === "volume") return (finite(b.volume_ratio_5_30) ?? -9999) - (finite(a.volume_ratio_5_30) ?? -9999);
       return String(b.added_at || "").localeCompare(String(a.added_at || ""));
     });
@@ -166,6 +208,8 @@
       const safeMarket = escapeHtml(item.market || "市場 —");
       const safeSector = escapeHtml(item.sector || "セクター —");
       const safeDate = escapeHtml(item.price_date || "—");
+      const holder = item.large_holding;
+      const holderName = escapeHtml(holder?.filer_name || "");
       return `<article class="watch-card" data-code="${safeCode}">
         <div class="watch-card-main"><a href="detail.html?code=${encodeURIComponent(code)}">${safeCode} ${safeName}</a><small>${safeMarket} / ${safeSector}</small></div>
         <div class="watch-stat"><span>月足</span><strong class="watch-status ${statusClass(item.provisional_status)}">${statusLabel(item.provisional_status)}</strong>${spread === null ? "" : `<small>RSI差 ${signed(spread, "pt", 1)}</small>`}</div>
@@ -173,6 +217,7 @@
         <div class="watch-stat"><span>出来高</span><strong>${volume === null ? "—" : `${number(volume, 2)}倍`}</strong><small>5日 / 30日平均</small></div>
         <div class="watch-stat"><span>52週高値比</span><strong>${signed(item.high52_distance_pct, "%", 1)}</strong><small>${item.perfect_order === true ? "上昇配列" : "配列未成立"}</small></div>
         <div class="watch-stat"><span>財務</span><strong>${item.fundamentals_available === true ? `ROE ${number(item.roe_pct, 1)}%` : "取得待ち"}</strong><small>${item.fundamentals_available === true ? `自己資本 ${number(item.equity_ratio_pct, 1)}%` : "—"}</small></div>
+        <div class="watch-stat watch-holder"><span>大口保有</span><strong>${holder ? holderLabel(holder) : "報告なし"}</strong><small>${holder ? `${holderName} / ${escapeHtml(String(holder.submitted_at || "").slice(0, 10))}` : "保存期間内"}</small></div>
         <button type="button" class="watch-remove" data-remove-code="${safeCode}">外す</button>
       </article>`;
     }).join("");
@@ -193,9 +238,10 @@
       return;
     }
     try {
-      [publicPayload, detailMap] = await Promise.all([
+      [publicPayload, detailMap, largeHoldingMap] = await Promise.all([
         fetchJson("data/core/public-radar.json"),
         loadDetails(saved.map((item) => item.code)),
+        loadLargeHoldings(saved.map((item) => item.code)),
       ]);
       const rows = mergedRows();
       record(rows);

@@ -61,7 +61,7 @@ jobs:
           cp \
             index.html detail.html backtest.html replay.html replay-select.html howto.html learn.html signal-method.html \
             ranking.html monthly-report.html monthly-strategy.html history.html shikiho-summer-2026.html today.html all-stocks.html monthly-dc.html watchlist.html \
-            extended-universe.html premium-supply-beta.html \
+            extended-universe.html premium-supply-beta.html large-holdings.html \
             manifest.webmanifest sw.js .nojekyll result.csv out.csv \
             _site/
           cp -R assets data history ranking monthly-report _site/
@@ -87,6 +87,7 @@ jobs:
           test -f _site/monthly-dc.html
           test -f _site/extended-universe.html
           test -f _site/premium-supply-beta.html
+          test -f _site/large-holdings.html
           test -f _site/ranking/index.html
           test -f _site/monthly-report/index.html
           test -f _site/assets/monthly-strategy-v16.css
@@ -105,6 +106,10 @@ jobs:
           test -f _site/assets/premium-supply-beta.js
           test -f _site/assets/premium-research.css
           test -f _site/assets/premium-research.js
+          test -f _site/assets/large-holdings.css
+          test -f _site/assets/large-holdings.js
+          test -f _site/assets/detail-large-holdings.js
+          test -f _site/data/large-holdings/latest.json
           test -f _site/assets/replay-stock-select.js
           test -f _site/assets/replay-picker.css
           test -f _site/data/core/public-radar.json
@@ -138,12 +143,15 @@ jobs:
           grep -q '拡張対象銘柄' _site/extended-universe.html
           grep -q 'noindex,nofollow,noarchive' _site/premium-supply-beta.html
           grep -q '観察優先度の検証室' _site/premium-supply-beta.html
+          grep -q 'EDINET LARGE HOLDINGS' _site/large-holdings.html
           ! grep -R -q 'premium-supply-beta.html' _site/index.html _site/learn.html _site/howto.html
           grep -q '暫定GC / 暫定DC' _site/detail.html
           node --check _site/assets/all-stocks.js
           node --check _site/assets/watchlist.js
           node --check _site/assets/watchlist-page.js
           node --check _site/assets/premium-research.js
+          node --check _site/assets/large-holdings.js
+          node --check _site/assets/detail-large-holdings.js
           node --check _site/assets/core-detail-fallback.js
 
       - name: Configure Pages
