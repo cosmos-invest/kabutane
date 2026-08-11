@@ -1,4 +1,4 @@
-const CACHE_VERSION = "kabutane-pwa-v26";
+const CACHE_VERSION = "kabutane-pwa-v27";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 
 // These files are required for the detail page to boot. If even one cannot be
@@ -7,6 +7,7 @@ const CRITICAL_ASSETS = [
   "./",
   "./detail.html",
   "./manifest.webmanifest",
+  "./assets/beginner-journey.css?v=1",
   "./assets/style.css?v=13",
   "./assets/detail-enhancements.css?v=13",
   "./assets/detail-signal-status.css?v=13",
@@ -33,6 +34,7 @@ const OPTIONAL_ASSETS = [
   "./backtest.html",
   "./howto.html",
   "./learn.html",
+  "./watchlist.html",
   "./large-holdings.html",
   "./signal-method.html",
   "./ranking.html",
@@ -73,12 +75,19 @@ const OPTIONAL_ASSETS = [
   "./assets/all-stocks.js",
   "./assets/monthly-dc.css",
   "./assets/monthly-dc.js",
+  "./assets/large-holdings.css?v=2",
+  "./assets/large-holdings.js?v=2",
   "./assets/large-holdings.css",
   "./assets/large-holdings.js",
+  "./assets/beginner-journey.css",
+  "./assets/beginner-journey.css?v=1",
   "./assets/detail-large-holdings.css",
   "./assets/detail-large-holdings.js",
   "./assets/detail-fundamentals.css",
   "./assets/watchlist-large-holdings.css",
+  "./assets/watchlist.css",
+  "./assets/watchlist.js",
+  "./assets/watchlist-page.js",
   "./assets/style.css?v=16",
   "./assets/pastel.css?v=16",
   "./assets/kabutane.css?v=16",
@@ -179,6 +188,9 @@ function routeAlternatives(url) {
   }
   if (pathname.endsWith("/all-stocks") || pathname.endsWith("/all-stocks.html")) {
     return ["./all-stocks.html"];
+  }
+  if (pathname.endsWith("/watchlist") || pathname.endsWith("/watchlist.html")) {
+    return ["./watchlist.html"];
   }
   if (pathname.endsWith("/monthly-dc") || pathname.endsWith("/monthly-dc.html")) {
     return ["./monthly-dc.html"];

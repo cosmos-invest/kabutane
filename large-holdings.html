@@ -8,16 +8,25 @@
   <link rel="stylesheet" href="assets/style.css">
   <link rel="stylesheet" href="assets/pastel.css">
   <link rel="stylesheet" href="assets/kabutane.css">
-  <link rel="stylesheet" href="assets/large-holdings.css?v=1">
+  <link rel="stylesheet" href="assets/beginner-journey.css?v=1">
+  <link rel="stylesheet" href="assets/large-holdings.css?v=2">
 </head>
 <body class="pastel-theme large-holdings-page">
-  <header class="site-header"><div class="header-inner"><div><a class="back-link" href="index.html">← 銘柄探しへ</a><p class="eyebrow">EDINET LARGE HOLDINGS</p><h1>大口保有の変化</h1><p class="subtitle">大量保有報告書・変更報告書の記載値を、銘柄ごとに見やすく整理します。</p></div><div class="header-meta"><span id="largeHoldingsDate" class="badge neutral">読込中…</span></div></div></header>
+  <header class="site-header"><div class="header-inner"><div><a class="back-link" href="index.html">← 銘柄探しへ</a><p class="eyebrow">STEP 4 — EDINET LARGE HOLDINGS</p><h1>大口保有は、最後に重ねる</h1><p class="subtitle">値動き・会社・需給を見たあとに、誰が・何の目的で保有割合を変えたか確認します。</p></div><div class="header-meta"><span id="largeHoldingsDate" class="badge neutral">読込中…</span></div></div></header>
   <main class="container large-holdings-container">
+    <section class="journey-map large-holdings-context" aria-labelledby="largeHoldingsRouteTitle">
+      <div class="journey-map-heading"><div><span>BEFORE READING</span><h2 id="largeHoldingsRouteTitle">この画面だけで、売買を決めない。</h2></div><p>大口の変化は強い材料に見えますが、単独では意味が決まりません。個別銘柄ページのSTEP 1〜3と重ねます。</p></div>
+      <div class="large-holdings-three-questions">
+        <article><span>1</span><strong>誰が？</strong><p>運用会社、創業者、安定株主、アクティビスト候補など提出者を確認。</p></article>
+        <article><span>2</span><strong>何の目的で？</strong><p>純投資、安定保有、経営参加、重要提案、証券業務など目的を確認。</p></article>
+        <article><span>3</span><strong>どう変わった？</strong><p>新規5％超か、前回からの増減か。同じ提出者の継続性を確認。</p></article>
+      </div>
+      <p class="journey-rule"><span>🌸</span><span><strong>コスモスの整理：</strong> 「増えたから買い」ではなく、チャート・会社・信用需給と同じ方向かを見よう。</span></p>
+    </section>
     <section class="large-holdings-guide" aria-label="表示の見方">
-      <article><span>🌱 新規5%超</span><strong>初めての大量保有報告</strong><p>提出者が5%を超えて保有したと報告したものです。</p></article>
-      <article><span>📈 保有割合の増加</span><strong>前回記載値より増加</strong><p>市場での買付とは限りません。組織再編や共同保有者の変化なども含みます。</p></article>
-      <article><span>📉 保有割合の減少</span><strong>前回記載値より減少</strong><p>売却そのものを断定せず、報告書の記載差として表示します。</p></article>
-      <article><span>⚑ 重要提案の可能性</span><strong>保有目的・記載欄から抽出</strong><p>提案の実施を断定せず、原本確認を優先する候補として表示します。</p></article>
+      <article><span>🌱 新規5%超</span><strong>新しく5％超を報告</strong><p>新しい大口の存在に気づく入口です。</p></article>
+      <article><span>↕ 保有割合の増減</span><strong>前回記載値との差</strong><p>売買そのものではなく、記載された割合の変化です。</p></article>
+      <article><span>⚑ 原本確認を優先</span><strong>重要提案の記載候補</strong><p>経営への働きかけを含む可能性があり、原本を先に確認します。</p></article>
     </section>
     <section class="panel">
       <div class="large-holdings-controls">
@@ -30,9 +39,9 @@
       <p id="largeHoldingsEmpty" class="large-holdings-empty" hidden>条件に合う報告書がありません。</p>
       <div class="large-holdings-more"><button id="largeHoldingsMore" class="button secondary" type="button" hidden>さらに表示</button></div>
     </section>
-    <section class="panel large-holdings-notice"><h2>大切な見方</h2><p><strong>「増加＝買い」「減少＝空売り」とは断定しません。</strong> 共同保有者、貸借、担保、相続、組織再編などでも割合は変わります。重要な判断では、必ずリンク先の原本と企業IRを確認してください。</p><p>出典：<a href="https://disclosure2.edinet-fsa.go.jp/" target="_blank" rel="noopener noreferrer">EDINET（金融庁）</a>。かぶたねが抽出・分類した参考情報で、売買推奨ではありません。</p></section>
+    <section class="panel large-holdings-notice"><h2>分かること／分からないこと</h2><div class="large-holdings-boundary"><p><strong>分かること</strong><br>提出者、報告種別、記載された保有割合、前回との差、保有目的。</p><p><strong>この情報だけでは分からないこと</strong><br>市場で実際に何株を買った・売ったか、株価が上がるか、機関投資家の空売り残高。</p></div><p><strong>「増加＝買い」「減少＝売却・空売り」とは断定しません。</strong> 共同保有者、貸借、担保、相続、組織再編などでも割合は変わります。重要な判断では、必ずリンク先の原本と企業IRを確認してください。</p><p>出典：<a href="https://disclosure2.edinet-fsa.go.jp/" target="_blank" rel="noopener noreferrer">EDINET（金融庁）</a>。かぶたねが抽出・分類した参考情報で、売買推奨ではありません。</p></section>
   </main>
   <footer><p>かぶたね 🌱 / 大口保有の変化</p></footer>
-  <script src="assets/large-holdings.js?v=1" defer></script>
+  <script src="assets/large-holdings.js?v=2" defer></script>
 </body>
 </html>

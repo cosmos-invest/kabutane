@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="assets/pastel.css">
   <link rel="stylesheet" href="assets/kabutane.css">
   <link rel="stylesheet" href="assets/kabutane-links.css">
+  <link rel="stylesheet" href="assets/beginner-journey.css?v=1">
   <link rel="stylesheet" href="assets/watchlist.css?v=1">
   <link rel="stylesheet" href="assets/watchlist-large-holdings.css?v=1">
 </head>
@@ -37,6 +38,14 @@
       <div class="watchlist-count"><span>保存中</span><strong><span id="watchlistCount">0</span>銘柄</strong><small>このブラウザのみ</small></div>
     </section>
 
+    <nav class="analysis-roadmap" aria-label="銘柄を確認する順番">
+      <a href="learn.html#monthly-rsi"><span>1</span><strong>値動き</strong><small>日足・月足RSI</small></a>
+      <a href="learn.html#decision-flow"><span>2</span><strong>会社</strong><small>財務の体力</small></a>
+      <a href="learn.html#margin-balance"><span>3</span><strong>需給</strong><small>信用残高</small></a>
+      <a href="learn.html#large-holdings"><span>4</span><strong>大口</strong><small>目的と変化</small></a>
+    </nav>
+    <aside class="journey-rule"><strong>エールからの確認 💜</strong><p>保存した理由が今も残っているか、4つの問いで見直します。理由が崩れた銘柄を外すことも、立派な判断です。</p></aside>
+
     <section class="watchlist-info" aria-label="ウォッチリストの特徴">
       <article><span>🌸 既知銘柄を確認</span><strong>暫定GC / DCも見える</strong><p>自分で登録した銘柄は「発見一覧」ではないため、進行中月の状態も確認できます。</p></article>
       <article><span>✨ 前回確認と比較</span><strong>見るたびに履歴を保存</strong><p>このブラウザ内で直近30回分の価格・状態を残し、前回確認時からの変化を追います。</p></article>
@@ -48,7 +57,7 @@
         <label>銘柄検索<input id="watchlistSearch" type="search" placeholder="5243 / note / 銘柄名"></label>
         <label>並び順<select id="watchlistSort"><option value="added">追加した順</option><option value="holder">大口保有の新しい順</option><option value="volume">出来高</option><option value="code">コード</option></select></label>
         <a class="button secondary" href="all-stocks.html">＋ 全銘柄から探す</a>
-        <a class="button secondary" href="large-holdings.html">大口保有一覧</a>
+        <a class="button secondary" href="howto.html#check">4つの確認順</a>
       </div>
       <div id="watchlistGrid" class="watchlist-grid"></div>
       <div id="watchlistEmpty" class="watchlist-empty" hidden><strong>まだ気になる株はありません。</strong><p>全銘柄一覧や個別ページで「☆ 気になる」を押すと、ここに追加されます。</p><a class="button" href="all-stocks.html">全銘柄一覧へ</a></div>

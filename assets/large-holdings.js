@@ -9,12 +9,21 @@
   const sort = document.getElementById("largeHoldingsSort");
   const more = document.getElementById("largeHoldingsMore");
   let payload = null;
-  let limit = 80;
+  let limit = 20;
   const labels = {NEW_OVER_5:"新規5%超",INCREASE:"保有割合 増加",DECREASE:"保有割合 減少",IMPORTANT_PROPOSAL:"重要提案の可能性",CORRECTION:"訂正報告書",CHANGE_OTHER:"その他変更"};
   const classes = {NEW_OVER_5:"kind-new",INCREASE:"kind-up",DECREASE:"kind-down",IMPORTANT_PROPOSAL:"kind-important",CORRECTION:"kind-correction",CHANGE_OTHER:"kind-correction"};
   const escapeHtml = (value) => String(value ?? "").replace(/[&<>"']/g,(char)=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[char]);
   const finite = (value) => value === null || value === "" || !Number.isFinite(Number(value)) ? null : Number(value);
   const pct = (value) => {const n=finite(value);return n===null?"—":`${n>0?"+":""}${n.toFixed(2)}pt`;};
+  const purposeLabel = (value) => {
+    const text=String(value||"");
+    if(/重要提案|株主提案|経営方針.*提案/.test(text))return "重要提案の記載候補";
+    if(/経営参加|経営に参加/.test(text))return "経営参加";
+    if(/安定株主|長期保有|基本財産/.test(text))return "安定保有・長期保有";
+    if(/純投資|投資一任|資産運用|信託財産/.test(text))return "純投資・資産運用";
+    if(/商品在庫|証券業務/.test(text))return "証券業務・商品在庫";
+    return text ? "その他の保有目的" : "目的記載なし";
+  };
   const safeSource = (item) => /^S[0-9A-Z]{6,39}$/.test(String(item.doc_id||"")) ? `https://disclosure2.edinet-fsa.go.jp/WZEK0040.aspx?${encodeURIComponent(item.doc_id)}` : "";
   const isCorrection = (item) => item?.report_type === "訂正報告書" || item?.event_kind === "CORRECTION";
   const signalDelta = (item) => isCorrection(item) ? null : finite(item?.change_pct_point);
@@ -50,10 +59,10 @@
   function render(){
     if(!payload)return;
     const rows=filtered(),shown=rows.slice(0,limit);
-    list.innerHTML=shown.map((item)=>{const source=safeSource(item);const delta=signalDelta(item);const chips=badges(item).map(([key,value])=>`<span class="large-holding-kind ${classes[key]||"kind-correction"}">${escapeHtml(value)}</span>`).join("");return `<article class="large-holding-card"><div><div class="large-holding-badges">${chips}</div><small>${escapeHtml(String(item.submitted_at||"").slice(0,10)||"—")}</small></div><div class="large-holding-stock"><strong><a href="detail.html?code=${encodeURIComponent(item.security_code||"")}">${escapeHtml(item.security_code||"—")} ${escapeHtml(item.issuer_name||"")}</a></strong><small>${escapeHtml(item.report_type||"")}</small></div><div class="large-holding-filer"><span>提出者</span><strong>${escapeHtml(item.filer_name||"—")}</strong><small>${escapeHtml(item.purpose||"目的記載なし")}</small></div><div class="large-holding-ratio"><strong>${finite(item.current_ratio_pct)===null?"—":`${Number(item.current_ratio_pct).toFixed(2)}%`}</strong>${isCorrection(item)?`<small>訂正報告（増減判定外）</small>`:`<small class="${delta>0?"up":delta<0?"down":""}">前回比 ${pct(delta)}</small>`}${source?`<a href="${source}" target="_blank" rel="noopener noreferrer">原本 ↗</a>`:""}</div></article>`;}).join("");
+    list.innerHTML=shown.map((item)=>{const source=safeSource(item);const delta=signalDelta(item);const purpose=String(item.purpose||"");const chips=badges(item).map(([key,value])=>`<span class="large-holding-kind ${classes[key]||"kind-correction"}">${escapeHtml(value)}</span>`).join("");return `<article class="large-holding-card"><div><div class="large-holding-badges">${chips}</div><small>${escapeHtml(String(item.submitted_at||"").slice(0,10)||"—")}</small></div><div class="large-holding-stock"><strong><a href="detail.html?code=${encodeURIComponent(item.security_code||"")}">${escapeHtml(item.security_code||"—")} ${escapeHtml(item.issuer_name||"")}</a></strong><small>${escapeHtml(item.report_type||"")}</small></div><div class="large-holding-filer"><span>提出者</span><strong>${escapeHtml(item.filer_name||"—")}</strong><small class="large-holding-purpose-label">${escapeHtml(purposeLabel(purpose))}</small>${purpose?`<details class="large-holding-purpose"><summary>保有目的の記載を読む</summary><p>${escapeHtml(purpose)}</p></details>`:""}</div><div class="large-holding-ratio"><strong>${finite(item.current_ratio_pct)===null?"—":`${Number(item.current_ratio_pct).toFixed(2)}%`}</strong>${isCorrection(item)?`<small>訂正報告（増減判定外）</small>`:`<small class="${delta>0?"up":delta<0?"down":""}">前回比 ${pct(delta)}</small>`}${source?`<a href="${source}" target="_blank" rel="noopener noreferrer">原本 ↗</a>`:""}</div></article>`;}).join("");
     empty.hidden=rows.length>0;more.hidden=rows.length<=limit;more.textContent=`さらに表示（残り ${Math.max(0,rows.length-limit)}件）`;
   }
   function liveFacets(){const records=payload?.records||[];return {NEW_OVER_5:records.filter((item)=>item.report_type==="大量保有報告書").length,INCREASE:records.filter((item)=>item.report_type==="変更報告書"&&(signalDelta(item)??0)>0).length,DECREASE:records.filter((item)=>item.report_type==="変更報告書"&&(signalDelta(item)??0)<0).length,IMPORTANT_PROPOSAL:records.filter((item)=>!isCorrection(item)&&hasImportantProposal(item)).length,CORRECTION:records.filter(isCorrection).length,CHANGE_OTHER:records.filter((item)=>item.event_kind==="CHANGE_OTHER").length};}
-  async function init(){try{const response=await fetch("data/large-holdings/latest.json",{cache:"no-cache"});if(!response.ok)throw new Error(String(response.status));payload=await response.json();if(!payload.ready){date.textContent="初回生成待ち";summary.innerHTML="<span>EDINET APIキーを端末内で入力し、初回更新すると表示されます</span>";}else{date.textContent=`更新 ${String(payload.generated_at||"").slice(0,10)||"—"}`;summary.innerHTML=Object.entries(liveFacets()).map(([key,value])=>`<span>${escapeHtml(labels[key]||key)} ${Number(value||0)}件</span>`).join("");}render();}catch(error){date.textContent="データ未生成";empty.hidden=false;empty.textContent=`データを読み込めませんでした（${escapeHtml(error.message)}）`;}}
-  [search,kind,sort].forEach((element)=>element?.addEventListener(element===search?"input":"change",()=>{limit=80;render();}));more?.addEventListener("click",()=>{limit+=80;render();});init();
+  async function init(){try{const response=await fetch("data/large-holdings/latest.json",{cache:"no-cache"});if(!response.ok)throw new Error(String(response.status));payload=await response.json();if(!payload.ready){date.textContent="初回生成待ち";summary.innerHTML="<span>EDINET APIキーを端末内で入力し、初回更新すると表示されます</span>";}else{date.textContent=`更新 ${String(payload.generated_at||"").slice(0,10)||"—"}`;const facets=liveFacets();summary.innerHTML=["NEW_OVER_5","INCREASE","DECREASE","IMPORTANT_PROPOSAL"].map((key)=>`<span>${escapeHtml(labels[key])} ${Number(facets[key]||0)}件</span>`).join("")+`<details><summary>訂正・その他</summary><span>訂正報告書 ${Number(facets.CORRECTION||0)}件</span><span>その他変更 ${Number(facets.CHANGE_OTHER||0)}件</span></details>`;}render();}catch(error){date.textContent="データ未生成";empty.hidden=false;empty.textContent=`データを読み込めませんでした（${escapeHtml(error.message)}）`;}}
+  [search,kind,sort].forEach((element)=>element?.addEventListener(element===search?"input":"change",()=>{limit=20;render();}));more?.addEventListener("click",()=>{limit+=20;render();});init();
 })();

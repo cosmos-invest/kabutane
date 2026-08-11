@@ -3,34 +3,41 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="かぶたねで使う月足RSI、価格帯別出来高、POC、信用残高、ウォッチリスト、観察優先度の検証を初心者向けに説明します。">
+  <meta name="description" content="値動き、会社の体力、信用需給、大口保有の4つの問いで、かぶたねの情報を初心者向けに読み解きます。">
   <title>学び・FAQ | かぶたね</title>
   <link rel="stylesheet" href="assets/style.css">
   <link rel="stylesheet" href="assets/pastel.css">
   <link rel="stylesheet" href="assets/kabutane.css">
+  <link rel="stylesheet" href="assets/beginner-journey.css?v=1">
   <link rel="stylesheet" href="assets/learn.css?v=1">
 </head>
 <body data-page="learn" class="pastel-theme learn-page">
-  <header class="site-header"><div class="header-inner"><div><p class="eyebrow">KABUTANE LEARNING GARDEN</p><h1>学び・FAQ</h1><p class="subtitle">難しい言葉は暗記しなくてOK。「何を見るための数字か」から、やさしく確認できます。</p></div><div class="header-meta"></div></div></header>
+  <header class="site-header"><div class="header-inner"><div><a class="back-link" href="index.html">← ホームへ</a><p class="eyebrow">KABUTANE LEARNING GARDEN</p><h1>学び・FAQ</h1><p class="subtitle">難しい言葉は暗記しなくてOK。「何を見るための数字か」から、やさしく確認できます。</p></div><div class="header-meta"></div></div></header>
   <main class="container learn-container">
     <section class="learn-hero">
       <p class="eyebrow">初心者向け・まずはここだけ</p>
-      <h1>価格・出来高・需給を、ひとつの流れで見る</h1>
-      <p>チャートの用語を全部覚える必要はありません。「価格はどちらへ向かっているか」「どの価格帯に売買が集まったか」「買いと売りの偏りはどうか」「間違ったらどこで出るか」を順番に見れば十分です。</p>
+      <h1>1社を、4つの問いで見る</h1>
+      <p>指標を一つずつ暗記するのではなく、値動き・会社・需給・大口の順に「何を確かめたいか」で整理します。</p>
       <nav class="learn-nav" aria-label="学習メニュー">
-        <a href="#volume-profile">価格帯別出来高</a>
-        <a href="#poc">POC</a>
-        <a href="#value-area">70%バリューエリア</a>
+        <a href="#monthly-rsi">① 値動き</a>
+        <a href="#decision-flow">② 会社の体力</a>
         <a href="#margin-balance">信用残高</a>
         <a href="#large-holdings">大量保有報告</a>
-        <a href="#monthly-rsi">月足RSI・GC/DC</a>
+        <a href="#volume-profile">価格帯別出来高</a>
         <a href="#watchlist">気になる株</a>
-        <a href="#premium-research">観察優先度の検証</a>
-        <a href="#decision-flow">判断の順番</a>
       </nav>
     </section>
 
-    <section class="panel note-panel"><h2>まず覚えるのは3つだけ</h2><p><strong>月足の勢い：</strong>日々の細かな上下ではなく、月単位で上昇の力が強まっているかを見ます。</p><p><strong>上昇トレンド：</strong>株価が長い期間で上向きの流れに乗っているかを確認します。</p><p><strong>出口：</strong>買う理由だけでなく、想定が崩れた時にどこで撤退するかを先に決めます。</p></section>
+    <section class="journey-map" aria-labelledby="learningRouteTitle">
+      <p class="eyebrow">THE SAME ROUTE, EVERY TIME</p>
+      <h2 id="learningRouteTitle">迷ったら、この4つへ戻る</h2>
+      <div class="journey-steps">
+        <article class="journey-step"><span class="journey-step-number">STEP 1</span><strong>値動きはどう？</strong><p>日足・出来高・移動平均・月足RSIで、価格の方向と勢いを見る。</p></article>
+        <article class="journey-step"><span class="journey-step-number">STEP 2</span><strong>会社の体力は？</strong><p>売上成長・ROE・自己資本・フリーCFで、数字の土台を見る。</p></article>
+        <article class="journey-step"><span class="journey-step-number">STEP 3</span><strong>需給は重くない？</strong><p>信用買い残・売り残の推移から、将来の売買圧力を考える。</p></article>
+        <article class="journey-step"><span class="journey-step-number">STEP 4</span><strong>大口はなぜ動いた？</strong><p>提出者・保有目的・割合の変化を、最後の補助材料にする。</p></article>
+      </div>
+    </section>
 
     <section class="learn-section term" id="volume-profile">
       <h2>価格帯別出来高とは？</h2>
@@ -70,6 +77,7 @@
       <p>信用取引でまだ決済されていない建玉の残高です。一般に<strong>信用買い残</strong>、<strong>信用売り残</strong>、その比率である<strong>信用倍率</strong>を見ます。価格だけでは見えない「将来の売買圧力の候補」を考える材料になります。</p>
       <table class="learn-table"><tr><th>信用買い残</th><td>信用で買ったまま残っている株数。増え続けると将来の返済売りが増える可能性があります。ただし上昇相場では買い需要の強さを示すこともあります。</td></tr><tr><th>信用売り残</th><td>信用で売ったまま残っている株数。株価が上がると買い戻しが入りやすく、上昇を加速させる場面があります。</td></tr><tr><th>信用倍率</th><td>買い残 ÷ 売り残。高いほど買い残が多い状態ですが、銘柄ごとの普段の水準や貸借区分が違うため、倍率だけで良し悪しは決めません。</td></tr></table>
       <p class="learn-callout">信用残高は公表にタイムラグがあります。「今日の値動きの原因」を直接示す数字ではなく、数週間の増減傾向を価格・出来高と重ねて使うのが基本です。</p>
+      <p class="learn-callout"><strong>信用売り残と機関空売りは別です。</strong> この画面はJPXの制度信用残高を表示します。機関投資家の空売り残高推移は現在のかぶたねには未搭載なので、同じものとして読み替えません。</p>
       <p class="learn-note">かぶたねではJPXの公表データを優先して扱います。全銘柄を比較する週次残高と、一部銘柄を対象に日次公表される残高は性質が違うため、画面上でも「基準日」「更新頻度」「対象範囲」を明示します。売り残が0株のときは信用倍率を無限大表示せず「—（売り残0）」とします。</p>
       <p class="learn-callout"><strong>かぶたねでは日足チャートと表示期間を同期します。</strong> 日足を拡大・縮小・左右へ移動すると、信用残高チャートも同じ開始日・終了日へ連動します。ただし信用残高自体はJPXの週次公表値なので、週と週の間を日次データのように補間しません。値がある週だけ棒・点を置き、価格の動きと同じ時間軸で比較します。</p>
     </section>
@@ -100,9 +108,18 @@
     </section>
 
     <section class="learn-section term" id="decision-flow">
-      <h2>初心者向け：判断はこの順番</h2>
-      <div class="learn-flow"><div>① トレンド<br>価格の方向</div><div>② 価格帯別出来高<br>どこが中心か</div><div>③ 信用残高<br>需給の偏り</div><div>④ 損切り<br>間違った時の出口</div></div>
-      <p>「上がりそう」を探すより、<strong>どこで入るか・どこで間違いと認めるか</strong>を先に決める方が、売買練習として再現しやすくなります。POC、信用倍率、RSIなどは全部その判断を補助する材料です。</p>
+      <h2>会社の体力は、4つに絞って確認</h2>
+      <div class="learn-flow"><div>① 売上成長<br>事業は伸びているか</div><div>② ROE<br>資本を生かせているか</div><div>③ 自己資本<br>財務に余力があるか</div><div>④ フリーCF<br>現金を生めているか</div></div>
+      <p><strong>良い会社と、今すぐ買いやすい株は同じではありません。</strong> 会社の体力があっても株価が割高なことがあり、数字が弱いまま期待だけで上がることもあります。値動きと会社の両方を見て、判断を急がないための段階です。</p>
+    </section>
+
+    <section class="learn-section term" id="worked-example">
+      <h2>具体例：大口の増加があっても、すぐ買わない</h2>
+      <div class="worked-example">
+        <article><span>4つがそろう例</span><h3>観察候補として残す</h3><p>株価が長期線より上、売上とFCFが安定、信用買い残が急増しておらず、大口の保有目的も長期保有。追いかけ買いはせず、入口と損切りを決めて練習します。</p></article>
+        <article><span>大口だけ強い例</span><h3>待つ・見送る</h3><p>大口の保有割合は増えた一方、日足は下降、FCFは赤字、信用買い残は増加。大口情報だけを買い理由にせず、値動きや会社の改善を待ちます。</p></article>
+      </div>
+      <p class="learn-callout"><strong>結論は「買う」だけではありません。</strong> 観察する・待つ・見送るも、4つの問いから得られる大切な判断です。</p>
     </section>
 
     <section class="panel note-panel"><h2>そのほか、かぶたねで使う考え方</h2>

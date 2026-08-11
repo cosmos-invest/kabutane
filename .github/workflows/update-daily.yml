@@ -116,7 +116,7 @@ jobs:
           mkdir -p _site
           cp \
             index.html detail.html backtest.html replay.html replay-select.html howto.html learn.html signal-method.html \
-            ranking.html monthly-report.html monthly-strategy.html history.html shikiho-summer-2026.html today.html all-stocks.html monthly-dc.html \
+            ranking.html monthly-report.html monthly-strategy.html history.html shikiho-summer-2026.html today.html all-stocks.html monthly-dc.html watchlist.html \
             premium-supply-beta.html large-holdings.html \
             manifest.webmanifest sw.js .nojekyll result.csv out.csv stocks.csv \
             _site/
@@ -127,6 +127,7 @@ jobs:
           test -f _site/replay-select.html
           test -f _site/today.html
           test -f _site/all-stocks.html
+          test -f _site/watchlist.html
           test -f _site/stocks.csv
           test -f _site/monthly-dc.html
           test -f _site/assets/all-stocks.js
@@ -135,7 +136,10 @@ jobs:
           test -f _site/large-holdings.html
           test -f _site/assets/premium-supply-beta.js
           test -f _site/assets/large-holdings.js
+          test -f _site/assets/beginner-journey.css
           test -f _site/data/large-holdings/latest.json
+          grep -q '迷ったら、4つの問いを順番に' _site/index.html
+          grep -q 'STEP 4 — 大口' _site/detail.html
           test -f _site/assets/core-detail-fallback.js
           test -f _site/assets/replay-stock-select.js
           test -f _site/assets/today-kabutane.css

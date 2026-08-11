@@ -11,12 +11,14 @@
   <link rel="stylesheet" href="assets/pastel.css">
   <link rel="stylesheet" href="assets/kabutane.css">
   <link rel="stylesheet" href="assets/kabutane-links.css">
+  <link rel="stylesheet" href="assets/beginner-journey.css?v=1">
   <link rel="stylesheet" href="assets/howto-visual.css">
 </head>
 <body data-page="howto" class="pastel-theme">
   <header class="site-header">
     <div class="header-inner">
       <div>
+        <a class="back-link" href="index.html">← ホームへ</a>
         <p class="eyebrow">KABUTANE BEGINNER GUIDE</p>
         <h1>3人と一緒に進める、かぶたねの使い方</h1>
         <p class="subtitle">画面を見ながら「探す → 確かめる → 練習する → 振り返る」の順番を身につけよう。</p>
@@ -47,8 +49,8 @@
     <section class="panel howto-section">
       <div class="howto-section-heading">
         <p class="eyebrow">START HERE</p>
-        <h2>最初は、この4つだけ覚えよう</h2>
-        <p>数字を全部理解してから始める必要はありません。迷ったら、この順番へ戻ります。</p>
+        <h2>最初は、4つの問いを上から読む</h2>
+        <p>数字を全部理解してから始める必要はありません。候補を見つけたら、個別ページで毎回同じ順番へ戻ります。</p>
       </div>
       <nav class="beginner-route" aria-label="初心者向けの使い方ルート">
         <a href="#find"><b>1</b><strong>候補を探す</strong><small>ホームから、気になる会社を3〜5社だけ選ぶ。</small></a>
@@ -94,11 +96,12 @@
     <section id="check" class="panel howto-section">
       <div class="howto-section-heading"><p class="eyebrow">STEP 2 — CHECK</p><h2>銘柄詳細は、上から順番に読む</h2><p>細かい指標を全部見るより、毎回同じ順番で確認する方が判断を比べやすくなります。</p></div>
       <div class="reading-grid">
-        <article class="reading-card"><h3>① 日足チャート</h3><p>現在の価格と大きな流れを確認します。</p><ul><li>株価がSMA25・75・200の上か下か</li><li>長期線が上向きか</li><li>出来高を伴っているか</li><li>ローソク足と平均足を切り替える</li></ul></article>
-        <article class="reading-card"><h3>② 月足RSI14と5か月MA</h3><p>月単位の勢いが強まっているか、弱まり始めているかを見ます。</p><ul><li>GC直後か、長く継続しているか</li><li>2本の差が広がっているか</li><li>完成した月足は翌月の日足から表示</li></ul></article>
-        <article class="reading-card"><h3>③ 配当・分割・財務</h3><p>株価だけでなく、会社の状態も確認します。</p><ul><li>配当と株式分割の履歴</li><li>PER・PBR・ROE・自己資本比率</li><li>「—」は0ではなく未取得</li></ul></article>
-        <article class="reading-card"><h3>④ 過去のGC実績</h3><p>上昇率だけでなく、途中の最大下落も確認します。</p><ul><li>実績数が少なければ過信しない</li><li>良かった場面だけを見ない</li><li>投資前は会社の公式IRも確認</li></ul></article>
+        <article class="reading-card"><h3>① 値動きはどう？</h3><p>日足・出来高・移動平均と月足RSIで、価格の方向と勢いを見ます。</p><ul><li>株価がSMA25・75・200の上か下か</li><li>出来高を伴っているか</li><li>GCは予言ではなく、勢いが強まった結果</li></ul></article>
+        <article class="reading-card"><h3>② 会社の体力は？</h3><p>売上成長・ROE・自己資本・フリーCFを中心に確認します。</p><ul><li>「—」は0ではなく未取得</li><li>良い会社でも割高な場合がある</li><li>公式IRも確認する</li></ul></article>
+        <article class="reading-card"><h3>③ 需給は重くない？</h3><p>信用買い残・売り残を価格と同じ期間で比べます。</p><ul><li>買い残の急増を返済売りの候補として見る</li><li>倍率だけで良し悪しを決めない</li><li>機関空売り残高とは別の制度</li></ul></article>
+        <article class="reading-card"><h3>④ 大口はなぜ動いた？</h3><p>提出者・保有目的・割合の増減を、最後の補助材料にします。</p><ul><li>増加を買い推奨と決めつけない</li><li>減少を空売りと決めつけない</li><li>重要な時はEDINET原本を見る</li></ul></article>
       </div>
+      <p><a class="button secondary" href="learn.html#worked-example">4つの問いを使った具体例を見る</a></p>
       <p class="mini-dialogue"><strong>エール💜</strong> 月足RSIが強くても、必ず上がるわけじゃないよ。価格の位置と、想定が崩れる場所も一緒に見よう。</p>
     </section>
 
@@ -210,7 +213,7 @@
     </section>
 
     <section class="panel howto-section">
-      <div class="howto-section-heading"><p class="eyebrow">READY CHECK</p><h2>実際のお金を動かす前の5項目</h2><p>全部にチェックできない時は、もう一度かぶたねで練習しよう。</p></div>
+      <div class="howto-section-heading"><p class="eyebrow">READY CHECK</p><h2>実際のお金を動かす前の6項目</h2><p>全部にチェックできない時は、もう一度かぶたねで練習しよう。</p></div>
       <div class="ready-check-grid">
         <label><input type="checkbox"><span>なぜこの銘柄を見るのか、自分の言葉で説明できる。</span></label>
         <label><input type="checkbox"><span>どこで予想が外れたと判断するか、買う前に決めた。</span></label>

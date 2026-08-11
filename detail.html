@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="assets/detail-large-holdings.css?v=1">
   <link rel="stylesheet" href="assets/detail-fundamentals.css?v=1">
   <link rel="stylesheet" href="assets/watchlist.css?v=1">
+  <link rel="stylesheet" href="assets/beginner-journey.css?v=1">
 </head>
 <body data-page="detail">
   <header class="site-header detail-header">
@@ -34,14 +35,17 @@
   <main class="container">
     <section class="stats-grid detail-stats" id="detailStats"></section>
 
-    <section class="quickstart-banner panel" aria-label="売買練習">
-      <div><span class="quickstart-label">日足リプレイ</span><strong>未来を隠して、資金管理と出口判断を練習</strong><p>はじめてモードでは、エントリーより先に損切り・利確・株数を決めます。自由練習モードでは分割注文や詳細な指標も試せます。</p></div>
-      <a id="replayCardLink" class="button quickstart-button" href="replay.html">この銘柄で練習する</a>
-    </section>
+    <nav class="analysis-roadmap" aria-label="この銘柄を見る順番">
+      <a href="#volumeProfilePanel"><span>STEP 1</span><strong>値動き</strong><small>日足・出来高・月足RSI</small></a>
+      <a href="#fundamentalsPanel"><span>STEP 2</span><strong>会社</strong><small>成長・体力・還元</small></a>
+      <a href="#marginBalancePanel"><span>STEP 3</span><strong>需給</strong><small>信用買い残・売り残</small></a>
+      <a href="#detailLargeHoldingsPanel"><span>STEP 4</span><strong>大口</strong><small>提出者・目的・保有割合</small></a>
+    </nav>
+    <p class="journey-rule"><span>🌸</span><span><strong>上から順番に1つずつ。</strong> 大口保有やRSIだけで結論を出さず、4つの材料が同じ方向かを確認します。</span></p>
 
-    <section class="panel chart-panel" id="volumeProfilePanel">
+    <section class="panel chart-panel analysis-stage" id="volumeProfilePanel" data-stage="STEP 1 — 値動き">
       <div class="section-heading">
-        <div><h2>日足チャート</h2><p>最新のローソク足・出来高・SMA25・75・200と、価格軸を共有した推定価格帯別出来高を確認できます。価格帯別出来高はローソク足に重ねず、チャート右側の専用スペースへ右向きの横棒で表示します。<a href="learn.html#volume-profile">価格帯別出来高をやさしく解説</a></p></div>
+        <div><h2>日足チャート</h2><p>最初は、<strong>株価がSMA200の上か・長期線が上向きか・出来高を伴っているか</strong>の3つを確認します。価格帯別出来高は、慣れてから支持・抵抗の参考に使います。<a href="learn.html#volume-profile">詳しい見方</a></p></div>
         <div class="chart-mode-switch" role="group" aria-label="チャート表示">
           <button id="candleMode" class="button chart-mode active" type="button">ローソク足</button>
           <button id="heikinMode" class="button secondary chart-mode" type="button">平均足</button>
@@ -68,55 +72,63 @@
       <div class="chart-box price-chart-box"><canvas id="priceChart"></canvas></div>
       <p class="volume-profile-bin-detail" id="volumeProfileBinDetail" aria-live="polite">右側の棒に触れると、その価格帯の推定出来高を確認できます。</p>
       <p class="volume-profile-summary" id="volumeProfileSummary"></p>
-      <p class="volume-profile-disclosure"><strong>価格帯別出来高は推定値です。</strong> 各日の日足出来高を、その日の安値〜高値と各価格帯が実際に重なる値幅の割合で配分しています。実際の約定価格別出来高とは一致しません。単独で売買判断せず、トレンド・直近出来高・損切り位置と合わせて確認してください。<a href="learn.html#decision-flow">初心者向けの見る順番</a></p>
-    </section>
-
-    <section class="panel detail-large-holdings" id="detailLargeHoldingsPanel">
-      <div class="section-heading"><div><h2>大口保有の変化（EDINET）</h2><p>大量保有報告書・変更報告書に記載された保有割合の推移です。割合の増減を売買そのものとは断定しません。</p></div><span id="detailLargeHoldingsStatus" class="badge neutral">読込中…</span></div>
-      <div id="detailLargeHoldingsSummary" class="detail-large-holdings-summary"></div>
-      <div id="detailLargeHoldingsList" class="detail-large-holdings-list"></div>
-      <p class="detail-large-holdings-note"><a href="large-holdings.html">全銘柄の大口保有一覧を見る</a> / 原本はEDINETで確認してください。</p>
-    </section>
-
-    <section class="panel chart-panel margin-balance-panel margin-balance-empty" id="marginBalancePanel">
-      <div class="section-heading margin-balance-heading">
-        <div><h2>信用需給（JPX週次）</h2><p><strong>日足チャートの表示期間と同期します。</strong> 日足を拡大・縮小・左右移動すると、信用買い残・信用売り残・信用倍率も同じ期間へ連動します。信用残高そのものはJPXの週次公表値なので、日足の間を補間せず週次の点だけ表示します。<a href="learn.html#margin-balance">信用残高をやさしく解説</a></p></div>
-        <span class="margin-balance-status" id="marginBalanceStatus">日足同期を準備中</span>
-      </div>
-      <div class="margin-balance-stats" id="marginBalanceStats"></div>
-      <div class="margin-balance-chart-box"><canvas id="marginBalanceChart"></canvas></div>
-      <p class="margin-balance-summary" id="marginBalanceSummary">JPXの週次信用残高を読み込み、日足と同じ表示期間へ同期します。</p>
-      <p class="margin-balance-note"><strong>見方：</strong> 買い残は将来の返済売り、売り残は将来の買い戻しにつながる可能性があります。ただし増減の意味は相場環境で変わります。データはJPX「銘柄別信用取引週末残高」を使用し、基準日と前週比を明示します。売り残0株のとき信用倍率は「—（売り残0）」と表示します。</p>
+      <p class="volume-profile-disclosure"><strong>価格帯別出来高は推定値です。</strong> ローソク足に重ねず、右側に右向きの横棒として分けて表示します。各日の日足出来高を、その日の安値〜高値と各価格帯が実際に重なる値幅の割合で配分しているため、実際の約定価格別出来高とは一致しません。単独で売買判断せず、トレンド・直近出来高・損切り位置と合わせて確認してください。<a href="learn.html#decision-flow">初心者向けの見る順番</a></p>
+      <p class="beginner-takeaway"><strong>ここで決めること</strong><span>上昇・横ばい・下降のどこにいるか。まだ「買う」とは決めません。</span></p>
     </section>
 
     <section class="panel chart-panel">
-      <div class="section-heading"><div><h2>月足RSIを日足軸で表示</h2><p>日足チャートと同じ期間へ連動します。実線は月末確定値、進行中月の観察値は点線で表示します。<strong>銘柄コードを指定して個別ページを開いた場合は、暫定GC / 暫定DCも確認できます。</strong> 縦の緑線は確定GC、縦の赤線は確定DCを翌月最初の取引日に表示します。<a href="learn.html#monthly-rsi">GC・DCをやさしく解説</a></p></div></div>
+      <div class="section-heading"><div><h2>月足RSIで、月単位の勢いを見る</h2><p><strong>GCは上昇の予言ではなく、勢いが強まった結果です。</strong> 実線は月末確定値、点線は進行中月の観察値。2本の差が広がっているか、縮まっているかを見ます。<a href="learn.html#monthly-rsi">GC・DCをやさしく解説</a></p></div></div>
       <div class="chart-box rsi-chart-box"><canvas id="rsiChart"></canvas></div>
       <p class="rsi-explanation" id="rsiExplanation"></p>
+      <p class="beginner-takeaway"><strong>ルーモ✨</strong><span>GCの文字だけでなく、株価の位置と出来高も一緒に見よう。点線の暫定GC / DCは月末まで変わるよ。</span></p>
     </section>
 
-    <section class="panel">
-      <div class="section-heading"><div><h2>配当・株式分割</h2><p>Yahoo Financeの株価履歴から取得できた配当と株式分割・併合を表示します。</p></div></div>
-      <div class="event-list" id="corporateEvents"></div>
-      <p class="event-source-note">有料APIやTDnetには接続していません。決算予定は自動更新せず、配当・分割の履歴だけをYahoo Finance経由で確認します。</p>
-    </section>
-
-    <section class="panel">
-      <div class="section-heading"><div><h2>過去のゴールデンクロス実績</h2><p>確定したGC月の終値から、確定したOUT月または最新日足の現在値までを計算した参考実績です。全銘柄モードの軽量データでは、この実績欄は未生成の場合があります。</p></div></div>
-      <div class="table-wrap">
-        <table id="episodeTable">
-          <thead><tr><th>GC月</th><th class="num">GC価格</th><th>終了月</th><th class="num">終了/現在価格</th><th class="num">騰落率</th><th class="num">最大上昇</th><th class="num">最大下落</th><th class="num">期間</th><th>状態</th></tr></thead>
-          <tbody></tbody>
-        </table>
-      </div>
-    </section>
-
-    <section class="panel detail-fundamentals-panel">
-      <div class="section-heading"><div><h2>会社の成長・体力・還元</h2><p>Yahoo Financeから取得できた財務プロフィールを、先に要点、次に詳細の順で表示します。取得できない項目は「—」で、0を意味しません。TDnetの決算・業績修正・増配判定ではありません。</p></div></div>
+    <section class="panel detail-fundamentals-panel analysis-stage" id="fundamentalsPanel" data-stage="STEP 2 — 会社">
+      <div class="section-heading"><div><h2>会社の成長・体力・還元</h2><p>最初は、<strong>売上成長・ROE・自己資本比率・フリーCF</strong>の要点を確認します。良い会社でも株価が高すぎる場合があるため、PER・PBRは次に見ます。</p></div></div>
       <div id="fundamentalsHighlights" class="fundamentals-highlights"></div>
       <details class="fundamentals-details"><summary>PER・PBR・CFなど24項目を見る</summary>
       <dl class="fundamentals-grid" id="fundamentalsGrid"></dl>
       </details>
+      <p class="beginner-takeaway"><strong>エール💜</strong><span>「—」は悪い数字でも0でもなく未取得だよ。値動きが良くても、会社の体力が支えられるか確認しよう。</span></p>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading"><div><h2>配当・株式分割</h2><p>配当と株式分割・併合の履歴を確認します。現在の増配方針や最新決算は企業IRで確認してください。</p></div></div>
+      <div class="event-list" id="corporateEvents"></div>
+      <p class="event-source-note">有料APIやTDnetには接続していません。決算予定は自動更新せず、配当・分割の履歴だけをYahoo Finance経由で確認します。</p>
+    </section>
+
+    <section class="panel chart-panel margin-balance-panel margin-balance-empty analysis-stage" id="marginBalancePanel" data-stage="STEP 3 — 需給">
+      <div class="section-heading margin-balance-heading">
+        <div><h2>信用需給（JPX週次）</h2><p>信用倍率だけでなく、<strong>信用買い残・信用売り残が前週から増えたか減ったか</strong>を確認します。日足チャートを動かすと、同じ期間の週次データへ連動します。<a href="learn.html#margin-balance">信用需給の見方</a></p></div>
+        <span class="margin-balance-status" id="marginBalanceStatus">日足同期を準備中</span>
+      </div>
+      <div class="margin-balance-stats" id="marginBalanceStats"></div>
+      <div class="margin-balance-chart-box"><canvas id="marginBalanceChart"></canvas></div>
+      <p class="margin-balance-summary" id="marginBalanceSummary">JPXの週次信用残高を読み込み、日足チャートの表示期間と同期します。</p>
+      <p class="margin-balance-note"><strong>分かること：</strong> 制度信用の買い残・売り残の週次変化。買い残は将来の返済売り、売り残は将来の買い戻しにつながる可能性があります。<strong>分からないこと：</strong> 機関投資家の空売り残高とは別の制度で、同じ数字ではありません。</p>
+      <p class="beginner-takeaway"><strong>ここで決めること</strong><span>株価の追い風を需給が支えているか、それとも買い残の重さが逆風になりそうか。</span></p>
+    </section>
+
+    <section class="panel detail-large-holdings analysis-stage" id="detailLargeHoldingsPanel" data-stage="STEP 4 — 大口">
+      <div class="section-heading"><div><h2>大口保有の変化（EDINET）</h2><p>最後に、<strong>誰が・何の目的で・どれだけ保有割合を変えたか</strong>を確認します。割合の増減だけを市場での買付・売却と断定しません。</p></div><span id="detailLargeHoldingsStatus" class="badge neutral">読込中…</span></div>
+      <div id="detailLargeHoldingsSummary" class="detail-large-holdings-summary"></div>
+      <div id="detailLargeHoldingsList" class="detail-large-holdings-list"></div>
+      <p class="detail-large-holdings-note"><a href="large-holdings.html">全銘柄の大口保有一覧を見る</a> / 重要な判断はEDINET原本で確認してください。</p>
+      <p class="beginner-takeaway"><strong>コスモス🌸</strong><span>大口情報は結論ではなく補強材料。値動き・会社・需給と同じ方向か、保有目的まで読んでつなげよう。</span></p>
+    </section>
+
+    <details class="panel advanced-panel">
+      <summary>過去のゴールデンクロス実績を見る</summary>
+      <div class="advanced-panel-body">
+        <p>確定したGC月の終値から、確定したOUT月または最新日足の現在値までを計算した参考実績です。上昇率だけでなく、途中の最大下落と実績数も確認してください。</p>
+        <div class="table-wrap"><table id="episodeTable"><thead><tr><th>GC月</th><th class="num">GC価格</th><th>終了月</th><th class="num">終了/現在価格</th><th class="num">騰落率</th><th class="num">最大上昇</th><th class="num">最大下落</th><th class="num">期間</th><th>状態</th></tr></thead><tbody></tbody></table></div>
+      </div>
+    </details>
+
+    <section class="quickstart-banner panel" aria-label="売買練習">
+      <div><span class="quickstart-label">4つの確認が終わったら</span><strong>未来を隠して、資金管理と出口判断を練習</strong><p>エントリーより先に損切り・利確・株数を決めます。材料が良くても、損失を許容できなければ見送る練習もできます。</p></div>
+      <a id="replayCardLink" class="button quickstart-button" href="replay.html">この銘柄で練習する</a>
     </section>
   </main>
 

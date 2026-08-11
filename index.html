@@ -29,6 +29,7 @@
   <link rel="stylesheet" href="assets/kabutane-characters.css">
   <link rel="stylesheet" href="assets/kabutane-links.css">
   <link rel="stylesheet" href="assets/all-stocks.css?v=2">
+  <link rel="stylesheet" href="assets/beginner-journey.css?v=1">
 </head>
 <body data-page="index" class="pastel-theme kabutane-page">
   <header class="site-header kabutane-header">
@@ -39,14 +40,11 @@
       </a>
       <div class="header-meta">
         <nav class="site-nav" aria-label="サイト内ナビゲーション">
+          <a href="howto.html">はじめて</a>
           <a href="index.html" class="active" aria-current="page">銘柄を探す</a>
-          <a href="all-stocks.html">全銘柄一覧</a>
-          <a href="large-holdings.html">大口保有</a>
-          <a href="backtest.html">運用を試す</a>
-          <a id="navPracticeLink" href="replay.html">売買を練習</a>
-          <a href="howto.html">使い方</a>
-          <a href="learn.html">学び・FAQ</a>
-          <a class="note-nav-link" href="https://note.com/cosmos_invest" target="_blank" rel="noopener noreferrer">note ↗</a>
+          <a href="watchlist.html">気になる株</a>
+          <a href="learn.html">学ぶ</a>
+          <details class="site-more-nav"><summary>慣れてきたら</summary><div class="site-more-nav-links"><a href="all-stocks.html">全銘柄一覧</a><a href="large-holdings.html">大口保有</a><a id="navPracticeLink" href="replay.html">売買を練習</a><a href="backtest.html">運用を試す</a><a href="ranking.html">ランキング</a><a class="note-nav-link" href="https://note.com/cosmos_invest" target="_blank" rel="noopener noreferrer">note ↗</a></div></details>
         </nav>
         <div class="kabutane-update-line"><span id="generatedAt">更新日時を取得中…</span><span id="signalMonth" class="badge neutral">判定月 —</span></div>
       </div>
@@ -77,25 +75,24 @@
       <article><span class="route-number">3</span><div><strong>練習する</strong><p>未来を隠した過去チャートで、入口・損切り・利確を何度でも試します。</p></div></article>
     </section>
 
-    <section class="panel core-universe-update" aria-labelledby="allStocksTitle">
-      <div>
-        <span class="update-kicker">NEW UPDATE ✨ 全銘柄搭載</span>
-        <h2 id="allStocksTitle">GC銘柄だけじゃない。<strong>3市場の内国普通株を全部</strong>見られるようになりました。</h2>
-        <p>プライム・スタンダード・グロースの対象通常株を全件一覧化。初心者はコスモス🌸・ルーモ✨・エール💜の3つの視点から選び、慣れた人は市場・月足状態・トレンド・出来高・財務を自由に組み合わせて絞れます。</p>
-      </div>
-      <div class="update-actions">
-        <a class="button kabutane-primary" href="all-stocks.html">✨ 全銘柄一覧を見る</a>
-        <a class="button secondary" href="learn.html#monthly-rsi">GC / DCの見方</a>
+    <section class="journey-map" aria-labelledby="beginnerRouteTitle">
+      <div class="journey-map-heading"><div><span>START HERE</span><h2 id="beginnerRouteTitle">迷ったら、4つの問いを順番に。</h2></div><p>全部の数字を覚える必要はありません。気になる1社を開き、上から1つずつ確認します。</p></div>
+      <div class="journey-steps">
+        <article class="journey-step"><span class="journey-step-number">1</span><strong>値動きはどう？</strong><b>日足・出来高・月足RSI</b><p>いま追い風か向かい風かを見る。</p><a href="learn.html#monthly-rsi">見方を知る</a></article>
+        <article class="journey-step"><span class="journey-step-number">2</span><strong>会社の体力は？</strong><b>成長・財務・還元</b><p>その動きを支える力があるかを見る。</p><a href="learn.html#decision-flow">見方を知る</a></article>
+        <article class="journey-step"><span class="journey-step-number">3</span><strong>需給は重くない？</strong><b>信用買い残・売り残</b><p>将来の売り買い圧力の候補を見る。</p><a href="learn.html#margin-balance">見方を知る</a></article>
+        <article class="journey-step"><span class="journey-step-number">4</span><strong>大口はなぜ動いた？</strong><b>提出者・目的・前回比</b><p>最後に保有変化の理由を重ねる。</p><a href="learn.html#large-holdings">見方を知る</a></article>
       </div>
     </section>
 
     <section class="kabutane-cast panel" aria-labelledby="castTitle">
-      <div class="kabutane-section-title"><span>WITH THREE GUIDES</span><h2 id="castTitle">3人と進める、かぶたねの旅</h2></div>
-      <div class="kabutane-cast-grid">
-        <article class="cast-card cosmos"><div class="cast-portrait" aria-hidden="true"></div><div><span>コスモス🌸</span><strong>王道の上昇トレンドを見る</strong><p>長期線より上、移動平均の並び、高値への近さから、勢いと流れがそろう会社を探します。</p></div></article>
-        <article class="cast-card lumo"><div class="cast-portrait" aria-hidden="true"></div><div><span>ルーモ✨</span><strong>チャートの動き出しを探す</strong><p>出来高が増え、短中期線より上で、高値へ向かう勢いが見える会社を先に確認します。</p></div></article>
-        <article class="cast-card aile"><div class="cast-portrait" aria-hidden="true"></div><div><span>エール💜</span><strong>会社の体力を慎重に見る</strong><p>自己資本、ROE、フリーCF、売上成長を確認し、財務面から無理をしにくい候補へ絞ります。</p></div></article>
+      <div class="kabutane-section-title"><span>THREE POINTS OF VIEW</span><h2 id="castTitle">3人は、同じ会社を違う角度から見るチーム。</h2></div>
+      <div class="character-role-grid">
+        <article class="character-role"><img src="assets/characters/lumo-guide.webp" alt=""><div><span>ルーモ✨</span><strong>変化を見つける</strong><p>値動き、出来高、数字の変化から「何か動いた」を知らせます。</p></div></article>
+        <article class="character-role"><img src="assets/characters/aile-guide.webp" alt=""><div><span>エール💜</span><strong>見落としを確かめる</strong><p>会社の体力、割高さ、需給、損失など「ここは大丈夫？」を確認します。</p></div></article>
+        <article class="character-role"><img src="assets/characters/cosmos-hero.webp" alt=""><div><span>コスモス🌸</span><strong>材料をつなぐ</strong><p>1つの材料で決めず、待つ・見送るも含めて4つの問いを整理します。</p></div></article>
       </div>
+      <p class="journey-rule"><span>🌱</span><span>全銘柄一覧では、この役割を銘柄探しへ応用して、コスモス＝王道、ルーモ＝動き出し、エール＝財務の慎重さで候補を選びます。</span></p>
     </section>
 
     <section id="search-start" class="panel purpose-panel kabutane-search-panel" aria-labelledby="purposeTitle">
@@ -148,6 +145,17 @@
       <div id="candidateGrid" class="candidate-grid"></div>
       <div class="simple-pagination"><button id="prevPage" class="button ghost-button" type="button">前へ</button><span id="pageInfo">—</span><button id="nextPage" class="button ghost-button" type="button">次へ</button></div>
     </section>
+
+    <details class="advanced-entry">
+      <summary>慣れてきたら使う機能</summary>
+      <div class="advanced-entry-grid">
+        <a href="all-stocks.html"><strong>全銘柄一覧</strong><small>市場や複合条件で広く探す。</small></a>
+        <a href="large-holdings.html"><strong>大口保有一覧</strong><small>EDINETの原本確認候補を探す。</small></a>
+        <a href="replay.html"><strong>売買を練習</strong><small>未来を隠して入口と出口を試す。</small></a>
+        <a href="backtest.html"><strong>運用を試す</strong><small>条件を決めて過去成績を比較する。</small></a>
+        <a href="ranking.html"><strong>ランキング</strong><small>観察結果を別の角度から比べる。</small></a>
+      </div>
+    </details>
 
     <section class="kabutane-practice panel">
       <div><span>BEFORE USING REAL MONEY</span><h2>候補を1つ選んでから、何度でも練習しよう。</h2><p>下のボタンは、現在表示している候補の先頭銘柄を自動でセットします。練習ページでも別の銘柄へ変更できます。</p></div>
