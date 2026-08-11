@@ -1,0 +1,45 @@
+name: Validate browser watchlist
+
+on:
+  pull_request:
+    paths:
+      - 'all-stocks.html'
+      - 'detail.html'
+      - 'watchlist.html'
+      - 'learn.html'
+      - 'AGENTS.md'
+      - 'assets/watchlist.js'
+      - 'assets/watchlist-page.js'
+      - 'assets/watchlist.css'
+      - 'tests/test_watchlist_ui.py'
+      - '.github/workflows/validate-watchlist.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'all-stocks.html'
+      - 'detail.html'
+      - 'watchlist.html'
+      - 'assets/watchlist.js'
+      - 'assets/watchlist-page.js'
+      - 'assets/watchlist.css'
+      - '.github/workflows/validate-watchlist.yml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate watchlist UI and product boundary
+        run: |
+          python -m unittest tests.test_watchlist_ui -v
+          node --check assets/watchlist.js
+          node --check assets/watchlist-page.js
+          grep -q 'localStorage' watchlist.html
+          grep -q 'watchlist.html' all-stocks.html
+          grep -q 'assets/watchlist.js?v=1' detail.html

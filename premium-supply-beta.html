@@ -7,6 +7,8 @@
   <title>先回り・需給ラボ β | かぶたね</title>
   <link rel="stylesheet" href="assets/style.css?v=14">
   <link rel="stylesheet" href="assets/premium-supply-beta.css?v=2">
+  <link rel="stylesheet" href="assets/premium-research.css?v=1">
+  <link rel="stylesheet" href="assets/premium-large-holdings.css?v=1">
 </head>
 <body class="premium-supply-beta-page">
   <header class="site-header premium-header">
@@ -14,7 +16,7 @@
       <div>
         <p class="eyebrow">KABUTANE PREMIUM LAB / PRIVATE BETA</p>
         <h1>先回り・需給ラボ β</h1>
-        <p class="subtitle">プライム・スタンダード・グロースの内国普通株を毎日横断し、<strong>暫定GC / GC接近</strong>、日足トレンド・出来高、JPX週次信用残高、財務を同じ画面で比較します。</p>
+        <p class="subtitle">プライム・スタンダード・グロースの内国普通株を横断し、<strong>暫定GC / GC接近</strong>、日足トレンド・出来高、JPX週次信用残高、EDINET大口保有、財務を同じ画面で比較します。</p>
       </div>
       <div class="header-meta"><span class="premium-badge">PREMIUM β</span></div>
     </div>
@@ -38,11 +40,50 @@
       <div id="premiumCoverage" class="premium-coverage"></div>
     </section>
 
+    <section class="panel premium-research-panel" aria-labelledby="researchTitle">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">ENGINE TRACK RECORD</p>
+          <h2 id="researchTitle">🔥 エンジン急上昇 ＆ 観察優先度の検証室</h2>
+          <p>今日上位へ浮上した銘柄だけでなく、<strong>その順位が本当に1週間後・1か月後の成績につながったか</strong>を時系列で残します。</p>
+        </div>
+      </div>
+
+      <div id="premiumResearchStatus" class="research-status-grid"></div>
+
+      <div class="research-subsection">
+        <h3>🔥 昨日より急浮上した銘柄</h3>
+        <p>観察優先度の順位・点数が前回スナップショットから上がった銘柄です。2営業日分たまると表示を開始します。</p>
+        <div id="premiumHotMovers" class="research-hot-grid"></div>
+      </div>
+
+      <div class="research-subsection">
+        <h3>仮想ポートフォリオの追跡</h3>
+        <p>各週の観察優先度を固定し、上位10/20/50銘柄や点数帯を等金額で保有したと仮定して、5営業日後・20営業日後を追跡します。未来の情報で過去スコアを書き換えません。</p>
+        <div id="premiumPortfolioValidation" class="research-table-wrap"></div>
+      </div>
+
+      <div class="research-subsection">
+        <h3>どの点数帯が強かった？</h3>
+        <p>観察優先度の閾値を感覚で決めず、50点台・60点台・70点台・80点台・90点台のその後を比較します。</p>
+        <div id="premiumBucketValidation" class="research-table-wrap"></div>
+      </div>
+
+      <div class="research-subsection">
+        <h3>重みの研究：現行 vs 挑戦者</h3>
+        <p>月足シグナル・日足/出来高・信用需給・財務の比重を複数パターンで並走させます。<strong>本番エンジンは自動変更せず</strong>、十分な検証期間がたまってから研究候補だけを提示します。</p>
+        <div id="premiumWeightExperiments" class="research-table-wrap"></div>
+      </div>
+
+      <p class="research-guardrail"><strong>過学習を避けるためのルール：</strong>正式な見直し候補は週次コホートで評価し、20営業日後の検証が12週以上、5営業日後が20週以上たまるまでは現行の観察優先度を変更しません。市場全体の平均騰落率との差も同時に比較します。</p>
+    </section>
+
     <section class="panel premium-finder-panel">
       <div class="premium-quick-filters" role="group" aria-label="すぐ見る">
         <button type="button" class="premium-quick active" data-premium-mode="early" aria-pressed="true"><strong>暫定GC・接近</strong><small>月末より先に変化を見る</small></button>
         <button type="button" class="premium-quick" data-premium-mode="combo" aria-pressed="false"><strong>GC系 × 需給改善</strong><small>二つの変化が重なる候補</small></button>
         <button type="button" class="premium-quick" data-premium-mode="dc" aria-pressed="false"><strong>暫定DC</strong><small>継続中の注意候補</small></button>
+        <button type="button" class="premium-quick" data-premium-mode="holder" aria-pressed="false"><strong>大口保有の変化</strong><small>EDINET報告あり</small></button>
         <button type="button" class="premium-quick" data-premium-mode="all" aria-pressed="false"><strong>全銘柄</strong><small>検索・比較する</small></button>
       </div>
 
@@ -51,6 +92,7 @@
         <label>途中判定<select id="premiumSignal"><option value="all">すべて</option><option value="GC">暫定GC</option><option value="NEAR_GC">GC接近</option><option value="CONTINUE">暫定継続</option><option value="DC">暫定DC</option><option value="OUT">OUT側</option></select></label>
         <label>市場<select id="premiumMarket"><option value="all">3市場すべて</option><option value="プライム">プライム</option><option value="スタンダード">スタンダード</option><option value="グロース">グロース</option></select></label>
         <label>信用需給<select id="premiumSupply"><option value="all">問わない</option><option value="yes">改善候補のみ</option><option value="S">Sのみ</option><option value="A">A以上</option></select></label>
+        <label>大口保有<select id="premiumLargeHolder"><option value="all">問わない</option><option value="yes">報告あり</option><option value="NEW_OVER_5">新規5%超</option><option value="INCREASE">保有割合 増加</option><option value="DECREASE">保有割合 減少</option><option value="IMPORTANT_PROPOSAL">重要提案の可能性</option></select></label>
         <label>並び順<select id="premiumSort"><option value="priority">観察優先度</option><option value="spread">月足RSI差</option><option value="volume">出来高変化</option><option value="supply">需給改善度</option><option value="code">コード</option></select></label>
       </div>
 
@@ -74,12 +116,14 @@
         <article><span>1</span><strong>暫定GC / 接近</strong><p>月足RSI14が5か月MAを今月途中で上抜いたか、すぐ下まで来ているかを見ます。</p></article>
         <article><span>2</span><strong>日足の形</strong><p>SMA200より上か、移動平均線の並び、直近出来高、52週高値との距離を確認します。</p></article>
         <article><span>3</span><strong>信用需給</strong><p>買い残整理・倍率低下などが同時に起きているかをJPX週次データで確認します。</p></article>
-        <article><span>4</span><strong>財務と詳細</strong><p>PER/PBRだけでなくROE、自己資本、成長率、CFを確認し、最後は個別チャートで位置を見ます。</p></article>
+        <article><span>4</span><strong>大口保有</strong><p>EDINETの大量保有・変更報告を確認します。割合増加を市場での買付とは断定しません。</p></article>
+        <article><span>5</span><strong>財務と詳細</strong><p>PER/PBRだけでなくROE、自己資本、成長率、CFを確認し、最後は個別チャートで位置を見ます。</p></article>
       </div>
       <p><strong>プレミアムの価値は生データではなく、複数の変化を同時に見つける判断軸です。</strong> ただし現在のGitHub Pagesにはログイン認証がないため、このURLは「隠し導線」のβ検証です。本番課金時は認証付き配信へ移します。</p>
     </section>
   </main>
 
   <script src="assets/premium-supply-beta.js?v=2" defer></script>
+  <script src="assets/premium-research.js?v=1" defer></script>
 </body>
 </html>

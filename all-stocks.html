@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="assets/kabutane.css">
   <link rel="stylesheet" href="assets/kabutane-links.css">
   <link rel="stylesheet" href="assets/all-stocks.css?v=2">
+  <link rel="stylesheet" href="assets/watchlist.css?v=1">
 </head>
 <body data-page="all-stocks" class="pastel-theme all-stocks-page">
   <header class="site-header">
@@ -22,7 +23,7 @@
         <h1>全銘柄一覧 ✨</h1>
         <p class="subtitle">プライム・スタンダード・グロースの内国普通株を全部ここから確認できます。迷ったら3人の視点に任せて、慣れたら自分の条件で絞れます。</p>
       </div>
-      <div class="header-meta"><span id="allStocksDataDate" class="badge neutral">データ読込中…</span></div>
+      <div class="header-meta"><span id="allStocksDataDate" class="badge neutral">データ読込中…</span><a class="button secondary" href="watchlist.html">🌱 気になる株</a><a class="button secondary" href="large-holdings.html">大口保有</a></div>
     </div>
   </header>
 
@@ -175,7 +176,7 @@
             </label>
           </div>
           <div class="expert-actions"><button id="allStocksExpertReset" class="button secondary" type="button">条件をすべてリセット</button></div>
-          <p class="premium-boundary-note"><strong>プレミアム境界：</strong>進行中月で新たに上抜けた銘柄を特定する先回り判定は、公開一覧・公開フィルター・個別詳細では表示しません。月末確定後の正式な状態は通常どおり反映します。</p>
+          <p class="premium-boundary-note"><strong>プレミアム境界：</strong>進行中月で新たに上抜けた銘柄を<strong>全市場から発見・抽出・順位付けする機能</strong>はプレミアム専用です。銘柄コードを指定した個別詳細と、自分で手動登録した「気になる株」は既知銘柄の確認場所なので、そこで進行中月の上抜け / 下抜け状態を確認できます。</p>
         </div>
       </details>
 
@@ -203,6 +204,7 @@
 
   <footer><p>かぶたね 🌱 / 全銘柄一覧</p></footer>
   <script src="assets/all-stocks.js?v=2" defer></script>
+  <script src="assets/watchlist.js?v=1" defer></script>
   <script src="assets/characters.js" defer></script>
 </body>
 </html>

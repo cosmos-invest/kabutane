@@ -10,8 +10,11 @@
   <link rel="stylesheet" href="assets/detail-chart-viewport.css?v=14">
   <link rel="stylesheet" href="assets/detail-volume-profile.css?v=3">
   <link rel="stylesheet" href="assets/detail-margin-balance.css?v=2">
+  <link rel="stylesheet" href="assets/detail-large-holdings.css?v=1">
+  <link rel="stylesheet" href="assets/detail-fundamentals.css?v=1">
+  <link rel="stylesheet" href="assets/watchlist.css?v=1">
 </head>
-<body>
+<body data-page="detail">
   <header class="site-header detail-header">
     <div class="header-inner">
       <div>
@@ -68,6 +71,13 @@
       <p class="volume-profile-disclosure"><strong>価格帯別出来高は推定値です。</strong> 各日の日足出来高を、その日の安値〜高値と各価格帯が実際に重なる値幅の割合で配分しています。実際の約定価格別出来高とは一致しません。単独で売買判断せず、トレンド・直近出来高・損切り位置と合わせて確認してください。<a href="learn.html#decision-flow">初心者向けの見る順番</a></p>
     </section>
 
+    <section class="panel detail-large-holdings" id="detailLargeHoldingsPanel">
+      <div class="section-heading"><div><h2>大口保有の変化（EDINET）</h2><p>大量保有報告書・変更報告書に記載された保有割合の推移です。割合の増減を売買そのものとは断定しません。</p></div><span id="detailLargeHoldingsStatus" class="badge neutral">読込中…</span></div>
+      <div id="detailLargeHoldingsSummary" class="detail-large-holdings-summary"></div>
+      <div id="detailLargeHoldingsList" class="detail-large-holdings-list"></div>
+      <p class="detail-large-holdings-note"><a href="large-holdings.html">全銘柄の大口保有一覧を見る</a> / 原本はEDINETで確認してください。</p>
+    </section>
+
     <section class="panel chart-panel margin-balance-panel margin-balance-empty" id="marginBalancePanel">
       <div class="section-heading margin-balance-heading">
         <div><h2>信用需給（JPX週次）</h2><p><strong>日足チャートの表示期間と同期します。</strong> 日足を拡大・縮小・左右移動すると、信用買い残・信用売り残・信用倍率も同じ期間へ連動します。信用残高そのものはJPXの週次公表値なので、日足の間を補間せず週次の点だけ表示します。<a href="learn.html#margin-balance">信用残高をやさしく解説</a></p></div>
@@ -101,9 +111,12 @@
       </div>
     </section>
 
-    <section class="panel">
-      <div class="section-heading"><div><h2>財務・バリュー情報</h2><p>Yahoo Financeから取得できた財務プロフィールのキャッシュを表示します。通常シグナル一覧外の銘柄も全対象銘柄用キャッシュから確認できます。取得できない項目は「—」で、0を意味しません。</p></div></div>
+    <section class="panel detail-fundamentals-panel">
+      <div class="section-heading"><div><h2>会社の成長・体力・還元</h2><p>Yahoo Financeから取得できた財務プロフィールを、先に要点、次に詳細の順で表示します。取得できない項目は「—」で、0を意味しません。TDnetの決算・業績修正・増配判定ではありません。</p></div></div>
+      <div id="fundamentalsHighlights" class="fundamentals-highlights"></div>
+      <details class="fundamentals-details"><summary>PER・PBR・CFなど24項目を見る</summary>
       <dl class="fundamentals-grid" id="fundamentalsGrid"></dl>
+      </details>
     </section>
   </main>
 
@@ -143,6 +156,8 @@
   <script src="assets/detail-signal-chart-fix.js?v=13" defer></script>
   <script src="assets/detail-volume-profile.js?v=3" defer></script>
   <script src="assets/detail-margin-balance.js?v=2" defer></script>
+  <script src="assets/detail-large-holdings.js?v=1" defer></script>
+  <script src="assets/watchlist.js?v=1" defer></script>
   <script src="assets/characters.js?v=13" defer></script>
 </body>
 </html>

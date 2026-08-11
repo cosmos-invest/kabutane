@@ -201,6 +201,28 @@ ETF・REIT・赤字企業・新規上場銘柄もRSI判定対象にできます�
 
 ## GitHub Actions
 
+### TermuxでEDINETだけ更新（GitHub Actions不使用）
+
+AndroidではTermuxから大量保有報告書・変更報告書を手動更新できます。この処理は追加課金を前提にせず、GitHub Actions、`git pull`、commit、pushを自動実行しません。APIキーもファイルへ保存しません。
+
+```bash
+pkg update
+pkg install git python
+git clone https://github.com/cosmos-invest/kabutane.git
+cd kabutane
+bash termux-edinet.sh
+```
+
+通常は「直近10日」、初回は「直近90日」を選びます。入力したEDINET APIキーは画面に表示されず、その実行中の環境変数だけで使われます。GitHub Secretsへの登録は不要です。既に保存済みの書類IDはXBRLを再ダウンロードしません。
+
+設定だけ確認する場合は、通信もAPIキー入力も行わないドライランを使えます。
+
+```bash
+bash termux-edinet.sh --dry-run
+```
+
+完了後は端末内のJSONが変わるだけで、サイトにはまだ公開されません。公開時は変更をまとめてGitHubへpushします。mainへのpushではPages公開や関連データの既存ワークフローが動く場合があるため、不要な実行を避けたい場合は小分けにpushせず、内容を確認してからまとめて反映してください。
+
 ### Update monthly RSI data
 
 次のタイミングで動きます。

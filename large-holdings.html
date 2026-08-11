@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="EDINETの大量保有報告書・変更報告書から、5%超の新規提出や保有割合の増減を見やすく確認できます。">
+  <title>大口保有の変化 | かぶたね</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/pastel.css">
+  <link rel="stylesheet" href="assets/kabutane.css">
+  <link rel="stylesheet" href="assets/large-holdings.css?v=1">
+</head>
+<body class="pastel-theme large-holdings-page">
+  <header class="site-header"><div class="header-inner"><div><a class="back-link" href="index.html">← 銘柄探しへ</a><p class="eyebrow">EDINET LARGE HOLDINGS</p><h1>大口保有の変化</h1><p class="subtitle">大量保有報告書・変更報告書の記載値を、銘柄ごとに見やすく整理します。</p></div><div class="header-meta"><span id="largeHoldingsDate" class="badge neutral">読込中…</span></div></div></header>
+  <main class="container large-holdings-container">
+    <section class="large-holdings-guide" aria-label="表示の見方">
+      <article><span>🌱 新規5%超</span><strong>初めての大量保有報告</strong><p>提出者が5%を超えて保有したと報告したものです。</p></article>
+      <article><span>📈 保有割合の増加</span><strong>前回記載値より増加</strong><p>市場での買付とは限りません。組織再編や共同保有者の変化なども含みます。</p></article>
+      <article><span>📉 保有割合の減少</span><strong>前回記載値より減少</strong><p>売却そのものを断定せず、報告書の記載差として表示します。</p></article>
+      <article><span>⚑ 重要提案の可能性</span><strong>保有目的・記載欄から抽出</strong><p>提案の実施を断定せず、原本確認を優先する候補として表示します。</p></article>
+    </section>
+    <section class="panel">
+      <div class="large-holdings-controls">
+        <label>銘柄・提出者<input id="largeHoldingsSearch" type="search" placeholder="7203 / 会社名 / 提出者"></label>
+        <label>変化<select id="largeHoldingsKind"><option value="all">すべて</option><option value="NEW_OVER_5">新規5%超</option><option value="INCREASE">保有割合の増加</option><option value="DECREASE">保有割合の減少</option><option value="IMPORTANT_PROPOSAL">重要提案の可能性</option><option value="CORRECTION">訂正報告書</option></select></label>
+        <label>並び順<select id="largeHoldingsSort"><option value="newest">提出日の新しい順</option><option value="increase">増加幅の大きい順</option><option value="decrease">減少幅の大きい順</option><option value="ratio">保有割合の大きい順</option></select></label>
+      </div>
+      <div id="largeHoldingsSummary" class="large-holdings-summary"></div>
+      <div id="largeHoldingsList" class="large-holdings-list" aria-live="polite"></div>
+      <p id="largeHoldingsEmpty" class="large-holdings-empty" hidden>条件に合う報告書がありません。</p>
+      <div class="large-holdings-more"><button id="largeHoldingsMore" class="button secondary" type="button" hidden>さらに表示</button></div>
+    </section>
+    <section class="panel large-holdings-notice"><h2>大切な見方</h2><p><strong>「増加＝買い」「減少＝空売り」とは断定しません。</strong> 共同保有者、貸借、担保、相続、組織再編などでも割合は変わります。重要な判断では、必ずリンク先の原本と企業IRを確認してください。</p><p>出典：<a href="https://disclosure2.edinet-fsa.go.jp/" target="_blank" rel="noopener noreferrer">EDINET（金融庁）</a>。かぶたねが抽出・分類した参考情報で、売買推奨ではありません。</p></section>
+  </main>
+  <footer><p>かぶたね 🌱 / 大口保有の変化</p></footer>
+  <script src="assets/large-holdings.js?v=1" defer></script>
+</body>
+</html>

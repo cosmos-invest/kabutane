@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import math
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -10,7 +11,10 @@ from scripts.public_core_radar import write_public_radar
 ROOT = Path(__file__).resolve().parents[1]
 CORE_RADAR = ROOT / "data" / "core" / "radar.json"
 SUPPLY_SCREEN = ROOT / "data" / "premium" / "supply-demand-screen.json"
+LARGE_HOLDINGS = ROOT / "data" / "large-holdings" / "latest.json"
 OUTPUT = ROOT / "data" / "premium" / "opportunity-radar.json"
+ENGINE_VERSION = "priority_v1_44_20_26_10"
+SCORE_CAPS = {"signal": 44, "trend_volume": 20, "supply": 26, "finance": 10}
 
 
 def finite(value: Any) -> float | None:
@@ -113,7 +117,24 @@ def supply_component(supply: dict[str, Any] | None) -> tuple[float, list[str]]:
     return score, reasons
 
 
-def build_row(row: dict[str, Any], supply: dict[str, Any] | None) -> dict[str, Any]:
+def compact_large_holder_event(event: dict[str, Any] | None) -> dict[str, Any] | None:
+    if not event:
+        return None
+    return {
+        "doc_id": event.get("doc_id"),
+        "report_type": event.get("report_type"),
+        "event_kind": event.get("event_kind"),
+        "submitted_at": event.get("submitted_at"),
+        "filer_name": event.get("filer_name"),
+        "current_ratio_pct": event.get("current_ratio_pct"),
+        "previous_ratio_pct": event.get("previous_ratio_pct"),
+        "change_pct_point": event.get("change_pct_point"),
+        "important_proposal": event.get("important_proposal") is True,
+        "source_url": event.get("source_url"),
+    }
+
+
+def build_row(row: dict[str, Any], supply: dict[str, Any] | None, large_event: dict[str, Any] | None = None) -> dict[str, Any]:
     s_signal, signal_reasons = signal_score(row)
     s_trend, trend_reasons = trend_score(row)
     s_finance, finance_reasons = finance_score(row)
@@ -131,6 +152,22 @@ def build_row(row: dict[str, Any], supply: dict[str, Any] | None) -> dict[str, A
         tags.append("上昇配列")
     if (finite(row.get("volume_ratio_5_30")) or 0) >= 1.5:
         tags.append("出来高増")
+    compact_event = compact_large_holder_event(large_event)
+    if compact_event:
+        holder_kind = str(compact_event.get("event_kind") or "")
+        holder_report = str(compact_event.get("report_type") or "")
+        holder_delta = finite(compact_event.get("change_pct_point"))
+        if holder_report == "大量保有報告書" or holder_kind == "NEW_OVER_5": tags.append("大口新規5%超")
+        elif holder_delta is not None and holder_delta > 0: tags.append("大口保有増加")
+        elif holder_delta is not None and holder_delta < 0: tags.append("大口保有減少")
+        if compact_event.get("important_proposal") is True: tags.append("重要提案の可能性")
+        filer = str(compact_event.get("filer_name") or "大口提出者")
+        delta = finite(compact_event.get("change_pct_point"))
+        holder_reason = f"{filer}の保有割合報告"
+        if delta is not None:
+            holder_reason += f"（前回比{delta:+.2f}pt）"
+    else:
+        holder_reason = ""
 
     return {
         "code": row.get("code"), "ticker": row.get("ticker"), "name": row.get("name"),
@@ -147,23 +184,36 @@ def build_row(row: dict[str, Any], supply: dict[str, Any] | None) -> dict[str, A
         "supply_grade": supply.get("grade") if supply else None, "supply_score": supply.get("score") if supply else None,
         "buy_reduction_pct": supply.get("buy_reduction_pct") if supply else None, "sell_change_pct": supply.get("sell_change_pct") if supply else None,
         "ratio_reduction_pct": supply.get("ratio_reduction_pct") if supply else None, "margin_ratio": supply.get("ratio") if supply else None,
+        "large_holding": compact_event,
         "priority_score": priority,
         "score_components": {"signal": round(s_signal, 1), "trend_volume": round(s_trend, 1), "supply": round(s_supply, 1), "finance": round(s_finance, 1)},
         "tags": tags,
-        "reasons": (signal_reasons + supply_reasons + trend_reasons + finance_reasons)[:6],
+        "reasons": (signal_reasons + supply_reasons + trend_reasons + finance_reasons + ([holder_reason] if holder_reason else []))[:7],
     }
 
 
 def build_payload() -> dict[str, Any]:
+    recorded_at = datetime.now(timezone.utc).isoformat()
     radar = load_json(CORE_RADAR, {})
     supply_payload = load_json(SUPPLY_SCREEN, {})
+    large_payload = load_json(LARGE_HOLDINGS, {})
     supply_map = {
         str(item.get("code") or ""): item
         for item in supply_payload.get("candidates") or []
         if item.get("scope") == "core" and item.get("code")
     }
-    rows = [build_row(row, supply_map.get(str(row.get("code") or ""))) for row in radar.get("records") or []]
+    large_map: dict[str, dict[str, Any]] = {}
+    for event in large_payload.get("records") or []:
+        code = str(event.get("security_code") or "")
+        if code and code not in large_map and event.get("event_kind") != "CORRECTION":
+            large_map[code] = event
+    rows = [
+        build_row(row, supply_map.get(str(row.get("code") or "")), large_map.get(str(row.get("code") or "")))
+        for row in radar.get("records") or []
+    ]
     rows.sort(key=lambda item: (-float(item.get("priority_score") or 0), str(item.get("code") or "")))
+    for rank, item in enumerate(rows, start=1):
+        item["priority_rank"] = rank
     status_counts = {
         status: sum(item.get("provisional_status") == status for item in rows)
         for status in ["GC", "NEAR_GC", "CONTINUE", "DC", "OUT", "UNKNOWN"]
@@ -173,9 +223,13 @@ def build_payload() -> dict[str, Any]:
         for item in rows
     )
     return {
-        "schema_version": 2,
+        "schema_version": 3,
         "kind": "kabutane_premium_opportunity_radar",
-        "generated_at": radar.get("generated_at"),
+        "engine_version": ENGINE_VERSION,
+        "score_caps": SCORE_CAPS,
+        "generated_at": recorded_at,
+        "recorded_at": recorded_at,
+        "source_core_generated_at": radar.get("generated_at"),
         "price_date": max((str(item.get("price_date") or "") for item in rows), default="") or None,
         "margin_date": supply_payload.get("latest_date"),
         "core_count": int(radar.get("core_count") or len(rows)),
@@ -185,7 +239,9 @@ def build_payload() -> dict[str, Any]:
         "status_counts": status_counts,
         "supply_candidate_count": sum(item.get("supply_score") is not None for item in rows),
         "early_supply_combo_count": composite,
-        "notice": "観察優先度は買い推奨ではありません。暫定月足RSI・日足トレンド/出来高・JPX週次信用残高・取得済み財務を同じ画面で比較するためのβ指標です。",
+        "large_holding_count": sum(item.get("large_holding") is not None for item in rows),
+        "large_holdings_generated_at": large_payload.get("generated_at"),
+        "notice": "観察優先度は買い推奨ではありません。暫定月足RSI・日足トレンド/出来高・JPX週次信用残高・取得済み財務を同じ画面で比較するためのβ指標です。EDINET大口保有は参考表示のみで、観察優先度へ加点しません。",
         "records": rows,
     }
 
@@ -199,7 +255,7 @@ def main() -> None:
     public_payload = write_public_radar()
     print(
         "Premium opportunity radar: "
-        f"core={payload['core_count']} GC={payload['status_counts'].get('GC', 0)} "
+        f"engine={payload['engine_version']} core={payload['core_count']} GC={payload['status_counts'].get('GC', 0)} "
         f"near={payload['status_counts'].get('NEAR_GC', 0)} supply={payload['supply_candidate_count']} "
         f"public={len(public_payload.get('records') or [])}"
     )
