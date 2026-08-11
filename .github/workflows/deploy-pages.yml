@@ -109,6 +109,7 @@ jobs:
           test -f _site/assets/premium-research.js
           test -f _site/assets/large-holdings.css
           test -f _site/assets/large-holdings.js
+          test -f _site/assets/beginner-journey.css
           test -f _site/assets/detail-large-holdings.js
           test -f _site/data/large-holdings/latest.json
           test -f _site/assets/replay-stock-select.js
@@ -145,6 +146,8 @@ jobs:
           grep -q 'noindex,nofollow,noarchive' _site/premium-supply-beta.html
           grep -q '観察優先度の検証室' _site/premium-supply-beta.html
           grep -q 'EDINET LARGE HOLDINGS' _site/large-holdings.html
+          grep -q '迷ったら、4つの問いを順番に' _site/index.html
+          grep -q 'STEP 4 — 大口' _site/detail.html
           ! grep -R -q 'premium-supply-beta.html' _site/index.html _site/learn.html _site/howto.html
           grep -q '暫定GC / 暫定DC' _site/detail.html
           node --check _site/assets/all-stocks.js
