@@ -62,7 +62,7 @@ jobs:
             index.html detail.html backtest.html replay.html replay-select.html howto.html learn.html signal-method.html \
             ranking.html monthly-report.html monthly-strategy.html history.html shikiho-summer-2026.html today.html all-stocks.html monthly-dc.html watchlist.html \
             extended-universe.html premium-supply-beta.html large-holdings.html \
-            manifest.webmanifest sw.js .nojekyll result.csv out.csv \
+            manifest.webmanifest sw.js .nojekyll result.csv out.csv stocks.csv \
             _site/
           cp -R assets data history ranking monthly-report _site/
           # Discovery of provisional GC stays premium-only. The public all-stock
@@ -83,6 +83,7 @@ jobs:
           test -f _site/shikiho-summer-2026.html
           test -f _site/today.html
           test -f _site/all-stocks.html
+          test -f _site/stocks.csv
           test -f _site/watchlist.html
           test -f _site/monthly-dc.html
           test -f _site/extended-universe.html
