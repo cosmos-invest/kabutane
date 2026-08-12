@@ -2,12 +2,12 @@
   "code": "6564",
   "ticker": "6564.T",
   "name": "ミダックホールディングス",
-  "generated_at": "2026-08-11T12:51:50.911825+00:00",
-  "price_date": "2026-08-10",
+  "generated_at": "2026-08-12T12:57:05.762549+00:00",
+  "price_date": "2026-08-12",
   "record": {
-    "current_price": 2321.0,
-    "change_from_signal_month_pct": 5.93,
-    "return_since_gc_pct": 5.93
+    "current_price": 2106.0,
+    "change_from_signal_month_pct": -3.88,
+    "return_since_gc_pct": -3.88
   },
   "daily": [
     {
@@ -35,22 +35,35 @@
       "sma200": 2008.11,
       "rsi14": 52.43,
       "rsi5": 55.28
+    },
+    {
+      "date": "2026-08-12",
+      "open": 2271.0,
+      "high": 2271.0,
+      "low": 2101.0,
+      "close": 2106.0,
+      "volume": 131800.0,
+      "sma25": 2179.12,
+      "sma75": 2114.53,
+      "sma200": 2009.16,
+      "rsi14": 52.43,
+      "rsi5": 55.28
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-10",
-    "monthly_rsi14": 60.15,
-    "monthly_rsi_ma5": 55.9,
-    "spread": 4.25,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-12",
+    "monthly_rsi14": 53.8,
+    "monthly_rsi_ma5": 54.63,
+    "spread": -0.83,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-11T12:52:50.739830+00:00"
+  "provisional_generated_at": "2026-08-12T12:58:07.234913+00:00"
 }

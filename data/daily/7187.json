@@ -2,12 +2,12 @@
   "code": "7187",
   "ticker": "7187.T",
   "name": "ジェイリース",
-  "generated_at": "2026-08-11T12:51:50.911825+00:00",
-  "price_date": "2026-08-10",
+  "generated_at": "2026-08-12T12:57:05.762549+00:00",
+  "price_date": "2026-08-12",
   "record": {
-    "current_price": 1335.0,
-    "change_from_signal_month_pct": -2.63,
-    "return_since_gc_pct": -2.63
+    "current_price": 1360.0,
+    "change_from_signal_month_pct": -0.8,
+    "return_since_gc_pct": -0.8
   },
   "daily": [
     {
@@ -35,22 +35,35 @@
       "sma200": 1382.39,
       "rsi14": 48.73,
       "rsi5": 51.47
+    },
+    {
+      "date": "2026-08-12",
+      "open": 1350.0,
+      "high": 1360.0,
+      "low": 1337.0,
+      "close": 1360.0,
+      "volume": 81800.0,
+      "sma25": 1356.64,
+      "sma75": 1330.39,
+      "sma200": 1381.43,
+      "rsi14": 48.73,
+      "rsi5": 51.47
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-10",
-    "monthly_rsi14": 50.34,
-    "monthly_rsi_ma5": 50.53,
-    "spread": -0.19,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-12",
+    "monthly_rsi14": 51.67,
+    "monthly_rsi_ma5": 50.79,
+    "spread": 0.88,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-11T12:52:50.739830+00:00"
+  "provisional_generated_at": "2026-08-12T12:58:07.234913+00:00"
 }

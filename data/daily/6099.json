@@ -2,12 +2,12 @@
   "code": "6099",
   "ticker": "6099.T",
   "name": "エラン",
-  "generated_at": "2026-08-11T12:51:50.911825+00:00",
-  "price_date": "2026-08-10",
+  "generated_at": "2026-08-12T12:57:05.762549+00:00",
+  "price_date": "2026-08-12",
   "record": {
-    "current_price": 758.0,
-    "change_from_signal_month_pct": -1.69,
-    "return_since_gc_pct": 1.88
+    "current_price": 776.0,
+    "change_from_signal_month_pct": 0.65,
+    "return_since_gc_pct": 4.3
   },
   "daily": [
     {
@@ -35,15 +35,28 @@
       "sma200": 733.25,
       "rsi14": 45.18,
       "rsi5": 48.51
+    },
+    {
+      "date": "2026-08-12",
+      "open": 765.0,
+      "high": 780.0,
+      "low": 756.0,
+      "close": 776.0,
+      "volume": 98200.0,
+      "sma25": 769.72,
+      "sma75": 733.96,
+      "sma200": 733.14,
+      "rsi14": 45.18,
+      "rsi5": 48.51
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-10",
-    "monthly_rsi14": 49.0,
-    "monthly_rsi_ma5": 47.53,
-    "spread": 1.47,
+    "price_date": "2026-08-12",
+    "monthly_rsi14": 50.32,
+    "monthly_rsi_ma5": 47.8,
+    "spread": 2.52,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -52,5 +65,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-11T12:52:50.739830+00:00"
+  "provisional_generated_at": "2026-08-12T12:58:07.234913+00:00"
 }

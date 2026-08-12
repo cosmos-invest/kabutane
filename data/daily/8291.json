@@ -2,12 +2,12 @@
   "code": "8291",
   "ticker": "8291.T",
   "name": "日産東京販売ホールディングス",
-  "generated_at": "2026-08-11T12:51:50.911825+00:00",
-  "price_date": "2026-08-10",
+  "generated_at": "2026-08-12T12:57:05.762549+00:00",
+  "price_date": "2026-08-12",
   "record": {
-    "current_price": 566.0,
-    "change_from_signal_month_pct": 3.85,
-    "return_since_gc_pct": 1.25
+    "current_price": 546.0,
+    "change_from_signal_month_pct": 0.18,
+    "return_since_gc_pct": -2.33
   },
   "daily": [
     {
@@ -35,22 +35,35 @@
       "sma200": 529.96,
       "rsi14": 58.43,
       "rsi5": 59.03
+    },
+    {
+      "date": "2026-08-12",
+      "open": 550.0,
+      "high": 552.0,
+      "low": 541.0,
+      "close": 546.0,
+      "volume": 326500.0,
+      "sma25": 552.8,
+      "sma75": 553.79,
+      "sma200": 530.16,
+      "rsi14": 58.43,
+      "rsi5": 59.03
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-10",
-    "monthly_rsi14": 60.85,
-    "monthly_rsi_ma5": 58.61,
-    "spread": 2.24,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-12",
+    "monthly_rsi14": 57.93,
+    "monthly_rsi_ma5": 58.03,
+    "spread": -0.1,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-11T12:52:50.739830+00:00"
+  "provisional_generated_at": "2026-08-12T12:58:07.234913+00:00"
 }

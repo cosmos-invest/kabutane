@@ -2,12 +2,12 @@
   "code": "5218",
   "ticker": "5218.T",
   "name": "オハラ",
-  "generated_at": "2026-08-11T12:51:50.911825+00:00",
-  "price_date": "2026-08-10",
+  "generated_at": "2026-08-12T12:57:05.762549+00:00",
+  "price_date": "2026-08-12",
   "record": {
-    "current_price": 1576.0,
-    "change_from_signal_month_pct": 9.52,
-    "return_since_gc_pct": 28.44
+    "current_price": 1556.0,
+    "change_from_signal_month_pct": 8.13,
+    "return_since_gc_pct": 26.81
   },
   "daily": [
     {
@@ -35,15 +35,28 @@
       "sma200": 1249.34,
       "rsi14": 56.32,
       "rsi5": 58.02
+    },
+    {
+      "date": "2026-08-12",
+      "open": 1572.0,
+      "high": 1574.0,
+      "low": 1540.0,
+      "close": 1556.0,
+      "volume": 47300.0,
+      "sma25": 1471.0,
+      "sma75": 1469.21,
+      "sma200": 1251.44,
+      "rsi14": 56.32,
+      "rsi5": 58.02
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-10",
-    "monthly_rsi14": 61.9,
-    "monthly_rsi_ma5": 59.35,
-    "spread": 2.55,
+    "price_date": "2026-08-12",
+    "monthly_rsi14": 61.32,
+    "monthly_rsi_ma5": 59.23,
+    "spread": 2.09,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -52,5 +65,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-11T12:52:50.739830+00:00"
+  "provisional_generated_at": "2026-08-12T12:58:07.234913+00:00"
 }

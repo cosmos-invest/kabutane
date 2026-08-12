@@ -2,12 +2,12 @@
   "code": "5982",
   "ticker": "5982.T",
   "name": "マルゼン",
-  "generated_at": "2026-08-11T12:51:50.911825+00:00",
-  "price_date": "2026-08-10",
+  "generated_at": "2026-08-12T12:57:05.762549+00:00",
+  "price_date": "2026-08-12",
   "record": {
-    "current_price": 4145.0,
-    "change_from_signal_month_pct": 2.09,
-    "return_since_gc_pct": 2.09
+    "current_price": 4095.0,
+    "change_from_signal_month_pct": 0.86,
+    "return_since_gc_pct": 0.86
   },
   "daily": [
     {
@@ -35,15 +35,28 @@
       "sma200": 3788.97,
       "rsi14": 62.47,
       "rsi5": 65.83
+    },
+    {
+      "date": "2026-08-12",
+      "open": 4110.0,
+      "high": 4130.0,
+      "low": 4050.0,
+      "close": 4095.0,
+      "volume": 3100.0,
+      "sma25": 4005.0,
+      "sma75": 3815.2,
+      "sma200": 3791.15,
+      "rsi14": 62.47,
+      "rsi5": 65.83
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-10",
-    "monthly_rsi14": 68.87,
-    "monthly_rsi_ma5": 64.66,
-    "spread": 4.2,
+    "price_date": "2026-08-12",
+    "monthly_rsi14": 68.12,
+    "monthly_rsi_ma5": 64.51,
+    "spread": 3.6,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -52,5 +65,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-11T12:52:50.739830+00:00"
+  "provisional_generated_at": "2026-08-12T12:58:07.234913+00:00"
 }

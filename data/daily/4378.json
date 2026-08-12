@@ -2,12 +2,12 @@
   "code": "4378",
   "ticker": "4378.T",
   "name": "ＣＩＮＣ",
-  "generated_at": "2026-08-11T12:51:50.911825+00:00",
-  "price_date": "2026-08-10",
+  "generated_at": "2026-08-12T12:57:05.762549+00:00",
+  "price_date": "2026-08-12",
   "record": {
-    "current_price": 488.0,
-    "change_from_signal_month_pct": 2.31,
-    "return_since_gc_pct": 6.09
+    "current_price": 483.0,
+    "change_from_signal_month_pct": 1.26,
+    "return_since_gc_pct": 5.0
   },
   "daily": [
     {
@@ -35,15 +35,28 @@
       "sma200": 506.32,
       "rsi14": 26.17,
       "rsi5": 30.49
+    },
+    {
+      "date": "2026-08-12",
+      "open": 488.0,
+      "high": 488.0,
+      "low": 474.0,
+      "close": 483.0,
+      "volume": 10000.0,
+      "sma25": 489.12,
+      "sma75": 524.91,
+      "sma200": 505.98,
+      "rsi14": 26.17,
+      "rsi5": 30.49
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-10",
-    "monthly_rsi14": 37.62,
-    "monthly_rsi_ma5": 32.31,
-    "spread": 5.31,
+    "price_date": "2026-08-12",
+    "monthly_rsi14": 36.66,
+    "monthly_rsi_ma5": 32.12,
+    "spread": 4.54,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -52,5 +65,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-11T12:52:50.739830+00:00"
+  "provisional_generated_at": "2026-08-12T12:58:07.234913+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "8917",
   "ticker": "8917.T",
   "name": "ファースト住建",
-  "generated_at": "2026-08-11T12:51:50.911825+00:00",
-  "price_date": "2026-08-10",
+  "generated_at": "2026-08-12T12:57:05.762549+00:00",
+  "price_date": "2026-08-12",
   "record": {
-    "current_price": 1155.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 1151.0,
+    "change_from_signal_month_pct": -0.35,
+    "return_since_gc_pct": -0.35
   },
   "daily": [
     {
@@ -35,15 +35,28 @@
       "sma200": 1145.27,
       "rsi14": 49.81,
       "rsi5": 53.04
+    },
+    {
+      "date": "2026-08-12",
+      "open": 1155.0,
+      "high": 1160.0,
+      "low": 1146.0,
+      "close": 1151.0,
+      "volume": 7800.0,
+      "sma25": 1139.08,
+      "sma75": 1088.59,
+      "sma200": 1145.21,
+      "rsi14": 49.81,
+      "rsi5": 53.04
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-10",
-    "monthly_rsi14": 52.31,
-    "monthly_rsi_ma5": 49.02,
-    "spread": 3.29,
+    "price_date": "2026-08-12",
+    "monthly_rsi14": 52.03,
+    "monthly_rsi_ma5": 48.97,
+    "spread": 3.06,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -52,5 +65,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-11T12:52:50.739830+00:00"
+  "provisional_generated_at": "2026-08-12T12:58:07.234913+00:00"
 }

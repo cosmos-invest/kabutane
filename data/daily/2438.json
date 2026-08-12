@@ -2,12 +2,12 @@
   "code": "2438",
   "ticker": "2438.T",
   "name": "アスカネット",
-  "generated_at": "2026-08-11T12:51:50.911825+00:00",
-  "price_date": "2026-08-10",
+  "generated_at": "2026-08-12T12:57:05.762549+00:00",
+  "price_date": "2026-08-12",
   "record": {
-    "current_price": 339.0,
-    "change_from_signal_month_pct": 1.8,
-    "return_since_gc_pct": 1.8
+    "current_price": 344.0,
+    "change_from_signal_month_pct": 3.3,
+    "return_since_gc_pct": 3.3
   },
   "daily": [
     {
@@ -35,15 +35,28 @@
       "sma200": 354.54,
       "rsi14": 28.87,
       "rsi5": 30.79
+    },
+    {
+      "date": "2026-08-12",
+      "open": 338.0,
+      "high": 344.0,
+      "low": 336.0,
+      "close": 344.0,
+      "volume": 17400.0,
+      "sma25": 343.36,
+      "sma75": 336.17,
+      "sma200": 354.46,
+      "rsi14": 28.87,
+      "rsi5": 30.79
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-10",
-    "monthly_rsi14": 29.89,
-    "monthly_rsi_ma5": 26.59,
-    "spread": 3.3,
+    "price_date": "2026-08-12",
+    "monthly_rsi14": 31.02,
+    "monthly_rsi_ma5": 26.82,
+    "spread": 4.21,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -52,5 +65,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-11T12:52:50.739830+00:00"
+  "provisional_generated_at": "2026-08-12T12:58:07.234913+00:00"
 }

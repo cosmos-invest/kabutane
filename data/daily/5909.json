@@ -2,12 +2,12 @@
   "code": "5909",
   "ticker": "5909.T",
   "name": "コロナ",
-  "generated_at": "2026-08-11T12:51:50.911825+00:00",
-  "price_date": "2026-08-10",
+  "generated_at": "2026-08-12T12:57:05.762549+00:00",
+  "price_date": "2026-08-12",
   "record": {
-    "current_price": 988.0,
-    "change_from_signal_month_pct": -0.5,
-    "return_since_gc_pct": -0.5
+    "current_price": 990.0,
+    "change_from_signal_month_pct": -0.3,
+    "return_since_gc_pct": -0.3
   },
   "daily": [
     {
@@ -35,15 +35,28 @@
       "sma200": 964.28,
       "rsi14": 50.47,
       "rsi5": 54.66
+    },
+    {
+      "date": "2026-08-12",
+      "open": 997.0,
+      "high": 997.0,
+      "low": 986.0,
+      "close": 990.0,
+      "volume": 9500.0,
+      "sma25": 1005.96,
+      "sma75": 960.93,
+      "sma200": 964.67,
+      "rsi14": 50.47,
+      "rsi5": 54.66
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-10",
-    "monthly_rsi14": 54.53,
-    "monthly_rsi_ma5": 51.81,
-    "spread": 2.72,
+    "price_date": "2026-08-12",
+    "monthly_rsi14": 54.76,
+    "monthly_rsi_ma5": 51.85,
+    "spread": 2.9,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -52,5 +65,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-11T12:52:50.739830+00:00"
+  "provisional_generated_at": "2026-08-12T12:58:07.234913+00:00"
 }

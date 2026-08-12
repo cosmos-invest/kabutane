@@ -2,12 +2,12 @@
   "code": "9008",
   "ticker": "9008.T",
   "name": "京王電鉄",
-  "generated_at": "2026-08-11T12:51:50.911825+00:00",
-  "price_date": "2026-08-10",
+  "generated_at": "2026-08-12T12:57:05.762549+00:00",
+  "price_date": "2026-08-12",
   "record": {
-    "current_price": 752.8,
-    "change_from_signal_month_pct": -7.04,
-    "return_since_gc_pct": -7.04
+    "current_price": 759.7,
+    "change_from_signal_month_pct": -6.19,
+    "return_since_gc_pct": -6.19
   },
   "daily": [
     {
@@ -35,15 +35,28 @@
       "sma200": 777.76,
       "rsi14": 46.65,
       "rsi5": 52.25
+    },
+    {
+      "date": "2026-08-12",
+      "open": 756.6,
+      "high": 764.1,
+      "low": 755.1,
+      "close": 759.7,
+      "volume": 1748900.0,
+      "sma25": 779.54,
+      "sma75": 755.83,
+      "sma200": 777.79,
+      "rsi14": 46.65,
+      "rsi5": 52.25
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-10",
-    "monthly_rsi14": 44.09,
-    "monthly_rsi_ma5": 43.59,
-    "spread": 0.49,
+    "price_date": "2026-08-12",
+    "monthly_rsi14": 44.7,
+    "monthly_rsi_ma5": 43.72,
+    "spread": 0.98,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -52,5 +65,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-11T12:52:50.739830+00:00"
+  "provisional_generated_at": "2026-08-12T12:58:07.234913+00:00"
 }

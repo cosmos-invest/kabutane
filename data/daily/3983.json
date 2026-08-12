@@ -2,12 +2,12 @@
   "code": "3983",
   "ticker": "3983.T",
   "name": "オロ",
-  "generated_at": "2026-08-11T12:51:50.911825+00:00",
-  "price_date": "2026-08-10",
+  "generated_at": "2026-08-12T12:57:05.762549+00:00",
+  "price_date": "2026-08-12",
   "record": {
-    "current_price": 2229.0,
-    "change_from_signal_month_pct": 0.72,
-    "return_since_gc_pct": 11.56
+    "current_price": 2245.0,
+    "change_from_signal_month_pct": 1.45,
+    "return_since_gc_pct": 12.36
   },
   "daily": [
     {
@@ -35,15 +35,28 @@
       "sma200": 2080.99,
       "rsi14": 42.5,
       "rsi5": 47.86
+    },
+    {
+      "date": "2026-08-12",
+      "open": 2247.0,
+      "high": 2250.0,
+      "low": 2234.0,
+      "close": 2245.0,
+      "volume": 18100.0,
+      "sma25": 2191.36,
+      "sma75": 2078.05,
+      "sma200": 2079.86,
+      "rsi14": 42.5,
+      "rsi5": 47.86
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-10",
-    "monthly_rsi14": 49.78,
-    "monthly_rsi_ma5": 46.07,
-    "spread": 3.71,
+    "price_date": "2026-08-12",
+    "monthly_rsi14": 50.15,
+    "monthly_rsi_ma5": 46.14,
+    "spread": 4.01,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -52,5 +65,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-11T12:52:50.739830+00:00"
+  "provisional_generated_at": "2026-08-12T12:58:07.234913+00:00"
 }

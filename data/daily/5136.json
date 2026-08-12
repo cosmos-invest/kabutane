@@ -2,12 +2,12 @@
   "code": "5136",
   "ticker": "5136.T",
   "name": "ｔｒｉｐｌａ",
-  "generated_at": "2026-08-11T12:51:50.911825+00:00",
-  "price_date": "2026-08-10",
+  "generated_at": "2026-08-12T12:57:05.762549+00:00",
+  "price_date": "2026-08-12",
   "record": {
-    "current_price": 1809.0,
-    "change_from_signal_month_pct": 1.97,
-    "return_since_gc_pct": 2.78
+    "current_price": 1777.0,
+    "change_from_signal_month_pct": 0.17,
+    "return_since_gc_pct": 0.97
   },
   "daily": [
     {
@@ -35,15 +35,28 @@
       "sma200": 1650.64,
       "rsi14": 46.65,
       "rsi5": 51.06
+    },
+    {
+      "date": "2026-08-12",
+      "open": 1805.0,
+      "high": 1827.0,
+      "low": 1765.0,
+      "close": 1777.0,
+      "volume": 16400.0,
+      "sma25": 1796.16,
+      "sma75": 1628.55,
+      "sma200": 1650.44,
+      "rsi14": 46.65,
+      "rsi5": 51.06
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-10",
-    "monthly_rsi14": 48.32,
-    "monthly_rsi_ma5": 44.54,
-    "spread": 3.79,
+    "price_date": "2026-08-12",
+    "monthly_rsi14": 47.6,
+    "monthly_rsi_ma5": 44.39,
+    "spread": 3.21,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -52,5 +65,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-11T12:52:50.739830+00:00"
+  "provisional_generated_at": "2026-08-12T12:58:07.234913+00:00"
 }

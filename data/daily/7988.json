@@ -2,12 +2,12 @@
   "code": "7988",
   "ticker": "7988.T",
   "name": "ニフコ",
-  "generated_at": "2026-08-11T12:51:50.911825+00:00",
-  "price_date": "2026-08-10",
+  "generated_at": "2026-08-12T12:57:05.762549+00:00",
+  "price_date": "2026-08-12",
   "record": {
-    "current_price": 5132.0,
-    "change_from_signal_month_pct": -1.48,
-    "return_since_gc_pct": -1.48
+    "current_price": 5107.0,
+    "change_from_signal_month_pct": -1.96,
+    "return_since_gc_pct": -1.96
   },
   "daily": [
     {
@@ -35,15 +35,28 @@
       "sma200": 4760.56,
       "rsi14": 57.66,
       "rsi5": 63.34
+    },
+    {
+      "date": "2026-08-12",
+      "open": 5127.0,
+      "high": 5154.0,
+      "low": 5082.0,
+      "close": 5107.0,
+      "volume": 169500.0,
+      "sma25": 5107.8,
+      "sma75": 4710.29,
+      "sma200": 4764.06,
+      "rsi14": 57.66,
+      "rsi5": 63.34
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-10",
-    "monthly_rsi14": 60.23,
-    "monthly_rsi_ma5": 57.3,
-    "spread": 2.93,
+    "price_date": "2026-08-12",
+    "monthly_rsi14": 59.8,
+    "monthly_rsi_ma5": 57.21,
+    "spread": 2.59,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -52,5 +65,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-11T12:52:50.739830+00:00"
+  "provisional_generated_at": "2026-08-12T12:58:07.234913+00:00"
 }

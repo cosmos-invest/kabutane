@@ -2,12 +2,12 @@
   "code": "3598",
   "ticker": "3598.T",
   "name": "山喜",
-  "generated_at": "2026-08-11T12:51:50.911825+00:00",
-  "price_date": "2026-08-10",
+  "generated_at": "2026-08-12T12:57:05.762549+00:00",
+  "price_date": "2026-08-12",
   "record": {
-    "current_price": 165.0,
-    "change_from_signal_month_pct": 1.23,
-    "return_since_gc_pct": 1.23
+    "current_price": 163.0,
+    "change_from_signal_month_pct": 0.0,
+    "return_since_gc_pct": 0.0
   },
   "daily": [
     {
@@ -35,15 +35,28 @@
       "sma200": 166.05,
       "rsi14": 47.22,
       "rsi5": 48.95
+    },
+    {
+      "date": "2026-08-12",
+      "open": 163.0,
+      "high": 163.0,
+      "low": 160.0,
+      "close": 163.0,
+      "volume": 28500.0,
+      "sma25": 162.64,
+      "sma75": 160.09,
+      "sma200": 166.02,
+      "rsi14": 47.22,
+      "rsi5": 48.95
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-10",
-    "monthly_rsi14": 48.1,
-    "monthly_rsi_ma5": 43.77,
-    "spread": 4.33,
+    "price_date": "2026-08-12",
+    "monthly_rsi14": 46.42,
+    "monthly_rsi_ma5": 43.44,
+    "spread": 2.98,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -52,5 +65,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-11T12:52:50.739830+00:00"
+  "provisional_generated_at": "2026-08-12T12:58:07.234913+00:00"
 }

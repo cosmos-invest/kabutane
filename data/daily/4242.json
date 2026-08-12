@@ -2,12 +2,12 @@
   "code": "4242",
   "ticker": "4242.T",
   "name": "タカギセイコー",
-  "generated_at": "2026-08-11T12:51:50.911825+00:00",
-  "price_date": "2026-08-10",
+  "generated_at": "2026-08-12T12:57:05.762549+00:00",
+  "price_date": "2026-08-12",
   "record": {
-    "current_price": 1780.0,
-    "change_from_signal_month_pct": -4.35,
-    "return_since_gc_pct": -4.35
+    "current_price": 1800.0,
+    "change_from_signal_month_pct": -3.28,
+    "return_since_gc_pct": -3.28
   },
   "daily": [
     {
@@ -35,15 +35,28 @@
       "sma200": 1748.72,
       "rsi14": 56.09,
       "rsi5": 58.25
+    },
+    {
+      "date": "2026-08-12",
+      "open": 1788.0,
+      "high": 1804.0,
+      "low": 1770.0,
+      "close": 1800.0,
+      "volume": 3500.0,
+      "sma25": 1822.6,
+      "sma75": 1769.25,
+      "sma200": 1750.95,
+      "rsi14": 56.09,
+      "rsi5": 58.25
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-10",
-    "monthly_rsi14": 54.67,
-    "monthly_rsi_ma5": 55.81,
-    "spread": -1.14,
+    "price_date": "2026-08-12",
+    "monthly_rsi14": 55.59,
+    "monthly_rsi_ma5": 55.99,
+    "spread": -0.4,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -52,5 +65,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-11T12:52:50.739830+00:00"
+  "provisional_generated_at": "2026-08-12T12:58:07.234913+00:00"
 }

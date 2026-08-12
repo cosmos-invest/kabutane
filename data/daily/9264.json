@@ -2,12 +2,12 @@
   "code": "9264",
   "ticker": "9264.T",
   "name": "ポエック",
-  "generated_at": "2026-08-11T12:51:50.911825+00:00",
-  "price_date": "2026-08-10",
+  "generated_at": "2026-08-12T12:57:05.762549+00:00",
+  "price_date": "2026-08-12",
   "record": {
-    "current_price": 1737.0,
-    "change_from_signal_month_pct": 0.23,
-    "return_since_gc_pct": 2.96
+    "current_price": 1750.0,
+    "change_from_signal_month_pct": 0.98,
+    "return_since_gc_pct": 3.73
   },
   "daily": [
     {
@@ -35,15 +35,28 @@
       "sma200": 1701.29,
       "rsi14": 51.66,
       "rsi5": 53.71
+    },
+    {
+      "date": "2026-08-12",
+      "open": 1739.0,
+      "high": 1751.0,
+      "low": 1738.0,
+      "close": 1750.0,
+      "volume": 17600.0,
+      "sma25": 1715.24,
+      "sma75": 1670.69,
+      "sma200": 1701.65,
+      "rsi14": 51.66,
+      "rsi5": 53.71
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-10",
-    "monthly_rsi14": 58.92,
-    "monthly_rsi_ma5": 57.7,
-    "spread": 1.22,
+    "price_date": "2026-08-12",
+    "monthly_rsi14": 59.31,
+    "monthly_rsi_ma5": 57.78,
+    "spread": 1.53,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -52,5 +65,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-11T12:52:50.739830+00:00"
+  "provisional_generated_at": "2026-08-12T12:58:07.234913+00:00"
 }

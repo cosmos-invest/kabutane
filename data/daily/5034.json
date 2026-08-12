@@ -2,12 +2,12 @@
   "code": "5034",
   "ticker": "5034.T",
   "name": "ｕｎｅｒｒｙ",
-  "generated_at": "2026-08-11T12:51:50.911825+00:00",
-  "price_date": "2026-08-10",
+  "generated_at": "2026-08-12T12:57:05.762549+00:00",
+  "price_date": "2026-08-12",
   "record": {
-    "current_price": 2131.0,
-    "change_from_signal_month_pct": -14.21,
-    "return_since_gc_pct": -14.21
+    "current_price": 2246.0,
+    "change_from_signal_month_pct": -9.58,
+    "return_since_gc_pct": -9.58
   },
   "daily": [
     {
@@ -35,22 +35,35 @@
       "sma200": 2524.62,
       "rsi14": 46.43,
       "rsi5": 49.71
+    },
+    {
+      "date": "2026-08-12",
+      "open": 2149.0,
+      "high": 2279.0,
+      "low": 2102.0,
+      "close": 2246.0,
+      "volume": 24900.0,
+      "sma25": 2248.32,
+      "sma75": 2200.57,
+      "sma200": 2519.18,
+      "rsi14": 46.43,
+      "rsi5": 49.71
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-10",
-    "monthly_rsi14": 42.34,
-    "monthly_rsi_ma5": 42.51,
-    "spread": -0.17,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-12",
+    "monthly_rsi14": 43.65,
+    "monthly_rsi_ma5": 42.78,
+    "spread": 0.88,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-11T12:52:50.739830+00:00"
+  "provisional_generated_at": "2026-08-12T12:58:07.234913+00:00"
 }

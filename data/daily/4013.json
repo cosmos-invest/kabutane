@@ -2,12 +2,12 @@
   "code": "4013",
   "ticker": "4013.T",
   "name": "勤次郎",
-  "generated_at": "2026-08-11T12:51:50.911825+00:00",
-  "price_date": "2026-08-10",
+  "generated_at": "2026-08-12T12:57:05.762549+00:00",
+  "price_date": "2026-08-12",
   "record": {
-    "current_price": 729.0,
-    "change_from_signal_month_pct": 0.69,
-    "return_since_gc_pct": 14.8
+    "current_price": 736.0,
+    "change_from_signal_month_pct": 1.66,
+    "return_since_gc_pct": 15.91
   },
   "daily": [
     {
@@ -35,15 +35,28 @@
       "sma200": 886.66,
       "rsi14": 44.0,
       "rsi5": 47.59
+    },
+    {
+      "date": "2026-08-12",
+      "open": 711.0,
+      "high": 750.0,
+      "low": 707.0,
+      "close": 736.0,
+      "volume": 83400.0,
+      "sma25": 704.8,
+      "sma75": 660.68,
+      "sma200": 883.8,
+      "rsi14": 44.0,
+      "rsi5": 47.59
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-10",
-    "monthly_rsi14": 47.29,
-    "monthly_rsi_ma5": 44.36,
-    "spread": 2.93,
+    "price_date": "2026-08-12",
+    "monthly_rsi14": 47.59,
+    "monthly_rsi_ma5": 44.42,
+    "spread": 3.17,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -52,5 +65,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-11T12:52:50.739830+00:00"
+  "provisional_generated_at": "2026-08-12T12:58:07.234913+00:00"
 }
