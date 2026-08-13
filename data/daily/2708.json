@@ -2,12 +2,12 @@
   "code": "2708",
   "ticker": "2708.T",
   "name": "久世",
-  "generated_at": "2026-08-12T12:57:05.762549+00:00",
-  "price_date": "2026-08-12",
+  "generated_at": "2026-08-13T12:58:03.746124+00:00",
+  "price_date": "2026-08-13",
   "record": {
-    "current_price": 2012.0,
-    "change_from_signal_month_pct": 0.1,
-    "return_since_gc_pct": 0.1
+    "current_price": 2005.0,
+    "change_from_signal_month_pct": -0.25,
+    "return_since_gc_pct": -0.25
   },
   "daily": [
     {
@@ -48,15 +48,28 @@
       "sma200": 2016.36,
       "rsi14": 53.44,
       "rsi5": 55.64
+    },
+    {
+      "date": "2026-08-13",
+      "open": 2015.0,
+      "high": 2015.0,
+      "low": 2005.0,
+      "close": 2005.0,
+      "volume": 2000.0,
+      "sma25": 1999.88,
+      "sma75": 1917.72,
+      "sma200": 2016.77,
+      "rsi14": 53.44,
+      "rsi5": 55.64
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-12",
-    "monthly_rsi14": 54.08,
-    "monthly_rsi_ma5": 52.05,
-    "spread": 2.03,
+    "price_date": "2026-08-13",
+    "monthly_rsi14": 53.85,
+    "monthly_rsi_ma5": 52.01,
+    "spread": 1.84,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -65,5 +78,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-12T12:58:07.234913+00:00"
+  "provisional_generated_at": "2026-08-13T12:59:03.768990+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "7057",
   "ticker": "7057.T",
   "name": "エヌ・シー・エヌ",
-  "generated_at": "2026-08-12T12:57:05.762549+00:00",
-  "price_date": "2026-08-12",
+  "generated_at": "2026-08-13T12:58:03.746124+00:00",
+  "price_date": "2026-08-13",
   "record": {
-    "current_price": 942.0,
-    "change_from_signal_month_pct": 0.53,
-    "return_since_gc_pct": 0.53
+    "current_price": 892.0,
+    "change_from_signal_month_pct": -4.8,
+    "return_since_gc_pct": -4.8
   },
   "daily": [
     {
@@ -48,22 +48,35 @@
       "sma200": 990.77,
       "rsi14": 43.99,
       "rsi5": 45.38
+    },
+    {
+      "date": "2026-08-13",
+      "open": 942.0,
+      "high": 942.0,
+      "low": 887.0,
+      "close": 892.0,
+      "volume": 29100.0,
+      "sma25": 928.56,
+      "sma75": 913.08,
+      "sma200": 990.28,
+      "rsi14": 43.99,
+      "rsi5": 45.38
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-12",
-    "monthly_rsi14": 45.81,
-    "monthly_rsi_ma5": 44.26,
-    "spread": 1.55,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-13",
+    "monthly_rsi14": 42.76,
+    "monthly_rsi_ma5": 43.65,
+    "spread": -0.89,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-12T12:58:07.234913+00:00"
+  "provisional_generated_at": "2026-08-13T12:59:03.768990+00:00"
 }

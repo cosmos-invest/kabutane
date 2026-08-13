@@ -2,12 +2,12 @@
   "code": "9475",
   "ticker": "9475.T",
   "name": "昭文社ホールディングス",
-  "generated_at": "2026-08-12T12:57:05.762549+00:00",
-  "price_date": "2026-08-12",
+  "generated_at": "2026-08-13T12:58:03.746124+00:00",
+  "price_date": "2026-08-13",
   "record": {
-    "current_price": 511.0,
-    "change_from_signal_month_pct": -2.29,
-    "return_since_gc_pct": -2.29
+    "current_price": 534.0,
+    "change_from_signal_month_pct": 2.1,
+    "return_since_gc_pct": 2.1
   },
   "daily": [
     {
@@ -48,22 +48,35 @@
       "sma200": 489.71,
       "rsi14": 63.36,
       "rsi5": 65.7
+    },
+    {
+      "date": "2026-08-13",
+      "open": 516.0,
+      "high": 537.0,
+      "low": 516.0,
+      "close": 534.0,
+      "volume": 4900.0,
+      "sma25": 510.64,
+      "sma75": 491.28,
+      "sma200": 490.29,
+      "rsi14": 63.36,
+      "rsi5": 65.7
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-12",
-    "monthly_rsi14": 64.88,
-    "monthly_rsi_ma5": 64.97,
-    "spread": -0.1,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-13",
+    "monthly_rsi14": 69.19,
+    "monthly_rsi_ma5": 65.84,
+    "spread": 3.35,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-12T12:58:07.234913+00:00"
+  "provisional_generated_at": "2026-08-13T12:59:03.768990+00:00"
 }

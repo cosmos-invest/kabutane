@@ -2,12 +2,12 @@
   "code": "5355",
   "ticker": "5355.T",
   "name": "日本坩堝",
-  "generated_at": "2026-08-12T12:57:05.762549+00:00",
-  "price_date": "2026-08-12",
+  "generated_at": "2026-08-13T12:58:03.746124+00:00",
+  "price_date": "2026-08-13",
   "record": {
-    "current_price": 675.0,
-    "change_from_signal_month_pct": -0.74,
-    "return_since_gc_pct": -1.03
+    "current_price": 679.0,
+    "change_from_signal_month_pct": -0.15,
+    "return_since_gc_pct": -0.44
   },
   "daily": [
     {
@@ -48,22 +48,35 @@
       "sma200": 645.21,
       "rsi14": 71.9,
       "rsi5": 74.8
+    },
+    {
+      "date": "2026-08-13",
+      "open": 676.0,
+      "high": 679.0,
+      "low": 675.0,
+      "close": 679.0,
+      "volume": 2900.0,
+      "sma25": 679.76,
+      "sma75": 666.83,
+      "sma200": 645.58,
+      "rsi14": 71.9,
+      "rsi5": 74.8
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-12",
-    "monthly_rsi14": 73.85,
-    "monthly_rsi_ma5": 74.6,
-    "spread": -0.75,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-13",
+    "monthly_rsi14": 76.37,
+    "monthly_rsi_ma5": 75.11,
+    "spread": 1.26,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-12T12:58:07.234913+00:00"
+  "provisional_generated_at": "2026-08-13T12:59:03.768990+00:00"
 }

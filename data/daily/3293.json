@@ -2,12 +2,12 @@
   "code": "3293",
   "ticker": "3293.T",
   "name": "アズマハウス",
-  "generated_at": "2026-08-12T12:57:05.762549+00:00",
-  "price_date": "2026-08-12",
+  "generated_at": "2026-08-13T12:58:03.746124+00:00",
+  "price_date": "2026-08-13",
   "record": {
-    "current_price": 768.0,
-    "change_from_signal_month_pct": -0.78,
-    "return_since_gc_pct": -0.78
+    "current_price": 774.0,
+    "change_from_signal_month_pct": 0.0,
+    "return_since_gc_pct": 0.0
   },
   "daily": [
     {
@@ -48,22 +48,35 @@
       "sma200": 775.12,
       "rsi14": 52.71,
       "rsi5": 53.92
+    },
+    {
+      "date": "2026-08-13",
+      "open": 773.0,
+      "high": 774.0,
+      "low": 769.0,
+      "close": 774.0,
+      "volume": 1900.0,
+      "sma25": 767.84,
+      "sma75": 765.73,
+      "sma200": 775.11,
+      "rsi14": 52.71,
+      "rsi5": 53.92
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-12",
-    "monthly_rsi14": 51.25,
-    "monthly_rsi_ma5": 51.33,
-    "spread": -0.08,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-13",
+    "monthly_rsi14": 54.03,
+    "monthly_rsi_ma5": 51.88,
+    "spread": 2.15,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-12T12:58:07.234913+00:00"
+  "provisional_generated_at": "2026-08-13T12:59:03.768990+00:00"
 }

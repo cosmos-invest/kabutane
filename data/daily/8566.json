@@ -2,12 +2,12 @@
   "code": "8566",
   "ticker": "8566.T",
   "name": "リコーリース",
-  "generated_at": "2026-08-12T12:57:05.762549+00:00",
-  "price_date": "2026-08-12",
+  "generated_at": "2026-08-13T12:58:03.746124+00:00",
+  "price_date": "2026-08-13",
   "record": {
-    "current_price": 6680.0,
-    "change_from_signal_month_pct": -0.6,
-    "return_since_gc_pct": -0.6
+    "current_price": 6650.0,
+    "change_from_signal_month_pct": -1.04,
+    "return_since_gc_pct": -1.04
   },
   "daily": [
     {
@@ -48,15 +48,28 @@
       "sma200": 6059.2,
       "rsi14": 62.85,
       "rsi5": 69.7
+    },
+    {
+      "date": "2026-08-13",
+      "open": 6700.0,
+      "high": 6700.0,
+      "low": 6600.0,
+      "close": 6650.0,
+      "volume": 28500.0,
+      "sma25": 6624.8,
+      "sma75": 6289.6,
+      "sma200": 6063.45,
+      "rsi14": 62.85,
+      "rsi5": 69.7
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-12",
-    "monthly_rsi14": 69.55,
-    "monthly_rsi_ma5": 65.89,
-    "spread": 3.66,
+    "price_date": "2026-08-13",
+    "monthly_rsi14": 68.84,
+    "monthly_rsi_ma5": 65.75,
+    "spread": 3.09,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -65,5 +78,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-12T12:58:07.234913+00:00"
+  "provisional_generated_at": "2026-08-13T12:59:03.768990+00:00"
 }

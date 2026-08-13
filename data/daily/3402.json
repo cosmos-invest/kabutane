@@ -2,12 +2,12 @@
   "code": "3402",
   "ticker": "3402.T",
   "name": "東レ",
-  "generated_at": "2026-08-12T12:57:05.762549+00:00",
-  "price_date": "2026-08-12",
+  "generated_at": "2026-08-13T12:58:03.746124+00:00",
+  "price_date": "2026-08-13",
   "record": {
-    "current_price": 1359.5,
-    "change_from_signal_month_pct": 17.4,
-    "return_since_gc_pct": 17.4
+    "current_price": 1355.0,
+    "change_from_signal_month_pct": 17.01,
+    "return_since_gc_pct": 17.01
   },
   "daily": [
     {
@@ -48,15 +48,28 @@
       "sma200": 1115.9,
       "rsi14": 58.31,
       "rsi5": 58.41
+    },
+    {
+      "date": "2026-08-13",
+      "open": 1359.0,
+      "high": 1371.5,
+      "low": 1338.5,
+      "close": 1355.0,
+      "volume": 6111900.0,
+      "sma25": 1196.56,
+      "sma75": 1156.35,
+      "sma200": 1118.05,
+      "rsi14": 58.31,
+      "rsi5": 58.41
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-12",
-    "monthly_rsi14": 65.93,
-    "monthly_rsi_ma5": 59.72,
-    "spread": 6.21,
+    "price_date": "2026-08-13",
+    "monthly_rsi14": 65.79,
+    "monthly_rsi_ma5": 59.69,
+    "spread": 6.09,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -65,5 +78,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-12T12:58:07.234913+00:00"
+  "provisional_generated_at": "2026-08-13T12:59:03.768990+00:00"
 }

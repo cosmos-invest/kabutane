@@ -2,12 +2,12 @@
   "code": "7081",
   "ticker": "7081.T",
   "name": "コーユーレンティア",
-  "generated_at": "2026-08-12T12:57:05.762549+00:00",
-  "price_date": "2026-08-12",
+  "generated_at": "2026-08-13T12:58:03.746124+00:00",
+  "price_date": "2026-08-13",
   "record": {
-    "current_price": 1325.0,
-    "change_from_signal_month_pct": 0.53,
-    "return_since_gc_pct": 0.53
+    "current_price": 1310.0,
+    "change_from_signal_month_pct": -0.61,
+    "return_since_gc_pct": -0.61
   },
   "daily": [
     {
@@ -48,22 +48,35 @@
       "sma200": 1294.85,
       "rsi14": 63.64,
       "rsi5": 65.16
+    },
+    {
+      "date": "2026-08-13",
+      "open": 1321.0,
+      "high": 1321.0,
+      "low": 1310.0,
+      "close": 1310.0,
+      "volume": 800.0,
+      "sma25": 1318.04,
+      "sma75": 1314.61,
+      "sma200": 1295.56,
+      "rsi14": 63.64,
+      "rsi5": 65.16
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-12",
-    "monthly_rsi14": 66.1,
-    "monthly_rsi_ma5": 64.99,
-    "spread": 1.12,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-13",
+    "monthly_rsi14": 64.52,
+    "monthly_rsi_ma5": 64.67,
+    "spread": -0.15,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-12T12:58:07.234913+00:00"
+  "provisional_generated_at": "2026-08-13T12:59:03.768990+00:00"
 }

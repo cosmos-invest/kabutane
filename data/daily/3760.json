@@ -2,12 +2,12 @@
   "code": "3760",
   "ticker": "3760.T",
   "name": "ケイブ",
-  "generated_at": "2026-08-12T12:57:05.762549+00:00",
-  "price_date": "2026-08-12",
+  "generated_at": "2026-08-13T12:58:03.746124+00:00",
+  "price_date": "2026-08-13",
   "record": {
-    "current_price": 760.0,
-    "change_from_signal_month_pct": 0.13,
-    "return_since_gc_pct": 16.39
+    "current_price": 748.0,
+    "change_from_signal_month_pct": -1.45,
+    "return_since_gc_pct": 14.55
   },
   "daily": [
     {
@@ -48,15 +48,28 @@
       "sma200": 687.0,
       "rsi14": 33.26,
       "rsi5": 40.95
+    },
+    {
+      "date": "2026-08-13",
+      "open": 750.0,
+      "high": 757.0,
+      "low": 742.0,
+      "close": 748.0,
+      "volume": 30800.0,
+      "sma25": 721.56,
+      "sma75": 652.39,
+      "sma200": 686.56,
+      "rsi14": 33.26,
+      "rsi5": 40.95
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-12",
-    "monthly_rsi14": 36.58,
-    "monthly_rsi_ma5": 30.06,
-    "spread": 6.52,
+    "price_date": "2026-08-13",
+    "monthly_rsi14": 36.06,
+    "monthly_rsi_ma5": 29.96,
+    "spread": 6.1,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -65,5 +78,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-12T12:58:07.234913+00:00"
+  "provisional_generated_at": "2026-08-13T12:59:03.768990+00:00"
 }

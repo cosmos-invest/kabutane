@@ -2,12 +2,12 @@
   "code": "2907",
   "ticker": "2907.T",
   "name": "あじかん",
-  "generated_at": "2026-08-12T12:57:05.762549+00:00",
-  "price_date": "2026-08-12",
+  "generated_at": "2026-08-13T12:58:03.746124+00:00",
+  "price_date": "2026-08-13",
   "record": {
-    "current_price": 1506.0,
-    "change_from_signal_month_pct": -3.09,
-    "return_since_gc_pct": 0.94
+    "current_price": 1518.0,
+    "change_from_signal_month_pct": -2.32,
+    "return_since_gc_pct": 1.74
   },
   "daily": [
     {
@@ -48,15 +48,28 @@
       "sma200": 1375.19,
       "rsi14": 65.14,
       "rsi5": 71.0
+    },
+    {
+      "date": "2026-08-13",
+      "open": 1507.0,
+      "high": 1531.0,
+      "low": 1507.0,
+      "close": 1518.0,
+      "volume": 2800.0,
+      "sma25": 1541.76,
+      "sma75": 1441.16,
+      "sma200": 1376.37,
+      "rsi14": 65.14,
+      "rsi5": 71.0
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-12",
-    "monthly_rsi14": 66.71,
-    "monthly_rsi_ma5": 65.82,
-    "spread": 0.89,
+    "price_date": "2026-08-13",
+    "monthly_rsi14": 67.77,
+    "monthly_rsi_ma5": 66.03,
+    "spread": 1.74,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -65,5 +78,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-12T12:58:07.234913+00:00"
+  "provisional_generated_at": "2026-08-13T12:59:03.768990+00:00"
 }

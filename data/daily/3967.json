@@ -2,12 +2,12 @@
   "code": "3967",
   "ticker": "3967.T",
   "name": "エルテス",
-  "generated_at": "2026-08-12T12:57:05.762549+00:00",
-  "price_date": "2026-08-12",
+  "generated_at": "2026-08-13T12:58:03.746124+00:00",
+  "price_date": "2026-08-13",
   "record": {
-    "current_price": 600.0,
-    "change_from_signal_month_pct": 1.18,
-    "return_since_gc_pct": 1.18
+    "current_price": 598.0,
+    "change_from_signal_month_pct": 0.84,
+    "return_since_gc_pct": 0.84
   },
   "daily": [
     {
@@ -48,15 +48,28 @@
       "sma200": 609.91,
       "rsi14": 39.45,
       "rsi5": 41.87
+    },
+    {
+      "date": "2026-08-13",
+      "open": 599.0,
+      "high": 604.0,
+      "low": 595.0,
+      "close": 598.0,
+      "volume": 8200.0,
+      "sma25": 585.84,
+      "sma75": 579.12,
+      "sma200": 609.59,
+      "rsi14": 39.45,
+      "rsi5": 41.87
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-12",
-    "monthly_rsi14": 40.34,
-    "monthly_rsi_ma5": 37.49,
-    "spread": 2.85,
+    "price_date": "2026-08-13",
+    "monthly_rsi14": 40.11,
+    "monthly_rsi_ma5": 37.44,
+    "spread": 2.67,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -65,5 +78,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-12T12:58:07.234913+00:00"
+  "provisional_generated_at": "2026-08-13T12:59:03.768990+00:00"
 }

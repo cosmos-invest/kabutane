@@ -2,12 +2,12 @@
   "code": "8278",
   "ticker": "8278.T",
   "name": "フジ",
-  "generated_at": "2026-08-12T12:57:05.762549+00:00",
-  "price_date": "2026-08-12",
+  "generated_at": "2026-08-13T12:58:03.746124+00:00",
+  "price_date": "2026-08-13",
   "record": {
-    "current_price": 1995.0,
-    "change_from_signal_month_pct": -1.68,
-    "return_since_gc_pct": -1.68
+    "current_price": 2001.0,
+    "change_from_signal_month_pct": -1.38,
+    "return_since_gc_pct": -1.38
   },
   "daily": [
     {
@@ -48,15 +48,28 @@
       "sma200": 2044.8,
       "rsi14": 49.69,
       "rsi5": 50.01
+    },
+    {
+      "date": "2026-08-13",
+      "open": 1995.0,
+      "high": 2003.0,
+      "low": 1981.0,
+      "close": 2001.0,
+      "volume": 98600.0,
+      "sma25": 2000.84,
+      "sma75": 1999.27,
+      "sma200": 2044.99,
+      "rsi14": 49.69,
+      "rsi5": 50.01
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-12",
-    "monthly_rsi14": 49.11,
-    "monthly_rsi_ma5": 50.32,
-    "spread": -1.21,
+    "price_date": "2026-08-13",
+    "monthly_rsi14": 49.58,
+    "monthly_rsi_ma5": 50.41,
+    "spread": -0.83,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -65,5 +78,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-12T12:58:07.234913+00:00"
+  "provisional_generated_at": "2026-08-13T12:59:03.768990+00:00"
 }

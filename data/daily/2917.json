@@ -2,12 +2,12 @@
   "code": "2917",
   "ticker": "2917.T",
   "name": "大森屋",
-  "generated_at": "2026-08-12T12:57:05.762549+00:00",
-  "price_date": "2026-08-12",
+  "generated_at": "2026-08-13T12:58:03.746124+00:00",
+  "price_date": "2026-08-13",
   "record": {
-    "current_price": 942.0,
-    "change_from_signal_month_pct": 0.11,
-    "return_since_gc_pct": 0.11
+    "current_price": 935.0,
+    "change_from_signal_month_pct": -0.64,
+    "return_since_gc_pct": -0.64
   },
   "daily": [
     {
@@ -48,15 +48,28 @@
       "sma200": 908.98,
       "rsi14": 51.73,
       "rsi5": 55.5
+    },
+    {
+      "date": "2026-08-13",
+      "open": 942.0,
+      "high": 942.0,
+      "low": 934.0,
+      "close": 935.0,
+      "volume": 3200.0,
+      "sma25": 936.68,
+      "sma75": 924.04,
+      "sma200": 909.15,
+      "rsi14": 51.73,
+      "rsi5": 55.5
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-12",
-    "monthly_rsi14": 52.97,
-    "monthly_rsi_ma5": 50.25,
-    "spread": 2.72,
+    "price_date": "2026-08-13",
+    "monthly_rsi14": 51.33,
+    "monthly_rsi_ma5": 49.92,
+    "spread": 1.41,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -65,5 +78,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-12T12:58:07.234913+00:00"
+  "provisional_generated_at": "2026-08-13T12:59:03.768990+00:00"
 }

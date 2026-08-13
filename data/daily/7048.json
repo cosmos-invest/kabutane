@@ -2,12 +2,12 @@
   "code": "7048",
   "ticker": "7048.T",
   "name": "ベルトラ",
-  "generated_at": "2026-08-12T12:57:05.762549+00:00",
-  "price_date": "2026-08-12",
+  "generated_at": "2026-08-13T12:58:03.746124+00:00",
+  "price_date": "2026-08-13",
   "record": {
-    "current_price": 159.0,
-    "change_from_signal_month_pct": 0.63,
-    "return_since_gc_pct": -3.05
+    "current_price": 156.0,
+    "change_from_signal_month_pct": -1.27,
+    "return_since_gc_pct": -4.88
   },
   "daily": [
     {
@@ -48,15 +48,28 @@
       "sma200": 176.84,
       "rsi14": 34.06,
       "rsi5": 35.5
+    },
+    {
+      "date": "2026-08-13",
+      "open": 159.0,
+      "high": 159.0,
+      "low": 153.0,
+      "close": 156.0,
+      "volume": 274400.0,
+      "sma25": 162.92,
+      "sma75": 154.05,
+      "sma200": 176.44,
+      "rsi14": 34.06,
+      "rsi5": 35.5
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-12",
-    "monthly_rsi14": 33.18,
-    "monthly_rsi_ma5": 31.71,
-    "spread": 1.47,
+    "price_date": "2026-08-13",
+    "monthly_rsi14": 32.84,
+    "monthly_rsi_ma5": 31.64,
+    "spread": 1.2,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -65,5 +78,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-12T12:58:07.234913+00:00"
+  "provisional_generated_at": "2026-08-13T12:59:03.768990+00:00"
 }

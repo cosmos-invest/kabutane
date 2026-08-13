@@ -2,12 +2,12 @@
   "code": "6982",
   "ticker": "6982.T",
   "name": "リード",
-  "generated_at": "2026-08-12T12:57:05.762549+00:00",
-  "price_date": "2026-08-12",
+  "generated_at": "2026-08-13T12:58:03.746124+00:00",
+  "price_date": "2026-08-13",
   "record": {
-    "current_price": 579.0,
-    "change_from_signal_month_pct": -5.7,
-    "return_since_gc_pct": -5.7
+    "current_price": 575.0,
+    "change_from_signal_month_pct": -6.35,
+    "return_since_gc_pct": -6.35
   },
   "daily": [
     {
@@ -48,15 +48,28 @@
       "sma200": 602.5,
       "rsi14": 48.75,
       "rsi5": 51.04
+    },
+    {
+      "date": "2026-08-13",
+      "open": 575.0,
+      "high": 575.0,
+      "low": 574.0,
+      "close": 575.0,
+      "volume": 400.0,
+      "sma25": 601.52,
+      "sma75": 593.33,
+      "sma200": 602.25,
+      "rsi14": 48.75,
+      "rsi5": 51.04
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-12",
-    "monthly_rsi14": 46.34,
-    "monthly_rsi_ma5": 48.1,
-    "spread": -1.76,
+    "price_date": "2026-08-13",
+    "monthly_rsi14": 45.87,
+    "monthly_rsi_ma5": 48.0,
+    "spread": -2.14,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -65,5 +78,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-12T12:58:07.234913+00:00"
+  "provisional_generated_at": "2026-08-13T12:59:03.768990+00:00"
 }

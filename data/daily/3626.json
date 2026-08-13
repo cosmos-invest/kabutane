@@ -2,12 +2,12 @@
   "code": "3626",
   "ticker": "3626.T",
   "name": "ＴＩＳＩ",
-  "generated_at": "2026-08-12T12:57:05.762549+00:00",
-  "price_date": "2026-08-12",
+  "generated_at": "2026-08-13T12:58:03.746124+00:00",
+  "price_date": "2026-08-13",
   "record": {
-    "current_price": 3780.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 3764.0,
+    "change_from_signal_month_pct": -0.42,
+    "return_since_gc_pct": -0.42
   },
   "daily": [
     {
@@ -48,15 +48,28 @@
       "sma200": 4006.99,
       "rsi14": 41.61,
       "rsi5": 47.89
+    },
+    {
+      "date": "2026-08-13",
+      "open": 3724.0,
+      "high": 3775.0,
+      "low": 3700.0,
+      "close": 3764.0,
+      "volume": 665100.0,
+      "sma25": 3613.0,
+      "sma75": 3432.97,
+      "sma200": 4001.43,
+      "rsi14": 41.61,
+      "rsi5": 47.89
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-12",
-    "monthly_rsi14": 47.53,
-    "monthly_rsi_ma5": 42.65,
-    "spread": 4.88,
+    "price_date": "2026-08-13",
+    "monthly_rsi14": 47.32,
+    "monthly_rsi_ma5": 42.61,
+    "spread": 4.71,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -65,5 +78,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-12T12:58:07.234913+00:00"
+  "provisional_generated_at": "2026-08-13T12:59:03.768990+00:00"
 }

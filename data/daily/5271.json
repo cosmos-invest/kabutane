@@ -2,12 +2,12 @@
   "code": "5271",
   "ticker": "5271.T",
   "name": "トーヨーアサノ",
-  "generated_at": "2026-08-12T12:57:05.762549+00:00",
-  "price_date": "2026-08-12",
+  "generated_at": "2026-08-13T12:58:03.746124+00:00",
+  "price_date": "2026-08-13",
   "record": {
-    "current_price": 2278.0,
-    "change_from_signal_month_pct": -0.74,
-    "return_since_gc_pct": -0.74
+    "current_price": 2300.0,
+    "change_from_signal_month_pct": 0.22,
+    "return_since_gc_pct": 0.22
   },
   "daily": [
     {
@@ -48,22 +48,35 @@
       "sma200": 2313.99,
       "rsi14": 55.05,
       "rsi5": 55.44
+    },
+    {
+      "date": "2026-08-13",
+      "open": 2328.0,
+      "high": 2328.0,
+      "low": 2300.0,
+      "close": 2300.0,
+      "volume": 400.0,
+      "sma25": 2246.6,
+      "sma75": 2232.69,
+      "sma200": 2314.23,
+      "rsi14": 55.05,
+      "rsi5": 55.44
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-12",
-    "monthly_rsi14": 56.92,
-    "monthly_rsi_ma5": 57.15,
-    "spread": -0.23,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-13",
+    "monthly_rsi14": 57.63,
+    "monthly_rsi_ma5": 57.29,
+    "spread": 0.34,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-12T12:58:07.234913+00:00"
+  "provisional_generated_at": "2026-08-13T12:59:03.768990+00:00"
 }

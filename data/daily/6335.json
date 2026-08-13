@@ -2,12 +2,12 @@
   "code": "6335",
   "ticker": "6335.T",
   "name": "東京機械製作所",
-  "generated_at": "2026-08-12T12:57:05.762549+00:00",
-  "price_date": "2026-08-12",
+  "generated_at": "2026-08-13T12:58:03.746124+00:00",
+  "price_date": "2026-08-13",
   "record": {
-    "current_price": 696.0,
-    "change_from_signal_month_pct": -2.79,
-    "return_since_gc_pct": 8.24
+    "current_price": 596.0,
+    "change_from_signal_month_pct": -16.76,
+    "return_since_gc_pct": -7.31
   },
   "daily": [
     {
@@ -48,22 +48,35 @@
       "sma200": 546.84,
       "rsi14": 59.91,
       "rsi5": 67.83
+    },
+    {
+      "date": "2026-08-13",
+      "open": 598.0,
+      "high": 609.0,
+      "low": 596.0,
+      "close": 596.0,
+      "volume": 378300.0,
+      "sma25": 707.92,
+      "sma75": 622.76,
+      "sma200": 547.51,
+      "rsi14": 59.91,
+      "rsi5": 67.83
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-12",
-    "monthly_rsi14": 67.84,
-    "monthly_rsi_ma5": 65.18,
-    "spread": 2.66,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-13",
+    "monthly_rsi14": 58.03,
+    "monthly_rsi_ma5": 63.22,
+    "spread": -5.19,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-12T12:58:07.234913+00:00"
+  "provisional_generated_at": "2026-08-13T12:59:03.768990+00:00"
 }

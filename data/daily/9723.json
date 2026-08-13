@@ -2,12 +2,12 @@
   "code": "9723",
   "ticker": "9723.T",
   "name": "京都ホテル",
-  "generated_at": "2026-08-12T12:57:05.762549+00:00",
-  "price_date": "2026-08-12",
+  "generated_at": "2026-08-13T12:58:03.746124+00:00",
+  "price_date": "2026-08-13",
   "record": {
-    "current_price": 631.0,
-    "change_from_signal_month_pct": -1.25,
-    "return_since_gc_pct": -1.25
+    "current_price": 637.0,
+    "change_from_signal_month_pct": -0.31,
+    "return_since_gc_pct": -0.31
   },
   "daily": [
     {
@@ -48,22 +48,35 @@
       "sma200": 639.63,
       "rsi14": 44.44,
       "rsi5": 45.05
+    },
+    {
+      "date": "2026-08-13",
+      "open": 633.0,
+      "high": 637.0,
+      "low": 632.0,
+      "close": 637.0,
+      "volume": 1000.0,
+      "sma25": 635.12,
+      "sma75": 635.13,
+      "sma200": 639.63,
+      "rsi14": 44.44,
+      "rsi5": 45.05
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-12",
-    "monthly_rsi14": 41.6,
-    "monthly_rsi_ma5": 41.66,
-    "spread": -0.06,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-13",
+    "monthly_rsi14": 42.73,
+    "monthly_rsi_ma5": 41.88,
+    "spread": 0.85,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-12T12:58:07.234913+00:00"
+  "provisional_generated_at": "2026-08-13T12:59:03.768990+00:00"
 }

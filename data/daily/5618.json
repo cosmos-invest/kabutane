@@ -2,12 +2,12 @@
   "code": "5618",
   "ticker": "5618.T",
   "name": "ナイル",
-  "generated_at": "2026-08-12T12:57:05.762549+00:00",
-  "price_date": "2026-08-12",
+  "generated_at": "2026-08-13T12:58:03.746124+00:00",
+  "price_date": "2026-08-13",
   "record": {
-    "current_price": 301.0,
-    "change_from_signal_month_pct": 1.35,
-    "return_since_gc_pct": 1.35
+    "current_price": 300.0,
+    "change_from_signal_month_pct": 1.01,
+    "return_since_gc_pct": 1.01
   },
   "daily": [
     {
@@ -48,15 +48,28 @@
       "sma200": 321.62,
       "rsi14": 30.54,
       "rsi5": 30.73
+    },
+    {
+      "date": "2026-08-13",
+      "open": 300.0,
+      "high": 301.0,
+      "low": 299.0,
+      "close": 300.0,
+      "volume": 1500.0,
+      "sma25": 294.64,
+      "sma75": 296.43,
+      "sma200": 321.23,
+      "rsi14": 30.54,
+      "rsi5": 30.73
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-12",
-    "monthly_rsi14": 31.2,
-    "monthly_rsi_ma5": 30.66,
-    "spread": 0.54,
+    "price_date": "2026-08-13",
+    "monthly_rsi14": 31.08,
+    "monthly_rsi_ma5": 30.63,
+    "spread": 0.45,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -65,5 +78,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-12T12:58:07.234913+00:00"
+  "provisional_generated_at": "2026-08-13T12:59:03.768990+00:00"
 }

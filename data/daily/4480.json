@@ -2,12 +2,12 @@
   "code": "4480",
   "ticker": "4480.T",
   "name": "メドレー",
-  "generated_at": "2026-08-12T12:57:05.762549+00:00",
-  "price_date": "2026-08-12",
+  "generated_at": "2026-08-13T12:58:03.746124+00:00",
+  "price_date": "2026-08-13",
   "record": {
-    "current_price": 2136.0,
-    "change_from_signal_month_pct": 4.25,
-    "return_since_gc_pct": -5.15
+    "current_price": 2177.0,
+    "change_from_signal_month_pct": 6.25,
+    "return_since_gc_pct": -3.33
   },
   "daily": [
     {
@@ -48,15 +48,28 @@
       "sma200": 2184.18,
       "rsi14": 39.95,
       "rsi5": 39.98
+    },
+    {
+      "date": "2026-08-13",
+      "open": 2136.0,
+      "high": 2198.0,
+      "low": 2118.0,
+      "close": 2177.0,
+      "volume": 226100.0,
+      "sma25": 2069.96,
+      "sma75": 2116.76,
+      "sma200": 2184.28,
+      "rsi14": 39.95,
+      "rsi5": 39.98
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-12",
-    "monthly_rsi14": 36.65,
-    "monthly_rsi_ma5": 35.88,
-    "spread": 0.77,
+    "price_date": "2026-08-13",
+    "monthly_rsi14": 37.35,
+    "monthly_rsi_ma5": 36.02,
+    "spread": 1.33,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -65,5 +78,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-12T12:58:07.234913+00:00"
+  "provisional_generated_at": "2026-08-13T12:59:03.768990+00:00"
 }

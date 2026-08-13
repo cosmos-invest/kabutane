@@ -2,12 +2,12 @@
   "code": "9024",
   "ticker": "9024.T",
   "name": "西武ホールディングス",
-  "generated_at": "2026-08-12T12:57:05.762549+00:00",
-  "price_date": "2026-08-12",
+  "generated_at": "2026-08-13T12:58:03.746124+00:00",
+  "price_date": "2026-08-13",
   "record": {
-    "current_price": 3412.0,
-    "change_from_signal_month_pct": -4.21,
-    "return_since_gc_pct": -4.21
+    "current_price": 3242.0,
+    "change_from_signal_month_pct": -8.98,
+    "return_since_gc_pct": -8.98
   },
   "daily": [
     {
@@ -48,22 +48,35 @@
       "sma200": 4102.68,
       "rsi14": 48.8,
       "rsi5": 49.47
+    },
+    {
+      "date": "2026-08-13",
+      "open": 3378.0,
+      "high": 3386.0,
+      "low": 3236.0,
+      "close": 3242.0,
+      "volume": 3186700.0,
+      "sma25": 3504.36,
+      "sma75": 3304.91,
+      "sma200": 4091.54,
+      "rsi14": 48.8,
+      "rsi5": 49.47
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-12",
-    "monthly_rsi14": 48.98,
-    "monthly_rsi_ma5": 48.04,
-    "spread": 0.95,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-13",
+    "monthly_rsi14": 47.51,
+    "monthly_rsi_ma5": 47.74,
+    "spread": -0.23,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-12T12:58:07.234913+00:00"
+  "provisional_generated_at": "2026-08-13T12:59:03.768990+00:00"
 }

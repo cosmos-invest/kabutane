@@ -2,12 +2,12 @@
   "code": "9258",
   "ticker": "9258.T",
   "name": "ＣＳ－Ｃ",
-  "generated_at": "2026-08-12T12:57:05.762549+00:00",
-  "price_date": "2026-08-12",
+  "generated_at": "2026-08-13T12:58:03.746124+00:00",
+  "price_date": "2026-08-13",
   "record": {
-    "current_price": 289.0,
-    "change_from_signal_month_pct": -18.13,
-    "return_since_gc_pct": -18.13
+    "current_price": 303.0,
+    "change_from_signal_month_pct": -14.16,
+    "return_since_gc_pct": -14.16
   },
   "daily": [
     {
@@ -48,22 +48,35 @@
       "sma200": 334.93,
       "rsi14": 36.36,
       "rsi5": 42.42
+    },
+    {
+      "date": "2026-08-13",
+      "open": 288.0,
+      "high": 303.0,
+      "low": 288.0,
+      "close": 303.0,
+      "volume": 3400.0,
+      "sma25": 305.24,
+      "sma75": 306.57,
+      "sma200": 334.52,
+      "rsi14": 36.36,
+      "rsi5": 42.42
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-12",
-    "monthly_rsi14": 38.24,
-    "monthly_rsi_ma5": 39.26,
-    "spread": -1.02,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-13",
+    "monthly_rsi14": 39.88,
+    "monthly_rsi_ma5": 39.59,
+    "spread": 0.29,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-12T12:58:07.234913+00:00"
+  "provisional_generated_at": "2026-08-13T12:59:03.768990+00:00"
 }

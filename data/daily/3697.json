@@ -2,12 +2,12 @@
   "code": "3697",
   "ticker": "3697.T",
   "name": "ＳＨＩＦＴ",
-  "generated_at": "2026-08-12T12:57:05.762549+00:00",
-  "price_date": "2026-08-12",
+  "generated_at": "2026-08-13T12:58:03.746124+00:00",
+  "price_date": "2026-08-13",
   "record": {
-    "current_price": 916.2,
-    "change_from_signal_month_pct": 4.4,
-    "return_since_gc_pct": 30.57
+    "current_price": 888.8,
+    "change_from_signal_month_pct": 1.28,
+    "return_since_gc_pct": 26.66
   },
   "daily": [
     {
@@ -45,7 +45,20 @@
       "volume": 3318000.0,
       "sma25": 802.78,
       "sma75": 709.7,
-      "sma200": 793.59,
+      "sma200": 793.58,
+      "rsi14": 37.6,
+      "rsi5": 43.97
+    },
+    {
+      "date": "2026-08-13",
+      "open": 901.2,
+      "high": 912.6,
+      "low": 872.6,
+      "close": 888.8,
+      "volume": 3686900.0,
+      "sma25": 810.1,
+      "sma75": 711.89,
+      "sma200": 792.12,
       "rsi14": 37.6,
       "rsi5": 43.97
     }
@@ -53,10 +66,10 @@
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-12",
-    "monthly_rsi14": 42.04,
-    "monthly_rsi_ma5": 36.33,
-    "spread": 5.71,
+    "price_date": "2026-08-13",
+    "monthly_rsi14": 41.09,
+    "monthly_rsi_ma5": 36.14,
+    "spread": 4.96,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -65,5 +78,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-12T12:58:07.234913+00:00"
+  "provisional_generated_at": "2026-08-13T12:59:03.768990+00:00"
 }

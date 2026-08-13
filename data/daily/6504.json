@@ -2,12 +2,12 @@
   "code": "6504",
   "ticker": "6504.T",
   "name": "富士電機",
-  "generated_at": "2026-08-12T12:57:05.762549+00:00",
-  "price_date": "2026-08-12",
+  "generated_at": "2026-08-13T12:58:03.746124+00:00",
+  "price_date": "2026-08-13",
   "record": {
-    "current_price": 14490.0,
-    "change_from_signal_month_pct": 1.44,
-    "return_since_gc_pct": 1.44
+    "current_price": 14970.0,
+    "change_from_signal_month_pct": 4.8,
+    "return_since_gc_pct": 4.8
   },
   "daily": [
     {
@@ -48,22 +48,35 @@
       "sma200": 12362.33,
       "rsi14": 62.53,
       "rsi5": 62.88
+    },
+    {
+      "date": "2026-08-13",
+      "open": 14990.0,
+      "high": 15085.0,
+      "low": 14760.0,
+      "close": 14970.0,
+      "volume": 725000.0,
+      "sma25": 13383.2,
+      "sma75": 14064.6,
+      "sma200": 12384.73,
+      "rsi14": 62.53,
+      "rsi5": 62.88
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-12",
-    "monthly_rsi14": 63.3,
-    "monthly_rsi_ma5": 63.85,
-    "spread": -0.55,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-13",
+    "monthly_rsi14": 64.36,
+    "monthly_rsi_ma5": 64.06,
+    "spread": 0.3,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-12T12:58:07.234913+00:00"
+  "provisional_generated_at": "2026-08-13T12:59:03.768990+00:00"
 }

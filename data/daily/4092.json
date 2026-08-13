@@ -2,12 +2,12 @@
   "code": "4092",
   "ticker": "4092.T",
   "name": "日本化学工業",
-  "generated_at": "2026-08-12T12:57:05.762549+00:00",
-  "price_date": "2026-08-12",
+  "generated_at": "2026-08-13T12:58:03.746124+00:00",
+  "price_date": "2026-08-13",
   "record": {
-    "current_price": 5180.0,
-    "change_from_signal_month_pct": -12.65,
-    "return_since_gc_pct": 6.37
+    "current_price": 5500.0,
+    "change_from_signal_month_pct": -7.25,
+    "return_since_gc_pct": 12.94
   },
   "daily": [
     {
@@ -48,22 +48,35 @@
       "sma200": 3625.14,
       "rsi14": 66.66,
       "rsi5": 76.44
+    },
+    {
+      "date": "2026-08-13",
+      "open": 5270.0,
+      "high": 5540.0,
+      "low": 5170.0,
+      "close": 5500.0,
+      "volume": 347700.0,
+      "sma25": 5172.8,
+      "sma75": 4695.13,
+      "sma200": 3638.34,
+      "rsi14": 66.66,
+      "rsi5": 76.44
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-12",
-    "monthly_rsi14": 67.55,
-    "monthly_rsi_ma5": 70.25,
-    "spread": -2.7,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-13",
+    "monthly_rsi14": 71.33,
+    "monthly_rsi_ma5": 71.0,
+    "spread": 0.33,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-12T12:58:07.234913+00:00"
+  "provisional_generated_at": "2026-08-13T12:59:03.768990+00:00"
 }

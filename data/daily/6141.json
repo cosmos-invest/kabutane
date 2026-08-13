@@ -2,12 +2,12 @@
   "code": "6141",
   "ticker": "6141.T",
   "name": "ＤＭＧ森精機",
-  "generated_at": "2026-08-12T12:57:05.762549+00:00",
-  "price_date": "2026-08-12",
+  "generated_at": "2026-08-13T12:58:03.746124+00:00",
+  "price_date": "2026-08-13",
   "record": {
-    "current_price": 3661.0,
-    "change_from_signal_month_pct": -1.59,
-    "return_since_gc_pct": 24.82
+    "current_price": 3280.0,
+    "change_from_signal_month_pct": -11.83,
+    "return_since_gc_pct": 11.83
   },
   "daily": [
     {
@@ -48,22 +48,35 @@
       "sma200": 3027.09,
       "rsi14": 53.59,
       "rsi5": 59.43
+    },
+    {
+      "date": "2026-08-13",
+      "open": 3343.0,
+      "high": 3408.0,
+      "low": 3252.0,
+      "close": 3280.0,
+      "volume": 6917000.0,
+      "sma25": 3610.52,
+      "sma75": 3496.73,
+      "sma200": 3027.94,
+      "rsi14": 53.59,
+      "rsi5": 59.43
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-12",
-    "monthly_rsi14": 58.98,
-    "monthly_rsi_ma5": 57.06,
-    "spread": 1.92,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-13",
+    "monthly_rsi14": 53.92,
+    "monthly_rsi_ma5": 56.05,
+    "spread": -2.13,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-12T12:58:07.234913+00:00"
+  "provisional_generated_at": "2026-08-13T12:59:03.768990+00:00"
 }

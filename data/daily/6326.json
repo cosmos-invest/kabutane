@@ -2,12 +2,12 @@
   "code": "6326",
   "ticker": "6326.T",
   "name": "クボタ",
-  "generated_at": "2026-08-12T12:57:05.762549+00:00",
-  "price_date": "2026-08-12",
+  "generated_at": "2026-08-13T12:58:03.746124+00:00",
+  "price_date": "2026-08-13",
   "record": {
-    "current_price": 2704.0,
-    "change_from_signal_month_pct": -1.51,
-    "return_since_gc_pct": -1.51
+    "current_price": 2750.0,
+    "change_from_signal_month_pct": 0.16,
+    "return_since_gc_pct": 0.16
   },
   "daily": [
     {
@@ -48,22 +48,35 @@
       "sma200": 2555.85,
       "rsi14": 59.29,
       "rsi5": 59.95
+    },
+    {
+      "date": "2026-08-13",
+      "open": 2717.5,
+      "high": 2752.0,
+      "low": 2704.0,
+      "close": 2750.0,
+      "volume": 3290200.0,
+      "sma25": 2738.52,
+      "sma75": 2755.09,
+      "sma200": 2559.34,
+      "rsi14": 59.29,
+      "rsi5": 59.95
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-12",
-    "monthly_rsi14": 58.23,
-    "monthly_rsi_ma5": 58.99,
-    "spread": -0.76,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-13",
+    "monthly_rsi14": 59.32,
+    "monthly_rsi_ma5": 59.2,
+    "spread": 0.11,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-12T12:58:07.234913+00:00"
+  "provisional_generated_at": "2026-08-13T12:59:03.768990+00:00"
 }
