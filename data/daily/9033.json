@@ -2,12 +2,12 @@
   "code": "9033",
   "ticker": "9033.T",
   "name": "広島電鉄",
-  "generated_at": "2026-08-13T12:58:03.746124+00:00",
-  "price_date": "2026-08-13",
+  "generated_at": "2026-08-14T12:54:09.887055+00:00",
+  "price_date": "2026-08-14",
   "record": {
-    "current_price": 628.0,
-    "change_from_signal_month_pct": 0.48,
-    "return_since_gc_pct": -0.32
+    "current_price": 632.0,
+    "change_from_signal_month_pct": 1.12,
+    "return_since_gc_pct": 0.32
   },
   "daily": [
     {
@@ -61,15 +61,28 @@
       "sma200": 622.16,
       "rsi14": 41.18,
       "rsi5": 41.97
+    },
+    {
+      "date": "2026-08-14",
+      "open": 628.0,
+      "high": 641.0,
+      "low": 625.0,
+      "close": 632.0,
+      "volume": 15000.0,
+      "sma25": 624.0,
+      "sma75": 619.92,
+      "sma200": 622.28,
+      "rsi14": 41.18,
+      "rsi5": 41.97
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-13",
-    "monthly_rsi14": 41.74,
-    "monthly_rsi_ma5": 40.75,
-    "spread": 0.98,
+    "price_date": "2026-08-14",
+    "monthly_rsi14": 42.82,
+    "monthly_rsi_ma5": 40.97,
+    "spread": 1.85,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -78,5 +91,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-13T12:59:03.768990+00:00"
+  "provisional_generated_at": "2026-08-14T12:54:57.232896+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "2349",
   "ticker": "2349.T",
   "name": "エヌアイデイ",
-  "generated_at": "2026-08-13T12:58:03.746124+00:00",
-  "price_date": "2026-08-12",
+  "generated_at": "2026-08-14T12:54:09.887055+00:00",
+  "price_date": "2026-08-14",
   "record": {
-    "current_price": 2504.0,
-    "change_from_signal_month_pct": -0.67,
-    "return_since_gc_pct": -0.67
+    "current_price": 2550.0,
+    "change_from_signal_month_pct": 1.15,
+    "return_since_gc_pct": 1.15
   },
   "daily": [
     {
@@ -48,15 +48,41 @@
       "sma200": 2373.66,
       "rsi14": 58.72,
       "rsi5": 60.93
+    },
+    {
+      "date": "2026-08-13",
+      "open": 2504.0,
+      "high": 2504.0,
+      "low": 2504.0,
+      "close": 2504.0,
+      "volume": 0.0,
+      "sma25": 2513.64,
+      "sma75": 2410.96,
+      "sma200": 2374.72,
+      "rsi14": 58.72,
+      "rsi5": 60.93
+    },
+    {
+      "date": "2026-08-14",
+      "open": 2500.0,
+      "high": 2550.0,
+      "low": 2500.0,
+      "close": 2550.0,
+      "volume": 1900.0,
+      "sma25": 2515.64,
+      "sma75": 2413.05,
+      "sma200": 2375.98,
+      "rsi14": 58.72,
+      "rsi5": 60.93
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-12",
-    "monthly_rsi14": 63.07,
-    "monthly_rsi_ma5": 62.89,
-    "spread": 0.18,
+    "price_date": "2026-08-14",
+    "monthly_rsi14": 65.31,
+    "monthly_rsi_ma5": 63.34,
+    "spread": 1.97,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -65,5 +91,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-13T12:59:03.768990+00:00"
+  "provisional_generated_at": "2026-08-14T12:54:57.232896+00:00"
 }

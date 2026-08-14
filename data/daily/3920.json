@@ -2,12 +2,12 @@
   "code": "3920",
   "ticker": "3920.T",
   "name": "アイビーシー",
-  "generated_at": "2026-08-13T12:58:03.746124+00:00",
-  "price_date": "2026-08-13",
+  "generated_at": "2026-08-14T12:54:09.887055+00:00",
+  "price_date": "2026-08-14",
   "record": {
-    "current_price": 999.0,
-    "change_from_signal_month_pct": 0.4,
-    "return_since_gc_pct": 0.4
+    "current_price": 976.0,
+    "change_from_signal_month_pct": -1.91,
+    "return_since_gc_pct": -1.91
   },
   "daily": [
     {
@@ -61,22 +61,35 @@
       "sma200": 980.33,
       "rsi14": 63.35,
       "rsi5": 63.41
+    },
+    {
+      "date": "2026-08-14",
+      "open": 979.0,
+      "high": 990.0,
+      "low": 975.0,
+      "close": 976.0,
+      "volume": 6500.0,
+      "sma25": 991.72,
+      "sma75": 992.0,
+      "sma200": 980.23,
+      "rsi14": 63.35,
+      "rsi5": 63.41
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-13",
-    "monthly_rsi14": 63.39,
-    "monthly_rsi_ma5": 63.02,
-    "spread": 0.37,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-14",
+    "monthly_rsi14": 60.82,
+    "monthly_rsi_ma5": 62.51,
+    "spread": -1.69,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-13T12:59:03.768990+00:00"
+  "provisional_generated_at": "2026-08-14T12:54:57.232896+00:00"
 }

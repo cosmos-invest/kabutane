@@ -2,12 +2,12 @@
   "code": "3153",
   "ticker": "3153.T",
   "name": "八洲電機",
-  "generated_at": "2026-08-13T12:58:03.746124+00:00",
-  "price_date": "2026-08-13",
+  "generated_at": "2026-08-14T12:54:09.887055+00:00",
+  "price_date": "2026-08-14",
   "record": {
-    "current_price": 2972.0,
-    "change_from_signal_month_pct": -1.75,
-    "return_since_gc_pct": -1.75
+    "current_price": 2991.0,
+    "change_from_signal_month_pct": -1.12,
+    "return_since_gc_pct": -1.12
   },
   "daily": [
     {
@@ -61,22 +61,35 @@
       "sma200": 2920.01,
       "rsi14": 64.66,
       "rsi5": 65.96
+    },
+    {
+      "date": "2026-08-14",
+      "open": 2941.0,
+      "high": 3000.0,
+      "low": 2941.0,
+      "close": 2991.0,
+      "volume": 31800.0,
+      "sma25": 2894.84,
+      "sma75": 2853.23,
+      "sma200": 2923.97,
+      "rsi14": 64.66,
+      "rsi5": 65.96
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-13",
-    "monthly_rsi14": 64.55,
-    "monthly_rsi_ma5": 64.63,
-    "spread": -0.09,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-14",
+    "monthly_rsi14": 65.08,
+    "monthly_rsi_ma5": 64.74,
+    "spread": 0.34,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-13T12:59:03.768990+00:00"
+  "provisional_generated_at": "2026-08-14T12:54:57.232896+00:00"
 }

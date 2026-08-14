@@ -2,12 +2,12 @@
   "code": "7726",
   "ticker": "7726.T",
   "name": "黒田精工",
-  "generated_at": "2026-08-13T12:58:03.746124+00:00",
-  "price_date": "2026-08-13",
+  "generated_at": "2026-08-14T12:54:09.887055+00:00",
+  "price_date": "2026-08-14",
   "record": {
-    "current_price": 1309.0,
-    "change_from_signal_month_pct": 3.31,
-    "return_since_gc_pct": 42.75
+    "current_price": 1322.0,
+    "change_from_signal_month_pct": 4.34,
+    "return_since_gc_pct": 44.17
   },
   "daily": [
     {
@@ -61,22 +61,35 @@
       "sma200": 1109.11,
       "rsi14": 53.52,
       "rsi5": 55.06
+    },
+    {
+      "date": "2026-08-14",
+      "open": 1309.0,
+      "high": 1342.0,
+      "low": 1309.0,
+      "close": 1322.0,
+      "volume": 17700.0,
+      "sma25": 1329.12,
+      "sma75": 1305.01,
+      "sma200": 1111.05,
+      "rsi14": 53.52,
+      "rsi5": 55.06
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-13",
-    "monthly_rsi14": 57.98,
-    "monthly_rsi_ma5": 58.05,
-    "spread": -0.07,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-14",
+    "monthly_rsi14": 58.48,
+    "monthly_rsi_ma5": 58.15,
+    "spread": 0.33,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-13T12:59:03.768990+00:00"
+  "provisional_generated_at": "2026-08-14T12:54:57.232896+00:00"
 }

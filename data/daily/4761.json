@@ -2,12 +2,12 @@
   "code": "4761",
   "ticker": "4761.T",
   "name": "さくらケーシーエス",
-  "generated_at": "2026-08-13T12:58:03.746124+00:00",
-  "price_date": "2026-08-13",
+  "generated_at": "2026-08-14T12:54:09.887055+00:00",
+  "price_date": "2026-08-14",
   "record": {
-    "current_price": 1431.0,
-    "change_from_signal_month_pct": -5.17,
-    "return_since_gc_pct": 11.19
+    "current_price": 1440.0,
+    "change_from_signal_month_pct": -4.57,
+    "return_since_gc_pct": 11.89
   },
   "daily": [
     {
@@ -61,22 +61,35 @@
       "sma200": 1323.01,
       "rsi14": 55.7,
       "rsi5": 60.77
+    },
+    {
+      "date": "2026-08-14",
+      "open": 1440.0,
+      "high": 1445.0,
+      "low": 1427.0,
+      "close": 1440.0,
+      "volume": 2800.0,
+      "sma25": 1458.92,
+      "sma75": 1397.24,
+      "sma200": 1323.59,
+      "rsi14": 55.7,
+      "rsi5": 60.77
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-13",
-    "monthly_rsi14": 57.94,
-    "monthly_rsi_ma5": 58.11,
-    "spread": -0.18,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-14",
+    "monthly_rsi14": 58.33,
+    "monthly_rsi_ma5": 58.19,
+    "spread": 0.14,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-13T12:59:03.768990+00:00"
+  "provisional_generated_at": "2026-08-14T12:54:57.232896+00:00"
 }

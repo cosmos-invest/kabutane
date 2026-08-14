@@ -2,12 +2,12 @@
   "code": "9245",
   "ticker": "9245.T",
   "name": "リベロ",
-  "generated_at": "2026-08-13T12:58:03.746124+00:00",
-  "price_date": "2026-08-13",
+  "generated_at": "2026-08-14T12:54:09.887055+00:00",
+  "price_date": "2026-08-14",
   "record": {
-    "current_price": 2034.0,
-    "change_from_signal_month_pct": -3.14,
-    "return_since_gc_pct": -3.14
+    "current_price": 2008.0,
+    "change_from_signal_month_pct": -4.38,
+    "return_since_gc_pct": -4.38
   },
   "daily": [
     {
@@ -61,22 +61,35 @@
       "sma200": 2205.07,
       "rsi14": 53.56,
       "rsi5": 54.96
+    },
+    {
+      "date": "2026-08-14",
+      "open": 2001.0,
+      "high": 2011.0,
+      "low": 1975.0,
+      "close": 2008.0,
+      "volume": 14600.0,
+      "sma25": 2028.32,
+      "sma75": 1968.45,
+      "sma200": 2204.32,
+      "rsi14": 53.56,
+      "rsi5": 54.96
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-13",
-    "monthly_rsi14": 54.75,
-    "monthly_rsi_ma5": 54.26,
-    "spread": 0.5,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-14",
+    "monthly_rsi14": 54.04,
+    "monthly_rsi_ma5": 54.11,
+    "spread": -0.08,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-13T12:59:03.768990+00:00"
+  "provisional_generated_at": "2026-08-14T12:54:57.232896+00:00"
 }

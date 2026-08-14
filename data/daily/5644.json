@@ -2,12 +2,12 @@
   "code": "5644",
   "ticker": "5644.T",
   "name": "メタルアート",
-  "generated_at": "2026-08-13T12:58:03.746124+00:00",
-  "price_date": "2026-08-13",
+  "generated_at": "2026-08-14T12:54:09.887055+00:00",
+  "price_date": "2026-08-14",
   "record": {
-    "current_price": 7130.0,
-    "change_from_signal_month_pct": -1.66,
-    "return_since_gc_pct": -6.92
+    "current_price": 7390.0,
+    "change_from_signal_month_pct": 1.93,
+    "return_since_gc_pct": -3.52
   },
   "daily": [
     {
@@ -61,22 +61,35 @@
       "sma200": 5842.4,
       "rsi14": 74.21,
       "rsi5": 75.53
+    },
+    {
+      "date": "2026-08-14",
+      "open": 7260.0,
+      "high": 7460.0,
+      "low": 7250.0,
+      "close": 7390.0,
+      "volume": 5600.0,
+      "sma25": 7466.8,
+      "sma75": 7182.53,
+      "sma200": 5859.27,
+      "rsi14": 74.21,
+      "rsi5": 75.53
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-13",
-    "monthly_rsi14": 71.97,
-    "monthly_rsi_ma5": 73.52,
-    "spread": -1.55,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-14",
+    "monthly_rsi14": 74.3,
+    "monthly_rsi_ma5": 73.99,
+    "spread": 0.31,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-13T12:59:03.768990+00:00"
+  "provisional_generated_at": "2026-08-14T12:54:57.232896+00:00"
 }

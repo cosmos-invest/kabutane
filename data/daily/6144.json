@@ -2,12 +2,12 @@
   "code": "6144",
   "ticker": "6144.T",
   "name": "西部電機",
-  "generated_at": "2026-08-13T12:58:03.746124+00:00",
-  "price_date": "2026-08-13",
+  "generated_at": "2026-08-14T12:54:09.887055+00:00",
+  "price_date": "2026-08-14",
   "record": {
-    "current_price": 3100.0,
-    "change_from_signal_month_pct": -2.97,
-    "return_since_gc_pct": -2.97
+    "current_price": 3150.0,
+    "change_from_signal_month_pct": -1.41,
+    "return_since_gc_pct": -1.41
   },
   "daily": [
     {
@@ -61,22 +61,35 @@
       "sma200": 2767.07,
       "rsi14": 70.61,
       "rsi5": 75.07
+    },
+    {
+      "date": "2026-08-14",
+      "open": 3110.0,
+      "high": 3150.0,
+      "low": 3105.0,
+      "close": 3150.0,
+      "volume": 3000.0,
+      "sma25": 2975.72,
+      "sma75": 2911.65,
+      "sma200": 2772.15,
+      "rsi14": 70.61,
+      "rsi5": 75.07
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-13",
-    "monthly_rsi14": 72.32,
-    "monthly_rsi_ma5": 72.52,
-    "spread": -0.19,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-14",
+    "monthly_rsi14": 74.37,
+    "monthly_rsi_ma5": 72.93,
+    "spread": 1.44,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-13T12:59:03.768990+00:00"
+  "provisional_generated_at": "2026-08-14T12:54:57.232896+00:00"
 }

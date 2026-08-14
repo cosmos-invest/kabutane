@@ -2,12 +2,12 @@
   "code": "5588",
   "ticker": "5588.T",
   "name": "ファーストアカウンティング",
-  "generated_at": "2026-08-13T12:58:03.746124+00:00",
-  "price_date": "2026-08-13",
+  "generated_at": "2026-08-14T12:54:09.887055+00:00",
+  "price_date": "2026-08-14",
   "record": {
-    "current_price": 844.0,
-    "change_from_signal_month_pct": -1.4,
-    "return_since_gc_pct": -1.4
+    "current_price": 812.0,
+    "change_from_signal_month_pct": -5.14,
+    "return_since_gc_pct": -5.14
   },
   "daily": [
     {
@@ -61,15 +61,28 @@
       "sma200": 903.65,
       "rsi14": 38.15,
       "rsi5": 41.94
+    },
+    {
+      "date": "2026-08-14",
+      "open": 844.0,
+      "high": 906.0,
+      "low": 800.0,
+      "close": 812.0,
+      "volume": 122300.0,
+      "sma25": 801.52,
+      "sma75": 759.32,
+      "sma200": 901.64,
+      "rsi14": 38.15,
+      "rsi5": 41.94
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-13",
-    "monthly_rsi14": 41.62,
-    "monthly_rsi_ma5": 38.88,
-    "spread": 2.73,
+    "price_date": "2026-08-14",
+    "monthly_rsi14": 40.78,
+    "monthly_rsi_ma5": 38.72,
+    "spread": 2.06,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -78,5 +91,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-13T12:59:03.768990+00:00"
+  "provisional_generated_at": "2026-08-14T12:54:57.232896+00:00"
 }

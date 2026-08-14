@@ -2,12 +2,12 @@
   "code": "7208",
   "ticker": "7208.T",
   "name": "カネミツ",
-  "generated_at": "2026-08-13T12:58:03.746124+00:00",
-  "price_date": "2026-08-13",
+  "generated_at": "2026-08-14T12:54:09.887055+00:00",
+  "price_date": "2026-08-14",
   "record": {
-    "current_price": 1305.0,
-    "change_from_signal_month_pct": -3.33,
-    "return_since_gc_pct": 6.36
+    "current_price": 1296.0,
+    "change_from_signal_month_pct": -4.0,
+    "return_since_gc_pct": 5.62
   },
   "daily": [
     {
@@ -61,22 +61,35 @@
       "sma200": 1129.29,
       "rsi14": 70.14,
       "rsi5": 77.34
+    },
+    {
+      "date": "2026-08-14",
+      "open": 1299.0,
+      "high": 1305.0,
+      "low": 1284.0,
+      "close": 1296.0,
+      "volume": 5600.0,
+      "sma25": 1308.24,
+      "sma75": 1214.87,
+      "sma200": 1130.86,
+      "rsi14": 70.14,
+      "rsi5": 77.34
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-13",
-    "monthly_rsi14": 72.22,
-    "monthly_rsi_ma5": 71.83,
-    "spread": 0.39,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-14",
+    "monthly_rsi14": 71.28,
+    "monthly_rsi_ma5": 71.64,
+    "spread": -0.36,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-13T12:59:03.768990+00:00"
+  "provisional_generated_at": "2026-08-14T12:54:57.232896+00:00"
 }

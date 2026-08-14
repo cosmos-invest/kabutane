@@ -2,12 +2,12 @@
   "code": "6841",
   "ticker": "6841.T",
   "name": "横河電機",
-  "generated_at": "2026-08-13T12:58:03.746124+00:00",
-  "price_date": "2026-08-13",
+  "generated_at": "2026-08-14T12:54:09.887055+00:00",
+  "price_date": "2026-08-14",
   "record": {
-    "current_price": 5570.0,
-    "change_from_signal_month_pct": -3.67,
-    "return_since_gc_pct": -3.67
+    "current_price": 5689.0,
+    "change_from_signal_month_pct": -1.61,
+    "return_since_gc_pct": -1.61
   },
   "daily": [
     {
@@ -61,22 +61,35 @@
       "sma200": 5206.99,
       "rsi14": 61.08,
       "rsi5": 63.65
+    },
+    {
+      "date": "2026-08-14",
+      "open": 5718.0,
+      "high": 5801.0,
+      "low": 5637.0,
+      "close": 5689.0,
+      "volume": 1184700.0,
+      "sma25": 5602.44,
+      "sma75": 5371.51,
+      "sma200": 5213.78,
+      "rsi14": 61.08,
+      "rsi5": 63.65
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-13",
-    "monthly_rsi14": 61.32,
-    "monthly_rsi_ma5": 61.99,
-    "spread": -0.67,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-14",
+    "monthly_rsi14": 62.72,
+    "monthly_rsi_ma5": 62.27,
+    "spread": 0.45,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-13T12:59:03.768990+00:00"
+  "provisional_generated_at": "2026-08-14T12:54:57.232896+00:00"
 }
