@@ -208,6 +208,7 @@
       const safeMarket = escapeHtml(item.market || "市場 —");
       const safeSector = escapeHtml(item.sector || "セクター —");
       const safeDate = escapeHtml(item.price_date || "—");
+      const safeNote = escapeHtml(item.note || "");
       const holder = item.large_holding;
       const holderName = escapeHtml(holder?.filer_name || "");
       return `<article class="watch-card" data-code="${safeCode}">
@@ -219,12 +220,23 @@
         <div class="watch-stat"><span>財務</span><strong>${item.fundamentals_available === true ? `ROE ${number(item.roe_pct, 1)}%` : "取得待ち"}</strong><small>${item.fundamentals_available === true ? `自己資本 ${number(item.equity_ratio_pct, 1)}%` : "—"}</small></div>
         <div class="watch-stat watch-holder"><span>大口保有</span><strong>${holder ? holderLabel(holder) : "報告なし"}</strong><small>${holder ? `${holderName} / ${escapeHtml(String(holder.submitted_at || "").slice(0, 10))}` : "保存期間内"}</small></div>
         <button type="button" class="watch-remove" data-remove-code="${safeCode}">外す</button>
+        <div class="watch-note-editor"><label for="watch-note-${safeCode}"><strong>🌱 なぜ、この会社が気になった？</strong><span>自分の言葉で短く残す</span></label><textarea id="watch-note-${safeCode}" data-note-code="${safeCode}" maxlength="280" rows="2" placeholder="例：商品が好き。出来高が増えた理由を調べたい。">${safeNote}</textarea><small data-note-status="${safeCode}">${safeNote ? "保存済み・このブラウザのみ" : "未入力・このブラウザのみ"}</small></div>
       </article>`;
     }).join("");
     root.querySelectorAll("[data-remove-code]").forEach((button) => {
       button.addEventListener("click", () => {
         store.remove(button.dataset.removeCode || "");
         render();
+      });
+    });
+    root.querySelectorAll("[data-note-code]").forEach((textarea) => {
+      const status = root.querySelector(`[data-note-status="${textarea.dataset.noteCode}"]`);
+      textarea.addEventListener("input", () => {
+        if (status) status.textContent = "入力中…（欄を離れると保存）";
+      });
+      textarea.addEventListener("change", () => {
+        store.updateNote(textarea.dataset.noteCode || "", textarea.value);
+        if (status) status.textContent = textarea.value.trim() ? "保存しました・このブラウザのみ" : "メモを空にしました";
       });
     });
   }

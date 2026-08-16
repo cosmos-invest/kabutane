@@ -1,0 +1,58 @@
+.watch-note-editor {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: minmax(190px, .55fr) minmax(260px, 1.45fr);
+  gap: 7px 12px;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid #eadce3;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #fffafc, #fbf8ff);
+}
+
+.watch-note-editor label {
+  display: grid;
+  gap: 3px;
+  color: #70465b;
+  font-size: .75rem;
+}
+
+.watch-note-editor label span {
+  color: #927786;
+  font-size: .68rem;
+}
+
+.watch-note-editor textarea {
+  width: 100%;
+  min-height: 62px;
+  resize: vertical;
+  border: 1px solid #d8c6cf;
+  border-radius: 11px;
+  padding: 9px 10px;
+  background: #fff;
+  color: #4e3b45;
+  font: inherit;
+  font-size: .76rem;
+  line-height: 1.55;
+}
+
+.watch-note-editor textarea:focus {
+  border-color: #dc78a4;
+  outline: 3px solid rgba(220, 120, 164, .16);
+}
+
+.watch-note-editor > small {
+  grid-column: 2;
+  color: #937c87;
+  font-size: .64rem;
+}
+
+@media (max-width: 720px) {
+  .watch-note-editor {
+    grid-template-columns: 1fr;
+  }
+
+  .watch-note-editor > small {
+    grid-column: auto;
+  }
+}

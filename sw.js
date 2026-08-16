@@ -1,4 +1,4 @@
-const CACHE_VERSION = "kabutane-pwa-v28";
+const CACHE_VERSION = "kabutane-pwa-v29";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 
 // These files are required for the detail page to boot. If even one cannot be
@@ -86,8 +86,9 @@ const OPTIONAL_ASSETS = [
   "./assets/detail-fundamentals.css",
   "./assets/watchlist-large-holdings.css",
   "./assets/watchlist.css",
-  "./assets/watchlist.js",
-  "./assets/watchlist-page.js",
+  "./assets/watchlist-notes.css?v=1",
+  "./assets/watchlist.js?v=2",
+  "./assets/watchlist-page.js?v=2",
   "./assets/style.css?v=16",
   "./assets/pastel.css?v=16",
   "./assets/kabutane.css?v=16",
