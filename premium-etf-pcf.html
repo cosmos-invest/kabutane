@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <title>プロの組入変化ラボ β | かぶたね</title>
+  <link rel="stylesheet" href="assets/style.css?v=16">
+  <link rel="stylesheet" href="assets/premium-etf-pcf.css?v=1">
+</head>
+<body class="pcf-page">
+  <header class="site-header pcf-header">
+    <div class="header-inner">
+      <div>
+        <a class="pcf-back" href="premium-supply-beta.html">← 先回り・需給ラボへ</a>
+        <p class="eyebrow">KABUTANE PREMIUM / ACTIVE ETF PCF</p>
+        <h1>プロの組入変化ラボ β</h1>
+        <p class="subtitle">東証アクティブETFが日々開示するPCFを比べ、<strong>どの銘柄を新しく組み入れ、増やし、減らしたか</strong>をやさしく整理します。</p>
+      </div>
+      <span class="pcf-premium-badge">PREMIUM β</span>
+    </div>
+  </header>
+
+  <main class="container pcf-container">
+    <section class="pcf-first panel" aria-labelledby="pcfFirstTitle">
+      <div class="pcf-first-copy">
+        <p class="eyebrow">FIRST, LOOK HERE</p>
+        <h2 id="pcfFirstTitle">プロが選んだ銘柄を、買いサインではなく“調べるヒント”に。</h2>
+        <p>PCFはETFの中身を記した計算用ファイルです。かぶたねはETFの設定・解約による全体増減をならし、<strong>ETF100万口あたりの組入数量</strong>が前回から変わった銘柄を探します。</p>
+      </div>
+      <div class="pcf-trio" aria-label="3人の見方">
+        <article><b>ルーモ✨</b><span>新規・増加を発見</span><p>前回のPCFから何が変わったかを見るよ。</p></article>
+        <article><b>エール💜</b><span>注意点を確認</span><p>企業行動やデリバティブの影響も忘れない。</p></article>
+        <article><b>コスモス🌸</b><span>自分の分析へつなぐ</span><p>会社・チャート・需給を確認して観察しよう。</p></article>
+      </div>
+    </section>
+
+    <section class="pcf-notice">
+      <strong>「ファンドが今日、市場で買った」と断定する情報ではありません。</strong>
+      <p>PCFは原則として前日基準のポートフォリオ情報です。設定・解約、株式分割などの企業行動、現金・先物・為替の影響を含むことがあります。</p>
+    </section>
+
+    <section class="panel pcf-status-panel" aria-labelledby="pcfStatusTitle">
+      <div class="pcf-section-heading">
+        <div><p class="eyebrow">TODAY'S COVERAGE</p><h2 id="pcfStatusTitle">今日の取得状況</h2></div>
+        <span id="pcfDataDate" class="pcf-date">読込中…</span>
+      </div>
+      <div id="pcfSummary" class="pcf-summary-grid"></div>
+      <p id="pcfCoverageNote" class="pcf-coverage-note"></p>
+    </section>
+
+    <section class="panel pcf-common-panel" aria-labelledby="pcfCommonTitle">
+      <div class="pcf-section-heading">
+        <div><p class="eyebrow">MORE THAN ONE FUND</p><h2 id="pcfCommonTitle">複数ファンドで重なった変化</h2><p>国内株アクティブETFのうち、同じ日に2本以上で増加側・減少側が重なった銘柄です。</p></div>
+      </div>
+      <div id="pcfCommonChanges" class="pcf-common-grid"><p class="pcf-empty">読込中…</p></div>
+    </section>
+
+    <section class="panel pcf-funds-panel" aria-labelledby="pcfFundsTitle">
+      <div class="pcf-section-heading pcf-funds-heading">
+        <div><p class="eyebrow">ACTIVE ETF WATCH</p><h2 id="pcfFundsTitle">ファンドごとの組入変化</h2><p>最初は日本株を運用するアクティブETFだけを表示します。</p></div>
+        <label class="pcf-search">ETFを検索<input id="pcfSearch" type="search" placeholder="2080 / 高配当 / 運用会社"></label>
+      </div>
+      <div class="pcf-filter-row" role="group" aria-label="表示するETF">
+        <button type="button" class="pcf-filter active" data-pcf-scope="domestic" aria-pressed="true">日本株アクティブ</button>
+        <button type="button" class="pcf-filter" data-pcf-scope="changed" aria-pressed="false">変化あり</button>
+        <button type="button" class="pcf-filter" data-pcf-scope="all" aria-pressed="false">全アクティブETF</button>
+      </div>
+      <div id="pcfFundGrid" class="pcf-fund-grid"></div>
+      <p id="pcfFundEmpty" class="pcf-empty" hidden>条件に合うETFがありません。</p>
+    </section>
+
+    <section class="panel pcf-method-panel">
+      <h2>かぶたねの読み方</h2>
+      <div class="pcf-method-grid">
+        <article><span>1</span><strong>新規・除外</strong><p>前回のPCFになかった銘柄、今回なくなった銘柄を確認します。</p></article>
+        <article><span>2</span><strong>実質的な増減</strong><p>ETF口数で正規化し、設定・解約で全銘柄が同時に増減した影響を抑えます。</p></article>
+        <article><span>3</span><strong>複数ファンド</strong><p>一つのファンドだけでなく、同じ方向の変化が重なったかを見ます。</p></article>
+        <article><span>4</span><strong>自分で確かめる</strong><p>個別ページで値動き・会社・信用需給・大口保有を順に確認します。</p></article>
+      </div>
+      <p class="pcf-source-note">出典：日本取引所グループのETF一覧・ETFデータベース、および各PCF配信先。表示は情報提供・学習目的で、売買推奨ではありません。</p>
+    </section>
+  </main>
+
+  <script src="assets/premium-etf-pcf.js?v=1" defer></script>
+</body>
+</html>
