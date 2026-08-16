@@ -54,7 +54,7 @@ class BeginnerJourneyTests(unittest.TestCase):
     def test_pwa_promotes_beginner_route(self):
         sw = read("sw.js")
         manifest = json.loads(read("manifest.webmanifest"))
-        self.assertIn('kabutane-pwa-v27', sw)
+        self.assertIn('kabutane-pwa-v28', sw)
         self.assertIn("./assets/beginner-journey.css?v=1", sw)
         shortcuts = {item["name"]: item["url"] for item in manifest["shortcuts"]}
         self.assertEqual(shortcuts["はじめての使い方"], "./howto.html")

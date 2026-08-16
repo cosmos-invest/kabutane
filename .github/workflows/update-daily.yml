@@ -18,6 +18,7 @@ on:
       - "validate_data_contract.py"
       - "validate_daily_derived_contract.py"
       - "scripts/public_core_radar.py"
+      - "scripts/update_etf_pcf.py"
       - "data/curated/shikiho-2026-summer.json"
       - "tests/test_update_daily.py"
       - "tests/test_provisional_signal.py"
@@ -28,6 +29,10 @@ on:
       - "tests/test_shikiho_room_v2.py"
       - "tests/test_data_contract.py"
       - "tests/test_daily_derived_contract.py"
+      - "tests/test_etf_pcf.py"
+      - "premium-etf-pcf.html"
+      - "assets/premium-etf-pcf.css"
+      - "assets/premium-etf-pcf.js"
       - ".github/workflows/update-daily.yml"
 
 permissions:
@@ -62,7 +67,7 @@ jobs:
 
       - name: Validate updater
         run: |
-          python -m py_compile update_daily.py provisional_signal.py build_market_reports.py build_daily_snapshot.py build_daily_events.py build_shikiho_room.py build_shikiho_room_v2.py validate_data_contract.py validate_daily_derived_contract.py scripts/public_core_radar.py tests/test_update_daily.py tests/test_provisional_signal.py tests/test_market_reports.py tests/test_daily_snapshot.py tests/test_daily_events.py tests/test_shikiho_room.py tests/test_shikiho_room_v2.py tests/test_data_contract.py tests/test_daily_derived_contract.py tests/test_today_page.py
+          python -m py_compile update_daily.py provisional_signal.py build_market_reports.py build_daily_snapshot.py build_daily_events.py build_shikiho_room.py build_shikiho_room_v2.py validate_data_contract.py validate_daily_derived_contract.py scripts/public_core_radar.py scripts/update_etf_pcf.py tests/test_update_daily.py tests/test_provisional_signal.py tests/test_market_reports.py tests/test_daily_snapshot.py tests/test_daily_events.py tests/test_shikiho_room.py tests/test_shikiho_room_v2.py tests/test_data_contract.py tests/test_daily_derived_contract.py tests/test_today_page.py tests/test_etf_pcf.py
           python -m unittest discover -s tests -p 'test_update_daily.py' -v
           python -m unittest discover -s tests -p 'test_provisional_signal.py' -v
           python -m unittest discover -s tests -p 'test_market_reports.py' -v
@@ -72,9 +77,11 @@ jobs:
           python -m unittest discover -s tests -p 'test_data_contract.py' -v
           python -m unittest discover -s tests -p 'test_daily_derived_contract.py' -v
           python -m unittest discover -s tests -p 'test_today_page.py' -v
+          python -m unittest discover -s tests -p 'test_etf_pcf.py' -v
           node --check assets/today-kabutane.js
           node --check assets/all-stocks.js
           node --check assets/core-detail-fallback.js
+          node --check assets/premium-etf-pcf.js
 
       - name: Download incremental daily prices
         env:
@@ -85,6 +92,7 @@ jobs:
           python provisional_signal.py
           python build_market_reports.py
           python build_shikiho_room_v2.py
+          python -m scripts.update_etf_pcf
 
       - name: Validate generated data contract
         run: python validate_data_contract.py
@@ -99,7 +107,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/latest.json data/daily data/daily-update-status.json data/ranking.json data/daily-change.json data/monthly-report.json data/daily-snapshot.json data/daily-events.json history/daily history/daily-events data/curated/shikiho-2026-summer-performance.json result.csv
+          git add data/latest.json data/daily data/daily-update-status.json data/ranking.json data/daily-change.json data/monthly-report.json data/daily-snapshot.json data/daily-events.json data/premium/etf-pcf history/daily history/daily-events data/curated/shikiho-2026-summer-performance.json result.csv
           if git diff --cached --quiet; then
             echo "No daily price changes"
           else
@@ -117,7 +125,7 @@ jobs:
           cp \
             index.html detail.html backtest.html replay.html replay-select.html howto.html learn.html signal-method.html \
             ranking.html monthly-report.html monthly-strategy.html history.html shikiho-summer-2026.html today.html all-stocks.html monthly-dc.html watchlist.html \
-            premium-supply-beta.html large-holdings.html \
+            premium-supply-beta.html premium-etf-pcf.html large-holdings.html \
             manifest.webmanifest sw.js .nojekyll result.csv out.csv stocks.csv \
             _site/
           cp -R assets data history ranking monthly-report _site/
@@ -133,8 +141,12 @@ jobs:
           test -f _site/assets/all-stocks.js
           test -f _site/assets/all-stocks.css
           test -f _site/premium-supply-beta.html
+          test -f _site/premium-etf-pcf.html
           test -f _site/large-holdings.html
           test -f _site/assets/premium-supply-beta.js
+          test -f _site/assets/premium-etf-pcf.css
+          test -f _site/assets/premium-etf-pcf.js
+          test -f _site/data/premium/etf-pcf/latest.json
           test -f _site/assets/large-holdings.js
           test -f _site/assets/beginner-journey.css
           test -f _site/data/large-holdings/latest.json

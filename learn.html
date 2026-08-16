@@ -99,6 +99,13 @@
       <p><a class="button secondary" href="watchlist.html">🌱 気になる株を開く</a></p>
     </section>
 
+    <section class="learn-section term" id="etf-pcf">
+      <h2>アクティブETFのPCFから何が分かる？</h2>
+      <p>PCF（Portfolio Composition File）は、ETFが保有する銘柄別の株式数や先物建玉などを一覧化したファイルです。東証のアクティブ運用型ETFは、日々、立会開始前までに確定した前日基準のポートフォリオ情報を開示します。</p>
+      <div class="learn-simple"><article><span>新規・除外</span><strong>構成銘柄の入れ替え</strong><p>前回になかった銘柄、今回なくなった銘柄を確認します。</p></article><article><span>ETF口数で正規化</span><strong>設定・解約の影響を抑える</strong><p>保有株数をETF発行口数で割り、ファンド全体が増減しただけの変化と分けます。</p></article><article><span>複数ファンド</span><strong>同じ方向の変化</strong><p>国内株アクティブETFのうち、2本以上で増加側・減少側が重なった銘柄を確認します。</p></article></div>
+      <p class="learn-callout"><strong>PCFだけで「プロが今日買った」とは断定できません。</strong> 前日基準の情報であり、ETFの設定・解約、株式分割などの企業行動、現金・先物・為替の影響を含む場合があります。かぶたねでは「PCF上の組入変化」として表示し、個別銘柄の値動き・会社・信用需給・大口保有を確認する入口にします。</p>
+    </section>
+
     <section class="learn-section term" id="premium-research">
       <h2>観察優先度は、どうやって良くしていくの？</h2>
       <p>プレミアムの「観察優先度」は、月足シグナル、日足トレンド・出来高、信用需給、財務を同じ尺度へまとめた<strong>観察順を決めるβスコア</strong>です。点数が高いから将来上がる、と最初から決めつけず、毎日の点数をその時点の株価と一緒に保存して検証します。</p>
@@ -131,8 +138,8 @@
     </section>
 
     <section class="panel note-panel"><h2>データと更新</h2>
-      <details open><summary><strong>何を取得していますか？</strong></summary><p>Yahoo Finance経由で株価・出来高・配当・株式分割等を取得し、信用残高はJPXの週次データを使います。大量保有報告書・変更報告書はEDINET（金融庁）から取得し、記載値を分類します。有料API、TDnet、決算予定・業績修正・増配の自動取得には接続していません。</p></details>
-      <details><summary><strong>いつ更新されますか？</strong></summary><p>確定NEW・CONTINUE・OUTは月末確定後の月次更新で変わります。プライム・スタンダード・グロースの内国普通株全体について、日足と進行中月の観察データを平日夜に再計算します。信用残高はJPXの週次公表後に自動確認し、新しい基準日のデータがあるときだけ更新します。プレミアム観察優先度の研究履歴は全銘柄レーダーや信用需給の更新後に保存し、実際に生成した時刻も記録します。信用需給の更新が株価基準日より後なら、そのgenerationを古い株価日のcohortには採用しません。市場の休場日やGitHub Actionsの混雑時は遅れる場合があります。</p></details>
+      <details open><summary><strong>何を取得していますか？</strong></summary><p>Yahoo Finance経由で株価・出来高・配当・株式分割等を取得し、信用残高はJPXの週次データを使います。大量保有報告書・変更報告書はEDINET（金融庁）から取得し、記載値を分類します。プレミアムでは、JPXのETF一覧・ETFデータベースからアクティブETFとPCF掲載先を確認し、各配信先のPCFを共通形式へ変換します。有料API、TDnet、決算予定・業績修正・増配の自動取得には接続していません。</p></details>
+      <details><summary><strong>いつ更新されますか？</strong></summary><p>確定NEW・CONTINUE・OUTは月末確定後の月次更新で変わります。プライム・スタンダード・グロースの内国普通株全体について、日足と進行中月の観察データを平日夜に再計算します。アクティブETFのPCFも同じ平日夜の更新で取得し、PCFファイル内の基準日を画面に表示します。信用残高はJPXの週次公表後に自動確認し、新しい基準日のデータがあるときだけ更新します。プレミアム観察優先度の研究履歴は全銘柄レーダーや信用需給の更新後に保存し、実際に生成した時刻も記録します。信用需給の更新が株価基準日より後なら、そのgenerationを古い株価日のcohortには採用しません。市場の休場日、PCF配信時間、GitHub Actionsの混雑時は遅れる場合があります。</p></details>
       <details><summary><strong>対象市場は？</strong></summary><p>JPXの上場銘柄一覧を使い、プライム・スタンダード・グロースの国内普通株式を対象にします。ETF・ETN・REIT・TOKYO PRO・外国株などは通常株のスクリーニングへ混ぜません。新規上場などで月足期間が不足する銘柄は、計算可能になるまで判定待ちになります。</p></details>
       <details><summary><strong>財務情報が「—」になるのはなぜ？</strong></summary><p>大量アクセスを避けるため、財務プロフィールは全対象銘柄を一度に取得せず、Yahoo Financeのキャッシュを使いながら未取得・古い銘柄を段階的に補完します。未取得や取得不能は0ではなく「情報なし」です。</p></details>
     </section>
