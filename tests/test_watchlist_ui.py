@@ -17,6 +17,20 @@ class WatchlistUiTests(unittest.TestCase):
         self.assertIn("別端末・別ブラウザ", html)
         self.assertNotIn("fetch(\"/api/watchlist", js)
 
+    def test_watchlist_keeps_a_sanitized_observation_note_locally(self):
+        html = self.text("watchlist.html")
+        store = self.text("assets/watchlist.js")
+        page = self.text("assets/watchlist-page.js")
+        self.assertIn("気になった理由も自分の言葉で残せます", html)
+        self.assertIn("function safeNote", store)
+        self.assertIn("slice(0, 280)", store)
+        self.assertIn("updateNote", store)
+        self.assertIn('maxlength="280"', page)
+        self.assertIn("なぜ、この会社が気になった", page)
+        self.assertIn("escapeHtml(item.note", page)
+        self.assertIn("このブラウザのみ", page)
+        self.assertNotIn("/api/watchlist-note", page)
+
     def test_watchlist_restricts_codes_and_escapes_saved_text(self):
         store = self.text("assets/watchlist.js")
         page = self.text("assets/watchlist-page.js")
@@ -45,8 +59,8 @@ class WatchlistUiTests(unittest.TestCase):
     def test_all_stock_and_detail_have_watch_controls(self):
         all_stocks = self.text("all-stocks.html")
         detail = self.text("detail.html")
-        self.assertIn("assets/watchlist.js?v=1", all_stocks)
-        self.assertIn("assets/watchlist.js?v=1", detail)
+        self.assertIn("assets/watchlist.js?v=2", all_stocks)
+        self.assertIn("assets/watchlist.js?v=2", detail)
         self.assertIn("watchlist.html", all_stocks)
         self.assertNotIn('value="GC"', all_stocks)
 

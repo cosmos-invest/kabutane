@@ -11,6 +11,7 @@ on:
       - 'assets/watchlist.js'
       - 'assets/watchlist-page.js'
       - 'assets/watchlist.css'
+      - 'assets/watchlist-notes.css'
       - 'tests/test_watchlist_ui.py'
       - '.github/workflows/validate-watchlist.yml'
   push:
@@ -22,6 +23,7 @@ on:
       - 'assets/watchlist.js'
       - 'assets/watchlist-page.js'
       - 'assets/watchlist.css'
+      - 'assets/watchlist-notes.css'
       - '.github/workflows/validate-watchlist.yml'
 
 jobs:
@@ -42,4 +44,5 @@ jobs:
           node --check assets/watchlist-page.js
           grep -q 'localStorage' watchlist.html
           grep -q 'watchlist.html' all-stocks.html
-          grep -q 'assets/watchlist.js?v=1' detail.html
+          grep -q 'assets/watchlist.js?v=2' detail.html
+          grep -q 'なぜ、この会社が気になった' assets/watchlist-page.js

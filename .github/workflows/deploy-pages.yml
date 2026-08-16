@@ -100,6 +100,7 @@ jobs:
           test -f _site/assets/all-stocks.css
           test -f _site/assets/all-stocks.js
           test -f _site/assets/watchlist.css
+          test -f _site/assets/watchlist-notes.css
           test -f _site/assets/watchlist.js
           test -f _site/assets/watchlist-page.js
           test -f _site/assets/extended-universe.css
@@ -162,6 +163,7 @@ jobs:
           node --check _site/assets/all-stocks.js
           node --check _site/assets/watchlist.js
           node --check _site/assets/watchlist-page.js
+          grep -q 'なぜ、この会社が気になった' _site/assets/watchlist-page.js
           node --check _site/assets/premium-research.js
           node --check _site/assets/premium-etf-pcf.js
           node --check _site/assets/large-holdings.js

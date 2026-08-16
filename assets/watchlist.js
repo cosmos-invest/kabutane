@@ -23,6 +23,10 @@
     return String(value || "").replace(/[\u0000-\u001F\u007F]/g, " ").trim().slice(0, 160);
   }
 
+  function safeNote(value) {
+    return String(value || "").replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, " ").trim().slice(0, 280);
+  }
+
   function load() {
     const rows = safeParse(STORAGE_KEY, []);
     if (!Array.isArray(rows)) return [];
@@ -30,17 +34,18 @@
       .map((item) => ({
         code: normalizeCode(item?.code),
         name: safeName(item?.name),
+        note: safeNote(item?.note),
         added_at: String(item?.added_at || "").slice(0, 40),
       }))
       .filter((item) => item.code);
   }
 
-  function save(rows) {
+  function save(rows, dispatchChange = true) {
     const safeRows = (Array.isArray(rows) ? rows : [])
-      .map((item) => ({ code: normalizeCode(item?.code), name: safeName(item?.name), added_at: String(item?.added_at || "").slice(0, 40) }))
+      .map((item) => ({ code: normalizeCode(item?.code), name: safeName(item?.name), note: safeNote(item?.note), added_at: String(item?.added_at || "").slice(0, 40) }))
       .filter((item) => item.code);
     localStorage.setItem(STORAGE_KEY, JSON.stringify(safeRows));
-    window.dispatchEvent(new CustomEvent("kabutane:watchlist-change", { detail: { count: safeRows.length } }));
+    if (dispatchChange) window.dispatchEvent(new CustomEvent("kabutane:watchlist-change", { detail: { count: safeRows.length } }));
     return safeRows;
   }
 
@@ -58,8 +63,18 @@
       if (name) existing.name = safeName(name);
       return save(rows);
     }
-    rows.unshift({ code: normalized, name: safeName(name), added_at: new Date().toISOString() });
+    rows.unshift({ code: normalized, name: safeName(name), note: "", added_at: new Date().toISOString() });
     return save(rows);
+  }
+
+  function updateNote(code, note) {
+    const normalized = normalizeCode(code);
+    if (!normalized) return load();
+    const rows = load();
+    const existing = rows.find((item) => item.code === normalized);
+    if (!existing) return rows;
+    existing.note = safeNote(note);
+    return save(rows, false);
   }
 
   function remove(code) {
@@ -219,6 +234,7 @@
     remove,
     toggle,
     has,
+    updateNote,
     recordObservation,
     observations,
     normalizeCode,
