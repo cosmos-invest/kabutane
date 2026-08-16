@@ -69,6 +69,22 @@ class BeginnerJourneyTests(unittest.TestCase):
         self.assertNotIn('value="GC"', all_stocks)
         self.assertIn("暫定GC / 暫定DC", detail)
 
+    def test_premium_begins_with_a_three_candidate_first_step(self):
+        html = read("premium-supply-beta.html")
+        script = read("assets/premium-supply-beta.js")
+        self.assertLess(html.index('id="premiumFirstTitle"'), html.index("全対象銘柄レーダー"))
+        self.assertIn("今日は、3社だけ見れば大丈夫", html)
+        self.assertIn('id="premiumStarterCards"', html)
+        self.assertIn("3社を見る", html)
+        self.assertIn("理由を読む", html)
+        self.assertIn("1社を確かめる", html)
+        self.assertIn("assets/premium-first-step.css?v=1", html)
+        self.assertIn(".slice(0, 3)", script)
+        self.assertIn("今すぐ買う理由にはしません", script)
+        self.assertIn("renderStarterCards();", script)
+        self.assertIn('kabutane_premium_first_step_v1', script)
+        self.assertIn("記録はこのブラウザだけに残ります", script)
+
 
 if __name__ == "__main__":
     unittest.main()

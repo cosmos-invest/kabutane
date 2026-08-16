@@ -13,11 +13,14 @@
   const largeHolder = document.getElementById("premiumLargeHolder");
   const sort = document.getElementById("premiumSort");
   const more = document.getElementById("premiumMore");
+  const starterCards = document.getElementById("premiumStarterCards");
+  const starterStatus = document.getElementById("premiumStarterStatus");
   const quickButtons = [...document.querySelectorAll("[data-premium-mode]")];
 
   let payload = null;
   let quickMode = "early";
   let visibleLimit = 80;
+  const STARTER_PROGRESS_KEY = "kabutane_premium_first_step_v1";
 
   function finite(value) {
     if (value === null || value === undefined || value === "") return null;
@@ -150,6 +153,78 @@
     return result;
   }
 
+  function starterReasons(item) {
+    const result = [];
+    if (item.provisional_status === "GC") result.push("月足の勢いが、今月途中で上向きに変化");
+    else if (item.provisional_status === "NEAR_GC") result.push("月足の勢いが、上向きの境目に接近");
+    if (["S", "A"].includes(item.supply_grade)) result.push("信用買い残や倍率の整理が進む候補");
+    if (item.perfect_order === true) result.push("短期・中期・長期の流れが上向き順");
+    const volume = finite(item.volume_ratio_5_30);
+    if (volume !== null && volume >= 1.5) result.push("出来高が30日平均より増加");
+    const highDistance = finite(item.high52_distance_pct);
+    if (highDistance !== null && highDistance >= -10) result.push("過去1年の高値に近い位置");
+    if (result.length < 2 && item.fundamentals_available) result.push("会社の体力を確認できる財務データあり");
+    return result.slice(0, 3);
+  }
+
+  function readStarterProgress() {
+    try {
+      const saved = JSON.parse(localStorage.getItem(STARTER_PROGRESS_KEY) || "null");
+      return saved && typeof saved === "object" ? saved : null;
+    } catch (_error) {
+      return null;
+    }
+  }
+
+  function saveStarterProgress(code, name) {
+    try {
+      localStorage.setItem(STARTER_PROGRESS_KEY, JSON.stringify({
+        price_date: payload?.price_date || null,
+        code,
+        name,
+        checked_at: new Date().toISOString(),
+      }));
+    } catch (_error) {
+      // Private browsing or storage restrictions must not block navigation.
+    }
+  }
+
+  function renderStarterCards() {
+    if (!starterCards || !payload) return;
+    const candidates = (Array.isArray(payload.records) ? payload.records : [])
+      .filter((item) => ["GC", "NEAR_GC"].includes(item.provisional_status))
+      .sort((a, b) => (finite(b.priority_score) ?? 0) - (finite(a.priority_score) ?? 0) || String(a.code || "").localeCompare(String(b.code || ""), "ja"))
+      .slice(0, 3);
+    if (!candidates.length) {
+      starterCards.innerHTML = '<p class="premium-starter-loading">今日は暫定GC・接近の観察候補がありません。無理に選ばず、次の更新を待ちましょう。</p>';
+      if (starterStatus) starterStatus.textContent = "候補がない日も、見送る判断ができれば前進です。";
+      return;
+    }
+    const progress = readStarterProgress();
+    starterCards.innerHTML = candidates.map((item, index) => {
+      const reasons = starterReasons(item).map((reason) => `<li>${escapeHtml(reason)}</li>`).join("");
+      const checked = progress?.price_date === payload.price_date && String(progress?.code || "") === String(item.code || "");
+      const caution = item.provisional_status === "GC"
+        ? "月末までに消える途中判定です。今すぐ買う理由にはしません。"
+        : "まだ上向きは確定していません。境目で止まる可能性も確認します。";
+      return `<article class="premium-starter-card${checked ? " is-checked" : ""}">
+        <div class="premium-starter-card-head"><span>観察候補 ${index + 1}</span><em class="${signalClass(item.provisional_status)}">${signalLabel(item.provisional_status)}</em></div>
+        <h3><span class="market-mark ${marketClass(item.market)}">${marketLabel(item.market)}</span>${escapeHtml(item.code)} ${escapeHtml(item.name)}</h3>
+        <p class="premium-starter-role"><strong>ルーモ✨が見つけた変化</strong></p>
+        <ul>${reasons}</ul>
+        <p class="premium-starter-caution"><strong>エール💜</strong> ${escapeHtml(caution)}</p>
+        <a class="button premium-starter-link" href="${detailHref(item)}" data-starter-code="${escapeHtml(item.code)}" data-starter-name="${escapeHtml(item.name)}">${checked ? "✓ 今日選んだ1社をもう一度見る" : "コスモス🌸と3分で確かめる"}</a>
+      </article>`;
+    }).join("");
+    if (starterStatus) {
+      if (progress?.price_date === payload.price_date && progress?.code) {
+        starterStatus.textContent = `今日の一歩：${progress.code} ${progress.name || ""}を選びました。買わなくても、自分で確かめれば前進です。`;
+      } else {
+        starterStatus.textContent = `株価 ${payload.price_date || "—"}時点。3社すべてを見る必要はありません。気になる1社を選べば完了です。記録はこのブラウザだけに残ります。`;
+      }
+    }
+  }
+
   function renderSummary() {
     if (!payload || !summary) return;
     const counts = payload.status_counts || {};
@@ -263,6 +338,7 @@
         payload.large_holding_count = (payload.records || []).filter((item) => item.large_holding).length;
         payload.large_holdings_generated_at = holderPayload.generated_at || null;
       }
+      renderStarterCards();
       renderSummary();
       renderRows();
     } catch (error) {
@@ -272,6 +348,8 @@
         empty.hidden = false;
         empty.textContent = `全銘柄レーダーを読み込めませんでした（${String(error.message || error)}）。初回データ生成後に表示されます。`;
       }
+      if (starterCards) starterCards.innerHTML = '<p class="premium-starter-loading">今日の観察候補を読み込めませんでした。時間をおいてもう一度確認してください。</p>';
+      if (starterStatus) starterStatus.textContent = "取得できない状態を、候補0件として扱いません。";
     }
   }
 
@@ -280,5 +358,10 @@
   });
   quickButtons.forEach((button) => button.addEventListener("click", () => setQuickMode(button.dataset.premiumMode || "early")));
   more?.addEventListener("click", () => { visibleLimit += 80; renderRows(); });
+  starterCards?.addEventListener("click", (event) => {
+    const link = event.target.closest("[data-starter-code]");
+    if (!link) return;
+    saveStarterProgress(link.dataset.starterCode || "", link.dataset.starterName || "");
+  });
   init();
 })();

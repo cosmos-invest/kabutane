@@ -106,6 +106,7 @@ jobs:
           test -f _site/assets/extended-universe.js
           test -f _site/assets/premium-supply-beta.css
           test -f _site/assets/premium-supply-beta.js
+          test -f _site/assets/premium-first-step.css
           test -f _site/assets/premium-etf-pcf.css
           test -f _site/assets/premium-etf-pcf.js
           test -f _site/assets/premium-research.css
@@ -148,6 +149,8 @@ jobs:
           grep -q 'all-stocks.html?signal=DC' _site/monthly-dc.html
           grep -q '拡張対象銘柄' _site/extended-universe.html
           grep -q 'noindex,nofollow,noarchive' _site/premium-supply-beta.html
+          grep -q 'premiumStarterCards' _site/premium-supply-beta.html
+          grep -q '今日は、3社だけ見れば大丈夫' _site/premium-supply-beta.html
           grep -q 'noindex,nofollow,noarchive' _site/premium-etf-pcf.html
           grep -q 'ETF100万口あたり' _site/premium-etf-pcf.html
           grep -q '観察優先度の検証室' _site/premium-supply-beta.html

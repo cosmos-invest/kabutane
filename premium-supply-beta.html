@@ -6,7 +6,8 @@
   <meta name="robots" content="noindex,nofollow,noarchive">
   <title>先回り・需給ラボ β | かぶたね</title>
   <link rel="stylesheet" href="assets/style.css?v=14">
-  <link rel="stylesheet" href="assets/premium-supply-beta.css?v=2">
+  <link rel="stylesheet" href="assets/premium-supply-beta.css?v=3">
+  <link rel="stylesheet" href="assets/premium-first-step.css?v=1">
   <link rel="stylesheet" href="assets/premium-research.css?v=1">
   <link rel="stylesheet" href="assets/premium-large-holdings.css?v=1">
 </head>
@@ -26,6 +27,33 @@
     <section class="premium-warning">
       <strong>観察候補を早く見つけるためのβ版です。</strong>
       <p>正式なNEW / CONTINUE / OUTは月末確定値のままです。暫定GC・GC接近・暫定DCは「今日までの終値を今月末終値と仮定した場合」の途中経過で、月末までに消えることがあります。ここでの順位は買い推奨ではありません。</p>
+    </section>
+
+    <section class="panel premium-first-step" aria-labelledby="premiumFirstTitle">
+      <div class="premium-first-heading">
+        <div>
+          <p class="eyebrow">YOUR FIRST 3 MINUTES</p>
+          <h2 id="premiumFirstTitle">今日は、3社だけ見れば大丈夫。</h2>
+          <p>ここは買う銘柄を当てる場所ではなく、<strong>自分で調べる1社を見つける研究ページ</strong>です。まず候補を1つ選び、理由を読み、個別ページで確かめてみましょう。</p>
+        </div>
+        <div class="premium-first-route" aria-label="最初の3ステップ">
+          <span><b>1</b> 3社を見る</span>
+          <span><b>2</b> 理由を読む</span>
+          <span><b>3</b> 1社を確かめる</span>
+        </div>
+      </div>
+      <div class="premium-first-guides" aria-label="3人の案内">
+        <p><strong>ルーモ✨</strong> 変化を見つける</p>
+        <p><strong>エール💜</strong> 急がない理由も確認</p>
+        <p><strong>コスモス🌸</strong> 自分の分析へつなぐ</p>
+      </div>
+      <div id="premiumStarterCards" class="premium-starter-grid" aria-live="polite">
+        <p class="premium-starter-loading">今日の観察候補を選んでいます…</p>
+      </div>
+      <div class="premium-first-footer">
+        <p id="premiumStarterStatus">最初の記録日は、明日と比べるための基準点になります。</p>
+        <a class="button secondary" href="#premiumFinder">候補一覧をもっと見る</a>
+      </div>
     </section>
 
     <section class="panel premium-pcf-entry" aria-labelledby="premiumPcfTitle">
@@ -87,7 +115,7 @@
       <p class="research-guardrail"><strong>過学習を避けるためのルール：</strong>正式な見直し候補は週次コホートで評価し、20営業日後の検証が12週以上、5営業日後が20週以上たまるまでは現行の観察優先度を変更しません。市場全体の平均騰落率との差も同時に比較します。</p>
     </section>
 
-    <section class="panel premium-finder-panel">
+    <section id="premiumFinder" class="panel premium-finder-panel">
       <div class="premium-quick-filters" role="group" aria-label="すぐ見る">
         <button type="button" class="premium-quick active" data-premium-mode="early" aria-pressed="true"><strong>暫定GC・接近</strong><small>月末より先に変化を見る</small></button>
         <button type="button" class="premium-quick" data-premium-mode="combo" aria-pressed="false"><strong>GC系 × 需給改善</strong><small>二つの変化が重なる候補</small></button>
@@ -132,7 +160,7 @@
     </section>
   </main>
 
-  <script src="assets/premium-supply-beta.js?v=2" defer></script>
+  <script src="assets/premium-supply-beta.js?v=3" defer></script>
   <script src="assets/premium-research.js?v=1" defer></script>
 </body>
 </html>
