@@ -4,8 +4,6 @@ on:
   workflow_run:
     workflows: ["Update daily candidate prices", "Update monthly RSI data", "Audit data quality", "Update JPX margin balance", "Update extended listed universe", "Update core universe data", "Update premium engine research"]
     types: [completed]
-  pull_request:
-    types: [closed]
   push:
     branches: ["main"]
     paths:
@@ -30,7 +28,8 @@ permissions:
 
 concurrency:
   group: pages
-  cancel-in-progress: true
+  # A failed updater must not cancel a deployment that already passed validation.
+  cancel-in-progress: false
 
 jobs:
   deploy:
