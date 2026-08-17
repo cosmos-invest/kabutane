@@ -4,163 +4,204 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow,noarchive">
-  <title>先回り・需給ラボ β | かぶたね</title>
+  <title>ROOMメイト専用｜かぶたね観察室</title>
   <link rel="stylesheet" href="assets/style.css?v=14">
+  <link rel="stylesheet" href="assets/room-gate.css?v=1">
   <link rel="stylesheet" href="assets/premium-supply-beta.css?v=3">
   <link rel="stylesheet" href="assets/premium-first-step.css?v=1">
   <link rel="stylesheet" href="assets/premium-research.css?v=1">
   <link rel="stylesheet" href="assets/premium-large-holdings.css?v=1">
 </head>
-<body class="premium-supply-beta-page">
-  <header class="site-header premium-header">
-    <div class="header-inner">
-      <div>
-        <p class="eyebrow">KABUTANE PREMIUM LAB / PRIVATE BETA</p>
-        <h1>先回り・需給ラボ β</h1>
-        <p class="subtitle">プライム・スタンダード・グロースの内国普通株を横断し、<strong>暫定GC / GC接近</strong>、日足トレンド・出来高、JPX週次信用残高、EDINET大口保有、財務を同じ画面で比較します。</p>
+<body class="premium-supply-beta-page room-gate-page">
+  <section id="roomGate" class="room-gate" aria-labelledby="roomGateTitle">
+    <div class="room-gate-inner">
+      <div class="room-gate-copy">
+        <p class="eyebrow">ROOM MATE ONLY / KABUTANE OBSERVATION ROOM</p>
+        <h1 id="roomGateTitle">ROOMメイト専用<br><em>かぶたね観察室</em> 🌱</h1>
+        <p>ここは、まだ答えが出ていない変化や仮説を、ROOMメイトと一緒に見ていく小さな観察室です。公開版より一歩先の途中経過を、焦らず育てていきます。</p>
+        <div class="room-gate-guide">
+          <article><b>1</b><strong>ROOMの合言葉で入室</strong><small>noteメンバーシップの固定投稿で案内している合言葉を入力します。</small></article>
+          <article><b>2</b><strong>この端末で30日間記憶</strong><small>チェックを入れておけば、毎回合言葉を入れなくても大丈夫です。</small></article>
+          <article><b>3</b><strong>仮説と途中経過を観察</strong><small>暫定GC、需給、大口保有、検証履歴などを「買い推奨」ではなく観察材料として見ます。</small></article>
+        </div>
       </div>
-      <div class="header-meta"><span class="premium-badge">PREMIUM β</span></div>
+      <div class="room-gate-card">
+        <h2>観察室の鍵をあける</h2>
+        <p>ROOMの固定投稿にある合言葉を入力してね🌸</p>
+        <form id="roomGateForm">
+          <label for="roomPassphrase">ROOMの合言葉</label>
+          <div class="room-pass-row">
+            <input id="roomPassphrase" type="password" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" inputmode="text" enterkeyhint="go" placeholder="合言葉を入力" aria-describedby="roomPassphraseHint roomGateError">
+            <button id="roomTogglePassword" type="button">表示</button>
+          </div>
+          <small id="roomPassphraseHint">半角英数字とアンダースコア（_）で入力</small>
+          <label class="room-remember"><input id="roomRemember" type="checkbox" checked>この端末で30日間覚えておく</label>
+          <button id="roomUnlockButton" class="room-gate-submit" type="submit">観察室へ入る</button>
+          <p id="roomGateError" class="room-gate-error" role="alert"></p>
+        </form>
+        <p id="roomGateNotice" class="room-gate-notice">ROOMメイト限定の簡易ゲートです。URL・合言葉の転載は禁止転載はご遠慮ください。</p>
+      </div>
     </div>
-  </header>
+  </section>
 
-  <main class="container premium-container">
-    <section class="premium-warning">
-      <strong>観察候補を早く見つけるためのβ版です。</strong>
-      <p>正式なNEW / CONTINUE / OUTは月末確定値のままです。暫定GC・GC接近・暫定DCは「今日までの終値を今月末終値と仮定した場合」の途中経過で、月末までに消えることがあります。ここでの順位は買い推奨ではありません。</p>
-    </section>
-
-    <section class="panel premium-first-step" aria-labelledby="premiumFirstTitle">
-      <div class="premium-first-heading">
+  <div id="roomShell" hidden>
+    <header class="site-header premium-header">
+      <div class="header-inner">
         <div>
-          <p class="eyebrow">YOUR FIRST 3 MINUTES</p>
-          <h2 id="premiumFirstTitle">今日は、3社だけ見れば大丈夫。</h2>
-          <p>ここは買う銘柄を当てる場所ではなく、<strong>自分で調べる1社を見つける研究ページ</strong>です。まず候補を1つ選び、理由を読み、個別ページで確かめてみましょう。</p>
+          <a class="room-back-link" href="index.html">← 公開版かぶたねへ戻る</a>
+          <p class="eyebrow">KABUTANE ROOM / OBSERVATION LAB</p>
+          <h1>かぶたね観察室</h1>
+          <p class="subtitle">ROOMメイトと、<strong>暫定GC / GC接近</strong>、日足トレンド・出来高、JPX週次信用残高、EDINET大口保有、財務、検証履歴を同じ画面で観察します。</p>
         </div>
-        <div class="premium-first-route" aria-label="最初の3ステップ">
-          <span><b>1</b> 3社を見る</span>
-          <span><b>2</b> 理由を読む</span>
-          <span><b>3</b> 1社を確かめる</span>
+        <div class="header-meta room-header-actions">
+          <span class="room-only-badge">ROOM ONLY</span>
+          <button id="roomLogout" class="room-lock-button" type="button">鍵を閉じる</button>
         </div>
       </div>
-      <div class="premium-first-guides" aria-label="3人の案内">
-        <p><strong>ルーモ✨</strong> 変化を見つける</p>
-        <p><strong>エール💜</strong> 急がない理由も確認</p>
-        <p><strong>コスモス🌸</strong> 自分の分析へつなぐ</p>
-      </div>
-      <div id="premiumPreviousReview" class="premium-previous-review" aria-live="polite" hidden></div>
-      <div id="premiumStarterCards" class="premium-starter-grid" aria-live="polite">
-        <p class="premium-starter-loading">今日の観察候補を選んでいます…</p>
-      </div>
-      <div class="premium-first-footer">
-        <p id="premiumStarterStatus">最初の記録日は、明日と比べるための基準点になります。</p>
-        <a class="button secondary" href="#premiumFinder">候補一覧をもっと見る</a>
-      </div>
-    </section>
+    </header>
 
-    <section class="panel premium-pcf-entry" aria-labelledby="premiumPcfTitle">
-      <div>
-        <p class="eyebrow">ACTIVE ETF PCF / DAILY</p>
-        <h2 id="premiumPcfTitle">プロの組入変化を、調べるヒントに。</h2>
-        <p>東証アクティブETFの日々のPCFを比べ、新規採用・除外・実質的な組入増減を整理します。ETFの設定・解約による全体増減は正規化してから比較します。</p>
-      </div>
-      <a class="button" href="premium-etf-pcf.html">アクティブETFの動きを見る</a>
-    </section>
+    <main class="container premium-container">
+      <p class="room-use-note"><strong>ROOMメイト専用の実験ページです。</strong> URL・合言葉の転載は禁止転載はご遠慮ください。ここで見つけた候補は、結論ではなく「次に自分で調べるための入口」として使ってください。</p>
 
-    <section class="panel premium-summary-panel">
-      <div class="section-heading">
+      <section class="premium-warning">
+        <strong>観察テーマ｜先回り・需給ラボ β</strong>
+        <p>正式なNEW / CONTINUE / OUTは月末確定値のままです。暫定GC・GC接近・暫定DCは「今日までの終値を今月末終値と仮定した場合」の途中経過で、月末までに消えることがあります。ここでの順位は買い推奨ではありません。</p>
+      </section>
+
+      <section class="panel premium-first-step" aria-labelledby="premiumFirstTitle">
+        <div class="premium-first-heading">
+          <div>
+            <p class="eyebrow">YOUR FIRST 3 MINUTES</p>
+            <h2 id="premiumFirstTitle">今日は、3社だけ見れば大丈夫。</h2>
+            <p>ここは買う銘柄を当てる場所ではなく、<strong>自分で調べる1社を見つける研究ページ</strong>です。まず候補を1つ選び、理由を読み、個別ページで確かめてみましょう。</p>
+          </div>
+          <div class="premium-first-route" aria-label="最初の3ステップ">
+            <span><b>1</b> 3社を見る</span>
+            <span><b>2</b> 理由を読む</span>
+            <span><b>3</b> 1社を確かめる</span>
+          </div>
+        </div>
+        <div class="premium-first-guides" aria-label="3人の案内">
+          <p><strong>ルーモ✨</strong> 変化を見つける</p>
+          <p><strong>エール💜</strong> 急がない理由も確認</p>
+          <p><strong>コスモス🌸</strong> 自分の分析へつなぐ</p>
+        </div>
+        <div id="premiumPreviousReview" class="premium-previous-review" aria-live="polite" hidden></div>
+        <div id="premiumStarterCards" class="premium-starter-grid" aria-live="polite">
+          <p class="premium-starter-loading">今日の観察候補を選んでいます…</p>
+        </div>
+        <div class="premium-first-footer">
+          <p id="premiumStarterStatus">最初の記録日は、明日と比べるための基準点になります。</p>
+          <a class="button secondary" href="#premiumFinder">候補一覧をもっと見る</a>
+        </div>
+      </section>
+
+      <section class="panel premium-pcf-entry" aria-labelledby="premiumPcfTitle">
         <div>
-          <h2>全対象銘柄レーダー</h2>
-          <p>ETF・ETN・REITなどは混ぜず、通常の株式スクリーニング対象だけを走査します。詳細ページでは、確定GC前の銘柄でも全銘柄用チャート・月足RSI・取得済み財務を確認できます。</p>
+          <p class="eyebrow">ACTIVE ETF PCF / DAILY</p>
+          <h2 id="premiumPcfTitle">プロの組入変化を、調べるヒントに。</h2>
+          <p>東証アクティブETFの日々のPCFを比べ、新規採用・除外・実質的な組入増減を整理します。ETFの設定・解約による全体増減は正規化してから比較します。</p>
         </div>
-        <span id="premiumDataDate" class="premium-date">読込中…</span>
-      </div>
-      <div id="premiumSummary" class="premium-summary-grid"></div>
-      <div id="premiumCoverage" class="premium-coverage"></div>
-    </section>
+        <a class="button" href="premium-etf-pcf.html">アクティブETFの動きを見る</a>
+      </section>
 
-    <section class="panel premium-research-panel" aria-labelledby="researchTitle">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">ENGINE TRACK RECORD</p>
-          <h2 id="researchTitle">🔥 エンジン急上昇 ＆ 観察優先度の検証室</h2>
-          <p>今日上位へ浮上した銘柄だけでなく、<strong>その順位が本当に1週間後・1か月後の成績につながったか</strong>を時系列で残します。</p>
+      <section class="panel premium-summary-panel">
+        <div class="section-heading">
+          <div>
+            <h2>全対象銘柄レーダー</h2>
+            <p>ETF・ETN・REITなどは混ぜず、通常の株式スクリーニング対象だけを走査します。詳細ページでは、確定GC前の銘柄でも全銘柄用チャート・月足RSI・取得済み財務を確認できます。</p>
+          </div>
+          <span id="premiumDataDate" class="premium-date">読込中…</span>
         </div>
-      </div>
+        <div id="premiumSummary" class="premium-summary-grid"></div>
+        <div id="premiumCoverage" class="premium-coverage"></div>
+      </section>
 
-      <div id="premiumResearchStatus" class="research-status-grid"></div>
+      <section class="panel premium-research-panel" aria-labelledby="researchTitle">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">ENGINE TRACK RECORD</p>
+            <h2 id="researchTitle">🔥 エンジン急上昇 ＆ 観察優先度の検証室</h2>
+            <p>今日上位へ浮上した銘柄だけでなく、<strong>その順位が本当に1週間後・1か月後の成績につながったか</strong>を時系列で残します。</p>
+          </div>
+        </div>
 
-      <div class="research-subsection">
-        <h3>🔥 昨日より急浮上した銘柄</h3>
-        <p>観察優先度の順位・点数が前回スナップショットから上がった銘柄です。2営業日分たまると表示を開始します。</p>
-        <div id="premiumHotMovers" class="research-hot-grid"></div>
-      </div>
+        <div id="premiumResearchStatus" class="research-status-grid"></div>
 
-      <div class="research-subsection">
-        <h3>仮想ポートフォリオの追跡</h3>
-        <p>各週の観察優先度を固定し、上位10/20/50銘柄や点数帯を等金額で保有したと仮定して、5営業日後・20営業日後を追跡します。未来の情報で過去スコアを書き換えません。</p>
-        <div id="premiumPortfolioValidation" class="research-table-wrap"></div>
-      </div>
+        <div class="research-subsection">
+          <h3>🔥 昨日より急浮上した銘柄</h3>
+          <p>観察優先度の順位・点数が前回スナップショットから上がった銘柄です。2営業日分たまると表示を開始します。</p>
+          <div id="premiumHotMovers" class="research-hot-grid"></div>
+        </div>
 
-      <div class="research-subsection">
-        <h3>どの点数帯が強かった？</h3>
-        <p>観察優先度の閾値を感覚で決めず、50点台・60点台・70点台・80点台・90点台のその後を比較します。</p>
-        <div id="premiumBucketValidation" class="research-table-wrap"></div>
-      </div>
+        <div class="research-subsection">
+          <h3>仮想ポートフォリオの追跡</h3>
+          <p>各週の観察優先度を固定し、上位10/20/50銘柄や点数帯を等金額で保有したと仮定して、5営業日後・20営業日後を追跡します。未来の情報で過去スコアを書き換えません。</p>
+          <div id="premiumPortfolioValidation" class="research-table-wrap"></div>
+        </div>
 
-      <div class="research-subsection">
-        <h3>重みの研究：現行 vs 挑戦者</h3>
-        <p>月足シグナル・日足/出来高・信用需給・財務の比重を複数パターンで並走させます。<strong>本番エンジンは自動変更せず</strong>、十分な検証期間がたまってから研究候補だけを提示します。</p>
-        <div id="premiumWeightExperiments" class="research-table-wrap"></div>
-      </div>
+        <div class="research-subsection">
+          <h3>どの点数帯が強かった？</h3>
+          <p>観察優先度の閾値を感覚で決めず、50点台・60点台・70点台・80点台・90点台のその後を比較します。</p>
+          <div id="premiumBucketValidation" class="research-table-wrap"></div>
+        </div>
 
-      <p class="research-guardrail"><strong>過学習を避けるためのルール：</strong>正式な見直し候補は週次コホートで評価し、20営業日後の検証が12週以上、5営業日後が20週以上たまるまでは現行の観察優先度を変更しません。市場全体の平均騰落率との差も同時に比較します。</p>
-    </section>
+        <div class="research-subsection">
+          <h3>重みの研究：現行 vs 挑戦者</h3>
+          <p>月足シグナル・日足/出来高・信用需給・財務の比重を複数パターンで並走させます。<strong>本番エンジンは自動変更せず</strong>、十分な検証期間がたまってから研究候補だけを提示します。</p>
+          <div id="premiumWeightExperiments" class="research-table-wrap"></div>
+        </div>
 
-    <section id="premiumFinder" class="panel premium-finder-panel">
-      <div class="premium-quick-filters" role="group" aria-label="すぐ見る">
-        <button type="button" class="premium-quick active" data-premium-mode="early" aria-pressed="true"><strong>暫定GC・接近</strong><small>月末より先に変化を見る</small></button>
-        <button type="button" class="premium-quick" data-premium-mode="combo" aria-pressed="false"><strong>GC系 × 需給改善</strong><small>二つの変化が重なる候補</small></button>
-        <button type="button" class="premium-quick" data-premium-mode="dc" aria-pressed="false"><strong>暫定DC</strong><small>継続中の注意候補</small></button>
-        <button type="button" class="premium-quick" data-premium-mode="holder" aria-pressed="false"><strong>大口保有の変化</strong><small>EDINET報告あり</small></button>
-        <button type="button" class="premium-quick" data-premium-mode="all" aria-pressed="false"><strong>全銘柄</strong><small>検索・比較する</small></button>
-      </div>
+        <p class="research-guardrail"><strong>過学習を避けるためのルール：</strong>正式な見直し候補は週次コホートで評価し、20営業日後の検証が12週以上、5営業日後が20週以上たまるまでは現行の観察優先度を変更しません。市場全体の平均騰落率との差も同時に比較します。</p>
+      </section>
 
-      <div class="premium-controls">
-        <label>銘柄検索<input id="premiumSearch" type="search" placeholder="5243 / note / 銘柄名"></label>
-        <label>途中判定<select id="premiumSignal"><option value="all">すべて</option><option value="GC">暫定GC</option><option value="NEAR_GC">GC接近</option><option value="CONTINUE">暫定継続</option><option value="DC">暫定DC</option><option value="OUT">OUT側</option></select></label>
-        <label>市場<select id="premiumMarket"><option value="all">3市場すべて</option><option value="プライム">プライム</option><option value="スタンダード">スタンダード</option><option value="グロース">グロース</option></select></label>
-        <label>信用需給<select id="premiumSupply"><option value="all">問わない</option><option value="yes">改善候補のみ</option><option value="S">Sのみ</option><option value="A">A以上</option></select></label>
-        <label>大口保有<select id="premiumLargeHolder"><option value="all">問わない</option><option value="yes">報告あり</option><option value="NEW_OVER_5">新規5%超</option><option value="INCREASE">保有割合 増加</option><option value="DECREASE">保有割合 減少</option><option value="IMPORTANT_PROPOSAL">重要提案の可能性</option></select></label>
-        <label>並び順<select id="premiumSort"><option value="priority">観察優先度</option><option value="spread">月足RSI差</option><option value="volume">出来高変化</option><option value="supply">需給改善度</option><option value="code">コード</option></select></label>
-      </div>
+      <section id="premiumFinder" class="panel premium-finder-panel">
+        <div class="premium-quick-filters" role="group" aria-label="すぐ見る">
+          <button type="button" class="premium-quick active" data-premium-mode="early" aria-pressed="true"><strong>暫定GC・接近</strong><small>月末より先に変化を見る</small></button>
+          <button type="button" class="premium-quick" data-premium-mode="combo" aria-pressed="false"><strong>GC系 × 需給改善</strong><small>二つの変化が重なる候補</small></button>
+          <button type="button" class="premium-quick" data-premium-mode="dc" aria-pressed="false"><strong>暫定DC</strong><small>継続中の注意候補</small></button>
+          <button type="button" class="premium-quick" data-premium-mode="holder" aria-pressed="false"><strong>大口保有の変化</strong><small>EDINET報告あり</small></button>
+          <button type="button" class="premium-quick" data-premium-mode="all" aria-pressed="false"><strong>全銘柄</strong><small>検索・比較する</small></button>
+        </div>
 
-      <p class="premium-key"><span class="signal-chip signal-gc">暫定GC</span> 今月途中で上抜け <span class="signal-chip signal-near">GC接近</span> RSI差 -2〜0pt <span class="signal-chip signal-dc">暫定DC</span> 今月途中で下抜け</p>
+        <div class="premium-controls">
+          <label>銘柄検索<input id="premiumSearch" type="search" placeholder="5243 / note / 銘柄名"></label>
+          <label>途中判定<select id="premiumSignal"><option value="all">すべて</option><option value="GC">暫定GC</option><option value="NEAR_GC">GC接近</option><option value="CONTINUE">暫定継続</option><option value="DC">暫定DC</option><option value="OUT">OUT側</option></select></label>
+          <label>市場<select id="premiumMarket"><option value="all">3市場すべて</option><option value="プライム">プライム</option><option value="スタンダード">スタンダード</option><option value="グロース">グロース</option></select></label>
+          <label>信用需給<select id="premiumSupply"><option value="all">問わない</option><option value="yes">改善候補のみ</option><option value="S">Sのみ</option><option value="A">A以上</option></select></label>
+          <label>大口保有<select id="premiumLargeHolder"><option value="all">問わない</option><option value="yes">報告あり</option><option value="NEW_OVER_5">新規5%超</option><option value="INCREASE">保有割合 増加</option><option value="DECREASE">保有割合 減少</option><option value="IMPORTANT_PROPOSAL">重要提案の可能性</option></select></label>
+          <label>並び順<select id="premiumSort"><option value="priority">観察優先度</option><option value="spread">月足RSI差</option><option value="volume">出来高変化</option><option value="supply">需給改善度</option><option value="code">コード</option></select></label>
+        </div>
 
-      <div class="premium-table-wrap">
-        <table class="premium-table">
-          <thead>
-            <tr><th>観察</th><th>途中判定</th><th>銘柄</th><th>現在値</th><th>月足RSI</th><th>日足・出来高</th><th>信用需給</th><th>財務</th><th>理由</th></tr>
-          </thead>
-          <tbody id="premiumRows"></tbody>
-        </table>
-      </div>
-      <p id="premiumEmpty" class="premium-empty" hidden>条件に合う銘柄がありません。</p>
-      <div class="premium-more-wrap"><button id="premiumMore" type="button" class="button secondary" hidden>さらに表示</button></div>
-    </section>
+        <p class="premium-key"><span class="signal-chip signal-gc">暫定GC</span> 今月途中で上抜け <span class="signal-chip signal-near">GC接近</span> RSI差 -2〜0pt <span class="signal-chip signal-dc">暫定DC</span> 今月途中で下抜け</p>
 
-    <section class="panel premium-method-note">
-      <h2>この画面の判断順</h2>
-      <div class="premium-method-grid">
-        <article><span>1</span><strong>暫定GC / 接近</strong><p>月足RSI14が5か月MAを今月途中で上抜いたか、すぐ下まで来ているかを見ます。</p></article>
-        <article><span>2</span><strong>日足の形</strong><p>SMA200より上か、移動平均線の並び、直近出来高、52週高値との距離を確認します。</p></article>
-        <article><span>3</span><strong>信用需給</strong><p>買い残整理・倍率低下などが同時に起きているかをJPX週次データで確認します。</p></article>
-        <article><span>4</span><strong>大口保有</strong><p>EDINETの大量保有・変更報告を確認します。割合増加を市場での買付とは断定しません。</p></article>
-        <article><span>5</span><strong>財務と詳細</strong><p>PER/PBRだけでなくROE、自己資本、成長率、CFを確認し、最後は個別チャートで位置を見ます。</p></article>
-      </div>
-      <p><strong>プレミアムの価値は生データではなく、複数の変化を同時に見つける判断軸です。</strong> ただし現在のGitHub Pagesにはログイン認証がないため、このURLは「隠し導線」のβ検証です。本番課金時は認証付き配信へ移します。</p>
-    </section>
-  </main>
+        <div class="premium-table-wrap">
+          <table class="premium-table">
+            <thead>
+              <tr><th>観察</th><th>途中判定</th><th>銘柄</th><th>現在値</th><th>月足RSI</th><th>日足・出来高</th><th>信用需給</th><th>財務</th><th>理由</th></tr>
+            </thead>
+            <tbody id="premiumRows"></tbody>
+          </table>
+        </div>
+        <p id="premiumEmpty" class="premium-empty" hidden>条件に合う銘柄がありません。</p>
+        <div class="premium-more-wrap"><button id="premiumMore" type="button" class="button secondary" hidden>さらに表示</button></div>
+      </section>
 
+      <section class="panel premium-method-note">
+        <h2>この画面の判断順</h2>
+        <div class="premium-method-grid">
+          <article><span>1</span><strong>暫定GC / 接近</strong><p>月足RSI14が5か月MAを今月途中で上抜いたか、すぐ下まで来ているかを見ます。</p></article>
+          <article><span>2</span><strong>日足の形</strong><p>SMA200より上か、移動平均線の並び、直近出来高、52週高値との距離を確認します。</p></article>
+          <article><span>3</span><strong>信用需給</strong><p>買い残整理・倍率低下などが同時に起きているかをJPX週次データで確認します。</p></article>
+          <article><span>4</span><strong>大口保有</strong><p>EDINETの大量保有・変更報告を確認します。割合増加を市場での買付とは断定しません。</p></article>
+          <article><span>5</span><strong>財務と詳細</strong><p>PER/PBRだけでなくROE、自己資本、成長率、CFを確認し、最後は個別チャートで位置を見ます。</p></article>
+        </div>
+        <p><strong>ROOM観察室の価値は生データではなく、複数の変化を同時に見つけ、仮説をあとから検証できる判断軸です。</strong> 現在のGitHub Pagesは厳密な会員認証ではないため、ここには高い秘匿性が必要な個人情報・管理データは置きません。本格的な会員認証が必要になった段階で認証付き配信へ移します。</p>
+      </section>
+    </main>
+  </div>
+
+  <script src="assets/room-gate.js?v=1" defer></script>
   <script src="assets/premium-supply-beta.js?v=4" defer></script>
   <script src="assets/premium-research.js?v=1" defer></script>
 </body>
