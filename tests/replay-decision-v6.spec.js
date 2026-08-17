@@ -126,8 +126,9 @@ test("mobile replay follows oscillator-chart-monthly judgment flow and keeps day
   await expect.poll(() => page.evaluate(() => state.plan.armed)).toBe(true);
   await expect(page.locator("#replayVolumeProfileDetailV6")).toContainText("株");
 
+  await page.evaluate(() => { state.toolMode = "none"; state.plan.armed = false; });
   const beforeDate = await page.locator("#replayDecisionDateV6").textContent();
-  await actions.locator('[data-decision-action="step-one"]').click();
+  await page.locator('#guidedActionArea [data-guided-action="step-one"]').click();
   await expect.poll(async () => await page.locator("#replayDecisionDateV6").textContent(), { timeout: 5000 }).not.toBe(beforeDate);
 
   const dockBox = await dock.boundingBox();
