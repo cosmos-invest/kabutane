@@ -2,12 +2,12 @@
   "code": "9936",
   "ticker": "9936.T",
   "name": "王将フードサービス",
-  "generated_at": "2026-08-14T12:54:09.887055+00:00",
-  "price_date": "2026-08-14",
+  "generated_at": "2026-08-17T12:33:44.025510+00:00",
+  "price_date": "2026-08-17",
   "record": {
-    "current_price": 2881.0,
-    "change_from_signal_month_pct": -4.6,
-    "return_since_gc_pct": -4.6
+    "current_price": 2820.0,
+    "change_from_signal_month_pct": -6.62,
+    "return_since_gc_pct": -6.62
   },
   "daily": [
     {
@@ -74,22 +74,35 @@
       "sma200": 3052.24,
       "rsi14": 45.71,
       "rsi5": 49.43
+    },
+    {
+      "date": "2026-08-17",
+      "open": 2859.0,
+      "high": 2859.0,
+      "low": 2820.0,
+      "close": 2820.0,
+      "volume": 370300.0,
+      "sma25": 2934.76,
+      "sma75": 2834.87,
+      "sma200": 3049.12,
+      "rsi14": 45.71,
+      "rsi5": 49.43
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-14",
-    "monthly_rsi14": 46.65,
-    "monthly_rsi_ma5": 45.91,
-    "spread": 0.74,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-17",
+    "monthly_rsi14": 45.24,
+    "monthly_rsi_ma5": 45.63,
+    "spread": -0.39,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-14T12:54:57.232896+00:00"
+  "provisional_generated_at": "2026-08-17T12:34:46.882480+00:00"
 }

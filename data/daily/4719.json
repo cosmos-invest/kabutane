@@ -2,12 +2,12 @@
   "code": "4719",
   "ticker": "4719.T",
   "name": "アルファシステムズ",
-  "generated_at": "2026-08-14T12:54:09.887055+00:00",
-  "price_date": "2026-08-14",
+  "generated_at": "2026-08-17T12:33:44.025510+00:00",
+  "price_date": "2026-08-17",
   "record": {
-    "current_price": 3490.0,
-    "change_from_signal_month_pct": 5.76,
-    "return_since_gc_pct": 5.76
+    "current_price": 3465.0,
+    "change_from_signal_month_pct": 5.0,
+    "return_since_gc_pct": 5.0
   },
   "daily": [
     {
@@ -74,15 +74,28 @@
       "sma200": 3600.72,
       "rsi14": 45.21,
       "rsi5": 45.32
+    },
+    {
+      "date": "2026-08-17",
+      "open": 3490.0,
+      "high": 3510.0,
+      "low": 3450.0,
+      "close": 3465.0,
+      "volume": 12000.0,
+      "sma25": 3351.6,
+      "sma75": 3296.73,
+      "sma200": 3599.4,
+      "rsi14": 45.21,
+      "rsi5": 45.32
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-14",
-    "monthly_rsi14": 51.75,
-    "monthly_rsi_ma5": 47.33,
-    "spread": 4.42,
+    "price_date": "2026-08-17",
+    "monthly_rsi14": 51.13,
+    "monthly_rsi_ma5": 47.2,
+    "spread": 3.92,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -91,5 +104,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-14T12:54:57.232896+00:00"
+  "provisional_generated_at": "2026-08-17T12:34:46.882480+00:00"
 }

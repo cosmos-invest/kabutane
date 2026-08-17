@@ -2,12 +2,12 @@
   "code": "5949",
   "ticker": "5949.T",
   "name": "ユニプレス",
-  "generated_at": "2026-08-14T12:54:09.887055+00:00",
-  "price_date": "2026-08-14",
+  "generated_at": "2026-08-17T12:33:44.025510+00:00",
+  "price_date": "2026-08-17",
   "record": {
-    "current_price": 1328.0,
-    "change_from_signal_month_pct": -0.6,
-    "return_since_gc_pct": -0.6
+    "current_price": 1318.0,
+    "change_from_signal_month_pct": -1.35,
+    "return_since_gc_pct": -1.35
   },
   "daily": [
     {
@@ -74,15 +74,28 @@
       "sma200": 1295.06,
       "rsi14": 55.62,
       "rsi5": 57.16
+    },
+    {
+      "date": "2026-08-17",
+      "open": 1329.0,
+      "high": 1334.0,
+      "low": 1314.0,
+      "close": 1318.0,
+      "volume": 120400.0,
+      "sma25": 1298.08,
+      "sma75": 1270.47,
+      "sma200": 1295.63,
+      "rsi14": 55.62,
+      "rsi5": 57.16
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-14",
-    "monthly_rsi14": 55.31,
-    "monthly_rsi_ma5": 54.08,
-    "spread": 1.23,
+    "price_date": "2026-08-17",
+    "monthly_rsi14": 54.75,
+    "monthly_rsi_ma5": 53.96,
+    "spread": 0.79,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -91,5 +104,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-14T12:54:57.232896+00:00"
+  "provisional_generated_at": "2026-08-17T12:34:46.882480+00:00"
 }

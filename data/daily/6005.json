@@ -2,12 +2,12 @@
   "code": "6005",
   "ticker": "6005.T",
   "name": "三浦工業",
-  "generated_at": "2026-08-14T12:54:09.887055+00:00",
-  "price_date": "2026-08-14",
+  "generated_at": "2026-08-17T12:33:44.025510+00:00",
+  "price_date": "2026-08-17",
   "record": {
-    "current_price": 3203.0,
-    "change_from_signal_month_pct": -0.44,
-    "return_since_gc_pct": -0.44
+    "current_price": 3187.0,
+    "change_from_signal_month_pct": -0.93,
+    "return_since_gc_pct": -0.93
   },
   "daily": [
     {
@@ -74,22 +74,35 @@
       "sma200": 3164.27,
       "rsi14": 50.09,
       "rsi5": 50.98
+    },
+    {
+      "date": "2026-08-17",
+      "open": 3205.0,
+      "high": 3208.0,
+      "low": 3160.0,
+      "close": 3187.0,
+      "volume": 302300.0,
+      "sma25": 3191.48,
+      "sma75": 3203.61,
+      "sma200": 3165.09,
+      "rsi14": 50.09,
+      "rsi5": 50.98
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-14",
-    "monthly_rsi14": 50.11,
-    "monthly_rsi_ma5": 50.07,
-    "spread": 0.03,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-17",
+    "monthly_rsi14": 49.65,
+    "monthly_rsi_ma5": 49.98,
+    "spread": -0.33,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-14T12:54:57.232896+00:00"
+  "provisional_generated_at": "2026-08-17T12:34:46.882480+00:00"
 }

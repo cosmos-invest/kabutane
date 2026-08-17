@@ -2,12 +2,12 @@
   "code": "3710",
   "ticker": "3710.T",
   "name": "ジョルダン",
-  "generated_at": "2026-08-14T12:54:09.887055+00:00",
-  "price_date": "2026-08-14",
+  "generated_at": "2026-08-17T12:33:44.025510+00:00",
+  "price_date": "2026-08-17",
   "record": {
-    "current_price": 661.0,
-    "change_from_signal_month_pct": 6.61,
-    "return_since_gc_pct": 13.18
+    "current_price": 651.0,
+    "change_from_signal_month_pct": 5.0,
+    "return_since_gc_pct": 11.47
   },
   "daily": [
     {
@@ -74,15 +74,28 @@
       "sma200": 605.6,
       "rsi14": 52.01,
       "rsi5": 52.08
+    },
+    {
+      "date": "2026-08-17",
+      "open": 658.0,
+      "high": 658.0,
+      "low": 639.0,
+      "close": 651.0,
+      "volume": 25600.0,
+      "sma25": 621.12,
+      "sma75": 614.52,
+      "sma200": 605.93,
+      "rsi14": 52.01,
+      "rsi5": 52.08
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-14",
-    "monthly_rsi14": 61.6,
-    "monthly_rsi_ma5": 51.08,
-    "spread": 10.52,
+    "price_date": "2026-08-17",
+    "monthly_rsi14": 59.33,
+    "monthly_rsi_ma5": 50.62,
+    "spread": 8.71,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -91,5 +104,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-14T12:54:57.232896+00:00"
+  "provisional_generated_at": "2026-08-17T12:34:46.882480+00:00"
 }

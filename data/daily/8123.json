@@ -2,12 +2,12 @@
   "code": "8123",
   "ticker": "8123.T",
   "name": "川辺",
-  "generated_at": "2026-08-14T12:54:09.887055+00:00",
-  "price_date": "2026-08-14",
+  "generated_at": "2026-08-17T12:33:44.025510+00:00",
+  "price_date": "2026-08-17",
   "record": {
-    "current_price": 1357.0,
-    "change_from_signal_month_pct": -0.15,
-    "return_since_gc_pct": -0.15
+    "current_price": 1381.0,
+    "change_from_signal_month_pct": 1.62,
+    "return_since_gc_pct": 1.62
   },
   "daily": [
     {
@@ -74,15 +74,28 @@
       "sma200": 1397.45,
       "rsi14": 50.66,
       "rsi5": 51.49
+    },
+    {
+      "date": "2026-08-17",
+      "open": 1383.0,
+      "high": 1383.0,
+      "low": 1381.0,
+      "close": 1381.0,
+      "volume": 700.0,
+      "sma25": 1355.44,
+      "sma75": 1339.29,
+      "sma200": 1397.53,
+      "rsi14": 50.66,
+      "rsi5": 51.49
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-14",
-    "monthly_rsi14": 52.78,
-    "monthly_rsi_ma5": 52.07,
-    "spread": 0.71,
+    "price_date": "2026-08-17",
+    "monthly_rsi14": 54.32,
+    "monthly_rsi_ma5": 52.38,
+    "spread": 1.94,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -91,5 +104,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-14T12:54:57.232896+00:00"
+  "provisional_generated_at": "2026-08-17T12:34:46.882480+00:00"
 }

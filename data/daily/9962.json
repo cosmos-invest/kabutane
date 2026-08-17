@@ -2,12 +2,12 @@
   "code": "9962",
   "ticker": "9962.T",
   "name": "ミスミグループ本社",
-  "generated_at": "2026-08-14T12:54:09.887055+00:00",
-  "price_date": "2026-08-14",
+  "generated_at": "2026-08-17T12:33:44.025510+00:00",
+  "price_date": "2026-08-17",
   "record": {
-    "current_price": 3831.0,
-    "change_from_signal_month_pct": -0.78,
-    "return_since_gc_pct": 6.74
+    "current_price": 3948.0,
+    "change_from_signal_month_pct": 2.25,
+    "return_since_gc_pct": 10.0
   },
   "daily": [
     {
@@ -74,22 +74,35 @@
       "sma200": 3035.06,
       "rsi14": 64.08,
       "rsi5": 66.5
+    },
+    {
+      "date": "2026-08-17",
+      "open": 3924.0,
+      "high": 3948.0,
+      "low": 3854.0,
+      "close": 3948.0,
+      "volume": 1352700.0,
+      "sma25": 3757.2,
+      "sma75": 3687.32,
+      "sma200": 3043.2,
+      "rsi14": 64.08,
+      "rsi5": 66.5
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-14",
-    "monthly_rsi14": 66.86,
-    "monthly_rsi_ma5": 67.92,
-    "spread": -1.06,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-17",
+    "monthly_rsi14": 68.43,
+    "monthly_rsi_ma5": 68.23,
+    "spread": 0.2,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-14T12:54:57.232896+00:00"
+  "provisional_generated_at": "2026-08-17T12:34:46.882480+00:00"
 }

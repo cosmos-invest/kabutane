@@ -2,12 +2,12 @@
   "code": "4251",
   "ticker": "4251.T",
   "name": "恵和",
-  "generated_at": "2026-08-14T12:54:09.887055+00:00",
-  "price_date": "2026-08-14",
+  "generated_at": "2026-08-17T12:33:44.025510+00:00",
+  "price_date": "2026-08-17",
   "record": {
-    "current_price": 1309.0,
-    "change_from_signal_month_pct": 5.91,
-    "return_since_gc_pct": 5.91
+    "current_price": 1200.0,
+    "change_from_signal_month_pct": -2.91,
+    "return_since_gc_pct": -2.91
   },
   "daily": [
     {
@@ -74,22 +74,35 @@
       "sma200": 1249.78,
       "rsi14": 49.58,
       "rsi5": 50.26
+    },
+    {
+      "date": "2026-08-17",
+      "open": 1189.0,
+      "high": 1209.0,
+      "low": 1175.0,
+      "close": 1200.0,
+      "volume": 492500.0,
+      "sma25": 1237.4,
+      "sma75": 1236.93,
+      "sma200": 1249.77,
+      "rsi14": 49.58,
+      "rsi5": 50.26
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-14",
-    "monthly_rsi14": 54.59,
-    "monthly_rsi_ma5": 52.34,
-    "spread": 2.24,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-17",
+    "monthly_rsi14": 50.43,
+    "monthly_rsi_ma5": 51.51,
+    "spread": -1.08,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-14T12:54:57.232896+00:00"
+  "provisional_generated_at": "2026-08-17T12:34:46.882480+00:00"
 }

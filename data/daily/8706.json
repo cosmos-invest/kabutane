@@ -2,12 +2,12 @@
   "code": "8706",
   "ticker": "8706.T",
   "name": "極東証券",
-  "generated_at": "2026-08-14T12:54:09.887055+00:00",
-  "price_date": "2026-08-14",
+  "generated_at": "2026-08-17T12:33:44.025510+00:00",
+  "price_date": "2026-08-17",
   "record": {
-    "current_price": 1858.0,
-    "change_from_signal_month_pct": 4.56,
-    "return_since_gc_pct": 4.56
+    "current_price": 1840.0,
+    "change_from_signal_month_pct": 3.55,
+    "return_since_gc_pct": 3.55
   },
   "daily": [
     {
@@ -74,15 +74,28 @@
       "sma200": 1666.81,
       "rsi14": 55.75,
       "rsi5": 61.06
+    },
+    {
+      "date": "2026-08-17",
+      "open": 1855.0,
+      "high": 1863.0,
+      "low": 1836.0,
+      "close": 1840.0,
+      "volume": 136700.0,
+      "sma25": 1772.4,
+      "sma75": 1630.97,
+      "sma200": 1668.12,
+      "rsi14": 55.75,
+      "rsi5": 61.06
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-14",
-    "monthly_rsi14": 64.94,
-    "monthly_rsi_ma5": 59.17,
-    "spread": 5.77,
+    "price_date": "2026-08-17",
+    "monthly_rsi14": 64.48,
+    "monthly_rsi_ma5": 59.07,
+    "spread": 5.4,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -91,5 +104,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-14T12:54:57.232896+00:00"
+  "provisional_generated_at": "2026-08-17T12:34:46.882480+00:00"
 }

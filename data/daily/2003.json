@@ -2,12 +2,12 @@
   "code": "2003",
   "ticker": "2003.T",
   "name": "日東富士製粉",
-  "generated_at": "2026-08-14T12:54:09.887055+00:00",
-  "price_date": "2026-08-14",
+  "generated_at": "2026-08-17T12:33:44.025510+00:00",
+  "price_date": "2026-08-17",
   "record": {
-    "current_price": 1793.0,
-    "change_from_signal_month_pct": -2.4,
-    "return_since_gc_pct": -2.4
+    "current_price": 1776.0,
+    "change_from_signal_month_pct": -3.32,
+    "return_since_gc_pct": -3.32
   },
   "daily": [
     {
@@ -74,22 +74,35 @@
       "sma200": 1765.78,
       "rsi14": 59.05,
       "rsi5": 62.9
+    },
+    {
+      "date": "2026-08-17",
+      "open": 1800.0,
+      "high": 1800.0,
+      "low": 1766.0,
+      "close": 1776.0,
+      "volume": 17600.0,
+      "sma25": 1794.68,
+      "sma75": 1752.12,
+      "sma200": 1765.8,
+      "rsi14": 59.05,
+      "rsi5": 62.9
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-14",
-    "monthly_rsi14": 60.18,
-    "monthly_rsi_ma5": 59.8,
-    "spread": 0.38,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-17",
+    "monthly_rsi14": 58.78,
+    "monthly_rsi_ma5": 59.52,
+    "spread": -0.74,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-14T12:54:57.232896+00:00"
+  "provisional_generated_at": "2026-08-17T12:34:46.882480+00:00"
 }

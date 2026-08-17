@@ -2,12 +2,12 @@
   "code": "4293",
   "ticker": "4293.T",
   "name": "セプテーニ・ホールディングス",
-  "generated_at": "2026-08-14T12:54:09.887055+00:00",
-  "price_date": "2026-08-14",
+  "generated_at": "2026-08-17T12:33:44.025510+00:00",
+  "price_date": "2026-08-17",
   "record": {
-    "current_price": 509.0,
-    "change_from_signal_month_pct": -1.17,
-    "return_since_gc_pct": -1.17
+    "current_price": 503.0,
+    "change_from_signal_month_pct": -2.33,
+    "return_since_gc_pct": -2.33
   },
   "daily": [
     {
@@ -74,22 +74,35 @@
       "sma200": 448.55,
       "rsi14": 54.66,
       "rsi5": 57.08
+    },
+    {
+      "date": "2026-08-17",
+      "open": 509.0,
+      "high": 509.0,
+      "low": 501.0,
+      "close": 503.0,
+      "volume": 163400.0,
+      "sma25": 508.4,
+      "sma75": 487.72,
+      "sma200": 449.03,
+      "rsi14": 54.66,
+      "rsi5": 57.08
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-14",
-    "monthly_rsi14": 56.62,
-    "monthly_rsi_ma5": 56.32,
-    "spread": 0.3,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-17",
+    "monthly_rsi14": 56.0,
+    "monthly_rsi_ma5": 56.2,
+    "spread": -0.19,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-14T12:54:57.232896+00:00"
+  "provisional_generated_at": "2026-08-17T12:34:46.882480+00:00"
 }

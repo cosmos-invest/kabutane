@@ -2,12 +2,12 @@
   "code": "2751",
   "ticker": "2751.T",
   "name": "テンポスホールディングス",
-  "generated_at": "2026-08-14T12:54:09.887055+00:00",
-  "price_date": "2026-08-14",
+  "generated_at": "2026-08-17T12:33:44.025510+00:00",
+  "price_date": "2026-08-17",
   "record": {
-    "current_price": 3770.0,
-    "change_from_signal_month_pct": -1.44,
-    "return_since_gc_pct": -1.44
+    "current_price": 3740.0,
+    "change_from_signal_month_pct": -2.22,
+    "return_since_gc_pct": -2.22
   },
   "daily": [
     {
@@ -74,22 +74,35 @@
       "sma200": 3699.65,
       "rsi14": 58.64,
       "rsi5": 60.13
+    },
+    {
+      "date": "2026-08-17",
+      "open": 3750.0,
+      "high": 3785.0,
+      "low": 3740.0,
+      "close": 3740.0,
+      "volume": 8700.0,
+      "sma25": 3787.0,
+      "sma75": 3676.6,
+      "sma200": 3700.85,
+      "rsi14": 58.64,
+      "rsi5": 60.13
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-14",
-    "monthly_rsi14": 59.51,
-    "monthly_rsi_ma5": 58.99,
-    "spread": 0.52,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-17",
+    "monthly_rsi14": 58.55,
+    "monthly_rsi_ma5": 58.8,
+    "spread": -0.25,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-14T12:54:57.232896+00:00"
+  "provisional_generated_at": "2026-08-17T12:34:46.882480+00:00"
 }

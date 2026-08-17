@@ -2,12 +2,12 @@
   "code": "9601",
   "ticker": "9601.T",
   "name": "松竹",
-  "generated_at": "2026-08-14T12:54:09.887055+00:00",
-  "price_date": "2026-08-14",
+  "generated_at": "2026-08-17T12:33:44.025510+00:00",
+  "price_date": "2026-08-17",
   "record": {
-    "current_price": 10830.0,
-    "change_from_signal_month_pct": -6.07,
-    "return_since_gc_pct": -6.07
+    "current_price": 10740.0,
+    "change_from_signal_month_pct": -6.85,
+    "return_since_gc_pct": -6.85
   },
   "daily": [
     {
@@ -74,15 +74,28 @@
       "sma200": 11387.45,
       "rsi14": 45.45,
       "rsi5": 49.86
+    },
+    {
+      "date": "2026-08-17",
+      "open": 10890.0,
+      "high": 10890.0,
+      "low": 10740.0,
+      "close": 10740.0,
+      "volume": 41500.0,
+      "sma25": 11130.4,
+      "sma75": 10608.8,
+      "sma200": 11377.25,
+      "rsi14": 45.45,
+      "rsi5": 49.86
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-14",
-    "monthly_rsi14": 45.51,
-    "monthly_rsi_ma5": 44.05,
-    "spread": 1.46,
+    "price_date": "2026-08-17",
+    "monthly_rsi14": 45.06,
+    "monthly_rsi_ma5": 43.96,
+    "spread": 1.1,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -91,5 +104,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-14T12:54:57.232896+00:00"
+  "provisional_generated_at": "2026-08-17T12:34:46.882480+00:00"
 }

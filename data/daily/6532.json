@@ -2,12 +2,12 @@
   "code": "6532",
   "ticker": "6532.T",
   "name": "ベイカレント",
-  "generated_at": "2026-08-14T12:54:09.887055+00:00",
-  "price_date": "2026-08-14",
+  "generated_at": "2026-08-17T12:33:44.025510+00:00",
+  "price_date": "2026-08-17",
   "record": {
-    "current_price": 7687.0,
-    "change_from_signal_month_pct": 7.68,
-    "return_since_gc_pct": 36.88
+    "current_price": 7400.0,
+    "change_from_signal_month_pct": 3.66,
+    "return_since_gc_pct": 31.77
   },
   "daily": [
     {
@@ -74,15 +74,28 @@
       "sma200": 5926.65,
       "rsi14": 48.72,
       "rsi5": 58.02
+    },
+    {
+      "date": "2026-08-17",
+      "open": 7569.0,
+      "high": 7667.0,
+      "low": 7360.0,
+      "close": 7400.0,
+      "volume": 982200.0,
+      "sma25": 6947.96,
+      "sma75": 6118.99,
+      "sma200": 5926.62,
+      "rsi14": 48.72,
+      "rsi5": 58.02
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-14",
-    "monthly_rsi14": 59.59,
-    "monthly_rsi_ma5": 51.47,
-    "spread": 8.13,
+    "price_date": "2026-08-17",
+    "monthly_rsi14": 58.15,
+    "monthly_rsi_ma5": 51.18,
+    "spread": 6.97,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -91,5 +104,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-14T12:54:57.232896+00:00"
+  "provisional_generated_at": "2026-08-17T12:34:46.882480+00:00"
 }
