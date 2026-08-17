@@ -1,0 +1,129 @@
+.pcf-summary-grid {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.pcf-period-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap;
+  margin: -4px 0 14px;
+  padding: 9px 11px;
+  border-radius: 12px;
+  background: #f8f4fa;
+}
+
+.pcf-period-row > span {
+  margin-right: 3px;
+  color: #806a77;
+  font-size: .68rem;
+  font-weight: 900;
+}
+
+.pcf-period-row button {
+  padding: 6px 10px;
+  border: 1px solid rgba(191, 157, 178, .52);
+  border-radius: 999px;
+  background: #fff;
+  color: #6f5866;
+  cursor: pointer;
+  font-size: .68rem;
+  font-weight: 850;
+}
+
+.pcf-period-row button.active {
+  border-color: #785fd0;
+  background: #f0ecff;
+  color: #604ca7;
+}
+
+.pcf-streaks {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.pcf-streak {
+  padding: 4px 6px;
+  border-radius: 999px;
+  font-size: .59rem;
+  font-weight: 900;
+}
+
+.pcf-streak.up,
+.pcf-lookup-grid article span.up {
+  background: #dcfce7;
+  color: #087a4d;
+}
+
+.pcf-streak.down,
+.pcf-lookup-grid article span.down {
+  background: #ffe0e7;
+  color: #ad3150;
+}
+
+.pcf-lookup-grid,
+.pcf-sponsor-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 9px;
+  margin-top: 12px;
+}
+
+.pcf-lookup-grid article,
+.pcf-sponsor-grid article {
+  padding: 11px;
+  border: 1px solid rgba(201, 171, 190, .5);
+  border-radius: 13px;
+  background: #fff;
+}
+
+.pcf-lookup-grid strong a {
+  color: #654b5b;
+  text-decoration: none;
+  font-size: .77rem;
+}
+
+.pcf-lookup-grid article div,
+.pcf-sponsor-grid article > div {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+  margin-top: 7px;
+}
+
+.pcf-lookup-grid article span {
+  padding: 4px 6px;
+  border-radius: 7px;
+  font-size: .61rem;
+  font-weight: 850;
+}
+
+.pcf-sponsor-grid article > strong {
+  display: block;
+  font-size: .76rem;
+}
+
+.pcf-sponsor-grid article > span {
+  color: #88717e;
+  font-size: .63rem;
+}
+
+.pcf-sponsor-grid article > div {
+  font-size: .67rem;
+}
+
+.pcf-sponsor-grid .up { color: #087a4d; }
+.pcf-sponsor-grid .down { color: #ad3150; }
+
+@media (max-width: 900px) {
+  .pcf-summary-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .pcf-lookup-grid,
+  .pcf-sponsor-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 680px) {
+  .pcf-summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pcf-lookup-grid,
+  .pcf-sponsor-grid { grid-template-columns: 1fr; }
+}

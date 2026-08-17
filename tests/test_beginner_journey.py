@@ -83,7 +83,18 @@ class BeginnerJourneyTests(unittest.TestCase):
         self.assertIn("今すぐ買う理由にはしません", script)
         self.assertIn("renderStarterCards();", script)
         self.assertIn('kabutane_premium_first_step_v1', script)
+        self.assertIn('kabutane_premium_observation_history_v1', script)
+        self.assertIn('id="premiumPreviousReview"', html)
+        self.assertIn('data-starter-reason-for', script)
+        self.assertIn('data-review-status', script)
+        self.assertIn('OBSERVATION_HISTORY_LIMIT = 30', script)
         self.assertIn("記録はこのブラウザだけに残ります", script)
+
+    def test_learning_explains_non_coercive_observation_habit(self):
+        learn = read("learn.html")
+        self.assertIn("まだ成り立つ・変わった・判断保留", learn)
+        self.assertIn("連続日数を競わせたり", learn)
+        self.assertIn("買わずに観察を続けることも前進", learn)
 
 
 if __name__ == "__main__":

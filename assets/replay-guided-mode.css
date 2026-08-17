@@ -97,6 +97,9 @@
 }
 .guided-status-line span { display:block; color:#99818f; font-size:.66rem; font-weight:800; }
 .guided-status-line strong { display:block; margin-top:2px; color:#59414f; font-size:1rem; }
+.guided-view-tabs { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:5px; padding:4px; border:1px solid #e5d3de; border-radius:12px; background:rgba(255,255,255,.65); }
+.guided-view-tabs button { min-height:38px; border:0; border-radius:9px; color:#806a78; background:transparent; font-size:.72rem; font-weight:900; cursor:pointer; }
+.guided-view-tabs button.active { color:#fff; background:linear-gradient(135deg,#d95f98,#8f69cc); }
 .guided-small-button {
   min-height:40px;
   padding:7px 11px;
@@ -284,6 +287,16 @@
 .guided-ratio-buttons button.active,
 .guided-split-choice button.active { color:#fff; border-color:transparent; background:#9b6ecb; }
 .guided-reward-preview { display:block; margin-top:10px; color:#704f64; }
+.guided-target-choice { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:3px 10px; align-items:center; margin-top:10px; padding:11px; border:1px solid #ead7e2; border-radius:13px; background:#fff; }
+.guided-target-choice span { color:#8e7684; font-size:.68rem; font-weight:850; }
+.guided-target-choice strong { color:#5a4050; font-size:1.05rem; }
+.guided-target-choice button { grid-column:2; grid-row:1/3; min-height:42px; border:1px solid #d9bfd0; border-radius:10px; color:#7a5670; background:#fff4f9; font-weight:900; }
+.guided-size-answer { display:grid; gap:3px; padding:14px; border:1px solid #cfe5d7; border-radius:14px; background:#f0faf4; text-align:center; }
+.guided-size-answer span,.guided-size-answer small { color:#66806f; }
+.guided-size-answer strong { color:#3f684e; font-size:1.55rem; }
+.guided-sizing-details { margin-top:12px; border:1px solid #e7d8e1; border-radius:12px; background:#fff; }
+.guided-sizing-details summary { padding:10px 12px; color:#806977; font-size:.72rem; font-weight:900; cursor:pointer; }
+.guided-sizing-details .guided-sizing-grid { padding:0 10px 10px; }
 .guided-sizing-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
 .guided-sizing-grid article { padding:10px; border:1px solid #ead7e2; border-radius:12px; background:#fff; }
 .guided-sizing-grid span { display:block; color:#937b89; font-size:.67rem; }
@@ -319,26 +332,18 @@
 .guided-replay-mode.terminal-session-active > .trade-history-panel { display:none !important; }
 .guided-replay-mode .free-practice-sheet-v5 { display:none !important; }
 
-/* はじめてモードの初期表示は価格判断だけ。分析は本人が開いた時だけ表示する。 */
-.guided-replay-mode[data-guided-analysis="false"] .replay-decision-oscillator-v6,
-.guided-replay-mode[data-guided-analysis="false"] .replay-decision-monthly-v6,
-.guided-replay-mode[data-guided-analysis="false"] #replayChartSettingsV6,
-.guided-replay-mode[data-guided-analysis="false"] #replayAdvancedToolsV6,
-.guided-replay-mode[data-guided-analysis="false"] #replayVolumeProfileV6,
-.guided-replay-mode[data-guided-analysis="false"] .pro-indicator-strip,
-.guided-replay-mode[data-guided-analysis="false"] .guided-monthly-heading,
-.guided-replay-mode[data-guided-analysis="false"] .guided-monthly-rsi,
+/* はじめてモードは価格・3本の移動平均・月足RSIを常設し、追加分析だけを畳む。 */
+.guided-replay-mode:not([data-guided-view="analysis"]) .replay-decision-oscillator-v6,
+.guided-replay-mode:not([data-guided-view="analysis"]) #replayVolumeProfileV6,
+.guided-replay-mode:not([data-guided-view="analysis"]) .pro-indicator-strip,
+.guided-replay-mode:not([data-guided-view="settings"]) #replayChartSettingsV6,
+.guided-replay-mode:not([data-guided-view="settings"]) #replayAdvancedToolsV6,
 .guided-replay-mode[data-guided-step="stop"] .replay-decision-oscillator-v6,
-.guided-replay-mode[data-guided-step="stop"] .replay-decision-monthly-v6,
-.guided-replay-mode[data-guided-step="stop"] #replayChartSettingsV6,
-.guided-replay-mode[data-guided-step="stop"] #replayAdvancedToolsV6,
 .guided-replay-mode[data-guided-step="stop"] #replayVolumeProfileV6,
-.guided-replay-mode[data-guided-step="stop"] .pro-indicator-strip,
-.guided-replay-mode[data-guided-step="stop"] .guided-monthly-heading,
-.guided-replay-mode[data-guided-step="stop"] .guided-monthly-rsi { display:none !important; }
-.guided-replay-mode[data-guided-analysis="false"] .replay-decision-main-v6:before,
+.guided-replay-mode[data-guided-step="stop"] .pro-indicator-strip { display:none !important; }
+.guided-replay-mode[data-guided-view="decision"] .replay-decision-main-v6:before,
 .guided-replay-mode[data-guided-step="stop"] .replay-decision-main-v6:before {
-  content:"いま見るもの：価格・直近安値・SMA25";
+  content:"常に表示：価格・直近安値・SMA25 / 75 / 200・月足RSI";
   display:block;
   padding:8px 10px;
   border-radius:10px;
@@ -353,14 +358,22 @@
   .guided-step-strip { grid-template-columns:repeat(3,minmax(0,1fr)); }
   .guided-step-strip span { display:none; }
   .guided-step-strip span.near { display:grid; }
-  .guided-coach { grid-template-columns:54px minmax(0,1fr); padding:8px 10px; }
-  .guided-character-image { width:50px; height:50px; }
+  .guided-replay-panel { gap:7px; padding:9px; }
+  .guided-coach { grid-template-columns:38px minmax(0,1fr); min-height:0; padding:6px 8px; }
+  .guided-character-image { width:36px; height:36px; border-width:2px; }
   .guided-coach-copy p { font-size:.78rem; line-height:1.5; }
+  .guided-status-line strong { font-size:.88rem; }
+  .guided-view-tabs button { min-height:34px; }
   .guided-action-area { display:grid; grid-template-columns:1fr 1fr; }
   .guided-action-area button { min-width:0; padding:8px 5px; }
   .guided-action-area .guided-live-metrics,
   .guided-action-area > p,
   .guided-action-area .guided-finish-score { grid-column:1/-1; }
+  .guided-replay-mode.terminal-session-active .pro-main-chart { height:clamp(300px,43vh,360px); }
+  .guided-replay-mode.terminal-session-active .guided-monthly-rsi { height:132px !important; min-height:132px !important; max-height:132px !important; }
+  .guided-replay-mode.terminal-session-active .guided-monthly-rsi canvas { height:116px !important; max-height:116px !important; }
+  .guided-sheet-heading p { margin-bottom:9px; }
+  .guided-sheet-actions { position:sticky; bottom:0; z-index:2; margin:12px -8px -8px; padding:9px 8px; background:rgba(255,251,253,.96); }
   .guided-sheet {
     top:auto;
     right:0;
@@ -381,8 +394,6 @@
   .guided-sheet-price { grid-template-columns:1fr; }
   .guided-sheet-price button { width:100%; }
   .guided-sizing-grid { grid-template-columns:1fr 1fr; }
-  .guided-replay-mode.terminal-session-active .pro-main-chart { height:clamp(340px,52vh,520px); }
-  .guided-replay-panel { padding:8px; }
 }
 
 @media (max-width:420px) {
