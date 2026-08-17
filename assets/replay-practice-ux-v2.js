@@ -92,6 +92,10 @@
   }
 
   function entryDecisionFields(prefix, compact = false) {
+    if (compact) return `<div class="practice-decision-grid practice-decision-grid-simple">
+      ${field("thesis", "入る理由を1つ選ぶ", THESIS_OPTIONS, prefix)}
+      ${noteField(prefix)}
+    </div><p class="practice-decision-status">自由記述は任意だよ。まず理由を1つ選べば進めます。</p>`;
     return `<div class="practice-decision-grid">
       ${field("thesis", "エントリー・追加の理由", THESIS_OPTIONS, prefix)}
       ${field("eventContext", "決算・権利など", EVENT_OPTIONS, prefix)}
@@ -102,6 +106,10 @@
   }
 
   function exitDecisionFields(prefix, compact = false) {
+    if (compact) return `<div class="practice-decision-grid practice-decision-grid-simple">
+      ${field("exitReason", "売る理由を1つ選ぶ", EXIT_OPTIONS, prefix)}
+      ${noteField(prefix)}
+    </div><p class="practice-decision-status">エントリー時と同じ形で、理由を1つだけ残します。自由記述は任意です。</p>`;
     return `<div class="practice-decision-grid">
       ${field("exitReason", "売却・継続の理由", EXIT_OPTIONS, prefix)}
       ${field("remainingStopDecision", "部分利確後の守り方", REMAINING_OPTIONS, prefix)}
@@ -145,8 +153,8 @@
   function injectGuidedDecisionCard() {
     const body = document.getElementById("guidedSheetBody");
     if (!body) return;
-    const entryButton = body.querySelector('[data-guided-action="confirm-entry"]');
-    const isExit = Boolean(body.querySelector("[data-guided-exit]"));
+    const entryButton = body.querySelector('[data-guided-action="confirm-entry"], [data-guided-action="confirm-add-entry"]');
+    const isExit = Boolean(body.querySelector("[data-guided-exit], [data-guided-action='confirm-manual-exit']"));
     if (!entryButton && !isExit) return;
     const wantedKind = entryButton ? "entry" : "exit";
     const existing = body.querySelector(".guided-decision-card");
@@ -155,9 +163,12 @@
     const card = document.createElement("section");
     card.className = "guided-decision-card";
     card.dataset.kind = wantedKind;
+    const decision = ensureAudit().pendingDecision;
+    decision.planStatus ||= "planned";
+    if (entryButton) decision.eventContext ||= "unknown";
     card.innerHTML = entryButton
       ? `<strong>どうして今、入るの？</strong>${entryDecisionFields("guidedEntry", true)}`
-      : `<strong>どれくらい売り、残りをどう守る？</strong>${exitDecisionFields("guidedExit", true)}`;
+      : `<strong>どうして今、売るの？</strong>${exitDecisionFields("guidedExit", true)}`;
     body.querySelector(".guided-sheet-actions")?.insertAdjacentElement("beforebegin", card);
     if (!body.querySelector(".guided-sheet-actions")) body.querySelector(".guided-risk-note")?.insertAdjacentElement("beforebegin", card);
     syncDecisionControls(card);
@@ -361,6 +372,29 @@
     audit.previousStop = currentStop();
   }
 
+  function decisionLabel(trade) {
+    const decision = trade?.decision || {};
+    const options = trade?.type === "BUY" ? THESIS_OPTIONS : EXIT_OPTIONS;
+    const key = trade?.type === "BUY" ? decision.thesis : decision.exitReason;
+    return options.find(([value]) => value === key)?.[1] || trade?.reason || "手動";
+  }
+
+  function installDecisionHistory() {
+    if (window.__kabutaneDecisionHistoryV2 || typeof renderHistory !== "function") return;
+    window.__kabutaneDecisionHistoryV2 = true;
+    const baseRenderHistory = renderHistory;
+    renderHistory = function renderHistoryWithDecisionReason() {
+      baseRenderHistory();
+      const rows = els?.tradeHistoryBody?.querySelectorAll("tr") || [];
+      state.trades.forEach((trade, index) => {
+        const cells = rows[index]?.cells;
+        if (!cells?.length) return;
+        cells[2].textContent = decisionLabel(trade);
+        cells[6].textContent = String(trade?.decision?.note || trade?.memo || "—");
+      });
+    };
+  }
+
   function wrapTradingFunctions() {
     if (window.__kabutanePracticeTradingWrapped) return;
     window.__kabutanePracticeTradingWrapped = true;
@@ -538,10 +572,22 @@
       const confirmEntry = event.target.closest('[data-guided-action="confirm-entry"]');
       if (confirmEntry) {
         const decision = ensureAudit().pendingDecision;
-        if (!decision.thesis || !decision.eventContext || !decision.planStatus) {
+        if (!decision.thesis) {
           event.preventDefault(); event.stopImmediatePropagation();
-          showNotice("入る理由・イベント状況・計画との関係を選んでね。点数のためではなく、判断を再現するためだよ。", true);
+          showNotice("まず、入る理由を1つ選んでね。自由記述は空欄でも進めるよ。", true);
         }
+      }
+
+      const confirmAddEntry = event.target.closest('[data-guided-action="confirm-add-entry"]');
+      if (confirmAddEntry && !ensureAudit().pendingDecision.thesis) {
+        event.preventDefault(); event.stopImmediatePropagation();
+        showNotice("まず、追加する理由を1つ選んでね。自由記述は空欄でも進めるよ。", true);
+      }
+
+      const confirmManualExit = event.target.closest('[data-guided-action="confirm-manual-exit"]');
+      if (confirmManualExit && !ensureAudit().pendingDecision.exitReason) {
+        event.preventDefault(); event.stopImmediatePropagation();
+        showNotice("まず、ここで売る理由を1つ選んでね。自由記述は空欄でも進めるよ。", true);
       }
 
       const closePosition = event.target.closest('[data-guided-action="close-position"]');
@@ -561,6 +607,7 @@
   function init() {
     ensureAudit();
     wrapTradingFunctions();
+    installDecisionHistory();
     installBoundsFix();
     injectDecisionPanel();
     injectChartTools();

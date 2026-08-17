@@ -106,6 +106,7 @@ jobs:
           node tests/test_replay_risk_ladder.js
           node tests/test_replay_month_end.js
           node tests/test_replay_guided_core.js
+          python -m unittest tests.test_replay_beginner_p0 -v
           node tests/test_replay_share_report_core.js
           node tests/test_practice_history_core.js
           node tests/test_detail_enhancements.js

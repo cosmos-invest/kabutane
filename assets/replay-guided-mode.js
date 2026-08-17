@@ -5,6 +5,11 @@
   const GuideCore = ReplayGuidedCore;
   const GUIDE_STEPS = ["探す", "損切り", "利確", "枚数", "確認", "見守る", "判断", "振り返り", "共有"];
   const CHARACTER_NAMES = { cosmos: "コスモス🌸", lumo: "ルーモ✨", aile: "エール💜" };
+  const STOP_BASIS_LABELS = {
+    recent_low: "直近安値を割れたら想定が崩れる",
+    sma25: "25日移動平均線を割れたら想定が崩れる",
+    thesis_break: "自分で決めた支持線を割れたら想定が崩れる",
+  };
 
   function guidedState() {
     if (!state.guided) {
@@ -13,6 +18,7 @@
         step: "seek-entry",
         pendingEntry: null,
         pendingStop: null,
+        stopBasis: "",
         pendingTarget: null,
         targetRatio: 2,
         splitCount: 1,
@@ -20,6 +26,7 @@
         trancheShares: 0,
         remainingTranches: 0,
         showLines: false,
+        showAnalysis: false,
         selectMode: null,
         targetTriggered: false,
         daysHeld: 0,
@@ -126,6 +133,34 @@
     document.body.appendChild(sheet);
   }
 
+  function applyBeginnerChartDefaults() {
+    if (!isGuided()) return;
+    state.priceMode = "candle";
+    document.getElementById("priceModeCandle")?.classList.add("active");
+    document.getElementById("priceModeHeikin")?.classList.remove("active");
+    const checks = {
+      showSma: true,
+      showEma: false,
+      showBollinger: false,
+      showSupertrend: false,
+      showHigh52: false,
+      showAverage: false,
+      showPlanLines: false,
+    };
+    Object.entries(checks).forEach(([key, checked]) => {
+      if (els?.[key]) els[key].checked = checked;
+    });
+    const volume = document.getElementById("replayVolumeToggleV6");
+    if (volume?.checked) {
+      volume.checked = false;
+      volume.dispatchEvent(new Event("change", { bubbles: true }));
+    }
+    ["replayChartSettingsV6", "replayAdvancedToolsV6"].forEach((id) => {
+      const details = document.getElementById(id);
+      if (details) details.open = false;
+    });
+  }
+
   function setMode(mode) {
     const guide = guidedState();
     guide.mode = mode === "free" ? "free" : "guided";
@@ -133,6 +168,7 @@
     document.querySelectorAll("[data-replay-mode]").forEach((button) => button.classList.toggle("active", button.dataset.replayMode === guide.mode));
     document.body.classList.toggle("guided-replay-mode", guide.mode === "guided");
     document.body.classList.toggle("free-replay-mode", guide.mode === "free");
+    if (guide.mode === "guided" && !els?.practiceArea?.hidden) applyBeginnerChartDefaults();
     if (els?.showPlanLines) els.showPlanLines.checked = guide.mode === "free";
     if (els?.showAverage && guide.mode === "guided") els.showAverage.checked = false;
     closeSheet();
@@ -148,6 +184,7 @@
     guide.step = "seek-entry";
     guide.lastCoachKey = "start";
     guide.showLines = false;
+    guide.showAnalysis = false;
     guide.selectMode = null;
     setCoach("lumo", "未来はまだ見えないよ。1日ずつ進めて、『ここで入りたい』と思う場所を探そう✨", "start");
   }
@@ -157,6 +194,7 @@
     guide.step = "seek-entry";
     guide.pendingEntry = null;
     guide.pendingStop = null;
+    guide.stopBasis = "";
     guide.pendingTarget = null;
     guide.targetRatio = 2;
     guide.splitCount = 1;
@@ -229,22 +267,60 @@
     return GuideCore.recentLowHint(state.rows, state.cursor, 20);
   }
 
+  function stopBasisReference(key) {
+    const row = currentRow();
+    if (key === "recent_low") {
+      const hint = stopHint();
+      return hint ? `${hint.date}の安値 ${formatPrice(hint.price)}` : "直近安値を確認できませんでした";
+    }
+    if (key === "sma25") {
+      const value = GuideCore.finite(row?.sma25);
+      return value === null ? "25日移動平均線を確認できませんでした" : `現在のSMA25 ${formatPrice(value)}`;
+    }
+    return "チャート上で、自分の想定が崩れる支持線を探します";
+  }
+
+  function stopRiskSummary(stop) {
+    const guide = guidedState();
+    const entry = GuideCore.finite(guide.pendingEntry);
+    const value = GuideCore.finite(stop);
+    const riskBudget = GuideCore.finite(state.initialCapital) !== null && GuideCore.finite(state.riskPct) !== null
+      ? Number(state.initialCapital) * Number(state.riskPct) / 100
+      : null;
+    if (entry === null || value === null || value <= 0 || value >= entry) {
+      return `<div class="guided-stop-risk-summary pending"><span>③ 金額を確認</span><strong>チャートで損切り価格を置くと表示されるよ</strong><small>損切り幅と、この練習で許容する損失上限を確認します。</small></div>`;
+    }
+    const perShare = entry - value;
+    const distance = perShare / entry * 100;
+    return `<div class="guided-stop-risk-summary"><span>③ 金額を確認</span><strong>${formatPrice(value)}・買値から ${distance.toFixed(2)}%</strong><small>1株の損失候補 ${formatPrice(perShare)} ／ この練習の損失上限 ${formatPrice(riskBudget)}</small></div>`;
+  }
+
   function showStopSheet() {
     const guide = guidedState();
     const hint = stopHint();
+    const sma25 = GuideCore.finite(currentRow()?.sma25);
+    const basisButton = (key, title, detail, disabled = false) => `<button type="button" class="guided-stop-basis${guide.stopBasis === key ? " active" : ""}" data-guided-stop-basis="${key}" aria-pressed="${guide.stopBasis === key}" ${disabled ? "disabled" : ""}><strong>${title}</strong><small>${detail}</small></button>`;
     openSheet(`
-      <div class="guided-sheet-heading"><span>STEP 2</span><h2>損切り価格はどこ？</h2><p>今回の予想が外れたと判断する価格を、買う前に決めよう。</p></div>
-      <div class="guided-sheet-price"><label>損切り価格<input id="guidedStopInput" type="number" min="0" step="0.1" value="${guide.pendingStop ?? ""}"></label><button type="button" data-guided-action="select-stop-chart">チャートで選ぶ</button></div>
-      <label class="guided-hint-toggle"><input id="guidedStopHintToggle" type="checkbox"> 直近安値のヒントを見る</label>
-      <div id="guidedStopHint" class="guided-hint-box" hidden>${hint ? `${hint.date}の${formatPrice(hint.price)}付近で一度下げ止まってるよ。現在値から${formatPct(hint.distancePct)}の位置だよ。` : "はっきりした直近安値が見つからなかったよ。チャートを見て、想定が崩れる場所を考えよう。"}</div>
+      <div class="guided-sheet-heading"><span>STEP 2</span><h2>損切りを3つの順番で決めよう</h2><p>価格を当てるのではなく、「何が崩れたら見送るか」を先に言葉にします。</p></div>
+      <section class="guided-stop-step"><span>① 根拠を1つ選ぶ</span><div class="guided-stop-basis-grid">
+        ${basisButton("recent_low", "直近安値", hint ? `${hint.date}・${formatPrice(hint.price)}` : "目安を取得できません", !hint)}
+        ${basisButton("sma25", "25日移動平均線", sma25 === null ? "目安を取得できません" : formatPrice(sma25), sma25 === null)}
+        ${basisButton("thesis_break", "自分の支持線", "高値・安値の並びから考える")}
+      </div>${guide.stopBasis ? `<p class="guided-stop-basis-copy">${STOP_BASIS_LABELS[guide.stopBasis]}。<small>${stopBasisReference(guide.stopBasis)}</small></p>` : ""}</section>
+      <section class="guided-stop-step"><span>② チャートで置く</span><input id="guidedStopInput" type="hidden" value="${guide.pendingStop ?? ""}"><button type="button" class="guided-stop-chart-button" data-guided-action="select-stop-chart" ${guide.stopBasis ? "" : "disabled"}>${guide.pendingStop === null ? "チャートで損切り価格を置く" : `置き直す（現在 ${formatPrice(guide.pendingStop)}）`}</button><p>損切り判断中は、価格・直近安値・SMA25だけに集中できます。</p></section>
+      ${stopRiskSummary(guide.pendingStop)}
       <div class="guided-risk-note"><strong>エール💜</strong><p>近すぎると小さな揺れで損切りになりやすいよ。遠すぎると買える株数が少なくなるよ。</p></div>
-      <div class="guided-sheet-actions"><button type="button" class="secondary" data-guided-action="back-entry">戻る</button><button type="button" class="primary" data-guided-action="confirm-stop">この損切りで進む</button></div>`);
+      <div class="guided-sheet-actions"><button type="button" class="secondary" data-guided-action="back-entry">戻る</button><button type="button" class="primary" data-guided-action="confirm-stop" ${guide.stopBasis && GuideCore.finite(guide.pendingStop) !== null ? "" : "disabled"}>根拠と金額を確認して進む</button></div>`);
   }
 
   function confirmStop() {
     const guide = guidedState();
     const input = document.getElementById("guidedStopInput");
     const stop = GuideCore.finite(input?.value ?? guide.pendingStop);
+    if (!STOP_BASIS_LABELS[guide.stopBasis]) {
+      setNotice("まず、損切りを置く根拠を1つ選んでね。", true);
+      return;
+    }
     if (stop === null || stop <= 0 || stop >= guide.pendingEntry) {
       setNotice("損切りはエントリー価格より下に置いてね。", true);
       return;
@@ -433,7 +509,7 @@
 
   function additionalEntry() {
     const guide = guidedState();
-    if (guide.remainingTranches <= 0 || state.account.shares <= 0) return;
+    if (guide.remainingTranches <= 0 || state.account.shares <= 0) return false;
     const metrics = ReplayPro.accountMetrics(state.account, currentRow()?.close, state.initialCapital);
     const plan = GuideCore.riskSizing({
       assets: state.initialCapital,
@@ -450,17 +526,35 @@
     const shares = Math.min(guide.trancheShares, plan.recommendedShares);
     if (shares <= 0) {
       setNotice("残りの許容損失では追加購入できないよ。無理に枚数を増やさないでおこう。", true);
-      return;
+      return false;
     }
     const slots = Math.max(1, Math.floor(ReplayPro.MAX_SLOTS / guide.splitCount));
     const result = executeBuy(shares, currentRow().close, "ガイド追加エントリー", slots);
     if (!result.ok) {
       setNotice(result.error, true);
-      return;
+      return false;
     }
     guide.remainingTranches -= 1;
     setCoach("aile", `${result.shares.toLocaleString("ja-JP")}株を追加したよ。合計の許容損失は超えていないから、ここからまた落ち着いて見守ろう。`, `add-${state.cursor}`);
     renderAll();
+    return true;
+  }
+
+  function showAdditionalEntrySheet() {
+    const guide = guidedState();
+    if (guide.remainingTranches <= 0 || state.account.shares <= 0) return;
+    const pending = state.practiceAudit?.pendingDecision;
+    if (pending) {
+      pending.thesis = "";
+      pending.note = "";
+      pending.eventContext ||= "unknown";
+      pending.planStatus = "planned";
+    }
+    openSheet(`
+      <div class="guided-sheet-heading"><span>STEP 6</span><h2>追加で入る？</h2><p>残りの損失上限を確認し、いま追加する理由を1つ選ぼう。</p></div>
+      <div class="guided-live-metrics"><span>追加の目安 <strong>${guide.trancheShares.toLocaleString("ja-JP")}株</strong></span><span>残り <strong>${guide.remainingTranches}回</strong></span></div>
+      <div class="guided-risk-note"><strong>エール💜</strong><p>価格が下がったことだけを理由にせず、最初の想定がまだ成り立つか確認しよう。</p></div>
+      <div class="guided-sheet-actions"><button type="button" class="secondary" data-guided-action="cancel-add-entry">まだ待つ</button><button type="button" class="primary" data-guided-action="confirm-add-entry">理由を記録して追加する</button></div>`);
   }
 
   function handleStopHit(price) {
@@ -522,6 +616,23 @@
       setCoach("lumo", "一部を利確して、残りはもう一度見守りだね！守るラインも忘れずにいこう✨", `partial-${state.cursor}`);
     }
     renderAll();
+  }
+
+  function showManualExitSheet() {
+    const guide = guidedState();
+    const pending = state.practiceAudit?.pendingDecision;
+    if (pending) {
+      pending.exitReason = "";
+      pending.note = "";
+      pending.planStatus = "planned";
+    }
+    const metrics = ReplayPro.accountMetrics(state.account, currentRow()?.close, state.initialCapital);
+    openSheet(`
+      <div class="guided-sheet-heading"><span>STEP 7</span><h2>ここで取引を終える？</h2><p>結果ではなく、いま売る理由を1つ選んでから区切ろう。</p></div>
+      <div class="guided-live-metrics"><span>保有 <strong>${state.account.shares.toLocaleString("ja-JP")}株</strong></span><span>評価損益 <strong class="${metrics.unrealized >= 0 ? "positive" : "negative"}">${formatPrice(metrics.unrealized)}</strong></span></div>
+      <div class="guided-risk-note"><strong>コスモス🌸</strong><p>売らずに見守る判断も選べるよ。最初に決めた損切りと、いまの理由を比べよう。</p></div>
+      <div class="guided-sheet-actions"><button type="button" class="secondary" data-guided-action="cancel-manual-exit">まだ見守る</button><button type="button" class="primary" data-guided-action="confirm-manual-exit">理由を記録して全株売る</button></div>`);
+    guide.selectMode = null;
   }
 
   function closePositionAndDecide() {
@@ -615,6 +726,9 @@
     if (!panel) return;
     document.body.classList.toggle("guided-replay-mode", isGuided());
     document.body.classList.toggle("free-replay-mode", !isGuided());
+    if (isGuided()) document.body.dataset.guidedStep = guide.step;
+    else delete document.body.dataset.guidedStep;
+    document.body.dataset.guidedAnalysis = isGuided() && guide.showAnalysis ? "true" : "false";
     panel.hidden = !isGuided() || Boolean(els?.practiceArea?.hidden);
     if (panel.hidden) return;
 
@@ -623,6 +737,7 @@
       const stepIndex = Number(node.dataset.guideStep);
       node.classList.toggle("active", stepIndex === index);
       node.classList.toggle("done", stepIndex < index);
+      node.classList.toggle("near", Math.abs(stepIndex - index) <= 1);
     });
     const title = document.getElementById("guidedStepTitle");
     const actions = document.getElementById("guidedActionArea");
@@ -635,7 +750,7 @@
     const actionButton = (label, action, className = "") => `<button type="button" class="${className}" data-guided-action="${action}">${label}</button>`;
     if (guide.step === "seek-entry") {
       title.textContent = "エントリー候補を探す";
-      actions.innerHTML = `${actionButton("1日進める", "step-one")}${actionButton("5日進める", "step-five", "secondary")}${actionButton("ここで入りたい", "choose-entry", "primary")}`;
+      actions.innerHTML = `${actionButton("1日進める", "step-one")}${actionButton("5日進める", "step-five", "secondary")}${actionButton("ここで入りたい", "choose-entry", "primary")}${actionButton(guide.showAnalysis ? "分析を閉じる" : "分析を開く", "toggle-analysis", "ghost")}`;
     } else if (["stop", "target", "size", "review"].includes(guide.step)) {
       title.textContent = ({ stop: "損切りを決める", target: "利確位置を決める", size: "枚数を決める", review: "注文前に確認する" })[guide.step];
       actions.innerHTML = `<p>下のガイドに沿って、今の判断だけに集中しよう。</p>${actionButton("入力パネルを開く", `open-${guide.step}`, "primary")}`;
@@ -645,7 +760,7 @@
       actions.innerHTML = `
         <div class="guided-live-metrics"><span>保有 <strong>${state.account.shares.toLocaleString("ja-JP")}株</strong></span><span>評価損益 <strong class="${metrics.unrealized >= 0 ? "positive" : "negative"}">${formatPrice(metrics.unrealized)}</strong></span><span>${guide.daysHeld}営業日目</span></div>
         ${actionButton("1日進める", "step-one", "primary")}${actionButton("5日進める", "step-five", "secondary")}${actionButton(state.timer ? "一時停止" : "自動再生", "toggle-play", "secondary")}
-        ${guide.remainingTranches > 0 ? actionButton(`追加購入（残り${guide.remainingTranches}回）`, "add-entry") : ""}${actionButton("ここで取引を終える", "close-position", "ghost")}`;
+        ${guide.remainingTranches > 0 ? actionButton(`追加購入（残り${guide.remainingTranches}回）`, "add-entry") : ""}${actionButton("ここで取引を終える", "open-manual-exit", "ghost")}`;
     } else if (guide.step === "targetDecision") {
       title.textContent = "利確量を決める";
       actions.innerHTML = `${actionButton("利確の選択を開く", "open-targetDecision", "primary")}`;
@@ -665,6 +780,7 @@
     if (action === "step-one") advance(1);
     else if (action === "step-five") advance(5);
     else if (action === "toggle-play") togglePlayback();
+    else if (action === "toggle-analysis") { guide.showAnalysis = !guide.showAnalysis; renderAll(); }
     else if (action === "choose-entry") beginEntryChoice();
     else if (action === "select-stop-chart") { guide.selectMode = "stop"; guide.showLines = true; setNotice("チャート上の損切り候補をタップしてね。"); }
     else if (action === "select-target-chart") { guide.selectMode = "target"; guide.showLines = true; setNotice("チャート上の利確候補をタップしてね。"); }
@@ -672,7 +788,12 @@
     else if (action === "confirm-target") confirmTarget();
     else if (action === "confirm-size") confirmSize();
     else if (action === "confirm-entry") confirmEntry();
-    else if (action === "add-entry") additionalEntry();
+    else if (action === "add-entry") showAdditionalEntrySheet();
+    else if (action === "confirm-add-entry") { if (additionalEntry()) closeSheet(); }
+    else if (action === "cancel-add-entry") closeSheet();
+    else if (action === "open-manual-exit") showManualExitSheet();
+    else if (action === "confirm-manual-exit") closePositionAndDecide();
+    else if (action === "cancel-manual-exit") closeSheet();
     else if (action === "close-position") closePositionAndDecide();
     else if (action === "continue") clearPlanForNextTrade();
     else if (action === "finish") finishGuidedSession();
@@ -693,6 +814,17 @@
     document.addEventListener("click", (event) => {
       const mode = event.target.closest("[data-replay-mode]");
       if (mode) { setMode(mode.dataset.replayMode); return; }
+      const stopBasis = event.target.closest("[data-guided-stop-basis]");
+      if (stopBasis && !stopBasis.disabled) {
+        guidedState().stopBasis = stopBasis.dataset.guidedStopBasis;
+        guidedState().pendingStop = null;
+        state.plan.initialStop = null;
+        state.plan.activeStop = null;
+        if (els?.stopPrice) els.stopPrice.value = "";
+        showStopSheet();
+        renderAll();
+        return;
+      }
       const ratio = event.target.closest("[data-guide-ratio]");
       if (ratio) { chooseRatio(ratio.dataset.guideRatio); return; }
       const split = event.target.closest("[data-guide-split]");
@@ -745,21 +877,42 @@
   planLineDatasets = function planLineDatasetsGuided(visible) {
     if (!isGuided()) return basePlanLineDatasetsGuided(visible);
     if (!guidedState().showLines) return [];
-    return basePlanLineDatasetsGuided(visible);
+    const datasets = basePlanLineDatasetsGuided(visible);
+    if (guidedState().step === "stop") {
+      const hint = stopHint();
+      if (hint?.price !== null && hint?.price !== undefined) {
+        datasets.push(lineDataset("直近安値", visible.map(() => hint.price), "#5f9873", { borderWidth: 1.6, borderDash: [3, 4] }));
+      }
+    }
+    return datasets;
   };
 
   const basePriceViewportBoundsGuided = priceViewportBounds;
   priceViewportBounds = function priceViewportBoundsGuided(rows) {
-    if (!isGuided() || guidedState().showLines) return basePriceViewportBoundsGuided(rows);
+    if (!isGuided() || (guidedState().showLines && guidedState().step !== "stop" && guidedState().showAnalysis)) return basePriceViewportBoundsGuided(rows);
     const values = [];
     rows.forEach((row) => {
       [row.low, row.high].forEach((value) => { const parsed = finite(value); if (parsed !== null) values.push(parsed); });
-      if (els.showSma?.checked) [row.sma25, row.sma75, row.sma200].forEach((value) => { const parsed = finite(value); if (parsed !== null) values.push(parsed); });
+      if (els.showSma?.checked) {
+        const movingAverages = guidedState().step === "stop" || !guidedState().showAnalysis ? [row.sma25] : [row.sma25, row.sma75, row.sma200];
+        movingAverages.forEach((value) => { const parsed = finite(value); if (parsed !== null) values.push(parsed); });
+      }
       if (els.showEma?.checked) [row.ema20, row.ema50].forEach((value) => { const parsed = finite(value); if (parsed !== null) values.push(parsed); });
       if (els.showBollinger?.checked) [row.bbUpper, row.bbLower].forEach((value) => { const parsed = finite(value); if (parsed !== null) values.push(parsed); });
       if (els.showSupertrend?.checked) { const parsed = finite(row.supertrend); if (parsed !== null) values.push(parsed); }
       if (els.showHigh52?.checked) { const parsed = finite(row.high52); if (parsed !== null) values.push(parsed); }
     });
+    if (guidedState().step === "stop") {
+      [guidedState().pendingEntry, guidedState().pendingStop, stopHint()?.price].forEach((value) => {
+        const parsed = finite(value);
+        if (parsed !== null) values.push(parsed);
+      });
+    } else if (guidedState().showLines) {
+      [guidedState().pendingEntry, guidedState().pendingStop, guidedState().pendingTarget].forEach((value) => {
+        const parsed = finite(value);
+        if (parsed !== null) values.push(parsed);
+      });
+    }
     if (!values.length) return {};
     let minimum = Math.min(...values);
     let maximum = Math.max(...values);
@@ -777,6 +930,10 @@
     baseRenderMainChartGuided();
     if (isGuided() && state.chart) {
       state.chart.options.plugins.legend.display = false;
+      if (!guidedState().showAnalysis || guidedState().step === "stop") {
+        const keep = new Set(["ローソク足", "平均足", "出来高", "SMA25", "エントリー", "損切り", "直近安値"]);
+        state.chart.data.datasets = state.chart.data.datasets.filter((dataset) => keep.has(String(dataset.label || "")));
+      }
       state.chart.update("none");
     }
   };
@@ -808,6 +965,7 @@
     baseStartSessionGuided();
     if (!isGuided() || els.practiceArea.hidden) return;
     resetGuide();
+    applyBeginnerChartDefaults();
     els.entryPrice.value = "";
     els.stopPrice.value = "";
     els.showPlanLines.checked = false;

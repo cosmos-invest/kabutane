@@ -34,6 +34,17 @@ test("mobile replay follows oscillator-chart-monthly judgment flow and keeps day
   const oscillator = page.locator(".replay-decision-oscillator-v6");
   const main = page.locator(".replay-decision-main-v6");
   const monthly = page.locator(".replay-decision-monthly-v6");
+  await expect(page.locator("body")).toHaveAttribute("data-guided-analysis", "false");
+  await expect(main).toBeVisible();
+  await expect(oscillator).toBeHidden();
+  await expect(monthly).toBeHidden();
+  await expect(page.locator("#monthlyRsiChart")).toBeHidden();
+  const beginnerLabels = await page.evaluate(() => Chart.getChart("replayChart").data.datasets.map((dataset) => dataset.label));
+  expect(beginnerLabels).toEqual(expect.arrayContaining(["ローソク足", "SMA25", "直近安値"]));
+  expect(beginnerLabels).not.toEqual(expect.arrayContaining(["SMA75", "SMA200", "Supertrend"]));
+
+  await page.locator('#guidedActionArea [data-guided-action="toggle-analysis"]').click();
+  await expect(page.locator("body")).toHaveAttribute("data-guided-analysis", "true");
   const oscillatorBox = await oscillator.boundingBox();
   const mainBox = await main.boundingBox();
   const monthlyBox = await monthly.boundingBox();
@@ -44,6 +55,8 @@ test("mobile replay follows oscillator-chart-monthly judgment flow and keeps day
   expect(mainBox.y).toBeLessThan(monthlyBox.y);
 
   await expect(page.locator("#replayVolumeProfileV6")).toBeVisible();
+  await expect(page.locator("#replayVolumeToggleV6")).not.toBeChecked();
+  await page.locator("#replayVolumeToggleV6").check();
   await expect.poll(async () => (await page.locator("#replayVolumeProfileDetailV6").textContent()) || "", { timeout: 10000 }).toContain("POC");
 
   const chartSettings = page.locator("#replayChartSettingsV6");

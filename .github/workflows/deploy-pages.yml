@@ -129,6 +129,9 @@ jobs:
           test -f _site/assets/replay-drawing-tools.js
           grep -q 'kabutane-wordmark-v3.svg' _site/manifest.webmanifest
           grep -q 'assets/replay-drawing-tools.js' _site/replay.html
+          grep -q '根拠を1つ選ぶ' _site/assets/replay-guided-mode.js
+          grep -q '理由を1つ選ぶ' _site/assets/replay-practice-ux-v2.js
+          grep -q '根拠 → チャート → 金額' _site/learn.html
           grep -q 'replay-stock-select.js' _site/replay-select.html
           grep -q 'MONTHLY RSI CROSS RANKING' _site/ranking.html
           grep -q 'monthly-strategy.html' _site/monthly-report.html
@@ -169,6 +172,9 @@ jobs:
           node --check _site/assets/large-holdings.js
           node --check _site/assets/detail-large-holdings.js
           node --check _site/assets/core-detail-fallback.js
+          node --check _site/assets/replay-guided-mode.js
+          node --check _site/assets/replay-guided-fixes.js
+          node --check _site/assets/replay-practice-ux-v2.js
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

@@ -1,4 +1,4 @@
-const CACHE_VERSION = "kabutane-pwa-v29";
+const CACHE_VERSION = "kabutane-pwa-v30";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 
 // These files are required for the detail page to boot. If even one cannot be
