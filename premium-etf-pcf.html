@@ -4,104 +4,144 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow,noarchive">
-  <title>プロの組入変化ラボ β | かぶたね</title>
+  <title>ROOMメイト専用｜プロの組入変化ラボ β</title>
   <link rel="stylesheet" href="assets/style.css?v=16">
+  <link rel="stylesheet" href="assets/room-gate.css?v=1">
   <link rel="stylesheet" href="assets/premium-etf-pcf.css?v=2">
   <link rel="stylesheet" href="assets/premium-etf-pcf-history.css?v=1">
 </head>
-<body class="pcf-page">
-  <header class="site-header pcf-header">
-    <div class="header-inner">
-      <div>
-        <a class="pcf-back" href="premium-supply-beta.html">← 先回り・需給ラボへ</a>
-        <p class="eyebrow">KABUTANE PREMIUM / ACTIVE ETF PCF</p>
-        <h1>プロの組入変化ラボ β</h1>
-        <p class="subtitle">東証アクティブETFが日々開示するPCFを比べ、<strong>どの銘柄を新しく組み入れ、増やし、減らしたか</strong>をやさしく整理します。</p>
+<body class="pcf-page room-gate-page">
+  <section id="roomGate" class="room-gate" aria-labelledby="roomGateTitle">
+    <div class="room-gate-inner">
+      <div class="room-gate-copy">
+        <p class="eyebrow">ROOM MATE ONLY / KABUTANE OBSERVATION ROOM</p>
+        <h1 id="roomGateTitle">ROOMメイト専用<br><em>かぶたね観察室</em> 🌱</h1>
+        <p>このページも、かぶたね観察室の中にある実験ページです。観察室と同じ合言葉で入れます。</p>
+        <div class="room-gate-guide">
+          <article><b>1</b><strong>ROOMの合言葉で入室</strong><small>noteメンバーシップの固定投稿で案内している合言葉を入力します。</small></article>
+          <article><b>2</b><strong>認証状態は観察室と共通</strong><small>一度入室していれば、このページもそのまま開けます。</small></article>
+          <article><b>3</b><strong>PCFの変化を観察</strong><small>プロの組入変化を、売買サインではなく次に調べる材料として使います。</small></article>
+        </div>
       </div>
-      <span class="pcf-premium-badge">PREMIUM β</span>
+      <div class="room-gate-card">
+        <h2>観察室の鍵をあける</h2>
+        <p>ROOMの固定投稿にある合言葉を入力してね🌸</p>
+        <form id="roomGateForm">
+          <label for="roomPassphrase">ROOMの合言葉</label>
+          <div class="room-pass-row">
+            <input id="roomPassphrase" type="password" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" inputmode="text" enterkeyhint="go" placeholder="合言葉を入力" aria-describedby="roomPassphraseHint roomGateError">
+            <button id="roomTogglePassword" type="button">表示</button>
+          </div>
+          <small id="roomPassphraseHint">半角英数字とアンダースコア（_）で入力</small>
+          <label class="room-remember"><input id="roomRemember" type="checkbox" checked>この端末で30日間覚えておく</label>
+          <button id="roomUnlockButton" class="room-gate-submit" type="submit">観察室へ入る</button>
+          <p id="roomGateError" class="room-gate-error" role="alert"></p>
+        </form>
+        <p id="roomGateNotice" class="room-gate-notice">ROOMメイト限定の簡易ゲートです。URL・合言葉の転載は禁止転載はご遠慮ください。</p>
+      </div>
     </div>
-  </header>
+  </section>
 
-  <main class="container pcf-container">
-    <section class="pcf-first panel" aria-labelledby="pcfFirstTitle">
-      <div class="pcf-first-copy">
-        <p class="eyebrow">FIRST, LOOK HERE</p>
-        <h2 id="pcfFirstTitle">プロが選んだ銘柄を、買いサインではなく“調べるヒント”に。</h2>
-        <p>PCFはETFの中身を記した計算用ファイルです。かぶたねはETFの設定・解約による全体増減をならし、<strong>ETF100万口あたりの組入数量</strong>が前回から変わった銘柄を探します。</p>
+  <div id="roomShell" hidden>
+    <header class="site-header pcf-header">
+      <div class="header-inner">
+        <div>
+          <a class="pcf-back" href="premium-supply-beta.html">← かぶたね観察室へ</a>
+          <p class="eyebrow">KABUTANE ROOM / ACTIVE ETF PCF</p>
+          <h1>プロの組入変化ラボ β</h1>
+          <p class="subtitle">東証アクティブETFが日々開示するPCFを比べ、<strong>どの銘柄を新しく組み入れ、増やし、減らしたか</strong>をやさしく整理します。</p>
+        </div>
+        <div class="room-header-actions">
+          <span class="room-only-badge">ROOM ONLY</span>
+          <button id="roomLogout" class="room-lock-button" type="button">鍵を閉じる</button>
+        </div>
       </div>
-      <div class="pcf-trio" aria-label="3人の見方">
-        <article><b>ルーモ✨</b><span>新規・増加を発見</span><p>前回のPCFから何が変わったかを見るよ。</p></article>
-        <article><b>エール💜</b><span>注意点を確認</span><p>企業行動やデリバティブの影響も忘れない。</p></article>
-        <article><b>コスモス🌸</b><span>自分の分析へつなぐ</span><p>会社・チャート・需給を確認して観察しよう。</p></article>
-      </div>
-    </section>
+    </header>
 
-    <section class="pcf-notice">
-      <strong>「ファンドが今日、市場で買った」と断定する情報ではありません。</strong>
-      <p>PCFは原則として前日基準のポートフォリオ情報です。設定・解約、株式分割などの企業行動、現金・先物・為替の影響を含むことがあります。</p>
-    </section>
+    <main class="container pcf-container">
+      <p class="room-use-note"><strong>ROOMメイト専用の実験ページです。</strong> URL・合言葉の転載は禁止転載はご遠慮ください。PCFの変化は「ファンドが今日、市場で買った」という意味ではありません。</p>
 
-    <section class="panel pcf-status-panel" aria-labelledby="pcfStatusTitle">
-      <div class="pcf-section-heading">
-        <div><p class="eyebrow">TODAY'S COVERAGE</p><h2 id="pcfStatusTitle">今日の取得状況</h2></div>
-        <span id="pcfDataDate" class="pcf-date">読込中…</span>
-      </div>
-      <div id="pcfSummary" class="pcf-summary-grid"></div>
-      <p id="pcfCoverageNote" class="pcf-coverage-note"></p>
-    </section>
+      <section class="pcf-first panel" aria-labelledby="pcfFirstTitle">
+        <div class="pcf-first-copy">
+          <p class="eyebrow">FIRST, LOOK HERE</p>
+          <h2 id="pcfFirstTitle">プロが選んだ銘柄を、買いサインではなく“調べるヒント”に。</h2>
+          <p>PCFはETFの中身を記した計算用ファイルです。かぶたねはETFの設定・解約による全体増減をならし、<strong>ETF100万口あたりの組入数量</strong>が前回から変わった銘柄を探します。</p>
+        </div>
+        <div class="pcf-trio" aria-label="3人の見方">
+          <article><b>ルーモ✨</b><span>新規・増加を発見</span><p>前回のPCFから何が変わったかを見るよ。</p></article>
+          <article><b>エール💜</b><span>注意点を確認</span><p>企業行動やデリバティブの影響も忘れない。</p></article>
+          <article><b>コスモス🌸</b><span>自分の分析へつなぐ</span><p>会社・チャート・需給を確認して観察しよう。</p></article>
+        </div>
+      </section>
 
-    <section class="panel pcf-common-panel" aria-labelledby="pcfCommonTitle">
-      <div class="pcf-section-heading">
-        <div><p class="eyebrow">MORE THAN ONE FUND</p><h2 id="pcfCommonTitle">複数ファンドで重なった変化</h2><p>国内株アクティブETFのうち、同じ日に2本以上で増加側・減少側が重なった銘柄です。</p></div>
-      </div>
-      <div id="pcfCommonChanges" class="pcf-common-grid"><p class="pcf-empty">読込中…</p></div>
-    </section>
+      <section class="pcf-notice">
+        <strong>「ファンドが今日、市場で買った」と断定する情報ではありません。</strong>
+        <p>PCFは原則として前日基準のポートフォリオ情報です。設定・解約、株式分割などの企業行動、現金・先物・為替の影響を含むことがあります。</p>
+      </section>
 
-    <section class="panel pcf-lookup-panel" aria-labelledby="pcfLookupTitle">
-      <div class="pcf-section-heading pcf-funds-heading">
-        <div><p class="eyebrow">STOCK → ACTIVE FUNDS</p><h2 id="pcfLookupTitle">この銘柄を動かしたETFを逆引き</h2><p>銘柄コード・銘柄名から、選択期間に組入数量が変わった日本株アクティブETFを探せます。</p></div>
-        <label class="pcf-search">銘柄を検索<input id="pcfStockSearch" type="search" placeholder="7203 / トヨタ"></label>
-      </div>
-      <div id="pcfStockLookup" class="pcf-lookup-grid"><p class="pcf-empty">銘柄を入力すると表示します。</p></div>
-    </section>
+      <section class="panel pcf-status-panel" aria-labelledby="pcfStatusTitle">
+        <div class="pcf-section-heading">
+          <div><p class="eyebrow">TODAY'S COVERAGE</p><h2 id="pcfStatusTitle">今日の取得状況</h2></div>
+          <span id="pcfDataDate" class="pcf-date">読込中…</span>
+        </div>
+        <div id="pcfSummary" class="pcf-summary-grid"></div>
+        <p id="pcfCoverageNote" class="pcf-coverage-note"></p>
+      </section>
 
-    <section class="panel pcf-funds-panel" aria-labelledby="pcfFundsTitle">
-      <div class="pcf-section-heading pcf-funds-heading">
-        <div><p class="eyebrow">ACTIVE ETF WATCH</p><h2 id="pcfFundsTitle">ファンドごとの組入変化</h2><p>最初は日本株を運用するアクティブETFだけを表示します。</p></div>
-        <label class="pcf-search">ETFを検索<input id="pcfSearch" type="search" placeholder="2080 / 高配当 / 運用会社"></label>
-      </div>
-      <div class="pcf-filter-row" role="group" aria-label="表示するETF">
-        <button type="button" class="pcf-filter active" data-pcf-scope="domestic" aria-pressed="true">日本株アクティブ</button>
-        <button type="button" class="pcf-filter" data-pcf-scope="changed" aria-pressed="false">変化あり</button>
-        <button type="button" class="pcf-filter" data-pcf-scope="all" aria-pressed="false">全アクティブETF</button>
-      </div>
-      <div class="pcf-period-row" role="group" aria-label="比較期間">
-        <span>比較期間</span>
-        <button type="button" data-pcf-period="day" aria-pressed="false">前回</button>
-        <button type="button" class="active" data-pcf-period="week" aria-pressed="true">1週間</button>
-        <button type="button" data-pcf-period="month" aria-pressed="false">1か月</button>
-      </div>
-      <div id="pcfFundGrid" class="pcf-fund-grid"></div>
-      <p id="pcfFundEmpty" class="pcf-empty" hidden>条件に合うETFがありません。</p>
-    </section>
+      <section class="panel pcf-common-panel" aria-labelledby="pcfCommonTitle">
+        <div class="pcf-section-heading">
+          <div><p class="eyebrow">MORE THAN ONE FUND</p><h2 id="pcfCommonTitle">複数ファンドで重なった変化</h2><p>国内株アクティブETFのうち、同じ日に2本以上で増加側・減少側が重なった銘柄です。</p></div>
+        </div>
+        <div id="pcfCommonChanges" class="pcf-common-grid"><p class="pcf-empty">読込中…</p></div>
+      </section>
 
-    <section class="panel pcf-sponsor-panel" aria-labelledby="pcfSponsorTitle">
-      <div class="pcf-section-heading"><div><p class="eyebrow">SPONSOR VIEW</p><h2 id="pcfSponsorTitle">運用会社ごとの変化</h2><p>選択期間の増加側・減少側の変化件数を、運用会社単位でまとめます。</p></div></div>
-      <div id="pcfSponsorTrends" class="pcf-sponsor-grid"><p class="pcf-empty">読込中…</p></div>
-    </section>
+      <section class="panel pcf-lookup-panel" aria-labelledby="pcfLookupTitle">
+        <div class="pcf-section-heading pcf-funds-heading">
+          <div><p class="eyebrow">STOCK → ACTIVE FUNDS</p><h2 id="pcfLookupTitle">この銘柄を動かしたETFを逆引き</h2><p>銘柄コード・銘柄名から、選択期間に組入数量が変わった日本株アクティブETFを探せます。</p></div>
+          <label class="pcf-search">銘柄を検索<input id="pcfStockSearch" type="search" placeholder="7203 / トヨタ"></label>
+        </div>
+        <div id="pcfStockLookup" class="pcf-lookup-grid"><p class="pcf-empty">銘柄を入力すると表示します。</p></div>
+      </section>
 
-    <section class="panel pcf-method-panel">
-      <h2>かぶたねの読み方</h2>
-      <div class="pcf-method-grid">
-        <article><span>1</span><strong>新規・除外</strong><p>前回のPCFになかった銘柄、今回なくなった銘柄を確認します。</p></article>
-        <article><span>2</span><strong>実質的な増減</strong><p>ETF口数で正規化し、設定・解約で全銘柄が同時に増減した影響を抑えます。</p></article>
-        <article><span>3</span><strong>複数ファンド</strong><p>一つのファンドだけでなく、同じ方向の変化が重なったかを見ます。</p></article>
-        <article><span>4</span><strong>自分で確かめる</strong><p>個別ページで値動き・会社・信用需給・大口保有を順に確認します。</p></article>
-      </div>
-      <p class="pcf-source-note">出典：日本取引所グループのETF一覧・ETFデータベース、および各PCF配信先。表示は情報提供・学習目的で、売買推奨ではありません。</p>
-    </section>
-  </main>
+      <section class="panel pcf-funds-panel" aria-labelledby="pcfFundsTitle">
+        <div class="pcf-section-heading pcf-funds-heading">
+          <div><p class="eyebrow">ACTIVE ETF WATCH</p><h2 id="pcfFundsTitle">ファンドごとの組入変化</h2><p>最初は日本株を運用するアクティブETFだけを表示します。</p></div>
+          <label class="pcf-search">ETFを検索<input id="pcfSearch" type="search" placeholder="2080 / 高配当 / 運用会社"></label>
+        </div>
+        <div class="pcf-filter-row" role="group" aria-label="表示するETF">
+          <button type="button" class="pcf-filter active" data-pcf-scope="domestic" aria-pressed="true">日本株アクティブ</button>
+          <button type="button" class="pcf-filter" data-pcf-scope="changed" aria-pressed="false">変化あり</button>
+          <button type="button" class="pcf-filter" data-pcf-scope="all" aria-pressed="false">全アクティブETF</button>
+        </div>
+        <div class="pcf-period-row" role="group" aria-label="比較期間">
+          <span>比較期間</span>
+          <button type="button" data-pcf-period="day" aria-pressed="false">前回</button>
+          <button type="button" class="active" data-pcf-period="week" aria-pressed="true">1週間</button>
+          <button type="button" data-pcf-period="month" aria-pressed="false">1か月</button>
+        </div>
+        <div id="pcfFundGrid" class="pcf-fund-grid"></div>
+        <p id="pcfFundEmpty" class="pcf-empty" hidden>条件に合うETFがありません。</p>
+      </section>
 
+      <section class="panel pcf-sponsor-panel" aria-labelledby="pcfSponsorTitle">
+        <div class="pcf-section-heading"><div><p class="eyebrow">SPONSOR VIEW</p><h2 id="pcfSponsorTitle">運用会社ごとの変化</h2><p>選択期間の増加側・減少側の変化件数を、運用会社単位でまとめます。</p></div></div>
+        <div id="pcfSponsorTrends" class="pcf-sponsor-grid"><p class="pcf-empty">読込中…</p></div>
+      </section>
+
+      <section class="panel pcf-method-panel">
+        <h2>かぶたねの読み方</h2>
+        <div class="pcf-method-grid">
+          <article><span>1</span><strong>新規・除外</strong><p>前回のPCFになかった銘柄、今回なくなった銘柄を確認します。</p></article>
+          <article><span>2</span><strong>実質的な増減</strong><p>ETF口数で正規化し、設定・解約で全銘柄が同時に増減した影響を抑えます。</p></article>
+          <article><span>3</span><strong>複数ファンド</strong><p>一つのファンドだけでなく、同じ方向の変化が重なったかを見ます。</p></article>
+          <article><span>4</span><strong>自分で確かめる</strong><p>個別ページで値動き・会社・信用需給・大口保有を順に確認します。</p></article>
+        </div>
+        <p class="pcf-source-note">出典：日本取引所グループのETF一覧・ETFデータベース、および各PCF配信先。表示は情報提供・学習目的で、売買推奨ではありません。</p>
+      </section>
+    </main>
+  </div>
+
+  <script src="assets/room-gate.js?v=1" defer></script>
   <script src="assets/premium-etf-pcf.js?v=2" defer></script>
 </body>
 </html>
