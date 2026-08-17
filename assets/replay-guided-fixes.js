@@ -31,8 +31,8 @@
         border-radius:0 0 13px 13px;
         background:rgba(255,255,255,.82);
       }
-      .guided-replay-mode.terminal-session-active .guided-monthly-heading,
-      .guided-replay-mode.terminal-session-active .guided-monthly-rsi {
+      .guided-replay-mode.terminal-session-active[data-guided-analysis="true"] .guided-monthly-heading,
+      .guided-replay-mode.terminal-session-active[data-guided-analysis="true"] .guided-monthly-rsi {
         display:block !important;
       }
       @media (max-width:1199px), (pointer:coarse) {
@@ -89,7 +89,7 @@
   planLineDatasets = function guidedPlanLineDatasets(visible) {
     if (!guidedActive()) return inheritedPlanLineDatasets(visible);
     const guide = state.guided;
-    if (!guide.showLines) return [];
+    if (!guide.showLines && guide.step !== "seek-entry") return [];
     const constant = (value) => visible.map(() => value);
     const datasets = [];
     if (Number.isFinite(Number(guide.pendingEntry))) {
@@ -97,6 +97,12 @@
     }
     if (Number.isFinite(Number(state.plan.activeStop ?? guide.pendingStop))) {
       datasets.push(lineDataset("損切り", constant(Number(state.plan.activeStop ?? guide.pendingStop)), "#347fa8", { borderWidth: 2, borderDash: [5, 4] }));
+    }
+    if (["seek-entry", "stop"].includes(guide.step) && typeof ReplayGuidedCore !== "undefined") {
+      const hint = ReplayGuidedCore.recentLowHint(state.rows, state.cursor, 20);
+      if (Number.isFinite(Number(hint?.price))) {
+        datasets.push(lineDataset("直近安値", constant(Number(hint.price)), "#5f9873", { borderWidth: 1.6, borderDash: [3, 4] }));
+      }
     }
     if (Number.isFinite(Number(guide.pendingTarget))) {
       datasets.push(lineDataset(`利確 ${Number(guide.targetRatio || 0).toFixed(2)}R`, constant(Number(guide.pendingTarget)), "#db588d", { borderWidth: 1.8, borderDash: [3, 3] }));

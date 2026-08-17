@@ -184,6 +184,63 @@
 .guided-sheet-heading span { color:#b24f7f; font-size:.67rem; font-weight:950; }
 .guided-sheet-heading h2 { margin:4px 0 5px; color:#563e4d; font-size:1.15rem; }
 .guided-sheet-heading p { margin:0 0 14px; color:#806b78; font-size:.78rem; line-height:1.55; }
+.guided-stop-step {
+  display:grid;
+  gap:8px;
+  margin-top:11px;
+  padding:11px;
+  border:1px solid #ead7e2;
+  border-radius:14px;
+  background:#fff;
+}
+.guided-stop-step > span,
+.guided-stop-risk-summary > span { color:#ad4f7d; font-size:.68rem; font-weight:950; }
+.guided-stop-basis-grid { display:grid; gap:7px; }
+.guided-stop-basis {
+  display:grid;
+  gap:3px;
+  width:100%;
+  min-height:56px;
+  padding:9px 11px;
+  border:1px solid #decbd6;
+  border-radius:11px;
+  color:#644b5a;
+  background:#fff;
+  text-align:left;
+  cursor:pointer;
+}
+.guided-stop-basis strong { font-size:.8rem; }
+.guided-stop-basis small { color:#927b88; font-size:.67rem; }
+.guided-stop-basis.active { border-color:#b65b8e; background:#fff1f7; box-shadow:0 0 0 2px rgba(182,91,142,.11); }
+.guided-stop-basis:disabled { opacity:.46; cursor:not-allowed; }
+.guided-stop-basis-copy { margin:0; color:#65505d; font-size:.74rem; line-height:1.5; }
+.guided-stop-basis-copy small { display:block; margin-top:2px; color:#8e7885; }
+.guided-stop-chart-button {
+  min-height:48px;
+  border:0;
+  border-radius:12px;
+  color:#fff;
+  background:linear-gradient(135deg,#d95f98,#8f69cc);
+  font-weight:950;
+  cursor:pointer;
+}
+.guided-stop-chart-button:disabled { opacity:.42; cursor:not-allowed; }
+.guided-stop-step > p { margin:0; color:#8a7481; font-size:.68rem; line-height:1.5; }
+.guided-stop-risk-summary {
+  display:grid;
+  gap:4px;
+  margin-top:11px;
+  padding:12px;
+  border:1px solid #cfe5d7;
+  border-radius:14px;
+  background:#f0faf4;
+}
+.guided-stop-risk-summary strong { color:#466a53; font-size:.9rem; }
+.guided-stop-risk-summary small { color:#66806f; line-height:1.5; }
+.guided-stop-risk-summary.pending { border-color:#e7d8e1; background:#faf7f9; }
+.guided-stop-risk-summary.pending strong,
+.guided-stop-risk-summary.pending small { color:#8b7582; }
+.guided-sheet .practice-decision-grid-simple { grid-template-columns:1fr; }
 .guided-sheet-price { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:8px; align-items:end; }
 .guided-sheet-price label { display:grid; gap:5px; color:#6b5261; font-size:.74rem; font-weight:900; }
 .guided-sheet input[type="number"],
@@ -260,11 +317,42 @@
 .guided-replay-mode.terminal-session-active .chart-range-label { flex:1; }
 .guided-replay-mode.terminal-session-active .trade-layout,
 .guided-replay-mode.terminal-session-active > .trade-history-panel { display:none !important; }
+.guided-replay-mode .free-practice-sheet-v5 { display:none !important; }
+
+/* はじめてモードの初期表示は価格判断だけ。分析は本人が開いた時だけ表示する。 */
+.guided-replay-mode[data-guided-analysis="false"] .replay-decision-oscillator-v6,
+.guided-replay-mode[data-guided-analysis="false"] .replay-decision-monthly-v6,
+.guided-replay-mode[data-guided-analysis="false"] #replayChartSettingsV6,
+.guided-replay-mode[data-guided-analysis="false"] #replayAdvancedToolsV6,
+.guided-replay-mode[data-guided-analysis="false"] #replayVolumeProfileV6,
+.guided-replay-mode[data-guided-analysis="false"] .pro-indicator-strip,
+.guided-replay-mode[data-guided-analysis="false"] .guided-monthly-heading,
+.guided-replay-mode[data-guided-analysis="false"] .guided-monthly-rsi,
+.guided-replay-mode[data-guided-step="stop"] .replay-decision-oscillator-v6,
+.guided-replay-mode[data-guided-step="stop"] .replay-decision-monthly-v6,
+.guided-replay-mode[data-guided-step="stop"] #replayChartSettingsV6,
+.guided-replay-mode[data-guided-step="stop"] #replayAdvancedToolsV6,
+.guided-replay-mode[data-guided-step="stop"] #replayVolumeProfileV6,
+.guided-replay-mode[data-guided-step="stop"] .pro-indicator-strip,
+.guided-replay-mode[data-guided-step="stop"] .guided-monthly-heading,
+.guided-replay-mode[data-guided-step="stop"] .guided-monthly-rsi { display:none !important; }
+.guided-replay-mode[data-guided-analysis="false"] .replay-decision-main-v6:before,
+.guided-replay-mode[data-guided-step="stop"] .replay-decision-main-v6:before {
+  content:"いま見るもの：価格・直近安値・SMA25";
+  display:block;
+  padding:8px 10px;
+  border-radius:10px;
+  color:#5d715f;
+  background:#eff8f2;
+  font-size:.7rem;
+  font-weight:900;
+}
 
 @media (max-width:760px) {
   .replay-mode-selector { grid-template-columns:1fr; }
-  .guided-step-strip { grid-template-columns:repeat(5,minmax(0,1fr)); }
-  .guided-step-strip span:nth-child(n+6) { display:none; }
+  .guided-step-strip { grid-template-columns:repeat(3,minmax(0,1fr)); }
+  .guided-step-strip span { display:none; }
+  .guided-step-strip span.near { display:grid; }
   .guided-coach { grid-template-columns:54px minmax(0,1fr); padding:8px 10px; }
   .guided-character-image { width:50px; height:50px; }
   .guided-coach-copy p { font-size:.78rem; line-height:1.5; }
@@ -298,8 +386,6 @@
 }
 
 @media (max-width:420px) {
-  .guided-step-strip { grid-template-columns:repeat(4,minmax(0,1fr)); }
-  .guided-step-strip span:nth-child(n+5) { display:none; }
   .guided-status-line { align-items:flex-start; }
   .guided-sizing-grid { grid-template-columns:1fr; }
   .guided-ratio-buttons { grid-template-columns:1fr; }
