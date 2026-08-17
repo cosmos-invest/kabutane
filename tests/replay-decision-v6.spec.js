@@ -129,6 +129,7 @@ test("mobile replay follows oscillator-chart-monthly judgment flow and keeps day
   await page.evaluate(() => {
     state.toolMode = "none";
     state.plan.armed = false;
+    state.ended = false;
     if (state.rows.length > 1 && state.cursor >= state.rows.length - 1) {
       state.cursor = state.rows.length - 2;
       renderAll();
