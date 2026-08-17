@@ -31,8 +31,8 @@
         border-radius:0 0 13px 13px;
         background:rgba(255,255,255,.82);
       }
-      .guided-replay-mode.terminal-session-active[data-guided-analysis="true"] .guided-monthly-heading,
-      .guided-replay-mode.terminal-session-active[data-guided-analysis="true"] .guided-monthly-rsi {
+      .guided-replay-mode.terminal-session-active .guided-monthly-heading,
+      .guided-replay-mode.terminal-session-active .guided-monthly-rsi {
         display:block !important;
       }
       @media (max-width:1199px), (pointer:coarse) {
@@ -65,7 +65,8 @@
         }
       }
       @media (max-width:760px) {
-        .guided-monthly-rsi { height:165px !important; }
+        .guided-monthly-rsi { height:132px !important; min-height:132px !important; max-height:132px !important; }
+        .guided-monthly-rsi canvas { height:116px !important; max-height:116px !important; }
         .guided-monthly-heading { margin-top:10px; }
       }
     `;
@@ -174,7 +175,7 @@
       ? "チャートを全面表示したよ。想定が崩れる損切り価格をタップしてね。"
       : "チャートを全面表示したよ。利確したい価格をタップしてね。");
     if (typeof renderMainChart === "function") renderMainChart();
-    requestAnimationFrame(() => document.querySelector(".pro-main-chart")?.scrollIntoView({ behavior: "smooth", block: "center" }));
+    requestAnimationFrame(() => document.querySelector(".pro-main-chart")?.scrollIntoView({ behavior: "smooth", block: "nearest" }));
   }
 
   function reopenSelectionSheet(mode) {

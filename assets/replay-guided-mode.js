@@ -27,6 +27,7 @@
         remainingTranches: 0,
         showLines: false,
         showAnalysis: false,
+        view: "decision",
         selectMode: null,
         targetTriggered: false,
         daysHeld: 0,
@@ -119,6 +120,11 @@
         <div><span>いまの手順</span><strong id="guidedStepTitle">エントリー候補を探す</strong></div>
         <button id="guidedLineToggle" type="button" class="guided-small-button">ライン確認</button>
       </div>
+      <nav class="guided-view-tabs" aria-label="はじめてモードの表示">
+        <button type="button" data-guided-view="decision" aria-pressed="true">判断</button>
+        <button type="button" data-guided-view="analysis" aria-pressed="false">追加分析</button>
+        <button type="button" data-guided-view="settings" aria-pressed="false">設定</button>
+      </nav>
       <div id="guidedActionArea" class="guided-action-area"></div>
       <p id="guidedNotice" class="guided-notice" aria-live="polite"></p>`;
     const toolbar = workspace.querySelector("#unifiedToolbar");
@@ -184,6 +190,7 @@
     guide.step = "seek-entry";
     guide.lastCoachKey = "start";
     guide.showLines = false;
+    guide.view = "decision";
     guide.showAnalysis = false;
     guide.selectMode = null;
     setCoach("lumo", "未来はまだ見えないよ。1日ずつ進めて、『ここで入りたい』と思う場所を探そう✨", "start");
@@ -202,6 +209,8 @@
     guide.trancheShares = 0;
     guide.remainingTranches = 0;
     guide.showLines = false;
+    guide.view = "decision";
+    guide.showAnalysis = false;
     guide.selectMode = null;
     guide.targetTriggered = false;
     guide.daysHeld = 0;
@@ -307,7 +316,7 @@
         ${basisButton("sma25", "25日移動平均線", sma25 === null ? "目安を取得できません" : formatPrice(sma25), sma25 === null)}
         ${basisButton("thesis_break", "自分の支持線", "高値・安値の並びから考える")}
       </div>${guide.stopBasis ? `<p class="guided-stop-basis-copy">${STOP_BASIS_LABELS[guide.stopBasis]}。<small>${stopBasisReference(guide.stopBasis)}</small></p>` : ""}</section>
-      <section class="guided-stop-step"><span>② チャートで置く</span><input id="guidedStopInput" type="hidden" value="${guide.pendingStop ?? ""}"><button type="button" class="guided-stop-chart-button" data-guided-action="select-stop-chart" ${guide.stopBasis ? "" : "disabled"}>${guide.pendingStop === null ? "チャートで損切り価格を置く" : `置き直す（現在 ${formatPrice(guide.pendingStop)}）`}</button><p>損切り判断中は、価格・直近安値・SMA25だけに集中できます。</p></section>
+      <section class="guided-stop-step"><span>② チャートで置く</span><input id="guidedStopInput" type="hidden" value="${guide.pendingStop ?? ""}"><button type="button" class="guided-stop-chart-button" data-guided-action="select-stop-chart" ${guide.stopBasis ? "" : "disabled"}>${guide.pendingStop === null ? "チャートで損切り価格を置く" : `置き直す（現在 ${formatPrice(guide.pendingStop)}）`}</button><p>損切り判断中も、SMA25・75・200と月足RSIを見ながら価格を置けます。</p></section>
       ${stopRiskSummary(guide.pendingStop)}
       <div class="guided-risk-note"><strong>エール💜</strong><p>近すぎると小さな揺れで損切りになりやすいよ。遠すぎると買える株数が少なくなるよ。</p></div>
       <div class="guided-sheet-actions"><button type="button" class="secondary" data-guided-action="back-entry">戻る</button><button type="button" class="primary" data-guided-action="confirm-stop" ${guide.stopBasis && GuideCore.finite(guide.pendingStop) !== null ? "" : "disabled"}>根拠と金額を確認して進む</button></div>`);
@@ -344,8 +353,6 @@
     state.plan.ratios = [guide.targetRatio, 3, 4, 5];
     state.plan.tpPrices = [guide.pendingTarget];
     document.querySelectorAll("[data-guide-ratio]").forEach((button) => button.classList.toggle("active", Number(button.dataset.guideRatio) === guide.targetRatio));
-    const input = document.getElementById("guidedTargetInput");
-    if (input && guide.pendingTarget !== null) input.value = guide.pendingTarget.toFixed(2);
     updateRewardPreview();
     renderMainChart();
   }
@@ -355,7 +362,7 @@
     const preview = document.getElementById("guidedRewardPreview");
     const warning = document.getElementById("guidedRewardWarning");
     if (!preview) return;
-    const target = GuideCore.finite(document.getElementById("guidedTargetInput")?.value ?? guide.pendingTarget);
+    const target = GuideCore.finite(guide.pendingTarget);
     const ratio = GuideCore.rewardRatio(guide.pendingEntry, guide.pendingStop, target);
     preview.textContent = ratio === null ? "R倍率 —" : `利益候補 ${formatPrice(target)}・約${ratio.toFixed(2)}R`;
     if (warning) {
@@ -370,7 +377,7 @@
     openSheet(`
       <div class="guided-sheet-heading"><span>STEP 3</span><h2>利確位置を選ぼう</h2><p>損失1に対して、どれくらいの利益を狙うか決めよう。</p></div>
       <div class="guided-ratio-buttons"><button type="button" data-guide-ratio="1.5">1.5R</button><button type="button" class="active" data-guide-ratio="2">2R おすすめ</button><button type="button" data-guide-ratio="3">3R</button></div>
-      <div class="guided-sheet-price"><label>利確候補<input id="guidedTargetInput" type="number" min="0" step="0.1" value="${guide.pendingTarget?.toFixed(2) || ""}"></label><button type="button" data-guided-action="select-target-chart">チャートで選ぶ</button></div>
+      <div class="guided-target-choice"><span>選んだ目標</span><strong id="guidedTargetPrice">${formatPrice(guide.pendingTarget)}</strong><button type="button" data-guided-action="select-target-chart">チャートで微調整</button></div>
       <strong id="guidedRewardPreview" class="guided-reward-preview"></strong><p id="guidedRewardWarning" class="guided-warning" hidden></p>
       <div class="guided-risk-note"><strong>コスモス🌸</strong><p>高い目標ほど良いわけじゃないよ。過去の高値や上値の重そうな場所も一緒に見よう🌸</p></div>
       <div class="guided-sheet-actions"><button type="button" class="secondary" data-guided-action="back-stop">戻る</button><button type="button" class="primary" data-guided-action="confirm-target">この利確で進む</button></div>`);
@@ -379,7 +386,7 @@
 
   function confirmTarget() {
     const guide = guidedState();
-    const target = GuideCore.finite(document.getElementById("guidedTargetInput")?.value ?? guide.pendingTarget);
+    const target = GuideCore.finite(guide.pendingTarget);
     const ratio = GuideCore.rewardRatio(guide.pendingEntry, guide.pendingStop, target);
     if (target === null || target <= guide.pendingEntry || ratio === null || ratio < 1) {
       setNotice("利確候補はエントリーより上で、少なくとも1R以上にしよう。", true);
@@ -421,14 +428,9 @@
     guide.trancheShares = GuideCore.trancheShares(plan.recommendedShares, guide.splitCount, state.lotSize);
     openSheet(`
       <div class="guided-sheet-heading"><span>STEP 4</span><h2>何株までなら大丈夫？</h2><p>損切りになっても、許容損失率を超えない株数を計算したよ。</p></div>
-      <div class="guided-sizing-grid">
-        <article><span>許容損失額</span><strong>${formatPrice(plan.riskBudget)}</strong></article>
-        <article><span>1株のリスク</span><strong>${formatPrice(plan.riskPerShare)}</strong></article>
-        <article><span>推奨上限</span><strong>${plan.recommendedShares.toLocaleString("ja-JP")}株</strong></article>
-        <article><span>想定最大損失</span><strong>${formatPrice(plan.plannedLoss)}</strong></article>
-      </div>
+      <div class="guided-size-answer"><span>この練習の推奨上限</span><strong>${plan.recommendedShares.toLocaleString("ja-JP")}株</strong><small>想定最大損失 ${formatPrice(plan.plannedLoss)}</small></div>
       <div class="guided-split-choice"><strong>買い方を選ぼう</strong><div><button type="button" class="active" data-guide-split="1">一括</button><button type="button" data-guide-split="2">2分割</button><button type="button" data-guide-split="4">4分割</button></div><p id="guidedSplitPreview"></p></div>
-      <div class="guided-risk-note"><strong>エール💜</strong><p>分割しても、合計の損失上限は増やさないよ。追加で買う時も、残りのリスクを毎回計算するよ。</p></div>
+      <details class="guided-sizing-details"><summary>計算の内訳</summary><div class="guided-sizing-grid"><article><span>許容損失額</span><strong>${formatPrice(plan.riskBudget)}</strong></article><article><span>1株のリスク</span><strong>${formatPrice(plan.riskPerShare)}</strong></article><article><span>推奨上限</span><strong>${plan.recommendedShares.toLocaleString("ja-JP")}株</strong></article><article><span>想定最大損失</span><strong>${formatPrice(plan.plannedLoss)}</strong></article></div></details>
       <div class="guided-sheet-actions"><button type="button" class="secondary" data-guided-action="back-target">戻る</button><button type="button" class="primary" data-guided-action="confirm-size" ${plan.recommendedShares <= 0 ? "disabled" : ""}>この枚数で確認する</button></div>`);
     selectSplit(guide.splitCount || 1);
   }
@@ -712,8 +714,8 @@
       guide.pendingTarget = price;
       guide.targetRatio = GuideCore.rewardRatio(guide.pendingEntry, guide.pendingStop, price) || 0;
       state.plan.tpPrices = [price];
-      const input = document.getElementById("guidedTargetInput");
-      if (input) input.value = price.toFixed(2);
+      const targetPrice = document.getElementById("guidedTargetPrice");
+      if (targetPrice) targetPrice.textContent = formatPrice(price);
       updateRewardPreview();
       setNotice(`${formatPrice(price)}を利確候補にしたよ。`);
     }
@@ -728,7 +730,12 @@
     document.body.classList.toggle("free-replay-mode", !isGuided());
     if (isGuided()) document.body.dataset.guidedStep = guide.step;
     else delete document.body.dataset.guidedStep;
+    const view = ["decision", "analysis", "settings"].includes(guide.view) ? guide.view : "decision";
+    guide.view = view;
+    guide.showAnalysis = view === "analysis";
     document.body.dataset.guidedAnalysis = isGuided() && guide.showAnalysis ? "true" : "false";
+    if (isGuided()) document.body.dataset.guidedView = view;
+    else delete document.body.dataset.guidedView;
     panel.hidden = !isGuided() || Boolean(els?.practiceArea?.hidden);
     if (panel.hidden) return;
 
@@ -742,6 +749,11 @@
     const title = document.getElementById("guidedStepTitle");
     const actions = document.getElementById("guidedActionArea");
     const toggle = document.getElementById("guidedLineToggle");
+    panel.querySelectorAll("[data-guided-view]").forEach((button) => {
+      const active = button.dataset.guidedView === view;
+      button.classList.toggle("active", active);
+      button.setAttribute("aria-pressed", String(active));
+    });
     if (toggle) {
       toggle.textContent = guide.showLines ? "ラインを隠す" : "ライン確認";
       toggle.hidden = !["stop", "target", "review", "observe", "targetDecision"].includes(guide.step);
@@ -750,7 +762,7 @@
     const actionButton = (label, action, className = "") => `<button type="button" class="${className}" data-guided-action="${action}">${label}</button>`;
     if (guide.step === "seek-entry") {
       title.textContent = "エントリー候補を探す";
-      actions.innerHTML = `${actionButton("1日進める", "step-one")}${actionButton("5日進める", "step-five", "secondary")}${actionButton("ここで入りたい", "choose-entry", "primary")}${actionButton(guide.showAnalysis ? "分析を閉じる" : "分析を開く", "toggle-analysis", "ghost")}`;
+      actions.innerHTML = `${actionButton("1日進める", "step-one")}${actionButton("5日進める", "step-five", "secondary")}${actionButton("ここで入りたい", "choose-entry", "primary")}`;
     } else if (["stop", "target", "size", "review"].includes(guide.step)) {
       title.textContent = ({ stop: "損切りを決める", target: "利確位置を決める", size: "枚数を決める", review: "注文前に確認する" })[guide.step];
       actions.innerHTML = `<p>下のガイドに沿って、今の判断だけに集中しよう。</p>${actionButton("入力パネルを開く", `open-${guide.step}`, "primary")}`;
@@ -780,7 +792,7 @@
     if (action === "step-one") advance(1);
     else if (action === "step-five") advance(5);
     else if (action === "toggle-play") togglePlayback();
-    else if (action === "toggle-analysis") { guide.showAnalysis = !guide.showAnalysis; renderAll(); }
+    else if (action === "toggle-analysis") { guide.view = guide.view === "analysis" ? "decision" : "analysis"; guide.showAnalysis = guide.view === "analysis"; renderAll(); }
     else if (action === "choose-entry") beginEntryChoice();
     else if (action === "select-stop-chart") { guide.selectMode = "stop"; guide.showLines = true; setNotice("チャート上の損切り候補をタップしてね。"); }
     else if (action === "select-target-chart") { guide.selectMode = "target"; guide.showLines = true; setNotice("チャート上の利確候補をタップしてね。"); }
@@ -814,6 +826,14 @@
     document.addEventListener("click", (event) => {
       const mode = event.target.closest("[data-replay-mode]");
       if (mode) { setMode(mode.dataset.replayMode); return; }
+      const view = event.target.closest("[data-guided-view]");
+      if (view && isGuided()) {
+        guidedState().view = view.dataset.guidedView;
+        guidedState().showAnalysis = guidedState().view === "analysis";
+        closeSheet();
+        renderAll();
+        return;
+      }
       const stopBasis = event.target.closest("[data-guided-stop-basis]");
       if (stopBasis && !stopBasis.disabled) {
         guidedState().stopBasis = stopBasis.dataset.guidedStopBasis;
@@ -841,12 +861,6 @@
         state.plan.initialStop = guide.pendingStop;
         state.plan.activeStop = guide.pendingStop;
         els.stopPrice.value = event.target.value;
-        renderMainChart();
-      }
-      if (event.target.id === "guidedTargetInput") {
-        guide.pendingTarget = GuideCore.finite(event.target.value);
-        state.plan.tpPrices = guide.pendingTarget === null ? [] : [guide.pendingTarget];
-        updateRewardPreview();
         renderMainChart();
       }
     });
@@ -894,8 +908,7 @@
     rows.forEach((row) => {
       [row.low, row.high].forEach((value) => { const parsed = finite(value); if (parsed !== null) values.push(parsed); });
       if (els.showSma?.checked) {
-        const movingAverages = guidedState().step === "stop" || !guidedState().showAnalysis ? [row.sma25] : [row.sma25, row.sma75, row.sma200];
-        movingAverages.forEach((value) => { const parsed = finite(value); if (parsed !== null) values.push(parsed); });
+        [row.sma25, row.sma75, row.sma200].forEach((value) => { const parsed = finite(value); if (parsed !== null) values.push(parsed); });
       }
       if (els.showEma?.checked) [row.ema20, row.ema50].forEach((value) => { const parsed = finite(value); if (parsed !== null) values.push(parsed); });
       if (els.showBollinger?.checked) [row.bbUpper, row.bbLower].forEach((value) => { const parsed = finite(value); if (parsed !== null) values.push(parsed); });
@@ -927,11 +940,12 @@
 
   const baseRenderMainChartGuided = renderMainChart;
   renderMainChart = function renderMainChartGuided() {
+    if (isGuided() && els.showSma) els.showSma.checked = true;
     baseRenderMainChartGuided();
     if (isGuided() && state.chart) {
       state.chart.options.plugins.legend.display = false;
       if (!guidedState().showAnalysis || guidedState().step === "stop") {
-        const keep = new Set(["ローソク足", "平均足", "出来高", "SMA25", "エントリー", "損切り", "直近安値"]);
+        const keep = new Set(["ローソク足", "平均足", "出来高", "SMA25", "SMA75", "SMA200", "エントリー", "損切り", "直近安値"]);
         state.chart.data.datasets = state.chart.data.datasets.filter((dataset) => keep.has(String(dataset.label || "")));
       }
       state.chart.update("none");

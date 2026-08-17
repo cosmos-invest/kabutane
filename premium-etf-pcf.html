@@ -6,7 +6,8 @@
   <meta name="robots" content="noindex,nofollow,noarchive">
   <title>プロの組入変化ラボ β | かぶたね</title>
   <link rel="stylesheet" href="assets/style.css?v=16">
-  <link rel="stylesheet" href="assets/premium-etf-pcf.css?v=1">
+  <link rel="stylesheet" href="assets/premium-etf-pcf.css?v=2">
+  <link rel="stylesheet" href="assets/premium-etf-pcf-history.css?v=1">
 </head>
 <body class="pcf-page">
   <header class="site-header pcf-header">
@@ -56,6 +57,14 @@
       <div id="pcfCommonChanges" class="pcf-common-grid"><p class="pcf-empty">読込中…</p></div>
     </section>
 
+    <section class="panel pcf-lookup-panel" aria-labelledby="pcfLookupTitle">
+      <div class="pcf-section-heading pcf-funds-heading">
+        <div><p class="eyebrow">STOCK → ACTIVE FUNDS</p><h2 id="pcfLookupTitle">この銘柄を動かしたETFを逆引き</h2><p>銘柄コード・銘柄名から、選択期間に組入数量が変わった日本株アクティブETFを探せます。</p></div>
+        <label class="pcf-search">銘柄を検索<input id="pcfStockSearch" type="search" placeholder="7203 / トヨタ"></label>
+      </div>
+      <div id="pcfStockLookup" class="pcf-lookup-grid"><p class="pcf-empty">銘柄を入力すると表示します。</p></div>
+    </section>
+
     <section class="panel pcf-funds-panel" aria-labelledby="pcfFundsTitle">
       <div class="pcf-section-heading pcf-funds-heading">
         <div><p class="eyebrow">ACTIVE ETF WATCH</p><h2 id="pcfFundsTitle">ファンドごとの組入変化</h2><p>最初は日本株を運用するアクティブETFだけを表示します。</p></div>
@@ -66,8 +75,19 @@
         <button type="button" class="pcf-filter" data-pcf-scope="changed" aria-pressed="false">変化あり</button>
         <button type="button" class="pcf-filter" data-pcf-scope="all" aria-pressed="false">全アクティブETF</button>
       </div>
+      <div class="pcf-period-row" role="group" aria-label="比較期間">
+        <span>比較期間</span>
+        <button type="button" data-pcf-period="day" aria-pressed="false">前回</button>
+        <button type="button" class="active" data-pcf-period="week" aria-pressed="true">1週間</button>
+        <button type="button" data-pcf-period="month" aria-pressed="false">1か月</button>
+      </div>
       <div id="pcfFundGrid" class="pcf-fund-grid"></div>
       <p id="pcfFundEmpty" class="pcf-empty" hidden>条件に合うETFがありません。</p>
+    </section>
+
+    <section class="panel pcf-sponsor-panel" aria-labelledby="pcfSponsorTitle">
+      <div class="pcf-section-heading"><div><p class="eyebrow">SPONSOR VIEW</p><h2 id="pcfSponsorTitle">運用会社ごとの変化</h2><p>選択期間の増加側・減少側の変化件数を、運用会社単位でまとめます。</p></div></div>
+      <div id="pcfSponsorTrends" class="pcf-sponsor-grid"><p class="pcf-empty">読込中…</p></div>
     </section>
 
     <section class="panel pcf-method-panel">
@@ -82,6 +102,6 @@
     </section>
   </main>
 
-  <script src="assets/premium-etf-pcf.js?v=1" defer></script>
+  <script src="assets/premium-etf-pcf.js?v=2" defer></script>
 </body>
 </html>

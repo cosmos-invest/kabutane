@@ -15,12 +15,15 @@
   const more = document.getElementById("premiumMore");
   const starterCards = document.getElementById("premiumStarterCards");
   const starterStatus = document.getElementById("premiumStarterStatus");
+  const previousReview = document.getElementById("premiumPreviousReview");
   const quickButtons = [...document.querySelectorAll("[data-premium-mode]")];
 
   let payload = null;
   let quickMode = "early";
   let visibleLimit = 80;
   const STARTER_PROGRESS_KEY = "kabutane_premium_first_step_v1";
+  const OBSERVATION_HISTORY_KEY = "kabutane_premium_observation_history_v1";
+  const OBSERVATION_HISTORY_LIMIT = 30;
 
   function finite(value) {
     if (value === null || value === undefined || value === "") return null;
@@ -176,21 +179,102 @@
     }
   }
 
-  function saveStarterProgress(code, name) {
+  function readObservationHistory() {
     try {
-      localStorage.setItem(STARTER_PROGRESS_KEY, JSON.stringify({
-        price_date: payload?.price_date || null,
-        code,
-        name,
-        checked_at: new Date().toISOString(),
-      }));
+      const saved = JSON.parse(localStorage.getItem(OBSERVATION_HISTORY_KEY) || "[]");
+      return Array.isArray(saved) ? saved.filter((item) => item && typeof item === "object") : [];
+    } catch (_error) {
+      return [];
+    }
+  }
+
+  function writeObservationHistory(history) {
+    try {
+      localStorage.setItem(OBSERVATION_HISTORY_KEY, JSON.stringify(history.slice(-OBSERVATION_HISTORY_LIMIT)));
     } catch (_error) {
       // Private browsing or storage restrictions must not block navigation.
     }
   }
 
+  function saveStarterProgress(code, name, reason) {
+    const priceDate = payload?.price_date || null;
+    const checkedAt = new Date().toISOString();
+    try {
+      localStorage.setItem(STARTER_PROGRESS_KEY, JSON.stringify({
+        price_date: priceDate,
+        code,
+        name,
+        reason,
+        checked_at: checkedAt,
+      }));
+    } catch (_error) {
+      // Private browsing or storage restrictions must not block navigation.
+    }
+    if (!priceDate || !code) return;
+    const history = readObservationHistory();
+    const existing = history.findIndex((item) => item.price_date === priceDate);
+    const observation = {
+      price_date: priceDate,
+      code,
+      name,
+      reason,
+      selected_at: checkedAt,
+      review_status: null,
+      reviewed_at: null,
+    };
+    if (existing >= 0) history[existing] = observation;
+    else history.push(observation);
+    writeObservationHistory(history);
+  }
+
+  function reviewStatusLabel(status) {
+    return ({ holds: "まだ成り立つ", changed: "変わった", pending: "判断保留" })[status] || "";
+  }
+
+  function previousObservation() {
+    const currentDate = payload?.price_date || "";
+    return readObservationHistory()
+      .filter((item) => item.price_date && item.price_date !== currentDate)
+      .sort((a, b) => String(b.price_date).localeCompare(String(a.price_date)))[0] || null;
+  }
+
+  function renderPreviousReview() {
+    if (!previousReview || !payload) return;
+    const observation = previousObservation();
+    if (!observation) {
+      previousReview.hidden = true;
+      previousReview.innerHTML = "";
+      return;
+    }
+    const reviewed = reviewStatusLabel(observation.review_status);
+    previousReview.hidden = false;
+    previousReview.innerHTML = `<div class="premium-review-copy">
+      <span>前回のたねを見直す</span>
+      <strong>${escapeHtml(observation.code)} ${escapeHtml(observation.name || "")}</strong>
+      <p><b>前回の理由：</b>${escapeHtml(observation.reason || "理由は未記録")}</p>
+    </div>
+    <div class="premium-review-actions" data-review-date="${escapeHtml(observation.price_date)}">
+      <p>${reviewed ? `見直し：${escapeHtml(reviewed)}。` : "その理由は、今も成り立っていますか？"}</p>
+      <div role="group" aria-label="前回の理由の見直し">
+        ${[["holds", "まだ成り立つ"], ["changed", "変わった"], ["pending", "判断保留"]].map(([value, label]) => `<button type="button" data-review-status="${value}" aria-pressed="${observation.review_status === value}">${label}</button>`).join("")}
+      </div>
+      <a href="${detailHref(observation)}">個別ページで確かめる →</a>
+    </div>`;
+  }
+
+  function savePreviousReview(priceDate, status) {
+    const history = readObservationHistory();
+    const target = history.find((item) => item.price_date === priceDate);
+    if (!target) return;
+    target.review_status = status;
+    target.reviewed_at = new Date().toISOString();
+    writeObservationHistory(history);
+    renderPreviousReview();
+  }
+
   function renderStarterCards() {
     if (!starterCards || !payload) return;
+    renderPreviousReview();
     const candidates = (Array.isArray(payload.records) ? payload.records : [])
       .filter((item) => ["GC", "NEAR_GC"].includes(item.provisional_status))
       .sort((a, b) => (finite(b.priority_score) ?? 0) - (finite(a.priority_score) ?? 0) || String(a.code || "").localeCompare(String(b.code || ""), "ja"))
@@ -202,7 +286,8 @@
     }
     const progress = readStarterProgress();
     starterCards.innerHTML = candidates.map((item, index) => {
-      const reasons = starterReasons(item).map((reason) => `<li>${escapeHtml(reason)}</li>`).join("");
+      const reasonOptions = starterReasons(item);
+      const reasons = reasonOptions.map((reason) => `<li>${escapeHtml(reason)}</li>`).join("");
       const checked = progress?.price_date === payload.price_date && String(progress?.code || "") === String(item.code || "");
       const caution = item.provisional_status === "GC"
         ? "月末までに消える途中判定です。今すぐ買う理由にはしません。"
@@ -212,6 +297,9 @@
         <h3><span class="market-mark ${marketClass(item.market)}">${marketLabel(item.market)}</span>${escapeHtml(item.code)} ${escapeHtml(item.name)}</h3>
         <p class="premium-starter-role"><strong>ルーモ✨が見つけた変化</strong></p>
         <ul>${reasons}</ul>
+        <label class="premium-starter-reason">今日、確かめたい理由
+          <select data-starter-reason-for="${escapeHtml(item.code)}">${reasonOptions.map((reason) => `<option value="${escapeHtml(reason)}">${escapeHtml(reason)}</option>`).join("")}</select>
+        </label>
         <p class="premium-starter-caution"><strong>エール💜</strong> ${escapeHtml(caution)}</p>
         <a class="button premium-starter-link" href="${detailHref(item)}" data-starter-code="${escapeHtml(item.code)}" data-starter-name="${escapeHtml(item.name)}">${checked ? "✓ 今日選んだ1社をもう一度見る" : "コスモス🌸と3分で確かめる"}</a>
       </article>`;
@@ -361,7 +449,15 @@
   starterCards?.addEventListener("click", (event) => {
     const link = event.target.closest("[data-starter-code]");
     if (!link) return;
-    saveStarterProgress(link.dataset.starterCode || "", link.dataset.starterName || "");
+    const code = link.dataset.starterCode || "";
+    const reason = starterCards.querySelector(`[data-starter-reason-for="${CSS.escape(code)}"]`)?.value || "";
+    saveStarterProgress(code, link.dataset.starterName || "", reason);
+  });
+  previousReview?.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-review-status]");
+    const actions = event.target.closest("[data-review-date]");
+    if (!button || !actions) return;
+    savePreviousReview(actions.dataset.reviewDate || "", button.dataset.reviewStatus || "pending");
   });
   init();
 })();

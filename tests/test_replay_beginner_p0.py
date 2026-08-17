@@ -33,16 +33,15 @@ class ReplayBeginnerP0Tests(unittest.TestCase):
     def test_stop_chart_shows_only_decision_context(self) -> None:
         self.assertIn('document.body.dataset.guidedStep = guide.step', self.guided)
         self.assertIn('node.classList.toggle("near", Math.abs(stepIndex - index) <= 1)', self.guided)
-        self.assertIn('"SMA25", "エントリー", "損切り", "直近安値"', self.guided)
+        self.assertIn('"SMA25", "SMA75", "SMA200", "エントリー", "損切り", "直近安値"', self.guided)
         self.assertIn('lineDataset("直近安値"', self.fixes)
         for marker in (
             '[data-guided-step="stop"] .replay-decision-oscillator-v6',
-            '[data-guided-step="stop"] .replay-decision-monthly-v6',
             '[data-guided-step="stop"] #replayVolumeProfileV6',
-            '[data-guided-analysis="false"] .guided-monthly-rsi',
-            'いま見るもの：価格・直近安値・SMA25',
+            '常に表示：価格・直近安値・SMA25 / 75 / 200・月足RSI',
         ):
             self.assertIn(marker, self.style)
+        self.assertNotIn('[data-guided-step="stop"] .replay-decision-monthly-v6', self.style)
 
     def test_guided_trade_reason_is_one_required_choice(self) -> None:
         self.assertIn("入る理由を1つ選ぶ", self.practice)
@@ -56,9 +55,9 @@ class ReplayBeginnerP0Tests(unittest.TestCase):
         self.assertNotIn("if (!decision.thesis || !decision.eventContext || !decision.planStatus)", self.practice)
 
     def test_learning_pages_match_the_new_beginner_flow(self) -> None:
-        for marker in ("根拠 → チャート → 金額", "理由1つ＋任意メモ", "価格・直近安値・SMA25"):
+        for marker in ("根拠 → チャート → 金額", "理由1つ＋任意メモ", "SMA25 / 75 / 200・月足RSI14"):
             self.assertIn(marker, self.learn)
-        for marker in ("直近安値・SMA25・自分の支持線", "1株の損失候補と練習の損失上限"):
+        for marker in ("直近安値・SMA25・自分の支持線", "1株の損失候補と練習の損失上限", "SMA25・75・200と月足RSI14"):
             self.assertIn(marker, self.howto)
 
 

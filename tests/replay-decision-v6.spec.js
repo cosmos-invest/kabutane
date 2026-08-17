@@ -37,13 +37,13 @@ test("mobile replay follows oscillator-chart-monthly judgment flow and keeps day
   await expect(page.locator("body")).toHaveAttribute("data-guided-analysis", "false");
   await expect(main).toBeVisible();
   await expect(oscillator).toBeHidden();
-  await expect(monthly).toBeHidden();
-  await expect(page.locator("#monthlyRsiChart")).toBeHidden();
+  await expect(monthly).toBeVisible();
+  await expect(page.locator("#monthlyRsiChart")).toBeVisible();
   const beginnerLabels = await page.evaluate(() => Chart.getChart("replayChart").data.datasets.map((dataset) => dataset.label));
-  expect(beginnerLabels).toEqual(expect.arrayContaining(["ローソク足", "SMA25", "直近安値"]));
-  expect(beginnerLabels).not.toEqual(expect.arrayContaining(["SMA75", "SMA200", "Supertrend"]));
+  expect(beginnerLabels).toEqual(expect.arrayContaining(["ローソク足", "SMA25", "SMA75", "SMA200", "直近安値"]));
+  expect(beginnerLabels).not.toEqual(expect.arrayContaining(["Supertrend"]));
 
-  await page.locator('#guidedActionArea [data-guided-action="toggle-analysis"]').click();
+  await page.locator('[data-guided-view="analysis"]').click();
   await expect(page.locator("body")).toHaveAttribute("data-guided-analysis", "true");
   const oscillatorBox = await oscillator.boundingBox();
   const mainBox = await main.boundingBox();
@@ -60,6 +60,8 @@ test("mobile replay follows oscillator-chart-monthly judgment flow and keeps day
   await expect.poll(async () => (await page.locator("#replayVolumeProfileDetailV6").textContent()) || "", { timeout: 10000 }).toContain("POC");
 
   const chartSettings = page.locator("#replayChartSettingsV6");
+  await expect(chartSettings).toBeHidden();
+  await page.locator('[data-guided-view="settings"]').click();
   await expect(chartSettings).toBeVisible();
   await ensureDetailsOpen(chartSettings);
   const chartSettingControl = chartSettings.locator("input:not([disabled]), button:not([disabled])").first();
@@ -77,6 +79,7 @@ test("mobile replay follows oscillator-chart-monthly judgment flow and keeps day
   if (await legacyIndicatorDetails.count()) await expect(legacyIndicatorDetails).toBeHidden();
 
   const oscillatorSettings = page.locator(".oscillator-settings-v6");
+  await page.locator('[data-guided-view="analysis"]').click();
   await ensureDetailsOpen(oscillatorSettings);
   const select = page.locator("#oscillatorSelect");
   await expect(select).toBeVisible();

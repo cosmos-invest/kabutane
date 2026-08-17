@@ -9,9 +9,10 @@ import json
 import math
 import re
 import time
+import zipfile
 from collections import defaultdict
 from dataclasses import dataclass, field
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any, Iterable
@@ -37,6 +38,11 @@ STANDARD_FIELDS = {
     "fund date",
 }
 SOLACTIVE_EXCEPTIONS = {"2858", "179A", "180A", "380A", "404A", "502A", "563A", "576A"}
+ICE_ZIP_LIST_URL = "https://inav.ice.com/pcf-download/listOfZips"
+ICE_ALL_ZIP_URL = "https://inav.ice.com/pcf-download/all/{name}"
+HISTORY_RETENTION = 45
+ICE_ZIP_RE = re.compile(r"all_pcf_(\d{8})\.zip", re.IGNORECASE)
+ICE_MEMBER_RE = re.compile(r"(?:^|/)([0-9]{4}|[0-9]{3}[A-Z])tsepcf_", re.IGNORECASE)
 
 
 def utc_now() -> str:
@@ -458,6 +464,144 @@ def compare_snapshots(current: dict[str, Any], previous: dict[str, Any] | None) 
     return changes
 
 
+def ice_archive_names(content: bytes, limit: int = 8) -> list[str]:
+    """Return the latest official ICE daily archive names from either JSON or text."""
+    names = {f"all_pcf_{match}.zip" for match in ICE_ZIP_RE.findall(content.decode("utf-8", errors="replace"))}
+    return sorted(names, reverse=True)[:limit]
+
+
+def snapshots_from_ice_archive(content: bytes, active_codes: set[str] | None = None) -> dict[str, dict[str, Any]]:
+    result: dict[str, dict[str, Any]] = {}
+    with zipfile.ZipFile(io.BytesIO(content)) as archive:
+        for member in archive.namelist():
+            match = ICE_MEMBER_RE.search(member)
+            if not match:
+                continue
+            code = normalize_code(match.group(1))
+            if active_codes is not None and code not in active_codes:
+                continue
+            try:
+                snapshot = parse_pcf(archive.read(member), ICE_ALL_ZIP_URL.format(name=Path(member).name), "ICE")
+            except (KeyError, ValueError):
+                continue
+            snapshot["etf_code"] = snapshot.get("etf_code") or code
+            result[code] = snapshot
+    return result
+
+
+def compact_snapshot(snapshot: dict[str, Any]) -> dict[str, Any]:
+    keys = (
+        "schema_version", "kind", "etf_code", "etf_name", "fund_date", "fund_cash_component",
+        "shares_outstanding", "source_url", "source_provider", "source_sha256", "retrieved_at",
+        "holdings", "domestic_equity", "asset_scope", "cash_weight_pct", "holding_count",
+        "sponsor", "specialized", "derivative",
+    )
+    return {key: snapshot.get(key) for key in keys if key in snapshot}
+
+
+def merge_snapshot_history(existing: Iterable[dict[str, Any]], additions: Iterable[dict[str, Any]]) -> list[dict[str, Any]]:
+    by_date = {
+        str(snapshot.get("fund_date")): compact_snapshot(snapshot)
+        for snapshot in [*existing, *additions]
+        if snapshot.get("fund_date")
+    }
+    return [by_date[date] for date in sorted(by_date)[-HISTORY_RETENTION:]]
+
+
+def period_baseline(history: list[dict[str, Any]], current_date: str, days: int) -> dict[str, Any] | None:
+    try:
+        target = datetime.strptime(current_date, "%Y-%m-%d").date() - timedelta(days=days)
+    except (TypeError, ValueError):
+        return None
+    eligible = []
+    for snapshot in history:
+        try:
+            snapshot_date = datetime.strptime(str(snapshot.get("fund_date")), "%Y-%m-%d").date()
+        except (TypeError, ValueError):
+            continue
+        if snapshot_date <= target:
+            eligible.append((snapshot_date, snapshot))
+    return max(eligible, key=lambda item: item[0])[1] if eligible else None
+
+
+def period_comparison(current: dict[str, Any], history: list[dict[str, Any]], days: int) -> dict[str, Any]:
+    baseline = period_baseline(history, str(current.get("fund_date") or ""), days)
+    if baseline is None:
+        return {"status": "collecting", "baseline_date": None, "changes": [], "change_counts": {}, "material_change_count": 0}
+    changes = compare_snapshots(current, baseline)
+    counts = {kind: sum(row.get("kind") == kind for row in changes) for kind in ("NEW", "INCREASE", "DECREASE", "REMOVED")}
+    return {
+        "status": "ready",
+        "baseline_date": baseline.get("fund_date"),
+        "changes": changes[:30],
+        "change_counts": counts,
+        "material_change_count": len(changes),
+    }
+
+
+def build_periods(current: dict[str, Any], history: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
+    return {
+        "day": period_comparison(current, history, 1),
+        "week": period_comparison(current, history, 7),
+        "month": period_comparison(current, history, 30),
+    }
+
+
+def build_streaks(history: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    streaks: dict[str, dict[str, Any]] = {}
+    for previous, current in zip(history, history[1:]):
+        changes = compare_snapshots(current, previous)
+        seen: set[str] = set()
+        for change in changes:
+            security = str(change.get("code") or change.get("id") or "")
+            direction = "UP" if change.get("kind") in {"NEW", "INCREASE"} else "DOWN"
+            if not security:
+                continue
+            seen.add(security)
+            old = streaks.get(security)
+            count = int(old.get("count") or 0) + 1 if old and old.get("direction") == direction else 1
+            streaks[security] = {"code": change.get("code"), "name": change.get("name_ja") or change.get("name"), "direction": direction, "count": count}
+        for security in set(streaks) - seen:
+            streaks.pop(security, None)
+    return sorted((row for row in streaks.values() if row["count"] >= 2), key=lambda row: (-row["count"], str(row.get("code") or "")))[:20]
+
+
+def build_stock_lookup(funds: Iterable[dict[str, Any]]) -> list[dict[str, Any]]:
+    grouped: dict[str, dict[str, Any]] = {}
+    for fund in funds:
+        if not fund.get("domestic_equity"):
+            continue
+        for period, comparison in (fund.get("periods") or {}).items():
+            if comparison.get("status") != "ready":
+                continue
+            for change in comparison.get("changes") or []:
+                code = normalize_code(change.get("code"))
+                if not code:
+                    continue
+                row = grouped.setdefault(code, {"code": code, "name": change.get("name_ja") or change.get("name"), "funds": []})
+                row["funds"].append({"fund_code": fund.get("code"), "fund_name": fund.get("display_name") or fund.get("name"), "period": period, "kind": change.get("kind"), "units_delta_pct": change.get("units_delta_pct")})
+    result = list(grouped.values())
+    for row in result:
+        row["fund_count"] = len({item["fund_code"] for item in row["funds"]})
+    result.sort(key=lambda row: (-int(row["fund_count"]), str(row["code"])))
+    return result
+
+
+def build_sponsor_trends(funds: Iterable[dict[str, Any]]) -> list[dict[str, Any]]:
+    grouped: dict[str, dict[str, Any]] = {}
+    for fund in funds:
+        sponsor = compact_text(fund.get("sponsor")) or "運用会社未確認"
+        row = grouped.setdefault(sponsor, {"sponsor": sponsor, "fund_count": 0, "periods": {}})
+        row["fund_count"] += 1
+        for period, comparison in (fund.get("periods") or {}).items():
+            bucket = row["periods"].setdefault(period, {"up": 0, "down": 0, "status": "collecting"})
+            if comparison.get("status") == "ready":
+                bucket["status"] = "ready"
+                for change in comparison.get("changes") or []:
+                    bucket["up" if change.get("kind") in {"NEW", "INCREASE"} else "down"] += 1
+    return sorted(grouped.values(), key=lambda row: (-int(row["fund_count"]), row["sponsor"]))
+
+
 def summarize_snapshot(snapshot: dict[str, Any], changes: list[dict[str, Any]], baseline: bool) -> dict[str, Any]:
     counts = {kind: sum(row.get("kind") == kind for row in changes) for kind in ("NEW", "INCREASE", "DECREASE", "REMOVED")}
     top_holdings = sorted(
@@ -562,6 +706,11 @@ def validate_payload(payload: dict[str, Any]) -> None:
     for fund in funds:
         if not fund.get("fund_date") or not isinstance(fund.get("changes"), list):
             raise ValueError(f"ETF PCF fund summary is incomplete: {fund.get('code')}")
+        periods = fund.get("periods")
+        if not isinstance(periods, dict) or set(periods) != {"day", "week", "month"}:
+            raise ValueError(f"ETF PCF fund periods are incomplete: {fund.get('code')}")
+        if any(value.get("status") not in {"ready", "collecting"} for value in periods.values()):
+            raise ValueError(f"ETF PCF period status is invalid: {fund.get('code')}")
 
 
 def run_update(root: Path = ROOT, issues_bytes: bytes | None = None, database_bytes: bytes | None = None) -> dict[str, Any]:
@@ -584,6 +733,29 @@ def run_update(root: Path = ROOT, issues_bytes: bytes | None = None, database_by
             errors.append({"code": code, "name": record.get("name"), "reason": "PCF掲載URLを確認できませんでした"})
             continue
         resolved.append((record, url, provider))
+
+    archive_names: list[str] = []
+    archive_error: str | None = None
+    archived_by_code: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    try:
+        archive_names = ice_archive_names(download(ICE_ZIP_LIST_URL, 20, 1), limit=8)
+        active_codes = {record["code"] for record in active}
+        with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
+            future_map = {
+                executor.submit(download, ICE_ALL_ZIP_URL.format(name=name), 30, 1): name
+                for name in archive_names
+            }
+            for future in concurrent.futures.as_completed(future_map):
+                archive_name = future_map[future]
+                try:
+                    snapshots = snapshots_from_ice_archive(future.result(), active_codes)
+                    for code, snapshot in snapshots.items():
+                        snapshot["source_url"] = ICE_ALL_ZIP_URL.format(name=archive_name)
+                        archived_by_code[code].append(enrich_snapshot(snapshot, stock_names))
+                except Exception as exc:
+                    archive_error = f"{archive_name}: {exc}"[:240]
+    except Exception as exc:
+        archive_error = str(exc)[:240]
 
     download_results: dict[str, bytes | Exception] = {}
     # Keep the provider load small while avoiding one closed/time-limited
@@ -633,6 +805,22 @@ def run_update(root: Path = ROOT, issues_bytes: bytes | None = None, database_by
             summary["sponsor"] = record.get("sponsor")
             summary["specialized"] = record.get("specialized") is True
             summary["derivative"] = record.get("derivative") is True
+            history_path = output_root / "snapshot-history" / f"{code}.json"
+            stored_history = load_json(history_path, [])
+            archive_snapshots = []
+            for archived in archived_by_code.get(code, []):
+                archived["etf_code"] = archived.get("etf_code") or code
+                archived["etf_name"] = record.get("name") or archived.get("etf_name")
+                archived["sponsor"] = record.get("sponsor")
+                archived["specialized"] = record.get("specialized") is True
+                archived["derivative"] = record.get("derivative") is True
+                archive_snapshots.append(archived)
+            snapshot_history = merge_snapshot_history(stored_history, [*archive_snapshots, snapshot])
+            write_json_if_changed(history_path, snapshot_history)
+            summary["periods"] = build_periods(snapshot, snapshot_history)
+            summary["streaks"] = build_streaks(snapshot_history)
+            summary["history_count"] = len(snapshot_history)
+            summary["history_start_date"] = snapshot_history[0].get("fund_date") if snapshot_history else None
             funds.append(summary)
             append_history(output_root / "history" / f"{code}.jsonl", summary)
         except Exception as exc:
@@ -643,6 +831,14 @@ def run_update(root: Path = ROOT, issues_bytes: bytes | None = None, database_by
                 summary["display_name"] = record.get("name")
                 summary["sponsor"] = record.get("sponsor")
                 summary["stale"] = True
+                snapshot_history = merge_snapshot_history(
+                    load_json(output_root / "snapshot-history" / f"{code}.json", []),
+                    archived_by_code.get(code, []),
+                )
+                summary["periods"] = build_periods(previous, snapshot_history)
+                summary["streaks"] = build_streaks(snapshot_history)
+                summary["history_count"] = len(snapshot_history)
+                summary["history_start_date"] = snapshot_history[0].get("fund_date") if snapshot_history else None
                 funds.append(summary)
     funds.sort(
         key=lambda row: (
@@ -660,6 +856,9 @@ def run_update(root: Path = ROOT, issues_bytes: bytes | None = None, database_by
             "jpx_issues_url": JPX_ISSUES_URL,
             "jpx_database_url": JPX_DATABASE_URL,
             "jpx_database_as_of": database_as_of,
+            "ice_zip_list_url": ICE_ZIP_LIST_URL,
+            "ice_archives": archive_names,
+            "ice_archive_error": archive_error,
             "notice": "PCFは前日基準のポートフォリオ情報です。組入変化は売買推奨や当日の市場売買を示しません。設定・解約、企業行動、デリバティブ等の影響を含む場合があります。",
         },
         "summary": {
@@ -670,8 +869,13 @@ def run_update(root: Path = ROOT, issues_bytes: bytes | None = None, database_by
             "unchanged_count": unchanged,
             "error_count": len(errors),
             "latest_fund_date": latest_dates[-1] if latest_dates else None,
+            "history_ready_count": sum(int(row.get("history_count") or 0) > 1 for row in funds),
+            "week_ready_count": sum((row.get("periods") or {}).get("week", {}).get("status") == "ready" for row in funds),
+            "month_ready_count": sum((row.get("periods") or {}).get("month", {}).get("status") == "ready" for row in funds),
         },
         "common_changes": build_common_changes(funds),
+        "stock_lookup": build_stock_lookup(funds),
+        "sponsor_trends": build_sponsor_trends(funds),
         "funds": funds,
         "errors": errors,
     }

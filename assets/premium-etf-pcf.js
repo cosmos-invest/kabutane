@@ -8,9 +8,14 @@
   const gridEl = document.getElementById("pcfFundGrid");
   const emptyEl = document.getElementById("pcfFundEmpty");
   const searchEl = document.getElementById("pcfSearch");
+  const stockSearchEl = document.getElementById("pcfStockSearch");
+  const stockLookupEl = document.getElementById("pcfStockLookup");
+  const sponsorEl = document.getElementById("pcfSponsorTrends");
   const filters = [...document.querySelectorAll("[data-pcf-scope]")];
+  const periodButtons = [...document.querySelectorAll("[data-pcf-period]")];
   let payload = null;
   let scope = "domestic";
+  let period = "week";
 
   function escapeHtml(value) {
     return String(value ?? "").replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char]);
@@ -40,6 +45,7 @@
       ["PCF取得済み", `${number(value.available_count, 0)}本`],
       ["日本株型", `${number(value.domestic_equity_count, 0)}本`],
       ["今回更新", `${number(value.updated_count, 0)}本`],
+      ["週比較可能", `${number(value.week_ready_count, 0)}本`],
       ["取得待ち", `${number(value.error_count, 0)}本`],
     ];
     summaryEl.innerHTML = cards.map(([label, result]) => `<article><span>${label}</span><strong>${result}</strong></article>`).join("");
@@ -74,14 +80,16 @@
   }
 
   function renderFund(fund) {
-    const counts = fund.change_counts || {};
-    const changes = Array.isArray(fund.changes) ? fund.changes : [];
+    const comparison = fund.periods?.[period] || (period === "day" ? { status: "ready", changes: fund.changes, change_counts: fund.change_counts } : { status: "collecting" });
+    const counts = comparison.change_counts || {};
+    const changes = Array.isArray(comparison.changes) ? comparison.changes : [];
     const top = Array.isArray(fund.top_holdings) ? fund.top_holdings : [];
     const changeHtml = changes.length
       ? `<div class="pcf-changes">${changes.slice(0, 5).map(renderChange).join("")}</div>`
-      : fund.baseline
-        ? '<p class="pcf-baseline">初回の基準データを記録しました。次の営業日から増減を表示します。</p>'
+      : comparison.status !== "ready"
+        ? `<p class="pcf-baseline">${period === "month" ? "1か月" : "比較"}分の履歴を収集中です。</p>`
         : '<p class="pcf-baseline">前回から1％以上の実質的な組入数量変化はありません。</p>';
+    const streaks = (fund.streaks || []).slice(0, 3).map((row) => `<span class="pcf-streak ${row.direction === "UP" ? "up" : "down"}">${escapeHtml(row.code || row.name)} ${row.direction === "UP" ? "増加" : "減少"}${number(row.count, 0)}回</span>`).join("");
     const holdings = top.map((row) => {
       const title = row.code ? `<a href="${detailHref(row.code)}">${escapeHtml(row.code)} ${escapeHtml(row.name_ja || row.name || "")}</a>` : escapeHtml(row.name || "");
       return `<tr><td>${title}</td><td>${number(row.weight_pct, 2)}%</td></tr>`;
@@ -89,7 +97,8 @@
     return `<article class="pcf-fund-card">
       <div class="pcf-fund-head">
         <div class="pcf-fund-title"><h3><span>${escapeHtml(fund.code)}</span> ${escapeHtml(fund.display_name || fund.name)}</h3><span>${fund.domestic_equity ? "日本株" : "全資産"}</span></div>
-        <div class="pcf-fund-meta"><span>${escapeHtml(fund.fund_date || "基準日—")}</span><span>${escapeHtml(fund.provider || "配信元—")}</span><span>${number(fund.holding_count, 0)}資産</span>${fund.stale ? "<span>前回データ</span>" : ""}</div>
+        <div class="pcf-fund-meta"><span>${escapeHtml(fund.fund_date || "基準日—")}</span><span>${comparison.baseline_date ? `${escapeHtml(comparison.baseline_date)}と比較` : "比較履歴を収集中"}</span><span>${escapeHtml(fund.provider || "配信元—")}</span><span>${number(fund.holding_count, 0)}資産</span>${fund.stale ? "<span>前回データ</span>" : ""}</div>
+        ${streaks ? `<div class="pcf-streaks">${streaks}</div>` : ""}
         <div class="pcf-change-counts"><span>新規<strong>${number(counts.NEW || 0, 0)}</strong></span><span>増加<strong>${number(counts.INCREASE || 0, 0)}</strong></span><span>減少<strong>${number(counts.DECREASE || 0, 0)}</strong></span><span>除外<strong>${number(counts.REMOVED || 0, 0)}</strong></span></div>
         ${changeHtml}
       </div>
@@ -101,7 +110,7 @@
     const query = String(searchEl?.value || "").trim().toLowerCase();
     return (payload?.funds || []).filter((fund) => {
       if (scope === "domestic" && !fund.domestic_equity) return false;
-      if (scope === "changed" && !(Number(fund.material_change_count) > 0)) return false;
+      if (scope === "changed" && !(Number(fund.periods?.[period]?.material_change_count ?? fund.material_change_count) > 0)) return false;
       if (query) {
         const haystack = `${fund.code || ""} ${fund.display_name || fund.name || ""} ${fund.sponsor || ""}`.toLowerCase();
         if (!haystack.includes(query)) return false;
@@ -126,6 +135,44 @@
     renderFunds();
   }
 
+  function renderStockLookup() {
+    if (!stockLookupEl) return;
+    const query = String(stockSearchEl?.value || "").trim().toLowerCase();
+    if (!query) {
+      stockLookupEl.innerHTML = '<p class="pcf-empty">銘柄コードまたは銘柄名を入力してください。</p>';
+      return;
+    }
+    const rows = (payload?.stock_lookup || []).filter((row) => `${row.code || ""} ${row.name || ""}`.toLowerCase().includes(query));
+    const cards = rows.slice(0, 12).map((row) => {
+      const funds = (row.funds || []).filter((item) => item.period === period);
+      if (!funds.length) return "";
+      return `<article><strong><a href="${detailHref(row.code)}">${escapeHtml(row.code)} ${escapeHtml(row.name || "")}</a></strong><div>${funds.map((item) => `<span class="${changeClass(item.kind)}">${escapeHtml(item.fund_code)} ${changeLabel(item.kind)}</span>`).join("")}</div></article>`;
+    }).filter(Boolean);
+    stockLookupEl.innerHTML = cards.join("") || '<p class="pcf-empty">選択期間に該当する変化はありません。</p>';
+  }
+
+  function renderSponsors() {
+    if (!sponsorEl) return;
+    const rows = payload?.sponsor_trends || [];
+    sponsorEl.innerHTML = rows.map((row) => {
+      const value = row.periods?.[period] || {};
+      const result = value.status === "ready" ? `<b class="up">増加側 ${number(value.up, 0)}</b><b class="down">減少側 ${number(value.down, 0)}</b>` : "<small>履歴収集中</small>";
+      return `<article><strong>${escapeHtml(row.sponsor)}</strong><span>${number(row.fund_count, 0)}本</span><div>${result}</div></article>`;
+    }).join("") || '<p class="pcf-empty">運用会社別データを準備中です。</p>';
+  }
+
+  function setPeriod(next) {
+    period = next;
+    periodButtons.forEach((button) => {
+      const active = button.dataset.pcfPeriod === period;
+      button.classList.toggle("active", active);
+      button.setAttribute("aria-pressed", String(active));
+    });
+    renderFunds();
+    renderStockLookup();
+    renderSponsors();
+  }
+
   async function init() {
     try {
       const response = await fetch("data/premium/etf-pcf/latest.json", { cache: "no-cache" });
@@ -134,6 +181,8 @@
       renderSummary();
       renderCommon();
       renderFunds();
+      renderStockLookup();
+      renderSponsors();
     } catch (error) {
       dateEl.textContent = "データ準備中";
       summaryEl.innerHTML = '<article><span>状態</span><strong>準備中</strong></article>';
@@ -143,6 +192,8 @@
   }
 
   filters.forEach((button) => button.addEventListener("click", () => setScope(button.dataset.pcfScope || "domestic")));
+  periodButtons.forEach((button) => button.addEventListener("click", () => setPeriod(button.dataset.pcfPeriod || "week")));
   searchEl?.addEventListener("input", renderFunds);
+  stockSearchEl?.addEventListener("input", renderStockLookup);
   init();
 })();

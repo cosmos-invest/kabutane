@@ -64,12 +64,12 @@
     const box = document.getElementById("monthlyRsiChart")?.closest(".monthly-rsi-chart-box");
     const canvas = document.getElementById("monthlyRsiChart");
     if (!box || !canvas || canvas.dataset.decisionCompactV6 === "true") return;
-    box.style.setProperty("height", "175px", "important");
-    box.style.setProperty("min-height", "175px", "important");
-    box.style.setProperty("max-height", "175px", "important");
-    canvas.style.setProperty("height", "159px", "important");
+    box.style.setProperty("height", "132px", "important");
+    box.style.setProperty("min-height", "132px", "important");
+    box.style.setProperty("max-height", "132px", "important");
+    canvas.style.setProperty("height", "116px", "important");
     canvas.style.setProperty("min-height", "0", "important");
-    canvas.style.setProperty("max-height", "159px", "important");
+    canvas.style.setProperty("max-height", "116px", "important");
     canvas.style.setProperty("width", "100%", "important");
     canvas.dataset.decisionCompactV6 = "true";
     window.requestAnimationFrame(() => {

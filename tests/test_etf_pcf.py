@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import io
 import unittest
+import zipfile
 from pathlib import Path
 
 from openpyxl import Workbook
@@ -85,6 +86,28 @@ Code,Name,ISIN,Exchange,Currency,Shares Amount,Stock Price
         self.assertEqual(common[0]["code"], "1111")
         self.assertEqual(common[0]["fund_count"], 2)
 
+    def test_reads_official_ice_archive_list_and_members(self):
+        names = pcf.ice_archive_names(b'["all_pcf_20260814.zip","all_pcf_20260817.zip"]')
+        self.assertEqual(names, ["all_pcf_20260817.zip", "all_pcf_20260814.zip"])
+        archive = io.BytesIO()
+        with zipfile.ZipFile(archive, "w") as handle:
+            handle.writestr("2080tsepcf_20260817.csv", SAMPLE_CSV)
+            handle.writestr("1306tsepcf_20260817.csv", SAMPLE_CSV.replace(b"2080,", b"1306,"))
+        snapshots = pcf.snapshots_from_ice_archive(archive.getvalue(), {"2080"})
+        self.assertEqual(list(snapshots), ["2080"])
+
+    def test_builds_day_week_month_comparison_status(self):
+        def snapshot(date: bytes, amount: bytes):
+            content = SAMPLE_CSV.replace(b"20260815", date).replace(b"10000,1000", amount + b",1000")
+            return pcf.enrich_snapshot(pcf.parse_pcf(content), {})
+
+        history = [snapshot(b"20260715", b"8000"), snapshot(b"20260810", b"9000"), snapshot(b"20260814", b"10000"), snapshot(b"20260817", b"12000")]
+        periods = pcf.build_periods(history[-1], history)
+        self.assertEqual(periods["day"]["baseline_date"], "2026-08-14")
+        self.assertEqual(periods["week"]["baseline_date"], "2026-08-10")
+        self.assertEqual(periods["month"]["baseline_date"], "2026-07-15")
+        self.assertTrue(all(value["status"] == "ready" for value in periods.values()))
+
     def test_payload_contract_rejects_duplicate_funds(self):
         payload = {
             "kind": "kabutane_active_etf_pcf",
@@ -109,6 +132,12 @@ Code,Name,ISIN,Exchange,Currency,Shares Amount,Stock Price
         self.assertIn("premium-etf-pcf.html", lab)
         self.assertIn("python -m scripts.update_etf_pcf", workflow)
         self.assertIn("premium-etf-pcf.html", deploy)
+        self.assertIn('data-pcf-period="week"', page)
+        self.assertIn('id="pcfStockLookup"', page)
+        self.assertIn('id="pcfSponsorTrends"', page)
+        script = (root / "assets" / "premium-etf-pcf.js").read_text(encoding="utf-8")
+        self.assertIn("week_ready_count", script)
+        self.assertIn("stock_lookup", script)
 
 
 if __name__ == "__main__":
