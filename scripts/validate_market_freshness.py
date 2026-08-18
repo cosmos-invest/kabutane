@@ -2,10 +2,12 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
+MIN_LATEST_DATE_COVERAGE = 0.90
 
 
 def load_json(path: Path) -> dict[str, Any]:
@@ -23,14 +25,19 @@ def text_date(value: Any) -> str | None:
     return text or None
 
 
-def max_record_price_date(payload: dict[str, Any]) -> str | None:
-    dates = [
-        text_date(item.get("price_date"))
+def record_price_dates(payload: dict[str, Any]) -> list[str]:
+    return [
+        value
         for item in payload.get("records") or []
         if isinstance(item, dict)
+        for value in [text_date(item.get("price_date"))]
+        if value
     ]
-    values = [value for value in dates if value]
-    return max(values) if values else None
+
+
+def max_record_price_date(payload: dict[str, Any]) -> str | None:
+    dates = record_price_dates(payload)
+    return max(dates) if dates else None
 
 
 def daily_price_date(payload: dict[str, Any]) -> str | None:
@@ -44,6 +51,22 @@ def require_not_older(label: str, current: str | None, baseline: str | None) -> 
         raise RuntimeError(f"{label} lost its price date; previous={baseline}")
     if current < baseline:
         raise RuntimeError(f"{label} regressed: {current} < {baseline}")
+
+
+def validate_latest_date_coverage(core: dict[str, Any], core_date: str | None) -> None:
+    if not core_date:
+        raise RuntimeError("core price date is missing")
+    dates = record_price_dates(core)
+    expected = int(core.get("daily_coverage") or core.get("core_count") or len(dates))
+    if expected <= 0:
+        raise RuntimeError("core daily coverage is missing")
+    latest_count = sum(value == core_date for value in dates)
+    minimum = max(1, math.ceil(expected * MIN_LATEST_DATE_COVERAGE))
+    if latest_count < minimum:
+        raise RuntimeError(
+            "core latest-date coverage is too low: "
+            f"date={core_date} latest={latest_count} expected={expected} minimum={minimum}"
+        )
 
 
 def validate_daily_regression(daily: dict[str, Any], baseline_daily: dict[str, Any] | None = None) -> str | None:
@@ -65,9 +88,12 @@ def validate_full_freshness(
     premium_date = text_date(premium.get("price_date"))
     previous_core_date = max_record_price_date(baseline_core or {})
 
+    if not daily_date:
+        raise RuntimeError("daily price date is missing")
     require_not_older("core price date", core_date, previous_core_date)
-    if daily_date and (not core_date or core_date < daily_date):
-        raise RuntimeError(f"core is older than daily: core={core_date} daily={daily_date}")
+    validate_latest_date_coverage(core, core_date)
+    if core_date != daily_date:
+        raise RuntimeError(f"daily/core price date mismatch: daily={daily_date} core={core_date}")
     if core_date != premium_date:
         raise RuntimeError(f"premium/core price date mismatch: premium={premium_date} core={core_date}")
 
