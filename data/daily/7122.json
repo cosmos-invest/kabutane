@@ -2,12 +2,12 @@
   "code": "7122",
   "ticker": "7122.T",
   "name": "近畿車輛",
-  "generated_at": "2026-08-17T18:57:40.046383+00:00",
-  "price_date": "2026-08-14",
+  "generated_at": "2026-08-17T12:33:44.025510+00:00",
+  "price_date": "2026-08-17",
   "record": {
-    "current_price": 2338.0,
-    "change_from_signal_month_pct": -0.21,
-    "return_since_gc_pct": -2.75
+    "current_price": 2362.0,
+    "change_from_signal_month_pct": 0.81,
+    "return_since_gc_pct": -1.75
   },
   "daily": [
     {
@@ -74,22 +74,35 @@
       "sma200": 2385.15,
       "rsi14": 58.44,
       "rsi5": 59.17
+    },
+    {
+      "date": "2026-08-17",
+      "open": 2341.0,
+      "high": 2368.0,
+      "low": 2341.0,
+      "close": 2362.0,
+      "volume": 4100.0,
+      "sma25": 2344.56,
+      "sma75": 2348.43,
+      "sma200": 2384.61,
+      "rsi14": 58.44,
+      "rsi5": 59.17
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-14",
-    "monthly_rsi14": 56.66,
-    "monthly_rsi_ma5": 57.09,
-    "spread": -0.43,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-17",
+    "monthly_rsi14": 57.38,
+    "monthly_rsi_ma5": 57.23,
+    "spread": 0.14,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-17T18:58:38.649934+00:00"
+  "provisional_generated_at": "2026-08-17T12:34:46.882480+00:00"
 }

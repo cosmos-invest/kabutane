@@ -2,7 +2,7 @@ name: Deploy GitHub Pages
 
 on:
   workflow_run:
-    workflows: ["Update daily candidate prices", "Update monthly RSI data", "Audit data quality", "Update JPX margin balance", "Update extended listed universe", "Update core universe data", "Update premium engine research"]
+    workflows: ["Update monthly RSI data", "Audit data quality", "Update JPX margin balance", "Update extended listed universe", "Update core universe data", "Update premium engine research"]
     types: [completed]
   push:
     branches: ["main"]
@@ -17,6 +17,7 @@ on:
       - "out.csv"
       - "validate_data_contract.py"
       - "scripts/public_core_radar.py"
+      - "scripts/validate_market_freshness.py"
       - ".nojekyll"
       - ".github/workflows/deploy-pages.yml"
   workflow_dispatch:
@@ -28,15 +29,14 @@ permissions:
 
 concurrency:
   group: pages
-  # A failed updater must not cancel a deployment that already passed validation.
   cancel-in-progress: false
 
 jobs:
   deploy:
     if: >-
-      github.event_name == 'push' ||
+      (github.event_name == 'push' &&
+       !startsWith(github.event.head_commit.message, 'chore: update daily prices')) ||
       github.event_name == 'workflow_dispatch' ||
-      (github.event_name == 'pull_request' && github.event.pull_request.merged == true) ||
       (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success')
     environment:
       name: github-pages
@@ -54,6 +54,9 @@ jobs:
       - name: Build public-safe all-stock radar
         run: python -m scripts.public_core_radar
 
+      - name: Validate daily/core/ROOM freshness
+        run: python scripts/validate_market_freshness.py
+
       - name: Prepare site
         run: |
           mkdir -p _site
@@ -64,10 +67,8 @@ jobs:
             manifest.webmanifest sw.js .nojekyll result.csv out.csv stocks.csv \
             _site/
           cp -R assets data history ranking monthly-report _site/
-          # Discovery of provisional GC stays premium-only. The public all-stock
+          # Discovery of provisional GC stays ROOM-only. The public all-stock
           # page uses public-radar.json, so the raw batch radar is not published.
-          # Individual detail payloads and hand-picked local watchlists intentionally
-          # keep provisional GC/DC for codes the user already chose to inspect.
           rm -f _site/data/core/radar.json
 
       - name: Verify public pages and PWA files
