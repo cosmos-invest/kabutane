@@ -131,6 +131,12 @@ const DetailEnhancements = (() => {
       </article>`;
   }
 
+  function focusType(record) {
+    if (record?.cosmos_focus_type === "MVP") return "MVP加速型";
+    if (record?.cosmos_focus_type === "BREAKOUT") return "新高値型";
+    return "両方適合";
+  }
+
   function renderFocus(record) {
     const focus = document.getElementById("detailFocus");
     if (!focus) return;
@@ -138,16 +144,188 @@ const DetailEnhancements = (() => {
     focus.hidden = !visible;
     focus.setAttribute("aria-hidden", visible ? "false" : "true");
     focus.style.setProperty("display", visible ? "inline-flex" : "none", "important");
-    if (visible) {
-      const type = record.cosmos_focus_type === "MVP"
-        ? "MVP加速型"
-        : record.cosmos_focus_type === "BREAKOUT"
-          ? "新高値型"
-          : "両方適合";
-      focus.textContent = `🌸 コスモス注目・${type}`;
-    } else {
-      focus.textContent = "";
+    if (visible) focus.textContent = `🌸 コスモス注目・${focusType(record)}`;
+    else focus.textContent = "";
+  }
+
+  function confirmedStatusLabel(record) {
+    const status = String(record?.status || "").toUpperCase();
+    if (status === "NEW") return "月足：確定NEW";
+    if (status === "OUT") return "月足：確定OUT";
+    if (status === "CONTINUE") return "月足：上側を継続";
+    return "月足：確認中";
+  }
+
+  function momentumLabel(record) {
+    const up = record?.monthly_rsi14_up ?? record?.rsi5_up;
+    if (up === true) return "勢い：上向き";
+    if (up === false) return "勢い：下向き";
+    return "勢い：確認中";
+  }
+
+  function relationLabel(record) {
+    const spread = finite(record?.monthly_rsi_spread ?? record?.diff);
+    if (spread === null) return "5か月MAとの位置：確認中";
+    if (spread > 0) return "RSIは5か月MAより上";
+    if (spread < 0) return "RSIは5か月MAより下";
+    return "RSIと5か月MAが同水準";
+  }
+
+  function provisionalLabel(payload) {
+    const signal = payload?.provisional_signal;
+    const status = String(signal?.status || "").toUpperCase();
+    if (status === "GC") return "今月：暫定GCを観察中";
+    if (status === "DC") return "今月：暫定DCを観察中";
+    return null;
+  }
+
+  function ensureQuickRead(payload) {
+    const main = document.querySelector("main.container");
+    if (!main) return null;
+    let section = document.getElementById("detailQuickRead");
+    if (!section) {
+      section = document.createElement("section");
+      section.id = "detailQuickRead";
+      section.className = "panel detail-quick-read";
+      section.innerHTML = `
+        <div class="detail-quick-read-heading">
+          <div><span>まずここだけ</span><h2>月足RSIから、いまの勢いを見る</h2></div>
+          <p>最初から全部の数字を読まなくて大丈夫。まずは「上か下か」「勢いが続いているか」だけ見ます。</p>
+        </div>
+        <div id="detailQuickReadChips" class="detail-quick-read-chips" aria-label="月足RSIの要点"></div>
+        <div id="cosmosFocusGuide" class="cosmos-focus-guide" hidden>
+          <div class="cosmos-focus-avatar" aria-hidden="true">
+            <img id="cosmosFocusGuideImage" hidden alt="">
+            <span id="cosmosFocusGuideFallback">🌸</span>
+          </div>
+          <div class="cosmos-focus-copy"><span>コスモス注目</span><strong id="cosmosFocusGuideType">—</strong><p>ここはあとからコスモスの画像を置けるようにしてあります。今は注目タイプだけ先に表示します。</p></div>
+        </div>`;
     }
+
+    const record = payload?.record || {};
+    const chips = document.getElementById("detailQuickReadChips");
+    if (chips) {
+      const labels = [confirmedStatusLabel(record), momentumLabel(record), relationLabel(record)];
+      const provisional = provisionalLabel(payload);
+      if (provisional) labels.push(provisional);
+      chips.innerHTML = "";
+      labels.forEach((label, index) => {
+        const item = document.createElement("span");
+        item.className = `detail-quick-chip quick-chip-${index + 1}`;
+        item.textContent = label;
+        chips.appendChild(item);
+      });
+    }
+
+    const guide = document.getElementById("cosmosFocusGuide");
+    const guideType = document.getElementById("cosmosFocusGuideType");
+    if (guide && record.cosmos_focus === true) {
+      guide.hidden = false;
+      if (guideType) guideType.textContent = focusType(record);
+    } else if (guide) {
+      guide.hidden = true;
+    }
+    return section;
+  }
+
+  function ensureSupplementalDetails() {
+    const main = document.querySelector("main.container");
+    if (!main) return null;
+    let details = document.getElementById("detailSupplementalDetails");
+    if (!details) {
+      details = document.createElement("details");
+      details.id = "detailSupplementalDetails";
+      details.className = "panel detail-supplemental-details";
+      details.innerHTML = `
+        <summary>
+          <span><small>補足情報</small><strong>詳しい数字・判定ルールを見る</strong></span>
+          <em>必要なときだけ開く ＋</em>
+        </summary>
+        <div class="detail-supplemental-body">
+          <p class="detail-supplemental-intro">現在値やRSIの細かな数値、確定・暫定の判定根拠、計算ルールをまとめています。最初は飛ばしても大丈夫です。</p>
+          <div id="detailStatsSlot" class="detail-stats-slot"></div>
+          <div id="detailGeneratedInfoSlot" class="detail-generated-info-slot"></div>
+          <div id="detailDefinitionSlot" class="detail-definition-slot"></div>
+        </div>`;
+      const anchor = main.querySelector(".advanced-panel") || main.querySelector(".quickstart-banner") || main.lastElementChild;
+      if (anchor) anchor.insertAdjacentElement("beforebegin", details);
+      else main.appendChild(details);
+    }
+
+    const stats = document.getElementById("detailStats");
+    const statsSlot = document.getElementById("detailStatsSlot");
+    if (stats && statsSlot && stats.parentElement !== statsSlot) statsSlot.appendChild(stats);
+    return details;
+  }
+
+  function dockSupplementalPanels() {
+    const main = document.querySelector("main.container");
+    const details = ensureSupplementalDetails();
+    if (!main || !details) return;
+
+    const generatedSlot = document.getElementById("detailGeneratedInfoSlot");
+    const definitionSlot = document.getElementById("detailDefinitionSlot");
+    const monthlySnapshot = document.getElementById("monthlySignalSnapshot");
+    if (monthlySnapshot && generatedSlot && !generatedSlot.contains(monthlySnapshot)) {
+      generatedSlot.appendChild(monthlySnapshot);
+    }
+
+    if (!definitionSlot) return;
+    [...main.querySelectorAll(".panel")].forEach((panel) => {
+      if (panel === details || details.contains(panel)) return;
+      const copy = panel.textContent || "";
+      if (copy.includes("OFFICIAL SIGNAL DEFINITION")) definitionSlot.appendChild(panel);
+    });
+  }
+
+  function organizePrimaryFlow(payload) {
+    const main = document.querySelector("main.container");
+    if (!main) return;
+    const quickRead = ensureQuickRead(payload);
+    const rsiPanel = document.getElementById("rsiChart")?.closest(".panel");
+    const dailyPanel = document.getElementById("volumeProfilePanel");
+    const roadmap = main.querySelector(".analysis-roadmap");
+    const journeyRule = main.querySelector(".journey-rule");
+    const errorBanner = main.querySelector(":scope > .error-banner");
+
+    if (rsiPanel) {
+      rsiPanel.id = rsiPanel.id || "monthlyRsiPanel";
+      rsiPanel.classList.add("detail-primary-rsi-panel");
+    }
+
+    if (quickRead) {
+      if (errorBanner) errorBanner.insertAdjacentElement("afterend", quickRead);
+      else main.prepend(quickRead);
+    }
+    if (quickRead && rsiPanel) quickRead.insertAdjacentElement("afterend", rsiPanel);
+    if (rsiPanel && dailyPanel) rsiPanel.insertAdjacentElement("afterend", dailyPanel);
+    if (dailyPanel && roadmap) dailyPanel.insertAdjacentElement("afterend", roadmap);
+    if (roadmap && journeyRule) roadmap.insertAdjacentElement("afterend", journeyRule);
+
+    const firstStep = roadmap?.querySelector('a[href="#volumeProfilePanel"]');
+    if (firstStep && rsiPanel?.id) {
+      firstStep.href = `#${rsiPanel.id}`;
+      const small = firstStep.querySelector("small");
+      if (small) small.textContent = "月足RSI → 日足・出来高";
+    }
+
+    ensureSupplementalDetails();
+    dockSupplementalPanels();
+  }
+
+  function watchGeneratedLayout(payload) {
+    if (!document.body || document.body.dataset.detailLayoutObserver === "1") return;
+    document.body.dataset.detailLayoutObserver = "1";
+    if (!("MutationObserver" in window)) return;
+    let timer = 0;
+    const observer = new MutationObserver(() => {
+      window.clearTimeout(timer);
+      timer = window.setTimeout(() => {
+        dockSupplementalPanels();
+        ensureQuickRead(payload);
+      }, 40);
+    });
+    observer.observe(document.querySelector("main.container") || document.body, { childList: true, subtree: true });
   }
 
   function syncStickyPriceFromStats(fallbackPrice = null) {
@@ -270,7 +448,7 @@ const DetailEnhancements = (() => {
   function repairRsiExplanation() {
     const explanation = document.getElementById("rsiExplanation");
     if (!explanation) return;
-    explanation.textContent = "月足RSI14はTradingViewと同じWilder方式で計算し、5か月MAはそのRSI14の直近5か月単純平均です。緑のGC線はRSI14が5か月MAを上抜けた翌月最初の取引日、赤のDC線は下抜けた翌月最初の取引日を示します。";
+    explanation.textContent = "実線は月末確定値、点線は進行中月の観察値です。まずは2本の位置と向きを見てください。詳しい計算ルールはページ下の「詳しい数字・判定ルール」にまとめています。";
     explanation.setAttribute("data-signal-canonical", "true");
   }
 
@@ -287,6 +465,7 @@ const DetailEnhancements = (() => {
     renderStickyIdentity(payload);
     renderEvents(payload);
     repairRsiExplanation();
+    organizePrimaryFlow(payload);
   }
 
   async function init() {
@@ -294,11 +473,13 @@ const DetailEnhancements = (() => {
     try {
       const payload = await fetchPayload();
       if (!payload) return;
+      organizePrimaryFlow(payload);
+      watchGeneratedLayout(payload);
       let attempts = 0;
       const applyAfterBaseRenderer = () => {
         applyPayload(payload);
         attempts += 1;
-        if (attempts < 6) window.setTimeout(applyAfterBaseRenderer, 180);
+        if (attempts < 8) window.setTimeout(applyAfterBaseRenderer, 180);
       };
       applyAfterBaseRenderer();
     } catch (error) {
@@ -312,6 +493,10 @@ const DetailEnhancements = (() => {
     deriveHighlights,
     dedupeFutureEvents,
     renderFocus,
+    ensureQuickRead,
+    ensureSupplementalDetails,
+    dockSupplementalPanels,
+    organizePrimaryFlow,
     renderStickyIdentity,
     syncStickyPriceFromStats,
     renderEvents,
