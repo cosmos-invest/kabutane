@@ -3,42 +3,11 @@ name: Update daily candidate prices
 on:
   workflow_dispatch:
   schedule:
-    # 平日21:00 JST。GitHub Actionsの混雑時は開始が遅れる場合があります。
+    # 平日21:00 JST。市場終了後だけ本番データを更新する。
     - cron: "0 12 * * 1-5"
-  push:
-    branches: ["main"]
-    paths:
-      - "update_daily.py"
-      - "provisional_signal.py"
-      - "build_market_reports.py"
-      - "build_daily_snapshot.py"
-      - "build_daily_events.py"
-      - "build_shikiho_room.py"
-      - "build_shikiho_room_v2.py"
-      - "validate_data_contract.py"
-      - "validate_daily_derived_contract.py"
-      - "scripts/public_core_radar.py"
-      - "scripts/update_etf_pcf.py"
-      - "data/curated/shikiho-2026-summer.json"
-      - "tests/test_update_daily.py"
-      - "tests/test_provisional_signal.py"
-      - "tests/test_market_reports.py"
-      - "tests/test_daily_snapshot.py"
-      - "tests/test_daily_events.py"
-      - "tests/test_shikiho_room.py"
-      - "tests/test_shikiho_room_v2.py"
-      - "tests/test_data_contract.py"
-      - "tests/test_daily_derived_contract.py"
-      - "tests/test_etf_pcf.py"
-      - "premium-etf-pcf.html"
-      - "assets/premium-etf-pcf.css"
-      - "assets/premium-etf-pcf.js"
-      - ".github/workflows/update-daily.yml"
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
 concurrency:
   group: market-data-writes
@@ -46,15 +15,14 @@ concurrency:
 
 jobs:
   update:
-    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     timeout-minutes: 90
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Checkout
+      - name: Checkout latest main
         uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -67,7 +35,7 @@ jobs:
 
       - name: Validate updater
         run: |
-          python -m py_compile update_daily.py provisional_signal.py build_market_reports.py build_daily_snapshot.py build_daily_events.py build_shikiho_room.py build_shikiho_room_v2.py validate_data_contract.py validate_daily_derived_contract.py scripts/public_core_radar.py scripts/update_etf_pcf.py tests/test_update_daily.py tests/test_provisional_signal.py tests/test_market_reports.py tests/test_daily_snapshot.py tests/test_daily_events.py tests/test_shikiho_room.py tests/test_shikiho_room_v2.py tests/test_data_contract.py tests/test_daily_derived_contract.py tests/test_today_page.py tests/test_etf_pcf.py
+          python -m py_compile update_daily.py provisional_signal.py build_market_reports.py build_daily_snapshot.py build_daily_events.py build_shikiho_room.py build_shikiho_room_v2.py validate_data_contract.py validate_daily_derived_contract.py scripts/public_core_radar.py scripts/update_etf_pcf.py scripts/validate_market_freshness.py tests/test_update_daily.py tests/test_provisional_signal.py tests/test_market_reports.py tests/test_daily_snapshot.py tests/test_daily_events.py tests/test_shikiho_room.py tests/test_shikiho_room_v2.py tests/test_data_contract.py tests/test_daily_derived_contract.py tests/test_today_page.py tests/test_etf_pcf.py tests/test_market_freshness.py
           python -m unittest discover -s tests -p 'test_update_daily.py' -v
           python -m unittest discover -s tests -p 'test_provisional_signal.py' -v
           python -m unittest discover -s tests -p 'test_market_reports.py' -v
@@ -78,10 +46,14 @@ jobs:
           python -m unittest discover -s tests -p 'test_daily_derived_contract.py' -v
           python -m unittest discover -s tests -p 'test_today_page.py' -v
           python -m unittest discover -s tests -p 'test_etf_pcf.py' -v
+          python -m unittest discover -s tests -p 'test_market_freshness.py' -v
           node --check assets/today-kabutane.js
           node --check assets/all-stocks.js
           node --check assets/core-detail-fallback.js
           node --check assets/premium-etf-pcf.js
+
+      - name: Preserve previous daily date
+        run: cp data/daily-update-status.json /tmp/daily-status-before.json
 
       - name: Download incremental daily prices
         env:
@@ -93,6 +65,9 @@ jobs:
           python build_market_reports.py
           python build_shikiho_room_v2.py
           python -m scripts.update_etf_pcf
+
+      - name: Reject date regression
+        run: python scripts/validate_market_freshness.py --daily-only --baseline-daily /tmp/daily-status-before.json
 
       - name: Validate generated data contract
         run: python validate_data_contract.py
@@ -110,110 +85,8 @@ jobs:
           git add data/latest.json data/daily data/daily-update-status.json data/ranking.json data/daily-change.json data/monthly-report.json data/daily-snapshot.json data/daily-events.json data/premium/etf-pcf history/daily history/daily-events data/curated/shikiho-2026-summer-performance.json result.csv
           if git diff --cached --quiet; then
             echo "No daily price changes"
-          else
-            git commit -m "chore: update daily prices, rankings and Shikiho room"
-            git push origin main
+            exit 0
           fi
-
-      - name: Build public-safe all-stock radar
-        run: python -m scripts.public_core_radar
-
-      - name: Prepare current data for GitHub Pages
-        run: |
-          rm -rf _site
-          mkdir -p _site
-          cp \
-            index.html detail.html backtest.html replay.html replay-select.html howto.html learn.html signal-method.html \
-            ranking.html monthly-report.html monthly-strategy.html history.html shikiho-summer-2026.html today.html all-stocks.html monthly-dc.html watchlist.html \
-            premium-supply-beta.html premium-etf-pcf.html large-holdings.html \
-            manifest.webmanifest sw.js .nojekyll result.csv out.csv stocks.csv \
-            _site/
-          cp -R assets data history ranking monthly-report _site/
-          # The public catalog must not expose a batch list of provisional GC.
-          # Individual detail payloads intentionally keep provisional GC/DC.
-          rm -f _site/data/core/radar.json
-          test -f _site/replay-select.html
-          test -f _site/today.html
-          test -f _site/all-stocks.html
-          test -f _site/watchlist.html
-          test -f _site/stocks.csv
-          test -f _site/monthly-dc.html
-          test -f _site/assets/all-stocks.js
-          test -f _site/assets/all-stocks.css
-          test -f _site/premium-supply-beta.html
-          test -f _site/premium-etf-pcf.html
-          test -f _site/large-holdings.html
-          test -f _site/assets/premium-supply-beta.js
-          test -f _site/assets/premium-etf-pcf.css
-          test -f _site/assets/premium-etf-pcf.js
-          test -f _site/data/premium/etf-pcf/latest.json
-          test -f _site/assets/large-holdings.js
-          test -f _site/assets/beginner-journey.css
-          test -f _site/data/large-holdings/latest.json
-          grep -q '迷ったら、4つの問いを順番に' _site/index.html
-          grep -q 'STEP 4 — 大口' _site/detail.html
-          test -f _site/assets/core-detail-fallback.js
-          test -f _site/assets/replay-stock-select.js
-          test -f _site/assets/today-kabutane.css
-          test -f _site/assets/today-kabutane.js
-          test -f _site/data/core/public-radar.json
-          test ! -f _site/data/core/radar.json
-          test -f _site/data/latest.json
-          test -f _site/data/daily-update-status.json
-          test -f _site/data/ranking.json
-          test -f _site/data/daily-change.json
-          test -f _site/data/daily-snapshot.json
-          test -f _site/data/daily-events.json
-          test -f _site/data/curated/shikiho-2026-summer.json
-          test -f _site/data/curated/shikiho-2026-summer-performance.json
-          test -f _site/shikiho-summer-2026.html
-          grep -q 'all-stocks.html' _site/index.html
-          grep -q 'data/core/public-radar.json' _site/assets/all-stocks.js
-          ! grep -q 'fetch(`data/core/radar.json' _site/assets/all-stocks.js
-          ! grep -q '"provisional_status":"GC"' _site/data/core/public-radar.json
-          ! grep -q 'monthly_rsi_spread' _site/data/core/public-radar.json
-          grep -q '暫定GC / 暫定DC' _site/detail.html
-          python - <<'PY'
-          import json
-          from pathlib import Path
-
-          latest = json.loads(Path('_site/data/latest.json').read_text(encoding='utf-8'))
-          daily = json.loads(Path('_site/data/daily-update-status.json').read_text(encoding='utf-8'))
-          ranking = json.loads(Path('_site/data/ranking.json').read_text(encoding='utf-8'))
-          snapshot = json.loads(Path('_site/data/daily-snapshot.json').read_text(encoding='utf-8'))
-          events = json.loads(Path('_site/data/daily-events.json').read_text(encoding='utf-8'))
-          shikiho = json.loads(Path('_site/data/curated/shikiho-2026-summer-performance.json').read_text(encoding='utf-8'))
-          if daily.get('price_date') != ranking.get('price_date'):
-              raise SystemExit(f"Daily/ranking date mismatch: {daily.get('price_date')} != {ranking.get('price_date')}")
-          if latest.get('daily_price_date') not in (None, daily.get('price_date')):
-              raise SystemExit(f"Latest/daily date mismatch: {latest.get('daily_price_date')} != {daily.get('price_date')}")
-          if snapshot.get('price_date') not in (None, daily.get('price_date')):
-              raise SystemExit(f"Snapshot/daily date mismatch: {snapshot.get('price_date')} != {daily.get('price_date')}")
-          if events.get('snapshot_date') != snapshot.get('snapshot_date'):
-              raise SystemExit(f"Events/snapshot date mismatch: {events.get('snapshot_date')} != {snapshot.get('snapshot_date')}")
-          if events.get('cost_policy') != 'paid_api_disabled':
-              raise SystemExit('Daily event feed must keep paid APIs disabled')
-          if shikiho.get('record_count') != 20:
-              raise SystemExit(f"Shikiho room record count mismatch: {shikiho.get('record_count')}")
-          if shikiho.get('baseline_date') != '2026-06-18':
-              raise SystemExit(f"Shikiho baseline mismatch: {shikiho.get('baseline_date')}")
-          suspicious = [
-              row for row in shikiho.get('records', [])
-              if row.get('return_pct') is not None and abs(float(row['return_pct'])) >= 200
-          ]
-          if suspicious:
-              raise SystemExit(f"Suspicious split-adjusted returns: {[(r.get('code'), r.get('return_pct')) for r in suspicious]}")
-          print(f"Publishing daily price date: {daily.get('price_date')}; events: {events.get('summary', {}).get('event_count')}; Shikiho latest: {shikiho.get('latest_price_date')}")
-          PY
-
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload current Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: _site
-
-      - name: Deploy current daily data to Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          git commit -m "chore: update daily prices, rankings and Shikiho room"
+          git pull --rebase origin main
+          git push origin main

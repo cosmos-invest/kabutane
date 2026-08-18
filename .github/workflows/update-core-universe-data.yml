@@ -6,38 +6,20 @@ on:
       - 'scripts/build_core_universe_data.py'
       - 'scripts/build_premium_lab.py'
       - 'scripts/public_core_radar.py'
-      - 'assets/core-detail-fallback.js'
-      - 'assets/premium-supply-beta.js'
-      - 'assets/premium-supply-beta.css'
-      - 'premium-supply-beta.html'
-      - 'detail.html'
+      - 'scripts/validate_market_freshness.py'
       - 'tests/test_core_universe_data.py'
-      - 'tests/test_core_detail_fallback.js'
       - 'tests/test_premium_lab.py'
       - 'tests/test_public_core_radar.py'
+      - 'tests/test_market_freshness.py'
       - '.github/workflows/update-core-universe-data.yml'
-  push:
-    branches: [main]
-    paths:
-      - 'scripts/build_core_universe_data.py'
-      - 'scripts/build_premium_lab.py'
-      - 'scripts/public_core_radar.py'
-      - 'assets/core-detail-fallback.js'
-      - 'assets/premium-supply-beta.js'
-      - 'assets/premium-supply-beta.css'
-      - 'premium-supply-beta.html'
-      - 'detail.html'
-      - '.github/workflows/update-core-universe-data.yml'
-  schedule:
-    # 平日21:35 JST。通常の日次更新後に全通常株の暫定月足判定を更新する。
-    - cron: '35 12 * * 1-5'
+  workflow_run:
+    workflows: ["Update daily candidate prices"]
+    types: [completed]
   workflow_dispatch:
 
 permissions:
   contents: write
 
-# PRに追加コミットが入ったら古い全銘柄テストを止める。
-# mainの定期更新は途中でキャンセルしない。
 concurrency:
   group: core-universe-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
@@ -58,8 +40,8 @@ jobs:
         run: pip install -r requirements.txt
       - name: Unit and syntax checks
         run: |
-          python -m py_compile scripts/build_core_universe_data.py scripts/build_premium_lab.py scripts/public_core_radar.py tests/test_core_universe_data.py tests/test_premium_lab.py tests/test_public_core_radar.py
-          python -m unittest tests.test_core_universe_data tests.test_premium_lab tests.test_public_core_radar -v
+          python -m py_compile scripts/build_core_universe_data.py scripts/build_premium_lab.py scripts/public_core_radar.py scripts/validate_market_freshness.py tests/test_core_universe_data.py tests/test_premium_lab.py tests/test_public_core_radar.py tests/test_market_freshness.py
+          python -m unittest tests.test_core_universe_data tests.test_premium_lab tests.test_public_core_radar tests.test_market_freshness -v
           node --check assets/core-detail-fallback.js
           node --check assets/premium-supply-beta.js
           node tests/test_core_detail_fallback.js
@@ -85,6 +67,7 @@ jobs:
 
   live-sample:
     needs: validate
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -117,9 +100,7 @@ jobs:
               raise SystemExit('public sample leaked provisional GC in all-stock catalog')
           if any('monthly_rsi_spread' in row for row in public.get('records') or []):
               raise SystemExit('public sample leaked current-month RSI spread in all-stock catalog')
-          note = next(row for row in radar['records'] if str(row.get('code')) == '5243')
-          print('5243 individual/raw status:', note.get('provisional_status'), 'spread:', note.get('monthly_rsi_spread'))
-          print('public list records:', len(public.get('records') or []))
+          print('core live sample OK')
           PY
 
   detect-heavy-change:
@@ -181,8 +162,12 @@ jobs:
           PY
 
   update:
-    needs: [validate, live-sample]
-    if: github.event_name != 'pull_request'
+    needs: validate
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'workflow_run' &&
+       github.event.workflow_run.conclusion == 'success' &&
+       github.event.workflow_run.event != 'pull_request')
     runs-on: ubuntu-latest
     timeout-minutes: 90
     concurrency:
@@ -199,6 +184,8 @@ jobs:
           cache: pip
       - name: Install dependencies
         run: pip install -r requirements.txt
+      - name: Preserve previous core date
+        run: cp data/core/radar.json /tmp/core-radar-before.json
       - name: Refresh core catalog
         run: python update_universe.py
       - name: Build all-core radar, chart data and finance cache
@@ -208,10 +195,7 @@ jobs:
           FUND_LIMIT=600
           CURRENT_UNIVERSE_HASH="$(sha256sum stocks.csv | awk '{print $1}')"
           STORED_UNIVERSE_HASH="$(cat data/core/universe.sha256 2>/dev/null || true)"
-          # Initial deployment, a changed core universe, or the first Monday of
-          # a month refreshes the one-year base. Ordinary weekdays update only
-          # the 25-day overlay and provisional signal, limiting repo growth.
-          if [ "${{ github.event_name }}" = "push" ] || [ ! -f data/core/manifest.json ]; then
+          if [ ! -f data/core/manifest.json ]; then
             REFRESH="--refresh-base"
             FUND_LIMIT=1200
           elif [ "$CURRENT_UNIVERSE_HASH" != "$STORED_UNIVERSE_HASH" ]; then
@@ -227,8 +211,9 @@ jobs:
           python scripts/build_supply_demand_screen.py
           python -m scripts.build_premium_lab
           python -m scripts.public_core_radar
-      - name: Validate production coverage
+      - name: Validate production coverage and freshness
         run: |
+          python scripts/validate_market_freshness.py --baseline-core /tmp/core-radar-before.json
           python - <<'PY'
           import json
           from pathlib import Path
