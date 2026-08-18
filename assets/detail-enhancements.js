@@ -1,4 +1,10 @@
 const DetailEnhancements = (() => {
+  const CHARACTER_ASSETS = {
+    cosmos: "assets/characters/detail-cosmos-guide.webp",
+    aile: "assets/characters/detail-aile-guide.webp",
+    lumo: "assets/characters/detail-lumo-guide.webp",
+  };
+
   const finite = (value) => {
     if (value === null || value === undefined || value === "") return null;
     const parsed = Number(value);
@@ -98,6 +104,14 @@ const DetailEnhancements = (() => {
     return null;
   }
 
+  function characterRouteMarkup() {
+    return `<div class="detail-character-route" aria-label="3人と見る順番">
+      <div><img src="${CHARACTER_ASSETS.cosmos}" alt=""><span><b>1 日足</b><small>まず形を見る</small></span></div>
+      <div><img src="${CHARACTER_ASSETS.lumo}" alt=""><span><b>2 月足RSI</b><small>勢いを見る</small></span></div>
+      <div><img src="${CHARACTER_ASSETS.aile}" alt=""><span><b>3 詳細</b><small>必要な時だけ</small></span></div>
+    </div>`;
+  }
+
   function ensureQuickRead(payload) {
     const main = document.querySelector("main.container");
     if (!main) return null;
@@ -106,7 +120,7 @@ const DetailEnhancements = (() => {
       section = document.createElement("section");
       section.id = "detailQuickRead";
       section.className = "panel detail-quick-read";
-      section.innerHTML = `<div class="detail-quick-read-heading"><div><span>まずここだけ</span><h2>月足RSIから、いまの勢いを見る</h2></div><p>最初から全部の数字を読まなくて大丈夫。まずは「上か下か」「勢いが続いているか」だけ見ます。</p></div><div id="detailQuickReadChips" class="detail-quick-read-chips" aria-label="月足RSIの要点"></div><div id="cosmosFocusGuide" class="cosmos-focus-guide" hidden><div class="cosmos-focus-avatar" aria-hidden="true"><img id="cosmosFocusGuideImage" hidden alt=""><span id="cosmosFocusGuideFallback">🌸</span></div><div class="cosmos-focus-copy"><span>コスモス注目</span><strong id="cosmosFocusGuideType">—</strong><p>画像素材を追加できる受け皿を用意済みです。今は注目タイプだけ表示します。</p></div></div>`;
+      section.innerHTML = `<div class="detail-quick-read-heading"><div><span>まずここだけ</span><h2>チャートを2つだけ、順番に見る</h2></div><p>最初から全部の数字を読まなくて大丈夫。日足チャートで値動きの形を見て、そのあと月足RSIで勢いを確認します。</p></div><div id="detailQuickReadChips" class="detail-quick-read-chips" aria-label="月足RSIの要点"></div>${characterRouteMarkup()}<div id="cosmosFocusGuide" class="cosmos-focus-guide" hidden><div class="cosmos-focus-avatar" aria-hidden="true"><img id="cosmosFocusGuideImage" src="${CHARACTER_ASSETS.cosmos}" alt=""><span id="cosmosFocusGuideFallback">🌸</span></div><div class="cosmos-focus-copy"><span>コスモス注目</span><strong id="cosmosFocusGuideType">—</strong><p>コスモスが特に気になった銘柄だけ表示します。まず日足の形を見て、月足RSIの勢いと重なるか確認してみよう🌸</p></div></div>`;
     }
     const record = payload?.record || {};
     const labels = [confirmedStatusLabel(record), momentumLabel(record), relationLabel(record)];
@@ -164,6 +178,24 @@ const DetailEnhancements = (() => {
     });
   }
 
+  function decorateTakeaway(selector, character, label) {
+    const node = document.querySelector(selector);
+    if (!node || node.querySelector(".detail-character-avatar")) return;
+    const image = document.createElement("img");
+    image.className = `detail-character-avatar detail-character-${character}`;
+    image.src = CHARACTER_ASSETS[character];
+    image.alt = `${label}の案内`;
+    node.prepend(image);
+    node.classList.add("has-character-avatar");
+  }
+
+  function hydrateCharacterGuides() {
+    decorateTakeaway("#volumeProfilePanel .beginner-takeaway", "cosmos", "コスモス");
+    decorateTakeaway("#monthlyRsiPanel .beginner-takeaway", "lumo", "ルーモ");
+    decorateTakeaway("#fundamentalsPanel .beginner-takeaway", "aile", "エール");
+    decorateTakeaway("#detailLargeHoldingsPanel .beginner-takeaway", "cosmos", "コスモス");
+  }
+
   function organizePrimaryFlow(payload) {
     const main = document.querySelector("main.container");
     if (!main) return;
@@ -174,19 +206,20 @@ const DetailEnhancements = (() => {
     const journeyRule = main.querySelector(".journey-rule");
     const errorBanner = [...main.children].find((node) => node.classList?.contains("error-banner"));
     if (rsiPanel) { rsiPanel.id = rsiPanel.id || "monthlyRsiPanel"; rsiPanel.classList.add("detail-primary-rsi-panel"); }
+    if (dailyPanel) dailyPanel.classList.add("detail-primary-daily-panel");
     if (quickRead) { if (errorBanner) errorBanner.insertAdjacentElement("afterend", quickRead); else main.prepend(quickRead); }
-    if (quickRead && rsiPanel) quickRead.insertAdjacentElement("afterend", rsiPanel);
-    if (rsiPanel && dailyPanel) rsiPanel.insertAdjacentElement("afterend", dailyPanel);
-    if (dailyPanel && roadmap) dailyPanel.insertAdjacentElement("afterend", roadmap);
+    if (quickRead && dailyPanel) quickRead.insertAdjacentElement("afterend", dailyPanel);
+    if (dailyPanel && rsiPanel) dailyPanel.insertAdjacentElement("afterend", rsiPanel);
+    if (rsiPanel && roadmap) rsiPanel.insertAdjacentElement("afterend", roadmap);
     if (roadmap && journeyRule) roadmap.insertAdjacentElement("afterend", journeyRule);
     const firstStep = roadmap?.querySelector('a[href="#volumeProfilePanel"]');
-    if (firstStep && rsiPanel?.id) {
-      firstStep.href = `#${rsiPanel.id}`;
+    if (firstStep) {
       const small = firstStep.querySelector("small");
-      if (small) small.textContent = "月足RSI → 日足・出来高";
+      if (small) small.textContent = "日足・出来高 → 月足RSI";
     }
     ensureSupplementalDetails();
     dockSupplementalPanels();
+    hydrateCharacterGuides();
   }
 
   function watchGeneratedLayout() {
@@ -195,7 +228,10 @@ const DetailEnhancements = (() => {
     let timer = 0;
     const observer = new MutationObserver(() => {
       window.clearTimeout(timer);
-      timer = window.setTimeout(dockSupplementalPanels, 60);
+      timer = window.setTimeout(() => {
+        dockSupplementalPanels();
+        hydrateCharacterGuides();
+      }, 60);
     });
     observer.observe(document.querySelector("main.container") || document.body, { childList: true, subtree: true });
   }
@@ -294,7 +330,7 @@ const DetailEnhancements = (() => {
     } catch (error) { console.error("detail enhancement failed", error); }
   }
 
-  return { todayIsoJst, isFutureEvent, deriveHighlights, dedupeFutureEvents, renderFocus, ensureQuickRead, ensureSupplementalDetails, dockSupplementalPanels, organizePrimaryFlow, renderStickyIdentity, syncStickyPriceFromStats, renderEvents, init };
+  return { todayIsoJst, isFutureEvent, deriveHighlights, dedupeFutureEvents, renderFocus, ensureQuickRead, ensureSupplementalDetails, dockSupplementalPanels, organizePrimaryFlow, renderStickyIdentity, syncStickyPriceFromStats, renderEvents, hydrateCharacterGuides, init };
 })();
 
 if (typeof module !== "undefined" && module.exports) module.exports = DetailEnhancements;
