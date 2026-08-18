@@ -150,6 +150,73 @@ const DetailEnhancements = (() => {
     }
   }
 
+  function renderStickyIdentity(payload) {
+    const header = document.querySelector(".detail-header");
+    if (!header) return;
+
+    const record = payload?.record || {};
+    let bar = document.getElementById("detailStickyIdentity");
+    if (!bar) {
+      bar = document.createElement("aside");
+      bar.id = "detailStickyIdentity";
+      bar.className = "detail-sticky-identity";
+      bar.setAttribute("aria-hidden", "true");
+      bar.setAttribute("aria-label", "現在表示中の銘柄");
+      bar.innerHTML = `
+        <div class="detail-sticky-inner">
+          <a class="detail-sticky-back" href="index.html" aria-label="銘柄探しへ戻る">←</a>
+          <div class="detail-sticky-company">
+            <strong id="detailStickyName">—</strong>
+            <span id="detailStickyCode">—</span>
+          </div>
+          <div class="detail-sticky-meta">
+            <strong id="detailStickyPrice">—</strong>
+            <span id="detailStickyStatus" class="detail-sticky-status">—</span>
+          </div>
+        </div>`;
+      document.body.appendChild(bar);
+      document.body.classList.add("detail-sticky-enabled");
+
+      const setVisible = (visible) => {
+        bar.classList.toggle("is-visible", visible);
+        bar.setAttribute("aria-hidden", visible ? "false" : "true");
+      };
+
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver((entries) => {
+          const entry = entries[0];
+          setVisible(Boolean(entry && !entry.isIntersecting));
+        }, { threshold: 0 });
+        observer.observe(header);
+      } else {
+        const updateVisibility = () => setVisible(header.getBoundingClientRect().bottom <= 0);
+        window.addEventListener("scroll", updateVisibility, { passive: true });
+        updateVisibility();
+      }
+    }
+
+    const companyName = text(payload?.name, "銘柄");
+    const code = text(payload?.code, "");
+    const currentPrice = finite(record.current_price);
+    const status = String(record.status || "").toUpperCase();
+    const statusLabel = status === "CONTINUE" ? "継続" : status || "—";
+
+    const nameElement = document.getElementById("detailStickyName");
+    const codeElement = document.getElementById("detailStickyCode");
+    const priceElement = document.getElementById("detailStickyPrice");
+    const statusElement = document.getElementById("detailStickyStatus");
+    if (nameElement) {
+      nameElement.textContent = companyName;
+      nameElement.title = companyName;
+    }
+    if (codeElement) codeElement.textContent = code;
+    if (priceElement) priceElement.textContent = currentPrice === null ? "—" : `${number(currentPrice)}円`;
+    if (statusElement) {
+      statusElement.textContent = statusLabel;
+      statusElement.dataset.status = status.toLowerCase();
+    }
+  }
+
   function renderEvents(payload, today = todayIsoJst()) {
     const container = document.getElementById("corporateEvents");
     if (!container) return;
@@ -197,6 +264,7 @@ const DetailEnhancements = (() => {
 
   function applyPayload(payload) {
     renderFocus(payload.record || {});
+    renderStickyIdentity(payload);
     renderEvents(payload);
     repairRsiExplanation();
   }
@@ -224,6 +292,7 @@ const DetailEnhancements = (() => {
     deriveHighlights,
     dedupeFutureEvents,
     renderFocus,
+    renderStickyIdentity,
     renderEvents,
     init,
   };
