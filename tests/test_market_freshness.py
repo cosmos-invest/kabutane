@@ -1,14 +1,8 @@
 from __future__ import annotations
 
-import tempfile
 import unittest
-from pathlib import Path
 
-from scripts.validate_market_freshness import (
-    require_not_older,
-    validate_daily_regression,
-    validate_full_freshness,
-)
+from scripts.validate_market_freshness import validate_daily_regression, validate_full_freshness
 
 
 class MarketFreshnessTests(unittest.TestCase):
@@ -30,21 +24,61 @@ class MarketFreshnessTests(unittest.TestCase):
 
     def test_core_older_than_daily_is_rejected(self) -> None:
         daily = {"price_date": "2026-08-17"}
-        core = {"generated_at": "core-new", "records": [{"price_date": "2026-08-14"}]}
+        core = {
+            "generated_at": "core-new",
+            "core_count": 1,
+            "daily_coverage": 1,
+            "records": [{"price_date": "2026-08-14"}],
+        }
         premium = {"price_date": "2026-08-14", "source_core_generated_at": "core-new"}
+        with self.assertRaises(RuntimeError):
+            validate_full_freshness(daily, core, premium)
+
+    def test_core_newer_than_daily_is_also_rejected(self) -> None:
+        daily = {"price_date": "2026-08-17"}
+        core = {
+            "generated_at": "core-new",
+            "core_count": 1,
+            "daily_coverage": 1,
+            "records": [{"price_date": "2026-08-18"}],
+        }
+        premium = {"price_date": "2026-08-18", "source_core_generated_at": "core-new"}
+        with self.assertRaises(RuntimeError):
+            validate_full_freshness(daily, core, premium)
+
+    def test_partial_stale_core_is_rejected(self) -> None:
+        daily = {"price_date": "2026-08-17"}
+        records = [{"price_date": "2026-08-17"}] + [{"price_date": "2026-08-14"} for _ in range(9)]
+        core = {
+            "generated_at": "core-new",
+            "core_count": 10,
+            "daily_coverage": 10,
+            "records": records,
+        }
+        premium = {"price_date": "2026-08-17", "source_core_generated_at": "core-new"}
         with self.assertRaises(RuntimeError):
             validate_full_freshness(daily, core, premium)
 
     def test_premium_must_come_from_current_core(self) -> None:
         daily = {"price_date": "2026-08-17"}
-        core = {"generated_at": "core-new", "records": [{"price_date": "2026-08-17"}]}
+        core = {
+            "generated_at": "core-new",
+            "core_count": 1,
+            "daily_coverage": 1,
+            "records": [{"price_date": "2026-08-17"}],
+        }
         premium = {"price_date": "2026-08-17", "source_core_generated_at": "core-old"}
         with self.assertRaises(RuntimeError):
             validate_full_freshness(daily, core, premium)
 
     def test_consistent_payloads_pass(self) -> None:
         daily = {"price_date": "2026-08-17"}
-        core = {"generated_at": "core-new", "records": [{"price_date": "2026-08-17"}]}
+        core = {
+            "generated_at": "core-new",
+            "core_count": 10,
+            "daily_coverage": 10,
+            "records": [{"price_date": "2026-08-17"} for _ in range(10)],
+        }
         premium = {"price_date": "2026-08-17", "source_core_generated_at": "core-new"}
         result = validate_full_freshness(daily, core, premium)
         self.assertEqual(result["core_date"], "2026-08-17")
