@@ -2,12 +2,12 @@
   "code": "7269",
   "ticker": "7269.T",
   "name": "スズキ",
-  "generated_at": "2026-08-17T12:33:44.025510+00:00",
-  "price_date": "2026-08-17",
+  "generated_at": "2026-08-18T12:36:00.659785+00:00",
+  "price_date": "2026-08-18",
   "record": {
-    "current_price": 2092.5,
-    "change_from_signal_month_pct": 0.31,
-    "return_since_gc_pct": 0.31
+    "current_price": 2081.0,
+    "change_from_signal_month_pct": -0.24,
+    "return_since_gc_pct": -0.24
   },
   "daily": [
     {
@@ -87,15 +87,28 @@
       "sma200": 2091.04,
       "rsi14": 51.19,
       "rsi5": 54.95
+    },
+    {
+      "date": "2026-08-18",
+      "open": 2080.0,
+      "high": 2084.0,
+      "low": 2056.0,
+      "close": 2081.0,
+      "volume": 5180100.0,
+      "sma25": 2032.64,
+      "sma75": 1943.33,
+      "sma200": 2090.1,
+      "rsi14": 51.19,
+      "rsi5": 54.95
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-17",
-    "monthly_rsi14": 55.48,
-    "monthly_rsi_ma5": 52.61,
-    "spread": 2.87,
+    "price_date": "2026-08-18",
+    "monthly_rsi14": 55.18,
+    "monthly_rsi_ma5": 52.55,
+    "spread": 2.63,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -104,5 +117,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-17T12:34:46.882480+00:00"
+  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
 }

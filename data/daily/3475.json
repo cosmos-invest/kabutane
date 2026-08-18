@@ -2,12 +2,12 @@
   "code": "3475",
   "ticker": "3475.T",
   "name": "グッドコムアセット",
-  "generated_at": "2026-08-17T12:33:44.025510+00:00",
-  "price_date": "2026-08-17",
+  "generated_at": "2026-08-18T12:36:00.659785+00:00",
+  "price_date": "2026-08-18",
   "record": {
-    "current_price": 1563.0,
-    "change_from_signal_month_pct": 1.17,
-    "return_since_gc_pct": 1.17
+    "current_price": 1533.0,
+    "change_from_signal_month_pct": -0.78,
+    "return_since_gc_pct": -0.78
   },
   "daily": [
     {
@@ -87,15 +87,28 @@
       "sma200": 1418.63,
       "rsi14": 61.41,
       "rsi5": 62.26
+    },
+    {
+      "date": "2026-08-18",
+      "open": 1562.0,
+      "high": 1562.0,
+      "low": 1512.0,
+      "close": 1533.0,
+      "volume": 116600.0,
+      "sma25": 1520.16,
+      "sma75": 1447.79,
+      "sma200": 1418.83,
+      "rsi14": 61.41,
+      "rsi5": 62.26
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-17",
-    "monthly_rsi14": 61.1,
-    "monthly_rsi_ma5": 59.15,
-    "spread": 1.96,
+    "price_date": "2026-08-18",
+    "monthly_rsi14": 60.08,
+    "monthly_rsi_ma5": 58.94,
+    "spread": 1.14,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -104,5 +117,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-17T12:34:46.882480+00:00"
+  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
 }

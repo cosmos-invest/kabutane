@@ -2,12 +2,12 @@
   "code": "4754",
   "ticker": "4754.T",
   "name": "トスネット",
-  "generated_at": "2026-08-17T12:33:44.025510+00:00",
-  "price_date": "2026-08-17",
+  "generated_at": "2026-08-18T12:36:00.659785+00:00",
+  "price_date": "2026-08-18",
   "record": {
-    "current_price": 1535.0,
-    "change_from_signal_month_pct": -2.29,
-    "return_since_gc_pct": -2.29
+    "current_price": 1504.0,
+    "change_from_signal_month_pct": -4.26,
+    "return_since_gc_pct": -4.26
   },
   "daily": [
     {
@@ -87,22 +87,35 @@
       "sma200": 1534.59,
       "rsi14": 57.45,
       "rsi5": 61.35
+    },
+    {
+      "date": "2026-08-18",
+      "open": 1527.0,
+      "high": 1527.0,
+      "low": 1447.0,
+      "close": 1504.0,
+      "volume": 4700.0,
+      "sma25": 1528.08,
+      "sma75": 1503.25,
+      "sma200": 1534.6,
+      "rsi14": 57.45,
+      "rsi5": 61.35
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-17",
-    "monthly_rsi14": 58.02,
-    "monthly_rsi_ma5": 57.64,
-    "spread": 0.38,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-18",
+    "monthly_rsi14": 55.83,
+    "monthly_rsi_ma5": 57.2,
+    "spread": -1.38,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-17T12:34:46.882480+00:00"
+  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
 }

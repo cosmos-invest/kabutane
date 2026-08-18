@@ -2,12 +2,12 @@
   "code": "2876",
   "ticker": "2876.T",
   "name": "デルソーレ",
-  "generated_at": "2026-08-17T12:33:44.025510+00:00",
-  "price_date": "2026-08-17",
+  "generated_at": "2026-08-18T12:36:00.659785+00:00",
+  "price_date": "2026-08-18",
   "record": {
-    "current_price": 474.0,
-    "change_from_signal_month_pct": 0.64,
-    "return_since_gc_pct": 0.64
+    "current_price": 467.0,
+    "change_from_signal_month_pct": -0.85,
+    "return_since_gc_pct": -0.85
   },
   "daily": [
     {
@@ -87,15 +87,28 @@
       "sma200": 458.03,
       "rsi14": 50.53,
       "rsi5": 52.45
+    },
+    {
+      "date": "2026-08-18",
+      "open": 473.0,
+      "high": 473.0,
+      "low": 465.0,
+      "close": 467.0,
+      "volume": 6800.0,
+      "sma25": 476.48,
+      "sma75": 461.21,
+      "sma200": 458.2,
+      "rsi14": 50.53,
+      "rsi5": 52.45
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-17",
-    "monthly_rsi14": 52.71,
-    "monthly_rsi_ma5": 50.58,
-    "spread": 2.13,
+    "price_date": "2026-08-18",
+    "monthly_rsi14": 51.32,
+    "monthly_rsi_ma5": 50.3,
+    "spread": 1.02,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -104,5 +117,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-17T12:34:46.882480+00:00"
+  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
 }

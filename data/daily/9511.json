@@ -2,12 +2,12 @@
   "code": "9511",
   "ticker": "9511.T",
   "name": "沖縄電力",
-  "generated_at": "2026-08-17T12:33:44.025510+00:00",
-  "price_date": "2026-08-17",
+  "generated_at": "2026-08-18T12:36:00.659785+00:00",
+  "price_date": "2026-08-18",
   "record": {
-    "current_price": 1142.0,
-    "change_from_signal_month_pct": 8.35,
-    "return_since_gc_pct": 8.35
+    "current_price": 1136.0,
+    "change_from_signal_month_pct": 7.78,
+    "return_since_gc_pct": 7.78
   },
   "daily": [
     {
@@ -87,15 +87,28 @@
       "sma200": 1029.49,
       "rsi14": 44.35,
       "rsi5": 51.61
+    },
+    {
+      "date": "2026-08-18",
+      "open": 1125.0,
+      "high": 1154.0,
+      "low": 1123.0,
+      "close": 1136.0,
+      "volume": 312000.0,
+      "sma25": 1005.88,
+      "sma75": 947.12,
+      "sma200": 1029.95,
+      "rsi14": 44.35,
+      "rsi5": 51.61
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-17",
-    "monthly_rsi14": 57.43,
-    "monthly_rsi_ma5": 45.93,
-    "spread": 11.5,
+    "price_date": "2026-08-18",
+    "monthly_rsi14": 57.1,
+    "monthly_rsi_ma5": 45.86,
+    "spread": 11.23,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -104,5 +117,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-17T12:34:46.882480+00:00"
+  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
 }

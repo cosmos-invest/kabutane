@@ -2,12 +2,12 @@
   "code": "7630",
   "ticker": "7630.T",
   "name": "壱番屋",
-  "generated_at": "2026-08-17T12:33:44.025510+00:00",
-  "price_date": "2026-08-17",
+  "generated_at": "2026-08-18T12:36:00.659785+00:00",
+  "price_date": "2026-08-18",
   "record": {
-    "current_price": 936.0,
-    "change_from_signal_month_pct": 0.21,
-    "return_since_gc_pct": 0.21
+    "current_price": 930.0,
+    "change_from_signal_month_pct": -0.43,
+    "return_since_gc_pct": -0.43
   },
   "daily": [
     {
@@ -87,15 +87,28 @@
       "sma200": 903.96,
       "rsi14": 41.84,
       "rsi5": 47.88
+    },
+    {
+      "date": "2026-08-18",
+      "open": 936.0,
+      "high": 939.0,
+      "low": 928.0,
+      "close": 930.0,
+      "volume": 218600.0,
+      "sma25": 920.76,
+      "sma75": 891.41,
+      "sma200": 903.96,
+      "rsi14": 41.84,
+      "rsi5": 47.88
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-17",
-    "monthly_rsi14": 46.93,
-    "monthly_rsi_ma5": 41.84,
-    "spread": 5.09,
+    "price_date": "2026-08-18",
+    "monthly_rsi14": 46.24,
+    "monthly_rsi_ma5": 41.7,
+    "spread": 4.54,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -104,5 +117,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-17T12:34:46.882480+00:00"
+  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
 }

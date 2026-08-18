@@ -2,12 +2,12 @@
   "code": "7444",
   "ticker": "7444.T",
   "name": "ハリマ共和物産",
-  "generated_at": "2026-08-17T12:33:44.025510+00:00",
-  "price_date": "2026-08-17",
+  "generated_at": "2026-08-18T12:36:00.659785+00:00",
+  "price_date": "2026-08-18",
   "record": {
-    "current_price": 1993.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 1975.0,
+    "change_from_signal_month_pct": -0.9,
+    "return_since_gc_pct": -0.9
   },
   "daily": [
     {
@@ -87,22 +87,35 @@
       "sma200": 1983.64,
       "rsi14": 51.25,
       "rsi5": 51.96
+    },
+    {
+      "date": "2026-08-18",
+      "open": 1993.0,
+      "high": 1994.0,
+      "low": 1975.0,
+      "close": 1975.0,
+      "volume": 900.0,
+      "sma25": 1987.36,
+      "sma75": 1969.51,
+      "sma200": 1984.08,
+      "rsi14": 51.25,
+      "rsi5": 51.96
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-17",
-    "monthly_rsi14": 54.66,
-    "monthly_rsi_ma5": 54.18,
-    "spread": 0.47,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-18",
+    "monthly_rsi14": 53.64,
+    "monthly_rsi_ma5": 53.98,
+    "spread": -0.34,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-17T12:34:46.882480+00:00"
+  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
 }

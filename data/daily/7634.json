@@ -2,12 +2,12 @@
   "code": "7634",
   "ticker": "7634.T",
   "name": "星医療酸器",
-  "generated_at": "2026-08-17T12:33:44.025510+00:00",
-  "price_date": "2026-08-14",
+  "generated_at": "2026-08-18T12:36:00.659785+00:00",
+  "price_date": "2026-08-18",
   "record": {
-    "current_price": 5130.0,
-    "change_from_signal_month_pct": -3.21,
-    "return_since_gc_pct": -3.21
+    "current_price": 5270.0,
+    "change_from_signal_month_pct": -0.57,
+    "return_since_gc_pct": -0.57
   },
   "daily": [
     {
@@ -74,22 +74,48 @@
       "sma200": 5052.23,
       "rsi14": 59.66,
       "rsi5": 62.12
+    },
+    {
+      "date": "2026-08-17",
+      "open": 5130.0,
+      "high": 5130.0,
+      "low": 5130.0,
+      "close": 5130.0,
+      "volume": 0.0,
+      "sma25": 5177.2,
+      "sma75": 4986.4,
+      "sma200": 5054.15,
+      "rsi14": 59.66,
+      "rsi5": 62.12
+    },
+    {
+      "date": "2026-08-18",
+      "open": 5170.0,
+      "high": 5270.0,
+      "low": 5170.0,
+      "close": 5270.0,
+      "volume": 400.0,
+      "sma25": 5192.0,
+      "sma75": 4986.0,
+      "sma200": 5056.73,
+      "rsi14": 59.66,
+      "rsi5": 62.12
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-14",
-    "monthly_rsi14": 57.88,
-    "monthly_rsi_ma5": 58.08,
-    "spread": -0.2,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-18",
+    "monthly_rsi14": 61.35,
+    "monthly_rsi_ma5": 58.77,
+    "spread": 2.58,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-17T12:34:46.882480+00:00"
+  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
 }

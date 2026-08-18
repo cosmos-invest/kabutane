@@ -2,12 +2,12 @@
   "code": "7621",
   "ticker": "7621.T",
   "name": "うかい",
-  "generated_at": "2026-08-17T12:33:44.025510+00:00",
-  "price_date": "2026-08-17",
+  "generated_at": "2026-08-18T12:36:00.659785+00:00",
+  "price_date": "2026-08-18",
   "record": {
-    "current_price": 3430.0,
-    "change_from_signal_month_pct": 0.88,
-    "return_since_gc_pct": 0.88
+    "current_price": 3425.0,
+    "change_from_signal_month_pct": 0.74,
+    "return_since_gc_pct": 0.74
   },
   "daily": [
     {
@@ -87,15 +87,28 @@
       "sma200": 3365.68,
       "rsi14": 40.31,
       "rsi5": 45.22
+    },
+    {
+      "date": "2026-08-18",
+      "open": 3410.0,
+      "high": 3430.0,
+      "low": 3410.0,
+      "close": 3425.0,
+      "volume": 1800.0,
+      "sma25": 3410.6,
+      "sma75": 3344.47,
+      "sma200": 3365.0,
+      "rsi14": 40.31,
+      "rsi5": 45.22
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-17",
-    "monthly_rsi14": 43.88,
-    "monthly_rsi_ma5": 38.73,
-    "spread": 5.15,
+    "price_date": "2026-08-18",
+    "monthly_rsi14": 43.57,
+    "monthly_rsi_ma5": 38.67,
+    "spread": 4.91,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -104,5 +117,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-17T12:34:46.882480+00:00"
+  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "2479",
   "ticker": "2479.T",
   "name": "ジェイテック",
-  "generated_at": "2026-08-17T12:33:44.025510+00:00",
-  "price_date": "2026-08-17",
+  "generated_at": "2026-08-18T12:36:00.659785+00:00",
+  "price_date": "2026-08-18",
   "record": {
-    "current_price": 244.0,
-    "change_from_signal_month_pct": 0.41,
-    "return_since_gc_pct": 0.41
+    "current_price": 242.0,
+    "change_from_signal_month_pct": -0.41,
+    "return_since_gc_pct": -0.41
   },
   "daily": [
     {
@@ -87,15 +87,28 @@
       "sma200": 240.22,
       "rsi14": 46.74,
       "rsi5": 49.68
+    },
+    {
+      "date": "2026-08-18",
+      "open": 244.0,
+      "high": 246.0,
+      "low": 242.0,
+      "close": 242.0,
+      "volume": 47100.0,
+      "sma25": 239.32,
+      "sma75": 235.76,
+      "sma200": 240.19,
+      "rsi14": 46.74,
+      "rsi5": 49.68
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-17",
-    "monthly_rsi14": 49.1,
-    "monthly_rsi_ma5": 46.08,
-    "spread": 3.02,
+    "price_date": "2026-08-18",
+    "monthly_rsi14": 48.32,
+    "monthly_rsi_ma5": 45.93,
+    "spread": 2.39,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -104,5 +117,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-17T12:34:46.882480+00:00"
+  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
 }

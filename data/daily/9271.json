@@ -2,12 +2,12 @@
   "code": "9271",
   "ticker": "9271.T",
   "name": "和心",
-  "generated_at": "2026-08-17T12:33:44.025510+00:00",
-  "price_date": "2026-08-17",
+  "generated_at": "2026-08-18T12:36:00.659785+00:00",
+  "price_date": "2026-08-18",
   "record": {
-    "current_price": 1024.0,
-    "change_from_signal_month_pct": 2.2,
-    "return_since_gc_pct": 2.2
+    "current_price": 1005.0,
+    "change_from_signal_month_pct": 0.3,
+    "return_since_gc_pct": 0.3
   },
   "daily": [
     {
@@ -87,15 +87,28 @@
       "sma200": 958.27,
       "rsi14": 56.9,
       "rsi5": 58.06
+    },
+    {
+      "date": "2026-08-18",
+      "open": 1054.0,
+      "high": 1054.0,
+      "low": 987.0,
+      "close": 1005.0,
+      "volume": 40000.0,
+      "sma25": 1015.2,
+      "sma75": 974.73,
+      "sma200": 958.65,
+      "rsi14": 56.9,
+      "rsi5": 58.06
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-17",
-    "monthly_rsi14": 58.97,
-    "monthly_rsi_ma5": 57.59,
-    "spread": 1.38,
+    "price_date": "2026-08-18",
+    "monthly_rsi14": 58.45,
+    "monthly_rsi_ma5": 57.49,
+    "spread": 0.96,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -104,5 +117,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-17T12:34:46.882480+00:00"
+  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
 }
