@@ -150,6 +150,22 @@ const DetailEnhancements = (() => {
     }
   }
 
+  function syncStickyPriceFromStats(fallbackPrice = null) {
+    const priceElement = document.getElementById("detailStickyPrice");
+    if (!priceElement) return;
+    const stats = document.getElementById("detailStats");
+    const currentCard = stats
+      ? [...stats.querySelectorAll(".stat-card")].find((card) => card.querySelector("span")?.textContent?.trim() === "現在値")
+      : null;
+    const rendered = currentCard?.querySelector("strong")?.textContent?.trim();
+    if (rendered && rendered !== "—") {
+      priceElement.textContent = rendered.endsWith("円") ? rendered : `${rendered}円`;
+      return;
+    }
+    const parsed = finite(fallbackPrice);
+    priceElement.textContent = parsed === null ? "—" : `${number(parsed)}円`;
+  }
+
   function renderStickyIdentity(payload) {
     const header = document.querySelector(".detail-header");
     if (!header) return;
@@ -193,24 +209,28 @@ const DetailEnhancements = (() => {
         window.addEventListener("scroll", updateVisibility, { passive: true });
         updateVisibility();
       }
+
+      const stats = document.getElementById("detailStats");
+      if (stats && "MutationObserver" in window) {
+        const priceObserver = new MutationObserver(() => syncStickyPriceFromStats(record.current_price));
+        priceObserver.observe(stats, { childList: true, subtree: true, characterData: true });
+      }
     }
 
     const companyName = text(payload?.name, "銘柄");
     const code = text(payload?.code, "");
-    const currentPrice = finite(record.current_price);
     const status = String(record.status || "").toUpperCase();
     const statusLabel = status === "CONTINUE" ? "継続" : status || "—";
 
     const nameElement = document.getElementById("detailStickyName");
     const codeElement = document.getElementById("detailStickyCode");
-    const priceElement = document.getElementById("detailStickyPrice");
     const statusElement = document.getElementById("detailStickyStatus");
     if (nameElement) {
       nameElement.textContent = companyName;
       nameElement.title = companyName;
     }
     if (codeElement) codeElement.textContent = code;
-    if (priceElement) priceElement.textContent = currentPrice === null ? "—" : `${number(currentPrice)}円`;
+    syncStickyPriceFromStats(record.current_price);
     if (statusElement) {
       statusElement.textContent = statusLabel;
       statusElement.dataset.status = status.toLowerCase();
@@ -293,6 +313,7 @@ const DetailEnhancements = (() => {
     dedupeFutureEvents,
     renderFocus,
     renderStickyIdentity,
+    syncStickyPriceFromStats,
     renderEvents,
     init,
   };
