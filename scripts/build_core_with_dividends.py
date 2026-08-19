@@ -18,11 +18,14 @@ def _load_json(path: Path, default: Any = None) -> Any:
         return default
 
 
-def _finance_for_code(output: Path, code: str) -> dict[str, Any]:
-    path = output / "fundamentals" / f"{core.shard_key(code)}.json"
-    payload = _load_json(path, {}) or {}
-    records = payload.get("records") if isinstance(payload, dict) else {}
-    return records.get(code, {}) if isinstance(records, dict) else {}
+def _finance_for_code(output: Path, code: str, cache: dict[str, dict[str, Any]]) -> dict[str, Any]:
+    shard = core.shard_key(code)
+    if shard not in cache:
+        path = output / "fundamentals" / f"{shard}.json"
+        payload = _load_json(path, {}) or {}
+        records = payload.get("records") if isinstance(payload, dict) else {}
+        cache[shard] = records if isinstance(records, dict) else {}
+    return cache[shard].get(code, {})
 
 
 def attach_dividend_data(output: Path, monthly_frames: dict[str, Any]) -> dict[str, int]:
@@ -30,6 +33,7 @@ def attach_dividend_data(output: Path, monthly_frames: dict[str, Any]) -> dict[s
     radar = _load_json(radar_path, {}) or {}
     rows = radar.get("records") or []
     detail_records: dict[str, dict[str, Any]] = {}
+    finance_cache: dict[str, dict[str, Any]] = {}
     available = 0
     no_cut_5y = 0
     increasing = 0
@@ -44,7 +48,7 @@ def attach_dividend_data(output: Path, monthly_frames: dict[str, Any]) -> dict[s
         compact = public_dividend_fields(summary)
         row.update(compact)
 
-        finance = _finance_for_code(output, code)
+        finance = _finance_for_code(output, code, finance_cache)
         row["dividend_yield_pct"] = finance.get("dividend_yield_pct")
         row["payout_ratio_pct"] = finance.get("payout_ratio_pct")
 
