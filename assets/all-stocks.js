@@ -168,6 +168,9 @@
   }
 
   function expertPass(item, filters) {
+    const dividendYieldMin = finite(filters.dividendYieldMin);
+    const dividendStreakMin = finite(filters.dividendStreakMin);
+    const dividendGrowthMin = finite(filters.dividendGrowthMin);
     if (filters.market !== "all" && !String(item.market || "").includes(filters.market)) return false;
     if (filters.signal !== "ALL" && publicStatus(item) !== filters.signal) return false;
     if (filters.sma200 === "above" && item.above_sma200 !== true) return false;
@@ -182,10 +185,10 @@
     if (filters.revenueMin !== null && (finite(item.revenue_growth_pct) === null || finite(item.revenue_growth_pct) < filters.revenueMin)) return false;
     if (filters.perMax !== null && (finite(item.per) === null || finite(item.per) > filters.perMax)) return false;
     if (filters.fcf === "positive" && (finite(item.free_cashflow_oku) === null || finite(item.free_cashflow_oku) <= 0)) return false;
-    if (filters.dividendYieldMin !== null && (finite(item.dividend_yield_pct) === null || finite(item.dividend_yield_pct) < filters.dividendYieldMin)) return false;
-    if (filters.dividendStreakMin !== null && (finite(item.consecutive_dividend_increase_years) === null || finite(item.consecutive_dividend_increase_years) < filters.dividendStreakMin)) return false;
+    if (dividendYieldMin !== null && (finite(item.dividend_yield_pct) === null || finite(item.dividend_yield_pct) < dividendYieldMin)) return false;
+    if (dividendStreakMin !== null && (finite(item.consecutive_dividend_increase_years) === null || finite(item.consecutive_dividend_increase_years) < dividendStreakMin)) return false;
     if (filters.dividendNoCut === "yes" && item.dividend_no_cut_5y !== true) return false;
-    if (filters.dividendGrowthMin !== null && (finite(item.dividend_cagr_5y_pct) === null || finite(item.dividend_cagr_5y_pct) < filters.dividendGrowthMin)) return false;
+    if (dividendGrowthMin !== null && (finite(item.dividend_cagr_5y_pct) === null || finite(item.dividend_cagr_5y_pct) < dividendGrowthMin)) return false;
     return true;
   }
 
@@ -354,6 +357,7 @@
     const url = new URL(location.href);
     const guide = url.searchParams.get("guide");
     const signal = url.searchParams.get("signal");
+    // signal=GC is intentionally ignored because provisional GC discovery stays premium-only.
     if (["cosmos", "lumo", "aile"].includes(guide)) guideFilter = guide;
     if (["NEAR_GC", "CONTINUE", "DC", "OUT", "UNKNOWN"].includes(signal)) {
       if (signalEl) signalEl.value = signal;
