@@ -15,6 +15,7 @@ class PublicCoreRadarTests(unittest.TestCase):
             "daily_coverage": 2,
             "monthly_coverage": 2,
             "fundamentals_coverage": 1,
+            "dividend_history_coverage": 2,
             "records": [
                 {
                     "code": "5243", "name": "note", "market": "グロース（内国株式）",
@@ -22,6 +23,11 @@ class PublicCoreRadarTests(unittest.TestCase):
                     "monthly_rsi14": 50.4, "monthly_rsi_ma5": 49.8, "monthly_rsi_spread": 0.6,
                     "confirmed_status": "OUT", "confirmed_month": "2026-07",
                     "current_price": 1180, "above_sma200": True,
+                    "dividend_yield_pct": 2.5,
+                    "consecutive_dividend_increase_years": 3,
+                    "dividend_cut_count_5y": 0,
+                    "dividend_no_cut_5y": True,
+                    "dividend_cagr_5y_pct": 6.2,
                 },
                 {
                     "code": "5942", "name": "日本フイルコン", "provisional_status": "DC",
@@ -34,6 +40,10 @@ class PublicCoreRadarTests(unittest.TestCase):
         rows = {row["code"]: row for row in payload["records"]}
         self.assertEqual(rows["5243"]["provisional_status"], "OUT")
         self.assertEqual(rows["5942"]["provisional_status"], "DC")
+        self.assertEqual(payload["dividend_history_coverage"], 2)
+        self.assertEqual(rows["5243"]["consecutive_dividend_increase_years"], 3)
+        self.assertTrue(rows["5243"]["dividend_no_cut_5y"])
+        self.assertEqual(rows["5243"]["dividend_cagr_5y_pct"], 6.2)
         for key in public.REMOVED_FIELDS:
             self.assertNotIn(key, rows["5243"])
             self.assertNotIn(key, rows["5942"])

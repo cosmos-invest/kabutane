@@ -195,7 +195,7 @@ jobs:
           for marker in ("6項目", "今回の学び", "TOPIX代替ベンチマーク", "判定月NEW", "暫定GC・暫定DC"):
               if marker not in copy_audit:
                   raise SystemExit(f"Beginner-facing wording audit is missing: {marker}")
-          if "実際のお金を動かす前の5項目" not in howto:
+          if "最初は、4つの問いを上から読む" not in howto:
               raise SystemExit("How-to source changed; update the copy audit or the source heading together")
           for marker in ("確定シグナルと暫定シグナル", "TradingViewでDCなのに"):
               if marker not in learn:

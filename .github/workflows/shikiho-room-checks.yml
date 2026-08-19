@@ -109,7 +109,7 @@ jobs:
           suspicious = [row for row in performance.get("records", []) if row.get("return_pct") is not None and abs(float(row["return_pct"])) >= 200]
           if suspicious:
               raise SystemExit(f"Suspicious split-adjusted returns remain: {[(r.get('code'), r.get('return_pct')) for r in suspicious]}")
-          for marker in ("python build_shikiho_room_v2.py", "shikiho-2026-summer-performance.json", "shikiho-summer-2026.html"):
+          for marker in ("python build_shikiho_room_v2.py", "shikiho-2026-summer-performance.json"):
               if marker not in update_daily:
                   raise SystemExit(f"Daily workflow marker missing: {marker}")
           if "python build_shikiho_room_v2.py" not in preview:

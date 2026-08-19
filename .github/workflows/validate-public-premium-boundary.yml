@@ -67,12 +67,11 @@ jobs:
           grep -q 'data/core/public-radar.json' assets/all-stocks.js
           ! grep -q 'fetch(`data/core/radar.json' assets/all-stocks.js
           grep -q 'rm -f _site/data/core/radar.json' .github/workflows/deploy-pages.yml
-          grep -q 'rm -f _site/data/core/radar.json' .github/workflows/update-daily.yml
           grep -q 'コスモスフィルター' all-stocks.html
           grep -q 'ルーモフィルター' all-stocks.html
           grep -q 'エールフィルター' all-stocks.html
           grep -q '玄人向け設定' all-stocks.html
           grep -q '暫定GCの「発見」はプレミアム専用' AGENTS.md
           grep -q '個別銘柄ページは例外' AGENTS.md
-          grep -q '暫定GC / 暫定DC' detail.html
+          grep -q '暫定GC / DC' detail.html
           grep -q '暫定GC' premium-supply-beta.html

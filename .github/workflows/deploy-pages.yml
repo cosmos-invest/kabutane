@@ -162,7 +162,7 @@ jobs:
           grep -q '迷ったら、4つの問いを順番に' _site/index.html
           grep -q 'STEP 4 — 大口' _site/detail.html
           ! grep -R -q 'premium-supply-beta.html' _site/index.html _site/learn.html _site/howto.html
-          grep -q '暫定GC / 暫定DC' _site/detail.html
+          grep -q '暫定GC / DC' _site/detail.html
           node --check _site/assets/all-stocks.js
           node --check _site/assets/watchlist.js
           node --check _site/assets/watchlist-page.js
