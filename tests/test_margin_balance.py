@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import datetime as dt
 import json
 from pathlib import Path
 import tempfile
@@ -10,6 +11,7 @@ from scripts.update_margin_balance import (
     merge_history,
     normalize_code,
     parse_report_text,
+    recent_friday_pdf_candidates,
     write_shards,
 )
 
@@ -26,6 +28,30 @@ class MarginBalanceTests(unittest.TestCase):
         result = discover_recent_pdfs(html, "https://www.jpx.co.jp/markets/statistics-equities/margin/05.html")
         self.assertEqual([item[0] for item in result], ["2026-07-24", "2026-07-31"])
         self.assertTrue(result[-1][1].endswith("syumatsu2026073100.pdf"))
+
+    def test_builds_direct_recent_friday_candidates_when_listing_lags(self):
+        listed = [
+            (
+                "2026-07-31",
+                "https://www.jpx.co.jp/markets/statistics-equities/margin/tvdivq0000001rnl-att/syumatsu2026073100.pdf",
+            )
+        ]
+        candidates = recent_friday_pdf_candidates(listed, today=dt.date(2026, 8, 19))
+        self.assertEqual([item[0] for item in candidates], ["2026-08-07", "2026-08-14"])
+        self.assertTrue(candidates[0][1].endswith("syumatsu2026080700.pdf"))
+        self.assertTrue(candidates[1][1].endswith("syumatsu2026081400.pdf"))
+
+    def test_direct_candidate_waits_until_normal_publication_window(self):
+        listed = [
+            (
+                "2026-08-07",
+                "https://www.jpx.co.jp/sample/syumatsu2026080700.pdf",
+            )
+        ]
+        monday = recent_friday_pdf_candidates(listed, today=dt.date(2026, 8, 17))
+        tuesday = recent_friday_pdf_candidates(listed, today=dt.date(2026, 8, 18))
+        self.assertEqual(monday, [])
+        self.assertEqual([item[0] for item in tuesday], ["2026-08-14"])
 
     def test_parses_total_sell_buy_and_negative_weekly_changes(self):
         text = (
