@@ -18,8 +18,6 @@ on:
   push:
     branches: [main]
     paths:
-      # Keep this narrow: changing the production core workflow should be able
-      # to prove itself immediately without adding another recurring batch.
       - '.github/workflows/update-core-universe-data.yml'
   workflow_run:
     workflows: ["Update daily candidate prices"]
@@ -209,12 +207,31 @@ jobs:
         run: python update_universe.py
       - name: Build all-core radar, chart data and finance cache
         shell: bash
+        env:
+          # Dividend history is derived from the monthly Yahoo frames. Refreshing
+          # only the daily overlay leaves CAPTURED_MONTHLY empty, so force the
+          # monthly/base download until dividend history has been published.
+          FORCE_DIVIDEND_BASE_REFRESH: ${{ github.event_name == 'push' && '1' || '0' }}
         run: |
           REFRESH=""
           FUND_LIMIT=600
           CURRENT_UNIVERSE_HASH="$(sha256sum stocks.csv | awk '{print $1}')"
           STORED_UNIVERSE_HASH="$(cat data/core/universe.sha256 2>/dev/null || true)"
-          if [ ! -f data/core/manifest.json ]; then
+          DIVIDEND_COVERAGE="$(python - <<'PY'
+          import json
+          from pathlib import Path
+          try:
+              manifest = json.loads(Path('data/core/manifest.json').read_text(encoding='utf-8'))
+              print(int(manifest.get('dividend_history_coverage') or 0))
+          except Exception:
+              print(0)
+          PY
+          )"
+          if [ "$FORCE_DIVIDEND_BASE_REFRESH" = "1" ] || [ "$DIVIDEND_COVERAGE" -le 0 ]; then
+            echo "Dividend history is missing; refreshing monthly chart base."
+            REFRESH="--refresh-base"
+            FUND_LIMIT=1200
+          elif [ ! -f data/core/manifest.json ]; then
             REFRESH="--refresh-base"
             FUND_LIMIT=1200
           elif [ "$CURRENT_UNIVERSE_HASH" != "$STORED_UNIVERSE_HASH" ]; then
