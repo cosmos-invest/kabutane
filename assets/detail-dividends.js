@@ -118,10 +118,12 @@
     const panel = corporateEvents?.closest(".panel");
     if (!securityCode || !panel) return;
     const prefix = shard(securityCode);
-    const [dividendShard, financeShard] = await Promise.all([
-      jsonOrNull(`data/core/dividends/${prefix}.json`),
+    const [manifest, financeShard] = await Promise.all([
+      jsonOrNull("data/core/manifest.json"),
       jsonOrNull(`data/core/fundamentals/${prefix}.json`),
     ]);
+    const dividendReady = Number(manifest?.dividend_history_coverage || 0) > 0;
+    const dividendShard = dividendReady ? await jsonOrNull(`data/core/dividends/${prefix}.json`) : null;
     const summary = dividendShard?.records?.[securityCode] || null;
     const finance = financeShard?.records?.[securityCode] || null;
     render(panel, summary, finance);
