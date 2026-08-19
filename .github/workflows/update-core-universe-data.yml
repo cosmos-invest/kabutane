@@ -18,6 +18,7 @@ on:
   push:
     branches: [main]
     paths:
+      # Updating this workflow is also the explicit production retrigger path.
       - '.github/workflows/update-core-universe-data.yml'
   workflow_run:
     workflows: ["Update daily candidate prices"]
