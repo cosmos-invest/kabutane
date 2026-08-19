@@ -1,24 +1,26 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-08-18T12:41:14.184525+00:00",
+  "generated_at": "2026-08-19T16:11:38.490493+00:00",
   "scope": "TSE domestic common stocks: Prime, Standard, Growth",
   "core_count": 3706,
   "daily_coverage": 3706,
   "monthly_coverage": 3603,
   "fundamentals_coverage": 3706,
-  "chart_base_generated_at": "2026-08-17T09:43:40.642394+00:00",
+  "chart_base_generated_at": "2026-08-19T16:11:38.490493+00:00",
   "chart_period": "1y",
   "overlay_days": 25,
   "shard_rule": "first two characters of security code",
   "bytes": {
-    "radar": 2920126,
-    "daily_overlay": 7274229,
-    "fundamentals": 3531813,
-    "chart_base": 53325226
+    "radar": 2919796,
+    "daily_overlay": 7091792,
+    "fundamentals": 3524672,
+    "chart_base": 53325235
   },
   "errors": {
     "daily": 0,
     "monthly": 0,
-    "fundamentals": 92
-  }
+    "fundamentals": 183
+  },
+  "dividend_history_coverage": 3172,
+  "dividend_history_basis": "calendar_year_ex_date"
 }
