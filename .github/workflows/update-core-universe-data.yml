@@ -15,6 +15,12 @@ on:
       - 'tests/test_public_core_radar.py'
       - 'tests/test_market_freshness.py'
       - '.github/workflows/update-core-universe-data.yml'
+  push:
+    branches: [main]
+    paths:
+      # Keep this narrow: changing the production core workflow should be able
+      # to prove itself immediately without adding another recurring batch.
+      - '.github/workflows/update-core-universe-data.yml'
   workflow_run:
     workflows: ["Update daily candidate prices"]
     types: [completed]
@@ -177,6 +183,7 @@ jobs:
     needs: validate
     if: >-
       github.event_name == 'workflow_dispatch' ||
+      github.event_name == 'push' ||
       (github.event_name == 'workflow_run' &&
        github.event.workflow_run.conclusion == 'success' &&
        github.event.workflow_run.event != 'pull_request')
