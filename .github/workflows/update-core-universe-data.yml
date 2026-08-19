@@ -3,11 +3,14 @@ name: Update core universe data
 on:
   pull_request:
     paths:
+      - 'dividend_history.py'
       - 'scripts/build_core_universe_data.py'
+      - 'scripts/build_core_with_dividends.py'
       - 'scripts/build_premium_lab.py'
       - 'scripts/public_core_radar.py'
       - 'scripts/validate_market_freshness.py'
       - 'tests/test_core_universe_data.py'
+      - 'tests/test_dividend_history.py'
       - 'tests/test_premium_lab.py'
       - 'tests/test_public_core_radar.py'
       - 'tests/test_market_freshness.py'
@@ -40,12 +43,15 @@ jobs:
         run: pip install -r requirements.txt
       - name: Unit and syntax checks
         run: |
-          python -m py_compile scripts/build_core_universe_data.py scripts/build_premium_lab.py scripts/public_core_radar.py scripts/validate_market_freshness.py tests/test_core_universe_data.py tests/test_premium_lab.py tests/test_public_core_radar.py tests/test_market_freshness.py
-          python -m unittest tests.test_core_universe_data tests.test_premium_lab tests.test_public_core_radar tests.test_market_freshness -v
+          python -m py_compile dividend_history.py scripts/build_core_universe_data.py scripts/build_core_with_dividends.py scripts/build_premium_lab.py scripts/public_core_radar.py scripts/validate_market_freshness.py tests/test_core_universe_data.py tests/test_dividend_history.py tests/test_premium_lab.py tests/test_public_core_radar.py tests/test_market_freshness.py
+          python -m unittest tests.test_core_universe_data tests.test_dividend_history tests.test_premium_lab tests.test_public_core_radar tests.test_market_freshness -v
           node --check assets/core-detail-fallback.js
           node --check assets/premium-supply-beta.js
+          node --check assets/detail-dividends.js
+          node --check assets/all-stocks.js
           node tests/test_core_detail_fallback.js
           grep -q 'core-detail-fallback.js' detail.html
+          grep -q 'detail-dividends.js' detail.html
           grep -q '暫定GC' premium-supply-beta.html
           ! grep -q 'extended' premium-supply-beta.html
       - name: Validate public catalog against checked-in full universe
@@ -80,7 +86,7 @@ jobs:
         run: pip install -r requirements.txt
       - name: Build live sample including note 5243
         run: |
-          python -m scripts.build_core_universe_data --codes 5243,5942 --output /tmp/kabutane-core-sample --refresh-base --fundamentals-limit 0
+          python -m scripts.build_core_with_dividends --codes 5243,5942 --output /tmp/kabutane-core-sample --refresh-base --fundamentals-limit 0
           python -m scripts.public_core_radar --input /tmp/kabutane-core-sample/radar.json --output /tmp/kabutane-core-sample/public-radar.json
           python - <<'PY'
           import json
@@ -96,11 +102,17 @@ jobs:
           shard = json.loads((root/'charts'/'52.json').read_text(encoding='utf-8'))
           if '5243' not in shard.get('records', {}):
               raise SystemExit('5243 chart payload not generated')
+          dividend_shard = json.loads((root/'dividends'/'52.json').read_text(encoding='utf-8'))
+          if '5243' not in dividend_shard.get('records', {}):
+              raise SystemExit('5243 dividend history not generated')
+          public_5243 = next((row for row in public.get('records') or [] if str(row.get('code')) == '5243'), None)
+          if public_5243 is None or 'consecutive_dividend_increase_years' not in public_5243:
+              raise SystemExit('public sample is missing dividend screening fields')
           if any(str(row.get('provisional_status') or '') == 'GC' for row in public.get('records') or []):
               raise SystemExit('public sample leaked provisional GC in all-stock catalog')
           if any('monthly_rsi_spread' in row for row in public.get('records') or []):
               raise SystemExit('public sample leaked current-month RSI spread in all-stock catalog')
-          print('core live sample OK')
+          print('core live sample with dividend history OK')
           PY
 
   detect-heavy-change:
@@ -204,7 +216,7 @@ jobs:
           elif [ "$(date -u +%u)" = "1" ] && [ "$(date -u +%d)" -le 7 ]; then
             REFRESH="--refresh-base"
           fi
-          python -m scripts.build_core_universe_data $REFRESH --fundamentals-limit "$FUND_LIMIT"
+          python -m scripts.build_core_with_dividends $REFRESH --fundamentals-limit "$FUND_LIMIT"
           printf '%s\n' "$CURRENT_UNIVERSE_HASH" > data/core/universe.sha256
       - name: Rebuild premium opportunity radar and public catalog
         run: |
@@ -236,6 +248,8 @@ jobs:
               raise SystemExit('premium radar must contain the full core universe')
           if int(manifest.get('daily_coverage') or 0) / total < .90:
               raise SystemExit('daily coverage below 90%')
+          if int(manifest.get('dividend_history_coverage') or 0) <= 0:
+              raise SystemExit('dividend history coverage is empty')
           if not Path('data/core/universe.sha256').read_text(encoding='utf-8').strip():
               raise SystemExit('core universe fingerprint is missing')
           print(json.dumps(manifest, ensure_ascii=False, indent=2))
@@ -251,6 +265,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add stocks.csv stocks-all.csv data/universe-all.json data/universe-status.json data/core data/premium/opportunity-radar.json data/premium/supply-demand-screen.json data/fundamentals_cache.json
-          git commit -m "data: refresh all-core charts, provisional signals and premium radar"
+          git commit -m "data: refresh all-core charts, provisional signals, dividends and premium radar"
           git pull --rebase origin main
           git push origin main
