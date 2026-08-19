@@ -22,6 +22,7 @@ import re
 import subprocess
 import tempfile
 from typing import Iterable
+from urllib.error import HTTPError, URLError
 from urllib.parse import urljoin, urlparse
 from urllib.request import Request, urlopen
 
@@ -34,6 +35,7 @@ ROW_RE = re.compile(
 NUMBER_RE = re.compile(r"(?P<negative>▲\s*)?(?P<number>\d[\d,]*)")
 MIN_RECORDS_PER_REPORT = 1000
 HISTORY_LIMIT = 104
+JST = dt.timezone(dt.timedelta(hours=9))
 
 
 class LinkParser(HTMLParser):
@@ -68,6 +70,58 @@ def discover_recent_pdfs(page_html: str, base_url: str = JPX_PAGE) -> list[tuple
         date = dt.datetime.strptime(match.group("date"), "%Y%m%d").date().isoformat()
         found[date] = absolute
     return sorted(found.items())
+
+
+def recent_friday_pdf_candidates(
+    listed: list[tuple[str, str]],
+    *,
+    today: dt.date | None = None,
+    limit: int = 8,
+) -> list[tuple[str, str]]:
+    """Build a tiny fallback set when JPX's listing page lags behind its PDFs.
+
+    The official issue-level weekend balance is normally published on the second
+    business day after the Friday snapshot. We deliberately wait until Tuesday
+    before probing a candidate. Japanese holidays can delay publication further;
+    a missing guessed URL is simply ignored and the Tue-Thu schedule tries again.
+
+    The URL is inferred only from the most recent *listed* JPX PDF and only for
+    later Fridays, so this never crawls historical or future dates broadly.
+    """
+    if not listed or limit <= 0:
+        return []
+
+    parsed_listed: list[tuple[dt.date, str]] = []
+    for raw_date, url in listed:
+        try:
+            parsed_listed.append((dt.date.fromisoformat(raw_date), url))
+        except ValueError:
+            continue
+    if not parsed_listed:
+        return []
+
+    latest_date, latest_url = max(parsed_listed, key=lambda item: item[0])
+    current = today or dt.datetime.now(JST).date()
+    if current <= latest_date:
+        return []
+
+    parsed_url = urlparse(latest_url)
+    latest_filename = Path(parsed_url.path).name
+    if not PDF_NAME_RE.search(latest_filename):
+        return []
+
+    start = latest_date + dt.timedelta(days=1)
+    first_friday = start + dt.timedelta(days=(4 - start.weekday()) % 7)
+    candidates: list[tuple[str, str]] = []
+    friday = first_friday
+    while friday <= current:
+        normal_publication_date = friday + dt.timedelta(days=4)
+        if normal_publication_date <= current:
+            filename = f"syumatsu{friday:%Y%m%d}00.pdf"
+            path = str(Path(parsed_url.path).with_name(filename))
+            candidates.append((friday.isoformat(), parsed_url._replace(path=path).geturl()))
+        friday += dt.timedelta(days=7)
+    return candidates[-limit:]
 
 
 def normalize_code(raw: str) -> str:
@@ -228,13 +282,36 @@ def write_shards(
 
 def collect(output_dir: Path) -> dict:
     page_html = fetch_bytes(JPX_PAGE).decode("utf-8", errors="replace")
-    pdfs = discover_recent_pdfs(page_html)
-    if not pdfs:
+    listed = discover_recent_pdfs(page_html)
+    if not listed:
         raise RuntimeError("JPX weekly margin PDFs were not found on the source page")
 
+    pdfs_by_date = dict(listed)
+    prefetched: dict[str, bytes] = {}
+    for report_date, url in recent_friday_pdf_candidates(listed):
+        if report_date in pdfs_by_date:
+            continue
+        try:
+            body = fetch_bytes(url, timeout=20)
+        except HTTPError as error:
+            if error.code not in {403, 404}:
+                print(f"fallback probe failed {report_date}: HTTP {error.code}")
+            continue
+        except (URLError, TimeoutError, OSError) as error:
+            print(f"fallback probe failed {report_date}: {error}")
+            continue
+        if not body.startswith(b"%PDF"):
+            print(f"fallback probe ignored non-PDF response for {report_date}")
+            continue
+        pdfs_by_date[report_date] = url
+        prefetched[url] = body
+        print(f"fallback discovered JPX weekly margin PDF: {report_date}")
+
+    pdfs = sorted(pdfs_by_date.items())
     snapshots = []
     for report_date, url in pdfs:
-        text = pdf_to_text(fetch_bytes(url))
+        pdf_bytes = prefetched.pop(url, None) or fetch_bytes(url)
+        text = pdf_to_text(pdf_bytes)
         records = parse_report_text(text, report_date)
         if len(records) < MIN_RECORDS_PER_REPORT:
             raise RuntimeError(
