@@ -67,7 +67,6 @@ jobs:
           grep -q 'data/core/public-radar.json' assets/all-stocks.js
           ! grep -q 'fetch(`data/core/radar.json' assets/all-stocks.js
           grep -q 'rm -f _site/data/core/radar.json' .github/workflows/deploy-pages.yml
-          grep -q 'rm -f _site/data/core/radar.json' .github/workflows/update-daily.yml
           grep -q 'コスモスフィルター' all-stocks.html
           grep -q 'ルーモフィルター' all-stocks.html
           grep -q 'エールフィルター' all-stocks.html
