@@ -1,6 +1,48 @@
 (() => {
   "use strict";
 
+  function injectDividendControls() {
+    const grid = document.querySelector(".expert-grid");
+    if (grid && !document.getElementById("allStocksDividendStreakMin")) {
+      grid.insertAdjacentHTML("beforeend", `
+        <label>配当利回り 最低%
+          <input id="allStocksDividendYieldMin" type="number" inputmode="decimal" placeholder="例 3" step="0.5" min="0">
+        </label>
+        <label>連続増配
+          <select id="allStocksDividendStreakMin">
+            <option value="">指定なし</option>
+            <option value="1">1年以上</option>
+            <option value="2">2年以上</option>
+            <option value="3">3年以上</option>
+            <option value="5">5年以上</option>
+          </select>
+        </label>
+        <label>直近5年の減配
+          <select id="allStocksDividendNoCut">
+            <option value="all">指定なし</option>
+            <option value="yes">減配なし</option>
+          </select>
+        </label>
+        <label>5年配当成長率 最低%
+          <select id="allStocksDividendGrowthMin">
+            <option value="">指定なし</option>
+            <option value="0">0%以上</option>
+            <option value="3">3%以上 / 年</option>
+            <option value="5">5%以上 / 年</option>
+            <option value="10">10%以上 / 年</option>
+          </select>
+        </label>`);
+    }
+    const sort = document.getElementById("allStocksSort");
+    if (sort && !sort.querySelector('option[value="dividend-streak"]')) {
+      sort.insertAdjacentHTML("beforeend", '<option value="dividend-streak">連続増配が長い順</option><option value="dividend-growth">5年配当成長率が高い順</option><option value="dividend-yield">配当利回りが高い順</option>');
+    }
+    const lastHeader = document.querySelector(".all-stocks-table thead th:last-child");
+    if (lastHeader && lastHeader.textContent.trim() === "財務") lastHeader.textContent = "財務・配当";
+  }
+
+  injectDividendControls();
+
   const rowsEl = document.getElementById("allStocksRows");
   const emptyEl = document.getElementById("allStocksEmpty");
   const totalEl = document.getElementById("allStocksTotal");
@@ -21,6 +63,10 @@
   const revenueMinEl = document.getElementById("allStocksRevenueMin");
   const perMaxEl = document.getElementById("allStocksPerMax");
   const fcfEl = document.getElementById("allStocksFcf");
+  const dividendYieldMinEl = document.getElementById("allStocksDividendYieldMin");
+  const dividendStreakMinEl = document.getElementById("allStocksDividendStreakMin");
+  const dividendNoCutEl = document.getElementById("allStocksDividendNoCut");
+  const dividendGrowthMinEl = document.getElementById("allStocksDividendGrowthMin");
   const sortEl = document.getElementById("allStocksSort");
   const moreEl = document.getElementById("allStocksMore");
   const guideResetEl = document.getElementById("allStocksGuideReset");
@@ -55,9 +101,6 @@
     }, "");
   }
 
-  // Defense-in-depth: the page normally receives public-radar.json, where the
-  // current-month up-cross state has already been removed. If an old payload is
-  // ever served, do not turn that state back into a public label or filter.
   function publicStatus(item) {
     const raw = String(item?.provisional_status || "UNKNOWN").toUpperCase();
     if (raw === "GC") {
@@ -68,23 +111,11 @@
   }
 
   function signalLabel(value) {
-    return ({
-      NEAR_GC: "GC接近",
-      CONTINUE: "継続",
-      DC: "暫定DC",
-      OUT: "OUT側",
-      UNKNOWN: "判定待ち",
-    })[value] || "判定待ち";
+    return ({ NEAR_GC: "GC接近", CONTINUE: "継続", DC: "暫定DC", OUT: "OUT側", UNKNOWN: "判定待ち" })[value] || "判定待ち";
   }
 
   function signalClass(value) {
-    return ({
-      NEAR_GC: "signal-near",
-      CONTINUE: "signal-continue",
-      DC: "signal-dc",
-      OUT: "signal-out",
-      UNKNOWN: "signal-unknown",
-    })[value] || "signal-unknown";
+    return ({ NEAR_GC: "signal-near", CONTINUE: "signal-continue", DC: "signal-dc", OUT: "signal-out", UNKNOWN: "signal-unknown" })[value] || "signal-unknown";
   }
 
   function marketLabel(value) {
@@ -99,13 +130,8 @@
     const status = publicStatus(item);
     const volume = finite(item.volume_ratio_5_30);
     const high = finite(item.high52_distance_pct);
-
-    if (guide === "cosmos") {
-      return status === "CONTINUE" && item.above_sma200 === true && item.perfect_order === true && high !== null && high >= -15;
-    }
-    if (guide === "lumo") {
-      return ["NEAR_GC", "CONTINUE"].includes(status) && item.above_sma25 === true && item.above_sma75 === true && volume !== null && volume >= 1.2 && high !== null && high >= -12;
-    }
+    if (guide === "cosmos") return status === "CONTINUE" && item.above_sma200 === true && item.perfect_order === true && high !== null && high >= -15;
+    if (guide === "lumo") return ["NEAR_GC", "CONTINUE"].includes(status) && item.above_sma25 === true && item.above_sma75 === true && volume !== null && volume >= 1.2 && high !== null && high >= -12;
     if (guide === "aile") {
       if (item.fundamentals_available !== true || item.above_sma200 !== true) return false;
       const checks = [
@@ -133,6 +159,10 @@
       revenueMin: finite(revenueMinEl?.value),
       perMax: finite(perMaxEl?.value),
       fcf: fcfEl?.value || "all",
+      dividendYieldMin: finite(dividendYieldMinEl?.value),
+      dividendStreakMin: finite(dividendStreakMinEl?.value),
+      dividendNoCut: dividendNoCutEl?.value || "all",
+      dividendGrowthMin: finite(dividendGrowthMinEl?.value),
       sort: sortEl?.value || "code",
     };
   }
@@ -152,12 +182,14 @@
     if (filters.revenueMin !== null && (finite(item.revenue_growth_pct) === null || finite(item.revenue_growth_pct) < filters.revenueMin)) return false;
     if (filters.perMax !== null && (finite(item.per) === null || finite(item.per) > filters.perMax)) return false;
     if (filters.fcf === "positive" && (finite(item.free_cashflow_oku) === null || finite(item.free_cashflow_oku) <= 0)) return false;
+    if (filters.dividendYieldMin !== null && (finite(item.dividend_yield_pct) === null || finite(item.dividend_yield_pct) < filters.dividendYieldMin)) return false;
+    if (filters.dividendStreakMin !== null && (finite(item.consecutive_dividend_increase_years) === null || finite(item.consecutive_dividend_increase_years) < filters.dividendStreakMin)) return false;
+    if (filters.dividendNoCut === "yes" && item.dividend_no_cut_5y !== true) return false;
+    if (filters.dividendGrowthMin !== null && (finite(item.dividend_cagr_5y_pct) === null || finite(item.dividend_cagr_5y_pct) < filters.dividendGrowthMin)) return false;
     return true;
   }
 
-  function currentQuery() {
-    return String(searchEl?.value || "").trim().toLowerCase();
-  }
+  function currentQuery() { return String(searchEl?.value || "").trim().toLowerCase(); }
 
   function filteredRows() {
     if (!payload) return [];
@@ -180,22 +212,18 @@
       if (filters.sort === "roe") return (finite(b.roe_pct) ?? -9999) - (finite(a.roe_pct) ?? -9999);
       if (filters.sort === "equity") return (finite(b.equity_ratio_pct) ?? -9999) - (finite(a.equity_ratio_pct) ?? -9999);
       if (filters.sort === "per") return (finite(a.per) ?? 999999) - (finite(b.per) ?? 999999);
+      if (filters.sort === "dividend-streak") return (finite(b.consecutive_dividend_increase_years) ?? -1) - (finite(a.consecutive_dividend_increase_years) ?? -1);
+      if (filters.sort === "dividend-growth") return (finite(b.dividend_cagr_5y_pct) ?? -9999) - (finite(a.dividend_cagr_5y_pct) ?? -9999);
+      if (filters.sort === "dividend-yield") return (finite(b.dividend_yield_pct) ?? -9999) - (finite(a.dividend_yield_pct) ?? -9999);
       return String(a.code || "").localeCompare(String(b.code || ""), "ja", { numeric: true });
     });
     return result;
   }
 
   function renderGuideCounts(records) {
-    const mapping = [
-      ["cosmos", "cosmosGuideCount"],
-      ["lumo", "lumoGuideCount"],
-      ["aile", "aileGuideCount"],
-    ];
-    mapping.forEach(([guide, id]) => {
+    [["cosmos", "cosmosGuideCount"], ["lumo", "lumoGuideCount"], ["aile", "aileGuideCount"]].forEach(([guide, id]) => {
       const element = document.getElementById(id);
-      if (!element) return;
-      const value = records.filter((item) => guidePass(item, guide)).length;
-      element.textContent = `${value.toLocaleString("ja-JP")}社`;
+      if (element) element.textContent = `${records.filter((item) => guidePass(item, guide)).length.toLocaleString("ja-JP")}社`;
     });
   }
 
@@ -205,54 +233,50 @@
     const total = Number(payload.core_count || records.length || 0);
     const monthly = Number(payload.monthly_coverage || 0);
     const daily = Number(payload.daily_coverage || 0);
+    const dividendCoverage = Number(payload.dividend_history_coverage || 0);
     const priceDate = latestPriceDate(records);
-
     if (totalEl) totalEl.textContent = total.toLocaleString("ja-JP");
-    if (coverageEl) coverageEl.textContent = `日足 ${daily.toLocaleString("ja-JP")} / 月足RSI ${monthly.toLocaleString("ja-JP")}`;
+    if (coverageEl) coverageEl.textContent = `日足 ${daily.toLocaleString("ja-JP")} / 月足RSI ${monthly.toLocaleString("ja-JP")}${dividendCoverage ? ` / 配当履歴 ${dividendCoverage.toLocaleString("ja-JP")}` : ""}`;
     if (dataDateEl) dataDateEl.textContent = `株価 ${priceDate || "—"}`;
     renderGuideCounts(records);
 
     if (summaryEl) {
       const counts = { NEAR_GC: 0, CONTINUE: 0, DC: 0, OUT: 0, UNKNOWN: 0 };
       records.forEach((item) => { counts[publicStatus(item)] = (counts[publicStatus(item)] || 0) + 1; });
-      const cards = [
-        ["GC接近", counts.NEAR_GC, "NEAR_GC", "signal-near"],
-        ["継続", counts.CONTINUE, "CONTINUE", "signal-continue"],
-        ["暫定DC", counts.DC, "DC", "signal-dc"],
-        ["OUT側", counts.OUT, "OUT", "signal-out"],
-        ["判定待ち", counts.UNKNOWN, "UNKNOWN", "signal-unknown"],
-      ];
+      const cards = [["GC接近", counts.NEAR_GC, "NEAR_GC", "signal-near"], ["継続", counts.CONTINUE, "CONTINUE", "signal-continue"], ["暫定DC", counts.DC, "DC", "signal-dc"], ["OUT側", counts.OUT, "OUT", "signal-out"], ["判定待ち", counts.UNKNOWN, "UNKNOWN", "signal-unknown"]];
       summaryEl.innerHTML = cards.map(([label, value, signal, cls]) => `<button type="button" data-summary-signal="${signal}" class="${cls}"><span>${label}</span><strong>${Number(value || 0).toLocaleString("ja-JP")}</strong></button>`).join("");
-      summaryEl.querySelectorAll("[data-summary-signal]").forEach((button) => {
-        button.addEventListener("click", () => {
-          setGuide("custom", false);
-          if (signalEl) signalEl.value = button.dataset.summarySignal || "ALL";
-          visibleLimit = 100;
-          syncUrl();
-          renderRows();
-        });
-      });
+      summaryEl.querySelectorAll("[data-summary-signal]").forEach((button) => button.addEventListener("click", () => {
+        setGuide("custom", false);
+        if (signalEl) signalEl.value = button.dataset.summarySignal || "ALL";
+        visibleLimit = 100;
+        syncUrl();
+        renderRows();
+      }));
     }
   }
 
   function renderFinance(item) {
-    if (item.fundamentals_available !== true) return '<span class="finance-muted">取得待ち / 取得不可</span>';
-    return `<div class="finance-mini"><span>PER ${number(item.per, 1)}</span><span>ROE ${number(item.roe_pct, 1)}%</span><span>自己資本 ${number(item.equity_ratio_pct, 1)}%</span></div>`;
+    const chips = [];
+    if (item.fundamentals_available === true) {
+      chips.push(`PER ${number(item.per, 1)}`, `ROE ${number(item.roe_pct, 1)}%`, `自己資本 ${number(item.equity_ratio_pct, 1)}%`);
+    }
+    const yieldPct = finite(item.dividend_yield_pct);
+    const streak = finite(item.consecutive_dividend_increase_years);
+    if (yieldPct !== null) chips.push(`配当 ${number(yieldPct, 2)}%`);
+    if (streak !== null && streak > 0) chips.push(`${number(streak, 0)}年増配`);
+    else if (item.dividend_no_cut_5y === true) chips.push("5年減配なし");
+    return chips.length ? `<div class="finance-mini">${chips.map((value) => `<span>${value}</span>`).join("")}</div>` : '<span class="finance-muted">取得待ち / 取得不可</span>';
   }
 
   function renderRows() {
     if (!payload || !rowsEl) return;
     const all = filteredRows();
     const shown = all.slice(0, visibleLimit);
-
     rowsEl.innerHTML = shown.map((item) => {
       const volume = finite(item.volume_ratio_5_30);
       const highDistance = finite(item.high52_distance_pct);
       const status = publicStatus(item);
-      const trend = [
-        item.above_sma200 === true ? "SMA200上" : item.above_sma200 === false ? "SMA200下" : "SMA200 —",
-        item.perfect_order === true ? "上昇配列" : "配列未成立",
-      ];
+      const trend = [item.above_sma200 === true ? "SMA200上" : item.above_sma200 === false ? "SMA200下" : "SMA200 —", item.perfect_order === true ? "上昇配列" : "配列未成立"];
       return `<tr>
         <td class="stock-main"><a class="all-stock-link" href="detail.html?code=${encodeURIComponent(item.code || "")}"><strong>${item.code || "—"} ${item.name || ""}</strong><small>${item.sector || "セクター —"}</small></a></td>
         <td><span class="market-chip">${marketLabel(item.market)}</span></td>
@@ -264,7 +288,6 @@
         <td>${renderFinance(item)}</td>
       </tr>`;
     }).join("");
-
     const guideName = ({ cosmos: "コスモス🌸", lumo: "ルーモ✨", aile: "エール💜", custom: "玄人設定", all: "全銘柄" })[guideFilter] || "全銘柄";
     if (resultTextEl) resultTextEl.textContent = `${guideName}：${all.length.toLocaleString("ja-JP")}銘柄 / ${Math.min(visibleLimit, all.length).toLocaleString("ja-JP")}件表示`;
     if (emptyEl) emptyEl.hidden = all.length > 0;
@@ -295,16 +318,18 @@
     if (revenueMinEl) revenueMinEl.value = "";
     if (perMaxEl) perMaxEl.value = "";
     if (fcfEl) fcfEl.value = "all";
+    if (dividendYieldMinEl) dividendYieldMinEl.value = "";
+    if (dividendStreakMinEl) dividendStreakMinEl.value = "";
+    if (dividendNoCutEl) dividendNoCutEl.value = "all";
+    if (dividendGrowthMinEl) dividendGrowthMinEl.value = "";
     if (sortEl) sortEl.value = "code";
   }
 
   function syncUrl() {
     const url = new URL(location.href);
-    if (["cosmos", "lumo", "aile"].includes(guideFilter)) url.searchParams.set("guide", guideFilter);
-    else url.searchParams.delete("guide");
+    if (["cosmos", "lumo", "aile"].includes(guideFilter)) url.searchParams.set("guide", guideFilter); else url.searchParams.delete("guide");
     const signal = signalEl?.value || "ALL";
-    if (signal !== "ALL") url.searchParams.set("signal", signal);
-    else url.searchParams.delete("signal");
+    if (signal !== "ALL") url.searchParams.set("signal", signal); else url.searchParams.delete("signal");
     history.replaceState(null, "", `${url.pathname}${url.search}${url.hash}`);
   }
 
@@ -334,7 +359,6 @@
       if (signalEl) signalEl.value = signal;
       guideFilter = "custom";
     }
-    // signal=GC is intentionally ignored; it is not a public filter.
   }
 
   async function init() {
@@ -349,21 +373,15 @@
     } catch (error) {
       if (dataDateEl) dataDateEl.textContent = "データ読込エラー";
       if (resultTextEl) resultTextEl.textContent = "全銘柄データを読み込めませんでした。";
-      if (emptyEl) {
-        emptyEl.hidden = false;
-        emptyEl.textContent = `全銘柄一覧を読み込めませんでした（${String(error.message || error)}）。`;
-      }
+      if (emptyEl) { emptyEl.hidden = false; emptyEl.textContent = `全銘柄一覧を読み込めませんでした（${String(error.message || error)}）。`; }
     }
   }
 
   guideButtons.forEach((button) => button.addEventListener("click", () => setGuide(button.dataset.guide || "all")));
   guideResetEl?.addEventListener("click", () => setGuide("all"));
-  expertResetEl?.addEventListener("click", () => {
-    resetExpertInputs();
-    setGuide("all", false);
-  });
+  expertResetEl?.addEventListener("click", () => { resetExpertInputs(); setGuide("all", false); });
   searchEl?.addEventListener("input", () => { visibleLimit = 100; renderRows(); });
-  [marketEl, signalEl, sma200El, perfectEl, volumeMinEl, highMinEl, financeEl, roeMinEl, equityMinEl, revenueMinEl, perMaxEl, fcfEl, sortEl].forEach((element) => {
+  [marketEl, signalEl, sma200El, perfectEl, volumeMinEl, highMinEl, financeEl, roeMinEl, equityMinEl, revenueMinEl, perMaxEl, fcfEl, dividendYieldMinEl, dividendStreakMinEl, dividendNoCutEl, dividendGrowthMinEl, sortEl].forEach((element) => {
     element?.addEventListener(element?.tagName === "INPUT" ? "input" : "change", onExpertChange);
   });
   moreEl?.addEventListener("click", () => { visibleLimit += 100; renderRows(); });
