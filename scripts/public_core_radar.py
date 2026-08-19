@@ -17,7 +17,11 @@ PUBLIC_FIELDS = (
     "volume_ratio_5_30", "high52_price", "high52_distance_pct",
     "confirmed_month", "confirmed_status", "confirmed_active",
     "data_completeness_pct", "per", "pbr", "roe_pct", "equity_ratio_pct",
-    "revenue_growth_pct", "free_cashflow_oku",
+    "revenue_growth_pct", "free_cashflow_oku", "dividend_yield_pct", "payout_ratio_pct",
+    "dividend_observation_years", "consecutive_dividend_increase_years",
+    "dividend_increase_count_5y", "dividend_cut_count_5y", "dividend_flat_count_5y",
+    "dividend_no_cut_5y", "dividend_cagr_3y_pct", "dividend_cagr_5y_pct",
+    "dividend_latest_change_pct", "dividend_latest_annual",
     "fundamentals_available", "fundamentals_stale",
 )
 REMOVED_FIELDS = {"provisional_month", "monthly_rsi14", "monthly_rsi_ma5", "monthly_rsi_spread"}
@@ -59,6 +63,7 @@ def build_public_payload(source: dict[str, Any]) -> dict[str, Any]:
         "daily_coverage": int(source.get("daily_coverage") or 0),
         "monthly_coverage": int(source.get("monthly_coverage") or 0),
         "fundamentals_coverage": int(source.get("fundamentals_coverage") or 0),
+        "dividend_history_coverage": int(source.get("dividend_history_coverage") or 0),
         "status_counts": counts,
         "public_boundary": "current_month_upcross_removed",
         "records": records,
