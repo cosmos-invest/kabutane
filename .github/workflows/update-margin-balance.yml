@@ -30,8 +30,8 @@ on:
       - 'assets/premium-supply-beta.css'
       - '.github/workflows/update-margin-balance.yml'
   schedule:
-    # JPX usually publishes the weekly issue-level balance around 16:30 JST
-    # on the second business day. Tue-Thu covers weeks with Japanese holidays.
+    # JPX usually publishes the weekly issue-level balance around 16:30 JST.
+    # Tue-Thu covers Japanese holiday shifts while duplicate data writes are suppressed.
     - cron: '10 8 * * 2-4'
   workflow_dispatch:
 
@@ -66,6 +66,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          # PRs validate their own head. Scheduled/manual/push refreshes always
+          # operate on a real main branch so the data commit can be pushed.
+          ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || 'main' }}
           fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
@@ -127,4 +130,4 @@ jobs:
           git add data/margin data/premium
           git commit -m "data: update JPX margin balances and premium opportunity radar"
           git pull --rebase origin main
-          git push
+          git push origin HEAD:main
