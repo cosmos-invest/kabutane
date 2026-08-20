@@ -5,6 +5,7 @@ import os
 from pathlib import Path
 from typing import Any
 
+from dividend_event_quality import suppress_partial_dividend_periods
 from dividend_history import (
     DEFAULT_MAX_YEARS,
     apply_verified_streak,
@@ -80,8 +81,8 @@ def download_dividend_frames(stocks: list[dict[str, str]]) -> tuple[dict[str, An
     )
     # Live diagnostics on SPK, Mitsubishi HC Capital and Ricoh Leasing showed
     # the same event set/amounts via 1mo, 1d, 1d+repair and get_dividends.
-    # Keep the efficient batched monthly transport; accuracy policy is handled
-    # downstream by treating missing-event years as unknown rather than zero.
+    # Keep the efficient batched monthly transport; downstream quality checks
+    # turn missing or partial event periods into unknown rather than fake values.
     return core.download_frames(
         tickers,
         DIVIDEND_HISTORY_PERIOD,
@@ -111,6 +112,8 @@ def attach_dividend_data(
     lower_bound_count = 0
     gap_record_count = 0
     unknown_year_count = 0
+    partial_event_record_count = 0
+    partial_event_period_count = 0
     review_required_count = 0
     extended_anchor_count = 0
 
@@ -121,6 +124,11 @@ def attach_dividend_data(
         ticker = str(row.get("ticker") or "")
         frame = dividend_frames.get(ticker)
         fiscal_month = fiscal_year_ends.get(code)
+        quality = {
+            "expected_events_per_period": None,
+            "partial_periods": [],
+        }
+
         if frame is None or getattr(frame, "empty", True):
             previous = _existing_dividend_for_code(output, code, existing_dividend_cache)
             # Reuse only schema-5-style clean records. Old records encoded a
@@ -139,14 +147,26 @@ def attach_dividend_data(
                     fiscal_year_end_month=fiscal_month,
                 )
         else:
-            summary = build_dividend_history(
+            clean_frame, quality = suppress_partial_dividend_periods(
                 frame,
+                fiscal_year_end_month=fiscal_month,
+            )
+            summary = build_dividend_history(
+                clean_frame,
                 max_years=DIVIDEND_HISTORY_YEARS,
                 fiscal_year_end_month=fiscal_month,
             )
+            summary["expected_dividend_events_per_period"] = quality.get("expected_events_per_period")
+            summary["partial_event_periods"] = list(quality.get("partial_periods") or [])
+            summary["partial_event_period_count"] = len(summary["partial_event_periods"])
 
+        summary.setdefault("expected_dividend_events_per_period", None)
+        summary.setdefault("partial_event_periods", [])
+        summary.setdefault("partial_event_period_count", len(summary.get("partial_event_periods") or []))
         summary = apply_verified_streak(summary, streak_overrides.get(code))
         compact = public_dividend_fields(summary)
+        compact["dividend_expected_events_per_period"] = summary.get("expected_dividend_events_per_period")
+        compact["dividend_partial_event_period_count"] = summary.get("partial_event_period_count")
         row.update(compact)
 
         finance = _finance_for_code(output, code, finance_cache)
@@ -168,6 +188,10 @@ def attach_dividend_data(
         if summary.get("history_has_gaps") is True:
             gap_record_count += 1
         unknown_year_count += int(summary.get("unknown_year_count") or 0)
+        partial_count = int(summary.get("partial_event_period_count") or 0)
+        if partial_count > 0:
+            partial_event_record_count += 1
+            partial_event_period_count += partial_count
         if summary.get("streak_review_required") is True:
             review_required_count += 1
         if int(summary.get("streak_extension_years") or 0) > 0:
@@ -187,6 +211,7 @@ def attach_dividend_data(
     radar["dividend_history_event_source"] = "Yahoo Finance corporate actions via yfinance"
     radar["dividend_history_transport_interval"] = "1mo"
     radar["dividend_history_missing_event_policy"] = "unknown_not_zero"
+    radar["dividend_history_partial_event_policy"] = "cadence_shortfall_unknown"
     radar["dividend_history_first_dividend_policy"] = "baseline_not_increase"
     radar["dividend_fiscal_year_coverage"] = fiscal_year_count
     radar["dividend_fiscal_calendar_source"] = EDINET_CODELIST_URL
@@ -196,6 +221,8 @@ def attach_dividend_data(
     radar["dividend_streak_lower_bound_count"] = lower_bound_count
     radar["dividend_history_gap_record_count"] = gap_record_count
     radar["dividend_history_unknown_year_count"] = unknown_year_count
+    radar["dividend_partial_event_record_count"] = partial_event_record_count
+    radar["dividend_partial_event_period_count"] = partial_event_period_count
     radar["dividend_streak_review_required_count"] = review_required_count
     radar["dividend_streak_extended_anchor_count"] = extended_anchor_count
     core.write_json(radar_path, radar)
@@ -211,6 +238,7 @@ def attach_dividend_data(
                 "history_max_years": DIVIDEND_HISTORY_YEARS,
                 "source_period": DIVIDEND_HISTORY_PERIOD,
                 "missing_event_policy": "unknown_not_zero",
+                "partial_event_policy": "cadence_shortfall_unknown",
                 "records": records,
             },
         )
@@ -224,6 +252,8 @@ def attach_dividend_data(
         "lower_bounds": lower_bound_count,
         "gap_records": gap_record_count,
         "unknown_years": unknown_year_count,
+        "partial_event_records": partial_event_record_count,
+        "partial_event_periods": partial_event_period_count,
         "review_required": review_required_count,
         "extended_anchors": extended_anchor_count,
     }
@@ -254,6 +284,7 @@ def build_with_dividends(
     refreshed_manifest["dividend_history_event_source"] = "Yahoo Finance corporate actions via yfinance"
     refreshed_manifest["dividend_history_transport_interval"] = "1mo"
     refreshed_manifest["dividend_history_missing_event_policy"] = "unknown_not_zero"
+    refreshed_manifest["dividend_history_partial_event_policy"] = "cadence_shortfall_unknown"
     refreshed_manifest["dividend_history_first_dividend_policy"] = "baseline_not_increase"
     refreshed_manifest["dividend_fiscal_year_coverage"] = dividend_counts["fiscal_years"]
     refreshed_manifest["dividend_fiscal_calendar_source"] = EDINET_CODELIST_URL
@@ -265,6 +296,8 @@ def build_with_dividends(
     refreshed_manifest["dividend_streak_lower_bound_count"] = dividend_counts["lower_bounds"]
     refreshed_manifest["dividend_history_gap_record_count"] = dividend_counts["gap_records"]
     refreshed_manifest["dividend_history_unknown_year_count"] = dividend_counts["unknown_years"]
+    refreshed_manifest["dividend_partial_event_record_count"] = dividend_counts["partial_event_records"]
+    refreshed_manifest["dividend_partial_event_period_count"] = dividend_counts["partial_event_periods"]
     refreshed_manifest["dividend_streak_review_required_count"] = dividend_counts["review_required"]
     refreshed_manifest["dividend_streak_extended_anchor_count"] = dividend_counts["extended_anchors"]
     core.write_json(manifest_path, refreshed_manifest, compact=False)
