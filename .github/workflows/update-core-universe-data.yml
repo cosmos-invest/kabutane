@@ -18,7 +18,8 @@ on:
   push:
     branches: [main]
     paths:
-      # Updating this workflow is also the explicit production retrigger path.
+      - 'dividend_history.py'
+      - 'scripts/build_core_with_dividends.py'
       - '.github/workflows/update-core-universe-data.yml'
   workflow_run:
     workflows: ["Update daily candidate prices"]
@@ -99,15 +100,20 @@ jobs:
           root = Path('/tmp/kabutane-core-sample')
           radar = json.loads((root/'radar.json').read_text(encoding='utf-8'))
           public = json.loads((root/'public-radar.json').read_text(encoding='utf-8'))
+          manifest = json.loads((root/'manifest.json').read_text(encoding='utf-8'))
           codes = {str(row.get('code')) for row in radar.get('records') or []}
           if '5243' not in codes:
               raise SystemExit('5243 note is missing from the core live sample')
           if int(radar.get('daily_coverage') or 0) < 1 or int(radar.get('monthly_coverage') or 0) < 1:
               raise SystemExit(f"sample coverage too low: {radar.get('daily_coverage')} / {radar.get('monthly_coverage')}")
+          if int(manifest.get('dividend_history_max_years') or 0) != 50:
+              raise SystemExit('dividend history is not configured for 50 years')
           shard = json.loads((root/'charts'/'52.json').read_text(encoding='utf-8'))
           if '5243' not in shard.get('records', {}):
               raise SystemExit('5243 chart payload not generated')
           dividend_shard = json.loads((root/'dividends'/'52.json').read_text(encoding='utf-8'))
+          if int(dividend_shard.get('history_max_years') or 0) != 50:
+              raise SystemExit('dividend shard is not 50-year capable')
           if '5243' not in dividend_shard.get('records', {}):
               raise SystemExit('5243 dividend history not generated')
           public_5243 = next((row for row in public.get('records') or [] if str(row.get('code')) == '5243'), None)
@@ -117,7 +123,7 @@ jobs:
               raise SystemExit('public sample leaked provisional GC in all-stock catalog')
           if any('monthly_rsi_spread' in row for row in public.get('records') or []):
               raise SystemExit('public sample leaked current-month RSI spread in all-stock catalog')
-          print('core live sample with dividend history OK')
+          print('core live sample with 50-year dividend history OK')
           PY
 
   detect-heavy-change:
@@ -206,33 +212,17 @@ jobs:
         run: cp data/core/radar.json /tmp/core-radar-before.json
       - name: Refresh core catalog
         run: python update_universe.py
-      - name: Build all-core radar, chart data and finance cache
+      - name: Build all-core radar, unchanged chart history, and 50-year dividend history
         shell: bash
         env:
-          # Dividend history is derived from the monthly Yahoo frames. Refreshing
-          # only the daily overlay leaves CAPTURED_MONTHLY empty, so force the
-          # monthly/base download until dividend history has been published.
-          FORCE_DIVIDEND_BASE_REFRESH: ${{ github.event_name == 'push' && '1' || '0' }}
+          DIVIDEND_HISTORY_PERIOD: 'max'
+          DIVIDEND_HISTORY_YEARS: '50'
         run: |
           REFRESH=""
           FUND_LIMIT=600
           CURRENT_UNIVERSE_HASH="$(sha256sum stocks.csv | awk '{print $1}')"
           STORED_UNIVERSE_HASH="$(cat data/core/universe.sha256 2>/dev/null || true)"
-          DIVIDEND_COVERAGE="$(python - <<'PY'
-          import json
-          from pathlib import Path
-          try:
-              manifest = json.loads(Path('data/core/manifest.json').read_text(encoding='utf-8'))
-              print(int(manifest.get('dividend_history_coverage') or 0))
-          except Exception:
-              print(0)
-          PY
-          )"
-          if [ "$FORCE_DIVIDEND_BASE_REFRESH" = "1" ] || [ "$DIVIDEND_COVERAGE" -le 0 ]; then
-            echo "Dividend history is missing; refreshing monthly chart base."
-            REFRESH="--refresh-base"
-            FUND_LIMIT=1200
-          elif [ ! -f data/core/manifest.json ]; then
+          if [ ! -f data/core/manifest.json ]; then
             REFRESH="--refresh-base"
             FUND_LIMIT=1200
           elif [ "$CURRENT_UNIVERSE_HASH" != "$STORED_UNIVERSE_HASH" ]; then
@@ -275,6 +265,10 @@ jobs:
               raise SystemExit('daily coverage below 90%')
           if int(manifest.get('dividend_history_coverage') or 0) <= 0:
               raise SystemExit('dividend history coverage is empty')
+          if int(manifest.get('dividend_history_max_years') or 0) != 50:
+              raise SystemExit('dividend history max years must be 50')
+          if str(manifest.get('dividend_history_period') or '') != 'max':
+              raise SystemExit('dividend history source period must be max')
           if not Path('data/core/universe.sha256').read_text(encoding='utf-8').strip():
               raise SystemExit('core universe fingerprint is missing')
           print(json.dumps(manifest, ensure_ascii=False, indent=2))
