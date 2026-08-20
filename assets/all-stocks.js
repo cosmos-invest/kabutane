@@ -15,6 +15,12 @@
             <option value="2">2年以上</option>
             <option value="3">3年以上</option>
             <option value="5">5年以上</option>
+            <option value="10">10年以上</option>
+            <option value="15">15年以上</option>
+            <option value="20">20年以上</option>
+            <option value="25">25年以上</option>
+            <option value="30">30年以上</option>
+            <option value="40">40年以上</option>
           </select>
         </label>
         <label>直近5年の減配
