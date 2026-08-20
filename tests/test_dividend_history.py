@@ -70,6 +70,24 @@ class DividendHistoryTests(unittest.TestCase):
         result = build_dividend_history(frame, now=self.NOW)
         self.assertEqual(result["history"][0]["year"], 2022)
 
+    def test_history_is_capped_at_50_complete_years(self):
+        values = {year: float(year - 1975) for year in range(1976, 2026)}
+        frame = frame_for_years(values)
+        result = build_dividend_history(frame, now=self.NOW)
+        self.assertEqual(result["observation_years"], 50)
+        self.assertEqual(result["history_start_year"], 1976)
+        self.assertEqual(result["history_end_year"], 2025)
+        self.assertEqual(len(result["history"]), 50)
+        self.assertEqual(result["consecutive_increase_years"], 49)
+
+    def test_older_than_50_years_is_trimmed_before_streak_calculation(self):
+        values = {year: float(year - 1965) for year in range(1966, 2026)}
+        frame = frame_for_years(values)
+        result = build_dividend_history(frame, now=self.NOW)
+        self.assertEqual(result["observation_years"], 50)
+        self.assertEqual(result["history_start_year"], 1976)
+        self.assertEqual(result["consecutive_increase_years"], 49)
+
 
 if __name__ == "__main__":
     unittest.main()
