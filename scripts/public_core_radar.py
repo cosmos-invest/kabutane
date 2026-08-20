@@ -5,9 +5,13 @@ import json
 from pathlib import Path
 from typing import Any
 
+from dividend_ir_review import build_ir_review_candidate, build_ir_review_payload
+
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_INPUT = ROOT / "data" / "core" / "radar.json"
 DEFAULT_OUTPUT = ROOT / "data" / "core" / "public-radar.json"
+DEFAULT_IR_REVIEW_OUTPUT = ROOT / "data" / "core" / "quality" / "dividend-ir-review-candidates.json"
+STREAK_OVERRIDES_FILE = ROOT / "data" / "dividend_streak_overrides.json"
 
 PUBLIC_STATUSES = {"NEAR_GC", "CONTINUE", "DC", "OUT", "UNKNOWN"}
 PUBLIC_FIELDS = (
@@ -93,6 +97,75 @@ def validate_public_payload(payload: dict[str, Any]) -> None:
             raise ValueError(f"Public radar contains removed fields for {row.get('code')}: {sorted(leaked)}")
 
 
+def _load_override_codes() -> set[str]:
+    try:
+        payload = load_json(STREAK_OVERRIDES_FILE)
+    except (FileNotFoundError, json.JSONDecodeError, ValueError):
+        return set()
+    return {str(code).upper() for code, value in payload.items() if isinstance(value, dict)}
+
+
+def _load_dividend_details(input_path: Path) -> dict[str, dict[str, Any]]:
+    dividend_dir = input_path.parent / "dividends"
+    records: dict[str, dict[str, Any]] = {}
+    if not dividend_dir.exists():
+        return records
+    for path in sorted(dividend_dir.glob("*.json")):
+        try:
+            payload = load_json(path)
+        except (OSError, json.JSONDecodeError, ValueError):
+            continue
+        shard_records = payload.get("records") or {}
+        if not isinstance(shard_records, dict):
+            continue
+        for code, detail in shard_records.items():
+            if isinstance(detail, dict):
+                records[str(code).upper()] = detail
+    return records
+
+
+def write_ir_review_candidates(input_path: Path, output_path: Path) -> dict[str, Any]:
+    """Build an internal-only IR review queue from detailed dividend histories.
+
+    The queue ranks source-quality anomalies; it never estimates or publishes a
+    replacement consecutive-increase streak. Public radar fields are unchanged.
+    """
+    source = load_json(input_path)
+    radar_rows = {
+        str(row.get("code") or "").upper(): row
+        for row in (source.get("records") or [])
+        if isinstance(row, dict) and row.get("code")
+    }
+    details = _load_dividend_details(input_path)
+    override_codes = _load_override_codes()
+    candidates: list[dict[str, Any]] = []
+
+    for code, detail in details.items():
+        row = radar_rows.get(code, {})
+        has_anchor = code in override_codes or detail.get("streak_anchor_as_of_year") is not None
+        candidate = build_ir_review_candidate(
+            detail,
+            code=code,
+            ticker=str(row.get("ticker") or detail.get("ticker") or ""),
+            name=str(row.get("name") or detail.get("name") or code),
+            has_official_anchor=has_anchor,
+        )
+        if candidate is not None:
+            candidates.append(candidate)
+
+    payload = build_ir_review_payload(
+        candidates,
+        generated_at=source.get("generated_at"),
+        core_count=int(source.get("core_count") or len(radar_rows)),
+        verified_anchor_count=int(source.get("dividend_verified_streak_count") or len(override_codes)),
+    )
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    text = json.dumps(payload, ensure_ascii=False, separators=(",", ":")) + "\n"
+    if not output_path.exists() or output_path.read_text(encoding="utf-8") != text:
+        output_path.write_text(text, encoding="utf-8")
+    return payload
+
+
 def write_public_radar(input_path: Path = DEFAULT_INPUT, output_path: Path = DEFAULT_OUTPUT) -> dict[str, Any]:
     source = load_json(input_path)
     payload = build_public_payload(source)
@@ -101,6 +174,11 @@ def write_public_radar(input_path: Path = DEFAULT_INPUT, output_path: Path = DEF
     text = json.dumps(payload, ensure_ascii=False, separators=(",", ":")) + "\n"
     if not output_path.exists() or output_path.read_text(encoding="utf-8") != text:
         output_path.write_text(text, encoding="utf-8")
+
+    # Keep review candidates beside the generated public catalog, but in a
+    # separate quality directory and out of all public-record fields/UI.
+    review_output = output_path.parent / "quality" / "dividend-ir-review-candidates.json"
+    write_ir_review_candidates(input_path, review_output)
     return payload
 
 
@@ -113,8 +191,14 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> None:
     args = parse_args()
-    payload = write_public_radar(Path(args.input), Path(args.output))
-    print(f"Public core radar: records={len(payload.get('records') or [])}")
+    output_path = Path(args.output)
+    payload = write_public_radar(Path(args.input), output_path)
+    review_path = output_path.parent / "quality" / "dividend-ir-review-candidates.json"
+    review = load_json(review_path) if review_path.exists() else {"candidate_count": 0}
+    print(
+        f"Public core radar: records={len(payload.get('records') or [])}; "
+        f"internal IR review candidates={int(review.get('candidate_count') or 0)}"
+    )
 
 
 if __name__ == "__main__":
