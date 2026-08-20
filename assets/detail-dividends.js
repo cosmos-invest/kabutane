@@ -28,8 +28,9 @@
 
   function heroLabel(summary) {
     const streak = Number(summary?.consecutive_increase_years || 0);
-    if (streak >= 2) return `${streak}年連続増配`;
-    if (streak === 1) return "2年連続で増配";
+    const verified = summary?.streak_verified === true;
+    if (streak >= 2) return `${streak}${verified ? "期" : "年"}連続増配`;
+    if (streak === 1) return verified ? "2期連続で増配" : "2年連続で増配";
     const cuts = Number(summary?.cut_count_5y || 0);
     if (summary?.no_cut_5y === true) return "直近5年 減配なし";
     if (cuts > 0) return "減配履歴あり";
@@ -74,6 +75,8 @@
     }
 
     const streak = Number(summary.consecutive_increase_years || 0);
+    const verified = summary.streak_verified === true;
+    const streakUnit = verified ? "期" : "年";
     const increases = Number(summary.increase_count_5y || 0);
     const cuts = Number(summary.cut_count_5y || 0);
     const flats = Number(summary.flat_count_5y || 0);
@@ -82,26 +85,31 @@
     const cagr5 = finite(summary.cagr_5y_pct);
     const latest = finite(summary.latest_annual_dividend);
     const heroClass = cuts === 0 && (streak > 0 || summary.no_cut_5y === true) ? "steady" : cuts > 0 ? "caution" : "neutral";
+    const asOf = Number(summary.streak_as_of_year || 0);
+    const heroBasis = verified
+      ? `企業IR確認済み${asOf ? `（${asOf}年まで）` : ""}・年次配当欄はYahoo暦年集計`
+      : "Yahoo暦年集計・分割調整済み配当";
+    const streakNote = verified ? "企業IRの会計年度ベース" : "Yahoo取得範囲内の暦年継続";
 
     root.innerHTML = `
       <div class="dividend-hero ${heroClass}">
-        <div><span>DIVIDEND HISTORY</span><strong>${heroLabel(summary)}</strong><small>暦年・分割調整後の実績</small></div>
+        <div><span>DIVIDEND HISTORY</span><strong>${heroLabel(summary)}</strong><small>${heroBasis}</small></div>
         <div class="dividend-hero-note">配当実績は<strong>スコア対象外</strong>です。高配当だけで判断せず、FCF・配当性向・業績と一緒に確認します。</div>
       </div>
       <div class="dividend-metrics">
-        ${metricCard("連続増配", streak > 0 ? `${streak}年` : "—", "直近の増配継続")}
+        ${metricCard("連続増配", streak > 0 ? `${streak}${streakUnit}` : "—", streakNote)}
         ${metricCard("直近5年", `増 ${increases} / 据 ${flats} / 減 ${cuts}`, summary.no_cut_5y ? "減配なし" : "増配・減配回数")}
-        ${metricCard("5年配当成長", cagr5 === null ? "—" : `${signed(cagr5)}/年`, "年平均の伸び")}
+        ${metricCard("5年配当成長", cagr5 === null ? "—" : `${signed(cagr5)}/年`, "Yahoo暦年集計の年平均")}
         ${metricCard("配当利回り", yieldPct === null ? "—" : `${format(yieldPct, 2)}%`, "現在の参考値")}
       </div>
       <div class="dividend-secondary">
         <span>最新年間配当 <strong>${latest === null ? "—" : `${format(latest, 2)}円`}</strong></span>
         <span>配当性向 <strong>${payout === null ? "—" : `${format(payout, 1)}%`}</strong></span>
-        <span>観測年数 <strong>${Number(summary.observation_years || 0)}年</strong></span>
+        <span>Yahoo観測年数 <strong>${Number(summary.observation_years || 0)}年</strong></span>
       </div>
       <div class="dividend-history-heading"><div><span>ANNUAL DIVIDEND</span><h3>年ごとの年間配当</h3></div><small>直近6年</small></div>
       ${historyMarkup(summary.history)}
-      <p class="dividend-basis-note">Yahoo Financeの配当・株式分割データを権利落ち日ベースで暦年集計し、後から行われた株式分割を調整しています。会社の会計年度ベースの配当実績とはずれる場合があります。最終確認は企業IRで行ってください。</p>`;
+      <p class="dividend-basis-note">年次配当はYahoo Financeが返す分割調整済みの配当イベントを権利落ち日ベースで暦年集計しています。企業IRで確認済みの連続増配年数がある場合は、会計年度ベースの公式値を優先表示します。年次配当欄と公式の連続増配年数は集計基準が異なる場合があります。</p>`;
 
     const events = panel.querySelector("#corporateEvents");
     if (events && !panel.querySelector(".dividend-event-caption")) {
