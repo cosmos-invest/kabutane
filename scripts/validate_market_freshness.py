@@ -126,8 +126,20 @@ def validate_full_freshness(
         raise RuntimeError("daily price date is missing")
     require_not_older("core price date", core_date, previous_core_date)
     validate_latest_date_coverage(core, core_date)
+
+    # daily-update-status is produced by a separate workflow and can legitimately
+    # lag behind a freshly rebuilt core universe. A stale daily status must not
+    # block publication of newer core/dividend data. The opposite direction is
+    # unsafe: if daily is newer than core, core may have regressed or failed to
+    # refresh, so keep that as a hard error.
     if core_date != daily_date:
-        raise RuntimeError(f"daily/core price date mismatch: daily={daily_date} core={core_date}")
+        if core_date is None or daily_date > core_date:
+            raise RuntimeError(f"daily/core price date mismatch: daily={daily_date} core={core_date}")
+        print(
+            "market freshness warning: stale daily status accepted: "
+            f"daily={daily_date} core={core_date}"
+        )
+
     if core_date != premium_date:
         raise RuntimeError(f"premium/core price date mismatch: premium={premium_date} core={core_date}")
 
