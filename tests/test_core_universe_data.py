@@ -7,6 +7,8 @@ from unittest.mock import patch
 
 import pandas as pd
 
+from dividend_event_quality import suppress_partial_dividend_periods
+from dividend_history import build_dividend_history
 from scripts import build_core_universe_data as core
 
 
@@ -54,6 +56,37 @@ class CoreUniverseDataTests(unittest.TestCase):
             result = core.calculate_provisional(completed, 112.0, pd.Period("2026-08", freq="M"))
         self.assertEqual(result["status"], "NEAR_GC")
         self.assertEqual(result["confirmed_status"], "OUT")
+
+    def test_partial_dividend_event_period_is_suppressed_instead_of_halved(self):
+        index = pd.date_range("2020-04-01", "2026-03-01", freq="MS")
+        frame = pd.DataFrame({"Close": 100.0, "Dividends": 0.0, "Stock Splits": 0.0}, index=index)
+        # March-year companies normally pay twice. FY2023 intentionally has
+        # only one action, simulating SPK-like historical source incompleteness.
+        events = {
+            "2020-09-01": 5, "2021-03-01": 5,
+            "2021-09-01": 5.5, "2022-03-01": 5.5,
+            "2022-09-01": 6,
+            "2023-09-01": 6.5, "2024-03-01": 6.5,
+            "2024-09-01": 7, "2025-03-01": 7,
+            "2025-09-01": 7.5, "2026-03-01": 7.5,
+        }
+        for date, amount in events.items():
+            frame.loc[pd.Timestamp(date), "Dividends"] = amount
+        clean, quality = suppress_partial_dividend_periods(
+            frame,
+            fiscal_year_end_month=3,
+            now=pd.Timestamp("2026-08-19"),
+        )
+        self.assertEqual(quality["expected_events_per_period"], 2)
+        self.assertEqual(quality["partial_periods"], [2023])
+        summary = build_dividend_history(
+            clean,
+            fiscal_year_end_month=3,
+            now=pd.Timestamp("2026-08-19"),
+        )
+        history = {row["year"]: row["annual_dividend"] for row in summary["history"]}
+        self.assertIsNone(history[2023])
+        self.assertEqual(summary["cut_count_5y"], 0)
 
     def test_write_json_is_compact_for_shards(self):
         with tempfile.TemporaryDirectory() as directory:

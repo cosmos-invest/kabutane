@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - 'dividend_history.py'
+      - 'dividend_event_quality.py'
       - 'data/dividend_streak_overrides.json'
       - 'scripts/build_core_universe_data.py'
       - 'scripts/build_core_with_dividends.py'
@@ -20,6 +21,7 @@ on:
     branches: [main]
     paths:
       - 'dividend_history.py'
+      - 'dividend_event_quality.py'
       - 'data/dividend_streak_overrides.json'
       - 'scripts/build_core_with_dividends.py'
       - '.github/workflows/update-core-universe-data.yml'
@@ -51,7 +53,7 @@ jobs:
         run: pip install -r requirements.txt
       - name: Unit and syntax checks
         run: |
-          python -m py_compile dividend_history.py scripts/build_core_universe_data.py scripts/build_core_with_dividends.py scripts/build_premium_lab.py scripts/public_core_radar.py scripts/validate_market_freshness.py tests/test_core_universe_data.py tests/test_dividend_history.py tests/test_premium_lab.py tests/test_public_core_radar.py tests/test_market_freshness.py
+          python -m py_compile dividend_history.py dividend_event_quality.py scripts/build_core_universe_data.py scripts/build_core_with_dividends.py scripts/build_premium_lab.py scripts/public_core_radar.py scripts/validate_market_freshness.py tests/test_core_universe_data.py tests/test_dividend_history.py tests/test_premium_lab.py tests/test_public_core_radar.py tests/test_market_freshness.py
           python -m unittest tests.test_core_universe_data tests.test_dividend_history tests.test_premium_lab tests.test_public_core_radar tests.test_market_freshness -v
           node --check assets/core-detail-fallback.js
           node --check assets/premium-supply-beta.js
@@ -92,9 +94,9 @@ jobs:
           cache: pip
       - name: Install dependencies
         run: pip install -r requirements.txt
-      - name: Build live sample including note 5243
+      - name: Build live sample including note 5243 and SPK 7466
         run: |
-          python -m scripts.build_core_with_dividends --codes 5243,5942 --output /tmp/kabutane-core-sample --refresh-base --fundamentals-limit 0
+          python -m scripts.build_core_with_dividends --codes 5243,5942,7466 --output /tmp/kabutane-core-sample --refresh-base --fundamentals-limit 0
           python -m scripts.public_core_radar --input /tmp/kabutane-core-sample/radar.json --output /tmp/kabutane-core-sample/public-radar.json
           python - <<'PY'
           import json
@@ -104,12 +106,18 @@ jobs:
           public = json.loads((root/'public-radar.json').read_text(encoding='utf-8'))
           manifest = json.loads((root/'manifest.json').read_text(encoding='utf-8'))
           codes = {str(row.get('code')) for row in radar.get('records') or []}
-          if '5243' not in codes:
-              raise SystemExit('5243 note is missing from the core live sample')
+          if not {'5243', '7466'}.issubset(codes):
+              raise SystemExit(f'live sample missing required codes: {sorted(codes)}')
           if int(radar.get('daily_coverage') or 0) < 1 or int(radar.get('monthly_coverage') or 0) < 1:
               raise SystemExit(f"sample coverage too low: {radar.get('daily_coverage')} / {radar.get('monthly_coverage')}")
           if int(manifest.get('dividend_history_max_years') or 0) != 50:
               raise SystemExit('dividend history is not configured for 50 years')
+          if int(manifest.get('dividend_history_schema_version') or 0) != 5:
+              raise SystemExit(f"dividend history schema is not v5: {manifest.get('dividend_history_schema_version')}")
+          if str(manifest.get('dividend_history_missing_event_policy') or '') != 'unknown_not_zero':
+              raise SystemExit('missing dividend actions are not configured as unknown')
+          if str(manifest.get('dividend_history_partial_event_policy') or '') != 'cadence_shortfall_unknown':
+              raise SystemExit('partial dividend actions are not quality-checked')
           shard = json.loads((root/'charts'/'52.json').read_text(encoding='utf-8'))
           if '5243' not in shard.get('records', {}):
               raise SystemExit('5243 chart payload not generated')
@@ -118,14 +126,30 @@ jobs:
               raise SystemExit('dividend shard is not 50-year capable')
           if '5243' not in dividend_shard.get('records', {}):
               raise SystemExit('5243 dividend history not generated')
+          spk_shard = json.loads((root/'dividends'/'74.json').read_text(encoding='utf-8'))
+          spk = (spk_shard.get('records') or {}).get('7466')
+          if not isinstance(spk, dict):
+              raise SystemExit('7466 SPK dividend history not generated')
+          if int(spk.get('expected_dividend_events_per_period') or 0) != 2:
+              raise SystemExit(f"SPK expected dividend cadence mismatch: {spk.get('expected_dividend_events_per_period')}")
+          if int(spk.get('partial_event_period_count') or 0) < 1:
+              raise SystemExit('SPK historical partial dividend-event periods were not detected')
+          spk_history = {int(row.get('year') or 0): row.get('annual_dividend') for row in spk.get('history') or []}
+          if spk_history.get(2005) is not None:
+              raise SystemExit(f"SPK FY2005 partial annual dividend must be unknown, got {spk_history.get(2005)}")
+          if int(spk.get('consecutive_increase_years') or 0) != 28 or spk.get('streak_verified') is not True:
+              raise SystemExit(f"SPK official streak not retained: {spk.get('consecutive_increase_years')} verified={spk.get('streak_verified')}")
           public_5243 = next((row for row in public.get('records') or [] if str(row.get('code')) == '5243'), None)
           if public_5243 is None or 'consecutive_dividend_increase_years' not in public_5243:
               raise SystemExit('public sample is missing dividend screening fields')
+          public_spk = next((row for row in public.get('records') or [] if str(row.get('code')) == '7466'), None)
+          if public_spk is None or int(public_spk.get('consecutive_dividend_increase_years') or 0) != 28:
+              raise SystemExit('public sample is missing SPK official streak')
           if any(str(row.get('provisional_status') or '') == 'GC' for row in public.get('records') or []):
               raise SystemExit('public sample leaked provisional GC in all-stock catalog')
           if any('monthly_rsi_spread' in row for row in public.get('records') or []):
               raise SystemExit('public sample leaked current-month RSI spread in all-stock catalog')
-          print('core live sample with 50-year dividend history OK')
+          print('core live sample with clean v5 dividend history OK')
           PY
 
   detect-heavy-change:
@@ -271,6 +295,12 @@ jobs:
               raise SystemExit('dividend history max years must be 50')
           if str(manifest.get('dividend_history_period') or '') != 'max':
               raise SystemExit('dividend history source period must be max')
+          if int(manifest.get('dividend_history_schema_version') or 0) != 5:
+              raise SystemExit('dividend history schema must be v5')
+          if str(manifest.get('dividend_history_missing_event_policy') or '') != 'unknown_not_zero':
+              raise SystemExit('dividend missing-event policy must be unknown_not_zero')
+          if str(manifest.get('dividend_history_partial_event_policy') or '') != 'cadence_shortfall_unknown':
+              raise SystemExit('dividend partial-event policy must be cadence_shortfall_unknown')
           if not Path('data/core/universe.sha256').read_text(encoding='utf-8').strip():
               raise SystemExit('core universe fingerprint is missing')
           print(json.dumps(manifest, ensure_ascii=False, indent=2))

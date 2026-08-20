@@ -192,7 +192,7 @@
     if (filters.perMax !== null && (finite(item.per) === null || finite(item.per) > filters.perMax)) return false;
     if (filters.fcf === "positive" && (finite(item.free_cashflow_oku) === null || finite(item.free_cashflow_oku) <= 0)) return false;
     if (dividendYieldMin !== null && (finite(item.dividend_yield_pct) === null || finite(item.dividend_yield_pct) < dividendYieldMin)) return false;
-    if (dividendStreakMin !== null && (finite(item.consecutive_dividend_increase_years) === null || finite(item.consecutive_dividend_increase_years) < dividendStreakMin)) return false;
+    if (dividendStreakMin !== null && (item.dividend_streak_review_required === true || finite(item.consecutive_dividend_increase_years) === null || finite(item.consecutive_dividend_increase_years) < dividendStreakMin)) return false;
     if (filters.dividendNoCut === "yes" && item.dividend_no_cut_5y !== true) return false;
     if (dividendGrowthMin !== null && (finite(item.dividend_cagr_5y_pct) === null || finite(item.dividend_cagr_5y_pct) < dividendGrowthMin)) return false;
     return true;
@@ -221,7 +221,11 @@
       if (filters.sort === "roe") return (finite(b.roe_pct) ?? -9999) - (finite(a.roe_pct) ?? -9999);
       if (filters.sort === "equity") return (finite(b.equity_ratio_pct) ?? -9999) - (finite(a.equity_ratio_pct) ?? -9999);
       if (filters.sort === "per") return (finite(a.per) ?? 999999) - (finite(b.per) ?? 999999);
-      if (filters.sort === "dividend-streak") return (finite(b.consecutive_dividend_increase_years) ?? -1) - (finite(a.consecutive_dividend_increase_years) ?? -1);
+      if (filters.sort === "dividend-streak") {
+        const reviewOrder = Number(a.dividend_streak_review_required === true) - Number(b.dividend_streak_review_required === true);
+        if (reviewOrder !== 0) return reviewOrder;
+        return (finite(b.consecutive_dividend_increase_years) ?? -1) - (finite(a.consecutive_dividend_increase_years) ?? -1);
+      }
       if (filters.sort === "dividend-growth") return (finite(b.dividend_cagr_5y_pct) ?? -9999) - (finite(a.dividend_cagr_5y_pct) ?? -9999);
       if (filters.sort === "dividend-yield") return (finite(b.dividend_yield_pct) ?? -9999) - (finite(a.dividend_yield_pct) ?? -9999);
       return String(a.code || "").localeCompare(String(b.code || ""), "ja", { numeric: true });
@@ -271,8 +275,15 @@
     }
     const yieldPct = finite(item.dividend_yield_pct);
     const streak = finite(item.consecutive_dividend_increase_years);
+    const fiscal = String(item.dividend_streak_basis || "").includes("fiscal_year");
+    const unit = fiscal ? "期" : "年";
+    const lowerBound = item.dividend_streak_lower_bound === true && item.dividend_streak_verified !== true;
+    const review = item.dividend_streak_review_required === true;
     if (yieldPct !== null) chips.push(`配当 ${number(yieldPct, 2)}%`);
-    if (streak !== null && streak > 0) chips.push(`${number(streak, 0)}年増配`);
+    if (streak !== null && streak > 0) {
+      if (review) chips.push(`${number(streak, 0)}${unit}まで・要確認`);
+      else chips.push(`${number(streak, 0)}${unit}${lowerBound ? "以上" : ""}増配${item.dividend_streak_verified === true ? " IR" : ""}`);
+    } else if (review) chips.push("増配継続 要確認");
     else if (item.dividend_no_cut_5y === true) chips.push("5年減配なし");
     return chips.length ? `<div class="finance-mini">${chips.map((value) => `<span>${value}</span>`).join("")}</div>` : '<span class="finance-muted">取得待ち / 取得不可</span>';
   }
