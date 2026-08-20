@@ -34,7 +34,7 @@ class MarketFreshnessTests(unittest.TestCase):
         with self.assertRaises(RuntimeError):
             validate_full_freshness(daily, core, premium)
 
-    def test_core_newer_than_daily_is_also_rejected(self) -> None:
+    def test_core_newer_than_stale_daily_is_allowed(self) -> None:
         daily = {"price_date": "2026-08-17"}
         core = {
             "generated_at": "core-new",
@@ -43,8 +43,10 @@ class MarketFreshnessTests(unittest.TestCase):
             "records": [{"price_date": "2026-08-18"}],
         }
         premium = {"price_date": "2026-08-18", "source_core_generated_at": "core-new"}
-        with self.assertRaises(RuntimeError):
-            validate_full_freshness(daily, core, premium)
+        result = validate_full_freshness(daily, core, premium)
+        self.assertEqual(result["daily_date"], "2026-08-17")
+        self.assertEqual(result["core_date"], "2026-08-18")
+        self.assertEqual(result["premium_date"], "2026-08-18")
 
     def test_partial_stale_core_is_rejected(self) -> None:
         daily = {"price_date": "2026-08-17"}
