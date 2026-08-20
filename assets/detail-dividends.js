@@ -16,6 +16,7 @@
   };
   const code = () => new URLSearchParams(location.search).get("code")?.trim().toUpperCase() || "";
   const shard = (securityCode) => String(securityCode).slice(0, 2).toUpperCase();
+  const isFiscal = (summary) => String(summary?.streak_basis || summary?.basis || "").includes("fiscal_year");
 
   async function jsonOrNull(path) {
     try {
@@ -28,9 +29,10 @@
 
   function heroLabel(summary) {
     const streak = Number(summary?.consecutive_increase_years || 0);
-    const verified = summary?.streak_verified === true;
-    if (streak >= 2) return `${streak}${verified ? "期" : "年"}連続増配`;
-    if (streak === 1) return verified ? "2期連続で増配" : "2年連続で増配";
+    const fiscal = isFiscal(summary);
+    const lowerBound = summary?.streak_lower_bound === true && summary?.streak_verified !== true;
+    const unit = fiscal ? "期" : "年";
+    if (streak >= 1) return `${streak}${unit}${lowerBound ? "以上" : ""}連続増配`;
     const cuts = Number(summary?.cut_count_5y || 0);
     if (summary?.no_cut_5y === true) return "直近5年 減配なし";
     if (cuts > 0) return "減配履歴あり";
@@ -41,9 +43,9 @@
     return `<article class="dividend-metric ${className}"><span>${label}</span><strong>${value}</strong>${note ? `<small>${note}</small>` : ""}</article>`;
   }
 
-  function historyMarkup(history) {
+  function historyMarkup(history, fiscalMonth) {
     const rows = Array.isArray(history) ? history.slice(-6) : [];
-    if (!rows.length) return '<p class="dividend-empty">年次配当をまだ集計できていません。</p>';
+    if (!rows.length) return '<p class="dividend-empty">年間配当をまだ集計できていません。</p>';
     const max = Math.max(...rows.map((row) => finite(row.annual_dividend) || 0), 1);
     return `<div class="dividend-history-list">${rows.map((row, index) => {
       const amount = finite(row.annual_dividend) || 0;
@@ -51,7 +53,8 @@
       const change = previous !== null && previous > 0 ? (amount / previous - 1) * 100 : null;
       const changeText = change === null ? "" : `<em class="${change > 0.05 ? "up" : change < -0.05 ? "down" : "flat"}">${Math.abs(change) <= 0.05 ? "据置" : signed(change)}</em>`;
       const width = Math.max(3, amount / max * 100);
-      return `<div class="dividend-history-row"><span class="dividend-year">${row.year}</span><div class="dividend-bar-track"><span class="dividend-bar" style="width:${width}%"></span></div><strong>${format(amount, 2)}円</strong>${changeText}</div>`;
+      const period = fiscalMonth ? `${row.year}/${fiscalMonth}期` : String(row.year);
+      return `<div class="dividend-history-row"><span class="dividend-year">${period}</span><div class="dividend-bar-track"><span class="dividend-bar" style="width:${width}%"></span></div><strong>${format(amount, 2)}円</strong>${changeText}</div>`;
     }).join("")}</div>`;
   }
 
@@ -76,7 +79,9 @@
 
     const streak = Number(summary.consecutive_increase_years || 0);
     const verified = summary.streak_verified === true;
-    const streakUnit = verified ? "期" : "年";
+    const fiscal = isFiscal(summary);
+    const lowerBound = summary.streak_lower_bound === true && !verified;
+    const streakUnit = fiscal ? "期" : "年";
     const increases = Number(summary.increase_count_5y || 0);
     const cuts = Number(summary.cut_count_5y || 0);
     const flats = Number(summary.flat_count_5y || 0);
@@ -84,12 +89,21 @@
     const payout = finite(finance?.payout_ratio_pct);
     const cagr5 = finite(summary.cagr_5y_pct);
     const latest = finite(summary.latest_annual_dividend);
+    const fiscalMonth = Number(summary.fiscal_year_end_month || 0);
     const heroClass = cuts === 0 && (streak > 0 || summary.no_cut_5y === true) ? "steady" : cuts > 0 ? "caution" : "neutral";
     const asOf = Number(summary.streak_as_of_year || 0);
     const heroBasis = verified
-      ? `企業IR確認済み${asOf ? `（${asOf}年まで）` : ""}・年次配当欄はYahoo暦年集計`
-      : "Yahoo暦年集計・分割調整済み配当";
-    const streakNote = verified ? "企業IRの会計年度ベース" : "Yahoo取得範囲内の暦年継続";
+      ? `企業IR確認済み${asOf ? `（${asOf}年まで）` : ""}・年次配当はYahoo実績`
+      : fiscal
+        ? `EDINET決算日${fiscalMonth ? `（${fiscalMonth}月）` : ""}でYahoo配当実績を会計年度集計`
+        : "Yahoo暦年集計・分割調整済み配当";
+    const streakNote = verified
+      ? "企業IRの会計年度ベース"
+      : fiscal
+        ? `${lowerBound ? "取得開始前も継続の可能性・" : ""}EDINET決算日ベース`
+        : "Yahoo取得範囲内の暦年継続";
+    const streakValue = streak > 0 ? `${streak}${streakUnit}${lowerBound ? "以上" : ""}` : "—";
+    const growthBasis = fiscal ? "会計年度集計の年平均" : "Yahoo暦年集計の年平均";
 
     root.innerHTML = `
       <div class="dividend-hero ${heroClass}">
@@ -97,9 +111,9 @@
         <div class="dividend-hero-note">配当実績は<strong>スコア対象外</strong>です。高配当だけで判断せず、FCF・配当性向・業績と一緒に確認します。</div>
       </div>
       <div class="dividend-metrics">
-        ${metricCard("連続増配", streak > 0 ? `${streak}${streakUnit}` : "—", streakNote)}
+        ${metricCard("連続増配", streakValue, streakNote)}
         ${metricCard("直近5年", `増 ${increases} / 据 ${flats} / 減 ${cuts}`, summary.no_cut_5y ? "減配なし" : "増配・減配回数")}
-        ${metricCard("5年配当成長", cagr5 === null ? "—" : `${signed(cagr5)}/年`, "Yahoo暦年集計の年平均")}
+        ${metricCard("5年配当成長", cagr5 === null ? "—" : `${signed(cagr5)}/年`, growthBasis)}
         ${metricCard("配当利回り", yieldPct === null ? "—" : `${format(yieldPct, 2)}%`, "現在の参考値")}
       </div>
       <div class="dividend-secondary">
@@ -107,9 +121,9 @@
         <span>配当性向 <strong>${payout === null ? "—" : `${format(payout, 1)}%`}</strong></span>
         <span>Yahoo観測年数 <strong>${Number(summary.observation_years || 0)}年</strong></span>
       </div>
-      <div class="dividend-history-heading"><div><span>ANNUAL DIVIDEND</span><h3>年ごとの年間配当</h3></div><small>直近6年</small></div>
-      ${historyMarkup(summary.history)}
-      <p class="dividend-basis-note">年次配当はYahoo Financeが返す分割調整済みの配当イベントを権利落ち日ベースで暦年集計しています。企業IRで確認済みの連続増配年数がある場合は、会計年度ベースの公式値を優先表示します。年次配当欄と公式の連続増配年数は集計基準が異なる場合があります。</p>`;
+      <div class="dividend-history-heading"><div><span>ANNUAL DIVIDEND</span><h3>${fiscal ? "期ごとの年間配当" : "年ごとの年間配当"}</h3></div><small>直近6期</small></div>
+      ${historyMarkup(summary.history, fiscal ? fiscalMonth : 0)}
+      <p class="dividend-basis-note">配当イベントはYahoo Financeが返す分割調整済み実績を使用しています。EDINETコードリストで決算日を確認できる会社は、その決算月に合わせて会計年度単位で集計します。企業IRで連続増配年数を確認済みの場合は公式値を優先します。Yahooの取得開始以前まで増配が続いている可能性がある場合は「以上」と表示します。</p>`;
 
     const events = panel.querySelector("#corporateEvents");
     if (events && !panel.querySelector(".dividend-event-caption")) {
