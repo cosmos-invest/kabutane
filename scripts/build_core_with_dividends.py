@@ -5,12 +5,24 @@ import os
 from pathlib import Path
 from typing import Any
 
-from dividend_history import DEFAULT_MAX_YEARS, build_dividend_history, public_dividend_fields
+from dividend_history import (
+    DEFAULT_MAX_YEARS,
+    apply_verified_streak,
+    build_dividend_history,
+    public_dividend_fields,
+)
 from scripts import build_core_universe_data as core
 
 
+ROOT = Path(__file__).resolve().parents[1]
 DIVIDEND_HISTORY_PERIOD = os.getenv("DIVIDEND_HISTORY_PERIOD", "max")
 DIVIDEND_HISTORY_YEARS = int(os.getenv("DIVIDEND_HISTORY_YEARS", str(DEFAULT_MAX_YEARS)))
+STREAK_OVERRIDES_FILE = Path(
+    os.getenv(
+        "DIVIDEND_STREAK_OVERRIDES_FILE",
+        str(ROOT / "data" / "dividend_streak_overrides.json"),
+    )
+)
 
 
 def _load_json(path: Path, default: Any = None) -> Any:
@@ -18,6 +30,17 @@ def _load_json(path: Path, default: Any = None) -> Any:
         return json.loads(path.read_text(encoding="utf-8"))
     except (FileNotFoundError, json.JSONDecodeError):
         return default
+
+
+def _load_streak_overrides() -> dict[str, dict[str, Any]]:
+    payload = _load_json(STREAK_OVERRIDES_FILE, {}) or {}
+    if not isinstance(payload, dict):
+        return {}
+    return {
+        str(code).upper(): value
+        for code, value in payload.items()
+        if isinstance(value, dict)
+    }
 
 
 def _finance_for_code(output: Path, code: str, cache: dict[str, dict[str, Any]]) -> dict[str, Any]:
@@ -71,10 +94,12 @@ def attach_dividend_data(
     detail_records: dict[str, dict[str, Any]] = {}
     finance_cache: dict[str, dict[str, Any]] = {}
     existing_dividend_cache: dict[str, dict[str, Any]] = {}
+    streak_overrides = _load_streak_overrides()
     available = 0
     no_cut_5y = 0
     increasing = 0
     fallback_count = 0
+    verified_streak_count = 0
 
     for row in rows:
         if not isinstance(row, dict):
@@ -106,6 +131,7 @@ def attach_dividend_data(
                 max_years=DIVIDEND_HISTORY_YEARS,
             )
 
+        summary = apply_verified_streak(summary, streak_overrides.get(code))
         compact = public_dividend_fields(summary)
         row.update(compact)
 
@@ -119,6 +145,8 @@ def attach_dividend_data(
             no_cut_5y += 1
         if int(summary.get("consecutive_increase_years") or 0) > 0:
             increasing += 1
+        if summary.get("streak_verified") is True:
+            verified_streak_count += 1
         detail_records[code] = {
             "code": code,
             "ticker": ticker,
@@ -131,6 +159,7 @@ def attach_dividend_data(
     radar["dividend_history_period"] = DIVIDEND_HISTORY_PERIOD
     radar["dividend_no_cut_5y_count"] = no_cut_5y
     radar["dividend_increasing_count"] = increasing
+    radar["dividend_verified_streak_count"] = verified_streak_count
     core.write_json(radar_path, radar)
 
     dividend_dir = output / "dividends"
@@ -138,7 +167,7 @@ def attach_dividend_data(
         core.write_json(
             dividend_dir / f"{shard}.json",
             {
-                "schema_version": 2,
+                "schema_version": 3,
                 "generated_at": radar.get("generated_at"),
                 "basis": "calendar_year_ex_date",
                 "history_max_years": DIVIDEND_HISTORY_YEARS,
@@ -151,6 +180,7 @@ def attach_dividend_data(
         "no_cut_5y": no_cut_5y,
         "increasing": increasing,
         "fallback": fallback_count,
+        "verified_streaks": verified_streak_count,
     }
 
 
@@ -179,6 +209,7 @@ def build_with_dividends(
     refreshed_manifest["dividend_history_period"] = DIVIDEND_HISTORY_PERIOD
     refreshed_manifest["dividend_history_download_errors"] = len(dividend_errors)
     refreshed_manifest["dividend_history_fallback_count"] = dividend_counts["fallback"]
+    refreshed_manifest["dividend_verified_streak_count"] = dividend_counts["verified_streaks"]
     core.write_json(manifest_path, refreshed_manifest, compact=False)
     print("Dividend history:", json.dumps(dividend_counts, ensure_ascii=False))
     if dividend_errors:
