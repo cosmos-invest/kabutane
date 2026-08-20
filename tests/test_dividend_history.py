@@ -27,7 +27,6 @@ def frame_for_years(values: dict[int, float], splits: dict[str, float] | None = 
 def march_fiscal_frame() -> pd.DataFrame:
     index = pd.date_range("2021-04-01", "2026-03-01", freq="MS")
     frame = pd.DataFrame({"Close": 100.0, "Dividends": 0.0, "Stock Splits": 0.0}, index=index)
-    # Fiscal totals (Mar year): 10, 12, 14, 16, 18. Calendar totals intentionally zig-zag.
     events = {
         "2021-09-01": 1.0, "2022-03-01": 9.0,
         "2022-09-01": 8.0, "2023-03-01": 4.0,
@@ -49,6 +48,7 @@ class DividendHistoryTests(unittest.TestCase):
         self.assertEqual(result["increase_count_5y"], 4)
         self.assertEqual(result["cut_count_5y"], 0)
         self.assertEqual(result["flat_count_5y"], 0)
+        self.assertEqual(result["unknown_count_5y"], 0)
         self.assertTrue(result["no_cut_5y"])
         self.assertGreater(result["cagr_5y_pct"], 10)
 
@@ -60,6 +60,26 @@ class DividendHistoryTests(unittest.TestCase):
         self.assertEqual(result["cut_count_5y"], 1)
         self.assertFalse(result["no_cut_5y"])
         self.assertLess(result["max_cut_pct_5y"], 0)
+
+    def test_first_dividend_is_not_counted_as_an_increase(self):
+        result = build_dividend_history(
+            frame_for_years({2022: 0, 2023: 10, 2024: 11, 2025: 12}),
+            now=self.NOW,
+            known_zero_years={2022},
+        )
+        self.assertEqual(result["consecutive_increase_years"], 2)
+        self.assertFalse(result["streak_lower_bound"])
+
+    def test_missing_event_year_is_unknown_not_zero_or_cut(self):
+        result = build_dividend_history(frame_for_years({2021: 10, 2022: 11, 2023: 0, 2024: 13, 2025: 14}), now=self.NOW)
+        history = {row["year"]: row["annual_dividend"] for row in result["history"]}
+        self.assertIsNone(history[2023])
+        self.assertEqual(result["unknown_year_count"], 1)
+        self.assertTrue(result["history_has_gaps"])
+        self.assertEqual(result["cut_count_5y"], 0)
+        self.assertEqual(result["consecutive_increase_years"], 1)
+        self.assertTrue(result["streak_lower_bound"])
+        self.assertIsNone(result["cagr_5y_pct"])
 
     def test_yahoo_split_adjusted_dividends_are_not_adjusted_twice(self):
         result = build_dividend_history(frame_for_years({2021: 50, 2022: 55, 2023: 60, 2024: 65, 2025: 70}, splits={"2023-01-01": 2.0}), now=self.NOW)
@@ -95,12 +115,57 @@ class DividendHistoryTests(unittest.TestCase):
         self.assertTrue(result["streak_verified"])
         self.assertFalse(result["streak_lower_bound"])
         self.assertEqual(result["streak_as_of_year"], 2025)
+        self.assertEqual(result["streak_status"], "verified")
 
-    def test_stale_verified_override_is_not_carried_forward(self):
-        summary = build_dividend_history(frame_for_years({2022: 20, 2023: 22, 2024: 24, 2025: 26, 2026: 28}), now=pd.Timestamp("2027-08-19"))
-        result = apply_verified_streak(summary, {"consecutive_increase_years": 36, "as_of_year": 2025})
+    def test_verified_anchor_auto_extends_after_new_increases(self):
+        summary = build_dividend_history(
+            frame_for_years({2024: 20, 2025: 22, 2026: 24, 2027: 26}),
+            now=pd.Timestamp("2028-08-19"),
+        )
+        result = apply_verified_streak(summary, {
+            "consecutive_increase_years": 36,
+            "as_of_year": 2025,
+            "basis": "company_official_fiscal_year",
+            "source": "company IR",
+        })
+        self.assertEqual(result["consecutive_increase_years"], 38)
+        self.assertEqual(result["streak_extension_years"], 2)
+        self.assertEqual(result["streak_as_of_year"], 2027)
+        self.assertEqual(result["streak_status"], "verified_extended")
+        self.assertTrue(result["streak_verified"])
+        self.assertFalse(result["streak_review_required"])
+
+    def test_verified_anchor_with_unknown_new_year_requires_review_without_falling_back(self):
+        summary = build_dividend_history(
+            frame_for_years({2024: 20, 2025: 22, 2026: 0, 2027: 26}),
+            now=pd.Timestamp("2028-08-19"),
+        )
+        result = apply_verified_streak(summary, {
+            "consecutive_increase_years": 36,
+            "as_of_year": 2025,
+            "basis": "company_official_fiscal_year",
+            "source": "company IR",
+        })
+        self.assertEqual(result["consecutive_increase_years"], 36)
+        self.assertEqual(result["streak_as_of_year"], 2025)
+        self.assertEqual(result["streak_status"], "verified_anchor_pending")
+        self.assertTrue(result["streak_review_required"])
+
+    def test_verified_anchor_known_flat_marks_current_streak_for_review(self):
+        summary = build_dividend_history(
+            frame_for_years({2024: 20, 2025: 22, 2026: 22, 2027: 24}),
+            now=pd.Timestamp("2028-08-19"),
+        )
+        result = apply_verified_streak(summary, {
+            "consecutive_increase_years": 36,
+            "as_of_year": 2025,
+            "basis": "company_official_fiscal_year",
+            "source": "company IR",
+        })
         self.assertFalse(result["streak_verified"])
-        self.assertEqual(result["consecutive_increase_years"], result["observed_consecutive_increase_years"])
+        self.assertTrue(result["streak_review_required"])
+        self.assertEqual(result["streak_status"], "anchor_break_needs_review")
+        self.assertEqual(result["consecutive_increase_years"], 1)
 
     def test_current_partial_calendar_year_is_excluded(self):
         result = build_dividend_history(frame_for_years({2022: 20, 2023: 22, 2024: 24, 2025: 26, 2026: 5}), now=self.NOW)
@@ -154,6 +219,8 @@ class DividendHistoryTests(unittest.TestCase):
         self.assertEqual(public["dividend_fiscal_year_end_month"], 3)
         self.assertEqual(public["dividend_streak_basis"], "fiscal_year_ex_date")
         self.assertTrue(public["dividend_streak_lower_bound"])
+        self.assertEqual(public["dividend_unknown_year_count"], 0)
+        self.assertFalse(public["dividend_streak_review_required"])
 
     def test_edinet_code_list_parser_reads_fiscal_month_for_numeric_and_alphanumeric_codes(self):
         csv_text = (
