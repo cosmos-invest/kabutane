@@ -8,9 +8,6 @@ import pandas as pd
 
 BASIS = "calendar_year_ex_date"
 SOURCE = "Yahoo Finance via yfinance"
-# Long-range dividend history is independent of same-day price-date coverage.
-# Production refresh marker: rerun after freshness-guard fixes.
-# Production refresh marker: rerun after freshness-test alignment.
 DEFAULT_MAX_YEARS = 50
 
 
@@ -57,18 +54,86 @@ def _cagr(history: list[dict[str, Any]], years: int) -> float | None:
     return _round(((last / first) ** (1 / intervals) - 1) * 100)
 
 
+def _trim_to_ticker_observation(frame: pd.DataFrame) -> pd.DataFrame:
+    """Remove batch-union rows where this ticker has no actual observation."""
+    if frame is None or frame.empty:
+        return pd.DataFrame()
+
+    work = frame.copy()
+    work.index = pd.to_datetime(work.index, errors="coerce")
+    work = work[~work.index.isna()].sort_index()
+    if work.empty:
+        return work
+    if getattr(work.index, "tz", None) is not None:
+        work.index = work.index.tz_localize(None)
+
+    close = (
+        pd.to_numeric(work["Close"], errors="coerce")
+        if "Close" in work.columns
+        else pd.Series(float("nan"), index=work.index)
+    )
+    dividends = (
+        pd.to_numeric(work["Dividends"], errors="coerce")
+        if "Dividends" in work.columns
+        else pd.Series(float("nan"), index=work.index)
+    )
+    splits = (
+        pd.to_numeric(work["Stock Splits"], errors="coerce")
+        if "Stock Splits" in work.columns
+        else pd.Series(float("nan"), index=work.index)
+    )
+    observed = close.notna() | dividends.fillna(0.0).ne(0.0) | splits.fillna(0.0).ne(0.0)
+    if not bool(observed.any()):
+        return work.iloc[0:0].copy()
+    first = observed[observed].index[0]
+    last = observed[observed].index[-1]
+    return work.loc[first:last].copy()
+
+
+def apply_verified_streak(
+    summary: dict[str, Any],
+    override: dict[str, Any] | None,
+) -> dict[str, Any]:
+    """Prefer an official fiscal-year streak when a current verified override exists."""
+    result = dict(summary)
+    observed = int(result.get("consecutive_increase_years") or 0)
+    result["observed_consecutive_increase_years"] = observed
+    result.setdefault("streak_basis", BASIS)
+    result.setdefault("streak_source", SOURCE)
+    result.setdefault("streak_source_url", None)
+    result.setdefault("streak_as_of_year", result.get("history_end_year"))
+    result["streak_verified"] = False
+
+    if not isinstance(override, dict):
+        return result
+
+    verified_years = int(override.get("consecutive_increase_years") or 0)
+    as_of_year = int(override.get("as_of_year") or 0)
+    history_end_year = int(result.get("history_end_year") or 0)
+    if verified_years <= 0 or as_of_year <= 0 or history_end_year > as_of_year:
+        return result
+
+    result["consecutive_increase_years"] = verified_years
+    result["streak_basis"] = str(override.get("basis") or "company_official_fiscal_year")
+    result["streak_source"] = str(override.get("source") or "company official")
+    result["streak_source_url"] = override.get("source_url")
+    result["streak_as_of_year"] = as_of_year
+    result["streak_verified"] = True
+    return result
+
+
 def build_dividend_history(
     frame: pd.DataFrame,
     *,
     now: datetime | pd.Timestamp | None = None,
     max_years: int = DEFAULT_MAX_YEARS,
 ) -> dict[str, Any]:
-    """Summarize completed calendar-year dividends without extra network access.
+    """Summarize completed calendar-year dividends from Yahoo actions.
 
-    Historical dividends are normalized for later stock splits so old per-share
-    amounts remain comparable to the latest share unit. The current partial
-    calendar year is intentionally excluded. Only the most recent ``max_years``
-    complete calendar years are retained and used for streak calculations.
+    Yahoo's dividend actions are already adjusted for stock splits. We therefore
+    aggregate them as returned and do not apply Stock Splits a second time.
+    The current partial calendar year is excluded. Only the most recent
+    ``max_years`` complete calendar years are retained.
     """
     max_years = max(2, int(max_years or DEFAULT_MAX_YEARS))
     empty = {
@@ -79,6 +144,12 @@ def build_dividend_history(
         "history_end_year": None,
         "observation_years": 0,
         "consecutive_increase_years": 0,
+        "observed_consecutive_increase_years": 0,
+        "streak_basis": BASIS,
+        "streak_source": SOURCE,
+        "streak_source_url": None,
+        "streak_as_of_year": None,
+        "streak_verified": False,
         "increase_count_5y": 0,
         "cut_count_5y": 0,
         "flat_count_5y": 0,
@@ -93,38 +164,17 @@ def build_dividend_history(
     if frame is None or frame.empty or "Dividends" not in frame.columns:
         return empty
 
-    work = frame.copy()
-    work.index = pd.to_datetime(work.index, errors="coerce")
-    work = work[~work.index.isna()].sort_index()
+    work = _trim_to_ticker_observation(frame)
     if work.empty:
         return empty
-    if getattr(work.index, "tz", None) is not None:
-        work.index = work.index.tz_localize(None)
 
     dividends = pd.to_numeric(work.get("Dividends"), errors="coerce").fillna(0.0)
-    splits = (
-        pd.to_numeric(work.get("Stock Splits"), errors="coerce").fillna(0.0)
-        if "Stock Splits" in work.columns
-        else pd.Series(0.0, index=work.index)
-    )
-
-    split_rows = [
-        (pd.Timestamp(date), float(ratio))
-        for date, ratio in splits.items()
-        if _finite(ratio) not in (None, 0, 1)
-    ]
-    adjusted_events: list[tuple[pd.Timestamp, float]] = []
+    dividend_events: list[tuple[pd.Timestamp, float]] = []
     for date, amount in dividends.items():
         value = _finite(amount)
         if value in (None, 0):
             continue
-        factor = 1.0
-        for split_date, ratio in split_rows:
-            if split_date > pd.Timestamp(date) and ratio > 0:
-                factor *= ratio
-        adjusted_events.append(
-            (pd.Timestamp(date), float(value) / factor if factor else float(value))
-        )
+        dividend_events.append((pd.Timestamp(date), float(value)))
 
     current_year = _current_year(now)
     first_date = pd.Timestamp(work.index.min())
@@ -141,7 +191,7 @@ def build_dividend_history(
     annual_totals = {
         year: 0.0 for year in range(capped_first_year, last_full_year + 1)
     }
-    for date, amount in adjusted_events:
+    for date, amount in dividend_events:
         if date.year in annual_totals:
             annual_totals[date.year] += amount
 
@@ -160,6 +210,7 @@ def build_dividend_history(
             "history_start_year": history_start_year,
             "history_end_year": history_end_year,
             "observation_years": len(history),
+            "streak_as_of_year": history_end_year,
             "history": history,
         }
 
@@ -209,6 +260,12 @@ def build_dividend_history(
         "history_end_year": history_end_year,
         "observation_years": len(history),
         "consecutive_increase_years": streak,
+        "observed_consecutive_increase_years": streak,
+        "streak_basis": BASIS,
+        "streak_source": SOURCE,
+        "streak_source_url": None,
+        "streak_as_of_year": history_end_year,
+        "streak_verified": False,
         "increase_count_5y": increase_count,
         "cut_count_5y": cut_count,
         "flat_count_5y": flat_count,
@@ -238,6 +295,12 @@ def public_dividend_fields(summary: dict[str, Any]) -> dict[str, Any]:
         "consecutive_dividend_increase_years": summary.get(
             "consecutive_increase_years"
         ),
+        "observed_consecutive_dividend_increase_years": summary.get(
+            "observed_consecutive_increase_years"
+        ),
+        "dividend_streak_basis": summary.get("streak_basis"),
+        "dividend_streak_verified": summary.get("streak_verified"),
+        "dividend_streak_as_of_year": summary.get("streak_as_of_year"),
         "dividend_increase_count_5y": summary.get("increase_count_5y"),
         "dividend_cut_count_5y": summary.get("cut_count_5y"),
         "dividend_flat_count_5y": summary.get("flat_count_5y"),

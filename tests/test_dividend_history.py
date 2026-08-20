@@ -4,7 +4,7 @@ import unittest
 
 import pandas as pd
 
-from dividend_history import build_dividend_history
+from dividend_history import apply_verified_streak, build_dividend_history
 
 
 def frame_for_years(values: dict[int, float], splits: dict[str, float] | None = None) -> pd.DataFrame:
@@ -44,9 +44,9 @@ class DividendHistoryTests(unittest.TestCase):
         self.assertFalse(result["no_cut_5y"])
         self.assertLess(result["max_cut_pct_5y"], 0)
 
-    def test_later_split_normalizes_older_dividend(self):
+    def test_yahoo_split_adjusted_dividends_are_not_adjusted_twice(self):
         frame = frame_for_years(
-            {2021: 100, 2022: 110, 2023: 60, 2024: 65, 2025: 70},
+            {2021: 50, 2022: 55, 2023: 60, 2024: 65, 2025: 70},
             splits={"2023-01-01": 2.0},
         )
         result = build_dividend_history(frame, now=self.NOW)
@@ -56,6 +56,63 @@ class DividendHistoryTests(unittest.TestCase):
         self.assertEqual(history[2023], 60.0)
         self.assertEqual(result["cut_count_5y"], 0)
         self.assertEqual(result["consecutive_increase_years"], 4)
+
+    def test_batch_union_empty_rows_do_not_fake_observation_years(self):
+        index = pd.date_range("2000-01-01", "2025-12-01", freq="MS")
+        frame = pd.DataFrame(
+            {"Close": float("nan"), "Dividends": 0.0, "Stock Splits": 0.0},
+            index=index,
+        )
+        frame.loc[frame.index >= pd.Timestamp("2019-12-01"), "Close"] = 100.0
+        for year, amount in {
+            2020: 10,
+            2021: 11,
+            2022: 12,
+            2023: 13,
+            2024: 14,
+            2025: 15,
+        }.items():
+            frame.loc[pd.Timestamp(year=year, month=6, day=1), "Dividends"] = amount
+
+        result = build_dividend_history(frame, now=self.NOW)
+        self.assertEqual(result["history_start_year"], 2020)
+        self.assertEqual(result["observation_years"], 6)
+        self.assertEqual(result["consecutive_increase_years"], 5)
+
+    def test_verified_company_streak_can_override_observed_calendar_streak(self):
+        summary = build_dividend_history(
+            frame_for_years({2021: 20, 2022: 22, 2023: 24, 2024: 26, 2025: 28}),
+            now=self.NOW,
+        )
+        result = apply_verified_streak(
+            summary,
+            {
+                "consecutive_increase_years": 36,
+                "as_of_year": 2025,
+                "basis": "company_official_fiscal_year",
+                "source": "Kao Corporation shareholder return",
+                "source_url": "https://www.kao.com/jp/investor-relations/stock-information/shareholder-return/",
+            },
+        )
+        self.assertEqual(result["consecutive_increase_years"], 36)
+        self.assertEqual(result["observed_consecutive_increase_years"], 4)
+        self.assertTrue(result["streak_verified"])
+        self.assertEqual(result["streak_as_of_year"], 2025)
+
+    def test_stale_verified_override_is_not_carried_forward(self):
+        summary = build_dividend_history(
+            frame_for_years({2022: 20, 2023: 22, 2024: 24, 2025: 26, 2026: 28}),
+            now=pd.Timestamp("2027-08-19"),
+        )
+        result = apply_verified_streak(
+            summary,
+            {"consecutive_increase_years": 36, "as_of_year": 2025},
+        )
+        self.assertFalse(result["streak_verified"])
+        self.assertEqual(
+            result["consecutive_increase_years"],
+            result["observed_consecutive_increase_years"],
+        )
 
     def test_current_partial_year_is_excluded(self):
         frame = frame_for_years({2022: 20, 2023: 22, 2024: 24, 2025: 26, 2026: 5})
