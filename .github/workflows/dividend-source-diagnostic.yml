@@ -1,0 +1,26 @@
+name: Dividend source diagnostic
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/diagnose_dividend_sources.py'
+      - '.github/workflows/dividend-source-diagnostic.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Compare monthly daily repair and dedicated dividend sources
+        run: python -m scripts.diagnose_dividend_sources 7466.T 8593.T 8566.T
