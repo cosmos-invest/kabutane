@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import tempfile
 import unittest
 from pathlib import Path
@@ -58,12 +59,91 @@ class PublicCoreRadarTests(unittest.TestCase):
             root = Path(directory)
             input_path = root / "radar.json"
             output_path = root / "public-radar.json"
-            import json
             input_path.write_text(json.dumps(source), encoding="utf-8")
             public.write_public_radar(input_path, output_path)
             text = output_path.read_text(encoding="utf-8")
             self.assertNotIn('"provisional_status":"GC"', text)
             self.assertNotIn("monthly_rsi_spread", text)
+
+    def test_ir_review_queue_prioritizes_unknown_boundary_without_leaking_to_public(self):
+        years = list(range(2010, 2027))
+        candidate_history = [
+            {"year": year, "annual_dividend": None if year == 2010 else float(year - 2010)}
+            for year in years
+        ]
+        known_break_history = [
+            {"year": 2010, "annual_dividend": 10.0},
+            {"year": 2011, "annual_dividend": 10.0},
+            *[
+                {"year": year, "annual_dividend": float(year)}
+                for year in range(2012, 2027)
+            ],
+        ]
+        source = {
+            "generated_at": "2026-08-20T00:00:00+00:00",
+            "core_count": 2,
+            "dividend_verified_streak_count": 0,
+            "records": [
+                {"code": "9999", "ticker": "9999.T", "name": "候補社", "provisional_status": "OUT"},
+                {"code": "9998", "ticker": "9998.T", "name": "据置社", "provisional_status": "OUT"},
+            ],
+        }
+        details = {
+            "9999": {
+                "code": "9999",
+                "ticker": "9999.T",
+                "name": "候補社",
+                "history": candidate_history,
+                "observed_consecutive_increase_years": 15,
+                "consecutive_increase_years": 15,
+                "streak_lower_bound": True,
+                "streak_verified": False,
+                "streak_anchor_as_of_year": None,
+                "unknown_year_count": 1,
+                "expected_dividend_events_per_period": 2,
+                "partial_event_periods": [2010],
+            },
+            "9998": {
+                "code": "9998",
+                "ticker": "9998.T",
+                "name": "据置社",
+                "history": known_break_history,
+                "observed_consecutive_increase_years": 15,
+                "consecutive_increase_years": 15,
+                "streak_lower_bound": False,
+                "streak_verified": False,
+                "streak_anchor_as_of_year": None,
+                "unknown_year_count": 0,
+                "expected_dividend_events_per_period": 2,
+                "partial_event_periods": [],
+            },
+        }
+
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            dividend_dir = root / "dividends"
+            dividend_dir.mkdir(parents=True)
+            input_path = root / "radar.json"
+            output_path = root / "public-radar.json"
+            input_path.write_text(json.dumps(source), encoding="utf-8")
+            (dividend_dir / "99.json").write_text(json.dumps({"records": details}), encoding="utf-8")
+
+            public.write_public_radar(input_path, output_path)
+            review = json.loads((root / "quality" / "dividend-ir-review-candidates.json").read_text(encoding="utf-8"))
+            codes = [row["code"] for row in review["records"]]
+            self.assertIn("9999", codes)
+            self.assertNotIn("9998", codes)
+            candidate = next(row for row in review["records"] if row["code"] == "9999")
+            self.assertGreaterEqual(candidate["score"], 80)
+            self.assertEqual(candidate["boundary_type"], "unknown")
+            self.assertTrue(candidate["partial_event_near_boundary"])
+            self.assertIn("取得未確認", " ".join(candidate["reasons"]))
+
+            public_payload = json.loads(output_path.read_text(encoding="utf-8"))
+            public_candidate = next(row for row in public_payload["records"] if row["code"] == "9999")
+            self.assertNotIn("score", public_candidate)
+            self.assertNotIn("priority", public_candidate)
+            self.assertNotIn("reasons", public_candidate)
 
 
 if __name__ == "__main__":
