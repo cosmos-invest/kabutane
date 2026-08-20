@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - 'dividend_history.py'
+      - 'data/dividend_streak_overrides.json'
       - 'scripts/build_core_universe_data.py'
       - 'scripts/build_core_with_dividends.py'
       - 'scripts/build_premium_lab.py'
@@ -19,6 +20,7 @@ on:
     branches: [main]
     paths:
       - 'dividend_history.py'
+      - 'data/dividend_streak_overrides.json'
       - 'scripts/build_core_with_dividends.py'
       - '.github/workflows/update-core-universe-data.yml'
   workflow_run:
