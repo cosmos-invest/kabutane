@@ -1,14 +1,16 @@
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 from typing import Any
 
-from dividend_history import build_dividend_history, public_dividend_fields
+from dividend_history import DEFAULT_MAX_YEARS, build_dividend_history, public_dividend_fields
 from scripts import build_core_universe_data as core
 
 
-CAPTURED_MONTHLY: dict[str, Any] = {}
+DIVIDEND_HISTORY_PERIOD = os.getenv("DIVIDEND_HISTORY_PERIOD", "max")
+DIVIDEND_HISTORY_YEARS = int(os.getenv("DIVIDEND_HISTORY_YEARS", str(DEFAULT_MAX_YEARS)))
 
 
 def _load_json(path: Path, default: Any = None) -> Any:
@@ -28,23 +30,82 @@ def _finance_for_code(output: Path, code: str, cache: dict[str, dict[str, Any]])
     return cache[shard].get(code, {})
 
 
-def attach_dividend_data(output: Path, monthly_frames: dict[str, Any]) -> dict[str, int]:
+def _existing_dividend_for_code(
+    output: Path,
+    code: str,
+    cache: dict[str, dict[str, Any]],
+) -> dict[str, Any] | None:
+    shard = core.shard_key(code)
+    if shard not in cache:
+        path = output / "dividends" / f"{shard}.json"
+        payload = _load_json(path, {}) or {}
+        records = payload.get("records") if isinstance(payload, dict) else {}
+        cache[shard] = records if isinstance(records, dict) else {}
+    previous = cache[shard].get(code)
+    return previous if isinstance(previous, dict) else None
+
+
+def download_dividend_frames(stocks: list[dict[str, str]]) -> tuple[dict[str, Any], list[dict[str, str]]]:
+    tickers = [str(stock.get("ticker") or "") for stock in stocks if stock.get("ticker")]
+    if not tickers:
+        return {}, []
+    print(
+        f"Dividend history: downloading dedicated {DIVIDEND_HISTORY_PERIOD} monthly actions "
+        f"for {len(tickers)} tickers; chart history remains unchanged"
+    )
+    return core.download_frames(
+        tickers,
+        DIVIDEND_HISTORY_PERIOD,
+        "1mo",
+        "dividend-history",
+    )
+
+
+def attach_dividend_data(
+    output: Path,
+    dividend_frames: dict[str, Any],
+) -> dict[str, int]:
     radar_path = output / "radar.json"
     radar = _load_json(radar_path, {}) or {}
     rows = radar.get("records") or []
     detail_records: dict[str, dict[str, Any]] = {}
     finance_cache: dict[str, dict[str, Any]] = {}
+    existing_dividend_cache: dict[str, dict[str, Any]] = {}
     available = 0
     no_cut_5y = 0
     increasing = 0
+    fallback_count = 0
 
     for row in rows:
         if not isinstance(row, dict):
             continue
         code = str(row.get("code") or "")
         ticker = str(row.get("ticker") or "")
-        frame = monthly_frames.get(ticker)
-        summary = build_dividend_history(frame)
+        frame = dividend_frames.get(ticker)
+        if frame is None or getattr(frame, "empty", True):
+            previous = _existing_dividend_for_code(
+                output,
+                code,
+                existing_dividend_cache,
+            )
+            if previous:
+                summary = {
+                    key: value
+                    for key, value in previous.items()
+                    if key not in {"code", "ticker", "name"}
+                }
+                fallback_count += 1
+            else:
+                summary = build_dividend_history(
+                    frame,
+                    max_years=DIVIDEND_HISTORY_YEARS,
+                )
+        else:
+            summary = build_dividend_history(
+                frame,
+                max_years=DIVIDEND_HISTORY_YEARS,
+            )
+
         compact = public_dividend_fields(summary)
         row.update(compact)
 
@@ -66,6 +127,8 @@ def attach_dividend_data(output: Path, monthly_frames: dict[str, Any]) -> dict[s
         }
 
     radar["dividend_history_coverage"] = available
+    radar["dividend_history_max_years"] = DIVIDEND_HISTORY_YEARS
+    radar["dividend_history_period"] = DIVIDEND_HISTORY_PERIOD
     radar["dividend_no_cut_5y_count"] = no_cut_5y
     radar["dividend_increasing_count"] = increasing
     core.write_json(radar_path, radar)
@@ -75,44 +138,51 @@ def attach_dividend_data(output: Path, monthly_frames: dict[str, Any]) -> dict[s
         core.write_json(
             dividend_dir / f"{shard}.json",
             {
-                "schema_version": 1,
+                "schema_version": 2,
                 "generated_at": radar.get("generated_at"),
                 "basis": "calendar_year_ex_date",
+                "history_max_years": DIVIDEND_HISTORY_YEARS,
+                "source_period": DIVIDEND_HISTORY_PERIOD,
                 "records": records,
             },
         )
-    return {"available": available, "no_cut_5y": no_cut_5y, "increasing": increasing}
+    return {
+        "available": available,
+        "no_cut_5y": no_cut_5y,
+        "increasing": increasing,
+        "fallback": fallback_count,
+    }
 
 
-def build_with_dividends(*, stocks: list[dict[str, str]], output: Path, refresh_base: bool, fundamentals_limit: int) -> dict[str, Any]:
-    global CAPTURED_MONTHLY
-    CAPTURED_MONTHLY = {}
-    original_download_frames = core.download_frames
+def build_with_dividends(
+    *,
+    stocks: list[dict[str, str]],
+    output: Path,
+    refresh_base: bool,
+    fundamentals_limit: int,
+) -> dict[str, Any]:
+    manifest = core.build_core_data(
+        stocks,
+        output=output,
+        refresh_base=refresh_base,
+        fundamentals_limit=fundamentals_limit,
+    )
 
-    def capture_download(tickers: list[str], period: str, interval: str, stage: str):
-        frames, errors = original_download_frames(tickers, period, interval, stage)
-        if stage == "core-monthly":
-            CAPTURED_MONTHLY.update(frames)
-        return frames, errors
+    dividend_frames, dividend_errors = download_dividend_frames(stocks)
+    dividend_counts = attach_dividend_data(output, dividend_frames)
 
-    core.download_frames = capture_download
-    try:
-        manifest = core.build_core_data(
-            stocks,
-            output=output,
-            refresh_base=refresh_base,
-            fundamentals_limit=fundamentals_limit,
-        )
-    finally:
-        core.download_frames = original_download_frames
-
-    dividend_counts = attach_dividend_data(output, CAPTURED_MONTHLY)
     manifest_path = output / "manifest.json"
     refreshed_manifest = _load_json(manifest_path, manifest) or manifest
     refreshed_manifest["dividend_history_coverage"] = dividend_counts["available"]
     refreshed_manifest["dividend_history_basis"] = "calendar_year_ex_date"
+    refreshed_manifest["dividend_history_max_years"] = DIVIDEND_HISTORY_YEARS
+    refreshed_manifest["dividend_history_period"] = DIVIDEND_HISTORY_PERIOD
+    refreshed_manifest["dividend_history_download_errors"] = len(dividend_errors)
+    refreshed_manifest["dividend_history_fallback_count"] = dividend_counts["fallback"]
     core.write_json(manifest_path, refreshed_manifest, compact=False)
     print("Dividend history:", json.dumps(dividend_counts, ensure_ascii=False))
+    if dividend_errors:
+        print(f"Dividend history download errors: {len(dividend_errors)}")
     return refreshed_manifest
 
 
