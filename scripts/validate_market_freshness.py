@@ -3,11 +3,16 @@ from __future__ import annotations
 import argparse
 import json
 import math
+from datetime import datetime, time
 from pathlib import Path
 from typing import Any
+from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parents[1]
 MIN_LATEST_DATE_COVERAGE = 0.90
+MIN_INTRADAY_LATEST_DATE_COVERAGE = 0.75
+TOKYO_TZ = ZoneInfo("Asia/Tokyo")
+INTRADAY_RELAX_UNTIL = time(15, 40)
 
 
 def load_json(path: Path) -> dict[str, Any]:
@@ -53,7 +58,22 @@ def require_not_older(label: str, current: str | None, baseline: str | None) -> 
         raise RuntimeError(f"{label} regressed: {current} < {baseline}")
 
 
-def validate_latest_date_coverage(core: dict[str, Any], core_date: str | None) -> None:
+def intraday_relaxation_applies(core_date: str | None, *, now: datetime | None = None) -> bool:
+    if not core_date:
+        return False
+    current = now or datetime.now(TOKYO_TZ)
+    if current.tzinfo is None:
+        current = current.replace(tzinfo=TOKYO_TZ)
+    current = current.astimezone(TOKYO_TZ)
+    return core_date == current.date().isoformat() and current.time() < INTRADAY_RELAX_UNTIL
+
+
+def validate_latest_date_coverage(
+    core: dict[str, Any],
+    core_date: str | None,
+    *,
+    now: datetime | None = None,
+) -> None:
     if not core_date:
         raise RuntimeError("core price date is missing")
     dates = record_price_dates(core)
@@ -61,11 +81,25 @@ def validate_latest_date_coverage(core: dict[str, Any], core_date: str | None) -
     if expected <= 0:
         raise RuntimeError("core daily coverage is missing")
     latest_count = sum(value == core_date for value in dates)
-    minimum = max(1, math.ceil(expected * MIN_LATEST_DATE_COVERAGE))
+
+    coverage_ratio = MIN_LATEST_DATE_COVERAGE
+    relaxed = intraday_relaxation_applies(core_date, now=now)
+    if relaxed:
+        coverage_ratio = MIN_INTRADAY_LATEST_DATE_COVERAGE
+
+    minimum = max(1, math.ceil(expected * coverage_ratio))
     if latest_count < minimum:
+        mode = "intraday" if relaxed else "strict"
         raise RuntimeError(
             "core latest-date coverage is too low: "
-            f"date={core_date} latest={latest_count} expected={expected} minimum={minimum}"
+            f"date={core_date} latest={latest_count} expected={expected} minimum={minimum} mode={mode}"
+        )
+
+    if relaxed and latest_count < math.ceil(expected * MIN_LATEST_DATE_COVERAGE):
+        print(
+            "market freshness warning: intraday latest-date coverage accepted: "
+            f"date={core_date} latest={latest_count} expected={expected} "
+            f"minimum={minimum}; strict 90% resumes after {INTRADAY_RELAX_UNTIL.strftime('%H:%M')} JST"
         )
 
 
