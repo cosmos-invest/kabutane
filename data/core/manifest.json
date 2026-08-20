@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-08-20T02:48:26.550303+00:00",
+  "generated_at": "2026-08-20T04:10:19.644309+00:00",
   "scope": "TSE domestic common stocks: Prime, Standard, Growth",
   "core_count": 3706,
   "daily_coverage": 3706,
@@ -11,21 +11,24 @@
   "overlay_days": 25,
   "shard_rule": "first two characters of security code",
   "bytes": {
-    "radar": 2919885,
-    "daily_overlay": 7268071,
-    "fundamentals": 3515262,
+    "radar": 2919834,
+    "daily_overlay": 7270756,
+    "fundamentals": 3515288,
     "chart_base": 53325235
   },
   "errors": {
     "daily": 0,
     "monthly": 0,
-    "fundamentals": 69
+    "fundamentals": 5
   },
-  "dividend_history_coverage": 3155,
-  "dividend_history_basis": "calendar_year_ex_date",
+  "dividend_history_coverage": 3182,
+  "dividend_history_basis": "fiscal_year_ex_date_with_calendar_fallback",
+  "dividend_fiscal_year_coverage": 3705,
+  "dividend_fiscal_calendar_source": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/codelist/Edinetcode.zip",
   "dividend_history_max_years": 50,
   "dividend_history_period": "max",
   "dividend_history_download_errors": 0,
   "dividend_history_fallback_count": 0,
-  "dividend_verified_streak_count": 1
+  "dividend_verified_streak_count": 4,
+  "dividend_streak_lower_bound_count": 134
 }
