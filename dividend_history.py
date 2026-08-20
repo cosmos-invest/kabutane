@@ -9,6 +9,7 @@ import pandas as pd
 BASIS = "calendar_year_ex_date"
 SOURCE = "Yahoo Finance via yfinance"
 # Long-range dividend history is independent of same-day price-date coverage.
+# Production refresh marker: rerun after freshness-guard fixes.
 DEFAULT_MAX_YEARS = 50
 
 
