@@ -11,6 +11,7 @@ from dividend_history import (
     build_dividend_history,
     public_dividend_fields,
 )
+from fiscal_year_calendar import EDINET_CODELIST_URL, load_fiscal_year_end_months
 from scripts import build_core_universe_data as core
 
 
@@ -95,11 +96,14 @@ def attach_dividend_data(
     finance_cache: dict[str, dict[str, Any]] = {}
     existing_dividend_cache: dict[str, dict[str, Any]] = {}
     streak_overrides = _load_streak_overrides()
+    fiscal_year_ends = load_fiscal_year_end_months(output / "fiscal-year-ends.json")
     available = 0
     no_cut_5y = 0
     increasing = 0
     fallback_count = 0
     verified_streak_count = 0
+    fiscal_year_count = 0
+    lower_bound_count = 0
 
     for row in rows:
         if not isinstance(row, dict):
@@ -107,6 +111,7 @@ def attach_dividend_data(
         code = str(row.get("code") or "")
         ticker = str(row.get("ticker") or "")
         frame = dividend_frames.get(ticker)
+        fiscal_month = fiscal_year_ends.get(code)
         if frame is None or getattr(frame, "empty", True):
             previous = _existing_dividend_for_code(
                 output,
@@ -124,11 +129,13 @@ def attach_dividend_data(
                 summary = build_dividend_history(
                     frame,
                     max_years=DIVIDEND_HISTORY_YEARS,
+                    fiscal_year_end_month=fiscal_month,
                 )
         else:
             summary = build_dividend_history(
                 frame,
                 max_years=DIVIDEND_HISTORY_YEARS,
+                fiscal_year_end_month=fiscal_month,
             )
 
         summary = apply_verified_streak(summary, streak_overrides.get(code))
@@ -147,6 +154,10 @@ def attach_dividend_data(
             increasing += 1
         if summary.get("streak_verified") is True:
             verified_streak_count += 1
+        if str(summary.get("basis") or "") == "fiscal_year_ex_date":
+            fiscal_year_count += 1
+        if summary.get("streak_lower_bound") is True:
+            lower_bound_count += 1
         detail_records[code] = {
             "code": code,
             "ticker": ticker,
@@ -157,9 +168,13 @@ def attach_dividend_data(
     radar["dividend_history_coverage"] = available
     radar["dividend_history_max_years"] = DIVIDEND_HISTORY_YEARS
     radar["dividend_history_period"] = DIVIDEND_HISTORY_PERIOD
+    radar["dividend_history_basis"] = "fiscal_year_ex_date_with_calendar_fallback"
+    radar["dividend_fiscal_year_coverage"] = fiscal_year_count
+    radar["dividend_fiscal_calendar_source"] = EDINET_CODELIST_URL
     radar["dividend_no_cut_5y_count"] = no_cut_5y
     radar["dividend_increasing_count"] = increasing
     radar["dividend_verified_streak_count"] = verified_streak_count
+    radar["dividend_streak_lower_bound_count"] = lower_bound_count
     core.write_json(radar_path, radar)
 
     dividend_dir = output / "dividends"
@@ -167,9 +182,9 @@ def attach_dividend_data(
         core.write_json(
             dividend_dir / f"{shard}.json",
             {
-                "schema_version": 3,
+                "schema_version": 4,
                 "generated_at": radar.get("generated_at"),
-                "basis": "calendar_year_ex_date",
+                "basis": "fiscal_year_ex_date_with_calendar_fallback",
                 "history_max_years": DIVIDEND_HISTORY_YEARS,
                 "source_period": DIVIDEND_HISTORY_PERIOD,
                 "records": records,
@@ -181,6 +196,8 @@ def attach_dividend_data(
         "increasing": increasing,
         "fallback": fallback_count,
         "verified_streaks": verified_streak_count,
+        "fiscal_years": fiscal_year_count,
+        "lower_bounds": lower_bound_count,
     }
 
 
@@ -204,12 +221,15 @@ def build_with_dividends(
     manifest_path = output / "manifest.json"
     refreshed_manifest = _load_json(manifest_path, manifest) or manifest
     refreshed_manifest["dividend_history_coverage"] = dividend_counts["available"]
-    refreshed_manifest["dividend_history_basis"] = "calendar_year_ex_date"
+    refreshed_manifest["dividend_history_basis"] = "fiscal_year_ex_date_with_calendar_fallback"
+    refreshed_manifest["dividend_fiscal_year_coverage"] = dividend_counts["fiscal_years"]
+    refreshed_manifest["dividend_fiscal_calendar_source"] = EDINET_CODELIST_URL
     refreshed_manifest["dividend_history_max_years"] = DIVIDEND_HISTORY_YEARS
     refreshed_manifest["dividend_history_period"] = DIVIDEND_HISTORY_PERIOD
     refreshed_manifest["dividend_history_download_errors"] = len(dividend_errors)
     refreshed_manifest["dividend_history_fallback_count"] = dividend_counts["fallback"]
     refreshed_manifest["dividend_verified_streak_count"] = dividend_counts["verified_streaks"]
+    refreshed_manifest["dividend_streak_lower_bound_count"] = dividend_counts["lower_bounds"]
     core.write_json(manifest_path, refreshed_manifest, compact=False)
     print("Dividend history:", json.dumps(dividend_counts, ensure_ascii=False))
     if dividend_errors:
