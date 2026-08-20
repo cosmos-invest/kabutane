@@ -5,6 +5,7 @@ on:
     paths:
       - 'dividend_history.py'
       - 'dividend_event_quality.py'
+      - 'dividend_ir_review.py'
       - 'data/dividend_streak_overrides.json'
       - 'scripts/build_core_universe_data.py'
       - 'scripts/build_core_with_dividends.py'
@@ -22,8 +23,10 @@ on:
     paths:
       - 'dividend_history.py'
       - 'dividend_event_quality.py'
+      - 'dividend_ir_review.py'
       - 'data/dividend_streak_overrides.json'
       - 'scripts/build_core_with_dividends.py'
+      - 'scripts/public_core_radar.py'
       - '.github/workflows/update-core-universe-data.yml'
   workflow_run:
     workflows: ["Update daily candidate prices"]
@@ -53,7 +56,7 @@ jobs:
         run: pip install -r requirements.txt
       - name: Unit and syntax checks
         run: |
-          python -m py_compile dividend_history.py dividend_event_quality.py scripts/build_core_universe_data.py scripts/build_core_with_dividends.py scripts/build_premium_lab.py scripts/public_core_radar.py scripts/validate_market_freshness.py tests/test_core_universe_data.py tests/test_dividend_history.py tests/test_premium_lab.py tests/test_public_core_radar.py tests/test_market_freshness.py
+          python -m py_compile dividend_history.py dividend_event_quality.py dividend_ir_review.py scripts/build_core_universe_data.py scripts/build_core_with_dividends.py scripts/build_premium_lab.py scripts/public_core_radar.py scripts/validate_market_freshness.py tests/test_core_universe_data.py tests/test_dividend_history.py tests/test_premium_lab.py tests/test_public_core_radar.py tests/test_market_freshness.py
           python -m unittest tests.test_core_universe_data tests.test_dividend_history tests.test_premium_lab tests.test_public_core_radar tests.test_market_freshness -v
           node --check assets/core-detail-fallback.js
           node --check assets/premium-supply-beta.js
@@ -71,6 +74,7 @@ jobs:
           import json
           from pathlib import Path
           payload = json.loads(Path('/tmp/public-radar.json').read_text(encoding='utf-8'))
+          review = json.loads(Path('/tmp/quality/dividend-ir-review-candidates.json').read_text(encoding='utf-8'))
           rows = payload.get('records') or []
           if len(rows) < 3500:
               raise SystemExit(f'public catalog too small: {len(rows)}')
@@ -78,7 +82,11 @@ jobs:
               raise SystemExit('public all-stock catalog leaked provisional GC')
           if any('monthly_rsi_spread' in row for row in rows):
               raise SystemExit('public all-stock catalog leaked current-month RSI spread')
-          print('public catalog records', len(rows))
+          if not isinstance(review.get('records'), list):
+              raise SystemExit('internal dividend IR review queue was not generated')
+          if int(review.get('candidate_count') or 0) != len(review.get('records') or []):
+              raise SystemExit('internal dividend IR review count mismatch')
+          print('public catalog records', len(rows), 'IR review candidates', review.get('candidate_count'))
           PY
 
   live-sample:
@@ -104,6 +112,7 @@ jobs:
           root = Path('/tmp/kabutane-core-sample')
           radar = json.loads((root/'radar.json').read_text(encoding='utf-8'))
           public = json.loads((root/'public-radar.json').read_text(encoding='utf-8'))
+          review = json.loads((root/'quality'/'dividend-ir-review-candidates.json').read_text(encoding='utf-8'))
           manifest = json.loads((root/'manifest.json').read_text(encoding='utf-8'))
           codes = {str(row.get('code')) for row in radar.get('records') or []}
           if not {'5243', '7466'}.issubset(codes):
@@ -139,6 +148,8 @@ jobs:
               raise SystemExit(f"SPK FY2005 partial annual dividend must be unknown, got {spk_history.get(2005)}")
           if int(spk.get('consecutive_increase_years') or 0) != 28 or spk.get('streak_verified') is not True:
               raise SystemExit(f"SPK official streak not retained: {spk.get('consecutive_increase_years')} verified={spk.get('streak_verified')}")
+          if any(str(row.get('code') or '') == '7466' for row in review.get('records') or []):
+              raise SystemExit('SPK must be excluded from IR discovery queue because it already has an official anchor')
           public_5243 = next((row for row in public.get('records') or [] if str(row.get('code')) == '5243'), None)
           if public_5243 is None or 'consecutive_dividend_increase_years' not in public_5243:
               raise SystemExit('public sample is missing dividend screening fields')
@@ -149,7 +160,7 @@ jobs:
               raise SystemExit('public sample leaked provisional GC in all-stock catalog')
           if any('monthly_rsi_spread' in row for row in public.get('records') or []):
               raise SystemExit('public sample leaked current-month RSI spread in all-stock catalog')
-          print('core live sample with clean v5 dividend history OK')
+          print('core live sample with clean v5 dividend history and internal IR review queue OK')
           PY
 
   detect-heavy-change:
@@ -273,6 +284,7 @@ jobs:
           manifest = json.loads(Path('data/core/manifest.json').read_text(encoding='utf-8'))
           radar = json.loads(Path('data/core/radar.json').read_text(encoding='utf-8'))
           public = json.loads(Path('data/core/public-radar.json').read_text(encoding='utf-8'))
+          review = json.loads(Path('data/core/quality/dividend-ir-review-candidates.json').read_text(encoding='utf-8'))
           premium = json.loads(Path('data/premium/opportunity-radar.json').read_text(encoding='utf-8'))
           total = int(manifest.get('core_count') or 0)
           if total < 3500:
@@ -285,6 +297,10 @@ jobs:
               raise SystemExit('public all-stock catalog leaked provisional GC')
           if any('monthly_rsi_spread' in row for row in public.get('records') or []):
               raise SystemExit('public all-stock catalog leaked current-month RSI spread')
+          if int(review.get('candidate_count') or 0) != len(review.get('records') or []):
+              raise SystemExit('dividend IR review queue count mismatch')
+          if int(review.get('verified_anchor_count') or 0) < 11:
+              raise SystemExit('dividend IR review queue lost verified-anchor provenance')
           if len(premium.get('records') or []) != total:
               raise SystemExit('premium radar must contain the full core universe')
           if int(manifest.get('daily_coverage') or 0) / total < .90:
@@ -306,6 +322,7 @@ jobs:
           print(json.dumps(manifest, ensure_ascii=False, indent=2))
           print('premium status', premium.get('status_counts'))
           print('public status', public.get('status_counts'))
+          print('IR review candidates', review.get('candidate_count'), review.get('priority_counts'))
           PY
       - name: Commit refreshed all-core data
         run: |
