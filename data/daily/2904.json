@@ -2,12 +2,12 @@
   "code": "2904",
   "ticker": "2904.T",
   "name": "一正蒲鉾",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 754.0,
-    "change_from_signal_month_pct": -0.92,
-    "return_since_gc_pct": 0.94
+    "current_price": 753.0,
+    "change_from_signal_month_pct": -1.05,
+    "return_since_gc_pct": 0.8
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 756.41,
       "rsi14": 51.71,
       "rsi5": 52.0
+    },
+    {
+      "date": "2026-08-19",
+      "open": 753.0,
+      "high": 753.0,
+      "low": 752.0,
+      "close": 752.0,
+      "volume": 2900.0,
+      "sma25": 757.92,
+      "sma75": 765.37,
+      "sma200": 756.43,
+      "rsi14": 51.71,
+      "rsi5": 52.0
+    },
+    {
+      "date": "2026-08-20",
+      "open": 752.0,
+      "high": 754.0,
+      "low": 752.0,
+      "close": 753.0,
+      "volume": 3400.0,
+      "sma25": 757.56,
+      "sma75": 765.29,
+      "sma200": 756.46,
+      "rsi14": 51.71,
+      "rsi5": 52.0
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 50.79,
-    "monthly_rsi_ma5": 54.22,
-    "spread": -3.43,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 50.3,
+    "monthly_rsi_ma5": 54.12,
+    "spread": -3.83,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

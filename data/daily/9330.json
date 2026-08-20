@@ -2,12 +2,12 @@
   "code": "9330",
   "ticker": "9330.T",
   "name": "揚羽",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 863.0,
-    "change_from_signal_month_pct": -1.37,
-    "return_since_gc_pct": -1.37
+    "current_price": 867.0,
+    "change_from_signal_month_pct": -0.91,
+    "return_since_gc_pct": -0.91
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 841.42,
       "rsi14": 41.77,
       "rsi5": 43.35
+    },
+    {
+      "date": "2026-08-19",
+      "open": 869.0,
+      "high": 869.0,
+      "low": 861.0,
+      "close": 861.0,
+      "volume": 300.0,
+      "sma25": 869.16,
+      "sma75": 854.48,
+      "sma200": 841.65,
+      "rsi14": 41.77,
+      "rsi5": 43.35
+    },
+    {
+      "date": "2026-08-20",
+      "open": 872.0,
+      "high": 872.0,
+      "low": 863.0,
+      "close": 867.0,
+      "volume": 600.0,
+      "sma25": 869.64,
+      "sma75": 854.77,
+      "sma200": 841.86,
+      "rsi14": 41.77,
+      "rsi5": 43.35
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 42.62,
-    "monthly_rsi_ma5": 41.83,
-    "spread": 0.79,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 42.86,
+    "monthly_rsi_ma5": 41.87,
+    "spread": 0.99,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

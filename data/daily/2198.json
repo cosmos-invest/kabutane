@@ -2,12 +2,12 @@
   "code": "2198",
   "ticker": "2198.T",
   "name": "アイ・ケイ・ケイホールディングス",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 772.0,
-    "change_from_signal_month_pct": -3.74,
-    "return_since_gc_pct": -3.74
+    "current_price": 792.0,
+    "change_from_signal_month_pct": -1.25,
+    "return_since_gc_pct": -1.25
   },
   "daily": [
     {
@@ -100,22 +100,48 @@
       "sma200": 782.52,
       "rsi14": 51.86,
       "rsi5": 53.28
+    },
+    {
+      "date": "2026-08-19",
+      "open": 772.0,
+      "high": 782.0,
+      "low": 770.0,
+      "close": 781.0,
+      "volume": 35200.0,
+      "sma25": 776.12,
+      "sma75": 764.12,
+      "sma200": 782.47,
+      "rsi14": 51.86,
+      "rsi5": 53.28
+    },
+    {
+      "date": "2026-08-20",
+      "open": 779.0,
+      "high": 794.0,
+      "low": 779.0,
+      "close": 792.0,
+      "volume": 41400.0,
+      "sma25": 777.8,
+      "sma75": 763.79,
+      "sma200": 782.43,
+      "rsi14": 51.86,
+      "rsi5": 53.28
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 50.82,
-    "monthly_rsi_ma5": 51.89,
-    "spread": -1.07,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 52.97,
+    "monthly_rsi_ma5": 52.32,
+    "spread": 0.64,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

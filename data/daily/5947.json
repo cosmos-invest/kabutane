@@ -2,12 +2,12 @@
   "code": "5947",
   "ticker": "5947.T",
   "name": "リンナイ",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 3616.0,
-    "change_from_signal_month_pct": 1.01,
-    "return_since_gc_pct": 1.01
+    "current_price": 3566.0,
+    "change_from_signal_month_pct": -0.39,
+    "return_since_gc_pct": -0.39
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 3742.06,
       "rsi14": 49.34,
       "rsi5": 50.22
+    },
+    {
+      "date": "2026-08-19",
+      "open": 3620.0,
+      "high": 3620.0,
+      "low": 3536.0,
+      "close": 3567.0,
+      "volume": 509000.0,
+      "sma25": 3610.36,
+      "sma75": 3541.24,
+      "sma200": 3742.64,
+      "rsi14": 49.34,
+      "rsi5": 50.22
+    },
+    {
+      "date": "2026-08-20",
+      "open": 3619.0,
+      "high": 3634.0,
+      "low": 3558.0,
+      "close": 3566.0,
+      "volume": 326500.0,
+      "sma25": 3608.4,
+      "sma75": 3541.29,
+      "sma200": 3743.16,
+      "rsi14": 49.34,
+      "rsi5": 50.22
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 53.79,
-    "monthly_rsi_ma5": 52.04,
-    "spread": 1.74,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 52.52,
+    "monthly_rsi_ma5": 51.79,
+    "spread": 0.73,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

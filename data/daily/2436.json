@@ -2,12 +2,12 @@
   "code": "2436",
   "ticker": "2436.T",
   "name": "共同ピーアール",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 650.0,
-    "change_from_signal_month_pct": 2.2,
-    "return_since_gc_pct": 23.57
+    "current_price": 647.0,
+    "change_from_signal_month_pct": 1.73,
+    "return_since_gc_pct": 23.0
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 512.01,
       "rsi14": 67.65,
       "rsi5": 76.28
+    },
+    {
+      "date": "2026-08-19",
+      "open": 641.0,
+      "high": 647.0,
+      "low": 633.0,
+      "close": 636.0,
+      "volume": 33200.0,
+      "sma25": 618.48,
+      "sma75": 559.46,
+      "sma200": 513.0,
+      "rsi14": 67.65,
+      "rsi5": 76.28
+    },
+    {
+      "date": "2026-08-20",
+      "open": 644.0,
+      "high": 668.0,
+      "low": 642.0,
+      "close": 647.0,
+      "volume": 44900.0,
+      "sma25": 619.4,
+      "sma75": 561.58,
+      "sma200": 514.07,
+      "rsi14": 67.65,
+      "rsi5": 76.28
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 77.83,
-    "monthly_rsi_ma5": 71.23,
-    "spread": 6.6,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 77.65,
+    "monthly_rsi_ma5": 71.19,
+    "spread": 6.45,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

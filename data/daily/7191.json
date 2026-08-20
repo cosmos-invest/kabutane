@@ -2,12 +2,12 @@
   "code": "7191",
   "ticker": "7191.T",
   "name": "イントラスト",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 1182.0,
-    "change_from_signal_month_pct": 4.97,
-    "return_since_gc_pct": 4.97
+    "current_price": 1165.0,
+    "change_from_signal_month_pct": 3.46,
+    "return_since_gc_pct": 3.46
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 1116.78,
       "rsi14": 59.3,
       "rsi5": 60.81
+    },
+    {
+      "date": "2026-08-19",
+      "open": 1182.0,
+      "high": 1182.0,
+      "low": 1160.0,
+      "close": 1172.0,
+      "volume": 16500.0,
+      "sma25": 1129.32,
+      "sma75": 1099.11,
+      "sma200": 1117.29,
+      "rsi14": 59.3,
+      "rsi5": 60.81
+    },
+    {
+      "date": "2026-08-20",
+      "open": 1172.0,
+      "high": 1172.0,
+      "low": 1157.0,
+      "close": 1165.0,
+      "volume": 11500.0,
+      "sma25": 1132.52,
+      "sma75": 1099.99,
+      "sma200": 1117.73,
+      "rsi14": 59.3,
+      "rsi5": 60.81
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 62.59,
-    "monthly_rsi_ma5": 58.7,
-    "spread": 3.88,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 61.61,
+    "monthly_rsi_ma5": 58.51,
+    "spread": 3.1,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

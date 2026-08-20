@@ -2,12 +2,12 @@
   "code": "4591",
   "ticker": "4591.T",
   "name": "リボミック",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 81.0,
-    "change_from_signal_month_pct": 10.96,
-    "return_since_gc_pct": 10.96
+    "current_price": 83.0,
+    "change_from_signal_month_pct": 13.7,
+    "return_since_gc_pct": 13.7
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 80.43,
       "rsi14": 37.98,
       "rsi5": 39.71
+    },
+    {
+      "date": "2026-08-19",
+      "open": 81.0,
+      "high": 81.0,
+      "low": 77.0,
+      "close": 78.0,
+      "volume": 797600.0,
+      "sma25": 74.64,
+      "sma75": 71.13,
+      "sma200": 80.34,
+      "rsi14": 37.98,
+      "rsi5": 39.71
+    },
+    {
+      "date": "2026-08-20",
+      "open": 78.0,
+      "high": 83.0,
+      "low": 78.0,
+      "close": 83.0,
+      "volume": 726400.0,
+      "sma25": 75.12,
+      "sma75": 71.19,
+      "sma200": 80.28,
+      "rsi14": 37.98,
+      "rsi5": 39.71
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 42.55,
-    "monthly_rsi_ma5": 35.31,
-    "spread": 7.24,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 43.68,
+    "monthly_rsi_ma5": 35.53,
+    "spread": 8.14,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "7442",
   "ticker": "7442.T",
   "name": "中山福",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 489.0,
-    "change_from_signal_month_pct": -1.81,
-    "return_since_gc_pct": -1.81
+    "current_price": 492.0,
+    "change_from_signal_month_pct": -1.2,
+    "return_since_gc_pct": -1.2
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 456.87,
       "rsi14": 64.25,
       "rsi5": 70.06
+    },
+    {
+      "date": "2026-08-19",
+      "open": 489.0,
+      "high": 490.0,
+      "low": 486.0,
+      "close": 490.0,
+      "volume": 10400.0,
+      "sma25": 489.28,
+      "sma75": 470.25,
+      "sma200": 457.24,
+      "rsi14": 64.25,
+      "rsi5": 70.06
+    },
+    {
+      "date": "2026-08-20",
+      "open": 492.0,
+      "high": 493.0,
+      "low": 491.0,
+      "close": 492.0,
+      "volume": 16900.0,
+      "sma25": 489.64,
+      "sma75": 470.93,
+      "sma200": 457.62,
+      "rsi14": 64.25,
+      "rsi5": 70.06
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 68.14,
-    "monthly_rsi_ma5": 66.05,
-    "spread": 2.09,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 69.2,
+    "monthly_rsi_ma5": 66.27,
+    "spread": 2.94,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

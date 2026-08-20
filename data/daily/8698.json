@@ -2,12 +2,12 @@
   "code": "8698",
   "ticker": "8698.T",
   "name": "マネックスグループ",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 693.0,
-    "change_from_signal_month_pct": -1.7,
-    "return_since_gc_pct": -1.7
+    "current_price": 715.0,
+    "change_from_signal_month_pct": 1.42,
+    "return_since_gc_pct": 1.42
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 702.79,
       "rsi14": 45.79,
       "rsi5": 49.31
+    },
+    {
+      "date": "2026-08-19",
+      "open": 692.0,
+      "high": 692.0,
+      "low": 679.0,
+      "close": 684.0,
+      "volume": 2157400.0,
+      "sma25": 717.2,
+      "sma75": 675.52,
+      "sma200": 702.25,
+      "rsi14": 45.79,
+      "rsi5": 49.31
+    },
+    {
+      "date": "2026-08-20",
+      "open": 697.0,
+      "high": 715.0,
+      "low": 695.0,
+      "close": 715.0,
+      "volume": 2441500.0,
+      "sma25": 716.52,
+      "sma75": 676.09,
+      "sma200": 702.02,
+      "rsi14": 45.79,
+      "rsi5": 49.31
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 50.25,
-    "monthly_rsi_ma5": 48.29,
-    "spread": 1.95,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 51.83,
+    "monthly_rsi_ma5": 48.61,
+    "spread": 3.22,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

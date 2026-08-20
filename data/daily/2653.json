@@ -2,12 +2,12 @@
   "code": "2653",
   "ticker": "2653.T",
   "name": "イオン九州",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 2829.0,
-    "change_from_signal_month_pct": -0.25,
-    "return_since_gc_pct": -0.25
+    "current_price": 2821.0,
+    "change_from_signal_month_pct": -0.53,
+    "return_since_gc_pct": -0.53
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 2851.22,
       "rsi14": 51.9,
       "rsi5": 52.89
+    },
+    {
+      "date": "2026-08-19",
+      "open": 2825.0,
+      "high": 2830.0,
+      "low": 2805.0,
+      "close": 2817.0,
+      "volume": 48200.0,
+      "sma25": 2833.52,
+      "sma75": 2819.25,
+      "sma200": 2850.2,
+      "rsi14": 51.9,
+      "rsi5": 52.89
+    },
+    {
+      "date": "2026-08-20",
+      "open": 2821.0,
+      "high": 2824.0,
+      "low": 2814.0,
+      "close": 2821.0,
+      "volume": 22700.0,
+      "sma25": 2833.48,
+      "sma75": 2819.6,
+      "sma200": 2849.31,
+      "rsi14": 51.9,
+      "rsi5": 52.89
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 53.93,
-    "monthly_rsi_ma5": 53.62,
-    "spread": 0.31,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 53.57,
+    "monthly_rsi_ma5": 53.55,
+    "spread": 0.02,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "5535",
   "ticker": "5535.T",
   "name": "ミガロホールディングス",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 272.0,
-    "change_from_signal_month_pct": -2.51,
-    "return_since_gc_pct": -2.51
+    "current_price": 281.0,
+    "change_from_signal_month_pct": 0.72,
+    "return_since_gc_pct": 0.72
   },
   "daily": [
     {
@@ -100,22 +100,48 @@
       "sma200": 346.51,
       "rsi14": 42.99,
       "rsi5": 43.0
+    },
+    {
+      "date": "2026-08-19",
+      "open": 272.0,
+      "high": 289.0,
+      "low": 272.0,
+      "close": 283.0,
+      "volume": 557600.0,
+      "sma25": 277.4,
+      "sma75": 272.97,
+      "sma200": 345.57,
+      "rsi14": 42.99,
+      "rsi5": 43.0
+    },
+    {
+      "date": "2026-08-20",
+      "open": 282.0,
+      "high": 288.0,
+      "low": 277.0,
+      "close": 281.0,
+      "volume": 204000.0,
+      "sma25": 277.32,
+      "sma75": 272.51,
+      "sma200": 344.7,
+      "rsi14": 42.99,
+      "rsi5": 43.0
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 42.75,
-    "monthly_rsi_ma5": 42.79,
-    "spread": -0.03,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 43.09,
+    "monthly_rsi_ma5": 42.85,
+    "spread": 0.24,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

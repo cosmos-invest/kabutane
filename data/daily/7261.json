@@ -2,12 +2,12 @@
   "code": "7261",
   "ticker": "7261.T",
   "name": "マツダ",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 1184.0,
-    "change_from_signal_month_pct": 0.64,
-    "return_since_gc_pct": 0.64
+    "current_price": 1201.5,
+    "change_from_signal_month_pct": 2.12,
+    "return_since_gc_pct": 2.12
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 1147.2,
       "rsi14": 48.09,
       "rsi5": 51.38
+    },
+    {
+      "date": "2026-08-19",
+      "open": 1170.5,
+      "high": 1171.0,
+      "low": 1129.0,
+      "close": 1134.5,
+      "volume": 7604900.0,
+      "sma25": 1157.28,
+      "sma75": 1117.02,
+      "sma200": 1147.16,
+      "rsi14": 48.09,
+      "rsi5": 51.38
+    },
+    {
+      "date": "2026-08-20",
+      "open": 1171.0,
+      "high": 1206.0,
+      "low": 1164.5,
+      "close": 1201.5,
+      "volume": 9320700.0,
+      "sma25": 1161.64,
+      "sma75": 1119.55,
+      "sma200": 1147.47,
+      "rsi14": 48.09,
+      "rsi5": 51.38
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 50.39,
-    "monthly_rsi_ma5": 48.01,
-    "spread": 2.38,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 51.03,
+    "monthly_rsi_ma5": 48.14,
+    "spread": 2.89,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

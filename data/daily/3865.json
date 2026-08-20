@@ -2,12 +2,12 @@
   "code": "3865",
   "ticker": "3865.T",
   "name": "北越コーポレーション",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 893.0,
-    "change_from_signal_month_pct": -2.62,
-    "return_since_gc_pct": -2.62
+    "current_price": 918.0,
+    "change_from_signal_month_pct": 0.11,
+    "return_since_gc_pct": 0.11
   },
   "daily": [
     {
@@ -100,22 +100,48 @@
       "sma200": 911.63,
       "rsi14": 42.75,
       "rsi5": 44.01
+    },
+    {
+      "date": "2026-08-19",
+      "open": 891.0,
+      "high": 907.0,
+      "low": 888.0,
+      "close": 903.0,
+      "volume": 212600.0,
+      "sma25": 919.04,
+      "sma75": 901.83,
+      "sma200": 911.21,
+      "rsi14": 42.75,
+      "rsi5": 44.01
+    },
+    {
+      "date": "2026-08-20",
+      "open": 918.0,
+      "high": 924.0,
+      "low": 901.0,
+      "close": 918.0,
+      "volume": 190800.0,
+      "sma25": 919.76,
+      "sma75": 902.21,
+      "sma200": 910.86,
+      "rsi14": 42.75,
+      "rsi5": 44.01
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 45.9,
-    "monthly_rsi_ma5": 45.93,
-    "spread": -0.03,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 46.96,
+    "monthly_rsi_ma5": 46.15,
+    "spread": 0.82,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

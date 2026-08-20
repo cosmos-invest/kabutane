@@ -2,12 +2,12 @@
   "code": "9009",
   "ticker": "9009.T",
   "name": "京成電鉄",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 1289.5,
-    "change_from_signal_month_pct": 0.78,
-    "return_since_gc_pct": 11.07
+    "current_price": 1327.0,
+    "change_from_signal_month_pct": 3.71,
+    "return_since_gc_pct": 14.3
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 1220.59,
       "rsi14": 40.86,
       "rsi5": 46.89
+    },
+    {
+      "date": "2026-08-19",
+      "open": 1299.5,
+      "high": 1309.0,
+      "low": 1288.0,
+      "close": 1303.0,
+      "volume": 1896100.0,
+      "sma25": 1275.56,
+      "sma75": 1164.79,
+      "sma200": 1220.51,
+      "rsi14": 40.86,
+      "rsi5": 46.89
+    },
+    {
+      "date": "2026-08-20",
+      "open": 1310.0,
+      "high": 1330.0,
+      "low": 1306.5,
+      "close": 1327.0,
+      "volume": 1767700.0,
+      "sma25": 1278.12,
+      "sma75": 1167.66,
+      "sma200": 1220.58,
+      "rsi14": 40.86,
+      "rsi5": 46.89
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 45.94,
-    "monthly_rsi_ma5": 40.99,
-    "spread": 4.95,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 47.57,
+    "monthly_rsi_ma5": 41.31,
+    "spread": 6.25,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

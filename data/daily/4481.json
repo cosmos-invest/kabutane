@@ -2,12 +2,12 @@
   "code": "4481",
   "ticker": "4481.T",
   "name": "ベース",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 3195.0,
-    "change_from_signal_month_pct": -0.62,
-    "return_since_gc_pct": -0.62
+    "current_price": 3380.0,
+    "change_from_signal_month_pct": 5.13,
+    "return_since_gc_pct": 5.13
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 3198.52,
       "rsi14": 45.8,
       "rsi5": 48.59
+    },
+    {
+      "date": "2026-08-19",
+      "open": 3210.0,
+      "high": 3220.0,
+      "low": 3170.0,
+      "close": 3190.0,
+      "volume": 73700.0,
+      "sma25": 3168.8,
+      "sma75": 3070.67,
+      "sma200": 3196.77,
+      "rsi14": 45.8,
+      "rsi5": 48.59
+    },
+    {
+      "date": "2026-08-20",
+      "open": 3240.0,
+      "high": 3380.0,
+      "low": 3235.0,
+      "close": 3380.0,
+      "volume": 199600.0,
+      "sma25": 3178.6,
+      "sma75": 3072.93,
+      "sma200": 3195.97,
+      "rsi14": 45.8,
+      "rsi5": 48.59
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 44.89,
-    "monthly_rsi_ma5": 42.17,
-    "spread": 2.72,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 48.64,
+    "monthly_rsi_ma5": 42.92,
+    "spread": 5.72,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

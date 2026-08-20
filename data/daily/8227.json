@@ -2,12 +2,12 @@
   "code": "8227",
   "ticker": "8227.T",
   "name": "しまむら",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 3386.0,
-    "change_from_signal_month_pct": 1.07,
-    "return_since_gc_pct": 1.38
+    "current_price": 3290.0,
+    "change_from_signal_month_pct": -1.79,
+    "return_since_gc_pct": -1.5
   },
   "daily": [
     {
@@ -100,15 +100,48 @@
       "sma200": 6166.4,
       "rsi14": 27.75,
       "rsi5": 28.07
+    },
+    {
+      "date": "2026-08-19",
+      "open": 3389.0,
+      "high": 3395.0,
+      "low": 3307.0,
+      "close": 3341.0,
+      "volume": 727400.0,
+      "sma25": 3379.0,
+      "sma75": 3308.96,
+      "sma200": 6135.95,
+      "rsi14": 27.75,
+      "rsi5": 28.07
+    },
+    {
+      "date": "2026-08-20",
+      "open": 3389.0,
+      "high": 3399.0,
+      "low": 3272.0,
+      "close": 3290.0,
+      "volume": 924800.0,
+      "sma25": 3376.52,
+      "sma75": 3309.17,
+      "sma200": 6104.71,
+      "rsi14": 27.75,
+      "rsi5": 28.07
     }
   ],
-  "corporate_events": [],
+  "corporate_events": [
+    {
+      "date": "2026-08-19",
+      "type": "DIVIDEND",
+      "label": "配当",
+      "detail": "1株 40円"
+    }
+  ],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 28.03,
-    "monthly_rsi_ma5": 27.56,
-    "spread": 0.46,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 27.52,
+    "monthly_rsi_ma5": 27.46,
+    "spread": 0.06,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -117,5 +150,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

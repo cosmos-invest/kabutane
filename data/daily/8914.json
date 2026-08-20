@@ -2,12 +2,12 @@
   "code": "8914",
   "ticker": "8914.T",
   "name": "エリアリンク",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 905.0,
-    "change_from_signal_month_pct": -9.23,
-    "return_since_gc_pct": -9.23
+    "current_price": 932.0,
+    "change_from_signal_month_pct": -6.52,
+    "return_since_gc_pct": -6.52
   },
   "daily": [
     {
@@ -100,22 +100,48 @@
       "sma200": 1034.01,
       "rsi14": 49.06,
       "rsi5": 50.64
+    },
+    {
+      "date": "2026-08-19",
+      "open": 905.0,
+      "high": 909.0,
+      "low": 890.0,
+      "close": 898.0,
+      "volume": 91100.0,
+      "sma25": 927.12,
+      "sma75": 912.92,
+      "sma200": 1032.93,
+      "rsi14": 49.06,
+      "rsi5": 50.64
+    },
+    {
+      "date": "2026-08-20",
+      "open": 898.0,
+      "high": 938.0,
+      "low": 898.0,
+      "close": 932.0,
+      "volume": 94800.0,
+      "sma25": 929.44,
+      "sma75": 911.95,
+      "sma200": 1032.06,
+      "rsi14": 49.06,
+      "rsi5": 50.64
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 46.33,
-    "monthly_rsi_ma5": 47.11,
-    "spread": -0.78,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 47.38,
+    "monthly_rsi_ma5": 47.32,
+    "spread": 0.06,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "2926",
   "ticker": "2926.T",
   "name": "篠崎屋",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 118.0,
-    "change_from_signal_month_pct": -2.48,
-    "return_since_gc_pct": 18.0
+    "current_price": 125.0,
+    "change_from_signal_month_pct": 3.31,
+    "return_since_gc_pct": 25.0
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 100.48,
       "rsi14": 56.37,
       "rsi5": 67.72
+    },
+    {
+      "date": "2026-08-19",
+      "open": 118.0,
+      "high": 137.0,
+      "low": 117.0,
+      "close": 127.0,
+      "volume": 1505400.0,
+      "sma25": 114.84,
+      "sma75": 105.0,
+      "sma200": 100.58,
+      "rsi14": 56.37,
+      "rsi5": 67.72
+    },
+    {
+      "date": "2026-08-20",
+      "open": 126.0,
+      "high": 128.0,
+      "low": 122.0,
+      "close": 125.0,
+      "volume": 258600.0,
+      "sma25": 115.56,
+      "sma75": 105.33,
+      "sma200": 100.67,
+      "rsi14": 56.37,
+      "rsi5": 67.72
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 64.92,
-    "monthly_rsi_ma5": 59.36,
-    "spread": 5.56,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 69.84,
+    "monthly_rsi_ma5": 60.34,
+    "spread": 9.49,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

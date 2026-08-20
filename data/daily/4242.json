@@ -2,12 +2,12 @@
   "code": "4242",
   "ticker": "4242.T",
   "name": "タカギセイコー",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 1817.0,
-    "change_from_signal_month_pct": -2.36,
-    "return_since_gc_pct": -2.36
+    "current_price": 1790.0,
+    "change_from_signal_month_pct": -3.82,
+    "return_since_gc_pct": -3.82
   },
   "daily": [
     {
@@ -100,22 +100,48 @@
       "sma200": 1759.54,
       "rsi14": 56.09,
       "rsi5": 58.25
+    },
+    {
+      "date": "2026-08-19",
+      "open": 1806.0,
+      "high": 1812.0,
+      "low": 1765.0,
+      "close": 1790.0,
+      "volume": 3600.0,
+      "sma25": 1831.2,
+      "sma75": 1767.51,
+      "sma200": 1761.58,
+      "rsi14": 56.09,
+      "rsi5": 58.25
+    },
+    {
+      "date": "2026-08-20",
+      "open": 1790.0,
+      "high": 1796.0,
+      "low": 1790.0,
+      "close": 1790.0,
+      "volume": 1100.0,
+      "sma25": 1831.56,
+      "sma75": 1766.97,
+      "sma200": 1763.62,
+      "rsi14": 56.09,
+      "rsi5": 58.25
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 56.4,
-    "monthly_rsi_ma5": 56.15,
-    "spread": 0.24,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 55.12,
+    "monthly_rsi_ma5": 55.9,
+    "spread": -0.77,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

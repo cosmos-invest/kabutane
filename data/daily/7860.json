@@ -2,12 +2,12 @@
   "code": "7860",
   "ticker": "7860.T",
   "name": "エイベックス",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 1253.0,
-    "change_from_signal_month_pct": -5.08,
-    "return_since_gc_pct": 3.98
+    "current_price": 1274.0,
+    "change_from_signal_month_pct": -3.48,
+    "return_since_gc_pct": 5.73
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 1211.22,
       "rsi14": 43.25,
       "rsi5": 52.68
+    },
+    {
+      "date": "2026-08-19",
+      "open": 1260.0,
+      "high": 1263.0,
+      "low": 1241.0,
+      "close": 1254.0,
+      "volume": 104100.0,
+      "sma25": 1270.52,
+      "sma75": 1220.47,
+      "sma200": 1211.3,
+      "rsi14": 43.25,
+      "rsi5": 52.68
+    },
+    {
+      "date": "2026-08-20",
+      "open": 1261.0,
+      "high": 1278.0,
+      "low": 1253.0,
+      "close": 1274.0,
+      "volume": 192300.0,
+      "sma25": 1271.2,
+      "sma75": 1221.65,
+      "sma200": 1211.46,
+      "rsi14": 43.25,
+      "rsi5": 52.68
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 46.34,
-    "monthly_rsi_ma5": 43.28,
-    "spread": 3.07,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 47.96,
+    "monthly_rsi_ma5": 43.6,
+    "spread": 4.36,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

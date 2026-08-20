@@ -2,12 +2,12 @@
   "code": "6845",
   "ticker": "6845.T",
   "name": "アズビル",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 1518.5,
-    "change_from_signal_month_pct": -8.83,
-    "return_since_gc_pct": -8.66
+    "current_price": 1499.0,
+    "change_from_signal_month_pct": -10.0,
+    "return_since_gc_pct": -9.83
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 1489.75,
       "rsi14": 61.98,
       "rsi5": 64.95
+    },
+    {
+      "date": "2026-08-19",
+      "open": 1485.0,
+      "high": 1504.0,
+      "low": 1475.5,
+      "close": 1485.0,
+      "volume": 1652800.0,
+      "sma25": 1623.22,
+      "sma75": 1610.93,
+      "sma200": 1490.13,
+      "rsi14": 61.98,
+      "rsi5": 64.95
+    },
+    {
+      "date": "2026-08-20",
+      "open": 1502.0,
+      "high": 1513.0,
+      "low": 1485.5,
+      "close": 1499.0,
+      "volume": 1300000.0,
+      "sma25": 1615.66,
+      "sma75": 1612.33,
+      "sma200": 1490.6,
+      "rsi14": 61.98,
+      "rsi5": 64.95
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 55.43,
-    "monthly_rsi_ma5": 61.23,
-    "spread": -5.8,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 54.48,
+    "monthly_rsi_ma5": 61.04,
+    "spread": -6.56,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

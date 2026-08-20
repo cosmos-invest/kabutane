@@ -2,12 +2,12 @@
   "code": "3075",
   "ticker": "3075.T",
   "name": "銚子丸",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 1693.0,
-    "change_from_signal_month_pct": -1.68,
-    "return_since_gc_pct": 2.61
+    "current_price": 1692.0,
+    "change_from_signal_month_pct": -1.74,
+    "return_since_gc_pct": 2.55
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 1607.47,
       "rsi14": 57.42,
       "rsi5": 63.87
+    },
+    {
+      "date": "2026-08-19",
+      "open": 1696.0,
+      "high": 1697.0,
+      "low": 1685.0,
+      "close": 1692.0,
+      "volume": 10600.0,
+      "sma25": 1707.2,
+      "sma75": 1647.13,
+      "sma200": 1608.3,
+      "rsi14": 57.42,
+      "rsi5": 63.87
+    },
+    {
+      "date": "2026-08-20",
+      "open": 1699.0,
+      "high": 1700.0,
+      "low": 1692.0,
+      "close": 1692.0,
+      "volume": 6000.0,
+      "sma25": 1707.04,
+      "sma75": 1648.16,
+      "sma200": 1609.14,
+      "rsi14": 57.42,
+      "rsi5": 63.87
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 62.91,
-    "monthly_rsi_ma5": 61.77,
-    "spread": 1.13,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 62.81,
+    "monthly_rsi_ma5": 61.75,
+    "spread": 1.06,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

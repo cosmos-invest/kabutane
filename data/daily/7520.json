@@ -2,12 +2,12 @@
   "code": "7520",
   "ticker": "7520.T",
   "name": "エコス",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 2531.0,
-    "change_from_signal_month_pct": 2.76,
-    "return_since_gc_pct": 2.76
+    "current_price": 2590.0,
+    "change_from_signal_month_pct": 5.16,
+    "return_since_gc_pct": 5.16
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 2671.2,
       "rsi14": 46.8,
       "rsi5": 50.25
+    },
+    {
+      "date": "2026-08-19",
+      "open": 2531.0,
+      "high": 2565.0,
+      "low": 2522.0,
+      "close": 2528.0,
+      "volume": 18400.0,
+      "sma25": 2468.68,
+      "sma75": 2340.53,
+      "sma200": 2669.2,
+      "rsi14": 46.8,
+      "rsi5": 50.25
+    },
+    {
+      "date": "2026-08-20",
+      "open": 2550.0,
+      "high": 2590.0,
+      "low": 2539.0,
+      "close": 2590.0,
+      "volume": 46500.0,
+      "sma25": 2477.28,
+      "sma75": 2345.44,
+      "sma200": 2667.52,
+      "rsi14": 46.8,
+      "rsi5": 50.25
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 52.68,
-    "monthly_rsi_ma5": 47.36,
-    "spread": 5.32,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 54.24,
+    "monthly_rsi_ma5": 47.67,
+    "spread": 6.58,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

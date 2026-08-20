@@ -2,12 +2,12 @@
   "code": "5028",
   "ticker": "5028.T",
   "name": "セカンドサイトアナリティカ",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 360.0,
-    "change_from_signal_month_pct": -1.64,
-    "return_since_gc_pct": -2.7
+    "current_price": 350.0,
+    "change_from_signal_month_pct": -4.37,
+    "return_since_gc_pct": -5.41
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 385.88,
       "rsi14": 44.67,
       "rsi5": 45.24
+    },
+    {
+      "date": "2026-08-19",
+      "open": 355.0,
+      "high": 357.0,
+      "low": 347.0,
+      "close": 348.0,
+      "volume": 12600.0,
+      "sma25": 372.28,
+      "sma75": 371.91,
+      "sma200": 385.31,
+      "rsi14": 44.67,
+      "rsi5": 45.24
+    },
+    {
+      "date": "2026-08-20",
+      "open": 348.0,
+      "high": 357.0,
+      "low": 345.0,
+      "close": 350.0,
+      "volume": 16600.0,
+      "sma25": 369.88,
+      "sma75": 371.57,
+      "sma200": 384.79,
+      "rsi14": 44.67,
+      "rsi5": 45.24
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 46.92,
-    "monthly_rsi_ma5": 47.43,
-    "spread": -0.51,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 46.08,
+    "monthly_rsi_ma5": 47.26,
+    "spread": -1.18,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

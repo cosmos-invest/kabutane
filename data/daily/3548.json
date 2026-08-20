@@ -2,12 +2,12 @@
   "code": "3548",
   "ticker": "3548.T",
   "name": "バロックジャパンリミテッド",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 731.0,
-    "change_from_signal_month_pct": -0.68,
-    "return_since_gc_pct": -0.68
+    "current_price": 729.0,
+    "change_from_signal_month_pct": -0.95,
+    "return_since_gc_pct": -0.95
   },
   "daily": [
     {
@@ -100,22 +100,48 @@
       "sma200": 752.42,
       "rsi14": 43.19,
       "rsi5": 43.69
+    },
+    {
+      "date": "2026-08-19",
+      "open": 732.0,
+      "high": 732.0,
+      "low": 729.0,
+      "close": 729.0,
+      "volume": 68100.0,
+      "sma25": 734.72,
+      "sma75": 730.55,
+      "sma200": 752.28,
+      "rsi14": 43.19,
+      "rsi5": 43.69
+    },
+    {
+      "date": "2026-08-20",
+      "open": 730.0,
+      "high": 731.0,
+      "low": 728.0,
+      "close": 729.0,
+      "volume": 46400.0,
+      "sma25": 734.24,
+      "sma75": 730.57,
+      "sma200": 752.13,
+      "rsi14": 43.19,
+      "rsi5": 43.69
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 40.24,
-    "monthly_rsi_ma5": 40.05,
-    "spread": 0.19,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 39.88,
+    "monthly_rsi_ma5": 39.97,
+    "spread": -0.09,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

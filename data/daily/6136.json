@@ -2,12 +2,12 @@
   "code": "6136",
   "ticker": "6136.T",
   "name": "オーエスジー",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 3828.0,
-    "change_from_signal_month_pct": 4.13,
-    "return_since_gc_pct": 17.14
+    "current_price": 3674.0,
+    "change_from_signal_month_pct": -0.05,
+    "return_since_gc_pct": 12.42
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 2937.8,
       "rsi14": 72.62,
       "rsi5": 77.09
+    },
+    {
+      "date": "2026-08-19",
+      "open": 3688.0,
+      "high": 3720.0,
+      "low": 3613.0,
+      "close": 3632.0,
+      "volume": 299700.0,
+      "sma25": 3820.84,
+      "sma75": 3629.96,
+      "sma200": 2944.6,
+      "rsi14": 72.62,
+      "rsi5": 77.09
+    },
+    {
+      "date": "2026-08-20",
+      "open": 3658.0,
+      "high": 3688.0,
+      "low": 3619.0,
+      "close": 3674.0,
+      "volume": 255000.0,
+      "sma25": 3809.0,
+      "sma75": 3635.37,
+      "sma200": 2951.72,
+      "rsi14": 72.62,
+      "rsi5": 77.09
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 79.29,
-    "monthly_rsi_ma5": 76.77,
-    "spread": 2.53,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 77.8,
+    "monthly_rsi_ma5": 76.47,
+    "spread": 1.33,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

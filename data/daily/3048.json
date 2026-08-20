@@ -2,12 +2,12 @@
   "code": "3048",
   "ticker": "3048.T",
   "name": "ビックカメラ",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 1730.0,
-    "change_from_signal_month_pct": -0.8,
-    "return_since_gc_pct": -0.8
+    "current_price": 1799.0,
+    "change_from_signal_month_pct": 3.15,
+    "return_since_gc_pct": 3.15
   },
   "daily": [
     {
@@ -100,22 +100,48 @@
       "sma200": 1691.35,
       "rsi14": 56.65,
       "rsi5": 57.13
+    },
+    {
+      "date": "2026-08-19",
+      "open": 1740.0,
+      "high": 1754.0,
+      "low": 1718.5,
+      "close": 1746.5,
+      "volume": 927000.0,
+      "sma25": 1718.92,
+      "sma75": 1703.52,
+      "sma200": 1692.11,
+      "rsi14": 56.65,
+      "rsi5": 57.13
+    },
+    {
+      "date": "2026-08-20",
+      "open": 1754.5,
+      "high": 1799.0,
+      "low": 1754.5,
+      "close": 1799.0,
+      "volume": 1389900.0,
+      "sma25": 1725.16,
+      "sma75": 1705.9,
+      "sma200": 1692.85,
+      "rsi14": 56.65,
+      "rsi5": 57.13
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 58.51,
-    "monthly_rsi_ma5": 58.51,
-    "spread": -0.0,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 61.35,
+    "monthly_rsi_ma5": 59.08,
+    "spread": 2.27,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

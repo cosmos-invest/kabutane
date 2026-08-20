@@ -2,12 +2,12 @@
   "code": "2721",
   "ticker": "2721.T",
   "name": "ジェイホールディングス",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 112.0,
-    "change_from_signal_month_pct": -26.32,
-    "return_since_gc_pct": -26.32
+    "current_price": 109.0,
+    "change_from_signal_month_pct": -28.29,
+    "return_since_gc_pct": -28.29
   },
   "daily": [
     {
@@ -100,22 +100,48 @@
       "sma200": 154.38,
       "rsi14": 36.27,
       "rsi5": 43.54
+    },
+    {
+      "date": "2026-08-19",
+      "open": 114.0,
+      "high": 114.0,
+      "low": 107.0,
+      "close": 108.0,
+      "volume": 176100.0,
+      "sma25": 130.6,
+      "sma75": 121.21,
+      "sma200": 153.77,
+      "rsi14": 36.27,
+      "rsi5": 43.54
+    },
+    {
+      "date": "2026-08-20",
+      "open": 110.0,
+      "high": 110.0,
+      "low": 107.0,
+      "close": 109.0,
+      "volume": 43300.0,
+      "sma25": 129.72,
+      "sma75": 121.05,
+      "sma200": 153.14,
+      "rsi14": 36.27,
+      "rsi5": 43.54
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 37.78,
-    "monthly_rsi_ma5": 37.75,
-    "spread": 0.03,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 37.33,
+    "monthly_rsi_ma5": 37.66,
+    "spread": -0.33,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

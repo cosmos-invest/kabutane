@@ -2,12 +2,12 @@
   "code": "7532",
   "ticker": "7532.T",
   "name": "パン・パシフィック・インターナショナルホールディングス",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 915.5,
-    "change_from_signal_month_pct": 1.47,
-    "return_since_gc_pct": 1.47
+    "current_price": 810.2,
+    "change_from_signal_month_pct": -10.2,
+    "return_since_gc_pct": -10.2
   },
   "daily": [
     {
@@ -100,22 +100,48 @@
       "sma200": 923.9,
       "rsi14": 52.62,
       "rsi5": 53.16
+    },
+    {
+      "date": "2026-08-19",
+      "open": 828.5,
+      "high": 854.5,
+      "low": 810.0,
+      "close": 814.1,
+      "volume": 34992000.0,
+      "sma25": 896.53,
+      "sma75": 864.36,
+      "sma200": 923.25,
+      "rsi14": 52.62,
+      "rsi5": 53.16
+    },
+    {
+      "date": "2026-08-20",
+      "open": 814.2,
+      "high": 834.3,
+      "low": 808.0,
+      "close": 810.2,
+      "volume": 23398600.0,
+      "sma25": 893.98,
+      "sma75": 863.31,
+      "sma200": 922.44,
+      "rsi14": 52.62,
+      "rsi5": 53.16
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 54.61,
-    "monthly_rsi_ma5": 52.38,
-    "spread": 2.24,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 47.4,
+    "monthly_rsi_ma5": 50.93,
+    "spread": -3.53,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "9017",
   "ticker": "9017.T",
   "name": "新潟交通",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-19",
   "record": {
-    "current_price": 1992.0,
-    "change_from_signal_month_pct": -0.65,
-    "return_since_gc_pct": -0.65
+    "current_price": 1988.0,
+    "change_from_signal_month_pct": -0.85,
+    "return_since_gc_pct": -0.85
   },
   "daily": [
     {
@@ -100,15 +100,28 @@
       "sma200": 2050.64,
       "rsi14": 38.57,
       "rsi5": 41.66
+    },
+    {
+      "date": "2026-08-19",
+      "open": 2000.0,
+      "high": 2000.0,
+      "low": 1988.0,
+      "close": 1988.0,
+      "volume": 500.0,
+      "sma25": 2000.36,
+      "sma75": 1983.05,
+      "sma200": 2050.12,
+      "rsi14": 38.57,
+      "rsi5": 41.66
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 40.72,
-    "monthly_rsi_ma5": 39.52,
-    "spread": 1.2,
+    "price_date": "2026-08-19",
+    "monthly_rsi14": 40.24,
+    "monthly_rsi_ma5": 39.42,
+    "spread": 0.82,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -117,5 +130,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

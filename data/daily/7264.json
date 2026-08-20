@@ -2,12 +2,12 @@
   "code": "7264",
   "ticker": "7264.T",
   "name": "ムロコーポレーション",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 1335.0,
-    "change_from_signal_month_pct": -2.63,
-    "return_since_gc_pct": -2.63
+    "current_price": 1321.0,
+    "change_from_signal_month_pct": -3.65,
+    "return_since_gc_pct": -3.65
   },
   "daily": [
     {
@@ -100,22 +100,48 @@
       "sma200": 1327.57,
       "rsi14": 51.96,
       "rsi5": 56.57
+    },
+    {
+      "date": "2026-08-19",
+      "open": 1333.0,
+      "high": 1334.0,
+      "low": 1320.0,
+      "close": 1320.0,
+      "volume": 5200.0,
+      "sma25": 1357.68,
+      "sma75": 1312.69,
+      "sma200": 1327.8,
+      "rsi14": 51.96,
+      "rsi5": 56.57
+    },
+    {
+      "date": "2026-08-20",
+      "open": 1323.0,
+      "high": 1325.0,
+      "low": 1320.0,
+      "close": 1321.0,
+      "volume": 2900.0,
+      "sma25": 1356.84,
+      "sma75": 1313.4,
+      "sma200": 1328.11,
+      "rsi14": 51.96,
+      "rsi5": 56.57
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 53.82,
-    "monthly_rsi_ma5": 53.0,
-    "spread": 0.82,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 52.74,
+    "monthly_rsi_ma5": 52.78,
+    "spread": -0.04,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

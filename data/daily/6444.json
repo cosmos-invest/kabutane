@@ -2,12 +2,12 @@
   "code": "6444",
   "ticker": "6444.T",
   "name": "サンデン",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 202.0,
-    "change_from_signal_month_pct": 23.17,
-    "return_since_gc_pct": 23.17
+    "current_price": 197.0,
+    "change_from_signal_month_pct": 20.12,
+    "return_since_gc_pct": 20.12
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 154.01,
       "rsi14": 50.23,
       "rsi5": 50.7
+    },
+    {
+      "date": "2026-08-19",
+      "open": 196.0,
+      "high": 202.0,
+      "low": 188.0,
+      "close": 189.0,
+      "volume": 238800.0,
+      "sma25": 170.2,
+      "sma75": 163.69,
+      "sma200": 154.22,
+      "rsi14": 50.23,
+      "rsi5": 50.7
+    },
+    {
+      "date": "2026-08-20",
+      "open": 192.0,
+      "high": 200.0,
+      "low": 189.0,
+      "close": 197.0,
+      "volume": 198100.0,
+      "sma25": 171.68,
+      "sma75": 164.0,
+      "sma200": 154.47,
+      "rsi14": 50.23,
+      "rsi5": 50.7
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 60.23,
-    "monthly_rsi_ma5": 53.82,
-    "spread": 6.4,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 59.27,
+    "monthly_rsi_ma5": 53.63,
+    "spread": 5.64,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

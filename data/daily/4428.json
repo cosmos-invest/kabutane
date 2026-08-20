@@ -2,12 +2,12 @@
   "code": "4428",
   "ticker": "4428.T",
   "name": "シノプス",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 671.0,
-    "change_from_signal_month_pct": -5.23,
-    "return_since_gc_pct": -5.23
+    "current_price": 705.0,
+    "change_from_signal_month_pct": -0.42,
+    "return_since_gc_pct": -0.42
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 727.97,
       "rsi14": 35.85,
       "rsi5": 40.32
+    },
+    {
+      "date": "2026-08-19",
+      "open": 671.0,
+      "high": 684.0,
+      "low": 661.0,
+      "close": 680.0,
+      "volume": 4900.0,
+      "sma25": 705.12,
+      "sma75": 665.28,
+      "sma200": 726.87,
+      "rsi14": 35.85,
+      "rsi5": 40.32
+    },
+    {
+      "date": "2026-08-20",
+      "open": 700.0,
+      "high": 705.0,
+      "low": 696.0,
+      "close": 705.0,
+      "volume": 4100.0,
+      "sma25": 706.48,
+      "sma75": 665.43,
+      "sma200": 725.91,
+      "rsi14": 35.85,
+      "rsi5": 40.32
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 38.11,
-    "monthly_rsi_ma5": 36.09,
-    "spread": 2.02,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 39.88,
+    "monthly_rsi_ma5": 36.44,
+    "spread": 3.44,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

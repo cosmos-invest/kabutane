@@ -2,12 +2,12 @@
   "code": "7444",
   "ticker": "7444.T",
   "name": "ハリマ共和物産",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-19",
   "record": {
-    "current_price": 1975.0,
-    "change_from_signal_month_pct": -0.9,
-    "return_since_gc_pct": -0.9
+    "current_price": 1983.0,
+    "change_from_signal_month_pct": -0.5,
+    "return_since_gc_pct": -0.5
   },
   "daily": [
     {
@@ -100,22 +100,35 @@
       "sma200": 1984.08,
       "rsi14": 51.25,
       "rsi5": 51.96
+    },
+    {
+      "date": "2026-08-19",
+      "open": 1975.0,
+      "high": 1989.0,
+      "low": 1967.0,
+      "close": 1983.0,
+      "volume": 1300.0,
+      "sma25": 1986.88,
+      "sma75": 1969.29,
+      "sma200": 1984.54,
+      "rsi14": 51.25,
+      "rsi5": 51.96
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 53.64,
-    "monthly_rsi_ma5": 53.98,
-    "spread": -0.34,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-19",
+    "monthly_rsi14": 54.09,
+    "monthly_rsi_ma5": 54.07,
+    "spread": 0.02,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "6325",
   "ticker": "6325.T",
   "name": "タカキタ",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 410.0,
-    "change_from_signal_month_pct": 2.24,
-    "return_since_gc_pct": 2.24
+    "current_price": 412.0,
+    "change_from_signal_month_pct": 2.74,
+    "return_since_gc_pct": 2.74
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 400.21,
       "rsi14": 45.48,
       "rsi5": 46.09
+    },
+    {
+      "date": "2026-08-19",
+      "open": 410.0,
+      "high": 410.0,
+      "low": 407.0,
+      "close": 408.0,
+      "volume": 3300.0,
+      "sma25": 404.36,
+      "sma75": 400.89,
+      "sma200": 400.22,
+      "rsi14": 45.48,
+      "rsi5": 46.09
+    },
+    {
+      "date": "2026-08-20",
+      "open": 408.0,
+      "high": 412.0,
+      "low": 408.0,
+      "close": 412.0,
+      "volume": 1800.0,
+      "sma25": 404.84,
+      "sma75": 400.97,
+      "sma200": 400.25,
+      "rsi14": 45.48,
+      "rsi5": 46.09
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 48.43,
-    "monthly_rsi_ma5": 46.07,
-    "spread": 2.36,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 49.04,
+    "monthly_rsi_ma5": 46.19,
+    "spread": 2.85,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

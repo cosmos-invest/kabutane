@@ -2,12 +2,12 @@
   "code": "6284",
   "ticker": "6284.T",
   "name": "日精エー・エス・ビー機械",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 9080.0,
-    "change_from_signal_month_pct": 0.11,
-    "return_since_gc_pct": 0.11
+    "current_price": 8830.0,
+    "change_from_signal_month_pct": -2.65,
+    "return_since_gc_pct": -2.65
   },
   "daily": [
     {
@@ -100,22 +100,48 @@
       "sma200": 7922.15,
       "rsi14": 64.04,
       "rsi5": 65.4
+    },
+    {
+      "date": "2026-08-19",
+      "open": 8710.0,
+      "high": 8840.0,
+      "low": 8630.0,
+      "close": 8630.0,
+      "volume": 40200.0,
+      "sma25": 9284.0,
+      "sma75": 9144.13,
+      "sma200": 7930.85,
+      "rsi14": 64.04,
+      "rsi5": 65.4
+    },
+    {
+      "date": "2026-08-20",
+      "open": 8780.0,
+      "high": 8830.0,
+      "low": 8630.0,
+      "close": 8830.0,
+      "volume": 32500.0,
+      "sma25": 9250.0,
+      "sma75": 9153.6,
+      "sma200": 7940.45,
+      "rsi14": 64.04,
+      "rsi5": 65.4
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 65.79,
-    "monthly_rsi_ma5": 65.65,
-    "spread": 0.14,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 63.73,
+    "monthly_rsi_ma5": 65.24,
+    "spread": -1.51,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

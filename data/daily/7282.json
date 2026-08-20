@@ -2,12 +2,12 @@
   "code": "7282",
   "ticker": "7282.T",
   "name": "豊田合成",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 5297.0,
-    "change_from_signal_month_pct": -4.76,
-    "return_since_gc_pct": 3.6
+    "current_price": 5339.0,
+    "change_from_signal_month_pct": -4.01,
+    "return_since_gc_pct": 4.42
   },
   "daily": [
     {
@@ -100,22 +100,48 @@
       "sma200": 4456.12,
       "rsi14": 66.79,
       "rsi5": 72.56
+    },
+    {
+      "date": "2026-08-19",
+      "open": 5212.0,
+      "high": 5212.0,
+      "low": 5025.0,
+      "close": 5053.0,
+      "volume": 454800.0,
+      "sma25": 5142.6,
+      "sma75": 4941.21,
+      "sma200": 4462.65,
+      "rsi14": 66.79,
+      "rsi5": 72.56
+    },
+    {
+      "date": "2026-08-20",
+      "open": 5300.0,
+      "high": 5373.0,
+      "low": 5265.0,
+      "close": 5339.0,
+      "volume": 646900.0,
+      "sma25": 5157.12,
+      "sma75": 4950.71,
+      "sma200": 4470.69,
+      "rsi14": 66.79,
+      "rsi5": 72.56
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 67.0,
-    "monthly_rsi_ma5": 67.27,
-    "spread": -0.27,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 67.67,
+    "monthly_rsi_ma5": 67.41,
+    "spread": 0.26,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

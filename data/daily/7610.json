@@ -2,12 +2,12 @@
   "code": "7610",
   "ticker": "7610.T",
   "name": "テイツー",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 139.0,
-    "change_from_signal_month_pct": -5.44,
-    "return_since_gc_pct": -2.8
+    "current_price": 141.0,
+    "change_from_signal_month_pct": -4.08,
+    "return_since_gc_pct": -1.4
   },
   "daily": [
     {
@@ -100,22 +100,48 @@
       "sma200": 142.59,
       "rsi14": 51.86,
       "rsi5": 54.67
+    },
+    {
+      "date": "2026-08-19",
+      "open": 139.0,
+      "high": 140.0,
+      "low": 137.0,
+      "close": 137.0,
+      "volume": 693400.0,
+      "sma25": 144.72,
+      "sma75": 140.92,
+      "sma200": 142.55,
+      "rsi14": 51.86,
+      "rsi5": 54.67
+    },
+    {
+      "date": "2026-08-20",
+      "open": 138.0,
+      "high": 142.0,
+      "low": 138.0,
+      "close": 141.0,
+      "volume": 741200.0,
+      "sma25": 144.4,
+      "sma75": 140.93,
+      "sma200": 142.54,
+      "rsi14": 51.86,
+      "rsi5": 54.67
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 45.5,
-    "monthly_rsi_ma5": 45.59,
-    "spread": -0.09,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 46.31,
+    "monthly_rsi_ma5": 45.75,
+    "spread": 0.56,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

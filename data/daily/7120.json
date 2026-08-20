@@ -2,12 +2,12 @@
   "code": "7120",
   "ticker": "7120.T",
   "name": "ＳＨＩＮＫＯ",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 996.0,
-    "change_from_signal_month_pct": -3.21,
-    "return_since_gc_pct": -0.2
+    "current_price": 1003.0,
+    "change_from_signal_month_pct": -2.53,
+    "return_since_gc_pct": 0.5
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 943.64,
       "rsi14": 62.46,
       "rsi5": 68.06
+    },
+    {
+      "date": "2026-08-19",
+      "open": 996.0,
+      "high": 1003.0,
+      "low": 988.0,
+      "close": 999.0,
+      "volume": 90300.0,
+      "sma25": 1046.28,
+      "sma75": 1020.91,
+      "sma200": 944.49,
+      "rsi14": 62.46,
+      "rsi5": 68.06
+    },
+    {
+      "date": "2026-08-20",
+      "open": 1000.0,
+      "high": 1020.0,
+      "low": 994.0,
+      "close": 1003.0,
+      "volume": 24900.0,
+      "sma25": 1042.04,
+      "sma75": 1022.47,
+      "sma200": 945.37,
+      "rsi14": 62.46,
+      "rsi5": 68.06
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 65.61,
-    "monthly_rsi_ma5": 66.62,
-    "spread": -1.01,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 66.63,
+    "monthly_rsi_ma5": 66.83,
+    "spread": -0.2,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

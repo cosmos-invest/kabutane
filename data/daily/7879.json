@@ -2,12 +2,12 @@
   "code": "7879",
   "ticker": "7879.T",
   "name": "ノダ",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 665.0,
-    "change_from_signal_month_pct": 2.94,
-    "return_since_gc_pct": 2.94
+    "current_price": 655.0,
+    "change_from_signal_month_pct": 1.39,
+    "return_since_gc_pct": 1.39
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 671.41,
       "rsi14": 34.36,
       "rsi5": 34.43
+    },
+    {
+      "date": "2026-08-19",
+      "open": 658.0,
+      "high": 667.0,
+      "low": 652.0,
+      "close": 653.0,
+      "volume": 12600.0,
+      "sma25": 648.96,
+      "sma75": 653.23,
+      "sma200": 671.16,
+      "rsi14": 34.36,
+      "rsi5": 34.43
+    },
+    {
+      "date": "2026-08-20",
+      "open": 660.0,
+      "high": 661.0,
+      "low": 654.0,
+      "close": 655.0,
+      "volume": 3000.0,
+      "sma25": 648.44,
+      "sma75": 652.97,
+      "sma200": 670.93,
+      "rsi14": 34.36,
+      "rsi5": 34.43
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 35.11,
-    "monthly_rsi_ma5": 32.26,
-    "spread": 2.85,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 33.47,
+    "monthly_rsi_ma5": 31.93,
+    "spread": 1.54,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

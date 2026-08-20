@@ -2,12 +2,12 @@
   "code": "3306",
   "ticker": "3306.T",
   "name": "日本製麻",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 608.0,
-    "change_from_signal_month_pct": -24.85,
-    "return_since_gc_pct": -24.85
+    "current_price": 592.0,
+    "change_from_signal_month_pct": -26.82,
+    "return_since_gc_pct": -26.82
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 686.16,
       "rsi14": 49.75,
       "rsi5": 59.74
+    },
+    {
+      "date": "2026-08-19",
+      "open": 609.0,
+      "high": 610.0,
+      "low": 594.0,
+      "close": 597.0,
+      "volume": 35500.0,
+      "sma25": 721.28,
+      "sma75": 657.99,
+      "sma200": 685.34,
+      "rsi14": 49.75,
+      "rsi5": 59.74
+    },
+    {
+      "date": "2026-08-20",
+      "open": 602.0,
+      "high": 604.0,
+      "low": 590.0,
+      "close": 592.0,
+      "volume": 34600.0,
+      "sma25": 717.16,
+      "sma75": 657.21,
+      "sma200": 684.65,
+      "rsi14": 49.75,
+      "rsi5": 59.74
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 43.11,
-    "monthly_rsi_ma5": 44.19,
-    "spread": -1.08,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 42.32,
+    "monthly_rsi_ma5": 44.03,
+    "spread": -1.71,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

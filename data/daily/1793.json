@@ -2,12 +2,12 @@
   "code": "1793",
   "ticker": "1793.T",
   "name": "大本組",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 2034.0,
-    "change_from_signal_month_pct": 3.25,
-    "return_since_gc_pct": 1.75
+    "current_price": 2021.0,
+    "change_from_signal_month_pct": 2.59,
+    "return_since_gc_pct": 1.1
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 1730.98,
       "rsi14": 65.4,
       "rsi5": 67.91
+    },
+    {
+      "date": "2026-08-19",
+      "open": 2020.0,
+      "high": 2029.0,
+      "low": 2017.0,
+      "close": 2017.0,
+      "volume": 2400.0,
+      "sma25": 2028.04,
+      "sma75": 1929.87,
+      "sma200": 1733.97,
+      "rsi14": 65.4,
+      "rsi5": 67.91
+    },
+    {
+      "date": "2026-08-20",
+      "open": 2024.0,
+      "high": 2036.0,
+      "low": 2013.0,
+      "close": 2021.0,
+      "volume": 2600.0,
+      "sma25": 2029.68,
+      "sma75": 1934.24,
+      "sma200": 1736.97,
+      "rsi14": 65.4,
+      "rsi5": 67.91
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 69.12,
-    "monthly_rsi_ma5": 66.52,
-    "spread": 2.6,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 68.82,
+    "monthly_rsi_ma5": 66.46,
+    "spread": 2.36,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

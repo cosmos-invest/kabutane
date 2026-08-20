@@ -2,12 +2,12 @@
   "code": "8999",
   "ticker": "8999.T",
   "name": "グランディハウス",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 577.0,
-    "change_from_signal_month_pct": 6.46,
-    "return_since_gc_pct": 6.46
+    "current_price": 575.0,
+    "change_from_signal_month_pct": 6.09,
+    "return_since_gc_pct": 6.09
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 574.22,
       "rsi14": 43.45,
       "rsi5": 46.37
+    },
+    {
+      "date": "2026-08-19",
+      "open": 574.0,
+      "high": 574.0,
+      "low": 566.0,
+      "close": 571.0,
+      "volume": 44800.0,
+      "sma25": 549.48,
+      "sma75": 529.65,
+      "sma200": 574.2,
+      "rsi14": 43.45,
+      "rsi5": 46.37
+    },
+    {
+      "date": "2026-08-20",
+      "open": 568.0,
+      "high": 576.0,
+      "low": 568.0,
+      "close": 575.0,
+      "volume": 50500.0,
+      "sma25": 550.96,
+      "sma75": 530.17,
+      "sma200": 574.14,
+      "rsi14": 43.45,
+      "rsi5": 46.37
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 50.89,
-    "monthly_rsi_ma5": 43.82,
-    "spread": 7.07,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 50.62,
+    "monthly_rsi_ma5": 43.76,
+    "spread": 6.86,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

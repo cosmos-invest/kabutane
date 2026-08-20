@@ -2,12 +2,12 @@
   "code": "173A",
   "ticker": "173A.T",
   "name": "ハンモック",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 1575.0,
-    "change_from_signal_month_pct": 2.94,
-    "return_since_gc_pct": 2.94
+    "current_price": 1541.0,
+    "change_from_signal_month_pct": 0.72,
+    "return_since_gc_pct": 0.72
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 1463.06,
       "rsi14": 40.99,
       "rsi5": 48.74
+    },
+    {
+      "date": "2026-08-19",
+      "open": 1539.0,
+      "high": 1568.0,
+      "low": 1539.0,
+      "close": 1550.0,
+      "volume": 1000.0,
+      "sma25": 1501.08,
+      "sma75": 1408.48,
+      "sma200": 1462.37,
+      "rsi14": 40.99,
+      "rsi5": 48.74
+    },
+    {
+      "date": "2026-08-20",
+      "open": 1524.0,
+      "high": 1549.0,
+      "low": 1515.0,
+      "close": 1541.0,
+      "volume": 3500.0,
+      "sma25": 1504.8,
+      "sma75": 1410.17,
+      "sma200": 1461.61,
+      "rsi14": 40.99,
+      "rsi5": 48.74
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 51.19,
-    "monthly_rsi_ma5": 43.09,
-    "spread": 8.11,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 49.36,
+    "monthly_rsi_ma5": 42.72,
+    "spread": 6.64,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "3583",
   "ticker": "3583.T",
   "name": "オーベクス",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 1305.0,
-    "change_from_signal_month_pct": 3.0,
-    "return_since_gc_pct": 3.0
+    "current_price": 1302.0,
+    "change_from_signal_month_pct": 2.76,
+    "return_since_gc_pct": 2.76
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 1289.26,
       "rsi14": 52.42,
       "rsi5": 52.98
+    },
+    {
+      "date": "2026-08-19",
+      "open": 1286.0,
+      "high": 1286.0,
+      "low": 1282.0,
+      "close": 1282.0,
+      "volume": 200.0,
+      "sma25": 1303.2,
+      "sma75": 1241.88,
+      "sma200": 1289.19,
+      "rsi14": 52.42,
+      "rsi5": 52.98
+    },
+    {
+      "date": "2026-08-20",
+      "open": 1302.0,
+      "high": 1302.0,
+      "low": 1302.0,
+      "close": 1302.0,
+      "volume": 100.0,
+      "sma25": 1303.76,
+      "sma75": 1242.16,
+      "sma200": 1289.2,
+      "rsi14": 52.42,
+      "rsi5": 52.98
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 57.86,
-    "monthly_rsi_ma5": 53.77,
-    "spread": 4.09,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 57.64,
+    "monthly_rsi_ma5": 53.72,
+    "spread": 3.91,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

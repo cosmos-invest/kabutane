@@ -2,12 +2,12 @@
   "code": "4023",
   "ticker": "4023.T",
   "name": "クレハ",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 4570.0,
-    "change_from_signal_month_pct": 6.53,
-    "return_since_gc_pct": 6.53
+    "current_price": 4450.0,
+    "change_from_signal_month_pct": 3.73,
+    "return_since_gc_pct": 3.73
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 4119.5,
       "rsi14": 57.7,
       "rsi5": 61.78
+    },
+    {
+      "date": "2026-08-19",
+      "open": 4500.0,
+      "high": 4510.0,
+      "low": 4400.0,
+      "close": 4415.0,
+      "volume": 232400.0,
+      "sma25": 4343.4,
+      "sma75": 4025.6,
+      "sma200": 4122.73,
+      "rsi14": 57.7,
+      "rsi5": 61.78
+    },
+    {
+      "date": "2026-08-20",
+      "open": 4480.0,
+      "high": 4480.0,
+      "low": 4410.0,
+      "close": 4450.0,
+      "volume": 122800.0,
+      "sma25": 4353.8,
+      "sma75": 4032.93,
+      "sma200": 4126.07,
+      "rsi14": 57.7,
+      "rsi5": 61.78
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 65.07,
-    "monthly_rsi_ma5": 59.17,
-    "spread": 5.9,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 63.72,
+    "monthly_rsi_ma5": 58.9,
+    "spread": 4.82,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

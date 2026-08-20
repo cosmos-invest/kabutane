@@ -2,12 +2,12 @@
   "code": "2908",
   "ticker": "2908.T",
   "name": "フジッコ",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 1605.0,
-    "change_from_signal_month_pct": 0.75,
-    "return_since_gc_pct": 0.75
+    "current_price": 1613.0,
+    "change_from_signal_month_pct": 1.26,
+    "return_since_gc_pct": 1.26
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 1567.78,
       "rsi14": 34.92,
       "rsi5": 43.88
+    },
+    {
+      "date": "2026-08-19",
+      "open": 1605.0,
+      "high": 1611.0,
+      "low": 1599.0,
+      "close": 1607.0,
+      "volume": 50600.0,
+      "sma25": 1568.72,
+      "sma75": 1523.75,
+      "sma200": 1567.76,
+      "rsi14": 34.92,
+      "rsi5": 43.88
+    },
+    {
+      "date": "2026-08-20",
+      "open": 1607.0,
+      "high": 1620.0,
+      "low": 1604.0,
+      "close": 1613.0,
+      "volume": 42700.0,
+      "sma25": 1570.92,
+      "sma75": 1524.89,
+      "sma200": 1567.7,
+      "rsi14": 34.92,
+      "rsi5": 43.88
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 44.08,
-    "monthly_rsi_ma5": 34.89,
-    "spread": 9.19,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 45.02,
+    "monthly_rsi_ma5": 35.08,
+    "spread": 9.94,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

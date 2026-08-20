@@ -2,12 +2,12 @@
   "code": "6522",
   "ticker": "6522.T",
   "name": "アスタリスク",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 2025.0,
-    "change_from_signal_month_pct": 27.28,
-    "return_since_gc_pct": 52.26
+    "current_price": 2018.0,
+    "change_from_signal_month_pct": 26.84,
+    "return_since_gc_pct": 51.73
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 831.6,
       "rsi14": 65.28,
       "rsi5": 69.59
+    },
+    {
+      "date": "2026-08-19",
+      "open": 1990.0,
+      "high": 2118.0,
+      "low": 1951.0,
+      "close": 2058.0,
+      "volume": 1325000.0,
+      "sma25": 1705.88,
+      "sma75": 1321.25,
+      "sma200": 840.04,
+      "rsi14": 65.28,
+      "rsi5": 69.59
+    },
+    {
+      "date": "2026-08-20",
+      "open": 2000.0,
+      "high": 2044.0,
+      "low": 1971.0,
+      "close": 2018.0,
+      "volume": 642500.0,
+      "sma25": 1713.6,
+      "sma75": 1332.95,
+      "sma200": 848.3,
+      "rsi14": 65.28,
+      "rsi5": 69.59
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 76.3,
-    "monthly_rsi_ma5": 68.0,
-    "spread": 8.3,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 76.23,
+    "monthly_rsi_ma5": 67.99,
+    "spread": 8.24,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

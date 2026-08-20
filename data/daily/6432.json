@@ -2,12 +2,12 @@
   "code": "6432",
   "ticker": "6432.T",
   "name": "竹内製作所",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 7580.0,
-    "change_from_signal_month_pct": 1.74,
-    "return_since_gc_pct": 1.74
+    "current_price": 7300.0,
+    "change_from_signal_month_pct": -2.01,
+    "return_since_gc_pct": -2.01
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 6936.15,
       "rsi14": 59.78,
       "rsi5": 62.83
+    },
+    {
+      "date": "2026-08-19",
+      "open": 7360.0,
+      "high": 7360.0,
+      "low": 7100.0,
+      "close": 7120.0,
+      "volume": 284300.0,
+      "sma25": 7494.4,
+      "sma75": 7288.93,
+      "sma200": 6940.65,
+      "rsi14": 59.78,
+      "rsi5": 62.83
+    },
+    {
+      "date": "2026-08-20",
+      "open": 7140.0,
+      "high": 7340.0,
+      "low": 7100.0,
+      "close": 7300.0,
+      "volume": 188700.0,
+      "sma25": 7498.8,
+      "sma75": 7292.67,
+      "sma200": 6946.25,
+      "rsi14": 59.78,
+      "rsi5": 62.83
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 62.76,
-    "monthly_rsi_ma5": 60.53,
-    "spread": 2.23,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 60.56,
+    "monthly_rsi_ma5": 60.09,
+    "spread": 0.47,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "3182",
   "ticker": "3182.T",
   "name": "オイシックス",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 1713.0,
-    "change_from_signal_month_pct": 5.16,
-    "return_since_gc_pct": 16.29
+    "current_price": 1781.0,
+    "change_from_signal_month_pct": 9.33,
+    "return_since_gc_pct": 20.91
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 1496.84,
       "rsi14": 47.64,
       "rsi5": 52.67
+    },
+    {
+      "date": "2026-08-19",
+      "open": 1716.0,
+      "high": 1730.0,
+      "low": 1687.0,
+      "close": 1721.0,
+      "volume": 89900.0,
+      "sma25": 1628.88,
+      "sma75": 1525.83,
+      "sma200": 1496.35,
+      "rsi14": 47.64,
+      "rsi5": 52.67
+    },
+    {
+      "date": "2026-08-20",
+      "open": 1730.0,
+      "high": 1787.0,
+      "low": 1720.0,
+      "close": 1781.0,
+      "volume": 136800.0,
+      "sma25": 1638.92,
+      "sma75": 1530.91,
+      "sma200": 1496.35,
+      "rsi14": 47.64,
+      "rsi5": 52.67
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 56.39,
-    "monthly_rsi_ma5": 50.0,
-    "spread": 6.39,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 58.54,
+    "monthly_rsi_ma5": 50.43,
+    "spread": 8.11,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

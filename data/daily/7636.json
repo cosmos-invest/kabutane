@@ -2,12 +2,12 @@
   "code": "7636",
   "ticker": "7636.T",
   "name": "ハンズマン",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 798.0,
-    "change_from_signal_month_pct": -0.75,
-    "return_since_gc_pct": -0.75
+    "current_price": 794.0,
+    "change_from_signal_month_pct": -1.24,
+    "return_since_gc_pct": -1.24
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 807.5,
       "rsi14": 37.91,
       "rsi5": 41.37
+    },
+    {
+      "date": "2026-08-19",
+      "open": 796.0,
+      "high": 797.0,
+      "low": 786.0,
+      "close": 797.0,
+      "volume": 13400.0,
+      "sma25": 788.84,
+      "sma75": 793.47,
+      "sma200": 807.29,
+      "rsi14": 37.91,
+      "rsi5": 41.37
+    },
+    {
+      "date": "2026-08-20",
+      "open": 797.0,
+      "high": 797.0,
+      "low": 792.0,
+      "close": 794.0,
+      "volume": 20400.0,
+      "sma25": 789.4,
+      "sma75": 793.36,
+      "sma200": 807.11,
+      "rsi14": 37.91,
+      "rsi5": 41.37
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 36.74,
-    "monthly_rsi_ma5": 34.14,
-    "spread": 2.6,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 36.14,
+    "monthly_rsi_ma5": 34.02,
+    "spread": 2.13,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

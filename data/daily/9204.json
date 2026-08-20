@@ -2,12 +2,12 @@
   "code": "9204",
   "ticker": "9204.T",
   "name": "スカイマーク",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 418.0,
-    "change_from_signal_month_pct": 2.45,
-    "return_since_gc_pct": 1.21
+    "current_price": 424.0,
+    "change_from_signal_month_pct": 3.92,
+    "return_since_gc_pct": 2.66
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 390.14,
       "rsi14": 36.95,
       "rsi5": 40.16
+    },
+    {
+      "date": "2026-08-19",
+      "open": 415.0,
+      "high": 415.0,
+      "low": 407.0,
+      "close": 412.0,
+      "volume": 40900.0,
+      "sma25": 415.52,
+      "sma75": 398.49,
+      "sma200": 389.85,
+      "rsi14": 36.95,
+      "rsi5": 40.16
+    },
+    {
+      "date": "2026-08-20",
+      "open": 415.0,
+      "high": 424.0,
+      "low": 408.0,
+      "close": 424.0,
+      "volume": 160700.0,
+      "sma25": 415.2,
+      "sma75": 399.81,
+      "sma200": 389.57,
+      "rsi14": 36.95,
+      "rsi5": 40.16
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 32.42,
-    "monthly_rsi_ma5": 28.81,
-    "spread": 3.61,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 33.25,
+    "monthly_rsi_ma5": 28.97,
+    "spread": 4.27,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

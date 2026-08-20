@@ -2,12 +2,12 @@
   "code": "8119",
   "ticker": "8119.T",
   "name": "三栄コーポレーション",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 781.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 776.0,
+    "change_from_signal_month_pct": -0.64,
+    "return_since_gc_pct": -0.64
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 805.17,
       "rsi14": 49.84,
       "rsi5": 49.99
+    },
+    {
+      "date": "2026-08-19",
+      "open": 781.0,
+      "high": 781.0,
+      "low": 777.0,
+      "close": 780.0,
+      "volume": 1400.0,
+      "sma25": 781.48,
+      "sma75": 771.05,
+      "sma200": 805.04,
+      "rsi14": 49.84,
+      "rsi5": 49.99
+    },
+    {
+      "date": "2026-08-20",
+      "open": 772.0,
+      "high": 780.0,
+      "low": 772.0,
+      "close": 776.0,
+      "volume": 2300.0,
+      "sma25": 780.8,
+      "sma75": 770.73,
+      "sma200": 804.89,
+      "rsi14": 49.84,
+      "rsi5": 49.99
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 51.86,
-    "monthly_rsi_ma5": 51.44,
-    "spread": 0.41,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 51.4,
+    "monthly_rsi_ma5": 51.35,
+    "spread": 0.05,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

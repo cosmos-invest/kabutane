@@ -2,12 +2,12 @@
   "code": "7551",
   "ticker": "7551.T",
   "name": "ウェッズ",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 712.0,
-    "change_from_signal_month_pct": -1.93,
-    "return_since_gc_pct": -1.93
+    "current_price": 735.0,
+    "change_from_signal_month_pct": 1.24,
+    "return_since_gc_pct": 1.24
   },
   "daily": [
     {
@@ -100,22 +100,48 @@
       "sma200": 677.99,
       "rsi14": 63.33,
       "rsi5": 66.03
+    },
+    {
+      "date": "2026-08-19",
+      "open": 712.0,
+      "high": 728.0,
+      "low": 711.0,
+      "close": 726.0,
+      "volume": 11400.0,
+      "sma25": 710.72,
+      "sma75": 685.64,
+      "sma200": 678.48,
+      "rsi14": 63.33,
+      "rsi5": 66.03
+    },
+    {
+      "date": "2026-08-20",
+      "open": 750.0,
+      "high": 750.0,
+      "low": 729.0,
+      "close": 735.0,
+      "volume": 36600.0,
+      "sma25": 712.44,
+      "sma75": 685.96,
+      "sma200": 679.01,
+      "rsi14": 63.33,
+      "rsi5": 66.03
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 62.99,
-    "monthly_rsi_ma5": 64.02,
-    "spread": -1.03,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 68.58,
+    "monthly_rsi_ma5": 65.14,
+    "spread": 3.45,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

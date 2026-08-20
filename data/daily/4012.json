@@ -2,12 +2,12 @@
   "code": "4012",
   "ticker": "4012.T",
   "name": "アクシス",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 1763.0,
-    "change_from_signal_month_pct": 1.44,
-    "return_since_gc_pct": 14.93
+    "current_price": 1735.0,
+    "change_from_signal_month_pct": -0.17,
+    "return_since_gc_pct": 13.1
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 1584.57,
       "rsi14": 54.56,
       "rsi5": 60.13
+    },
+    {
+      "date": "2026-08-19",
+      "open": 1760.0,
+      "high": 1760.0,
+      "low": 1715.0,
+      "close": 1721.0,
+      "volume": 12200.0,
+      "sma25": 1732.44,
+      "sma75": 1659.52,
+      "sma200": 1585.11,
+      "rsi14": 54.56,
+      "rsi5": 60.13
+    },
+    {
+      "date": "2026-08-20",
+      "open": 1739.0,
+      "high": 1747.0,
+      "low": 1722.0,
+      "close": 1735.0,
+      "volume": 3500.0,
+      "sma25": 1734.88,
+      "sma75": 1662.2,
+      "sma200": 1585.79,
+      "rsi14": 54.56,
+      "rsi5": 60.13
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 61.95,
-    "monthly_rsi_ma5": 57.45,
-    "spread": 4.5,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 60.79,
+    "monthly_rsi_ma5": 57.22,
+    "spread": 3.57,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

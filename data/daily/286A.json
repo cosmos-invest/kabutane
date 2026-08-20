@@ -2,12 +2,12 @@
   "code": "286A",
   "ticker": "286A.T",
   "name": "ユカリア",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 818.0,
-    "change_from_signal_month_pct": -0.24,
-    "return_since_gc_pct": -0.24
+    "current_price": 811.0,
+    "change_from_signal_month_pct": -1.1,
+    "return_since_gc_pct": -1.1
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 832.37,
       "rsi14": 42.29,
       "rsi5": 46.68
+    },
+    {
+      "date": "2026-08-19",
+      "open": 820.0,
+      "high": 829.0,
+      "low": 796.0,
+      "close": 819.0,
+      "volume": 41000.0,
+      "sma25": 809.6,
+      "sma75": 746.08,
+      "sma200": 831.48,
+      "rsi14": 42.29,
+      "rsi5": 46.68
+    },
+    {
+      "date": "2026-08-20",
+      "open": 818.0,
+      "high": 818.0,
+      "low": 802.0,
+      "close": 811.0,
+      "volume": 8900.0,
+      "sma25": 809.56,
+      "sma75": 745.17,
+      "sma200": 830.53,
+      "rsi14": 42.29,
+      "rsi5": 46.68
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 46.58,
-    "monthly_rsi_ma5": 42.67,
-    "spread": 3.91,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 46.21,
+    "monthly_rsi_ma5": 42.59,
+    "spread": 3.62,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

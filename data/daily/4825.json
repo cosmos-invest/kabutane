@@ -2,12 +2,12 @@
   "code": "4825",
   "ticker": "4825.T",
   "name": "ウェザーニューズ",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 2042.0,
-    "change_from_signal_month_pct": 1.34,
-    "return_since_gc_pct": 1.34
+    "current_price": 2100.0,
+    "change_from_signal_month_pct": 4.22,
+    "return_since_gc_pct": 4.22
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 2015.48,
       "rsi14": 54.21,
       "rsi5": 54.35
+    },
+    {
+      "date": "2026-08-19",
+      "open": 2044.0,
+      "high": 2058.0,
+      "low": 2031.0,
+      "close": 2053.0,
+      "volume": 231200.0,
+      "sma25": 1982.0,
+      "sma75": 2035.47,
+      "sma200": 2015.06,
+      "rsi14": 54.21,
+      "rsi5": 54.35
+    },
+    {
+      "date": "2026-08-20",
+      "open": 2075.0,
+      "high": 2100.0,
+      "low": 2065.0,
+      "close": 2100.0,
+      "volume": 258800.0,
+      "sma25": 1985.48,
+      "sma75": 2036.33,
+      "sma200": 2015.16,
+      "rsi14": 54.21,
+      "rsi5": 54.35
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 54.44,
-    "monthly_rsi_ma5": 54.26,
-    "spread": 0.18,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 56.21,
+    "monthly_rsi_ma5": 54.62,
+    "spread": 1.59,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

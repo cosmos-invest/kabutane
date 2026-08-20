@@ -2,12 +2,12 @@
   "code": "9857",
   "ticker": "9857.T",
   "name": "英和",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-19",
   "record": {
-    "current_price": 2674.0,
-    "change_from_signal_month_pct": 2.85,
-    "return_since_gc_pct": 2.85
+    "current_price": 2594.0,
+    "change_from_signal_month_pct": -0.23,
+    "return_since_gc_pct": -0.23
   },
   "daily": [
     {
@@ -100,15 +100,28 @@
       "sma200": 2536.59,
       "rsi14": 57.68,
       "rsi5": 58.22
+    },
+    {
+      "date": "2026-08-19",
+      "open": 2574.0,
+      "high": 2594.0,
+      "low": 2571.0,
+      "close": 2594.0,
+      "volume": 5300.0,
+      "sma25": 2530.8,
+      "sma75": 2474.91,
+      "sma200": 2537.76,
+      "rsi14": 57.68,
+      "rsi5": 58.22
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 60.79,
-    "monthly_rsi_ma5": 58.7,
-    "spread": 2.09,
+    "price_date": "2026-08-19",
+    "monthly_rsi14": 58.77,
+    "monthly_rsi_ma5": 58.3,
+    "spread": 0.47,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -117,5 +130,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

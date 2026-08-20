@@ -2,12 +2,12 @@
   "code": "3024",
   "ticker": "3024.T",
   "name": "クリエイト",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 1170.0,
-    "change_from_signal_month_pct": 4.84,
-    "return_since_gc_pct": 4.84
+    "current_price": 1155.0,
+    "change_from_signal_month_pct": 3.49,
+    "return_since_gc_pct": 3.49
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 1146.43,
       "rsi14": 52.36,
       "rsi5": 54.55
+    },
+    {
+      "date": "2026-08-19",
+      "open": 1172.0,
+      "high": 1172.0,
+      "low": 1160.0,
+      "close": 1160.0,
+      "volume": 1900.0,
+      "sma25": 1131.84,
+      "sma75": 1066.03,
+      "sma200": 1146.62,
+      "rsi14": 52.36,
+      "rsi5": 54.55
+    },
+    {
+      "date": "2026-08-20",
+      "open": 1158.0,
+      "high": 1158.0,
+      "low": 1133.0,
+      "close": 1155.0,
+      "volume": 2200.0,
+      "sma25": 1134.12,
+      "sma75": 1066.48,
+      "sma200": 1146.75,
+      "rsi14": 52.36,
+      "rsi5": 54.55
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 59.02,
-    "monthly_rsi_ma5": 53.37,
-    "spread": 5.65,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 58.08,
+    "monthly_rsi_ma5": 53.18,
+    "spread": 4.9,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

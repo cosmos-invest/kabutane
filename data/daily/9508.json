@@ -2,12 +2,12 @@
   "code": "9508",
   "ticker": "9508.T",
   "name": "九州電力",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 1912.0,
-    "change_from_signal_month_pct": 7.48,
-    "return_since_gc_pct": 7.48
+    "current_price": 1921.5,
+    "change_from_signal_month_pct": 8.01,
+    "return_since_gc_pct": 8.01
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 1725.54,
       "rsi14": 58.09,
       "rsi5": 59.91
+    },
+    {
+      "date": "2026-08-19",
+      "open": 1924.0,
+      "high": 1943.0,
+      "low": 1862.5,
+      "close": 1873.5,
+      "volume": 2169800.0,
+      "sma25": 1811.8,
+      "sma75": 1724.41,
+      "sma200": 1727.33,
+      "rsi14": 58.09,
+      "rsi5": 59.91
+    },
+    {
+      "date": "2026-08-20",
+      "open": 1907.5,
+      "high": 1947.5,
+      "low": 1900.5,
+      "close": 1921.5,
+      "volume": 2285100.0,
+      "sma25": 1819.3,
+      "sma75": 1727.51,
+      "sma200": 1729.29,
+      "rsi14": 58.09,
+      "rsi5": 59.91
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 64.81,
-    "monthly_rsi_ma5": 59.85,
-    "spread": 4.96,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 65.04,
+    "monthly_rsi_ma5": 59.9,
+    "spread": 5.14,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

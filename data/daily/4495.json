@@ -2,12 +2,12 @@
   "code": "4495",
   "ticker": "4495.T",
   "name": "アイキューブドシステムズ",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 1897.0,
-    "change_from_signal_month_pct": -3.51,
-    "return_since_gc_pct": -3.51
+    "current_price": 1911.0,
+    "change_from_signal_month_pct": -2.8,
+    "return_since_gc_pct": -2.8
   },
   "daily": [
     {
@@ -100,22 +100,48 @@
       "sma200": 2246.65,
       "rsi14": 47.23,
       "rsi5": 48.32
+    },
+    {
+      "date": "2026-08-19",
+      "open": 1866.0,
+      "high": 1899.0,
+      "low": 1840.0,
+      "close": 1852.0,
+      "volume": 6600.0,
+      "sma25": 1915.6,
+      "sma75": 1905.4,
+      "sma200": 2244.1,
+      "rsi14": 47.23,
+      "rsi5": 48.32
+    },
+    {
+      "date": "2026-08-20",
+      "open": 1878.0,
+      "high": 1911.0,
+      "low": 1851.0,
+      "close": 1911.0,
+      "volume": 9100.0,
+      "sma25": 1917.2,
+      "sma75": 1904.87,
+      "sma200": 2241.8,
+      "rsi14": 47.23,
+      "rsi5": 48.32
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 49.58,
-    "monthly_rsi_ma5": 49.74,
-    "spread": -0.17,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 49.88,
+    "monthly_rsi_ma5": 49.8,
+    "spread": 0.07,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

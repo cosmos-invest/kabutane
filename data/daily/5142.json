@@ -2,12 +2,12 @@
   "code": "5142",
   "ticker": "5142.T",
   "name": "アキレス",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 1980.0,
-    "change_from_signal_month_pct": 52.54,
-    "return_since_gc_pct": 52.54
+    "current_price": 2016.0,
+    "change_from_signal_month_pct": 55.32,
+    "return_since_gc_pct": 55.32
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 1384.14,
       "rsi14": 46.08,
       "rsi5": 47.65
+    },
+    {
+      "date": "2026-08-19",
+      "open": 1940.0,
+      "high": 1960.0,
+      "low": 1880.0,
+      "close": 1901.0,
+      "volume": 123400.0,
+      "sma25": 1460.6,
+      "sma75": 1302.8,
+      "sma200": 1387.19,
+      "rsi14": 46.08,
+      "rsi5": 47.65
+    },
+    {
+      "date": "2026-08-20",
+      "open": 1910.0,
+      "high": 2032.0,
+      "low": 1876.0,
+      "close": 2016.0,
+      "volume": 177200.0,
+      "sma25": 1491.4,
+      "sma75": 1311.12,
+      "sma200": 1390.73,
+      "rsi14": 46.08,
+      "rsi5": 47.65
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 65.27,
-    "monthly_rsi_ma5": 49.85,
-    "spread": 15.42,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 65.87,
+    "monthly_rsi_ma5": 49.97,
+    "spread": 15.9,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

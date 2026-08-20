@@ -2,12 +2,12 @@
   "code": "6199",
   "ticker": "6199.T",
   "name": "セラク",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 1411.0,
-    "change_from_signal_month_pct": 6.01,
-    "return_since_gc_pct": 6.01
+    "current_price": 1385.0,
+    "change_from_signal_month_pct": 4.06,
+    "return_since_gc_pct": 4.06
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 1424.58,
       "rsi14": 42.66,
       "rsi5": 45.76
+    },
+    {
+      "date": "2026-08-19",
+      "open": 1381.0,
+      "high": 1392.0,
+      "low": 1371.0,
+      "close": 1371.0,
+      "volume": 13000.0,
+      "sma25": 1324.88,
+      "sma75": 1240.05,
+      "sma200": 1423.75,
+      "rsi14": 42.66,
+      "rsi5": 45.76
+    },
+    {
+      "date": "2026-08-20",
+      "open": 1371.0,
+      "high": 1398.0,
+      "low": 1371.0,
+      "close": 1385.0,
+      "volume": 13800.0,
+      "sma25": 1328.76,
+      "sma75": 1240.8,
+      "sma200": 1423.02,
+      "rsi14": 42.66,
+      "rsi5": 45.76
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 49.02,
-    "monthly_rsi_ma5": 42.99,
-    "spread": 6.04,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 47.99,
+    "monthly_rsi_ma5": 42.78,
+    "spread": 5.21,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

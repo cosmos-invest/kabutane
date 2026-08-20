@@ -2,12 +2,12 @@
   "code": "8007",
   "ticker": "8007.T",
   "name": "高島",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 809.0,
-    "change_from_signal_month_pct": -0.37,
-    "return_since_gc_pct": -0.37
+    "current_price": 810.0,
+    "change_from_signal_month_pct": -0.25,
+    "return_since_gc_pct": -0.25
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 823.7,
       "rsi14": 56.64,
       "rsi5": 58.6
+    },
+    {
+      "date": "2026-08-19",
+      "open": 807.0,
+      "high": 807.0,
+      "low": 789.0,
+      "close": 795.0,
+      "volume": 229600.0,
+      "sma25": 797.36,
+      "sma75": 767.76,
+      "sma200": 823.51,
+      "rsi14": 56.64,
+      "rsi5": 58.6
+    },
+    {
+      "date": "2026-08-20",
+      "open": 798.0,
+      "high": 810.0,
+      "low": 795.0,
+      "close": 810.0,
+      "volume": 63500.0,
+      "sma25": 798.48,
+      "sma75": 768.11,
+      "sma200": 823.39,
+      "rsi14": 56.64,
+      "rsi5": 58.6
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 58.15,
-    "monthly_rsi_ma5": 56.48,
-    "spread": 1.67,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 58.27,
+    "monthly_rsi_ma5": 56.51,
+    "spread": 1.76,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

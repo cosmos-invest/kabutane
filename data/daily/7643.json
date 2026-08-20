@@ -2,12 +2,12 @@
   "code": "7643",
   "ticker": "7643.T",
   "name": "ダイイチ",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 1747.0,
-    "change_from_signal_month_pct": 1.75,
-    "return_since_gc_pct": 1.75
+    "current_price": 1750.0,
+    "change_from_signal_month_pct": 1.92,
+    "return_since_gc_pct": 1.92
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 1700.04,
       "rsi14": 59.54,
       "rsi5": 60.73
+    },
+    {
+      "date": "2026-08-19",
+      "open": 1745.0,
+      "high": 1748.0,
+      "low": 1740.0,
+      "close": 1748.0,
+      "volume": 2300.0,
+      "sma25": 1716.4,
+      "sma75": 1699.03,
+      "sma200": 1700.54,
+      "rsi14": 59.54,
+      "rsi5": 60.73
+    },
+    {
+      "date": "2026-08-20",
+      "open": 1748.0,
+      "high": 1750.0,
+      "low": 1748.0,
+      "close": 1750.0,
+      "volume": 600.0,
+      "sma25": 1718.16,
+      "sma75": 1699.96,
+      "sma200": 1701.03,
+      "rsi14": 59.54,
+      "rsi5": 60.73
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 62.92,
-    "monthly_rsi_ma5": 61.64,
-    "spread": 1.29,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 63.03,
+    "monthly_rsi_ma5": 61.66,
+    "spread": 1.38,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

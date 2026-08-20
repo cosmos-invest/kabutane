@@ -2,12 +2,12 @@
   "code": "5357",
   "ticker": "5357.T",
   "name": "ヨータイ",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 1782.0,
-    "change_from_signal_month_pct": 1.48,
-    "return_since_gc_pct": 1.48
+    "current_price": 1755.0,
+    "change_from_signal_month_pct": -0.06,
+    "return_since_gc_pct": -0.06
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 1784.0,
       "rsi14": 52.59,
       "rsi5": 53.03
+    },
+    {
+      "date": "2026-08-19",
+      "open": 1775.0,
+      "high": 1776.0,
+      "low": 1743.0,
+      "close": 1748.0,
+      "volume": 64700.0,
+      "sma25": 1760.64,
+      "sma75": 1731.6,
+      "sma200": 1783.87,
+      "rsi14": 52.59,
+      "rsi5": 53.03
+    },
+    {
+      "date": "2026-08-20",
+      "open": 1761.0,
+      "high": 1762.0,
+      "low": 1742.0,
+      "close": 1755.0,
+      "volume": 42600.0,
+      "sma25": 1760.56,
+      "sma75": 1732.75,
+      "sma200": 1783.82,
+      "rsi14": 52.59,
+      "rsi5": 53.03
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 54.82,
-    "monthly_rsi_ma5": 52.34,
-    "spread": 2.48,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 53.19,
+    "monthly_rsi_ma5": 52.01,
+    "spread": 1.18,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }

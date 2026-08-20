@@ -2,12 +2,12 @@
   "code": "9366",
   "ticker": "9366.T",
   "name": "サンリツ",
-  "generated_at": "2026-08-18T12:36:00.659785+00:00",
-  "price_date": "2026-08-18",
+  "generated_at": "2026-08-20T12:35:42.358083+00:00",
+  "price_date": "2026-08-20",
   "record": {
-    "current_price": 1102.0,
-    "change_from_signal_month_pct": 7.41,
-    "return_since_gc_pct": 12.91
+    "current_price": 1099.0,
+    "change_from_signal_month_pct": 7.12,
+    "return_since_gc_pct": 12.6
   },
   "daily": [
     {
@@ -100,15 +100,41 @@
       "sma200": 941.08,
       "rsi14": 64.55,
       "rsi5": 69.23
+    },
+    {
+      "date": "2026-08-19",
+      "open": 1101.0,
+      "high": 1102.0,
+      "low": 1071.0,
+      "close": 1079.0,
+      "volume": 8600.0,
+      "sma25": 1049.8,
+      "sma75": 1006.97,
+      "sma200": 942.17,
+      "rsi14": 64.55,
+      "rsi5": 69.23
+    },
+    {
+      "date": "2026-08-20",
+      "open": 1091.0,
+      "high": 1102.0,
+      "low": 1080.0,
+      "close": 1099.0,
+      "volume": 4900.0,
+      "sma25": 1051.4,
+      "sma75": 1009.2,
+      "sma200": 943.35,
+      "rsi14": 64.55,
+      "rsi5": 69.23
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-18",
-    "monthly_rsi14": 75.38,
-    "monthly_rsi_ma5": 68.8,
-    "spread": 6.58,
+    "price_date": "2026-08-20",
+    "monthly_rsi14": 75.22,
+    "monthly_rsi_ma5": 68.77,
+    "spread": 6.45,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -117,5 +143,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-18T12:36:42.258004+00:00"
+  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
 }
