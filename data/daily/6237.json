@@ -2,12 +2,12 @@
   "code": "6237",
   "ticker": "6237.T",
   "name": "イワキポンプ",
-  "generated_at": "2026-08-20T12:35:42.358083+00:00",
-  "price_date": "2026-08-20",
+  "generated_at": "2026-08-21T12:35:03.264864+00:00",
+  "price_date": "2026-08-21",
   "record": {
-    "current_price": 4525.0,
-    "change_from_signal_month_pct": -12.14,
-    "return_since_gc_pct": 34.07
+    "current_price": 4400.0,
+    "change_from_signal_month_pct": -14.56,
+    "return_since_gc_pct": 30.37
   },
   "daily": [
     {
@@ -126,22 +126,35 @@
       "sma200": 3113.84,
       "rsi14": 64.88,
       "rsi5": 80.45
+    },
+    {
+      "date": "2026-08-21",
+      "open": 4475.0,
+      "high": 4475.0,
+      "low": 4305.0,
+      "close": 4400.0,
+      "volume": 121500.0,
+      "sma25": 4903.4,
+      "sma75": 3935.72,
+      "sma200": 3122.66,
+      "rsi14": 64.88,
+      "rsi5": 80.45
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-20",
-    "monthly_rsi14": 69.32,
-    "monthly_rsi_ma5": 68.68,
-    "spread": 0.64,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-21",
+    "monthly_rsi14": 67.48,
+    "monthly_rsi_ma5": 68.32,
+    "spread": -0.84,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
+  "provisional_generated_at": "2026-08-21T12:36:07.907562+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "9991",
   "ticker": "9991.T",
   "name": "ジェコス",
-  "generated_at": "2026-08-20T12:35:42.358083+00:00",
-  "price_date": "2026-08-20",
+  "generated_at": "2026-08-21T12:35:03.264864+00:00",
+  "price_date": "2026-08-21",
   "record": {
-    "current_price": 1774.0,
-    "change_from_signal_month_pct": 1.6,
-    "return_since_gc_pct": 1.6
+    "current_price": 1780.0,
+    "change_from_signal_month_pct": 1.95,
+    "return_since_gc_pct": 1.95
   },
   "daily": [
     {
@@ -126,15 +126,28 @@
       "sma200": 1593.77,
       "rsi14": 64.62,
       "rsi5": 66.75
+    },
+    {
+      "date": "2026-08-21",
+      "open": 1773.0,
+      "high": 1780.0,
+      "low": 1760.0,
+      "close": 1780.0,
+      "volume": 29300.0,
+      "sma25": 1710.52,
+      "sma75": 1593.79,
+      "sma200": 1595.55,
+      "rsi14": 64.62,
+      "rsi5": 66.75
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-20",
-    "monthly_rsi14": 67.35,
-    "monthly_rsi_ma5": 63.44,
-    "spread": 3.91,
+    "price_date": "2026-08-21",
+    "monthly_rsi14": 67.52,
+    "monthly_rsi_ma5": 63.47,
+    "spread": 4.05,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -143,5 +156,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
+  "provisional_generated_at": "2026-08-21T12:36:07.907562+00:00"
 }

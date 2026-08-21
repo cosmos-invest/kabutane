@@ -2,12 +2,12 @@
   "code": "6103",
   "ticker": "6103.T",
   "name": "オークマ",
-  "generated_at": "2026-08-20T12:35:42.358083+00:00",
-  "price_date": "2026-08-20",
+  "generated_at": "2026-08-21T12:35:03.264864+00:00",
+  "price_date": "2026-08-21",
   "record": {
-    "current_price": 4980.0,
-    "change_from_signal_month_pct": 0.71,
-    "return_since_gc_pct": 7.68
+    "current_price": 4935.0,
+    "change_from_signal_month_pct": -0.2,
+    "return_since_gc_pct": 6.7
   },
   "daily": [
     {
@@ -118,7 +118,7 @@
       "date": "2026-08-20",
       "open": 5080.0,
       "high": 5080.0,
-      "low": 4925.0,
+      "low": 4930.0,
       "close": 4980.0,
       "volume": 518400.0,
       "sma25": 5108.2,
@@ -126,15 +126,28 @@
       "sma200": 4190.18,
       "rsi14": 56.94,
       "rsi5": 61.74
+    },
+    {
+      "date": "2026-08-21",
+      "open": 4910.0,
+      "high": 4990.0,
+      "low": 4860.0,
+      "close": 4935.0,
+      "volume": 432000.0,
+      "sma25": 5104.4,
+      "sma75": 4694.07,
+      "sma200": 4196.82,
+      "rsi14": 56.94,
+      "rsi5": 61.74
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-20",
-    "monthly_rsi14": 61.61,
-    "monthly_rsi_ma5": 58.91,
-    "spread": 2.7,
+    "price_date": "2026-08-21",
+    "monthly_rsi14": 61.21,
+    "monthly_rsi_ma5": 58.83,
+    "spread": 2.38,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -143,5 +156,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
+  "provisional_generated_at": "2026-08-21T12:36:07.907562+00:00"
 }

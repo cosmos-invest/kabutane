@@ -2,12 +2,12 @@
   "code": "9895",
   "ticker": "9895.T",
   "name": "コンセック",
-  "generated_at": "2026-08-20T12:35:42.358083+00:00",
-  "price_date": "2026-08-19",
+  "generated_at": "2026-08-21T12:35:03.264864+00:00",
+  "price_date": "2026-08-21",
   "record": {
-    "current_price": 1260.0,
-    "change_from_signal_month_pct": -0.71,
-    "return_since_gc_pct": -0.71
+    "current_price": 1265.0,
+    "change_from_signal_month_pct": -0.32,
+    "return_since_gc_pct": -0.32
   },
   "daily": [
     {
@@ -113,22 +113,48 @@
       "sma200": 1259.73,
       "rsi14": 52.04,
       "rsi5": 52.83
+    },
+    {
+      "date": "2026-08-20",
+      "open": 1260.0,
+      "high": 1260.0,
+      "low": 1260.0,
+      "close": 1260.0,
+      "volume": 0.0,
+      "sma25": 1266.8,
+      "sma75": 1260.96,
+      "sma200": 1259.96,
+      "rsi14": 52.04,
+      "rsi5": 52.83
+    },
+    {
+      "date": "2026-08-21",
+      "open": 1260.0,
+      "high": 1265.0,
+      "low": 1259.0,
+      "close": 1265.0,
+      "volume": 800.0,
+      "sma25": 1266.76,
+      "sma75": 1261.16,
+      "sma200": 1260.16,
+      "rsi14": 52.04,
+      "rsi5": 52.83
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-19",
-    "monthly_rsi14": 53.24,
-    "monthly_rsi_ma5": 53.57,
-    "spread": -0.33,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-21",
+    "monthly_rsi14": 53.96,
+    "monthly_rsi_ma5": 53.71,
+    "spread": 0.25,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
+  "provisional_generated_at": "2026-08-21T12:36:07.907562+00:00"
 }

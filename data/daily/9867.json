@@ -2,12 +2,12 @@
   "code": "9867",
   "ticker": "9867.T",
   "name": "ソレキア",
-  "generated_at": "2026-08-20T12:35:42.358083+00:00",
-  "price_date": "2026-08-19",
+  "generated_at": "2026-08-21T12:35:03.264864+00:00",
+  "price_date": "2026-08-21",
   "record": {
-    "current_price": 10650.0,
-    "change_from_signal_month_pct": 5.45,
-    "return_since_gc_pct": 5.45
+    "current_price": 10770.0,
+    "change_from_signal_month_pct": 6.63,
+    "return_since_gc_pct": 6.63
   },
   "daily": [
     {
@@ -113,15 +113,41 @@
       "sma200": 9994.1,
       "rsi14": 62.98,
       "rsi5": 63.22
+    },
+    {
+      "date": "2026-08-20",
+      "open": 10650.0,
+      "high": 10650.0,
+      "low": 10650.0,
+      "close": 10650.0,
+      "volume": 100.0,
+      "sma25": 10268.8,
+      "sma75": 10202.4,
+      "sma200": 10007.4,
+      "rsi14": 62.98,
+      "rsi5": 63.22
+    },
+    {
+      "date": "2026-08-21",
+      "open": 10700.0,
+      "high": 10770.0,
+      "low": 10700.0,
+      "close": 10770.0,
+      "volume": 300.0,
+      "sma25": 10281.2,
+      "sma75": 10221.2,
+      "sma200": 10022.25,
+      "rsi14": 62.98,
+      "rsi5": 63.22
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-19",
-    "monthly_rsi14": 67.16,
-    "monthly_rsi_ma5": 64.8,
-    "spread": 2.36,
+    "price_date": "2026-08-21",
+    "monthly_rsi14": 67.67,
+    "monthly_rsi_ma5": 64.9,
+    "spread": 2.77,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -130,5 +156,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
+  "provisional_generated_at": "2026-08-21T12:36:07.907562+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "3839",
   "ticker": "3839.T",
   "name": "ＯＤＫソリューションズ",
-  "generated_at": "2026-08-20T12:35:42.358083+00:00",
-  "price_date": "2026-08-20",
+  "generated_at": "2026-08-21T12:35:03.264864+00:00",
+  "price_date": "2026-08-21",
   "record": {
-    "current_price": 632.0,
-    "change_from_signal_month_pct": -2.02,
-    "return_since_gc_pct": 0.8
+    "current_price": 635.0,
+    "change_from_signal_month_pct": -1.55,
+    "return_since_gc_pct": 1.28
   },
   "daily": [
     {
@@ -126,22 +126,35 @@
       "sma200": 626.41,
       "rsi14": 55.45,
       "rsi5": 59.62
+    },
+    {
+      "date": "2026-08-21",
+      "open": 634.0,
+      "high": 635.0,
+      "low": 631.0,
+      "close": 635.0,
+      "volume": 2200.0,
+      "sma25": 636.36,
+      "sma75": 628.03,
+      "sma200": 626.5,
+      "rsi14": 55.45,
+      "rsi5": 59.62
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-20",
-    "monthly_rsi14": 56.2,
-    "monthly_rsi_ma5": 56.6,
-    "spread": -0.4,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-21",
+    "monthly_rsi14": 57.06,
+    "monthly_rsi_ma5": 56.78,
+    "spread": 0.28,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
+  "provisional_generated_at": "2026-08-21T12:36:07.907562+00:00"
 }

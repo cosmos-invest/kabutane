@@ -2,12 +2,12 @@
   "code": "4540",
   "ticker": "4540.T",
   "name": "ツムラ",
-  "generated_at": "2026-08-20T12:35:42.358083+00:00",
-  "price_date": "2026-08-20",
+  "generated_at": "2026-08-21T12:35:03.264864+00:00",
+  "price_date": "2026-08-21",
   "record": {
-    "current_price": 3748.0,
-    "change_from_signal_month_pct": -1.81,
-    "return_since_gc_pct": -1.81
+    "current_price": 3767.0,
+    "change_from_signal_month_pct": -1.31,
+    "return_since_gc_pct": -1.31
   },
   "daily": [
     {
@@ -126,22 +126,35 @@
       "sma200": 3861.07,
       "rsi14": 48.82,
       "rsi5": 50.34
+    },
+    {
+      "date": "2026-08-21",
+      "open": 3745.0,
+      "high": 3780.0,
+      "low": 3732.0,
+      "close": 3767.0,
+      "volume": 355100.0,
+      "sma25": 3810.84,
+      "sma75": 3770.4,
+      "sma200": 3861.8,
+      "rsi14": 48.82,
+      "rsi5": 50.34
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-20",
-    "monthly_rsi14": 51.38,
-    "monthly_rsi_ma5": 51.6,
-    "spread": -0.22,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-21",
+    "monthly_rsi14": 51.79,
+    "monthly_rsi_ma5": 51.68,
+    "spread": 0.11,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
+  "provisional_generated_at": "2026-08-21T12:36:07.907562+00:00"
 }

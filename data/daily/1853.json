@@ -2,12 +2,12 @@
   "code": "1853",
   "ticker": "1853.T",
   "name": "森組",
-  "generated_at": "2026-08-20T12:35:42.358083+00:00",
-  "price_date": "2026-08-20",
+  "generated_at": "2026-08-21T12:35:03.264864+00:00",
+  "price_date": "2026-08-21",
   "record": {
-    "current_price": 331.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 333.0,
+    "change_from_signal_month_pct": 0.6,
+    "return_since_gc_pct": 0.6
   },
   "daily": [
     {
@@ -126,15 +126,28 @@
       "sma200": 327.91,
       "rsi14": 50.64,
       "rsi5": 54.59
+    },
+    {
+      "date": "2026-08-21",
+      "open": 331.0,
+      "high": 333.0,
+      "low": 330.0,
+      "close": 333.0,
+      "volume": 10500.0,
+      "sma25": 330.36,
+      "sma75": 322.29,
+      "sma200": 327.89,
+      "rsi14": 50.64,
+      "rsi5": 54.59
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-20",
-    "monthly_rsi14": 55.35,
-    "monthly_rsi_ma5": 52.47,
-    "spread": 2.88,
+    "price_date": "2026-08-21",
+    "monthly_rsi14": 56.09,
+    "monthly_rsi_ma5": 52.62,
+    "spread": 3.46,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -143,5 +156,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
+  "provisional_generated_at": "2026-08-21T12:36:07.907562+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "9034",
   "ticker": "9034.T",
   "name": "南総通運",
-  "generated_at": "2026-08-20T12:35:42.358083+00:00",
-  "price_date": "2026-08-20",
+  "generated_at": "2026-08-21T12:35:03.264864+00:00",
+  "price_date": "2026-08-21",
   "record": {
-    "current_price": 1620.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 1617.0,
+    "change_from_signal_month_pct": -0.19,
+    "return_since_gc_pct": -0.19
   },
   "daily": [
     {
@@ -126,15 +126,28 @@
       "sma200": 1587.14,
       "rsi14": 66.0,
       "rsi5": 67.98
+    },
+    {
+      "date": "2026-08-21",
+      "open": 1624.0,
+      "high": 1625.0,
+      "low": 1617.0,
+      "close": 1617.0,
+      "volume": 2100.0,
+      "sma25": 1620.08,
+      "sma75": 1595.92,
+      "sma200": 1587.48,
+      "rsi14": 66.0,
+      "rsi5": 67.98
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-20",
-    "monthly_rsi14": 68.29,
-    "monthly_rsi_ma5": 67.17,
-    "spread": 1.12,
+    "price_date": "2026-08-21",
+    "monthly_rsi14": 68.03,
+    "monthly_rsi_ma5": 67.12,
+    "spread": 0.92,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -143,5 +156,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
+  "provisional_generated_at": "2026-08-21T12:36:07.907562+00:00"
 }

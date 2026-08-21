@@ -2,12 +2,12 @@
   "code": "5301",
   "ticker": "5301.T",
   "name": "東海カーボン",
-  "generated_at": "2026-08-20T12:35:42.358083+00:00",
-  "price_date": "2026-08-20",
+  "generated_at": "2026-08-21T12:35:03.264864+00:00",
+  "price_date": "2026-08-21",
   "record": {
-    "current_price": 1709.0,
-    "change_from_signal_month_pct": 11.15,
-    "return_since_gc_pct": 52.73
+    "current_price": 1685.0,
+    "change_from_signal_month_pct": 9.59,
+    "return_since_gc_pct": 50.58
   },
   "daily": [
     {
@@ -126,15 +126,28 @@
       "sma200": 1261.27,
       "rsi14": 62.88,
       "rsi5": 63.9
+    },
+    {
+      "date": "2026-08-21",
+      "open": 1698.0,
+      "high": 1716.5,
+      "low": 1673.0,
+      "close": 1685.0,
+      "volume": 1280600.0,
+      "sma25": 1673.62,
+      "sma75": 1674.33,
+      "sma200": 1264.13,
+      "rsi14": 62.88,
+      "rsi5": 63.9
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-20",
-    "monthly_rsi14": 67.81,
-    "monthly_rsi_ma5": 67.07,
-    "spread": 0.74,
+    "price_date": "2026-08-21",
+    "monthly_rsi14": 67.29,
+    "monthly_rsi_ma5": 66.96,
+    "spread": 0.33,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -143,5 +156,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
+  "provisional_generated_at": "2026-08-21T12:36:07.907562+00:00"
 }

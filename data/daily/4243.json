@@ -2,12 +2,12 @@
   "code": "4243",
   "ticker": "4243.T",
   "name": "ニックス",
-  "generated_at": "2026-08-20T12:35:42.358083+00:00",
-  "price_date": "2026-08-20",
+  "generated_at": "2026-08-21T12:35:03.264864+00:00",
+  "price_date": "2026-08-21",
   "record": {
-    "current_price": 990.0,
-    "change_from_signal_month_pct": 7.84,
-    "return_since_gc_pct": 9.88
+    "current_price": 1030.0,
+    "change_from_signal_month_pct": 12.2,
+    "return_since_gc_pct": 14.32
   },
   "daily": [
     {
@@ -126,15 +126,28 @@
       "sma200": 865.9,
       "rsi14": 58.11,
       "rsi5": 59.59
+    },
+    {
+      "date": "2026-08-21",
+      "open": 1001.0,
+      "high": 1030.0,
+      "low": 1000.0,
+      "close": 1030.0,
+      "volume": 4600.0,
+      "sma25": 948.44,
+      "sma75": 916.77,
+      "sma200": 867.07,
+      "rsi14": 58.11,
+      "rsi5": 59.59
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-20",
-    "monthly_rsi14": 64.97,
-    "monthly_rsi_ma5": 60.97,
-    "spread": 4.0,
+    "price_date": "2026-08-21",
+    "monthly_rsi14": 67.35,
+    "monthly_rsi_ma5": 61.44,
+    "spread": 5.91,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -143,5 +156,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
+  "provisional_generated_at": "2026-08-21T12:36:07.907562+00:00"
 }

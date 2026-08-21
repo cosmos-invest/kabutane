@@ -2,12 +2,12 @@
   "code": "7089",
   "ticker": "7089.T",
   "name": "フォースタートアップス",
-  "generated_at": "2026-08-20T12:35:42.358083+00:00",
-  "price_date": "2026-08-20",
+  "generated_at": "2026-08-21T12:35:03.264864+00:00",
+  "price_date": "2026-08-21",
   "record": {
-    "current_price": 1623.0,
-    "change_from_signal_month_pct": 1.18,
-    "return_since_gc_pct": 34.8
+    "current_price": 1506.0,
+    "change_from_signal_month_pct": -6.11,
+    "return_since_gc_pct": 25.08
   },
   "daily": [
     {
@@ -126,22 +126,35 @@
       "sma200": 1264.11,
       "rsi14": 65.95,
       "rsi5": 70.5
+    },
+    {
+      "date": "2026-08-21",
+      "open": 1610.0,
+      "high": 1610.0,
+      "low": 1492.0,
+      "close": 1506.0,
+      "volume": 80400.0,
+      "sma25": 1612.8,
+      "sma75": 1557.99,
+      "sma200": 1266.7,
+      "rsi14": 65.95,
+      "rsi5": 70.5
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-20",
-    "monthly_rsi14": 71.83,
-    "monthly_rsi_ma5": 68.97,
-    "spread": 2.86,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-21",
+    "monthly_rsi14": 66.56,
+    "monthly_rsi_ma5": 67.91,
+    "spread": -1.35,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
+  "provisional_generated_at": "2026-08-21T12:36:07.907562+00:00"
 }

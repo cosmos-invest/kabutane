@@ -2,12 +2,12 @@
   "code": "7443",
   "ticker": "7443.T",
   "name": "横浜魚類",
-  "generated_at": "2026-08-20T12:35:42.358083+00:00",
-  "price_date": "2026-08-20",
+  "generated_at": "2026-08-21T12:35:03.264864+00:00",
+  "price_date": "2026-08-21",
   "record": {
-    "current_price": 665.0,
-    "change_from_signal_month_pct": 3.58,
-    "return_since_gc_pct": 3.58
+    "current_price": 664.0,
+    "change_from_signal_month_pct": 3.43,
+    "return_since_gc_pct": 3.43
   },
   "daily": [
     {
@@ -126,15 +126,28 @@
       "sma200": 641.3,
       "rsi14": 54.59,
       "rsi5": 56.92
+    },
+    {
+      "date": "2026-08-21",
+      "open": 665.0,
+      "high": 666.0,
+      "low": 655.0,
+      "close": 664.0,
+      "volume": 1300.0,
+      "sma25": 647.72,
+      "sma75": 634.25,
+      "sma200": 641.55,
+      "rsi14": 54.59,
+      "rsi5": 56.92
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-20",
-    "monthly_rsi14": 61.17,
-    "monthly_rsi_ma5": 56.91,
-    "spread": 4.26,
+    "price_date": "2026-08-21",
+    "monthly_rsi14": 61.02,
+    "monthly_rsi_ma5": 56.88,
+    "spread": 4.14,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -143,5 +156,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
+  "provisional_generated_at": "2026-08-21T12:36:07.907562+00:00"
 }

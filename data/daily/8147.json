@@ -2,12 +2,12 @@
   "code": "8147",
   "ticker": "8147.T",
   "name": "トミタ",
-  "generated_at": "2026-08-20T12:35:42.358083+00:00",
-  "price_date": "2026-08-20",
+  "generated_at": "2026-08-21T12:35:03.264864+00:00",
+  "price_date": "2026-08-21",
   "record": {
-    "current_price": 1405.0,
-    "change_from_signal_month_pct": 0.86,
-    "return_since_gc_pct": 1.15
+    "current_price": 1410.0,
+    "change_from_signal_month_pct": 1.22,
+    "return_since_gc_pct": 1.51
   },
   "daily": [
     {
@@ -126,15 +126,28 @@
       "sma200": 1310.64,
       "rsi14": 49.78,
       "rsi5": 55.88
+    },
+    {
+      "date": "2026-08-21",
+      "open": 1410.0,
+      "high": 1410.0,
+      "low": 1408.0,
+      "close": 1410.0,
+      "volume": 300.0,
+      "sma25": 1402.88,
+      "sma75": 1310.27,
+      "sma200": 1311.74,
+      "rsi14": 49.78,
+      "rsi5": 55.88
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-20",
-    "monthly_rsi14": 58.31,
-    "monthly_rsi_ma5": 54.12,
-    "spread": 4.19,
+    "price_date": "2026-08-21",
+    "monthly_rsi14": 58.53,
+    "monthly_rsi_ma5": 54.16,
+    "spread": 4.37,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -143,5 +156,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
+  "provisional_generated_at": "2026-08-21T12:36:07.907562+00:00"
 }

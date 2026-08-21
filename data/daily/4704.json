@@ -2,12 +2,12 @@
   "code": "4704",
   "ticker": "4704.T",
   "name": "トレンドマイクロ",
-  "generated_at": "2026-08-20T12:35:42.358083+00:00",
-  "price_date": "2026-08-20",
+  "generated_at": "2026-08-21T12:35:03.264864+00:00",
+  "price_date": "2026-08-21",
   "record": {
-    "current_price": 5708.0,
-    "change_from_signal_month_pct": -9.98,
-    "return_since_gc_pct": -5.02
+    "current_price": 5472.0,
+    "change_from_signal_month_pct": -13.7,
+    "return_since_gc_pct": -8.95
   },
   "daily": [
     {
@@ -126,15 +126,28 @@
       "sma200": 6245.9,
       "rsi14": 39.0,
       "rsi5": 43.4
+    },
+    {
+      "date": "2026-08-21",
+      "open": 5611.0,
+      "high": 5689.0,
+      "low": 5421.0,
+      "close": 5472.0,
+      "volume": 1294600.0,
+      "sma25": 6317.96,
+      "sma75": 6110.75,
+      "sma200": 6233.7,
+      "rsi14": 39.0,
+      "rsi5": 43.4
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-20",
-    "monthly_rsi14": 41.3,
-    "monthly_rsi_ma5": 41.91,
-    "spread": -0.61,
+    "price_date": "2026-08-21",
+    "monthly_rsi14": 40.05,
+    "monthly_rsi_ma5": 41.66,
+    "spread": -1.61,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -143,5 +156,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-20T12:36:37.492332+00:00"
+  "provisional_generated_at": "2026-08-21T12:36:07.907562+00:00"
 }
