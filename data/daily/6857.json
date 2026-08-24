@@ -2,12 +2,12 @@
   "code": "6857",
   "ticker": "6857.T",
   "name": "アドバンテスト",
-  "generated_at": "2026-08-21T12:35:03.264864+00:00",
-  "price_date": "2026-08-21",
+  "generated_at": "2026-08-24T12:38:27.574870+00:00",
+  "price_date": "2026-08-24",
   "record": {
-    "current_price": 35900.0,
-    "change_from_signal_month_pct": 10.46,
-    "return_since_gc_pct": 11.01
+    "current_price": 34500.0,
+    "change_from_signal_month_pct": 6.15,
+    "return_since_gc_pct": 6.68
   },
   "daily": [
     {
@@ -139,15 +139,28 @@
       "sma200": 25598.85,
       "rsi14": 68.75,
       "rsi5": 71.92
+    },
+    {
+      "date": "2026-08-24",
+      "open": 35670.0,
+      "high": 35890.0,
+      "low": 34500.0,
+      "close": 34500.0,
+      "volume": 5653500.0,
+      "sma25": 32132.0,
+      "sma75": 29815.27,
+      "sma200": 25680.38,
+      "rsi14": 68.75,
+      "rsi5": 71.92
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-21",
-    "monthly_rsi14": 74.26,
-    "monthly_rsi_ma5": 70.92,
-    "spread": 3.33,
+    "price_date": "2026-08-24",
+    "monthly_rsi14": 73.28,
+    "monthly_rsi_ma5": 70.73,
+    "spread": 2.55,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -156,5 +169,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-21T12:36:07.907562+00:00"
+  "provisional_generated_at": "2026-08-24T12:39:08.902832+00:00"
 }

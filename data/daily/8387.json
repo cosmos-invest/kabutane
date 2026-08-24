@@ -2,12 +2,12 @@
   "code": "8387",
   "ticker": "8387.T",
   "name": "四国銀行",
-  "generated_at": "2026-08-21T12:35:03.264864+00:00",
-  "price_date": "2026-08-21",
+  "generated_at": "2026-08-24T12:38:27.574870+00:00",
+  "price_date": "2026-08-24",
   "record": {
-    "current_price": 3370.0,
-    "change_from_signal_month_pct": 1.2,
-    "return_since_gc_pct": 31.69
+    "current_price": 3310.0,
+    "change_from_signal_month_pct": -0.6,
+    "return_since_gc_pct": 29.35
   },
   "daily": [
     {
@@ -139,15 +139,28 @@
       "sma200": 2412.72,
       "rsi14": 80.79,
       "rsi5": 85.71
+    },
+    {
+      "date": "2026-08-24",
+      "open": 3405.0,
+      "high": 3415.0,
+      "low": 3280.0,
+      "close": 3310.0,
+      "volume": 115000.0,
+      "sma25": 3399.6,
+      "sma75": 3049.87,
+      "sma200": 2422.07,
+      "rsi14": 80.79,
+      "rsi5": 85.71
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-21",
-    "monthly_rsi14": 85.76,
-    "monthly_rsi_ma5": 82.81,
-    "spread": 2.95,
+    "price_date": "2026-08-24",
+    "monthly_rsi14": 84.71,
+    "monthly_rsi_ma5": 82.6,
+    "spread": 2.11,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -156,5 +169,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-21T12:36:07.907562+00:00"
+  "provisional_generated_at": "2026-08-24T12:39:08.902832+00:00"
 }

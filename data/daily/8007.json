@@ -2,12 +2,12 @@
   "code": "8007",
   "ticker": "8007.T",
   "name": "高島",
-  "generated_at": "2026-08-21T12:35:03.264864+00:00",
-  "price_date": "2026-08-21",
+  "generated_at": "2026-08-24T12:38:27.574870+00:00",
+  "price_date": "2026-08-24",
   "record": {
-    "current_price": 814.0,
-    "change_from_signal_month_pct": 0.25,
-    "return_since_gc_pct": 0.25
+    "current_price": 820.0,
+    "change_from_signal_month_pct": 0.99,
+    "return_since_gc_pct": 0.99
   },
   "daily": [
     {
@@ -139,15 +139,28 @@
       "sma200": 823.33,
       "rsi14": 56.64,
       "rsi5": 58.6
+    },
+    {
+      "date": "2026-08-24",
+      "open": 817.0,
+      "high": 821.0,
+      "low": 812.0,
+      "close": 820.0,
+      "volume": 102600.0,
+      "sma25": 800.8,
+      "sma75": 768.73,
+      "sma200": 823.26,
+      "rsi14": 56.64,
+      "rsi5": 58.6
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-21",
-    "monthly_rsi14": 58.66,
-    "monthly_rsi_ma5": 56.59,
-    "spread": 2.07,
+    "price_date": "2026-08-24",
+    "monthly_rsi14": 59.14,
+    "monthly_rsi_ma5": 56.68,
+    "spread": 2.46,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -156,5 +169,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-21T12:36:07.907562+00:00"
+  "provisional_generated_at": "2026-08-24T12:39:08.902832+00:00"
 }

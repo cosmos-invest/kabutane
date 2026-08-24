@@ -2,12 +2,12 @@
   "code": "2903",
   "ticker": "2903.T",
   "name": "シノブフーズ",
-  "generated_at": "2026-08-21T12:35:03.264864+00:00",
-  "price_date": "2026-08-21",
+  "generated_at": "2026-08-24T12:38:27.574870+00:00",
+  "price_date": "2026-08-24",
   "record": {
-    "current_price": 1583.0,
-    "change_from_signal_month_pct": -7.54,
-    "return_since_gc_pct": -7.54
+    "current_price": 1603.0,
+    "change_from_signal_month_pct": -6.37,
+    "return_since_gc_pct": -6.37
   },
   "daily": [
     {
@@ -139,22 +139,35 @@
       "sma200": 1659.96,
       "rsi14": 58.05,
       "rsi5": 62.64
+    },
+    {
+      "date": "2026-08-24",
+      "open": 1584.0,
+      "high": 1603.0,
+      "low": 1583.0,
+      "close": 1603.0,
+      "volume": 1900.0,
+      "sma25": 1629.64,
+      "sma75": 1549.44,
+      "sma200": 1660.43,
+      "rsi14": 58.05,
+      "rsi5": 62.64
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-21",
-    "monthly_rsi14": 57.19,
-    "monthly_rsi_ma5": 57.74,
-    "spread": -0.55,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-24",
+    "monthly_rsi14": 57.95,
+    "monthly_rsi_ma5": 57.89,
+    "spread": 0.06,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-21T12:36:07.907562+00:00"
+  "provisional_generated_at": "2026-08-24T12:39:08.902832+00:00"
 }

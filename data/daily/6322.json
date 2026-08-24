@@ -2,12 +2,12 @@
   "code": "6322",
   "ticker": "6322.T",
   "name": "タクミナ",
-  "generated_at": "2026-08-21T12:35:03.264864+00:00",
-  "price_date": "2026-08-21",
+  "generated_at": "2026-08-24T12:38:27.574870+00:00",
+  "price_date": "2026-08-24",
   "record": {
-    "current_price": 1587.0,
-    "change_from_signal_month_pct": -0.94,
-    "return_since_gc_pct": -0.19
+    "current_price": 1582.0,
+    "change_from_signal_month_pct": -1.25,
+    "return_since_gc_pct": -0.5
   },
   "daily": [
     {
@@ -139,15 +139,28 @@
       "sma200": 1586.62,
       "rsi14": 46.23,
       "rsi5": 47.86
+    },
+    {
+      "date": "2026-08-24",
+      "open": 1580.0,
+      "high": 1582.0,
+      "low": 1580.0,
+      "close": 1582.0,
+      "volume": 500.0,
+      "sma25": 1593.84,
+      "sma75": 1595.61,
+      "sma200": 1586.62,
+      "rsi14": 46.23,
+      "rsi5": 47.86
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-21",
-    "monthly_rsi14": 47.52,
-    "monthly_rsi_ma5": 47.84,
-    "spread": -0.33,
+    "price_date": "2026-08-24",
+    "monthly_rsi14": 47.05,
+    "monthly_rsi_ma5": 47.75,
+    "spread": -0.7,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -156,5 +169,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-21T12:36:07.907562+00:00"
+  "provisional_generated_at": "2026-08-24T12:39:08.902832+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "5660",
   "ticker": "5660.T",
   "name": "神鋼鋼線工業",
-  "generated_at": "2026-08-21T12:35:03.264864+00:00",
-  "price_date": "2026-08-21",
+  "generated_at": "2026-08-24T12:38:27.574870+00:00",
+  "price_date": "2026-08-24",
   "record": {
-    "current_price": 1900.0,
-    "change_from_signal_month_pct": -2.21,
-    "return_since_gc_pct": 24.18
+    "current_price": 1911.0,
+    "change_from_signal_month_pct": -1.65,
+    "return_since_gc_pct": 24.9
   },
   "daily": [
     {
@@ -139,22 +139,35 @@
       "sma200": 1565.83,
       "rsi14": 69.68,
       "rsi5": 74.47
+    },
+    {
+      "date": "2026-08-24",
+      "open": 1904.0,
+      "high": 1923.0,
+      "low": 1894.0,
+      "close": 1911.0,
+      "volume": 5600.0,
+      "sma25": 1879.0,
+      "sma75": 1816.73,
+      "sma200": 1568.51,
+      "rsi14": 69.68,
+      "rsi5": 74.47
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-21",
-    "monthly_rsi14": 71.58,
-    "monthly_rsi_ma5": 71.72,
-    "spread": -0.14,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-24",
+    "monthly_rsi14": 72.28,
+    "monthly_rsi_ma5": 71.86,
+    "spread": 0.41,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-21T12:36:07.907562+00:00"
+  "provisional_generated_at": "2026-08-24T12:39:08.902832+00:00"
 }

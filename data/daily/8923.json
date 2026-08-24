@@ -2,12 +2,12 @@
   "code": "8923",
   "ticker": "8923.T",
   "name": "トーセイ",
-  "generated_at": "2026-08-21T12:35:03.264864+00:00",
-  "price_date": "2026-08-21",
+  "generated_at": "2026-08-24T12:38:27.574870+00:00",
+  "price_date": "2026-08-24",
   "record": {
-    "current_price": 1829.0,
-    "change_from_signal_month_pct": 0.55,
-    "return_since_gc_pct": 7.97
+    "current_price": 1818.0,
+    "change_from_signal_month_pct": -0.05,
+    "return_since_gc_pct": 7.32
   },
   "daily": [
     {
@@ -139,15 +139,28 @@
       "sma200": 1664.08,
       "rsi14": 64.94,
       "rsi5": 70.15
+    },
+    {
+      "date": "2026-08-24",
+      "open": 1826.0,
+      "high": 1846.0,
+      "low": 1818.0,
+      "close": 1818.0,
+      "volume": 155200.0,
+      "sma25": 1781.64,
+      "sma75": 1688.41,
+      "sma200": 1664.79,
+      "rsi14": 64.94,
+      "rsi5": 70.15
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-21",
-    "monthly_rsi14": 70.04,
-    "monthly_rsi_ma5": 66.4,
-    "spread": 3.64,
+    "price_date": "2026-08-24",
+    "monthly_rsi14": 69.67,
+    "monthly_rsi_ma5": 66.32,
+    "spread": 3.34,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -156,5 +169,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-21T12:36:07.907562+00:00"
+  "provisional_generated_at": "2026-08-24T12:39:08.902832+00:00"
 }
