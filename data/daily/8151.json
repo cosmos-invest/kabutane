@@ -2,12 +2,12 @@
   "code": "8151",
   "ticker": "8151.T",
   "name": "東陽テクニカ",
-  "generated_at": "2026-08-24T12:38:27.574870+00:00",
-  "price_date": "2026-08-24",
+  "generated_at": "2026-08-25T12:37:23.878275+00:00",
+  "price_date": "2026-08-25",
   "record": {
-    "current_price": 2015.0,
-    "change_from_signal_month_pct": 2.86,
-    "return_since_gc_pct": 2.86
+    "current_price": 1972.0,
+    "change_from_signal_month_pct": 0.66,
+    "return_since_gc_pct": 0.66
   },
   "daily": [
     {
@@ -152,22 +152,35 @@
       "sma200": 1841.38,
       "rsi14": 62.85,
       "rsi5": 63.38
+    },
+    {
+      "date": "2026-08-25",
+      "open": 2002.0,
+      "high": 2012.0,
+      "low": 1947.0,
+      "close": 1972.0,
+      "volume": 389900.0,
+      "sma25": 2003.16,
+      "sma75": 1980.08,
+      "sma200": 1842.79,
+      "rsi14": 62.85,
+      "rsi5": 63.38
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-24",
-    "monthly_rsi14": 65.8,
-    "monthly_rsi_ma5": 65.5,
-    "spread": 0.3,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-25",
+    "monthly_rsi14": 64.48,
+    "monthly_rsi_ma5": 65.24,
+    "spread": -0.75,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-24T12:39:08.902832+00:00"
+  "provisional_generated_at": "2026-08-25T12:38:25.023516+00:00"
 }

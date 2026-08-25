@@ -2,12 +2,12 @@
   "code": "6652",
   "ticker": "6652.T",
   "name": "ＩＤＥＣ",
-  "generated_at": "2026-08-24T12:38:27.574870+00:00",
-  "price_date": "2026-08-24",
+  "generated_at": "2026-08-25T12:37:23.878275+00:00",
+  "price_date": "2026-08-25",
   "record": {
-    "current_price": 3590.0,
-    "change_from_signal_month_pct": 1.56,
-    "return_since_gc_pct": 1.56
+    "current_price": 3610.0,
+    "change_from_signal_month_pct": 2.12,
+    "return_since_gc_pct": 2.12
   },
   "daily": [
     {
@@ -152,15 +152,28 @@
       "sma200": 3124.23,
       "rsi14": 61.97,
       "rsi5": 64.19
+    },
+    {
+      "date": "2026-08-25",
+      "open": 3615.0,
+      "high": 3655.0,
+      "low": 3535.0,
+      "close": 3610.0,
+      "volume": 96000.0,
+      "sma25": 3546.0,
+      "sma75": 3403.27,
+      "sma200": 3130.43,
+      "rsi14": 61.97,
+      "rsi5": 64.19
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-24",
-    "monthly_rsi14": 64.27,
-    "monthly_rsi_ma5": 62.74,
-    "spread": 1.53,
+    "price_date": "2026-08-25",
+    "monthly_rsi14": 64.57,
+    "monthly_rsi_ma5": 62.8,
+    "spread": 1.77,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -169,5 +182,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-24T12:39:08.902832+00:00"
+  "provisional_generated_at": "2026-08-25T12:38:25.023516+00:00"
 }

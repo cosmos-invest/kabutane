@@ -2,12 +2,12 @@
   "code": "8227",
   "ticker": "8227.T",
   "name": "しまむら",
-  "generated_at": "2026-08-24T12:38:27.574870+00:00",
-  "price_date": "2026-08-24",
+  "generated_at": "2026-08-25T12:37:23.878275+00:00",
+  "price_date": "2026-08-25",
   "record": {
-    "current_price": 3390.0,
-    "change_from_signal_month_pct": 1.19,
-    "return_since_gc_pct": 1.5
+    "current_price": 3323.0,
+    "change_from_signal_month_pct": -0.81,
+    "return_since_gc_pct": -0.51
   },
   "daily": [
     {
@@ -152,6 +152,19 @@
       "sma200": 6040.74,
       "rsi14": 27.75,
       "rsi5": 28.07
+    },
+    {
+      "date": "2026-08-25",
+      "open": 3413.0,
+      "high": 3425.0,
+      "low": 3323.0,
+      "close": 3323.0,
+      "volume": 823500.0,
+      "sma25": 3376.16,
+      "sma75": 3314.95,
+      "sma200": 6008.83,
+      "rsi14": 27.75,
+      "rsi5": 28.07
     }
   ],
   "corporate_events": [
@@ -164,10 +177,10 @@
   ],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-24",
-    "monthly_rsi14": 28.06,
-    "monthly_rsi_ma5": 27.57,
-    "spread": 0.49,
+    "price_date": "2026-08-25",
+    "monthly_rsi14": 27.63,
+    "monthly_rsi_ma5": 27.48,
+    "spread": 0.15,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -176,5 +189,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-24T12:39:08.902832+00:00"
+  "provisional_generated_at": "2026-08-25T12:38:25.023516+00:00"
 }

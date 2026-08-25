@@ -2,12 +2,12 @@
   "code": "6379",
   "ticker": "6379.T",
   "name": "レイズネクスト",
-  "generated_at": "2026-08-24T12:38:27.574870+00:00",
-  "price_date": "2026-08-24",
+  "generated_at": "2026-08-25T12:37:23.878275+00:00",
+  "price_date": "2026-08-25",
   "record": {
-    "current_price": 3135.0,
-    "change_from_signal_month_pct": 7.69,
-    "return_since_gc_pct": 7.69
+    "current_price": 3050.0,
+    "change_from_signal_month_pct": 4.77,
+    "return_since_gc_pct": 4.77
   },
   "daily": [
     {
@@ -152,15 +152,28 @@
       "sma200": 2406.48,
       "rsi14": 63.71,
       "rsi5": 74.35
+    },
+    {
+      "date": "2026-08-25",
+      "open": 3155.0,
+      "high": 3155.0,
+      "low": 3030.0,
+      "close": 3050.0,
+      "volume": 235000.0,
+      "sma25": 2831.72,
+      "sma75": 2473.19,
+      "sma200": 2412.14,
+      "rsi14": 63.71,
+      "rsi5": 74.35
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-24",
-    "monthly_rsi14": 77.04,
-    "monthly_rsi_ma5": 67.27,
-    "spread": 9.78,
+    "price_date": "2026-08-25",
+    "monthly_rsi14": 76.06,
+    "monthly_rsi_ma5": 67.07,
+    "spread": 8.99,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -169,5 +182,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-24T12:39:08.902832+00:00"
+  "provisional_generated_at": "2026-08-25T12:38:25.023516+00:00"
 }

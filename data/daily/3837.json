@@ -2,12 +2,12 @@
   "code": "3837",
   "ticker": "3837.T",
   "name": "アドソル日進",
-  "generated_at": "2026-08-24T12:38:27.574870+00:00",
-  "price_date": "2026-08-24",
+  "generated_at": "2026-08-25T12:37:23.878275+00:00",
+  "price_date": "2026-08-25",
   "record": {
-    "current_price": 1508.0,
-    "change_from_signal_month_pct": -0.4,
-    "return_since_gc_pct": -0.4
+    "current_price": 1461.0,
+    "change_from_signal_month_pct": -3.5,
+    "return_since_gc_pct": -3.5
   },
   "daily": [
     {
@@ -152,22 +152,35 @@
       "sma200": 1531.24,
       "rsi14": 57.51,
       "rsi5": 59.77
+    },
+    {
+      "date": "2026-08-25",
+      "open": 1503.0,
+      "high": 1507.0,
+      "low": 1454.0,
+      "close": 1461.0,
+      "volume": 107400.0,
+      "sma25": 1486.4,
+      "sma75": 1444.21,
+      "sma200": 1531.08,
+      "rsi14": 57.51,
+      "rsi5": 59.77
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-24",
-    "monthly_rsi14": 59.62,
-    "monthly_rsi_ma5": 58.11,
-    "spread": 1.51,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-25",
+    "monthly_rsi14": 57.21,
+    "monthly_rsi_ma5": 57.62,
+    "spread": -0.42,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-24T12:39:08.902832+00:00"
+  "provisional_generated_at": "2026-08-25T12:38:25.023516+00:00"
 }

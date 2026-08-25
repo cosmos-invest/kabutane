@@ -2,12 +2,12 @@
   "code": "8152",
   "ticker": "8152.T",
   "name": "ソマール",
-  "generated_at": "2026-08-24T12:38:27.574870+00:00",
-  "price_date": "2026-08-24",
+  "generated_at": "2026-08-25T12:37:23.878275+00:00",
+  "price_date": "2026-08-25",
   "record": {
-    "current_price": 7420.0,
-    "change_from_signal_month_pct": -3.01,
-    "return_since_gc_pct": -3.01
+    "current_price": 7390.0,
+    "change_from_signal_month_pct": -3.4,
+    "return_since_gc_pct": -3.4
   },
   "daily": [
     {
@@ -152,15 +152,28 @@
       "sma200": 6391.45,
       "rsi14": 61.43,
       "rsi5": 65.0
+    },
+    {
+      "date": "2026-08-25",
+      "open": 7440.0,
+      "high": 7440.0,
+      "low": 7270.0,
+      "close": 7390.0,
+      "volume": 1000.0,
+      "sma25": 7572.8,
+      "sma75": 7365.6,
+      "sma200": 6399.8,
+      "rsi14": 61.43,
+      "rsi5": 65.0
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-24",
-    "monthly_rsi14": 63.63,
-    "monthly_rsi_ma5": 64.03,
-    "spread": -0.39,
+    "price_date": "2026-08-25",
+    "monthly_rsi14": 63.36,
+    "monthly_rsi_ma5": 63.98,
+    "spread": -0.61,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -169,5 +182,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-24T12:39:08.902832+00:00"
+  "provisional_generated_at": "2026-08-25T12:38:25.023516+00:00"
 }

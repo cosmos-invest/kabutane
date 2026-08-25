@@ -2,12 +2,12 @@
   "code": "3825",
   "ticker": "3825.T",
   "name": "リミックスポイント",
-  "generated_at": "2026-08-24T12:38:27.574870+00:00",
-  "price_date": "2026-08-24",
+  "generated_at": "2026-08-25T12:37:23.878275+00:00",
+  "price_date": "2026-08-25",
   "record": {
-    "current_price": 231.0,
-    "change_from_signal_month_pct": 17.86,
-    "return_since_gc_pct": 17.86
+    "current_price": 240.0,
+    "change_from_signal_month_pct": 22.45,
+    "return_since_gc_pct": 22.45
   },
   "daily": [
     {
@@ -152,15 +152,28 @@
       "sma200": 234.62,
       "rsi14": 42.73,
       "rsi5": 42.94
+    },
+    {
+      "date": "2026-08-25",
+      "open": 235.0,
+      "high": 244.0,
+      "low": 231.0,
+      "close": 240.0,
+      "volume": 2315500.0,
+      "sma25": 209.04,
+      "sma75": 200.96,
+      "sma200": 234.24,
+      "rsi14": 42.73,
+      "rsi5": 42.94
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-24",
-    "monthly_rsi14": 45.94,
-    "monthly_rsi_ma5": 42.73,
-    "spread": 3.21,
+    "price_date": "2026-08-25",
+    "monthly_rsi14": 46.75,
+    "monthly_rsi_ma5": 42.89,
+    "spread": 3.86,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -169,5 +182,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-24T12:39:08.902832+00:00"
+  "provisional_generated_at": "2026-08-25T12:38:25.023516+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "8522",
   "ticker": "8522.T",
   "name": "名古屋銀行",
-  "generated_at": "2026-08-24T12:38:27.574870+00:00",
-  "price_date": "2026-08-24",
+  "generated_at": "2026-08-25T12:37:23.878275+00:00",
+  "price_date": "2026-08-25",
   "record": {
-    "current_price": 6820.0,
-    "change_from_signal_month_pct": 4.76,
-    "return_since_gc_pct": 4.76
+    "current_price": 6830.0,
+    "change_from_signal_month_pct": 4.92,
+    "return_since_gc_pct": 4.92
   },
   "daily": [
     {
@@ -152,15 +152,28 @@
       "sma200": 5474.15,
       "rsi14": 84.62,
       "rsi5": 87.01
+    },
+    {
+      "date": "2026-08-25",
+      "open": 6860.0,
+      "high": 6890.0,
+      "low": 6750.0,
+      "close": 6830.0,
+      "volume": 150600.0,
+      "sma25": 6685.6,
+      "sma75": 6266.13,
+      "sma200": 5489.38,
+      "rsi14": 84.62,
+      "rsi5": 87.01
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-24",
-    "monthly_rsi14": 87.97,
+    "price_date": "2026-08-25",
+    "monthly_rsi14": 88.0,
     "monthly_rsi_ma5": 85.55,
-    "spread": 2.43,
+    "spread": 2.45,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -169,5 +182,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-24T12:39:08.902832+00:00"
+  "provisional_generated_at": "2026-08-25T12:38:25.023516+00:00"
 }

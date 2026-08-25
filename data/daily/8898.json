@@ -2,12 +2,12 @@
   "code": "8898",
   "ticker": "8898.T",
   "name": "センチュリー２１・ジャパン",
-  "generated_at": "2026-08-24T12:38:27.574870+00:00",
-  "price_date": "2026-08-24",
+  "generated_at": "2026-08-25T12:37:23.878275+00:00",
+  "price_date": "2026-08-25",
   "record": {
-    "current_price": 1135.0,
-    "change_from_signal_month_pct": -0.53,
-    "return_since_gc_pct": -0.53
+    "current_price": 1138.0,
+    "change_from_signal_month_pct": -0.26,
+    "return_since_gc_pct": -0.26
   },
   "daily": [
     {
@@ -152,22 +152,35 @@
       "sma200": 1124.8,
       "rsi14": 55.23,
       "rsi5": 56.81
+    },
+    {
+      "date": "2026-08-25",
+      "open": 1135.0,
+      "high": 1138.0,
+      "low": 1131.0,
+      "close": 1138.0,
+      "volume": 2500.0,
+      "sma25": 1129.24,
+      "sma75": 1125.21,
+      "sma200": 1124.98,
+      "rsi14": 55.23,
+      "rsi5": 56.81
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-24",
-    "monthly_rsi14": 55.35,
-    "monthly_rsi_ma5": 55.82,
-    "spread": -0.47,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-25",
+    "monthly_rsi14": 56.29,
+    "monthly_rsi_ma5": 56.01,
+    "spread": 0.28,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-24T12:39:08.902832+00:00"
+  "provisional_generated_at": "2026-08-25T12:38:25.023516+00:00"
 }

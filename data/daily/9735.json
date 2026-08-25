@@ -2,12 +2,12 @@
   "code": "9735",
   "ticker": "9735.T",
   "name": "セコム",
-  "generated_at": "2026-08-24T12:38:27.574870+00:00",
-  "price_date": "2026-08-24",
+  "generated_at": "2026-08-25T12:37:23.878275+00:00",
+  "price_date": "2026-08-25",
   "record": {
-    "current_price": 6435.0,
-    "change_from_signal_month_pct": -6.5,
-    "return_since_gc_pct": 1.34
+    "current_price": 6440.0,
+    "change_from_signal_month_pct": -6.42,
+    "return_since_gc_pct": 1.42
   },
   "daily": [
     {
@@ -152,15 +152,28 @@
       "sma200": 6014.53,
       "rsi14": 68.18,
       "rsi5": 74.45
+    },
+    {
+      "date": "2026-08-25",
+      "open": 6435.0,
+      "high": 6483.0,
+      "low": 6405.0,
+      "close": 6440.0,
+      "volume": 776000.0,
+      "sma25": 6651.52,
+      "sma75": 6499.01,
+      "sma200": 6020.93,
+      "rsi14": 68.18,
+      "rsi5": 74.45
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-24",
-    "monthly_rsi14": 63.14,
-    "monthly_rsi_ma5": 66.59,
-    "spread": -3.46,
+    "price_date": "2026-08-25",
+    "monthly_rsi14": 63.24,
+    "monthly_rsi_ma5": 66.61,
+    "spread": -3.37,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -169,5 +182,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-24T12:39:08.902832+00:00"
+  "provisional_generated_at": "2026-08-25T12:38:25.023516+00:00"
 }

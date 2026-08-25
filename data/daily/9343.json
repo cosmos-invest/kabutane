@@ -2,12 +2,12 @@
   "code": "9343",
   "ticker": "9343.T",
   "name": "アイビス",
-  "generated_at": "2026-08-24T12:38:27.574870+00:00",
-  "price_date": "2026-08-24",
+  "generated_at": "2026-08-25T12:37:23.878275+00:00",
+  "price_date": "2026-08-25",
   "record": {
-    "current_price": 770.0,
-    "change_from_signal_month_pct": -1.28,
-    "return_since_gc_pct": 12.41
+    "current_price": 766.0,
+    "change_from_signal_month_pct": -1.79,
+    "return_since_gc_pct": 11.82
   },
   "daily": [
     {
@@ -152,22 +152,35 @@
       "sma200": 719.85,
       "rsi14": 54.25,
       "rsi5": 56.58
+    },
+    {
+      "date": "2026-08-25",
+      "open": 773.0,
+      "high": 773.0,
+      "low": 762.0,
+      "close": 766.0,
+      "volume": 20100.0,
+      "sma25": 775.8,
+      "sma75": 775.99,
+      "sma200": 720.14,
+      "rsi14": 54.25,
+      "rsi5": 56.58
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-24",
-    "monthly_rsi14": 59.83,
-    "monthly_rsi_ma5": 59.83,
-    "spread": 0.0,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-25",
+    "monthly_rsi14": 59.5,
+    "monthly_rsi_ma5": 59.77,
+    "spread": -0.26,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-24T12:39:08.902832+00:00"
+  "provisional_generated_at": "2026-08-25T12:38:25.023516+00:00"
 }

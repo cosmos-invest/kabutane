@@ -2,12 +2,12 @@
   "code": "6807",
   "ticker": "6807.T",
   "name": "日本航空電子工業",
-  "generated_at": "2026-08-24T12:38:27.574870+00:00",
-  "price_date": "2026-08-24",
+  "generated_at": "2026-08-25T12:37:23.878275+00:00",
+  "price_date": "2026-08-25",
   "record": {
-    "current_price": 2384.0,
-    "change_from_signal_month_pct": 0.25,
-    "return_since_gc_pct": 0.25
+    "current_price": 2421.0,
+    "change_from_signal_month_pct": 1.81,
+    "return_since_gc_pct": 1.81
   },
   "daily": [
     {
@@ -152,22 +152,35 @@
       "sma200": 2446.55,
       "rsi14": 47.31,
       "rsi5": 47.63
+    },
+    {
+      "date": "2026-08-25",
+      "open": 2399.0,
+      "high": 2435.0,
+      "low": 2394.0,
+      "close": 2421.0,
+      "volume": 210900.0,
+      "sma25": 2385.44,
+      "sma75": 2399.03,
+      "sma200": 2444.49,
+      "rsi14": 47.31,
+      "rsi5": 47.63
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-24",
-    "monthly_rsi14": 45.31,
-    "monthly_rsi_ma5": 45.36,
-    "spread": -0.05,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-25",
+    "monthly_rsi14": 46.19,
+    "monthly_rsi_ma5": 45.54,
+    "spread": 0.65,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-24T12:39:08.902832+00:00"
+  "provisional_generated_at": "2026-08-25T12:38:25.023516+00:00"
 }

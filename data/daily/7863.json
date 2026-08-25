@@ -2,12 +2,12 @@
   "code": "7863",
   "ticker": "7863.T",
   "name": "平賀",
-  "generated_at": "2026-08-24T12:38:27.574870+00:00",
-  "price_date": "2026-08-24",
+  "generated_at": "2026-08-25T12:37:23.878275+00:00",
+  "price_date": "2026-08-25",
   "record": {
-    "current_price": 948.0,
-    "change_from_signal_month_pct": -0.21,
-    "return_since_gc_pct": -0.21
+    "current_price": 940.0,
+    "change_from_signal_month_pct": -1.05,
+    "return_since_gc_pct": -1.05
   },
   "daily": [
     {
@@ -152,15 +152,28 @@
       "sma200": 985.35,
       "rsi14": 44.19,
       "rsi5": 44.62
+    },
+    {
+      "date": "2026-08-25",
+      "open": 940.0,
+      "high": 940.0,
+      "low": 940.0,
+      "close": 940.0,
+      "volume": 300.0,
+      "sma25": 949.52,
+      "sma75": 955.39,
+      "sma200": 985.0,
+      "rsi14": 44.19,
+      "rsi5": 44.62
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-24",
-    "monthly_rsi14": 41.58,
-    "monthly_rsi_ma5": 40.54,
-    "spread": 1.04,
+    "price_date": "2026-08-25",
+    "monthly_rsi14": 40.43,
+    "monthly_rsi_ma5": 40.31,
+    "spread": 0.12,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -169,5 +182,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-24T12:39:08.902832+00:00"
+  "provisional_generated_at": "2026-08-25T12:38:25.023516+00:00"
 }

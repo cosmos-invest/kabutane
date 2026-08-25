@@ -2,12 +2,12 @@
   "code": "9605",
   "ticker": "9605.T",
   "name": "東映",
-  "generated_at": "2026-08-24T12:38:27.574870+00:00",
-  "price_date": "2026-08-24",
+  "generated_at": "2026-08-25T12:37:23.878275+00:00",
+  "price_date": "2026-08-25",
   "record": {
-    "current_price": 6130.0,
-    "change_from_signal_month_pct": 1.49,
-    "return_since_gc_pct": 1.49
+    "current_price": 6100.0,
+    "change_from_signal_month_pct": 0.99,
+    "return_since_gc_pct": 0.99
   },
   "daily": [
     {
@@ -152,15 +152,28 @@
       "sma200": 5713.4,
       "rsi14": 61.46,
       "rsi5": 62.7
+    },
+    {
+      "date": "2026-08-25",
+      "open": 6150.0,
+      "high": 6210.0,
+      "low": 6100.0,
+      "close": 6100.0,
+      "volume": 33900.0,
+      "sma25": 5975.6,
+      "sma75": 5820.4,
+      "sma200": 5716.25,
+      "rsi14": 61.46,
+      "rsi5": 62.7
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-24",
-    "monthly_rsi14": 64.63,
-    "monthly_rsi_ma5": 62.76,
-    "spread": 1.88,
+    "price_date": "2026-08-25",
+    "monthly_rsi14": 64.3,
+    "monthly_rsi_ma5": 62.69,
+    "spread": 1.61,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -169,5 +182,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-24T12:39:08.902832+00:00"
+  "provisional_generated_at": "2026-08-25T12:38:25.023516+00:00"
 }

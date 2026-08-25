@@ -2,12 +2,12 @@
   "code": "8130",
   "ticker": "8130.T",
   "name": "サンゲツ",
-  "generated_at": "2026-08-24T12:38:27.574870+00:00",
-  "price_date": "2026-08-24",
+  "generated_at": "2026-08-25T12:37:23.878275+00:00",
+  "price_date": "2026-08-25",
   "record": {
-    "current_price": 3195.0,
-    "change_from_signal_month_pct": 3.23,
-    "return_since_gc_pct": 3.23
+    "current_price": 3180.0,
+    "change_from_signal_month_pct": 2.75,
+    "return_since_gc_pct": 2.75
   },
   "daily": [
     {
@@ -152,15 +152,28 @@
       "sma200": 3076.7,
       "rsi14": 52.06,
       "rsi5": 55.16
+    },
+    {
+      "date": "2026-08-25",
+      "open": 3215.0,
+      "high": 3225.0,
+      "low": 3180.0,
+      "close": 3180.0,
+      "volume": 73200.0,
+      "sma25": 3108.2,
+      "sma75": 2991.85,
+      "sma200": 3077.34,
+      "rsi14": 52.06,
+      "rsi5": 55.16
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-24",
-    "monthly_rsi14": 55.89,
-    "monthly_rsi_ma5": 49.82,
-    "spread": 6.07,
+    "price_date": "2026-08-25",
+    "monthly_rsi14": 55.42,
+    "monthly_rsi_ma5": 49.73,
+    "spread": 5.69,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -169,5 +182,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-24T12:39:08.902832+00:00"
+  "provisional_generated_at": "2026-08-25T12:38:25.023516+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "7247",
   "ticker": "7247.T",
   "name": "ミクニ",
-  "generated_at": "2026-08-24T12:38:27.574870+00:00",
-  "price_date": "2026-08-24",
+  "generated_at": "2026-08-25T12:37:23.878275+00:00",
+  "price_date": "2026-08-25",
   "record": {
-    "current_price": 373.0,
-    "change_from_signal_month_pct": 0.81,
-    "return_since_gc_pct": 0.81
+    "current_price": 372.0,
+    "change_from_signal_month_pct": 0.54,
+    "return_since_gc_pct": 0.54
   },
   "daily": [
     {
@@ -152,15 +152,28 @@
       "sma200": 374.24,
       "rsi14": 50.1,
       "rsi5": 51.0
+    },
+    {
+      "date": "2026-08-25",
+      "open": 374.0,
+      "high": 374.0,
+      "low": 371.0,
+      "close": 372.0,
+      "volume": 27500.0,
+      "sma25": 367.6,
+      "sma75": 357.56,
+      "sma200": 374.15,
+      "rsi14": 50.1,
+      "rsi5": 51.0
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-24",
-    "monthly_rsi14": 49.52,
-    "monthly_rsi_ma5": 48.0,
-    "spread": 1.52,
+    "price_date": "2026-08-25",
+    "monthly_rsi14": 49.36,
+    "monthly_rsi_ma5": 47.96,
+    "spread": 1.39,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -169,5 +182,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-24T12:39:08.902832+00:00"
+  "provisional_generated_at": "2026-08-25T12:38:25.023516+00:00"
 }
