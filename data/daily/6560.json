@@ -2,12 +2,12 @@
   "code": "6560",
   "ticker": "6560.T",
   "name": "エル・ティー・エス",
-  "generated_at": "2026-08-25T12:37:23.878275+00:00",
-  "price_date": "2026-08-25",
+  "generated_at": "2026-08-26T12:40:14.614158+00:00",
+  "price_date": "2026-08-26",
   "record": {
-    "current_price": 1716.0,
-    "change_from_signal_month_pct": -1.21,
-    "return_since_gc_pct": -2.94
+    "current_price": 1735.0,
+    "change_from_signal_month_pct": -0.12,
+    "return_since_gc_pct": -1.87
   },
   "daily": [
     {
@@ -165,22 +165,35 @@
       "sma200": 1883.09,
       "rsi14": 39.55,
       "rsi5": 40.27
+    },
+    {
+      "date": "2026-08-26",
+      "open": 1714.0,
+      "high": 1735.0,
+      "low": 1703.0,
+      "close": 1735.0,
+      "volume": 21800.0,
+      "sma25": 1713.48,
+      "sma75": 1725.93,
+      "sma200": 1880.26,
+      "rsi14": 39.55,
+      "rsi5": 40.27
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-25",
-    "monthly_rsi14": 35.27,
-    "monthly_rsi_ma5": 35.31,
-    "spread": -0.04,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-26",
+    "monthly_rsi14": 35.58,
+    "monthly_rsi_ma5": 35.37,
+    "spread": 0.21,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-25T12:38:25.023516+00:00"
+  "provisional_generated_at": "2026-08-26T12:40:57.212861+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "4755",
   "ticker": "4755.T",
   "name": "楽天グループ",
-  "generated_at": "2026-08-25T12:37:23.878275+00:00",
-  "price_date": "2026-08-25",
+  "generated_at": "2026-08-26T12:40:14.614158+00:00",
+  "price_date": "2026-08-26",
   "record": {
-    "current_price": 768.9,
-    "change_from_signal_month_pct": -7.76,
-    "return_since_gc_pct": -7.76
+    "current_price": 772.7,
+    "change_from_signal_month_pct": -7.31,
+    "return_since_gc_pct": -7.31
   },
   "daily": [
     {
@@ -165,22 +165,35 @@
       "sma200": 845.05,
       "rsi14": 44.82,
       "rsi5": 49.85
+    },
+    {
+      "date": "2026-08-26",
+      "open": 765.4,
+      "high": 782.9,
+      "low": 765.4,
+      "close": 772.7,
+      "volume": 14024500.0,
+      "sma25": 804.3,
+      "sma75": 774.04,
+      "sma200": 844.01,
+      "rsi14": 44.82,
+      "rsi5": 49.85
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-25",
-    "monthly_rsi14": 48.45,
-    "monthly_rsi_ma5": 48.6,
-    "spread": -0.15,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-26",
+    "monthly_rsi14": 48.68,
+    "monthly_rsi_ma5": 48.65,
+    "spread": 0.03,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-25T12:38:25.023516+00:00"
+  "provisional_generated_at": "2026-08-26T12:40:57.212861+00:00"
 }

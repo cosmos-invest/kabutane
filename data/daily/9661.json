@@ -2,12 +2,12 @@
   "code": "9661",
   "ticker": "9661.T",
   "name": "歌舞伎座",
-  "generated_at": "2026-08-25T12:37:23.878275+00:00",
-  "price_date": "2026-08-25",
+  "generated_at": "2026-08-26T12:40:14.614158+00:00",
+  "price_date": "2026-08-26",
   "record": {
-    "current_price": 4465.0,
-    "change_from_signal_month_pct": -0.45,
-    "return_since_gc_pct": -0.45
+    "current_price": 4440.0,
+    "change_from_signal_month_pct": -1.0,
+    "return_since_gc_pct": -1.0
   },
   "daily": [
     {
@@ -165,22 +165,35 @@
       "sma200": 4539.3,
       "rsi14": 39.57,
       "rsi5": 41.74
+    },
+    {
+      "date": "2026-08-26",
+      "open": 4460.0,
+      "high": 4465.0,
+      "low": 4420.0,
+      "close": 4440.0,
+      "volume": 11100.0,
+      "sma25": 4467.0,
+      "sma75": 4462.27,
+      "sma200": 4538.73,
+      "rsi14": 39.57,
+      "rsi5": 41.74
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-25",
-    "monthly_rsi14": 39.19,
-    "monthly_rsi_ma5": 38.33,
-    "spread": 0.86,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-26",
+    "monthly_rsi14": 37.54,
+    "monthly_rsi_ma5": 38.0,
+    "spread": -0.47,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-25T12:38:25.023516+00:00"
+  "provisional_generated_at": "2026-08-26T12:40:57.212861+00:00"
 }

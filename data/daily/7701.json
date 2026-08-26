@@ -2,12 +2,12 @@
   "code": "7701",
   "ticker": "7701.T",
   "name": "島津製作所",
-  "generated_at": "2026-08-25T12:37:23.878275+00:00",
-  "price_date": "2026-08-25",
+  "generated_at": "2026-08-26T12:40:14.614158+00:00",
+  "price_date": "2026-08-26",
   "record": {
-    "current_price": 4119.0,
-    "change_from_signal_month_pct": 0.61,
-    "return_since_gc_pct": 0.07
+    "current_price": 4110.0,
+    "change_from_signal_month_pct": 0.39,
+    "return_since_gc_pct": -0.15
   },
   "daily": [
     {
@@ -165,15 +165,28 @@
       "sma200": 4058.39,
       "rsi14": 47.58,
       "rsi5": 51.5
+    },
+    {
+      "date": "2026-08-26",
+      "open": 4122.0,
+      "high": 4132.0,
+      "low": 4091.0,
+      "close": 4110.0,
+      "volume": 424600.0,
+      "sma25": 4123.12,
+      "sma75": 3968.27,
+      "sma200": 4058.32,
+      "rsi14": 47.58,
+      "rsi5": 51.5
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-25",
-    "monthly_rsi14": 51.62,
-    "monthly_rsi_ma5": 48.75,
-    "spread": 2.87,
+    "price_date": "2026-08-26",
+    "monthly_rsi14": 51.47,
+    "monthly_rsi_ma5": 48.72,
+    "spread": 2.75,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -182,5 +195,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-25T12:38:25.023516+00:00"
+  "provisional_generated_at": "2026-08-26T12:40:57.212861+00:00"
 }

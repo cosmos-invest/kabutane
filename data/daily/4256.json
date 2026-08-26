@@ -2,12 +2,12 @@
   "code": "4256",
   "ticker": "4256.T",
   "name": "サインド",
-  "generated_at": "2026-08-25T12:37:23.878275+00:00",
-  "price_date": "2026-08-25",
+  "generated_at": "2026-08-26T12:40:14.614158+00:00",
+  "price_date": "2026-08-26",
   "record": {
-    "current_price": 1030.0,
-    "change_from_signal_month_pct": 3.0,
-    "return_since_gc_pct": 3.0
+    "current_price": 1018.0,
+    "change_from_signal_month_pct": 1.8,
+    "return_since_gc_pct": 1.8
   },
   "daily": [
     {
@@ -165,15 +165,28 @@
       "sma200": 1158.34,
       "rsi14": 44.33,
       "rsi5": 44.6
+    },
+    {
+      "date": "2026-08-26",
+      "open": 1021.0,
+      "high": 1030.0,
+      "low": 1011.0,
+      "close": 1018.0,
+      "volume": 4600.0,
+      "sma25": 991.48,
+      "sma75": 974.4,
+      "sma200": 1158.6,
+      "rsi14": 44.33,
+      "rsi5": 44.6
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-25",
-    "monthly_rsi14": 49.15,
-    "monthly_rsi_ma5": 47.75,
-    "spread": 1.4,
+    "price_date": "2026-08-26",
+    "monthly_rsi14": 48.61,
+    "monthly_rsi_ma5": 47.64,
+    "spread": 0.97,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -182,5 +195,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-25T12:38:25.023516+00:00"
+  "provisional_generated_at": "2026-08-26T12:40:57.212861+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "3092",
   "ticker": "3092.T",
   "name": "ＺＯＺＯ",
-  "generated_at": "2026-08-25T12:37:23.878275+00:00",
-  "price_date": "2026-08-25",
+  "generated_at": "2026-08-26T12:40:14.614158+00:00",
+  "price_date": "2026-08-26",
   "record": {
-    "current_price": 1148.5,
-    "change_from_signal_month_pct": 0.48,
-    "return_since_gc_pct": -0.04
+    "current_price": 1142.0,
+    "change_from_signal_month_pct": -0.09,
+    "return_since_gc_pct": -0.61
   },
   "daily": [
     {
@@ -165,15 +165,28 @@
       "sma200": 1167.37,
       "rsi14": 38.42,
       "rsi5": 43.12
+    },
+    {
+      "date": "2026-08-26",
+      "open": 1144.5,
+      "high": 1149.5,
+      "low": 1142.0,
+      "close": 1142.0,
+      "volume": 2399000.0,
+      "sma25": 1144.1,
+      "sma75": 1109.32,
+      "sma200": 1166.54,
+      "rsi14": 38.42,
+      "rsi5": 43.12
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-25",
-    "monthly_rsi14": 45.84,
-    "monthly_rsi_ma5": 42.29,
-    "spread": 3.55,
+    "price_date": "2026-08-26",
+    "monthly_rsi14": 45.45,
+    "monthly_rsi_ma5": 42.22,
+    "spread": 3.24,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -182,5 +195,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-25T12:38:25.023516+00:00"
+  "provisional_generated_at": "2026-08-26T12:40:57.212861+00:00"
 }

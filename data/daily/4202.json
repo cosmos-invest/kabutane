@@ -2,12 +2,12 @@
   "code": "4202",
   "ticker": "4202.T",
   "name": "ダイセル",
-  "generated_at": "2026-08-25T12:37:23.878275+00:00",
-  "price_date": "2026-08-25",
+  "generated_at": "2026-08-26T12:40:14.614158+00:00",
+  "price_date": "2026-08-26",
   "record": {
-    "current_price": 1459.5,
-    "change_from_signal_month_pct": 0.62,
-    "return_since_gc_pct": 0.62
+    "current_price": 1458.5,
+    "change_from_signal_month_pct": 0.55,
+    "return_since_gc_pct": 0.55
   },
   "daily": [
     {
@@ -165,15 +165,28 @@
       "sma200": 1373.32,
       "rsi14": 49.97,
       "rsi5": 55.64
+    },
+    {
+      "date": "2026-08-26",
+      "open": 1472.5,
+      "high": 1472.5,
+      "low": 1453.0,
+      "close": 1458.5,
+      "volume": 609000.0,
+      "sma25": 1464.74,
+      "sma75": 1369.58,
+      "sma200": 1374.02,
+      "rsi14": 49.97,
+      "rsi5": 55.64
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-25",
-    "monthly_rsi14": 56.32,
-    "monthly_rsi_ma5": 52.46,
-    "spread": 3.86,
+    "price_date": "2026-08-26",
+    "monthly_rsi14": 56.28,
+    "monthly_rsi_ma5": 52.45,
+    "spread": 3.83,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -182,5 +195,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-25T12:38:25.023516+00:00"
+  "provisional_generated_at": "2026-08-26T12:40:57.212861+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "150A",
   "ticker": "150A.T",
   "name": "ＪＳＨ",
-  "generated_at": "2026-08-25T12:37:23.878275+00:00",
-  "price_date": "2026-08-25",
+  "generated_at": "2026-08-26T12:40:14.614158+00:00",
+  "price_date": "2026-08-26",
   "record": {
-    "current_price": 724.0,
-    "change_from_signal_month_pct": 70.35,
-    "return_since_gc_pct": 70.35
+    "current_price": 765.0,
+    "change_from_signal_month_pct": 80.0,
+    "return_since_gc_pct": 80.0
   },
   "daily": [
     {
@@ -165,15 +165,28 @@
       "sma200": 410.44,
       "rsi14": 35.18,
       "rsi5": 42.2
+    },
+    {
+      "date": "2026-08-26",
+      "open": 726.0,
+      "high": 770.0,
+      "low": 724.0,
+      "close": 765.0,
+      "volume": 253000.0,
+      "sma25": 586.52,
+      "sma75": 439.92,
+      "sma200": 412.14,
+      "rsi14": 35.18,
+      "rsi5": 42.2
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-25",
-    "monthly_rsi14": 63.23,
-    "monthly_rsi_ma5": 41.48,
-    "spread": 21.75,
+    "price_date": "2026-08-26",
+    "monthly_rsi14": 64.98,
+    "monthly_rsi_ma5": 41.83,
+    "spread": 23.14,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -182,5 +195,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-25T12:38:25.023516+00:00"
+  "provisional_generated_at": "2026-08-26T12:40:57.212861+00:00"
 }

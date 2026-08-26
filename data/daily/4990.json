@@ -2,12 +2,12 @@
   "code": "4990",
   "ticker": "4990.T",
   "name": "昭和化学工業",
-  "generated_at": "2026-08-25T12:37:23.878275+00:00",
-  "price_date": "2026-08-25",
+  "generated_at": "2026-08-26T12:40:14.614158+00:00",
+  "price_date": "2026-08-26",
   "record": {
-    "current_price": 502.0,
-    "change_from_signal_month_pct": -1.18,
-    "return_since_gc_pct": -1.18
+    "current_price": 499.0,
+    "change_from_signal_month_pct": -1.77,
+    "return_since_gc_pct": -1.77
   },
   "daily": [
     {
@@ -165,22 +165,35 @@
       "sma200": 504.04,
       "rsi14": 54.55,
       "rsi5": 55.11
+    },
+    {
+      "date": "2026-08-26",
+      "open": 503.0,
+      "high": 508.0,
+      "low": 498.0,
+      "close": 499.0,
+      "volume": 6300.0,
+      "sma25": 498.76,
+      "sma75": 494.48,
+      "sma200": 504.11,
+      "rsi14": 54.55,
+      "rsi5": 55.11
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-25",
-    "monthly_rsi14": 53.0,
-    "monthly_rsi_ma5": 52.95,
-    "spread": 0.05,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-26",
+    "monthly_rsi14": 52.32,
+    "monthly_rsi_ma5": 52.81,
+    "spread": -0.49,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-25T12:38:25.023516+00:00"
+  "provisional_generated_at": "2026-08-26T12:40:57.212861+00:00"
 }

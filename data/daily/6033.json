@@ -2,12 +2,12 @@
   "code": "6033",
   "ticker": "6033.T",
   "name": "エクストリーム",
-  "generated_at": "2026-08-25T12:37:23.878275+00:00",
-  "price_date": "2026-08-25",
+  "generated_at": "2026-08-26T12:40:14.614158+00:00",
+  "price_date": "2026-08-26",
   "record": {
-    "current_price": 1602.0,
-    "change_from_signal_month_pct": -4.42,
-    "return_since_gc_pct": -4.42
+    "current_price": 1655.0,
+    "change_from_signal_month_pct": -1.25,
+    "return_since_gc_pct": -1.25
   },
   "daily": [
     {
@@ -165,15 +165,28 @@
       "sma200": 1444.07,
       "rsi14": 57.7,
       "rsi5": 65.22
+    },
+    {
+      "date": "2026-08-26",
+      "open": 1611.0,
+      "high": 1750.0,
+      "low": 1611.0,
+      "close": 1655.0,
+      "volume": 39300.0,
+      "sma25": 1674.2,
+      "sma75": 1490.75,
+      "sma200": 1445.71,
+      "rsi14": 57.7,
+      "rsi5": 65.22
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-25",
-    "monthly_rsi14": 60.39,
-    "monthly_rsi_ma5": 57.76,
-    "spread": 2.64,
+    "price_date": "2026-08-26",
+    "monthly_rsi14": 63.63,
+    "monthly_rsi_ma5": 58.4,
+    "spread": 5.22,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -182,5 +195,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-25T12:38:25.023516+00:00"
+  "provisional_generated_at": "2026-08-26T12:40:57.212861+00:00"
 }
