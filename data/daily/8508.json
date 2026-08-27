@@ -2,12 +2,12 @@
   "code": "8508",
   "ticker": "8508.T",
   "name": "Ｊトラスト",
-  "generated_at": "2026-08-26T12:40:14.614158+00:00",
-  "price_date": "2026-08-26",
+  "generated_at": "2026-08-27T21:35:38.483486+00:00",
+  "price_date": "2026-08-27",
   "record": {
-    "current_price": 804.0,
-    "change_from_signal_month_pct": -1.59,
-    "return_since_gc_pct": 68.55
+    "current_price": 746.0,
+    "change_from_signal_month_pct": -8.69,
+    "return_since_gc_pct": 56.39
   },
   "daily": [
     {
@@ -178,22 +178,35 @@
       "sma200": 616.66,
       "rsi14": 71.91,
       "rsi5": 77.36
+    },
+    {
+      "date": "2026-08-27",
+      "open": 807.0,
+      "high": 807.0,
+      "low": 724.0,
+      "close": 746.0,
+      "volume": 4988000.0,
+      "sma25": 838.72,
+      "sma75": 798.41,
+      "sma200": 618.35,
+      "rsi14": 71.91,
+      "rsi5": 77.36
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-26",
-    "monthly_rsi14": 76.58,
-    "monthly_rsi_ma5": 76.29,
-    "spread": 0.29,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-27",
+    "monthly_rsi14": 68.54,
+    "monthly_rsi_ma5": 74.68,
+    "spread": -6.14,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-26T12:40:57.212861+00:00"
+  "provisional_generated_at": "2026-08-27T21:36:42.169416+00:00"
 }

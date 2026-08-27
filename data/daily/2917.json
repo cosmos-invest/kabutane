@@ -2,12 +2,12 @@
   "code": "2917",
   "ticker": "2917.T",
   "name": "大森屋",
-  "generated_at": "2026-08-26T12:40:14.614158+00:00",
-  "price_date": "2026-08-26",
+  "generated_at": "2026-08-27T21:35:38.483486+00:00",
+  "price_date": "2026-08-27",
   "record": {
-    "current_price": 934.0,
-    "change_from_signal_month_pct": -0.74,
-    "return_since_gc_pct": -0.74
+    "current_price": 925.0,
+    "change_from_signal_month_pct": -1.7,
+    "return_since_gc_pct": -1.7
   },
   "daily": [
     {
@@ -178,22 +178,35 @@
       "sma200": 910.67,
       "rsi14": 51.73,
       "rsi5": 55.5
+    },
+    {
+      "date": "2026-08-27",
+      "open": 930.0,
+      "high": 930.0,
+      "low": 924.0,
+      "close": 925.0,
+      "volume": 2600.0,
+      "sma25": 937.12,
+      "sma75": 925.44,
+      "sma200": 910.84,
+      "rsi14": 51.73,
+      "rsi5": 55.5
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-26",
-    "monthly_rsi14": 51.1,
-    "monthly_rsi_ma5": 49.88,
-    "spread": 1.23,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-27",
+    "monthly_rsi14": 49.13,
+    "monthly_rsi_ma5": 49.48,
+    "spread": -0.36,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-26T12:40:57.212861+00:00"
+  "provisional_generated_at": "2026-08-27T21:36:42.169416+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "4523",
   "ticker": "4523.T",
   "name": "エーザイ",
-  "generated_at": "2026-08-26T12:40:14.614158+00:00",
-  "price_date": "2026-08-26",
+  "generated_at": "2026-08-27T21:35:38.483486+00:00",
+  "price_date": "2026-08-27",
   "record": {
-    "current_price": 4833.0,
-    "change_from_signal_month_pct": 0.1,
-    "return_since_gc_pct": 0.1
+    "current_price": 4820.0,
+    "change_from_signal_month_pct": -0.17,
+    "return_since_gc_pct": -0.17
   },
   "daily": [
     {
@@ -178,15 +178,28 @@
       "sma200": 4592.23,
       "rsi14": 43.52,
       "rsi5": 47.98
+    },
+    {
+      "date": "2026-08-27",
+      "open": 4827.0,
+      "high": 4847.0,
+      "low": 4771.0,
+      "close": 4820.0,
+      "volume": 991100.0,
+      "sma25": 4809.88,
+      "sma75": 4342.91,
+      "sma200": 4593.49,
+      "rsi14": 43.52,
+      "rsi5": 47.98
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-26",
-    "monthly_rsi14": 43.6,
-    "monthly_rsi_ma5": 38.63,
-    "spread": 4.96,
+    "price_date": "2026-08-27",
+    "monthly_rsi14": 43.47,
+    "monthly_rsi_ma5": 38.61,
+    "spread": 4.86,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -195,5 +208,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-26T12:40:57.212861+00:00"
+  "provisional_generated_at": "2026-08-27T21:36:42.169416+00:00"
 }

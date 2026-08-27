@@ -2,12 +2,12 @@
   "code": "9142",
   "ticker": "9142.T",
   "name": "九州旅客鉄道",
-  "generated_at": "2026-08-26T12:40:14.614158+00:00",
-  "price_date": "2026-08-26",
+  "generated_at": "2026-08-27T21:35:38.483486+00:00",
+  "price_date": "2026-08-27",
   "record": {
-    "current_price": 3536.0,
-    "change_from_signal_month_pct": -1.67,
-    "return_since_gc_pct": -1.67
+    "current_price": 3591.0,
+    "change_from_signal_month_pct": -0.14,
+    "return_since_gc_pct": -0.14
   },
   "daily": [
     {
@@ -178,22 +178,35 @@
       "sma200": 3770.66,
       "rsi14": 46.47,
       "rsi5": 47.15
+    },
+    {
+      "date": "2026-08-27",
+      "open": 3524.0,
+      "high": 3591.0,
+      "low": 3512.0,
+      "close": 3591.0,
+      "volume": 1241500.0,
+      "sma25": 3541.64,
+      "sma75": 3534.53,
+      "sma200": 3769.11,
+      "rsi14": 46.47,
+      "rsi5": 47.15
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-26",
-    "monthly_rsi14": 46.13,
-    "monthly_rsi_ma5": 46.2,
-    "spread": -0.07,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-27",
+    "monthly_rsi14": 47.86,
+    "monthly_rsi_ma5": 46.54,
+    "spread": 1.32,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-26T12:40:57.212861+00:00"
+  "provisional_generated_at": "2026-08-27T21:36:42.169416+00:00"
 }

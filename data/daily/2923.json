@@ -2,12 +2,12 @@
   "code": "2923",
   "ticker": "2923.T",
   "name": "サトウ食品",
-  "generated_at": "2026-08-26T12:40:14.614158+00:00",
-  "price_date": "2026-08-26",
+  "generated_at": "2026-08-27T21:35:38.483486+00:00",
+  "price_date": "2026-08-27",
   "record": {
-    "current_price": 7930.0,
-    "change_from_signal_month_pct": -7.58,
-    "return_since_gc_pct": 0.25
+    "current_price": 7990.0,
+    "change_from_signal_month_pct": -6.88,
+    "return_since_gc_pct": 1.01
   },
   "daily": [
     {
@@ -178,22 +178,35 @@
       "sma200": 7710.55,
       "rsi14": 53.81,
       "rsi5": 61.38
+    },
+    {
+      "date": "2026-08-27",
+      "open": 7850.0,
+      "high": 7990.0,
+      "low": 7660.0,
+      "close": 7990.0,
+      "volume": 6100.0,
+      "sma25": 8384.4,
+      "sma75": 7867.6,
+      "sma200": 7711.1,
+      "rsi14": 53.81,
+      "rsi5": 61.38
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-26",
-    "monthly_rsi14": 56.02,
-    "monthly_rsi_ma5": 56.17,
-    "spread": -0.15,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-27",
+    "monthly_rsi14": 56.55,
+    "monthly_rsi_ma5": 56.27,
+    "spread": 0.27,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-26T12:40:57.212861+00:00"
+  "provisional_generated_at": "2026-08-27T21:36:42.169416+00:00"
 }

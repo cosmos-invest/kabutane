@@ -2,12 +2,12 @@
   "code": "9365",
   "ticker": "9365.T",
   "name": "トレーディア",
-  "generated_at": "2026-08-26T12:40:14.614158+00:00",
-  "price_date": "2026-08-25",
+  "generated_at": "2026-08-27T21:35:38.483486+00:00",
+  "price_date": "2026-08-27",
   "record": {
-    "current_price": 1666.0,
-    "change_from_signal_month_pct": -1.13,
-    "return_since_gc_pct": 4.19
+    "current_price": 1617.0,
+    "change_from_signal_month_pct": -4.04,
+    "return_since_gc_pct": 1.13
   },
   "daily": [
     {
@@ -165,15 +165,41 @@
       "sma200": 1558.24,
       "rsi14": 60.08,
       "rsi5": 66.29
+    },
+    {
+      "date": "2026-08-26",
+      "open": 1666.0,
+      "high": 1666.0,
+      "low": 1666.0,
+      "close": 1666.0,
+      "volume": 0.0,
+      "sma25": 1652.08,
+      "sma75": 1569.67,
+      "sma200": 1559.37,
+      "rsi14": 60.08,
+      "rsi5": 66.29
+    },
+    {
+      "date": "2026-08-27",
+      "open": 1617.0,
+      "high": 1617.0,
+      "low": 1617.0,
+      "close": 1617.0,
+      "volume": 100.0,
+      "sma25": 1651.16,
+      "sma75": 1571.23,
+      "sma200": 1560.16,
+      "rsi14": 60.08,
+      "rsi5": 66.29
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-25",
-    "monthly_rsi14": 65.71,
-    "monthly_rsi_ma5": 62.38,
-    "spread": 3.32,
+    "price_date": "2026-08-27",
+    "monthly_rsi14": 61.57,
+    "monthly_rsi_ma5": 61.56,
+    "spread": 0.02,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -182,5 +208,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-26T12:40:57.212861+00:00"
+  "provisional_generated_at": "2026-08-27T21:36:42.169416+00:00"
 }

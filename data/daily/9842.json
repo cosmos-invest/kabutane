@@ -2,12 +2,12 @@
   "code": "9842",
   "ticker": "9842.T",
   "name": "アークランズ",
-  "generated_at": "2026-08-26T12:40:14.614158+00:00",
-  "price_date": "2026-08-26",
+  "generated_at": "2026-08-27T21:35:38.483486+00:00",
+  "price_date": "2026-08-27",
   "record": {
-    "current_price": 1916.0,
-    "change_from_signal_month_pct": 0.1,
-    "return_since_gc_pct": 0.58
+    "current_price": 1903.0,
+    "change_from_signal_month_pct": -0.57,
+    "return_since_gc_pct": -0.1
   },
   "daily": [
     {
@@ -178,15 +178,28 @@
       "sma200": 1876.03,
       "rsi14": 54.06,
       "rsi5": 56.56
+    },
+    {
+      "date": "2026-08-27",
+      "open": 1904.0,
+      "high": 1925.0,
+      "low": 1900.0,
+      "close": 1903.0,
+      "volume": 1516600.0,
+      "sma25": 1909.44,
+      "sma75": 1882.12,
+      "sma200": 1876.8,
+      "rsi14": 54.06,
+      "rsi5": 56.56
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-26",
-    "monthly_rsi14": 57.05,
-    "monthly_rsi_ma5": 55.7,
-    "spread": 1.34,
+    "price_date": "2026-08-27",
+    "monthly_rsi14": 56.19,
+    "monthly_rsi_ma5": 55.53,
+    "spread": 0.66,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -195,5 +208,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-26T12:40:57.212861+00:00"
+  "provisional_generated_at": "2026-08-27T21:36:42.169416+00:00"
 }

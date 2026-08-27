@@ -2,12 +2,12 @@
   "code": "3774",
   "ticker": "3774.T",
   "name": "インターネットイニシアティブ",
-  "generated_at": "2026-08-26T12:40:14.614158+00:00",
-  "price_date": "2026-08-26",
+  "generated_at": "2026-08-27T21:35:38.483486+00:00",
+  "price_date": "2026-08-27",
   "record": {
-    "current_price": 3314.0,
-    "change_from_signal_month_pct": -5.4,
-    "return_since_gc_pct": 19.53
+    "current_price": 3262.0,
+    "change_from_signal_month_pct": -6.88,
+    "return_since_gc_pct": 17.66
   },
   "daily": [
     {
@@ -178,22 +178,35 @@
       "sma200": 2856.1,
       "rsi14": 57.15,
       "rsi5": 66.47
+    },
+    {
+      "date": "2026-08-27",
+      "open": 3305.0,
+      "high": 3318.0,
+      "low": 3245.0,
+      "close": 3262.0,
+      "volume": 784900.0,
+      "sma25": 3466.2,
+      "sma75": 3281.55,
+      "sma200": 2858.78,
+      "rsi14": 57.15,
+      "rsi5": 66.47
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-26",
-    "monthly_rsi14": 61.05,
-    "monthly_rsi_ma5": 60.24,
-    "spread": 0.82,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-27",
+    "monthly_rsi14": 59.78,
+    "monthly_rsi_ma5": 59.98,
+    "spread": -0.2,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-26T12:40:57.212861+00:00"
+  "provisional_generated_at": "2026-08-27T21:36:42.169416+00:00"
 }

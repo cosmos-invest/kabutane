@@ -2,12 +2,12 @@
   "code": "9048",
   "ticker": "9048.T",
   "name": "名古屋鉄道",
-  "generated_at": "2026-08-26T12:40:14.614158+00:00",
-  "price_date": "2026-08-26",
+  "generated_at": "2026-08-27T21:35:38.483486+00:00",
+  "price_date": "2026-08-27",
   "record": {
-    "current_price": 1895.5,
-    "change_from_signal_month_pct": 0.03,
-    "return_since_gc_pct": 12.69
+    "current_price": 1893.0,
+    "change_from_signal_month_pct": -0.11,
+    "return_since_gc_pct": 12.54
   },
   "daily": [
     {
@@ -178,15 +178,28 @@
       "sma200": 1770.51,
       "rsi14": 49.97,
       "rsi5": 55.27
+    },
+    {
+      "date": "2026-08-27",
+      "open": 1892.0,
+      "high": 1904.0,
+      "low": 1883.0,
+      "close": 1893.0,
+      "volume": 315700.0,
+      "sma25": 1887.54,
+      "sma75": 1857.91,
+      "sma200": 1771.62,
+      "rsi14": 49.97,
+      "rsi5": 55.27
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-26",
-    "monthly_rsi14": 51.86,
-    "monthly_rsi_ma5": 48.41,
-    "spread": 3.45,
+    "price_date": "2026-08-27",
+    "monthly_rsi14": 51.69,
+    "monthly_rsi_ma5": 48.38,
+    "spread": 3.31,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -195,5 +208,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-26T12:40:57.212861+00:00"
+  "provisional_generated_at": "2026-08-27T21:36:42.169416+00:00"
 }
