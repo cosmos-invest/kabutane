@@ -2,12 +2,12 @@
   "code": "2708",
   "ticker": "2708.T",
   "name": "久世",
-  "generated_at": "2026-08-28T21:41:36.502034+00:00",
-  "price_date": "2026-08-27",
+  "generated_at": "2026-08-31T18:38:36.301635+00:00",
+  "price_date": "2026-08-28",
   "record": {
-    "current_price": 1914.0,
-    "change_from_signal_month_pct": -4.78,
-    "return_since_gc_pct": -4.78
+    "current_price": 1938.0,
+    "change_from_signal_month_pct": -3.58,
+    "return_since_gc_pct": -3.58
   },
   "daily": [
     {
@@ -191,22 +191,35 @@
       "sma200": 2015.03,
       "rsi14": 53.44,
       "rsi5": 55.64
+    },
+    {
+      "date": "2026-08-28",
+      "open": 1942.0,
+      "high": 1942.0,
+      "low": 1910.0,
+      "close": 1938.0,
+      "volume": 1700.0,
+      "sma25": 1958.32,
+      "sma75": 1914.45,
+      "sma200": 2015.2,
+      "rsi14": 53.44,
+      "rsi5": 55.64
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-27",
-    "monthly_rsi14": 50.87,
-    "monthly_rsi_ma5": 51.41,
-    "spread": -0.54,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-28",
+    "monthly_rsi14": 51.62,
+    "monthly_rsi_ma5": 51.56,
+    "spread": 0.06,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-28T21:42:44.527522+00:00"
+  "provisional_generated_at": "2026-08-31T18:39:13.448212+00:00"
 }

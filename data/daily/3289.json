@@ -2,12 +2,12 @@
   "code": "3289",
   "ticker": "3289.T",
   "name": "東急不動産ホールディングス",
-  "generated_at": "2026-08-28T21:41:36.502034+00:00",
-  "price_date": "2026-08-27",
+  "generated_at": "2026-08-31T18:38:36.301635+00:00",
+  "price_date": "2026-08-28",
   "record": {
-    "current_price": 1338.0,
-    "change_from_signal_month_pct": 0.11,
-    "return_since_gc_pct": 0.11
+    "current_price": 1330.5,
+    "change_from_signal_month_pct": -0.45,
+    "return_since_gc_pct": -0.45
   },
   "daily": [
     {
@@ -191,22 +191,35 @@
       "sma200": 1379.13,
       "rsi14": 59.43,
       "rsi5": 59.73
+    },
+    {
+      "date": "2026-08-28",
+      "open": 1330.0,
+      "high": 1337.0,
+      "low": 1326.0,
+      "close": 1330.5,
+      "volume": 2937700.0,
+      "sma25": 1330.66,
+      "sma75": 1315.05,
+      "sma200": 1379.59,
+      "rsi14": 59.43,
+      "rsi5": 59.73
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-27",
-    "monthly_rsi14": 59.6,
-    "monthly_rsi_ma5": 59.18,
-    "spread": 0.42,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-28",
+    "monthly_rsi14": 59.06,
+    "monthly_rsi_ma5": 59.08,
+    "spread": -0.01,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-28T21:42:44.527522+00:00"
+  "provisional_generated_at": "2026-08-31T18:39:13.448212+00:00"
 }

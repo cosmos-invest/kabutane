@@ -2,12 +2,12 @@
   "code": "6055",
   "ticker": "6055.T",
   "name": "ジャパンマテリアル",
-  "generated_at": "2026-08-28T21:41:36.502034+00:00",
-  "price_date": "2026-08-27",
+  "generated_at": "2026-08-31T18:38:36.301635+00:00",
+  "price_date": "2026-08-28",
   "record": {
-    "current_price": 2215.0,
-    "change_from_signal_month_pct": -2.29,
-    "return_since_gc_pct": 24.58
+    "current_price": 2143.0,
+    "change_from_signal_month_pct": -5.47,
+    "return_since_gc_pct": 20.53
   },
   "daily": [
     {
@@ -191,22 +191,35 @@
       "sma200": 1954.81,
       "rsi14": 53.71,
       "rsi5": 56.07
+    },
+    {
+      "date": "2026-08-28",
+      "open": 2215.0,
+      "high": 2263.0,
+      "low": 2138.0,
+      "close": 2143.0,
+      "volume": 809500.0,
+      "sma25": 2184.6,
+      "sma75": 2279.44,
+      "sma200": 1955.85,
+      "rsi14": 53.71,
+      "rsi5": 56.07
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-27",
-    "monthly_rsi14": 53.47,
-    "monthly_rsi_ma5": 53.47,
-    "spread": 0.0,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-28",
+    "monthly_rsi14": 52.33,
+    "monthly_rsi_ma5": 53.24,
+    "spread": -0.91,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-28T21:42:44.527522+00:00"
+  "provisional_generated_at": "2026-08-31T18:39:13.448212+00:00"
 }

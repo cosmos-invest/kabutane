@@ -2,12 +2,12 @@
   "code": "3064",
   "ticker": "3064.T",
   "name": "ＭｏｎｏｔａＲＯ",
-  "generated_at": "2026-08-28T21:41:36.502034+00:00",
-  "price_date": "2026-08-27",
+  "generated_at": "2026-08-31T18:38:36.301635+00:00",
+  "price_date": "2026-08-28",
   "record": {
-    "current_price": 1872.5,
-    "change_from_signal_month_pct": -6.52,
-    "return_since_gc_pct": -0.87
+    "current_price": 1918.5,
+    "change_from_signal_month_pct": -4.22,
+    "return_since_gc_pct": 1.56
   },
   "daily": [
     {
@@ -191,22 +191,35 @@
       "sma200": 2011.7,
       "rsi14": 42.52,
       "rsi5": 46.13
+    },
+    {
+      "date": "2026-08-28",
+      "open": 1890.0,
+      "high": 1928.5,
+      "low": 1885.5,
+      "close": 1918.5,
+      "volume": 1940800.0,
+      "sma25": 1907.4,
+      "sma75": 1885.66,
+      "sma200": 2010.53,
+      "rsi14": 42.52,
+      "rsi5": 46.13
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-27",
-    "monthly_rsi14": 44.33,
-    "monthly_rsi_ma5": 44.43,
-    "spread": -0.1,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-28",
+    "monthly_rsi14": 45.25,
+    "monthly_rsi_ma5": 44.62,
+    "spread": 0.63,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-28T21:42:44.527522+00:00"
+  "provisional_generated_at": "2026-08-31T18:39:13.448212+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "9946",
   "ticker": "9946.T",
   "name": "ミニストップ",
-  "generated_at": "2026-08-28T21:41:36.502034+00:00",
-  "price_date": "2026-08-27",
+  "generated_at": "2026-08-31T18:38:36.301635+00:00",
+  "price_date": "2026-08-28",
   "record": {
-    "current_price": 1872.0,
-    "change_from_signal_month_pct": -0.11,
-    "return_since_gc_pct": 0.38
+    "current_price": 1817.0,
+    "change_from_signal_month_pct": -3.04,
+    "return_since_gc_pct": -2.57
   },
   "daily": [
     {
@@ -191,6 +191,19 @@
       "sma200": 1925.5,
       "rsi14": 51.8,
       "rsi5": 53.32
+    },
+    {
+      "date": "2026-08-28",
+      "open": 1822.0,
+      "high": 1826.0,
+      "low": 1806.0,
+      "close": 1817.0,
+      "volume": 234400.0,
+      "sma25": 1845.4,
+      "sma75": 1835.39,
+      "sma200": 1924.69,
+      "rsi14": 51.8,
+      "rsi5": 53.32
     }
   ],
   "corporate_events": [
@@ -203,17 +216,17 @@
   ],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-27",
-    "monthly_rsi14": 54.29,
-    "monthly_rsi_ma5": 53.47,
-    "spread": 0.82,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-28",
+    "monthly_rsi14": 50.6,
+    "monthly_rsi_ma5": 52.73,
+    "spread": -2.13,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-28T21:42:44.527522+00:00"
+  "provisional_generated_at": "2026-08-31T18:39:13.448212+00:00"
 }

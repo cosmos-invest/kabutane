@@ -2,12 +2,12 @@
   "code": "7181",
   "ticker": "7181.T",
   "name": "かんぽ生命保険",
-  "generated_at": "2026-08-28T21:41:36.502034+00:00",
-  "price_date": "2026-08-27",
+  "generated_at": "2026-08-31T18:38:36.301635+00:00",
+  "price_date": "2026-08-28",
   "record": {
-    "current_price": 1669.0,
-    "change_from_signal_month_pct": -5.76,
-    "return_since_gc_pct": -5.76
+    "current_price": 1678.0,
+    "change_from_signal_month_pct": -5.25,
+    "return_since_gc_pct": -5.25
   },
   "daily": [
     {
@@ -191,22 +191,35 @@
       "sma200": 1571.81,
       "rsi14": 65.59,
       "rsi5": 70.52
+    },
+    {
+      "date": "2026-08-28",
+      "open": 1663.0,
+      "high": 1695.5,
+      "low": 1661.5,
+      "close": 1678.0,
+      "volume": 2416100.0,
+      "sma25": 1703.0,
+      "sma75": 1598.83,
+      "sma200": 1573.55,
+      "rsi14": 65.59,
+      "rsi5": 70.52
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-27",
-    "monthly_rsi14": 65.05,
-    "monthly_rsi_ma5": 65.13,
-    "spread": -0.08,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-28",
+    "monthly_rsi14": 65.52,
+    "monthly_rsi_ma5": 65.22,
+    "spread": 0.29,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-28T21:42:44.527522+00:00"
+  "provisional_generated_at": "2026-08-31T18:39:13.448212+00:00"
 }
