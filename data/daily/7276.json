@@ -2,12 +2,12 @@
   "code": "7276",
   "ticker": "7276.T",
   "name": "小糸製作所",
-  "generated_at": "2026-08-31T18:38:36.301635+00:00",
-  "price_date": "2026-08-28",
+  "generated_at": "2026-09-01T15:56:28.717521+00:00",
+  "price_date": "2026-08-31",
   "record": {
-    "current_price": 2692.5,
-    "change_from_signal_month_pct": -0.15,
-    "return_since_gc_pct": -0.15
+    "current_price": 2705.5,
+    "change_from_signal_month_pct": 0.33,
+    "return_since_gc_pct": 0.33
   },
   "daily": [
     {
@@ -204,22 +204,35 @@
       "sma200": 2545.69,
       "rsi14": 58.66,
       "rsi5": 59.21
+    },
+    {
+      "date": "2026-08-31",
+      "open": 2682.0,
+      "high": 2718.0,
+      "low": 2681.0,
+      "close": 2705.5,
+      "volume": 934400.0,
+      "sma25": 2674.94,
+      "sma75": 2679.62,
+      "sma200": 2547.66,
+      "rsi14": 58.66,
+      "rsi5": 59.21
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-28",
-    "monthly_rsi14": 58.4,
-    "monthly_rsi_ma5": 58.5,
-    "spread": -0.09,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-31",
+    "monthly_rsi14": 58.71,
+    "monthly_rsi_ma5": 58.56,
+    "spread": 0.15,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-31T18:39:13.448212+00:00"
+  "provisional_generated_at": "2026-09-01T15:57:25.165343+00:00"
 }

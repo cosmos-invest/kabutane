@@ -2,12 +2,12 @@
   "code": "6226",
   "ticker": "6226.T",
   "name": "守谷輸送機工業",
-  "generated_at": "2026-08-31T18:38:36.301635+00:00",
-  "price_date": "2026-08-28",
+  "generated_at": "2026-09-01T15:56:28.717521+00:00",
+  "price_date": "2026-08-31",
   "record": {
-    "current_price": 2233.0,
-    "change_from_signal_month_pct": -4.2,
-    "return_since_gc_pct": -4.2
+    "current_price": 2219.0,
+    "change_from_signal_month_pct": -4.8,
+    "return_since_gc_pct": -4.8
   },
   "daily": [
     {
@@ -204,22 +204,35 @@
       "sma200": 2381.65,
       "rsi14": 55.63,
       "rsi5": 58.53
+    },
+    {
+      "date": "2026-08-31",
+      "open": 2211.0,
+      "high": 2248.0,
+      "low": 2182.0,
+      "close": 2219.0,
+      "volume": 109400.0,
+      "sma25": 2242.32,
+      "sma75": 2275.99,
+      "sma200": 2380.25,
+      "rsi14": 55.63,
+      "rsi5": 58.53
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-28",
-    "monthly_rsi14": 56.53,
-    "monthly_rsi_ma5": 56.41,
-    "spread": 0.12,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-31",
+    "monthly_rsi14": 56.26,
+    "monthly_rsi_ma5": 56.35,
+    "spread": -0.09,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-31T18:39:13.448212+00:00"
+  "provisional_generated_at": "2026-09-01T15:57:25.165343+00:00"
 }

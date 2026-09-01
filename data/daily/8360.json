@@ -2,12 +2,12 @@
   "code": "8360",
   "ticker": "8360.T",
   "name": "山梨中央銀行",
-  "generated_at": "2026-08-31T18:38:36.301635+00:00",
-  "price_date": "2026-08-28",
+  "generated_at": "2026-09-01T15:56:28.717521+00:00",
+  "price_date": "2026-08-31",
   "record": {
-    "current_price": 7410.0,
-    "change_from_signal_month_pct": 15.06,
-    "return_since_gc_pct": 19.9
+    "current_price": 7380.0,
+    "change_from_signal_month_pct": 14.6,
+    "return_since_gc_pct": 19.42
   },
   "daily": [
     {
@@ -204,15 +204,28 @@
       "sma200": 5353.5,
       "rsi14": 84.9,
       "rsi5": 87.36
+    },
+    {
+      "date": "2026-08-31",
+      "open": 7360.0,
+      "high": 7500.0,
+      "low": 7260.0,
+      "close": 7380.0,
+      "volume": 171800.0,
+      "sma25": 7075.6,
+      "sma75": 6476.0,
+      "sma200": 5373.7,
+      "rsi14": 84.9,
+      "rsi5": 87.36
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-28",
-    "monthly_rsi14": 89.78,
-    "monthly_rsi_ma5": 86.17,
-    "spread": 3.61,
+    "price_date": "2026-08-31",
+    "monthly_rsi14": 89.72,
+    "monthly_rsi_ma5": 86.16,
+    "spread": 3.56,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -221,5 +234,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-31T18:39:13.448212+00:00"
+  "provisional_generated_at": "2026-09-01T15:57:25.165343+00:00"
 }

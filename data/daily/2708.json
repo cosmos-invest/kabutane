@@ -2,12 +2,12 @@
   "code": "2708",
   "ticker": "2708.T",
   "name": "久世",
-  "generated_at": "2026-08-31T18:38:36.301635+00:00",
-  "price_date": "2026-08-28",
+  "generated_at": "2026-09-01T15:56:28.717521+00:00",
+  "price_date": "2026-08-31",
   "record": {
-    "current_price": 1938.0,
-    "change_from_signal_month_pct": -3.58,
-    "return_since_gc_pct": -3.58
+    "current_price": 1910.0,
+    "change_from_signal_month_pct": -4.98,
+    "return_since_gc_pct": -4.98
   },
   "daily": [
     {
@@ -204,22 +204,35 @@
       "sma200": 2015.2,
       "rsi14": 53.44,
       "rsi5": 55.64
+    },
+    {
+      "date": "2026-08-31",
+      "open": 1950.0,
+      "high": 1950.0,
+      "low": 1910.0,
+      "close": 1910.0,
+      "volume": 1700.0,
+      "sma25": 1955.24,
+      "sma75": 1914.8,
+      "sma200": 2015.2,
+      "rsi14": 53.44,
+      "rsi5": 55.64
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-28",
-    "monthly_rsi14": 51.62,
-    "monthly_rsi_ma5": 51.56,
-    "spread": 0.06,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-08-31",
+    "monthly_rsi14": 50.74,
+    "monthly_rsi_ma5": 51.39,
+    "spread": -0.64,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-31T18:39:13.448212+00:00"
+  "provisional_generated_at": "2026-09-01T15:57:25.165343+00:00"
 }

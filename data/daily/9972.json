@@ -2,12 +2,12 @@
   "code": "9972",
   "ticker": "9972.T",
   "name": "アルテック",
-  "generated_at": "2026-08-31T18:38:36.301635+00:00",
-  "price_date": "2026-08-28",
+  "generated_at": "2026-09-01T15:56:28.717521+00:00",
+  "price_date": "2026-08-31",
   "record": {
-    "current_price": 281.0,
-    "change_from_signal_month_pct": 1.08,
-    "return_since_gc_pct": 1.08
+    "current_price": 280.0,
+    "change_from_signal_month_pct": 0.72,
+    "return_since_gc_pct": 0.72
   },
   "daily": [
     {
@@ -204,15 +204,28 @@
       "sma200": 276.47,
       "rsi14": 52.2,
       "rsi5": 54.3
+    },
+    {
+      "date": "2026-08-31",
+      "open": 282.0,
+      "high": 282.0,
+      "low": 280.0,
+      "close": 280.0,
+      "volume": 2400.0,
+      "sma25": 277.88,
+      "sma75": 272.36,
+      "sma200": 276.45,
+      "rsi14": 52.2,
+      "rsi5": 54.3
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-28",
-    "monthly_rsi14": 55.8,
-    "monthly_rsi_ma5": 53.62,
-    "spread": 2.17,
+    "price_date": "2026-08-31",
+    "monthly_rsi14": 55.56,
+    "monthly_rsi_ma5": 53.58,
+    "spread": 1.99,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -221,5 +234,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-31T18:39:13.448212+00:00"
+  "provisional_generated_at": "2026-09-01T15:57:25.165343+00:00"
 }

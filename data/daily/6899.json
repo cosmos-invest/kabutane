@@ -2,12 +2,12 @@
   "code": "6899",
   "ticker": "6899.T",
   "name": "ＡＳＴＩ",
-  "generated_at": "2026-08-31T18:38:36.301635+00:00",
-  "price_date": "2026-08-28",
+  "generated_at": "2026-09-01T15:56:28.717521+00:00",
+  "price_date": "2026-08-31",
   "record": {
-    "current_price": 2300.0,
-    "change_from_signal_month_pct": -2.62,
-    "return_since_gc_pct": -2.62
+    "current_price": 2402.0,
+    "change_from_signal_month_pct": 1.69,
+    "return_since_gc_pct": 1.69
   },
   "daily": [
     {
@@ -204,22 +204,35 @@
       "sma200": 2390.36,
       "rsi14": 48.97,
       "rsi5": 50.03
+    },
+    {
+      "date": "2026-08-31",
+      "open": 2339.0,
+      "high": 2402.0,
+      "low": 2339.0,
+      "close": 2402.0,
+      "volume": 11400.0,
+      "sma25": 2329.0,
+      "sma75": 2300.48,
+      "sma200": 2391.91,
+      "rsi14": 48.97,
+      "rsi5": 50.03
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-28",
-    "monthly_rsi14": 46.3,
-    "monthly_rsi_ma5": 46.74,
-    "spread": -0.44,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-31",
+    "monthly_rsi14": 48.85,
+    "monthly_rsi_ma5": 47.25,
+    "spread": 1.6,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-31T18:39:13.448212+00:00"
+  "provisional_generated_at": "2026-09-01T15:57:25.165343+00:00"
 }

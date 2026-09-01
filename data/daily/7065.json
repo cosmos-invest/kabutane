@@ -2,12 +2,12 @@
   "code": "7065",
   "ticker": "7065.T",
   "name": "ユーピーアール",
-  "generated_at": "2026-08-31T18:38:36.301635+00:00",
-  "price_date": "2026-08-28",
+  "generated_at": "2026-09-01T15:56:28.717521+00:00",
+  "price_date": "2026-08-31",
   "record": {
-    "current_price": 985.0,
-    "change_from_signal_month_pct": -2.28,
-    "return_since_gc_pct": 17.4
+    "current_price": 998.0,
+    "change_from_signal_month_pct": -0.99,
+    "return_since_gc_pct": 18.95
   },
   "daily": [
     {
@@ -204,6 +204,19 @@
       "sma200": 935.74,
       "rsi14": 47.42,
       "rsi5": 48.57
+    },
+    {
+      "date": "2026-08-31",
+      "open": 981.0,
+      "high": 1001.0,
+      "low": 981.0,
+      "close": 998.0,
+      "volume": 18900.0,
+      "sma25": 1006.96,
+      "sma75": 995.59,
+      "sma200": 937.21,
+      "rsi14": 47.42,
+      "rsi5": 48.57
     }
   ],
   "corporate_events": [
@@ -216,17 +229,17 @@
   ],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-28",
-    "monthly_rsi14": 40.42,
-    "monthly_rsi_ma5": 40.69,
-    "spread": -0.27,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-08-31",
+    "monthly_rsi14": 40.9,
+    "monthly_rsi_ma5": 40.79,
+    "spread": 0.11,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-31T18:39:13.448212+00:00"
+  "provisional_generated_at": "2026-09-01T15:57:25.165343+00:00"
 }

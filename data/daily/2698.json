@@ -2,12 +2,12 @@
   "code": "2698",
   "ticker": "2698.T",
   "name": "キャンドゥ",
-  "generated_at": "2026-08-31T18:38:36.301635+00:00",
-  "price_date": "2026-08-28",
+  "generated_at": "2026-09-01T15:56:28.717521+00:00",
+  "price_date": "2026-08-31",
   "record": {
-    "current_price": 3490.0,
-    "change_from_signal_month_pct": -3.19,
-    "return_since_gc_pct": 0.58
+    "current_price": 3420.0,
+    "change_from_signal_month_pct": -5.13,
+    "return_since_gc_pct": -1.44
   },
   "daily": [
     {
@@ -204,6 +204,19 @@
       "sma200": 3401.25,
       "rsi14": 52.09,
       "rsi5": 58.77
+    },
+    {
+      "date": "2026-08-31",
+      "open": 3485.0,
+      "high": 3490.0,
+      "low": 3420.0,
+      "close": 3420.0,
+      "volume": 16200.0,
+      "sma25": 3607.4,
+      "sma75": 3437.33,
+      "sma200": 3401.18,
+      "rsi14": 52.09,
+      "rsi5": 58.77
     }
   ],
   "corporate_events": [
@@ -216,10 +229,10 @@
   ],
   "provisional_signal": {
     "month": "2026-08",
-    "price_date": "2026-08-28",
-    "monthly_rsi14": 55.12,
-    "monthly_rsi_ma5": 53.19,
-    "spread": 1.93,
+    "price_date": "2026-08-31",
+    "monthly_rsi14": 53.08,
+    "monthly_rsi_ma5": 52.78,
+    "spread": 0.3,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -228,5 +241,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-08-31T18:39:13.448212+00:00"
+  "provisional_generated_at": "2026-09-01T15:57:25.165343+00:00"
 }
