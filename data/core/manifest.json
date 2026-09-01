@@ -1,18 +1,18 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-08-27T21:39:59.596772+00:00",
+  "generated_at": "2026-09-01T16:01:10.091770+00:00",
   "scope": "TSE domestic common stocks: Prime, Standard, Growth",
   "core_count": 3706,
   "daily_coverage": 3706,
-  "monthly_coverage": 3602,
+  "monthly_coverage": 3618,
   "fundamentals_coverage": 3706,
   "chart_base_generated_at": "2026-08-19T16:11:38.490493+00:00",
   "chart_period": "1y",
   "overlay_days": 25,
   "shard_rule": "first two characters of security code",
   "bytes": {
-    "radar": 2918572,
-    "daily_overlay": 7274325,
+    "radar": 2926353,
+    "daily_overlay": 7114217,
     "fundamentals": 3515138,
     "chart_base": 53325235
   },
@@ -22,7 +22,7 @@
     "fundamentals": 0
   },
   "dividend_history_schema_version": 5,
-  "dividend_history_coverage": 2948,
+  "dividend_history_coverage": 2952,
   "dividend_history_basis": "fiscal_year_ex_date_with_calendar_fallback",
   "dividend_history_event_source": "Yahoo Finance corporate actions via yfinance",
   "dividend_history_transport_interval": "1mo",
@@ -36,11 +36,11 @@
   "dividend_history_download_errors": 0,
   "dividend_history_fallback_count": 0,
   "dividend_verified_streak_count": 15,
-  "dividend_streak_lower_bound_count": 405,
-  "dividend_history_gap_record_count": 2708,
-  "dividend_history_unknown_year_count": 18518,
-  "dividend_partial_event_record_count": 1562,
-  "dividend_partial_event_period_count": 6372,
+  "dividend_streak_lower_bound_count": 410,
+  "dividend_history_gap_record_count": 2709,
+  "dividend_history_unknown_year_count": 18552,
+  "dividend_partial_event_record_count": 1563,
+  "dividend_partial_event_period_count": 6378,
   "dividend_streak_review_required_count": 0,
   "dividend_streak_extended_anchor_count": 2
 }
