@@ -2,12 +2,12 @@
   "code": "4287",
   "ticker": "4287.T",
   "name": "ジャストプランニング",
-  "generated_at": "2026-09-01T15:56:28.717521+00:00",
-  "price_date": "2026-08-31",
+  "generated_at": "2026-09-02T15:50:18.381761+00:00",
+  "price_date": "2026-09-01",
   "record": {
-    "current_price": 497.0,
-    "change_from_signal_month_pct": 3.11,
-    "return_since_gc_pct": 3.11
+    "current_price": 487.0,
+    "change_from_signal_month_pct": 1.04,
+    "return_since_gc_pct": 1.04
   },
   "daily": [
     {
@@ -217,22 +217,35 @@
       "sma200": 473.07,
       "rsi14": 59.23,
       "rsi5": 59.57
+    },
+    {
+      "date": "2026-09-01",
+      "open": 494.0,
+      "high": 494.0,
+      "low": 481.0,
+      "close": 487.0,
+      "volume": 5300.0,
+      "sma25": 489.96,
+      "sma75": 472.37,
+      "sma200": 473.43,
+      "rsi14": 59.23,
+      "rsi5": 59.57
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-08",
-    "price_date": "2026-08-31",
-    "monthly_rsi14": 63.25,
-    "monthly_rsi_ma5": 61.16,
-    "spread": 2.08,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "month": "2026-09",
+    "price_date": "2026-09-01",
+    "monthly_rsi14": 60.92,
+    "monthly_rsi_ma5": 60.92,
+    "spread": -0.01,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-01T15:57:25.165343+00:00"
+  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
 }

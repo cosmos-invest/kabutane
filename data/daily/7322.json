@@ -2,12 +2,12 @@
   "code": "7322",
   "ticker": "7322.T",
   "name": "三十三フィナンシャルグループ",
-  "generated_at": "2026-09-01T15:56:28.717521+00:00",
-  "price_date": "2026-08-31",
+  "generated_at": "2026-09-02T15:50:18.381761+00:00",
+  "price_date": "2026-09-01",
   "record": {
-    "current_price": 2253.0,
-    "change_from_signal_month_pct": 17.96,
-    "return_since_gc_pct": 17.96
+    "current_price": 2132.0,
+    "change_from_signal_month_pct": 11.62,
+    "return_since_gc_pct": 11.62
   },
   "daily": [
     {
@@ -217,22 +217,35 @@
       "sma200": 1510.08,
       "rsi14": 83.51,
       "rsi5": 86.86
+    },
+    {
+      "date": "2026-09-01",
+      "open": 2213.0,
+      "high": 2225.0,
+      "low": 2116.0,
+      "close": 2132.0,
+      "volume": 707100.0,
+      "sma25": 1985.24,
+      "sma75": 1824.96,
+      "sma200": 1516.18,
+      "rsi14": 83.51,
+      "rsi5": 86.86
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-08",
-    "price_date": "2026-08-31",
-    "monthly_rsi14": 89.83,
-    "monthly_rsi_ma5": 85.38,
-    "spread": 4.45,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "month": "2026-09",
+    "price_date": "2026-09-01",
+    "monthly_rsi14": 82.68,
+    "monthly_rsi_ma5": 85.29,
+    "spread": -2.61,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-01T15:57:25.165343+00:00"
+  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
 }

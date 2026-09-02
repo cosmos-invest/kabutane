@@ -2,12 +2,12 @@
   "code": "3388",
   "ticker": "3388.T",
   "name": "明治電機工業",
-  "generated_at": "2026-09-01T15:56:28.717521+00:00",
-  "price_date": "2026-08-31",
+  "generated_at": "2026-09-02T15:50:18.381761+00:00",
+  "price_date": "2026-09-01",
   "record": {
-    "current_price": 2150.0,
-    "change_from_signal_month_pct": -2.36,
-    "return_since_gc_pct": -2.36
+    "current_price": 2161.0,
+    "change_from_signal_month_pct": -1.86,
+    "return_since_gc_pct": -1.86
   },
   "daily": [
     {
@@ -217,22 +217,35 @@
       "sma200": 2232.06,
       "rsi14": 57.72,
       "rsi5": 60.84
+    },
+    {
+      "date": "2026-09-01",
+      "open": 2159.0,
+      "high": 2172.0,
+      "low": 2149.0,
+      "close": 2161.0,
+      "volume": 35700.0,
+      "sma25": 2120.88,
+      "sma75": 2127.09,
+      "sma200": 2231.7,
+      "rsi14": 57.72,
+      "rsi5": 60.84
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-08",
-    "price_date": "2026-08-31",
-    "monthly_rsi14": 57.74,
-    "monthly_rsi_ma5": 57.64,
-    "spread": 0.11,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "month": "2026-09",
+    "price_date": "2026-09-01",
+    "monthly_rsi14": 58.12,
+    "monthly_rsi_ma5": 58.18,
+    "spread": -0.06,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-01T15:57:25.165343+00:00"
+  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
 }

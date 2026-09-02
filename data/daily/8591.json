@@ -2,12 +2,12 @@
   "code": "8591",
   "ticker": "8591.T",
   "name": "オリックス",
-  "generated_at": "2026-09-01T15:56:28.717521+00:00",
-  "price_date": "2026-08-31",
+  "generated_at": "2026-09-02T15:50:18.381761+00:00",
+  "price_date": "2026-09-01",
   "record": {
-    "current_price": 6284.0,
-    "change_from_signal_month_pct": -1.97,
-    "return_since_gc_pct": 0.75
+    "current_price": 6361.0,
+    "change_from_signal_month_pct": -0.76,
+    "return_since_gc_pct": 1.99
   },
   "daily": [
     {
@@ -217,15 +217,28 @@
       "sma200": 5326.47,
       "rsi14": 70.96,
       "rsi5": 74.93
+    },
+    {
+      "date": "2026-09-01",
+      "open": 6318.0,
+      "high": 6423.0,
+      "low": 6254.0,
+      "close": 6361.0,
+      "volume": 2831900.0,
+      "sma25": 6315.72,
+      "sma75": 6295.79,
+      "sma200": 5339.39,
+      "rsi14": 70.96,
+      "rsi5": 74.93
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-08",
-    "price_date": "2026-08-31",
-    "monthly_rsi14": 73.12,
-    "monthly_rsi_ma5": 73.32,
-    "spread": -0.2,
+    "month": "2026-09",
+    "price_date": "2026-09-01",
+    "monthly_rsi14": 73.62,
+    "monthly_rsi_ma5": 74.21,
+    "spread": -0.59,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -234,5 +247,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-01T15:57:25.165343+00:00"
+  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "6859",
   "ticker": "6859.T",
   "name": "エスペック",
-  "generated_at": "2026-09-01T15:56:28.717521+00:00",
-  "price_date": "2026-08-31",
+  "generated_at": "2026-09-02T15:50:18.381761+00:00",
+  "price_date": "2026-09-01",
   "record": {
-    "current_price": 4000.0,
-    "change_from_signal_month_pct": 2.83,
-    "return_since_gc_pct": 0.88
+    "current_price": 3925.0,
+    "change_from_signal_month_pct": 0.9,
+    "return_since_gc_pct": -1.01
   },
   "daily": [
     {
@@ -217,15 +217,28 @@
       "sma200": 3655.95,
       "rsi14": 59.24,
       "rsi5": 60.21
+    },
+    {
+      "date": "2026-09-01",
+      "open": 3930.0,
+      "high": 3990.0,
+      "low": 3915.0,
+      "close": 3925.0,
+      "volume": 49600.0,
+      "sma25": 4010.6,
+      "sma75": 4056.2,
+      "sma200": 3658.51,
+      "rsi14": 59.24,
+      "rsi5": 60.21
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-08",
-    "price_date": "2026-08-31",
-    "monthly_rsi14": 61.75,
-    "monthly_rsi_ma5": 61.84,
-    "spread": -0.09,
+    "month": "2026-09",
+    "price_date": "2026-09-01",
+    "monthly_rsi14": 60.39,
+    "monthly_rsi_ma5": 62.64,
+    "spread": -2.26,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -234,5 +247,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-01T15:57:25.165343+00:00"
+  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
 }

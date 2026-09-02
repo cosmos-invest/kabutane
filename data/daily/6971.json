@@ -2,12 +2,12 @@
   "code": "6971",
   "ticker": "6971.T",
   "name": "京セラ",
-  "generated_at": "2026-09-01T15:56:28.717521+00:00",
-  "price_date": "2026-08-31",
+  "generated_at": "2026-09-02T15:50:18.381761+00:00",
+  "price_date": "2026-09-01",
   "record": {
-    "current_price": 3657.0,
-    "change_from_signal_month_pct": -0.92,
-    "return_since_gc_pct": 5.0
+    "current_price": 3648.0,
+    "change_from_signal_month_pct": -1.16,
+    "return_since_gc_pct": 4.74
   },
   "daily": [
     {
@@ -217,22 +217,35 @@
       "sma200": 2856.82,
       "rsi14": 73.81,
       "rsi5": 80.21
+    },
+    {
+      "date": "2026-09-01",
+      "open": 3602.0,
+      "high": 3704.0,
+      "low": 3600.0,
+      "close": 3648.0,
+      "volume": 3690200.0,
+      "sma25": 3701.48,
+      "sma75": 3606.3,
+      "sma200": 2865.04,
+      "rsi14": 73.81,
+      "rsi5": 80.21
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-08",
-    "price_date": "2026-08-31",
-    "monthly_rsi14": 78.66,
-    "monthly_rsi_ma5": 76.76,
-    "spread": 1.89,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "month": "2026-09",
+    "price_date": "2026-09-01",
+    "monthly_rsi14": 78.33,
+    "monthly_rsi_ma5": 78.71,
+    "spread": -0.38,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-01T15:57:25.165343+00:00"
+  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
 }

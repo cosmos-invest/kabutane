@@ -2,12 +2,12 @@
   "code": "1948",
   "ticker": "1948.T",
   "name": "弘電社",
-  "generated_at": "2026-09-01T15:56:28.717521+00:00",
-  "price_date": "2026-08-31",
+  "generated_at": "2026-09-02T15:50:18.381761+00:00",
+  "price_date": "2026-09-01",
   "record": {
-    "current_price": 11430.0,
-    "change_from_signal_month_pct": 0.26,
-    "return_since_gc_pct": -0.26
+    "current_price": 11420.0,
+    "change_from_signal_month_pct": 0.18,
+    "return_since_gc_pct": -0.35
   },
   "daily": [
     {
@@ -217,22 +217,35 @@
       "sma200": 7569.79,
       "rsi14": 88.6,
       "rsi5": 91.25
+    },
+    {
+      "date": "2026-09-01",
+      "open": 11420.0,
+      "high": 11430.0,
+      "low": 11420.0,
+      "close": 11420.0,
+      "volume": 2100.0,
+      "sma25": 11414.8,
+      "sma75": 11036.13,
+      "sma200": 7613.39,
+      "rsi14": 88.6,
+      "rsi5": 91.25
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-08",
-    "price_date": "2026-08-31",
-    "monthly_rsi14": 91.34,
-    "monthly_rsi_ma5": 90.34,
-    "spread": 1.0,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "month": "2026-09",
+    "price_date": "2026-09-01",
+    "monthly_rsi14": 91.21,
+    "monthly_rsi_ma5": 91.68,
+    "spread": -0.46,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-01T15:57:25.165343+00:00"
+  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "7722",
   "ticker": "7722.T",
   "name": "国際計測器",
-  "generated_at": "2026-09-01T15:56:28.717521+00:00",
-  "price_date": "2026-08-31",
+  "generated_at": "2026-09-02T15:50:18.381761+00:00",
+  "price_date": "2026-09-01",
   "record": {
-    "current_price": 785.0,
-    "change_from_signal_month_pct": -2.48,
-    "return_since_gc_pct": -2.48
+    "current_price": 796.0,
+    "change_from_signal_month_pct": -1.12,
+    "return_since_gc_pct": -1.12
   },
   "daily": [
     {
@@ -217,22 +217,35 @@
       "sma200": 840.66,
       "rsi14": 58.86,
       "rsi5": 59.28
+    },
+    {
+      "date": "2026-09-01",
+      "open": 785.0,
+      "high": 796.0,
+      "low": 785.0,
+      "close": 796.0,
+      "volume": 17300.0,
+      "sma25": 790.36,
+      "sma75": 776.29,
+      "sma200": 841.22,
+      "rsi14": 58.86,
+      "rsi5": 59.28
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-08",
-    "price_date": "2026-08-31",
-    "monthly_rsi14": 57.45,
-    "monthly_rsi_ma5": 58.64,
-    "spread": -1.18,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "month": "2026-09",
+    "price_date": "2026-09-01",
+    "monthly_rsi14": 58.34,
+    "monthly_rsi_ma5": 58.21,
+    "spread": 0.13,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-01T15:57:25.165343+00:00"
+  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
 }

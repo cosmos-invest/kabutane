@@ -2,12 +2,12 @@
   "code": "3179",
   "ticker": "3179.T",
   "name": "シュッピン",
-  "generated_at": "2026-09-01T15:56:28.717521+00:00",
-  "price_date": "2026-08-31",
+  "generated_at": "2026-09-02T15:50:18.381761+00:00",
+  "price_date": "2026-09-01",
   "record": {
-    "current_price": 1200.0,
-    "change_from_signal_month_pct": -11.44,
-    "return_since_gc_pct": -11.44
+    "current_price": 1207.0,
+    "change_from_signal_month_pct": -10.92,
+    "return_since_gc_pct": -10.92
   },
   "daily": [
     {
@@ -217,15 +217,28 @@
       "sma200": 1174.58,
       "rsi14": 48.42,
       "rsi5": 57.44
+    },
+    {
+      "date": "2026-09-01",
+      "open": 1190.0,
+      "high": 1221.0,
+      "low": 1190.0,
+      "close": 1207.0,
+      "volume": 68400.0,
+      "sma25": 1272.92,
+      "sma75": 1150.81,
+      "sma200": 1174.29,
+      "rsi14": 48.42,
+      "rsi5": 57.44
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-08",
-    "price_date": "2026-08-31",
-    "monthly_rsi14": 51.46,
-    "monthly_rsi_ma5": 49.93,
-    "spread": 1.53,
+    "month": "2026-09",
+    "price_date": "2026-09-01",
+    "monthly_rsi14": 51.73,
+    "monthly_rsi_ma5": 50.82,
+    "spread": 0.91,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -234,5 +247,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-01T15:57:25.165343+00:00"
+  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "8388",
   "ticker": "8388.T",
   "name": "阿波銀行",
-  "generated_at": "2026-09-01T15:56:28.717521+00:00",
-  "price_date": "2026-08-31",
+  "generated_at": "2026-09-02T15:50:18.381761+00:00",
+  "price_date": "2026-09-01",
   "record": {
-    "current_price": 10020.0,
-    "change_from_signal_month_pct": 20.14,
-    "return_since_gc_pct": 58.04
+    "current_price": 9770.0,
+    "change_from_signal_month_pct": 17.15,
+    "return_since_gc_pct": 54.1
   },
   "daily": [
     {
@@ -217,22 +217,35 @@
       "sma200": 6175.82,
       "rsi14": 86.0,
       "rsi5": 90.3
+    },
+    {
+      "date": "2026-09-01",
+      "open": 9920.0,
+      "high": 10000.0,
+      "low": 9630.0,
+      "close": 9770.0,
+      "volume": 150500.0,
+      "sma25": 9080.0,
+      "sma75": 7835.2,
+      "sma200": 6206.25,
+      "rsi14": 86.0,
+      "rsi5": 90.3
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-08",
-    "price_date": "2026-08-31",
-    "monthly_rsi14": 93.01,
-    "monthly_rsi_ma5": 88.57,
-    "spread": 4.45,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "month": "2026-09",
+    "price_date": "2026-09-01",
+    "monthly_rsi14": 89.29,
+    "monthly_rsi_ma5": 89.43,
+    "spread": -0.14,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-01T15:57:25.165343+00:00"
+  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
 }

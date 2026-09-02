@@ -2,12 +2,12 @@
   "code": "2685",
   "ticker": "2685.T",
   "name": "アンドエスティＨＤ",
-  "generated_at": "2026-09-01T15:56:28.717521+00:00",
-  "price_date": "2026-08-31",
+  "generated_at": "2026-09-02T15:50:18.381761+00:00",
+  "price_date": "2026-09-01",
   "record": {
-    "current_price": 3380.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 12.82
+    "current_price": 3365.0,
+    "change_from_signal_month_pct": -0.44,
+    "return_since_gc_pct": 12.32
   },
   "daily": [
     {
@@ -217,6 +217,19 @@
       "sma200": 3099.4,
       "rsi14": 54.48,
       "rsi5": 57.5
+    },
+    {
+      "date": "2026-09-01",
+      "open": 3390.0,
+      "high": 3430.0,
+      "low": 3350.0,
+      "close": 3365.0,
+      "volume": 227900.0,
+      "sma25": 3463.6,
+      "sma75": 3406.87,
+      "sma200": 3102.91,
+      "rsi14": 54.48,
+      "rsi5": 57.5
     }
   ],
   "corporate_events": [
@@ -228,18 +241,18 @@
     }
   ],
   "provisional_signal": {
-    "month": "2026-08",
-    "price_date": "2026-08-31",
-    "monthly_rsi14": 57.69,
-    "monthly_rsi_ma5": 56.45,
-    "spread": 1.24,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "month": "2026-09",
+    "price_date": "2026-09-01",
+    "monthly_rsi14": 57.27,
+    "monthly_rsi_ma5": 57.74,
+    "spread": -0.47,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-01T15:57:25.165343+00:00"
+  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
 }

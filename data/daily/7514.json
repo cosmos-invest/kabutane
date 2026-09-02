@@ -2,12 +2,12 @@
   "code": "7514",
   "ticker": "7514.T",
   "name": "ヒマラヤ",
-  "generated_at": "2026-09-01T15:56:28.717521+00:00",
-  "price_date": "2026-08-31",
+  "generated_at": "2026-09-02T15:50:18.381761+00:00",
+  "price_date": "2026-09-01",
   "record": {
-    "current_price": 851.0,
-    "change_from_signal_month_pct": -3.08,
-    "return_since_gc_pct": -0.58
+    "current_price": 855.0,
+    "change_from_signal_month_pct": -2.62,
+    "return_since_gc_pct": -0.12
   },
   "daily": [
     {
@@ -217,6 +217,19 @@
       "sma200": 859.21,
       "rsi14": 45.62,
       "rsi5": 52.74
+    },
+    {
+      "date": "2026-09-01",
+      "open": 853.0,
+      "high": 858.0,
+      "low": 853.0,
+      "close": 855.0,
+      "volume": 12000.0,
+      "sma25": 875.84,
+      "sma75": 863.33,
+      "sma200": 859.25,
+      "rsi14": 45.62,
+      "rsi5": 52.74
     }
   ],
   "corporate_events": [
@@ -228,18 +241,18 @@
     }
   ],
   "provisional_signal": {
-    "month": "2026-08",
-    "price_date": "2026-08-31",
-    "monthly_rsi14": 43.42,
-    "monthly_rsi_ma5": 43.92,
-    "spread": -0.5,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "month": "2026-09",
+    "price_date": "2026-09-01",
+    "monthly_rsi14": 44.88,
+    "monthly_rsi_ma5": 44.78,
+    "spread": 0.1,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-01T15:57:25.165343+00:00"
+  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
 }

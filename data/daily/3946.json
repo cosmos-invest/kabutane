@@ -2,12 +2,12 @@
   "code": "3946",
   "ticker": "3946.T",
   "name": "トーモク",
-  "generated_at": "2026-09-01T15:56:28.717521+00:00",
-  "price_date": "2026-08-31",
+  "generated_at": "2026-09-02T15:50:18.381761+00:00",
+  "price_date": "2026-09-01",
   "record": {
-    "current_price": 4455.0,
-    "change_from_signal_month_pct": -1.33,
-    "return_since_gc_pct": -1.33
+    "current_price": 4520.0,
+    "change_from_signal_month_pct": 0.11,
+    "return_since_gc_pct": 0.11
   },
   "daily": [
     {
@@ -217,15 +217,28 @@
       "sma200": 3738.05,
       "rsi14": 69.43,
       "rsi5": 76.47
+    },
+    {
+      "date": "2026-09-01",
+      "open": 4420.0,
+      "high": 4520.0,
+      "low": 4390.0,
+      "close": 4520.0,
+      "volume": 81100.0,
+      "sma25": 4599.6,
+      "sma75": 4180.6,
+      "sma200": 3744.25,
+      "rsi14": 69.43,
+      "rsi5": 76.47
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-08",
-    "price_date": "2026-08-31",
-    "monthly_rsi14": 73.93,
-    "monthly_rsi_ma5": 70.82,
-    "spread": 3.11,
+    "month": "2026-09",
+    "price_date": "2026-09-01",
+    "monthly_rsi14": 74.6,
+    "monthly_rsi_ma5": 72.81,
+    "spread": 1.78,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -234,5 +247,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-01T15:57:25.165343+00:00"
+  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
 }

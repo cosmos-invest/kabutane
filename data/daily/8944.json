@@ -2,12 +2,12 @@
   "code": "8944",
   "ticker": "8944.T",
   "name": "ランドビジネス",
-  "generated_at": "2026-09-01T15:56:28.717521+00:00",
-  "price_date": "2026-08-31",
+  "generated_at": "2026-09-02T15:50:18.381761+00:00",
+  "price_date": "2026-09-01",
   "record": {
-    "current_price": 244.0,
-    "change_from_signal_month_pct": -0.41,
-    "return_since_gc_pct": -0.41
+    "current_price": 242.0,
+    "change_from_signal_month_pct": -1.22,
+    "return_since_gc_pct": -1.22
   },
   "daily": [
     {
@@ -217,22 +217,35 @@
       "sma200": 246.69,
       "rsi14": 51.09,
       "rsi5": 51.69
+    },
+    {
+      "date": "2026-09-01",
+      "open": 244.0,
+      "high": 244.0,
+      "low": 241.0,
+      "close": 242.0,
+      "volume": 13900.0,
+      "sma25": 244.24,
+      "sma75": 246.11,
+      "sma200": 246.75,
+      "rsi14": 51.09,
+      "rsi5": 51.69
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-08",
-    "price_date": "2026-08-31",
-    "monthly_rsi14": 50.07,
-    "monthly_rsi_ma5": 50.05,
-    "spread": 0.02,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "month": "2026-09",
+    "price_date": "2026-09-01",
+    "monthly_rsi14": 49.58,
+    "monthly_rsi_ma5": 50.18,
+    "spread": -0.6,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-01T15:57:25.165343+00:00"
+  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
 }

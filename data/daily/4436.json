@@ -2,12 +2,12 @@
   "code": "4436",
   "ticker": "4436.T",
   "name": "ミンカブ・ジ・インフォノイド",
-  "generated_at": "2026-09-01T15:56:28.717521+00:00",
-  "price_date": "2026-08-31",
+  "generated_at": "2026-09-02T15:50:18.381761+00:00",
+  "price_date": "2026-09-01",
   "record": {
-    "current_price": 421.0,
-    "change_from_signal_month_pct": -7.27,
-    "return_since_gc_pct": -12.11
+    "current_price": 420.0,
+    "change_from_signal_month_pct": -7.49,
+    "return_since_gc_pct": -12.32
   },
   "daily": [
     {
@@ -217,22 +217,35 @@
       "sma200": 443.43,
       "rsi14": 32.15,
       "rsi5": 34.65
+    },
+    {
+      "date": "2026-09-01",
+      "open": 422.0,
+      "high": 422.0,
+      "low": 417.0,
+      "close": 420.0,
+      "volume": 34100.0,
+      "sma25": 438.08,
+      "sma75": 443.29,
+      "sma200": 443.16,
+      "rsi14": 32.15,
+      "rsi5": 34.65
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-08",
-    "price_date": "2026-08-31",
-    "monthly_rsi14": 31.55,
-    "monthly_rsi_ma5": 30.92,
-    "spread": 0.63,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "month": "2026-09",
+    "price_date": "2026-09-01",
+    "monthly_rsi14": 31.5,
+    "monthly_rsi_ma5": 31.78,
+    "spread": -0.28,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-01T15:57:25.165343+00:00"
+  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
 }

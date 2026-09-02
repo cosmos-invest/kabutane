@@ -2,12 +2,12 @@
   "code": "5408",
   "ticker": "5408.T",
   "name": "中山製鋼所",
-  "generated_at": "2026-09-01T15:56:28.717521+00:00",
-  "price_date": "2026-08-31",
+  "generated_at": "2026-09-02T15:50:18.381761+00:00",
+  "price_date": "2026-09-01",
   "record": {
-    "current_price": 635.0,
-    "change_from_signal_month_pct": -3.35,
-    "return_since_gc_pct": -3.35
+    "current_price": 658.0,
+    "change_from_signal_month_pct": 0.15,
+    "return_since_gc_pct": 0.15
   },
   "daily": [
     {
@@ -217,15 +217,28 @@
       "sma200": 621.02,
       "rsi14": 42.36,
       "rsi5": 47.54
+    },
+    {
+      "date": "2026-09-01",
+      "open": 635.0,
+      "high": 659.0,
+      "low": 633.0,
+      "close": 658.0,
+      "volume": 294300.0,
+      "sma25": 644.36,
+      "sma75": 632.93,
+      "sma200": 621.54,
+      "rsi14": 42.36,
+      "rsi5": 47.54
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-08",
-    "price_date": "2026-08-31",
-    "monthly_rsi14": 42.75,
-    "monthly_rsi_ma5": 40.04,
-    "spread": 2.71,
+    "month": "2026-09",
+    "price_date": "2026-09-01",
+    "monthly_rsi14": 45.68,
+    "monthly_rsi_ma5": 42.57,
+    "spread": 3.11,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -234,5 +247,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-01T15:57:25.165343+00:00"
+  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
 }

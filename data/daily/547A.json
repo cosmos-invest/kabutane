@@ -2,12 +2,12 @@
   "code": "547A",
   "ticker": "547A.T",
   "name": "ムニノバホールディングス",
-  "generated_at": "2026-09-01T15:56:28.717521+00:00",
-  "price_date": "2026-08-31",
+  "generated_at": "2026-09-02T15:50:18.381761+00:00",
+  "price_date": "2026-09-01",
   "record": {
-    "current_price": 445.0,
-    "change_from_signal_month_pct": -0.67,
-    "return_since_gc_pct": -0.67
+    "current_price": 447.0,
+    "change_from_signal_month_pct": -0.22,
+    "return_since_gc_pct": -0.22
   },
   "daily": [
     {
@@ -217,22 +217,35 @@
       "sma200": 480.31,
       "rsi14": 51.9,
       "rsi5": 52.15
+    },
+    {
+      "date": "2026-09-01",
+      "open": 446.0,
+      "high": 451.0,
+      "low": 446.0,
+      "close": 447.0,
+      "volume": 1226200.0,
+      "sma25": 451.6,
+      "sma75": 444.35,
+      "sma200": 480.27,
+      "rsi14": 51.9,
+      "rsi5": 52.15
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-08",
-    "price_date": "2026-08-31",
-    "monthly_rsi14": 52.48,
-    "monthly_rsi_ma5": 52.51,
-    "spread": -0.03,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "month": "2026-09",
+    "price_date": "2026-09-01",
+    "monthly_rsi14": 52.8,
+    "monthly_rsi_ma5": 52.11,
+    "spread": 0.7,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-01T15:57:25.165343+00:00"
+  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
 }

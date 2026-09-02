@@ -2,12 +2,12 @@
   "code": "7545",
   "ticker": "7545.T",
   "name": "西松屋チェーン",
-  "generated_at": "2026-09-01T15:56:28.717521+00:00",
-  "price_date": "2026-08-31",
+  "generated_at": "2026-09-02T15:50:18.381761+00:00",
+  "price_date": "2026-09-01",
   "record": {
-    "current_price": 2009.0,
-    "change_from_signal_month_pct": 0.9,
-    "return_since_gc_pct": 0.9
+    "current_price": 2022.0,
+    "change_from_signal_month_pct": 1.56,
+    "return_since_gc_pct": 1.56
   },
   "daily": [
     {
@@ -217,6 +217,19 @@
       "sma200": 2070.76,
       "rsi14": 46.61,
       "rsi5": 46.75
+    },
+    {
+      "date": "2026-09-01",
+      "open": 2009.0,
+      "high": 2029.0,
+      "low": 2007.0,
+      "close": 2022.0,
+      "volume": 216800.0,
+      "sma25": 2012.12,
+      "sma75": 1978.11,
+      "sma200": 2070.47,
+      "rsi14": 46.61,
+      "rsi5": 46.75
     }
   ],
   "corporate_events": [
@@ -228,11 +241,11 @@
     }
   ],
   "provisional_signal": {
-    "month": "2026-08",
-    "price_date": "2026-08-31",
-    "monthly_rsi14": 49.77,
-    "monthly_rsi_ma5": 48.64,
-    "spread": 1.13,
+    "month": "2026-09",
+    "price_date": "2026-09-01",
+    "monthly_rsi14": 50.29,
+    "monthly_rsi_ma5": 48.88,
+    "spread": 1.4,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -241,5 +254,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-01T15:57:25.165343+00:00"
+  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "3045",
   "ticker": "3045.T",
   "name": "カワサキ",
-  "generated_at": "2026-09-01T15:56:28.717521+00:00",
-  "price_date": "2026-08-31",
+  "generated_at": "2026-09-02T15:50:18.381761+00:00",
+  "price_date": "2026-09-01",
   "record": {
-    "current_price": 1455.0,
-    "change_from_signal_month_pct": -2.02,
-    "return_since_gc_pct": -1.49
+    "current_price": 1456.0,
+    "change_from_signal_month_pct": -1.95,
+    "return_since_gc_pct": -1.42
   },
   "daily": [
     {
@@ -217,6 +217,19 @@
       "sma200": 1461.55,
       "rsi14": 57.9,
       "rsi5": 59.79
+    },
+    {
+      "date": "2026-09-01",
+      "open": 1455.0,
+      "high": 1457.0,
+      "low": 1455.0,
+      "close": 1456.0,
+      "volume": 1900.0,
+      "sma25": 1485.76,
+      "sma75": 1478.61,
+      "sma200": 1461.79,
+      "rsi14": 57.9,
+      "rsi5": 59.79
     }
   ],
   "corporate_events": [
@@ -228,11 +241,11 @@
     }
   ],
   "provisional_signal": {
-    "month": "2026-08",
-    "price_date": "2026-08-31",
-    "monthly_rsi14": 55.02,
-    "monthly_rsi_ma5": 57.59,
-    "spread": -2.57,
+    "month": "2026-09",
+    "price_date": "2026-09-01",
+    "monthly_rsi14": 55.14,
+    "monthly_rsi_ma5": 57.34,
+    "spread": -2.2,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -241,5 +254,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-01T15:57:25.165343+00:00"
+  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
 }

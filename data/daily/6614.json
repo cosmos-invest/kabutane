@@ -2,12 +2,12 @@
   "code": "6614",
   "ticker": "6614.T",
   "name": "シキノハイテック",
-  "generated_at": "2026-09-01T15:56:28.717521+00:00",
-  "price_date": "2026-08-31",
+  "generated_at": "2026-09-02T15:50:18.381761+00:00",
+  "price_date": "2026-09-01",
   "record": {
-    "current_price": 885.0,
-    "change_from_signal_month_pct": 0.57,
-    "return_since_gc_pct": 17.22
+    "current_price": 863.0,
+    "change_from_signal_month_pct": -1.93,
+    "return_since_gc_pct": 14.3
   },
   "daily": [
     {
@@ -217,22 +217,35 @@
       "sma200": 826.9,
       "rsi14": 39.06,
       "rsi5": 40.71
+    },
+    {
+      "date": "2026-09-01",
+      "open": 883.0,
+      "high": 883.0,
+      "low": 863.0,
+      "close": 863.0,
+      "volume": 3600.0,
+      "sma25": 871.8,
+      "sma75": 899.49,
+      "sma200": 827.56,
+      "rsi14": 39.06,
+      "rsi5": 40.71
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-08",
-    "price_date": "2026-08-31",
-    "monthly_rsi14": 36.42,
-    "monthly_rsi_ma5": 35.29,
-    "spread": 1.13,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "month": "2026-09",
+    "price_date": "2026-09-01",
+    "monthly_rsi14": 35.78,
+    "monthly_rsi_ma5": 36.57,
+    "spread": -0.78,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-01T15:57:25.165343+00:00"
+  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "2593",
   "ticker": "2593.T",
   "name": "伊藤園",
-  "generated_at": "2026-09-01T15:56:28.717521+00:00",
-  "price_date": "2026-08-31",
+  "generated_at": "2026-09-02T15:50:18.381761+00:00",
+  "price_date": "2026-09-01",
   "record": {
-    "current_price": 3031.0,
-    "change_from_signal_month_pct": 1.58,
-    "return_since_gc_pct": 0.76
+    "current_price": 3011.0,
+    "change_from_signal_month_pct": 0.9,
+    "return_since_gc_pct": 0.1
   },
   "daily": [
     {
@@ -217,15 +217,28 @@
       "sma200": 2985.11,
       "rsi14": 38.3,
       "rsi5": 39.68
+    },
+    {
+      "date": "2026-09-01",
+      "open": 3001.0,
+      "high": 3049.0,
+      "low": 3000.0,
+      "close": 3011.0,
+      "volume": 474100.0,
+      "sma25": 2993.9,
+      "sma75": 2928.77,
+      "sma200": 2984.19,
+      "rsi14": 38.3,
+      "rsi5": 39.68
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-08",
-    "price_date": "2026-08-31",
-    "monthly_rsi14": 41.27,
-    "monthly_rsi_ma5": 39.03,
-    "spread": 2.24,
+    "month": "2026-09",
+    "price_date": "2026-09-01",
+    "monthly_rsi14": 40.79,
+    "monthly_rsi_ma5": 39.97,
+    "spread": 0.82,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -234,5 +247,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-01T15:57:25.165343+00:00"
+  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
 }

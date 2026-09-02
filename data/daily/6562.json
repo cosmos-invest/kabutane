@@ -2,12 +2,12 @@
   "code": "6562",
   "ticker": "6562.T",
   "name": "ジーニー",
-  "generated_at": "2026-09-01T15:56:28.717521+00:00",
-  "price_date": "2026-08-31",
+  "generated_at": "2026-09-02T15:50:18.381761+00:00",
+  "price_date": "2026-09-01",
   "record": {
-    "current_price": 962.0,
-    "change_from_signal_month_pct": -4.18,
-    "return_since_gc_pct": -4.18
+    "current_price": 926.0,
+    "change_from_signal_month_pct": -7.77,
+    "return_since_gc_pct": -7.77
   },
   "daily": [
     {
@@ -217,22 +217,35 @@
       "sma200": 994.7,
       "rsi14": 41.45,
       "rsi5": 43.86
+    },
+    {
+      "date": "2026-09-01",
+      "open": 962.0,
+      "high": 962.0,
+      "low": 922.0,
+      "close": 926.0,
+      "volume": 41900.0,
+      "sma25": 967.76,
+      "sma75": 952.45,
+      "sma200": 993.63,
+      "rsi14": 41.45,
+      "rsi5": 43.86
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-08",
-    "price_date": "2026-08-31",
-    "monthly_rsi14": 42.23,
+    "month": "2026-09",
+    "price_date": "2026-09-01",
+    "monthly_rsi14": 41.02,
     "monthly_rsi_ma5": 41.69,
-    "spread": 0.54,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "spread": -0.67,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-01T15:57:25.165343+00:00"
+  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
 }

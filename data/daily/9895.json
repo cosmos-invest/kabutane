@@ -2,12 +2,12 @@
   "code": "9895",
   "ticker": "9895.T",
   "name": "コンセック",
-  "generated_at": "2026-09-01T15:56:28.717521+00:00",
-  "price_date": "2026-08-31",
+  "generated_at": "2026-09-02T15:50:18.381761+00:00",
+  "price_date": "2026-09-01",
   "record": {
-    "current_price": 1268.0,
-    "change_from_signal_month_pct": -0.08,
-    "return_since_gc_pct": -0.08
+    "current_price": 1280.0,
+    "change_from_signal_month_pct": 0.87,
+    "return_since_gc_pct": 0.87
   },
   "daily": [
     {
@@ -217,15 +217,28 @@
       "sma200": 1260.84,
       "rsi14": 52.04,
       "rsi5": 52.83
+    },
+    {
+      "date": "2026-09-01",
+      "open": 1278.0,
+      "high": 1280.0,
+      "low": 1270.0,
+      "close": 1280.0,
+      "volume": 900.0,
+      "sma25": 1266.08,
+      "sma75": 1261.97,
+      "sma200": 1260.99,
+      "rsi14": 52.04,
+      "rsi5": 52.83
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-08",
-    "price_date": "2026-08-31",
-    "monthly_rsi14": 54.4,
-    "monthly_rsi_ma5": 53.8,
-    "spread": 0.6,
+    "month": "2026-09",
+    "price_date": "2026-09-01",
+    "monthly_rsi14": 55.94,
+    "monthly_rsi_ma5": 54.47,
+    "spread": 1.47,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -234,5 +247,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-01T15:57:25.165343+00:00"
+  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
 }

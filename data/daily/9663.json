@@ -2,12 +2,12 @@
   "code": "9663",
   "ticker": "9663.T",
   "name": "ナガワ",
-  "generated_at": "2026-09-01T15:56:28.717521+00:00",
-  "price_date": "2026-08-31",
+  "generated_at": "2026-09-02T15:50:18.381761+00:00",
+  "price_date": "2026-09-01",
   "record": {
-    "current_price": 5210.0,
-    "change_from_signal_month_pct": 0.39,
-    "return_since_gc_pct": 0.39
+    "current_price": 5140.0,
+    "change_from_signal_month_pct": -0.96,
+    "return_since_gc_pct": -0.96
   },
   "daily": [
     {
@@ -217,15 +217,28 @@
       "sma200": 5606.65,
       "rsi14": 36.64,
       "rsi5": 38.05
+    },
+    {
+      "date": "2026-09-01",
+      "open": 5270.0,
+      "high": 5280.0,
+      "low": 5140.0,
+      "close": 5140.0,
+      "volume": 27700.0,
+      "sma25": 5148.8,
+      "sma75": 5029.87,
+      "sma200": 5602.6,
+      "rsi14": 36.64,
+      "rsi5": 38.05
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-08",
-    "price_date": "2026-08-31",
-    "monthly_rsi14": 39.09,
-    "monthly_rsi_ma5": 37.24,
-    "spread": 1.85,
+    "month": "2026-09",
+    "price_date": "2026-09-01",
+    "monthly_rsi14": 38.41,
+    "monthly_rsi_ma5": 37.5,
+    "spread": 0.92,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -234,5 +247,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-01T15:57:25.165343+00:00"
+  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
 }

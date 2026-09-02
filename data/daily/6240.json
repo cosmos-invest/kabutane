@@ -2,12 +2,12 @@
   "code": "6240",
   "ticker": "6240.T",
   "name": "ヤマシンフィルタ",
-  "generated_at": "2026-09-01T15:56:28.717521+00:00",
-  "price_date": "2026-08-31",
+  "generated_at": "2026-09-02T15:50:18.381761+00:00",
+  "price_date": "2026-09-01",
   "record": {
-    "current_price": 543.0,
-    "change_from_signal_month_pct": 0.56,
-    "return_since_gc_pct": 0.56
+    "current_price": 538.0,
+    "change_from_signal_month_pct": -0.37,
+    "return_since_gc_pct": -0.37
   },
   "daily": [
     {
@@ -217,22 +217,35 @@
       "sma200": 558.63,
       "rsi14": 46.78,
       "rsi5": 49.12
+    },
+    {
+      "date": "2026-09-01",
+      "open": 540.0,
+      "high": 545.0,
+      "low": 538.0,
+      "close": 538.0,
+      "volume": 225800.0,
+      "sma25": 540.4,
+      "sma75": 535.92,
+      "sma200": 557.71,
+      "rsi14": 46.78,
+      "rsi5": 49.12
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-08",
-    "price_date": "2026-08-31",
-    "monthly_rsi14": 50.88,
-    "monthly_rsi_ma5": 49.78,
-    "spread": 1.1,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "month": "2026-09",
+    "price_date": "2026-09-01",
+    "monthly_rsi14": 50.47,
+    "monthly_rsi_ma5": 50.61,
+    "spread": -0.14,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-01T15:57:25.165343+00:00"
+  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
 }

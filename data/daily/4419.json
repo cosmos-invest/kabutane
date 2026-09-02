@@ -2,12 +2,12 @@
   "code": "4419",
   "ticker": "4419.T",
   "name": "Ｆｉｎａｔｅｘｔホールディングス",
-  "generated_at": "2026-09-01T15:56:28.717521+00:00",
-  "price_date": "2026-08-31",
+  "generated_at": "2026-09-02T15:50:18.381761+00:00",
+  "price_date": "2026-09-01",
   "record": {
-    "current_price": 1465.0,
-    "change_from_signal_month_pct": -4.25,
-    "return_since_gc_pct": 53.89
+    "current_price": 1399.0,
+    "change_from_signal_month_pct": -8.56,
+    "return_since_gc_pct": 46.95
   },
   "daily": [
     {
@@ -217,22 +217,35 @@
       "sma200": 1137.59,
       "rsi14": 58.87,
       "rsi5": 66.59
+    },
+    {
+      "date": "2026-09-01",
+      "open": 1465.0,
+      "high": 1479.0,
+      "low": 1398.0,
+      "close": 1399.0,
+      "volume": 570900.0,
+      "sma25": 1468.48,
+      "sma75": 1400.81,
+      "sma200": 1138.87,
+      "rsi14": 58.87,
+      "rsi5": 66.59
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-08",
-    "price_date": "2026-08-31",
-    "monthly_rsi14": 64.25,
-    "monthly_rsi_ma5": 62.67,
-    "spread": 1.58,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "month": "2026-09",
+    "price_date": "2026-09-01",
+    "monthly_rsi14": 61.24,
+    "monthly_rsi_ma5": 63.71,
+    "spread": -2.48,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-01T15:57:25.165343+00:00"
+  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "2286",
   "ticker": "2286.T",
   "name": "林兼産業",
-  "generated_at": "2026-09-01T15:56:28.717521+00:00",
-  "price_date": "2026-08-31",
+  "generated_at": "2026-09-02T15:50:18.381761+00:00",
+  "price_date": "2026-09-01",
   "record": {
-    "current_price": 943.0,
-    "change_from_signal_month_pct": 3.4,
-    "return_since_gc_pct": 3.4
+    "current_price": 932.0,
+    "change_from_signal_month_pct": 2.19,
+    "return_since_gc_pct": 2.19
   },
   "daily": [
     {
@@ -217,22 +217,35 @@
       "sma200": 843.85,
       "rsi14": 82.09,
       "rsi5": 82.59
+    },
+    {
+      "date": "2026-09-01",
+      "open": 940.0,
+      "high": 940.0,
+      "low": 922.0,
+      "close": 932.0,
+      "volume": 32300.0,
+      "sma25": 904.52,
+      "sma75": 877.99,
+      "sma200": 844.96,
+      "rsi14": 82.09,
+      "rsi5": 82.59
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-08",
-    "price_date": "2026-08-31",
-    "monthly_rsi14": 83.47,
-    "monthly_rsi_ma5": 80.94,
-    "spread": 2.52,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "month": "2026-09",
+    "price_date": "2026-09-01",
+    "monthly_rsi14": 80.86,
+    "monthly_rsi_ma5": 81.19,
+    "spread": -0.34,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-01T15:57:25.165343+00:00"
+  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
 }

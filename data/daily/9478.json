@@ -2,12 +2,12 @@
   "code": "9478",
   "ticker": "9478.T",
   "name": "ＳＥホールディングス・アンド・インキュベーションズ",
-  "generated_at": "2026-09-01T15:56:28.717521+00:00",
-  "price_date": "2026-08-31",
+  "generated_at": "2026-09-02T15:50:18.381761+00:00",
+  "price_date": "2026-09-01",
   "record": {
-    "current_price": 532.0,
-    "change_from_signal_month_pct": 1.53,
-    "return_since_gc_pct": 13.68
+    "current_price": 529.0,
+    "change_from_signal_month_pct": 0.95,
+    "return_since_gc_pct": 13.03
   },
   "daily": [
     {
@@ -217,22 +217,35 @@
       "sma200": 471.88,
       "rsi14": 74.43,
       "rsi5": 76.11
+    },
+    {
+      "date": "2026-09-01",
+      "open": 542.0,
+      "high": 542.0,
+      "low": 529.0,
+      "close": 529.0,
+      "volume": 2600.0,
+      "sma25": 523.24,
+      "sma75": 516.93,
+      "sma200": 472.51,
+      "rsi14": 74.43,
+      "rsi5": 76.11
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-08",
-    "price_date": "2026-08-31",
-    "monthly_rsi14": 76.3,
-    "monthly_rsi_ma5": 75.26,
-    "spread": 1.04,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "month": "2026-09",
+    "price_date": "2026-09-01",
+    "monthly_rsi14": 75.42,
+    "monthly_rsi_ma5": 75.63,
+    "spread": -0.21,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-01T15:57:25.165343+00:00"
+  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
 }

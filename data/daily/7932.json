@@ -2,12 +2,12 @@
   "code": "7932",
   "ticker": "7932.T",
   "name": "ニッピ",
-  "generated_at": "2026-09-01T15:56:28.717521+00:00",
-  "price_date": "2026-08-31",
+  "generated_at": "2026-09-02T15:50:18.381761+00:00",
+  "price_date": "2026-09-01",
   "record": {
-    "current_price": 11960.0,
-    "change_from_signal_month_pct": -1.64,
-    "return_since_gc_pct": -1.64
+    "current_price": 11860.0,
+    "change_from_signal_month_pct": -2.47,
+    "return_since_gc_pct": -2.47
   },
   "daily": [
     {
@@ -217,15 +217,28 @@
       "sma200": 12659.3,
       "rsi14": 64.05,
       "rsi5": 64.79
+    },
+    {
+      "date": "2026-09-01",
+      "open": 11910.0,
+      "high": 11960.0,
+      "low": 11810.0,
+      "close": 11860.0,
+      "volume": 6700.0,
+      "sma25": 11882.4,
+      "sma75": 11843.07,
+      "sma200": 12657.1,
+      "rsi14": 64.05,
+      "rsi5": 64.79
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-08",
-    "price_date": "2026-08-31",
-    "monthly_rsi14": 63.72,
-    "monthly_rsi_ma5": 64.2,
-    "spread": -0.48,
+    "month": "2026-09",
+    "price_date": "2026-09-01",
+    "monthly_rsi14": 62.85,
+    "monthly_rsi_ma5": 64.05,
+    "spread": -1.2,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -234,5 +247,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-01T15:57:25.165343+00:00"
+  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
 }

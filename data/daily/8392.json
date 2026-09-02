@@ -2,12 +2,12 @@
   "code": "8392",
   "ticker": "8392.T",
   "name": "大分銀行",
-  "generated_at": "2026-09-01T15:56:28.717521+00:00",
-  "price_date": "2026-08-31",
+  "generated_at": "2026-09-02T15:50:18.381761+00:00",
+  "price_date": "2026-09-01",
   "record": {
-    "current_price": 3075.0,
-    "change_from_signal_month_pct": 19.88,
-    "return_since_gc_pct": 27.59
+    "current_price": 2930.0,
+    "change_from_signal_month_pct": 14.23,
+    "return_since_gc_pct": 21.58
   },
   "daily": [
     {
@@ -217,22 +217,35 @@
       "sma200": 1973.42,
       "rsi14": 87.75,
       "rsi5": 90.25
+    },
+    {
+      "date": "2026-09-01",
+      "open": 3015.0,
+      "high": 3020.0,
+      "low": 2913.0,
+      "close": 2930.0,
+      "volume": 458700.0,
+      "sma25": 2751.96,
+      "sma75": 2517.8,
+      "sma200": 1982.98,
+      "rsi14": 87.75,
+      "rsi5": 90.25
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-08",
-    "price_date": "2026-08-31",
-    "monthly_rsi14": 92.71,
-    "monthly_rsi_ma5": 89.49,
-    "spread": 3.23,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "month": "2026-09",
+    "price_date": "2026-09-01",
+    "monthly_rsi14": 86.13,
+    "monthly_rsi_ma5": 89.31,
+    "spread": -3.18,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-01T15:57:25.165343+00:00"
+  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "2204",
   "ticker": "2204.T",
   "name": "中村屋",
-  "generated_at": "2026-09-01T15:56:28.717521+00:00",
-  "price_date": "2026-08-31",
+  "generated_at": "2026-09-02T15:50:18.381761+00:00",
+  "price_date": "2026-09-01",
   "record": {
-    "current_price": 3165.0,
-    "change_from_signal_month_pct": -1.4,
-    "return_since_gc_pct": -1.4
+    "current_price": 3160.0,
+    "change_from_signal_month_pct": -1.56,
+    "return_since_gc_pct": -1.56
   },
   "daily": [
     {
@@ -217,15 +217,28 @@
       "sma200": 3167.07,
       "rsi14": 51.08,
       "rsi5": 52.39
+    },
+    {
+      "date": "2026-09-01",
+      "open": 3160.0,
+      "high": 3175.0,
+      "low": 3150.0,
+      "close": 3160.0,
+      "volume": 8600.0,
+      "sma25": 3208.4,
+      "sma75": 3165.87,
+      "sma200": 3167.72,
+      "rsi14": 51.08,
+      "rsi5": 52.39
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-08",
-    "price_date": "2026-08-31",
-    "monthly_rsi14": 51.13,
-    "monthly_rsi_ma5": 50.8,
-    "spread": 0.33,
+    "month": "2026-09",
+    "price_date": "2026-09-01",
+    "monthly_rsi14": 50.81,
+    "monthly_rsi_ma5": 50.76,
+    "spread": 0.06,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -234,5 +247,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-01T15:57:25.165343+00:00"
+  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
 }

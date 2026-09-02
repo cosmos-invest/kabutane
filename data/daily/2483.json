@@ -2,12 +2,12 @@
   "code": "2483",
   "ticker": "2483.T",
   "name": "翻訳センター",
-  "generated_at": "2026-09-01T15:56:28.717521+00:00",
-  "price_date": "2026-08-31",
+  "generated_at": "2026-09-02T15:50:18.381761+00:00",
+  "price_date": "2026-09-01",
   "record": {
-    "current_price": 2255.0,
-    "change_from_signal_month_pct": -1.91,
-    "return_since_gc_pct": 6.12
+    "current_price": 2213.0,
+    "change_from_signal_month_pct": -3.74,
+    "return_since_gc_pct": 4.14
   },
   "daily": [
     {
@@ -217,22 +217,35 @@
       "sma200": 1992.94,
       "rsi14": 56.22,
       "rsi5": 66.84
+    },
+    {
+      "date": "2026-09-01",
+      "open": 2260.0,
+      "high": 2260.0,
+      "low": 2213.0,
+      "close": 2213.0,
+      "volume": 6600.0,
+      "sma25": 2225.68,
+      "sma75": 2188.79,
+      "sma200": 1994.2,
+      "rsi14": 56.22,
+      "rsi5": 66.84
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-08",
-    "price_date": "2026-08-31",
-    "monthly_rsi14": 62.79,
-    "monthly_rsi_ma5": 58.54,
-    "spread": 4.25,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "month": "2026-09",
+    "price_date": "2026-09-01",
+    "monthly_rsi14": 60.59,
+    "monthly_rsi_ma5": 61.53,
+    "spread": -0.94,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-01T15:57:25.165343+00:00"
+  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
 }
