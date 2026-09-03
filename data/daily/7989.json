@@ -2,12 +2,12 @@
   "code": "7989",
   "ticker": "7989.T",
   "name": "立川ブラインド工業",
-  "generated_at": "2026-09-02T15:50:18.381761+00:00",
-  "price_date": "2026-09-01",
+  "generated_at": "2026-09-03T15:38:58.058644+00:00",
+  "price_date": "2026-09-02",
   "record": {
-    "current_price": 2686.0,
-    "change_from_signal_month_pct": 1.94,
-    "return_since_gc_pct": 1.94
+    "current_price": 2643.0,
+    "change_from_signal_month_pct": 0.3,
+    "return_since_gc_pct": 0.3
   },
   "daily": [
     {
@@ -230,22 +230,35 @@
       "sma200": 2364.38,
       "rsi14": 77.01,
       "rsi5": 77.66
+    },
+    {
+      "date": "2026-09-02",
+      "open": 2666.0,
+      "high": 2671.0,
+      "low": 2643.0,
+      "close": 2643.0,
+      "volume": 36600.0,
+      "sma25": 2651.28,
+      "sma75": 2545.36,
+      "sma200": 2367.84,
+      "rsi14": 77.01,
+      "rsi5": 77.66
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-01",
-    "monthly_rsi14": 77.57,
-    "monthly_rsi_ma5": 76.32,
-    "spread": 1.26,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-02",
+    "monthly_rsi14": 74.98,
+    "monthly_rsi_ma5": 75.8,
+    "spread": -0.81,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
+  "provisional_generated_at": "2026-09-03T15:40:03.570184+00:00"
 }

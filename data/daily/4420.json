@@ -2,12 +2,12 @@
   "code": "4420",
   "ticker": "4420.T",
   "name": "イーソル",
-  "generated_at": "2026-09-02T15:50:18.381761+00:00",
-  "price_date": "2026-09-01",
+  "generated_at": "2026-09-03T15:38:58.058644+00:00",
+  "price_date": "2026-09-02",
   "record": {
-    "current_price": 910.0,
-    "change_from_signal_month_pct": 27.09,
-    "return_since_gc_pct": 28.53
+    "current_price": 829.0,
+    "change_from_signal_month_pct": 15.78,
+    "return_since_gc_pct": 17.09
   },
   "daily": [
     {
@@ -230,22 +230,35 @@
       "sma200": 625.65,
       "rsi14": 50.88,
       "rsi5": 55.47
+    },
+    {
+      "date": "2026-09-02",
+      "open": 835.0,
+      "high": 843.0,
+      "low": 824.0,
+      "close": 829.0,
+      "volume": 2031900.0,
+      "sma25": 736.52,
+      "sma75": 777.56,
+      "sma200": 627.14,
+      "rsi14": 50.88,
+      "rsi5": 55.47
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-01",
-    "monthly_rsi14": 64.86,
-    "monthly_rsi_ma5": 61.46,
-    "spread": 3.4,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-02",
+    "monthly_rsi14": 59.25,
+    "monthly_rsi_ma5": 60.33,
+    "spread": -1.09,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
+  "provisional_generated_at": "2026-09-03T15:40:03.570184+00:00"
 }

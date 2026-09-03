@@ -2,12 +2,12 @@
   "code": "7927",
   "ticker": "7927.T",
   "name": "ムトー精工",
-  "generated_at": "2026-09-02T15:50:18.381761+00:00",
-  "price_date": "2026-09-01",
+  "generated_at": "2026-09-03T15:38:58.058644+00:00",
+  "price_date": "2026-09-02",
   "record": {
-    "current_price": 2287.0,
-    "change_from_signal_month_pct": 0.13,
-    "return_since_gc_pct": 0.13
+    "current_price": 2265.0,
+    "change_from_signal_month_pct": -0.83,
+    "return_since_gc_pct": -0.83
   },
   "daily": [
     {
@@ -230,22 +230,35 @@
       "sma200": 2148.44,
       "rsi14": 59.55,
       "rsi5": 62.24
+    },
+    {
+      "date": "2026-09-02",
+      "open": 2287.0,
+      "high": 2287.0,
+      "low": 2260.0,
+      "close": 2265.0,
+      "volume": 22100.0,
+      "sma25": 2258.52,
+      "sma75": 2246.64,
+      "sma200": 2151.47,
+      "rsi14": 59.55,
+      "rsi5": 62.24
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-01",
-    "monthly_rsi14": 61.1,
-    "monthly_rsi_ma5": 60.83,
-    "spread": 0.26,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-02",
+    "monthly_rsi14": 60.32,
+    "monthly_rsi_ma5": 60.68,
+    "spread": -0.36,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
+  "provisional_generated_at": "2026-09-03T15:40:03.570184+00:00"
 }

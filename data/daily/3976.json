@@ -2,12 +2,12 @@
   "code": "3976",
   "ticker": "3976.T",
   "name": "シャノン",
-  "generated_at": "2026-09-02T15:50:18.381761+00:00",
-  "price_date": "2026-09-01",
+  "generated_at": "2026-09-03T15:38:58.058644+00:00",
+  "price_date": "2026-09-02",
   "record": {
-    "current_price": 658.0,
-    "change_from_signal_month_pct": 16.25,
-    "return_since_gc_pct": 62.47
+    "current_price": 610.0,
+    "change_from_signal_month_pct": 7.77,
+    "return_since_gc_pct": 50.62
   },
   "daily": [
     {
@@ -230,15 +230,28 @@
       "sma200": 445.61,
       "rsi14": 50.75,
       "rsi5": 57.85
+    },
+    {
+      "date": "2026-09-02",
+      "open": 650.0,
+      "high": 650.0,
+      "low": 601.0,
+      "close": 610.0,
+      "volume": 56600.0,
+      "sma25": 611.08,
+      "sma75": 558.32,
+      "sma200": 446.63,
+      "rsi14": 50.75,
+      "rsi5": 57.85
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-01",
-    "monthly_rsi14": 64.24,
-    "monthly_rsi_ma5": 60.23,
-    "spread": 4.01,
+    "price_date": "2026-09-02",
+    "monthly_rsi14": 59.34,
+    "monthly_rsi_ma5": 59.25,
+    "spread": 0.08,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -247,5 +260,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
+  "provisional_generated_at": "2026-09-03T15:40:03.570184+00:00"
 }

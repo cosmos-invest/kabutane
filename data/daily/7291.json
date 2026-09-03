@@ -2,12 +2,12 @@
   "code": "7291",
   "ticker": "7291.T",
   "name": "日本プラスト",
-  "generated_at": "2026-09-02T15:50:18.381761+00:00",
-  "price_date": "2026-09-01",
+  "generated_at": "2026-09-03T15:38:58.058644+00:00",
+  "price_date": "2026-09-02",
   "record": {
-    "current_price": 475.0,
-    "change_from_signal_month_pct": -1.25,
-    "return_since_gc_pct": -1.25
+    "current_price": 463.0,
+    "change_from_signal_month_pct": -3.74,
+    "return_since_gc_pct": -3.74
   },
   "daily": [
     {
@@ -230,22 +230,35 @@
       "sma200": 442.88,
       "rsi14": 53.58,
       "rsi5": 57.63
+    },
+    {
+      "date": "2026-09-02",
+      "open": 473.0,
+      "high": 473.0,
+      "low": 462.0,
+      "close": 463.0,
+      "volume": 23800.0,
+      "sma25": 461.88,
+      "sma75": 461.09,
+      "sma200": 443.15,
+      "rsi14": 53.58,
+      "rsi5": 57.63
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-01",
-    "monthly_rsi14": 56.22,
-    "monthly_rsi_ma5": 55.87,
-    "spread": 0.35,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-02",
+    "monthly_rsi14": 54.54,
+    "monthly_rsi_ma5": 55.53,
+    "spread": -1.0,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
+  "provisional_generated_at": "2026-09-03T15:40:03.570184+00:00"
 }

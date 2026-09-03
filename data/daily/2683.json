@@ -2,12 +2,12 @@
   "code": "2683",
   "ticker": "2683.T",
   "name": "魚喜",
-  "generated_at": "2026-09-02T15:50:18.381761+00:00",
-  "price_date": "2026-09-01",
+  "generated_at": "2026-09-03T15:38:58.058644+00:00",
+  "price_date": "2026-09-02",
   "record": {
-    "current_price": 998.0,
-    "change_from_signal_month_pct": -1.58,
-    "return_since_gc_pct": 0.0
+    "current_price": 999.0,
+    "change_from_signal_month_pct": -1.48,
+    "return_since_gc_pct": 0.1
   },
   "daily": [
     {
@@ -230,22 +230,35 @@
       "sma200": 1001.7,
       "rsi14": 36.78,
       "rsi5": 41.81
+    },
+    {
+      "date": "2026-09-02",
+      "open": 996.0,
+      "high": 999.0,
+      "low": 992.0,
+      "close": 999.0,
+      "volume": 7000.0,
+      "sma25": 1009.48,
+      "sma75": 1006.17,
+      "sma200": 1001.71,
+      "rsi14": 36.78,
+      "rsi5": 41.81
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-01",
-    "monthly_rsi14": 35.98,
-    "monthly_rsi_ma5": 36.05,
-    "spread": -0.07,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-02",
+    "monthly_rsi14": 36.53,
+    "monthly_rsi_ma5": 36.16,
+    "spread": 0.37,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
+  "provisional_generated_at": "2026-09-03T15:40:03.570184+00:00"
 }

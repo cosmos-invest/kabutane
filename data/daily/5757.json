@@ -2,12 +2,12 @@
   "code": "5757",
   "ticker": "5757.T",
   "name": "ＣＫサンエツ",
-  "generated_at": "2026-09-02T15:50:18.381761+00:00",
-  "price_date": "2026-09-01",
+  "generated_at": "2026-09-03T15:38:58.058644+00:00",
+  "price_date": "2026-09-02",
   "record": {
-    "current_price": 5300.0,
-    "change_from_signal_month_pct": 2.12,
-    "return_since_gc_pct": 9.28
+    "current_price": 5130.0,
+    "change_from_signal_month_pct": -1.16,
+    "return_since_gc_pct": 5.77
   },
   "daily": [
     {
@@ -230,22 +230,35 @@
       "sma200": 4555.4,
       "rsi14": 60.94,
       "rsi5": 66.22
+    },
+    {
+      "date": "2026-09-02",
+      "open": 5200.0,
+      "high": 5200.0,
+      "low": 5110.0,
+      "close": 5130.0,
+      "volume": 11300.0,
+      "sma25": 5239.6,
+      "sma75": 5132.8,
+      "sma200": 4560.62,
+      "rsi14": 60.94,
+      "rsi5": 66.22
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-01",
-    "monthly_rsi14": 68.41,
-    "monthly_rsi_ma5": 67.62,
-    "spread": 0.79,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-02",
+    "monthly_rsi14": 64.47,
+    "monthly_rsi_ma5": 66.83,
+    "spread": -2.37,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
+  "provisional_generated_at": "2026-09-03T15:40:03.570184+00:00"
 }

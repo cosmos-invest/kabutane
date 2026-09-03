@@ -2,12 +2,12 @@
   "code": "5301",
   "ticker": "5301.T",
   "name": "東海カーボン",
-  "generated_at": "2026-09-02T15:50:18.381761+00:00",
-  "price_date": "2026-09-01",
+  "generated_at": "2026-09-03T15:38:58.058644+00:00",
+  "price_date": "2026-09-02",
   "record": {
-    "current_price": 1907.0,
-    "change_from_signal_month_pct": 24.03,
-    "return_since_gc_pct": 70.42
+    "current_price": 1812.0,
+    "change_from_signal_month_pct": 17.85,
+    "return_since_gc_pct": 61.93
   },
   "daily": [
     {
@@ -230,22 +230,35 @@
       "sma200": 1287.69,
       "rsi14": 62.88,
       "rsi5": 63.9
+    },
+    {
+      "date": "2026-09-02",
+      "open": 1841.0,
+      "high": 1872.5,
+      "low": 1794.0,
+      "close": 1812.0,
+      "volume": 2058900.0,
+      "sma25": 1705.86,
+      "sma75": 1711.51,
+      "sma200": 1291.72,
+      "rsi14": 62.88,
+      "rsi5": 63.9
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-01",
-    "monthly_rsi14": 71.66,
-    "monthly_rsi_ma5": 70.81,
-    "spread": 0.85,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-02",
+    "monthly_rsi14": 69.86,
+    "monthly_rsi_ma5": 70.45,
+    "spread": -0.58,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
+  "provisional_generated_at": "2026-09-03T15:40:03.570184+00:00"
 }

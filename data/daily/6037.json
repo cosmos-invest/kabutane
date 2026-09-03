@@ -2,12 +2,12 @@
   "code": "6037",
   "ticker": "6037.T",
   "name": "楽待",
-  "generated_at": "2026-09-02T15:50:18.381761+00:00",
-  "price_date": "2026-09-01",
+  "generated_at": "2026-09-03T15:38:58.058644+00:00",
+  "price_date": "2026-09-02",
   "record": {
-    "current_price": 1074.0,
-    "change_from_signal_month_pct": 6.76,
-    "return_since_gc_pct": 9.04
+    "current_price": 1027.0,
+    "change_from_signal_month_pct": 2.09,
+    "return_since_gc_pct": 4.26
   },
   "daily": [
     {
@@ -230,22 +230,35 @@
       "sma200": 1035.57,
       "rsi14": 54.72,
       "rsi5": 55.44
+    },
+    {
+      "date": "2026-09-02",
+      "open": 1058.0,
+      "high": 1064.0,
+      "low": 1025.0,
+      "close": 1027.0,
+      "volume": 58300.0,
+      "sma25": 1041.12,
+      "sma75": 1029.05,
+      "sma200": 1034.92,
+      "rsi14": 54.72,
+      "rsi5": 55.44
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-01",
-    "monthly_rsi14": 57.8,
-    "monthly_rsi_ma5": 57.08,
-    "spread": 0.72,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-02",
+    "monthly_rsi14": 55.12,
+    "monthly_rsi_ma5": 56.55,
+    "spread": -1.42,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
+  "provisional_generated_at": "2026-09-03T15:40:03.570184+00:00"
 }

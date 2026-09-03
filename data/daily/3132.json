@@ -2,12 +2,12 @@
   "code": "3132",
   "ticker": "3132.T",
   "name": "マクニカホールディングス",
-  "generated_at": "2026-09-02T15:50:18.381761+00:00",
-  "price_date": "2026-09-01",
+  "generated_at": "2026-09-03T15:38:58.058644+00:00",
+  "price_date": "2026-09-02",
   "record": {
-    "current_price": 3746.0,
-    "change_from_signal_month_pct": 13.69,
-    "return_since_gc_pct": 20.45
+    "current_price": 3544.0,
+    "change_from_signal_month_pct": 7.56,
+    "return_since_gc_pct": 13.95
   },
   "daily": [
     {
@@ -230,22 +230,35 @@
       "sma200": 2802.32,
       "rsi14": 66.81,
       "rsi5": 72.96
+    },
+    {
+      "date": "2026-09-02",
+      "open": 3606.0,
+      "high": 3645.0,
+      "low": 3493.0,
+      "close": 3544.0,
+      "volume": 911700.0,
+      "sma25": 3515.52,
+      "sma75": 3338.25,
+      "sma200": 2808.77,
+      "rsi14": 66.81,
+      "rsi5": 72.96
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-01",
-    "monthly_rsi14": 75.48,
-    "monthly_rsi_ma5": 71.35,
-    "spread": 4.13,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-02",
+    "monthly_rsi14": 70.19,
+    "monthly_rsi_ma5": 70.29,
+    "spread": -0.1,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
+  "provisional_generated_at": "2026-09-03T15:40:03.570184+00:00"
 }

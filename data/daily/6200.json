@@ -2,12 +2,12 @@
   "code": "6200",
   "ticker": "6200.T",
   "name": "インソース",
-  "generated_at": "2026-09-02T15:50:18.381761+00:00",
-  "price_date": "2026-09-01",
+  "generated_at": "2026-09-03T15:38:58.058644+00:00",
+  "price_date": "2026-09-02",
   "record": {
-    "current_price": 733.0,
-    "change_from_signal_month_pct": -2.79,
-    "return_since_gc_pct": -2.79
+    "current_price": 723.0,
+    "change_from_signal_month_pct": -4.11,
+    "return_since_gc_pct": -4.11
   },
   "daily": [
     {
@@ -230,15 +230,28 @@
       "sma200": 721.22,
       "rsi14": 37.44,
       "rsi5": 44.25
+    },
+    {
+      "date": "2026-09-02",
+      "open": 726.0,
+      "high": 732.0,
+      "low": 722.0,
+      "close": 723.0,
+      "volume": 339600.0,
+      "sma25": 732.36,
+      "sma75": 656.21,
+      "sma200": 720.61,
+      "rsi14": 37.44,
+      "rsi5": 44.25
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-01",
-    "monthly_rsi14": 42.14,
-    "monthly_rsi_ma5": 38.69,
-    "spread": 3.44,
+    "price_date": "2026-09-02",
+    "monthly_rsi14": 41.61,
+    "monthly_rsi_ma5": 38.59,
+    "spread": 3.02,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -247,5 +260,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
+  "provisional_generated_at": "2026-09-03T15:40:03.570184+00:00"
 }

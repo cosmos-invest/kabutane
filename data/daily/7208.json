@@ -2,12 +2,12 @@
   "code": "7208",
   "ticker": "7208.T",
   "name": "カネミツ",
-  "generated_at": "2026-09-02T15:50:18.381761+00:00",
-  "price_date": "2026-09-01",
+  "generated_at": "2026-09-03T15:38:58.058644+00:00",
+  "price_date": "2026-09-02",
   "record": {
-    "current_price": 1323.0,
-    "change_from_signal_month_pct": -2.0,
-    "return_since_gc_pct": 7.82
+    "current_price": 1319.0,
+    "change_from_signal_month_pct": -2.3,
+    "return_since_gc_pct": 7.5
   },
   "daily": [
     {
@@ -230,15 +230,28 @@
       "sma200": 1148.99,
       "rsi14": 70.14,
       "rsi5": 77.34
+    },
+    {
+      "date": "2026-09-02",
+      "open": 1323.0,
+      "high": 1323.0,
+      "low": 1319.0,
+      "close": 1319.0,
+      "volume": 1100.0,
+      "sma25": 1311.92,
+      "sma75": 1240.79,
+      "sma200": 1150.64,
+      "rsi14": 70.14,
+      "rsi5": 77.34
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-01",
-    "monthly_rsi14": 73.31,
-    "monthly_rsi_ma5": 72.88,
-    "spread": 0.43,
+    "price_date": "2026-09-02",
+    "monthly_rsi14": 73.14,
+    "monthly_rsi_ma5": 72.85,
+    "spread": 0.29,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -247,5 +260,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
+  "provisional_generated_at": "2026-09-03T15:40:03.570184+00:00"
 }

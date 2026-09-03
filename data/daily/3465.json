@@ -2,12 +2,12 @@
   "code": "3465",
   "ticker": "3465.T",
   "name": "ケイアイスター不動産",
-  "generated_at": "2026-09-02T15:50:18.381761+00:00",
-  "price_date": "2026-09-01",
+  "generated_at": "2026-09-03T15:38:58.058644+00:00",
+  "price_date": "2026-09-02",
   "record": {
-    "current_price": 3570.0,
-    "change_from_signal_month_pct": 0.85,
-    "return_since_gc_pct": -3.38
+    "current_price": 3370.0,
+    "change_from_signal_month_pct": -4.8,
+    "return_since_gc_pct": -8.8
   },
   "daily": [
     {
@@ -230,15 +230,28 @@
       "sma200": 3416.03,
       "rsi14": 61.32,
       "rsi5": 61.6
+    },
+    {
+      "date": "2026-09-02",
+      "open": 3520.0,
+      "high": 3520.0,
+      "low": 3370.0,
+      "close": 3370.0,
+      "volume": 265000.0,
+      "sma25": 3690.0,
+      "sma75": 3652.73,
+      "sma200": 3419.88,
+      "rsi14": 61.32,
+      "rsi5": 61.6
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-01",
-    "monthly_rsi14": 61.11,
-    "monthly_rsi_ma5": 61.44,
-    "spread": -0.33,
+    "price_date": "2026-09-02",
+    "monthly_rsi14": 57.14,
+    "monthly_rsi_ma5": 60.65,
+    "spread": -3.5,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -247,5 +260,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
+  "provisional_generated_at": "2026-09-03T15:40:03.570184+00:00"
 }

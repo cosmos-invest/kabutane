@@ -2,12 +2,12 @@
   "code": "8345",
   "ticker": "8345.T",
   "name": "岩手銀行",
-  "generated_at": "2026-09-02T15:50:18.381761+00:00",
-  "price_date": "2026-09-01",
+  "generated_at": "2026-09-03T15:38:58.058644+00:00",
+  "price_date": "2026-09-02",
   "record": {
-    "current_price": 2538.0,
-    "change_from_signal_month_pct": 17.77,
-    "return_since_gc_pct": 17.77
+    "current_price": 2493.0,
+    "change_from_signal_month_pct": 15.68,
+    "return_since_gc_pct": 15.68
   },
   "daily": [
     {
@@ -230,22 +230,35 @@
       "sma200": 1764.29,
       "rsi14": 79.31,
       "rsi5": 80.99
+    },
+    {
+      "date": "2026-09-02",
+      "open": 2502.0,
+      "high": 2522.0,
+      "low": 2463.0,
+      "close": 2493.0,
+      "volume": 351200.0,
+      "sma25": 2366.76,
+      "sma75": 2148.89,
+      "sma200": 1771.61,
+      "rsi14": 79.31,
+      "rsi5": 80.99
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-01",
-    "monthly_rsi14": 82.55,
-    "monthly_rsi_ma5": 81.05,
-    "spread": 1.5,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-02",
+    "monthly_rsi14": 80.57,
+    "monthly_rsi_ma5": 80.66,
+    "spread": -0.08,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
+  "provisional_generated_at": "2026-09-03T15:40:03.570184+00:00"
 }

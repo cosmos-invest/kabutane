@@ -2,12 +2,12 @@
   "code": "2980",
   "ticker": "2980.T",
   "name": "ＳＲＥホールディングス",
-  "generated_at": "2026-09-02T15:50:18.381761+00:00",
-  "price_date": "2026-09-01",
+  "generated_at": "2026-09-03T15:38:58.058644+00:00",
+  "price_date": "2026-09-02",
   "record": {
-    "current_price": 2459.0,
-    "change_from_signal_month_pct": -9.89,
-    "return_since_gc_pct": -9.89
+    "current_price": 2375.0,
+    "change_from_signal_month_pct": -12.97,
+    "return_since_gc_pct": -12.97
   },
   "daily": [
     {
@@ -230,22 +230,35 @@
       "sma200": 2899.01,
       "rsi14": 44.4,
       "rsi5": 44.94
+    },
+    {
+      "date": "2026-09-02",
+      "open": 2420.0,
+      "high": 2438.0,
+      "low": 2373.0,
+      "close": 2375.0,
+      "volume": 344200.0,
+      "sma25": 2531.2,
+      "sma75": 2518.95,
+      "sma200": 2897.39,
+      "rsi14": 44.4,
+      "rsi5": 44.94
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-01",
-    "monthly_rsi14": 43.28,
-    "monthly_rsi_ma5": 43.27,
-    "spread": 0.01,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-02",
+    "monthly_rsi14": 42.52,
+    "monthly_rsi_ma5": 43.12,
+    "spread": -0.59,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
+  "provisional_generated_at": "2026-09-03T15:40:03.570184+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "3996",
   "ticker": "3996.T",
   "name": "サインポスト",
-  "generated_at": "2026-09-02T15:50:18.381761+00:00",
-  "price_date": "2026-09-01",
+  "generated_at": "2026-09-03T15:38:58.058644+00:00",
+  "price_date": "2026-09-02",
   "record": {
-    "current_price": 208.0,
-    "change_from_signal_month_pct": 6.67,
-    "return_since_gc_pct": 6.67
+    "current_price": 206.0,
+    "change_from_signal_month_pct": 5.64,
+    "return_since_gc_pct": 5.64
   },
   "daily": [
     {
@@ -230,15 +230,28 @@
       "sma200": 233.75,
       "rsi14": 30.02,
       "rsi5": 31.43
+    },
+    {
+      "date": "2026-09-02",
+      "open": 208.0,
+      "high": 208.0,
+      "low": 203.0,
+      "close": 206.0,
+      "volume": 102100.0,
+      "sma25": 198.0,
+      "sma75": 192.73,
+      "sma200": 233.38,
+      "rsi14": 30.02,
+      "rsi5": 31.43
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-01",
-    "monthly_rsi14": 37.37,
-    "monthly_rsi_ma5": 35.12,
-    "spread": 2.25,
+    "price_date": "2026-09-02",
+    "monthly_rsi14": 37.11,
+    "monthly_rsi_ma5": 35.06,
+    "spread": 2.05,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -247,5 +260,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-02T15:51:18.619112+00:00"
+  "provisional_generated_at": "2026-09-03T15:40:03.570184+00:00"
 }
