@@ -2,12 +2,12 @@
   "code": "4769",
   "ticker": "4769.T",
   "name": "ＩＣ",
-  "generated_at": "2026-09-03T15:38:58.058644+00:00",
-  "price_date": "2026-09-02",
+  "generated_at": "2026-09-04T15:36:54.973567+00:00",
+  "price_date": "2026-09-03",
   "record": {
-    "current_price": 1122.0,
-    "change_from_signal_month_pct": 1.08,
-    "return_since_gc_pct": 6.65
+    "current_price": 1131.0,
+    "change_from_signal_month_pct": 1.89,
+    "return_since_gc_pct": 7.51
   },
   "daily": [
     {
@@ -243,22 +243,35 @@
       "sma200": 1069.2,
       "rsi14": 58.9,
       "rsi5": 64.34
+    },
+    {
+      "date": "2026-09-03",
+      "open": 1122.0,
+      "high": 1150.0,
+      "low": 1122.0,
+      "close": 1131.0,
+      "volume": 300.0,
+      "sma25": 1127.4,
+      "sma75": 1105.19,
+      "sma200": 1069.54,
+      "rsi14": 58.9,
+      "rsi5": 64.34
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-02",
-    "monthly_rsi14": 63.39,
-    "monthly_rsi_ma5": 63.72,
-    "spread": -0.34,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-03",
+    "monthly_rsi14": 64.92,
+    "monthly_rsi_ma5": 64.03,
+    "spread": 0.89,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-03T15:40:03.570184+00:00"
+  "provisional_generated_at": "2026-09-04T15:37:52.688006+00:00"
 }

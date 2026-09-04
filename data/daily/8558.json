@@ -2,12 +2,12 @@
   "code": "8558",
   "ticker": "8558.T",
   "name": "東和銀行",
-  "generated_at": "2026-09-03T15:38:58.058644+00:00",
-  "price_date": "2026-09-02",
+  "generated_at": "2026-09-04T15:36:54.973567+00:00",
+  "price_date": "2026-09-03",
   "record": {
-    "current_price": 1450.0,
-    "change_from_signal_month_pct": 9.27,
-    "return_since_gc_pct": 13.28
+    "current_price": 1496.0,
+    "change_from_signal_month_pct": 12.74,
+    "return_since_gc_pct": 16.87
   },
   "daily": [
     {
@@ -243,22 +243,35 @@
       "sma200": 1204.4,
       "rsi14": 66.19,
       "rsi5": 66.44
+    },
+    {
+      "date": "2026-09-03",
+      "open": 1458.0,
+      "high": 1520.0,
+      "low": 1451.0,
+      "close": 1496.0,
+      "volume": 238900.0,
+      "sma25": 1434.08,
+      "sma75": 1407.61,
+      "sma200": 1207.32,
+      "rsi14": 66.19,
+      "rsi5": 66.44
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-02",
-    "monthly_rsi14": 69.45,
-    "monthly_rsi_ma5": 70.22,
-    "spread": -0.77,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-03",
+    "monthly_rsi14": 71.05,
+    "monthly_rsi_ma5": 70.54,
+    "spread": 0.51,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-03T15:40:03.570184+00:00"
+  "provisional_generated_at": "2026-09-04T15:37:52.688006+00:00"
 }

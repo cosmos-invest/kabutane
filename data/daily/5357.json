@@ -2,12 +2,12 @@
   "code": "5357",
   "ticker": "5357.T",
   "name": "ヨータイ",
-  "generated_at": "2026-09-03T15:38:58.058644+00:00",
-  "price_date": "2026-09-02",
+  "generated_at": "2026-09-04T15:36:54.973567+00:00",
+  "price_date": "2026-09-03",
   "record": {
-    "current_price": 1770.0,
-    "change_from_signal_month_pct": 0.8,
-    "return_since_gc_pct": 0.8
+    "current_price": 1778.0,
+    "change_from_signal_month_pct": 1.25,
+    "return_since_gc_pct": 1.25
   },
   "daily": [
     {
@@ -243,15 +243,28 @@
       "sma200": 1784.85,
       "rsi14": 52.59,
       "rsi5": 53.03
+    },
+    {
+      "date": "2026-09-03",
+      "open": 1771.0,
+      "high": 1778.0,
+      "low": 1768.0,
+      "close": 1778.0,
+      "volume": 23600.0,
+      "sma25": 1767.88,
+      "sma75": 1745.93,
+      "sma200": 1785.06,
+      "rsi14": 52.59,
+      "rsi5": 53.03
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-02",
-    "monthly_rsi14": 53.75,
-    "monthly_rsi_ma5": 53.54,
-    "spread": 0.21,
+    "price_date": "2026-09-03",
+    "monthly_rsi14": 54.32,
+    "monthly_rsi_ma5": 53.66,
+    "spread": 0.66,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -260,5 +273,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-03T15:40:03.570184+00:00"
+  "provisional_generated_at": "2026-09-04T15:37:52.688006+00:00"
 }

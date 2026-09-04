@@ -2,12 +2,12 @@
   "code": "4074",
   "ticker": "4074.T",
   "name": "ラキール",
-  "generated_at": "2026-09-03T15:38:58.058644+00:00",
-  "price_date": "2026-09-02",
+  "generated_at": "2026-09-04T15:36:54.973567+00:00",
+  "price_date": "2026-09-03",
   "record": {
-    "current_price": 800.0,
-    "change_from_signal_month_pct": -21.88,
-    "return_since_gc_pct": 13.8
+    "current_price": 790.0,
+    "change_from_signal_month_pct": -22.85,
+    "return_since_gc_pct": 12.38
   },
   "daily": [
     {
@@ -243,15 +243,28 @@
       "sma200": 781.18,
       "rsi14": 40.26,
       "rsi5": 50.09
+    },
+    {
+      "date": "2026-09-03",
+      "open": 790.0,
+      "high": 800.0,
+      "low": 785.0,
+      "close": 790.0,
+      "volume": 2500.0,
+      "sma25": 842.96,
+      "sma75": 795.69,
+      "sma200": 780.03,
+      "rsi14": 40.26,
+      "rsi5": 50.09
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-02",
-    "monthly_rsi14": 41.5,
-    "monthly_rsi_ma5": 40.81,
-    "spread": 0.68,
+    "price_date": "2026-09-03",
+    "monthly_rsi14": 41.2,
+    "monthly_rsi_ma5": 40.75,
+    "spread": 0.45,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -260,5 +273,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-03T15:40:03.570184+00:00"
+  "provisional_generated_at": "2026-09-04T15:37:52.688006+00:00"
 }

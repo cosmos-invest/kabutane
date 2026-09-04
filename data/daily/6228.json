@@ -2,12 +2,12 @@
   "code": "6228",
   "ticker": "6228.T",
   "name": "ジェイ・イー・ティ",
-  "generated_at": "2026-09-03T15:38:58.058644+00:00",
-  "price_date": "2026-09-02",
+  "generated_at": "2026-09-04T15:36:54.973567+00:00",
+  "price_date": "2026-09-03",
   "record": {
-    "current_price": 505.0,
-    "change_from_signal_month_pct": -10.62,
-    "return_since_gc_pct": -10.62
+    "current_price": 538.0,
+    "change_from_signal_month_pct": -4.78,
+    "return_since_gc_pct": -4.78
   },
   "daily": [
     {
@@ -243,22 +243,35 @@
       "sma200": 636.3,
       "rsi14": 36.02,
       "rsi5": 36.09
+    },
+    {
+      "date": "2026-09-03",
+      "open": 503.0,
+      "high": 550.0,
+      "low": 500.0,
+      "close": 538.0,
+      "volume": 175000.0,
+      "sma25": 509.8,
+      "sma75": 558.85,
+      "sma200": 634.84,
+      "rsi14": 36.02,
+      "rsi5": 36.09
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-02",
-    "monthly_rsi14": 43.57,
-    "monthly_rsi_ma5": 44.14,
-    "spread": -0.58,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-03",
+    "monthly_rsi14": 44.52,
+    "monthly_rsi_ma5": 44.33,
+    "spread": 0.19,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-03T15:40:03.570184+00:00"
+  "provisional_generated_at": "2026-09-04T15:37:52.688006+00:00"
 }

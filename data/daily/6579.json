@@ -2,12 +2,12 @@
   "code": "6579",
   "ticker": "6579.T",
   "name": "ログリー",
-  "generated_at": "2026-09-03T15:38:58.058644+00:00",
-  "price_date": "2026-09-02",
+  "generated_at": "2026-09-04T15:36:54.973567+00:00",
+  "price_date": "2026-09-03",
   "record": {
-    "current_price": 349.0,
-    "change_from_signal_month_pct": 1.16,
-    "return_since_gc_pct": 10.44
+    "current_price": 347.0,
+    "change_from_signal_month_pct": 0.58,
+    "return_since_gc_pct": 9.81
   },
   "daily": [
     {
@@ -243,22 +243,35 @@
       "sma200": 329.98,
       "rsi14": 40.5,
       "rsi5": 42.25
+    },
+    {
+      "date": "2026-09-03",
+      "open": 350.0,
+      "high": 357.0,
+      "low": 345.0,
+      "close": 347.0,
+      "volume": 1100.0,
+      "sma25": 353.0,
+      "sma75": 350.19,
+      "sma200": 329.96,
+      "rsi14": 40.5,
+      "rsi5": 42.25
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-02",
-    "monthly_rsi14": 38.28,
-    "monthly_rsi_ma5": 38.15,
-    "spread": 0.13,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-03",
+    "monthly_rsi14": 37.99,
+    "monthly_rsi_ma5": 38.1,
+    "spread": -0.1,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-03T15:40:03.570184+00:00"
+  "provisional_generated_at": "2026-09-04T15:37:52.688006+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "6960",
   "ticker": "6960.T",
   "name": "フクダ電子",
-  "generated_at": "2026-09-03T15:38:58.058644+00:00",
-  "price_date": "2026-09-02",
+  "generated_at": "2026-09-04T15:36:54.973567+00:00",
+  "price_date": "2026-09-03",
   "record": {
-    "current_price": 12190.0,
-    "change_from_signal_month_pct": 7.59,
-    "return_since_gc_pct": 7.59
+    "current_price": 11720.0,
+    "change_from_signal_month_pct": 3.44,
+    "return_since_gc_pct": 3.44
   },
   "daily": [
     {
@@ -243,22 +243,35 @@
       "sma200": 9850.85,
       "rsi14": 75.83,
       "rsi5": 75.88
+    },
+    {
+      "date": "2026-09-03",
+      "open": 12200.0,
+      "high": 12240.0,
+      "low": 11630.0,
+      "close": 11720.0,
+      "volume": 54600.0,
+      "sma25": 11837.2,
+      "sma75": 11552.93,
+      "sma200": 9875.4,
+      "rsi14": 75.83,
+      "rsi5": 75.88
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-02",
-    "monthly_rsi14": 78.61,
-    "monthly_rsi_ma5": 77.93,
-    "spread": 0.68,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-03",
+    "monthly_rsi14": 73.51,
+    "monthly_rsi_ma5": 76.91,
+    "spread": -3.4,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-03T15:40:03.570184+00:00"
+  "provisional_generated_at": "2026-09-04T15:37:52.688006+00:00"
 }

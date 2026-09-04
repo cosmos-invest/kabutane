@@ -2,12 +2,12 @@
   "code": "8393",
   "ticker": "8393.T",
   "name": "宮崎銀行",
-  "generated_at": "2026-09-03T15:38:58.058644+00:00",
-  "price_date": "2026-09-02",
+  "generated_at": "2026-09-04T15:36:54.973567+00:00",
+  "price_date": "2026-09-03",
   "record": {
-    "current_price": 2557.0,
-    "change_from_signal_month_pct": 9.32,
-    "return_since_gc_pct": 9.32
+    "current_price": 2619.0,
+    "change_from_signal_month_pct": 11.97,
+    "return_since_gc_pct": 11.97
   },
   "daily": [
     {
@@ -243,22 +243,35 @@
       "sma200": 1840.17,
       "rsi14": 81.89,
       "rsi5": 83.58
+    },
+    {
+      "date": "2026-09-03",
+      "open": 2595.0,
+      "high": 2633.0,
+      "low": 2548.0,
+      "close": 2619.0,
+      "volume": 248300.0,
+      "sma25": 2450.36,
+      "sma75": 2240.83,
+      "sma200": 1848.16,
+      "rsi14": 81.89,
+      "rsi5": 83.58
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-02",
-    "monthly_rsi14": 81.98,
-    "monthly_rsi_ma5": 82.16,
-    "spread": -0.17,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-03",
+    "monthly_rsi14": 84.74,
+    "monthly_rsi_ma5": 82.71,
+    "spread": 2.04,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-03T15:40:03.570184+00:00"
+  "provisional_generated_at": "2026-09-04T15:37:52.688006+00:00"
 }

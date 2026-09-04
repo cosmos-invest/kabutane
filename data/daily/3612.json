@@ -2,12 +2,12 @@
   "code": "3612",
   "ticker": "3612.T",
   "name": "ワールド",
-  "generated_at": "2026-09-03T15:38:58.058644+00:00",
-  "price_date": "2026-09-02",
+  "generated_at": "2026-09-04T15:36:54.973567+00:00",
+  "price_date": "2026-09-03",
   "record": {
-    "current_price": 1601.0,
-    "change_from_signal_month_pct": -0.25,
-    "return_since_gc_pct": 0.25
+    "current_price": 1611.0,
+    "change_from_signal_month_pct": 0.37,
+    "return_since_gc_pct": 0.88
   },
   "daily": [
     {
@@ -243,6 +243,19 @@
       "sma200": 1551.91,
       "rsi14": 62.08,
       "rsi5": 64.47
+    },
+    {
+      "date": "2026-09-03",
+      "open": 1608.0,
+      "high": 1616.0,
+      "low": 1599.0,
+      "close": 1611.0,
+      "volume": 264100.0,
+      "sma25": 1635.24,
+      "sma75": 1582.69,
+      "sma200": 1553.05,
+      "rsi14": 62.08,
+      "rsi5": 64.47
     }
   ],
   "corporate_events": [
@@ -255,17 +268,17 @@
   ],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-02",
-    "monthly_rsi14": 64.17,
-    "monthly_rsi_ma5": 64.31,
-    "spread": -0.14,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-03",
+    "monthly_rsi14": 64.91,
+    "monthly_rsi_ma5": 64.46,
+    "spread": 0.45,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-03T15:40:03.570184+00:00"
+  "provisional_generated_at": "2026-09-04T15:37:52.688006+00:00"
 }

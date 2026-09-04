@@ -2,12 +2,12 @@
   "code": "7077",
   "ticker": "7077.T",
   "name": "ＡＬｉＮＫインターネット",
-  "generated_at": "2026-09-03T15:38:58.058644+00:00",
-  "price_date": "2026-09-02",
+  "generated_at": "2026-09-04T15:36:54.973567+00:00",
+  "price_date": "2026-09-03",
   "record": {
-    "current_price": 987.0,
-    "change_from_signal_month_pct": -3.14,
-    "return_since_gc_pct": -0.4
+    "current_price": 989.0,
+    "change_from_signal_month_pct": -2.94,
+    "return_since_gc_pct": -0.2
   },
   "daily": [
     {
@@ -243,22 +243,35 @@
       "sma200": 1019.14,
       "rsi14": 43.79,
       "rsi5": 46.66
+    },
+    {
+      "date": "2026-09-03",
+      "open": 979.0,
+      "high": 989.0,
+      "low": 979.0,
+      "close": 989.0,
+      "volume": 1100.0,
+      "sma25": 1006.64,
+      "sma75": 997.95,
+      "sma200": 1018.84,
+      "rsi14": 43.79,
+      "rsi5": 46.66
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-02",
-    "monthly_rsi14": 42.91,
-    "monthly_rsi_ma5": 43.06,
-    "spread": -0.15,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-03",
+    "monthly_rsi14": 43.14,
+    "monthly_rsi_ma5": 43.11,
+    "spread": 0.03,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-03T15:40:03.570184+00:00"
+  "provisional_generated_at": "2026-09-04T15:37:52.688006+00:00"
 }

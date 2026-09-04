@@ -2,12 +2,12 @@
   "code": "5133",
   "ticker": "5133.T",
   "name": "テリロジーホールディングス",
-  "generated_at": "2026-09-03T15:38:58.058644+00:00",
-  "price_date": "2026-09-02",
+  "generated_at": "2026-09-04T15:36:54.973567+00:00",
+  "price_date": "2026-09-03",
   "record": {
-    "current_price": 305.0,
-    "change_from_signal_month_pct": 0.99,
-    "return_since_gc_pct": 0.99
+    "current_price": 301.0,
+    "change_from_signal_month_pct": -0.33,
+    "return_since_gc_pct": -0.33
   },
   "daily": [
     {
@@ -243,15 +243,28 @@
       "sma200": 321.78,
       "rsi14": 46.97,
       "rsi5": 47.03
+    },
+    {
+      "date": "2026-09-03",
+      "open": 304.0,
+      "high": 305.0,
+      "low": 300.0,
+      "close": 301.0,
+      "volume": 90600.0,
+      "sma25": 311.28,
+      "sma75": 302.09,
+      "sma200": 321.69,
+      "rsi14": 46.97,
+      "rsi5": 47.03
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-02",
-    "monthly_rsi14": 47.29,
-    "monthly_rsi_ma5": 46.15,
-    "spread": 1.14,
+    "price_date": "2026-09-03",
+    "monthly_rsi14": 46.63,
+    "monthly_rsi_ma5": 46.02,
+    "spread": 0.61,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -260,5 +273,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-03T15:40:03.570184+00:00"
+  "provisional_generated_at": "2026-09-04T15:37:52.688006+00:00"
 }

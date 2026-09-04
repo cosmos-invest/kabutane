@@ -2,12 +2,12 @@
   "code": "6742",
   "ticker": "6742.T",
   "name": "京三製作所",
-  "generated_at": "2026-09-03T15:38:58.058644+00:00",
-  "price_date": "2026-09-02",
+  "generated_at": "2026-09-04T15:36:54.973567+00:00",
+  "price_date": "2026-09-03",
   "record": {
-    "current_price": 992.0,
-    "change_from_signal_month_pct": 13.76,
-    "return_since_gc_pct": 6.1
+    "current_price": 970.0,
+    "change_from_signal_month_pct": 11.24,
+    "return_since_gc_pct": 3.74
   },
   "daily": [
     {
@@ -243,22 +243,35 @@
       "sma200": 755.03,
       "rsi14": 63.97,
       "rsi5": 66.78
+    },
+    {
+      "date": "2026-09-03",
+      "open": 1004.0,
+      "high": 1004.0,
+      "low": 970.0,
+      "close": 970.0,
+      "volume": 274700.0,
+      "sma25": 998.92,
+      "sma75": 924.25,
+      "sma200": 757.23,
+      "rsi14": 63.97,
+      "rsi5": 66.78
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-02",
-    "monthly_rsi14": 70.42,
-    "monthly_rsi_ma5": 69.69,
-    "spread": 0.73,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-03",
+    "monthly_rsi14": 68.66,
+    "monthly_rsi_ma5": 69.33,
+    "spread": -0.67,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-03T15:40:03.570184+00:00"
+  "provisional_generated_at": "2026-09-04T15:37:52.688006+00:00"
 }
