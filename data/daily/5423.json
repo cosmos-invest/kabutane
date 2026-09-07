@@ -2,12 +2,12 @@
   "code": "5423",
   "ticker": "5423.T",
   "name": "東京製鐵",
-  "generated_at": "2026-09-04T15:36:54.973567+00:00",
-  "price_date": "2026-09-03",
+  "generated_at": "2026-09-07T17:03:44.585643+00:00",
+  "price_date": "2026-09-04",
   "record": {
-    "current_price": 1755.0,
-    "change_from_signal_month_pct": -0.96,
-    "return_since_gc_pct": -0.96
+    "current_price": 1701.0,
+    "change_from_signal_month_pct": -4.01,
+    "return_since_gc_pct": -4.01
   },
   "daily": [
     {
@@ -256,22 +256,35 @@
       "sma200": 1634.69,
       "rsi14": 56.51,
       "rsi5": 58.68
+    },
+    {
+      "date": "2026-09-04",
+      "open": 1754.0,
+      "high": 1754.0,
+      "low": 1701.0,
+      "close": 1701.0,
+      "volume": 322000.0,
+      "sma25": 1728.72,
+      "sma75": 1727.6,
+      "sma200": 1636.29,
+      "rsi14": 56.51,
+      "rsi5": 58.68
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-03",
-    "monthly_rsi14": 57.27,
-    "monthly_rsi_ma5": 57.12,
-    "spread": 0.15,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-04",
+    "monthly_rsi14": 54.53,
+    "monthly_rsi_ma5": 56.57,
+    "spread": -2.04,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-04T15:37:52.688006+00:00"
+  "provisional_generated_at": "2026-09-07T17:04:50.978222+00:00"
 }

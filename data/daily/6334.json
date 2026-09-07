@@ -2,12 +2,12 @@
   "code": "6334",
   "ticker": "6334.T",
   "name": "明治機械",
-  "generated_at": "2026-09-04T15:36:54.973567+00:00",
-  "price_date": "2026-09-03",
+  "generated_at": "2026-09-07T17:03:44.585643+00:00",
+  "price_date": "2026-09-04",
   "record": {
-    "current_price": 494.0,
-    "change_from_signal_month_pct": 2.49,
-    "return_since_gc_pct": 11.01
+    "current_price": 491.0,
+    "change_from_signal_month_pct": 1.87,
+    "return_since_gc_pct": 10.34
   },
   "daily": [
     {
@@ -256,22 +256,35 @@
       "sma200": 419.86,
       "rsi14": 67.62,
       "rsi5": 72.88
+    },
+    {
+      "date": "2026-09-04",
+      "open": 490.0,
+      "high": 498.0,
+      "low": 480.0,
+      "close": 491.0,
+      "volume": 6200.0,
+      "sma25": 496.88,
+      "sma75": 472.36,
+      "sma200": 420.41,
+      "rsi14": 67.62,
+      "rsi5": 72.88
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-03",
-    "monthly_rsi14": 74.44,
-    "monthly_rsi_ma5": 73.87,
-    "spread": 0.57,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-04",
+    "monthly_rsi14": 73.49,
+    "monthly_rsi_ma5": 73.68,
+    "spread": -0.18,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-04T15:37:52.688006+00:00"
+  "provisional_generated_at": "2026-09-07T17:04:50.978222+00:00"
 }

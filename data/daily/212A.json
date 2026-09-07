@@ -2,12 +2,12 @@
   "code": "212A",
   "ticker": "212A.T",
   "name": "フィットイージー",
-  "generated_at": "2026-09-04T15:36:54.973567+00:00",
-  "price_date": "2026-09-03",
+  "generated_at": "2026-09-07T17:03:44.585643+00:00",
+  "price_date": "2026-09-04",
   "record": {
-    "current_price": 2819.0,
-    "change_from_signal_month_pct": 2.92,
-    "return_since_gc_pct": 1.66
+    "current_price": 2897.0,
+    "change_from_signal_month_pct": 5.77,
+    "return_since_gc_pct": 4.47
   },
   "daily": [
     {
@@ -256,22 +256,35 @@
       "sma200": 2564.63,
       "rsi14": 60.56,
       "rsi5": 63.03
+    },
+    {
+      "date": "2026-09-04",
+      "open": 2802.0,
+      "high": 2925.0,
+      "low": 2777.0,
+      "close": 2897.0,
+      "volume": 127000.0,
+      "sma25": 2963.6,
+      "sma75": 2698.01,
+      "sma200": 2566.07,
+      "rsi14": 60.56,
+      "rsi5": 63.03
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-03",
-    "monthly_rsi14": 62.42,
-    "monthly_rsi_ma5": 62.53,
-    "spread": -0.11,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-04",
+    "monthly_rsi14": 63.82,
+    "monthly_rsi_ma5": 62.81,
+    "spread": 1.02,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-04T15:37:52.688006+00:00"
+  "provisional_generated_at": "2026-09-07T17:04:50.978222+00:00"
 }

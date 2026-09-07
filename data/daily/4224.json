@@ -2,12 +2,12 @@
   "code": "4224",
   "ticker": "4224.T",
   "name": "ロンシール工業",
-  "generated_at": "2026-09-04T15:36:54.973567+00:00",
-  "price_date": "2026-09-03",
+  "generated_at": "2026-09-07T17:03:44.585643+00:00",
+  "price_date": "2026-09-04",
   "record": {
-    "current_price": 2128.0,
-    "change_from_signal_month_pct": -0.42,
-    "return_since_gc_pct": -0.42
+    "current_price": 2104.0,
+    "change_from_signal_month_pct": -1.54,
+    "return_since_gc_pct": -1.54
   },
   "daily": [
     {
@@ -256,22 +256,35 @@
       "sma200": 2003.03,
       "rsi14": 58.62,
       "rsi5": 61.61
+    },
+    {
+      "date": "2026-09-04",
+      "open": 2137.0,
+      "high": 2137.0,
+      "low": 2104.0,
+      "close": 2104.0,
+      "volume": 6000.0,
+      "sma25": 2139.56,
+      "sma75": 2063.61,
+      "sma200": 2004.38,
+      "rsi14": 58.62,
+      "rsi5": 61.61
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-03",
-    "monthly_rsi14": 61.3,
-    "monthly_rsi_ma5": 60.79,
-    "spread": 0.51,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-04",
+    "monthly_rsi14": 60.22,
+    "monthly_rsi_ma5": 60.58,
+    "spread": -0.35,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-04T15:37:52.688006+00:00"
+  "provisional_generated_at": "2026-09-07T17:04:50.978222+00:00"
 }

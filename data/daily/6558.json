@@ -2,12 +2,12 @@
   "code": "6558",
   "ticker": "6558.T",
   "name": "クックビズ",
-  "generated_at": "2026-09-04T15:36:54.973567+00:00",
-  "price_date": "2026-09-03",
+  "generated_at": "2026-09-07T17:03:44.585643+00:00",
+  "price_date": "2026-09-04",
   "record": {
-    "current_price": 663.0,
-    "change_from_signal_month_pct": -4.33,
-    "return_since_gc_pct": -4.33
+    "current_price": 671.0,
+    "change_from_signal_month_pct": -3.17,
+    "return_since_gc_pct": -3.17
   },
   "daily": [
     {
@@ -256,22 +256,35 @@
       "sma200": 693.05,
       "rsi14": 41.3,
       "rsi5": 42.53
+    },
+    {
+      "date": "2026-09-04",
+      "open": 659.0,
+      "high": 671.0,
+      "low": 659.0,
+      "close": 671.0,
+      "volume": 500.0,
+      "sma25": 674.88,
+      "sma75": 666.73,
+      "sma200": 693.6,
+      "rsi14": 41.3,
+      "rsi5": 42.53
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-03",
-    "monthly_rsi14": 42.4,
-    "monthly_rsi_ma5": 42.54,
-    "spread": -0.14,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-04",
+    "monthly_rsi14": 42.93,
+    "monthly_rsi_ma5": 42.65,
+    "spread": 0.28,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-04T15:37:52.688006+00:00"
+  "provisional_generated_at": "2026-09-07T17:04:50.978222+00:00"
 }

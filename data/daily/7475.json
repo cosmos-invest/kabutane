@@ -2,12 +2,12 @@
   "code": "7475",
   "ticker": "7475.T",
   "name": "アルビス",
-  "generated_at": "2026-09-04T15:36:54.973567+00:00",
-  "price_date": "2026-09-03",
+  "generated_at": "2026-09-07T17:03:44.585643+00:00",
+  "price_date": "2026-09-04",
   "record": {
-    "current_price": 2501.0,
-    "change_from_signal_month_pct": -1.69,
-    "return_since_gc_pct": -1.69
+    "current_price": 2521.0,
+    "change_from_signal_month_pct": -0.9,
+    "return_since_gc_pct": -0.9
   },
   "daily": [
     {
@@ -256,15 +256,28 @@
       "sma200": 2590.53,
       "rsi14": 42.92,
       "rsi5": 45.28
+    },
+    {
+      "date": "2026-09-04",
+      "open": 2500.0,
+      "high": 2521.0,
+      "low": 2500.0,
+      "close": 2521.0,
+      "volume": 16600.0,
+      "sma25": 2514.16,
+      "sma75": 2501.76,
+      "sma200": 2589.46,
+      "rsi14": 42.92,
+      "rsi5": 45.28
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-03",
-    "monthly_rsi14": 44.64,
-    "monthly_rsi_ma5": 44.23,
-    "spread": 0.41,
+    "price_date": "2026-09-04",
+    "monthly_rsi14": 45.36,
+    "monthly_rsi_ma5": 44.37,
+    "spread": 0.99,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -273,5 +286,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-04T15:37:52.688006+00:00"
+  "provisional_generated_at": "2026-09-07T17:04:50.978222+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "8697",
   "ticker": "8697.T",
   "name": "日本取引所グループ",
-  "generated_at": "2026-09-04T15:36:54.973567+00:00",
-  "price_date": "2026-09-03",
+  "generated_at": "2026-09-07T17:03:44.585643+00:00",
+  "price_date": "2026-09-04",
   "record": {
-    "current_price": 2144.0,
-    "change_from_signal_month_pct": -2.21,
-    "return_since_gc_pct": 9.89
+    "current_price": 2239.0,
+    "change_from_signal_month_pct": 2.12,
+    "return_since_gc_pct": 14.76
   },
   "daily": [
     {
@@ -256,22 +256,35 @@
       "sma200": 1938.77,
       "rsi14": 59.62,
       "rsi5": 65.36
+    },
+    {
+      "date": "2026-09-04",
+      "open": 2194.0,
+      "high": 2244.0,
+      "low": 2179.5,
+      "close": 2239.0,
+      "volume": 5537200.0,
+      "sma25": 2235.42,
+      "sma75": 2153.53,
+      "sma200": 1941.07,
+      "rsi14": 59.62,
+      "rsi5": 65.36
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-03",
-    "monthly_rsi14": 62.99,
-    "monthly_rsi_ma5": 64.12,
-    "spread": -1.13,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-04",
+    "monthly_rsi14": 67.1,
+    "monthly_rsi_ma5": 64.94,
+    "spread": 2.16,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-04T15:37:52.688006+00:00"
+  "provisional_generated_at": "2026-09-07T17:04:50.978222+00:00"
 }

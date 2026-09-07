@@ -2,12 +2,12 @@
   "code": "7956",
   "ticker": "7956.T",
   "name": "ピジョン",
-  "generated_at": "2026-09-04T15:36:54.973567+00:00",
-  "price_date": "2026-09-03",
+  "generated_at": "2026-09-07T17:03:44.585643+00:00",
+  "price_date": "2026-09-04",
   "record": {
-    "current_price": 2069.5,
-    "change_from_signal_month_pct": 2.43,
-    "return_since_gc_pct": 20.01
+    "current_price": 2056.0,
+    "change_from_signal_month_pct": 1.76,
+    "return_since_gc_pct": 19.22
   },
   "daily": [
     {
@@ -256,22 +256,35 @@
       "sma200": 1784.76,
       "rsi14": 54.4,
       "rsi5": 59.93
+    },
+    {
+      "date": "2026-09-04",
+      "open": 2059.5,
+      "high": 2068.0,
+      "low": 2042.0,
+      "close": 2056.0,
+      "volume": 918300.0,
+      "sma25": 2089.24,
+      "sma75": 2014.5,
+      "sma200": 1786.8,
+      "rsi14": 54.4,
+      "rsi5": 59.93
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-03",
-    "monthly_rsi14": 62.69,
-    "monthly_rsi_ma5": 62.66,
-    "spread": 0.03,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-04",
+    "monthly_rsi14": 61.98,
+    "monthly_rsi_ma5": 62.52,
+    "spread": -0.54,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-04T15:37:52.688006+00:00"
+  "provisional_generated_at": "2026-09-07T17:04:50.978222+00:00"
 }

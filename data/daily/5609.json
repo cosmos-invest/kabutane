@@ -2,12 +2,12 @@
   "code": "5609",
   "ticker": "5609.T",
   "name": "日本鋳造",
-  "generated_at": "2026-09-04T15:36:54.973567+00:00",
-  "price_date": "2026-09-03",
+  "generated_at": "2026-09-07T17:03:44.585643+00:00",
+  "price_date": "2026-09-04",
   "record": {
-    "current_price": 918.0,
-    "change_from_signal_month_pct": -0.86,
-    "return_since_gc_pct": 3.26
+    "current_price": 914.0,
+    "change_from_signal_month_pct": -1.3,
+    "return_since_gc_pct": 2.81
   },
   "daily": [
     {
@@ -256,22 +256,35 @@
       "sma200": 873.85,
       "rsi14": 52.88,
       "rsi5": 57.06
+    },
+    {
+      "date": "2026-09-04",
+      "open": 914.0,
+      "high": 917.0,
+      "low": 914.0,
+      "close": 914.0,
+      "volume": 2500.0,
+      "sma25": 920.52,
+      "sma75": 918.11,
+      "sma200": 874.33,
+      "rsi14": 52.88,
+      "rsi5": 57.06
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-03",
-    "monthly_rsi14": 53.36,
-    "monthly_rsi_ma5": 53.34,
-    "spread": 0.02,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-04",
+    "monthly_rsi14": 52.74,
+    "monthly_rsi_ma5": 53.22,
+    "spread": -0.48,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-04T15:37:52.688006+00:00"
+  "provisional_generated_at": "2026-09-07T17:04:50.978222+00:00"
 }

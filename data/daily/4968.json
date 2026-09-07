@@ -2,12 +2,12 @@
   "code": "4968",
   "ticker": "4968.T",
   "name": "荒川化学工業",
-  "generated_at": "2026-09-04T15:36:54.973567+00:00",
-  "price_date": "2026-09-03",
+  "generated_at": "2026-09-07T17:03:44.585643+00:00",
+  "price_date": "2026-09-04",
   "record": {
-    "current_price": 2047.0,
-    "change_from_signal_month_pct": 12.53,
-    "return_since_gc_pct": 37.85
+    "current_price": 2139.0,
+    "change_from_signal_month_pct": 17.59,
+    "return_since_gc_pct": 44.04
   },
   "daily": [
     {
@@ -256,22 +256,35 @@
       "sma200": 1545.97,
       "rsi14": 62.07,
       "rsi5": 64.51
+    },
+    {
+      "date": "2026-09-04",
+      "open": 2057.0,
+      "high": 2149.0,
+      "low": 2028.0,
+      "close": 2139.0,
+      "volume": 210300.0,
+      "sma25": 2219.64,
+      "sma75": 2004.23,
+      "sma200": 1551.21,
+      "rsi14": 62.07,
+      "rsi5": 64.51
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-03",
-    "monthly_rsi14": 67.23,
-    "monthly_rsi_ma5": 68.56,
-    "spread": -1.34,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-04",
+    "monthly_rsi14": 70.41,
+    "monthly_rsi_ma5": 69.2,
+    "spread": 1.21,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-04T15:37:52.688006+00:00"
+  "provisional_generated_at": "2026-09-07T17:04:50.978222+00:00"
 }

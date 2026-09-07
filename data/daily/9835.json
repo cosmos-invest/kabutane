@@ -2,12 +2,12 @@
   "code": "9835",
   "ticker": "9835.T",
   "name": "ジュンテンドー",
-  "generated_at": "2026-09-04T15:36:54.973567+00:00",
-  "price_date": "2026-09-03",
+  "generated_at": "2026-09-07T17:03:44.585643+00:00",
+  "price_date": "2026-09-04",
   "record": {
-    "current_price": 507.0,
-    "change_from_signal_month_pct": -0.59,
-    "return_since_gc_pct": -0.78
+    "current_price": 509.0,
+    "change_from_signal_month_pct": -0.2,
+    "return_since_gc_pct": -0.39
   },
   "daily": [
     {
@@ -256,22 +256,35 @@
       "sma200": 507.16,
       "rsi14": 44.07,
       "rsi5": 45.34
+    },
+    {
+      "date": "2026-09-04",
+      "open": 509.0,
+      "high": 513.0,
+      "low": 506.0,
+      "close": 509.0,
+      "volume": 2300.0,
+      "sma25": 511.68,
+      "sma75": 509.28,
+      "sma200": 507.28,
+      "rsi14": 44.07,
+      "rsi5": 45.34
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-03",
-    "monthly_rsi14": 42.62,
-    "monthly_rsi_ma5": 42.96,
-    "spread": -0.35,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-04",
+    "monthly_rsi14": 43.62,
+    "monthly_rsi_ma5": 43.16,
+    "spread": 0.45,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-04T15:37:52.688006+00:00"
+  "provisional_generated_at": "2026-09-07T17:04:50.978222+00:00"
 }

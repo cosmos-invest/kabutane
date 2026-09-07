@@ -2,12 +2,12 @@
   "code": "6517",
   "ticker": "6517.T",
   "name": "デンヨー",
-  "generated_at": "2026-09-04T15:36:54.973567+00:00",
-  "price_date": "2026-09-03",
+  "generated_at": "2026-09-07T17:03:44.585643+00:00",
+  "price_date": "2026-09-04",
   "record": {
-    "current_price": 4010.0,
-    "change_from_signal_month_pct": -0.12,
-    "return_since_gc_pct": -0.12
+    "current_price": 4005.0,
+    "change_from_signal_month_pct": -0.25,
+    "return_since_gc_pct": -0.25
   },
   "daily": [
     {
@@ -256,15 +256,28 @@
       "sma200": 3625.76,
       "rsi14": 64.24,
       "rsi5": 69.37
+    },
+    {
+      "date": "2026-09-04",
+      "open": 4010.0,
+      "high": 4050.0,
+      "low": 3960.0,
+      "close": 4005.0,
+      "volume": 57600.0,
+      "sma25": 4150.0,
+      "sma75": 3785.53,
+      "sma200": 3631.37,
+      "rsi14": 64.24,
+      "rsi5": 69.37
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-03",
-    "monthly_rsi14": 67.45,
-    "monthly_rsi_ma5": 67.58,
-    "spread": -0.13,
+    "price_date": "2026-09-04",
+    "monthly_rsi14": 67.32,
+    "monthly_rsi_ma5": 67.56,
+    "spread": -0.24,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -273,5 +286,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-04T15:37:52.688006+00:00"
+  "provisional_generated_at": "2026-09-07T17:04:50.978222+00:00"
 }

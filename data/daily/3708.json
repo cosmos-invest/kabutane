@@ -2,12 +2,12 @@
   "code": "3708",
   "ticker": "3708.T",
   "name": "特種東海製紙",
-  "generated_at": "2026-09-04T15:36:54.973567+00:00",
-  "price_date": "2026-09-03",
+  "generated_at": "2026-09-07T17:03:44.585643+00:00",
+  "price_date": "2026-09-04",
   "record": {
-    "current_price": 2131.0,
-    "change_from_signal_month_pct": 2.16,
-    "return_since_gc_pct": 18.78
+    "current_price": 2143.0,
+    "change_from_signal_month_pct": 2.73,
+    "return_since_gc_pct": 19.45
   },
   "daily": [
     {
@@ -256,22 +256,35 @@
       "sma200": 1740.71,
       "rsi14": 70.37,
       "rsi5": 78.93
+    },
+    {
+      "date": "2026-09-04",
+      "open": 2127.0,
+      "high": 2151.0,
+      "low": 2122.0,
+      "close": 2143.0,
+      "volume": 47900.0,
+      "sma25": 2126.68,
+      "sma75": 1971.44,
+      "sma200": 1743.84,
+      "rsi14": 70.37,
+      "rsi5": 78.93
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-03",
-    "monthly_rsi14": 77.12,
-    "monthly_rsi_ma5": 77.59,
-    "spread": -0.47,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-04",
+    "monthly_rsi14": 77.96,
+    "monthly_rsi_ma5": 77.76,
+    "spread": 0.21,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-04T15:37:52.688006+00:00"
+  "provisional_generated_at": "2026-09-07T17:04:50.978222+00:00"
 }

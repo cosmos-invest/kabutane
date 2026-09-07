@@ -2,12 +2,12 @@
   "code": "6742",
   "ticker": "6742.T",
   "name": "京三製作所",
-  "generated_at": "2026-09-04T15:36:54.973567+00:00",
-  "price_date": "2026-09-03",
+  "generated_at": "2026-09-07T17:03:44.585643+00:00",
+  "price_date": "2026-09-04",
   "record": {
-    "current_price": 970.0,
-    "change_from_signal_month_pct": 11.24,
-    "return_since_gc_pct": 3.74
+    "current_price": 994.0,
+    "change_from_signal_month_pct": 13.99,
+    "return_since_gc_pct": 6.31
   },
   "daily": [
     {
@@ -256,22 +256,35 @@
       "sma200": 757.23,
       "rsi14": 63.97,
       "rsi5": 66.78
+    },
+    {
+      "date": "2026-09-04",
+      "open": 985.0,
+      "high": 994.0,
+      "low": 968.0,
+      "close": 994.0,
+      "volume": 219200.0,
+      "sma25": 1005.32,
+      "sma75": 928.04,
+      "sma200": 759.42,
+      "rsi14": 63.97,
+      "rsi5": 66.78
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-03",
-    "monthly_rsi14": 68.66,
-    "monthly_rsi_ma5": 69.33,
-    "spread": -0.67,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-04",
+    "monthly_rsi14": 70.58,
+    "monthly_rsi_ma5": 69.72,
+    "spread": 0.86,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-04T15:37:52.688006+00:00"
+  "provisional_generated_at": "2026-09-07T17:04:50.978222+00:00"
 }

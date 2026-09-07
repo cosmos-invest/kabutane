@@ -2,12 +2,12 @@
   "code": "9733",
   "ticker": "9733.T",
   "name": "ナガセ",
-  "generated_at": "2026-09-04T15:36:54.973567+00:00",
-  "price_date": "2026-09-03",
+  "generated_at": "2026-09-07T17:03:44.585643+00:00",
+  "price_date": "2026-09-04",
   "record": {
-    "current_price": 2341.0,
-    "change_from_signal_month_pct": 0.09,
-    "return_since_gc_pct": 0.09
+    "current_price": 2336.0,
+    "change_from_signal_month_pct": -0.13,
+    "return_since_gc_pct": -0.13
   },
   "daily": [
     {
@@ -256,22 +256,35 @@
       "sma200": 2446.08,
       "rsi14": 56.87,
       "rsi5": 57.54
+    },
+    {
+      "date": "2026-09-04",
+      "open": 2339.0,
+      "high": 2351.0,
+      "low": 2330.0,
+      "close": 2336.0,
+      "volume": 36700.0,
+      "sma25": 2317.0,
+      "sma75": 2296.48,
+      "sma200": 2446.36,
+      "rsi14": 56.87,
+      "rsi5": 57.54
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-03",
-    "monthly_rsi14": 56.35,
-    "monthly_rsi_ma5": 56.23,
-    "spread": 0.12,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-04",
+    "monthly_rsi14": 56.1,
+    "monthly_rsi_ma5": 56.18,
+    "spread": -0.08,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-04T15:37:52.688006+00:00"
+  "provisional_generated_at": "2026-09-07T17:04:50.978222+00:00"
 }

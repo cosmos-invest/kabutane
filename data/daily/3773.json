@@ -2,12 +2,12 @@
   "code": "3773",
   "ticker": "3773.T",
   "name": "アドバンスト・メディア",
-  "generated_at": "2026-09-04T15:36:54.973567+00:00",
-  "price_date": "2026-09-03",
+  "generated_at": "2026-09-07T17:03:44.585643+00:00",
+  "price_date": "2026-09-04",
   "record": {
-    "current_price": 1048.0,
-    "change_from_signal_month_pct": -4.2,
-    "return_since_gc_pct": -4.2
+    "current_price": 1069.0,
+    "change_from_signal_month_pct": -2.29,
+    "return_since_gc_pct": -2.29
   },
   "daily": [
     {
@@ -256,22 +256,35 @@
       "sma200": 1061.96,
       "rsi14": 47.28,
       "rsi5": 48.38
+    },
+    {
+      "date": "2026-09-04",
+      "open": 1048.0,
+      "high": 1073.0,
+      "low": 1042.0,
+      "close": 1069.0,
+      "volume": 35600.0,
+      "sma25": 1062.2,
+      "sma75": 1067.07,
+      "sma200": 1062.07,
+      "rsi14": 47.28,
+      "rsi5": 48.38
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-03",
-    "monthly_rsi14": 42.38,
-    "monthly_rsi_ma5": 42.75,
-    "spread": -0.37,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-04",
+    "monthly_rsi14": 43.38,
+    "monthly_rsi_ma5": 42.95,
+    "spread": 0.43,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-04T15:37:52.688006+00:00"
+  "provisional_generated_at": "2026-09-07T17:04:50.978222+00:00"
 }

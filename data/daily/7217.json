@@ -2,12 +2,12 @@
   "code": "7217",
   "ticker": "7217.T",
   "name": "テイン",
-  "generated_at": "2026-09-04T15:36:54.973567+00:00",
-  "price_date": "2026-09-03",
+  "generated_at": "2026-09-07T17:03:44.585643+00:00",
+  "price_date": "2026-09-04",
   "record": {
-    "current_price": 457.0,
-    "change_from_signal_month_pct": 7.53,
-    "return_since_gc_pct": 8.55
+    "current_price": 453.0,
+    "change_from_signal_month_pct": 6.59,
+    "return_since_gc_pct": 7.6
   },
   "daily": [
     {
@@ -256,15 +256,28 @@
       "sma200": 415.12,
       "rsi14": 51.47,
       "rsi5": 51.61
+    },
+    {
+      "date": "2026-09-04",
+      "open": 457.0,
+      "high": 457.0,
+      "low": 453.0,
+      "close": 453.0,
+      "volume": 400.0,
+      "sma25": 450.12,
+      "sma75": 433.56,
+      "sma200": 415.44,
+      "rsi14": 51.47,
+      "rsi5": 51.61
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-03",
-    "monthly_rsi14": 57.08,
-    "monthly_rsi_ma5": 54.07,
-    "spread": 3.01,
+    "price_date": "2026-09-04",
+    "monthly_rsi14": 56.32,
+    "monthly_rsi_ma5": 53.92,
+    "spread": 2.4,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -273,5 +286,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-04T15:37:52.688006+00:00"
+  "provisional_generated_at": "2026-09-07T17:04:50.978222+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "3415",
   "ticker": "3415.T",
   "name": "ＴＯＫＹＯ　ＢＡＳＥ",
-  "generated_at": "2026-09-04T15:36:54.973567+00:00",
-  "price_date": "2026-09-03",
+  "generated_at": "2026-09-07T17:03:44.585643+00:00",
+  "price_date": "2026-09-04",
   "record": {
-    "current_price": 360.0,
-    "change_from_signal_month_pct": -5.76,
-    "return_since_gc_pct": -5.76
+    "current_price": 364.0,
+    "change_from_signal_month_pct": -4.71,
+    "return_since_gc_pct": -4.71
   },
   "daily": [
     {
@@ -256,22 +256,35 @@
       "sma200": 402.74,
       "rsi14": 49.94,
       "rsi5": 50.22
+    },
+    {
+      "date": "2026-09-04",
+      "open": 363.0,
+      "high": 367.0,
+      "low": 360.0,
+      "close": 364.0,
+      "volume": 229200.0,
+      "sma25": 376.16,
+      "sma75": 371.68,
+      "sma200": 402.22,
+      "rsi14": 49.94,
+      "rsi5": 50.22
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-03",
-    "monthly_rsi14": 48.38,
-    "monthly_rsi_ma5": 48.57,
-    "spread": -0.19,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-04",
+    "monthly_rsi14": 48.85,
+    "monthly_rsi_ma5": 48.67,
+    "spread": 0.18,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-04T15:37:52.688006+00:00"
+  "provisional_generated_at": "2026-09-07T17:04:50.978222+00:00"
 }

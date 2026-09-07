@@ -2,12 +2,12 @@
   "code": "2871",
   "ticker": "2871.T",
   "name": "ニチレイ",
-  "generated_at": "2026-09-04T15:36:54.973567+00:00",
-  "price_date": "2026-09-03",
+  "generated_at": "2026-09-07T17:03:44.585643+00:00",
+  "price_date": "2026-09-04",
   "record": {
-    "current_price": 2140.0,
-    "change_from_signal_month_pct": -2.88,
-    "return_since_gc_pct": -1.43
+    "current_price": 2108.5,
+    "change_from_signal_month_pct": -4.31,
+    "return_since_gc_pct": -2.88
   },
   "daily": [
     {
@@ -256,22 +256,35 @@
       "sma200": 1991.46,
       "rsi14": 54.79,
       "rsi5": 60.48
+    },
+    {
+      "date": "2026-09-04",
+      "open": 2125.0,
+      "high": 2141.0,
+      "low": 2098.5,
+      "close": 2108.5,
+      "volume": 1350100.0,
+      "sma25": 2164.16,
+      "sma75": 2095.43,
+      "sma200": 1992.84,
+      "rsi14": 54.79,
+      "rsi5": 60.48
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-03",
-    "monthly_rsi14": 57.69,
-    "monthly_rsi_ma5": 56.86,
-    "spread": 0.84,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-04",
+    "monthly_rsi14": 56.44,
+    "monthly_rsi_ma5": 56.6,
+    "spread": -0.17,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-04T15:37:52.688006+00:00"
+  "provisional_generated_at": "2026-09-07T17:04:50.978222+00:00"
 }

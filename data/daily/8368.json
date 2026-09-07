@@ -2,12 +2,12 @@
   "code": "8368",
   "ticker": "8368.T",
   "name": "百五銀行",
-  "generated_at": "2026-09-04T15:36:54.973567+00:00",
-  "price_date": "2026-09-03",
+  "generated_at": "2026-09-07T17:03:44.585643+00:00",
+  "price_date": "2026-09-04",
   "record": {
-    "current_price": 2410.0,
-    "change_from_signal_month_pct": 19.48,
-    "return_since_gc_pct": 21.78
+    "current_price": 2376.0,
+    "change_from_signal_month_pct": 17.8,
+    "return_since_gc_pct": 20.06
   },
   "daily": [
     {
@@ -256,22 +256,35 @@
       "sma200": 1667.94,
       "rsi14": 82.14,
       "rsi5": 84.58
+    },
+    {
+      "date": "2026-09-04",
+      "open": 2410.0,
+      "high": 2429.0,
+      "low": 2329.0,
+      "close": 2376.0,
+      "volume": 884000.0,
+      "sma25": 2254.08,
+      "sma75": 2072.65,
+      "sma200": 1675.03,
+      "rsi14": 82.14,
+      "rsi5": 84.58
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-03",
-    "monthly_rsi14": 86.07,
-    "monthly_rsi_ma5": 85.19,
-    "spread": 0.88,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-04",
+    "monthly_rsi14": 84.3,
+    "monthly_rsi_ma5": 84.84,
+    "spread": -0.54,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-04T15:37:52.688006+00:00"
+  "provisional_generated_at": "2026-09-07T17:04:50.978222+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "3798",
   "ticker": "3798.T",
   "name": "ＵＬＳグループ",
-  "generated_at": "2026-09-04T15:36:54.973567+00:00",
-  "price_date": "2026-09-03",
+  "generated_at": "2026-09-07T17:03:44.585643+00:00",
+  "price_date": "2026-09-04",
   "record": {
-    "current_price": 526.0,
-    "change_from_signal_month_pct": -6.41,
-    "return_since_gc_pct": -6.41
+    "current_price": 549.0,
+    "change_from_signal_month_pct": -2.31,
+    "return_since_gc_pct": -2.31
   },
   "daily": [
     {
@@ -256,22 +256,35 @@
       "sma200": 553.04,
       "rsi14": 47.01,
       "rsi5": 51.22
+    },
+    {
+      "date": "2026-09-04",
+      "open": 529.0,
+      "high": 549.0,
+      "low": 527.0,
+      "close": 549.0,
+      "volume": 283200.0,
+      "sma25": 539.96,
+      "sma75": 533.67,
+      "sma200": 552.5,
+      "rsi14": 47.01,
+      "rsi5": 51.22
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-03",
-    "monthly_rsi14": 47.9,
-    "monthly_rsi_ma5": 48.4,
-    "spread": -0.5,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-04",
+    "monthly_rsi14": 49.9,
+    "monthly_rsi_ma5": 48.8,
+    "spread": 1.1,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-04T15:37:52.688006+00:00"
+  "provisional_generated_at": "2026-09-07T17:04:50.978222+00:00"
 }

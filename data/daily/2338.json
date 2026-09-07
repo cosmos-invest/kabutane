@@ -2,12 +2,12 @@
   "code": "2338",
   "ticker": "2338.T",
   "name": "クオンタムソリューションズ",
-  "generated_at": "2026-09-04T15:36:54.973567+00:00",
-  "price_date": "2026-09-03",
+  "generated_at": "2026-09-07T17:03:44.585643+00:00",
+  "price_date": "2026-09-04",
   "record": {
-    "current_price": 119.0,
-    "change_from_signal_month_pct": -7.75,
-    "return_since_gc_pct": -13.77
+    "current_price": 125.0,
+    "change_from_signal_month_pct": -3.1,
+    "return_since_gc_pct": -9.42
   },
   "daily": [
     {
@@ -256,22 +256,35 @@
       "sma200": 196.54,
       "rsi14": 35.89,
       "rsi5": 37.09
+    },
+    {
+      "date": "2026-09-04",
+      "open": 120.0,
+      "high": 129.0,
+      "low": 120.0,
+      "close": 125.0,
+      "volume": 237000.0,
+      "sma25": 127.96,
+      "sma75": 124.97,
+      "sma200": 194.51,
+      "rsi14": 35.89,
+      "rsi5": 37.09
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-03",
-    "monthly_rsi14": 40.7,
-    "monthly_rsi_ma5": 40.82,
-    "spread": -0.12,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-04",
+    "monthly_rsi14": 40.97,
+    "monthly_rsi_ma5": 40.88,
+    "spread": 0.1,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-04T15:37:52.688006+00:00"
+  "provisional_generated_at": "2026-09-07T17:04:50.978222+00:00"
 }

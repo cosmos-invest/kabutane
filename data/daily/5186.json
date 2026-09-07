@@ -2,12 +2,12 @@
   "code": "5186",
   "ticker": "5186.T",
   "name": "ニッタ",
-  "generated_at": "2026-09-04T15:36:54.973567+00:00",
-  "price_date": "2026-09-03",
+  "generated_at": "2026-09-07T17:03:44.585643+00:00",
+  "price_date": "2026-09-04",
   "record": {
-    "current_price": 6590.0,
-    "change_from_signal_month_pct": 3.13,
-    "return_since_gc_pct": 12.27
+    "current_price": 6720.0,
+    "change_from_signal_month_pct": 5.16,
+    "return_since_gc_pct": 14.48
   },
   "daily": [
     {
@@ -256,22 +256,35 @@
       "sma200": 5100.38,
       "rsi14": 72.49,
       "rsi5": 81.49
+    },
+    {
+      "date": "2026-09-04",
+      "open": 6600.0,
+      "high": 6720.0,
+      "low": 6560.0,
+      "close": 6720.0,
+      "volume": 57000.0,
+      "sma25": 6734.8,
+      "sma75": 6330.0,
+      "sma200": 5113.48,
+      "rsi14": 72.49,
+      "rsi5": 81.49
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-03",
-    "monthly_rsi14": 80.04,
-    "monthly_rsi_ma5": 80.64,
-    "spread": -0.6,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-04",
+    "monthly_rsi14": 83.17,
+    "monthly_rsi_ma5": 81.27,
+    "spread": 1.9,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-04T15:37:52.688006+00:00"
+  "provisional_generated_at": "2026-09-07T17:04:50.978222+00:00"
 }

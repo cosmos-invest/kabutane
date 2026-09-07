@@ -2,12 +2,12 @@
   "code": "3498",
   "ticker": "3498.T",
   "name": "霞ヶ関キャピタル",
-  "generated_at": "2026-09-04T15:36:54.973567+00:00",
-  "price_date": "2026-09-03",
+  "generated_at": "2026-09-07T17:03:44.585643+00:00",
+  "price_date": "2026-09-04",
   "record": {
-    "current_price": 7120.0,
-    "change_from_signal_month_pct": -4.17,
-    "return_since_gc_pct": 5.64
+    "current_price": 7480.0,
+    "change_from_signal_month_pct": 0.67,
+    "return_since_gc_pct": 10.98
   },
   "daily": [
     {
@@ -256,6 +256,19 @@
       "sma200": 7088.45,
       "rsi14": 48.67,
       "rsi5": 53.51
+    },
+    {
+      "date": "2026-09-04",
+      "open": 7190.0,
+      "high": 7480.0,
+      "low": 7140.0,
+      "close": 7480.0,
+      "volume": 257700.0,
+      "sma25": 7765.6,
+      "sma75": 6877.73,
+      "sma200": 7084.7,
+      "rsi14": 48.67,
+      "rsi5": 53.51
     }
   ],
   "corporate_events": [
@@ -268,17 +281,17 @@
   ],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-03",
-    "monthly_rsi14": 53.34,
-    "monthly_rsi_ma5": 53.38,
-    "spread": -0.05,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-04",
+    "monthly_rsi14": 55.46,
+    "monthly_rsi_ma5": 53.81,
+    "spread": 1.66,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-04T15:37:52.688006+00:00"
+  "provisional_generated_at": "2026-09-07T17:04:50.978222+00:00"
 }
