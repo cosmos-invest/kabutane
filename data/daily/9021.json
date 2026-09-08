@@ -2,12 +2,12 @@
   "code": "9021",
   "ticker": "9021.T",
   "name": "西日本旅客鉄道",
-  "generated_at": "2026-09-07T17:03:44.585643+00:00",
-  "price_date": "2026-09-04",
+  "generated_at": "2026-09-08T15:50:08.752476+00:00",
+  "price_date": "2026-09-07",
   "record": {
-    "current_price": 3020.0,
-    "change_from_signal_month_pct": 0.63,
-    "return_since_gc_pct": 0.63
+    "current_price": 2990.0,
+    "change_from_signal_month_pct": -0.37,
+    "return_since_gc_pct": -0.37
   },
   "daily": [
     {
@@ -269,15 +269,28 @@
       "sma200": 3008.68,
       "rsi14": 44.31,
       "rsi5": 49.89
+    },
+    {
+      "date": "2026-09-07",
+      "open": 3019.0,
+      "high": 3037.0,
+      "low": 2985.0,
+      "close": 2990.0,
+      "volume": 1406100.0,
+      "sma25": 2943.0,
+      "sma75": 2817.84,
+      "sma200": 3008.57,
+      "rsi14": 44.31,
+      "rsi5": 49.89
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-04",
-    "monthly_rsi14": 49.13,
-    "monthly_rsi_ma5": 44.01,
-    "spread": 5.12,
+    "price_date": "2026-09-07",
+    "monthly_rsi14": 48.16,
+    "monthly_rsi_ma5": 43.82,
+    "spread": 4.34,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -286,5 +299,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-07T17:04:50.978222+00:00"
+  "provisional_generated_at": "2026-09-08T15:51:07.516603+00:00"
 }

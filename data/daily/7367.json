@@ -2,12 +2,12 @@
   "code": "7367",
   "ticker": "7367.T",
   "name": "セルム",
-  "generated_at": "2026-09-07T17:03:44.585643+00:00",
-  "price_date": "2026-09-04",
+  "generated_at": "2026-09-08T15:50:08.752476+00:00",
+  "price_date": "2026-09-07",
   "record": {
-    "current_price": 330.0,
-    "change_from_signal_month_pct": -1.49,
-    "return_since_gc_pct": 0.0
+    "current_price": 331.0,
+    "change_from_signal_month_pct": -1.19,
+    "return_since_gc_pct": 0.3
   },
   "daily": [
     {
@@ -269,22 +269,35 @@
       "sma200": 337.35,
       "rsi14": 44.31,
       "rsi5": 46.5
+    },
+    {
+      "date": "2026-09-07",
+      "open": 330.0,
+      "high": 331.0,
+      "low": 325.0,
+      "close": 331.0,
+      "volume": 7900.0,
+      "sma25": 334.08,
+      "sma75": 333.96,
+      "sma200": 337.29,
+      "rsi14": 44.31,
+      "rsi5": 46.5
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-04",
-    "monthly_rsi14": 42.52,
-    "monthly_rsi_ma5": 42.57,
-    "spread": -0.05,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-07",
+    "monthly_rsi14": 42.75,
+    "monthly_rsi_ma5": 42.62,
+    "spread": 0.13,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-07T17:04:50.978222+00:00"
+  "provisional_generated_at": "2026-09-08T15:51:07.516603+00:00"
 }

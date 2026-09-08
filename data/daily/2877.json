@@ -2,12 +2,12 @@
   "code": "2877",
   "ticker": "2877.T",
   "name": "日東ベスト",
-  "generated_at": "2026-09-07T17:03:44.585643+00:00",
-  "price_date": "2026-09-04",
+  "generated_at": "2026-09-08T15:50:08.752476+00:00",
+  "price_date": "2026-09-07",
   "record": {
-    "current_price": 757.0,
-    "change_from_signal_month_pct": 2.3,
-    "return_since_gc_pct": 2.02
+    "current_price": 751.0,
+    "change_from_signal_month_pct": 1.49,
+    "return_since_gc_pct": 1.21
   },
   "daily": [
     {
@@ -269,15 +269,28 @@
       "sma200": 742.75,
       "rsi14": 41.07,
       "rsi5": 42.78
+    },
+    {
+      "date": "2026-09-07",
+      "open": 757.0,
+      "high": 760.0,
+      "low": 751.0,
+      "close": 751.0,
+      "volume": 1000.0,
+      "sma25": 746.12,
+      "sma75": 742.52,
+      "sma200": 742.8,
+      "rsi14": 41.07,
+      "rsi5": 42.78
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-04",
-    "monthly_rsi14": 47.53,
-    "monthly_rsi_ma5": 42.53,
-    "spread": 4.99,
+    "price_date": "2026-09-07",
+    "monthly_rsi14": 45.48,
+    "monthly_rsi_ma5": 42.12,
+    "spread": 3.35,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -286,5 +299,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-07T17:04:50.978222+00:00"
+  "provisional_generated_at": "2026-09-08T15:51:07.516603+00:00"
 }

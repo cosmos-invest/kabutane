@@ -2,12 +2,12 @@
   "code": "5909",
   "ticker": "5909.T",
   "name": "コロナ",
-  "generated_at": "2026-09-07T17:03:44.585643+00:00",
-  "price_date": "2026-09-04",
+  "generated_at": "2026-09-08T15:50:08.752476+00:00",
+  "price_date": "2026-09-07",
   "record": {
-    "current_price": 967.0,
-    "change_from_signal_month_pct": -2.62,
-    "return_since_gc_pct": -2.62
+    "current_price": 954.0,
+    "change_from_signal_month_pct": -3.93,
+    "return_since_gc_pct": -3.93
   },
   "daily": [
     {
@@ -269,22 +269,35 @@
       "sma200": 969.26,
       "rsi14": 50.47,
       "rsi5": 54.66
+    },
+    {
+      "date": "2026-09-07",
+      "open": 961.0,
+      "high": 963.0,
+      "low": 953.0,
+      "close": 954.0,
+      "volume": 8900.0,
+      "sma25": 977.84,
+      "sma75": 970.31,
+      "sma200": 969.3,
+      "rsi14": 50.47,
+      "rsi5": 54.66
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-04",
-    "monthly_rsi14": 52.2,
-    "monthly_rsi_ma5": 52.09,
-    "spread": 0.11,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-07",
+    "monthly_rsi14": 50.79,
+    "monthly_rsi_ma5": 51.81,
+    "spread": -1.01,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-07T17:04:50.978222+00:00"
+  "provisional_generated_at": "2026-09-08T15:51:07.516603+00:00"
 }

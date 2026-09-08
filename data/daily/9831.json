@@ -2,12 +2,12 @@
   "code": "9831",
   "ticker": "9831.T",
   "name": "ヤマダホールディングス",
-  "generated_at": "2026-09-07T17:03:44.585643+00:00",
-  "price_date": "2026-09-04",
+  "generated_at": "2026-09-08T15:50:08.752476+00:00",
+  "price_date": "2026-09-07",
   "record": {
-    "current_price": 709.0,
-    "change_from_signal_month_pct": -0.57,
-    "return_since_gc_pct": 13.53
+    "current_price": 699.8,
+    "change_from_signal_month_pct": -1.87,
+    "return_since_gc_pct": 12.06
   },
   "daily": [
     {
@@ -269,22 +269,35 @@
       "sma200": 583.5,
       "rsi14": 66.68,
       "rsi5": 75.98
+    },
+    {
+      "date": "2026-09-07",
+      "open": 706.0,
+      "high": 708.0,
+      "low": 694.9,
+      "close": 699.8,
+      "volume": 4090200.0,
+      "sma25": 698.24,
+      "sma75": 676.57,
+      "sma200": 584.71,
+      "rsi14": 66.68,
+      "rsi5": 75.98
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-04",
-    "monthly_rsi14": 74.7,
-    "monthly_rsi_ma5": 73.82,
-    "spread": 0.89,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-07",
+    "monthly_rsi14": 72.82,
+    "monthly_rsi_ma5": 73.44,
+    "spread": -0.62,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-07T17:04:50.978222+00:00"
+  "provisional_generated_at": "2026-09-08T15:51:07.516603+00:00"
 }

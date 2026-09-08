@@ -2,12 +2,12 @@
   "code": "3758",
   "ticker": "3758.T",
   "name": "アエリア",
-  "generated_at": "2026-09-07T17:03:44.585643+00:00",
-  "price_date": "2026-09-04",
+  "generated_at": "2026-09-08T15:50:08.752476+00:00",
+  "price_date": "2026-09-07",
   "record": {
-    "current_price": 248.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 246.0,
+    "change_from_signal_month_pct": -0.81,
+    "return_since_gc_pct": -0.81
   },
   "daily": [
     {
@@ -269,15 +269,28 @@
       "sma200": 259.9,
       "rsi14": 39.5,
       "rsi5": 42.32
+    },
+    {
+      "date": "2026-09-07",
+      "open": 250.0,
+      "high": 250.0,
+      "low": 245.0,
+      "close": 246.0,
+      "volume": 12200.0,
+      "sma25": 245.8,
+      "sma75": 237.31,
+      "sma200": 259.69,
+      "rsi14": 39.5,
+      "rsi5": 42.32
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-04",
-    "monthly_rsi14": 41.56,
-    "monthly_rsi_ma5": 39.53,
-    "spread": 2.03,
+    "price_date": "2026-09-07",
+    "monthly_rsi14": 41.18,
+    "monthly_rsi_ma5": 39.45,
+    "spread": 1.73,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -286,5 +299,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-07T17:04:50.978222+00:00"
+  "provisional_generated_at": "2026-09-08T15:51:07.516603+00:00"
 }

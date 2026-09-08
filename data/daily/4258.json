@@ -2,12 +2,12 @@
   "code": "4258",
   "ticker": "4258.T",
   "name": "網屋",
-  "generated_at": "2026-09-07T17:03:44.585643+00:00",
-  "price_date": "2026-09-04",
+  "generated_at": "2026-09-08T15:50:08.752476+00:00",
+  "price_date": "2026-09-07",
   "record": {
-    "current_price": 4340.0,
-    "change_from_signal_month_pct": 0.12,
-    "return_since_gc_pct": 28.78
+    "current_price": 4500.0,
+    "change_from_signal_month_pct": 3.81,
+    "return_since_gc_pct": 33.53
   },
   "daily": [
     {
@@ -269,15 +269,28 @@
       "sma200": 3410.2,
       "rsi14": 63.3,
       "rsi5": 73.14
+    },
+    {
+      "date": "2026-09-07",
+      "open": 4355.0,
+      "high": 4510.0,
+      "low": 4320.0,
+      "close": 4500.0,
+      "volume": 38200.0,
+      "sma25": 4488.2,
+      "sma75": 4028.27,
+      "sma200": 3413.0,
+      "rsi14": 63.3,
+      "rsi5": 73.14
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-04",
-    "monthly_rsi14": 70.51,
-    "monthly_rsi_ma5": 69.66,
-    "spread": 0.85,
+    "price_date": "2026-09-07",
+    "monthly_rsi14": 73.66,
+    "monthly_rsi_ma5": 70.29,
+    "spread": 3.37,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -286,5 +299,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-07T17:04:50.978222+00:00"
+  "provisional_generated_at": "2026-09-08T15:51:07.516603+00:00"
 }
