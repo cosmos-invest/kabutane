@@ -2,12 +2,12 @@
   "code": "4208",
   "ticker": "4208.T",
   "name": "ＵＢＥ",
-  "generated_at": "2026-09-08T15:50:08.752476+00:00",
-  "price_date": "2026-09-07",
+  "generated_at": "2026-09-09T15:45:47.822484+00:00",
+  "price_date": "2026-09-08",
   "record": {
-    "current_price": 3470.0,
-    "change_from_signal_month_pct": 9.02,
-    "return_since_gc_pct": 17.53
+    "current_price": 3392.0,
+    "change_from_signal_month_pct": 6.57,
+    "return_since_gc_pct": 14.89
   },
   "daily": [
     {
@@ -282,22 +282,35 @@
       "sma200": 2821.78,
       "rsi14": 58.67,
       "rsi5": 66.47
+    },
+    {
+      "date": "2026-09-08",
+      "open": 3450.0,
+      "high": 3467.0,
+      "low": 3392.0,
+      "close": 3392.0,
+      "volume": 745700.0,
+      "sma25": 3507.88,
+      "sma75": 3257.87,
+      "sma200": 2826.59,
+      "rsi14": 58.67,
+      "rsi5": 66.47
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-07",
-    "monthly_rsi14": 68.87,
-    "monthly_rsi_ma5": 67.24,
-    "spread": 1.62,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-08",
+    "monthly_rsi14": 66.52,
+    "monthly_rsi_ma5": 66.77,
+    "spread": -0.25,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-08T15:51:07.516603+00:00"
+  "provisional_generated_at": "2026-09-09T15:46:59.308159+00:00"
 }

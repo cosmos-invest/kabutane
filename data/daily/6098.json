@@ -2,12 +2,12 @@
   "code": "6098",
   "ticker": "6098.T",
   "name": "リクルートホールディングス",
-  "generated_at": "2026-09-08T15:50:08.752476+00:00",
-  "price_date": "2026-09-07",
+  "generated_at": "2026-09-09T15:45:47.822484+00:00",
+  "price_date": "2026-09-08",
   "record": {
-    "current_price": 16140.0,
-    "change_from_signal_month_pct": 28.61,
-    "return_since_gc_pct": 52.7
+    "current_price": 15690.0,
+    "change_from_signal_month_pct": 25.02,
+    "return_since_gc_pct": 48.44
   },
   "daily": [
     {
@@ -282,22 +282,35 @@
       "sma200": 9670.71,
       "rsi14": 57.3,
       "rsi5": 68.93
+    },
+    {
+      "date": "2026-09-08",
+      "open": 15910.0,
+      "high": 16055.0,
+      "low": 15615.0,
+      "close": 15690.0,
+      "volume": 3086400.0,
+      "sma25": 15960.4,
+      "sma75": 13007.39,
+      "sma200": 9708.33,
+      "rsi14": 57.3,
+      "rsi5": 68.93
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-07",
-    "monthly_rsi14": 70.52,
-    "monthly_rsi_ma5": 70.01,
-    "spread": 0.51,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-08",
+    "monthly_rsi14": 68.75,
+    "monthly_rsi_ma5": 69.65,
+    "spread": -0.91,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-08T15:51:07.516603+00:00"
+  "provisional_generated_at": "2026-09-09T15:46:59.308159+00:00"
 }

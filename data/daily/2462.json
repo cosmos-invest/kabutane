@@ -2,12 +2,12 @@
   "code": "2462",
   "ticker": "2462.T",
   "name": "ライク",
-  "generated_at": "2026-09-08T15:50:08.752476+00:00",
-  "price_date": "2026-09-07",
+  "generated_at": "2026-09-09T15:45:47.822484+00:00",
+  "price_date": "2026-09-08",
   "record": {
-    "current_price": 1513.0,
-    "change_from_signal_month_pct": -0.53,
-    "return_since_gc_pct": -0.53
+    "current_price": 1501.0,
+    "change_from_signal_month_pct": -1.31,
+    "return_since_gc_pct": -1.31
   },
   "daily": [
     {
@@ -282,22 +282,35 @@
       "sma200": 1534.4,
       "rsi14": 49.09,
       "rsi5": 49.16
+    },
+    {
+      "date": "2026-09-08",
+      "open": 1510.0,
+      "high": 1510.0,
+      "low": 1501.0,
+      "close": 1501.0,
+      "volume": 23300.0,
+      "sma25": 1530.76,
+      "sma75": 1497.96,
+      "sma200": 1534.39,
+      "rsi14": 49.09,
+      "rsi5": 49.16
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-07",
-    "monthly_rsi14": 50.4,
-    "monthly_rsi_ma5": 50.36,
-    "spread": 0.04,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-08",
+    "monthly_rsi14": 49.47,
+    "monthly_rsi_ma5": 50.17,
+    "spread": -0.7,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-08T15:51:07.516603+00:00"
+  "provisional_generated_at": "2026-09-09T15:46:59.308159+00:00"
 }

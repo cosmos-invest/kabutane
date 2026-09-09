@@ -2,12 +2,12 @@
   "code": "1450",
   "ticker": "1450.T",
   "name": "ＴＡＮＡＫＥＮ",
-  "generated_at": "2026-09-08T15:50:08.752476+00:00",
-  "price_date": "2026-09-07",
+  "generated_at": "2026-09-09T15:45:47.822484+00:00",
+  "price_date": "2026-09-08",
   "record": {
-    "current_price": 1463.0,
-    "change_from_signal_month_pct": -3.11,
-    "return_since_gc_pct": -3.11
+    "current_price": 1456.0,
+    "change_from_signal_month_pct": -3.58,
+    "return_since_gc_pct": -3.58
   },
   "daily": [
     {
@@ -282,22 +282,35 @@
       "sma200": 1450.26,
       "rsi14": 57.09,
       "rsi5": 60.03
+    },
+    {
+      "date": "2026-09-08",
+      "open": 1464.0,
+      "high": 1474.0,
+      "low": 1453.0,
+      "close": 1456.0,
+      "volume": 3800.0,
+      "sma25": 1467.0,
+      "sma75": 1413.47,
+      "sma200": 1450.54,
+      "rsi14": 57.09,
+      "rsi5": 60.03
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-07",
-    "monthly_rsi14": 56.52,
-    "monthly_rsi_ma5": 56.21,
-    "spread": 0.31,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-08",
+    "monthly_rsi14": 56.01,
+    "monthly_rsi_ma5": 56.11,
+    "spread": -0.1,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-08T15:51:07.516603+00:00"
+  "provisional_generated_at": "2026-09-09T15:46:59.308159+00:00"
 }

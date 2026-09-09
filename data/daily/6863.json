@@ -2,12 +2,12 @@
   "code": "6863",
   "ticker": "6863.T",
   "name": "ニレコ",
-  "generated_at": "2026-09-08T15:50:08.752476+00:00",
-  "price_date": "2026-09-07",
+  "generated_at": "2026-09-09T15:45:47.822484+00:00",
+  "price_date": "2026-09-08",
   "record": {
-    "current_price": 1016.0,
-    "change_from_signal_month_pct": 14.67,
-    "return_since_gc_pct": 15.02
+    "current_price": 985.0,
+    "change_from_signal_month_pct": 11.17,
+    "return_since_gc_pct": 11.51
   },
   "daily": [
     {
@@ -282,22 +282,35 @@
       "sma200": 785.98,
       "rsi14": 64.87,
       "rsi5": 66.24
+    },
+    {
+      "date": "2026-09-08",
+      "open": 1007.0,
+      "high": 1007.0,
+      "low": 985.0,
+      "close": 985.0,
+      "volume": 30600.0,
+      "sma25": 965.36,
+      "sma75": 921.74,
+      "sma200": 787.84,
+      "rsi14": 64.87,
+      "rsi5": 66.24
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-07",
-    "monthly_rsi14": 70.89,
-    "monthly_rsi_ma5": 69.47,
-    "spread": 1.42,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-08",
+    "monthly_rsi14": 69.07,
+    "monthly_rsi_ma5": 69.11,
+    "spread": -0.03,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-08T15:51:07.516603+00:00"
+  "provisional_generated_at": "2026-09-09T15:46:59.308159+00:00"
 }

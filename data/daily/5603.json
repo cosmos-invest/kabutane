@@ -2,12 +2,12 @@
   "code": "5603",
   "ticker": "5603.T",
   "name": "虹技",
-  "generated_at": "2026-09-08T15:50:08.752476+00:00",
-  "price_date": "2026-09-07",
+  "generated_at": "2026-09-09T15:45:47.822484+00:00",
+  "price_date": "2026-09-08",
   "record": {
-    "current_price": 1315.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 1301.0,
+    "change_from_signal_month_pct": -1.06,
+    "return_since_gc_pct": -1.06
   },
   "daily": [
     {
@@ -282,15 +282,28 @@
       "sma200": 1314.08,
       "rsi14": 53.36,
       "rsi5": 54.01
+    },
+    {
+      "date": "2026-09-08",
+      "open": 1307.0,
+      "high": 1319.0,
+      "low": 1301.0,
+      "close": 1301.0,
+      "volume": 3200.0,
+      "sma25": 1312.04,
+      "sma75": 1266.43,
+      "sma200": 1314.35,
+      "rsi14": 53.36,
+      "rsi5": 54.01
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-07",
-    "monthly_rsi14": 49.07,
-    "monthly_rsi_ma5": 46.55,
-    "spread": 2.52,
+    "price_date": "2026-09-08",
+    "monthly_rsi14": 48.09,
+    "monthly_rsi_ma5": 46.36,
+    "spread": 1.73,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -299,5 +312,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-08T15:51:07.516603+00:00"
+  "provisional_generated_at": "2026-09-09T15:46:59.308159+00:00"
 }

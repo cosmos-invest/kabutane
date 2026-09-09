@@ -2,12 +2,12 @@
   "code": "4177",
   "ticker": "4177.T",
   "name": "ｉ‐ｐｌｕｇ",
-  "generated_at": "2026-09-08T15:50:08.752476+00:00",
-  "price_date": "2026-09-07",
+  "generated_at": "2026-09-09T15:45:47.822484+00:00",
+  "price_date": "2026-09-08",
   "record": {
-    "current_price": 1530.0,
-    "change_from_signal_month_pct": 0.13,
-    "return_since_gc_pct": 0.13
+    "current_price": 1525.0,
+    "change_from_signal_month_pct": -0.2,
+    "return_since_gc_pct": -0.2
   },
   "daily": [
     {
@@ -282,15 +282,28 @@
       "sma200": 1516.65,
       "rsi14": 50.91,
       "rsi5": 52.28
+    },
+    {
+      "date": "2026-09-08",
+      "open": 1525.0,
+      "high": 1551.0,
+      "low": 1525.0,
+      "close": 1525.0,
+      "volume": 1200.0,
+      "sma25": 1525.88,
+      "sma75": 1479.01,
+      "sma200": 1518.54,
+      "rsi14": 50.91,
+      "rsi5": 52.28
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-07",
-    "monthly_rsi14": 53.66,
-    "monthly_rsi_ma5": 52.55,
-    "spread": 1.11,
+    "price_date": "2026-09-08",
+    "monthly_rsi14": 53.48,
+    "monthly_rsi_ma5": 52.52,
+    "spread": 0.96,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -299,5 +312,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-08T15:51:07.516603+00:00"
+  "provisional_generated_at": "2026-09-09T15:46:59.308159+00:00"
 }

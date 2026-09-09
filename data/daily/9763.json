@@ -2,12 +2,12 @@
   "code": "9763",
   "ticker": "9763.T",
   "name": "丸建リース",
-  "generated_at": "2026-09-08T15:50:08.752476+00:00",
-  "price_date": "2026-09-07",
+  "generated_at": "2026-09-09T15:45:47.822484+00:00",
+  "price_date": "2026-09-08",
   "record": {
-    "current_price": 1292.0,
-    "change_from_signal_month_pct": -1.45,
-    "return_since_gc_pct": -1.45
+    "current_price": 1282.0,
+    "change_from_signal_month_pct": -2.21,
+    "return_since_gc_pct": -2.21
   },
   "daily": [
     {
@@ -282,22 +282,35 @@
       "sma200": 1349.86,
       "rsi14": 57.76,
       "rsi5": 58.12
+    },
+    {
+      "date": "2026-09-08",
+      "open": 1292.0,
+      "high": 1308.0,
+      "low": 1282.0,
+      "close": 1282.0,
+      "volume": 20400.0,
+      "sma25": 1302.4,
+      "sma75": 1249.92,
+      "sma200": 1350.19,
+      "rsi14": 57.76,
+      "rsi5": 58.12
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-07",
-    "monthly_rsi14": 56.6,
-    "monthly_rsi_ma5": 56.44,
-    "spread": 0.16,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-08",
+    "monthly_rsi14": 55.98,
+    "monthly_rsi_ma5": 56.32,
+    "spread": -0.34,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-08T15:51:07.516603+00:00"
+  "provisional_generated_at": "2026-09-09T15:46:59.308159+00:00"
 }

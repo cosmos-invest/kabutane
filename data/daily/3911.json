@@ -2,12 +2,12 @@
   "code": "3911",
   "ticker": "3911.T",
   "name": "Ａｉｍｉｎｇ",
-  "generated_at": "2026-09-08T15:50:08.752476+00:00",
-  "price_date": "2026-09-07",
+  "generated_at": "2026-09-09T15:45:47.822484+00:00",
+  "price_date": "2026-09-08",
   "record": {
-    "current_price": 182.0,
-    "change_from_signal_month_pct": -1.09,
-    "return_since_gc_pct": -5.7
+    "current_price": 177.0,
+    "change_from_signal_month_pct": -3.8,
+    "return_since_gc_pct": -8.29
   },
   "daily": [
     {
@@ -282,22 +282,35 @@
       "sma200": 201.71,
       "rsi14": 38.62,
       "rsi5": 39.78
+    },
+    {
+      "date": "2026-09-08",
+      "open": 182.0,
+      "high": 182.0,
+      "low": 177.0,
+      "close": 177.0,
+      "volume": 199500.0,
+      "sma25": 177.64,
+      "sma75": 183.71,
+      "sma200": 201.41,
+      "rsi14": 38.62,
+      "rsi5": 39.78
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-07",
-    "monthly_rsi14": 35.71,
-    "monthly_rsi_ma5": 35.44,
-    "spread": 0.27,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-08",
+    "monthly_rsi14": 34.97,
+    "monthly_rsi_ma5": 35.3,
+    "spread": -0.32,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-08T15:51:07.516603+00:00"
+  "provisional_generated_at": "2026-09-09T15:46:59.308159+00:00"
 }

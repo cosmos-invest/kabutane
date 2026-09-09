@@ -2,12 +2,12 @@
   "code": "6272",
   "ticker": "6272.T",
   "name": "レオン自動機",
-  "generated_at": "2026-09-08T15:50:08.752476+00:00",
-  "price_date": "2026-09-07",
+  "generated_at": "2026-09-09T15:45:47.822484+00:00",
+  "price_date": "2026-09-08",
   "record": {
-    "current_price": 1552.0,
-    "change_from_signal_month_pct": 2.17,
-    "return_since_gc_pct": 2.17
+    "current_price": 1500.0,
+    "change_from_signal_month_pct": -1.25,
+    "return_since_gc_pct": -1.25
   },
   "daily": [
     {
@@ -282,22 +282,35 @@
       "sma200": 1504.88,
       "rsi14": 52.92,
       "rsi5": 54.66
+    },
+    {
+      "date": "2026-09-08",
+      "open": 1545.0,
+      "high": 1549.0,
+      "low": 1500.0,
+      "close": 1500.0,
+      "volume": 52900.0,
+      "sma25": 1536.44,
+      "sma75": 1499.17,
+      "sma200": 1504.89,
+      "rsi14": 52.92,
+      "rsi5": 54.66
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-07",
-    "monthly_rsi14": 56.1,
-    "monthly_rsi_ma5": 54.5,
-    "spread": 1.6,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-08",
+    "monthly_rsi14": 53.12,
+    "monthly_rsi_ma5": 53.91,
+    "spread": -0.79,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-08T15:51:07.516603+00:00"
+  "provisional_generated_at": "2026-09-09T15:46:59.308159+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "6988",
   "ticker": "6988.T",
   "name": "日東電工",
-  "generated_at": "2026-09-08T15:50:08.752476+00:00",
-  "price_date": "2026-09-07",
+  "generated_at": "2026-09-09T15:45:47.822484+00:00",
+  "price_date": "2026-09-08",
   "record": {
-    "current_price": 3379.0,
-    "change_from_signal_month_pct": 1.62,
-    "return_since_gc_pct": 1.62
+    "current_price": 3179.0,
+    "change_from_signal_month_pct": -4.39,
+    "return_since_gc_pct": -4.39
   },
   "daily": [
     {
@@ -282,22 +282,35 @@
       "sma200": 3397.27,
       "rsi14": 53.06,
       "rsi5": 57.1
+    },
+    {
+      "date": "2026-09-08",
+      "open": 3344.0,
+      "high": 3347.0,
+      "low": 3179.0,
+      "close": 3179.0,
+      "volume": 3124800.0,
+      "sma25": 3452.28,
+      "sma75": 3275.31,
+      "sma200": 3393.38,
+      "rsi14": 53.06,
+      "rsi5": 57.1
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-07",
-    "monthly_rsi14": 57.62,
-    "monthly_rsi_ma5": 56.58,
-    "spread": 1.04,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-08",
+    "monthly_rsi14": 53.35,
+    "monthly_rsi_ma5": 55.72,
+    "spread": -2.38,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-08T15:51:07.516603+00:00"
+  "provisional_generated_at": "2026-09-09T15:46:59.308159+00:00"
 }

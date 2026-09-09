@@ -2,12 +2,12 @@
   "code": "5942",
   "ticker": "5942.T",
   "name": "日本フイルコン",
-  "generated_at": "2026-09-08T15:50:08.752476+00:00",
-  "price_date": "2026-09-07",
+  "generated_at": "2026-09-09T15:45:47.822484+00:00",
+  "price_date": "2026-09-08",
   "record": {
-    "current_price": 637.0,
-    "change_from_signal_month_pct": -1.55,
-    "return_since_gc_pct": 3.58
+    "current_price": 629.0,
+    "change_from_signal_month_pct": -2.78,
+    "return_since_gc_pct": 2.28
   },
   "daily": [
     {
@@ -282,22 +282,35 @@
       "sma200": 592.21,
       "rsi14": 64.03,
       "rsi5": 67.74
+    },
+    {
+      "date": "2026-09-08",
+      "open": 635.0,
+      "high": 635.0,
+      "low": 625.0,
+      "close": 629.0,
+      "volume": 59300.0,
+      "sma25": 644.76,
+      "sma75": 624.77,
+      "sma200": 592.6,
+      "rsi14": 64.03,
+      "rsi5": 67.74
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-07",
-    "monthly_rsi14": 66.1,
-    "monthly_rsi_ma5": 65.01,
-    "spread": 1.09,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-08",
+    "monthly_rsi14": 64.17,
+    "monthly_rsi_ma5": 64.63,
+    "spread": -0.46,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-08T15:51:07.516603+00:00"
+  "provisional_generated_at": "2026-09-09T15:46:59.308159+00:00"
 }

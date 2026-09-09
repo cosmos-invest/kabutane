@@ -2,12 +2,12 @@
   "code": "2760",
   "ticker": "2760.T",
   "name": "東京エレクトロン　デバイス",
-  "generated_at": "2026-09-08T15:50:08.752476+00:00",
-  "price_date": "2026-09-07",
+  "generated_at": "2026-09-09T15:45:47.822484+00:00",
+  "price_date": "2026-09-08",
   "record": {
-    "current_price": 4180.0,
-    "change_from_signal_month_pct": 3.72,
-    "return_since_gc_pct": 20.98
+    "current_price": 3955.0,
+    "change_from_signal_month_pct": -1.86,
+    "return_since_gc_pct": 14.47
   },
   "daily": [
     {
@@ -282,22 +282,35 @@
       "sma200": 3640.41,
       "rsi14": 53.88,
       "rsi5": 58.11
+    },
+    {
+      "date": "2026-09-08",
+      "open": 4150.0,
+      "high": 4160.0,
+      "low": 3955.0,
+      "close": 3955.0,
+      "volume": 114900.0,
+      "sma25": 4179.6,
+      "sma75": 4028.2,
+      "sma200": 3645.14,
+      "rsi14": 53.88,
+      "rsi5": 58.11
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-07",
-    "monthly_rsi14": 59.43,
-    "monthly_rsi_ma5": 59.07,
-    "spread": 0.36,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-08",
+    "monthly_rsi14": 56.27,
+    "monthly_rsi_ma5": 58.44,
+    "spread": -2.17,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-08T15:51:07.516603+00:00"
+  "provisional_generated_at": "2026-09-09T15:46:59.308159+00:00"
 }

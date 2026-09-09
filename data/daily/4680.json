@@ -2,12 +2,12 @@
   "code": "4680",
   "ticker": "4680.T",
   "name": "ラウンドワン",
-  "generated_at": "2026-09-08T15:50:08.752476+00:00",
-  "price_date": "2026-09-07",
+  "generated_at": "2026-09-09T15:45:47.822484+00:00",
+  "price_date": "2026-09-08",
   "record": {
-    "current_price": 1248.0,
-    "change_from_signal_month_pct": 2.63,
-    "return_since_gc_pct": 7.4
+    "current_price": 1198.0,
+    "change_from_signal_month_pct": -1.48,
+    "return_since_gc_pct": 3.1
   },
   "daily": [
     {
@@ -282,22 +282,35 @@
       "sma200": 1059.4,
       "rsi14": 49.21,
       "rsi5": 56.46
+    },
+    {
+      "date": "2026-09-08",
+      "open": 1236.5,
+      "high": 1251.5,
+      "low": 1192.0,
+      "close": 1198.0,
+      "volume": 2851800.0,
+      "sma25": 1307.16,
+      "sma75": 1173.49,
+      "sma200": 1060.2,
+      "rsi14": 49.21,
+      "rsi5": 56.46
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-07",
-    "monthly_rsi14": 56.66,
-    "monthly_rsi_ma5": 55.36,
-    "spread": 1.3,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-08",
+    "monthly_rsi14": 54.95,
+    "monthly_rsi_ma5": 55.02,
+    "spread": -0.07,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-08T15:51:07.516603+00:00"
+  "provisional_generated_at": "2026-09-09T15:46:59.308159+00:00"
 }

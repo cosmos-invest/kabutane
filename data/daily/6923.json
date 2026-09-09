@@ -2,12 +2,12 @@
   "code": "6923",
   "ticker": "6923.T",
   "name": "スタンレー電気",
-  "generated_at": "2026-09-08T15:50:08.752476+00:00",
-  "price_date": "2026-09-07",
+  "generated_at": "2026-09-09T15:45:47.822484+00:00",
+  "price_date": "2026-09-08",
   "record": {
-    "current_price": 3674.0,
-    "change_from_signal_month_pct": 5.24,
-    "return_since_gc_pct": 3.46
+    "current_price": 3449.0,
+    "change_from_signal_month_pct": -1.2,
+    "return_since_gc_pct": -2.87
   },
   "daily": [
     {
@@ -282,22 +282,35 @@
       "sma200": 3265.61,
       "rsi14": 59.18,
       "rsi5": 62.88
+    },
+    {
+      "date": "2026-09-08",
+      "open": 3633.0,
+      "high": 3675.0,
+      "low": 3449.0,
+      "close": 3449.0,
+      "volume": 690000.0,
+      "sma25": 3595.64,
+      "sma75": 3579.09,
+      "sma200": 3267.22,
+      "rsi14": 59.18,
+      "rsi5": 62.88
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-07",
-    "monthly_rsi14": 67.18,
-    "monthly_rsi_ma5": 65.62,
-    "spread": 1.57,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-08",
+    "monthly_rsi14": 60.48,
+    "monthly_rsi_ma5": 64.28,
+    "spread": -3.79,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-08T15:51:07.516603+00:00"
+  "provisional_generated_at": "2026-09-09T15:46:59.308159+00:00"
 }

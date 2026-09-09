@@ -2,12 +2,12 @@
   "code": "6463",
   "ticker": "6463.T",
   "name": "ＴＰＲ",
-  "generated_at": "2026-09-08T15:50:08.752476+00:00",
-  "price_date": "2026-09-07",
+  "generated_at": "2026-09-09T15:45:47.822484+00:00",
+  "price_date": "2026-09-08",
   "record": {
-    "current_price": 1619.0,
-    "change_from_signal_month_pct": 8.22,
-    "return_since_gc_pct": 15.73
+    "current_price": 1521.0,
+    "change_from_signal_month_pct": 1.67,
+    "return_since_gc_pct": 8.72
   },
   "daily": [
     {
@@ -282,22 +282,35 @@
       "sma200": 1358.21,
       "rsi14": 61.08,
       "rsi5": 67.61
+    },
+    {
+      "date": "2026-09-08",
+      "open": 1618.0,
+      "high": 1618.0,
+      "low": 1518.0,
+      "close": 1521.0,
+      "volume": 147200.0,
+      "sma25": 1560.08,
+      "sma75": 1463.13,
+      "sma200": 1359.61,
+      "rsi14": 61.08,
+      "rsi5": 67.61
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-07",
-    "monthly_rsi14": 71.99,
-    "monthly_rsi_ma5": 67.94,
-    "spread": 4.05,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-08",
+    "monthly_rsi14": 64.92,
+    "monthly_rsi_ma5": 66.52,
+    "spread": -1.6,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-08T15:51:07.516603+00:00"
+  "provisional_generated_at": "2026-09-09T15:46:59.308159+00:00"
 }
