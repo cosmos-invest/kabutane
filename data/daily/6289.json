@@ -2,12 +2,12 @@
   "code": "6289",
   "ticker": "6289.T",
   "name": "技研製作所",
-  "generated_at": "2026-09-09T15:45:47.822484+00:00",
-  "price_date": "2026-09-08",
+  "generated_at": "2026-09-10T15:41:12.551500+00:00",
+  "price_date": "2026-09-09",
   "record": {
-    "current_price": 1847.0,
-    "change_from_signal_month_pct": -2.79,
-    "return_since_gc_pct": -2.79
+    "current_price": 1878.0,
+    "change_from_signal_month_pct": -1.16,
+    "return_since_gc_pct": -1.16
   },
   "daily": [
     {
@@ -295,6 +295,19 @@
       "sma200": 1933.85,
       "rsi14": 48.65,
       "rsi5": 50.58
+    },
+    {
+      "date": "2026-09-09",
+      "open": 1850.0,
+      "high": 1889.0,
+      "low": 1848.0,
+      "close": 1878.0,
+      "volume": 47400.0,
+      "sma25": 1920.72,
+      "sma75": 1843.56,
+      "sma200": 1934.82,
+      "rsi14": 48.65,
+      "rsi5": 50.58
     }
   ],
   "corporate_events": [
@@ -307,17 +320,17 @@
   ],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-08",
-    "monthly_rsi14": 50.63,
-    "monthly_rsi_ma5": 50.86,
-    "spread": -0.22,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-09",
+    "monthly_rsi14": 51.6,
+    "monthly_rsi_ma5": 51.05,
+    "spread": 0.55,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-09T15:46:59.308159+00:00"
+  "provisional_generated_at": "2026-09-10T15:42:15.193269+00:00"
 }

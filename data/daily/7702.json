@@ -2,12 +2,12 @@
   "code": "7702",
   "ticker": "7702.T",
   "name": "ＪＭＳ",
-  "generated_at": "2026-09-09T15:45:47.822484+00:00",
-  "price_date": "2026-09-08",
+  "generated_at": "2026-09-10T15:41:12.551500+00:00",
+  "price_date": "2026-09-09",
   "record": {
-    "current_price": 454.0,
-    "change_from_signal_month_pct": 0.22,
-    "return_since_gc_pct": 2.02
+    "current_price": 451.0,
+    "change_from_signal_month_pct": -0.44,
+    "return_since_gc_pct": 1.35
   },
   "daily": [
     {
@@ -295,15 +295,28 @@
       "sma200": 441.95,
       "rsi14": 40.31,
       "rsi5": 46.69
+    },
+    {
+      "date": "2026-09-09",
+      "open": 454.0,
+      "high": 460.0,
+      "low": 451.0,
+      "close": 451.0,
+      "volume": 59800.0,
+      "sma25": 456.4,
+      "sma75": 450.49,
+      "sma200": 442.0,
+      "rsi14": 40.31,
+      "rsi5": 46.69
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-08",
-    "monthly_rsi14": 47.68,
-    "monthly_rsi_ma5": 45.62,
-    "spread": 2.06,
+    "price_date": "2026-09-09",
+    "monthly_rsi14": 46.75,
+    "monthly_rsi_ma5": 45.43,
+    "spread": 1.32,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -312,5 +325,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-09T15:46:59.308159+00:00"
+  "provisional_generated_at": "2026-09-10T15:42:15.193269+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "4716",
   "ticker": "4716.T",
   "name": "日本オラクル",
-  "generated_at": "2026-09-09T15:45:47.822484+00:00",
-  "price_date": "2026-09-08",
+  "generated_at": "2026-09-10T15:41:12.551500+00:00",
+  "price_date": "2026-09-09",
   "record": {
-    "current_price": 8982.0,
-    "change_from_signal_month_pct": 1.13,
-    "return_since_gc_pct": 1.13
+    "current_price": 8850.0,
+    "change_from_signal_month_pct": -0.36,
+    "return_since_gc_pct": -0.36
   },
   "daily": [
     {
@@ -295,15 +295,28 @@
       "sma200": 10019.13,
       "rsi14": 30.04,
       "rsi5": 33.06
+    },
+    {
+      "date": "2026-09-09",
+      "open": 8950.0,
+      "high": 8952.0,
+      "low": 8841.0,
+      "close": 8850.0,
+      "volume": 270300.0,
+      "sma25": 9220.32,
+      "sma75": 8870.68,
+      "sma200": 9992.81,
+      "rsi14": 30.04,
+      "rsi5": 33.06
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-08",
-    "monthly_rsi14": 36.22,
-    "monthly_rsi_ma5": 33.87,
-    "spread": 2.35,
+    "price_date": "2026-09-09",
+    "monthly_rsi14": 35.7,
+    "monthly_rsi_ma5": 33.77,
+    "spread": 1.93,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -312,5 +325,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-09T15:46:59.308159+00:00"
+  "provisional_generated_at": "2026-09-10T15:42:15.193269+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "6228",
   "ticker": "6228.T",
   "name": "ジェイ・イー・ティ",
-  "generated_at": "2026-09-09T15:45:47.822484+00:00",
-  "price_date": "2026-09-08",
+  "generated_at": "2026-09-10T15:41:12.551500+00:00",
+  "price_date": "2026-09-09",
   "record": {
-    "current_price": 533.0,
-    "change_from_signal_month_pct": -5.66,
-    "return_since_gc_pct": -5.66
+    "current_price": 524.0,
+    "change_from_signal_month_pct": -7.26,
+    "return_since_gc_pct": -7.26
   },
   "daily": [
     {
@@ -295,22 +295,35 @@
       "sma200": 631.22,
       "rsi14": 36.02,
       "rsi5": 36.09
+    },
+    {
+      "date": "2026-09-09",
+      "open": 539.0,
+      "high": 545.0,
+      "low": 521.0,
+      "close": 524.0,
+      "volume": 37600.0,
+      "sma25": 508.84,
+      "sma75": 557.4,
+      "sma200": 630.0,
+      "rsi14": 36.02,
+      "rsi5": 36.09
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-08",
-    "monthly_rsi14": 44.38,
-    "monthly_rsi_ma5": 44.31,
-    "spread": 0.07,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-09",
+    "monthly_rsi14": 44.12,
+    "monthly_rsi_ma5": 44.25,
+    "spread": -0.13,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-09T15:46:59.308159+00:00"
+  "provisional_generated_at": "2026-09-10T15:42:15.193269+00:00"
 }

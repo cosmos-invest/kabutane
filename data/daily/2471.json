@@ -2,12 +2,12 @@
   "code": "2471",
   "ticker": "2471.T",
   "name": "エスプール",
-  "generated_at": "2026-09-09T15:45:47.822484+00:00",
-  "price_date": "2026-09-08",
+  "generated_at": "2026-09-10T15:41:12.551500+00:00",
+  "price_date": "2026-09-09",
   "record": {
-    "current_price": 274.0,
-    "change_from_signal_month_pct": 1.11,
-    "return_since_gc_pct": 6.61
+    "current_price": 270.0,
+    "change_from_signal_month_pct": -0.37,
+    "return_since_gc_pct": 5.06
   },
   "daily": [
     {
@@ -295,15 +295,28 @@
       "sma200": 260.81,
       "rsi14": 35.38,
       "rsi5": 39.93
+    },
+    {
+      "date": "2026-09-09",
+      "open": 273.0,
+      "high": 273.0,
+      "low": 269.0,
+      "close": 270.0,
+      "volume": 250400.0,
+      "sma25": 286.52,
+      "sma75": 266.32,
+      "sma200": 260.7,
+      "rsi14": 35.38,
+      "rsi5": 39.93
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-08",
-    "monthly_rsi14": 41.76,
-    "monthly_rsi_ma5": 39.23,
-    "spread": 2.52,
+    "price_date": "2026-09-09",
+    "monthly_rsi14": 41.16,
+    "monthly_rsi_ma5": 39.11,
+    "spread": 2.05,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -312,5 +325,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-09T15:46:59.308159+00:00"
+  "provisional_generated_at": "2026-09-10T15:42:15.193269+00:00"
 }

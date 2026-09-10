@@ -2,12 +2,12 @@
   "code": "6396",
   "ticker": "6396.T",
   "name": "宇野澤組鐵工所",
-  "generated_at": "2026-09-09T15:45:47.822484+00:00",
-  "price_date": "2026-09-08",
+  "generated_at": "2026-09-10T15:41:12.551500+00:00",
+  "price_date": "2026-09-09",
   "record": {
-    "current_price": 4490.0,
-    "change_from_signal_month_pct": 4.91,
-    "return_since_gc_pct": 4.91
+    "current_price": 4525.0,
+    "change_from_signal_month_pct": 5.72,
+    "return_since_gc_pct": 5.72
   },
   "daily": [
     {
@@ -295,22 +295,35 @@
       "sma200": 4097.48,
       "rsi14": 61.59,
       "rsi5": 65.25
+    },
+    {
+      "date": "2026-09-09",
+      "open": 4490.0,
+      "high": 4525.0,
+      "low": 4490.0,
+      "close": 4525.0,
+      "volume": 200.0,
+      "sma25": 4625.2,
+      "sma75": 4210.6,
+      "sma200": 4102.35,
+      "rsi14": 61.59,
+      "rsi5": 65.25
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-08",
-    "monthly_rsi14": 64.21,
-    "monthly_rsi_ma5": 64.77,
-    "spread": -0.56,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-09",
+    "monthly_rsi14": 64.92,
+    "monthly_rsi_ma5": 64.91,
+    "spread": 0.0,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-09T15:46:59.308159+00:00"
+  "provisional_generated_at": "2026-09-10T15:42:15.193269+00:00"
 }

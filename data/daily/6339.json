@@ -2,12 +2,12 @@
   "code": "6339",
   "ticker": "6339.T",
   "name": "新東工業",
-  "generated_at": "2026-09-09T15:45:47.822484+00:00",
-  "price_date": "2026-09-08",
+  "generated_at": "2026-09-10T15:41:12.551500+00:00",
+  "price_date": "2026-09-09",
   "record": {
-    "current_price": 1151.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": -10.22
+    "current_price": 1149.0,
+    "change_from_signal_month_pct": -0.17,
+    "return_since_gc_pct": -10.37
   },
   "daily": [
     {
@@ -295,15 +295,28 @@
       "sma200": 1114.68,
       "rsi14": 54.25,
       "rsi5": 55.73
+    },
+    {
+      "date": "2026-09-09",
+      "open": 1149.0,
+      "high": 1160.0,
+      "low": 1137.0,
+      "close": 1149.0,
+      "volume": 183600.0,
+      "sma25": 1211.92,
+      "sma75": 1197.37,
+      "sma200": 1115.51,
+      "rsi14": 54.25,
+      "rsi5": 55.73
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-08",
-    "monthly_rsi14": 54.29,
-    "monthly_rsi_ma5": 57.05,
-    "spread": -2.77,
+    "price_date": "2026-09-09",
+    "monthly_rsi14": 54.18,
+    "monthly_rsi_ma5": 57.03,
+    "spread": -2.85,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -312,5 +325,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-09T15:46:59.308159+00:00"
+  "provisional_generated_at": "2026-09-10T15:42:15.193269+00:00"
 }

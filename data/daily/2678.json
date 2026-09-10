@@ -2,12 +2,12 @@
   "code": "2678",
   "ticker": "2678.T",
   "name": "アスクル",
-  "generated_at": "2026-09-09T15:45:47.822484+00:00",
-  "price_date": "2026-09-08",
+  "generated_at": "2026-09-10T15:41:12.551500+00:00",
+  "price_date": "2026-09-09",
   "record": {
-    "current_price": 1288.0,
-    "change_from_signal_month_pct": 2.06,
-    "return_since_gc_pct": 9.9
+    "current_price": 1241.0,
+    "change_from_signal_month_pct": -1.66,
+    "return_since_gc_pct": 5.89
   },
   "daily": [
     {
@@ -295,15 +295,28 @@
       "sma200": 1278.29,
       "rsi14": 29.74,
       "rsi5": 35.86
+    },
+    {
+      "date": "2026-09-09",
+      "open": 1286.0,
+      "high": 1287.0,
+      "low": 1241.0,
+      "close": 1241.0,
+      "volume": 365600.0,
+      "sma25": 1273.68,
+      "sma75": 1236.65,
+      "sma200": 1277.1,
+      "rsi14": 29.74,
+      "rsi5": 35.86
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-08",
-    "monthly_rsi14": 38.36,
-    "monthly_rsi_ma5": 34.68,
-    "spread": 3.67,
+    "price_date": "2026-09-09",
+    "monthly_rsi14": 36.31,
+    "monthly_rsi_ma5": 34.27,
+    "spread": 2.03,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -312,5 +325,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-09T15:46:59.308159+00:00"
+  "provisional_generated_at": "2026-09-10T15:42:15.193269+00:00"
 }

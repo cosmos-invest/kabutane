@@ -2,12 +2,12 @@
   "code": "304A",
   "ticker": "304A.T",
   "name": "フォルシア",
-  "generated_at": "2026-09-09T15:45:47.822484+00:00",
-  "price_date": "2026-09-08",
+  "generated_at": "2026-09-10T15:41:12.551500+00:00",
+  "price_date": "2026-09-09",
   "record": {
-    "current_price": 1950.0,
-    "change_from_signal_month_pct": -3.94,
-    "return_since_gc_pct": 5.46
+    "current_price": 1960.0,
+    "change_from_signal_month_pct": -3.45,
+    "return_since_gc_pct": 6.0
   },
   "daily": [
     {
@@ -295,15 +295,28 @@
       "sma200": 1889.56,
       "rsi14": 21.62,
       "rsi5": 26.94
+    },
+    {
+      "date": "2026-09-09",
+      "open": 1960.0,
+      "high": 1960.0,
+      "low": 1960.0,
+      "close": 1960.0,
+      "volume": 100.0,
+      "sma25": 1943.96,
+      "sma75": 1877.48,
+      "sma200": 1889.11,
+      "rsi14": 21.62,
+      "rsi5": 26.94
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-08",
-    "monthly_rsi14": 26.14,
-    "monthly_rsi_ma5": 24.17,
-    "spread": 1.97,
+    "price_date": "2026-09-09",
+    "monthly_rsi14": 26.24,
+    "monthly_rsi_ma5": 24.19,
+    "spread": 2.05,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -312,5 +325,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-09T15:46:59.308159+00:00"
+  "provisional_generated_at": "2026-09-10T15:42:15.193269+00:00"
 }

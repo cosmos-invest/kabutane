@@ -2,12 +2,12 @@
   "code": "7297",
   "ticker": "7297.T",
   "name": "カーメイト",
-  "generated_at": "2026-09-09T15:45:47.822484+00:00",
-  "price_date": "2026-09-08",
+  "generated_at": "2026-09-10T15:41:12.551500+00:00",
+  "price_date": "2026-09-09",
   "record": {
-    "current_price": 864.0,
-    "change_from_signal_month_pct": -0.69,
-    "return_since_gc_pct": -0.69
+    "current_price": 866.0,
+    "change_from_signal_month_pct": -0.46,
+    "return_since_gc_pct": -0.46
   },
   "daily": [
     {
@@ -295,22 +295,35 @@
       "sma200": 873.71,
       "rsi14": 48.58,
       "rsi5": 49.11
+    },
+    {
+      "date": "2026-09-09",
+      "open": 865.0,
+      "high": 872.0,
+      "low": 865.0,
+      "close": 866.0,
+      "volume": 600.0,
+      "sma25": 862.2,
+      "sma75": 862.29,
+      "sma200": 873.83,
+      "rsi14": 48.58,
+      "rsi5": 49.11
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-08",
-    "monthly_rsi14": 49.07,
-    "monthly_rsi_ma5": 49.08,
-    "spread": -0.01,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-09",
+    "monthly_rsi14": 49.38,
+    "monthly_rsi_ma5": 49.14,
+    "spread": 0.24,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-09T15:46:59.308159+00:00"
+  "provisional_generated_at": "2026-09-10T15:42:15.193269+00:00"
 }

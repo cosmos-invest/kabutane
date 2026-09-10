@@ -2,12 +2,12 @@
   "code": "5991",
   "ticker": "5991.T",
   "name": "日本発條",
-  "generated_at": "2026-09-09T15:45:47.822484+00:00",
-  "price_date": "2026-09-08",
+  "generated_at": "2026-09-10T15:41:12.551500+00:00",
+  "price_date": "2026-09-09",
   "record": {
-    "current_price": 3261.0,
-    "change_from_signal_month_pct": -9.67,
-    "return_since_gc_pct": -9.14
+    "current_price": 3325.0,
+    "change_from_signal_month_pct": -7.89,
+    "return_since_gc_pct": -7.36
   },
   "daily": [
     {
@@ -295,15 +295,28 @@
       "sma200": 3081.25,
       "rsi14": 67.44,
       "rsi5": 68.42
+    },
+    {
+      "date": "2026-09-09",
+      "open": 3261.0,
+      "high": 3343.0,
+      "low": 3247.0,
+      "close": 3325.0,
+      "volume": 483700.0,
+      "sma25": 3487.28,
+      "sma75": 3677.79,
+      "sma200": 3085.78,
+      "rsi14": 67.44,
+      "rsi5": 68.42
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-08",
-    "monthly_rsi14": 62.06,
-    "monthly_rsi_ma5": 68.51,
-    "spread": -6.45,
+    "price_date": "2026-09-09",
+    "monthly_rsi14": 63.23,
+    "monthly_rsi_ma5": 68.74,
+    "spread": -5.51,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -312,5 +325,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-09T15:46:59.308159+00:00"
+  "provisional_generated_at": "2026-09-10T15:42:15.193269+00:00"
 }

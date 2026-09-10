@@ -2,12 +2,12 @@
   "code": "3649",
   "ticker": "3649.T",
   "name": "ファインデックス",
-  "generated_at": "2026-09-09T15:45:47.822484+00:00",
-  "price_date": "2026-09-08",
+  "generated_at": "2026-09-10T15:41:12.551500+00:00",
+  "price_date": "2026-09-09",
   "record": {
-    "current_price": 830.0,
-    "change_from_signal_month_pct": -1.54,
-    "return_since_gc_pct": -1.54
+    "current_price": 825.0,
+    "change_from_signal_month_pct": -2.14,
+    "return_since_gc_pct": -2.14
   },
   "daily": [
     {
@@ -295,15 +295,28 @@
       "sma200": 855.07,
       "rsi14": 47.51,
       "rsi5": 50.47
+    },
+    {
+      "date": "2026-09-09",
+      "open": 823.0,
+      "high": 832.0,
+      "low": 821.0,
+      "close": 825.0,
+      "volume": 21900.0,
+      "sma25": 852.84,
+      "sma75": 830.91,
+      "sma200": 854.86,
+      "rsi14": 47.51,
+      "rsi5": 50.47
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-08",
-    "monthly_rsi14": 52.25,
-    "monthly_rsi_ma5": 51.37,
-    "spread": 0.88,
+    "price_date": "2026-09-09",
+    "monthly_rsi14": 51.88,
+    "monthly_rsi_ma5": 51.3,
+    "spread": 0.59,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -312,5 +325,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-09T15:46:59.308159+00:00"
+  "provisional_generated_at": "2026-09-10T15:42:15.193269+00:00"
 }

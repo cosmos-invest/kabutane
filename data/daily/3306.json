@@ -2,12 +2,12 @@
   "code": "3306",
   "ticker": "3306.T",
   "name": "日本製麻",
-  "generated_at": "2026-09-09T15:45:47.822484+00:00",
-  "price_date": "2026-09-08",
+  "generated_at": "2026-09-10T15:41:12.551500+00:00",
+  "price_date": "2026-09-09",
   "record": {
-    "current_price": 718.0,
-    "change_from_signal_month_pct": -11.25,
-    "return_since_gc_pct": -11.25
+    "current_price": 681.0,
+    "change_from_signal_month_pct": -15.82,
+    "return_since_gc_pct": -15.82
   },
   "daily": [
     {
@@ -295,15 +295,28 @@
       "sma200": 679.04,
       "rsi14": 49.75,
       "rsi5": 59.74
+    },
+    {
+      "date": "2026-09-09",
+      "open": 703.0,
+      "high": 708.0,
+      "low": 680.0,
+      "close": 681.0,
+      "volume": 38000.0,
+      "sma25": 642.2,
+      "sma75": 659.15,
+      "sma200": 678.77,
+      "rsi14": 49.75,
+      "rsi5": 59.74
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-08",
-    "monthly_rsi14": 49.74,
-    "monthly_rsi_ma5": 46.4,
-    "spread": 3.34,
+    "price_date": "2026-09-09",
+    "monthly_rsi14": 47.28,
+    "monthly_rsi_ma5": 45.91,
+    "spread": 1.37,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -312,5 +325,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-09T15:46:59.308159+00:00"
+  "provisional_generated_at": "2026-09-10T15:42:15.193269+00:00"
 }

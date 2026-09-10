@@ -2,12 +2,12 @@
   "code": "6058",
   "ticker": "6058.T",
   "name": "ベクトル",
-  "generated_at": "2026-09-09T15:45:47.822484+00:00",
-  "price_date": "2026-09-08",
+  "generated_at": "2026-09-10T15:41:12.551500+00:00",
+  "price_date": "2026-09-09",
   "record": {
-    "current_price": 2017.0,
-    "change_from_signal_month_pct": 13.57,
-    "return_since_gc_pct": 43.25
+    "current_price": 1932.0,
+    "change_from_signal_month_pct": 8.78,
+    "return_since_gc_pct": 37.22
   },
   "daily": [
     {
@@ -295,22 +295,35 @@
       "sma200": 1450.59,
       "rsi14": 61.41,
       "rsi5": 70.15
+    },
+    {
+      "date": "2026-09-09",
+      "open": 2017.0,
+      "high": 2020.0,
+      "low": 1921.0,
+      "close": 1932.0,
+      "volume": 631300.0,
+      "sma25": 1923.8,
+      "sma75": 1745.19,
+      "sma200": 1454.49,
+      "rsi14": 61.41,
+      "rsi5": 70.15
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-08",
-    "monthly_rsi14": 69.03,
-    "monthly_rsi_ma5": 68.31,
-    "spread": 0.72,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-09",
+    "monthly_rsi14": 65.79,
+    "monthly_rsi_ma5": 67.66,
+    "spread": -1.86,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-09T15:46:59.308159+00:00"
+  "provisional_generated_at": "2026-09-10T15:42:15.193269+00:00"
 }

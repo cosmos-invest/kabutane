@@ -2,12 +2,12 @@
   "code": "2204",
   "ticker": "2204.T",
   "name": "中村屋",
-  "generated_at": "2026-09-09T15:45:47.822484+00:00",
-  "price_date": "2026-09-08",
+  "generated_at": "2026-09-10T15:41:12.551500+00:00",
+  "price_date": "2026-09-09",
   "record": {
-    "current_price": 3165.0,
-    "change_from_signal_month_pct": -1.4,
-    "return_since_gc_pct": -1.4
+    "current_price": 3135.0,
+    "change_from_signal_month_pct": -2.34,
+    "return_since_gc_pct": -2.34
   },
   "daily": [
     {
@@ -295,22 +295,35 @@
       "sma200": 3171.45,
       "rsi14": 51.08,
       "rsi5": 52.39
+    },
+    {
+      "date": "2026-09-09",
+      "open": 3150.0,
+      "high": 3150.0,
+      "low": 3130.0,
+      "close": 3135.0,
+      "volume": 5400.0,
+      "sma25": 3188.2,
+      "sma75": 3172.87,
+      "sma200": 3171.93,
+      "rsi14": 51.08,
+      "rsi5": 52.39
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-08",
-    "monthly_rsi14": 51.13,
-    "monthly_rsi_ma5": 50.82,
-    "spread": 0.31,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-09",
+    "monthly_rsi14": 49.31,
+    "monthly_rsi_ma5": 50.45,
+    "spread": -1.15,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-09T15:46:59.308159+00:00"
+  "provisional_generated_at": "2026-09-10T15:42:15.193269+00:00"
 }

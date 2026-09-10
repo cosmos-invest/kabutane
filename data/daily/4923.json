@@ -2,12 +2,12 @@
   "code": "4923",
   "ticker": "4923.T",
   "name": "コタ",
-  "generated_at": "2026-09-09T15:45:47.822484+00:00",
-  "price_date": "2026-09-08",
+  "generated_at": "2026-09-10T15:41:12.551500+00:00",
+  "price_date": "2026-09-09",
   "record": {
-    "current_price": 1221.0,
-    "change_from_signal_month_pct": 0.41,
-    "return_since_gc_pct": 4.72
+    "current_price": 1216.0,
+    "change_from_signal_month_pct": 0.0,
+    "return_since_gc_pct": 4.29
   },
   "daily": [
     {
@@ -295,15 +295,28 @@
       "sma200": 1174.22,
       "rsi14": 40.46,
       "rsi5": 46.16
+    },
+    {
+      "date": "2026-09-09",
+      "open": 1220.0,
+      "high": 1221.0,
+      "low": 1209.0,
+      "close": 1216.0,
+      "volume": 17900.0,
+      "sma25": 1234.72,
+      "sma75": 1180.45,
+      "sma200": 1174.53,
+      "rsi14": 40.46,
+      "rsi5": 46.16
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-08",
-    "monthly_rsi14": 46.19,
-    "monthly_rsi_ma5": 43.44,
-    "spread": 2.76,
+    "price_date": "2026-09-09",
+    "monthly_rsi14": 45.87,
+    "monthly_rsi_ma5": 43.37,
+    "spread": 2.5,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -312,5 +325,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-09T15:46:59.308159+00:00"
+  "provisional_generated_at": "2026-09-10T15:42:15.193269+00:00"
 }

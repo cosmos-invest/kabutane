@@ -2,12 +2,12 @@
   "code": "3156",
   "ticker": "3156.T",
   "name": "レスター",
-  "generated_at": "2026-09-09T15:45:47.822484+00:00",
-  "price_date": "2026-09-08",
+  "generated_at": "2026-09-10T15:41:12.551500+00:00",
+  "price_date": "2026-09-09",
   "record": {
-    "current_price": 5070.0,
-    "change_from_signal_month_pct": 22.91,
-    "return_since_gc_pct": 24.72
+    "current_price": 5060.0,
+    "change_from_signal_month_pct": 22.67,
+    "return_since_gc_pct": 24.48
   },
   "daily": [
     {
@@ -295,15 +295,28 @@
       "sma200": 3439.93,
       "rsi14": 64.14,
       "rsi5": 71.34
+    },
+    {
+      "date": "2026-09-09",
+      "open": 4985.0,
+      "high": 5200.0,
+      "low": 4980.0,
+      "close": 5060.0,
+      "volume": 73800.0,
+      "sma25": 5027.8,
+      "sma75": 4391.93,
+      "sma200": 3452.43,
+      "rsi14": 64.14,
+      "rsi5": 71.34
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-08",
-    "monthly_rsi14": 73.03,
-    "monthly_rsi_ma5": 74.54,
-    "spread": -1.51,
+    "price_date": "2026-09-09",
+    "monthly_rsi14": 72.86,
+    "monthly_rsi_ma5": 74.5,
+    "spread": -1.64,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -312,5 +325,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-09T15:46:59.308159+00:00"
+  "provisional_generated_at": "2026-09-10T15:42:15.193269+00:00"
 }

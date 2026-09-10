@@ -2,12 +2,12 @@
   "code": "8850",
   "ticker": "8850.T",
   "name": "スターツコーポレーション",
-  "generated_at": "2026-09-09T15:45:47.822484+00:00",
-  "price_date": "2026-09-08",
+  "generated_at": "2026-09-10T15:41:12.551500+00:00",
+  "price_date": "2026-09-09",
   "record": {
-    "current_price": 4680.0,
-    "change_from_signal_month_pct": -1.58,
-    "return_since_gc_pct": -1.58
+    "current_price": 4670.0,
+    "change_from_signal_month_pct": -1.79,
+    "return_since_gc_pct": -1.79
   },
   "daily": [
     {
@@ -295,22 +295,35 @@
       "sma200": 4798.6,
       "rsi14": 58.29,
       "rsi5": 59.04
+    },
+    {
+      "date": "2026-09-09",
+      "open": 4680.0,
+      "high": 4715.0,
+      "low": 4660.0,
+      "close": 4670.0,
+      "volume": 49500.0,
+      "sma25": 4699.6,
+      "sma75": 4643.4,
+      "sma200": 4797.95,
+      "rsi14": 58.29,
+      "rsi5": 59.04
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-08",
-    "monthly_rsi14": 57.02,
-    "monthly_rsi_ma5": 56.9,
-    "spread": 0.12,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-09",
+    "monthly_rsi14": 56.79,
+    "monthly_rsi_ma5": 56.85,
+    "spread": -0.07,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-09T15:46:59.308159+00:00"
+  "provisional_generated_at": "2026-09-10T15:42:15.193269+00:00"
 }
