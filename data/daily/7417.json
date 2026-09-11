@@ -2,12 +2,12 @@
   "code": "7417",
   "ticker": "7417.T",
   "name": "南陽",
-  "generated_at": "2026-09-10T15:41:12.551500+00:00",
-  "price_date": "2026-09-09",
+  "generated_at": "2026-09-11T15:42:48.195352+00:00",
+  "price_date": "2026-09-10",
   "record": {
-    "current_price": 1835.0,
-    "change_from_signal_month_pct": -5.8,
-    "return_since_gc_pct": -5.8
+    "current_price": 1844.0,
+    "change_from_signal_month_pct": -5.34,
+    "return_since_gc_pct": -5.34
   },
   "daily": [
     {
@@ -308,22 +308,35 @@
       "sma200": 1565.04,
       "rsi14": 67.16,
       "rsi5": 80.2
+    },
+    {
+      "date": "2026-09-10",
+      "open": 1837.0,
+      "high": 1844.0,
+      "low": 1836.0,
+      "close": 1844.0,
+      "volume": 400.0,
+      "sma25": 1875.04,
+      "sma75": 1717.03,
+      "sma200": 1567.23,
+      "rsi14": 67.16,
+      "rsi5": 80.2
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-09",
-    "monthly_rsi14": 71.29,
-    "monthly_rsi_ma5": 71.35,
-    "spread": -0.06,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-10",
+    "monthly_rsi14": 71.91,
+    "monthly_rsi_ma5": 71.47,
+    "spread": 0.44,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-10T15:42:15.193269+00:00"
+  "provisional_generated_at": "2026-09-11T15:43:59.884298+00:00"
 }

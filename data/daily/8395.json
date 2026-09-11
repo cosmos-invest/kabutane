@@ -2,12 +2,12 @@
   "code": "8395",
   "ticker": "8395.T",
   "name": "佐賀銀行",
-  "generated_at": "2026-09-10T15:41:12.551500+00:00",
-  "price_date": "2026-09-09",
+  "generated_at": "2026-09-11T15:42:48.195352+00:00",
+  "price_date": "2026-09-10",
   "record": {
-    "current_price": 6330.0,
-    "change_from_signal_month_pct": 13.04,
-    "return_since_gc_pct": 13.04
+    "current_price": 6580.0,
+    "change_from_signal_month_pct": 17.5,
+    "return_since_gc_pct": 17.5
   },
   "daily": [
     {
@@ -308,22 +308,35 @@
       "sma200": 5019.9,
       "rsi14": 78.66,
       "rsi5": 81.32
+    },
+    {
+      "date": "2026-09-10",
+      "open": 6350.0,
+      "high": 6610.0,
+      "low": 6310.0,
+      "close": 6580.0,
+      "volume": 48700.0,
+      "sma25": 6383.6,
+      "sma75": 5764.27,
+      "sma200": 5036.07,
+      "rsi14": 78.66,
+      "rsi5": 81.32
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-09",
-    "monthly_rsi14": 80.49,
-    "monthly_rsi_ma5": 81.13,
-    "spread": -0.64,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-10",
+    "monthly_rsi14": 85.58,
+    "monthly_rsi_ma5": 82.15,
+    "spread": 3.43,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-10T15:42:15.193269+00:00"
+  "provisional_generated_at": "2026-09-11T15:43:59.884298+00:00"
 }

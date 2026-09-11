@@ -2,12 +2,12 @@
   "code": "8341",
   "ticker": "8341.T",
   "name": "七十七銀行",
-  "generated_at": "2026-09-10T15:41:12.551500+00:00",
-  "price_date": "2026-09-09",
+  "generated_at": "2026-09-11T15:42:48.195352+00:00",
+  "price_date": "2026-09-10",
   "record": {
-    "current_price": 3845.0,
-    "change_from_signal_month_pct": 10.01,
-    "return_since_gc_pct": 10.01
+    "current_price": 3960.0,
+    "change_from_signal_month_pct": 13.3,
+    "return_since_gc_pct": 13.3
   },
   "daily": [
     {
@@ -308,22 +308,35 @@
       "sma200": 3132.03,
       "rsi14": 80.98,
       "rsi5": 83.57
+    },
+    {
+      "date": "2026-09-10",
+      "open": 3867.0,
+      "high": 3984.0,
+      "low": 3845.0,
+      "close": 3960.0,
+      "volume": 818400.0,
+      "sma25": 3848.76,
+      "sma75": 3537.11,
+      "sma200": 3140.36,
+      "rsi14": 80.98,
+      "rsi5": 83.57
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-09",
-    "monthly_rsi14": 81.56,
-    "monthly_rsi_ma5": 82.93,
-    "spread": -1.37,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-10",
+    "monthly_rsi14": 85.79,
+    "monthly_rsi_ma5": 83.78,
+    "spread": 2.01,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-10T15:42:15.193269+00:00"
+  "provisional_generated_at": "2026-09-11T15:43:59.884298+00:00"
 }

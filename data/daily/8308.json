@@ -2,12 +2,12 @@
   "code": "8308",
   "ticker": "8308.T",
   "name": "りそなホールディングス",
-  "generated_at": "2026-09-10T15:41:12.551500+00:00",
-  "price_date": "2026-09-09",
+  "generated_at": "2026-09-11T15:42:48.195352+00:00",
+  "price_date": "2026-09-10",
   "record": {
-    "current_price": 2412.0,
-    "change_from_signal_month_pct": 10.06,
-    "return_since_gc_pct": 18.26
+    "current_price": 2488.5,
+    "change_from_signal_month_pct": 13.55,
+    "return_since_gc_pct": 22.02
   },
   "daily": [
     {
@@ -308,22 +308,35 @@
       "sma200": 1969.77,
       "rsi14": 72.82,
       "rsi5": 76.57
+    },
+    {
+      "date": "2026-09-10",
+      "open": 2415.5,
+      "high": 2501.5,
+      "low": 2405.5,
+      "close": 2488.5,
+      "volume": 9814800.0,
+      "sma25": 2441.58,
+      "sma75": 2283.11,
+      "sma200": 1974.26,
+      "rsi14": 72.82,
+      "rsi5": 76.57
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-09",
-    "monthly_rsi14": 75.58,
-    "monthly_rsi_ma5": 76.52,
-    "spread": -0.93,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-10",
+    "monthly_rsi14": 79.27,
+    "monthly_rsi_ma5": 77.26,
+    "spread": 2.02,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-10T15:42:15.193269+00:00"
+  "provisional_generated_at": "2026-09-11T15:43:59.884298+00:00"
 }

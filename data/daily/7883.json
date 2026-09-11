@@ -2,12 +2,12 @@
   "code": "7883",
   "ticker": "7883.T",
   "name": "サンメッセ",
-  "generated_at": "2026-09-10T15:41:12.551500+00:00",
-  "price_date": "2026-09-09",
+  "generated_at": "2026-09-11T15:42:48.195352+00:00",
+  "price_date": "2026-09-10",
   "record": {
-    "current_price": 401.0,
-    "change_from_signal_month_pct": 2.82,
-    "return_since_gc_pct": 7.8
+    "current_price": 400.0,
+    "change_from_signal_month_pct": 2.56,
+    "return_since_gc_pct": 7.53
   },
   "daily": [
     {
@@ -308,15 +308,28 @@
       "sma200": 374.24,
       "rsi14": 55.11,
       "rsi5": 62.43
+    },
+    {
+      "date": "2026-09-10",
+      "open": 400.0,
+      "high": 401.0,
+      "low": 400.0,
+      "close": 400.0,
+      "volume": 4400.0,
+      "sma25": 401.52,
+      "sma75": 391.49,
+      "sma200": 374.47,
+      "rsi14": 55.11,
+      "rsi5": 62.43
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-09",
-    "monthly_rsi14": 67.13,
-    "monthly_rsi_ma5": 63.01,
-    "spread": 4.12,
+    "price_date": "2026-09-10",
+    "monthly_rsi14": 66.39,
+    "monthly_rsi_ma5": 62.86,
+    "spread": 3.52,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -325,5 +338,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-10T15:42:15.193269+00:00"
+  "provisional_generated_at": "2026-09-11T15:43:59.884298+00:00"
 }

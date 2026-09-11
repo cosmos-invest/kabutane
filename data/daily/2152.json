@@ -2,12 +2,12 @@
   "code": "2152",
   "ticker": "2152.T",
   "name": "幼児活動研究会",
-  "generated_at": "2026-09-10T15:41:12.551500+00:00",
-  "price_date": "2026-09-09",
+  "generated_at": "2026-09-11T15:42:48.195352+00:00",
+  "price_date": "2026-09-10",
   "record": {
-    "current_price": 1527.0,
-    "change_from_signal_month_pct": 0.66,
-    "return_since_gc_pct": 0.66
+    "current_price": 1513.0,
+    "change_from_signal_month_pct": -0.26,
+    "return_since_gc_pct": -0.26
   },
   "daily": [
     {
@@ -308,22 +308,35 @@
       "sma200": 1474.4,
       "rsi14": 57.13,
       "rsi5": 57.88
+    },
+    {
+      "date": "2026-09-10",
+      "open": 1514.0,
+      "high": 1514.0,
+      "low": 1513.0,
+      "close": 1513.0,
+      "volume": 300.0,
+      "sma25": 1529.24,
+      "sma75": 1490.03,
+      "sma200": 1475.03,
+      "rsi14": 57.13,
+      "rsi5": 57.88
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-09",
-    "monthly_rsi14": 58.35,
-    "monthly_rsi_ma5": 57.65,
-    "spread": 0.7,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-10",
+    "monthly_rsi14": 57.17,
+    "monthly_rsi_ma5": 57.41,
+    "spread": -0.24,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-10T15:42:15.193269+00:00"
+  "provisional_generated_at": "2026-09-11T15:43:59.884298+00:00"
 }

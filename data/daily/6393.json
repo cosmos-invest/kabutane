@@ -2,12 +2,12 @@
   "code": "6393",
   "ticker": "6393.T",
   "name": "油研工業",
-  "generated_at": "2026-09-10T15:41:12.551500+00:00",
-  "price_date": "2026-09-09",
+  "generated_at": "2026-09-11T15:42:48.195352+00:00",
+  "price_date": "2026-09-10",
   "record": {
-    "current_price": 3055.0,
-    "change_from_signal_month_pct": 0.83,
-    "return_since_gc_pct": 0.83
+    "current_price": 3045.0,
+    "change_from_signal_month_pct": 0.5,
+    "return_since_gc_pct": 0.5
   },
   "daily": [
     {
@@ -308,15 +308,28 @@
       "sma200": 3061.49,
       "rsi14": 57.99,
       "rsi5": 59.39
+    },
+    {
+      "date": "2026-09-10",
+      "open": 3050.0,
+      "high": 3050.0,
+      "low": 3020.0,
+      "close": 3045.0,
+      "volume": 700.0,
+      "sma25": 3049.4,
+      "sma75": 2971.25,
+      "sma200": 3061.87,
+      "rsi14": 57.99,
+      "rsi5": 59.39
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-09",
-    "monthly_rsi14": 59.79,
-    "monthly_rsi_ma5": 57.77,
-    "spread": 2.02,
+    "price_date": "2026-09-10",
+    "monthly_rsi14": 59.5,
+    "monthly_rsi_ma5": 57.71,
+    "spread": 1.79,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -325,5 +338,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-10T15:42:15.193269+00:00"
+  "provisional_generated_at": "2026-09-11T15:43:59.884298+00:00"
 }

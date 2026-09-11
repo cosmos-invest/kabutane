@@ -2,12 +2,12 @@
   "code": "9766",
   "ticker": "9766.T",
   "name": "コナミグループ",
-  "generated_at": "2026-09-10T15:41:12.551500+00:00",
-  "price_date": "2026-09-09",
+  "generated_at": "2026-09-11T15:42:48.195352+00:00",
+  "price_date": "2026-09-10",
   "record": {
-    "current_price": 20690.0,
-    "change_from_signal_month_pct": 0.24,
-    "return_since_gc_pct": 0.24
+    "current_price": 20350.0,
+    "change_from_signal_month_pct": -1.41,
+    "return_since_gc_pct": -1.41
   },
   "daily": [
     {
@@ -308,22 +308,35 @@
       "sma200": 20358.6,
       "rsi14": 53.62,
       "rsi5": 57.08
+    },
+    {
+      "date": "2026-09-10",
+      "open": 20305.0,
+      "high": 20490.0,
+      "low": 20210.0,
+      "close": 20350.0,
+      "volume": 501600.0,
+      "sma25": 21562.0,
+      "sma75": 19810.13,
+      "sma200": 20341.28,
+      "rsi14": 53.62,
+      "rsi5": 57.08
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-09",
-    "monthly_rsi14": 56.25,
-    "monthly_rsi_ma5": 55.61,
-    "spread": 0.64,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-10",
+    "monthly_rsi14": 55.34,
+    "monthly_rsi_ma5": 55.43,
+    "spread": -0.09,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-10T15:42:15.193269+00:00"
+  "provisional_generated_at": "2026-09-11T15:43:59.884298+00:00"
 }

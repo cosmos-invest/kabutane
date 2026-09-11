@@ -2,12 +2,12 @@
   "code": "8253",
   "ticker": "8253.T",
   "name": "クレディセゾン",
-  "generated_at": "2026-09-10T15:41:12.551500+00:00",
-  "price_date": "2026-09-09",
+  "generated_at": "2026-09-11T15:42:48.195352+00:00",
+  "price_date": "2026-09-10",
   "record": {
-    "current_price": 4555.0,
-    "change_from_signal_month_pct": 0.09,
-    "return_since_gc_pct": 0.09
+    "current_price": 4581.0,
+    "change_from_signal_month_pct": 0.66,
+    "return_since_gc_pct": 0.66
   },
   "daily": [
     {
@@ -308,15 +308,28 @@
       "sma200": 4352.08,
       "rsi14": 59.36,
       "rsi5": 61.98
+    },
+    {
+      "date": "2026-09-10",
+      "open": 4520.0,
+      "high": 4582.0,
+      "low": 4502.0,
+      "close": 4581.0,
+      "volume": 874300.0,
+      "sma25": 4682.6,
+      "sma75": 4504.64,
+      "sma200": 4355.28,
+      "rsi14": 59.36,
+      "rsi5": 61.98
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-09",
-    "monthly_rsi14": 61.57,
-    "monthly_rsi_ma5": 61.2,
-    "spread": 0.36,
+    "price_date": "2026-09-10",
+    "monthly_rsi14": 62.05,
+    "monthly_rsi_ma5": 61.3,
+    "spread": 0.75,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -325,5 +338,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-10T15:42:15.193269+00:00"
+  "provisional_generated_at": "2026-09-11T15:43:59.884298+00:00"
 }

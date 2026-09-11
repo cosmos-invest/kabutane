@@ -2,12 +2,12 @@
   "code": "2270",
   "ticker": "2270.T",
   "name": "雪印メグミルク",
-  "generated_at": "2026-09-10T15:41:12.551500+00:00",
-  "price_date": "2026-09-09",
+  "generated_at": "2026-09-11T15:42:48.195352+00:00",
+  "price_date": "2026-09-10",
   "record": {
-    "current_price": 3715.0,
-    "change_from_signal_month_pct": -1.33,
-    "return_since_gc_pct": 6.29
+    "current_price": 3700.0,
+    "change_from_signal_month_pct": -1.73,
+    "return_since_gc_pct": 5.87
   },
   "daily": [
     {
@@ -308,22 +308,35 @@
       "sma200": 3419.05,
       "rsi14": 65.58,
       "rsi5": 70.71
+    },
+    {
+      "date": "2026-09-10",
+      "open": 3695.0,
+      "high": 3710.0,
+      "low": 3665.0,
+      "close": 3700.0,
+      "volume": 125500.0,
+      "sma25": 3701.6,
+      "sma75": 3666.27,
+      "sma200": 3422.79,
+      "rsi14": 65.58,
+      "rsi5": 70.71
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-09",
-    "monthly_rsi14": 68.0,
-    "monthly_rsi_ma5": 67.93,
-    "spread": 0.07,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-10",
+    "monthly_rsi14": 67.45,
+    "monthly_rsi_ma5": 67.82,
+    "spread": -0.37,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-10T15:42:15.193269+00:00"
+  "provisional_generated_at": "2026-09-11T15:43:59.884298+00:00"
 }

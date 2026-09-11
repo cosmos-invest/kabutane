@@ -2,12 +2,12 @@
   "code": "4911",
   "ticker": "4911.T",
   "name": "資生堂",
-  "generated_at": "2026-09-10T15:41:12.551500+00:00",
-  "price_date": "2026-09-09",
+  "generated_at": "2026-09-11T15:42:48.195352+00:00",
+  "price_date": "2026-09-10",
   "record": {
-    "current_price": 3351.0,
-    "change_from_signal_month_pct": 6.25,
-    "return_since_gc_pct": 6.25
+    "current_price": 3330.0,
+    "change_from_signal_month_pct": 5.58,
+    "return_since_gc_pct": 5.58
   },
   "daily": [
     {
@@ -308,15 +308,28 @@
       "sma200": 2903.46,
       "rsi14": 46.32,
       "rsi5": 49.32
+    },
+    {
+      "date": "2026-09-10",
+      "open": 3302.0,
+      "high": 3350.0,
+      "low": 3267.0,
+      "close": 3330.0,
+      "volume": 2988600.0,
+      "sma25": 3546.68,
+      "sma75": 3049.85,
+      "sma200": 2906.78,
+      "rsi14": 46.32,
+      "rsi5": 49.32
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-09",
-    "monthly_rsi14": 49.44,
-    "monthly_rsi_ma5": 46.15,
-    "spread": 3.29,
+    "price_date": "2026-09-10",
+    "monthly_rsi14": 49.21,
+    "monthly_rsi_ma5": 46.1,
+    "spread": 3.11,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -325,5 +338,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-10T15:42:15.193269+00:00"
+  "provisional_generated_at": "2026-09-11T15:43:59.884298+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "5884",
   "ticker": "5884.T",
   "name": "クラダシ",
-  "generated_at": "2026-09-10T15:41:12.551500+00:00",
-  "price_date": "2026-09-09",
+  "generated_at": "2026-09-11T15:42:48.195352+00:00",
+  "price_date": "2026-09-10",
   "record": {
-    "current_price": 617.0,
-    "change_from_signal_month_pct": 12.39,
-    "return_since_gc_pct": 34.13
+    "current_price": 601.0,
+    "change_from_signal_month_pct": 9.47,
+    "return_since_gc_pct": 30.65
   },
   "daily": [
     {
@@ -308,22 +308,35 @@
       "sma200": 497.01,
       "rsi14": 52.24,
       "rsi5": 54.44
+    },
+    {
+      "date": "2026-09-10",
+      "open": 610.0,
+      "high": 617.0,
+      "low": 589.0,
+      "close": 601.0,
+      "volume": 25800.0,
+      "sma25": 623.72,
+      "sma75": 577.75,
+      "sma200": 497.78,
+      "rsi14": 52.24,
+      "rsi5": 54.44
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-09",
-    "monthly_rsi14": 62.46,
-    "monthly_rsi_ma5": 61.71,
-    "spread": 0.75,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-10",
+    "monthly_rsi14": 60.72,
+    "monthly_rsi_ma5": 61.36,
+    "spread": -0.64,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-10T15:42:15.193269+00:00"
+  "provisional_generated_at": "2026-09-11T15:43:59.884298+00:00"
 }

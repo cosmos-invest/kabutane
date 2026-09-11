@@ -2,12 +2,12 @@
   "code": "8007",
   "ticker": "8007.T",
   "name": "高島",
-  "generated_at": "2026-09-10T15:41:12.551500+00:00",
-  "price_date": "2026-09-09",
+  "generated_at": "2026-09-11T15:42:48.195352+00:00",
+  "price_date": "2026-09-10",
   "record": {
-    "current_price": 790.0,
-    "change_from_signal_month_pct": -2.71,
-    "return_since_gc_pct": -2.71
+    "current_price": 793.0,
+    "change_from_signal_month_pct": -2.34,
+    "return_since_gc_pct": -2.34
   },
   "daily": [
     {
@@ -308,15 +308,28 @@
       "sma200": 821.6,
       "rsi14": 56.64,
       "rsi5": 58.6
+    },
+    {
+      "date": "2026-09-10",
+      "open": 790.0,
+      "high": 793.0,
+      "low": 786.0,
+      "close": 793.0,
+      "volume": 106000.0,
+      "sma25": 807.16,
+      "sma75": 779.36,
+      "sma200": 821.37,
+      "rsi14": 56.64,
+      "rsi5": 58.6
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-09",
-    "monthly_rsi14": 55.58,
-    "monthly_rsi_ma5": 56.55,
-    "spread": -0.97,
+    "price_date": "2026-09-10",
+    "monthly_rsi14": 55.9,
+    "monthly_rsi_ma5": 56.62,
+    "spread": -0.71,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -325,5 +338,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-10T15:42:15.193269+00:00"
+  "provisional_generated_at": "2026-09-11T15:43:59.884298+00:00"
 }

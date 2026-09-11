@@ -2,12 +2,12 @@
   "code": "9744",
   "ticker": "9744.T",
   "name": "メイテックグループホールディングス",
-  "generated_at": "2026-09-10T15:41:12.551500+00:00",
-  "price_date": "2026-09-09",
+  "generated_at": "2026-09-11T15:42:48.195352+00:00",
+  "price_date": "2026-09-10",
   "record": {
-    "current_price": 3253.0,
-    "change_from_signal_month_pct": -2.58,
-    "return_since_gc_pct": -2.58
+    "current_price": 3295.0,
+    "change_from_signal_month_pct": -1.32,
+    "return_since_gc_pct": -1.32
   },
   "daily": [
     {
@@ -308,22 +308,35 @@
       "sma200": 3310.14,
       "rsi14": 52.07,
       "rsi5": 57.12
+    },
+    {
+      "date": "2026-09-10",
+      "open": 3260.0,
+      "high": 3295.0,
+      "low": 3251.0,
+      "close": 3295.0,
+      "volume": 399300.0,
+      "sma25": 3339.96,
+      "sma75": 3208.2,
+      "sma200": 3309.83,
+      "rsi14": 52.07,
+      "rsi5": 57.12
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-09",
-    "monthly_rsi14": 54.5,
-    "monthly_rsi_ma5": 54.79,
-    "spread": -0.3,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-10",
+    "monthly_rsi14": 55.91,
+    "monthly_rsi_ma5": 55.08,
+    "spread": 0.83,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-10T15:42:15.193269+00:00"
+  "provisional_generated_at": "2026-09-11T15:43:59.884298+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "2413",
   "ticker": "2413.T",
   "name": "エムスリー",
-  "generated_at": "2026-09-10T15:41:12.551500+00:00",
-  "price_date": "2026-09-09",
+  "generated_at": "2026-09-11T15:42:48.195352+00:00",
+  "price_date": "2026-09-10",
   "record": {
-    "current_price": 1666.0,
-    "change_from_signal_month_pct": -6.48,
-    "return_since_gc_pct": -8.21
+    "current_price": 1701.0,
+    "change_from_signal_month_pct": -4.52,
+    "return_since_gc_pct": -6.28
   },
   "daily": [
     {
@@ -308,22 +308,35 @@
       "sma200": 1797.13,
       "rsi14": 41.44,
       "rsi5": 45.4
+    },
+    {
+      "date": "2026-09-10",
+      "open": 1626.0,
+      "high": 1702.0,
+      "low": 1624.5,
+      "close": 1701.0,
+      "volume": 3747600.0,
+      "sma25": 1724.48,
+      "sma75": 1736.1,
+      "sma200": 1791.94,
+      "rsi14": 41.44,
+      "rsi5": 45.4
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-09",
-    "monthly_rsi14": 42.37,
-    "monthly_rsi_ma5": 42.56,
-    "spread": -0.19,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-10",
+    "monthly_rsi14": 43.01,
+    "monthly_rsi_ma5": 42.69,
+    "spread": 0.32,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-10T15:42:15.193269+00:00"
+  "provisional_generated_at": "2026-09-11T15:43:59.884298+00:00"
 }

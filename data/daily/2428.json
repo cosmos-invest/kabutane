@@ -2,12 +2,12 @@
   "code": "2428",
   "ticker": "2428.T",
   "name": "ウェルネット",
-  "generated_at": "2026-09-10T15:41:12.551500+00:00",
-  "price_date": "2026-09-09",
+  "generated_at": "2026-09-11T15:42:48.195352+00:00",
+  "price_date": "2026-09-10",
   "record": {
-    "current_price": 629.0,
-    "change_from_signal_month_pct": -2.18,
-    "return_since_gc_pct": -2.18
+    "current_price": 625.0,
+    "change_from_signal_month_pct": -2.8,
+    "return_since_gc_pct": -2.8
   },
   "daily": [
     {
@@ -308,22 +308,35 @@
       "sma200": 642.26,
       "rsi14": 44.33,
       "rsi5": 46.29
+    },
+    {
+      "date": "2026-09-10",
+      "open": 624.0,
+      "high": 627.0,
+      "low": 622.0,
+      "close": 625.0,
+      "volume": 31100.0,
+      "sma25": 634.4,
+      "sma75": 626.75,
+      "sma200": 642.03,
+      "rsi14": 44.33,
+      "rsi5": 46.29
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-09",
-    "monthly_rsi14": 45.18,
-    "monthly_rsi_ma5": 44.84,
-    "spread": 0.34,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-10",
+    "monthly_rsi14": 44.72,
+    "monthly_rsi_ma5": 44.74,
+    "spread": -0.03,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-10T15:42:15.193269+00:00"
+  "provisional_generated_at": "2026-09-11T15:43:59.884298+00:00"
 }

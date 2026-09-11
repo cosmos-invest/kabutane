@@ -2,12 +2,12 @@
   "code": "8361",
   "ticker": "8361.T",
   "name": "大垣共立銀行",
-  "generated_at": "2026-09-10T15:41:12.551500+00:00",
-  "price_date": "2026-09-09",
+  "generated_at": "2026-09-11T15:42:48.195352+00:00",
+  "price_date": "2026-09-10",
   "record": {
-    "current_price": 7860.0,
-    "change_from_signal_month_pct": 9.02,
-    "return_since_gc_pct": 9.02
+    "current_price": 8160.0,
+    "change_from_signal_month_pct": 13.18,
+    "return_since_gc_pct": 13.18
   },
   "daily": [
     {
@@ -308,22 +308,35 @@
       "sma200": 6529.27,
       "rsi14": 82.48,
       "rsi5": 82.8
+    },
+    {
+      "date": "2026-09-10",
+      "open": 7870.0,
+      "high": 8210.0,
+      "low": 7870.0,
+      "close": 8160.0,
+      "volume": 131300.0,
+      "sma25": 7990.0,
+      "sma75": 7649.87,
+      "sma200": 6551.4,
+      "rsi14": 82.48,
+      "rsi5": 82.8
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-09",
-    "monthly_rsi14": 79.9,
-    "monthly_rsi_ma5": 83.23,
-    "spread": -3.34,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-10",
+    "monthly_rsi14": 84.62,
+    "monthly_rsi_ma5": 84.18,
+    "spread": 0.44,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-10T15:42:15.193269+00:00"
+  "provisional_generated_at": "2026-09-11T15:43:59.884298+00:00"
 }

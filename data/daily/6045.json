@@ -2,12 +2,12 @@
   "code": "6045",
   "ticker": "6045.T",
   "name": "レントラックス",
-  "generated_at": "2026-09-10T15:41:12.551500+00:00",
-  "price_date": "2026-09-09",
+  "generated_at": "2026-09-11T15:42:48.195352+00:00",
+  "price_date": "2026-09-10",
   "record": {
-    "current_price": 2123.0,
-    "change_from_signal_month_pct": 28.74,
-    "return_since_gc_pct": 28.74
+    "current_price": 2112.0,
+    "change_from_signal_month_pct": 28.08,
+    "return_since_gc_pct": 28.08
   },
   "daily": [
     {
@@ -308,15 +308,28 @@
       "sma200": 1674.88,
       "rsi14": 62.99,
       "rsi5": 63.38
+    },
+    {
+      "date": "2026-09-10",
+      "open": 2111.0,
+      "high": 2123.0,
+      "low": 2052.0,
+      "close": 2112.0,
+      "volume": 19900.0,
+      "sma25": 2094.88,
+      "sma75": 1706.04,
+      "sma200": 1677.4,
+      "rsi14": 62.99,
+      "rsi5": 63.38
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-09",
-    "monthly_rsi14": 66.79,
-    "monthly_rsi_ma5": 65.46,
-    "spread": 1.32,
+    "price_date": "2026-09-10",
+    "monthly_rsi14": 66.47,
+    "monthly_rsi_ma5": 65.4,
+    "spread": 1.07,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -325,5 +338,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-10T15:42:15.193269+00:00"
+  "provisional_generated_at": "2026-09-11T15:43:59.884298+00:00"
 }

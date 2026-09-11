@@ -2,12 +2,12 @@
   "code": "7380",
   "ticker": "7380.T",
   "name": "十六フィナンシャルグループ",
-  "generated_at": "2026-09-10T15:41:12.551500+00:00",
-  "price_date": "2026-09-09",
+  "generated_at": "2026-09-11T15:42:48.195352+00:00",
+  "price_date": "2026-09-10",
   "record": {
-    "current_price": 2538.0,
-    "change_from_signal_month_pct": 7.27,
-    "return_since_gc_pct": 8.83
+    "current_price": 2639.0,
+    "change_from_signal_month_pct": 11.54,
+    "return_since_gc_pct": 13.16
   },
   "daily": [
     {
@@ -308,22 +308,35 @@
       "sma200": 1971.76,
       "rsi14": 79.21,
       "rsi5": 82.35
+    },
+    {
+      "date": "2026-09-10",
+      "open": 2538.0,
+      "high": 2655.0,
+      "low": 2525.0,
+      "close": 2639.0,
+      "volume": 443600.0,
+      "sma25": 2557.92,
+      "sma75": 2395.6,
+      "sma200": 1979.02,
+      "rsi14": 79.21,
+      "rsi5": 82.35
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-09",
-    "monthly_rsi14": 80.01,
-    "monthly_rsi_ma5": 81.58,
-    "spread": -1.58,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-10",
+    "monthly_rsi14": 84.93,
+    "monthly_rsi_ma5": 82.57,
+    "spread": 2.36,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-10T15:42:15.193269+00:00"
+  "provisional_generated_at": "2026-09-11T15:43:59.884298+00:00"
 }

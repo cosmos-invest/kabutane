@@ -2,12 +2,12 @@
   "code": "8316",
   "ticker": "8316.T",
   "name": "三井住友フィナンシャルグループ",
-  "generated_at": "2026-09-10T15:41:12.551500+00:00",
-  "price_date": "2026-09-09",
+  "generated_at": "2026-09-11T15:42:48.195352+00:00",
+  "price_date": "2026-09-10",
   "record": {
-    "current_price": 6801.0,
-    "change_from_signal_month_pct": -0.19,
-    "return_since_gc_pct": 7.17
+    "current_price": 6901.0,
+    "change_from_signal_month_pct": 1.28,
+    "return_since_gc_pct": 8.75
   },
   "daily": [
     {
@@ -308,22 +308,35 @@
       "sma200": 5834.98,
       "rsi14": 71.08,
       "rsi5": 76.95
+    },
+    {
+      "date": "2026-09-10",
+      "open": 6790.0,
+      "high": 6941.0,
+      "low": 6770.0,
+      "close": 6901.0,
+      "volume": 10054500.0,
+      "sma25": 6836.48,
+      "sma75": 6647.8,
+      "sma200": 5847.84,
+      "rsi14": 71.08,
+      "rsi5": 76.95
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-09",
-    "monthly_rsi14": 74.79,
-    "monthly_rsi_ma5": 75.1,
-    "spread": -0.31,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-10",
+    "monthly_rsi14": 76.54,
+    "monthly_rsi_ma5": 75.45,
+    "spread": 1.09,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-10T15:42:15.193269+00:00"
+  "provisional_generated_at": "2026-09-11T15:43:59.884298+00:00"
 }

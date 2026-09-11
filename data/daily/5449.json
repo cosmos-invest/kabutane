@@ -2,12 +2,12 @@
   "code": "5449",
   "ticker": "5449.T",
   "name": "大阪製鐵",
-  "generated_at": "2026-09-10T15:41:12.551500+00:00",
-  "price_date": "2026-09-09",
+  "generated_at": "2026-09-11T15:42:48.195352+00:00",
+  "price_date": "2026-09-10",
   "record": {
-    "current_price": 2550.0,
-    "change_from_signal_month_pct": 1.76,
-    "return_since_gc_pct": 1.76
+    "current_price": 2573.0,
+    "change_from_signal_month_pct": 2.67,
+    "return_since_gc_pct": 2.67
   },
   "daily": [
     {
@@ -308,22 +308,35 @@
       "sma200": 2643.42,
       "rsi14": 49.27,
       "rsi5": 49.44
+    },
+    {
+      "date": "2026-09-10",
+      "open": 2530.0,
+      "high": 2602.0,
+      "low": 2530.0,
+      "close": 2573.0,
+      "volume": 17800.0,
+      "sma25": 2703.68,
+      "sma75": 2539.16,
+      "sma200": 2643.11,
+      "rsi14": 49.27,
+      "rsi5": 49.44
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-09",
-    "monthly_rsi14": 51.05,
-    "monthly_rsi_ma5": 51.06,
-    "spread": -0.01,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-10",
+    "monthly_rsi14": 51.42,
+    "monthly_rsi_ma5": 51.13,
+    "spread": 0.29,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-10T15:42:15.193269+00:00"
+  "provisional_generated_at": "2026-09-11T15:43:59.884298+00:00"
 }
