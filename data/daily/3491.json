@@ -2,12 +2,12 @@
   "code": "3491",
   "ticker": "3491.T",
   "name": "ＧＡ　ｔｅｃｈｎｏｌｏｇｉｅｓ",
-  "generated_at": "2026-09-11T15:42:48.195352+00:00",
-  "price_date": "2026-09-10",
+  "generated_at": "2026-09-14T17:25:33.504270+00:00",
+  "price_date": "2026-09-11",
   "record": {
-    "current_price": 1492.0,
-    "change_from_signal_month_pct": 2.9,
-    "return_since_gc_pct": 2.9
+    "current_price": 1447.0,
+    "change_from_signal_month_pct": -0.21,
+    "return_since_gc_pct": -0.21
   },
   "daily": [
     {
@@ -321,22 +321,35 @@
       "sma200": 1583.37,
       "rsi14": 47.15,
       "rsi5": 47.16
+    },
+    {
+      "date": "2026-09-11",
+      "open": 1464.0,
+      "high": 1500.0,
+      "low": 1445.0,
+      "close": 1447.0,
+      "volume": 279800.0,
+      "sma25": 1533.48,
+      "sma75": 1440.04,
+      "sma200": 1580.58,
+      "rsi14": 47.15,
+      "rsi5": 47.16
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-10",
-    "monthly_rsi14": 48.22,
-    "monthly_rsi_ma5": 47.95,
-    "spread": 0.27,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-11",
+    "monthly_rsi14": 47.22,
+    "monthly_rsi_ma5": 47.75,
+    "spread": -0.54,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-11T15:43:59.884298+00:00"
+  "provisional_generated_at": "2026-09-14T17:26:32.871544+00:00"
 }

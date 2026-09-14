@@ -2,12 +2,12 @@
   "code": "4218",
   "ticker": "4218.T",
   "name": "ニチバン",
-  "generated_at": "2026-09-11T15:42:48.195352+00:00",
-  "price_date": "2026-09-10",
+  "generated_at": "2026-09-14T17:25:33.504270+00:00",
+  "price_date": "2026-09-11",
   "record": {
-    "current_price": 1916.0,
-    "change_from_signal_month_pct": -1.59,
-    "return_since_gc_pct": 2.3
+    "current_price": 1901.0,
+    "change_from_signal_month_pct": -2.36,
+    "return_since_gc_pct": 1.49
   },
   "daily": [
     {
@@ -321,22 +321,35 @@
       "sma200": 1920.33,
       "rsi14": 45.96,
       "rsi5": 51.55
+    },
+    {
+      "date": "2026-09-11",
+      "open": 1900.0,
+      "high": 1924.0,
+      "low": 1893.0,
+      "close": 1901.0,
+      "volume": 31400.0,
+      "sma25": 1944.48,
+      "sma75": 1900.17,
+      "sma200": 1920.04,
+      "rsi14": 45.96,
+      "rsi5": 51.55
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-10",
-    "monthly_rsi14": 48.55,
-    "monthly_rsi_ma5": 47.97,
-    "spread": 0.59,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-11",
+    "monthly_rsi14": 47.62,
+    "monthly_rsi_ma5": 47.78,
+    "spread": -0.16,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-11T15:43:59.884298+00:00"
+  "provisional_generated_at": "2026-09-14T17:26:32.871544+00:00"
 }

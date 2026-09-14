@@ -2,12 +2,12 @@
   "code": "6301",
   "ticker": "6301.T",
   "name": "小松製作所",
-  "generated_at": "2026-09-11T15:42:48.195352+00:00",
-  "price_date": "2026-09-10",
+  "generated_at": "2026-09-14T17:25:33.504270+00:00",
+  "price_date": "2026-09-11",
   "record": {
-    "current_price": 7389.0,
-    "change_from_signal_month_pct": 5.65,
-    "return_since_gc_pct": 5.65
+    "current_price": 7114.0,
+    "change_from_signal_month_pct": 1.72,
+    "return_since_gc_pct": 1.72
   },
   "daily": [
     {
@@ -321,22 +321,35 @@
       "sma200": 6443.38,
       "rsi14": 63.28,
       "rsi5": 65.81
+    },
+    {
+      "date": "2026-09-11",
+      "open": 7089.0,
+      "high": 7224.0,
+      "low": 7053.0,
+      "close": 7114.0,
+      "volume": 4144200.0,
+      "sma25": 7349.56,
+      "sma75": 6860.89,
+      "sma200": 6452.78,
+      "rsi14": 63.28,
+      "rsi5": 65.81
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-10",
-    "monthly_rsi14": 67.08,
-    "monthly_rsi_ma5": 64.71,
-    "spread": 2.37,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-11",
+    "monthly_rsi14": 63.88,
+    "monthly_rsi_ma5": 64.07,
+    "spread": -0.19,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-11T15:43:59.884298+00:00"
+  "provisional_generated_at": "2026-09-14T17:26:32.871544+00:00"
 }

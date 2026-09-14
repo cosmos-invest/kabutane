@@ -2,12 +2,12 @@
   "code": "9005",
   "ticker": "9005.T",
   "name": "東急",
-  "generated_at": "2026-09-11T15:42:48.195352+00:00",
-  "price_date": "2026-09-10",
+  "generated_at": "2026-09-14T17:25:33.504270+00:00",
+  "price_date": "2026-09-11",
   "record": {
-    "current_price": 1668.0,
-    "change_from_signal_month_pct": -4.52,
-    "return_since_gc_pct": -4.52
+    "current_price": 1672.0,
+    "change_from_signal_month_pct": -4.29,
+    "return_since_gc_pct": -4.29
   },
   "daily": [
     {
@@ -321,15 +321,28 @@
       "sma200": 1764.22,
       "rsi14": 47.46,
       "rsi5": 49.57
+    },
+    {
+      "date": "2026-09-11",
+      "open": 1659.5,
+      "high": 1677.5,
+      "low": 1656.5,
+      "close": 1672.0,
+      "volume": 2654800.0,
+      "sma25": 1652.7,
+      "sma75": 1684.2,
+      "sma200": 1763.92,
+      "rsi14": 47.46,
+      "rsi5": 49.57
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-10",
-    "monthly_rsi14": 45.55,
-    "monthly_rsi_ma5": 45.29,
-    "spread": 0.26,
+    "price_date": "2026-09-11",
+    "monthly_rsi14": 45.75,
+    "monthly_rsi_ma5": 45.33,
+    "spread": 0.41,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -338,5 +351,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-11T15:43:59.884298+00:00"
+  "provisional_generated_at": "2026-09-14T17:26:32.871544+00:00"
 }

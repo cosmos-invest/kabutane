@@ -2,12 +2,12 @@
   "code": "4377",
   "ticker": "4377.T",
   "name": "ワンキャリア",
-  "generated_at": "2026-09-11T15:42:48.195352+00:00",
-  "price_date": "2026-09-10",
+  "generated_at": "2026-09-14T17:25:33.504270+00:00",
+  "price_date": "2026-09-11",
   "record": {
-    "current_price": 2295.0,
-    "change_from_signal_month_pct": 8.25,
-    "return_since_gc_pct": 17.51
+    "current_price": 2231.0,
+    "change_from_signal_month_pct": 5.24,
+    "return_since_gc_pct": 14.23
   },
   "daily": [
     {
@@ -321,22 +321,35 @@
       "sma200": 2182.08,
       "rsi14": 50.54,
       "rsi5": 54.75
+    },
+    {
+      "date": "2026-09-11",
+      "open": 2245.0,
+      "high": 2264.0,
+      "low": 2222.0,
+      "close": 2231.0,
+      "volume": 45200.0,
+      "sma25": 2391.24,
+      "sma75": 2115.67,
+      "sma200": 2179.88,
+      "rsi14": 50.54,
+      "rsi5": 54.75
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-10",
-    "monthly_rsi14": 56.18,
-    "monthly_rsi_ma5": 55.46,
-    "spread": 0.72,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-11",
+    "monthly_rsi14": 54.85,
+    "monthly_rsi_ma5": 55.19,
+    "spread": -0.34,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-11T15:43:59.884298+00:00"
+  "provisional_generated_at": "2026-09-14T17:26:32.871544+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "9827",
   "ticker": "9827.T",
   "name": "リリカラ",
-  "generated_at": "2026-09-11T15:42:48.195352+00:00",
-  "price_date": "2026-09-10",
+  "generated_at": "2026-09-14T17:25:33.504270+00:00",
+  "price_date": "2026-09-11",
   "record": {
-    "current_price": 628.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 630.0,
+    "change_from_signal_month_pct": 0.32,
+    "return_since_gc_pct": 0.32
   },
   "daily": [
     {
@@ -321,15 +321,28 @@
       "sma200": 646.76,
       "rsi14": 49.27,
       "rsi5": 50.58
+    },
+    {
+      "date": "2026-09-11",
+      "open": 628.0,
+      "high": 630.0,
+      "low": 625.0,
+      "close": 630.0,
+      "volume": 7200.0,
+      "sma25": 634.44,
+      "sma75": 617.59,
+      "sma200": 646.48,
+      "rsi14": 49.27,
+      "rsi5": 50.58
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-10",
-    "monthly_rsi14": 47.06,
-    "monthly_rsi_ma5": 45.86,
-    "spread": 1.2,
+    "price_date": "2026-09-11",
+    "monthly_rsi14": 47.28,
+    "monthly_rsi_ma5": 45.9,
+    "spread": 1.37,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -338,5 +351,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-11T15:43:59.884298+00:00"
+  "provisional_generated_at": "2026-09-14T17:26:32.871544+00:00"
 }

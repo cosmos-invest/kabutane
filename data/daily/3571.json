@@ -2,12 +2,12 @@
   "code": "3571",
   "ticker": "3571.T",
   "name": "ソトー",
-  "generated_at": "2026-09-11T15:42:48.195352+00:00",
-  "price_date": "2026-09-10",
+  "generated_at": "2026-09-14T17:25:33.504270+00:00",
+  "price_date": "2026-09-11",
   "record": {
-    "current_price": 718.0,
-    "change_from_signal_month_pct": 0.7,
-    "return_since_gc_pct": 0.7
+    "current_price": 717.0,
+    "change_from_signal_month_pct": 0.56,
+    "return_since_gc_pct": 0.56
   },
   "daily": [
     {
@@ -321,15 +321,28 @@
       "sma200": 744.14,
       "rsi14": 45.12,
       "rsi5": 45.41
+    },
+    {
+      "date": "2026-09-11",
+      "open": 721.0,
+      "high": 721.0,
+      "low": 716.0,
+      "close": 717.0,
+      "volume": 2700.0,
+      "sma25": 722.84,
+      "sma75": 711.52,
+      "sma200": 743.87,
+      "rsi14": 45.12,
+      "rsi5": 45.41
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-10",
-    "monthly_rsi14": 45.32,
-    "monthly_rsi_ma5": 44.44,
-    "spread": 0.88,
+    "price_date": "2026-09-11",
+    "monthly_rsi14": 45.15,
+    "monthly_rsi_ma5": 44.4,
+    "spread": 0.75,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -338,5 +351,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-11T15:43:59.884298+00:00"
+  "provisional_generated_at": "2026-09-14T17:26:32.871544+00:00"
 }

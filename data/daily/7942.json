@@ -2,12 +2,12 @@
   "code": "7942",
   "ticker": "7942.T",
   "name": "ＪＳＰ",
-  "generated_at": "2026-09-11T15:42:48.195352+00:00",
-  "price_date": "2026-09-10",
+  "generated_at": "2026-09-14T17:25:33.504270+00:00",
+  "price_date": "2026-09-11",
   "record": {
-    "current_price": 2864.0,
-    "change_from_signal_month_pct": 13.07,
-    "return_since_gc_pct": 13.07
+    "current_price": 2851.0,
+    "change_from_signal_month_pct": 12.55,
+    "return_since_gc_pct": 12.55
   },
   "daily": [
     {
@@ -321,22 +321,35 @@
       "sma200": 2567.96,
       "rsi14": 56.85,
       "rsi5": 58.42
+    },
+    {
+      "date": "2026-09-11",
+      "open": 2804.0,
+      "high": 2864.0,
+      "low": 2789.0,
+      "close": 2851.0,
+      "volume": 58100.0,
+      "sma25": 3047.2,
+      "sma75": 2715.07,
+      "sma200": 2571.64,
+      "rsi14": 56.85,
+      "rsi5": 58.42
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-10",
-    "monthly_rsi14": 60.84,
-    "monthly_rsi_ma5": 60.8,
-    "spread": 0.05,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-11",
+    "monthly_rsi14": 60.55,
+    "monthly_rsi_ma5": 60.74,
+    "spread": -0.19,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-11T15:43:59.884298+00:00"
+  "provisional_generated_at": "2026-09-14T17:26:32.871544+00:00"
 }

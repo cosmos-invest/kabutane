@@ -2,12 +2,12 @@
   "code": "7807",
   "ticker": "7807.T",
   "name": "幸和製作所",
-  "generated_at": "2026-09-11T15:42:48.195352+00:00",
-  "price_date": "2026-09-10",
+  "generated_at": "2026-09-14T17:25:33.504270+00:00",
+  "price_date": "2026-09-11",
   "record": {
-    "current_price": 846.0,
-    "change_from_signal_month_pct": -1.17,
-    "return_since_gc_pct": -1.17
+    "current_price": 853.0,
+    "change_from_signal_month_pct": -0.35,
+    "return_since_gc_pct": -0.35
   },
   "daily": [
     {
@@ -321,22 +321,35 @@
       "sma200": 839.89,
       "rsi14": 44.3,
       "rsi5": 47.16
+    },
+    {
+      "date": "2026-09-11",
+      "open": 844.0,
+      "high": 853.0,
+      "low": 830.0,
+      "close": 853.0,
+      "volume": 4000.0,
+      "sma25": 867.84,
+      "sma75": 845.28,
+      "sma200": 839.95,
+      "rsi14": 44.3,
+      "rsi5": 47.16
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-10",
-    "monthly_rsi14": 49.14,
-    "monthly_rsi_ma5": 49.2,
-    "spread": -0.06,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-11",
+    "monthly_rsi14": 49.67,
+    "monthly_rsi_ma5": 49.31,
+    "spread": 0.36,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-11T15:43:59.884298+00:00"
+  "provisional_generated_at": "2026-09-14T17:26:32.871544+00:00"
 }

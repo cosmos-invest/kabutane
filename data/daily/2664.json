@@ -2,8 +2,8 @@
   "code": "2664",
   "ticker": "2664.T",
   "name": "カワチ薬品",
-  "generated_at": "2026-09-11T15:42:48.195352+00:00",
-  "price_date": "2026-09-10",
+  "generated_at": "2026-09-14T17:25:33.504270+00:00",
+  "price_date": "2026-09-11",
   "record": {
     "current_price": 3725.0,
     "change_from_signal_month_pct": 12.03,
@@ -321,12 +321,32 @@
       "sma200": 3211.97,
       "rsi14": 62.78,
       "rsi5": 63.33
+    },
+    {
+      "date": "2026-09-11",
+      "open": 3730.0,
+      "high": 3775.0,
+      "low": 3715.0,
+      "close": 3725.0,
+      "volume": 116400.0,
+      "sma25": 3730.0,
+      "sma75": 3522.93,
+      "sma200": 3215.59,
+      "rsi14": 62.78,
+      "rsi5": 63.33
     }
   ],
-  "corporate_events": [],
+  "corporate_events": [
+    {
+      "date": "2026-09-14",
+      "type": "DIVIDEND",
+      "label": "配当",
+      "detail": "1株 50円"
+    }
+  ],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-10",
+    "price_date": "2026-09-11",
     "monthly_rsi14": 72.4,
     "monthly_rsi_ma5": 69.98,
     "spread": 2.42,
@@ -338,5 +358,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-11T15:43:59.884298+00:00"
+  "provisional_generated_at": "2026-09-14T17:26:32.871544+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "7241",
   "ticker": "7241.T",
   "name": "フタバ産業",
-  "generated_at": "2026-09-11T15:42:48.195352+00:00",
-  "price_date": "2026-09-10",
+  "generated_at": "2026-09-14T17:25:33.504270+00:00",
+  "price_date": "2026-09-11",
   "record": {
-    "current_price": 1061.0,
-    "change_from_signal_month_pct": 2.31,
-    "return_since_gc_pct": 2.31
+    "current_price": 1073.0,
+    "change_from_signal_month_pct": 3.47,
+    "return_since_gc_pct": 3.47
   },
   "daily": [
     {
@@ -321,22 +321,35 @@
       "sma200": 1028.24,
       "rsi14": 56.72,
       "rsi5": 58.69
+    },
+    {
+      "date": "2026-09-11",
+      "open": 1049.0,
+      "high": 1077.0,
+      "low": 1046.0,
+      "close": 1073.0,
+      "volume": 408000.0,
+      "sma25": 1096.56,
+      "sma75": 1019.87,
+      "sma200": 1028.73,
+      "rsi14": 56.72,
+      "rsi5": 58.69
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-10",
-    "monthly_rsi14": 58.03,
-    "monthly_rsi_ma5": 58.18,
-    "spread": -0.15,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-11",
+    "monthly_rsi14": 58.77,
+    "monthly_rsi_ma5": 58.32,
+    "spread": 0.44,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-11T15:43:59.884298+00:00"
+  "provisional_generated_at": "2026-09-14T17:26:32.871544+00:00"
 }

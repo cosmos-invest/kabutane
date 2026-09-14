@@ -2,12 +2,12 @@
   "code": "6465",
   "ticker": "6465.T",
   "name": "ホシザキ",
-  "generated_at": "2026-09-11T15:42:48.195352+00:00",
-  "price_date": "2026-09-10",
+  "generated_at": "2026-09-14T17:25:33.504270+00:00",
+  "price_date": "2026-09-11",
   "record": {
-    "current_price": 5286.0,
-    "change_from_signal_month_pct": -7.33,
-    "return_since_gc_pct": 0.34
+    "current_price": 5305.0,
+    "change_from_signal_month_pct": -7.0,
+    "return_since_gc_pct": 0.7
   },
   "daily": [
     {
@@ -321,15 +321,28 @@
       "sma200": 5297.62,
       "rsi14": 49.82,
       "rsi5": 55.65
+    },
+    {
+      "date": "2026-09-11",
+      "open": 5216.0,
+      "high": 5320.0,
+      "low": 5216.0,
+      "close": 5305.0,
+      "volume": 477200.0,
+      "sma25": 5614.92,
+      "sma75": 5468.25,
+      "sma200": 5298.16,
+      "rsi14": 49.82,
+      "rsi5": 55.65
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-10",
-    "monthly_rsi14": 47.53,
-    "monthly_rsi_ma5": 50.07,
-    "spread": -2.53,
+    "price_date": "2026-09-11",
+    "monthly_rsi14": 47.78,
+    "monthly_rsi_ma5": 50.12,
+    "spread": -2.34,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -338,5 +351,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-11T15:43:59.884298+00:00"
+  "provisional_generated_at": "2026-09-14T17:26:32.871544+00:00"
 }

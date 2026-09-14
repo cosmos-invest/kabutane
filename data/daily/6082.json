@@ -2,12 +2,12 @@
   "code": "6082",
   "ticker": "6082.T",
   "name": "ライドオンエクスプレスホールディングス",
-  "generated_at": "2026-09-11T15:42:48.195352+00:00",
-  "price_date": "2026-09-10",
+  "generated_at": "2026-09-14T17:25:33.504270+00:00",
+  "price_date": "2026-09-11",
   "record": {
-    "current_price": 991.0,
-    "change_from_signal_month_pct": -0.1,
-    "return_since_gc_pct": -0.1
+    "current_price": 985.0,
+    "change_from_signal_month_pct": -0.71,
+    "return_since_gc_pct": -0.71
   },
   "daily": [
     {
@@ -321,22 +321,35 @@
       "sma200": 1003.79,
       "rsi14": 41.52,
       "rsi5": 43.33
+    },
+    {
+      "date": "2026-09-11",
+      "open": 990.0,
+      "high": 991.0,
+      "low": 982.0,
+      "close": 985.0,
+      "volume": 40000.0,
+      "sma25": 1011.88,
+      "sma75": 992.0,
+      "sma200": 1003.7,
+      "rsi14": 41.52,
+      "rsi5": 43.33
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-10",
-    "monthly_rsi14": 46.68,
-    "monthly_rsi_ma5": 46.27,
-    "spread": 0.41,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-11",
+    "monthly_rsi14": 45.44,
+    "monthly_rsi_ma5": 46.02,
+    "spread": -0.58,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-11T15:43:59.884298+00:00"
+  "provisional_generated_at": "2026-09-14T17:26:32.871544+00:00"
 }

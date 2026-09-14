@@ -2,12 +2,12 @@
   "code": "9305",
   "ticker": "9305.T",
   "name": "ヤマタネ",
-  "generated_at": "2026-09-11T15:42:48.195352+00:00",
-  "price_date": "2026-09-10",
+  "generated_at": "2026-09-14T17:25:33.504270+00:00",
+  "price_date": "2026-09-11",
   "record": {
-    "current_price": 2057.0,
-    "change_from_signal_month_pct": -2.47,
-    "return_since_gc_pct": -2.47
+    "current_price": 2043.0,
+    "change_from_signal_month_pct": -3.13,
+    "return_since_gc_pct": -3.13
   },
   "daily": [
     {
@@ -321,22 +321,35 @@
       "sma200": 2183.32,
       "rsi14": 51.25,
       "rsi5": 52.87
+    },
+    {
+      "date": "2026-09-11",
+      "open": 2046.0,
+      "high": 2057.0,
+      "low": 2030.0,
+      "close": 2043.0,
+      "volume": 66300.0,
+      "sma25": 2077.8,
+      "sma75": 2060.91,
+      "sma200": 2181.2,
+      "rsi14": 51.25,
+      "rsi5": 52.87
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-10",
-    "monthly_rsi14": 52.01,
-    "monthly_rsi_ma5": 51.96,
-    "spread": 0.05,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-11",
+    "monthly_rsi14": 51.53,
+    "monthly_rsi_ma5": 51.86,
+    "spread": -0.33,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-11T15:43:59.884298+00:00"
+  "provisional_generated_at": "2026-09-14T17:26:32.871544+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "2918",
   "ticker": "2918.T",
   "name": "わらべや日洋ホールディングス",
-  "generated_at": "2026-09-11T15:42:48.195352+00:00",
-  "price_date": "2026-09-10",
+  "generated_at": "2026-09-14T17:25:33.504270+00:00",
+  "price_date": "2026-09-11",
   "record": {
-    "current_price": 2741.0,
-    "change_from_signal_month_pct": -1.58,
-    "return_since_gc_pct": -1.58
+    "current_price": 2719.0,
+    "change_from_signal_month_pct": -2.37,
+    "return_since_gc_pct": -2.37
   },
   "daily": [
     {
@@ -321,6 +321,19 @@
       "sma200": 2992.83,
       "rsi14": 51.14,
       "rsi5": 51.69
+    },
+    {
+      "date": "2026-09-11",
+      "open": 2715.0,
+      "high": 2735.0,
+      "low": 2699.0,
+      "close": 2719.0,
+      "volume": 103600.0,
+      "sma25": 2802.88,
+      "sma75": 2701.01,
+      "sma200": 2989.97,
+      "rsi14": 51.14,
+      "rsi5": 51.69
     }
   ],
   "corporate_events": [
@@ -333,17 +346,17 @@
   ],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-10",
-    "monthly_rsi14": 49.13,
-    "monthly_rsi_ma5": 48.78,
-    "spread": 0.34,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-11",
+    "monthly_rsi14": 48.58,
+    "monthly_rsi_ma5": 48.67,
+    "spread": -0.09,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-11T15:43:59.884298+00:00"
+  "provisional_generated_at": "2026-09-14T17:26:32.871544+00:00"
 }

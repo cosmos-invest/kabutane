@@ -2,12 +2,12 @@
   "code": "9342",
   "ticker": "9342.T",
   "name": "スマサポ",
-  "generated_at": "2026-09-11T15:42:48.195352+00:00",
-  "price_date": "2026-09-10",
+  "generated_at": "2026-09-14T17:25:33.504270+00:00",
+  "price_date": "2026-09-11",
   "record": {
-    "current_price": 981.0,
-    "change_from_signal_month_pct": 7.8,
-    "return_since_gc_pct": 7.8
+    "current_price": 975.0,
+    "change_from_signal_month_pct": 7.14,
+    "return_since_gc_pct": 7.14
   },
   "daily": [
     {
@@ -321,15 +321,28 @@
       "sma200": 986.27,
       "rsi14": 36.87,
       "rsi5": 39.58
+    },
+    {
+      "date": "2026-09-11",
+      "open": 979.0,
+      "high": 979.0,
+      "low": 968.0,
+      "close": 975.0,
+      "volume": 2000.0,
+      "sma25": 956.32,
+      "sma75": 866.24,
+      "sma200": 986.16,
+      "rsi14": 36.87,
+      "rsi5": 39.58
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-10",
-    "monthly_rsi14": 42.13,
-    "monthly_rsi_ma5": 38.24,
-    "spread": 3.88,
+    "price_date": "2026-09-11",
+    "monthly_rsi14": 41.93,
+    "monthly_rsi_ma5": 38.2,
+    "spread": 3.73,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -338,5 +351,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-11T15:43:59.884298+00:00"
+  "provisional_generated_at": "2026-09-14T17:26:32.871544+00:00"
 }

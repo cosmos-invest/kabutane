@@ -2,12 +2,12 @@
   "code": "7524",
   "ticker": "7524.T",
   "name": "マルシェ",
-  "generated_at": "2026-09-11T15:42:48.195352+00:00",
-  "price_date": "2026-09-10",
+  "generated_at": "2026-09-14T17:25:33.504270+00:00",
+  "price_date": "2026-09-11",
   "record": {
-    "current_price": 178.0,
-    "change_from_signal_month_pct": -2.2,
-    "return_since_gc_pct": -1.11
+    "current_price": 177.0,
+    "change_from_signal_month_pct": -2.75,
+    "return_since_gc_pct": -1.67
   },
   "daily": [
     {
@@ -321,15 +321,28 @@
       "sma200": 180.97,
       "rsi14": 31.87,
       "rsi5": 37.52
+    },
+    {
+      "date": "2026-09-11",
+      "open": 180.0,
+      "high": 180.0,
+      "low": 177.0,
+      "close": 177.0,
+      "volume": 15500.0,
+      "sma25": 177.84,
+      "sma75": 179.32,
+      "sma200": 180.9,
+      "rsi14": 31.87,
+      "rsi5": 37.52
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-10",
-    "monthly_rsi14": 36.08,
-    "monthly_rsi_ma5": 35.12,
-    "spread": 0.95,
+    "price_date": "2026-09-11",
+    "monthly_rsi14": 35.71,
+    "monthly_rsi_ma5": 35.05,
+    "spread": 0.66,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -338,5 +351,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-11T15:43:59.884298+00:00"
+  "provisional_generated_at": "2026-09-14T17:26:32.871544+00:00"
 }

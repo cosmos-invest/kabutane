@@ -2,12 +2,12 @@
   "code": "8165",
   "ticker": "8165.T",
   "name": "千趣会",
-  "generated_at": "2026-09-11T15:42:48.195352+00:00",
-  "price_date": "2026-09-10",
+  "generated_at": "2026-09-14T17:25:33.504270+00:00",
+  "price_date": "2026-09-11",
   "record": {
-    "current_price": 103.0,
-    "change_from_signal_month_pct": -8.04,
-    "return_since_gc_pct": -8.04
+    "current_price": 102.0,
+    "change_from_signal_month_pct": -8.93,
+    "return_since_gc_pct": -8.93
   },
   "daily": [
     {
@@ -321,22 +321,35 @@
       "sma200": 148.01,
       "rsi14": 19.75,
       "rsi5": 20.1
+    },
+    {
+      "date": "2026-09-11",
+      "open": 103.0,
+      "high": 104.0,
+      "low": 102.0,
+      "close": 102.0,
+      "volume": 168600.0,
+      "sma25": 106.4,
+      "sma75": 110.55,
+      "sma200": 147.41,
+      "rsi14": 19.75,
+      "rsi5": 20.1
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-10",
-    "monthly_rsi14": 17.25,
-    "monthly_rsi_ma5": 17.23,
-    "spread": 0.01,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-11",
+    "monthly_rsi14": 17.15,
+    "monthly_rsi_ma5": 17.21,
+    "spread": -0.06,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-11T15:43:59.884298+00:00"
+  "provisional_generated_at": "2026-09-14T17:26:32.871544+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "5697",
   "ticker": "5697.T",
   "name": "サンユウ",
-  "generated_at": "2026-09-11T15:42:48.195352+00:00",
-  "price_date": "2026-09-10",
+  "generated_at": "2026-09-14T17:25:33.504270+00:00",
+  "price_date": "2026-09-11",
   "record": {
-    "current_price": 809.0,
-    "change_from_signal_month_pct": 9.92,
-    "return_since_gc_pct": 9.92
+    "current_price": 803.0,
+    "change_from_signal_month_pct": 9.1,
+    "return_since_gc_pct": 9.1
   },
   "daily": [
     {
@@ -321,15 +321,28 @@
       "sma200": 732.15,
       "rsi14": 60.01,
       "rsi5": 62.75
+    },
+    {
+      "date": "2026-09-11",
+      "open": 801.0,
+      "high": 804.0,
+      "low": 795.0,
+      "close": 803.0,
+      "volume": 2900.0,
+      "sma25": 822.96,
+      "sma75": 748.6,
+      "sma200": 732.9,
+      "rsi14": 60.01,
+      "rsi5": 62.75
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-10",
-    "monthly_rsi14": 66.61,
-    "monthly_rsi_ma5": 62.97,
-    "spread": 3.64,
+    "price_date": "2026-09-11",
+    "monthly_rsi14": 65.81,
+    "monthly_rsi_ma5": 62.81,
+    "spread": 3.0,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -338,5 +351,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-11T15:43:59.884298+00:00"
+  "provisional_generated_at": "2026-09-14T17:26:32.871544+00:00"
 }

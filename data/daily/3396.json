@@ -2,12 +2,12 @@
   "code": "3396",
   "ticker": "3396.T",
   "name": "フェリシモ",
-  "generated_at": "2026-09-11T15:42:48.195352+00:00",
-  "price_date": "2026-09-10",
+  "generated_at": "2026-09-14T17:25:33.504270+00:00",
+  "price_date": "2026-09-11",
   "record": {
-    "current_price": 867.0,
-    "change_from_signal_month_pct": -1.03,
-    "return_since_gc_pct": 1.29
+    "current_price": 863.0,
+    "change_from_signal_month_pct": -1.48,
+    "return_since_gc_pct": 0.82
   },
   "daily": [
     {
@@ -321,15 +321,28 @@
       "sma200": 858.82,
       "rsi14": 47.61,
       "rsi5": 50.33
+    },
+    {
+      "date": "2026-09-11",
+      "open": 867.0,
+      "high": 867.0,
+      "low": 861.0,
+      "close": 863.0,
+      "volume": 1000.0,
+      "sma25": 871.08,
+      "sma75": 859.04,
+      "sma200": 858.83,
+      "rsi14": 47.61,
+      "rsi5": 50.33
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-10",
-    "monthly_rsi14": 48.49,
-    "monthly_rsi_ma5": 47.28,
-    "spread": 1.2,
+    "price_date": "2026-09-11",
+    "monthly_rsi14": 47.79,
+    "monthly_rsi_ma5": 47.14,
+    "spread": 0.64,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -338,5 +351,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-11T15:43:59.884298+00:00"
+  "provisional_generated_at": "2026-09-14T17:26:32.871544+00:00"
 }
