@@ -2,12 +2,12 @@
   "code": "6727",
   "ticker": "6727.T",
   "name": "ワコム",
-  "generated_at": "2026-09-14T17:25:33.504270+00:00",
-  "price_date": "2026-09-11",
+  "generated_at": "2026-09-15T16:03:26.658480+00:00",
+  "price_date": "2026-09-14",
   "record": {
-    "current_price": 795.0,
-    "change_from_signal_month_pct": 1.92,
-    "return_since_gc_pct": 1.92
+    "current_price": 821.0,
+    "change_from_signal_month_pct": 5.26,
+    "return_since_gc_pct": 5.26
   },
   "daily": [
     {
@@ -334,22 +334,35 @@
       "sma200": 801.77,
       "rsi14": 52.52,
       "rsi5": 52.73
+    },
+    {
+      "date": "2026-09-14",
+      "open": 799.0,
+      "high": 823.0,
+      "low": 794.0,
+      "close": 821.0,
+      "volume": 498700.0,
+      "sma25": 813.48,
+      "sma75": 808.47,
+      "sma200": 801.95,
+      "rsi14": 52.52,
+      "rsi5": 52.73
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-11",
-    "monthly_rsi14": 53.98,
-    "monthly_rsi_ma5": 55.24,
-    "spread": -1.25,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-14",
+    "monthly_rsi14": 55.8,
+    "monthly_rsi_ma5": 55.6,
+    "spread": 0.2,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-14T17:26:32.871544+00:00"
+  "provisional_generated_at": "2026-09-15T16:04:37.139200+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "4014",
   "ticker": "4014.T",
   "name": "カラダノート",
-  "generated_at": "2026-09-14T17:25:33.504270+00:00",
-  "price_date": "2026-09-11",
+  "generated_at": "2026-09-15T16:03:26.658480+00:00",
+  "price_date": "2026-09-14",
   "record": {
-    "current_price": 515.0,
-    "change_from_signal_month_pct": 1.38,
-    "return_since_gc_pct": 23.21
+    "current_price": 470.0,
+    "change_from_signal_month_pct": -7.48,
+    "return_since_gc_pct": 12.44
   },
   "daily": [
     {
@@ -334,22 +334,35 @@
       "sma200": 457.12,
       "rsi14": 42.88,
       "rsi5": 49.65
+    },
+    {
+      "date": "2026-09-14",
+      "open": 515.0,
+      "high": 515.0,
+      "low": 465.0,
+      "close": 470.0,
+      "volume": 260600.0,
+      "sma25": 508.76,
+      "sma75": 493.91,
+      "sma200": 457.24,
+      "rsi14": 42.88,
+      "rsi5": 49.65
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-11",
-    "monthly_rsi14": 49.72,
-    "monthly_rsi_ma5": 46.23,
-    "spread": 3.49,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-14",
+    "monthly_rsi14": 44.99,
+    "monthly_rsi_ma5": 45.28,
+    "spread": -0.3,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-14T17:26:32.871544+00:00"
+  "provisional_generated_at": "2026-09-15T16:04:37.139200+00:00"
 }

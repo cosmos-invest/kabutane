@@ -2,12 +2,12 @@
   "code": "3020",
   "ticker": "3020.T",
   "name": "アプライド",
-  "generated_at": "2026-09-14T17:25:33.504270+00:00",
-  "price_date": "2026-09-11",
+  "generated_at": "2026-09-15T16:03:26.658480+00:00",
+  "price_date": "2026-09-14",
   "record": {
-    "current_price": 4670.0,
-    "change_from_signal_month_pct": 14.04,
-    "return_since_gc_pct": 14.04
+    "current_price": 4785.0,
+    "change_from_signal_month_pct": 16.85,
+    "return_since_gc_pct": 16.85
   },
   "daily": [
     {
@@ -334,15 +334,28 @@
       "sma200": 4160.62,
       "rsi14": 61.55,
       "rsi5": 62.46
+    },
+    {
+      "date": "2026-09-14",
+      "open": 4725.0,
+      "high": 4785.0,
+      "low": 4670.0,
+      "close": 4785.0,
+      "volume": 7100.0,
+      "sma25": 4412.4,
+      "sma75": 4185.13,
+      "sma200": 4164.65,
+      "rsi14": 61.55,
+      "rsi5": 62.46
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-11",
-    "monthly_rsi14": 71.61,
-    "monthly_rsi_ma5": 66.5,
-    "spread": 5.11,
+    "price_date": "2026-09-14",
+    "monthly_rsi14": 72.84,
+    "monthly_rsi_ma5": 66.75,
+    "spread": 6.09,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -351,5 +364,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-14T17:26:32.871544+00:00"
+  "provisional_generated_at": "2026-09-15T16:04:37.139200+00:00"
 }

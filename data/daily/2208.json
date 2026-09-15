@@ -2,12 +2,12 @@
   "code": "2208",
   "ticker": "2208.T",
   "name": "ブルボン",
-  "generated_at": "2026-09-14T17:25:33.504270+00:00",
-  "price_date": "2026-09-11",
+  "generated_at": "2026-09-15T16:03:26.658480+00:00",
+  "price_date": "2026-09-14",
   "record": {
-    "current_price": 3085.0,
-    "change_from_signal_month_pct": -2.37,
-    "return_since_gc_pct": -2.37
+    "current_price": 3135.0,
+    "change_from_signal_month_pct": -0.79,
+    "return_since_gc_pct": -0.79
   },
   "daily": [
     {
@@ -334,22 +334,35 @@
       "sma200": 2951.45,
       "rsi14": 64.41,
       "rsi5": 65.44
+    },
+    {
+      "date": "2026-09-14",
+      "open": 3120.0,
+      "high": 3135.0,
+      "low": 3100.0,
+      "close": 3135.0,
+      "volume": 1900.0,
+      "sma25": 3100.6,
+      "sma75": 3059.37,
+      "sma200": 2955.12,
+      "rsi14": 64.41,
+      "rsi5": 65.44
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-11",
-    "monthly_rsi14": 62.64,
-    "monthly_rsi_ma5": 63.29,
-    "spread": -0.65,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-14",
+    "monthly_rsi14": 64.05,
+    "monthly_rsi_ma5": 63.57,
+    "spread": 0.48,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-14T17:26:32.871544+00:00"
+  "provisional_generated_at": "2026-09-15T16:04:37.139200+00:00"
 }

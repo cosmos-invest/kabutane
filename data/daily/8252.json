@@ -2,12 +2,12 @@
   "code": "8252",
   "ticker": "8252.T",
   "name": "丸井グループ",
-  "generated_at": "2026-09-14T17:25:33.504270+00:00",
-  "price_date": "2026-09-11",
+  "generated_at": "2026-09-15T16:03:26.658480+00:00",
+  "price_date": "2026-09-14",
   "record": {
-    "current_price": 2852.5,
-    "change_from_signal_month_pct": -3.88,
-    "return_since_gc_pct": -3.88
+    "current_price": 2896.5,
+    "change_from_signal_month_pct": -2.39,
+    "return_since_gc_pct": -2.39
   },
   "daily": [
     {
@@ -334,22 +334,35 @@
       "sma200": 3012.92,
       "rsi14": 53.83,
       "rsi5": 54.68
+    },
+    {
+      "date": "2026-09-14",
+      "open": 2883.5,
+      "high": 2910.0,
+      "low": 2870.5,
+      "close": 2896.5,
+      "volume": 807700.0,
+      "sma25": 2936.0,
+      "sma75": 2893.47,
+      "sma200": 3012.14,
+      "rsi14": 53.83,
+      "rsi5": 54.68
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-11",
-    "monthly_rsi14": 49.35,
-    "monthly_rsi_ma5": 50.03,
-    "spread": -0.68,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-14",
+    "monthly_rsi14": 50.95,
+    "monthly_rsi_ma5": 50.35,
+    "spread": 0.6,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-14T17:26:32.871544+00:00"
+  "provisional_generated_at": "2026-09-15T16:04:37.139200+00:00"
 }

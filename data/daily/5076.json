@@ -2,12 +2,12 @@
   "code": "5076",
   "ticker": "5076.T",
   "name": "インフロニア・ホールディングス",
-  "generated_at": "2026-09-14T17:25:33.504270+00:00",
-  "price_date": "2026-09-11",
+  "generated_at": "2026-09-15T16:03:26.658480+00:00",
+  "price_date": "2026-09-14",
   "record": {
-    "current_price": 2768.0,
-    "change_from_signal_month_pct": 6.58,
-    "return_since_gc_pct": 3.42
+    "current_price": 2849.5,
+    "change_from_signal_month_pct": 9.72,
+    "return_since_gc_pct": 6.46
   },
   "daily": [
     {
@@ -334,22 +334,35 @@
       "sma200": 2423.05,
       "rsi14": 69.62,
       "rsi5": 71.23
+    },
+    {
+      "date": "2026-09-14",
+      "open": 2797.0,
+      "high": 2849.5,
+      "low": 2784.0,
+      "close": 2849.5,
+      "volume": 1816300.0,
+      "sma25": 2780.52,
+      "sma75": 2711.75,
+      "sma200": 2428.06,
+      "rsi14": 69.62,
+      "rsi5": 71.23
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-11",
-    "monthly_rsi14": 70.32,
-    "monthly_rsi_ma5": 71.09,
-    "spread": -0.77,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-14",
+    "monthly_rsi14": 73.26,
+    "monthly_rsi_ma5": 71.68,
+    "spread": 1.58,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-14T17:26:32.871544+00:00"
+  "provisional_generated_at": "2026-09-15T16:04:37.139200+00:00"
 }

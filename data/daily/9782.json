@@ -2,12 +2,12 @@
   "code": "9782",
   "ticker": "9782.T",
   "name": "ディーエムエス",
-  "generated_at": "2026-09-14T17:25:33.504270+00:00",
-  "price_date": "2026-09-11",
+  "generated_at": "2026-09-15T16:03:26.658480+00:00",
+  "price_date": "2026-09-14",
   "record": {
-    "current_price": 3385.0,
-    "change_from_signal_month_pct": -1.02,
-    "return_since_gc_pct": -1.02
+    "current_price": 3440.0,
+    "change_from_signal_month_pct": 0.58,
+    "return_since_gc_pct": 0.58
   },
   "daily": [
     {
@@ -334,15 +334,28 @@
       "sma200": 3440.23,
       "rsi14": 60.53,
       "rsi5": 61.25
+    },
+    {
+      "date": "2026-09-14",
+      "open": 3385.0,
+      "high": 3445.0,
+      "low": 3365.0,
+      "close": 3440.0,
+      "volume": 40800.0,
+      "sma25": 3468.6,
+      "sma75": 3412.53,
+      "sma200": 3441.7,
+      "rsi14": 60.53,
+      "rsi5": 61.25
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-11",
-    "monthly_rsi14": 59.19,
-    "monthly_rsi_ma5": 61.2,
-    "spread": -2.01,
+    "price_date": "2026-09-14",
+    "monthly_rsi14": 60.4,
+    "monthly_rsi_ma5": 61.44,
+    "spread": -1.04,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -351,5 +364,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-14T17:26:32.871544+00:00"
+  "provisional_generated_at": "2026-09-15T16:04:37.139200+00:00"
 }

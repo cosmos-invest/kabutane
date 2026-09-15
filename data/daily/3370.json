@@ -2,12 +2,12 @@
   "code": "3370",
   "ticker": "3370.T",
   "name": "フジタコーポレーション",
-  "generated_at": "2026-09-14T17:25:33.504270+00:00",
-  "price_date": "2026-09-11",
+  "generated_at": "2026-09-15T16:03:26.658480+00:00",
+  "price_date": "2026-09-14",
   "record": {
-    "current_price": 490.0,
-    "change_from_signal_month_pct": 0.82,
-    "return_since_gc_pct": 0.82
+    "current_price": 465.0,
+    "change_from_signal_month_pct": -4.32,
+    "return_since_gc_pct": -4.32
   },
   "daily": [
     {
@@ -334,15 +334,28 @@
       "sma200": 450.97,
       "rsi14": 57.73,
       "rsi5": 58.0
+    },
+    {
+      "date": "2026-09-14",
+      "open": 492.0,
+      "high": 492.0,
+      "low": 465.0,
+      "close": 465.0,
+      "volume": 73800.0,
+      "sma25": 472.88,
+      "sma75": 476.88,
+      "sma200": 451.46,
+      "rsi14": 57.73,
+      "rsi5": 58.0
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-11",
-    "monthly_rsi14": 57.71,
-    "monthly_rsi_ma5": 57.74,
-    "spread": -0.03,
+    "price_date": "2026-09-14",
+    "monthly_rsi14": 55.87,
+    "monthly_rsi_ma5": 57.37,
+    "spread": -1.5,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -351,5 +364,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-14T17:26:32.871544+00:00"
+  "provisional_generated_at": "2026-09-15T16:04:37.139200+00:00"
 }

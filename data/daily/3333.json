@@ -2,12 +2,12 @@
   "code": "3333",
   "ticker": "3333.T",
   "name": "あさひ",
-  "generated_at": "2026-09-14T17:25:33.504270+00:00",
-  "price_date": "2026-09-11",
+  "generated_at": "2026-09-15T16:03:26.658480+00:00",
+  "price_date": "2026-09-14",
   "record": {
-    "current_price": 1290.0,
-    "change_from_signal_month_pct": -5.01,
-    "return_since_gc_pct": -0.08
+    "current_price": 1309.0,
+    "change_from_signal_month_pct": -3.61,
+    "return_since_gc_pct": 1.39
   },
   "daily": [
     {
@@ -334,6 +334,19 @@
       "sma200": 1307.26,
       "rsi14": 44.59,
       "rsi5": 50.11
+    },
+    {
+      "date": "2026-09-14",
+      "open": 1290.0,
+      "high": 1309.0,
+      "low": 1281.0,
+      "close": 1309.0,
+      "volume": 92700.0,
+      "sma25": 1330.08,
+      "sma75": 1313.35,
+      "sma200": 1307.18,
+      "rsi14": 44.59,
+      "rsi5": 50.11
     }
   ],
   "corporate_events": [
@@ -346,17 +359,17 @@
   ],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-11",
-    "monthly_rsi14": 46.34,
-    "monthly_rsi_ma5": 47.55,
-    "spread": -1.21,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-14",
+    "monthly_rsi14": 47.93,
+    "monthly_rsi_ma5": 47.87,
+    "spread": 0.06,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-14T17:26:32.871544+00:00"
+  "provisional_generated_at": "2026-09-15T16:04:37.139200+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "3042",
   "ticker": "3042.T",
   "name": "セキュアヴェイル",
-  "generated_at": "2026-09-14T17:25:33.504270+00:00",
-  "price_date": "2026-09-11",
+  "generated_at": "2026-09-15T16:03:26.658480+00:00",
+  "price_date": "2026-09-14",
   "record": {
-    "current_price": 293.0,
-    "change_from_signal_month_pct": 1.03,
-    "return_since_gc_pct": 1.03
+    "current_price": 300.0,
+    "change_from_signal_month_pct": 3.45,
+    "return_since_gc_pct": 3.45
   },
   "daily": [
     {
@@ -334,22 +334,35 @@
       "sma200": 311.91,
       "rsi14": 46.24,
       "rsi5": 46.37
+    },
+    {
+      "date": "2026-09-14",
+      "open": 293.0,
+      "high": 300.0,
+      "low": 292.0,
+      "close": 300.0,
+      "volume": 20800.0,
+      "sma25": 298.32,
+      "sma75": 290.95,
+      "sma200": 311.65,
+      "rsi14": 46.24,
+      "rsi5": 46.37
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-11",
-    "monthly_rsi14": 48.9,
-    "monthly_rsi_ma5": 49.17,
-    "spread": -0.27,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-14",
+    "monthly_rsi14": 50.42,
+    "monthly_rsi_ma5": 49.48,
+    "spread": 0.94,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-14T17:26:32.871544+00:00"
+  "provisional_generated_at": "2026-09-15T16:04:37.139200+00:00"
 }

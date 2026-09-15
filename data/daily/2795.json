@@ -2,12 +2,12 @@
   "code": "2795",
   "ticker": "2795.T",
   "name": "日本プリメックス",
-  "generated_at": "2026-09-14T17:25:33.504270+00:00",
-  "price_date": "2026-09-11",
+  "generated_at": "2026-09-15T16:03:26.658480+00:00",
+  "price_date": "2026-09-14",
   "record": {
-    "current_price": 951.0,
-    "change_from_signal_month_pct": -2.26,
-    "return_since_gc_pct": 0.21
+    "current_price": 948.0,
+    "change_from_signal_month_pct": -2.57,
+    "return_since_gc_pct": -0.11
   },
   "daily": [
     {
@@ -334,15 +334,28 @@
       "sma200": 923.53,
       "rsi14": 58.86,
       "rsi5": 64.3
+    },
+    {
+      "date": "2026-09-14",
+      "open": 950.0,
+      "high": 951.0,
+      "low": 948.0,
+      "close": 948.0,
+      "volume": 1100.0,
+      "sma25": 962.72,
+      "sma75": 951.91,
+      "sma200": 923.83,
+      "rsi14": 58.86,
+      "rsi5": 64.3
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-11",
-    "monthly_rsi14": 61.61,
-    "monthly_rsi_ma5": 63.18,
-    "spread": -1.57,
+    "price_date": "2026-09-14",
+    "monthly_rsi14": 61.01,
+    "monthly_rsi_ma5": 63.06,
+    "spread": -2.05,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -351,5 +364,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-14T17:26:32.871544+00:00"
+  "provisional_generated_at": "2026-09-15T16:04:37.139200+00:00"
 }

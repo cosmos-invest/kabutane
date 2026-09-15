@@ -2,12 +2,12 @@
   "code": "5933",
   "ticker": "5933.T",
   "name": "アルインコ",
-  "generated_at": "2026-09-14T17:25:33.504270+00:00",
-  "price_date": "2026-09-11",
+  "generated_at": "2026-09-15T16:03:26.658480+00:00",
+  "price_date": "2026-09-14",
   "record": {
-    "current_price": 1102.0,
-    "change_from_signal_month_pct": -0.36,
-    "return_since_gc_pct": -0.36
+    "current_price": 1106.0,
+    "change_from_signal_month_pct": 0.0,
+    "return_since_gc_pct": 0.0
   },
   "daily": [
     {
@@ -334,15 +334,28 @@
       "sma200": 1088.04,
       "rsi14": 49.34,
       "rsi5": 55.05
+    },
+    {
+      "date": "2026-09-14",
+      "open": 1099.0,
+      "high": 1110.0,
+      "low": 1099.0,
+      "close": 1106.0,
+      "volume": 15800.0,
+      "sma25": 1125.4,
+      "sma75": 1084.97,
+      "sma200": 1088.38,
+      "rsi14": 49.34,
+      "rsi5": 55.05
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-11",
-    "monthly_rsi14": 52.73,
-    "monthly_rsi_ma5": 51.58,
-    "spread": 1.14,
+    "price_date": "2026-09-14",
+    "monthly_rsi14": 53.12,
+    "monthly_rsi_ma5": 51.66,
+    "spread": 1.46,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -351,5 +364,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-14T17:26:32.871544+00:00"
+  "provisional_generated_at": "2026-09-15T16:04:37.139200+00:00"
 }

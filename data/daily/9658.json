@@ -2,12 +2,12 @@
   "code": "9658",
   "ticker": "9658.T",
   "name": "ビジネスブレイン太田昭和",
-  "generated_at": "2026-09-14T17:25:33.504270+00:00",
-  "price_date": "2026-09-11",
+  "generated_at": "2026-09-15T16:03:26.658480+00:00",
+  "price_date": "2026-09-14",
   "record": {
-    "current_price": 1056.0,
-    "change_from_signal_month_pct": 2.03,
-    "return_since_gc_pct": 2.03
+    "current_price": 1077.0,
+    "change_from_signal_month_pct": 4.06,
+    "return_since_gc_pct": 4.06
   },
   "daily": [
     {
@@ -334,22 +334,35 @@
       "sma200": 1049.89,
       "rsi14": 56.61,
       "rsi5": 59.2
+    },
+    {
+      "date": "2026-09-14",
+      "open": 1055.0,
+      "high": 1078.0,
+      "low": 1050.0,
+      "close": 1077.0,
+      "volume": 74900.0,
+      "sma25": 1075.52,
+      "sma75": 1038.39,
+      "sma200": 1049.41,
+      "rsi14": 56.61,
+      "rsi5": 59.2
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-11",
-    "monthly_rsi14": 58.38,
-    "monthly_rsi_ma5": 59.37,
-    "spread": -0.99,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-14",
+    "monthly_rsi14": 60.08,
+    "monthly_rsi_ma5": 59.71,
+    "spread": 0.38,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-14T17:26:32.871544+00:00"
+  "provisional_generated_at": "2026-09-15T16:04:37.139200+00:00"
 }

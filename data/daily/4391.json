@@ -2,12 +2,12 @@
   "code": "4391",
   "ticker": "4391.T",
   "name": "ロジザード",
-  "generated_at": "2026-09-14T17:25:33.504270+00:00",
-  "price_date": "2026-09-11",
+  "generated_at": "2026-09-15T16:03:26.658480+00:00",
+  "price_date": "2026-09-14",
   "record": {
-    "current_price": 1149.0,
-    "change_from_signal_month_pct": 0.79,
-    "return_since_gc_pct": 4.17
+    "current_price": 1137.0,
+    "change_from_signal_month_pct": -0.26,
+    "return_since_gc_pct": 3.08
   },
   "daily": [
     {
@@ -334,15 +334,28 @@
       "sma200": 1107.4,
       "rsi14": 44.32,
       "rsi5": 47.28
+    },
+    {
+      "date": "2026-09-14",
+      "open": 1138.0,
+      "high": 1144.0,
+      "low": 1137.0,
+      "close": 1137.0,
+      "volume": 1300.0,
+      "sma25": 1142.04,
+      "sma75": 1125.21,
+      "sma200": 1107.52,
+      "rsi14": 44.32,
+      "rsi5": 47.28
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-11",
-    "monthly_rsi14": 52.14,
-    "monthly_rsi_ma5": 51.12,
-    "spread": 1.02,
+    "price_date": "2026-09-14",
+    "monthly_rsi14": 51.37,
+    "monthly_rsi_ma5": 50.96,
+    "spread": 0.41,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -351,5 +364,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-14T17:26:32.871544+00:00"
+  "provisional_generated_at": "2026-09-15T16:04:37.139200+00:00"
 }

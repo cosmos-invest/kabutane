@@ -2,12 +2,12 @@
   "code": "6337",
   "ticker": "6337.T",
   "name": "テセック",
-  "generated_at": "2026-09-14T17:25:33.504270+00:00",
-  "price_date": "2026-09-11",
+  "generated_at": "2026-09-15T16:03:26.658480+00:00",
+  "price_date": "2026-09-14",
   "record": {
-    "current_price": 3300.0,
-    "change_from_signal_month_pct": 5.26,
-    "return_since_gc_pct": 5.26
+    "current_price": 3180.0,
+    "change_from_signal_month_pct": 1.44,
+    "return_since_gc_pct": 1.44
   },
   "daily": [
     {
@@ -334,15 +334,28 @@
       "sma200": 2610.88,
       "rsi14": 58.61,
       "rsi5": 63.81
+    },
+    {
+      "date": "2026-09-14",
+      "open": 3170.0,
+      "high": 3230.0,
+      "low": 3130.0,
+      "close": 3180.0,
+      "volume": 40100.0,
+      "sma25": 3332.0,
+      "sma75": 2823.8,
+      "sma200": 2617.01,
+      "rsi14": 58.61,
+      "rsi5": 63.81
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-11",
-    "monthly_rsi14": 61.95,
-    "monthly_rsi_ma5": 57.66,
-    "spread": 4.29,
+    "price_date": "2026-09-14",
+    "monthly_rsi14": 59.69,
+    "monthly_rsi_ma5": 57.21,
+    "spread": 2.48,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -351,5 +364,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-14T17:26:32.871544+00:00"
+  "provisional_generated_at": "2026-09-15T16:04:37.139200+00:00"
 }
