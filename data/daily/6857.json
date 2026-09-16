@@ -2,12 +2,12 @@
   "code": "6857",
   "ticker": "6857.T",
   "name": "アドバンテスト",
-  "generated_at": "2026-09-15T16:03:26.658480+00:00",
-  "price_date": "2026-09-14",
+  "generated_at": "2026-09-16T15:57:12.188910+00:00",
+  "price_date": "2026-09-15",
   "record": {
-    "current_price": 31080.0,
-    "change_from_signal_month_pct": -4.37,
-    "return_since_gc_pct": -3.9
+    "current_price": 30160.0,
+    "change_from_signal_month_pct": -7.2,
+    "return_since_gc_pct": -6.74
   },
   "daily": [
     {
@@ -347,15 +347,28 @@
       "sma200": 26650.2,
       "rsi14": 68.75,
       "rsi5": 71.92
+    },
+    {
+      "date": "2026-09-15",
+      "open": 30380.0,
+      "high": 31350.0,
+      "low": 29810.0,
+      "close": 30160.0,
+      "volume": 8444200.0,
+      "sma25": 34191.6,
+      "sma75": 31125.27,
+      "sma200": 26705.25,
+      "rsi14": 68.75,
+      "rsi5": 71.92
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-14",
-    "monthly_rsi14": 67.42,
-    "monthly_rsi_ma5": 69.99,
-    "spread": -2.57,
+    "price_date": "2026-09-15",
+    "monthly_rsi14": 65.74,
+    "monthly_rsi_ma5": 69.66,
+    "spread": -3.91,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -364,5 +377,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-15T16:04:37.139200+00:00"
+  "provisional_generated_at": "2026-09-16T15:58:23.532950+00:00"
 }

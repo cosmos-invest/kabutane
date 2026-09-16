@@ -2,12 +2,12 @@
   "code": "8160",
   "ticker": "8160.T",
   "name": "木曽路",
-  "generated_at": "2026-09-15T16:03:26.658480+00:00",
-  "price_date": "2026-09-14",
+  "generated_at": "2026-09-16T15:57:12.188910+00:00",
+  "price_date": "2026-09-15",
   "record": {
-    "current_price": 2466.0,
-    "change_from_signal_month_pct": 0.24,
-    "return_since_gc_pct": 0.24
+    "current_price": 2458.0,
+    "change_from_signal_month_pct": -0.08,
+    "return_since_gc_pct": -0.08
   },
   "daily": [
     {
@@ -347,15 +347,28 @@
       "sma200": 2450.22,
       "rsi14": 48.79,
       "rsi5": 52.58
+    },
+    {
+      "date": "2026-09-15",
+      "open": 2480.0,
+      "high": 2483.0,
+      "low": 2457.0,
+      "close": 2458.0,
+      "volume": 83500.0,
+      "sma25": 2449.44,
+      "sma75": 2386.68,
+      "sma200": 2450.3,
+      "rsi14": 48.79,
+      "rsi5": 52.58
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-14",
-    "monthly_rsi14": 51.11,
-    "monthly_rsi_ma5": 48.26,
-    "spread": 2.85,
+    "price_date": "2026-09-15",
+    "monthly_rsi14": 50.7,
+    "monthly_rsi_ma5": 48.18,
+    "spread": 2.51,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -364,5 +377,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-15T16:04:37.139200+00:00"
+  "provisional_generated_at": "2026-09-16T15:58:23.532950+00:00"
 }

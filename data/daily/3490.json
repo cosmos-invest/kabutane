@@ -2,12 +2,12 @@
   "code": "3490",
   "ticker": "3490.T",
   "name": "アズ企画設計",
-  "generated_at": "2026-09-15T16:03:26.658480+00:00",
-  "price_date": "2026-09-14",
+  "generated_at": "2026-09-16T15:57:12.188910+00:00",
+  "price_date": "2026-09-15",
   "record": {
-    "current_price": 3045.0,
-    "change_from_signal_month_pct": -2.4,
-    "return_since_gc_pct": 2.18
+    "current_price": 3015.0,
+    "change_from_signal_month_pct": -3.37,
+    "return_since_gc_pct": 1.17
   },
   "daily": [
     {
@@ -347,22 +347,35 @@
       "sma200": 2948.75,
       "rsi14": 61.77,
       "rsi5": 67.67
+    },
+    {
+      "date": "2026-09-15",
+      "open": 3040.0,
+      "high": 3070.0,
+      "low": 3010.0,
+      "close": 3015.0,
+      "volume": 1300.0,
+      "sma25": 3114.4,
+      "sma75": 3024.0,
+      "sma200": 2949.66,
+      "rsi14": 61.77,
+      "rsi5": 67.67
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-14",
-    "monthly_rsi14": 62.33,
-    "monthly_rsi_ma5": 62.13,
-    "spread": 0.19,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-15",
+    "monthly_rsi14": 60.94,
+    "monthly_rsi_ma5": 61.86,
+    "spread": -0.91,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-15T16:04:37.139200+00:00"
+  "provisional_generated_at": "2026-09-16T15:58:23.532950+00:00"
 }

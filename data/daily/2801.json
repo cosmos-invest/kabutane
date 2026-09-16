@@ -2,12 +2,12 @@
   "code": "2801",
   "ticker": "2801.T",
   "name": "キッコーマン",
-  "generated_at": "2026-09-15T16:03:26.658480+00:00",
-  "price_date": "2026-09-14",
+  "generated_at": "2026-09-16T15:57:12.188910+00:00",
+  "price_date": "2026-09-15",
   "record": {
-    "current_price": 1698.0,
-    "change_from_signal_month_pct": 3.07,
-    "return_since_gc_pct": 1.8
+    "current_price": 1676.5,
+    "change_from_signal_month_pct": 1.76,
+    "return_since_gc_pct": 0.51
   },
   "daily": [
     {
@@ -347,22 +347,35 @@
       "sma200": 1518.07,
       "rsi14": 50.93,
       "rsi5": 57.07
+    },
+    {
+      "date": "2026-09-15",
+      "open": 1709.0,
+      "high": 1721.5,
+      "low": 1660.0,
+      "close": 1676.5,
+      "volume": 3265300.0,
+      "sma25": 1778.6,
+      "sma75": 1666.04,
+      "sma200": 1519.51,
+      "rsi14": 50.93,
+      "rsi5": 57.07
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-14",
-    "monthly_rsi14": 56.76,
-    "monthly_rsi_ma5": 56.16,
-    "spread": 0.6,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-15",
+    "monthly_rsi14": 55.82,
+    "monthly_rsi_ma5": 55.97,
+    "spread": -0.15,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-15T16:04:37.139200+00:00"
+  "provisional_generated_at": "2026-09-16T15:58:23.532950+00:00"
 }

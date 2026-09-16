@@ -2,12 +2,12 @@
   "code": "6074",
   "ticker": "6074.T",
   "name": "ジェイエスエス",
-  "generated_at": "2026-09-15T16:03:26.658480+00:00",
-  "price_date": "2026-09-14",
+  "generated_at": "2026-09-16T15:57:12.188910+00:00",
+  "price_date": "2026-09-15",
   "record": {
-    "current_price": 517.0,
-    "change_from_signal_month_pct": 0.19,
-    "return_since_gc_pct": 0.19
+    "current_price": 515.0,
+    "change_from_signal_month_pct": -0.19,
+    "return_since_gc_pct": -0.19
   },
   "daily": [
     {
@@ -347,15 +347,28 @@
       "sma200": 524.72,
       "rsi14": 49.81,
       "rsi5": 50.65
+    },
+    {
+      "date": "2026-09-15",
+      "open": 517.0,
+      "high": 517.0,
+      "low": 515.0,
+      "close": 515.0,
+      "volume": 500.0,
+      "sma25": 517.36,
+      "sma75": 504.52,
+      "sma200": 524.66,
+      "rsi14": 49.81,
+      "rsi5": 50.65
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-14",
-    "monthly_rsi14": 50.24,
-    "monthly_rsi_ma5": 48.58,
-    "spread": 1.66,
+    "price_date": "2026-09-15",
+    "monthly_rsi14": 49.86,
+    "monthly_rsi_ma5": 48.51,
+    "spread": 1.36,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -364,5 +377,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-15T16:04:37.139200+00:00"
+  "provisional_generated_at": "2026-09-16T15:58:23.532950+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "4934",
   "ticker": "4934.T",
   "name": "プレミアアンチエイジング",
-  "generated_at": "2026-09-15T16:03:26.658480+00:00",
-  "price_date": "2026-09-14",
+  "generated_at": "2026-09-16T15:57:12.188910+00:00",
+  "price_date": "2026-09-15",
   "record": {
-    "current_price": 610.0,
-    "change_from_signal_month_pct": 0.16,
-    "return_since_gc_pct": 0.16
+    "current_price": 601.0,
+    "change_from_signal_month_pct": -1.31,
+    "return_since_gc_pct": -1.31
   },
   "daily": [
     {
@@ -347,22 +347,35 @@
       "sma200": 650.75,
       "rsi14": 38.21,
       "rsi5": 38.3
+    },
+    {
+      "date": "2026-09-15",
+      "open": 612.0,
+      "high": 612.0,
+      "low": 586.0,
+      "close": 601.0,
+      "volume": 31200.0,
+      "sma25": 597.6,
+      "sma75": 607.6,
+      "sma200": 650.29,
+      "rsi14": 38.21,
+      "rsi5": 38.3
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-14",
-    "monthly_rsi14": 34.91,
-    "monthly_rsi_ma5": 34.26,
-    "spread": 0.65,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-15",
+    "monthly_rsi14": 33.99,
+    "monthly_rsi_ma5": 34.08,
+    "spread": -0.08,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-15T16:04:37.139200+00:00"
+  "provisional_generated_at": "2026-09-16T15:58:23.532950+00:00"
 }

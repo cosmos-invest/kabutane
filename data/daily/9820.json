@@ -2,12 +2,12 @@
   "code": "9820",
   "ticker": "9820.T",
   "name": "エムティジェネックス",
-  "generated_at": "2026-09-15T16:03:26.658480+00:00",
-  "price_date": "2026-09-14",
+  "generated_at": "2026-09-16T15:57:12.188910+00:00",
+  "price_date": "2026-09-15",
   "record": {
-    "current_price": 3760.0,
-    "change_from_signal_month_pct": 1.62,
-    "return_since_gc_pct": 1.62
+    "current_price": 3720.0,
+    "change_from_signal_month_pct": 0.54,
+    "return_since_gc_pct": 0.54
   },
   "daily": [
     {
@@ -347,22 +347,35 @@
       "sma200": 3602.1,
       "rsi14": 60.61,
       "rsi5": 63.5
+    },
+    {
+      "date": "2026-09-15",
+      "open": 3720.0,
+      "high": 3720.0,
+      "low": 3720.0,
+      "close": 3720.0,
+      "volume": 300.0,
+      "sma25": 3779.4,
+      "sma75": 3657.07,
+      "sma200": 3603.38,
+      "rsi14": 60.61,
+      "rsi5": 63.5
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-14",
-    "monthly_rsi14": 65.03,
-    "monthly_rsi_ma5": 64.22,
-    "spread": 0.81,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-15",
+    "monthly_rsi14": 63.66,
+    "monthly_rsi_ma5": 63.95,
+    "spread": -0.29,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-15T16:04:37.139200+00:00"
+  "provisional_generated_at": "2026-09-16T15:58:23.532950+00:00"
 }
