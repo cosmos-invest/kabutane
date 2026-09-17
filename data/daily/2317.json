@@ -2,12 +2,12 @@
   "code": "2317",
   "ticker": "2317.T",
   "name": "システナ",
-  "generated_at": "2026-09-16T15:57:12.188910+00:00",
-  "price_date": "2026-09-15",
+  "generated_at": "2026-09-17T16:02:18.029026+00:00",
+  "price_date": "2026-09-16",
   "record": {
-    "current_price": 441.0,
-    "change_from_signal_month_pct": 5.0,
-    "return_since_gc_pct": 5.0
+    "current_price": 437.0,
+    "change_from_signal_month_pct": 4.05,
+    "return_since_gc_pct": 4.05
   },
   "daily": [
     {
@@ -360,15 +360,28 @@
       "sma200": 447.01,
       "rsi14": 49.71,
       "rsi5": 50.76
+    },
+    {
+      "date": "2026-09-16",
+      "open": 441.0,
+      "high": 442.0,
+      "low": 437.0,
+      "close": 437.0,
+      "volume": 487300.0,
+      "sma25": 441.08,
+      "sma75": 423.41,
+      "sma200": 446.73,
+      "rsi14": 49.71,
+      "rsi5": 50.76
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-15",
-    "monthly_rsi14": 55.57,
-    "monthly_rsi_ma5": 53.95,
-    "spread": 1.62,
+    "price_date": "2026-09-16",
+    "monthly_rsi14": 54.85,
+    "monthly_rsi_ma5": 53.8,
+    "spread": 1.05,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -377,5 +390,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-16T15:58:23.532950+00:00"
+  "provisional_generated_at": "2026-09-17T16:03:32.221807+00:00"
 }

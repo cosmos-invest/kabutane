@@ -2,12 +2,12 @@
   "code": "8876",
   "ticker": "8876.T",
   "name": "リログループ",
-  "generated_at": "2026-09-16T15:57:12.188910+00:00",
-  "price_date": "2026-09-15",
+  "generated_at": "2026-09-17T16:02:18.029026+00:00",
+  "price_date": "2026-09-16",
   "record": {
-    "current_price": 2185.0,
-    "change_from_signal_month_pct": 8.49,
-    "return_since_gc_pct": 9.47
+    "current_price": 2167.0,
+    "change_from_signal_month_pct": 7.6,
+    "return_since_gc_pct": 8.57
   },
   "daily": [
     {
@@ -360,15 +360,28 @@
       "sma200": 1915.79,
       "rsi14": 55.99,
       "rsi5": 58.54
+    },
+    {
+      "date": "2026-09-16",
+      "open": 2185.5,
+      "high": 2200.0,
+      "low": 2135.0,
+      "close": 2167.0,
+      "volume": 513000.0,
+      "sma25": 2185.44,
+      "sma75": 2034.04,
+      "sma200": 1918.18,
+      "rsi14": 55.99,
+      "rsi5": 58.54
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-15",
-    "monthly_rsi14": 64.34,
-    "monthly_rsi_ma5": 60.09,
-    "spread": 4.25,
+    "price_date": "2026-09-16",
+    "monthly_rsi14": 63.37,
+    "monthly_rsi_ma5": 59.9,
+    "spread": 3.47,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -377,5 +390,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-16T15:58:23.532950+00:00"
+  "provisional_generated_at": "2026-09-17T16:03:32.221807+00:00"
 }

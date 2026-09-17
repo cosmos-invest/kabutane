@@ -2,12 +2,12 @@
   "code": "4809",
   "ticker": "4809.T",
   "name": "パラカ",
-  "generated_at": "2026-09-16T15:57:12.188910+00:00",
-  "price_date": "2026-09-15",
+  "generated_at": "2026-09-17T16:02:18.029026+00:00",
+  "price_date": "2026-09-16",
   "record": {
-    "current_price": 2035.0,
-    "change_from_signal_month_pct": -0.49,
-    "return_since_gc_pct": -0.49
+    "current_price": 2022.0,
+    "change_from_signal_month_pct": -1.12,
+    "return_since_gc_pct": -1.12
   },
   "daily": [
     {
@@ -360,15 +360,28 @@
       "sma200": 2028.78,
       "rsi14": 55.33,
       "rsi5": 57.16
+    },
+    {
+      "date": "2026-09-16",
+      "open": 2041.0,
+      "high": 2059.0,
+      "low": 2022.0,
+      "close": 2022.0,
+      "volume": 19100.0,
+      "sma25": 2040.84,
+      "sma75": 2031.76,
+      "sma200": 2028.54,
+      "rsi14": 55.33,
+      "rsi5": 57.16
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-15",
-    "monthly_rsi14": 53.91,
-    "monthly_rsi_ma5": 52.72,
-    "spread": 1.18,
+    "price_date": "2026-09-16",
+    "monthly_rsi14": 52.67,
+    "monthly_rsi_ma5": 52.48,
+    "spread": 0.19,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -377,5 +390,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-16T15:58:23.532950+00:00"
+  "provisional_generated_at": "2026-09-17T16:03:32.221807+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "7721",
   "ticker": "7721.T",
   "name": "東京計器",
-  "generated_at": "2026-09-16T15:57:12.188910+00:00",
-  "price_date": "2026-09-15",
+  "generated_at": "2026-09-17T16:02:18.029026+00:00",
+  "price_date": "2026-09-16",
   "record": {
-    "current_price": 6700.0,
-    "change_from_signal_month_pct": -2.62,
-    "return_since_gc_pct": -2.62
+    "current_price": 6800.0,
+    "change_from_signal_month_pct": -1.16,
+    "return_since_gc_pct": -1.16
   },
   "daily": [
     {
@@ -360,22 +360,35 @@
       "sma200": 6828.95,
       "rsi14": 60.09,
       "rsi5": 60.22
+    },
+    {
+      "date": "2026-09-16",
+      "open": 6750.0,
+      "high": 6890.0,
+      "low": 6740.0,
+      "close": 6800.0,
+      "volume": 189700.0,
+      "sma25": 7093.2,
+      "sma75": 6592.53,
+      "sma200": 6834.2,
+      "rsi14": 60.09,
+      "rsi5": 60.22
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-15",
-    "monthly_rsi14": 58.85,
-    "monthly_rsi_ma5": 59.31,
-    "spread": -0.46,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-16",
+    "monthly_rsi14": 59.46,
+    "monthly_rsi_ma5": 59.43,
+    "spread": 0.03,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-16T15:58:23.532950+00:00"
+  "provisional_generated_at": "2026-09-17T16:03:32.221807+00:00"
 }

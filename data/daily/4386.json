@@ -2,12 +2,12 @@
   "code": "4386",
   "ticker": "4386.T",
   "name": "ＳＩＧグループ",
-  "generated_at": "2026-09-16T15:57:12.188910+00:00",
-  "price_date": "2026-09-15",
+  "generated_at": "2026-09-17T16:02:18.029026+00:00",
+  "price_date": "2026-09-16",
   "record": {
-    "current_price": 871.0,
-    "change_from_signal_month_pct": 0.35,
-    "return_since_gc_pct": 0.35
+    "current_price": 880.0,
+    "change_from_signal_month_pct": 1.38,
+    "return_since_gc_pct": 1.38
   },
   "daily": [
     {
@@ -360,22 +360,35 @@
       "sma200": 895.18,
       "rsi14": 57.59,
       "rsi5": 58.12
+    },
+    {
+      "date": "2026-09-16",
+      "open": 872.0,
+      "high": 882.0,
+      "low": 871.0,
+      "close": 880.0,
+      "volume": 3400.0,
+      "sma25": 895.2,
+      "sma75": 853.37,
+      "sma200": 895.12,
+      "rsi14": 57.59,
+      "rsi5": 58.12
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-15",
-    "monthly_rsi14": 58.06,
-    "monthly_rsi_ma5": 58.65,
-    "spread": -0.58,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-16",
+    "monthly_rsi14": 58.99,
+    "monthly_rsi_ma5": 58.83,
+    "spread": 0.16,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-16T15:58:23.532950+00:00"
+  "provisional_generated_at": "2026-09-17T16:03:32.221807+00:00"
 }
