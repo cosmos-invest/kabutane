@@ -2,12 +2,12 @@
   "code": "5900",
   "ticker": "5900.T",
   "name": "ダイケン",
-  "generated_at": "2026-09-17T16:02:18.029026+00:00",
-  "price_date": "2026-09-16",
+  "generated_at": "2026-09-18T15:38:31.004246+00:00",
+  "price_date": "2026-09-17",
   "record": {
-    "current_price": 899.0,
-    "change_from_signal_month_pct": 5.15,
-    "return_since_gc_pct": 10.44
+    "current_price": 882.0,
+    "change_from_signal_month_pct": 3.16,
+    "return_since_gc_pct": 8.35
   },
   "daily": [
     {
@@ -373,15 +373,28 @@
       "sma200": 838.85,
       "rsi14": 50.76,
       "rsi5": 55.63
+    },
+    {
+      "date": "2026-09-17",
+      "open": 888.0,
+      "high": 888.0,
+      "low": 876.0,
+      "close": 882.0,
+      "volume": 1600.0,
+      "sma25": 878.96,
+      "sma75": 856.17,
+      "sma200": 839.12,
+      "rsi14": 50.76,
+      "rsi5": 55.63
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-16",
-    "monthly_rsi14": 61.37,
-    "monthly_rsi_ma5": 56.16,
-    "spread": 5.21,
+    "price_date": "2026-09-17",
+    "monthly_rsi14": 59.37,
+    "monthly_rsi_ma5": 55.76,
+    "spread": 3.62,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -390,5 +403,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-17T16:03:32.221807+00:00"
+  "provisional_generated_at": "2026-09-18T15:39:39.444816+00:00"
 }

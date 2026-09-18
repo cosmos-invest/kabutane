@@ -2,12 +2,12 @@
   "code": "2108",
   "ticker": "2108.T",
   "name": "日本甜菜製糖",
-  "generated_at": "2026-09-17T16:02:18.029026+00:00",
-  "price_date": "2026-09-16",
+  "generated_at": "2026-09-18T15:38:31.004246+00:00",
+  "price_date": "2026-09-17",
   "record": {
-    "current_price": 5200.0,
-    "change_from_signal_month_pct": 3.17,
-    "return_since_gc_pct": 9.36
+    "current_price": 5290.0,
+    "change_from_signal_month_pct": 4.96,
+    "return_since_gc_pct": 11.25
   },
   "daily": [
     {
@@ -373,22 +373,35 @@
       "sma200": 4399.77,
       "rsi14": 76.12,
       "rsi5": 80.82
+    },
+    {
+      "date": "2026-09-17",
+      "open": 5260.0,
+      "high": 5310.0,
+      "low": 5220.0,
+      "close": 5290.0,
+      "volume": 31200.0,
+      "sma25": 5422.8,
+      "sma75": 4998.33,
+      "sma200": 4408.1,
+      "rsi14": 76.12,
+      "rsi5": 80.82
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-16",
-    "monthly_rsi14": 77.18,
-    "monthly_rsi_ma5": 78.92,
-    "spread": -1.75,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-17",
+    "monthly_rsi14": 79.38,
+    "monthly_rsi_ma5": 79.36,
+    "spread": 0.02,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-17T16:03:32.221807+00:00"
+  "provisional_generated_at": "2026-09-18T15:39:39.444816+00:00"
 }

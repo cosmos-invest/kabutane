@@ -2,12 +2,12 @@
   "code": "3981",
   "ticker": "3981.T",
   "name": "ビーグリー",
-  "generated_at": "2026-09-17T16:02:18.029026+00:00",
-  "price_date": "2026-09-16",
+  "generated_at": "2026-09-18T15:38:31.004246+00:00",
+  "price_date": "2026-09-17",
   "record": {
-    "current_price": 1215.0,
-    "change_from_signal_month_pct": -1.62,
-    "return_since_gc_pct": -1.62
+    "current_price": 1225.0,
+    "change_from_signal_month_pct": -0.81,
+    "return_since_gc_pct": -0.81
   },
   "daily": [
     {
@@ -373,22 +373,35 @@
       "sma200": 1250.24,
       "rsi14": 46.17,
       "rsi5": 46.45
+    },
+    {
+      "date": "2026-09-17",
+      "open": 1218.0,
+      "high": 1225.0,
+      "low": 1217.0,
+      "close": 1225.0,
+      "volume": 1700.0,
+      "sma25": 1215.04,
+      "sma75": 1214.16,
+      "sma200": 1249.95,
+      "rsi14": 46.17,
+      "rsi5": 46.45
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-16",
-    "monthly_rsi14": 46.51,
-    "monthly_rsi_ma5": 46.79,
-    "spread": -0.29,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-17",
+    "monthly_rsi14": 47.13,
+    "monthly_rsi_ma5": 46.92,
+    "spread": 0.21,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-17T16:03:32.221807+00:00"
+  "provisional_generated_at": "2026-09-18T15:39:39.444816+00:00"
 }

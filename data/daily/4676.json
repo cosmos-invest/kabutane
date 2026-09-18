@@ -2,12 +2,12 @@
   "code": "4676",
   "ticker": "4676.T",
   "name": "フジ・メディア・ホールディングス",
-  "generated_at": "2026-09-17T16:02:18.029026+00:00",
-  "price_date": "2026-09-16",
+  "generated_at": "2026-09-18T15:38:31.004246+00:00",
+  "price_date": "2026-09-17",
   "record": {
-    "current_price": 4096.0,
-    "change_from_signal_month_pct": 2.89,
-    "return_since_gc_pct": 2.89
+    "current_price": 4154.0,
+    "change_from_signal_month_pct": 4.35,
+    "return_since_gc_pct": 4.35
   },
   "daily": [
     {
@@ -373,22 +373,35 @@
       "sma200": 3891.22,
       "rsi14": 70.82,
       "rsi5": 71.13
+    },
+    {
+      "date": "2026-09-17",
+      "open": 4131.0,
+      "high": 4172.0,
+      "low": 4121.0,
+      "close": 4154.0,
+      "volume": 514600.0,
+      "sma25": 4125.68,
+      "sma75": 4071.61,
+      "sma200": 3894.64,
+      "rsi14": 70.82,
+      "rsi5": 71.13
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-16",
-    "monthly_rsi14": 70.4,
-    "monthly_rsi_ma5": 70.45,
-    "spread": -0.05,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-17",
+    "monthly_rsi14": 72.2,
+    "monthly_rsi_ma5": 70.81,
+    "spread": 1.39,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-17T16:03:32.221807+00:00"
+  "provisional_generated_at": "2026-09-18T15:39:39.444816+00:00"
 }

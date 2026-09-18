@@ -2,12 +2,12 @@
   "code": "5161",
   "ticker": "5161.T",
   "name": "西川ゴム工業",
-  "generated_at": "2026-09-17T16:02:18.029026+00:00",
-  "price_date": "2026-09-16",
+  "generated_at": "2026-09-18T15:38:31.004246+00:00",
+  "price_date": "2026-09-17",
   "record": {
-    "current_price": 3450.0,
-    "change_from_signal_month_pct": 4.7,
-    "return_since_gc_pct": 4.7
+    "current_price": 3555.0,
+    "change_from_signal_month_pct": 7.89,
+    "return_since_gc_pct": 7.89
   },
   "daily": [
     {
@@ -373,22 +373,35 @@
       "sma200": 3419.25,
       "rsi14": 60.89,
       "rsi5": 60.95
+    },
+    {
+      "date": "2026-09-17",
+      "open": 3480.0,
+      "high": 3555.0,
+      "low": 3480.0,
+      "close": 3555.0,
+      "volume": 99400.0,
+      "sma25": 3561.6,
+      "sma75": 3280.71,
+      "sma200": 3422.16,
+      "rsi14": 60.89,
+      "rsi5": 60.95
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-16",
-    "monthly_rsi14": 60.83,
-    "monthly_rsi_ma5": 61.16,
-    "spread": -0.33,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-17",
+    "monthly_rsi14": 62.53,
+    "monthly_rsi_ma5": 61.5,
+    "spread": 1.03,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-17T16:03:32.221807+00:00"
+  "provisional_generated_at": "2026-09-18T15:39:39.444816+00:00"
 }

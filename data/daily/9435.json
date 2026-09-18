@@ -2,12 +2,12 @@
   "code": "9435",
   "ticker": "9435.T",
   "name": "光通信",
-  "generated_at": "2026-09-17T16:02:18.029026+00:00",
-  "price_date": "2026-09-16",
+  "generated_at": "2026-09-18T15:38:31.004246+00:00",
+  "price_date": "2026-09-17",
   "record": {
-    "current_price": 38080.0,
-    "change_from_signal_month_pct": -2.81,
-    "return_since_gc_pct": -2.81
+    "current_price": 39160.0,
+    "change_from_signal_month_pct": -0.05,
+    "return_since_gc_pct": -0.05
   },
   "daily": [
     {
@@ -373,22 +373,35 @@
       "sma200": 40178.3,
       "rsi14": 53.47,
       "rsi5": 56.02
+    },
+    {
+      "date": "2026-09-17",
+      "open": 38670.0,
+      "high": 39370.0,
+      "low": 38570.0,
+      "close": 39160.0,
+      "volume": 81800.0,
+      "sma25": 39046.4,
+      "sma75": 37832.13,
+      "sma200": 40159.85,
+      "rsi14": 53.47,
+      "rsi5": 56.02
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-16",
-    "monthly_rsi14": 52.67,
-    "monthly_rsi_ma5": 53.12,
-    "spread": -0.45,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-17",
+    "monthly_rsi14": 55.03,
+    "monthly_rsi_ma5": 53.59,
+    "spread": 1.44,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-17T16:03:32.221807+00:00"
+  "provisional_generated_at": "2026-09-18T15:39:39.444816+00:00"
 }

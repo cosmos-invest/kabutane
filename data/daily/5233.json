@@ -2,12 +2,12 @@
   "code": "5233",
   "ticker": "5233.T",
   "name": "太平洋セメント",
-  "generated_at": "2026-09-17T16:02:18.029026+00:00",
-  "price_date": "2026-09-16",
+  "generated_at": "2026-09-18T15:38:31.004246+00:00",
+  "price_date": "2026-09-17",
   "record": {
-    "current_price": 4178.0,
-    "change_from_signal_month_pct": 2.55,
-    "return_since_gc_pct": 2.55
+    "current_price": 4281.0,
+    "change_from_signal_month_pct": 5.08,
+    "return_since_gc_pct": 5.08
   },
   "daily": [
     {
@@ -373,22 +373,35 @@
       "sma200": 4031.31,
       "rsi14": 52.61,
       "rsi5": 53.9
+    },
+    {
+      "date": "2026-09-17",
+      "open": 4233.0,
+      "high": 4281.0,
+      "low": 4182.0,
+      "close": 4281.0,
+      "volume": 405100.0,
+      "sma25": 4173.04,
+      "sma75": 4150.77,
+      "sma200": 4033.99,
+      "rsi14": 52.61,
+      "rsi5": 53.9
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-16",
-    "monthly_rsi14": 55.4,
-    "monthly_rsi_ma5": 56.08,
-    "spread": -0.68,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-17",
+    "monthly_rsi14": 56.75,
+    "monthly_rsi_ma5": 56.35,
+    "spread": 0.4,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-17T16:03:32.221807+00:00"
+  "provisional_generated_at": "2026-09-18T15:39:39.444816+00:00"
 }

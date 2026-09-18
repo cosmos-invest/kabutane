@@ -2,12 +2,12 @@
   "code": "7236",
   "ticker": "7236.T",
   "name": "ティラド",
-  "generated_at": "2026-09-17T16:02:18.029026+00:00",
-  "price_date": "2026-09-16",
+  "generated_at": "2026-09-18T15:38:31.004246+00:00",
+  "price_date": "2026-09-17",
   "record": {
-    "current_price": 1480.0,
-    "change_from_signal_month_pct": -0.2,
-    "return_since_gc_pct": -0.4
+    "current_price": 1505.0,
+    "change_from_signal_month_pct": 1.48,
+    "return_since_gc_pct": 1.28
   },
   "daily": [
     {
@@ -373,15 +373,28 @@
       "sma200": 1181.64,
       "rsi14": 71.43,
       "rsi5": 75.4
+    },
+    {
+      "date": "2026-09-17",
+      "open": 1497.0,
+      "high": 1521.0,
+      "low": 1490.0,
+      "close": 1505.0,
+      "volume": 370500.0,
+      "sma25": 1525.6,
+      "sma75": 1496.01,
+      "sma200": 1184.6,
+      "rsi14": 71.43,
+      "rsi5": 75.4
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-16",
-    "monthly_rsi14": 71.98,
-    "monthly_rsi_ma5": 75.6,
-    "spread": -3.61,
+    "price_date": "2026-09-17",
+    "monthly_rsi14": 73.2,
+    "monthly_rsi_ma5": 75.84,
+    "spread": -2.64,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -390,5 +403,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-17T16:03:32.221807+00:00"
+  "provisional_generated_at": "2026-09-18T15:39:39.444816+00:00"
 }

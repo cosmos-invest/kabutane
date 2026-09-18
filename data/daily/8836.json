@@ -2,12 +2,12 @@
   "code": "8836",
   "ticker": "8836.T",
   "name": "ＲＩＳＥ",
-  "generated_at": "2026-09-17T16:02:18.029026+00:00",
-  "price_date": "2026-09-16",
+  "generated_at": "2026-09-18T15:38:31.004246+00:00",
+  "price_date": "2026-09-17",
   "record": {
-    "current_price": 27.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 26.0,
+    "change_from_signal_month_pct": -3.7,
+    "return_since_gc_pct": -3.7
   },
   "daily": [
     {
@@ -373,15 +373,28 @@
       "sma200": 28.66,
       "rsi14": 47.21,
       "rsi5": 47.77
+    },
+    {
+      "date": "2026-09-17",
+      "open": 27.0,
+      "high": 27.0,
+      "low": 26.0,
+      "close": 26.0,
+      "volume": 12500.0,
+      "sma25": 27.0,
+      "sma75": 26.24,
+      "sma200": 28.64,
+      "rsi14": 47.21,
+      "rsi5": 47.77
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-16",
-    "monthly_rsi14": 47.55,
-    "monthly_rsi_ma5": 45.78,
-    "spread": 1.77,
+    "price_date": "2026-09-17",
+    "monthly_rsi14": 45.87,
+    "monthly_rsi_ma5": 45.44,
+    "spread": 0.43,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -390,5 +403,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-17T16:03:32.221807+00:00"
+  "provisional_generated_at": "2026-09-18T15:39:39.444816+00:00"
 }

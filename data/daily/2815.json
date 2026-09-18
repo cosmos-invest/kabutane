@@ -2,12 +2,12 @@
   "code": "2815",
   "ticker": "2815.T",
   "name": "アリアケジャパン",
-  "generated_at": "2026-09-17T16:02:18.029026+00:00",
-  "price_date": "2026-09-16",
+  "generated_at": "2026-09-18T15:38:31.004246+00:00",
+  "price_date": "2026-09-17",
   "record": {
-    "current_price": 5240.0,
-    "change_from_signal_month_pct": -2.42,
-    "return_since_gc_pct": -2.42
+    "current_price": 5260.0,
+    "change_from_signal_month_pct": -2.05,
+    "return_since_gc_pct": -2.05
   },
   "daily": [
     {
@@ -373,22 +373,35 @@
       "sma200": 5440.27,
       "rsi14": 46.45,
       "rsi5": 47.47
+    },
+    {
+      "date": "2026-09-17",
+      "open": 5230.0,
+      "high": 5270.0,
+      "low": 5220.0,
+      "close": 5260.0,
+      "volume": 127600.0,
+      "sma25": 5366.8,
+      "sma75": 5245.4,
+      "sma200": 5440.23,
+      "rsi14": 46.45,
+      "rsi5": 47.47
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-16",
-    "monthly_rsi14": 45.5,
-    "monthly_rsi_ma5": 45.55,
-    "spread": -0.06,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-17",
+    "monthly_rsi14": 45.75,
+    "monthly_rsi_ma5": 45.61,
+    "spread": 0.15,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-17T16:03:32.221807+00:00"
+  "provisional_generated_at": "2026-09-18T15:39:39.444816+00:00"
 }

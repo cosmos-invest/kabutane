@@ -2,12 +2,12 @@
   "code": "2138",
   "ticker": "2138.T",
   "name": "クルーズ",
-  "generated_at": "2026-09-17T16:02:18.029026+00:00",
-  "price_date": "2026-09-16",
+  "generated_at": "2026-09-18T15:38:31.004246+00:00",
+  "price_date": "2026-09-17",
   "record": {
-    "current_price": 432.0,
-    "change_from_signal_month_pct": -5.68,
-    "return_since_gc_pct": -5.68
+    "current_price": 429.0,
+    "change_from_signal_month_pct": -6.33,
+    "return_since_gc_pct": -6.33
   },
   "daily": [
     {
@@ -373,15 +373,28 @@
       "sma200": 512.83,
       "rsi14": 37.24,
       "rsi5": 39.25
+    },
+    {
+      "date": "2026-09-17",
+      "open": 433.0,
+      "high": 433.0,
+      "low": 414.0,
+      "close": 429.0,
+      "volume": 34100.0,
+      "sma25": 446.96,
+      "sma75": 438.73,
+      "sma200": 512.12,
+      "rsi14": 37.24,
+      "rsi5": 39.25
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-16",
-    "monthly_rsi14": 32.92,
-    "monthly_rsi_ma5": 31.2,
-    "spread": 1.71,
+    "price_date": "2026-09-17",
+    "monthly_rsi14": 32.75,
+    "monthly_rsi_ma5": 31.17,
+    "spread": 1.58,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -390,5 +403,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-17T16:03:32.221807+00:00"
+  "provisional_generated_at": "2026-09-18T15:39:39.444816+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "7524",
   "ticker": "7524.T",
   "name": "マルシェ",
-  "generated_at": "2026-09-17T16:02:18.029026+00:00",
-  "price_date": "2026-09-16",
+  "generated_at": "2026-09-18T15:38:31.004246+00:00",
+  "price_date": "2026-09-17",
   "record": {
-    "current_price": 175.0,
-    "change_from_signal_month_pct": -3.85,
-    "return_since_gc_pct": -2.78
+    "current_price": 172.0,
+    "change_from_signal_month_pct": -5.49,
+    "return_since_gc_pct": -4.44
   },
   "daily": [
     {
@@ -373,22 +373,35 @@
       "sma200": 180.63,
       "rsi14": 31.87,
       "rsi5": 37.52
+    },
+    {
+      "date": "2026-09-17",
+      "open": 174.0,
+      "high": 174.0,
+      "low": 171.0,
+      "close": 172.0,
+      "volume": 31700.0,
+      "sma25": 177.16,
+      "sma75": 179.65,
+      "sma200": 180.53,
+      "rsi14": 31.87,
+      "rsi5": 37.52
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-16",
-    "monthly_rsi14": 35.0,
-    "monthly_rsi_ma5": 34.91,
-    "spread": 0.1,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-17",
+    "monthly_rsi14": 33.99,
+    "monthly_rsi_ma5": 34.7,
+    "spread": -0.71,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-17T16:03:32.221807+00:00"
+  "provisional_generated_at": "2026-09-18T15:39:39.444816+00:00"
 }

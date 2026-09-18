@@ -2,12 +2,12 @@
   "code": "7472",
   "ticker": "7472.T",
   "name": "鳥羽洋行",
-  "generated_at": "2026-09-17T16:02:18.029026+00:00",
-  "price_date": "2026-09-16",
+  "generated_at": "2026-09-18T15:38:31.004246+00:00",
+  "price_date": "2026-09-17",
   "record": {
-    "current_price": 3900.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 3910.0,
+    "change_from_signal_month_pct": 0.26,
+    "return_since_gc_pct": 0.26
   },
   "daily": [
     {
@@ -373,15 +373,28 @@
       "sma200": 3894.6,
       "rsi14": 53.57,
       "rsi5": 56.57
+    },
+    {
+      "date": "2026-09-17",
+      "open": 3900.0,
+      "high": 3915.0,
+      "low": 3900.0,
+      "close": 3910.0,
+      "volume": 400.0,
+      "sma25": 3917.6,
+      "sma75": 3818.07,
+      "sma200": 3893.65,
+      "rsi14": 53.57,
+      "rsi5": 56.57
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-16",
-    "monthly_rsi14": 56.03,
-    "monthly_rsi_ma5": 53.95,
-    "spread": 2.09,
+    "price_date": "2026-09-17",
+    "monthly_rsi14": 56.4,
+    "monthly_rsi_ma5": 54.02,
+    "spread": 2.38,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -390,5 +403,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-17T16:03:32.221807+00:00"
+  "provisional_generated_at": "2026-09-18T15:39:39.444816+00:00"
 }

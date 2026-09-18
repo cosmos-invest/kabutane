@@ -2,12 +2,12 @@
   "code": "4707",
   "ticker": "4707.T",
   "name": "キタック",
-  "generated_at": "2026-09-17T16:02:18.029026+00:00",
-  "price_date": "2026-09-16",
+  "generated_at": "2026-09-18T15:38:31.004246+00:00",
+  "price_date": "2026-09-17",
   "record": {
-    "current_price": 343.0,
-    "change_from_signal_month_pct": 4.89,
-    "return_since_gc_pct": 3.94
+    "current_price": 345.0,
+    "change_from_signal_month_pct": 5.5,
+    "return_since_gc_pct": 4.55
   },
   "daily": [
     {
@@ -373,15 +373,28 @@
       "sma200": 333.81,
       "rsi14": 44.83,
       "rsi5": 45.61
+    },
+    {
+      "date": "2026-09-17",
+      "open": 343.0,
+      "high": 345.0,
+      "low": 343.0,
+      "close": 345.0,
+      "volume": 8300.0,
+      "sma25": 338.0,
+      "sma75": 331.21,
+      "sma200": 333.76,
+      "rsi14": 44.83,
+      "rsi5": 45.61
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-16",
-    "monthly_rsi14": 49.96,
-    "monthly_rsi_ma5": 47.52,
-    "spread": 2.44,
+    "price_date": "2026-09-17",
+    "monthly_rsi14": 50.36,
+    "monthly_rsi_ma5": 47.6,
+    "spread": 2.75,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -390,5 +403,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-17T16:03:32.221807+00:00"
+  "provisional_generated_at": "2026-09-18T15:39:39.444816+00:00"
 }

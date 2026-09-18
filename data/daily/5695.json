@@ -2,12 +2,12 @@
   "code": "5695",
   "ticker": "5695.T",
   "name": "パウダーテック",
-  "generated_at": "2026-09-17T16:02:18.029026+00:00",
-  "price_date": "2026-09-16",
+  "generated_at": "2026-09-18T15:38:31.004246+00:00",
+  "price_date": "2026-09-17",
   "record": {
-    "current_price": 2950.0,
-    "change_from_signal_month_pct": -2.8,
-    "return_since_gc_pct": 9.26
+    "current_price": 2999.0,
+    "change_from_signal_month_pct": -1.19,
+    "return_since_gc_pct": 11.07
   },
   "daily": [
     {
@@ -373,22 +373,35 @@
       "sma200": 2657.51,
       "rsi14": 63.06,
       "rsi5": 70.26
+    },
+    {
+      "date": "2026-09-17",
+      "open": 2951.0,
+      "high": 2999.0,
+      "low": 2910.0,
+      "close": 2999.0,
+      "volume": 1600.0,
+      "sma25": 2989.56,
+      "sma75": 2966.43,
+      "sma200": 2661.08,
+      "rsi14": 63.06,
+      "rsi5": 70.26
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-16",
-    "monthly_rsi14": 67.06,
-    "monthly_rsi_ma5": 67.8,
-    "spread": -0.74,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-17",
+    "monthly_rsi14": 68.83,
+    "monthly_rsi_ma5": 68.15,
+    "spread": 0.67,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-17T16:03:32.221807+00:00"
+  "provisional_generated_at": "2026-09-18T15:39:39.444816+00:00"
 }

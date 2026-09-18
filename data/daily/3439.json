@@ -2,12 +2,12 @@
   "code": "3439",
   "ticker": "3439.T",
   "name": "三ツ知",
-  "generated_at": "2026-09-17T16:02:18.029026+00:00",
-  "price_date": "2026-09-16",
+  "generated_at": "2026-09-18T15:38:31.004246+00:00",
+  "price_date": "2026-09-17",
   "record": {
-    "current_price": 686.0,
-    "change_from_signal_month_pct": -0.58,
-    "return_since_gc_pct": -0.58
+    "current_price": 677.0,
+    "change_from_signal_month_pct": -1.88,
+    "return_since_gc_pct": -1.88
   },
   "daily": [
     {
@@ -373,22 +373,35 @@
       "sma200": 664.24,
       "rsi14": 48.3,
       "rsi5": 48.31
+    },
+    {
+      "date": "2026-09-17",
+      "open": 680.0,
+      "high": 680.0,
+      "low": 676.0,
+      "close": 677.0,
+      "volume": 400.0,
+      "sma25": 677.2,
+      "sma75": 672.15,
+      "sma200": 664.57,
+      "rsi14": 48.3,
+      "rsi5": 48.31
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-16",
-    "monthly_rsi14": 48.3,
-    "monthly_rsi_ma5": 47.84,
-    "spread": 0.47,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-17",
+    "monthly_rsi14": 47.0,
+    "monthly_rsi_ma5": 47.58,
+    "spread": -0.58,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-17T16:03:32.221807+00:00"
+  "provisional_generated_at": "2026-09-18T15:39:39.444816+00:00"
 }

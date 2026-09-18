@@ -2,12 +2,12 @@
   "code": "3399",
   "ticker": "3399.T",
   "name": "丸千代山岡家",
-  "generated_at": "2026-09-17T16:02:18.029026+00:00",
-  "price_date": "2026-09-16",
+  "generated_at": "2026-09-18T15:38:31.004246+00:00",
+  "price_date": "2026-09-17",
   "record": {
-    "current_price": 3600.0,
-    "change_from_signal_month_pct": 3.45,
-    "return_since_gc_pct": 3.45
+    "current_price": 3775.0,
+    "change_from_signal_month_pct": 8.48,
+    "return_since_gc_pct": 8.48
   },
   "daily": [
     {
@@ -373,22 +373,35 @@
       "sma200": 3387.18,
       "rsi14": 60.64,
       "rsi5": 61.88
+    },
+    {
+      "date": "2026-09-17",
+      "open": 3655.0,
+      "high": 3800.0,
+      "low": 3620.0,
+      "close": 3775.0,
+      "volume": 122100.0,
+      "sma25": 3905.4,
+      "sma75": 3606.27,
+      "sma200": 3391.59,
+      "rsi14": 60.64,
+      "rsi5": 61.88
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-16",
-    "monthly_rsi14": 60.33,
-    "monthly_rsi_ma5": 61.76,
-    "spread": -1.43,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-17",
+    "monthly_rsi14": 62.88,
+    "monthly_rsi_ma5": 62.27,
+    "spread": 0.61,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-17T16:03:32.221807+00:00"
+  "provisional_generated_at": "2026-09-18T15:39:39.444816+00:00"
 }

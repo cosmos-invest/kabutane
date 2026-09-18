@@ -2,12 +2,12 @@
   "code": "9972",
   "ticker": "9972.T",
   "name": "アルテック",
-  "generated_at": "2026-09-17T16:02:18.029026+00:00",
-  "price_date": "2026-09-16",
+  "generated_at": "2026-09-18T15:38:31.004246+00:00",
+  "price_date": "2026-09-17",
   "record": {
-    "current_price": 272.0,
-    "change_from_signal_month_pct": -2.16,
-    "return_since_gc_pct": -2.16
+    "current_price": 275.0,
+    "change_from_signal_month_pct": -1.08,
+    "return_since_gc_pct": -1.08
   },
   "daily": [
     {
@@ -373,22 +373,35 @@
       "sma200": 276.06,
       "rsi14": 52.2,
       "rsi5": 54.3
+    },
+    {
+      "date": "2026-09-17",
+      "open": 272.0,
+      "high": 275.0,
+      "low": 270.0,
+      "close": 275.0,
+      "volume": 4300.0,
+      "sma25": 278.36,
+      "sma75": 274.25,
+      "sma200": 276.01,
+      "rsi14": 52.2,
+      "rsi5": 54.3
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-16",
-    "monthly_rsi14": 53.11,
-    "monthly_rsi_ma5": 53.21,
-    "spread": -0.1,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-17",
+    "monthly_rsi14": 54.01,
+    "monthly_rsi_ma5": 53.39,
+    "spread": 0.62,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-17T16:03:32.221807+00:00"
+  "provisional_generated_at": "2026-09-18T15:39:39.444816+00:00"
 }

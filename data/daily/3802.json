@@ -2,12 +2,12 @@
   "code": "3802",
   "ticker": "3802.T",
   "name": "エコミック",
-  "generated_at": "2026-09-17T16:02:18.029026+00:00",
-  "price_date": "2026-09-16",
+  "generated_at": "2026-09-18T15:38:31.004246+00:00",
+  "price_date": "2026-09-17",
   "record": {
-    "current_price": 501.0,
-    "change_from_signal_month_pct": 1.21,
-    "return_since_gc_pct": 5.03
+    "current_price": 503.0,
+    "change_from_signal_month_pct": 1.62,
+    "return_since_gc_pct": 5.45
   },
   "daily": [
     {
@@ -373,15 +373,28 @@
       "sma200": 479.24,
       "rsi14": 49.91,
       "rsi5": 54.54
+    },
+    {
+      "date": "2026-09-17",
+      "open": 501.0,
+      "high": 504.0,
+      "low": 501.0,
+      "close": 503.0,
+      "volume": 1700.0,
+      "sma25": 500.36,
+      "sma75": 487.24,
+      "sma200": 479.35,
+      "rsi14": 49.91,
+      "rsi5": 54.54
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-16",
-    "monthly_rsi14": 52.84,
-    "monthly_rsi_ma5": 49.75,
-    "spread": 3.09,
+    "price_date": "2026-09-17",
+    "monthly_rsi14": 53.35,
+    "monthly_rsi_ma5": 49.86,
+    "spread": 3.5,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -390,5 +403,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-17T16:03:32.221807+00:00"
+  "provisional_generated_at": "2026-09-18T15:39:39.444816+00:00"
 }

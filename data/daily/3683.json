@@ -2,12 +2,12 @@
   "code": "3683",
   "ticker": "3683.T",
   "name": "サイバーリンクス",
-  "generated_at": "2026-09-17T16:02:18.029026+00:00",
-  "price_date": "2026-09-16",
+  "generated_at": "2026-09-18T15:38:31.004246+00:00",
+  "price_date": "2026-09-17",
   "record": {
-    "current_price": 1094.0,
-    "change_from_signal_month_pct": 3.21,
-    "return_since_gc_pct": 3.21
+    "current_price": 1082.0,
+    "change_from_signal_month_pct": 2.08,
+    "return_since_gc_pct": 2.08
   },
   "daily": [
     {
@@ -373,22 +373,35 @@
       "sma200": 1135.36,
       "rsi14": 46.55,
       "rsi5": 48.33
+    },
+    {
+      "date": "2026-09-17",
+      "open": 1095.0,
+      "high": 1102.0,
+      "low": 1082.0,
+      "close": 1082.0,
+      "volume": 17100.0,
+      "sma25": 1113.92,
+      "sma75": 1065.39,
+      "sma200": 1134.11,
+      "rsi14": 46.55,
+      "rsi5": 48.33
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-16",
-    "monthly_rsi14": 50.94,
-    "monthly_rsi_ma5": 50.75,
-    "spread": 0.18,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-17",
+    "monthly_rsi14": 50.4,
+    "monthly_rsi_ma5": 50.65,
+    "spread": -0.25,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-17T16:03:32.221807+00:00"
+  "provisional_generated_at": "2026-09-18T15:39:39.444816+00:00"
 }
