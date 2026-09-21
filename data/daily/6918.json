@@ -2,12 +2,12 @@
   "code": "6918",
   "ticker": "6918.T",
   "name": "アバールデータ",
-  "generated_at": "2026-09-18T15:38:31.004246+00:00",
-  "price_date": "2026-09-17",
+  "generated_at": "2026-09-21T17:39:21.759565+00:00",
+  "price_date": "2026-09-18",
   "record": {
-    "current_price": 3570.0,
-    "change_from_signal_month_pct": 14.42,
-    "return_since_gc_pct": 21.72
+    "current_price": 3755.0,
+    "change_from_signal_month_pct": 20.35,
+    "return_since_gc_pct": 28.03
   },
   "daily": [
     {
@@ -386,15 +386,28 @@
       "sma200": 3089.68,
       "rsi14": 49.82,
       "rsi5": 50.13
+    },
+    {
+      "date": "2026-09-18",
+      "open": 3600.0,
+      "high": 3765.0,
+      "low": 3550.0,
+      "close": 3755.0,
+      "volume": 67700.0,
+      "sma25": 3602.0,
+      "sma75": 3367.47,
+      "sma200": 3095.41,
+      "rsi14": 49.82,
+      "rsi5": 50.13
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-17",
-    "monthly_rsi14": 55.94,
-    "monthly_rsi_ma5": 54.33,
-    "spread": 1.6,
+    "price_date": "2026-09-18",
+    "monthly_rsi14": 57.96,
+    "monthly_rsi_ma5": 54.74,
+    "spread": 3.22,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -403,5 +416,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-18T15:39:39.444816+00:00"
+  "provisional_generated_at": "2026-09-21T17:40:35.660114+00:00"
 }

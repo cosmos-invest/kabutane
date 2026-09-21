@@ -2,12 +2,12 @@
   "code": "2327",
   "ticker": "2327.T",
   "name": "日鉄ソリューションズ",
-  "generated_at": "2026-09-18T15:38:31.004246+00:00",
-  "price_date": "2026-09-17",
+  "generated_at": "2026-09-21T17:39:21.759565+00:00",
+  "price_date": "2026-09-18",
   "record": {
-    "current_price": 3925.0,
-    "change_from_signal_month_pct": 0.26,
-    "return_since_gc_pct": 0.26
+    "current_price": 3757.0,
+    "change_from_signal_month_pct": -4.04,
+    "return_since_gc_pct": -4.04
   },
   "daily": [
     {
@@ -386,22 +386,35 @@
       "sma200": 3851.74,
       "rsi14": 51.88,
       "rsi5": 56.93
+    },
+    {
+      "date": "2026-09-18",
+      "open": 3913.0,
+      "high": 3925.0,
+      "low": 3694.0,
+      "close": 3757.0,
+      "volume": 1826600.0,
+      "sma25": 3892.64,
+      "sma75": 3682.91,
+      "sma200": 3851.61,
+      "rsi14": 51.88,
+      "rsi5": 56.93
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-17",
-    "monthly_rsi14": 57.81,
-    "monthly_rsi_ma5": 55.62,
-    "spread": 2.19,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-18",
+    "monthly_rsi14": 54.61,
+    "monthly_rsi_ma5": 54.98,
+    "spread": -0.37,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-18T15:39:39.444816+00:00"
+  "provisional_generated_at": "2026-09-21T17:40:35.660114+00:00"
 }

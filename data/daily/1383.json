@@ -2,12 +2,12 @@
   "code": "1383",
   "ticker": "1383.T",
   "name": "ベルグアース",
-  "generated_at": "2026-09-18T15:38:31.004246+00:00",
-  "price_date": "2026-09-17",
+  "generated_at": "2026-09-21T17:39:21.759565+00:00",
+  "price_date": "2026-09-18",
   "record": {
-    "current_price": 3020.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 3065.0,
+    "change_from_signal_month_pct": 1.49,
+    "return_since_gc_pct": 1.49
   },
   "daily": [
     {
@@ -386,15 +386,28 @@
       "sma200": 3068.24,
       "rsi14": 46.51,
       "rsi5": 48.78
+    },
+    {
+      "date": "2026-09-18",
+      "open": 3020.0,
+      "high": 3080.0,
+      "low": 3010.0,
+      "close": 3065.0,
+      "volume": 1900.0,
+      "sma25": 3002.8,
+      "sma75": 2951.05,
+      "sma200": 3068.7,
+      "rsi14": 46.51,
+      "rsi5": 48.78
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-17",
-    "monthly_rsi14": 48.38,
-    "monthly_rsi_ma5": 45.58,
-    "spread": 2.8,
+    "price_date": "2026-09-18",
+    "monthly_rsi14": 50.29,
+    "monthly_rsi_ma5": 45.96,
+    "spread": 4.33,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -403,5 +416,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-18T15:39:39.444816+00:00"
+  "provisional_generated_at": "2026-09-21T17:40:35.660114+00:00"
 }

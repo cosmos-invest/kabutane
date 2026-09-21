@@ -2,12 +2,12 @@
   "code": "3333",
   "ticker": "3333.T",
   "name": "あさひ",
-  "generated_at": "2026-09-18T15:38:31.004246+00:00",
-  "price_date": "2026-09-17",
+  "generated_at": "2026-09-21T17:39:21.759565+00:00",
+  "price_date": "2026-09-18",
   "record": {
-    "current_price": 1322.0,
-    "change_from_signal_month_pct": -2.65,
-    "return_since_gc_pct": 2.4
+    "current_price": 1312.0,
+    "change_from_signal_month_pct": -3.39,
+    "return_since_gc_pct": 1.63
   },
   "daily": [
     {
@@ -386,6 +386,19 @@
       "sma200": 1307.05,
       "rsi14": 44.59,
       "rsi5": 50.11
+    },
+    {
+      "date": "2026-09-18",
+      "open": 1320.0,
+      "high": 1324.0,
+      "low": 1309.0,
+      "close": 1312.0,
+      "volume": 100000.0,
+      "sma25": 1323.76,
+      "sma75": 1316.97,
+      "sma200": 1307.04,
+      "rsi14": 44.59,
+      "rsi5": 50.11
     }
   ],
   "corporate_events": [
@@ -398,10 +411,10 @@
   ],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-17",
-    "monthly_rsi14": 49.09,
-    "monthly_rsi_ma5": 48.1,
-    "spread": 0.99,
+    "price_date": "2026-09-18",
+    "monthly_rsi14": 48.2,
+    "monthly_rsi_ma5": 47.92,
+    "spread": 0.27,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -410,5 +423,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-18T15:39:39.444816+00:00"
+  "provisional_generated_at": "2026-09-21T17:40:35.660114+00:00"
 }

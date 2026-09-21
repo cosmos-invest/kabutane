@@ -2,12 +2,12 @@
   "code": "8138",
   "ticker": "8138.T",
   "name": "三京化成",
-  "generated_at": "2026-09-18T15:38:31.004246+00:00",
-  "price_date": "2026-09-17",
+  "generated_at": "2026-09-21T17:39:21.759565+00:00",
+  "price_date": "2026-09-18",
   "record": {
-    "current_price": 4105.0,
-    "change_from_signal_month_pct": -1.08,
-    "return_since_gc_pct": -1.08
+    "current_price": 4090.0,
+    "change_from_signal_month_pct": -1.45,
+    "return_since_gc_pct": -1.45
   },
   "daily": [
     {
@@ -386,22 +386,35 @@
       "sma200": 4310.75,
       "rsi14": 52.84,
       "rsi5": 53.02
+    },
+    {
+      "date": "2026-09-18",
+      "open": 4090.0,
+      "high": 4090.0,
+      "low": 4090.0,
+      "close": 4090.0,
+      "volume": 100.0,
+      "sma25": 4263.8,
+      "sma75": 4132.53,
+      "sma200": 4310.45,
+      "rsi14": 52.84,
+      "rsi5": 53.02
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-17",
-    "monthly_rsi14": 52.65,
-    "monthly_rsi_ma5": 52.62,
-    "spread": 0.02,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-18",
+    "monthly_rsi14": 52.39,
+    "monthly_rsi_ma5": 52.57,
+    "spread": -0.18,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-18T15:39:39.444816+00:00"
+  "provisional_generated_at": "2026-09-21T17:40:35.660114+00:00"
 }

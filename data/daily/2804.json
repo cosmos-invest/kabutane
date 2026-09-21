@@ -2,12 +2,12 @@
   "code": "2804",
   "ticker": "2804.T",
   "name": "ブルドックソース",
-  "generated_at": "2026-09-18T15:38:31.004246+00:00",
-  "price_date": "2026-09-17",
+  "generated_at": "2026-09-21T17:39:21.759565+00:00",
+  "price_date": "2026-09-18",
   "record": {
-    "current_price": 1890.0,
-    "change_from_signal_month_pct": 4.02,
-    "return_since_gc_pct": 4.02
+    "current_price": 1875.0,
+    "change_from_signal_month_pct": 3.19,
+    "return_since_gc_pct": 3.19
   },
   "daily": [
     {
@@ -386,15 +386,28 @@
       "sma200": 1840.58,
       "rsi14": 43.94,
       "rsi5": 46.67
+    },
+    {
+      "date": "2026-09-18",
+      "open": 1872.0,
+      "high": 1888.0,
+      "low": 1868.0,
+      "close": 1875.0,
+      "volume": 19300.0,
+      "sma25": 1856.76,
+      "sma75": 1802.92,
+      "sma200": 1840.29,
+      "rsi14": 43.94,
+      "rsi5": 46.67
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-17",
-    "monthly_rsi14": 50.15,
-    "monthly_rsi_ma5": 43.97,
-    "spread": 6.17,
+    "price_date": "2026-09-18",
+    "monthly_rsi14": 49.11,
+    "monthly_rsi_ma5": 43.76,
+    "spread": 5.34,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -403,5 +416,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-18T15:39:39.444816+00:00"
+  "provisional_generated_at": "2026-09-21T17:40:35.660114+00:00"
 }

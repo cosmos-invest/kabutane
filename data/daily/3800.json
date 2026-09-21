@@ -2,12 +2,12 @@
   "code": "3800",
   "ticker": "3800.T",
   "name": "ユニリタ",
-  "generated_at": "2026-09-18T15:38:31.004246+00:00",
-  "price_date": "2026-09-17",
+  "generated_at": "2026-09-21T17:39:21.759565+00:00",
+  "price_date": "2026-09-18",
   "record": {
-    "current_price": 1975.0,
-    "change_from_signal_month_pct": 0.51,
-    "return_since_gc_pct": 1.18
+    "current_price": 1978.0,
+    "change_from_signal_month_pct": 0.66,
+    "return_since_gc_pct": 1.33
   },
   "daily": [
     {
@@ -386,15 +386,28 @@
       "sma200": 1953.51,
       "rsi14": 50.78,
       "rsi5": 54.73
+    },
+    {
+      "date": "2026-09-18",
+      "open": 1975.0,
+      "high": 1978.0,
+      "low": 1972.0,
+      "close": 1978.0,
+      "volume": 1100.0,
+      "sma25": 1971.76,
+      "sma75": 1963.07,
+      "sma200": 1953.69,
+      "rsi14": 50.78,
+      "rsi5": 54.73
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-17",
-    "monthly_rsi14": 57.79,
-    "monthly_rsi_ma5": 56.25,
-    "spread": 1.53,
+    "price_date": "2026-09-18",
+    "monthly_rsi14": 58.24,
+    "monthly_rsi_ma5": 56.34,
+    "spread": 1.9,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -403,5 +416,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-18T15:39:39.444816+00:00"
+  "provisional_generated_at": "2026-09-21T17:40:35.660114+00:00"
 }

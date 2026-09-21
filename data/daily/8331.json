@@ -2,12 +2,12 @@
   "code": "8331",
   "ticker": "8331.T",
   "name": "千葉銀行",
-  "generated_at": "2026-09-18T15:38:31.004246+00:00",
-  "price_date": "2026-09-17",
+  "generated_at": "2026-09-21T17:39:21.759565+00:00",
+  "price_date": "2026-09-18",
   "record": {
-    "current_price": 2759.5,
-    "change_from_signal_month_pct": 5.04,
-    "return_since_gc_pct": 11.86
+    "current_price": 2737.0,
+    "change_from_signal_month_pct": 4.19,
+    "return_since_gc_pct": 10.94
   },
   "daily": [
     {
@@ -386,22 +386,35 @@
       "sma200": 2283.56,
       "rsi14": 72.1,
       "rsi5": 76.96
+    },
+    {
+      "date": "2026-09-18",
+      "open": 2761.0,
+      "high": 2771.0,
+      "low": 2686.5,
+      "close": 2737.0,
+      "volume": 4336600.0,
+      "sma25": 2776.68,
+      "sma75": 2660.43,
+      "sma200": 2289.3,
+      "rsi14": 72.1,
+      "rsi5": 76.96
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-17",
-    "monthly_rsi14": 76.6,
-    "monthly_rsi_ma5": 75.97,
-    "spread": 0.63,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-18",
+    "monthly_rsi14": 75.66,
+    "monthly_rsi_ma5": 75.78,
+    "spread": -0.13,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-18T15:39:39.444816+00:00"
+  "provisional_generated_at": "2026-09-21T17:40:35.660114+00:00"
 }

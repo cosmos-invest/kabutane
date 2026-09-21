@@ -2,12 +2,12 @@
   "code": "6964",
   "ticker": "6964.T",
   "name": "サンコー",
-  "generated_at": "2026-09-18T15:38:31.004246+00:00",
-  "price_date": "2026-09-17",
+  "generated_at": "2026-09-21T17:39:21.759565+00:00",
+  "price_date": "2026-09-18",
   "record": {
-    "current_price": 688.0,
-    "change_from_signal_month_pct": 0.15,
-    "return_since_gc_pct": 0.15
+    "current_price": 686.0,
+    "change_from_signal_month_pct": -0.15,
+    "return_since_gc_pct": -0.15
   },
   "daily": [
     {
@@ -386,15 +386,28 @@
       "sma200": 669.92,
       "rsi14": 62.51,
       "rsi5": 62.7
+    },
+    {
+      "date": "2026-09-18",
+      "open": 688.0,
+      "high": 688.0,
+      "low": 686.0,
+      "close": 686.0,
+      "volume": 800.0,
+      "sma25": 694.96,
+      "sma75": 681.13,
+      "sma200": 670.52,
+      "rsi14": 62.51,
+      "rsi5": 62.7
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-17",
-    "monthly_rsi14": 62.72,
-    "monthly_rsi_ma5": 63.48,
-    "spread": -0.77,
+    "price_date": "2026-09-18",
+    "monthly_rsi14": 62.32,
+    "monthly_rsi_ma5": 63.4,
+    "spread": -1.09,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -403,5 +416,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-18T15:39:39.444816+00:00"
+  "provisional_generated_at": "2026-09-21T17:40:35.660114+00:00"
 }
