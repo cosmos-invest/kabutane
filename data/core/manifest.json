@@ -1,18 +1,18 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-22T16:11:46.048531+00:00",
+  "generated_at": "2026-09-24T16:24:08.476269+00:00",
   "scope": "TSE domestic common stocks: Prime, Standard, Growth",
   "core_count": 3700,
   "daily_coverage": 3700,
-  "monthly_coverage": 3611,
+  "monthly_coverage": 3610,
   "fundamentals_coverage": 3700,
   "chart_base_generated_at": "2026-09-07T17:08:32.530081+00:00",
   "chart_period": "1y",
   "overlay_days": 25,
   "shard_rule": "first two characters of security code",
   "bytes": {
-    "radar": 2918389,
-    "daily_overlay": 7284465,
+    "radar": 2918231,
+    "daily_overlay": 7283801,
     "fundamentals": 3426414,
     "chart_base": 53099247
   },
@@ -22,7 +22,7 @@
     "fundamentals": 0
   },
   "dividend_history_schema_version": 5,
-  "dividend_history_coverage": 2947,
+  "dividend_history_coverage": 2946,
   "dividend_history_basis": "fiscal_year_ex_date_with_calendar_fallback",
   "dividend_history_event_source": "Yahoo Finance corporate actions via yfinance",
   "dividend_history_transport_interval": "1mo",
