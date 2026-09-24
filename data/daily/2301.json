@@ -2,12 +2,12 @@
   "code": "2301",
   "ticker": "2301.T",
   "name": "学情",
-  "generated_at": "2026-09-23T15:57:27.816741+00:00",
-  "price_date": "2026-09-18",
+  "generated_at": "2026-09-24T16:20:06.269089+00:00",
+  "price_date": "2026-09-24",
   "record": {
-    "current_price": 1777.0,
-    "change_from_signal_month_pct": 9.56,
-    "return_since_gc_pct": 9.56
+    "current_price": 1741.0,
+    "change_from_signal_month_pct": 7.34,
+    "return_since_gc_pct": 7.34
   },
   "daily": [
     {
@@ -399,15 +399,28 @@
       "sma200": 1680.34,
       "rsi14": 45.03,
       "rsi5": 46.02
+    },
+    {
+      "date": "2026-09-24",
+      "open": 1760.0,
+      "high": 1776.0,
+      "low": 1741.0,
+      "close": 1741.0,
+      "volume": 116100.0,
+      "sma25": 1711.6,
+      "sma75": 1635.99,
+      "sma200": 1681.09,
+      "rsi14": 45.03,
+      "rsi5": 46.02
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-18",
-    "monthly_rsi14": 51.03,
-    "monthly_rsi_ma5": 46.42,
-    "spread": 4.61,
+    "price_date": "2026-09-24",
+    "monthly_rsi14": 49.63,
+    "monthly_rsi_ma5": 46.14,
+    "spread": 3.49,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -416,5 +429,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-23T15:58:08.778357+00:00"
+  "provisional_generated_at": "2026-09-24T16:20:43.611204+00:00"
 }

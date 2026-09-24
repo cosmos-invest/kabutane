@@ -2,12 +2,12 @@
   "code": "5363",
   "ticker": "5363.T",
   "name": "東京窯業",
-  "generated_at": "2026-09-23T15:57:27.816741+00:00",
-  "price_date": "2026-09-18",
+  "generated_at": "2026-09-24T16:20:06.269089+00:00",
+  "price_date": "2026-09-24",
   "record": {
-    "current_price": 693.0,
-    "change_from_signal_month_pct": -0.14,
-    "return_since_gc_pct": -3.08
+    "current_price": 707.0,
+    "change_from_signal_month_pct": 1.87,
+    "return_since_gc_pct": -1.12
   },
   "daily": [
     {
@@ -399,22 +399,35 @@
       "sma200": 632.87,
       "rsi14": 65.06,
       "rsi5": 67.55
+    },
+    {
+      "date": "2026-09-24",
+      "open": 695.0,
+      "high": 708.0,
+      "low": 694.0,
+      "close": 707.0,
+      "volume": 86600.0,
+      "sma25": 688.56,
+      "sma75": 690.03,
+      "sma200": 633.63,
+      "rsi14": 65.06,
+      "rsi5": 67.55
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-18",
-    "monthly_rsi14": 67.6,
-    "monthly_rsi_ma5": 68.52,
-    "spread": -0.92,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-24",
+    "monthly_rsi14": 68.94,
+    "monthly_rsi_ma5": 68.79,
+    "spread": 0.15,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-23T15:58:08.778357+00:00"
+  "provisional_generated_at": "2026-09-24T16:20:43.611204+00:00"
 }

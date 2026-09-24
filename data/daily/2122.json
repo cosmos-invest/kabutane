@@ -2,12 +2,12 @@
   "code": "2122",
   "ticker": "2122.T",
   "name": "インタースペース",
-  "generated_at": "2026-09-23T15:57:27.816741+00:00",
-  "price_date": "2026-09-18",
+  "generated_at": "2026-09-24T16:20:06.269089+00:00",
+  "price_date": "2026-09-24",
   "record": {
-    "current_price": 1416.0,
-    "change_from_signal_month_pct": 1.07,
-    "return_since_gc_pct": 8.92
+    "current_price": 1451.0,
+    "change_from_signal_month_pct": 3.57,
+    "return_since_gc_pct": 11.62
   },
   "daily": [
     {
@@ -399,22 +399,35 @@
       "sma200": 1296.09,
       "rsi14": 62.35,
       "rsi5": 68.04
+    },
+    {
+      "date": "2026-09-24",
+      "open": 1437.0,
+      "high": 1451.0,
+      "low": 1423.0,
+      "close": 1451.0,
+      "volume": 14100.0,
+      "sma25": 1463.64,
+      "sma75": 1385.48,
+      "sma200": 1297.31,
+      "rsi14": 62.35,
+      "rsi5": 68.04
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-18",
-    "monthly_rsi14": 67.39,
-    "monthly_rsi_ma5": 68.56,
-    "spread": -1.17,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-24",
+    "monthly_rsi14": 70.56,
+    "monthly_rsi_ma5": 69.19,
+    "spread": 1.37,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-23T15:58:08.778357+00:00"
+  "provisional_generated_at": "2026-09-24T16:20:43.611204+00:00"
 }

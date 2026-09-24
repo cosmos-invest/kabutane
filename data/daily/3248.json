@@ -2,12 +2,12 @@
   "code": "3248",
   "ticker": "3248.T",
   "name": "アールエイジ",
-  "generated_at": "2026-09-23T15:57:27.816741+00:00",
-  "price_date": "2026-09-18",
+  "generated_at": "2026-09-24T16:20:06.269089+00:00",
+  "price_date": "2026-09-24",
   "record": {
-    "current_price": 895.0,
-    "change_from_signal_month_pct": 0.11,
-    "return_since_gc_pct": 0.11
+    "current_price": 890.0,
+    "change_from_signal_month_pct": -0.45,
+    "return_since_gc_pct": -0.45
   },
   "daily": [
     {
@@ -399,15 +399,28 @@
       "sma200": 868.4,
       "rsi14": 55.07,
       "rsi5": 57.62
+    },
+    {
+      "date": "2026-09-24",
+      "open": 892.0,
+      "high": 892.0,
+      "low": 888.0,
+      "close": 890.0,
+      "volume": 2700.0,
+      "sma25": 888.68,
+      "sma75": 877.95,
+      "sma200": 868.76,
+      "rsi14": 55.07,
+      "rsi5": 57.62
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-18",
-    "monthly_rsi14": 57.53,
-    "monthly_rsi_ma5": 55.76,
-    "spread": 1.77,
+    "price_date": "2026-09-24",
+    "monthly_rsi14": 56.82,
+    "monthly_rsi_ma5": 55.62,
+    "spread": 1.2,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -416,5 +429,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-23T15:58:08.778357+00:00"
+  "provisional_generated_at": "2026-09-24T16:20:43.611204+00:00"
 }

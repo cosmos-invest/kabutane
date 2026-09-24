@@ -2,12 +2,12 @@
   "code": "4373",
   "ticker": "4373.T",
   "name": "シンプレクス・ホールディングス",
-  "generated_at": "2026-09-23T15:57:27.816741+00:00",
-  "price_date": "2026-09-18",
+  "generated_at": "2026-09-24T16:20:06.269089+00:00",
+  "price_date": "2026-09-24",
   "record": {
-    "current_price": 1162.0,
-    "change_from_signal_month_pct": 2.74,
-    "return_since_gc_pct": 9.21
+    "current_price": 1154.0,
+    "change_from_signal_month_pct": 2.03,
+    "return_since_gc_pct": 8.46
   },
   "daily": [
     {
@@ -399,22 +399,35 @@
       "sma200": 992.87,
       "rsi14": 55.46,
       "rsi5": 61.64
+    },
+    {
+      "date": "2026-09-24",
+      "open": 1143.0,
+      "high": 1168.0,
+      "low": 1142.0,
+      "close": 1154.0,
+      "volume": 2037400.0,
+      "sma25": 1170.52,
+      "sma75": 1084.4,
+      "sma200": 993.13,
+      "rsi14": 55.46,
+      "rsi5": 61.64
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-18",
-    "monthly_rsi14": 59.97,
-    "monthly_rsi_ma5": 59.7,
-    "spread": 0.27,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-24",
+    "monthly_rsi14": 59.57,
+    "monthly_rsi_ma5": 59.62,
+    "spread": -0.05,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-23T15:58:08.778357+00:00"
+  "provisional_generated_at": "2026-09-24T16:20:43.611204+00:00"
 }

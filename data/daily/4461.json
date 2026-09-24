@@ -2,12 +2,12 @@
   "code": "4461",
   "ticker": "4461.T",
   "name": "第一工業製薬",
-  "generated_at": "2026-09-23T15:57:27.816741+00:00",
-  "price_date": "2026-09-18",
+  "generated_at": "2026-09-24T16:20:06.269089+00:00",
+  "price_date": "2026-09-24",
   "record": {
-    "current_price": 13090.0,
-    "change_from_signal_month_pct": 3.72,
-    "return_since_gc_pct": 6.6
+    "current_price": 13910.0,
+    "change_from_signal_month_pct": 10.22,
+    "return_since_gc_pct": 13.27
   },
   "daily": [
     {
@@ -399,22 +399,35 @@
       "sma200": 10343.9,
       "rsi14": 65.46,
       "rsi5": 70.72
+    },
+    {
+      "date": "2026-09-24",
+      "open": 13390.0,
+      "high": 14230.0,
+      "low": 13340.0,
+      "close": 13910.0,
+      "volume": 172200.0,
+      "sma25": 13193.6,
+      "sma75": 12313.2,
+      "sma200": 10375.7,
+      "rsi14": 65.46,
+      "rsi5": 70.72
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-18",
-    "monthly_rsi14": 70.13,
-    "monthly_rsi_ma5": 70.83,
-    "spread": -0.7,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-24",
+    "monthly_rsi14": 73.73,
+    "monthly_rsi_ma5": 71.55,
+    "spread": 2.18,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-23T15:58:08.778357+00:00"
+  "provisional_generated_at": "2026-09-24T16:20:43.611204+00:00"
 }

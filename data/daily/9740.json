@@ -2,12 +2,12 @@
   "code": "9740",
   "ticker": "9740.T",
   "name": "セントラル警備保障",
-  "generated_at": "2026-09-23T15:57:27.816741+00:00",
-  "price_date": "2026-09-18",
+  "generated_at": "2026-09-24T16:20:06.269089+00:00",
+  "price_date": "2026-09-24",
   "record": {
-    "current_price": 2701.0,
-    "change_from_signal_month_pct": -3.05,
-    "return_since_gc_pct": -3.05
+    "current_price": 2663.0,
+    "change_from_signal_month_pct": -4.41,
+    "return_since_gc_pct": -4.41
   },
   "daily": [
     {
@@ -399,6 +399,19 @@
       "sma200": 2843.61,
       "rsi14": 49.2,
       "rsi5": 51.17
+    },
+    {
+      "date": "2026-09-24",
+      "open": 2670.0,
+      "high": 2687.0,
+      "low": 2651.0,
+      "close": 2663.0,
+      "volume": 40700.0,
+      "sma25": 2732.04,
+      "sma75": 2712.53,
+      "sma200": 2843.09,
+      "rsi14": 49.2,
+      "rsi5": 51.17
     }
   ],
   "corporate_events": [
@@ -411,17 +424,17 @@
   ],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-18",
-    "monthly_rsi14": 47.49,
-    "monthly_rsi_ma5": 47.1,
-    "spread": 0.38,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-24",
+    "monthly_rsi14": 46.53,
+    "monthly_rsi_ma5": 46.91,
+    "spread": -0.38,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-23T15:58:08.778357+00:00"
+  "provisional_generated_at": "2026-09-24T16:20:43.611204+00:00"
 }

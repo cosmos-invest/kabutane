@@ -2,12 +2,12 @@
   "code": "7164",
   "ticker": "7164.T",
   "name": "全国保証",
-  "generated_at": "2026-09-23T15:57:27.816741+00:00",
-  "price_date": "2026-09-18",
+  "generated_at": "2026-09-24T16:20:06.269089+00:00",
+  "price_date": "2026-09-24",
   "record": {
-    "current_price": 3156.0,
-    "change_from_signal_month_pct": 0.83,
-    "return_since_gc_pct": 0.83
+    "current_price": 3133.0,
+    "change_from_signal_month_pct": 0.1,
+    "return_since_gc_pct": 0.1
   },
   "daily": [
     {
@@ -399,15 +399,28 @@
       "sma200": 3106.32,
       "rsi14": 54.12,
       "rsi5": 55.43
+    },
+    {
+      "date": "2026-09-24",
+      "open": 3156.0,
+      "high": 3160.0,
+      "low": 3133.0,
+      "close": 3133.0,
+      "volume": 363400.0,
+      "sma25": 3173.32,
+      "sma75": 3074.65,
+      "sma200": 3106.22,
+      "rsi14": 54.12,
+      "rsi5": 55.43
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-18",
-    "monthly_rsi14": 56.7,
-    "monthly_rsi_ma5": 55.12,
-    "spread": 1.57,
+    "price_date": "2026-09-24",
+    "monthly_rsi14": 55.57,
+    "monthly_rsi_ma5": 54.9,
+    "spread": 0.68,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -416,5 +429,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-23T15:58:08.778357+00:00"
+  "provisional_generated_at": "2026-09-24T16:20:43.611204+00:00"
 }

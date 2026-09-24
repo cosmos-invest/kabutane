@@ -2,12 +2,12 @@
   "code": "4912",
   "ticker": "4912.T",
   "name": "ライオン",
-  "generated_at": "2026-09-23T15:57:27.816741+00:00",
-  "price_date": "2026-09-18",
+  "generated_at": "2026-09-24T16:20:06.269089+00:00",
+  "price_date": "2026-09-24",
   "record": {
-    "current_price": 1725.5,
-    "change_from_signal_month_pct": 1.02,
-    "return_since_gc_pct": 0.64
+    "current_price": 1718.0,
+    "change_from_signal_month_pct": 0.59,
+    "return_since_gc_pct": 0.2
   },
   "daily": [
     {
@@ -399,15 +399,28 @@
       "sma200": 1692.09,
       "rsi14": 52.19,
       "rsi5": 54.65
+    },
+    {
+      "date": "2026-09-24",
+      "open": 1726.0,
+      "high": 1728.5,
+      "low": 1713.5,
+      "close": 1718.0,
+      "volume": 890900.0,
+      "sma25": 1822.42,
+      "sma75": 1747.95,
+      "sma200": 1692.48,
+      "rsi14": 52.19,
+      "rsi5": 54.65
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-18",
-    "monthly_rsi14": 52.72,
-    "monthly_rsi_ma5": 54.15,
-    "spread": -1.44,
+    "price_date": "2026-09-24",
+    "monthly_rsi14": 52.41,
+    "monthly_rsi_ma5": 54.09,
+    "spread": -1.68,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -416,5 +429,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-23T15:58:08.778357+00:00"
+  "provisional_generated_at": "2026-09-24T16:20:43.611204+00:00"
 }

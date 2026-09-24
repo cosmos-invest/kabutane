@@ -2,12 +2,12 @@
   "code": "4985",
   "ticker": "4985.T",
   "name": "アース製薬",
-  "generated_at": "2026-09-23T15:57:27.816741+00:00",
-  "price_date": "2026-09-18",
+  "generated_at": "2026-09-24T16:20:06.269089+00:00",
+  "price_date": "2026-09-24",
   "record": {
-    "current_price": 4745.0,
-    "change_from_signal_month_pct": 0.32,
-    "return_since_gc_pct": 0.32
+    "current_price": 4730.0,
+    "change_from_signal_month_pct": 0.0,
+    "return_since_gc_pct": 0.0
   },
   "daily": [
     {
@@ -399,22 +399,35 @@
       "sma200": 4820.38,
       "rsi14": 42.81,
       "rsi5": 44.24
+    },
+    {
+      "date": "2026-09-24",
+      "open": 4745.0,
+      "high": 4765.0,
+      "low": 4710.0,
+      "close": 4730.0,
+      "volume": 42100.0,
+      "sma25": 4808.0,
+      "sma75": 4735.33,
+      "sma200": 4818.52,
+      "rsi14": 42.81,
+      "rsi5": 44.24
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-18",
-    "monthly_rsi14": 45.51,
-    "monthly_rsi_ma5": 45.42,
-    "spread": 0.09,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-24",
+    "monthly_rsi14": 45.19,
+    "monthly_rsi_ma5": 45.36,
+    "spread": -0.17,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-23T15:58:08.778357+00:00"
+  "provisional_generated_at": "2026-09-24T16:20:43.611204+00:00"
 }

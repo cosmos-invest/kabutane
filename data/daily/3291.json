@@ -2,12 +2,12 @@
   "code": "3291",
   "ticker": "3291.T",
   "name": "飯田グループホールディングス",
-  "generated_at": "2026-09-23T15:57:27.816741+00:00",
-  "price_date": "2026-09-18",
+  "generated_at": "2026-09-24T16:20:06.269089+00:00",
+  "price_date": "2026-09-24",
   "record": {
-    "current_price": 2219.5,
-    "change_from_signal_month_pct": -3.04,
-    "return_since_gc_pct": -3.04
+    "current_price": 2252.0,
+    "change_from_signal_month_pct": -1.62,
+    "return_since_gc_pct": -1.62
   },
   "daily": [
     {
@@ -399,22 +399,35 @@
       "sma200": 2365.7,
       "rsi14": 47.68,
       "rsi5": 49.71
+    },
+    {
+      "date": "2026-09-24",
+      "open": 2242.0,
+      "high": 2265.5,
+      "low": 2230.0,
+      "close": 2252.0,
+      "volume": 717100.0,
+      "sma25": 2304.48,
+      "sma75": 2248.03,
+      "sma200": 2364.57,
+      "rsi14": 47.68,
+      "rsi5": 49.71
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-18",
-    "monthly_rsi14": 46.25,
-    "monthly_rsi_ma5": 46.68,
-    "spread": -0.43,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-24",
+    "monthly_rsi14": 47.24,
+    "monthly_rsi_ma5": 46.88,
+    "spread": 0.36,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-23T15:58:08.778357+00:00"
+  "provisional_generated_at": "2026-09-24T16:20:43.611204+00:00"
 }

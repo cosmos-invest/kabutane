@@ -2,12 +2,12 @@
   "code": "8766",
   "ticker": "8766.T",
   "name": "東京海上ホールディングス",
-  "generated_at": "2026-09-23T15:57:27.816741+00:00",
-  "price_date": "2026-09-18",
+  "generated_at": "2026-09-24T16:20:06.269089+00:00",
+  "price_date": "2026-09-24",
   "record": {
-    "current_price": 8200.0,
-    "change_from_signal_month_pct": 1.06,
-    "return_since_gc_pct": 25.63
+    "current_price": 7932.0,
+    "change_from_signal_month_pct": -2.24,
+    "return_since_gc_pct": 21.53
   },
   "daily": [
     {
@@ -399,22 +399,35 @@
       "sma200": 6889.34,
       "rsi14": 71.52,
       "rsi5": 75.98
+    },
+    {
+      "date": "2026-09-24",
+      "open": 8350.0,
+      "high": 8353.0,
+      "low": 7932.0,
+      "close": 7932.0,
+      "volume": 9689100.0,
+      "sma25": 7764.2,
+      "sma75": 7646.43,
+      "sma200": 6901.23,
+      "rsi14": 71.52,
+      "rsi5": 75.98
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-18",
-    "monthly_rsi14": 73.11,
-    "monthly_rsi_ma5": 72.23,
-    "spread": 0.88,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-24",
+    "monthly_rsi14": 71.52,
+    "monthly_rsi_ma5": 71.91,
+    "spread": -0.39,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-23T15:58:08.778357+00:00"
+  "provisional_generated_at": "2026-09-24T16:20:43.611204+00:00"
 }

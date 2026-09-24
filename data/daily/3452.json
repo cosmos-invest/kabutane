@@ -2,12 +2,12 @@
   "code": "3452",
   "ticker": "3452.T",
   "name": "ビーロット",
-  "generated_at": "2026-09-23T15:57:27.816741+00:00",
-  "price_date": "2026-09-18",
+  "generated_at": "2026-09-24T16:20:06.269089+00:00",
+  "price_date": "2026-09-24",
   "record": {
-    "current_price": 1471.0,
-    "change_from_signal_month_pct": 1.03,
-    "return_since_gc_pct": 1.03
+    "current_price": 1455.0,
+    "change_from_signal_month_pct": -0.07,
+    "return_since_gc_pct": -0.07
   },
   "daily": [
     {
@@ -399,22 +399,35 @@
       "sma200": 1481.04,
       "rsi14": 53.04,
       "rsi5": 53.87
+    },
+    {
+      "date": "2026-09-24",
+      "open": 1471.0,
+      "high": 1471.0,
+      "low": 1450.0,
+      "close": 1455.0,
+      "volume": 57700.0,
+      "sma25": 1467.96,
+      "sma75": 1459.08,
+      "sma200": 1480.51,
+      "rsi14": 53.04,
+      "rsi5": 53.87
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-18",
-    "monthly_rsi14": 53.51,
-    "monthly_rsi_ma5": 53.27,
-    "spread": 0.23,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-24",
+    "monthly_rsi14": 52.88,
+    "monthly_rsi_ma5": 53.15,
+    "spread": -0.27,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-23T15:58:08.778357+00:00"
+  "provisional_generated_at": "2026-09-24T16:20:43.611204+00:00"
 }

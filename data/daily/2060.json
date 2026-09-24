@@ -2,12 +2,12 @@
   "code": "2060",
   "ticker": "2060.T",
   "name": "フィード・ワン",
-  "generated_at": "2026-09-23T15:57:27.816741+00:00",
-  "price_date": "2026-09-18",
+  "generated_at": "2026-09-24T16:20:06.269089+00:00",
+  "price_date": "2026-09-24",
   "record": {
-    "current_price": 1473.0,
-    "change_from_signal_month_pct": 14.72,
-    "return_since_gc_pct": 14.72
+    "current_price": 1454.0,
+    "change_from_signal_month_pct": 13.24,
+    "return_since_gc_pct": 13.24
   },
   "daily": [
     {
@@ -399,15 +399,28 @@
       "sma200": 1210.26,
       "rsi14": 61.04,
       "rsi5": 64.44
+    },
+    {
+      "date": "2026-09-24",
+      "open": 1470.0,
+      "high": 1470.0,
+      "low": 1446.0,
+      "close": 1454.0,
+      "volume": 99900.0,
+      "sma25": 1442.16,
+      "sma75": 1319.84,
+      "sma200": 1212.38,
+      "rsi14": 61.04,
+      "rsi5": 64.44
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-18",
-    "monthly_rsi14": 71.0,
-    "monthly_rsi_ma5": 65.6,
-    "spread": 5.4,
+    "price_date": "2026-09-24",
+    "monthly_rsi14": 70.42,
+    "monthly_rsi_ma5": 65.48,
+    "spread": 4.93,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -416,5 +429,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-23T15:58:08.778357+00:00"
+  "provisional_generated_at": "2026-09-24T16:20:43.611204+00:00"
 }

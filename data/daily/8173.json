@@ -2,12 +2,12 @@
   "code": "8173",
   "ticker": "8173.T",
   "name": "Ｊｏｓｈｉｎ",
-  "generated_at": "2026-09-23T15:57:27.816741+00:00",
-  "price_date": "2026-09-18",
+  "generated_at": "2026-09-24T16:20:06.269089+00:00",
+  "price_date": "2026-09-24",
   "record": {
-    "current_price": 4380.0,
-    "change_from_signal_month_pct": 11.03,
-    "return_since_gc_pct": 97.03
+    "current_price": 4420.0,
+    "change_from_signal_month_pct": 12.04,
+    "return_since_gc_pct": 98.83
   },
   "daily": [
     {
@@ -399,22 +399,35 @@
       "sma200": 3234.3,
       "rsi14": 75.23,
       "rsi5": 84.96
+    },
+    {
+      "date": "2026-09-24",
+      "open": 4385.0,
+      "high": 4445.0,
+      "low": 4355.0,
+      "close": 4420.0,
+      "volume": 281600.0,
+      "sma25": 4270.0,
+      "sma75": 3957.8,
+      "sma200": 3243.09,
+      "rsi14": 75.23,
+      "rsi5": 84.96
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-18",
-    "monthly_rsi14": 83.71,
-    "monthly_rsi_ma5": 84.03,
-    "spread": -0.32,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-24",
+    "monthly_rsi14": 85.23,
+    "monthly_rsi_ma5": 84.33,
+    "spread": 0.89,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-23T15:58:08.778357+00:00"
+  "provisional_generated_at": "2026-09-24T16:20:43.611204+00:00"
 }

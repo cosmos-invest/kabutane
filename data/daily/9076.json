@@ -2,12 +2,12 @@
   "code": "9076",
   "ticker": "9076.T",
   "name": "セイノーホールディングス",
-  "generated_at": "2026-09-23T15:57:27.816741+00:00",
-  "price_date": "2026-09-18",
+  "generated_at": "2026-09-24T16:20:06.269089+00:00",
+  "price_date": "2026-09-24",
   "record": {
-    "current_price": 2732.5,
-    "change_from_signal_month_pct": 3.74,
-    "return_since_gc_pct": 3.74
+    "current_price": 2740.0,
+    "change_from_signal_month_pct": 4.02,
+    "return_since_gc_pct": 4.02
   },
   "daily": [
     {
@@ -399,22 +399,35 @@
       "sma200": 2553.54,
       "rsi14": 61.29,
       "rsi5": 62.37
+    },
+    {
+      "date": "2026-09-24",
+      "open": 2746.5,
+      "high": 2754.0,
+      "low": 2710.5,
+      "close": 2740.0,
+      "volume": 311500.0,
+      "sma25": 2747.6,
+      "sma75": 2701.83,
+      "sma200": 2556.04,
+      "rsi14": 61.29,
+      "rsi5": 62.37
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-18",
-    "monthly_rsi14": 62.98,
-    "monthly_rsi_ma5": 63.18,
-    "spread": -0.2,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-24",
+    "monthly_rsi14": 63.35,
+    "monthly_rsi_ma5": 63.25,
+    "spread": 0.09,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-23T15:58:08.778357+00:00"
+  "provisional_generated_at": "2026-09-24T16:20:43.611204+00:00"
 }

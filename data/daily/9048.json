@@ -2,12 +2,12 @@
   "code": "9048",
   "ticker": "9048.T",
   "name": "名古屋鉄道",
-  "generated_at": "2026-09-23T15:57:27.816741+00:00",
-  "price_date": "2026-09-18",
+  "generated_at": "2026-09-24T16:20:06.269089+00:00",
+  "price_date": "2026-09-24",
   "record": {
-    "current_price": 1905.0,
-    "change_from_signal_month_pct": 0.53,
-    "return_since_gc_pct": 13.26
+    "current_price": 1860.0,
+    "change_from_signal_month_pct": -1.85,
+    "return_since_gc_pct": 10.58
   },
   "daily": [
     {
@@ -399,22 +399,35 @@
       "sma200": 1792.53,
       "rsi14": 49.97,
       "rsi5": 55.27
+    },
+    {
+      "date": "2026-09-24",
+      "open": 1892.5,
+      "high": 1901.0,
+      "low": 1860.0,
+      "close": 1860.0,
+      "volume": 2627700.0,
+      "sma25": 1886.28,
+      "sma75": 1870.41,
+      "sma200": 1793.59,
+      "rsi14": 49.97,
+      "rsi5": 55.27
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-18",
-    "monthly_rsi14": 52.48,
-    "monthly_rsi_ma5": 50.16,
-    "spread": 2.32,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-24",
+    "monthly_rsi14": 49.4,
+    "monthly_rsi_ma5": 49.54,
+    "spread": -0.15,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-23T15:58:08.778357+00:00"
+  "provisional_generated_at": "2026-09-24T16:20:43.611204+00:00"
 }

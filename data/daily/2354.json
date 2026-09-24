@@ -2,12 +2,12 @@
   "code": "2354",
   "ticker": "2354.T",
   "name": "ＹＥ　ＤＩＧＩＴＡＬ",
-  "generated_at": "2026-09-23T15:57:27.816741+00:00",
-  "price_date": "2026-09-18",
+  "generated_at": "2026-09-24T16:20:06.269089+00:00",
+  "price_date": "2026-09-24",
   "record": {
-    "current_price": 1352.0,
-    "change_from_signal_month_pct": 9.47,
-    "return_since_gc_pct": 9.47
+    "current_price": 1310.0,
+    "change_from_signal_month_pct": 6.07,
+    "return_since_gc_pct": 6.07
   },
   "daily": [
     {
@@ -399,6 +399,19 @@
       "sma200": 946.55,
       "rsi14": 61.68,
       "rsi5": 68.77
+    },
+    {
+      "date": "2026-09-24",
+      "open": 1300.0,
+      "high": 1372.0,
+      "low": 1287.0,
+      "close": 1310.0,
+      "volume": 742900.0,
+      "sma25": 1367.68,
+      "sma75": 1153.21,
+      "sma200": 949.93,
+      "rsi14": 61.68,
+      "rsi5": 68.77
     }
   ],
   "corporate_events": [
@@ -411,17 +424,17 @@
   ],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-18",
-    "monthly_rsi14": 66.17,
-    "monthly_rsi_ma5": 65.44,
-    "spread": 0.73,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-24",
+    "monthly_rsi14": 64.48,
+    "monthly_rsi_ma5": 65.1,
+    "spread": -0.62,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-23T15:58:08.778357+00:00"
+  "provisional_generated_at": "2026-09-24T16:20:43.611204+00:00"
 }
