@@ -2,12 +2,12 @@
   "code": "9509",
   "ticker": "9509.T",
   "name": "北海道電力",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 1109.0,
-    "change_from_signal_month_pct": 8.09,
-    "return_since_gc_pct": 8.09
+    "current_price": 1140.0,
+    "change_from_signal_month_pct": 11.11,
+    "return_since_gc_pct": 11.11
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 1046.85,
       "rsi14": 51.99,
       "rsi5": 53.43
+    },
+    {
+      "date": "2026-09-25",
+      "open": 1112.0,
+      "high": 1122.5,
+      "low": 1107.5,
+      "close": 1115.5,
+      "volume": 1727900.0,
+      "sma25": 1114.82,
+      "sma75": 1023.99,
+      "sma200": 1046.42,
+      "rsi14": 51.99,
+      "rsi5": 53.43
+    },
+    {
+      "date": "2026-09-28",
+      "open": 1145.5,
+      "high": 1154.0,
+      "low": 1130.0,
+      "close": 1140.0,
+      "volume": 4078900.0,
+      "sma25": 1118.56,
+      "sma75": 1026.89,
+      "sma200": 1046.07,
+      "rsi14": 51.99,
+      "rsi5": 53.43
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 56.96,
-    "monthly_rsi_ma5": 53.81,
-    "spread": 3.15,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 58.0,
+    "monthly_rsi_ma5": 54.02,
+    "spread": 3.98,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

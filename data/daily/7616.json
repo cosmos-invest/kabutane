@@ -2,12 +2,12 @@
   "code": "7616",
   "ticker": "7616.T",
   "name": "コロワイド",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 2005.5,
-    "change_from_signal_month_pct": -2.53,
-    "return_since_gc_pct": 8.85
+    "current_price": 2067.5,
+    "change_from_signal_month_pct": 0.49,
+    "return_since_gc_pct": 12.21
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 1876.26,
       "rsi14": 50.65,
       "rsi5": 59.87
+    },
+    {
+      "date": "2026-09-25",
+      "open": 2001.0,
+      "high": 2006.5,
+      "low": 1985.0,
+      "close": 1985.0,
+      "volume": 1147300.0,
+      "sma25": 2063.78,
+      "sma75": 1963.69,
+      "sma200": 1877.44,
+      "rsi14": 50.65,
+      "rsi5": 59.87
+    },
+    {
+      "date": "2026-09-28",
+      "open": 2015.0,
+      "high": 2067.5,
+      "low": 2010.0,
+      "close": 2067.5,
+      "volume": 1296400.0,
+      "sma25": 2066.1,
+      "sma75": 1967.53,
+      "sma200": 1878.97,
+      "rsi14": 50.65,
+      "rsi5": 59.87
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 51.3,
-    "monthly_rsi_ma5": 49.49,
-    "spread": 1.81,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 54.31,
+    "monthly_rsi_ma5": 50.09,
+    "spread": 4.22,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

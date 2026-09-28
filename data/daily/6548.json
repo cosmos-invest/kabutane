@@ -2,12 +2,12 @@
   "code": "6548",
   "ticker": "6548.T",
   "name": "旅工房",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 123.0,
-    "change_from_signal_month_pct": 11.82,
-    "return_since_gc_pct": 11.82
+    "current_price": 127.0,
+    "change_from_signal_month_pct": 15.45,
+    "return_since_gc_pct": 15.45
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 127.38,
       "rsi14": 31.81,
       "rsi5": 33.7
+    },
+    {
+      "date": "2026-09-25",
+      "open": 123.0,
+      "high": 127.0,
+      "low": 123.0,
+      "close": 127.0,
+      "volume": 12500.0,
+      "sma25": 121.52,
+      "sma75": 108.36,
+      "sma200": 127.28,
+      "rsi14": 31.81,
+      "rsi5": 33.7
+    },
+    {
+      "date": "2026-09-28",
+      "open": 127.0,
+      "high": 131.0,
+      "low": 126.0,
+      "close": 127.0,
+      "volume": 35600.0,
+      "sma25": 122.16,
+      "sma75": 108.67,
+      "sma200": 127.21,
+      "rsi14": 31.81,
+      "rsi5": 33.7
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 35.35,
-    "monthly_rsi_ma5": 29.46,
-    "spread": 5.9,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 36.81,
+    "monthly_rsi_ma5": 29.75,
+    "spread": 7.06,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

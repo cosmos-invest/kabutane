@@ -2,12 +2,12 @@
   "code": "1925",
   "ticker": "1925.T",
   "name": "大和ハウス工業",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 4532.0,
-    "change_from_signal_month_pct": -3.12,
-    "return_since_gc_pct": -3.12
+    "current_price": 2260.5,
+    "change_from_signal_month_pct": -51.68,
+    "return_since_gc_pct": -51.68
   },
   "daily": [
     {
@@ -412,22 +412,48 @@
       "sma200": 4890.88,
       "rsi14": 46.9,
       "rsi5": 48.58
+    },
+    {
+      "date": "2026-09-25",
+      "open": 4534.0,
+      "high": 4560.0,
+      "low": 4519.0,
+      "close": 4551.0,
+      "volume": 2333900.0,
+      "sma25": 4650.68,
+      "sma75": 4556.69,
+      "sma200": 4886.89,
+      "rsi14": 46.9,
+      "rsi5": 48.58
+    },
+    {
+      "date": "2026-09-28",
+      "open": 2277.5,
+      "high": 2296.0,
+      "low": 2260.5,
+      "close": 2260.5,
+      "volume": 4946400.0,
+      "sma25": 4558.22,
+      "sma75": 4530.18,
+      "sma200": 4871.55,
+      "rsi14": 46.9,
+      "rsi5": 48.58
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 45.43,
-    "monthly_rsi_ma5": 45.13,
-    "spread": 0.3,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 23.8,
+    "monthly_rsi_ma5": 40.8,
+    "spread": -17.0,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

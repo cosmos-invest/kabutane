@@ -2,12 +2,12 @@
   "code": "3923",
   "ticker": "3923.T",
   "name": "ラクス",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 1073.0,
-    "change_from_signal_month_pct": 1.23,
-    "return_since_gc_pct": 25.31
+    "current_price": 1036.0,
+    "change_from_signal_month_pct": -2.26,
+    "return_since_gc_pct": 20.99
   },
   "daily": [
     {
@@ -412,22 +412,48 @@
       "sma200": 954.3,
       "rsi14": 44.98,
       "rsi5": 51.16
+    },
+    {
+      "date": "2026-09-25",
+      "open": 1063.5,
+      "high": 1068.0,
+      "low": 1043.0,
+      "close": 1047.5,
+      "volume": 1673000.0,
+      "sma25": 1091.36,
+      "sma75": 1030.04,
+      "sma200": 953.34,
+      "rsi14": 44.98,
+      "rsi5": 51.16
+    },
+    {
+      "date": "2026-09-28",
+      "open": 1047.5,
+      "high": 1058.5,
+      "low": 1032.0,
+      "close": 1036.0,
+      "volume": 1479800.0,
+      "sma25": 1089.46,
+      "sma75": 1030.83,
+      "sma200": 952.34,
+      "rsi14": 44.98,
+      "rsi5": 51.16
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 50.27,
-    "monthly_rsi_ma5": 49.47,
-    "spread": 0.81,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 48.94,
+    "monthly_rsi_ma5": 49.2,
+    "spread": -0.26,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

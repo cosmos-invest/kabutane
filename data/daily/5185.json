@@ -2,12 +2,12 @@
   "code": "5185",
   "ticker": "5185.T",
   "name": "フコク",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 2011.0,
-    "change_from_signal_month_pct": 7.08,
-    "return_since_gc_pct": 7.08
+    "current_price": 2050.0,
+    "change_from_signal_month_pct": 9.16,
+    "return_since_gc_pct": 9.16
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 1893.9,
       "rsi14": 52.61,
       "rsi5": 56.34
+    },
+    {
+      "date": "2026-09-25",
+      "open": 2011.0,
+      "high": 2040.0,
+      "low": 2008.0,
+      "close": 2040.0,
+      "volume": 52800.0,
+      "sma25": 2018.56,
+      "sma75": 1909.19,
+      "sma200": 1894.94,
+      "rsi14": 52.61,
+      "rsi5": 56.34
+    },
+    {
+      "date": "2026-09-28",
+      "open": 2054.0,
+      "high": 2067.0,
+      "low": 2041.0,
+      "close": 2050.0,
+      "volume": 102400.0,
+      "sma25": 2018.96,
+      "sma75": 1912.92,
+      "sma200": 1895.87,
+      "rsi14": 52.61,
+      "rsi5": 56.34
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 60.9,
-    "monthly_rsi_ma5": 57.37,
-    "spread": 3.52,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 63.13,
+    "monthly_rsi_ma5": 57.82,
+    "spread": 5.31,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

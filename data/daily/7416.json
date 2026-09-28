@@ -2,12 +2,12 @@
   "code": "7416",
   "ticker": "7416.T",
   "name": "はるやまホールディングス",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 683.0,
-    "change_from_signal_month_pct": -2.84,
-    "return_since_gc_pct": -2.84
+    "current_price": 689.0,
+    "change_from_signal_month_pct": -1.99,
+    "return_since_gc_pct": -1.99
   },
   "daily": [
     {
@@ -412,22 +412,48 @@
       "sma200": 714.16,
       "rsi14": 51.61,
       "rsi5": 52.89
+    },
+    {
+      "date": "2026-09-25",
+      "open": 687.0,
+      "high": 688.0,
+      "low": 681.0,
+      "close": 688.0,
+      "volume": 11900.0,
+      "sma25": 685.16,
+      "sma75": 679.79,
+      "sma200": 714.17,
+      "rsi14": 51.61,
+      "rsi5": 52.89
+    },
+    {
+      "date": "2026-09-28",
+      "open": 690.0,
+      "high": 690.0,
+      "low": 685.0,
+      "close": 689.0,
+      "volume": 53500.0,
+      "sma25": 685.52,
+      "sma75": 679.92,
+      "sma200": 714.16,
+      "rsi14": 51.61,
+      "rsi5": 52.89
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 51.68,
-    "monthly_rsi_ma5": 51.98,
-    "spread": -0.3,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 52.37,
+    "monthly_rsi_ma5": 52.12,
+    "spread": 0.25,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

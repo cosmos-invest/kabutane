@@ -2,12 +2,12 @@
   "code": "3549",
   "ticker": "3549.T",
   "name": "クスリのアオキホールディングス",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 3976.0,
-    "change_from_signal_month_pct": -1.09,
-    "return_since_gc_pct": -1.09
+    "current_price": 3828.0,
+    "change_from_signal_month_pct": -4.78,
+    "return_since_gc_pct": -4.78
   },
   "daily": [
     {
@@ -412,22 +412,48 @@
       "sma200": 3917.71,
       "rsi14": 52.81,
       "rsi5": 57.28
+    },
+    {
+      "date": "2026-09-25",
+      "open": 3960.0,
+      "high": 3987.0,
+      "low": 3903.0,
+      "close": 3948.0,
+      "volume": 301600.0,
+      "sma25": 4082.2,
+      "sma75": 3905.0,
+      "sma200": 3917.74,
+      "rsi14": 52.81,
+      "rsi5": 57.28
+    },
+    {
+      "date": "2026-09-28",
+      "open": 4000.0,
+      "high": 4020.0,
+      "low": 3828.0,
+      "close": 3828.0,
+      "volume": 342400.0,
+      "sma25": 4074.6,
+      "sma75": 3905.87,
+      "sma200": 3917.34,
+      "rsi14": 52.81,
+      "rsi5": 57.28
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 55.31,
-    "monthly_rsi_ma5": 53.44,
-    "spread": 1.87,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 52.54,
+    "monthly_rsi_ma5": 52.89,
+    "spread": -0.35,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

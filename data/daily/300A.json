@@ -2,12 +2,12 @@
   "code": "300A",
   "ticker": "300A.T",
   "name": "ＭＩＣ",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 3165.0,
-    "change_from_signal_month_pct": 5.5,
-    "return_since_gc_pct": 8.06
+    "current_price": 3095.0,
+    "change_from_signal_month_pct": 3.17,
+    "return_since_gc_pct": 5.67
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 2966.54,
       "rsi14": 74.42,
       "rsi5": 75.7
+    },
+    {
+      "date": "2026-09-25",
+      "open": 3150.0,
+      "high": 3185.0,
+      "low": 3150.0,
+      "close": 3155.0,
+      "volume": 14600.0,
+      "sma25": 3238.6,
+      "sma75": 3040.95,
+      "sma200": 2966.64,
+      "rsi14": 74.42,
+      "rsi5": 75.7
+    },
+    {
+      "date": "2026-09-28",
+      "open": 3165.0,
+      "high": 3165.0,
+      "low": 3095.0,
+      "close": 3095.0,
+      "volume": 28400.0,
+      "sma25": 3227.8,
+      "sma75": 3045.72,
+      "sma200": 2966.64,
+      "rsi14": 74.42,
+      "rsi5": 75.7
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 73.09,
-    "monthly_rsi_ma5": 75.38,
-    "spread": -2.29,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 71.4,
+    "monthly_rsi_ma5": 75.04,
+    "spread": -3.64,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

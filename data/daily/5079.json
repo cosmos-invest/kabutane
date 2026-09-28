@@ -2,12 +2,12 @@
   "code": "5079",
   "ticker": "5079.T",
   "name": "ノバック",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 2591.0,
-    "change_from_signal_month_pct": -0.92,
-    "return_since_gc_pct": -0.92
+    "current_price": 2603.0,
+    "change_from_signal_month_pct": -0.46,
+    "return_since_gc_pct": -0.46
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 2675.11,
       "rsi14": 46.27,
       "rsi5": 47.24
+    },
+    {
+      "date": "2026-09-25",
+      "open": 2570.0,
+      "high": 2591.0,
+      "low": 2570.0,
+      "close": 2589.0,
+      "volume": 2300.0,
+      "sma25": 2610.08,
+      "sma75": 2555.88,
+      "sma200": 2674.71,
+      "rsi14": 46.27,
+      "rsi5": 47.24
+    },
+    {
+      "date": "2026-09-28",
+      "open": 2592.0,
+      "high": 2607.0,
+      "low": 2592.0,
+      "close": 2603.0,
+      "volume": 9000.0,
+      "sma25": 2611.08,
+      "sma75": 2557.84,
+      "sma200": 2674.2,
+      "rsi14": 46.27,
+      "rsi5": 47.24
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 46.13,
-    "monthly_rsi_ma5": 45.42,
-    "spread": 0.71,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 46.43,
+    "monthly_rsi_ma5": 45.48,
+    "spread": 0.95,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

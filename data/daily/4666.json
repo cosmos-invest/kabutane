@@ -2,12 +2,12 @@
   "code": "4666",
   "ticker": "4666.T",
   "name": "パーク２４",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 2008.5,
-    "change_from_signal_month_pct": 1.7,
-    "return_since_gc_pct": -0.22
+    "current_price": 1953.0,
+    "change_from_signal_month_pct": -1.11,
+    "return_since_gc_pct": -2.98
   },
   "daily": [
     {
@@ -412,22 +412,48 @@
       "sma200": 1996.96,
       "rsi14": 48.95,
       "rsi5": 50.99
+    },
+    {
+      "date": "2026-09-25",
+      "open": 1998.0,
+      "high": 2021.0,
+      "low": 1997.0,
+      "close": 2013.5,
+      "volume": 729600.0,
+      "sma25": 2003.1,
+      "sma75": 1994.09,
+      "sma200": 1997.76,
+      "rsi14": 48.95,
+      "rsi5": 50.99
+    },
+    {
+      "date": "2026-09-28",
+      "open": 2021.0,
+      "high": 2023.5,
+      "low": 1924.0,
+      "close": 1953.0,
+      "volume": 2489800.0,
+      "sma25": 2002.14,
+      "sma75": 1996.16,
+      "sma200": 1998.28,
+      "rsi14": 48.95,
+      "rsi5": 50.99
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 50.69,
-    "monthly_rsi_ma5": 49.42,
-    "spread": 1.27,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 48.69,
+    "monthly_rsi_ma5": 49.02,
+    "spread": -0.33,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

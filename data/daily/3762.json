@@ -2,12 +2,12 @@
   "code": "3762",
   "ticker": "3762.T",
   "name": "テクマトリックス",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 2524.0,
-    "change_from_signal_month_pct": 23.6,
-    "return_since_gc_pct": 23.6
+    "current_price": 2500.0,
+    "change_from_signal_month_pct": 22.43,
+    "return_since_gc_pct": 22.43
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 2024.95,
       "rsi14": 44.58,
       "rsi5": 51.03
+    },
+    {
+      "date": "2026-09-25",
+      "open": 2512.0,
+      "high": 2542.0,
+      "low": 2497.0,
+      "close": 2535.0,
+      "volume": 243300.0,
+      "sma25": 2422.56,
+      "sma75": 2096.83,
+      "sma200": 2026.79,
+      "rsi14": 44.58,
+      "rsi5": 51.03
+    },
+    {
+      "date": "2026-09-28",
+      "open": 2538.0,
+      "high": 2551.0,
+      "low": 2486.0,
+      "close": 2500.0,
+      "volume": 472100.0,
+      "sma25": 2429.68,
+      "sma75": 2105.85,
+      "sma200": 2028.41,
+      "rsi14": 44.58,
+      "rsi5": 51.03
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 62.01,
-    "monthly_rsi_ma5": 52.68,
-    "spread": 9.33,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 61.59,
+    "monthly_rsi_ma5": 52.6,
+    "spread": 8.99,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

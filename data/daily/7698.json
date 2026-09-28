@@ -2,12 +2,12 @@
   "code": "7698",
   "ticker": "7698.T",
   "name": "アイスコ",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 2886.0,
-    "change_from_signal_month_pct": 10.53,
-    "return_since_gc_pct": 10.53
+    "current_price": 2750.0,
+    "change_from_signal_month_pct": 5.32,
+    "return_since_gc_pct": 5.32
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 2496.66,
       "rsi14": 81.89,
       "rsi5": 83.87
+    },
+    {
+      "date": "2026-09-25",
+      "open": 2886.0,
+      "high": 2899.0,
+      "low": 2886.0,
+      "close": 2890.0,
+      "volume": 4300.0,
+      "sma25": 2740.8,
+      "sma75": 2619.17,
+      "sma200": 2500.78,
+      "rsi14": 81.89,
+      "rsi5": 83.87
+    },
+    {
+      "date": "2026-09-28",
+      "open": 2890.0,
+      "high": 2900.0,
+      "low": 2750.0,
+      "close": 2750.0,
+      "volume": 12700.0,
+      "sma25": 2745.12,
+      "sma75": 2623.07,
+      "sma200": 2504.11,
+      "rsi14": 81.89,
+      "rsi5": 83.87
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 88.23,
-    "monthly_rsi_ma5": 84.79,
-    "spread": 3.44,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 86.67,
+    "monthly_rsi_ma5": 84.48,
+    "spread": 2.19,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

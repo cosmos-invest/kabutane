@@ -2,12 +2,12 @@
   "code": "4762",
   "ticker": "4762.T",
   "name": "エックスネット",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 2207.0,
-    "change_from_signal_month_pct": 8.45,
-    "return_since_gc_pct": 42.57
+    "current_price": 1095.0,
+    "change_from_signal_month_pct": -46.19,
+    "return_since_gc_pct": -29.26
   },
   "daily": [
     {
@@ -412,22 +412,48 @@
       "sma200": 1652.62,
       "rsi14": 66.96,
       "rsi5": 80.29
+    },
+    {
+      "date": "2026-09-25",
+      "open": 2201.0,
+      "high": 2208.0,
+      "low": 2165.0,
+      "close": 2165.0,
+      "volume": 2600.0,
+      "sma25": 2145.8,
+      "sma75": 1907.51,
+      "sma200": 1656.45,
+      "rsi14": 66.96,
+      "rsi5": 80.29
+    },
+    {
+      "date": "2026-09-28",
+      "open": 1082.5,
+      "high": 1095.0,
+      "low": 1082.5,
+      "close": 1095.0,
+      "volume": 5600.0,
+      "sma25": 2107.92,
+      "sma75": 1901.09,
+      "sma200": 1654.88,
+      "rsi14": 66.96,
+      "rsi5": 80.29
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 84.16,
-    "monthly_rsi_ma5": 77.23,
-    "spread": 6.93,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 40.47,
+    "monthly_rsi_ma5": 68.5,
+    "spread": -28.02,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

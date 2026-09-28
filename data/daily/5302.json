@@ -2,12 +2,12 @@
   "code": "5302",
   "ticker": "5302.T",
   "name": "日本カーボン",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 5070.0,
-    "change_from_signal_month_pct": 7.07,
-    "return_since_gc_pct": 7.07
+    "current_price": 5080.0,
+    "change_from_signal_month_pct": 7.29,
+    "return_since_gc_pct": 7.29
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 4737.88,
       "rsi14": 53.42,
       "rsi5": 54.33
+    },
+    {
+      "date": "2026-09-25",
+      "open": 5140.0,
+      "high": 5170.0,
+      "low": 5090.0,
+      "close": 5110.0,
+      "volume": 41900.0,
+      "sma25": 5029.4,
+      "sma75": 4858.6,
+      "sma200": 4740.95,
+      "rsi14": 53.42,
+      "rsi5": 54.33
+    },
+    {
+      "date": "2026-09-28",
+      "open": 5110.0,
+      "high": 5160.0,
+      "low": 5070.0,
+      "close": 5080.0,
+      "volume": 33100.0,
+      "sma25": 5036.0,
+      "sma75": 4863.33,
+      "sma200": 4743.82,
+      "rsi14": 53.42,
+      "rsi5": 54.33
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 59.01,
-    "monthly_rsi_ma5": 57.0,
-    "spread": 2.0,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 59.21,
+    "monthly_rsi_ma5": 57.04,
+    "spread": 2.16,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

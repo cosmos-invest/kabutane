@@ -2,12 +2,12 @@
   "code": "7461",
   "ticker": "7461.T",
   "name": "キムラ",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 477.0,
-    "change_from_signal_month_pct": 2.8,
-    "return_since_gc_pct": 2.8
+    "current_price": 469.0,
+    "change_from_signal_month_pct": 1.08,
+    "return_since_gc_pct": 1.08
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 480.45,
       "rsi14": 41.57,
       "rsi5": 42.95
+    },
+    {
+      "date": "2026-09-25",
+      "open": 474.0,
+      "high": 474.0,
+      "low": 468.0,
+      "close": 469.0,
+      "volume": 8500.0,
+      "sma25": 476.6,
+      "sma75": 471.29,
+      "sma200": 480.34,
+      "rsi14": 41.57,
+      "rsi5": 42.95
+    },
+    {
+      "date": "2026-09-28",
+      "open": 469.0,
+      "high": 469.0,
+      "low": 468.0,
+      "close": 469.0,
+      "volume": 1500.0,
+      "sma25": 476.36,
+      "sma75": 471.6,
+      "sma200": 480.22,
+      "rsi14": 41.57,
+      "rsi5": 42.95
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 45.64,
-    "monthly_rsi_ma5": 43.14,
-    "spread": 2.5,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 44.0,
+    "monthly_rsi_ma5": 42.81,
+    "spread": 1.19,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

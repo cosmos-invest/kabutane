@@ -2,12 +2,12 @@
   "code": "3001",
   "ticker": "3001.T",
   "name": "片倉工業",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 3075.0,
-    "change_from_signal_month_pct": 9.0,
-    "return_since_gc_pct": 9.0
+    "current_price": 3120.0,
+    "change_from_signal_month_pct": 10.6,
+    "return_since_gc_pct": 10.6
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 2811.04,
       "rsi14": 54.37,
       "rsi5": 58.41
+    },
+    {
+      "date": "2026-09-25",
+      "open": 3090.0,
+      "high": 3145.0,
+      "low": 3090.0,
+      "close": 3125.0,
+      "volume": 36500.0,
+      "sma25": 2974.24,
+      "sma75": 2734.64,
+      "sma200": 2811.14,
+      "rsi14": 54.37,
+      "rsi5": 58.41
+    },
+    {
+      "date": "2026-09-28",
+      "open": 3145.0,
+      "high": 3150.0,
+      "low": 3095.0,
+      "close": 3120.0,
+      "volume": 34600.0,
+      "sma25": 2984.52,
+      "sma75": 2744.47,
+      "sma200": 2810.99,
+      "rsi14": 54.37,
+      "rsi5": 58.41
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 64.06,
-    "monthly_rsi_ma5": 58.32,
-    "spread": 5.74,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 64.8,
+    "monthly_rsi_ma5": 58.47,
+    "spread": 6.33,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

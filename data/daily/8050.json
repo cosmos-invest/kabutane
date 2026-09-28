@@ -2,12 +2,12 @@
   "code": "8050",
   "ticker": "8050.T",
   "name": "セイコーグループ",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 10200.0,
-    "change_from_signal_month_pct": 28.46,
-    "return_since_gc_pct": 44.27
+    "current_price": 9990.0,
+    "change_from_signal_month_pct": 25.82,
+    "return_since_gc_pct": 41.3
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 6558.93,
       "rsi14": 76.94,
       "rsi5": 79.83
+    },
+    {
+      "date": "2026-09-25",
+      "open": 10250.0,
+      "high": 10570.0,
+      "low": 10070.0,
+      "close": 10410.0,
+      "volume": 414200.0,
+      "sma25": 10354.4,
+      "sma75": 8850.27,
+      "sma200": 6592.65,
+      "rsi14": 76.94,
+      "rsi5": 79.83
+    },
+    {
+      "date": "2026-09-28",
+      "open": 10430.0,
+      "high": 10520.0,
+      "low": 9990.0,
+      "close": 9990.0,
+      "volume": 478100.0,
+      "sma25": 10306.0,
+      "sma75": 8893.2,
+      "sma200": 6624.27,
+      "rsi14": 76.94,
+      "rsi5": 79.83
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 74.9,
-    "monthly_rsi_ma5": 80.38,
-    "spread": -5.49,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 73.53,
+    "monthly_rsi_ma5": 80.11,
+    "spread": -6.58,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

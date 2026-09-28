@@ -2,12 +2,12 @@
   "code": "7196",
   "ticker": "7196.T",
   "name": "Ｃａｓａ",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 750.0,
-    "change_from_signal_month_pct": 1.35,
-    "return_since_gc_pct": 3.02
+    "current_price": 754.0,
+    "change_from_signal_month_pct": 1.89,
+    "return_since_gc_pct": 3.57
   },
   "daily": [
     {
@@ -412,22 +412,48 @@
       "sma200": 740.7,
       "rsi14": 42.78,
       "rsi5": 43.03
+    },
+    {
+      "date": "2026-09-25",
+      "open": 746.0,
+      "high": 751.0,
+      "low": 746.0,
+      "close": 751.0,
+      "volume": 4100.0,
+      "sma25": 745.52,
+      "sma75": 761.01,
+      "sma200": 740.88,
+      "rsi14": 42.78,
+      "rsi5": 43.03
+    },
+    {
+      "date": "2026-09-28",
+      "open": 753.0,
+      "high": 754.0,
+      "low": 748.0,
+      "close": 754.0,
+      "volume": 13200.0,
+      "sma25": 745.96,
+      "sma75": 760.97,
+      "sma200": 741.08,
+      "rsi14": 42.78,
+      "rsi5": 43.03
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 44.72,
-    "monthly_rsi_ma5": 44.92,
-    "spread": -0.2,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 45.42,
+    "monthly_rsi_ma5": 45.06,
+    "spread": 0.36,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

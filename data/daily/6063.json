@@ -2,12 +2,12 @@
   "code": "6063",
   "ticker": "6063.T",
   "name": "日本エマージェンシーアシスタンス",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 1002.0,
-    "change_from_signal_month_pct": -2.15,
-    "return_since_gc_pct": 0.7
+    "current_price": 993.0,
+    "change_from_signal_month_pct": -3.03,
+    "return_since_gc_pct": -0.2
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 951.79,
       "rsi14": 50.7,
       "rsi5": 55.34
+    },
+    {
+      "date": "2026-09-25",
+      "open": 995.0,
+      "high": 1008.0,
+      "low": 987.0,
+      "close": 1008.0,
+      "volume": 1300.0,
+      "sma25": 1000.04,
+      "sma75": 988.84,
+      "sma200": 952.03,
+      "rsi14": 50.7,
+      "rsi5": 55.34
+    },
+    {
+      "date": "2026-09-28",
+      "open": 1003.0,
+      "high": 1003.0,
+      "low": 993.0,
+      "close": 993.0,
+      "volume": 300.0,
+      "sma25": 999.76,
+      "sma75": 990.8,
+      "sma200": 952.3,
+      "rsi14": 50.7,
+      "rsi5": 55.34
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 53.96,
-    "monthly_rsi_ma5": 53.06,
-    "spread": 0.9,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 53.36,
+    "monthly_rsi_ma5": 52.94,
+    "spread": 0.42,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

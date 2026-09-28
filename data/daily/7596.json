@@ -2,12 +2,12 @@
   "code": "7596",
   "ticker": "7596.T",
   "name": "魚力",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 2339.0,
-    "change_from_signal_month_pct": 2.14,
-    "return_since_gc_pct": 2.14
+    "current_price": 2308.0,
+    "change_from_signal_month_pct": 0.79,
+    "return_since_gc_pct": 0.79
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 2301.46,
       "rsi14": 42.72,
       "rsi5": 46.77
+    },
+    {
+      "date": "2026-09-25",
+      "open": 2340.0,
+      "high": 2344.0,
+      "low": 2312.0,
+      "close": 2312.0,
+      "volume": 32800.0,
+      "sma25": 2345.76,
+      "sma75": 2294.36,
+      "sma200": 2301.22,
+      "rsi14": 42.72,
+      "rsi5": 46.77
+    },
+    {
+      "date": "2026-09-28",
+      "open": 2311.0,
+      "high": 2325.0,
+      "low": 2308.0,
+      "close": 2308.0,
+      "volume": 66800.0,
+      "sma25": 2344.2,
+      "sma75": 2296.4,
+      "sma200": 2300.97,
+      "rsi14": 42.72,
+      "rsi5": 46.77
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 51.73,
-    "monthly_rsi_ma5": 47.69,
-    "spread": 4.04,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 49.43,
+    "monthly_rsi_ma5": 47.23,
+    "spread": 2.2,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

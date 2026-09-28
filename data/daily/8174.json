@@ -2,12 +2,12 @@
   "code": "8174",
   "ticker": "8174.T",
   "name": "日本瓦斯",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 3036.0,
-    "change_from_signal_month_pct": 6.49,
-    "return_since_gc_pct": 6.49
+    "current_price": 1018.33,
+    "change_from_signal_month_pct": -64.28,
+    "return_since_gc_pct": -64.28
   },
   "daily": [
     {
@@ -412,22 +412,48 @@
       "sma200": 2918.76,
       "rsi14": 57.25,
       "rsi5": 57.46
+    },
+    {
+      "date": "2026-09-25",
+      "open": 3040.0,
+      "high": 3114.0,
+      "low": 3036.0,
+      "close": 3084.0,
+      "volume": 392200.0,
+      "sma25": 3036.54,
+      "sma75": 2897.87,
+      "sma200": 2918.91,
+      "rsi14": 57.25,
+      "rsi5": 57.46
+    },
+    {
+      "date": "2026-09-28",
+      "open": 1033.33,
+      "high": 1036.33,
+      "low": 1015.67,
+      "close": 1018.33,
+      "volume": 1044900.0,
+      "sma25": 2961.45,
+      "sma75": 2875.1,
+      "sma200": 2908.77,
+      "rsi14": 57.25,
+      "rsi5": 57.46
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 61.88,
-    "monthly_rsi_ma5": 58.8,
-    "spread": 3.08,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 25.88,
+    "monthly_rsi_ma5": 51.6,
+    "spread": -25.72,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

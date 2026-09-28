@@ -2,12 +2,12 @@
   "code": "4634",
   "ticker": "4634.T",
   "name": "ａｒｔｉｅｎｃｅ",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 5130.0,
-    "change_from_signal_month_pct": 15.02,
-    "return_since_gc_pct": 18.89
+    "current_price": 5080.0,
+    "change_from_signal_month_pct": 13.9,
+    "return_since_gc_pct": 17.73
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 4128.32,
       "rsi14": 64.88,
       "rsi5": 69.06
+    },
+    {
+      "date": "2026-09-25",
+      "open": 5180.0,
+      "high": 5190.0,
+      "low": 5120.0,
+      "close": 5130.0,
+      "volume": 135900.0,
+      "sma25": 5058.4,
+      "sma75": 4651.27,
+      "sma200": 4137.05,
+      "rsi14": 64.88,
+      "rsi5": 69.06
+    },
+    {
+      "date": "2026-09-28",
+      "open": 5150.0,
+      "high": 5150.0,
+      "low": 5060.0,
+      "close": 5080.0,
+      "volume": 115100.0,
+      "sma25": 5068.8,
+      "sma75": 4665.07,
+      "sma200": 4145.3,
+      "rsi14": 64.88,
+      "rsi5": 69.06
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 75.72,
-    "monthly_rsi_ma5": 71.66,
-    "spread": 4.06,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 74.53,
+    "monthly_rsi_ma5": 71.42,
+    "spread": 3.11,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

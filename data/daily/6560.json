@@ -2,12 +2,12 @@
   "code": "6560",
   "ticker": "6560.T",
   "name": "エル・ティー・エス",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 1806.0,
-    "change_from_signal_month_pct": 3.97,
-    "return_since_gc_pct": 2.15
+    "current_price": 1784.0,
+    "change_from_signal_month_pct": 2.71,
+    "return_since_gc_pct": 0.9
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 1832.41,
       "rsi14": 39.55,
       "rsi5": 40.27
+    },
+    {
+      "date": "2026-09-25",
+      "open": 1810.0,
+      "high": 1817.0,
+      "low": 1776.0,
+      "close": 1790.0,
+      "volume": 20400.0,
+      "sma25": 1778.24,
+      "sma75": 1751.91,
+      "sma200": 1829.88,
+      "rsi14": 39.55,
+      "rsi5": 40.27
+    },
+    {
+      "date": "2026-09-28",
+      "open": 1793.0,
+      "high": 1800.0,
+      "low": 1776.0,
+      "close": 1784.0,
+      "volume": 14700.0,
+      "sma25": 1783.36,
+      "sma75": 1754.09,
+      "sma200": 1827.3,
+      "rsi14": 39.55,
+      "rsi5": 40.27
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 37.65,
-    "monthly_rsi_ma5": 36.19,
-    "spread": 1.46,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 36.98,
+    "monthly_rsi_ma5": 36.06,
+    "spread": 0.93,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

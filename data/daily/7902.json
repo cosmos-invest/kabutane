@@ -2,12 +2,12 @@
   "code": "7902",
   "ticker": "7902.T",
   "name": "ソノコム",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 1124.0,
-    "change_from_signal_month_pct": -1.4,
-    "return_since_gc_pct": -1.4
+    "current_price": 1134.0,
+    "change_from_signal_month_pct": -0.53,
+    "return_since_gc_pct": -0.53
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 1075.58,
       "rsi14": 62.46,
       "rsi5": 62.55
+    },
+    {
+      "date": "2026-09-25",
+      "open": 1117.0,
+      "high": 1130.0,
+      "low": 1117.0,
+      "close": 1130.0,
+      "volume": 700.0,
+      "sma25": 1109.88,
+      "sma75": 1095.41,
+      "sma200": 1076.84,
+      "rsi14": 62.46,
+      "rsi5": 62.55
+    },
+    {
+      "date": "2026-09-28",
+      "open": 1130.0,
+      "high": 1134.0,
+      "low": 1119.0,
+      "close": 1134.0,
+      "volume": 500.0,
+      "sma25": 1112.28,
+      "sma75": 1097.21,
+      "sma200": 1078.06,
+      "rsi14": 62.46,
+      "rsi5": 62.55
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 61.18,
-    "monthly_rsi_ma5": 59.71,
-    "spread": 1.47,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 61.97,
+    "monthly_rsi_ma5": 59.86,
+    "spread": 2.11,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

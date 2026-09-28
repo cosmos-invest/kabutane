@@ -2,12 +2,12 @@
   "code": "4381",
   "ticker": "4381.T",
   "name": "ビープラッツ",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 224.0,
-    "change_from_signal_month_pct": -20.85,
-    "return_since_gc_pct": -20.85
+    "current_price": 210.0,
+    "change_from_signal_month_pct": -25.8,
+    "return_since_gc_pct": -25.8
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 420.55,
       "rsi14": 35.02,
       "rsi5": 36.17
+    },
+    {
+      "date": "2026-09-25",
+      "open": 221.0,
+      "high": 224.0,
+      "low": 212.0,
+      "close": 212.0,
+      "volume": 101800.0,
+      "sma25": 273.44,
+      "sma75": 305.31,
+      "sma200": 418.7,
+      "rsi14": 35.02,
+      "rsi5": 36.17
+    },
+    {
+      "date": "2026-09-28",
+      "open": 220.0,
+      "high": 233.0,
+      "low": 203.0,
+      "close": 210.0,
+      "volume": 296600.0,
+      "sma25": 268.08,
+      "sma75": 304.51,
+      "sma200": 416.83,
+      "rsi14": 35.02,
+      "rsi5": 36.17
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 27.48,
-    "monthly_rsi_ma5": 26.16,
-    "spread": 1.32,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 27.13,
+    "monthly_rsi_ma5": 26.09,
+    "spread": 1.04,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

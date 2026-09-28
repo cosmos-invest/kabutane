@@ -2,12 +2,12 @@
   "code": "3121",
   "ticker": "3121.T",
   "name": "マーチャント・バンカーズ",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 255.0,
-    "change_from_signal_month_pct": 12.33,
-    "return_since_gc_pct": 12.33
+    "current_price": 251.0,
+    "change_from_signal_month_pct": 10.57,
+    "return_since_gc_pct": 10.57
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 225.67,
       "rsi14": 40.08,
       "rsi5": 42.76
+    },
+    {
+      "date": "2026-09-25",
+      "open": 256.0,
+      "high": 259.0,
+      "low": 253.0,
+      "close": 256.0,
+      "volume": 19700.0,
+      "sma25": 260.64,
+      "sma75": 234.61,
+      "sma200": 225.78,
+      "rsi14": 40.08,
+      "rsi5": 42.76
+    },
+    {
+      "date": "2026-09-28",
+      "open": 251.0,
+      "high": 254.0,
+      "low": 250.0,
+      "close": 251.0,
+      "volume": 34200.0,
+      "sma25": 260.84,
+      "sma75": 235.03,
+      "sma200": 225.87,
+      "rsi14": 40.08,
+      "rsi5": 42.76
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 49.03,
-    "monthly_rsi_ma5": 45.14,
-    "spread": 3.9,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 48.32,
+    "monthly_rsi_ma5": 44.99,
+    "spread": 3.33,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

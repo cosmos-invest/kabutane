@@ -2,12 +2,12 @@
   "code": "8025",
   "ticker": "8025.T",
   "name": "ツカモトコーポレーション",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 1306.0,
-    "change_from_signal_month_pct": -1.8,
-    "return_since_gc_pct": 0.54
+    "current_price": 1322.0,
+    "change_from_signal_month_pct": -0.6,
+    "return_since_gc_pct": 1.77
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 1307.77,
       "rsi14": 50.14,
       "rsi5": 53.58
+    },
+    {
+      "date": "2026-09-25",
+      "open": 1307.0,
+      "high": 1307.0,
+      "low": 1307.0,
+      "close": 1307.0,
+      "volume": 200.0,
+      "sma25": 1322.32,
+      "sma75": 1290.15,
+      "sma200": 1307.61,
+      "rsi14": 50.14,
+      "rsi5": 53.58
+    },
+    {
+      "date": "2026-09-28",
+      "open": 1314.0,
+      "high": 1322.0,
+      "low": 1314.0,
+      "close": 1322.0,
+      "volume": 300.0,
+      "sma25": 1321.96,
+      "sma75": 1291.57,
+      "sma200": 1307.54,
+      "rsi14": 50.14,
+      "rsi5": 53.58
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 50.57,
-    "monthly_rsi_ma5": 50.31,
-    "spread": 0.27,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 51.85,
+    "monthly_rsi_ma5": 50.56,
+    "spread": 1.29,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

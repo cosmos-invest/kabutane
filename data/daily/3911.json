@@ -2,12 +2,12 @@
   "code": "3911",
   "ticker": "3911.T",
   "name": "Ａｉｍｉｎｇ",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 172.0,
-    "change_from_signal_month_pct": -6.52,
-    "return_since_gc_pct": -10.88
+    "current_price": 175.0,
+    "change_from_signal_month_pct": -4.89,
+    "return_since_gc_pct": -9.33
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 199.03,
       "rsi14": 38.62,
       "rsi5": 39.78
+    },
+    {
+      "date": "2026-09-25",
+      "open": 173.0,
+      "high": 173.0,
+      "low": 171.0,
+      "close": 172.0,
+      "volume": 142800.0,
+      "sma25": 178.16,
+      "sma75": 184.32,
+      "sma200": 198.69,
+      "rsi14": 38.62,
+      "rsi5": 39.78
+    },
+    {
+      "date": "2026-09-28",
+      "open": 172.0,
+      "high": 175.0,
+      "low": 171.0,
+      "close": 175.0,
+      "volume": 158100.0,
+      "sma25": 178.32,
+      "sma75": 184.39,
+      "sma200": 198.33,
+      "rsi14": 38.62,
+      "rsi5": 39.78
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 34.26,
-    "monthly_rsi_ma5": 35.15,
-    "spread": -0.89,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 34.69,
+    "monthly_rsi_ma5": 35.24,
+    "spread": -0.55,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

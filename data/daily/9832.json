@@ -2,12 +2,12 @@
   "code": "9832",
   "ticker": "9832.T",
   "name": "オートバックスセブン",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 1601.0,
-    "change_from_signal_month_pct": 2.89,
-    "return_since_gc_pct": 2.89
+    "current_price": 1600.0,
+    "change_from_signal_month_pct": 2.83,
+    "return_since_gc_pct": 2.83
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 1575.93,
       "rsi14": 47.98,
       "rsi5": 50.83
+    },
+    {
+      "date": "2026-09-25",
+      "open": 1606.0,
+      "high": 1623.0,
+      "low": 1606.0,
+      "close": 1620.0,
+      "volume": 622100.0,
+      "sma25": 1576.08,
+      "sma75": 1522.04,
+      "sma200": 1575.98,
+      "rsi14": 47.98,
+      "rsi5": 50.83
+    },
+    {
+      "date": "2026-09-28",
+      "open": 1625.0,
+      "high": 1629.0,
+      "low": 1597.0,
+      "close": 1600.0,
+      "volume": 1199200.0,
+      "sma25": 1578.6,
+      "sma75": 1523.51,
+      "sma200": 1575.88,
+      "rsi14": 47.98,
+      "rsi5": 50.83
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 52.6,
-    "monthly_rsi_ma5": 48.25,
-    "spread": 4.35,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 52.54,
+    "monthly_rsi_ma5": 48.24,
+    "spread": 4.3,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "2911",
   "ticker": "2911.T",
   "name": "旭松食品",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 2285.0,
-    "change_from_signal_month_pct": 0.35,
-    "return_since_gc_pct": 0.35
+    "current_price": 2294.0,
+    "change_from_signal_month_pct": 0.75,
+    "return_since_gc_pct": 0.75
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 2275.49,
       "rsi14": 47.32,
       "rsi5": 50.8
+    },
+    {
+      "date": "2026-09-25",
+      "open": 2262.0,
+      "high": 2286.0,
+      "low": 2262.0,
+      "close": 2275.0,
+      "volume": 900.0,
+      "sma25": 2259.44,
+      "sma75": 2259.16,
+      "sma200": 2275.53,
+      "rsi14": 47.32,
+      "rsi5": 50.8
+    },
+    {
+      "date": "2026-09-28",
+      "open": 2280.0,
+      "high": 2294.0,
+      "low": 2280.0,
+      "close": 2294.0,
+      "volume": 900.0,
+      "sma25": 2260.6,
+      "sma75": 2260.07,
+      "sma200": 2275.64,
+      "rsi14": 47.32,
+      "rsi5": 50.8
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 52.94,
-    "monthly_rsi_ma5": 48.96,
-    "spread": 3.98,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 54.22,
+    "monthly_rsi_ma5": 49.21,
+    "spread": 5.01,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "4290",
   "ticker": "4290.T",
   "name": "プレステージ・インターナショナル",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 712.0,
-    "change_from_signal_month_pct": 0.28,
-    "return_since_gc_pct": 0.28
+    "current_price": 703.0,
+    "change_from_signal_month_pct": -0.99,
+    "return_since_gc_pct": -0.99
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 687.25,
       "rsi14": 48.48,
       "rsi5": 54.66
+    },
+    {
+      "date": "2026-09-25",
+      "open": 713.0,
+      "high": 724.0,
+      "low": 712.0,
+      "close": 723.0,
+      "volume": 939400.0,
+      "sma25": 708.88,
+      "sma75": 684.12,
+      "sma200": 687.49,
+      "rsi14": 48.48,
+      "rsi5": 54.66
+    },
+    {
+      "date": "2026-09-28",
+      "open": 728.0,
+      "high": 729.0,
+      "low": 702.0,
+      "close": 703.0,
+      "volume": 1966300.0,
+      "sma25": 708.0,
+      "sma75": 684.33,
+      "sma200": 687.59,
+      "rsi14": 48.48,
+      "rsi5": 54.66
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 56.8,
-    "monthly_rsi_ma5": 53.4,
-    "spread": 3.4,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 55.47,
+    "monthly_rsi_ma5": 53.13,
+    "spread": 2.34,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

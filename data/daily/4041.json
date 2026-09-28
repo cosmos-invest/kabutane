@@ -2,12 +2,12 @@
   "code": "4041",
   "ticker": "4041.T",
   "name": "日本曹達",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 3850.0,
-    "change_from_signal_month_pct": 0.39,
-    "return_since_gc_pct": 0.39
+    "current_price": 3840.0,
+    "change_from_signal_month_pct": 0.13,
+    "return_since_gc_pct": 0.13
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 3720.38,
       "rsi14": 59.57,
       "rsi5": 62.61
+    },
+    {
+      "date": "2026-09-25",
+      "open": 3860.0,
+      "high": 3880.0,
+      "low": 3850.0,
+      "close": 3875.0,
+      "volume": 256500.0,
+      "sma25": 3912.8,
+      "sma75": 3767.93,
+      "sma200": 3722.12,
+      "rsi14": 59.57,
+      "rsi5": 62.61
+    },
+    {
+      "date": "2026-09-28",
+      "open": 3895.0,
+      "high": 3900.0,
+      "low": 3830.0,
+      "close": 3840.0,
+      "volume": 243500.0,
+      "sma25": 3909.6,
+      "sma75": 3772.93,
+      "sma200": 3723.53,
+      "rsi14": 59.57,
+      "rsi5": 62.61
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 60.14,
-    "monthly_rsi_ma5": 60.3,
-    "spread": -0.16,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 59.89,
+    "monthly_rsi_ma5": 60.25,
+    "spread": -0.36,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

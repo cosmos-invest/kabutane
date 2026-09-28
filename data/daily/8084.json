@@ -2,12 +2,12 @@
   "code": "8084",
   "ticker": "8084.T",
   "name": "ＲＹＯＤＥＮ",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 4820.0,
-    "change_from_signal_month_pct": 10.55,
-    "return_since_gc_pct": 20.8
+    "current_price": 2437.5,
+    "change_from_signal_month_pct": -44.09,
+    "return_since_gc_pct": -38.91
   },
   "daily": [
     {
@@ -412,22 +412,48 @@
       "sma200": 3820.8,
       "rsi14": 69.13,
       "rsi5": 76.61
+    },
+    {
+      "date": "2026-09-25",
+      "open": 4845.0,
+      "high": 4955.0,
+      "low": 4845.0,
+      "close": 4950.0,
+      "volume": 43600.0,
+      "sma25": 4765.4,
+      "sma75": 4316.2,
+      "sma200": 3829.28,
+      "rsi14": 69.13,
+      "rsi5": 76.61
+    },
+    {
+      "date": "2026-09-28",
+      "open": 2477.5,
+      "high": 2492.5,
+      "low": 2432.5,
+      "close": 2437.5,
+      "volume": 116400.0,
+      "sma25": 4676.1,
+      "sma75": 4296.43,
+      "sma200": 3825.09,
+      "rsi14": 69.13,
+      "rsi5": 76.61
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 80.4,
-    "monthly_rsi_ma5": 75.67,
-    "spread": 4.73,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 41.28,
+    "monthly_rsi_ma5": 67.84,
+    "spread": -26.56,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

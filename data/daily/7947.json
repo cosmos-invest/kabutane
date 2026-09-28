@@ -2,12 +2,12 @@
   "code": "7947",
   "ticker": "7947.T",
   "name": "エフピコ",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 2813.0,
-    "change_from_signal_month_pct": 11.49,
-    "return_since_gc_pct": 8.4
+    "current_price": 2812.0,
+    "change_from_signal_month_pct": 11.45,
+    "return_since_gc_pct": 8.36
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 2580.56,
       "rsi14": 42.83,
       "rsi5": 45.79
+    },
+    {
+      "date": "2026-09-25",
+      "open": 2813.0,
+      "high": 2837.0,
+      "low": 2806.0,
+      "close": 2833.0,
+      "volume": 127400.0,
+      "sma25": 2811.4,
+      "sma75": 2663.43,
+      "sma200": 2581.25,
+      "rsi14": 42.83,
+      "rsi5": 45.79
+    },
+    {
+      "date": "2026-09-28",
+      "open": 2850.0,
+      "high": 2850.0,
+      "low": 2808.0,
+      "close": 2812.0,
+      "volume": 156100.0,
+      "sma25": 2814.16,
+      "sma75": 2668.2,
+      "sma200": 2581.78,
+      "rsi14": 42.83,
+      "rsi5": 45.79
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 53.66,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 53.64,
     "monthly_rsi_ma5": 48.97,
-    "spread": 4.69,
+    "spread": 4.67,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "6118",
   "ticker": "6118.T",
   "name": "アイダエンジニアリング",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 1194.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 1199.0,
+    "change_from_signal_month_pct": 0.42,
+    "return_since_gc_pct": 0.42
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 1189.3,
       "rsi14": 62.26,
       "rsi5": 64.14
+    },
+    {
+      "date": "2026-09-25",
+      "open": 1198.0,
+      "high": 1213.0,
+      "low": 1181.0,
+      "close": 1206.0,
+      "volume": 223500.0,
+      "sma25": 1244.64,
+      "sma75": 1201.64,
+      "sma200": 1189.61,
+      "rsi14": 62.26,
+      "rsi5": 64.14
+    },
+    {
+      "date": "2026-09-28",
+      "open": 1221.0,
+      "high": 1221.0,
+      "low": 1197.0,
+      "close": 1199.0,
+      "volume": 179700.0,
+      "sma25": 1242.12,
+      "sma75": 1202.53,
+      "sma200": 1189.76,
+      "rsi14": 62.26,
+      "rsi5": 64.14
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 61.68,
-    "monthly_rsi_ma5": 60.41,
-    "spread": 1.27,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 62.0,
+    "monthly_rsi_ma5": 60.47,
+    "spread": 1.53,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

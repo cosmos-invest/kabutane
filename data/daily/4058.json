@@ -2,12 +2,12 @@
   "code": "4058",
   "ticker": "4058.T",
   "name": "トヨクモ",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 2299.0,
-    "change_from_signal_month_pct": -2.38,
-    "return_since_gc_pct": 8.29
+    "current_price": 2184.0,
+    "change_from_signal_month_pct": -7.26,
+    "return_since_gc_pct": 2.87
   },
   "daily": [
     {
@@ -412,22 +412,48 @@
       "sma200": 2188.16,
       "rsi14": 43.83,
       "rsi5": 51.19
+    },
+    {
+      "date": "2026-09-25",
+      "open": 2300.0,
+      "high": 2300.0,
+      "low": 2214.0,
+      "close": 2248.0,
+      "volume": 35200.0,
+      "sma25": 2383.64,
+      "sma75": 2214.8,
+      "sma200": 2185.39,
+      "rsi14": 43.83,
+      "rsi5": 51.19
+    },
+    {
+      "date": "2026-09-28",
+      "open": 2215.0,
+      "high": 2239.0,
+      "low": 2169.0,
+      "close": 2184.0,
+      "volume": 52900.0,
+      "sma25": 2376.6,
+      "sma75": 2217.57,
+      "sma200": 2182.34,
+      "rsi14": 43.83,
+      "rsi5": 51.19
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 50.59,
-    "monthly_rsi_ma5": 50.11,
-    "spread": 0.48,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 48.75,
+    "monthly_rsi_ma5": 49.75,
+    "spread": -0.99,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

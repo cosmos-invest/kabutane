@@ -2,12 +2,12 @@
   "code": "5900",
   "ticker": "5900.T",
   "name": "ダイケン",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 879.0,
-    "change_from_signal_month_pct": 2.81,
-    "return_since_gc_pct": 7.99
+    "current_price": 872.0,
+    "change_from_signal_month_pct": 1.99,
+    "return_since_gc_pct": 7.13
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 839.47,
       "rsi14": 50.76,
       "rsi5": 55.63
+    },
+    {
+      "date": "2026-09-25",
+      "open": 886.0,
+      "high": 886.0,
+      "low": 868.0,
+      "close": 874.0,
+      "volume": 2400.0,
+      "sma25": 879.44,
+      "sma75": 858.27,
+      "sma200": 839.64,
+      "rsi14": 50.76,
+      "rsi5": 55.63
+    },
+    {
+      "date": "2026-09-28",
+      "open": 880.0,
+      "high": 884.0,
+      "low": 872.0,
+      "close": 872.0,
+      "volume": 4300.0,
+      "sma25": 879.56,
+      "sma75": 858.91,
+      "sma200": 839.81,
+      "rsi14": 50.76,
+      "rsi5": 55.63
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 59.0,
-    "monthly_rsi_ma5": 55.68,
-    "spread": 3.32,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 58.09,
+    "monthly_rsi_ma5": 55.5,
+    "spread": 2.59,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

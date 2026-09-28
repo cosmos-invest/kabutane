@@ -2,12 +2,12 @@
   "code": "5122",
   "ticker": "5122.T",
   "name": "オカモト",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 6260.0,
-    "change_from_signal_month_pct": 4.33,
-    "return_since_gc_pct": 4.33
+    "current_price": 6300.0,
+    "change_from_signal_month_pct": 5.0,
+    "return_since_gc_pct": 5.0
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 5762.1,
       "rsi14": 58.11,
       "rsi5": 61.45
+    },
+    {
+      "date": "2026-09-25",
+      "open": 6270.0,
+      "high": 6410.0,
+      "low": 6260.0,
+      "close": 6400.0,
+      "volume": 19500.0,
+      "sma25": 6308.8,
+      "sma75": 5898.8,
+      "sma200": 5766.95,
+      "rsi14": 58.11,
+      "rsi5": 61.45
+    },
+    {
+      "date": "2026-09-28",
+      "open": 6400.0,
+      "high": 6410.0,
+      "low": 6270.0,
+      "close": 6300.0,
+      "volume": 30100.0,
+      "sma25": 6302.8,
+      "sma75": 5907.47,
+      "sma200": 5771.05,
+      "rsi14": 58.11,
+      "rsi5": 61.45
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 62.85,
-    "monthly_rsi_ma5": 59.18,
-    "spread": 3.67,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 63.6,
+    "monthly_rsi_ma5": 59.33,
+    "spread": 4.27,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

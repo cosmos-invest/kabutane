@@ -2,12 +2,12 @@
   "code": "3796",
   "ticker": "3796.T",
   "name": "いい生活",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 333.0,
-    "change_from_signal_month_pct": 12.88,
-    "return_since_gc_pct": 19.35
+    "current_price": 327.0,
+    "change_from_signal_month_pct": 10.85,
+    "return_since_gc_pct": 17.2
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 279.52,
       "rsi14": 59.17,
       "rsi5": 60.06
+    },
+    {
+      "date": "2026-09-25",
+      "open": 333.0,
+      "high": 338.0,
+      "low": 333.0,
+      "close": 338.0,
+      "volume": 58100.0,
+      "sma25": 321.6,
+      "sma75": 294.11,
+      "sma200": 279.89,
+      "rsi14": 59.17,
+      "rsi5": 60.06
+    },
+    {
+      "date": "2026-09-28",
+      "open": 346.0,
+      "high": 346.0,
+      "low": 323.0,
+      "close": 327.0,
+      "volume": 92400.0,
+      "sma25": 322.92,
+      "sma75": 294.88,
+      "sma200": 280.25,
+      "rsi14": 59.17,
+      "rsi5": 60.06
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 67.48,
-    "monthly_rsi_ma5": 60.43,
-    "spread": 7.05,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 66.32,
+    "monthly_rsi_ma5": 60.2,
+    "spread": 6.11,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

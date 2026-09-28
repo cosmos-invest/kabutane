@@ -2,12 +2,12 @@
   "code": "5451",
   "ticker": "5451.T",
   "name": "ヨドコウ",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 1436.0,
-    "change_from_signal_month_pct": 3.68,
-    "return_since_gc_pct": 3.68
+    "current_price": 1433.0,
+    "change_from_signal_month_pct": 3.47,
+    "return_since_gc_pct": 3.47
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 1374.24,
       "rsi14": 62.72,
       "rsi5": 64.26
+    },
+    {
+      "date": "2026-09-25",
+      "open": 1440.0,
+      "high": 1453.0,
+      "low": 1440.0,
+      "close": 1448.0,
+      "volume": 289600.0,
+      "sma25": 1424.16,
+      "sma75": 1364.75,
+      "sma200": 1374.96,
+      "rsi14": 62.72,
+      "rsi5": 64.26
+    },
+    {
+      "date": "2026-09-28",
+      "open": 1455.0,
+      "high": 1459.0,
+      "low": 1431.0,
+      "close": 1433.0,
+      "volume": 327900.0,
+      "sma25": 1425.04,
+      "sma75": 1366.97,
+      "sma200": 1375.53,
+      "rsi14": 62.72,
+      "rsi5": 64.26
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 68.08,
-    "monthly_rsi_ma5": 64.18,
-    "spread": 3.91,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 67.94,
+    "monthly_rsi_ma5": 64.15,
+    "spread": 3.79,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

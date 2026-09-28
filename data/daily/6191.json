@@ -2,12 +2,12 @@
   "code": "6191",
   "ticker": "6191.T",
   "name": "エアトリ",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 1545.0,
-    "change_from_signal_month_pct": 73.4,
-    "return_since_gc_pct": 85.92
+    "current_price": 1440.0,
+    "change_from_signal_month_pct": 61.62,
+    "return_since_gc_pct": 73.29
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 798.19,
       "rsi14": 35.86,
       "rsi5": 42.93
+    },
+    {
+      "date": "2026-09-25",
+      "open": 1530.0,
+      "high": 1551.0,
+      "low": 1481.0,
+      "close": 1481.0,
+      "volume": 1243000.0,
+      "sma25": 1048.92,
+      "sma75": 908.13,
+      "sma200": 801.86,
+      "rsi14": 35.86,
+      "rsi5": 42.93
+    },
+    {
+      "date": "2026-09-28",
+      "open": 1483.0,
+      "high": 1494.0,
+      "low": 1436.0,
+      "close": 1440.0,
+      "volume": 1360100.0,
+      "sma25": 1073.72,
+      "sma75": 916.93,
+      "sma200": 805.31,
+      "rsi14": 35.86,
+      "rsi5": 42.93
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 61.38,
-    "monthly_rsi_ma5": 40.48,
-    "spread": 20.9,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 59.07,
+    "monthly_rsi_ma5": 40.02,
+    "spread": 19.05,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

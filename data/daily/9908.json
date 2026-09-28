@@ -2,12 +2,12 @@
   "code": "9908",
   "ticker": "9908.T",
   "name": "日本電計",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 2959.0,
-    "change_from_signal_month_pct": 11.87,
-    "return_since_gc_pct": 12.98
+    "current_price": 2969.0,
+    "change_from_signal_month_pct": 12.25,
+    "return_since_gc_pct": 13.36
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 2519.57,
       "rsi14": 65.2,
       "rsi5": 68.2
+    },
+    {
+      "date": "2026-09-25",
+      "open": 2979.0,
+      "high": 2995.0,
+      "low": 2959.0,
+      "close": 2959.0,
+      "volume": 8700.0,
+      "sma25": 2831.2,
+      "sma75": 2681.07,
+      "sma200": 2524.09,
+      "rsi14": 65.2,
+      "rsi5": 68.2
+    },
+    {
+      "date": "2026-09-28",
+      "open": 2960.0,
+      "high": 2995.0,
+      "low": 2959.0,
+      "close": 2969.0,
+      "volume": 11200.0,
+      "sma25": 2844.56,
+      "sma75": 2688.29,
+      "sma200": 2528.61,
+      "rsi14": 65.2,
+      "rsi5": 68.2
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 72.88,
-    "monthly_rsi_ma5": 68.05,
-    "spread": 4.83,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 73.06,
+    "monthly_rsi_ma5": 68.09,
+    "spread": 4.97,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

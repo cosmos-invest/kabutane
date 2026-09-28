@@ -2,12 +2,12 @@
   "code": "3402",
   "ticker": "3402.T",
   "name": "東レ",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 1251.0,
-    "change_from_signal_month_pct": 8.03,
-    "return_since_gc_pct": 8.03
+    "current_price": 1251.5,
+    "change_from_signal_month_pct": 8.07,
+    "return_since_gc_pct": 8.07
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 1159.35,
       "rsi14": 58.31,
       "rsi5": 58.41
+    },
+    {
+      "date": "2026-09-25",
+      "open": 1250.5,
+      "high": 1260.5,
+      "low": 1246.0,
+      "close": 1253.0,
+      "volume": 3876500.0,
+      "sma25": 1262.94,
+      "sma75": 1210.64,
+      "sma200": 1160.57,
+      "rsi14": 58.31,
+      "rsi5": 58.41
+    },
+    {
+      "date": "2026-09-28",
+      "open": 1272.0,
+      "high": 1275.5,
+      "low": 1251.5,
+      "close": 1251.5,
+      "volume": 4467400.0,
+      "sma25": 1261.84,
+      "sma75": 1212.73,
+      "sma200": 1161.76,
+      "rsi14": 58.31,
+      "rsi5": 58.41
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 61.05,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 61.08,
     "monthly_rsi_ma5": 59.94,
-    "spread": 1.11,
+    "spread": 1.14,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "9692",
   "ticker": "9692.T",
   "name": "シーイーシー",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 2244.0,
-    "change_from_signal_month_pct": 0.22,
-    "return_since_gc_pct": 10.0
+    "current_price": 2232.0,
+    "change_from_signal_month_pct": -0.31,
+    "return_since_gc_pct": 9.41
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 2160.81,
       "rsi14": 50.63,
       "rsi5": 55.74
+    },
+    {
+      "date": "2026-09-25",
+      "open": 2262.0,
+      "high": 2262.0,
+      "low": 2229.0,
+      "close": 2231.0,
+      "volume": 152200.0,
+      "sma25": 2354.08,
+      "sma75": 2232.03,
+      "sma200": 2160.69,
+      "rsi14": 50.63,
+      "rsi5": 55.74
+    },
+    {
+      "date": "2026-09-28",
+      "open": 2243.0,
+      "high": 2248.0,
+      "low": 2229.0,
+      "close": 2232.0,
+      "volume": 145300.0,
+      "sma25": 2349.48,
+      "sma75": 2234.75,
+      "sma200": 2160.56,
+      "rsi14": 50.63,
+      "rsi5": 55.74
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 53.44,
-    "monthly_rsi_ma5": 54.65,
-    "spread": -1.21,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 53.16,
+    "monthly_rsi_ma5": 54.59,
+    "spread": -1.43,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

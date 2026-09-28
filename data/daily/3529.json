@@ -2,12 +2,12 @@
   "code": "3529",
   "ticker": "3529.T",
   "name": "アツギ",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 1014.0,
-    "change_from_signal_month_pct": -6.8,
-    "return_since_gc_pct": -6.8
+    "current_price": 1134.0,
+    "change_from_signal_month_pct": 4.23,
+    "return_since_gc_pct": 4.23
   },
   "daily": [
     {
@@ -412,22 +412,48 @@
       "sma200": 1078.04,
       "rsi14": 53.09,
       "rsi5": 55.09
+    },
+    {
+      "date": "2026-09-25",
+      "open": 1023.0,
+      "high": 1034.0,
+      "low": 1014.0,
+      "close": 1014.0,
+      "volume": 12700.0,
+      "sma25": 1032.8,
+      "sma75": 1022.76,
+      "sma200": 1076.97,
+      "rsi14": 53.09,
+      "rsi5": 55.09
+    },
+    {
+      "date": "2026-09-28",
+      "open": 1024.0,
+      "high": 1179.0,
+      "low": 1013.0,
+      "close": 1134.0,
+      "volume": 285200.0,
+      "sma25": 1036.76,
+      "sma75": 1024.81,
+      "sma200": 1076.48,
+      "rsi14": 53.09,
+      "rsi5": 55.09
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 52.03,
-    "monthly_rsi_ma5": 54.36,
-    "spread": -2.34,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 58.29,
+    "monthly_rsi_ma5": 55.61,
+    "spread": 2.68,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "4194",
   "ticker": "4194.T",
   "name": "ビジョナル",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 8456.0,
-    "change_from_signal_month_pct": -2.95,
-    "return_since_gc_pct": 7.72
+    "current_price": 8700.0,
+    "change_from_signal_month_pct": -0.15,
+    "return_since_gc_pct": 10.83
   },
   "daily": [
     {
@@ -412,22 +412,48 @@
       "sma200": 8390.33,
       "rsi14": 44.34,
       "rsi5": 50.48
+    },
+    {
+      "date": "2026-09-25",
+      "open": 8400.0,
+      "high": 8600.0,
+      "low": 8371.0,
+      "close": 8503.0,
+      "volume": 327400.0,
+      "sma25": 8915.2,
+      "sma75": 8452.31,
+      "sma200": 8380.69,
+      "rsi14": 44.34,
+      "rsi5": 50.48
+    },
+    {
+      "date": "2026-09-28",
+      "open": 8600.0,
+      "high": 8713.0,
+      "low": 8514.0,
+      "close": 8700.0,
+      "volume": 275300.0,
+      "sma25": 8901.72,
+      "sma75": 8463.09,
+      "sma200": 8371.8,
+      "rsi14": 44.34,
+      "rsi5": 50.48
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 48.9,
-    "monthly_rsi_ma5": 48.96,
-    "spread": -0.05,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 50.24,
+    "monthly_rsi_ma5": 49.22,
+    "spread": 1.02,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

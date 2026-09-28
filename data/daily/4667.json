@@ -2,12 +2,12 @@
   "code": "4667",
   "ticker": "4667.T",
   "name": "アイサンテクノロジー",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 3260.0,
-    "change_from_signal_month_pct": 79.32,
-    "return_since_gc_pct": 62.92
+    "current_price": 1098.33,
+    "change_from_signal_month_pct": -39.59,
+    "return_since_gc_pct": -45.11
   },
   "daily": [
     {
@@ -412,22 +412,48 @@
       "sma200": 2018.49,
       "rsi14": 53.18,
       "rsi5": 53.34
+    },
+    {
+      "date": "2026-09-25",
+      "open": 3260.0,
+      "high": 3335.0,
+      "low": 3235.0,
+      "close": 3310.0,
+      "volume": 89900.0,
+      "sma25": 2931.36,
+      "sma75": 2273.59,
+      "sma200": 2026.12,
+      "rsi14": 53.18,
+      "rsi5": 53.34
+    },
+    {
+      "date": "2026-09-28",
+      "open": 1098.33,
+      "high": 1176.67,
+      "low": 1081.67,
+      "close": 1098.33,
+      "volume": 516000.0,
+      "sma25": 2895.61,
+      "sma75": 2267.55,
+      "sma200": 2022.51,
+      "rsi14": 53.18,
+      "rsi5": 53.34
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 73.91,
-    "monthly_rsi_ma5": 61.07,
-    "spread": 12.85,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 42.24,
+    "monthly_rsi_ma5": 54.73,
+    "spread": -12.5,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

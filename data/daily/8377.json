@@ -2,12 +2,12 @@
   "code": "8377",
   "ticker": "8377.T",
   "name": "ほくほくフィナンシャルグループ",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 8358.0,
-    "change_from_signal_month_pct": 11.9,
-    "return_since_gc_pct": 25.19
+    "current_price": 879.4,
+    "change_from_signal_month_pct": -88.23,
+    "return_since_gc_pct": -86.83
   },
   "daily": [
     {
@@ -412,22 +412,48 @@
       "sma200": 6379.69,
       "rsi14": 84.67,
       "rsi5": 88.02
+    },
+    {
+      "date": "2026-09-25",
+      "open": 8500.0,
+      "high": 8815.0,
+      "low": 8500.0,
+      "close": 8815.0,
+      "volume": 698600.0,
+      "sma25": 8243.6,
+      "sma75": 7609.83,
+      "sma200": 6401.72,
+      "rsi14": 84.67,
+      "rsi5": 88.02
+    },
+    {
+      "date": "2026-09-28",
+      "open": 882.1,
+      "high": 890.0,
+      "low": 877.5,
+      "close": 879.4,
+      "volume": 4965000.0,
+      "sma25": 7960.3,
+      "sma75": 7536.53,
+      "sma200": 6383.91,
+      "rsi14": 84.67,
+      "rsi5": 88.02
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 89.24,
-    "monthly_rsi_ma5": 87.22,
-    "spread": 2.02,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 35.8,
+    "monthly_rsi_ma5": 76.53,
+    "spread": -40.73,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "8343",
   "ticker": "8343.T",
   "name": "秋田銀行",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 9490.0,
-    "change_from_signal_month_pct": 30.72,
-    "return_since_gc_pct": 38.74
+    "current_price": 2068.0,
+    "change_from_signal_month_pct": -71.52,
+    "return_since_gc_pct": -69.77
   },
   "daily": [
     {
@@ -412,22 +412,48 @@
       "sma200": 6028.55,
       "rsi14": 79.64,
       "rsi5": 84.78
+    },
+    {
+      "date": "2026-09-25",
+      "open": 9600.0,
+      "high": 10280.0,
+      "low": 9600.0,
+      "close": 10250.0,
+      "volume": 263200.0,
+      "sma25": 9052.8,
+      "sma75": 7766.27,
+      "sma200": 6060.55,
+      "rsi14": 79.64,
+      "rsi5": 84.78
+    },
+    {
+      "date": "2026-09-28",
+      "open": 2068.0,
+      "high": 2092.0,
+      "low": 2030.0,
+      "close": 2068.0,
+      "volume": 1032000.0,
+      "sma25": 8795.12,
+      "sma75": 7715.31,
+      "sma200": 6051.52,
+      "rsi14": 79.64,
+      "rsi5": 84.78
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 89.92,
-    "monthly_rsi_ma5": 85.52,
-    "spread": 4.4,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 40.91,
+    "monthly_rsi_ma5": 75.71,
+    "spread": -34.8,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

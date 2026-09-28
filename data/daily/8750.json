@@ -2,12 +2,12 @@
   "code": "8750",
   "ticker": "8750.T",
   "name": "第一ライフグループ",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 1870.5,
-    "change_from_signal_month_pct": -2.5,
-    "return_since_gc_pct": 14.33
+    "current_price": 1943.5,
+    "change_from_signal_month_pct": 1.3,
+    "return_since_gc_pct": 18.8
   },
   "daily": [
     {
@@ -412,22 +412,48 @@
       "sma200": 1585.65,
       "rsi14": 68.86,
       "rsi5": 75.43
+    },
+    {
+      "date": "2026-09-25",
+      "open": 1890.0,
+      "high": 1909.5,
+      "low": 1879.0,
+      "close": 1907.0,
+      "volume": 8401200.0,
+      "sma25": 1849.84,
+      "sma75": 1840.93,
+      "sma200": 1589.06,
+      "rsi14": 68.86,
+      "rsi5": 75.43
+    },
+    {
+      "date": "2026-09-28",
+      "open": 1922.5,
+      "high": 1948.5,
+      "low": 1907.0,
+      "close": 1943.5,
+      "volume": 14931300.0,
+      "sma25": 1856.54,
+      "sma75": 1844.61,
+      "sma200": 1592.68,
+      "rsi14": 68.86,
+      "rsi5": 75.43
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 72.4,
-    "monthly_rsi_ma5": 72.82,
-    "spread": -0.42,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 73.87,
+    "monthly_rsi_ma5": 73.11,
+    "spread": 0.75,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

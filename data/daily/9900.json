@@ -2,12 +2,12 @@
   "code": "9900",
   "ticker": "9900.T",
   "name": "サガミホールディングス",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 1091.0,
-    "change_from_signal_month_pct": -47.42,
-    "return_since_gc_pct": -47.42
+    "current_price": 1102.0,
+    "change_from_signal_month_pct": -46.89,
+    "return_since_gc_pct": -46.89
   },
   "daily": [
     {
@@ -412,22 +412,41 @@
       "sma200": 1703.83,
       "rsi14": 53.34,
       "rsi5": 65.09
-    }
-  ],
-  "corporate_events": [
+    },
     {
-      "date": "2026-08-27",
-      "type": "SPLIT",
-      "label": "株式分割・併合",
-      "detail": "比率 2"
+      "date": "2026-09-25",
+      "open": 1095.0,
+      "high": 1112.0,
+      "low": 1095.0,
+      "close": 1108.0,
+      "volume": 342300.0,
+      "sma25": 1111.5,
+      "sma75": 1489.31,
+      "sma200": 1700.12,
+      "rsi14": 53.34,
+      "rsi5": 65.09
+    },
+    {
+      "date": "2026-09-28",
+      "open": 1103.0,
+      "high": 1115.0,
+      "low": 1100.0,
+      "close": 1102.0,
+      "volume": 944600.0,
+      "sma25": 1112.12,
+      "sma75": 1483.61,
+      "sma200": 1696.37,
+      "rsi14": 53.34,
+      "rsi5": 65.09
     }
   ],
+  "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 35.11,
-    "monthly_rsi_ma5": 46.23,
-    "spread": -11.11,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 35.31,
+    "monthly_rsi_ma5": 46.27,
+    "spread": -10.96,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -436,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

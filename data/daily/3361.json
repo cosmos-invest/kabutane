@@ -2,12 +2,12 @@
   "code": "3361",
   "ticker": "3361.T",
   "name": "トーエル",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 891.0,
-    "change_from_signal_month_pct": 1.71,
-    "return_since_gc_pct": 1.71
+    "current_price": 903.0,
+    "change_from_signal_month_pct": 3.08,
+    "return_since_gc_pct": 3.08
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 877.98,
       "rsi14": 56.04,
       "rsi5": 57.03
+    },
+    {
+      "date": "2026-09-25",
+      "open": 889.0,
+      "high": 906.0,
+      "low": 885.0,
+      "close": 906.0,
+      "volume": 4800.0,
+      "sma25": 892.92,
+      "sma75": 880.39,
+      "sma200": 878.34,
+      "rsi14": 56.04,
+      "rsi5": 57.03
+    },
+    {
+      "date": "2026-09-28",
+      "open": 906.0,
+      "high": 907.0,
+      "low": 902.0,
+      "close": 903.0,
+      "volume": 2700.0,
+      "sma25": 894.04,
+      "sma75": 881.15,
+      "sma200": 878.71,
+      "rsi14": 56.04,
+      "rsi5": 57.03
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 59.1,
-    "monthly_rsi_ma5": 57.84,
-    "spread": 1.26,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 60.79,
+    "monthly_rsi_ma5": 58.18,
+    "spread": 2.61,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

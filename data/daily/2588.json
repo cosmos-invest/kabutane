@@ -2,12 +2,12 @@
   "code": "2588",
   "ticker": "2588.T",
   "name": "プレミアムウォーターホールディングス",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 3700.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 3670.0,
+    "change_from_signal_month_pct": -0.81,
+    "return_since_gc_pct": -0.81
   },
   "daily": [
     {
@@ -412,22 +412,48 @@
       "sma200": 3612.65,
       "rsi14": 58.37,
       "rsi5": 59.93
+    },
+    {
+      "date": "2026-09-25",
+      "open": 3765.0,
+      "high": 3765.0,
+      "low": 3635.0,
+      "close": 3650.0,
+      "volume": 8700.0,
+      "sma25": 3705.2,
+      "sma75": 3678.2,
+      "sma200": 3614.12,
+      "rsi14": 58.37,
+      "rsi5": 59.93
+    },
+    {
+      "date": "2026-09-28",
+      "open": 3650.0,
+      "high": 3700.0,
+      "low": 3590.0,
+      "close": 3670.0,
+      "volume": 4500.0,
+      "sma25": 3707.8,
+      "sma75": 3682.07,
+      "sma200": 3615.65,
+      "rsi14": 58.37,
+      "rsi5": 59.93
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 59.22,
-    "monthly_rsi_ma5": 59.01,
-    "spread": 0.2,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 58.39,
+    "monthly_rsi_ma5": 58.85,
+    "spread": -0.46,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

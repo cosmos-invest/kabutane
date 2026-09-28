@@ -2,12 +2,12 @@
   "code": "7186",
   "ticker": "7186.T",
   "name": "横浜フィナンシャルグループ",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 1856.5,
-    "change_from_signal_month_pct": 0.95,
-    "return_since_gc_pct": 7.16
+    "current_price": 1917.0,
+    "change_from_signal_month_pct": 4.24,
+    "return_since_gc_pct": 10.65
   },
   "daily": [
     {
@@ -412,22 +412,48 @@
       "sma200": 1608.14,
       "rsi14": 70.28,
       "rsi5": 75.39
+    },
+    {
+      "date": "2026-09-25",
+      "open": 1875.5,
+      "high": 1930.5,
+      "low": 1874.0,
+      "close": 1930.5,
+      "volume": 4637200.0,
+      "sma25": 1904.4,
+      "sma75": 1852.26,
+      "sma200": 1611.6,
+      "rsi14": 70.28,
+      "rsi5": 75.39
+    },
+    {
+      "date": "2026-09-28",
+      "open": 1898.0,
+      "high": 1921.5,
+      "low": 1898.0,
+      "close": 1917.0,
+      "volume": 6017700.0,
+      "sma25": 1906.96,
+      "sma75": 1855.93,
+      "sma200": 1615.01,
+      "rsi14": 70.28,
+      "rsi5": 75.39
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 72.21,
-    "monthly_rsi_ma5": 73.98,
-    "spread": -1.77,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 75.56,
+    "monthly_rsi_ma5": 74.65,
+    "spread": 0.9,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

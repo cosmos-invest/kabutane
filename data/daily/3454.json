@@ -2,12 +2,12 @@
   "code": "3454",
   "ticker": "3454.T",
   "name": "ファーストブラザーズ",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 1267.0,
-    "change_from_signal_month_pct": 0.16,
-    "return_since_gc_pct": 0.16
+    "current_price": 1260.0,
+    "change_from_signal_month_pct": -0.4,
+    "return_since_gc_pct": -0.4
   },
   "daily": [
     {
@@ -412,22 +412,48 @@
       "sma200": 1212.36,
       "rsi14": 56.75,
       "rsi5": 61.63
+    },
+    {
+      "date": "2026-09-25",
+      "open": 1274.0,
+      "high": 1285.0,
+      "low": 1253.0,
+      "close": 1274.0,
+      "volume": 6300.0,
+      "sma25": 1269.72,
+      "sma75": 1244.04,
+      "sma200": 1212.95,
+      "rsi14": 56.75,
+      "rsi5": 61.63
+    },
+    {
+      "date": "2026-09-28",
+      "open": 1275.0,
+      "high": 1289.0,
+      "low": 1247.0,
+      "close": 1260.0,
+      "volume": 14900.0,
+      "sma25": 1269.32,
+      "sma75": 1244.85,
+      "sma200": 1213.41,
+      "rsi14": 56.75,
+      "rsi5": 61.63
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 59.6,
-    "monthly_rsi_ma5": 59.16,
-    "spread": 0.45,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 58.94,
+    "monthly_rsi_ma5": 59.02,
+    "spread": -0.08,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

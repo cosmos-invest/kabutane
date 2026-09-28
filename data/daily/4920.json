@@ -2,12 +2,12 @@
   "code": "4920",
   "ticker": "4920.T",
   "name": "日本色材工業研究所",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 1137.0,
-    "change_from_signal_month_pct": 1.34,
-    "return_since_gc_pct": -1.22
+    "current_price": 1130.0,
+    "change_from_signal_month_pct": 0.71,
+    "return_since_gc_pct": -1.82
   },
   "daily": [
     {
@@ -412,22 +412,48 @@
       "sma200": 1136.88,
       "rsi14": 44.96,
       "rsi5": 45.07
+    },
+    {
+      "date": "2026-09-25",
+      "open": 1131.0,
+      "high": 1145.0,
+      "low": 1128.0,
+      "close": 1145.0,
+      "volume": 1400.0,
+      "sma25": 1132.68,
+      "sma75": 1126.12,
+      "sma200": 1137.09,
+      "rsi14": 44.96,
+      "rsi5": 45.07
+    },
+    {
+      "date": "2026-09-28",
+      "open": 1144.0,
+      "high": 1144.0,
+      "low": 1130.0,
+      "close": 1130.0,
+      "volume": 500.0,
+      "sma25": 1133.32,
+      "sma75": 1126.32,
+      "sma200": 1137.18,
+      "rsi14": 44.96,
+      "rsi5": 45.07
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 42.45,
-    "monthly_rsi_ma5": 42.37,
-    "spread": 0.08,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 42.1,
+    "monthly_rsi_ma5": 42.3,
+    "spread": -0.2,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

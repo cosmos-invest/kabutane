@@ -2,12 +2,12 @@
   "code": "5574",
   "ticker": "5574.T",
   "name": "ＡＢＥＪＡ",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 3345.0,
-    "change_from_signal_month_pct": 22.44,
-    "return_since_gc_pct": 22.44
+    "current_price": 3150.0,
+    "change_from_signal_month_pct": 15.3,
+    "return_since_gc_pct": 15.3
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 2694.96,
       "rsi14": 39.26,
       "rsi5": 42.89
+    },
+    {
+      "date": "2026-09-25",
+      "open": 3330.0,
+      "high": 3340.0,
+      "low": 3205.0,
+      "close": 3210.0,
+      "volume": 163600.0,
+      "sma25": 2997.44,
+      "sma75": 2598.69,
+      "sma200": 2696.93,
+      "rsi14": 39.26,
+      "rsi5": 42.89
+    },
+    {
+      "date": "2026-09-28",
+      "open": 3215.0,
+      "high": 3250.0,
+      "low": 3130.0,
+      "close": 3150.0,
+      "volume": 101500.0,
+      "sma25": 3010.76,
+      "sma75": 2610.49,
+      "sma200": 2699.14,
+      "rsi14": 39.26,
+      "rsi5": 42.89
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 51.25,
-    "monthly_rsi_ma5": 45.24,
-    "spread": 6.02,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 49.47,
+    "monthly_rsi_ma5": 44.88,
+    "spread": 4.59,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

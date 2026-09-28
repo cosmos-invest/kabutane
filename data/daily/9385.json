@@ -2,12 +2,12 @@
   "code": "9385",
   "ticker": "9385.T",
   "name": "ショーエイコーポレーション",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 750.0,
-    "change_from_signal_month_pct": -2.85,
-    "return_since_gc_pct": -2.85
+    "current_price": 745.0,
+    "change_from_signal_month_pct": -3.5,
+    "return_since_gc_pct": -3.5
   },
   "daily": [
     {
@@ -412,22 +412,48 @@
       "sma200": 717.85,
       "rsi14": 61.2,
       "rsi5": 65.35
+    },
+    {
+      "date": "2026-09-25",
+      "open": 750.0,
+      "high": 755.0,
+      "low": 748.0,
+      "close": 750.0,
+      "volume": 6900.0,
+      "sma25": 752.8,
+      "sma75": 744.36,
+      "sma200": 718.57,
+      "rsi14": 61.2,
+      "rsi5": 65.35
+    },
+    {
+      "date": "2026-09-28",
+      "open": 750.0,
+      "high": 750.0,
+      "low": 745.0,
+      "close": 745.0,
+      "volume": 7900.0,
+      "sma25": 752.84,
+      "sma75": 745.21,
+      "sma200": 719.25,
+      "rsi14": 61.2,
+      "rsi5": 65.35
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 62.53,
-    "monthly_rsi_ma5": 62.24,
-    "spread": 0.28,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 61.74,
+    "monthly_rsi_ma5": 62.09,
+    "spread": -0.34,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

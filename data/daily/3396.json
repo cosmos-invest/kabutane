@@ -2,12 +2,12 @@
   "code": "3396",
   "ticker": "3396.T",
   "name": "フェリシモ",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 861.0,
-    "change_from_signal_month_pct": -1.71,
-    "return_since_gc_pct": 0.58
+    "current_price": 862.0,
+    "change_from_signal_month_pct": -1.6,
+    "return_since_gc_pct": 0.7
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 859.61,
       "rsi14": 47.61,
       "rsi5": 50.33
+    },
+    {
+      "date": "2026-09-25",
+      "open": 861.0,
+      "high": 861.0,
+      "low": 859.0,
+      "close": 861.0,
+      "volume": 3600.0,
+      "sma25": 868.92,
+      "sma75": 862.15,
+      "sma200": 859.75,
+      "rsi14": 47.61,
+      "rsi5": 50.33
+    },
+    {
+      "date": "2026-09-28",
+      "open": 861.0,
+      "high": 862.0,
+      "low": 860.0,
+      "close": 862.0,
+      "volume": 4300.0,
+      "sma25": 868.44,
+      "sma75": 862.48,
+      "sma200": 859.85,
+      "rsi14": 47.61,
+      "rsi5": 50.33
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 47.44,
-    "monthly_rsi_ma5": 47.07,
-    "spread": 0.37,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 47.61,
+    "monthly_rsi_ma5": 47.11,
+    "spread": 0.51,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

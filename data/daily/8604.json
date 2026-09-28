@@ -2,12 +2,12 @@
   "code": "8604",
   "ticker": "8604.T",
   "name": "野村ホールディングス",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 1549.5,
-    "change_from_signal_month_pct": 1.94,
-    "return_since_gc_pct": 9.62
+    "current_price": 1595.0,
+    "change_from_signal_month_pct": 4.93,
+    "return_since_gc_pct": 12.84
   },
   "daily": [
     {
@@ -412,22 +412,48 @@
       "sma200": 1393.19,
       "rsi14": 64.51,
       "rsi5": 70.58
+    },
+    {
+      "date": "2026-09-25",
+      "open": 1566.5,
+      "high": 1596.0,
+      "low": 1559.5,
+      "close": 1586.0,
+      "volume": 9617000.0,
+      "sma25": 1609.22,
+      "sma75": 1536.46,
+      "sma200": 1395.26,
+      "rsi14": 64.51,
+      "rsi5": 70.58
+    },
+    {
+      "date": "2026-09-28",
+      "open": 1585.5,
+      "high": 1604.5,
+      "low": 1579.0,
+      "close": 1595.0,
+      "volume": 11483800.0,
+      "sma25": 1612.64,
+      "sma75": 1539.6,
+      "sma200": 1397.35,
+      "rsi14": 64.51,
+      "rsi5": 70.58
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 68.67,
-    "monthly_rsi_ma5": 69.29,
-    "spread": -0.63,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 71.46,
+    "monthly_rsi_ma5": 69.85,
+    "spread": 1.61,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

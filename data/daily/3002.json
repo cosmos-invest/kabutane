@@ -2,12 +2,12 @@
   "code": "3002",
   "ticker": "3002.T",
   "name": "グンゼ",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 4110.0,
-    "change_from_signal_month_pct": 2.24,
-    "return_since_gc_pct": 2.24
+    "current_price": 4085.0,
+    "change_from_signal_month_pct": 1.62,
+    "return_since_gc_pct": 1.62
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 4108.98,
       "rsi14": 57.11,
       "rsi5": 60.72
+    },
+    {
+      "date": "2026-09-25",
+      "open": 4140.0,
+      "high": 4140.0,
+      "low": 4105.0,
+      "close": 4125.0,
+      "volume": 253300.0,
+      "sma25": 4122.4,
+      "sma75": 4018.53,
+      "sma200": 4108.95,
+      "rsi14": 57.11,
+      "rsi5": 60.72
+    },
+    {
+      "date": "2026-09-28",
+      "open": 4155.0,
+      "high": 4165.0,
+      "low": 4085.0,
+      "close": 4085.0,
+      "volume": 431700.0,
+      "sma25": 4118.8,
+      "sma75": 4024.13,
+      "sma200": 4108.68,
+      "rsi14": 57.11,
+      "rsi5": 60.72
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 62.05,
-    "monthly_rsi_ma5": 60.54,
-    "spread": 1.51,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 61.45,
+    "monthly_rsi_ma5": 60.42,
+    "spread": 1.03,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

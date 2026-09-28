@@ -2,12 +2,12 @@
   "code": "7812",
   "ticker": "7812.T",
   "name": "クレステック",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 2082.0,
-    "change_from_signal_month_pct": -3.79,
-    "return_since_gc_pct": 4.1
+    "current_price": 2115.0,
+    "change_from_signal_month_pct": -2.26,
+    "return_since_gc_pct": 5.75
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 2033.03,
       "rsi14": 61.21,
       "rsi5": 67.06
+    },
+    {
+      "date": "2026-09-25",
+      "open": 2070.0,
+      "high": 2120.0,
+      "low": 2070.0,
+      "close": 2116.0,
+      "volume": 2700.0,
+      "sma25": 2118.52,
+      "sma75": 2135.47,
+      "sma200": 2033.79,
+      "rsi14": 61.21,
+      "rsi5": 67.06
+    },
+    {
+      "date": "2026-09-28",
+      "open": 2116.0,
+      "high": 2116.0,
+      "low": 2081.0,
+      "close": 2115.0,
+      "volume": 1600.0,
+      "sma25": 2117.44,
+      "sma75": 2136.79,
+      "sma200": 2034.38,
+      "rsi14": 61.21,
+      "rsi5": 67.06
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 58.54,
-    "monthly_rsi_ma5": 61.34,
-    "spread": -2.8,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 60.88,
+    "monthly_rsi_ma5": 61.81,
+    "spread": -0.93,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

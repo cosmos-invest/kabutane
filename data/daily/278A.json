@@ -2,12 +2,12 @@
   "code": "278A",
   "ticker": "278A.T",
   "name": "Ｔｅｒｒａ　Ｄｒｏｎｅ",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 19950.0,
-    "change_from_signal_month_pct": 89.28,
-    "return_since_gc_pct": 105.88
+    "current_price": 9765.0,
+    "change_from_signal_month_pct": -7.35,
+    "return_since_gc_pct": 0.77
   },
   "daily": [
     {
@@ -412,22 +412,48 @@
       "sma200": 7795.23,
       "rsi14": 64.11,
       "rsi5": 66.98
+    },
+    {
+      "date": "2026-09-25",
+      "open": 20650.0,
+      "high": 21030.0,
+      "low": 19800.0,
+      "close": 19800.0,
+      "volume": 1384000.0,
+      "sma25": 18202.4,
+      "sma75": 13075.47,
+      "sma200": 7879.27,
+      "rsi14": 64.11,
+      "rsi5": 66.98
+    },
+    {
+      "date": "2026-09-28",
+      "open": 9900.0,
+      "high": 10100.0,
+      "low": 9750.0,
+      "close": 9765.0,
+      "volume": 1299400.0,
+      "sma25": 18065.8,
+      "sma75": 13095.53,
+      "sma200": 7912.6,
+      "rsi14": 64.11,
+      "rsi5": 66.98
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 78.23,
-    "monthly_rsi_ma5": 70.38,
-    "spread": 7.85,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 57.13,
+    "monthly_rsi_ma5": 66.16,
+    "spread": -9.03,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "4771",
   "ticker": "4771.T",
   "name": "エフアンドエム",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 2802.0,
-    "change_from_signal_month_pct": 7.85,
-    "return_since_gc_pct": 11.32
+    "current_price": 2754.0,
+    "change_from_signal_month_pct": 6.0,
+    "return_since_gc_pct": 9.42
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 2405.81,
       "rsi14": 52.62,
       "rsi5": 58.12
+    },
+    {
+      "date": "2026-09-25",
+      "open": 2801.0,
+      "high": 2803.0,
+      "low": 2735.0,
+      "close": 2770.0,
+      "volume": 18100.0,
+      "sma25": 2718.04,
+      "sma75": 2548.55,
+      "sma200": 2407.27,
+      "rsi14": 52.62,
+      "rsi5": 58.12
+    },
+    {
+      "date": "2026-09-28",
+      "open": 2770.0,
+      "high": 2780.0,
+      "low": 2746.0,
+      "close": 2754.0,
+      "volume": 6200.0,
+      "sma25": 2720.2,
+      "sma75": 2552.6,
+      "sma200": 2408.62,
+      "rsi14": 52.62,
+      "rsi5": 58.12
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 60.58,
-    "monthly_rsi_ma5": 56.34,
-    "spread": 4.24,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 59.58,
+    "monthly_rsi_ma5": 56.14,
+    "spread": 3.44,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "3148",
   "ticker": "3148.T",
   "name": "クリエイトＳＤホールディングス",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 3295.0,
-    "change_from_signal_month_pct": -1.05,
-    "return_since_gc_pct": -1.05
+    "current_price": 3305.0,
+    "change_from_signal_month_pct": -0.75,
+    "return_since_gc_pct": -0.75
   },
   "daily": [
     {
@@ -412,22 +412,48 @@
       "sma200": 3303.88,
       "rsi14": 51.31,
       "rsi5": 53.42
+    },
+    {
+      "date": "2026-09-25",
+      "open": 3295.0,
+      "high": 3325.0,
+      "low": 3295.0,
+      "close": 3310.0,
+      "volume": 78900.0,
+      "sma25": 3376.4,
+      "sma75": 3328.33,
+      "sma200": 3303.88,
+      "rsi14": 51.31,
+      "rsi5": 53.42
+    },
+    {
+      "date": "2026-09-28",
+      "open": 3315.0,
+      "high": 3335.0,
+      "low": 3290.0,
+      "close": 3305.0,
+      "volume": 78400.0,
+      "sma25": 3372.8,
+      "sma75": 3328.93,
+      "sma200": 3303.8,
+      "rsi14": 51.31,
+      "rsi5": 53.42
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 48.59,
-    "monthly_rsi_ma5": 48.67,
-    "spread": -0.08,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 48.96,
+    "monthly_rsi_ma5": 48.74,
+    "spread": 0.22,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

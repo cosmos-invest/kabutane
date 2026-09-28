@@ -2,12 +2,12 @@
   "code": "246A",
   "ticker": "246A.T",
   "name": "アスア",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 1078.0,
-    "change_from_signal_month_pct": -1.01,
-    "return_since_gc_pct": -1.01
+    "current_price": 1126.0,
+    "change_from_signal_month_pct": 3.4,
+    "return_since_gc_pct": 3.4
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 901.66,
       "rsi14": 55.03,
       "rsi5": 57.48
+    },
+    {
+      "date": "2026-09-25",
+      "open": 1108.0,
+      "high": 1110.0,
+      "low": 1090.0,
+      "close": 1102.0,
+      "volume": 3600.0,
+      "sma25": 961.52,
+      "sma75": 1024.0,
+      "sma200": 903.9,
+      "rsi14": 55.03,
+      "rsi5": 57.48
+    },
+    {
+      "date": "2026-09-28",
+      "open": 1115.0,
+      "high": 1127.0,
+      "low": 1109.0,
+      "close": 1126.0,
+      "volume": 4900.0,
+      "sma25": 970.04,
+      "sma75": 1024.79,
+      "sma200": 906.23,
+      "rsi14": 55.03,
+      "rsi5": 57.48
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 55.82,
-    "monthly_rsi_ma5": 55.06,
-    "spread": 0.76,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 57.41,
+    "monthly_rsi_ma5": 55.38,
+    "spread": 2.03,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

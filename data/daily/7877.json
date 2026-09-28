@@ -2,12 +2,12 @@
   "code": "7877",
   "ticker": "7877.T",
   "name": "永大化工",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 2152.0,
-    "change_from_signal_month_pct": 0.23,
-    "return_since_gc_pct": 0.23
+    "current_price": 2182.0,
+    "change_from_signal_month_pct": 1.63,
+    "return_since_gc_pct": 1.63
   },
   "daily": [
     {
@@ -412,22 +412,48 @@
       "sma200": 2015.28,
       "rsi14": 63.52,
       "rsi5": 64.4
+    },
+    {
+      "date": "2026-09-25",
+      "open": 2176.0,
+      "high": 2176.0,
+      "low": 2176.0,
+      "close": 2176.0,
+      "volume": 100.0,
+      "sma25": 2209.8,
+      "sma75": 2122.88,
+      "sma200": 2017.5,
+      "rsi14": 63.52,
+      "rsi5": 64.4
+    },
+    {
+      "date": "2026-09-28",
+      "open": 2176.0,
+      "high": 2182.0,
+      "low": 2156.0,
+      "close": 2182.0,
+      "volume": 500.0,
+      "sma25": 2207.28,
+      "sma75": 2126.12,
+      "sma200": 2019.67,
+      "rsi14": 63.52,
+      "rsi5": 64.4
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 62.47,
-    "monthly_rsi_ma5": 62.93,
-    "spread": -0.46,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 63.93,
+    "monthly_rsi_ma5": 63.23,
+    "spread": 0.7,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

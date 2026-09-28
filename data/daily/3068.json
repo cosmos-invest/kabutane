@@ -2,12 +2,12 @@
   "code": "3068",
   "ticker": "3068.T",
   "name": "ＷＤＩ",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 3050.0,
-    "change_from_signal_month_pct": 1.67,
-    "return_since_gc_pct": 1.67
+    "current_price": 3065.0,
+    "change_from_signal_month_pct": 2.17,
+    "return_since_gc_pct": 2.17
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 3058.34,
       "rsi14": 48.09,
       "rsi5": 50.78
+    },
+    {
+      "date": "2026-09-25",
+      "open": 3060.0,
+      "high": 3060.0,
+      "low": 3045.0,
+      "close": 3055.0,
+      "volume": 5900.0,
+      "sma25": 3042.8,
+      "sma75": 2984.83,
+      "sma200": 3058.59,
+      "rsi14": 48.09,
+      "rsi5": 50.78
+    },
+    {
+      "date": "2026-09-28",
+      "open": 3065.0,
+      "high": 3065.0,
+      "low": 3055.0,
+      "close": 3065.0,
+      "volume": 2900.0,
+      "sma25": 3044.6,
+      "sma75": 2987.21,
+      "sma200": 3058.76,
+      "rsi14": 48.09,
+      "rsi5": 50.78
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 52.9,
-    "monthly_rsi_ma5": 49.8,
-    "spread": 3.1,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 53.54,
+    "monthly_rsi_ma5": 49.93,
+    "spread": 3.61,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

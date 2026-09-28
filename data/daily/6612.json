@@ -2,12 +2,12 @@
   "code": "6612",
   "ticker": "6612.T",
   "name": "バルミューダ",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 585.0,
-    "change_from_signal_month_pct": -2.66,
-    "return_since_gc_pct": 0.34
+    "current_price": 583.0,
+    "change_from_signal_month_pct": -3.0,
+    "return_since_gc_pct": 0.0
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 623.97,
       "rsi14": 27.57,
       "rsi5": 28.88
+    },
+    {
+      "date": "2026-09-25",
+      "open": 582.0,
+      "high": 583.0,
+      "low": 582.0,
+      "close": 583.0,
+      "volume": 1000.0,
+      "sma25": 595.88,
+      "sma75": 600.08,
+      "sma200": 623.11,
+      "rsi14": 27.57,
+      "rsi5": 28.88
+    },
+    {
+      "date": "2026-09-28",
+      "open": 583.0,
+      "high": 584.0,
+      "low": 583.0,
+      "close": 583.0,
+      "volume": 1300.0,
+      "sma25": 595.4,
+      "sma75": 600.25,
+      "sma200": 622.24,
+      "rsi14": 27.57,
+      "rsi5": 28.88
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 21.76,
-    "monthly_rsi_ma5": 21.04,
-    "spread": 0.72,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 21.68,
+    "monthly_rsi_ma5": 21.02,
+    "spread": 0.66,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

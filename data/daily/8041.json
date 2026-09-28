@@ -2,12 +2,12 @@
   "code": "8041",
   "ticker": "8041.T",
   "name": "ＯＵＧホールディングス",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 4645.0,
-    "change_from_signal_month_pct": 4.62,
-    "return_since_gc_pct": 4.62
+    "current_price": 4470.0,
+    "change_from_signal_month_pct": 0.68,
+    "return_since_gc_pct": 0.68
   },
   "daily": [
     {
@@ -412,22 +412,48 @@
       "sma200": 4231.73,
       "rsi14": 63.99,
       "rsi5": 67.16
+    },
+    {
+      "date": "2026-09-25",
+      "open": 4645.0,
+      "high": 4645.0,
+      "low": 4605.0,
+      "close": 4615.0,
+      "volume": 4600.0,
+      "sma25": 4613.0,
+      "sma75": 4449.07,
+      "sma200": 4234.82,
+      "rsi14": 63.99,
+      "rsi5": 67.16
+    },
+    {
+      "date": "2026-09-28",
+      "open": 4605.0,
+      "high": 4610.0,
+      "low": 4470.0,
+      "close": 4470.0,
+      "volume": 12500.0,
+      "sma25": 4611.8,
+      "sma75": 4451.07,
+      "sma200": 4236.73,
+      "rsi14": 63.99,
+      "rsi5": 67.16
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 69.13,
-    "monthly_rsi_ma5": 67.74,
-    "spread": 1.39,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 64.63,
+    "monthly_rsi_ma5": 66.84,
+    "spread": -2.21,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

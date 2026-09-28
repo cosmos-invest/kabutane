@@ -2,12 +2,12 @@
   "code": "9052",
   "ticker": "9052.T",
   "name": "山陽電気鉄道",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 1998.0,
-    "change_from_signal_month_pct": -0.25,
-    "return_since_gc_pct": -0.25
+    "current_price": 2018.0,
+    "change_from_signal_month_pct": 0.75,
+    "return_since_gc_pct": 0.75
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 2003.48,
       "rsi14": 43.34,
       "rsi5": 47.4
+    },
+    {
+      "date": "2026-09-25",
+      "open": 2009.0,
+      "high": 2010.0,
+      "low": 2002.0,
+      "close": 2007.0,
+      "volume": 47800.0,
+      "sma25": 2015.6,
+      "sma75": 1978.36,
+      "sma200": 2003.13,
+      "rsi14": 43.34,
+      "rsi5": 47.4
+    },
+    {
+      "date": "2026-09-28",
+      "open": 2007.0,
+      "high": 2018.0,
+      "low": 1999.0,
+      "close": 2018.0,
+      "volume": 63600.0,
+      "sma25": 2015.68,
+      "sma75": 1979.96,
+      "sma200": 2002.8,
+      "rsi14": 43.34,
+      "rsi5": 47.4
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 45.66,
-    "monthly_rsi_ma5": 43.24,
-    "spread": 2.43,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 47.09,
+    "monthly_rsi_ma5": 43.52,
+    "spread": 3.56,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

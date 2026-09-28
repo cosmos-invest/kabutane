@@ -2,12 +2,12 @@
   "code": "7939",
   "ticker": "7939.T",
   "name": "研創",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 604.0,
-    "change_from_signal_month_pct": -0.33,
-    "return_since_gc_pct": -0.33
+    "current_price": 600.0,
+    "change_from_signal_month_pct": -0.99,
+    "return_since_gc_pct": -0.99
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 591.61,
       "rsi14": 58.2,
       "rsi5": 61.32
+    },
+    {
+      "date": "2026-09-25",
+      "open": 604.0,
+      "high": 606.0,
+      "low": 597.0,
+      "close": 598.0,
+      "volume": 2600.0,
+      "sma25": 603.48,
+      "sma75": 593.79,
+      "sma200": 591.82,
+      "rsi14": 58.2,
+      "rsi5": 61.32
+    },
+    {
+      "date": "2026-09-28",
+      "open": 599.0,
+      "high": 602.0,
+      "low": 599.0,
+      "close": 600.0,
+      "volume": 1000.0,
+      "sma25": 602.96,
+      "sma75": 594.37,
+      "sma200": 592.06,
+      "rsi14": 58.2,
+      "rsi5": 61.32
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 60.78,
-    "monthly_rsi_ma5": 58.94,
-    "spread": 1.84,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 59.81,
+    "monthly_rsi_ma5": 58.75,
+    "spread": 1.07,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "9433",
   "ticker": "9433.T",
   "name": "ＫＤＤＩ",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 3031.0,
-    "change_from_signal_month_pct": 3.77,
-    "return_since_gc_pct": 10.68
+    "current_price": 2981.5,
+    "change_from_signal_month_pct": 2.07,
+    "return_since_gc_pct": 8.87
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 2739.66,
       "rsi14": 60.47,
       "rsi5": 65.46
+    },
+    {
+      "date": "2026-09-25",
+      "open": 3021.0,
+      "high": 3051.0,
+      "low": 3011.0,
+      "close": 3039.0,
+      "volume": 8776100.0,
+      "sma25": 2976.7,
+      "sma75": 2865.17,
+      "sma200": 2741.37,
+      "rsi14": 60.47,
+      "rsi5": 65.46
+    },
+    {
+      "date": "2026-09-28",
+      "open": 3035.0,
+      "high": 3046.0,
+      "low": 2981.5,
+      "close": 2981.5,
+      "volume": 11862300.0,
+      "sma25": 2982.34,
+      "sma75": 2868.61,
+      "sma200": 2742.83,
+      "rsi14": 60.47,
+      "rsi5": 65.46
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 68.11,
-    "monthly_rsi_ma5": 63.93,
-    "spread": 4.18,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 66.84,
+    "monthly_rsi_ma5": 63.67,
+    "spread": 3.17,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "2883",
   "ticker": "2883.T",
   "name": "大冷",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 2044.0,
-    "change_from_signal_month_pct": 2.25,
-    "return_since_gc_pct": 2.25
+    "current_price": 2053.0,
+    "change_from_signal_month_pct": 2.7,
+    "return_since_gc_pct": 2.7
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 1992.02,
       "rsi14": 57.04,
       "rsi5": 58.74
+    },
+    {
+      "date": "2026-09-25",
+      "open": 2049.0,
+      "high": 2055.0,
+      "low": 2044.0,
+      "close": 2055.0,
+      "volume": 6000.0,
+      "sma25": 2033.44,
+      "sma75": 2002.59,
+      "sma200": 1992.44,
+      "rsi14": 57.04,
+      "rsi5": 58.74
+    },
+    {
+      "date": "2026-09-28",
+      "open": 2058.0,
+      "high": 2058.0,
+      "low": 2035.0,
+      "close": 2053.0,
+      "volume": 15700.0,
+      "sma25": 2035.28,
+      "sma75": 2003.8,
+      "sma200": 1992.83,
+      "rsi14": 57.04,
+      "rsi5": 58.74
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 63.45,
-    "monthly_rsi_ma5": 57.01,
-    "spread": 6.43,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 64.72,
+    "monthly_rsi_ma5": 57.27,
+    "spread": 7.45,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

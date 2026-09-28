@@ -2,12 +2,12 @@
   "code": "8045",
   "ticker": "8045.T",
   "name": "横浜丸魚",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 2090.0,
-    "change_from_signal_month_pct": 8.57,
-    "return_since_gc_pct": 13.1
+    "current_price": 2120.0,
+    "change_from_signal_month_pct": 10.13,
+    "return_since_gc_pct": 14.72
   },
   "daily": [
     {
@@ -412,15 +412,41 @@
       "sma200": 1697.66,
       "rsi14": 72.48,
       "rsi5": 77.73
+    },
+    {
+      "date": "2026-09-25",
+      "open": 2118.0,
+      "high": 2119.0,
+      "low": 2083.0,
+      "close": 2083.0,
+      "volume": 1600.0,
+      "sma25": 2036.32,
+      "sma75": 1952.8,
+      "sma200": 1702.18,
+      "rsi14": 72.48,
+      "rsi5": 77.73
+    },
+    {
+      "date": "2026-09-28",
+      "open": 2132.0,
+      "high": 2132.0,
+      "low": 2089.0,
+      "close": 2120.0,
+      "volume": 3900.0,
+      "sma25": 2040.32,
+      "sma75": 1959.73,
+      "sma200": 1706.84,
+      "rsi14": 72.48,
+      "rsi5": 77.73
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 80.86,
-    "monthly_rsi_ma5": 77.34,
-    "spread": 3.52,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 81.32,
+    "monthly_rsi_ma5": 77.43,
+    "spread": 3.89,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -429,5 +455,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }

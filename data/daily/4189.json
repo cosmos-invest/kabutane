@@ -2,12 +2,12 @@
   "code": "4189",
   "ticker": "4189.T",
   "name": "ＫＨネオケム",
-  "generated_at": "2026-09-25T16:19:51.524053+00:00",
-  "price_date": "2026-09-24",
+  "generated_at": "2026-09-28T19:07:27.092471+00:00",
+  "price_date": "2026-09-28",
   "record": {
-    "current_price": 3235.0,
-    "change_from_signal_month_pct": -2.12,
-    "return_since_gc_pct": 9.07
+    "current_price": 3300.0,
+    "change_from_signal_month_pct": -0.15,
+    "return_since_gc_pct": 11.26
   },
   "daily": [
     {
@@ -412,22 +412,48 @@
       "sma200": 2855.82,
       "rsi14": 58.83,
       "rsi5": 66.98
+    },
+    {
+      "date": "2026-09-25",
+      "open": 3245.0,
+      "high": 3320.0,
+      "low": 3240.0,
+      "close": 3300.0,
+      "volume": 158700.0,
+      "sma25": 3304.6,
+      "sma75": 3120.27,
+      "sma200": 2860.07,
+      "rsi14": 58.83,
+      "rsi5": 66.98
+    },
+    {
+      "date": "2026-09-28",
+      "open": 3320.0,
+      "high": 3380.0,
+      "low": 3290.0,
+      "close": 3300.0,
+      "volume": 166600.0,
+      "sma25": 3308.2,
+      "sma75": 3129.37,
+      "sma200": 2864.2,
+      "rsi14": 58.83,
+      "rsi5": 66.98
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-24",
-    "monthly_rsi14": 62.85,
-    "monthly_rsi_ma5": 64.07,
-    "spread": -1.22,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-28",
+    "monthly_rsi14": 64.83,
+    "monthly_rsi_ma5": 64.47,
+    "spread": 0.36,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-25T16:21:05.878020+00:00"
+  "provisional_generated_at": "2026-09-28T19:08:24.897682+00:00"
 }
