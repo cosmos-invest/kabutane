@@ -2,12 +2,12 @@
   "code": "1853",
   "ticker": "1853.T",
   "name": "森組",
-  "generated_at": "2026-09-29T17:29:39.759797+00:00",
-  "price_date": "2026-09-28",
+  "generated_at": "2026-09-30T17:26:37.023669+00:00",
+  "price_date": "2026-09-29",
   "record": {
-    "current_price": 327.0,
-    "change_from_signal_month_pct": -1.21,
-    "return_since_gc_pct": -1.21
+    "current_price": 325.0,
+    "change_from_signal_month_pct": -1.81,
+    "return_since_gc_pct": -1.81
   },
   "daily": [
     {
@@ -438,22 +438,35 @@
       "sma200": 327.87,
       "rsi14": 50.64,
       "rsi5": 54.59
+    },
+    {
+      "date": "2026-09-29",
+      "open": 326.0,
+      "high": 327.0,
+      "low": 324.0,
+      "close": 325.0,
+      "volume": 9800.0,
+      "sma25": 326.84,
+      "sma75": 326.12,
+      "sma200": 327.89,
+      "rsi14": 50.64,
+      "rsi5": 54.59
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-28",
-    "monthly_rsi14": 53.52,
-    "monthly_rsi_ma5": 52.9,
-    "spread": 0.62,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-29",
+    "monthly_rsi14": 52.6,
+    "monthly_rsi_ma5": 52.72,
+    "spread": -0.11,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-29T17:30:53.274104+00:00"
+  "provisional_generated_at": "2026-09-30T17:27:39.407695+00:00"
 }

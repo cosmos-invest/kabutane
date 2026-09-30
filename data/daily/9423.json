@@ -2,12 +2,12 @@
   "code": "9423",
   "ticker": "9423.T",
   "name": "フォーバル・リアルストレート",
-  "generated_at": "2026-09-29T17:29:39.759797+00:00",
-  "price_date": "2026-09-28",
+  "generated_at": "2026-09-30T17:26:37.023669+00:00",
+  "price_date": "2026-09-29",
   "record": {
-    "current_price": 105.0,
-    "change_from_signal_month_pct": 0.96,
-    "return_since_gc_pct": 0.96
+    "current_price": 104.0,
+    "change_from_signal_month_pct": 0.0,
+    "return_since_gc_pct": 0.0
   },
   "daily": [
     {
@@ -438,15 +438,28 @@
       "sma200": 106.12,
       "rsi14": 45.5,
       "rsi5": 47.44
+    },
+    {
+      "date": "2026-09-29",
+      "open": 106.0,
+      "high": 106.0,
+      "low": 104.0,
+      "close": 104.0,
+      "volume": 119200.0,
+      "sma25": 104.8,
+      "sma75": 103.44,
+      "sma200": 106.11,
+      "rsi14": 45.5,
+      "rsi5": 47.44
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-28",
-    "monthly_rsi14": 49.94,
-    "monthly_rsi_ma5": 47.9,
-    "spread": 2.04,
+    "price_date": "2026-09-29",
+    "monthly_rsi14": 48.84,
+    "monthly_rsi_ma5": 47.68,
+    "spread": 1.16,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -455,5 +468,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-29T17:30:53.274104+00:00"
+  "provisional_generated_at": "2026-09-30T17:27:39.407695+00:00"
 }

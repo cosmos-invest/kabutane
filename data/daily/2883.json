@@ -2,12 +2,12 @@
   "code": "2883",
   "ticker": "2883.T",
   "name": "大冷",
-  "generated_at": "2026-09-29T17:29:39.759797+00:00",
-  "price_date": "2026-09-28",
+  "generated_at": "2026-09-30T17:26:37.023669+00:00",
+  "price_date": "2026-09-29",
   "record": {
-    "current_price": 2053.0,
-    "change_from_signal_month_pct": 2.7,
-    "return_since_gc_pct": 2.7
+    "current_price": 1968.0,
+    "change_from_signal_month_pct": -1.55,
+    "return_since_gc_pct": -1.55
   },
   "daily": [
     {
@@ -438,22 +438,35 @@
       "sma200": 1992.83,
       "rsi14": 57.04,
       "rsi5": 58.74
+    },
+    {
+      "date": "2026-09-29",
+      "open": 1957.0,
+      "high": 1978.0,
+      "low": 1953.0,
+      "close": 1968.0,
+      "volume": 15400.0,
+      "sma25": 2033.24,
+      "sma75": 2003.85,
+      "sma200": 1992.83,
+      "rsi14": 57.04,
+      "rsi5": 58.74
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-28",
-    "monthly_rsi14": 64.72,
-    "monthly_rsi_ma5": 57.27,
-    "spread": 7.45,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-29",
+    "monthly_rsi14": 48.46,
+    "monthly_rsi_ma5": 54.02,
+    "spread": -5.55,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-29T17:30:53.274104+00:00"
+  "provisional_generated_at": "2026-09-30T17:27:39.407695+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "4025",
   "ticker": "4025.T",
   "name": "多木化学",
-  "generated_at": "2026-09-29T17:29:39.759797+00:00",
-  "price_date": "2026-09-28",
+  "generated_at": "2026-09-30T17:26:37.023669+00:00",
+  "price_date": "2026-09-29",
   "record": {
-    "current_price": 5750.0,
-    "change_from_signal_month_pct": 15.81,
-    "return_since_gc_pct": 96.18
+    "current_price": 5530.0,
+    "change_from_signal_month_pct": 11.38,
+    "return_since_gc_pct": 88.67
   },
   "daily": [
     {
@@ -438,22 +438,35 @@
       "sma200": 4667.18,
       "rsi14": 64.04,
       "rsi5": 65.31
+    },
+    {
+      "date": "2026-09-29",
+      "open": 5710.0,
+      "high": 5750.0,
+      "low": 5490.0,
+      "close": 5530.0,
+      "volume": 25800.0,
+      "sma25": 5793.6,
+      "sma75": 5322.6,
+      "sma200": 4676.18,
+      "rsi14": 64.04,
+      "rsi5": 65.31
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-28",
-    "monthly_rsi14": 71.4,
-    "monthly_rsi_ma5": 69.81,
-    "spread": 1.59,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-29",
+    "monthly_rsi14": 67.56,
+    "monthly_rsi_ma5": 69.04,
+    "spread": -1.48,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-29T17:30:53.274104+00:00"
+  "provisional_generated_at": "2026-09-30T17:27:39.407695+00:00"
 }

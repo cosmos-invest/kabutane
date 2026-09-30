@@ -2,12 +2,12 @@
   "code": "5391",
   "ticker": "5391.T",
   "name": "エーアンドエーマテリアル",
-  "generated_at": "2026-09-29T17:29:39.759797+00:00",
-  "price_date": "2026-09-28",
+  "generated_at": "2026-09-30T17:26:37.023669+00:00",
+  "price_date": "2026-09-29",
   "record": {
-    "current_price": 1534.0,
-    "change_from_signal_month_pct": 1.12,
-    "return_since_gc_pct": 1.12
+    "current_price": 1488.0,
+    "change_from_signal_month_pct": -1.91,
+    "return_since_gc_pct": -1.91
   },
   "daily": [
     {
@@ -438,6 +438,19 @@
       "sma200": 1425.4,
       "rsi14": 62.68,
       "rsi5": 66.68
+    },
+    {
+      "date": "2026-09-29",
+      "open": 1495.0,
+      "high": 1509.0,
+      "low": 1486.0,
+      "close": 1488.0,
+      "volume": 4700.0,
+      "sma25": 1503.04,
+      "sma75": 1487.81,
+      "sma200": 1426.43,
+      "rsi14": 62.68,
+      "rsi5": 66.68
     }
   ],
   "corporate_events": [
@@ -450,17 +463,17 @@
   ],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-28",
-    "monthly_rsi14": 66.16,
-    "monthly_rsi_ma5": 64.26,
-    "spread": 1.91,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-29",
+    "monthly_rsi14": 62.73,
+    "monthly_rsi_ma5": 63.57,
+    "spread": -0.84,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-29T17:30:53.274104+00:00"
+  "provisional_generated_at": "2026-09-30T17:27:39.407695+00:00"
 }

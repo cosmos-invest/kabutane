@@ -2,12 +2,12 @@
   "code": "4491",
   "ticker": "4491.T",
   "name": "コンピューターマネージメント",
-  "generated_at": "2026-09-29T17:29:39.759797+00:00",
-  "price_date": "2026-09-28",
+  "generated_at": "2026-09-30T17:26:37.023669+00:00",
+  "price_date": "2026-09-29",
   "record": {
-    "current_price": 3375.0,
-    "change_from_signal_month_pct": 7.14,
-    "return_since_gc_pct": 7.14
+    "current_price": 3050.0,
+    "change_from_signal_month_pct": -3.17,
+    "return_since_gc_pct": -3.17
   },
   "daily": [
     {
@@ -438,22 +438,35 @@
       "sma200": 3020.0,
       "rsi14": 73.96,
       "rsi5": 75.05
+    },
+    {
+      "date": "2026-09-29",
+      "open": 3025.0,
+      "high": 3100.0,
+      "low": 3015.0,
+      "close": 3050.0,
+      "volume": 18700.0,
+      "sma25": 3290.0,
+      "sma75": 3163.64,
+      "sma200": 3021.76,
+      "rsi14": 73.96,
+      "rsi5": 75.05
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-28",
-    "monthly_rsi14": 79.84,
-    "monthly_rsi_ma5": 76.31,
-    "spread": 3.53,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-29",
+    "monthly_rsi14": 67.86,
+    "monthly_rsi_ma5": 73.91,
+    "spread": -6.05,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-29T17:30:53.274104+00:00"
+  "provisional_generated_at": "2026-09-30T17:27:39.407695+00:00"
 }

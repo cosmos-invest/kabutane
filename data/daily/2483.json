@@ -2,12 +2,12 @@
   "code": "2483",
   "ticker": "2483.T",
   "name": "翻訳センター",
-  "generated_at": "2026-09-29T17:29:39.759797+00:00",
-  "price_date": "2026-09-28",
+  "generated_at": "2026-09-30T17:26:37.023669+00:00",
+  "price_date": "2026-09-29",
   "record": {
-    "current_price": 2256.0,
-    "change_from_signal_month_pct": -1.87,
-    "return_since_gc_pct": 6.16
+    "current_price": 2225.0,
+    "change_from_signal_month_pct": -3.22,
+    "return_since_gc_pct": 4.71
   },
   "daily": [
     {
@@ -438,22 +438,35 @@
       "sma200": 2019.36,
       "rsi14": 56.22,
       "rsi5": 66.84
+    },
+    {
+      "date": "2026-09-29",
+      "open": 2255.0,
+      "high": 2280.0,
+      "low": 2225.0,
+      "close": 2225.0,
+      "volume": 4500.0,
+      "sma25": 2219.88,
+      "sma75": 2212.49,
+      "sma200": 2020.97,
+      "rsi14": 56.22,
+      "rsi5": 66.84
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-28",
-    "monthly_rsi14": 62.82,
-    "monthly_rsi_ma5": 61.98,
-    "spread": 0.84,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-29",
+    "monthly_rsi14": 61.2,
+    "monthly_rsi_ma5": 61.65,
+    "spread": -0.45,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-29T17:30:53.274104+00:00"
+  "provisional_generated_at": "2026-09-30T17:27:39.407695+00:00"
 }

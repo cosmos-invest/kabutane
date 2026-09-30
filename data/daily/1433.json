@@ -2,12 +2,12 @@
   "code": "1433",
   "ticker": "1433.T",
   "name": "ベステラ",
-  "generated_at": "2026-09-29T17:29:39.759797+00:00",
-  "price_date": "2026-09-28",
+  "generated_at": "2026-09-30T17:26:37.023669+00:00",
+  "price_date": "2026-09-29",
   "record": {
-    "current_price": 1189.0,
-    "change_from_signal_month_pct": 5.41,
-    "return_since_gc_pct": 5.41
+    "current_price": 1181.0,
+    "change_from_signal_month_pct": 4.7,
+    "return_since_gc_pct": 4.7
   },
   "daily": [
     {
@@ -438,15 +438,28 @@
       "sma200": 1170.83,
       "rsi14": 49.97,
       "rsi5": 51.13
+    },
+    {
+      "date": "2026-09-29",
+      "open": 1189.0,
+      "high": 1189.0,
+      "low": 1178.0,
+      "close": 1181.0,
+      "volume": 34400.0,
+      "sma25": 1234.08,
+      "sma75": 1172.07,
+      "sma200": 1171.24,
+      "rsi14": 49.97,
+      "rsi5": 51.13
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-28",
-    "monthly_rsi14": 52.14,
-    "monthly_rsi_ma5": 51.56,
-    "spread": 0.58,
+    "price_date": "2026-09-29",
+    "monthly_rsi14": 51.81,
+    "monthly_rsi_ma5": 51.49,
+    "spread": 0.32,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -455,5 +468,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-29T17:30:53.274104+00:00"
+  "provisional_generated_at": "2026-09-30T17:27:39.407695+00:00"
 }

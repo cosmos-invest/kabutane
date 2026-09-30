@@ -2,12 +2,12 @@
   "code": "8439",
   "ticker": "8439.T",
   "name": "東京センチュリー",
-  "generated_at": "2026-09-29T17:29:39.759797+00:00",
-  "price_date": "2026-09-28",
+  "generated_at": "2026-09-30T17:26:37.023669+00:00",
+  "price_date": "2026-09-29",
   "record": {
-    "current_price": 2716.5,
-    "change_from_signal_month_pct": 3.56,
-    "return_since_gc_pct": 15.01
+    "current_price": 2606.0,
+    "change_from_signal_month_pct": -0.65,
+    "return_since_gc_pct": 10.33
   },
   "daily": [
     {
@@ -438,6 +438,19 @@
       "sma200": 2309.71,
       "rsi14": 69.06,
       "rsi5": 75.25
+    },
+    {
+      "date": "2026-09-29",
+      "open": 2647.5,
+      "high": 2649.5,
+      "low": 2606.0,
+      "close": 2606.0,
+      "volume": 629200.0,
+      "sma25": 2666.5,
+      "sma75": 2579.32,
+      "sma200": 2313.0,
+      "rsi14": 69.06,
+      "rsi5": 75.25
     }
   ],
   "corporate_events": [
@@ -450,17 +463,17 @@
   ],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-28",
-    "monthly_rsi14": 77.31,
-    "monthly_rsi_ma5": 74.88,
-    "spread": 2.43,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-29",
+    "monthly_rsi14": 72.24,
+    "monthly_rsi_ma5": 73.86,
+    "spread": -1.62,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-29T17:30:53.274104+00:00"
+  "provisional_generated_at": "2026-09-30T17:27:39.407695+00:00"
 }

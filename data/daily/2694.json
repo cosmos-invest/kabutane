@@ -2,12 +2,12 @@
   "code": "2694",
   "ticker": "2694.T",
   "name": "焼肉坂井ホールディングス",
-  "generated_at": "2026-09-29T17:29:39.759797+00:00",
-  "price_date": "2026-09-28",
+  "generated_at": "2026-09-30T17:26:37.023669+00:00",
+  "price_date": "2026-09-29",
   "record": {
-    "current_price": 72.0,
-    "change_from_signal_month_pct": 1.41,
-    "return_since_gc_pct": 1.41
+    "current_price": 70.0,
+    "change_from_signal_month_pct": -1.41,
+    "return_since_gc_pct": -1.41
   },
   "daily": [
     {
@@ -438,22 +438,35 @@
       "sma200": 71.25,
       "rsi14": 45.39,
       "rsi5": 47.84
+    },
+    {
+      "date": "2026-09-29",
+      "open": 71.0,
+      "high": 71.0,
+      "low": 70.0,
+      "close": 70.0,
+      "volume": 264900.0,
+      "sma25": 71.88,
+      "sma75": 71.17,
+      "sma200": 71.25,
+      "rsi14": 45.39,
+      "rsi5": 47.84
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-28",
-    "monthly_rsi14": 50.8,
-    "monthly_rsi_ma5": 47.99,
-    "spread": 2.81,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-29",
+    "monthly_rsi14": 45.57,
+    "monthly_rsi_ma5": 46.95,
+    "spread": -1.38,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-29T17:30:53.274104+00:00"
+  "provisional_generated_at": "2026-09-30T17:27:39.407695+00:00"
 }

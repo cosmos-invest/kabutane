@@ -2,12 +2,12 @@
   "code": "6942",
   "ticker": "6942.T",
   "name": "ソフィアホールディングス",
-  "generated_at": "2026-09-29T17:29:39.759797+00:00",
-  "price_date": "2026-09-28",
+  "generated_at": "2026-09-30T17:26:37.023669+00:00",
+  "price_date": "2026-09-29",
   "record": {
-    "current_price": 1451.0,
-    "change_from_signal_month_pct": 5.53,
-    "return_since_gc_pct": 11.02
+    "current_price": 1406.0,
+    "change_from_signal_month_pct": 2.25,
+    "return_since_gc_pct": 7.57
   },
   "daily": [
     {
@@ -438,22 +438,35 @@
       "sma200": 1312.07,
       "rsi14": 65.3,
       "rsi5": 69.1
+    },
+    {
+      "date": "2026-09-29",
+      "open": 1391.0,
+      "high": 1414.0,
+      "low": 1369.0,
+      "close": 1406.0,
+      "volume": 16500.0,
+      "sma25": 1432.2,
+      "sma75": 1376.59,
+      "sma200": 1313.08,
+      "rsi14": 65.3,
+      "rsi5": 69.1
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-28",
-    "monthly_rsi14": 74.1,
-    "monthly_rsi_ma5": 70.88,
-    "spread": 3.22,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-29",
+    "monthly_rsi14": 68.89,
+    "monthly_rsi_ma5": 69.84,
+    "spread": -0.95,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-29T17:30:53.274104+00:00"
+  "provisional_generated_at": "2026-09-30T17:27:39.407695+00:00"
 }

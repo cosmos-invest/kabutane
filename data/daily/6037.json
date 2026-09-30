@@ -2,12 +2,12 @@
   "code": "6037",
   "ticker": "6037.T",
   "name": "楽待",
-  "generated_at": "2026-09-29T17:29:39.759797+00:00",
-  "price_date": "2026-09-28",
+  "generated_at": "2026-09-30T17:26:37.023669+00:00",
+  "price_date": "2026-09-29",
   "record": {
-    "current_price": 1073.0,
-    "change_from_signal_month_pct": 6.66,
-    "return_since_gc_pct": 8.93
+    "current_price": 1063.0,
+    "change_from_signal_month_pct": 5.67,
+    "return_since_gc_pct": 7.92
   },
   "daily": [
     {
@@ -438,15 +438,28 @@
       "sma200": 1028.9,
       "rsi14": 54.72,
       "rsi5": 55.44
+    },
+    {
+      "date": "2026-09-29",
+      "open": 1063.0,
+      "high": 1068.0,
+      "low": 1048.0,
+      "close": 1063.0,
+      "volume": 33900.0,
+      "sma25": 1068.0,
+      "sma75": 1054.43,
+      "sma200": 1028.52,
+      "rsi14": 54.72,
+      "rsi5": 55.44
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-28",
-    "monthly_rsi14": 57.74,
-    "monthly_rsi_ma5": 57.07,
-    "spread": 0.67,
+    "price_date": "2026-09-29",
+    "monthly_rsi14": 57.15,
+    "monthly_rsi_ma5": 56.95,
+    "spread": 0.2,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -455,5 +468,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-29T17:30:53.274104+00:00"
+  "provisional_generated_at": "2026-09-30T17:27:39.407695+00:00"
 }

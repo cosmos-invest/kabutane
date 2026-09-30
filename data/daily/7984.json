@@ -2,12 +2,12 @@
   "code": "7984",
   "ticker": "7984.T",
   "name": "コクヨ",
-  "generated_at": "2026-09-29T17:29:39.759797+00:00",
-  "price_date": "2026-09-28",
+  "generated_at": "2026-09-30T17:26:37.023669+00:00",
+  "price_date": "2026-09-29",
   "record": {
-    "current_price": 890.6,
-    "change_from_signal_month_pct": -2.11,
-    "return_since_gc_pct": -2.11
+    "current_price": 874.2,
+    "change_from_signal_month_pct": -3.91,
+    "return_since_gc_pct": -3.91
   },
   "daily": [
     {
@@ -438,22 +438,35 @@
       "sma200": 871.86,
       "rsi14": 56.95,
       "rsi5": 62.55
+    },
+    {
+      "date": "2026-09-29",
+      "open": 882.3,
+      "high": 883.7,
+      "low": 872.9,
+      "close": 874.2,
+      "volume": 769200.0,
+      "sma25": 904.35,
+      "sma75": 866.42,
+      "sma200": 871.63,
+      "rsi14": 56.95,
+      "rsi5": 62.55
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-28",
-    "monthly_rsi14": 59.48,
-    "monthly_rsi_ma5": 58.73,
-    "spread": 0.75,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-29",
+    "monthly_rsi14": 57.65,
+    "monthly_rsi_ma5": 58.36,
+    "spread": -0.71,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-29T17:30:53.274104+00:00"
+  "provisional_generated_at": "2026-09-30T17:27:39.407695+00:00"
 }

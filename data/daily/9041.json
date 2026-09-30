@@ -2,12 +2,12 @@
   "code": "9041",
   "ticker": "9041.T",
   "name": "近鉄グループホールディングス",
-  "generated_at": "2026-09-29T17:29:39.759797+00:00",
-  "price_date": "2026-09-28",
+  "generated_at": "2026-09-30T17:26:37.023669+00:00",
+  "price_date": "2026-09-29",
   "record": {
-    "current_price": 3515.0,
-    "change_from_signal_month_pct": 1.47,
-    "return_since_gc_pct": 21.35
+    "current_price": 3424.0,
+    "change_from_signal_month_pct": -1.15,
+    "return_since_gc_pct": 18.21
   },
   "daily": [
     {
@@ -438,6 +438,19 @@
       "sma200": 3347.27,
       "rsi14": 50.49,
       "rsi5": 52.06
+    },
+    {
+      "date": "2026-09-29",
+      "open": 3481.0,
+      "high": 3481.0,
+      "low": 3424.0,
+      "close": 3424.0,
+      "volume": 1599200.0,
+      "sma25": 3508.12,
+      "sma75": 3483.68,
+      "sma200": 3349.59,
+      "rsi14": 50.49,
+      "rsi5": 52.06
     }
   ],
   "corporate_events": [
@@ -450,17 +463,17 @@
   ],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-28",
-    "monthly_rsi14": 50.77,
-    "monthly_rsi_ma5": 49.94,
-    "spread": 0.82,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-29",
+    "monthly_rsi14": 48.29,
+    "monthly_rsi_ma5": 49.45,
+    "spread": -1.16,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-29T17:30:53.274104+00:00"
+  "provisional_generated_at": "2026-09-30T17:27:39.407695+00:00"
 }

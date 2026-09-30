@@ -2,12 +2,12 @@
   "code": "8596",
   "ticker": "8596.T",
   "name": "九州リースサービス",
-  "generated_at": "2026-09-29T17:29:39.759797+00:00",
-  "price_date": "2026-09-28",
+  "generated_at": "2026-09-30T17:26:37.023669+00:00",
+  "price_date": "2026-09-29",
   "record": {
-    "current_price": 1592.0,
-    "change_from_signal_month_pct": 0.82,
-    "return_since_gc_pct": 8.97
+    "current_price": 1540.0,
+    "change_from_signal_month_pct": -2.47,
+    "return_since_gc_pct": 5.41
   },
   "daily": [
     {
@@ -438,6 +438,19 @@
       "sma200": 1460.83,
       "rsi14": 62.13,
       "rsi5": 67.59
+    },
+    {
+      "date": "2026-09-29",
+      "open": 1555.0,
+      "high": 1558.0,
+      "low": 1540.0,
+      "close": 1540.0,
+      "volume": 32700.0,
+      "sma25": 1578.92,
+      "sma75": 1527.95,
+      "sma200": 1461.78,
+      "rsi14": 62.13,
+      "rsi5": 67.59
     }
   ],
   "corporate_events": [
@@ -450,17 +463,17 @@
   ],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-28",
-    "monthly_rsi14": 66.84,
-    "monthly_rsi_ma5": 65.61,
-    "spread": 1.23,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-29",
+    "monthly_rsi14": 63.37,
+    "monthly_rsi_ma5": 64.92,
+    "spread": -1.55,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-29T17:30:53.274104+00:00"
+  "provisional_generated_at": "2026-09-30T17:27:39.407695+00:00"
 }

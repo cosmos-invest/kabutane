@@ -2,12 +2,12 @@
   "code": "9337",
   "ticker": "9337.T",
   "name": "トリドリ",
-  "generated_at": "2026-09-29T17:29:39.759797+00:00",
-  "price_date": "2026-09-28",
+  "generated_at": "2026-09-30T17:26:37.023669+00:00",
+  "price_date": "2026-09-29",
   "record": {
-    "current_price": 1453.0,
-    "change_from_signal_month_pct": -11.46,
-    "return_since_gc_pct": -11.46
+    "current_price": 1440.0,
+    "change_from_signal_month_pct": -12.25,
+    "return_since_gc_pct": -12.25
   },
   "daily": [
     {
@@ -438,15 +438,28 @@
       "sma200": 2011.96,
       "rsi14": 42.3,
       "rsi5": 43.52
+    },
+    {
+      "date": "2026-09-29",
+      "open": 1453.0,
+      "high": 1460.0,
+      "low": 1440.0,
+      "close": 1440.0,
+      "volume": 11000.0,
+      "sma25": 1451.28,
+      "sma75": 1533.15,
+      "sma200": 2003.43,
+      "rsi14": 42.3,
+      "rsi5": 43.52
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-28",
-    "monthly_rsi14": 39.12,
-    "monthly_rsi_ma5": 39.64,
-    "spread": -0.52,
+    "price_date": "2026-09-29",
+    "monthly_rsi14": 38.98,
+    "monthly_rsi_ma5": 39.61,
+    "spread": -0.63,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -455,5 +468,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-29T17:30:53.274104+00:00"
+  "provisional_generated_at": "2026-09-30T17:27:39.407695+00:00"
 }

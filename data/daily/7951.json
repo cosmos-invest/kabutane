@@ -2,12 +2,12 @@
   "code": "7951",
   "ticker": "7951.T",
   "name": "ヤマハ",
-  "generated_at": "2026-09-29T17:29:39.759797+00:00",
-  "price_date": "2026-09-28",
+  "generated_at": "2026-09-30T17:26:37.023669+00:00",
+  "price_date": "2026-09-29",
   "record": {
-    "current_price": 1250.5,
-    "change_from_signal_month_pct": 0.56,
-    "return_since_gc_pct": 0.56
+    "current_price": 1219.5,
+    "change_from_signal_month_pct": -1.93,
+    "return_since_gc_pct": -1.93
   },
   "daily": [
     {
@@ -438,6 +438,19 @@
       "sma200": 1172.58,
       "rsi14": 49.08,
       "rsi5": 55.03
+    },
+    {
+      "date": "2026-09-29",
+      "open": 1231.5,
+      "high": 1237.0,
+      "low": 1205.5,
+      "close": 1219.5,
+      "volume": 2248400.0,
+      "sma25": 1283.42,
+      "sma75": 1236.51,
+      "sma200": 1173.37,
+      "rsi14": 49.08,
+      "rsi5": 55.03
     }
   ],
   "corporate_events": [
@@ -450,17 +463,17 @@
   ],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-28",
-    "monthly_rsi14": 53.16,
-    "monthly_rsi_ma5": 52.29,
-    "spread": 0.87,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-29",
+    "monthly_rsi14": 51.23,
+    "monthly_rsi_ma5": 51.9,
+    "spread": -0.67,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-29T17:30:53.274104+00:00"
+  "provisional_generated_at": "2026-09-30T17:27:39.407695+00:00"
 }

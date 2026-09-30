@@ -2,12 +2,12 @@
   "code": "8601",
   "ticker": "8601.T",
   "name": "大和証券グループ本社",
-  "generated_at": "2026-09-29T17:29:39.759797+00:00",
-  "price_date": "2026-09-28",
+  "generated_at": "2026-09-30T17:26:37.023669+00:00",
+  "price_date": "2026-09-29",
   "record": {
-    "current_price": 1850.5,
-    "change_from_signal_month_pct": 2.41,
-    "return_since_gc_pct": 15.98
+    "current_price": 1786.0,
+    "change_from_signal_month_pct": -1.16,
+    "return_since_gc_pct": 11.94
   },
   "daily": [
     {
@@ -438,22 +438,35 @@
       "sma200": 1592.03,
       "rsi14": 69.17,
       "rsi5": 76.14
+    },
+    {
+      "date": "2026-09-29",
+      "open": 1815.0,
+      "high": 1820.0,
+      "low": 1783.5,
+      "close": 1786.0,
+      "volume": 6829000.0,
+      "sma25": 1832.0,
+      "sma75": 1765.03,
+      "sma200": 1594.52,
+      "rsi14": 69.17,
+      "rsi5": 76.14
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-28",
-    "monthly_rsi14": 77.54,
-    "monthly_rsi_ma5": 74.16,
-    "spread": 3.38,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-29",
+    "monthly_rsi14": 73.19,
+    "monthly_rsi_ma5": 73.29,
+    "spread": -0.1,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-29T17:30:53.274104+00:00"
+  "provisional_generated_at": "2026-09-30T17:27:39.407695+00:00"
 }

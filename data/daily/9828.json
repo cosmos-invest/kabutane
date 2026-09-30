@@ -2,12 +2,12 @@
   "code": "9828",
   "ticker": "9828.T",
   "name": "Ｇｅｎｋｉ　Ｇｌｏｂａｌ　Ｄｉｎｉｎｇ　Ｃｏｎｃｅｐｔｓ",
-  "generated_at": "2026-09-29T17:29:39.759797+00:00",
-  "price_date": "2026-09-28",
+  "generated_at": "2026-09-30T17:26:37.023669+00:00",
+  "price_date": "2026-09-29",
   "record": {
-    "current_price": 3345.0,
-    "change_from_signal_month_pct": -5.37,
-    "return_since_gc_pct": 5.52
+    "current_price": 3265.0,
+    "change_from_signal_month_pct": -7.64,
+    "return_since_gc_pct": 3.0
   },
   "daily": [
     {
@@ -438,6 +438,19 @@
       "sma200": 3061.78,
       "rsi14": 47.81,
       "rsi5": 57.02
+    },
+    {
+      "date": "2026-09-29",
+      "open": 3300.0,
+      "high": 3345.0,
+      "low": 3255.0,
+      "close": 3265.0,
+      "volume": 134100.0,
+      "sma25": 3414.2,
+      "sma75": 3274.07,
+      "sma200": 3062.72,
+      "rsi14": 47.81,
+      "rsi5": 57.02
     }
   ],
   "corporate_events": [
@@ -450,17 +463,17 @@
   ],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-28",
-    "monthly_rsi14": 53.79,
-    "monthly_rsi_ma5": 53.49,
-    "spread": 0.31,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-29",
+    "monthly_rsi14": 52.41,
+    "monthly_rsi_ma5": 53.21,
+    "spread": -0.8,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-29T17:30:53.274104+00:00"
+  "provisional_generated_at": "2026-09-30T17:27:39.407695+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "7148",
   "ticker": "7148.T",
   "name": "ＦＰＧ",
-  "generated_at": "2026-09-29T17:29:39.759797+00:00",
-  "price_date": "2026-09-28",
+  "generated_at": "2026-09-30T17:26:37.023669+00:00",
+  "price_date": "2026-09-29",
   "record": {
-    "current_price": 1707.0,
-    "change_from_signal_month_pct": -0.29,
-    "return_since_gc_pct": -0.29
+    "current_price": 1603.0,
+    "change_from_signal_month_pct": -6.37,
+    "return_since_gc_pct": -6.37
   },
   "daily": [
     {
@@ -438,6 +438,19 @@
       "sma200": 1769.42,
       "rsi14": 39.39,
       "rsi5": 43.29
+    },
+    {
+      "date": "2026-09-29",
+      "open": 1660.0,
+      "high": 1662.0,
+      "low": 1602.0,
+      "close": 1603.0,
+      "volume": 1112900.0,
+      "sma25": 1692.24,
+      "sma75": 1614.28,
+      "sma200": 1766.44,
+      "rsi14": 39.39,
+      "rsi5": 43.29
     }
   ],
   "corporate_events": [
@@ -450,17 +463,17 @@
   ],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-28",
-    "monthly_rsi14": 44.66,
-    "monthly_rsi_ma5": 42.88,
-    "spread": 1.78,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-29",
+    "monthly_rsi14": 42.18,
+    "monthly_rsi_ma5": 42.38,
+    "spread": -0.21,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-29T17:30:53.274104+00:00"
+  "provisional_generated_at": "2026-09-30T17:27:39.407695+00:00"
 }

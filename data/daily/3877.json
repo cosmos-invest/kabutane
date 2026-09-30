@@ -2,12 +2,12 @@
   "code": "3877",
   "ticker": "3877.T",
   "name": "中越パルプ工業",
-  "generated_at": "2026-09-29T17:29:39.759797+00:00",
-  "price_date": "2026-09-28",
+  "generated_at": "2026-09-30T17:26:37.023669+00:00",
+  "price_date": "2026-09-29",
   "record": {
-    "current_price": 2228.0,
-    "change_from_signal_month_pct": 6.55,
-    "return_since_gc_pct": 9.48
+    "current_price": 2164.0,
+    "change_from_signal_month_pct": 3.49,
+    "return_since_gc_pct": 6.34
   },
   "daily": [
     {
@@ -438,6 +438,19 @@
       "sma200": 2037.96,
       "rsi14": 61.79,
       "rsi5": 65.0
+    },
+    {
+      "date": "2026-09-29",
+      "open": 2178.0,
+      "high": 2178.0,
+      "low": 2151.0,
+      "close": 2164.0,
+      "volume": 62200.0,
+      "sma25": 2228.2,
+      "sma75": 2136.57,
+      "sma200": 2038.56,
+      "rsi14": 61.79,
+      "rsi5": 65.0
     }
   ],
   "corporate_events": [
@@ -450,17 +463,17 @@
   ],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-28",
-    "monthly_rsi14": 67.86,
-    "monthly_rsi_ma5": 65.67,
-    "spread": 2.19,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-29",
+    "monthly_rsi14": 64.65,
+    "monthly_rsi_ma5": 65.03,
+    "spread": -0.38,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-29T17:30:53.274104+00:00"
+  "provisional_generated_at": "2026-09-30T17:27:39.407695+00:00"
 }

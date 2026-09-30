@@ -2,12 +2,12 @@
   "code": "2179",
   "ticker": "2179.T",
   "name": "成学社",
-  "generated_at": "2026-09-29T17:29:39.759797+00:00",
-  "price_date": "2026-09-28",
+  "generated_at": "2026-09-30T17:26:37.023669+00:00",
+  "price_date": "2026-09-29",
   "record": {
-    "current_price": 835.0,
-    "change_from_signal_month_pct": 1.95,
-    "return_since_gc_pct": 1.95
+    "current_price": 822.0,
+    "change_from_signal_month_pct": 0.37,
+    "return_since_gc_pct": 0.37
   },
   "daily": [
     {
@@ -438,6 +438,19 @@
       "sma200": 800.38,
       "rsi14": 50.71,
       "rsi5": 55.72
+    },
+    {
+      "date": "2026-09-29",
+      "open": 832.0,
+      "high": 832.0,
+      "low": 821.0,
+      "close": 822.0,
+      "volume": 1100.0,
+      "sma25": 835.32,
+      "sma75": 810.76,
+      "sma200": 800.5,
+      "rsi14": 50.71,
+      "rsi5": 55.72
     }
   ],
   "corporate_events": [
@@ -450,17 +463,17 @@
   ],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-28",
-    "monthly_rsi14": 58.13,
-    "monthly_rsi_ma5": 57.18,
-    "spread": 0.95,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-29",
+    "monthly_rsi14": 56.0,
+    "monthly_rsi_ma5": 56.75,
+    "spread": -0.75,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-29T17:30:53.274104+00:00"
+  "provisional_generated_at": "2026-09-30T17:27:39.407695+00:00"
 }

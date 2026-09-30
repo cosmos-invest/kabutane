@@ -2,12 +2,12 @@
   "code": "4362",
   "ticker": "4362.T",
   "name": "日本精化",
-  "generated_at": "2026-09-29T17:29:39.759797+00:00",
-  "price_date": "2026-09-28",
+  "generated_at": "2026-09-30T17:26:37.023669+00:00",
+  "price_date": "2026-09-29",
   "record": {
-    "current_price": 2694.0,
-    "change_from_signal_month_pct": 4.5,
-    "return_since_gc_pct": 4.5
+    "current_price": 2602.0,
+    "change_from_signal_month_pct": 0.93,
+    "return_since_gc_pct": 0.93
   },
   "daily": [
     {
@@ -438,6 +438,19 @@
       "sma200": 2627.79,
       "rsi14": 50.07,
       "rsi5": 51.65
+    },
+    {
+      "date": "2026-09-29",
+      "open": 2629.0,
+      "high": 2649.0,
+      "low": 2602.0,
+      "close": 2602.0,
+      "volume": 38900.0,
+      "sma25": 2691.68,
+      "sma75": 2614.84,
+      "sma200": 2626.43,
+      "rsi14": 50.07,
+      "rsi5": 51.65
     }
   ],
   "corporate_events": [
@@ -450,17 +463,17 @@
   ],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-28",
-    "monthly_rsi14": 53.62,
-    "monthly_rsi_ma5": 51.86,
-    "spread": 1.76,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-29",
+    "monthly_rsi14": 51.29,
+    "monthly_rsi_ma5": 51.4,
+    "spread": -0.11,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-29T17:30:53.274104+00:00"
+  "provisional_generated_at": "2026-09-30T17:27:39.407695+00:00"
 }

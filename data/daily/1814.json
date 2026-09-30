@@ -2,12 +2,12 @@
   "code": "1814",
   "ticker": "1814.T",
   "name": "大末建設",
-  "generated_at": "2026-09-29T17:29:39.759797+00:00",
-  "price_date": "2026-09-28",
+  "generated_at": "2026-09-30T17:26:37.023669+00:00",
+  "price_date": "2026-09-29",
   "record": {
-    "current_price": 3615.0,
-    "change_from_signal_month_pct": 3.58,
-    "return_since_gc_pct": 3.58
+    "current_price": 3525.0,
+    "change_from_signal_month_pct": 1.0,
+    "return_since_gc_pct": 1.0
   },
   "daily": [
     {
@@ -438,6 +438,19 @@
       "sma200": 3634.47,
       "rsi14": 62.65,
       "rsi5": 63.32
+    },
+    {
+      "date": "2026-09-29",
+      "open": 3565.0,
+      "high": 3590.0,
+      "low": 3495.0,
+      "close": 3525.0,
+      "volume": 130500.0,
+      "sma25": 3617.4,
+      "sma75": 3512.53,
+      "sma200": 3633.6,
+      "rsi14": 62.65,
+      "rsi5": 63.32
     }
   ],
   "corporate_events": [
@@ -450,17 +463,17 @@
   ],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-28",
-    "monthly_rsi14": 64.28,
-    "monthly_rsi_ma5": 62.7,
-    "spread": 1.58,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-29",
+    "monthly_rsi14": 62.27,
+    "monthly_rsi_ma5": 62.3,
+    "spread": -0.02,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-29T17:30:53.274104+00:00"
+  "provisional_generated_at": "2026-09-30T17:27:39.407695+00:00"
 }

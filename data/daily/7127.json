@@ -2,12 +2,12 @@
   "code": "7127",
   "ticker": "7127.T",
   "name": "一家ホールディングス",
-  "generated_at": "2026-09-29T17:29:39.759797+00:00",
-  "price_date": "2026-09-28",
+  "generated_at": "2026-09-30T17:26:37.023669+00:00",
+  "price_date": "2026-09-29",
   "record": {
-    "current_price": 720.0,
-    "change_from_signal_month_pct": 3.15,
-    "return_since_gc_pct": 3.15
+    "current_price": 695.0,
+    "change_from_signal_month_pct": -0.43,
+    "return_since_gc_pct": -0.43
   },
   "daily": [
     {
@@ -438,22 +438,35 @@
       "sma200": 693.36,
       "rsi14": 52.73,
       "rsi5": 54.82
+    },
+    {
+      "date": "2026-09-29",
+      "open": 691.0,
+      "high": 695.0,
+      "low": 686.0,
+      "close": 695.0,
+      "volume": 33800.0,
+      "sma25": 707.4,
+      "sma75": 701.23,
+      "sma200": 693.5,
+      "rsi14": 52.73,
+      "rsi5": 54.82
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-28",
-    "monthly_rsi14": 56.96,
-    "monthly_rsi_ma5": 52.54,
-    "spread": 4.42,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-29",
+    "monthly_rsi14": 50.95,
+    "monthly_rsi_ma5": 51.34,
+    "spread": -0.39,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-29T17:30:53.274104+00:00"
+  "provisional_generated_at": "2026-09-30T17:27:39.407695+00:00"
 }

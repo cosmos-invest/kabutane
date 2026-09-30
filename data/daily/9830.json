@@ -2,12 +2,12 @@
   "code": "9830",
   "ticker": "9830.T",
   "name": "トラスコ中山",
-  "generated_at": "2026-09-29T17:29:39.759797+00:00",
-  "price_date": "2026-09-28",
+  "generated_at": "2026-09-30T17:26:37.023669+00:00",
+  "price_date": "2026-09-29",
   "record": {
-    "current_price": 2432.0,
-    "change_from_signal_month_pct": 0.7,
-    "return_since_gc_pct": 0.7
+    "current_price": 2392.0,
+    "change_from_signal_month_pct": -0.95,
+    "return_since_gc_pct": -0.95
   },
   "daily": [
     {
@@ -438,15 +438,28 @@
       "sma200": 2356.47,
       "rsi14": 48.54,
       "rsi5": 53.94
+    },
+    {
+      "date": "2026-09-29",
+      "open": 2415.0,
+      "high": 2415.0,
+      "low": 2380.0,
+      "close": 2392.0,
+      "volume": 125900.0,
+      "sma25": 2399.04,
+      "sma75": 2347.63,
+      "sma200": 2356.59,
+      "rsi14": 48.54,
+      "rsi5": 53.94
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-28",
-    "monthly_rsi14": 53.32,
-    "monthly_rsi_ma5": 50.43,
-    "spread": 2.89,
+    "price_date": "2026-09-29",
+    "monthly_rsi14": 51.68,
+    "monthly_rsi_ma5": 50.1,
+    "spread": 1.58,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -455,5 +468,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-29T17:30:53.274104+00:00"
+  "provisional_generated_at": "2026-09-30T17:27:39.407695+00:00"
 }

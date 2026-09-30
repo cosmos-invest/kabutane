@@ -2,12 +2,12 @@
   "code": "1431",
   "ticker": "1431.T",
   "name": "Ｌｉｂ　Ｗｏｒｋ",
-  "generated_at": "2026-09-29T17:29:39.759797+00:00",
-  "price_date": "2026-09-28",
+  "generated_at": "2026-09-30T17:26:37.023669+00:00",
+  "price_date": "2026-09-29",
   "record": {
-    "current_price": 652.0,
-    "change_from_signal_month_pct": -0.61,
-    "return_since_gc_pct": -0.61
+    "current_price": 642.0,
+    "change_from_signal_month_pct": -2.13,
+    "return_since_gc_pct": -2.13
   },
   "daily": [
     {
@@ -438,6 +438,19 @@
       "sma200": 653.12,
       "rsi14": 42.12,
       "rsi5": 44.24
+    },
+    {
+      "date": "2026-09-29",
+      "open": 643.0,
+      "high": 650.0,
+      "low": 640.0,
+      "close": 642.0,
+      "volume": 57000.0,
+      "sma25": 652.6,
+      "sma75": 648.59,
+      "sma200": 652.77,
+      "rsi14": 42.12,
+      "rsi5": 44.24
     }
   ],
   "corporate_events": [
@@ -450,17 +463,17 @@
   ],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-28",
-    "monthly_rsi14": 41.84,
-    "monthly_rsi_ma5": 40.91,
-    "spread": 0.92,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-29",
+    "monthly_rsi14": 40.3,
+    "monthly_rsi_ma5": 40.61,
+    "spread": -0.31,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-29T17:30:53.274104+00:00"
+  "provisional_generated_at": "2026-09-30T17:27:39.407695+00:00"
 }

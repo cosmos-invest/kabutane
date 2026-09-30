@@ -2,12 +2,12 @@
   "code": "3763",
   "ticker": "3763.T",
   "name": "プロシップ",
-  "generated_at": "2026-09-29T17:29:39.759797+00:00",
-  "price_date": "2026-09-28",
+  "generated_at": "2026-09-30T17:26:37.023669+00:00",
+  "price_date": "2026-09-29",
   "record": {
-    "current_price": 2132.0,
-    "change_from_signal_month_pct": 15.24,
-    "return_since_gc_pct": 32.67
+    "current_price": 2087.0,
+    "change_from_signal_month_pct": 12.81,
+    "return_since_gc_pct": 29.87
   },
   "daily": [
     {
@@ -438,22 +438,35 @@
       "sma200": 1691.03,
       "rsi14": 66.44,
       "rsi5": 73.17
+    },
+    {
+      "date": "2026-09-29",
+      "open": 2106.0,
+      "high": 2132.0,
+      "low": 2056.0,
+      "close": 2087.0,
+      "volume": 75400.0,
+      "sma25": 2139.64,
+      "sma75": 1930.63,
+      "sma200": 1693.58,
+      "rsi14": 66.44,
+      "rsi5": 73.17
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-28",
-    "monthly_rsi14": 74.13,
-    "monthly_rsi_ma5": 73.06,
-    "spread": 1.07,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-29",
+    "monthly_rsi14": 72.09,
+    "monthly_rsi_ma5": 72.66,
+    "spread": -0.57,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-29T17:30:53.274104+00:00"
+  "provisional_generated_at": "2026-09-30T17:27:39.407695+00:00"
 }

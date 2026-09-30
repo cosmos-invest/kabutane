@@ -2,12 +2,12 @@
   "code": "9948",
   "ticker": "9948.T",
   "name": "アークス",
-  "generated_at": "2026-09-29T17:29:39.759797+00:00",
-  "price_date": "2026-09-28",
+  "generated_at": "2026-09-30T17:26:37.023669+00:00",
+  "price_date": "2026-09-29",
   "record": {
-    "current_price": 3695.0,
-    "change_from_signal_month_pct": 2.21,
-    "return_since_gc_pct": 2.21
+    "current_price": 3645.0,
+    "change_from_signal_month_pct": 0.83,
+    "return_since_gc_pct": 0.83
   },
   "daily": [
     {
@@ -438,15 +438,28 @@
       "sma200": 3544.8,
       "rsi14": 62.35,
       "rsi5": 63.08
+    },
+    {
+      "date": "2026-09-29",
+      "open": 3700.0,
+      "high": 3700.0,
+      "low": 3625.0,
+      "close": 3645.0,
+      "volume": 74300.0,
+      "sma25": 3728.6,
+      "sma75": 3563.93,
+      "sma200": 3546.3,
+      "rsi14": 62.35,
+      "rsi5": 63.08
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-28",
-    "monthly_rsi14": 63.73,
-    "monthly_rsi_ma5": 61.05,
-    "spread": 2.68,
+    "price_date": "2026-09-29",
+    "monthly_rsi14": 62.08,
+    "monthly_rsi_ma5": 60.72,
+    "spread": 1.36,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -455,5 +468,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-29T17:30:53.274104+00:00"
+  "provisional_generated_at": "2026-09-30T17:27:39.407695+00:00"
 }

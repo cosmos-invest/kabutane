@@ -2,12 +2,12 @@
   "code": "8793",
   "ticker": "8793.T",
   "name": "ＮＥＣキャピタルソリューション",
-  "generated_at": "2026-09-29T17:29:39.759797+00:00",
-  "price_date": "2026-09-28",
+  "generated_at": "2026-09-30T17:26:37.023669+00:00",
+  "price_date": "2026-09-29",
   "record": {
-    "current_price": 4245.0,
-    "change_from_signal_month_pct": 2.29,
-    "return_since_gc_pct": 2.29
+    "current_price": 4135.0,
+    "change_from_signal_month_pct": -0.36,
+    "return_since_gc_pct": -0.36
   },
   "daily": [
     {
@@ -438,6 +438,19 @@
       "sma200": 4110.15,
       "rsi14": 56.92,
       "rsi5": 59.58
+    },
+    {
+      "date": "2026-09-29",
+      "open": 4180.0,
+      "high": 4190.0,
+      "low": 4135.0,
+      "close": 4135.0,
+      "volume": 27300.0,
+      "sma25": 4218.6,
+      "sma75": 4133.33,
+      "sma200": 4111.1,
+      "rsi14": 56.92,
+      "rsi5": 59.58
     }
   ],
   "corporate_events": [
@@ -450,17 +463,17 @@
   ],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-28",
-    "monthly_rsi14": 62.1,
-    "monthly_rsi_ma5": 59.15,
-    "spread": 2.95,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-29",
+    "monthly_rsi14": 58.07,
+    "monthly_rsi_ma5": 58.34,
+    "spread": -0.27,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-29T17:30:53.274104+00:00"
+  "provisional_generated_at": "2026-09-30T17:27:39.407695+00:00"
 }

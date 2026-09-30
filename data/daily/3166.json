@@ -2,12 +2,12 @@
   "code": "3166",
   "ticker": "3166.T",
   "name": "ＯＣＨＩホールディングス",
-  "generated_at": "2026-09-29T17:29:39.759797+00:00",
-  "price_date": "2026-09-28",
+  "generated_at": "2026-09-30T17:26:37.023669+00:00",
+  "price_date": "2026-09-29",
   "record": {
-    "current_price": 1451.0,
-    "change_from_signal_month_pct": -0.07,
-    "return_since_gc_pct": -0.07
+    "current_price": 1439.0,
+    "change_from_signal_month_pct": -0.9,
+    "return_since_gc_pct": -0.9
   },
   "daily": [
     {
@@ -438,6 +438,19 @@
       "sma200": 1454.85,
       "rsi14": 50.89,
       "rsi5": 53.25
+    },
+    {
+      "date": "2026-09-29",
+      "open": 1440.0,
+      "high": 1440.0,
+      "low": 1433.0,
+      "close": 1439.0,
+      "volume": 2100.0,
+      "sma25": 1461.76,
+      "sma75": 1433.59,
+      "sma200": 1454.94,
+      "rsi14": 50.89,
+      "rsi5": 53.25
     }
   ],
   "corporate_events": [
@@ -450,17 +463,17 @@
   ],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-28",
-    "monthly_rsi14": 52.99,
-    "monthly_rsi_ma5": 52.5,
-    "spread": 0.49,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-29",
+    "monthly_rsi14": 51.83,
+    "monthly_rsi_ma5": 52.27,
+    "spread": -0.43,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-29T17:30:53.274104+00:00"
+  "provisional_generated_at": "2026-09-30T17:27:39.407695+00:00"
 }

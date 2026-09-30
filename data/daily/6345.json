@@ -2,12 +2,12 @@
   "code": "6345",
   "ticker": "6345.T",
   "name": "アイチ　コーポレーション",
-  "generated_at": "2026-09-29T17:29:39.759797+00:00",
-  "price_date": "2026-09-28",
+  "generated_at": "2026-09-30T17:26:37.023669+00:00",
+  "price_date": "2026-09-29",
   "record": {
-    "current_price": 1481.0,
-    "change_from_signal_month_pct": 2.07,
-    "return_since_gc_pct": 2.07
+    "current_price": 1430.0,
+    "change_from_signal_month_pct": -1.45,
+    "return_since_gc_pct": -1.45
   },
   "daily": [
     {
@@ -438,6 +438,19 @@
       "sma200": 1385.54,
       "rsi14": 55.84,
       "rsi5": 59.07
+    },
+    {
+      "date": "2026-09-29",
+      "open": 1450.0,
+      "high": 1457.0,
+      "low": 1428.0,
+      "close": 1430.0,
+      "volume": 183000.0,
+      "sma25": 1456.48,
+      "sma75": 1413.65,
+      "sma200": 1386.07,
+      "rsi14": 55.84,
+      "rsi5": 59.07
     }
   ],
   "corporate_events": [
@@ -450,17 +463,17 @@
   ],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-28",
-    "monthly_rsi14": 60.69,
-    "monthly_rsi_ma5": 58.54,
-    "spread": 2.15,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-29",
+    "monthly_rsi14": 57.26,
+    "monthly_rsi_ma5": 57.86,
+    "spread": -0.59,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-29T17:30:53.274104+00:00"
+  "provisional_generated_at": "2026-09-30T17:27:39.407695+00:00"
 }

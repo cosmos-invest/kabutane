@@ -2,12 +2,12 @@
   "code": "8207",
   "ticker": "8207.T",
   "name": "テンアライド",
-  "generated_at": "2026-09-29T17:29:39.759797+00:00",
-  "price_date": "2026-09-28",
+  "generated_at": "2026-09-30T17:26:37.023669+00:00",
+  "price_date": "2026-09-29",
   "record": {
-    "current_price": 305.0,
-    "change_from_signal_month_pct": 3.74,
-    "return_since_gc_pct": 5.9
+    "current_price": 290.0,
+    "change_from_signal_month_pct": -1.36,
+    "return_since_gc_pct": 0.69
   },
   "daily": [
     {
@@ -438,22 +438,35 @@
       "sma200": 290.14,
       "rsi14": 50.32,
       "rsi5": 53.92
+    },
+    {
+      "date": "2026-09-29",
+      "open": 290.0,
+      "high": 293.0,
+      "low": 288.0,
+      "close": 290.0,
+      "volume": 145500.0,
+      "sma25": 300.4,
+      "sma75": 293.52,
+      "sma200": 290.19,
+      "rsi14": 50.32,
+      "rsi5": 53.92
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-28",
-    "monthly_rsi14": 58.12,
-    "monthly_rsi_ma5": 52.11,
-    "spread": 6.02,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-29",
+    "monthly_rsi14": 49.23,
+    "monthly_rsi_ma5": 50.33,
+    "spread": -1.1,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-29T17:30:53.274104+00:00"
+  "provisional_generated_at": "2026-09-30T17:27:39.407695+00:00"
 }

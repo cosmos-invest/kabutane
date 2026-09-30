@@ -2,12 +2,12 @@
   "code": "8570",
   "ticker": "8570.T",
   "name": "イオンフィナンシャルサービス",
-  "generated_at": "2026-09-29T17:29:39.759797+00:00",
-  "price_date": "2026-09-28",
+  "generated_at": "2026-09-30T17:26:37.023669+00:00",
+  "price_date": "2026-09-29",
   "record": {
-    "current_price": 1612.5,
-    "change_from_signal_month_pct": 2.67,
-    "return_since_gc_pct": 2.67
+    "current_price": 1570.0,
+    "change_from_signal_month_pct": -0.03,
+    "return_since_gc_pct": -0.03
   },
   "daily": [
     {
@@ -438,22 +438,35 @@
       "sma200": 1608.48,
       "rsi14": 54.56,
       "rsi5": 56.16
+    },
+    {
+      "date": "2026-09-29",
+      "open": 1598.0,
+      "high": 1599.5,
+      "low": 1567.5,
+      "close": 1570.0,
+      "volume": 629000.0,
+      "sma25": 1648.02,
+      "sma75": 1577.48,
+      "sma200": 1608.59,
+      "rsi14": 54.56,
+      "rsi5": 56.16
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-28",
-    "monthly_rsi14": 57.45,
-    "monthly_rsi_ma5": 56.16,
-    "spread": 1.29,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-29",
+    "monthly_rsi14": 55.06,
+    "monthly_rsi_ma5": 55.68,
+    "spread": -0.62,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-29T17:30:53.274104+00:00"
+  "provisional_generated_at": "2026-09-30T17:27:39.407695+00:00"
 }

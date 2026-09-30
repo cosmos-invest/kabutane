@@ -2,12 +2,12 @@
   "code": "6758",
   "ticker": "6758.T",
   "name": "ソニーグループ",
-  "generated_at": "2026-09-29T17:29:39.759797+00:00",
-  "price_date": "2026-09-28",
+  "generated_at": "2026-09-30T17:26:37.023669+00:00",
+  "price_date": "2026-09-29",
   "record": {
-    "current_price": 3680.0,
-    "change_from_signal_month_pct": -2.83,
-    "return_since_gc_pct": -2.83
+    "current_price": 3732.0,
+    "change_from_signal_month_pct": -1.45,
+    "return_since_gc_pct": -1.45
   },
   "daily": [
     {
@@ -438,6 +438,19 @@
       "sma200": 3582.23,
       "rsi14": 48.88,
       "rsi5": 55.83
+    },
+    {
+      "date": "2026-09-29",
+      "open": 3705.0,
+      "high": 3749.0,
+      "low": 3683.0,
+      "close": 3732.0,
+      "volume": 15962200.0,
+      "sma25": 3788.16,
+      "sma75": 3576.91,
+      "sma200": 3578.82,
+      "rsi14": 48.88,
+      "rsi5": 55.83
     }
   ],
   "corporate_events": [
@@ -450,17 +463,17 @@
   ],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-28",
-    "monthly_rsi14": 53.37,
-    "monthly_rsi_ma5": 53.61,
-    "spread": -0.23,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-29",
+    "monthly_rsi14": 54.22,
+    "monthly_rsi_ma5": 53.78,
+    "spread": 0.44,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-29T17:30:53.274104+00:00"
+  "provisional_generated_at": "2026-09-30T17:27:39.407695+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "299A",
   "ticker": "299A.T",
   "name": "クラシル",
-  "generated_at": "2026-09-29T17:29:39.759797+00:00",
-  "price_date": "2026-09-28",
+  "generated_at": "2026-09-30T17:26:37.023669+00:00",
+  "price_date": "2026-09-29",
   "record": {
-    "current_price": 1185.0,
-    "change_from_signal_month_pct": 1.8,
-    "return_since_gc_pct": 1.8
+    "current_price": 1176.0,
+    "change_from_signal_month_pct": 1.03,
+    "return_since_gc_pct": 1.03
   },
   "daily": [
     {
@@ -438,15 +438,28 @@
       "sma200": 1085.38,
       "rsi14": 47.82,
       "rsi5": 51.4
+    },
+    {
+      "date": "2026-09-29",
+      "open": 1190.0,
+      "high": 1190.0,
+      "low": 1171.0,
+      "close": 1176.0,
+      "volume": 58300.0,
+      "sma25": 1267.6,
+      "sma75": 1117.52,
+      "sma200": 1084.54,
+      "rsi14": 47.82,
+      "rsi5": 51.4
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-28",
-    "monthly_rsi14": 51.18,
-    "monthly_rsi_ma5": 50.8,
-    "spread": 0.38,
+    "price_date": "2026-09-29",
+    "monthly_rsi14": 50.97,
+    "monthly_rsi_ma5": 50.76,
+    "spread": 0.21,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -455,5 +468,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-29T17:30:53.274104+00:00"
+  "provisional_generated_at": "2026-09-30T17:27:39.407695+00:00"
 }
