@@ -2,12 +2,12 @@
   "code": "5261",
   "ticker": "5261.T",
   "name": "リソルホールディングス",
-  "generated_at": "2026-09-30T17:26:37.023669+00:00",
-  "price_date": "2026-09-29",
+  "generated_at": "2026-10-01T17:52:48.781255+00:00",
+  "price_date": "2026-09-30",
   "record": {
-    "current_price": 7540.0,
-    "change_from_signal_month_pct": -4.19,
-    "return_since_gc_pct": -4.19
+    "current_price": 7640.0,
+    "change_from_signal_month_pct": -2.92,
+    "return_since_gc_pct": -2.92
   },
   "daily": [
     {
@@ -451,22 +451,35 @@
       "sma200": 7545.2,
       "rsi14": 60.87,
       "rsi5": 64.64
+    },
+    {
+      "date": "2026-09-30",
+      "open": 7570.0,
+      "high": 7640.0,
+      "low": 7510.0,
+      "close": 7640.0,
+      "volume": 4100.0,
+      "sma25": 7658.8,
+      "sma75": 7603.6,
+      "sma200": 7550.9,
+      "rsi14": 60.87,
+      "rsi5": 64.64
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-29",
-    "monthly_rsi14": 60.71,
-    "monthly_rsi_ma5": 61.52,
-    "spread": -0.82,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-30",
+    "monthly_rsi14": 61.8,
+    "monthly_rsi_ma5": 61.74,
+    "spread": 0.06,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-30T17:27:39.407695+00:00"
+  "provisional_generated_at": "2026-10-01T17:54:04.821776+00:00"
 }

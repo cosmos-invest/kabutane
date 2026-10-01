@@ -2,12 +2,12 @@
   "code": "2349",
   "ticker": "2349.T",
   "name": "エヌアイデイ",
-  "generated_at": "2026-09-30T17:26:37.023669+00:00",
-  "price_date": "2026-09-29",
+  "generated_at": "2026-10-01T17:52:48.781255+00:00",
+  "price_date": "2026-09-30",
   "record": {
-    "current_price": 2473.0,
-    "change_from_signal_month_pct": -1.9,
-    "return_since_gc_pct": -1.9
+    "current_price": 2523.0,
+    "change_from_signal_month_pct": 0.08,
+    "return_since_gc_pct": 0.08
   },
   "daily": [
     {
@@ -451,22 +451,35 @@
       "sma200": 2406.28,
       "rsi14": 58.72,
       "rsi5": 60.93
+    },
+    {
+      "date": "2026-09-30",
+      "open": 2523.0,
+      "high": 2523.0,
+      "low": 2523.0,
+      "close": 2523.0,
+      "volume": 100.0,
+      "sma25": 2490.4,
+      "sma75": 2468.39,
+      "sma200": 2407.6,
+      "rsi14": 58.72,
+      "rsi5": 60.93
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-29",
-    "monthly_rsi14": 60.3,
-    "monthly_rsi_ma5": 62.9,
-    "spread": -2.6,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-09-30",
+    "monthly_rsi14": 63.64,
+    "monthly_rsi_ma5": 63.57,
+    "spread": 0.07,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-30T17:27:39.407695+00:00"
+  "provisional_generated_at": "2026-10-01T17:54:04.821776+00:00"
 }

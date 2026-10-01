@@ -2,12 +2,12 @@
   "code": "3921",
   "ticker": "3921.T",
   "name": "ネオジャパン",
-  "generated_at": "2026-09-30T17:26:37.023669+00:00",
-  "price_date": "2026-09-29",
+  "generated_at": "2026-10-01T17:52:48.781255+00:00",
+  "price_date": "2026-09-30",
   "record": {
-    "current_price": 1630.0,
-    "change_from_signal_month_pct": -0.61,
-    "return_since_gc_pct": -0.61
+    "current_price": 1613.0,
+    "change_from_signal_month_pct": -1.65,
+    "return_since_gc_pct": -1.65
   },
   "daily": [
     {
@@ -451,22 +451,35 @@
       "sma200": 1659.63,
       "rsi14": 47.32,
       "rsi5": 50.57
+    },
+    {
+      "date": "2026-09-30",
+      "open": 1622.0,
+      "high": 1632.0,
+      "low": 1590.0,
+      "close": 1613.0,
+      "volume": 15500.0,
+      "sma25": 1638.88,
+      "sma75": 1602.8,
+      "sma200": 1658.82,
+      "rsi14": 47.32,
+      "rsi5": 50.57
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-29",
-    "monthly_rsi14": 52.4,
-    "monthly_rsi_ma5": 51.69,
-    "spread": 0.71,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-30",
+    "monthly_rsi14": 51.51,
+    "monthly_rsi_ma5": 51.52,
+    "spread": -0.01,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-30T17:27:39.407695+00:00"
+  "provisional_generated_at": "2026-10-01T17:54:04.821776+00:00"
 }

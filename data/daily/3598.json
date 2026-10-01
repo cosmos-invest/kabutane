@@ -2,12 +2,12 @@
   "code": "3598",
   "ticker": "3598.T",
   "name": "山喜",
-  "generated_at": "2026-09-30T17:26:37.023669+00:00",
-  "price_date": "2026-09-29",
+  "generated_at": "2026-10-01T17:52:48.781255+00:00",
+  "price_date": "2026-09-30",
   "record": {
-    "current_price": 161.0,
-    "change_from_signal_month_pct": -1.23,
-    "return_since_gc_pct": -1.23
+    "current_price": 158.0,
+    "change_from_signal_month_pct": -3.07,
+    "return_since_gc_pct": -3.07
   },
   "daily": [
     {
@@ -451,22 +451,35 @@
       "sma200": 165.19,
       "rsi14": 47.22,
       "rsi5": 48.95
+    },
+    {
+      "date": "2026-09-30",
+      "open": 160.0,
+      "high": 160.0,
+      "low": 158.0,
+      "close": 158.0,
+      "volume": 13300.0,
+      "sma25": 164.76,
+      "sma75": 161.25,
+      "sma200": 165.12,
+      "rsi14": 47.22,
+      "rsi5": 48.95
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-09",
-    "price_date": "2026-09-29",
-    "monthly_rsi14": 44.85,
-    "monthly_rsi_ma5": 43.46,
-    "spread": 1.39,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-09-30",
+    "monthly_rsi14": 42.69,
+    "monthly_rsi_ma5": 43.03,
+    "spread": -0.34,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-09-30T17:27:39.407695+00:00"
+  "provisional_generated_at": "2026-10-01T17:54:04.821776+00:00"
 }
