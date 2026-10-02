@@ -2,12 +2,12 @@
   "code": "2602",
   "ticker": "2602.T",
   "name": "日清オイリオグループ",
-  "generated_at": "2026-10-01T17:52:48.781255+00:00",
-  "price_date": "2026-09-30",
+  "generated_at": "2026-10-02T17:15:18.292331+00:00",
+  "price_date": "2026-10-01",
   "record": {
-    "current_price": 2014.0,
-    "change_from_signal_month_pct": 5.67,
-    "return_since_gc_pct": 5.67
+    "current_price": 2008.0,
+    "change_from_signal_month_pct": 5.35,
+    "return_since_gc_pct": 5.35
   },
   "daily": [
     {
@@ -464,6 +464,19 @@
       "sma200": 1886.48,
       "rsi14": 59.43,
       "rsi5": 61.59
+    },
+    {
+      "date": "2026-10-01",
+      "open": 1992.0,
+      "high": 2019.0,
+      "low": 1988.0,
+      "close": 2008.0,
+      "volume": 295200.0,
+      "sma25": 2068.84,
+      "sma75": 1957.44,
+      "sma200": 1887.93,
+      "rsi14": 59.43,
+      "rsi5": 61.59
     }
   ],
   "corporate_events": [
@@ -475,11 +488,11 @@
     }
   ],
   "provisional_signal": {
-    "month": "2026-09",
-    "price_date": "2026-09-30",
-    "monthly_rsi14": 64.95,
-    "monthly_rsi_ma5": 61.61,
-    "spread": 3.34,
+    "month": "2026-10",
+    "price_date": "2026-10-01",
+    "monthly_rsi14": 64.51,
+    "monthly_rsi_ma5": 63.6,
+    "spread": 0.91,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -488,5 +501,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-01T17:54:04.821776+00:00"
+  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
 }

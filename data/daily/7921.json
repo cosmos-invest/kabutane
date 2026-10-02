@@ -2,12 +2,12 @@
   "code": "7921",
   "ticker": "7921.T",
   "name": "ＴＡＫＡＲＡ　＆　ＣＯＭＰＡＮＹ",
-  "generated_at": "2026-10-01T17:52:48.781255+00:00",
-  "price_date": "2026-09-30",
+  "generated_at": "2026-10-02T17:15:18.292331+00:00",
+  "price_date": "2026-10-01",
   "record": {
-    "current_price": 4145.0,
-    "change_from_signal_month_pct": -2.7,
-    "return_since_gc_pct": -2.7
+    "current_price": 4050.0,
+    "change_from_signal_month_pct": -4.93,
+    "return_since_gc_pct": -4.93
   },
   "daily": [
     {
@@ -464,22 +464,35 @@
       "sma200": 3940.49,
       "rsi14": 50.77,
       "rsi5": 60.25
+    },
+    {
+      "date": "2026-10-01",
+      "open": 4100.0,
+      "high": 4105.0,
+      "low": 4025.0,
+      "close": 4050.0,
+      "volume": 38600.0,
+      "sma25": 4168.8,
+      "sma75": 3972.87,
+      "sma200": 3938.91,
+      "rsi14": 50.77,
+      "rsi5": 60.25
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-09",
-    "price_date": "2026-09-30",
-    "monthly_rsi14": 58.27,
-    "monthly_rsi_ma5": 54.18,
-    "spread": 4.1,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "month": "2026-10",
+    "price_date": "2026-10-01",
+    "monthly_rsi14": 56.77,
+    "monthly_rsi_ma5": 56.83,
+    "spread": -0.06,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-01T17:54:04.821776+00:00"
+  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
 }

@@ -2,8 +2,8 @@
   "code": "5255",
   "ticker": "5255.T",
   "name": "モンスターラボ",
-  "generated_at": "2026-10-01T17:52:48.781255+00:00",
-  "price_date": "2026-09-30",
+  "generated_at": "2026-10-02T17:15:18.292331+00:00",
+  "price_date": "2026-10-01",
   "record": {
     "current_price": 80.0,
     "change_from_signal_month_pct": -8.05,
@@ -464,22 +464,35 @@
       "sma200": 113.76,
       "rsi14": 30.15,
       "rsi5": 30.95
+    },
+    {
+      "date": "2026-10-01",
+      "open": 80.0,
+      "high": 82.0,
+      "low": 80.0,
+      "close": 80.0,
+      "volume": 130900.0,
+      "sma25": 87.08,
+      "sma75": 87.0,
+      "sma200": 113.31,
+      "rsi14": 30.15,
+      "rsi5": 30.95
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-09",
-    "price_date": "2026-09-30",
+    "month": "2026-10",
+    "price_date": "2026-10-01",
     "monthly_rsi14": 38.25,
-    "monthly_rsi_ma5": 38.27,
-    "spread": -0.02,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "monthly_rsi_ma5": 38.22,
+    "spread": 0.03,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-01T17:54:04.821776+00:00"
+  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
 }

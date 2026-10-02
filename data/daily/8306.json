@@ -2,12 +2,12 @@
   "code": "8306",
   "ticker": "8306.T",
   "name": "三菱ＵＦＪフィナンシャル・グループ",
-  "generated_at": "2026-10-01T17:52:48.781255+00:00",
-  "price_date": "2026-09-30",
+  "generated_at": "2026-10-02T17:15:18.292331+00:00",
+  "price_date": "2026-10-01",
   "record": {
-    "current_price": 3700.0,
-    "change_from_signal_month_pct": 3.61,
-    "return_since_gc_pct": 15.37
+    "current_price": 3586.0,
+    "change_from_signal_month_pct": 0.42,
+    "return_since_gc_pct": 11.82
   },
   "daily": [
     {
@@ -464,6 +464,19 @@
       "sma200": 3071.64,
       "rsi14": 72.37,
       "rsi5": 78.98
+    },
+    {
+      "date": "2026-10-01",
+      "open": 3653.0,
+      "high": 3668.0,
+      "low": 3577.0,
+      "close": 3586.0,
+      "volume": 56859900.0,
+      "sma25": 3658.76,
+      "sma75": 3534.69,
+      "sma200": 3077.22,
+      "rsi14": 72.37,
+      "rsi5": 78.98
     }
   ],
   "corporate_events": [
@@ -475,18 +488,18 @@
     }
   ],
   "provisional_signal": {
-    "month": "2026-09",
-    "price_date": "2026-09-30",
-    "monthly_rsi14": 80.3,
-    "monthly_rsi_ma5": 77.47,
-    "spread": 2.83,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "month": "2026-10",
+    "price_date": "2026-10-01",
+    "monthly_rsi14": 75.93,
+    "monthly_rsi_ma5": 78.14,
+    "spread": -2.21,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-01T17:54:04.821776+00:00"
+  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
 }

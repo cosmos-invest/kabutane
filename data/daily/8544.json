@@ -2,12 +2,12 @@
   "code": "8544",
   "ticker": "8544.T",
   "name": "京葉銀行",
-  "generated_at": "2026-10-01T17:52:48.781255+00:00",
-  "price_date": "2026-09-30",
+  "generated_at": "2026-10-02T17:15:18.292331+00:00",
+  "price_date": "2026-10-01",
   "record": {
-    "current_price": 2980.0,
-    "change_from_signal_month_pct": 12.45,
-    "return_since_gc_pct": 12.45
+    "current_price": 2922.0,
+    "change_from_signal_month_pct": 10.26,
+    "return_since_gc_pct": 10.26
   },
   "daily": [
     {
@@ -464,6 +464,19 @@
       "sma200": 2290.9,
       "rsi14": 80.76,
       "rsi5": 81.56
+    },
+    {
+      "date": "2026-10-01",
+      "open": 2970.0,
+      "high": 2980.0,
+      "low": 2845.0,
+      "close": 2922.0,
+      "volume": 386100.0,
+      "sma25": 2853.92,
+      "sma75": 2701.91,
+      "sma200": 2297.66,
+      "rsi14": 80.76,
+      "rsi5": 81.56
     }
   ],
   "corporate_events": [
@@ -475,18 +488,18 @@
     }
   ],
   "provisional_signal": {
-    "month": "2026-09",
-    "price_date": "2026-09-30",
-    "monthly_rsi14": 84.79,
-    "monthly_rsi_ma5": 83.06,
-    "spread": 1.74,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "month": "2026-10",
+    "price_date": "2026-10-01",
+    "monthly_rsi14": 82.19,
+    "monthly_rsi_ma5": 82.54,
+    "spread": -0.34,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-01T17:54:04.821776+00:00"
+  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
 }

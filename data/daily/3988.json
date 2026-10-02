@@ -2,12 +2,12 @@
   "code": "3988",
   "ticker": "3988.T",
   "name": "ＳＹＳホールディングス",
-  "generated_at": "2026-10-01T17:52:48.781255+00:00",
-  "price_date": "2026-09-30",
+  "generated_at": "2026-10-02T17:15:18.292331+00:00",
+  "price_date": "2026-10-01",
   "record": {
-    "current_price": 553.0,
-    "change_from_signal_month_pct": 0.73,
-    "return_since_gc_pct": 0.73
+    "current_price": 548.0,
+    "change_from_signal_month_pct": -0.18,
+    "return_since_gc_pct": -0.18
   },
   "daily": [
     {
@@ -464,22 +464,35 @@
       "sma200": 549.95,
       "rsi14": 51.48,
       "rsi5": 52.92
+    },
+    {
+      "date": "2026-10-01",
+      "open": 547.0,
+      "high": 556.0,
+      "low": 547.0,
+      "close": 548.0,
+      "volume": 900.0,
+      "sma25": 557.96,
+      "sma75": 546.13,
+      "sma200": 549.8,
+      "rsi14": 51.48,
+      "rsi5": 52.92
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-09",
-    "price_date": "2026-09-30",
-    "monthly_rsi14": 55.47,
-    "monthly_rsi_ma5": 54.81,
-    "spread": 0.66,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "month": "2026-10",
+    "price_date": "2026-10-01",
+    "monthly_rsi14": 54.47,
+    "monthly_rsi_ma5": 54.69,
+    "spread": -0.22,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-01T17:54:04.821776+00:00"
+  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
 }

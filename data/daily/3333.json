@@ -2,12 +2,12 @@
   "code": "3333",
   "ticker": "3333.T",
   "name": "あさひ",
-  "generated_at": "2026-10-01T17:52:48.781255+00:00",
-  "price_date": "2026-09-30",
+  "generated_at": "2026-10-02T17:15:18.292331+00:00",
+  "price_date": "2026-10-01",
   "record": {
-    "current_price": 1273.0,
-    "change_from_signal_month_pct": -6.26,
-    "return_since_gc_pct": -1.39
+    "current_price": 1278.0,
+    "change_from_signal_month_pct": -5.89,
+    "return_since_gc_pct": -1.01
   },
   "daily": [
     {
@@ -464,15 +464,28 @@
       "sma200": 1306.34,
       "rsi14": 44.59,
       "rsi5": 50.11
+    },
+    {
+      "date": "2026-10-01",
+      "open": 1263.0,
+      "high": 1280.0,
+      "low": 1260.0,
+      "close": 1278.0,
+      "volume": 148900.0,
+      "sma25": 1304.28,
+      "sma75": 1317.64,
+      "sma200": 1306.24,
+      "rsi14": 44.59,
+      "rsi5": 50.11
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-09",
-    "price_date": "2026-09-30",
-    "monthly_rsi14": 44.99,
-    "monthly_rsi_ma5": 47.28,
-    "spread": -2.29,
+    "month": "2026-10",
+    "price_date": "2026-10-01",
+    "monthly_rsi14": 45.49,
+    "monthly_rsi_ma5": 47.71,
+    "spread": -2.21,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -481,5 +494,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-01T17:54:04.821776+00:00"
+  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
 }

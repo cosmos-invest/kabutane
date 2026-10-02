@@ -2,12 +2,12 @@
   "code": "4792",
   "ticker": "4792.T",
   "name": "山田コンサルティンググループ",
-  "generated_at": "2026-10-01T17:52:48.781255+00:00",
-  "price_date": "2026-09-30",
+  "generated_at": "2026-10-02T17:15:18.292331+00:00",
+  "price_date": "2026-10-01",
   "record": {
-    "current_price": 1720.0,
-    "change_from_signal_month_pct": 1.47,
-    "return_since_gc_pct": 3.86
+    "current_price": 1713.0,
+    "change_from_signal_month_pct": 1.06,
+    "return_since_gc_pct": 3.44
   },
   "daily": [
     {
@@ -464,6 +464,19 @@
       "sma200": 1697.22,
       "rsi14": 45.23,
       "rsi5": 47.89
+    },
+    {
+      "date": "2026-10-01",
+      "open": 1709.0,
+      "high": 1728.0,
+      "low": 1708.0,
+      "close": 1713.0,
+      "volume": 27800.0,
+      "sma25": 1769.2,
+      "sma75": 1709.25,
+      "sma200": 1697.21,
+      "rsi14": 45.23,
+      "rsi5": 47.89
     }
   ],
   "corporate_events": [
@@ -475,18 +488,18 @@
     }
   ],
   "provisional_signal": {
-    "month": "2026-09",
-    "price_date": "2026-09-30",
-    "monthly_rsi14": 50.81,
-    "monthly_rsi_ma5": 50.31,
-    "spread": 0.5,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "month": "2026-10",
+    "price_date": "2026-10-01",
+    "monthly_rsi14": 50.42,
+    "monthly_rsi_ma5": 50.98,
+    "spread": -0.56,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-01T17:54:04.821776+00:00"
+  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
 }

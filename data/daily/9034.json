@@ -2,12 +2,12 @@
   "code": "9034",
   "ticker": "9034.T",
   "name": "南総通運",
-  "generated_at": "2026-10-01T17:52:48.781255+00:00",
-  "price_date": "2026-09-30",
+  "generated_at": "2026-10-02T17:15:18.292331+00:00",
+  "price_date": "2026-10-01",
   "record": {
-    "current_price": 1648.0,
-    "change_from_signal_month_pct": 1.73,
-    "return_since_gc_pct": 1.73
+    "current_price": 1637.0,
+    "change_from_signal_month_pct": 1.05,
+    "return_since_gc_pct": 1.05
   },
   "daily": [
     {
@@ -464,6 +464,19 @@
       "sma200": 1604.13,
       "rsi14": 66.0,
       "rsi5": 67.98
+    },
+    {
+      "date": "2026-10-01",
+      "open": 1649.0,
+      "high": 1649.0,
+      "low": 1635.0,
+      "close": 1637.0,
+      "volume": 3500.0,
+      "sma25": 1655.12,
+      "sma75": 1624.07,
+      "sma200": 1604.66,
+      "rsi14": 66.0,
+      "rsi5": 67.98
     }
   ],
   "corporate_events": [
@@ -475,18 +488,18 @@
     }
   ],
   "provisional_signal": {
-    "month": "2026-09",
-    "price_date": "2026-09-30",
-    "monthly_rsi14": 69.42,
-    "monthly_rsi_ma5": 68.19,
-    "spread": 1.23,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "month": "2026-10",
+    "price_date": "2026-10-01",
+    "monthly_rsi14": 68.35,
+    "monthly_rsi_ma5": 68.37,
+    "spread": -0.03,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-01T17:54:04.821776+00:00"
+  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
 }

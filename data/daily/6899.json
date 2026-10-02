@@ -2,12 +2,12 @@
   "code": "6899",
   "ticker": "6899.T",
   "name": "ＡＳＴＩ",
-  "generated_at": "2026-10-01T17:52:48.781255+00:00",
-  "price_date": "2026-09-30",
+  "generated_at": "2026-10-02T17:15:18.292331+00:00",
+  "price_date": "2026-10-01",
   "record": {
-    "current_price": 2202.0,
-    "change_from_signal_month_pct": -6.77,
-    "return_since_gc_pct": -6.77
+    "current_price": 2218.0,
+    "change_from_signal_month_pct": -6.1,
+    "return_since_gc_pct": -6.1
   },
   "daily": [
     {
@@ -464,15 +464,28 @@
       "sma200": 2399.78,
       "rsi14": 48.97,
       "rsi5": 50.03
+    },
+    {
+      "date": "2026-10-01",
+      "open": 2200.0,
+      "high": 2218.0,
+      "low": 2196.0,
+      "close": 2218.0,
+      "volume": 2200.0,
+      "sma25": 2294.6,
+      "sma75": 2320.41,
+      "sma200": 2399.4,
+      "rsi14": 48.97,
+      "rsi5": 50.03
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-09",
-    "price_date": "2026-09-30",
-    "monthly_rsi14": 44.03,
-    "monthly_rsi_ma5": 46.55,
-    "spread": -2.52,
+    "month": "2026-10",
+    "price_date": "2026-10-01",
+    "monthly_rsi14": 44.5,
+    "monthly_rsi_ma5": 46.32,
+    "spread": -1.82,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -481,5 +494,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-01T17:54:04.821776+00:00"
+  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
 }

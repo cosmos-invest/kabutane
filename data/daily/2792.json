@@ -2,12 +2,12 @@
   "code": "2792",
   "ticker": "2792.T",
   "name": "ハニーズホールディングス",
-  "generated_at": "2026-10-01T17:52:48.781255+00:00",
-  "price_date": "2026-09-30",
+  "generated_at": "2026-10-02T17:15:18.292331+00:00",
+  "price_date": "2026-10-01",
   "record": {
-    "current_price": 1413.0,
-    "change_from_signal_month_pct": -1.4,
-    "return_since_gc_pct": -1.4
+    "current_price": 1414.0,
+    "change_from_signal_month_pct": -1.33,
+    "return_since_gc_pct": -1.33
   },
   "daily": [
     {
@@ -464,22 +464,35 @@
       "sma200": 1456.88,
       "rsi14": 43.33,
       "rsi5": 44.08
+    },
+    {
+      "date": "2026-10-01",
+      "open": 1411.0,
+      "high": 1421.0,
+      "low": 1404.0,
+      "close": 1414.0,
+      "volume": 67200.0,
+      "sma25": 1441.16,
+      "sma75": 1418.09,
+      "sma200": 1456.43,
+      "rsi14": 43.33,
+      "rsi5": 44.08
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-09",
-    "price_date": "2026-09-30",
-    "monthly_rsi14": 40.98,
-    "monthly_rsi_ma5": 40.97,
-    "spread": 0.0,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "month": "2026-10",
+    "price_date": "2026-10-01",
+    "monthly_rsi14": 41.07,
+    "monthly_rsi_ma5": 41.16,
+    "spread": -0.09,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-01T17:54:04.821776+00:00"
+  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
 }

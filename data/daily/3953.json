@@ -2,12 +2,12 @@
   "code": "3953",
   "ticker": "3953.T",
   "name": "大村紙業",
-  "generated_at": "2026-10-01T17:52:48.781255+00:00",
-  "price_date": "2026-09-30",
+  "generated_at": "2026-10-02T17:15:18.292331+00:00",
+  "price_date": "2026-10-01",
   "record": {
-    "current_price": 800.0,
-    "change_from_signal_month_pct": 0.25,
-    "return_since_gc_pct": 0.25
+    "current_price": 796.0,
+    "change_from_signal_month_pct": -0.25,
+    "return_since_gc_pct": -0.25
   },
   "daily": [
     {
@@ -464,15 +464,28 @@
       "sma200": 788.32,
       "rsi14": 49.44,
       "rsi5": 53.4
+    },
+    {
+      "date": "2026-10-01",
+      "open": 805.0,
+      "high": 805.0,
+      "low": 796.0,
+      "close": 796.0,
+      "volume": 1800.0,
+      "sma25": 792.16,
+      "sma75": 779.8,
+      "sma200": 788.32,
+      "rsi14": 49.44,
+      "rsi5": 53.4
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-09",
-    "price_date": "2026-09-30",
-    "monthly_rsi14": 56.25,
-    "monthly_rsi_ma5": 53.71,
-    "spread": 2.54,
+    "month": "2026-10",
+    "price_date": "2026-10-01",
+    "monthly_rsi14": 55.62,
+    "monthly_rsi_ma5": 54.71,
+    "spread": 0.9,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -481,5 +494,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-01T17:54:04.821776+00:00"
+  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "4020",
   "ticker": "4020.T",
   "name": "ビートレンド",
-  "generated_at": "2026-10-01T17:52:48.781255+00:00",
-  "price_date": "2026-09-30",
+  "generated_at": "2026-10-02T17:15:18.292331+00:00",
+  "price_date": "2026-10-01",
   "record": {
-    "current_price": 850.0,
-    "change_from_signal_month_pct": 22.48,
-    "return_since_gc_pct": 22.48
+    "current_price": 863.0,
+    "change_from_signal_month_pct": 24.35,
+    "return_since_gc_pct": 24.35
   },
   "daily": [
     {
@@ -464,15 +464,28 @@
       "sma200": 738.37,
       "rsi14": 41.87,
       "rsi5": 43.01
+    },
+    {
+      "date": "2026-10-01",
+      "open": 850.0,
+      "high": 871.0,
+      "low": 850.0,
+      "close": 863.0,
+      "volume": 1400.0,
+      "sma25": 832.16,
+      "sma75": 744.25,
+      "sma200": 738.28,
+      "rsi14": 41.87,
+      "rsi5": 43.01
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-09",
-    "price_date": "2026-09-30",
-    "monthly_rsi14": 58.09,
-    "monthly_rsi_ma5": 50.0,
-    "spread": 8.08,
+    "month": "2026-10",
+    "price_date": "2026-10-01",
+    "monthly_rsi14": 59.0,
+    "monthly_rsi_ma5": 52.9,
+    "spread": 6.1,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -481,5 +494,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-01T17:54:04.821776+00:00"
+  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
 }

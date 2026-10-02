@@ -2,12 +2,12 @@
   "code": "6436",
   "ticker": "6436.T",
   "name": "アマノ",
-  "generated_at": "2026-10-01T17:52:48.781255+00:00",
-  "price_date": "2026-09-30",
+  "generated_at": "2026-10-02T17:15:18.292331+00:00",
+  "price_date": "2026-10-01",
   "record": {
-    "current_price": 3797.0,
-    "change_from_signal_month_pct": -1.99,
-    "return_since_gc_pct": -1.99
+    "current_price": 3784.0,
+    "change_from_signal_month_pct": -2.32,
+    "return_since_gc_pct": -2.32
   },
   "daily": [
     {
@@ -464,6 +464,19 @@
       "sma200": 3890.43,
       "rsi14": 45.23,
       "rsi5": 50.31
+    },
+    {
+      "date": "2026-10-01",
+      "open": 3795.0,
+      "high": 3807.0,
+      "low": 3768.0,
+      "close": 3784.0,
+      "volume": 329100.0,
+      "sma25": 3908.12,
+      "sma75": 3815.13,
+      "sma200": 3888.68,
+      "rsi14": 45.23,
+      "rsi5": 50.31
     }
   ],
   "corporate_events": [
@@ -475,18 +488,18 @@
     }
   ],
   "provisional_signal": {
-    "month": "2026-09",
-    "price_date": "2026-09-30",
-    "monthly_rsi14": 49.14,
-    "monthly_rsi_ma5": 48.56,
-    "spread": 0.58,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "month": "2026-10",
+    "price_date": "2026-10-01",
+    "monthly_rsi14": 48.82,
+    "monthly_rsi_ma5": 49.59,
+    "spread": -0.76,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-01T17:54:04.821776+00:00"
+  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
 }

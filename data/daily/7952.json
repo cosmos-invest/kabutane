@@ -2,12 +2,12 @@
   "code": "7952",
   "ticker": "7952.T",
   "name": "河合楽器製作所",
-  "generated_at": "2026-10-01T17:52:48.781255+00:00",
-  "price_date": "2026-09-30",
+  "generated_at": "2026-10-02T17:15:18.292331+00:00",
+  "price_date": "2026-10-01",
   "record": {
-    "current_price": 3395.0,
-    "change_from_signal_month_pct": -2.44,
-    "return_since_gc_pct": 2.88
+    "current_price": 3445.0,
+    "change_from_signal_month_pct": -1.01,
+    "return_since_gc_pct": 4.39
   },
   "daily": [
     {
@@ -464,22 +464,35 @@
       "sma200": 3043.16,
       "rsi14": 55.15,
       "rsi5": 62.36
+    },
+    {
+      "date": "2026-10-01",
+      "open": 3355.0,
+      "high": 3455.0,
+      "low": 3345.0,
+      "close": 3445.0,
+      "volume": 9900.0,
+      "sma25": 3376.4,
+      "sma75": 3357.07,
+      "sma200": 3047.9,
+      "rsi14": 55.15,
+      "rsi5": 62.36
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-09",
-    "price_date": "2026-09-30",
-    "monthly_rsi14": 58.76,
-    "monthly_rsi_ma5": 59.12,
-    "spread": -0.36,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "month": "2026-10",
+    "price_date": "2026-10-01",
+    "monthly_rsi14": 59.77,
+    "monthly_rsi_ma5": 59.38,
+    "spread": 0.39,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-01T17:54:04.821776+00:00"
+  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
 }

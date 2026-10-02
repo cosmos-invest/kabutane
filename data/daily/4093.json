@@ -2,12 +2,12 @@
   "code": "4093",
   "ticker": "4093.T",
   "name": "東邦アセチレン",
-  "generated_at": "2026-10-01T17:52:48.781255+00:00",
-  "price_date": "2026-09-30",
+  "generated_at": "2026-10-02T17:15:18.292331+00:00",
+  "price_date": "2026-10-01",
   "record": {
-    "current_price": 432.0,
-    "change_from_signal_month_pct": 0.93,
-    "return_since_gc_pct": 0.93
+    "current_price": 427.0,
+    "change_from_signal_month_pct": -0.23,
+    "return_since_gc_pct": -0.23
   },
   "daily": [
     {
@@ -464,6 +464,19 @@
       "sma200": 409.7,
       "rsi14": 62.41,
       "rsi5": 62.92
+    },
+    {
+      "date": "2026-10-01",
+      "open": 429.0,
+      "high": 432.0,
+      "low": 427.0,
+      "close": 427.0,
+      "volume": 11200.0,
+      "sma25": 426.36,
+      "sma75": 422.41,
+      "sma200": 410.05,
+      "rsi14": 62.41,
+      "rsi5": 62.92
     }
   ],
   "corporate_events": [
@@ -475,18 +488,18 @@
     }
   ],
   "provisional_signal": {
-    "month": "2026-09",
-    "price_date": "2026-09-30",
-    "monthly_rsi14": 63.8,
-    "monthly_rsi_ma5": 62.12,
-    "spread": 1.68,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "month": "2026-10",
+    "price_date": "2026-10-01",
+    "monthly_rsi14": 62.12,
+    "monthly_rsi_ma5": 62.9,
+    "spread": -0.78,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-01T17:54:04.821776+00:00"
+  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
 }

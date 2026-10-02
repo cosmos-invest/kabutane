@@ -2,12 +2,12 @@
   "code": "4221",
   "ticker": "4221.T",
   "name": "大倉工業",
-  "generated_at": "2026-10-01T17:52:48.781255+00:00",
-  "price_date": "2026-09-30",
+  "generated_at": "2026-10-02T17:15:18.292331+00:00",
+  "price_date": "2026-10-01",
   "record": {
-    "current_price": 5690.0,
-    "change_from_signal_month_pct": 2.52,
-    "return_since_gc_pct": 2.52
+    "current_price": 5370.0,
+    "change_from_signal_month_pct": -3.24,
+    "return_since_gc_pct": -3.24
   },
   "daily": [
     {
@@ -464,22 +464,35 @@
       "sma200": 5013.98,
       "rsi14": 63.4,
       "rsi5": 68.62
+    },
+    {
+      "date": "2026-10-01",
+      "open": 5400.0,
+      "high": 5430.0,
+      "low": 5340.0,
+      "close": 5370.0,
+      "volume": 320500.0,
+      "sma25": 5569.6,
+      "sma75": 5303.93,
+      "sma200": 5016.82,
+      "rsi14": 63.4,
+      "rsi5": 68.62
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-09",
-    "price_date": "2026-09-30",
-    "monthly_rsi14": 69.18,
-    "monthly_rsi_ma5": 65.99,
-    "spread": 3.19,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "month": "2026-10",
+    "price_date": "2026-10-01",
+    "monthly_rsi14": 62.89,
+    "monthly_rsi_ma5": 66.05,
+    "spread": -3.16,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-01T17:54:04.821776+00:00"
+  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
 }

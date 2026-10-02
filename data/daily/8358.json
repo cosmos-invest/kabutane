@@ -2,12 +2,12 @@
   "code": "8358",
   "ticker": "8358.T",
   "name": "スルガ銀行",
-  "generated_at": "2026-10-01T17:52:48.781255+00:00",
-  "price_date": "2026-09-30",
+  "generated_at": "2026-10-02T17:15:18.292331+00:00",
+  "price_date": "2026-10-01",
   "record": {
-    "current_price": 2940.0,
-    "change_from_signal_month_pct": 12.86,
-    "return_since_gc_pct": 20.89
+    "current_price": 2974.0,
+    "change_from_signal_month_pct": 14.17,
+    "return_since_gc_pct": 22.29
   },
   "daily": [
     {
@@ -464,6 +464,19 @@
       "sma200": 2288.89,
       "rsi14": 83.32,
       "rsi5": 86.66
+    },
+    {
+      "date": "2026-10-01",
+      "open": 3005.0,
+      "high": 3030.0,
+      "low": 2924.0,
+      "close": 2974.0,
+      "volume": 2636000.0,
+      "sma25": 2907.6,
+      "sma75": 2716.04,
+      "sma200": 2295.55,
+      "rsi14": 83.32,
+      "rsi5": 86.66
     }
   ],
   "corporate_events": [
@@ -471,15 +484,15 @@
       "date": "2026-09-29",
       "type": "DIVIDEND",
       "label": "配当",
-      "detail": "1株 30円"
+      "detail": "1株 40円"
     }
   ],
   "provisional_signal": {
-    "month": "2026-09",
-    "price_date": "2026-09-30",
-    "monthly_rsi14": 87.5,
-    "monthly_rsi_ma5": 86.64,
-    "spread": 0.85,
+    "month": "2026-10",
+    "price_date": "2026-10-01",
+    "monthly_rsi14": 87.77,
+    "monthly_rsi_ma5": 87.43,
+    "spread": 0.34,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -488,5 +501,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-01T17:54:04.821776+00:00"
+  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
 }

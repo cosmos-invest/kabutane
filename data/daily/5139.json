@@ -2,12 +2,12 @@
   "code": "5139",
   "ticker": "5139.T",
   "name": "オープンワーク",
-  "generated_at": "2026-10-01T17:52:48.781255+00:00",
-  "price_date": "2026-09-30",
+  "generated_at": "2026-10-02T17:15:18.292331+00:00",
+  "price_date": "2026-10-01",
   "record": {
-    "current_price": 944.0,
-    "change_from_signal_month_pct": 3.4,
-    "return_since_gc_pct": 1.07
+    "current_price": 943.0,
+    "change_from_signal_month_pct": 3.29,
+    "return_since_gc_pct": 0.96
   },
   "daily": [
     {
@@ -464,15 +464,28 @@
       "sma200": 960.52,
       "rsi14": 48.55,
       "rsi5": 48.77
+    },
+    {
+      "date": "2026-10-01",
+      "open": 930.0,
+      "high": 943.0,
+      "low": 930.0,
+      "close": 943.0,
+      "volume": 4200.0,
+      "sma25": 935.76,
+      "sma75": 937.01,
+      "sma200": 960.17,
+      "rsi14": 48.55,
+      "rsi5": 48.77
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-09",
-    "price_date": "2026-09-30",
-    "monthly_rsi14": 47.3,
-    "monthly_rsi_ma5": 46.68,
-    "spread": 0.62,
+    "month": "2026-10",
+    "price_date": "2026-10-01",
+    "monthly_rsi14": 47.25,
+    "monthly_rsi_ma5": 47.0,
+    "spread": 0.25,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -481,5 +494,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-01T17:54:04.821776+00:00"
+  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
 }

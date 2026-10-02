@@ -2,12 +2,12 @@
   "code": "9997",
   "ticker": "9997.T",
   "name": "ベルーナ",
-  "generated_at": "2026-10-01T17:52:48.781255+00:00",
-  "price_date": "2026-09-30",
+  "generated_at": "2026-10-02T17:15:18.292331+00:00",
+  "price_date": "2026-10-01",
   "record": {
-    "current_price": 1068.0,
-    "change_from_signal_month_pct": -0.56,
-    "return_since_gc_pct": 12.78
+    "current_price": 1063.0,
+    "change_from_signal_month_pct": -1.02,
+    "return_since_gc_pct": 12.25
   },
   "daily": [
     {
@@ -464,6 +464,19 @@
       "sma200": 970.36,
       "rsi14": 54.04,
       "rsi5": 64.9
+    },
+    {
+      "date": "2026-10-01",
+      "open": 1064.0,
+      "high": 1067.0,
+      "low": 1050.0,
+      "close": 1063.0,
+      "volume": 209200.0,
+      "sma25": 1063.8,
+      "sma75": 1026.13,
+      "sma200": 970.8,
+      "rsi14": 54.04,
+      "rsi5": 64.9
     }
   ],
   "corporate_events": [
@@ -475,11 +488,11 @@
     }
   ],
   "provisional_signal": {
-    "month": "2026-09",
-    "price_date": "2026-09-30",
-    "monthly_rsi14": 63.52,
-    "monthly_rsi_ma5": 60.76,
-    "spread": 2.76,
+    "month": "2026-10",
+    "price_date": "2026-10-01",
+    "monthly_rsi14": 62.92,
+    "monthly_rsi_ma5": 62.56,
+    "spread": 0.36,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -488,5 +501,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-01T17:54:04.821776+00:00"
+  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
 }

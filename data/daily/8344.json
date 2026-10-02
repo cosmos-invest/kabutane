@@ -2,12 +2,12 @@
   "code": "8344",
   "ticker": "8344.T",
   "name": "山形銀行",
-  "generated_at": "2026-10-01T17:52:48.781255+00:00",
-  "price_date": "2026-09-30",
+  "generated_at": "2026-10-02T17:15:18.292331+00:00",
+  "price_date": "2026-10-01",
   "record": {
-    "current_price": 5740.0,
-    "change_from_signal_month_pct": 53.48,
-    "return_since_gc_pct": 85.46
+    "current_price": 5560.0,
+    "change_from_signal_month_pct": 48.66,
+    "return_since_gc_pct": 79.64
   },
   "daily": [
     {
@@ -464,6 +464,19 @@
       "sma200": 3103.26,
       "rsi14": 78.4,
       "rsi5": 84.39
+    },
+    {
+      "date": "2026-10-01",
+      "open": 5680.0,
+      "high": 5680.0,
+      "low": 5360.0,
+      "close": 5560.0,
+      "volume": 295400.0,
+      "sma25": 4950.6,
+      "sma75": 4231.27,
+      "sma200": 3122.03,
+      "rsi14": 78.4,
+      "rsi5": 84.39
     }
   ],
   "corporate_events": [
@@ -475,11 +488,11 @@
     }
   ],
   "provisional_signal": {
-    "month": "2026-09",
-    "price_date": "2026-09-30",
-    "monthly_rsi14": 91.73,
-    "monthly_rsi_ma5": 85.74,
-    "spread": 5.99,
+    "month": "2026-10",
+    "price_date": "2026-10-01",
+    "monthly_rsi14": 87.72,
+    "monthly_rsi_ma5": 87.25,
+    "spread": 0.47,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -488,5 +501,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-01T17:54:04.821776+00:00"
+  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
 }
