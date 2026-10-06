@@ -2,12 +2,12 @@
   "code": "7081",
   "ticker": "7081.T",
   "name": "コーユーレンティア",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1294.0,
-    "change_from_signal_month_pct": -1.82,
-    "return_since_gc_pct": -1.82
+    "current_price": 1290.0,
+    "change_from_signal_month_pct": -2.12,
+    "return_since_gc_pct": -2.12
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 1311.72,
       "rsi14": 63.64,
       "rsi5": 65.16
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1294.0,
+      "high": 1294.0,
+      "low": 1290.0,
+      "close": 1290.0,
+      "volume": 3000.0,
+      "sma25": 1291.6,
+      "sma75": 1309.35,
+      "sma200": 1312.02,
+      "rsi14": 63.64,
+      "rsi5": 65.16
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1290.0,
+      "high": 1290.0,
+      "low": 1290.0,
+      "close": 1290.0,
+      "volume": 100.0,
+      "sma25": 1290.88,
+      "sma75": 1308.85,
+      "sma200": 1312.31,
+      "rsi14": 63.64,
+      "rsi5": 65.16
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 61.74,
-    "monthly_rsi_ma5": 63.34,
-    "spread": -1.6,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 61.4,
+    "monthly_rsi_ma5": 63.27,
+    "spread": -1.87,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

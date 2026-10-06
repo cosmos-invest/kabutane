@@ -2,12 +2,12 @@
   "code": "8473",
   "ticker": "8473.T",
   "name": "ＳＢＩホールディングス",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 3157.0,
-    "change_from_signal_month_pct": 3.92,
-    "return_since_gc_pct": 3.92
+    "current_price": 3073.0,
+    "change_from_signal_month_pct": 1.15,
+    "return_since_gc_pct": 1.15
   },
   "daily": [
     {
@@ -477,6 +477,32 @@
       "sma200": 3138.05,
       "rsi14": 55.74,
       "rsi5": 56.6
+    },
+    {
+      "date": "2026-10-02",
+      "open": 3142.0,
+      "high": 3155.0,
+      "low": 3056.0,
+      "close": 3057.0,
+      "volume": 3328700.0,
+      "sma25": 3272.32,
+      "sma75": 3015.67,
+      "sma200": 3136.78,
+      "rsi14": 55.74,
+      "rsi5": 56.6
+    },
+    {
+      "date": "2026-10-05",
+      "open": 3085.0,
+      "high": 3089.0,
+      "low": 3053.0,
+      "close": 3073.0,
+      "volume": 2899400.0,
+      "sma25": 3259.48,
+      "sma75": 3017.32,
+      "sma200": 3135.58,
+      "rsi14": 55.74,
+      "rsi5": 56.6
     }
   ],
   "corporate_events": [
@@ -489,17 +515,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 57.75,
-    "monthly_rsi_ma5": 56.91,
-    "spread": 0.84,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 56.16,
+    "monthly_rsi_ma5": 56.59,
+    "spread": -0.43,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "8563",
   "ticker": "8563.T",
   "name": "大東銀行",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1240.0,
-    "change_from_signal_month_pct": 21.57,
-    "return_since_gc_pct": 21.57
+    "current_price": 1296.0,
+    "change_from_signal_month_pct": 27.06,
+    "return_since_gc_pct": 27.06
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 1017.84,
       "rsi14": 59.72,
       "rsi5": 61.7
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1246.0,
+      "high": 1276.0,
+      "low": 1239.0,
+      "close": 1260.0,
+      "volume": 73000.0,
+      "sma25": 1182.76,
+      "sma75": 1072.64,
+      "sma200": 1020.08,
+      "rsi14": 59.72,
+      "rsi5": 61.7
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1273.0,
+      "high": 1296.0,
+      "low": 1253.0,
+      "close": 1296.0,
+      "volume": 64300.0,
+      "sma25": 1189.08,
+      "sma75": 1076.84,
+      "sma200": 1022.52,
+      "rsi14": 59.72,
+      "rsi5": 61.7
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 71.27,
-    "monthly_rsi_ma5": 66.17,
-    "spread": 5.1,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 73.13,
+    "monthly_rsi_ma5": 66.54,
+    "spread": 6.58,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

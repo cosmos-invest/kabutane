@@ -2,12 +2,12 @@
   "code": "8237",
   "ticker": "8237.T",
   "name": "松屋",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 2136.0,
-    "change_from_signal_month_pct": 11.25,
-    "return_since_gc_pct": 11.25
+    "current_price": 2198.0,
+    "change_from_signal_month_pct": 14.48,
+    "return_since_gc_pct": 14.48
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 1924.19,
       "rsi14": 55.57,
       "rsi5": 58.45
+    },
+    {
+      "date": "2026-10-02",
+      "open": 2095.0,
+      "high": 2136.0,
+      "low": 2036.0,
+      "close": 2123.0,
+      "volume": 355600.0,
+      "sma25": 2306.24,
+      "sma75": 2006.56,
+      "sma200": 1925.45,
+      "rsi14": 55.57,
+      "rsi5": 58.45
+    },
+    {
+      "date": "2026-10-05",
+      "open": 2127.0,
+      "high": 2202.0,
+      "low": 2110.0,
+      "close": 2198.0,
+      "volume": 204100.0,
+      "sma25": 2278.16,
+      "sma75": 2015.51,
+      "sma200": 1927.43,
+      "rsi14": 55.57,
+      "rsi5": 58.45
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 59.87,
-    "monthly_rsi_ma5": 59.69,
-    "spread": 0.18,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 61.24,
+    "monthly_rsi_ma5": 59.97,
+    "spread": 1.27,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

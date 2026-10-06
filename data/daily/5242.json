@@ -2,12 +2,12 @@
   "code": "5242",
   "ticker": "5242.T",
   "name": "アイズ",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 2370.0,
-    "change_from_signal_month_pct": -0.5,
-    "return_since_gc_pct": -0.5
+    "current_price": 2249.0,
+    "change_from_signal_month_pct": -5.58,
+    "return_since_gc_pct": -5.58
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 1313.61,
       "rsi14": 40.98,
       "rsi5": 61.52
+    },
+    {
+      "date": "2026-10-02",
+      "open": 2320.0,
+      "high": 2338.0,
+      "low": 2000.0,
+      "close": 2151.0,
+      "volume": 14600.0,
+      "sma25": 2384.16,
+      "sma75": 1784.65,
+      "sma200": 1318.66,
+      "rsi14": 40.98,
+      "rsi5": 61.52
+    },
+    {
+      "date": "2026-10-05",
+      "open": 2200.0,
+      "high": 2249.0,
+      "low": 2130.0,
+      "close": 2249.0,
+      "volume": 4700.0,
+      "sma25": 2385.96,
+      "sma75": 1803.45,
+      "sma200": 1324.32,
+      "rsi14": 40.98,
+      "rsi5": 61.52
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 60.18,
-    "monthly_rsi_ma5": 53.76,
-    "spread": 6.43,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 58.17,
+    "monthly_rsi_ma5": 53.35,
+    "spread": 4.81,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

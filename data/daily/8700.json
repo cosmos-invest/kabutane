@@ -2,12 +2,12 @@
   "code": "8700",
   "ticker": "8700.T",
   "name": "丸八証券",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 2110.0,
-    "change_from_signal_month_pct": 6.84,
-    "return_since_gc_pct": 6.84
+    "current_price": 2055.0,
+    "change_from_signal_month_pct": 4.05,
+    "return_since_gc_pct": 4.05
   },
   "daily": [
     {
@@ -477,22 +477,48 @@
       "sma200": 1819.83,
       "rsi14": 64.79,
       "rsi5": 71.96
+    },
+    {
+      "date": "2026-10-02",
+      "open": 2082.0,
+      "high": 2088.0,
+      "low": 2079.0,
+      "close": 2084.0,
+      "volume": 2900.0,
+      "sma25": 2105.28,
+      "sma75": 1951.2,
+      "sma200": 1822.04,
+      "rsi14": 64.79,
+      "rsi5": 71.96
+    },
+    {
+      "date": "2026-10-05",
+      "open": 2071.0,
+      "high": 2071.0,
+      "low": 2055.0,
+      "close": 2055.0,
+      "volume": 1400.0,
+      "sma25": 2108.36,
+      "sma75": 1955.63,
+      "sma200": 1824.09,
+      "rsi14": 64.79,
+      "rsi5": 71.96
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 75.35,
-    "monthly_rsi_ma5": 72.39,
-    "spread": 2.96,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 70.54,
+    "monthly_rsi_ma5": 71.43,
+    "spread": -0.89,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

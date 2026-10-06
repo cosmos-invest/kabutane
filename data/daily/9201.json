@@ -2,12 +2,12 @@
   "code": "9201",
   "ticker": "9201.T",
   "name": "日本航空",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 3022.0,
-    "change_from_signal_month_pct": 2.68,
-    "return_since_gc_pct": 6.04
+    "current_price": 3011.0,
+    "change_from_signal_month_pct": 2.31,
+    "return_since_gc_pct": 5.65
   },
   "daily": [
     {
@@ -477,6 +477,32 @@
       "sma200": 2848.7,
       "rsi14": 48.33,
       "rsi5": 54.29
+    },
+    {
+      "date": "2026-10-02",
+      "open": 2976.0,
+      "high": 3008.0,
+      "low": 2970.0,
+      "close": 2989.0,
+      "volume": 2195400.0,
+      "sma25": 3022.18,
+      "sma75": 2967.31,
+      "sma200": 2849.18,
+      "rsi14": 48.33,
+      "rsi5": 54.29
+    },
+    {
+      "date": "2026-10-05",
+      "open": 2984.0,
+      "high": 3020.0,
+      "low": 2984.0,
+      "close": 3011.0,
+      "volume": 2369800.0,
+      "sma25": 3020.9,
+      "sma75": 2969.81,
+      "sma200": 2850.09,
+      "rsi14": 48.33,
+      "rsi5": 54.29
     }
   ],
   "corporate_events": [
@@ -489,10 +515,10 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 54.21,
-    "monthly_rsi_ma5": 53.41,
-    "spread": 0.8,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 53.87,
+    "monthly_rsi_ma5": 53.34,
+    "spread": 0.53,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -501,5 +527,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

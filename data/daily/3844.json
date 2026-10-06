@@ -2,12 +2,12 @@
   "code": "3844",
   "ticker": "3844.T",
   "name": "コムチュア",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1286.0,
-    "change_from_signal_month_pct": -10.07,
-    "return_since_gc_pct": -10.07
+    "current_price": 1250.0,
+    "change_from_signal_month_pct": -12.59,
+    "return_since_gc_pct": -12.59
   },
   "daily": [
     {
@@ -477,6 +477,32 @@
       "sma200": 1444.34,
       "rsi14": 36.31,
       "rsi5": 40.27
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1287.0,
+      "high": 1287.0,
+      "low": 1256.0,
+      "close": 1265.0,
+      "volume": 260800.0,
+      "sma25": 1318.88,
+      "sma75": 1342.41,
+      "sma200": 1442.35,
+      "rsi14": 36.31,
+      "rsi5": 40.27
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1260.0,
+      "high": 1262.0,
+      "low": 1248.0,
+      "close": 1250.0,
+      "volume": 224800.0,
+      "sma25": 1314.6,
+      "sma75": 1342.01,
+      "sma200": 1440.45,
+      "rsi14": 36.31,
+      "rsi5": 40.27
     }
   ],
   "corporate_events": [
@@ -489,10 +515,10 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 33.33,
-    "monthly_rsi_ma5": 33.53,
-    "spread": -0.21,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 32.11,
+    "monthly_rsi_ma5": 33.29,
+    "spread": -1.18,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -501,5 +527,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "7309",
   "ticker": "7309.T",
   "name": "シマノ",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 17770.0,
-    "change_from_signal_month_pct": -11.7,
-    "return_since_gc_pct": 2.45
+    "current_price": 17525.0,
+    "change_from_signal_month_pct": -12.92,
+    "return_since_gc_pct": 1.04
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 17424.42,
       "rsi14": 41.46,
       "rsi5": 53.81
+    },
+    {
+      "date": "2026-10-02",
+      "open": 17660.0,
+      "high": 17690.0,
+      "low": 17435.0,
+      "close": 17485.0,
+      "volume": 290900.0,
+      "sma25": 18561.0,
+      "sma75": 18526.53,
+      "sma200": 17428.83,
+      "rsi14": 41.46,
+      "rsi5": 53.81
+    },
+    {
+      "date": "2026-10-05",
+      "open": 17585.0,
+      "high": 17650.0,
+      "low": 17525.0,
+      "close": 17525.0,
+      "volume": 238800.0,
+      "sma25": 18471.0,
+      "sma75": 18541.87,
+      "sma200": 17433.55,
+      "rsi14": 41.46,
+      "rsi5": 53.81
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 46.4,
-    "monthly_rsi_ma5": 49.66,
-    "spread": -3.25,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 45.53,
+    "monthly_rsi_ma5": 49.48,
+    "spread": -3.95,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

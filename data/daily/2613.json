@@ -2,12 +2,12 @@
   "code": "2613",
   "ticker": "2613.T",
   "name": "Ｊ－オイルミルズ",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 2220.0,
-    "change_from_signal_month_pct": 6.42,
-    "return_since_gc_pct": 8.61
+    "current_price": 2162.0,
+    "change_from_signal_month_pct": 3.64,
+    "return_since_gc_pct": 5.77
   },
   "daily": [
     {
@@ -477,6 +477,32 @@
       "sma200": 2064.38,
       "rsi14": 51.8,
       "rsi5": 56.2
+    },
+    {
+      "date": "2026-10-02",
+      "open": 2220.0,
+      "high": 2220.0,
+      "low": 2151.0,
+      "close": 2168.0,
+      "volume": 82300.0,
+      "sma25": 2267.36,
+      "sma75": 2148.68,
+      "sma200": 2065.26,
+      "rsi14": 51.8,
+      "rsi5": 56.2
+    },
+    {
+      "date": "2026-10-05",
+      "open": 2165.0,
+      "high": 2170.0,
+      "low": 2151.0,
+      "close": 2162.0,
+      "volume": 66000.0,
+      "sma25": 2263.24,
+      "sma75": 2150.32,
+      "sma200": 2066.24,
+      "rsi14": 51.8,
+      "rsi5": 56.2
     }
   ],
   "corporate_events": [
@@ -489,17 +515,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 60.54,
-    "monthly_rsi_ma5": 59.99,
-    "spread": 0.55,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 56.86,
+    "monthly_rsi_ma5": 59.26,
+    "spread": -2.39,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

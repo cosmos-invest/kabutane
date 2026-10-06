@@ -2,12 +2,12 @@
   "code": "3071",
   "ticker": "3071.T",
   "name": "ストリーム",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 103.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 102.0,
+    "change_from_signal_month_pct": -0.97,
+    "return_since_gc_pct": -0.97
   },
   "daily": [
     {
@@ -477,22 +477,48 @@
       "sma200": 104.95,
       "rsi14": 44.19,
       "rsi5": 45.28
+    },
+    {
+      "date": "2026-10-02",
+      "open": 102.0,
+      "high": 103.0,
+      "low": 101.0,
+      "close": 102.0,
+      "volume": 56600.0,
+      "sma25": 103.24,
+      "sma75": 102.13,
+      "sma200": 104.92,
+      "rsi14": 44.19,
+      "rsi5": 45.28
+    },
+    {
+      "date": "2026-10-05",
+      "open": 102.0,
+      "high": 103.0,
+      "low": 102.0,
+      "close": 102.0,
+      "volume": 63700.0,
+      "sma25": 103.12,
+      "sma75": 102.15,
+      "sma200": 104.91,
+      "rsi14": 44.19,
+      "rsi5": 45.28
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 45.27,
-    "monthly_rsi_ma5": 44.63,
-    "spread": 0.63,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 44.02,
+    "monthly_rsi_ma5": 44.38,
+    "spread": -0.37,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "9928",
   "ticker": "9928.T",
   "name": "ミロク情報サービス",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 2133.0,
-    "change_from_signal_month_pct": 17.0,
-    "return_since_gc_pct": 23.01
+    "current_price": 2099.0,
+    "change_from_signal_month_pct": 15.14,
+    "return_since_gc_pct": 21.05
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 1840.64,
       "rsi14": 46.21,
       "rsi5": 50.97
+    },
+    {
+      "date": "2026-10-02",
+      "open": 2140.0,
+      "high": 2140.0,
+      "low": 2101.0,
+      "close": 2123.0,
+      "volume": 36700.0,
+      "sma25": 2051.44,
+      "sma75": 1892.25,
+      "sma200": 1841.99,
+      "rsi14": 46.21,
+      "rsi5": 50.97
+    },
+    {
+      "date": "2026-10-05",
+      "open": 2117.0,
+      "high": 2118.0,
+      "low": 2092.0,
+      "close": 2099.0,
+      "volume": 33800.0,
+      "sma25": 2056.68,
+      "sma75": 1897.13,
+      "sma200": 1843.27,
+      "rsi14": 46.21,
+      "rsi5": 50.97
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 65.24,
-    "monthly_rsi_ma5": 59.09,
-    "spread": 6.15,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 63.7,
+    "monthly_rsi_ma5": 58.78,
+    "spread": 4.92,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

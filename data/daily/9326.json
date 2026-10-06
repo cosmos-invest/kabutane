@@ -2,12 +2,12 @@
   "code": "9326",
   "ticker": "9326.T",
   "name": "関通ホールディングス",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 480.0,
-    "change_from_signal_month_pct": -3.81,
-    "return_since_gc_pct": -3.81
+    "current_price": 476.0,
+    "change_from_signal_month_pct": -4.61,
+    "return_since_gc_pct": -4.61
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 451.56,
       "rsi14": 48.84,
       "rsi5": 56.18
+    },
+    {
+      "date": "2026-10-02",
+      "open": 481.0,
+      "high": 481.0,
+      "low": 480.0,
+      "close": 480.0,
+      "volume": 2600.0,
+      "sma25": 482.16,
+      "sma75": 469.96,
+      "sma200": 451.87,
+      "rsi14": 48.84,
+      "rsi5": 56.18
+    },
+    {
+      "date": "2026-10-05",
+      "open": 480.0,
+      "high": 480.0,
+      "low": 476.0,
+      "close": 476.0,
+      "volume": 6400.0,
+      "sma25": 481.2,
+      "sma75": 470.75,
+      "sma200": 452.19,
+      "rsi14": 48.84,
+      "rsi5": 56.18
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 51.21,
-    "monthly_rsi_ma5": 50.24,
-    "spread": 0.97,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 50.65,
+    "monthly_rsi_ma5": 50.12,
+    "spread": 0.52,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

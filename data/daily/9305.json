@@ -2,12 +2,12 @@
   "code": "9305",
   "ticker": "9305.T",
   "name": "ヤマタネ",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 2015.0,
-    "change_from_signal_month_pct": -4.46,
-    "return_since_gc_pct": -4.46
+    "current_price": 2003.0,
+    "change_from_signal_month_pct": -5.03,
+    "return_since_gc_pct": -5.03
   },
   "daily": [
     {
@@ -477,6 +477,32 @@
       "sma200": 2157.57,
       "rsi14": 51.25,
       "rsi5": 52.87
+    },
+    {
+      "date": "2026-10-02",
+      "open": 2000.0,
+      "high": 2003.0,
+      "low": 1979.0,
+      "close": 1985.0,
+      "volume": 89900.0,
+      "sma25": 2074.48,
+      "sma75": 2075.11,
+      "sma200": 2154.89,
+      "rsi14": 51.25,
+      "rsi5": 52.87
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1990.0,
+      "high": 2012.0,
+      "low": 1982.0,
+      "close": 2003.0,
+      "volume": 58000.0,
+      "sma25": 2070.2,
+      "sma75": 2074.81,
+      "sma200": 2152.39,
+      "rsi14": 51.25,
+      "rsi5": 52.87
     }
   ],
   "corporate_events": [
@@ -489,10 +515,10 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 50.62,
-    "monthly_rsi_ma5": 51.75,
-    "spread": -1.13,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 50.21,
+    "monthly_rsi_ma5": 51.66,
+    "spread": -1.45,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -501,5 +527,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

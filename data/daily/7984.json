@@ -2,12 +2,12 @@
   "code": "7984",
   "ticker": "7984.T",
   "name": "コクヨ",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 869.0,
-    "change_from_signal_month_pct": -4.48,
-    "return_since_gc_pct": -4.48
+    "current_price": 852.8,
+    "change_from_signal_month_pct": -6.27,
+    "return_since_gc_pct": -6.27
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 871.18,
       "rsi14": 56.95,
       "rsi5": 62.55
+    },
+    {
+      "date": "2026-10-02",
+      "open": 863.1,
+      "high": 863.1,
+      "low": 851.0,
+      "close": 851.0,
+      "volume": 866400.0,
+      "sma25": 902.22,
+      "sma75": 868.24,
+      "sma200": 870.85,
+      "rsi14": 56.95,
+      "rsi5": 62.55
+    },
+    {
+      "date": "2026-10-05",
+      "open": 857.2,
+      "high": 859.1,
+      "low": 848.8,
+      "close": 852.8,
+      "volume": 742100.0,
+      "sma25": 899.96,
+      "sma75": 868.74,
+      "sma200": 870.47,
+      "rsi14": 56.95,
+      "rsi5": 62.55
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 57.08,
-    "monthly_rsi_ma5": 58.53,
-    "spread": -1.44,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 55.32,
+    "monthly_rsi_ma5": 58.17,
+    "spread": -2.85,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

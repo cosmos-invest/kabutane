@@ -2,12 +2,12 @@
   "code": "9341",
   "ticker": "9341.T",
   "name": "ＧＥＮＯＶＡ",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 619.0,
-    "change_from_signal_month_pct": -1.75,
-    "return_since_gc_pct": 6.17
+    "current_price": 607.0,
+    "change_from_signal_month_pct": -3.65,
+    "return_since_gc_pct": 4.12
   },
   "daily": [
     {
@@ -477,22 +477,48 @@
       "sma200": 594.28,
       "rsi14": 33.08,
       "rsi5": 36.25
+    },
+    {
+      "date": "2026-10-02",
+      "open": 616.0,
+      "high": 616.0,
+      "low": 602.0,
+      "close": 602.0,
+      "volume": 59700.0,
+      "sma25": 622.8,
+      "sma75": 614.41,
+      "sma200": 594.4,
+      "rsi14": 33.08,
+      "rsi5": 36.25
+    },
+    {
+      "date": "2026-10-05",
+      "open": 604.0,
+      "high": 612.0,
+      "low": 604.0,
+      "close": 607.0,
+      "volume": 39500.0,
+      "sma25": 621.84,
+      "sma75": 615.04,
+      "sma200": 594.57,
+      "rsi14": 33.08,
+      "rsi5": 36.25
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 35.79,
-    "monthly_rsi_ma5": 35.41,
-    "spread": 0.37,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 35.27,
+    "monthly_rsi_ma5": 35.31,
+    "spread": -0.04,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "1407",
   "ticker": "1407.T",
   "name": "ウエストホールディングス",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 2220.0,
-    "change_from_signal_month_pct": -12.22,
-    "return_since_gc_pct": 39.53
+    "current_price": 2215.0,
+    "change_from_signal_month_pct": -12.42,
+    "return_since_gc_pct": 39.22
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 2148.5,
       "rsi14": 54.85,
       "rsi5": 55.63
+    },
+    {
+      "date": "2026-10-02",
+      "open": 2220.0,
+      "high": 2234.0,
+      "low": 2188.0,
+      "close": 2217.0,
+      "volume": 161300.0,
+      "sma25": 2347.88,
+      "sma75": 2467.77,
+      "sma200": 2152.55,
+      "rsi14": 54.85,
+      "rsi5": 55.63
+    },
+    {
+      "date": "2026-10-05",
+      "open": 2234.0,
+      "high": 2245.0,
+      "low": 2194.0,
+      "close": 2215.0,
+      "volume": 288700.0,
+      "sma25": 2327.64,
+      "sma75": 2466.91,
+      "sma200": 2156.64,
+      "rsi14": 54.85,
+      "rsi5": 55.63
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 50.83,
-    "monthly_rsi_ma5": 54.22,
-    "spread": -3.39,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 50.75,
+    "monthly_rsi_ma5": 54.21,
+    "spread": -3.46,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

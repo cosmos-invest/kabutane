@@ -2,12 +2,12 @@
   "code": "2491",
   "ticker": "2491.T",
   "name": "バリューコマース",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 453.0,
-    "change_from_signal_month_pct": -4.23,
-    "return_since_gc_pct": -3.0
+    "current_price": 449.0,
+    "change_from_signal_month_pct": -5.07,
+    "return_since_gc_pct": -3.85
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 502.9,
       "rsi14": 23.31,
       "rsi5": 25.38
+    },
+    {
+      "date": "2026-10-02",
+      "open": 451.0,
+      "high": 452.0,
+      "low": 447.0,
+      "close": 448.0,
+      "volume": 143400.0,
+      "sma25": 475.16,
+      "sma75": 467.96,
+      "sma200": 501.71,
+      "rsi14": 23.31,
+      "rsi5": 25.38
+    },
+    {
+      "date": "2026-10-05",
+      "open": 448.0,
+      "high": 455.0,
+      "low": 444.0,
+      "close": 449.0,
+      "volume": 224100.0,
+      "sma25": 473.0,
+      "sma75": 467.75,
+      "sma200": 500.54,
+      "rsi14": 23.31,
+      "rsi5": 25.38
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 26.63,
-    "monthly_rsi_ma5": 26.37,
-    "spread": 0.26,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 26.45,
+    "monthly_rsi_ma5": 26.33,
+    "spread": 0.12,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

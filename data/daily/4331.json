@@ -2,12 +2,12 @@
   "code": "4331",
   "ticker": "4331.T",
   "name": "テイクアンドギヴ・ニーズ",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 876.0,
-    "change_from_signal_month_pct": 28.82,
-    "return_since_gc_pct": 28.82
+    "current_price": 856.0,
+    "change_from_signal_month_pct": 25.88,
+    "return_since_gc_pct": 25.88
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 724.27,
       "rsi14": 32.16,
       "rsi5": 33.78
+    },
+    {
+      "date": "2026-10-02",
+      "open": 876.0,
+      "high": 880.0,
+      "low": 854.0,
+      "close": 856.0,
+      "volume": 230700.0,
+      "sma25": 758.56,
+      "sma75": 707.8,
+      "sma200": 724.7,
+      "rsi14": 32.16,
+      "rsi5": 33.78
+    },
+    {
+      "date": "2026-10-05",
+      "open": 865.0,
+      "high": 868.0,
+      "low": 854.0,
+      "close": 856.0,
+      "volume": 154600.0,
+      "sma25": 763.28,
+      "sma75": 710.31,
+      "sma200": 725.16,
+      "rsi14": 32.16,
+      "rsi5": 33.78
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 53.24,
-    "monthly_rsi_ma5": 41.43,
-    "spread": 11.82,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 51.51,
+    "monthly_rsi_ma5": 41.08,
+    "spread": 10.43,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

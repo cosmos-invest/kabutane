@@ -2,12 +2,12 @@
   "code": "4763",
   "ticker": "4763.T",
   "name": "クリーク・アンド・リバー社",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1510.0,
-    "change_from_signal_month_pct": 4.57,
-    "return_since_gc_pct": 4.57
+    "current_price": 1500.0,
+    "change_from_signal_month_pct": 3.88,
+    "return_since_gc_pct": 3.88
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 1421.7,
       "rsi14": 37.15,
       "rsi5": 44.65
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1500.0,
+      "high": 1504.0,
+      "low": 1477.0,
+      "close": 1479.0,
+      "volume": 52100.0,
+      "sma25": 1498.04,
+      "sma75": 1436.89,
+      "sma200": 1421.88,
+      "rsi14": 37.15,
+      "rsi5": 44.65
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1481.0,
+      "high": 1500.0,
+      "low": 1481.0,
+      "close": 1500.0,
+      "volume": 52300.0,
+      "sma25": 1496.68,
+      "sma75": 1439.91,
+      "sma200": 1422.24,
+      "rsi14": 37.15,
+      "rsi5": 44.65
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 45.31,
-    "monthly_rsi_ma5": 42.53,
-    "spread": 2.78,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 44.79,
+    "monthly_rsi_ma5": 42.42,
+    "spread": 2.37,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

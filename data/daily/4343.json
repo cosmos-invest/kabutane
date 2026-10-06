@@ -2,12 +2,12 @@
   "code": "4343",
   "ticker": "4343.T",
   "name": "イオンファンタジー",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 2705.0,
-    "change_from_signal_month_pct": -2.06,
-    "return_since_gc_pct": 4.4
+    "current_price": 2653.0,
+    "change_from_signal_month_pct": -3.95,
+    "return_since_gc_pct": 2.39
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 2676.01,
       "rsi14": 46.38,
       "rsi5": 50.05
+    },
+    {
+      "date": "2026-10-02",
+      "open": 2680.0,
+      "high": 2681.0,
+      "low": 2640.0,
+      "close": 2643.0,
+      "volume": 62300.0,
+      "sma25": 2768.8,
+      "sma75": 2702.65,
+      "sma200": 2674.68,
+      "rsi14": 46.38,
+      "rsi5": 50.05
+    },
+    {
+      "date": "2026-10-05",
+      "open": 2636.0,
+      "high": 2672.0,
+      "low": 2633.0,
+      "close": 2653.0,
+      "volume": 57000.0,
+      "sma25": 2759.4,
+      "sma75": 2704.8,
+      "sma200": 2673.45,
+      "rsi14": 46.38,
+      "rsi5": 50.05
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 46.71,
-    "monthly_rsi_ma5": 46.82,
-    "spread": -0.12,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 45.74,
+    "monthly_rsi_ma5": 46.63,
+    "spread": -0.89,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

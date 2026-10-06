@@ -2,12 +2,12 @@
   "code": "9888",
   "ticker": "9888.T",
   "name": "ＵＥＸ",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1247.0,
-    "change_from_signal_month_pct": 21.66,
-    "return_since_gc_pct": 36.43
+    "current_price": 1206.0,
+    "change_from_signal_month_pct": 17.66,
+    "return_since_gc_pct": 31.95
   },
   "daily": [
     {
@@ -477,6 +477,32 @@
       "sma200": 924.5,
       "rsi14": 49.26,
       "rsi5": 59.0
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1247.0,
+      "high": 1260.0,
+      "low": 1217.0,
+      "close": 1221.0,
+      "volume": 48100.0,
+      "sma25": 1255.6,
+      "sma75": 1123.36,
+      "sma200": 926.89,
+      "rsi14": 49.26,
+      "rsi5": 59.0
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1215.0,
+      "high": 1223.0,
+      "low": 1199.0,
+      "close": 1206.0,
+      "volume": 50500.0,
+      "sma25": 1254.92,
+      "sma75": 1126.81,
+      "sma200": 929.23,
+      "rsi14": 49.26,
+      "rsi5": 59.0
     }
   ],
   "corporate_events": [
@@ -489,10 +515,10 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 64.13,
-    "monthly_rsi_ma5": 61.71,
-    "spread": 2.42,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 61.86,
+    "monthly_rsi_ma5": 61.26,
+    "spread": 0.6,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -501,5 +527,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

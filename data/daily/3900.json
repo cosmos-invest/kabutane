@@ -2,12 +2,12 @@
   "code": "3900",
   "ticker": "3900.T",
   "name": "クラウドワークス",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 673.0,
-    "change_from_signal_month_pct": -3.3,
-    "return_since_gc_pct": -3.3
+    "current_price": 685.0,
+    "change_from_signal_month_pct": -1.58,
+    "return_since_gc_pct": -1.58
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 679.76,
       "rsi14": 34.18,
       "rsi5": 39.05
+    },
+    {
+      "date": "2026-10-02",
+      "open": 673.0,
+      "high": 673.0,
+      "low": 661.0,
+      "close": 668.0,
+      "volume": 239000.0,
+      "sma25": 664.64,
+      "sma75": 650.07,
+      "sma200": 679.12,
+      "rsi14": 34.18,
+      "rsi5": 39.05
+    },
+    {
+      "date": "2026-10-05",
+      "open": 675.0,
+      "high": 685.0,
+      "low": 662.0,
+      "close": 685.0,
+      "volume": 99800.0,
+      "sma25": 665.52,
+      "sma75": 651.35,
+      "sma200": 678.58,
+      "rsi14": 34.18,
+      "rsi5": 39.05
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 37.56,
-    "monthly_rsi_ma5": 36.8,
-    "spread": 0.76,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 38.21,
+    "monthly_rsi_ma5": 36.93,
+    "spread": 1.28,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "3878",
   "ticker": "3878.T",
   "name": "巴川コーポレーション",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 994.0,
-    "change_from_signal_month_pct": 19.33,
-    "return_since_gc_pct": 19.33
+    "current_price": 963.0,
+    "change_from_signal_month_pct": 15.61,
+    "return_since_gc_pct": 15.61
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 835.14,
       "rsi14": 52.31,
       "rsi5": 52.4
+    },
+    {
+      "date": "2026-10-02",
+      "open": 993.0,
+      "high": 1009.0,
+      "low": 964.0,
+      "close": 969.0,
+      "volume": 63700.0,
+      "sma25": 867.72,
+      "sma75": 834.48,
+      "sma200": 836.05,
+      "rsi14": 52.31,
+      "rsi5": 52.4
+    },
+    {
+      "date": "2026-10-05",
+      "open": 981.0,
+      "high": 987.0,
+      "low": 959.0,
+      "close": 963.0,
+      "volume": 55200.0,
+      "sma25": 870.88,
+      "sma75": 836.44,
+      "sma200": 837.0,
+      "rsi14": 52.31,
+      "rsi5": 52.4
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 62.01,
-    "monthly_rsi_ma5": 56.83,
-    "spread": 5.17,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 60.59,
+    "monthly_rsi_ma5": 56.55,
+    "spread": 4.04,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

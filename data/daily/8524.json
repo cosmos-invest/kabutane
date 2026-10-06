@@ -2,12 +2,12 @@
   "code": "8524",
   "ticker": "8524.T",
   "name": "北洋銀行",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1365.0,
-    "change_from_signal_month_pct": 17.98,
-    "return_since_gc_pct": 22.53
+    "current_price": 1351.0,
+    "change_from_signal_month_pct": 16.77,
+    "return_since_gc_pct": 21.27
   },
   "daily": [
     {
@@ -477,6 +477,32 @@
       "sma200": 1054.09,
       "rsi14": 72.1,
       "rsi5": 75.82
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1365.0,
+      "high": 1392.0,
+      "low": 1355.0,
+      "close": 1361.0,
+      "volume": 1315500.0,
+      "sma25": 1323.0,
+      "sma75": 1221.23,
+      "sma200": 1056.7,
+      "rsi14": 72.1,
+      "rsi5": 75.82
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1378.0,
+      "high": 1381.0,
+      "low": 1349.0,
+      "close": 1351.0,
+      "volume": 1158400.0,
+      "sma25": 1326.56,
+      "sma75": 1225.27,
+      "sma200": 1059.29,
+      "rsi14": 72.1,
+      "rsi5": 75.82
     }
   ],
   "corporate_events": [
@@ -489,10 +515,10 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 79.27,
-    "monthly_rsi_ma5": 78.26,
-    "spread": 1.02,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 78.1,
+    "monthly_rsi_ma5": 78.02,
+    "spread": 0.08,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -501,5 +527,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

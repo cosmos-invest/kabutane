@@ -2,12 +2,12 @@
   "code": "7380",
   "ticker": "7380.T",
   "name": "十六フィナンシャルグループ",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 2806.0,
-    "change_from_signal_month_pct": 18.6,
-    "return_since_gc_pct": 20.33
+    "current_price": 2842.0,
+    "change_from_signal_month_pct": 20.12,
+    "return_since_gc_pct": 21.87
   },
   "daily": [
     {
@@ -477,6 +477,32 @@
       "sma200": 2069.76,
       "rsi14": 79.21,
       "rsi5": 82.35
+    },
+    {
+      "date": "2026-10-02",
+      "open": 2781.0,
+      "high": 2852.0,
+      "low": 2780.0,
+      "close": 2783.0,
+      "volume": 574300.0,
+      "sma25": 2681.52,
+      "sma75": 2504.6,
+      "sma200": 2077.24,
+      "rsi14": 79.21,
+      "rsi5": 82.35
+    },
+    {
+      "date": "2026-10-05",
+      "open": 2805.0,
+      "high": 2845.0,
+      "low": 2774.0,
+      "close": 2842.0,
+      "volume": 567800.0,
+      "sma25": 2692.32,
+      "sma75": 2512.35,
+      "sma200": 2085.07,
+      "rsi14": 79.21,
+      "rsi5": 82.35
     }
   ],
   "corporate_events": [
@@ -489,17 +515,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 83.89,
-    "monthly_rsi_ma5": 83.9,
-    "spread": -0.01,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 85.62,
+    "monthly_rsi_ma5": 84.24,
+    "spread": 1.38,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

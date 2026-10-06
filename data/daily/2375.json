@@ -2,12 +2,12 @@
   "code": "2375",
   "ticker": "2375.T",
   "name": "ギグワークス",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 214.0,
-    "change_from_signal_month_pct": 2.39,
-    "return_since_gc_pct": 2.39
+    "current_price": 210.0,
+    "change_from_signal_month_pct": 0.48,
+    "return_since_gc_pct": 0.48
   },
   "daily": [
     {
@@ -477,22 +477,48 @@
       "sma200": 213.18,
       "rsi14": 38.19,
       "rsi5": 38.73
+    },
+    {
+      "date": "2026-10-02",
+      "open": 214.0,
+      "high": 214.0,
+      "low": 208.0,
+      "close": 214.0,
+      "volume": 29500.0,
+      "sma25": 211.16,
+      "sma75": 206.73,
+      "sma200": 213.13,
+      "rsi14": 38.19,
+      "rsi5": 38.73
+    },
+    {
+      "date": "2026-10-05",
+      "open": 211.0,
+      "high": 211.0,
+      "low": 208.0,
+      "close": 210.0,
+      "volume": 31100.0,
+      "sma25": 211.24,
+      "sma75": 206.73,
+      "sma200": 213.08,
+      "rsi14": 38.19,
+      "rsi5": 38.73
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 47.66,
-    "monthly_rsi_ma5": 47.38,
-    "spread": 0.28,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 47.18,
+    "monthly_rsi_ma5": 47.28,
+    "spread": -0.11,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

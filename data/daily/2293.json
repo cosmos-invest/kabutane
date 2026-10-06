@@ -2,12 +2,12 @@
   "code": "2293",
   "ticker": "2293.T",
   "name": "滝沢ハム",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 2669.0,
-    "change_from_signal_month_pct": -1.29,
-    "return_since_gc_pct": -1.29
+    "current_price": 2650.0,
+    "change_from_signal_month_pct": -2.0,
+    "return_since_gc_pct": -2.0
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 2769.89,
       "rsi14": 42.47,
       "rsi5": 44.01
+    },
+    {
+      "date": "2026-10-02",
+      "open": 2651.0,
+      "high": 2662.0,
+      "low": 2651.0,
+      "close": 2655.0,
+      "volume": 700.0,
+      "sma25": 2688.96,
+      "sma75": 2702.68,
+      "sma200": 2769.75,
+      "rsi14": 42.47,
+      "rsi5": 44.01
+    },
+    {
+      "date": "2026-10-05",
+      "open": 2650.0,
+      "high": 2650.0,
+      "low": 2650.0,
+      "close": 2650.0,
+      "volume": 1400.0,
+      "sma25": 2686.56,
+      "sma75": 2702.01,
+      "sma200": 2769.52,
+      "rsi14": 42.47,
+      "rsi5": 44.01
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 42.69,
-    "monthly_rsi_ma5": 43.25,
-    "spread": -0.56,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 41.68,
+    "monthly_rsi_ma5": 43.05,
+    "spread": -1.37,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

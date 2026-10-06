@@ -2,12 +2,12 @@
   "code": "4615",
   "ticker": "4615.T",
   "name": "神東塗料",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 131.0,
-    "change_from_signal_month_pct": 1.55,
-    "return_since_gc_pct": 3.15
+    "current_price": 132.0,
+    "change_from_signal_month_pct": 2.33,
+    "return_since_gc_pct": 3.94
   },
   "daily": [
     {
@@ -477,22 +477,48 @@
       "sma200": 127.23,
       "rsi14": 45.08,
       "rsi5": 48.18
+    },
+    {
+      "date": "2026-10-02",
+      "open": 131.0,
+      "high": 134.0,
+      "low": 131.0,
+      "close": 132.0,
+      "volume": 9700.0,
+      "sma25": 131.8,
+      "sma75": 129.84,
+      "sma200": 127.27,
+      "rsi14": 45.08,
+      "rsi5": 48.18
+    },
+    {
+      "date": "2026-10-05",
+      "open": 132.0,
+      "high": 132.0,
+      "low": 132.0,
+      "close": 132.0,
+      "volume": 16500.0,
+      "sma25": 131.8,
+      "sma75": 129.92,
+      "sma200": 127.3,
+      "rsi14": 45.08,
+      "rsi5": 48.18
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 51.18,
-    "monthly_rsi_ma5": 51.57,
-    "spread": -0.39,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 52.81,
+    "monthly_rsi_ma5": 51.9,
+    "spread": 0.91,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

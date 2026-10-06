@@ -2,12 +2,12 @@
   "code": "6287",
   "ticker": "6287.T",
   "name": "サトー",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 2707.0,
-    "change_from_signal_month_pct": 10.58,
-    "return_since_gc_pct": 13.93
+    "current_price": 2634.0,
+    "change_from_signal_month_pct": 7.6,
+    "return_since_gc_pct": 10.86
   },
   "daily": [
     {
@@ -477,6 +477,32 @@
       "sma200": 2403.8,
       "rsi14": 52.03,
       "rsi5": 58.04
+    },
+    {
+      "date": "2026-10-02",
+      "open": 2657.0,
+      "high": 2677.0,
+      "low": 2609.0,
+      "close": 2624.0,
+      "volume": 177200.0,
+      "sma25": 2728.8,
+      "sma75": 2565.28,
+      "sma200": 2405.41,
+      "rsi14": 52.03,
+      "rsi5": 58.04
+    },
+    {
+      "date": "2026-10-05",
+      "open": 2649.0,
+      "high": 2670.0,
+      "low": 2622.0,
+      "close": 2634.0,
+      "volume": 130400.0,
+      "sma25": 2721.84,
+      "sma75": 2569.75,
+      "sma200": 2407.35,
+      "rsi14": 52.03,
+      "rsi5": 58.04
     }
   ],
   "corporate_events": [
@@ -489,17 +515,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 62.77,
-    "monthly_rsi_ma5": 61.79,
-    "spread": 0.99,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 60.14,
+    "monthly_rsi_ma5": 61.26,
+    "spread": -1.12,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "9761",
   "ticker": "9761.T",
   "name": "東海リース",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 2407.0,
-    "change_from_signal_month_pct": 0.67,
-    "return_since_gc_pct": 0.67
+    "current_price": 2356.0,
+    "change_from_signal_month_pct": -1.46,
+    "return_since_gc_pct": -1.46
   },
   "daily": [
     {
@@ -477,6 +477,32 @@
       "sma200": 2422.84,
       "rsi14": 58.27,
       "rsi5": 59.82
+    },
+    {
+      "date": "2026-10-02",
+      "open": 2411.0,
+      "high": 2411.0,
+      "low": 2360.0,
+      "close": 2368.0,
+      "volume": 2600.0,
+      "sma25": 2440.52,
+      "sma75": 2370.19,
+      "sma200": 2422.6,
+      "rsi14": 58.27,
+      "rsi5": 59.82
+    },
+    {
+      "date": "2026-10-05",
+      "open": 2418.0,
+      "high": 2418.0,
+      "low": 2356.0,
+      "close": 2356.0,
+      "volume": 2800.0,
+      "sma25": 2437.64,
+      "sma75": 2372.13,
+      "sma200": 2422.32,
+      "rsi14": 58.27,
+      "rsi5": 59.82
     }
   ],
   "corporate_events": [
@@ -489,17 +515,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 60.37,
-    "monthly_rsi_ma5": 60.19,
-    "spread": 0.19,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 58.49,
+    "monthly_rsi_ma5": 59.81,
+    "spread": -1.32,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

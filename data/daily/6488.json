@@ -2,12 +2,12 @@
   "code": "6488",
   "ticker": "6488.T",
   "name": "ヨシタケ",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1045.0,
-    "change_from_signal_month_pct": 6.63,
-    "return_since_gc_pct": 6.63
+    "current_price": 1050.0,
+    "change_from_signal_month_pct": 7.14,
+    "return_since_gc_pct": 7.14
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 983.04,
       "rsi14": 58.93,
       "rsi5": 61.62
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1050.0,
+      "high": 1050.0,
+      "low": 1019.0,
+      "close": 1021.0,
+      "volume": 36700.0,
+      "sma25": 1042.8,
+      "sma75": 1000.39,
+      "sma200": 983.4,
+      "rsi14": 58.93,
+      "rsi5": 61.62
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1035.0,
+      "high": 1050.0,
+      "low": 1010.0,
+      "close": 1050.0,
+      "volume": 27000.0,
+      "sma25": 1043.4,
+      "sma75": 1002.12,
+      "sma200": 983.95,
+      "rsi14": 58.93,
+      "rsi5": 61.62
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 63.63,
-    "monthly_rsi_ma5": 61.29,
-    "spread": 2.34,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 64.22,
+    "monthly_rsi_ma5": 61.41,
+    "spread": 2.81,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

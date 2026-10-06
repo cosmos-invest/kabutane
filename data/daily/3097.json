@@ -2,12 +2,12 @@
   "code": "3097",
   "ticker": "3097.T",
   "name": "物語コーポレーション",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 5490.0,
-    "change_from_signal_month_pct": 0.18,
-    "return_since_gc_pct": 0.18
+    "current_price": 5550.0,
+    "change_from_signal_month_pct": 1.28,
+    "return_since_gc_pct": 1.28
   },
   "daily": [
     {
@@ -477,22 +477,48 @@
       "sma200": 4844.7,
       "rsi14": 59.21,
       "rsi5": 63.77
+    },
+    {
+      "date": "2026-10-02",
+      "open": 5480.0,
+      "high": 5520.0,
+      "low": 5440.0,
+      "close": 5510.0,
+      "volume": 133700.0,
+      "sma25": 5548.0,
+      "sma75": 5270.33,
+      "sma200": 4850.43,
+      "rsi14": 59.21,
+      "rsi5": 63.77
+    },
+    {
+      "date": "2026-10-05",
+      "open": 5550.0,
+      "high": 5550.0,
+      "low": 5480.0,
+      "close": 5550.0,
+      "volume": 140900.0,
+      "sma25": 5542.8,
+      "sma75": 5280.53,
+      "sma200": 4856.25,
+      "rsi14": 59.21,
+      "rsi5": 63.77
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 59.28,
-    "monthly_rsi_ma5": 59.43,
-    "spread": -0.14,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 59.79,
+    "monthly_rsi_ma5": 59.53,
+    "spread": 0.26,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

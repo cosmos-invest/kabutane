@@ -2,12 +2,12 @@
   "code": "137A",
   "ticker": "137A.T",
   "name": "Ｃｏｃｏｌｉｖｅ",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 704.0,
-    "change_from_signal_month_pct": 1.44,
-    "return_since_gc_pct": -7.37
+    "current_price": 701.0,
+    "change_from_signal_month_pct": 1.01,
+    "return_since_gc_pct": -7.76
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 759.22,
       "rsi14": 20.34,
       "rsi5": 23.7
+    },
+    {
+      "date": "2026-10-02",
+      "open": 704.0,
+      "high": 706.0,
+      "low": 697.0,
+      "close": 697.0,
+      "volume": 900.0,
+      "sma25": 705.28,
+      "sma75": 719.05,
+      "sma200": 756.98,
+      "rsi14": 20.34,
+      "rsi5": 23.7
+    },
+    {
+      "date": "2026-10-05",
+      "open": 691.0,
+      "high": 703.0,
+      "low": 691.0,
+      "close": 701.0,
+      "volume": 2600.0,
+      "sma25": 705.64,
+      "sma75": 719.84,
+      "sma200": 754.75,
+      "rsi14": 20.34,
+      "rsi5": 23.7
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 24.29,
-    "monthly_rsi_ma5": 24.18,
-    "spread": 0.11,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 24.24,
+    "monthly_rsi_ma5": 24.17,
+    "spread": 0.06,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

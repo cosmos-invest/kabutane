@@ -2,12 +2,12 @@
   "code": "2670",
   "ticker": "2670.T",
   "name": "エービーシー・マート",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 2719.5,
-    "change_from_signal_month_pct": -0.13,
-    "return_since_gc_pct": 1.93
+    "current_price": 2710.0,
+    "change_from_signal_month_pct": -0.48,
+    "return_since_gc_pct": 1.57
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 2668.85,
       "rsi14": 48.55,
       "rsi5": 50.16
+    },
+    {
+      "date": "2026-10-02",
+      "open": 2686.5,
+      "high": 2702.0,
+      "low": 2655.5,
+      "close": 2666.5,
+      "volume": 676300.0,
+      "sma25": 2703.76,
+      "sma75": 2736.89,
+      "sma200": 2668.58,
+      "rsi14": 48.55,
+      "rsi5": 50.16
+    },
+    {
+      "date": "2026-10-05",
+      "open": 2666.5,
+      "high": 2719.0,
+      "low": 2664.0,
+      "close": 2710.0,
+      "volume": 617000.0,
+      "sma25": 2700.62,
+      "sma75": 2737.02,
+      "sma200": 2668.78,
+      "rsi14": 48.55,
+      "rsi5": 50.16
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 49.71,
-    "monthly_rsi_ma5": 50.26,
-    "spread": -0.55,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 49.38,
+    "monthly_rsi_ma5": 50.19,
+    "spread": -0.81,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "4183",
   "ticker": "4183.T",
   "name": "三井化学",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 2117.0,
-    "change_from_signal_month_pct": -0.07,
-    "return_since_gc_pct": -0.07
+    "current_price": 2169.5,
+    "change_from_signal_month_pct": 2.41,
+    "return_since_gc_pct": 2.41
   },
   "daily": [
     {
@@ -477,6 +477,32 @@
       "sma200": 2101.17,
       "rsi14": 53.82,
       "rsi5": 55.88
+    },
+    {
+      "date": "2026-10-02",
+      "open": 2086.5,
+      "high": 2120.5,
+      "low": 2084.0,
+      "close": 2101.0,
+      "volume": 1739600.0,
+      "sma25": 2161.44,
+      "sma75": 2155.59,
+      "sma200": 2101.89,
+      "rsi14": 53.82,
+      "rsi5": 55.88
+    },
+    {
+      "date": "2026-10-05",
+      "open": 2120.0,
+      "high": 2172.5,
+      "low": 2113.5,
+      "close": 2169.5,
+      "volume": 1854700.0,
+      "sma25": 2163.26,
+      "sma75": 2155.38,
+      "sma200": 2103.26,
+      "rsi14": 53.82,
+      "rsi5": 55.88
     }
   ],
   "corporate_events": [
@@ -489,17 +515,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 54.78,
-    "monthly_rsi_ma5": 55.98,
-    "spread": -1.2,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 56.68,
+    "monthly_rsi_ma5": 56.36,
+    "spread": 0.32,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

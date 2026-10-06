@@ -2,12 +2,12 @@
   "code": "4623",
   "ticker": "4623.T",
   "name": "アサヒペン",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1826.0,
-    "change_from_signal_month_pct": 6.1,
-    "return_since_gc_pct": 6.1
+    "current_price": 1860.0,
+    "change_from_signal_month_pct": 8.08,
+    "return_since_gc_pct": 8.08
   },
   "daily": [
     {
@@ -477,6 +477,32 @@
       "sma200": 1744.93,
       "rsi14": 43.41,
       "rsi5": 45.84
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1830.0,
+      "high": 1875.0,
+      "low": 1830.0,
+      "close": 1852.0,
+      "volume": 2600.0,
+      "sma25": 1859.96,
+      "sma75": 1780.53,
+      "sma200": 1745.63,
+      "rsi14": 43.41,
+      "rsi5": 45.84
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1852.0,
+      "high": 1860.0,
+      "low": 1845.0,
+      "close": 1860.0,
+      "volume": 1600.0,
+      "sma25": 1858.76,
+      "sma75": 1782.73,
+      "sma200": 1746.38,
+      "rsi14": 43.41,
+      "rsi5": 45.84
     }
   ],
   "corporate_events": [
@@ -489,10 +515,10 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 58.69,
-    "monthly_rsi_ma5": 55.14,
-    "spread": 3.55,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 62.68,
+    "monthly_rsi_ma5": 55.94,
+    "spread": 6.74,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -501,5 +527,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

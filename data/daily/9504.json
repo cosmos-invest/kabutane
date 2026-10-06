@@ -2,12 +2,12 @@
   "code": "9504",
   "ticker": "9504.T",
   "name": "中国電力",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1013.5,
-    "change_from_signal_month_pct": 7.75,
-    "return_since_gc_pct": 7.75
+    "current_price": 977.6,
+    "change_from_signal_month_pct": 3.93,
+    "return_since_gc_pct": 3.93
   },
   "daily": [
     {
@@ -477,6 +477,32 @@
       "sma200": 969.22,
       "rsi14": 49.35,
       "rsi5": 50.94
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1001.0,
+      "high": 1010.0,
+      "low": 990.0,
+      "close": 990.0,
+      "volume": 2017800.0,
+      "sma25": 1048.74,
+      "sma75": 964.38,
+      "sma200": 969.27,
+      "rsi14": 49.35,
+      "rsi5": 50.94
+    },
+    {
+      "date": "2026-10-05",
+      "open": 989.0,
+      "high": 993.9,
+      "low": 975.6,
+      "close": 977.6,
+      "volume": 1889400.0,
+      "sma25": 1048.62,
+      "sma75": 965.24,
+      "sma200": 969.29,
+      "rsi14": 49.35,
+      "rsi5": 50.94
     }
   ],
   "corporate_events": [
@@ -489,10 +515,10 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 55.35,
-    "monthly_rsi_ma5": 53.27,
-    "spread": 2.08,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 52.77,
+    "monthly_rsi_ma5": 52.75,
+    "spread": 0.02,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -501,5 +527,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

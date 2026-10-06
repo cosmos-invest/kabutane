@@ -2,12 +2,12 @@
   "code": "142A",
   "ticker": "142A.T",
   "name": "ジンジブ",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1058.0,
-    "change_from_signal_month_pct": 39.03,
-    "return_since_gc_pct": 59.34
+    "current_price": 1009.0,
+    "change_from_signal_month_pct": 32.59,
+    "return_since_gc_pct": 51.96
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 735.51,
       "rsi14": 41.5,
       "rsi5": 42.89
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1046.0,
+      "high": 1070.0,
+      "low": 1008.0,
+      "close": 1070.0,
+      "volume": 37300.0,
+      "sma25": 892.56,
+      "sma75": 808.48,
+      "sma200": 737.36,
+      "rsi14": 41.5,
+      "rsi5": 42.89
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1070.0,
+      "high": 1070.0,
+      "low": 973.0,
+      "close": 1009.0,
+      "volume": 37100.0,
+      "sma25": 899.28,
+      "sma75": 812.52,
+      "sma200": 739.02,
+      "rsi14": 41.5,
+      "rsi5": 42.89
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 52.61,
-    "monthly_rsi_ma5": 47.53,
-    "spread": 5.09,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 51.08,
+    "monthly_rsi_ma5": 47.22,
+    "spread": 3.86,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

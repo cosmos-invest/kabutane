@@ -2,12 +2,12 @@
   "code": "6863",
   "ticker": "6863.T",
   "name": "ニレコ",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1100.0,
-    "change_from_signal_month_pct": 24.15,
-    "return_since_gc_pct": 24.53
+    "current_price": 1088.0,
+    "change_from_signal_month_pct": 22.8,
+    "return_since_gc_pct": 23.17
   },
   "daily": [
     {
@@ -477,6 +477,32 @@
       "sma200": 818.07,
       "rsi14": 64.87,
       "rsi5": 66.24
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1100.0,
+      "high": 1106.0,
+      "low": 1056.0,
+      "close": 1064.0,
+      "volume": 184400.0,
+      "sma25": 1030.4,
+      "sma75": 960.53,
+      "sma200": 820.11,
+      "rsi14": 64.87,
+      "rsi5": 66.24
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1078.0,
+      "high": 1100.0,
+      "low": 1074.0,
+      "close": 1088.0,
+      "volume": 70500.0,
+      "sma25": 1034.56,
+      "sma75": 963.35,
+      "sma200": 822.33,
+      "rsi14": 64.87,
+      "rsi5": 66.24
     }
   ],
   "corporate_events": [
@@ -489,10 +515,10 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 72.09,
-    "monthly_rsi_ma5": 70.82,
-    "spread": 1.27,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 71.11,
+    "monthly_rsi_ma5": 70.63,
+    "spread": 0.48,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -501,5 +527,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

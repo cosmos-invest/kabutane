@@ -2,12 +2,12 @@
   "code": "4052",
   "ticker": "4052.T",
   "name": "フィーチャ",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1067.0,
-    "change_from_signal_month_pct": 211.99,
-    "return_since_gc_pct": 211.99
+    "current_price": 1017.0,
+    "change_from_signal_month_pct": 197.37,
+    "return_since_gc_pct": 197.37
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 376.8,
       "rsi14": 30.77,
       "rsi5": 40.36
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1084.0,
+      "high": 1109.0,
+      "low": 1012.0,
+      "close": 1015.0,
+      "volume": 1041600.0,
+      "sma25": 906.68,
+      "sma75": 530.41,
+      "sma200": 380.38,
+      "rsi14": 30.77,
+      "rsi5": 40.36
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1012.0,
+      "high": 1085.0,
+      "low": 996.0,
+      "close": 1017.0,
+      "volume": 1485600.0,
+      "sma25": 927.04,
+      "sma75": 540.75,
+      "sma200": 383.97,
+      "rsi14": 30.77,
+      "rsi5": 40.36
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 71.72,
-    "monthly_rsi_ma5": 53.21,
-    "spread": 18.51,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 68.87,
+    "monthly_rsi_ma5": 52.64,
+    "spread": 16.23,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

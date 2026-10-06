@@ -2,12 +2,12 @@
   "code": "4231",
   "ticker": "4231.T",
   "name": "タイガースポリマー",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1012.0,
-    "change_from_signal_month_pct": 1.2,
-    "return_since_gc_pct": 1.2
+    "current_price": 993.0,
+    "change_from_signal_month_pct": -0.7,
+    "return_since_gc_pct": -0.7
   },
   "daily": [
     {
@@ -477,6 +477,32 @@
       "sma200": 1020.82,
       "rsi14": 54.8,
       "rsi5": 54.97
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1020.0,
+      "high": 1020.0,
+      "low": 992.0,
+      "close": 1005.0,
+      "volume": 17400.0,
+      "sma25": 1035.68,
+      "sma75": 1017.17,
+      "sma200": 1021.34,
+      "rsi14": 54.8,
+      "rsi5": 54.97
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1012.0,
+      "high": 1012.0,
+      "low": 975.0,
+      "close": 993.0,
+      "volume": 15900.0,
+      "sma25": 1033.4,
+      "sma75": 1017.37,
+      "sma200": 1021.87,
+      "rsi14": 54.8,
+      "rsi5": 54.97
     }
   ],
   "corporate_events": [
@@ -489,10 +515,10 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 53.92,
-    "monthly_rsi_ma5": 54.19,
-    "spread": -0.27,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 52.88,
+    "monthly_rsi_ma5": 53.98,
+    "spread": -1.1,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -501,5 +527,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

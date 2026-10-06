@@ -2,12 +2,12 @@
   "code": "5572",
   "ticker": "5572.T",
   "name": "Ｒｉｄｇｅ－ｉ",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 3015.0,
-    "change_from_signal_month_pct": 28.03,
-    "return_since_gc_pct": 35.87
+    "current_price": 3250.0,
+    "change_from_signal_month_pct": 38.0,
+    "return_since_gc_pct": 46.46
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 2428.01,
       "rsi14": 46.0,
       "rsi5": 46.28
+    },
+    {
+      "date": "2026-10-02",
+      "open": 3015.0,
+      "high": 3200.0,
+      "low": 3010.0,
+      "close": 3170.0,
+      "volume": 39300.0,
+      "sma25": 2977.28,
+      "sma75": 2756.45,
+      "sma200": 2432.37,
+      "rsi14": 46.0,
+      "rsi5": 46.28
+    },
+    {
+      "date": "2026-10-05",
+      "open": 3170.0,
+      "high": 3305.0,
+      "low": 3130.0,
+      "close": 3250.0,
+      "volume": 75600.0,
+      "sma25": 2991.88,
+      "sma75": 2754.72,
+      "sma200": 2436.95,
+      "rsi14": 46.0,
+      "rsi5": 46.28
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 57.52,
-    "monthly_rsi_ma5": 55.33,
-    "spread": 2.2,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 60.47,
+    "monthly_rsi_ma5": 55.91,
+    "spread": 4.55,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

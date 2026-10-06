@@ -2,12 +2,12 @@
   "code": "2818",
   "ticker": "2818.T",
   "name": "ピエトロ",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1751.0,
-    "change_from_signal_month_pct": -0.51,
-    "return_since_gc_pct": -0.51
+    "current_price": 1758.0,
+    "change_from_signal_month_pct": -0.11,
+    "return_since_gc_pct": -0.11
   },
   "daily": [
     {
@@ -477,22 +477,48 @@
       "sma200": 1752.29,
       "rsi14": 45.11,
       "rsi5": 50.97
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1755.0,
+      "high": 1755.0,
+      "low": 1750.0,
+      "close": 1752.0,
+      "volume": 2300.0,
+      "sma25": 1761.0,
+      "sma75": 1753.35,
+      "sma200": 1752.34,
+      "rsi14": 45.11,
+      "rsi5": 50.97
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1758.0,
+      "high": 1758.0,
+      "low": 1750.0,
+      "close": 1758.0,
+      "volume": 2100.0,
+      "sma25": 1760.76,
+      "sma75": 1753.69,
+      "sma200": 1752.42,
+      "rsi14": 45.11,
+      "rsi5": 50.97
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 46.34,
-    "monthly_rsi_ma5": 46.4,
-    "spread": -0.06,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 48.2,
+    "monthly_rsi_ma5": 46.77,
+    "spread": 1.42,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

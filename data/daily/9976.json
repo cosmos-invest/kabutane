@@ -2,12 +2,12 @@
   "code": "9976",
   "ticker": "9976.T",
   "name": "セキチュー",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1077.0,
-    "change_from_signal_month_pct": 2.09,
-    "return_since_gc_pct": 2.57
+    "current_price": 1067.0,
+    "change_from_signal_month_pct": 1.14,
+    "return_since_gc_pct": 1.62
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 1054.83,
       "rsi14": 41.69,
       "rsi5": 44.91
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1086.0,
+      "high": 1086.0,
+      "low": 1071.0,
+      "close": 1086.0,
+      "volume": 2500.0,
+      "sma25": 1095.12,
+      "sma75": 1066.76,
+      "sma200": 1055.1,
+      "rsi14": 41.69,
+      "rsi5": 44.91
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1076.0,
+      "high": 1076.0,
+      "low": 1062.0,
+      "close": 1067.0,
+      "volume": 1300.0,
+      "sma25": 1095.28,
+      "sma75": 1066.85,
+      "sma200": 1055.28,
+      "rsi14": 41.69,
+      "rsi5": 44.91
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 50.17,
-    "monthly_rsi_ma5": 47.77,
-    "spread": 2.4,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 48.56,
+    "monthly_rsi_ma5": 47.45,
+    "spread": 1.12,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

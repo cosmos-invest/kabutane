@@ -2,12 +2,12 @@
   "code": "3907",
   "ticker": "3907.T",
   "name": "シリコンスタジオ",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1980.0,
-    "change_from_signal_month_pct": 97.21,
-    "return_since_gc_pct": 41.73
+    "current_price": 1891.0,
+    "change_from_signal_month_pct": 88.35,
+    "return_since_gc_pct": 35.36
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 1030.16,
       "rsi14": 47.89,
       "rsi5": 52.58
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1952.0,
+      "high": 1999.0,
+      "low": 1882.0,
+      "close": 1888.0,
+      "volume": 95200.0,
+      "sma25": 2102.52,
+      "sma75": 1447.41,
+      "sma200": 1035.76,
+      "rsi14": 47.89,
+      "rsi5": 52.58
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1890.0,
+      "high": 1967.0,
+      "low": 1890.0,
+      "close": 1891.0,
+      "volume": 90500.0,
+      "sma25": 2096.16,
+      "sma75": 1461.37,
+      "sma200": 1041.34,
+      "rsi14": 47.89,
+      "rsi5": 52.58
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 62.69,
-    "monthly_rsi_ma5": 58.65,
-    "spread": 4.04,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 61.38,
+    "monthly_rsi_ma5": 58.39,
+    "spread": 2.99,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

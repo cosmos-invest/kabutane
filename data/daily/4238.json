@@ -2,12 +2,12 @@
   "code": "4238",
   "ticker": "4238.T",
   "name": "ミライアル",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 2024.0,
-    "change_from_signal_month_pct": 29.41,
-    "return_since_gc_pct": 55.93
+    "current_price": 2059.0,
+    "change_from_signal_month_pct": 31.65,
+    "return_since_gc_pct": 58.63
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 1495.38,
       "rsi14": 54.02,
       "rsi5": 56.76
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1999.0,
+      "high": 2039.0,
+      "low": 1961.0,
+      "close": 1961.0,
+      "volume": 47100.0,
+      "sma25": 1896.08,
+      "sma75": 1800.4,
+      "sma200": 1499.32,
+      "rsi14": 54.02,
+      "rsi5": 56.76
+    },
+    {
+      "date": "2026-10-05",
+      "open": 2001.0,
+      "high": 2072.0,
+      "low": 1999.0,
+      "close": 2059.0,
+      "volume": 84200.0,
+      "sma25": 1908.44,
+      "sma75": 1801.32,
+      "sma200": 1503.74,
+      "rsi14": 54.02,
+      "rsi5": 56.76
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 67.87,
-    "monthly_rsi_ma5": 64.19,
-    "spread": 3.67,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 68.55,
+    "monthly_rsi_ma5": 64.33,
+    "spread": 4.22,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

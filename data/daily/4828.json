@@ -2,12 +2,12 @@
   "code": "4828",
   "ticker": "4828.T",
   "name": "ビジネスエンジニアリング",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1351.0,
-    "change_from_signal_month_pct": 10.47,
-    "return_since_gc_pct": 10.47
+    "current_price": 1270.0,
+    "change_from_signal_month_pct": 3.84,
+    "return_since_gc_pct": 3.84
   },
   "daily": [
     {
@@ -477,6 +477,32 @@
       "sma200": 1308.06,
       "rsi14": 52.76,
       "rsi5": 55.62
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1335.0,
+      "high": 1354.0,
+      "low": 1297.0,
+      "close": 1304.0,
+      "volume": 149700.0,
+      "sma25": 1385.8,
+      "sma75": 1237.12,
+      "sma200": 1306.96,
+      "rsi14": 52.76,
+      "rsi5": 55.62
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1290.0,
+      "high": 1290.0,
+      "low": 1256.0,
+      "close": 1270.0,
+      "volume": 190200.0,
+      "sma25": 1380.0,
+      "sma75": 1240.51,
+      "sma200": 1305.65,
+      "rsi14": 52.76,
+      "rsi5": 55.62
     }
   ],
   "corporate_events": [
@@ -489,17 +515,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 57.63,
-    "monthly_rsi_ma5": 56.01,
-    "spread": 1.62,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 54.98,
+    "monthly_rsi_ma5": 55.48,
+    "spread": -0.5,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

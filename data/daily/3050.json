@@ -2,12 +2,12 @@
   "code": "3050",
   "ticker": "3050.T",
   "name": "ＤＣＭホールディングス",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1524.0,
-    "change_from_signal_month_pct": -0.78,
-    "return_since_gc_pct": -0.78
+    "current_price": 1510.0,
+    "change_from_signal_month_pct": -1.69,
+    "return_since_gc_pct": -1.69
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 1573.71,
       "rsi14": 53.12,
       "rsi5": 54.05
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1522.0,
+      "high": 1530.0,
+      "low": 1505.0,
+      "close": 1511.0,
+      "volume": 388200.0,
+      "sma25": 1588.36,
+      "sma75": 1546.51,
+      "sma200": 1573.51,
+      "rsi14": 53.12,
+      "rsi5": 54.05
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1513.0,
+      "high": 1515.0,
+      "low": 1497.0,
+      "close": 1510.0,
+      "volume": 413200.0,
+      "sma25": 1583.88,
+      "sma75": 1546.75,
+      "sma200": 1573.45,
+      "rsi14": 53.12,
+      "rsi5": 54.05
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 53.65,
-    "monthly_rsi_ma5": 55.34,
-    "spread": -1.69,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 52.74,
+    "monthly_rsi_ma5": 55.16,
+    "spread": -2.41,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

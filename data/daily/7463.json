@@ -2,12 +2,12 @@
   "code": "7463",
   "ticker": "7463.T",
   "name": "アドヴァングループ",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 956.0,
-    "change_from_signal_month_pct": 2.47,
-    "return_since_gc_pct": 2.47
+    "current_price": 929.0,
+    "change_from_signal_month_pct": -0.43,
+    "return_since_gc_pct": -0.43
   },
   "daily": [
     {
@@ -477,6 +477,32 @@
       "sma200": 942.57,
       "rsi14": 49.46,
       "rsi5": 50.35
+    },
+    {
+      "date": "2026-10-02",
+      "open": 950.0,
+      "high": 950.0,
+      "low": 925.0,
+      "close": 925.0,
+      "volume": 41300.0,
+      "sma25": 965.2,
+      "sma75": 936.89,
+      "sma200": 942.79,
+      "rsi14": 49.46,
+      "rsi5": 50.35
+    },
+    {
+      "date": "2026-10-05",
+      "open": 935.0,
+      "high": 935.0,
+      "low": 926.0,
+      "close": 929.0,
+      "volume": 18300.0,
+      "sma25": 964.24,
+      "sma75": 937.05,
+      "sma200": 943.08,
+      "rsi14": 49.46,
+      "rsi5": 50.35
     }
   ],
   "corporate_events": [
@@ -489,17 +515,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 51.95,
-    "monthly_rsi_ma5": 50.94,
-    "spread": 1.01,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 49.42,
+    "monthly_rsi_ma5": 50.43,
+    "spread": -1.02,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

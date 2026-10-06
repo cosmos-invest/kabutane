@@ -2,12 +2,12 @@
   "code": "3611",
   "ticker": "3611.T",
   "name": "マツオカコーポレーション",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 2400.0,
-    "change_from_signal_month_pct": -2.56,
-    "return_since_gc_pct": -0.04
+    "current_price": 2368.0,
+    "change_from_signal_month_pct": -3.86,
+    "return_since_gc_pct": -1.37
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 2383.32,
       "rsi14": 59.49,
       "rsi5": 64.25
+    },
+    {
+      "date": "2026-10-02",
+      "open": 2402.0,
+      "high": 2414.0,
+      "low": 2343.0,
+      "close": 2356.0,
+      "volume": 29200.0,
+      "sma25": 2426.32,
+      "sma75": 2450.61,
+      "sma200": 2383.89,
+      "rsi14": 59.49,
+      "rsi5": 64.25
+    },
+    {
+      "date": "2026-10-05",
+      "open": 2368.0,
+      "high": 2377.0,
+      "low": 2360.0,
+      "close": 2368.0,
+      "volume": 10100.0,
+      "sma25": 2419.52,
+      "sma75": 2452.11,
+      "sma200": 2384.42,
+      "rsi14": 59.49,
+      "rsi5": 64.25
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 61.19,
-    "monthly_rsi_ma5": 63.53,
-    "spread": -2.34,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 59.75,
+    "monthly_rsi_ma5": 63.24,
+    "spread": -3.49,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

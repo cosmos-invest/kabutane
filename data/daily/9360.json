@@ -2,12 +2,12 @@
   "code": "9360",
   "ticker": "9360.T",
   "name": "鈴与シンワート",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 2815.0,
-    "change_from_signal_month_pct": -6.01,
-    "return_since_gc_pct": -6.01
+    "current_price": 2800.0,
+    "change_from_signal_month_pct": -6.51,
+    "return_since_gc_pct": -6.51
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 2926.72,
       "rsi14": 58.54,
       "rsi5": 59.3
+    },
+    {
+      "date": "2026-10-02",
+      "open": 2830.0,
+      "high": 2830.0,
+      "low": 2800.0,
+      "close": 2800.0,
+      "volume": 300.0,
+      "sma25": 2771.92,
+      "sma75": 2821.01,
+      "sma200": 2925.76,
+      "rsi14": 58.54,
+      "rsi5": 59.3
+    },
+    {
+      "date": "2026-10-05",
+      "open": 2800.0,
+      "high": 2800.0,
+      "low": 2799.0,
+      "close": 2800.0,
+      "volume": 1000.0,
+      "sma25": 2773.12,
+      "sma75": 2821.35,
+      "sma200": 2924.78,
+      "rsi14": 58.54,
+      "rsi5": 59.3
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 54.46,
-    "monthly_rsi_ma5": 55.48,
-    "spread": -1.02,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 54.05,
+    "monthly_rsi_ma5": 55.4,
+    "spread": -1.36,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

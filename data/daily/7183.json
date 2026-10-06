@@ -2,12 +2,12 @@
   "code": "7183",
   "ticker": "7183.T",
   "name": "あんしん保証",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 255.0,
-    "change_from_signal_month_pct": 0.39,
-    "return_since_gc_pct": 66.67
+    "current_price": 254.0,
+    "change_from_signal_month_pct": 0.0,
+    "return_since_gc_pct": 66.01
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 211.4,
       "rsi14": 59.63,
       "rsi5": 66.0
+    },
+    {
+      "date": "2026-10-02",
+      "open": 255.0,
+      "high": 255.0,
+      "low": 255.0,
+      "close": 255.0,
+      "volume": 12400.0,
+      "sma25": 254.2,
+      "sma75": 254.35,
+      "sma200": 211.96,
+      "rsi14": 59.63,
+      "rsi5": 66.0
+    },
+    {
+      "date": "2026-10-05",
+      "open": 255.0,
+      "high": 255.0,
+      "low": 254.0,
+      "close": 254.0,
+      "volume": 3300.0,
+      "sma25": 254.2,
+      "sma75": 254.32,
+      "sma200": 212.51,
+      "rsi14": 59.63,
+      "rsi5": 66.0
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 64.67,
-    "monthly_rsi_ma5": 64.67,
-    "spread": -0.01,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 64.21,
+    "monthly_rsi_ma5": 64.58,
+    "spread": -0.37,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "2226",
   "ticker": "2226.T",
   "name": "湖池屋",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 4730.0,
-    "change_from_signal_month_pct": -0.73,
-    "return_since_gc_pct": 1.07
+    "current_price": 4725.0,
+    "change_from_signal_month_pct": -0.84,
+    "return_since_gc_pct": 0.96
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 4707.43,
       "rsi14": 57.77,
       "rsi5": 60.22
+    },
+    {
+      "date": "2026-10-02",
+      "open": 4730.0,
+      "high": 4730.0,
+      "low": 4705.0,
+      "close": 4715.0,
+      "volume": 4600.0,
+      "sma25": 4874.2,
+      "sma75": 4795.33,
+      "sma200": 4708.02,
+      "rsi14": 57.77,
+      "rsi5": 60.22
+    },
+    {
+      "date": "2026-10-05",
+      "open": 4720.0,
+      "high": 4735.0,
+      "low": 4700.0,
+      "close": 4725.0,
+      "volume": 2300.0,
+      "sma25": 4868.0,
+      "sma75": 4795.93,
+      "sma200": 4708.62,
+      "rsi14": 57.77,
+      "rsi5": 60.22
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 56.06,
-    "monthly_rsi_ma5": 59.15,
-    "spread": -3.09,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 55.88,
+    "monthly_rsi_ma5": 59.12,
+    "spread": -3.23,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

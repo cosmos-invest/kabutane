@@ -2,12 +2,12 @@
   "code": "9258",
   "ticker": "9258.T",
   "name": "ＣＳ－Ｃ",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 300.0,
-    "change_from_signal_month_pct": -15.01,
-    "return_since_gc_pct": -15.01
+    "current_price": 303.0,
+    "change_from_signal_month_pct": -14.16,
+    "return_since_gc_pct": -14.16
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 325.3,
       "rsi14": 36.36,
       "rsi5": 42.42
+    },
+    {
+      "date": "2026-10-02",
+      "open": 298.0,
+      "high": 298.0,
+      "low": 298.0,
+      "close": 298.0,
+      "volume": 1000.0,
+      "sma25": 301.68,
+      "sma75": 300.8,
+      "sma200": 325.11,
+      "rsi14": 36.36,
+      "rsi5": 42.42
+    },
+    {
+      "date": "2026-10-05",
+      "open": 298.0,
+      "high": 303.0,
+      "low": 292.0,
+      "close": 303.0,
+      "volume": 3000.0,
+      "sma25": 301.56,
+      "sma75": 301.13,
+      "sma200": 324.94,
+      "rsi14": 36.36,
+      "rsi5": 42.42
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 39.42,
-    "monthly_rsi_ma5": 40.14,
-    "spread": -0.72,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 39.98,
+    "monthly_rsi_ma5": 40.25,
+    "spread": -0.27,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

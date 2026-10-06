@@ -2,12 +2,12 @@
   "code": "9716",
   "ticker": "9716.T",
   "name": "乃村工藝社",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1233.0,
-    "change_from_signal_month_pct": 5.2,
-    "return_since_gc_pct": 5.2
+    "current_price": 1206.0,
+    "change_from_signal_month_pct": 2.9,
+    "return_since_gc_pct": 2.9
   },
   "daily": [
     {
@@ -477,22 +477,48 @@
       "sma200": 1248.3,
       "rsi14": 55.63,
       "rsi5": 55.83
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1227.0,
+      "high": 1227.0,
+      "low": 1210.0,
+      "close": 1212.0,
+      "volume": 212100.0,
+      "sma25": 1250.52,
+      "sma75": 1187.63,
+      "sma200": 1248.27,
+      "rsi14": 55.63,
+      "rsi5": 55.83
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1216.0,
+      "high": 1224.0,
+      "low": 1200.0,
+      "close": 1206.0,
+      "volume": 320700.0,
+      "sma25": 1247.96,
+      "sma75": 1189.0,
+      "sma200": 1248.22,
+      "rsi14": 55.63,
+      "rsi5": 55.83
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 58.22,
-    "monthly_rsi_ma5": 56.96,
-    "spread": 1.26,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 56.62,
+    "monthly_rsi_ma5": 56.64,
+    "spread": -0.02,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "9165",
   "ticker": "9165.T",
   "name": "クオルテック",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1830.0,
-    "change_from_signal_month_pct": 6.71,
-    "return_since_gc_pct": 23.73
+    "current_price": 1812.0,
+    "change_from_signal_month_pct": 5.66,
+    "return_since_gc_pct": 22.52
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 1598.35,
       "rsi14": 49.88,
       "rsi5": 53.08
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1830.0,
+      "high": 1840.0,
+      "low": 1819.0,
+      "close": 1819.0,
+      "volume": 5400.0,
+      "sma25": 1760.44,
+      "sma75": 1733.8,
+      "sma200": 1600.12,
+      "rsi14": 49.88,
+      "rsi5": 53.08
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1820.0,
+      "high": 1842.0,
+      "low": 1801.0,
+      "close": 1812.0,
+      "volume": 5300.0,
+      "sma25": 1765.16,
+      "sma75": 1735.27,
+      "sma200": 1601.76,
+      "rsi14": 49.88,
+      "rsi5": 53.08
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 56.58,
-    "monthly_rsi_ma5": 54.32,
-    "spread": 2.27,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 55.85,
+    "monthly_rsi_ma5": 54.17,
+    "spread": 1.68,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "2211",
   "ticker": "2211.T",
   "name": "不二家",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 2498.0,
-    "change_from_signal_month_pct": 2.13,
-    "return_since_gc_pct": 2.13
+    "current_price": 2463.0,
+    "change_from_signal_month_pct": 0.7,
+    "return_since_gc_pct": 0.7
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 2467.2,
       "rsi14": 44.83,
       "rsi5": 47.89
+    },
+    {
+      "date": "2026-10-02",
+      "open": 2485.0,
+      "high": 2485.0,
+      "low": 2455.0,
+      "close": 2460.0,
+      "volume": 33400.0,
+      "sma25": 2503.0,
+      "sma75": 2446.29,
+      "sma200": 2466.33,
+      "rsi14": 44.83,
+      "rsi5": 47.89
+    },
+    {
+      "date": "2026-10-05",
+      "open": 2468.0,
+      "high": 2473.0,
+      "low": 2450.0,
+      "close": 2463.0,
+      "volume": 24600.0,
+      "sma25": 2501.04,
+      "sma75": 2447.81,
+      "sma200": 2465.49,
+      "rsi14": 44.83,
+      "rsi5": 47.89
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 51.24,
-    "monthly_rsi_ma5": 49.14,
-    "spread": 2.1,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 49.11,
+    "monthly_rsi_ma5": 48.71,
+    "spread": 0.4,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

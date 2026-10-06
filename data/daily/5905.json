@@ -2,12 +2,12 @@
   "code": "5905",
   "ticker": "5905.T",
   "name": "日本製罐",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1360.0,
-    "change_from_signal_month_pct": -0.73,
-    "return_since_gc_pct": 2.56
+    "current_price": 1368.0,
+    "change_from_signal_month_pct": -0.15,
+    "return_since_gc_pct": 3.17
   },
   "daily": [
     {
@@ -477,22 +477,48 @@
       "sma200": 1324.22,
       "rsi14": 44.6,
       "rsi5": 47.88
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1360.0,
+      "high": 1368.0,
+      "low": 1360.0,
+      "close": 1368.0,
+      "volume": 900.0,
+      "sma25": 1365.28,
+      "sma75": 1355.71,
+      "sma200": 1324.69,
+      "rsi14": 44.6,
+      "rsi5": 47.88
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1350.0,
+      "high": 1368.0,
+      "low": 1350.0,
+      "close": 1368.0,
+      "volume": 200.0,
+      "sma25": 1365.6,
+      "sma75": 1356.11,
+      "sma200": 1325.12,
+      "rsi14": 44.6,
+      "rsi5": 47.88
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 44.44,
-    "monthly_rsi_ma5": 44.78,
-    "spread": -0.34,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 45.26,
+    "monthly_rsi_ma5": 44.94,
+    "spread": 0.32,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "8304",
   "ticker": "8304.T",
   "name": "あおぞら銀行",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 3491.0,
-    "change_from_signal_month_pct": 14.91,
-    "return_since_gc_pct": 30.72
+    "current_price": 3398.0,
+    "change_from_signal_month_pct": 11.85,
+    "return_since_gc_pct": 27.24
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 2814.51,
       "rsi14": 55.91,
       "rsi5": 64.07
+    },
+    {
+      "date": "2026-10-02",
+      "open": 3433.0,
+      "high": 3479.0,
+      "low": 3389.0,
+      "close": 3389.0,
+      "volume": 1499300.0,
+      "sma25": 3447.12,
+      "sma75": 3161.97,
+      "sma200": 2819.4,
+      "rsi14": 55.91,
+      "rsi5": 64.07
+    },
+    {
+      "date": "2026-10-05",
+      "open": 3400.0,
+      "high": 3419.0,
+      "low": 3365.0,
+      "close": 3398.0,
+      "volume": 916300.0,
+      "sma25": 3447.56,
+      "sma75": 3170.07,
+      "sma200": 2824.39,
+      "rsi14": 55.91,
+      "rsi5": 64.07
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 70.09,
-    "monthly_rsi_ma5": 65.46,
-    "spread": 4.63,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 66.97,
+    "monthly_rsi_ma5": 64.83,
+    "spread": 2.13,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

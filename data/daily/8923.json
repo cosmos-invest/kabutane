@@ -2,12 +2,12 @@
   "code": "8923",
   "ticker": "8923.T",
   "name": "トーセイ",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1733.0,
-    "change_from_signal_month_pct": -4.73,
-    "return_since_gc_pct": 2.3
+    "current_price": 1664.0,
+    "change_from_signal_month_pct": -8.52,
+    "return_since_gc_pct": -1.77
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 1677.1,
       "rsi14": 64.94,
       "rsi5": 70.15
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1725.0,
+      "high": 1733.0,
+      "low": 1713.0,
+      "close": 1731.0,
+      "volume": 215400.0,
+      "sma25": 1739.44,
+      "sma75": 1743.09,
+      "sma200": 1677.57,
+      "rsi14": 64.94,
+      "rsi5": 70.15
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1731.0,
+      "high": 1799.0,
+      "low": 1651.0,
+      "close": 1664.0,
+      "volume": 945600.0,
+      "sma25": 1732.4,
+      "sma75": 1744.07,
+      "sma200": 1677.79,
+      "rsi14": 64.94,
+      "rsi5": 70.15
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 63.16,
-    "monthly_rsi_ma5": 66.63,
-    "spread": -3.47,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 58.93,
+    "monthly_rsi_ma5": 65.78,
+    "spread": -6.86,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

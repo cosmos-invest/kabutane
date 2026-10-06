@@ -2,12 +2,12 @@
   "code": "2291",
   "ticker": "2291.T",
   "name": "福留ハム",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 507.0,
-    "change_from_signal_month_pct": -2.12,
-    "return_since_gc_pct": -2.12
+    "current_price": 506.0,
+    "change_from_signal_month_pct": -2.32,
+    "return_since_gc_pct": -2.32
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 566.07,
       "rsi14": 20.97,
       "rsi5": 22.81
+    },
+    {
+      "date": "2026-10-02",
+      "open": 508.0,
+      "high": 508.0,
+      "low": 506.0,
+      "close": 507.0,
+      "volume": 800.0,
+      "sma25": 509.12,
+      "sma75": 506.55,
+      "sma200": 565.59,
+      "rsi14": 20.97,
+      "rsi5": 22.81
+    },
+    {
+      "date": "2026-10-05",
+      "open": 506.0,
+      "high": 506.0,
+      "low": 506.0,
+      "close": 506.0,
+      "volume": 400.0,
+      "sma25": 508.88,
+      "sma75": 506.83,
+      "sma200": 565.09,
+      "rsi14": 20.97,
+      "rsi5": 22.81
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 22.44,
-    "monthly_rsi_ma5": 21.74,
-    "spread": 0.7,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 22.4,
+    "monthly_rsi_ma5": 21.73,
+    "spread": 0.67,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "4714",
   "ticker": "4714.T",
   "name": "リソー教育グループ",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 209.0,
-    "change_from_signal_month_pct": 0.48,
-    "return_since_gc_pct": 4.5
+    "current_price": 206.0,
+    "change_from_signal_month_pct": -0.96,
+    "return_since_gc_pct": 3.0
   },
   "daily": [
     {
@@ -477,22 +477,48 @@
       "sma200": 200.97,
       "rsi14": 37.96,
       "rsi5": 42.83
+    },
+    {
+      "date": "2026-10-02",
+      "open": 208.0,
+      "high": 208.0,
+      "low": 204.0,
+      "close": 206.0,
+      "volume": 826100.0,
+      "sma25": 210.04,
+      "sma75": 203.53,
+      "sma200": 200.99,
+      "rsi14": 37.96,
+      "rsi5": 42.83
+    },
+    {
+      "date": "2026-10-05",
+      "open": 205.0,
+      "high": 207.0,
+      "low": 204.0,
+      "close": 206.0,
+      "volume": 815200.0,
+      "sma25": 209.96,
+      "sma75": 203.72,
+      "sma200": 201.01,
+      "rsi14": 37.96,
+      "rsi5": 42.83
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 45.15,
-    "monthly_rsi_ma5": 44.19,
-    "spread": 0.95,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 43.91,
+    "monthly_rsi_ma5": 43.95,
+    "spread": -0.04,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

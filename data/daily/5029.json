@@ -2,12 +2,12 @@
   "code": "5029",
   "ticker": "5029.T",
   "name": "サークレイス",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 978.0,
-    "change_from_signal_month_pct": 20.89,
-    "return_since_gc_pct": 36.97
+    "current_price": 920.0,
+    "change_from_signal_month_pct": 13.72,
+    "return_since_gc_pct": 28.85
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 790.49,
       "rsi14": 41.17,
       "rsi5": 46.99
+    },
+    {
+      "date": "2026-10-02",
+      "open": 965.0,
+      "high": 979.0,
+      "low": 921.0,
+      "close": 923.0,
+      "volume": 10600.0,
+      "sma25": 924.8,
+      "sma75": 800.04,
+      "sma200": 790.05,
+      "rsi14": 41.17,
+      "rsi5": 46.99
+    },
+    {
+      "date": "2026-10-05",
+      "open": 938.0,
+      "high": 938.0,
+      "low": 903.0,
+      "close": 920.0,
+      "volume": 12000.0,
+      "sma25": 930.0,
+      "sma75": 803.11,
+      "sma200": 789.5,
+      "rsi14": 41.17,
+      "rsi5": 46.99
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 53.94,
-    "monthly_rsi_ma5": 49.69,
-    "spread": 4.25,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 51.72,
+    "monthly_rsi_ma5": 49.24,
+    "spread": 2.47,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

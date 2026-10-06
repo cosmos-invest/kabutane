@@ -2,12 +2,12 @@
   "code": "6071",
   "ticker": "6071.T",
   "name": "ＩＢＪ",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 902.0,
-    "change_from_signal_month_pct": 9.6,
-    "return_since_gc_pct": 9.33
+    "current_price": 895.0,
+    "change_from_signal_month_pct": 8.75,
+    "return_since_gc_pct": 8.48
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 789.27,
       "rsi14": 51.32,
       "rsi5": 54.95
+    },
+    {
+      "date": "2026-10-02",
+      "open": 887.0,
+      "high": 894.0,
+      "low": 876.0,
+      "close": 883.0,
+      "volume": 185400.0,
+      "sma25": 899.72,
+      "sma75": 854.99,
+      "sma200": 789.91,
+      "rsi14": 51.32,
+      "rsi5": 54.95
+    },
+    {
+      "date": "2026-10-05",
+      "open": 887.0,
+      "high": 903.0,
+      "low": 887.0,
+      "close": 895.0,
+      "volume": 144400.0,
+      "sma25": 898.6,
+      "sma75": 856.44,
+      "sma200": 790.62,
+      "rsi14": 51.32,
+      "rsi5": 54.95
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 58.98,
-    "monthly_rsi_ma5": 58.16,
-    "spread": 0.82,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 58.62,
+    "monthly_rsi_ma5": 58.09,
+    "spread": 0.53,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

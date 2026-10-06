@@ -2,12 +2,12 @@
   "code": "7803",
   "ticker": "7803.T",
   "name": "ブシロード",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 451.0,
-    "change_from_signal_month_pct": 19.63,
-    "return_since_gc_pct": 62.82
+    "current_price": 459.0,
+    "change_from_signal_month_pct": 21.75,
+    "return_since_gc_pct": 65.7
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 313.89,
       "rsi14": 49.4,
       "rsi5": 61.55
+    },
+    {
+      "date": "2026-10-02",
+      "open": 450.0,
+      "high": 456.0,
+      "low": 437.0,
+      "close": 439.0,
+      "volume": 834800.0,
+      "sma25": 447.08,
+      "sma75": 382.27,
+      "sma200": 314.56,
+      "rsi14": 49.4,
+      "rsi5": 61.55
+    },
+    {
+      "date": "2026-10-05",
+      "open": 442.0,
+      "high": 464.0,
+      "low": 441.0,
+      "close": 459.0,
+      "volume": 815700.0,
+      "sma25": 449.36,
+      "sma75": 384.71,
+      "sma200": 315.38,
+      "rsi14": 49.4,
+      "rsi5": 61.55
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 67.7,
-    "monthly_rsi_ma5": 63.36,
-    "spread": 4.34,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 68.31,
+    "monthly_rsi_ma5": 63.48,
+    "spread": 4.83,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

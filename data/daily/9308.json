@@ -2,12 +2,12 @@
   "code": "9308",
   "ticker": "9308.T",
   "name": "乾汽船",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 2278.0,
-    "change_from_signal_month_pct": 20.53,
-    "return_since_gc_pct": 20.53
+    "current_price": 2200.0,
+    "change_from_signal_month_pct": 16.4,
+    "return_since_gc_pct": 16.4
   },
   "daily": [
     {
@@ -477,6 +477,32 @@
       "sma200": 1637.75,
       "rsi14": 53.97,
       "rsi5": 60.54
+    },
+    {
+      "date": "2026-10-02",
+      "open": 2273.0,
+      "high": 2273.0,
+      "low": 2106.0,
+      "close": 2125.0,
+      "volume": 282300.0,
+      "sma25": 2206.16,
+      "sma75": 1894.23,
+      "sma200": 1641.21,
+      "rsi14": 53.97,
+      "rsi5": 60.54
+    },
+    {
+      "date": "2026-10-05",
+      "open": 2110.0,
+      "high": 2200.0,
+      "low": 2100.0,
+      "close": 2200.0,
+      "volume": 236800.0,
+      "sma25": 2210.0,
+      "sma75": 1903.03,
+      "sma200": 1644.92,
+      "rsi14": 53.97,
+      "rsi5": 60.54
     }
   ],
   "corporate_events": [
@@ -489,10 +515,10 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 64.79,
-    "monthly_rsi_ma5": 62.72,
-    "spread": 2.07,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 62.72,
+    "monthly_rsi_ma5": 62.31,
+    "spread": 0.41,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -501,5 +527,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

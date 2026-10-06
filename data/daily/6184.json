@@ -2,12 +2,12 @@
   "code": "6184",
   "ticker": "6184.T",
   "name": "鎌倉新書",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 613.0,
-    "change_from_signal_month_pct": 15.01,
-    "return_since_gc_pct": 15.01
+    "current_price": 611.0,
+    "change_from_signal_month_pct": 14.63,
+    "return_since_gc_pct": 14.63
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 533.36,
       "rsi14": 42.07,
       "rsi5": 47.99
+    },
+    {
+      "date": "2026-10-02",
+      "open": 606.0,
+      "high": 613.0,
+      "low": 601.0,
+      "close": 603.0,
+      "volume": 105100.0,
+      "sma25": 594.48,
+      "sma75": 546.76,
+      "sma200": 533.49,
+      "rsi14": 42.07,
+      "rsi5": 47.99
+    },
+    {
+      "date": "2026-10-05",
+      "open": 603.0,
+      "high": 613.0,
+      "low": 598.0,
+      "close": 611.0,
+      "volume": 137500.0,
+      "sma25": 594.84,
+      "sma75": 548.55,
+      "sma200": 533.68,
+      "rsi14": 42.07,
+      "rsi5": 47.99
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 55.56,
-    "monthly_rsi_ma5": 50.54,
-    "spread": 5.01,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 55.37,
+    "monthly_rsi_ma5": 50.51,
+    "spread": 4.86,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

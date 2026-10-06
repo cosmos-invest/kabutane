@@ -2,12 +2,12 @@
   "code": "7327",
   "ticker": "7327.T",
   "name": "第四北越フィナンシャルグループ",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 2766.0,
-    "change_from_signal_month_pct": 19.84,
-    "return_since_gc_pct": 29.86
+    "current_price": 2701.0,
+    "change_from_signal_month_pct": 17.03,
+    "return_since_gc_pct": 26.81
   },
   "daily": [
     {
@@ -477,6 +477,32 @@
       "sma200": 2090.47,
       "rsi14": 80.41,
       "rsi5": 84.17
+    },
+    {
+      "date": "2026-10-02",
+      "open": 2731.0,
+      "high": 2757.0,
+      "low": 2669.0,
+      "close": 2674.0,
+      "volume": 1321000.0,
+      "sma25": 2660.88,
+      "sma75": 2410.2,
+      "sma200": 2095.55,
+      "rsi14": 80.41,
+      "rsi5": 84.17
+    },
+    {
+      "date": "2026-10-05",
+      "open": 2688.0,
+      "high": 2712.0,
+      "low": 2663.0,
+      "close": 2701.0,
+      "volume": 947700.0,
+      "sma25": 2667.92,
+      "sma75": 2417.79,
+      "sma200": 2100.79,
+      "rsi14": 80.41,
+      "rsi5": 84.17
     }
   ],
   "corporate_events": [
@@ -489,17 +515,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 85.71,
-    "monthly_rsi_ma5": 85.69,
-    "spread": 0.02,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 82.36,
+    "monthly_rsi_ma5": 85.02,
+    "spread": -2.66,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

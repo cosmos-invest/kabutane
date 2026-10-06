@@ -2,12 +2,12 @@
   "code": "7093",
   "ticker": "7093.T",
   "name": "アディッシュ",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 604.0,
-    "change_from_signal_month_pct": 14.61,
-    "return_since_gc_pct": 14.61
+    "current_price": 632.0,
+    "change_from_signal_month_pct": 19.92,
+    "return_since_gc_pct": 19.92
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 545.76,
       "rsi14": 41.63,
       "rsi5": 42.23
+    },
+    {
+      "date": "2026-10-02",
+      "open": 603.0,
+      "high": 640.0,
+      "low": 603.0,
+      "close": 615.0,
+      "volume": 16700.0,
+      "sma25": 595.76,
+      "sma75": 546.88,
+      "sma200": 546.04,
+      "rsi14": 41.63,
+      "rsi5": 42.23
+    },
+    {
+      "date": "2026-10-05",
+      "open": 636.0,
+      "high": 636.0,
+      "low": 620.0,
+      "close": 632.0,
+      "volume": 2600.0,
+      "sma25": 597.8,
+      "sma75": 548.64,
+      "sma200": 546.4,
+      "rsi14": 41.63,
+      "rsi5": 42.23
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 42.49,
-    "monthly_rsi_ma5": 39.47,
-    "spread": 3.02,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 44.52,
+    "monthly_rsi_ma5": 39.87,
+    "spread": 4.65,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

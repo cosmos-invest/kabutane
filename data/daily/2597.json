@@ -2,12 +2,12 @@
   "code": "2597",
   "ticker": "2597.T",
   "name": "ユニカフェ",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1318.0,
-    "change_from_signal_month_pct": 14.11,
-    "return_since_gc_pct": 22.15
+    "current_price": 1319.0,
+    "change_from_signal_month_pct": 14.2,
+    "return_since_gc_pct": 22.24
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 1110.97,
       "rsi14": 67.51,
       "rsi5": 73.57
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1327.0,
+      "high": 1327.0,
+      "low": 1319.0,
+      "close": 1323.0,
+      "volume": 3800.0,
+      "sma25": 1269.08,
+      "sma75": 1182.21,
+      "sma200": 1111.93,
+      "rsi14": 67.51,
+      "rsi5": 73.57
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1323.0,
+      "high": 1328.0,
+      "low": 1317.0,
+      "close": 1319.0,
+      "volume": 7400.0,
+      "sma25": 1272.88,
+      "sma75": 1185.32,
+      "sma200": 1112.88,
+      "rsi14": 67.51,
+      "rsi5": 73.57
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 83.29,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 83.33,
     "monthly_rsi_ma5": 77.81,
-    "spread": 5.49,
+    "spread": 5.52,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

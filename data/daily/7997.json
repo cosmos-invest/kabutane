@@ -2,12 +2,12 @@
   "code": "7997",
   "ticker": "7997.T",
   "name": "くろがね工作所",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1136.0,
-    "change_from_signal_month_pct": 7.47,
-    "return_since_gc_pct": 16.63
+    "current_price": 1163.0,
+    "change_from_signal_month_pct": 10.03,
+    "return_since_gc_pct": 19.4
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 993.53,
       "rsi14": 56.98,
       "rsi5": 60.47
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1136.0,
+      "high": 1138.0,
+      "low": 1130.0,
+      "close": 1131.0,
+      "volume": 1800.0,
+      "sma25": 1095.0,
+      "sma75": 1053.39,
+      "sma200": 994.57,
+      "rsi14": 56.98,
+      "rsi5": 60.47
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1140.0,
+      "high": 1163.0,
+      "low": 1136.0,
+      "close": 1163.0,
+      "volume": 4800.0,
+      "sma25": 1098.08,
+      "sma75": 1055.73,
+      "sma200": 995.78,
+      "rsi14": 56.98,
+      "rsi5": 60.47
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 63.41,
-    "monthly_rsi_ma5": 61.22,
-    "spread": 2.2,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 65.04,
+    "monthly_rsi_ma5": 61.54,
+    "spread": 3.5,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

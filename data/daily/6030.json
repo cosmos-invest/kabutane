@@ -2,12 +2,12 @@
   "code": "6030",
   "ticker": "6030.T",
   "name": "アドベンチャー",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1614.0,
-    "change_from_signal_month_pct": 7.96,
-    "return_since_gc_pct": 7.96
+    "current_price": 1482.0,
+    "change_from_signal_month_pct": -0.87,
+    "return_since_gc_pct": -0.87
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 1584.57,
       "rsi14": 31.58,
       "rsi5": 33.11
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1602.0,
+      "high": 1604.0,
+      "low": 1533.0,
+      "close": 1541.0,
+      "volume": 38400.0,
+      "sma25": 1660.88,
+      "sma75": 1502.87,
+      "sma200": 1583.88,
+      "rsi14": 31.58,
+      "rsi5": 33.11
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1541.0,
+      "high": 1550.0,
+      "low": 1482.0,
+      "close": 1482.0,
+      "volume": 30400.0,
+      "sma25": 1660.8,
+      "sma75": 1506.41,
+      "sma200": 1583.08,
+      "rsi14": 31.58,
+      "rsi5": 33.11
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 31.94,
-    "monthly_rsi_ma5": 30.63,
-    "spread": 1.31,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 30.83,
+    "monthly_rsi_ma5": 30.41,
+    "spread": 0.42,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

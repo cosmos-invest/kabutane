@@ -2,12 +2,12 @@
   "code": "4224",
   "ticker": "4224.T",
   "name": "ロンシール工業",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 2146.0,
-    "change_from_signal_month_pct": 0.42,
-    "return_since_gc_pct": 0.42
+    "current_price": 2109.0,
+    "change_from_signal_month_pct": -1.31,
+    "return_since_gc_pct": -1.31
   },
   "daily": [
     {
@@ -477,22 +477,48 @@
       "sma200": 2027.08,
       "rsi14": 58.62,
       "rsi5": 61.61
+    },
+    {
+      "date": "2026-10-02",
+      "open": 2152.0,
+      "high": 2152.0,
+      "low": 2117.0,
+      "close": 2117.0,
+      "volume": 5500.0,
+      "sma25": 2121.2,
+      "sma75": 2087.43,
+      "sma200": 2028.42,
+      "rsi14": 58.62,
+      "rsi5": 61.61
+    },
+    {
+      "date": "2026-10-05",
+      "open": 2128.0,
+      "high": 2128.0,
+      "low": 2109.0,
+      "close": 2109.0,
+      "volume": 7700.0,
+      "sma25": 2119.4,
+      "sma75": 2089.33,
+      "sma200": 2029.84,
+      "rsi14": 58.62,
+      "rsi5": 61.61
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 62.01,
-    "monthly_rsi_ma5": 61.05,
-    "spread": 0.96,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 60.31,
+    "monthly_rsi_ma5": 60.71,
+    "spread": -0.4,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

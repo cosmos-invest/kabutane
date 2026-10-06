@@ -2,12 +2,12 @@
   "code": "7837",
   "ticker": "7837.T",
   "name": "アールシーコア",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 351.0,
-    "change_from_signal_month_pct": 3.54,
-    "return_since_gc_pct": 3.54
+    "current_price": 342.0,
+    "change_from_signal_month_pct": 0.88,
+    "return_since_gc_pct": 0.88
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 337.43,
       "rsi14": 37.0,
       "rsi5": 42.26
+    },
+    {
+      "date": "2026-10-02",
+      "open": 344.0,
+      "high": 350.0,
+      "low": 344.0,
+      "close": 345.0,
+      "volume": 1300.0,
+      "sma25": 343.16,
+      "sma75": 335.28,
+      "sma200": 337.31,
+      "rsi14": 37.0,
+      "rsi5": 42.26
+    },
+    {
+      "date": "2026-10-05",
+      "open": 351.0,
+      "high": 352.0,
+      "low": 336.0,
+      "close": 342.0,
+      "volume": 9100.0,
+      "sma25": 343.24,
+      "sma75": 335.84,
+      "sma200": 337.18,
+      "rsi14": 37.0,
+      "rsi5": 42.26
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 44.62,
-    "monthly_rsi_ma5": 41.09,
-    "spread": 3.53,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 43.14,
+    "monthly_rsi_ma5": 40.8,
+    "spread": 2.34,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

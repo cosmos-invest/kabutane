@@ -2,12 +2,12 @@
   "code": "3091",
   "ticker": "3091.T",
   "name": "ブロンコビリー",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 2883.0,
-    "change_from_signal_month_pct": 7.02,
-    "return_since_gc_pct": 31.05
+    "current_price": 2821.0,
+    "change_from_signal_month_pct": 4.71,
+    "return_since_gc_pct": 28.23
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 2247.34,
       "rsi14": 64.11,
       "rsi5": 73.99
+    },
+    {
+      "date": "2026-10-02",
+      "open": 2860.0,
+      "high": 2887.0,
+      "low": 2824.0,
+      "close": 2866.0,
+      "volume": 73200.0,
+      "sma25": 2825.24,
+      "sma75": 2577.03,
+      "sma200": 2251.93,
+      "rsi14": 64.11,
+      "rsi5": 73.99
+    },
+    {
+      "date": "2026-10-05",
+      "open": 2852.0,
+      "high": 2859.0,
+      "low": 2806.0,
+      "close": 2821.0,
+      "volume": 76900.0,
+      "sma25": 2828.0,
+      "sma75": 2585.11,
+      "sma200": 2256.28,
+      "rsi14": 64.11,
+      "rsi5": 73.99
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 75.93,
-    "monthly_rsi_ma5": 73.19,
-    "spread": 2.74,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 73.72,
+    "monthly_rsi_ma5": 72.75,
+    "spread": 0.97,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

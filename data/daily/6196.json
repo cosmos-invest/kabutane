@@ -2,12 +2,12 @@
   "code": "6196",
   "ticker": "6196.T",
   "name": "ストライクグループ",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1415.0,
-    "change_from_signal_month_pct": 7.03,
-    "return_since_gc_pct": 7.03
+    "current_price": 1382.0,
+    "change_from_signal_month_pct": 4.54,
+    "return_since_gc_pct": 4.54
   },
   "daily": [
     {
@@ -477,6 +477,32 @@
       "sma200": 1349.07,
       "rsi14": 48.88,
       "rsi5": 49.97
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1415.0,
+      "high": 1419.0,
+      "low": 1396.0,
+      "close": 1409.0,
+      "volume": 298000.0,
+      "sma25": 1403.24,
+      "sma75": 1345.88,
+      "sma200": 1349.35,
+      "rsi14": 48.88,
+      "rsi5": 49.97
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1409.0,
+      "high": 1412.0,
+      "low": 1378.0,
+      "close": 1382.0,
+      "volume": 321600.0,
+      "sma25": 1403.88,
+      "sma75": 1347.39,
+      "sma200": 1349.58,
+      "rsi14": 48.88,
+      "rsi5": 49.97
     }
   ],
   "corporate_events": [
@@ -489,10 +515,10 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 55.73,
-    "monthly_rsi_ma5": 54.35,
-    "spread": 1.37,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 54.38,
+    "monthly_rsi_ma5": 54.09,
+    "spread": 0.3,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -501,5 +527,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

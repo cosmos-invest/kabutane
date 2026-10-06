@@ -2,12 +2,12 @@
   "code": "7047",
   "ticker": "7047.T",
   "name": "ポート",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 2170.0,
-    "change_from_signal_month_pct": -11.07,
-    "return_since_gc_pct": -11.07
+    "current_price": 2148.0,
+    "change_from_signal_month_pct": -11.97,
+    "return_since_gc_pct": -11.97
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 2271.68,
       "rsi14": 55.61,
       "rsi5": 58.62
+    },
+    {
+      "date": "2026-10-02",
+      "open": 2151.0,
+      "high": 2162.0,
+      "low": 2113.0,
+      "close": 2120.0,
+      "volume": 57500.0,
+      "sma25": 2172.16,
+      "sma75": 2302.92,
+      "sma200": 2271.45,
+      "rsi14": 55.61,
+      "rsi5": 58.62
+    },
+    {
+      "date": "2026-10-05",
+      "open": 2140.0,
+      "high": 2167.0,
+      "low": 2125.0,
+      "close": 2148.0,
+      "volume": 64500.0,
+      "sma25": 2166.84,
+      "sma75": 2304.09,
+      "sma200": 2271.47,
+      "rsi14": 55.61,
+      "rsi5": 58.62
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 48.02,
-    "monthly_rsi_ma5": 49.72,
-    "spread": -1.7,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 47.53,
+    "monthly_rsi_ma5": 49.62,
+    "spread": -2.09,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

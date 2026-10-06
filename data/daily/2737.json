@@ -2,12 +2,12 @@
   "code": "2737",
   "ticker": "2737.T",
   "name": "トーメンデバイス",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 40900.0,
-    "change_from_signal_month_pct": 93.38,
-    "return_since_gc_pct": 135.19
+    "current_price": 36650.0,
+    "change_from_signal_month_pct": 73.29,
+    "return_since_gc_pct": 110.75
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 17821.7,
       "rsi14": 70.18,
       "rsi5": 77.34
+    },
+    {
+      "date": "2026-10-02",
+      "open": 40300.0,
+      "high": 40350.0,
+      "low": 36900.0,
+      "close": 37100.0,
+      "volume": 286600.0,
+      "sma25": 35852.0,
+      "sma75": 25909.73,
+      "sma200": 17949.45,
+      "rsi14": 70.18,
+      "rsi5": 77.34
+    },
+    {
+      "date": "2026-10-05",
+      "open": 38500.0,
+      "high": 39500.0,
+      "low": 36600.0,
+      "close": 36650.0,
+      "volume": 250700.0,
+      "sma25": 35990.0,
+      "sma75": 26198.93,
+      "sma200": 18074.35,
+      "rsi14": 70.18,
+      "rsi5": 77.34
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 89.19,
-    "monthly_rsi_ma5": 83.04,
-    "spread": 6.16,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 83.96,
+    "monthly_rsi_ma5": 81.99,
+    "spread": 1.97,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

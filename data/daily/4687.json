@@ -2,12 +2,12 @@
   "code": "4687",
   "ticker": "4687.T",
   "name": "ＴＤＣソフト",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1087.0,
-    "change_from_signal_month_pct": 2.35,
-    "return_since_gc_pct": 2.35
+    "current_price": 1067.0,
+    "change_from_signal_month_pct": 0.47,
+    "return_since_gc_pct": 0.47
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 1060.58,
       "rsi14": 38.57,
       "rsi5": 46.14
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1075.0,
+      "high": 1085.0,
+      "low": 1060.0,
+      "close": 1070.0,
+      "volume": 67900.0,
+      "sma25": 1050.64,
+      "sma75": 999.76,
+      "sma200": 1059.21,
+      "rsi14": 38.57,
+      "rsi5": 46.14
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1064.0,
+      "high": 1067.0,
+      "low": 1051.0,
+      "close": 1067.0,
+      "volume": 75600.0,
+      "sma25": 1051.76,
+      "sma75": 1001.95,
+      "sma200": 1057.77,
+      "rsi14": 38.57,
+      "rsi5": 46.14
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 48.97,
-    "monthly_rsi_ma5": 45.85,
-    "spread": 3.12,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 47.81,
+    "monthly_rsi_ma5": 45.62,
+    "spread": 2.2,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

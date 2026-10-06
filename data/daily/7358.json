@@ -2,12 +2,12 @@
   "code": "7358",
   "ticker": "7358.T",
   "name": "ポピンズ",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1752.0,
-    "change_from_signal_month_pct": 18.46,
-    "return_since_gc_pct": 18.46
+    "current_price": 1808.0,
+    "change_from_signal_month_pct": 22.24,
+    "return_since_gc_pct": 22.24
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 1491.8,
       "rsi14": 50.96,
       "rsi5": 53.86
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1763.0,
+      "high": 1815.0,
+      "low": 1761.0,
+      "close": 1782.0,
+      "volume": 35100.0,
+      "sma25": 1812.76,
+      "sma75": 1618.24,
+      "sma200": 1493.45,
+      "rsi14": 50.96,
+      "rsi5": 53.86
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1822.0,
+      "high": 1829.0,
+      "low": 1801.0,
+      "close": 1808.0,
+      "volume": 27500.0,
+      "sma25": 1809.52,
+      "sma75": 1624.51,
+      "sma200": 1495.3,
+      "rsi14": 50.96,
+      "rsi5": 53.86
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 64.07,
-    "monthly_rsi_ma5": 62.07,
-    "spread": 2.01,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 65.92,
+    "monthly_rsi_ma5": 62.44,
+    "spread": 3.48,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

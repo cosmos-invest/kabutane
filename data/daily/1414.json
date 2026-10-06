@@ -2,12 +2,12 @@
   "code": "1414",
   "ticker": "1414.T",
   "name": "ショーボンドホールディングス",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1259.0,
-    "change_from_signal_month_pct": -4.8,
-    "return_since_gc_pct": -4.8
+    "current_price": 1225.0,
+    "change_from_signal_month_pct": -7.37,
+    "return_since_gc_pct": -7.37
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 1328.2,
       "rsi14": 48.84,
       "rsi5": 49.82
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1252.0,
+      "high": 1254.5,
+      "low": 1244.0,
+      "close": 1247.0,
+      "volume": 710900.0,
+      "sma25": 1264.22,
+      "sma75": 1272.3,
+      "sma200": 1328.08,
+      "rsi14": 48.84,
+      "rsi5": 49.82
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1244.0,
+      "high": 1244.0,
+      "low": 1222.0,
+      "close": 1225.0,
+      "volume": 1483000.0,
+      "sma25": 1262.0,
+      "sma75": 1271.59,
+      "sma200": 1327.88,
+      "rsi14": 48.84,
+      "rsi5": 49.82
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 45.15,
-    "monthly_rsi_ma5": 46.01,
-    "spread": -0.86,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 42.85,
+    "monthly_rsi_ma5": 45.55,
+    "spread": -2.7,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

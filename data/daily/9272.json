@@ -2,12 +2,12 @@
   "code": "9272",
   "ticker": "9272.T",
   "name": "ブティックス",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1549.0,
-    "change_from_signal_month_pct": 0.58,
-    "return_since_gc_pct": 0.58
+    "current_price": 1486.0,
+    "change_from_signal_month_pct": -3.51,
+    "return_since_gc_pct": -3.51
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 1476.4,
       "rsi14": 50.06,
       "rsi5": 51.87
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1537.0,
+      "high": 1550.0,
+      "low": 1494.0,
+      "close": 1494.0,
+      "volume": 11500.0,
+      "sma25": 1448.56,
+      "sma75": 1461.68,
+      "sma200": 1476.88,
+      "rsi14": 50.06,
+      "rsi5": 51.87
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1493.0,
+      "high": 1516.0,
+      "low": 1486.0,
+      "close": 1486.0,
+      "volume": 6900.0,
+      "sma25": 1451.16,
+      "sma75": 1464.11,
+      "sma200": 1477.23,
+      "rsi14": 50.06,
+      "rsi5": 51.87
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 47.86,
-    "monthly_rsi_ma5": 45.83,
-    "spread": 2.03,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 45.99,
+    "monthly_rsi_ma5": 45.46,
+    "spread": 0.53,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

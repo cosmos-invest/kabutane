@@ -2,12 +2,12 @@
   "code": "7561",
   "ticker": "7561.T",
   "name": "ハークスレイホールディングス",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 689.0,
-    "change_from_signal_month_pct": 3.61,
-    "return_since_gc_pct": 3.61
+    "current_price": 679.0,
+    "change_from_signal_month_pct": 2.11,
+    "return_since_gc_pct": 2.11
   },
   "daily": [
     {
@@ -477,6 +477,32 @@
       "sma200": 682.21,
       "rsi14": 46.99,
       "rsi5": 48.51
+    },
+    {
+      "date": "2026-10-02",
+      "open": 689.0,
+      "high": 689.0,
+      "low": 676.0,
+      "close": 678.0,
+      "volume": 30800.0,
+      "sma25": 709.12,
+      "sma75": 680.09,
+      "sma200": 682.34,
+      "rsi14": 46.99,
+      "rsi5": 48.51
+    },
+    {
+      "date": "2026-10-05",
+      "open": 685.0,
+      "high": 690.0,
+      "low": 675.0,
+      "close": 679.0,
+      "volume": 19100.0,
+      "sma25": 708.12,
+      "sma75": 680.69,
+      "sma200": 682.49,
+      "rsi14": 46.99,
+      "rsi5": 48.51
     }
   ],
   "corporate_events": [
@@ -489,17 +515,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 50.38,
-    "monthly_rsi_ma5": 50.04,
-    "spread": 0.34,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 49.26,
+    "monthly_rsi_ma5": 49.82,
+    "spread": -0.55,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

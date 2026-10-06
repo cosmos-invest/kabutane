@@ -2,12 +2,12 @@
   "code": "9045",
   "ticker": "9045.T",
   "name": "京阪ホールディングス",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 3131.0,
-    "change_from_signal_month_pct": -4.07,
-    "return_since_gc_pct": -4.07
+    "current_price": 3098.0,
+    "change_from_signal_month_pct": -5.09,
+    "return_since_gc_pct": -5.09
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 3279.8,
       "rsi14": 47.71,
       "rsi5": 49.05
+    },
+    {
+      "date": "2026-10-02",
+      "open": 3123.0,
+      "high": 3123.0,
+      "low": 3094.0,
+      "close": 3102.0,
+      "volume": 365500.0,
+      "sma25": 3201.72,
+      "sma75": 3191.6,
+      "sma200": 3278.7,
+      "rsi14": 47.71,
+      "rsi5": 49.05
+    },
+    {
+      "date": "2026-10-05",
+      "open": 3096.0,
+      "high": 3117.0,
+      "low": 3081.0,
+      "close": 3098.0,
+      "volume": 273200.0,
+      "sma25": 3195.96,
+      "sma75": 3190.81,
+      "sma200": 3278.01,
+      "rsi14": 47.71,
+      "rsi5": 49.05
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 40.76,
-    "monthly_rsi_ma5": 41.99,
-    "spread": -1.24,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 39.87,
+    "monthly_rsi_ma5": 41.81,
+    "spread": -1.95,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "9742",
   "ticker": "9742.T",
   "name": "アイネス",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 2244.0,
-    "change_from_signal_month_pct": 5.11,
-    "return_since_gc_pct": 8.56
+    "current_price": 2252.0,
+    "change_from_signal_month_pct": 5.48,
+    "return_since_gc_pct": 8.95
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 2082.55,
       "rsi14": 59.39,
       "rsi5": 60.96
+    },
+    {
+      "date": "2026-10-02",
+      "open": 2220.0,
+      "high": 2305.0,
+      "low": 2220.0,
+      "close": 2280.0,
+      "volume": 23100.0,
+      "sma25": 2207.96,
+      "sma75": 2200.47,
+      "sma200": 2084.98,
+      "rsi14": 59.39,
+      "rsi5": 60.96
+    },
+    {
+      "date": "2026-10-05",
+      "open": 2267.0,
+      "high": 2267.0,
+      "low": 2216.0,
+      "close": 2252.0,
+      "volume": 24900.0,
+      "sma25": 2204.92,
+      "sma75": 2202.64,
+      "sma200": 2087.24,
+      "rsi14": 59.39,
+      "rsi5": 60.96
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 60.73,
-    "monthly_rsi_ma5": 61.43,
-    "spread": -0.7,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 60.94,
+    "monthly_rsi_ma5": 61.47,
+    "spread": -0.53,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

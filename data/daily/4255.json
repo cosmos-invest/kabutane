@@ -2,12 +2,12 @@
   "code": "4255",
   "ticker": "4255.T",
   "name": "ＴＨＥＣＯＯ",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 3430.0,
-    "change_from_signal_month_pct": 39.43,
-    "return_since_gc_pct": 42.8
+    "current_price": 3315.0,
+    "change_from_signal_month_pct": 34.76,
+    "return_since_gc_pct": 38.01
   },
   "daily": [
     {
@@ -477,22 +477,48 @@
       "sma200": 2431.91,
       "rsi14": 63.78,
       "rsi5": 64.54
+    },
+    {
+      "date": "2026-10-02",
+      "open": 3410.0,
+      "high": 3415.0,
+      "low": 3385.0,
+      "close": 3400.0,
+      "volume": 2300.0,
+      "sma25": 3516.4,
+      "sma75": 2958.08,
+      "sma200": 2438.82,
+      "rsi14": 63.78,
+      "rsi5": 64.54
+    },
+    {
+      "date": "2026-10-05",
+      "open": 3375.0,
+      "high": 3380.0,
+      "low": 3285.0,
+      "close": 3315.0,
+      "volume": 12800.0,
+      "sma25": 3509.8,
+      "sma75": 2969.04,
+      "sma200": 2445.02,
+      "rsi14": 63.78,
+      "rsi5": 64.54
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 77.23,
-    "monthly_rsi_ma5": 76.66,
-    "spread": 0.57,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 74.49,
+    "monthly_rsi_ma5": 76.11,
+    "spread": -1.62,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

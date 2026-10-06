@@ -2,12 +2,12 @@
   "code": "4754",
   "ticker": "4754.T",
   "name": "トスネット",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1528.0,
-    "change_from_signal_month_pct": -2.74,
-    "return_since_gc_pct": -2.74
+    "current_price": 1539.0,
+    "change_from_signal_month_pct": -2.04,
+    "return_since_gc_pct": -2.04
   },
   "daily": [
     {
@@ -477,6 +477,32 @@
       "sma200": 1529.61,
       "rsi14": 57.45,
       "rsi5": 61.35
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1528.0,
+      "high": 1528.0,
+      "low": 1528.0,
+      "close": 1528.0,
+      "volume": 0.0,
+      "sma25": 1501.36,
+      "sma75": 1505.6,
+      "sma200": 1529.65,
+      "rsi14": 57.45,
+      "rsi5": 61.35
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1539.0,
+      "high": 1539.0,
+      "low": 1539.0,
+      "close": 1539.0,
+      "volume": 300.0,
+      "sma25": 1502.92,
+      "sma75": 1506.12,
+      "sma200": 1529.74,
+      "rsi14": 57.45,
+      "rsi5": 61.35
     }
   ],
   "corporate_events": [
@@ -489,10 +515,10 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 57.16,
-    "monthly_rsi_ma5": 56.88,
-    "spread": 0.28,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 57.79,
+    "monthly_rsi_ma5": 57.0,
+    "spread": 0.79,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -501,5 +527,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

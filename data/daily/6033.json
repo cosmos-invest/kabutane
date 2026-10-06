@@ -2,12 +2,12 @@
   "code": "6033",
   "ticker": "6033.T",
   "name": "エクストリーム",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1682.0,
-    "change_from_signal_month_pct": 0.36,
-    "return_since_gc_pct": 0.36
+    "current_price": 1615.0,
+    "change_from_signal_month_pct": -3.64,
+    "return_since_gc_pct": -3.64
   },
   "daily": [
     {
@@ -477,22 +477,48 @@
       "sma200": 1492.82,
       "rsi14": 57.7,
       "rsi5": 65.22
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1667.0,
+      "high": 1671.0,
+      "low": 1610.0,
+      "close": 1611.0,
+      "volume": 36600.0,
+      "sma25": 1700.64,
+      "sma75": 1593.71,
+      "sma200": 1494.21,
+      "rsi14": 57.7,
+      "rsi5": 65.22
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1620.0,
+      "high": 1623.0,
+      "low": 1602.0,
+      "close": 1615.0,
+      "volume": 11700.0,
+      "sma25": 1699.04,
+      "sma75": 1597.04,
+      "sma200": 1495.38,
+      "rsi14": 57.7,
+      "rsi5": 65.22
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 64.84,
-    "monthly_rsi_ma5": 62.35,
-    "spread": 2.49,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 60.35,
+    "monthly_rsi_ma5": 61.45,
+    "spread": -1.11,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "3683",
   "ticker": "3683.T",
   "name": "サイバーリンクス",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1084.0,
-    "change_from_signal_month_pct": 2.26,
-    "return_since_gc_pct": 2.26
+    "current_price": 1051.0,
+    "change_from_signal_month_pct": -0.85,
+    "return_since_gc_pct": -0.85
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 1124.53,
       "rsi14": 46.55,
       "rsi5": 48.33
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1080.0,
+      "high": 1080.0,
+      "low": 1055.0,
+      "close": 1065.0,
+      "volume": 28200.0,
+      "sma25": 1103.72,
+      "sma75": 1070.76,
+      "sma200": 1123.18,
+      "rsi14": 46.55,
+      "rsi5": 48.33
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1064.0,
+      "high": 1074.0,
+      "low": 1036.0,
+      "close": 1051.0,
+      "volume": 39800.0,
+      "sma25": 1100.96,
+      "sma75": 1071.4,
+      "sma200": 1121.82,
+      "rsi14": 46.55,
+      "rsi5": 48.33
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 50.46,
-    "monthly_rsi_ma5": 50.67,
-    "spread": -0.21,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 48.92,
+    "monthly_rsi_ma5": 50.36,
+    "spread": -1.44,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

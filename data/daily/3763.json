@@ -2,12 +2,12 @@
   "code": "3763",
   "ticker": "3763.T",
   "name": "プロシップ",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 2085.0,
-    "change_from_signal_month_pct": 12.7,
-    "return_since_gc_pct": 29.74
+    "current_price": 2108.0,
+    "change_from_signal_month_pct": 13.95,
+    "return_since_gc_pct": 31.18
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 1698.58,
       "rsi14": 66.44,
       "rsi5": 73.17
+    },
+    {
+      "date": "2026-10-02",
+      "open": 2035.0,
+      "high": 2100.0,
+      "low": 2029.0,
+      "close": 2080.0,
+      "volume": 50200.0,
+      "sma25": 2102.16,
+      "sma75": 1946.81,
+      "sma200": 1700.82,
+      "rsi14": 66.44,
+      "rsi5": 73.17
+    },
+    {
+      "date": "2026-10-05",
+      "open": 2079.0,
+      "high": 2128.0,
+      "low": 2048.0,
+      "close": 2108.0,
+      "volume": 58300.0,
+      "sma25": 2092.92,
+      "sma75": 1952.83,
+      "sma200": 1703.36,
+      "rsi14": 66.44,
+      "rsi5": 73.17
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 71.98,
-    "monthly_rsi_ma5": 73.56,
-    "spread": -1.58,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 72.58,
+    "monthly_rsi_ma5": 73.68,
+    "spread": -1.11,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

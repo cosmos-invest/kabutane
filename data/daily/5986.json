@@ -2,12 +2,12 @@
   "code": "5986",
   "ticker": "5986.T",
   "name": "モリテック　スチール",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 292.0,
-    "change_from_signal_month_pct": 17.27,
-    "return_since_gc_pct": 17.27
+    "current_price": 284.0,
+    "change_from_signal_month_pct": 14.06,
+    "return_since_gc_pct": 14.06
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 230.47,
       "rsi14": 54.22,
       "rsi5": 57.0
+    },
+    {
+      "date": "2026-10-02",
+      "open": 287.0,
+      "high": 291.0,
+      "low": 287.0,
+      "close": 289.0,
+      "volume": 63200.0,
+      "sma25": 264.6,
+      "sma75": 248.92,
+      "sma200": 230.94,
+      "rsi14": 54.22,
+      "rsi5": 57.0
+    },
+    {
+      "date": "2026-10-05",
+      "open": 288.0,
+      "high": 289.0,
+      "low": 279.0,
+      "close": 284.0,
+      "volume": 84400.0,
+      "sma25": 265.64,
+      "sma75": 249.63,
+      "sma200": 231.4,
+      "rsi14": 54.22,
+      "rsi5": 57.0
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 64.07,
-    "monthly_rsi_ma5": 57.11,
-    "spread": 6.96,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 61.85,
+    "monthly_rsi_ma5": 56.67,
+    "spread": 5.18,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

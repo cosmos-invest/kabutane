@@ -2,12 +2,12 @@
   "code": "7049",
   "ticker": "7049.T",
   "name": "識学",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 765.0,
-    "change_from_signal_month_pct": -9.47,
-    "return_since_gc_pct": -10.21
+    "current_price": 752.0,
+    "change_from_signal_month_pct": -11.01,
+    "return_since_gc_pct": -11.74
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 846.42,
       "rsi14": 51.0,
       "rsi5": 53.3
+    },
+    {
+      "date": "2026-10-02",
+      "open": 765.0,
+      "high": 769.0,
+      "low": 761.0,
+      "close": 761.0,
+      "volume": 13400.0,
+      "sma25": 792.16,
+      "sma75": 834.35,
+      "sma200": 845.92,
+      "rsi14": 51.0,
+      "rsi5": 53.3
+    },
+    {
+      "date": "2026-10-05",
+      "open": 761.0,
+      "high": 762.0,
+      "low": 752.0,
+      "close": 752.0,
+      "volume": 29400.0,
+      "sma25": 787.12,
+      "sma75": 833.39,
+      "sma200": 845.36,
+      "rsi14": 51.0,
+      "rsi5": 53.3
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 47.68,
-    "monthly_rsi_ma5": 51.21,
-    "spread": -3.53,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 46.68,
+    "monthly_rsi_ma5": 51.01,
+    "spread": -4.33,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "196A",
   "ticker": "196A.T",
   "name": "ＭＦＳ",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 331.0,
-    "change_from_signal_month_pct": 17.79,
-    "return_since_gc_pct": 24.44
+    "current_price": 363.0,
+    "change_from_signal_month_pct": 29.18,
+    "return_since_gc_pct": 36.47
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 283.7,
       "rsi14": 43.47,
       "rsi5": 45.48
+    },
+    {
+      "date": "2026-10-02",
+      "open": 330.0,
+      "high": 333.0,
+      "low": 327.0,
+      "close": 329.0,
+      "volume": 60700.0,
+      "sma25": 329.84,
+      "sma75": 298.24,
+      "sma200": 283.89,
+      "rsi14": 43.47,
+      "rsi5": 45.48
+    },
+    {
+      "date": "2026-10-05",
+      "open": 329.0,
+      "high": 363.0,
+      "low": 325.0,
+      "close": 363.0,
+      "volume": 206400.0,
+      "sma25": 330.72,
+      "sma75": 299.29,
+      "sma200": 284.31,
+      "rsi14": 43.47,
+      "rsi5": 45.48
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 50.88,
-    "monthly_rsi_ma5": 49.49,
-    "spread": 1.39,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 54.11,
+    "monthly_rsi_ma5": 50.14,
+    "spread": 3.97,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

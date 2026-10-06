@@ -2,12 +2,12 @@
   "code": "9603",
   "ticker": "9603.T",
   "name": "エイチ・アイ・エス",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1105.0,
-    "change_from_signal_month_pct": 8.02,
-    "return_since_gc_pct": 8.02
+    "current_price": 1078.0,
+    "change_from_signal_month_pct": 5.38,
+    "return_since_gc_pct": 5.38
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 1137.57,
       "rsi14": 32.78,
       "rsi5": 33.83
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1105.0,
+      "high": 1105.0,
+      "low": 1073.0,
+      "close": 1075.0,
+      "volume": 318200.0,
+      "sma25": 1149.68,
+      "sma75": 1072.2,
+      "sma200": 1136.79,
+      "rsi14": 32.78,
+      "rsi5": 33.83
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1074.0,
+      "high": 1084.0,
+      "low": 1066.0,
+      "close": 1078.0,
+      "volume": 287800.0,
+      "sma25": 1145.6,
+      "sma75": 1074.4,
+      "sma200": 1135.88,
+      "rsi14": 32.78,
+      "rsi5": 33.83
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 38.83,
-    "monthly_rsi_ma5": 36.33,
-    "spread": 2.5,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 37.83,
+    "monthly_rsi_ma5": 36.13,
+    "spread": 1.7,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

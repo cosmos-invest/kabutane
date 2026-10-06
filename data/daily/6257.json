@@ -2,12 +2,12 @@
   "code": "6257",
   "ticker": "6257.T",
   "name": "藤商事",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1000.0,
-    "change_from_signal_month_pct": -3.19,
-    "return_since_gc_pct": 0.5
+    "current_price": 999.0,
+    "change_from_signal_month_pct": -3.29,
+    "return_since_gc_pct": 0.4
   },
   "daily": [
     {
@@ -477,6 +477,32 @@
       "sma200": 1023.79,
       "rsi14": 39.66,
       "rsi5": 43.83
+    },
+    {
+      "date": "2026-10-02",
+      "open": 998.0,
+      "high": 1002.0,
+      "low": 990.0,
+      "close": 1000.0,
+      "volume": 85000.0,
+      "sma25": 1015.4,
+      "sma75": 1011.61,
+      "sma200": 1023.44,
+      "rsi14": 39.66,
+      "rsi5": 43.83
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1000.0,
+      "high": 1001.0,
+      "low": 994.0,
+      "close": 999.0,
+      "volume": 23500.0,
+      "sma25": 1014.68,
+      "sma75": 1011.67,
+      "sma200": 1023.15,
+      "rsi14": 39.66,
+      "rsi5": 43.83
     }
   ],
   "corporate_events": [
@@ -489,10 +515,10 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 37.59,
-    "monthly_rsi_ma5": 38.26,
-    "spread": -0.67,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 37.52,
+    "monthly_rsi_ma5": 38.25,
+    "spread": -0.73,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -501,5 +527,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

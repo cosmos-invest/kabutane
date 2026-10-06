@@ -2,12 +2,12 @@
   "code": "3817",
   "ticker": "3817.T",
   "name": "ＳＲＡホールディングス",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 4790.0,
-    "change_from_signal_month_pct": 3.01,
-    "return_since_gc_pct": 3.01
+    "current_price": 4655.0,
+    "change_from_signal_month_pct": 0.11,
+    "return_since_gc_pct": 0.11
   },
   "daily": [
     {
@@ -477,6 +477,32 @@
       "sma200": 4864.02,
       "rsi14": 50.97,
       "rsi5": 53.37
+    },
+    {
+      "date": "2026-10-02",
+      "open": 4760.0,
+      "high": 4785.0,
+      "low": 4710.0,
+      "close": 4710.0,
+      "volume": 28400.0,
+      "sma25": 4816.2,
+      "sma75": 4682.4,
+      "sma200": 4861.62,
+      "rsi14": 50.97,
+      "rsi5": 53.37
+    },
+    {
+      "date": "2026-10-05",
+      "open": 4710.0,
+      "high": 4710.0,
+      "low": 4655.0,
+      "close": 4655.0,
+      "volume": 23400.0,
+      "sma25": 4806.2,
+      "sma75": 4684.33,
+      "sma200": 4859.35,
+      "rsi14": 50.97,
+      "rsi5": 53.37
     }
   ],
   "corporate_events": [
@@ -489,17 +515,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 55.61,
-    "monthly_rsi_ma5": 55.02,
-    "spread": 0.59,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 52.73,
+    "monthly_rsi_ma5": 54.44,
+    "spread": -1.71,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "3177",
   "ticker": "3177.T",
   "name": "ありがとうサービス",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 5000.0,
-    "change_from_signal_month_pct": 22.7,
-    "return_since_gc_pct": 22.7
+    "current_price": 4690.0,
+    "change_from_signal_month_pct": 15.09,
+    "return_since_gc_pct": 15.09
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 3759.9,
       "rsi14": 57.2,
       "rsi5": 66.53
+    },
+    {
+      "date": "2026-10-02",
+      "open": 4900.0,
+      "high": 4900.0,
+      "low": 4780.0,
+      "close": 4835.0,
+      "volume": 1400.0,
+      "sma25": 4503.2,
+      "sma75": 4087.93,
+      "sma200": 3767.07,
+      "rsi14": 57.2,
+      "rsi5": 66.53
+    },
+    {
+      "date": "2026-10-05",
+      "open": 4765.0,
+      "high": 4765.0,
+      "low": 4605.0,
+      "close": 4690.0,
+      "volume": 3900.0,
+      "sma25": 4515.6,
+      "sma75": 4104.13,
+      "sma200": 3773.53,
+      "rsi14": 57.2,
+      "rsi5": 66.53
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 76.02,
-    "monthly_rsi_ma5": 69.16,
-    "spread": 6.85,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 68.42,
+    "monthly_rsi_ma5": 67.65,
+    "spread": 0.78,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

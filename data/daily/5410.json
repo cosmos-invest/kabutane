@@ -2,12 +2,12 @@
   "code": "5410",
   "ticker": "5410.T",
   "name": "合同製鐵",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 2903.0,
-    "change_from_signal_month_pct": 2.22,
-    "return_since_gc_pct": 2.22
+    "current_price": 2823.0,
+    "change_from_signal_month_pct": -0.6,
+    "return_since_gc_pct": -0.6
   },
   "daily": [
     {
@@ -477,6 +477,32 @@
       "sma200": 3308.03,
       "rsi14": 35.74,
       "rsi5": 36.73
+    },
+    {
+      "date": "2026-10-02",
+      "open": 2890.0,
+      "high": 2902.0,
+      "low": 2855.0,
+      "close": 2865.0,
+      "volume": 88300.0,
+      "sma25": 3043.8,
+      "sma75": 2856.08,
+      "sma200": 3303.51,
+      "rsi14": 35.74,
+      "rsi5": 36.73
+    },
+    {
+      "date": "2026-10-05",
+      "open": 2863.0,
+      "high": 2863.0,
+      "low": 2814.0,
+      "close": 2823.0,
+      "volume": 82700.0,
+      "sma25": 3033.92,
+      "sma75": 2858.56,
+      "sma200": 3298.85,
+      "rsi14": 35.74,
+      "rsi5": 36.73
     }
   ],
   "corporate_events": [
@@ -489,10 +515,10 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 38.04,
-    "monthly_rsi_ma5": 36.36,
-    "spread": 1.67,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 37.01,
+    "monthly_rsi_ma5": 36.16,
+    "spread": 0.85,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -501,5 +527,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

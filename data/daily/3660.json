@@ -2,12 +2,12 @@
   "code": "3660",
   "ticker": "3660.T",
   "name": "アイスタイル",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 496.0,
-    "change_from_signal_month_pct": 12.22,
-    "return_since_gc_pct": 12.22
+    "current_price": 472.0,
+    "change_from_signal_month_pct": 6.79,
+    "return_since_gc_pct": 6.79
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 445.3,
       "rsi14": 44.92,
       "rsi5": 48.17
+    },
+    {
+      "date": "2026-10-02",
+      "open": 494.0,
+      "high": 497.0,
+      "low": 480.0,
+      "close": 481.0,
+      "volume": 714500.0,
+      "sma25": 502.72,
+      "sma75": 449.93,
+      "sma200": 445.46,
+      "rsi14": 44.92,
+      "rsi5": 48.17
+    },
+    {
+      "date": "2026-10-05",
+      "open": 483.0,
+      "high": 486.0,
+      "low": 472.0,
+      "close": 472.0,
+      "volume": 781900.0,
+      "sma25": 500.6,
+      "sma75": 451.15,
+      "sma200": 445.61,
+      "rsi14": 44.92,
+      "rsi5": 48.17
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 51.77,
-    "monthly_rsi_ma5": 49.25,
-    "spread": 2.52,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 49.92,
+    "monthly_rsi_ma5": 48.88,
+    "spread": 1.03,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

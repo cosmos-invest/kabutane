@@ -2,12 +2,12 @@
   "code": "4389",
   "ticker": "4389.T",
   "name": "プロパティデータバンク",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1148.0,
-    "change_from_signal_month_pct": 10.28,
-    "return_since_gc_pct": 30.6
+    "current_price": 1050.0,
+    "change_from_signal_month_pct": 0.86,
+    "return_since_gc_pct": 19.45
   },
   "daily": [
     {
@@ -477,22 +477,48 @@
       "sma200": 910.65,
       "rsi14": 53.58,
       "rsi5": 62.01
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1148.0,
+      "high": 1148.0,
+      "low": 1067.0,
+      "close": 1098.0,
+      "volume": 8000.0,
+      "sma25": 1075.32,
+      "sma75": 1031.21,
+      "sma200": 912.17,
+      "rsi14": 53.58,
+      "rsi5": 62.01
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1098.0,
+      "high": 1127.0,
+      "low": 1033.0,
+      "close": 1050.0,
+      "volume": 6000.0,
+      "sma25": 1075.68,
+      "sma75": 1033.53,
+      "sma200": 913.46,
+      "rsi14": 53.58,
+      "rsi5": 62.01
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 63.05,
-    "monthly_rsi_ma5": 60.87,
-    "spread": 2.19,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 56.97,
+    "monthly_rsi_ma5": 59.65,
+    "spread": -2.68,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

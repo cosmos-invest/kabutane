@@ -2,12 +2,12 @@
   "code": "9505",
   "ticker": "9505.T",
   "name": "北陸電力",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1105.0,
-    "change_from_signal_month_pct": 14.92,
-    "return_since_gc_pct": 14.92
+    "current_price": 1051.0,
+    "change_from_signal_month_pct": 9.31,
+    "return_since_gc_pct": 9.31
   },
   "daily": [
     {
@@ -477,6 +477,32 @@
       "sma200": 982.4,
       "rsi14": 52.42,
       "rsi5": 54.32
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1102.0,
+      "high": 1104.5,
+      "low": 1064.0,
+      "close": 1067.0,
+      "volume": 1023700.0,
+      "sma25": 1084.25,
+      "sma75": 973.48,
+      "sma200": 982.95,
+      "rsi14": 52.42,
+      "rsi5": 54.32
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1071.0,
+      "high": 1076.5,
+      "low": 1041.5,
+      "close": 1051.0,
+      "volume": 1205000.0,
+      "sma25": 1086.79,
+      "sma75": 975.66,
+      "sma200": 983.45,
+      "rsi14": 52.42,
+      "rsi5": 54.32
     }
   ],
   "corporate_events": [
@@ -489,10 +515,10 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 59.5,
-    "monthly_rsi_ma5": 55.97,
-    "spread": 3.53,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 56.38,
+    "monthly_rsi_ma5": 55.35,
+    "spread": 1.03,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -501,5 +527,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

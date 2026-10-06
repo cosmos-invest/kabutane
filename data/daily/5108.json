@@ -2,12 +2,12 @@
   "code": "5108",
   "ticker": "5108.T",
   "name": "ブリヂストン",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 3842.0,
-    "change_from_signal_month_pct": -3.1,
-    "return_since_gc_pct": -3.1
+    "current_price": 3829.0,
+    "change_from_signal_month_pct": -3.43,
+    "return_since_gc_pct": -3.43
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 3593.65,
       "rsi14": 56.45,
       "rsi5": 65.67
+    },
+    {
+      "date": "2026-10-02",
+      "open": 3818.0,
+      "high": 3841.0,
+      "low": 3777.0,
+      "close": 3780.0,
+      "volume": 4064000.0,
+      "sma25": 3893.28,
+      "sma75": 3808.67,
+      "sma200": 3594.19,
+      "rsi14": 56.45,
+      "rsi5": 65.67
+    },
+    {
+      "date": "2026-10-05",
+      "open": 3797.0,
+      "high": 3829.0,
+      "low": 3785.0,
+      "close": 3829.0,
+      "volume": 3050400.0,
+      "sma25": 3881.36,
+      "sma75": 3812.88,
+      "sma200": 3595.84,
+      "rsi14": 56.45,
+      "rsi5": 65.67
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 60.2,
-    "monthly_rsi_ma5": 62.19,
-    "spread": -1.98,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 59.88,
+    "monthly_rsi_ma5": 62.12,
+    "spread": -2.24,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

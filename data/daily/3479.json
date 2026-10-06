@@ -2,12 +2,12 @@
   "code": "3479",
   "ticker": "3479.T",
   "name": "ＴＫＰ",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1855.0,
-    "change_from_signal_month_pct": -3.23,
-    "return_since_gc_pct": -3.23
+    "current_price": 1821.0,
+    "change_from_signal_month_pct": -5.01,
+    "return_since_gc_pct": -5.01
   },
   "daily": [
     {
@@ -477,22 +477,48 @@
       "sma200": 1867.6,
       "rsi14": 47.73,
       "rsi5": 51.59
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1852.0,
+      "high": 1852.0,
+      "low": 1823.0,
+      "close": 1824.0,
+      "volume": 48400.0,
+      "sma25": 1880.36,
+      "sma75": 1828.21,
+      "sma200": 1867.91,
+      "rsi14": 47.73,
+      "rsi5": 51.59
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1811.0,
+      "high": 1835.0,
+      "low": 1800.0,
+      "close": 1821.0,
+      "volume": 63100.0,
+      "sma25": 1877.44,
+      "sma75": 1828.49,
+      "sma200": 1868.34,
+      "rsi14": 47.73,
+      "rsi5": 51.59
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 47.16,
-    "monthly_rsi_ma5": 47.11,
-    "spread": 0.05,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 46.35,
+    "monthly_rsi_ma5": 46.94,
+    "spread": -0.6,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

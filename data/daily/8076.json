@@ -2,12 +2,12 @@
   "code": "8076",
   "ticker": "8076.T",
   "name": "カノークス",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 2090.0,
-    "change_from_signal_month_pct": -0.43,
-    "return_since_gc_pct": -0.43
+    "current_price": 2055.0,
+    "change_from_signal_month_pct": -2.1,
+    "return_since_gc_pct": -2.1
   },
   "daily": [
     {
@@ -477,6 +477,32 @@
       "sma200": 2055.66,
       "rsi14": 58.55,
       "rsi5": 61.69
+    },
+    {
+      "date": "2026-10-02",
+      "open": 2100.0,
+      "high": 2100.0,
+      "low": 2076.0,
+      "close": 2082.0,
+      "volume": 3400.0,
+      "sma25": 2112.88,
+      "sma75": 2065.76,
+      "sma200": 2056.43,
+      "rsi14": 58.55,
+      "rsi5": 61.69
+    },
+    {
+      "date": "2026-10-05",
+      "open": 2082.0,
+      "high": 2082.0,
+      "low": 2055.0,
+      "close": 2055.0,
+      "volume": 2900.0,
+      "sma25": 2111.6,
+      "sma75": 2067.12,
+      "sma200": 2057.05,
+      "rsi14": 58.55,
+      "rsi5": 61.69
     }
   ],
   "corporate_events": [
@@ -489,17 +515,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 55.9,
-    "monthly_rsi_ma5": 55.19,
-    "spread": 0.71,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 53.63,
+    "monthly_rsi_ma5": 54.74,
+    "spread": -1.11,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

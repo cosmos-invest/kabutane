@@ -2,12 +2,12 @@
   "code": "9365",
   "ticker": "9365.T",
   "name": "トレーディア",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1607.0,
-    "change_from_signal_month_pct": -4.63,
-    "return_since_gc_pct": 0.5
+    "current_price": 1613.0,
+    "change_from_signal_month_pct": -4.27,
+    "return_since_gc_pct": 0.88
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 1579.61,
       "rsi14": 60.08,
       "rsi5": 66.29
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1607.0,
+      "high": 1607.0,
+      "low": 1607.0,
+      "close": 1607.0,
+      "volume": 0.0,
+      "sma25": 1638.8,
+      "sma75": 1615.6,
+      "sma200": 1580.32,
+      "rsi14": 60.08,
+      "rsi5": 66.29
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1625.0,
+      "high": 1640.0,
+      "low": 1613.0,
+      "close": 1613.0,
+      "volume": 500.0,
+      "sma25": 1636.68,
+      "sma75": 1617.17,
+      "sma200": 1580.93,
+      "rsi14": 60.08,
+      "rsi5": 66.29
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 60.73,
-    "monthly_rsi_ma5": 62.54,
-    "spread": -1.81,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 61.07,
+    "monthly_rsi_ma5": 62.61,
+    "spread": -1.54,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

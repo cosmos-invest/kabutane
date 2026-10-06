@@ -2,12 +2,12 @@
   "code": "9857",
   "ticker": "9857.T",
   "name": "英和",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 2644.0,
-    "change_from_signal_month_pct": 1.69,
-    "return_since_gc_pct": 1.69
+    "current_price": 2593.0,
+    "change_from_signal_month_pct": -0.27,
+    "return_since_gc_pct": -0.27
   },
   "daily": [
     {
@@ -477,6 +477,32 @@
       "sma200": 2575.01,
       "rsi14": 57.68,
       "rsi5": 58.22
+    },
+    {
+      "date": "2026-10-02",
+      "open": 2643.0,
+      "high": 2643.0,
+      "low": 2643.0,
+      "close": 2643.0,
+      "volume": 100.0,
+      "sma25": 2618.8,
+      "sma75": 2533.75,
+      "sma200": 2576.43,
+      "rsi14": 57.68,
+      "rsi5": 58.22
+    },
+    {
+      "date": "2026-10-05",
+      "open": 2593.0,
+      "high": 2593.0,
+      "low": 2583.0,
+      "close": 2593.0,
+      "volume": 2600.0,
+      "sma25": 2616.8,
+      "sma75": 2536.49,
+      "sma200": 2577.53,
+      "rsi14": 57.68,
+      "rsi5": 58.22
     }
   ],
   "corporate_events": [
@@ -489,17 +515,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 60.1,
-    "monthly_rsi_ma5": 58.57,
-    "spread": 1.53,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 58.03,
+    "monthly_rsi_ma5": 58.16,
+    "spread": -0.13,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "2685",
   "ticker": "2685.T",
   "name": "アンドエスティＨＤ",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 3040.0,
-    "change_from_signal_month_pct": -10.06,
-    "return_since_gc_pct": 1.47
+    "current_price": 3020.0,
+    "change_from_signal_month_pct": -10.65,
+    "return_since_gc_pct": 0.8
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 3136.33,
       "rsi14": 54.48,
       "rsi5": 57.5
+    },
+    {
+      "date": "2026-10-02",
+      "open": 3035.0,
+      "high": 3055.0,
+      "low": 2973.0,
+      "close": 2988.0,
+      "volume": 297700.0,
+      "sma25": 3227.52,
+      "sma75": 3375.97,
+      "sma200": 3136.88,
+      "rsi14": 54.48,
+      "rsi5": 57.5
+    },
+    {
+      "date": "2026-10-05",
+      "open": 3030.0,
+      "high": 3050.0,
+      "low": 3005.0,
+      "close": 3020.0,
+      "volume": 237900.0,
+      "sma25": 3206.12,
+      "sma75": 3370.91,
+      "sma200": 3137.76,
+      "rsi14": 54.48,
+      "rsi5": 57.5
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 49.35,
-    "monthly_rsi_ma5": 55.02,
-    "spread": -5.66,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 48.91,
+    "monthly_rsi_ma5": 54.93,
+    "spread": -6.02,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

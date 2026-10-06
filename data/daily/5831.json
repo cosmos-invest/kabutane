@@ -2,12 +2,12 @@
   "code": "5831",
   "ticker": "5831.T",
   "name": "しずおかフィナンシャルグループ",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 3601.0,
-    "change_from_signal_month_pct": 13.24,
-    "return_since_gc_pct": 13.24
+    "current_price": 3578.0,
+    "change_from_signal_month_pct": 12.52,
+    "return_since_gc_pct": 12.52
   },
   "daily": [
     {
@@ -477,6 +477,32 @@
       "sma200": 2955.43,
       "rsi14": 71.24,
       "rsi5": 75.08
+    },
+    {
+      "date": "2026-10-02",
+      "open": 3596.0,
+      "high": 3631.0,
+      "low": 3568.0,
+      "close": 3568.0,
+      "volume": 1654700.0,
+      "sma25": 3582.36,
+      "sma75": 3366.43,
+      "sma200": 2961.5,
+      "rsi14": 71.24,
+      "rsi5": 75.08
+    },
+    {
+      "date": "2026-10-05",
+      "open": 3571.0,
+      "high": 3595.0,
+      "low": 3535.0,
+      "close": 3578.0,
+      "volume": 1736100.0,
+      "sma25": 3582.84,
+      "sma75": 3372.52,
+      "sma200": 2967.58,
+      "rsi14": 71.24,
+      "rsi5": 75.08
     }
   ],
   "corporate_events": [
@@ -489,17 +515,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 76.95,
-    "monthly_rsi_ma5": 76.58,
-    "spread": 0.37,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 76.2,
+    "monthly_rsi_ma5": 76.43,
+    "spread": -0.23,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

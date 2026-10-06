@@ -2,12 +2,12 @@
   "code": "3010",
   "ticker": "3010.T",
   "name": "ポラリス・ホールディングス",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 190.0,
-    "change_from_signal_month_pct": -2.56,
-    "return_since_gc_pct": -3.55
+    "current_price": 189.0,
+    "change_from_signal_month_pct": -3.08,
+    "return_since_gc_pct": -4.06
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 184.62,
       "rsi14": 48.9,
       "rsi5": 51.86
+    },
+    {
+      "date": "2026-10-02",
+      "open": 191.0,
+      "high": 191.0,
+      "low": 188.0,
+      "close": 188.0,
+      "volume": 245400.0,
+      "sma25": 190.0,
+      "sma75": 190.68,
+      "sma200": 184.68,
+      "rsi14": 48.9,
+      "rsi5": 51.86
+    },
+    {
+      "date": "2026-10-05",
+      "open": 189.0,
+      "high": 190.0,
+      "low": 189.0,
+      "close": 189.0,
+      "volume": 43200.0,
+      "sma25": 189.84,
+      "sma75": 190.97,
+      "sma200": 184.73,
+      "rsi14": 48.9,
+      "rsi5": 51.86
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 50.56,
-    "monthly_rsi_ma5": 51.33,
-    "spread": -0.77,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 50.29,
+    "monthly_rsi_ma5": 51.28,
+    "spread": -0.99,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

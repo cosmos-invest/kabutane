@@ -2,12 +2,12 @@
   "code": "3926",
   "ticker": "3926.T",
   "name": "オープンドア",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 417.0,
-    "change_from_signal_month_pct": 10.9,
-    "return_since_gc_pct": 27.52
+    "current_price": 413.0,
+    "change_from_signal_month_pct": 9.84,
+    "return_since_gc_pct": 26.3
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 338.96,
       "rsi14": 32.31,
       "rsi5": 38.69
+    },
+    {
+      "date": "2026-10-02",
+      "open": 416.0,
+      "high": 448.0,
+      "low": 411.0,
+      "close": 430.0,
+      "volume": 54100.0,
+      "sma25": 428.48,
+      "sma75": 383.09,
+      "sma200": 339.62,
+      "rsi14": 32.31,
+      "rsi5": 38.69
+    },
+    {
+      "date": "2026-10-05",
+      "open": 427.0,
+      "high": 436.0,
+      "low": 413.0,
+      "close": 413.0,
+      "volume": 54400.0,
+      "sma25": 427.68,
+      "sma75": 385.12,
+      "sma200": 340.25,
+      "rsi14": 32.31,
+      "rsi5": 38.69
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 40.8,
-    "monthly_rsi_ma5": 38.28,
-    "spread": 2.53,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 40.54,
+    "monthly_rsi_ma5": 38.22,
+    "spread": 2.32,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

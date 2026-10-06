@@ -2,12 +2,12 @@
   "code": "2004",
   "ticker": "2004.T",
   "name": "昭和産業",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 3730.0,
-    "change_from_signal_month_pct": 5.07,
-    "return_since_gc_pct": 10.03
+    "current_price": 3695.0,
+    "change_from_signal_month_pct": 4.08,
+    "return_since_gc_pct": 9.0
   },
   "daily": [
     {
@@ -477,6 +477,32 @@
       "sma200": 3328.46,
       "rsi14": 57.06,
       "rsi5": 63.19
+    },
+    {
+      "date": "2026-10-02",
+      "open": 3700.0,
+      "high": 3700.0,
+      "low": 3655.0,
+      "close": 3690.0,
+      "volume": 54400.0,
+      "sma25": 3843.8,
+      "sma75": 3605.33,
+      "sma200": 3332.53,
+      "rsi14": 57.06,
+      "rsi5": 63.19
+    },
+    {
+      "date": "2026-10-05",
+      "open": 3660.0,
+      "high": 3705.0,
+      "low": 3655.0,
+      "close": 3695.0,
+      "volume": 51300.0,
+      "sma25": 3841.0,
+      "sma75": 3610.4,
+      "sma200": 3336.74,
+      "rsi14": 57.06,
+      "rsi5": 63.19
     }
   ],
   "corporate_events": [
@@ -489,10 +515,10 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 66.16,
-    "monthly_rsi_ma5": 64.5,
-    "spread": 1.66,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 64.8,
+    "monthly_rsi_ma5": 64.23,
+    "spread": 0.57,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -501,5 +527,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

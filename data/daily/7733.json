@@ -2,12 +2,12 @@
   "code": "7733",
   "ticker": "7733.T",
   "name": "オリンパス",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 2008.5,
-    "change_from_signal_month_pct": 10.36,
-    "return_since_gc_pct": 12.49
+    "current_price": 1955.0,
+    "change_from_signal_month_pct": 7.42,
+    "return_since_gc_pct": 9.49
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 1791.03,
       "rsi14": 40.69,
       "rsi5": 46.39
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1961.5,
+      "high": 1991.5,
+      "low": 1948.0,
+      "close": 1958.0,
+      "volume": 4150400.0,
+      "sma25": 2027.94,
+      "sma75": 1894.81,
+      "sma200": 1790.59,
+      "rsi14": 40.69,
+      "rsi5": 46.39
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1973.0,
+      "high": 1977.5,
+      "low": 1941.0,
+      "close": 1955.0,
+      "volume": 4291000.0,
+      "sma25": 2020.82,
+      "sma75": 1898.39,
+      "sma200": 1790.22,
+      "rsi14": 40.69,
+      "rsi5": 46.39
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 53.58,
-    "monthly_rsi_ma5": 51.48,
-    "spread": 2.1,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 51.93,
+    "monthly_rsi_ma5": 51.15,
+    "spread": 0.78,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

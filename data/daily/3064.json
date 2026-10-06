@@ -2,12 +2,12 @@
   "code": "3064",
   "ticker": "3064.T",
   "name": "ＭｏｎｏｔａＲＯ",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1958.5,
-    "change_from_signal_month_pct": -2.22,
-    "return_since_gc_pct": 3.68
+    "current_price": 2089.5,
+    "change_from_signal_month_pct": 4.32,
+    "return_since_gc_pct": 10.61
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 1979.99,
       "rsi14": 42.52,
       "rsi5": 46.13
+    },
+    {
+      "date": "2026-10-02",
+      "open": 2019.5,
+      "high": 2062.0,
+      "low": 2012.5,
+      "close": 2060.0,
+      "volume": 3361700.0,
+      "sma25": 1929.2,
+      "sma75": 1899.86,
+      "sma200": 1978.99,
+      "rsi14": 42.52,
+      "rsi5": 46.13
+    },
+    {
+      "date": "2026-10-05",
+      "open": 2038.0,
+      "high": 2109.0,
+      "low": 2028.5,
+      "close": 2089.5,
+      "volume": 2873200.0,
+      "sma25": 1938.34,
+      "sma75": 1903.57,
+      "sma200": 1978.13,
+      "rsi14": 42.52,
+      "rsi5": 46.13
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 46.27,
-    "monthly_rsi_ma5": 45.65,
-    "spread": 0.62,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 49.68,
+    "monthly_rsi_ma5": 46.33,
+    "spread": 3.35,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

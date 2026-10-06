@@ -2,12 +2,12 @@
   "code": "8200",
   "ticker": "8200.T",
   "name": "リンガーハット",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 2297.0,
-    "change_from_signal_month_pct": -1.88,
-    "return_since_gc_pct": -1.88
+    "current_price": 2282.0,
+    "change_from_signal_month_pct": -2.52,
+    "return_since_gc_pct": -2.52
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 2246.02,
       "rsi14": 47.16,
       "rsi5": 55.29
+    },
+    {
+      "date": "2026-10-02",
+      "open": 2290.0,
+      "high": 2290.0,
+      "low": 2260.0,
+      "close": 2270.0,
+      "volume": 60100.0,
+      "sma25": 2308.56,
+      "sma75": 2270.87,
+      "sma200": 2245.97,
+      "rsi14": 47.16,
+      "rsi5": 55.29
+    },
+    {
+      "date": "2026-10-05",
+      "open": 2260.0,
+      "high": 2286.0,
+      "low": 2255.0,
+      "close": 2282.0,
+      "volume": 40800.0,
+      "sma25": 2305.6,
+      "sma75": 2273.16,
+      "sma200": 2245.99,
+      "rsi14": 47.16,
+      "rsi5": 55.29
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 51.84,
-    "monthly_rsi_ma5": 50.47,
-    "spread": 1.37,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 50.88,
+    "monthly_rsi_ma5": 50.28,
+    "spread": 0.6,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

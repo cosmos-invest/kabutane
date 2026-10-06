@@ -2,12 +2,12 @@
   "code": "3955",
   "ticker": "3955.T",
   "name": "イムラ",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 869.0,
-    "change_from_signal_month_pct": 4.2,
-    "return_since_gc_pct": 4.2
+    "current_price": 870.0,
+    "change_from_signal_month_pct": 4.32,
+    "return_since_gc_pct": 4.32
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 887.59,
       "rsi14": 34.85,
       "rsi5": 36.48
+    },
+    {
+      "date": "2026-10-02",
+      "open": 873.0,
+      "high": 873.0,
+      "low": 866.0,
+      "close": 867.0,
+      "volume": 2200.0,
+      "sma25": 856.8,
+      "sma75": 832.24,
+      "sma200": 886.98,
+      "rsi14": 34.85,
+      "rsi5": 36.48
+    },
+    {
+      "date": "2026-10-05",
+      "open": 870.0,
+      "high": 873.0,
+      "low": 870.0,
+      "close": 870.0,
+      "volume": 800.0,
+      "sma25": 857.8,
+      "sma75": 833.47,
+      "sma200": 886.36,
+      "rsi14": 34.85,
+      "rsi5": 36.48
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 40.06,
-    "monthly_rsi_ma5": 36.3,
-    "spread": 3.77,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 40.21,
+    "monthly_rsi_ma5": 36.33,
+    "spread": 3.88,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

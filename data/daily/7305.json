@@ -2,12 +2,12 @@
   "code": "7305",
   "ticker": "7305.T",
   "name": "新家工業",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 2757.0,
-    "change_from_signal_month_pct": 3.37,
-    "return_since_gc_pct": 3.37
+    "current_price": 2673.0,
+    "change_from_signal_month_pct": 0.22,
+    "return_since_gc_pct": 0.22
   },
   "daily": [
     {
@@ -477,6 +477,32 @@
       "sma200": 2616.47,
       "rsi14": 56.31,
       "rsi5": 59.33
+    },
+    {
+      "date": "2026-10-02",
+      "open": 2757.0,
+      "high": 2757.0,
+      "low": 2691.0,
+      "close": 2691.0,
+      "volume": 20700.0,
+      "sma25": 2762.84,
+      "sma75": 2655.12,
+      "sma200": 2618.16,
+      "rsi14": 56.31,
+      "rsi5": 59.33
+    },
+    {
+      "date": "2026-10-05",
+      "open": 2691.0,
+      "high": 2692.0,
+      "low": 2669.0,
+      "close": 2673.0,
+      "volume": 21300.0,
+      "sma25": 2760.36,
+      "sma75": 2657.33,
+      "sma200": 2619.74,
+      "rsi14": 56.31,
+      "rsi5": 59.33
     }
   ],
   "corporate_events": [
@@ -489,17 +515,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 62.56,
-    "monthly_rsi_ma5": 61.18,
-    "spread": 1.38,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 59.42,
+    "monthly_rsi_ma5": 60.55,
+    "spread": -1.13,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

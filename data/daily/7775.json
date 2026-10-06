@@ -2,12 +2,12 @@
   "code": "7775",
   "ticker": "7775.T",
   "name": "大研医器",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 418.0,
-    "change_from_signal_month_pct": -1.65,
-    "return_since_gc_pct": -1.65
+    "current_price": 415.0,
+    "change_from_signal_month_pct": -2.35,
+    "return_since_gc_pct": -2.35
   },
   "daily": [
     {
@@ -477,6 +477,32 @@
       "sma200": 441.55,
       "rsi14": 36.84,
       "rsi5": 37.23
+    },
+    {
+      "date": "2026-10-02",
+      "open": 417.0,
+      "high": 419.0,
+      "low": 417.0,
+      "close": 417.0,
+      "volume": 14000.0,
+      "sma25": 423.8,
+      "sma75": 423.19,
+      "sma200": 441.43,
+      "rsi14": 36.84,
+      "rsi5": 37.23
+    },
+    {
+      "date": "2026-10-05",
+      "open": 416.0,
+      "high": 417.0,
+      "low": 415.0,
+      "close": 415.0,
+      "volume": 17000.0,
+      "sma25": 423.32,
+      "sma75": 423.12,
+      "sma200": 441.31,
+      "rsi14": 36.84,
+      "rsi5": 37.23
     }
   ],
   "corporate_events": [
@@ -489,17 +515,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 34.77,
-    "monthly_rsi_ma5": 34.62,
-    "spread": 0.14,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 33.87,
+    "monthly_rsi_ma5": 34.44,
+    "spread": -0.57,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

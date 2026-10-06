@@ -2,12 +2,12 @@
   "code": "4765",
   "ticker": "4765.T",
   "name": "ＳＢＩグローバルアセットマネジメント",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 620.0,
-    "change_from_signal_month_pct": -0.16,
-    "return_since_gc_pct": -0.16
+    "current_price": 596.0,
+    "change_from_signal_month_pct": -4.03,
+    "return_since_gc_pct": -4.03
   },
   "daily": [
     {
@@ -477,6 +477,32 @@
       "sma200": 602.82,
       "rsi14": 46.65,
       "rsi5": 51.32
+    },
+    {
+      "date": "2026-10-02",
+      "open": 615.0,
+      "high": 617.0,
+      "low": 605.0,
+      "close": 609.0,
+      "volume": 233300.0,
+      "sma25": 629.08,
+      "sma75": 601.57,
+      "sma200": 602.91,
+      "rsi14": 46.65,
+      "rsi5": 51.32
+    },
+    {
+      "date": "2026-10-05",
+      "open": 608.0,
+      "high": 608.0,
+      "low": 593.0,
+      "close": 596.0,
+      "volume": 372700.0,
+      "sma25": 627.44,
+      "sma75": 601.77,
+      "sma200": 602.96,
+      "rsi14": 46.65,
+      "rsi5": 51.32
     }
   ],
   "corporate_events": [
@@ -489,17 +515,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 51.67,
-    "monthly_rsi_ma5": 51.29,
-    "spread": 0.38,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 48.35,
+    "monthly_rsi_ma5": 50.63,
+    "spread": -2.28,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

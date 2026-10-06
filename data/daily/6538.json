@@ -2,12 +2,12 @@
   "code": "6538",
   "ticker": "6538.T",
   "name": "ディスラプターズ",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 245.0,
-    "change_from_signal_month_pct": 2.94,
-    "return_since_gc_pct": 2.94
+    "current_price": 238.0,
+    "change_from_signal_month_pct": 0.0,
+    "return_since_gc_pct": 0.0
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 272.89,
       "rsi14": 46.16,
       "rsi5": 46.26
+    },
+    {
+      "date": "2026-10-02",
+      "open": 246.0,
+      "high": 247.0,
+      "low": 245.0,
+      "close": 245.0,
+      "volume": 11700.0,
+      "sma25": 247.2,
+      "sma75": 241.59,
+      "sma200": 272.5,
+      "rsi14": 46.16,
+      "rsi5": 46.26
+    },
+    {
+      "date": "2026-10-05",
+      "open": 242.0,
+      "high": 247.0,
+      "low": 233.0,
+      "close": 238.0,
+      "volume": 85500.0,
+      "sma25": 247.16,
+      "sma75": 241.81,
+      "sma200": 272.06,
+      "rsi14": 46.16,
+      "rsi5": 46.26
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 48.47,
-    "monthly_rsi_ma5": 47.42,
-    "spread": 1.04,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 47.21,
+    "monthly_rsi_ma5": 47.17,
+    "spread": 0.03,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

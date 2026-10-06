@@ -2,12 +2,12 @@
   "code": "9632",
   "ticker": "9632.T",
   "name": "スバル興業",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 4870.0,
-    "change_from_signal_month_pct": 33.61,
-    "return_since_gc_pct": 33.61
+    "current_price": 4650.0,
+    "change_from_signal_month_pct": 27.57,
+    "return_since_gc_pct": 27.57
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 3515.43,
       "rsi14": 58.24,
       "rsi5": 58.76
+    },
+    {
+      "date": "2026-10-02",
+      "open": 4800.0,
+      "high": 5510.0,
+      "low": 4790.0,
+      "close": 5050.0,
+      "volume": 549300.0,
+      "sma25": 3733.0,
+      "sma75": 3648.67,
+      "sma200": 3524.6,
+      "rsi14": 58.24,
+      "rsi5": 58.76
+    },
+    {
+      "date": "2026-10-05",
+      "open": 4975.0,
+      "high": 5000.0,
+      "low": 4650.0,
+      "close": 4650.0,
+      "volume": 257200.0,
+      "sma25": 3766.8,
+      "sma75": 3662.27,
+      "sma200": 3531.88,
+      "rsi14": 58.24,
+      "rsi5": 58.76
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 73.34,
-    "monthly_rsi_ma5": 63.62,
-    "spread": 9.73,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 71.52,
+    "monthly_rsi_ma5": 63.25,
+    "spread": 8.27,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "9929",
   "ticker": "9929.T",
   "name": "平和紙業",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 470.0,
-    "change_from_signal_month_pct": -0.21,
-    "return_since_gc_pct": -0.21
+    "current_price": 471.0,
+    "change_from_signal_month_pct": 0.0,
+    "return_since_gc_pct": 0.0
   },
   "daily": [
     {
@@ -477,6 +477,32 @@
       "sma200": 467.34,
       "rsi14": 54.79,
       "rsi5": 57.08
+    },
+    {
+      "date": "2026-10-02",
+      "open": 472.0,
+      "high": 475.0,
+      "low": 472.0,
+      "close": 475.0,
+      "volume": 300.0,
+      "sma25": 473.04,
+      "sma75": 469.79,
+      "sma200": 467.45,
+      "rsi14": 54.79,
+      "rsi5": 57.08
+    },
+    {
+      "date": "2026-10-05",
+      "open": 483.0,
+      "high": 483.0,
+      "low": 470.0,
+      "close": 471.0,
+      "volume": 1800.0,
+      "sma25": 472.8,
+      "sma75": 469.88,
+      "sma200": 467.55,
+      "rsi14": 54.79,
+      "rsi5": 57.08
     }
   ],
   "corporate_events": [
@@ -489,17 +515,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 57.68,
-    "monthly_rsi_ma5": 57.8,
-    "spread": -0.12,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 58.15,
+    "monthly_rsi_ma5": 57.89,
+    "spread": 0.26,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

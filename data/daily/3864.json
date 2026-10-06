@@ -2,12 +2,12 @@
   "code": "3864",
   "ticker": "3864.T",
   "name": "三菱製紙",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1250.0,
-    "change_from_signal_month_pct": 11.31,
-    "return_since_gc_pct": 11.31
+    "current_price": 1208.0,
+    "change_from_signal_month_pct": 7.57,
+    "return_since_gc_pct": 7.57
   },
   "daily": [
     {
@@ -477,6 +477,32 @@
       "sma200": 939.66,
       "rsi14": 68.81,
       "rsi5": 70.92
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1237.0,
+      "high": 1244.0,
+      "low": 1218.0,
+      "close": 1223.0,
+      "volume": 155000.0,
+      "sma25": 1203.16,
+      "sma75": 1132.33,
+      "sma200": 942.59,
+      "rsi14": 68.81,
+      "rsi5": 70.92
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1229.0,
+      "high": 1230.0,
+      "low": 1204.0,
+      "close": 1208.0,
+      "volume": 138900.0,
+      "sma25": 1203.68,
+      "sma75": 1133.72,
+      "sma200": 945.46,
+      "rsi14": 68.81,
+      "rsi5": 70.92
     }
   ],
   "corporate_events": [
@@ -489,17 +515,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 74.2,
-    "monthly_rsi_ma5": 71.83,
-    "spread": 2.37,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 71.0,
+    "monthly_rsi_ma5": 71.19,
+    "spread": -0.19,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

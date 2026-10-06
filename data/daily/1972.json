@@ -2,12 +2,12 @@
   "code": "1972",
   "ticker": "1972.T",
   "name": "三晃金属工業",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1307.0,
-    "change_from_signal_month_pct": 2.91,
-    "return_since_gc_pct": 2.91
+    "current_price": 1265.0,
+    "change_from_signal_month_pct": -0.39,
+    "return_since_gc_pct": -0.39
   },
   "daily": [
     {
@@ -477,6 +477,32 @@
       "sma200": 1340.99,
       "rsi14": 53.43,
       "rsi5": 54.01
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1300.0,
+      "high": 1305.0,
+      "low": 1280.0,
+      "close": 1280.0,
+      "volume": 36100.0,
+      "sma25": 1316.8,
+      "sma75": 1287.45,
+      "sma200": 1340.43,
+      "rsi14": 53.43,
+      "rsi5": 54.01
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1289.0,
+      "high": 1289.0,
+      "low": 1265.0,
+      "close": 1265.0,
+      "volume": 29100.0,
+      "sma25": 1313.8,
+      "sma75": 1287.87,
+      "sma200": 1339.84,
+      "rsi14": 53.43,
+      "rsi5": 54.01
     }
   ],
   "corporate_events": [
@@ -489,17 +515,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 54.87,
-    "monthly_rsi_ma5": 54.64,
-    "spread": 0.23,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 52.32,
+    "monthly_rsi_ma5": 54.13,
+    "spread": -1.81,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

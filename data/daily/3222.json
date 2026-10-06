@@ -2,12 +2,12 @@
   "code": "3222",
   "ticker": "3222.T",
   "name": "ユナイテッド・スーパーマーケット・ホールディングス",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 813.0,
-    "change_from_signal_month_pct": -1.09,
-    "return_since_gc_pct": -1.09
+    "current_price": 801.0,
+    "change_from_signal_month_pct": -2.55,
+    "return_since_gc_pct": -2.55
   },
   "daily": [
     {
@@ -477,22 +477,48 @@
       "sma200": 863.51,
       "rsi14": 41.74,
       "rsi5": 41.78
+    },
+    {
+      "date": "2026-10-02",
+      "open": 808.0,
+      "high": 809.0,
+      "low": 800.0,
+      "close": 802.0,
+      "volume": 296500.0,
+      "sma25": 833.16,
+      "sma75": 819.97,
+      "sma200": 863.24,
+      "rsi14": 41.74,
+      "rsi5": 41.78
+    },
+    {
+      "date": "2026-10-05",
+      "open": 807.0,
+      "high": 809.0,
+      "low": 799.0,
+      "close": 801.0,
+      "volume": 286900.0,
+      "sma25": 831.4,
+      "sma75": 819.68,
+      "sma200": 862.98,
+      "rsi14": 41.74,
+      "rsi5": 41.78
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 38.4,
-    "monthly_rsi_ma5": 37.77,
-    "spread": 0.63,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 36.88,
+    "monthly_rsi_ma5": 37.46,
+    "spread": -0.58,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

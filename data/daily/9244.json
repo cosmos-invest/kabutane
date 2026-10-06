@@ -2,12 +2,12 @@
   "code": "9244",
   "ticker": "9244.T",
   "name": "デジタリフト",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1127.0,
-    "change_from_signal_month_pct": -11.33,
-    "return_since_gc_pct": 9.21
+    "current_price": 1088.0,
+    "change_from_signal_month_pct": -14.4,
+    "return_since_gc_pct": 5.43
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 1099.41,
       "rsi14": 55.99,
       "rsi5": 62.21
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1130.0,
+      "high": 1147.0,
+      "low": 1126.0,
+      "close": 1128.0,
+      "volume": 19200.0,
+      "sma25": 1401.72,
+      "sma75": 1277.97,
+      "sma200": 1100.63,
+      "rsi14": 55.99,
+      "rsi5": 62.21
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1128.0,
+      "high": 1128.0,
+      "low": 1077.0,
+      "close": 1088.0,
+      "volume": 28700.0,
+      "sma25": 1392.04,
+      "sma75": 1278.76,
+      "sma200": 1101.71,
+      "rsi14": 55.99,
+      "rsi5": 62.21
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 53.66,
-    "monthly_rsi_ma5": 61.57,
-    "spread": -7.91,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 52.07,
+    "monthly_rsi_ma5": 61.25,
+    "spread": -9.18,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

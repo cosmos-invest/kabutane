@@ -2,12 +2,12 @@
   "code": "3178",
   "ticker": "3178.T",
   "name": "チムニー",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1142.0,
-    "change_from_signal_month_pct": -0.44,
-    "return_since_gc_pct": -0.44
+    "current_price": 1120.0,
+    "change_from_signal_month_pct": -2.35,
+    "return_since_gc_pct": -2.35
   },
   "daily": [
     {
@@ -477,6 +477,32 @@
       "sma200": 1201.95,
       "rsi14": 40.79,
       "rsi5": 43.16
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1140.0,
+      "high": 1140.0,
+      "low": 1135.0,
+      "close": 1136.0,
+      "volume": 10600.0,
+      "sma25": 1195.32,
+      "sma75": 1152.63,
+      "sma200": 1201.53,
+      "rsi14": 40.79,
+      "rsi5": 43.16
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1140.0,
+      "high": 1140.0,
+      "low": 1120.0,
+      "close": 1120.0,
+      "volume": 18600.0,
+      "sma25": 1191.96,
+      "sma75": 1153.41,
+      "sma200": 1200.9,
+      "rsi14": 40.79,
+      "rsi5": 43.16
     }
   ],
   "corporate_events": [
@@ -489,17 +515,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 41.35,
-    "monthly_rsi_ma5": 40.42,
-    "spread": 0.93,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 39.92,
+    "monthly_rsi_ma5": 40.13,
+    "spread": -0.21,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

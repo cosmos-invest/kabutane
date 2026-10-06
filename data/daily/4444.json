@@ -2,12 +2,12 @@
   "code": "4444",
   "ticker": "4444.T",
   "name": "インフォネット",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 935.0,
-    "change_from_signal_month_pct": -0.11,
-    "return_since_gc_pct": 7.59
+    "current_price": 930.0,
+    "change_from_signal_month_pct": -0.64,
+    "return_since_gc_pct": 7.02
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 894.55,
       "rsi14": 43.92,
       "rsi5": 48.09
+    },
+    {
+      "date": "2026-10-02",
+      "open": 935.0,
+      "high": 935.0,
+      "low": 935.0,
+      "close": 935.0,
+      "volume": 0.0,
+      "sma25": 953.32,
+      "sma75": 916.55,
+      "sma200": 894.71,
+      "rsi14": 43.92,
+      "rsi5": 48.09
+    },
+    {
+      "date": "2026-10-05",
+      "open": 922.0,
+      "high": 933.0,
+      "low": 922.0,
+      "close": 930.0,
+      "volume": 1100.0,
+      "sma25": 952.64,
+      "sma75": 918.53,
+      "sma200": 894.87,
+      "rsi14": 43.92,
+      "rsi5": 48.09
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 46.17,
-    "monthly_rsi_ma5": 45.42,
-    "spread": 0.75,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 45.84,
+    "monthly_rsi_ma5": 45.36,
+    "spread": 0.48,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

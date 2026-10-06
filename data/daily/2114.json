@@ -2,12 +2,12 @@
   "code": "2114",
   "ticker": "2114.T",
   "name": "フジ日本",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 638.0,
-    "change_from_signal_month_pct": 0.31,
-    "return_since_gc_pct": 0.31
+    "current_price": 633.0,
+    "change_from_signal_month_pct": -0.47,
+    "return_since_gc_pct": -0.47
   },
   "daily": [
     {
@@ -477,6 +477,32 @@
       "sma200": 631.33,
       "rsi14": 63.19,
       "rsi5": 64.21
+    },
+    {
+      "date": "2026-10-02",
+      "open": 640.0,
+      "high": 642.0,
+      "low": 635.0,
+      "close": 638.0,
+      "volume": 10800.0,
+      "sma25": 669.76,
+      "sma75": 643.45,
+      "sma200": 631.69,
+      "rsi14": 63.19,
+      "rsi5": 64.21
+    },
+    {
+      "date": "2026-10-05",
+      "open": 640.0,
+      "high": 640.0,
+      "low": 630.0,
+      "close": 633.0,
+      "volume": 16100.0,
+      "sma25": 668.68,
+      "sma75": 643.76,
+      "sma200": 632.06,
+      "rsi14": 63.19,
+      "rsi5": 64.21
     }
   ],
   "corporate_events": [
@@ -489,10 +515,10 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 57.01,
-    "monthly_rsi_ma5": 59.5,
-    "spread": -2.48,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 56.15,
+    "monthly_rsi_ma5": 59.32,
+    "spread": -3.17,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -501,5 +527,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

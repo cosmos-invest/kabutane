@@ -2,12 +2,12 @@
   "code": "8057",
   "ticker": "8057.T",
   "name": "内田洋行",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 2239.0,
-    "change_from_signal_month_pct": 4.58,
-    "return_since_gc_pct": 4.58
+    "current_price": 2207.0,
+    "change_from_signal_month_pct": 3.08,
+    "return_since_gc_pct": 3.08
   },
   "daily": [
     {
@@ -477,22 +477,48 @@
       "sma200": 2087.38,
       "rsi14": 58.51,
       "rsi5": 61.68
+    },
+    {
+      "date": "2026-10-02",
+      "open": 2255.0,
+      "high": 2262.0,
+      "low": 2230.0,
+      "close": 2233.0,
+      "volume": 136200.0,
+      "sma25": 2249.56,
+      "sma75": 2136.08,
+      "sma200": 2088.66,
+      "rsi14": 58.51,
+      "rsi5": 61.68
+    },
+    {
+      "date": "2026-10-05",
+      "open": 2230.0,
+      "high": 2234.0,
+      "low": 2205.0,
+      "close": 2207.0,
+      "volume": 153700.0,
+      "sma25": 2247.64,
+      "sma75": 2139.41,
+      "sma200": 2089.76,
+      "rsi14": 58.51,
+      "rsi5": 61.68
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 61.92,
-    "monthly_rsi_ma5": 61.72,
-    "spread": 0.21,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 60.72,
+    "monthly_rsi_ma5": 61.48,
+    "spread": -0.75,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

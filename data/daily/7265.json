@@ -2,12 +2,12 @@
   "code": "7265",
   "ticker": "7265.T",
   "name": "エイケン工業",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 3525.0,
-    "change_from_signal_month_pct": -7.6,
-    "return_since_gc_pct": -3.82
+    "current_price": 3505.0,
+    "change_from_signal_month_pct": -8.13,
+    "return_since_gc_pct": -4.37
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 3672.57,
       "rsi14": 53.69,
       "rsi5": 55.08
+    },
+    {
+      "date": "2026-10-02",
+      "open": 3505.0,
+      "high": 3510.0,
+      "low": 3500.0,
+      "close": 3500.0,
+      "volume": 1800.0,
+      "sma25": 3673.2,
+      "sma75": 3777.13,
+      "sma200": 3670.82,
+      "rsi14": 53.69,
+      "rsi5": 55.08
+    },
+    {
+      "date": "2026-10-05",
+      "open": 3500.0,
+      "high": 3525.0,
+      "low": 3500.0,
+      "close": 3505.0,
+      "volume": 1800.0,
+      "sma25": 3658.4,
+      "sma75": 3773.2,
+      "sma200": 3671.6,
+      "rsi14": 53.69,
+      "rsi5": 55.08
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 50.34,
-    "monthly_rsi_ma5": 53.67,
-    "spread": -3.32,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 49.99,
+    "monthly_rsi_ma5": 53.6,
+    "spread": -3.61,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

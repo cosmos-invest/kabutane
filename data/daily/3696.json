@@ -2,12 +2,12 @@
   "code": "3696",
   "ticker": "3696.T",
   "name": "セレス",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 2110.0,
-    "change_from_signal_month_pct": -0.14,
-    "return_since_gc_pct": 17.55
+    "current_price": 2291.0,
+    "change_from_signal_month_pct": 8.42,
+    "return_since_gc_pct": 27.63
   },
   "daily": [
     {
@@ -477,22 +477,48 @@
       "sma200": 1883.05,
       "rsi14": 48.22,
       "rsi5": 53.11
+    },
+    {
+      "date": "2026-10-02",
+      "open": 2275.0,
+      "high": 2308.0,
+      "low": 2225.0,
+      "close": 2284.0,
+      "volume": 552600.0,
+      "sma25": 2181.0,
+      "sma75": 2101.25,
+      "sma200": 1884.01,
+      "rsi14": 48.22,
+      "rsi5": 53.11
+    },
+    {
+      "date": "2026-10-05",
+      "open": 2260.0,
+      "high": 2308.0,
+      "low": 2237.0,
+      "close": 2291.0,
+      "volume": 265500.0,
+      "sma25": 2181.56,
+      "sma75": 2107.2,
+      "sma200": 1885.15,
+      "rsi14": 48.22,
+      "rsi5": 53.11
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 54.27,
-    "monthly_rsi_ma5": 55.1,
-    "spread": -0.83,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 57.77,
+    "monthly_rsi_ma5": 55.8,
+    "spread": 1.97,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

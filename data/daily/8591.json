@@ -2,12 +2,12 @@
   "code": "8591",
   "ticker": "8591.T",
   "name": "オリックス",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 5911.0,
-    "change_from_signal_month_pct": -7.78,
-    "return_since_gc_pct": -5.23
+    "current_price": 5850.0,
+    "change_from_signal_month_pct": -8.74,
+    "return_since_gc_pct": -6.2
   },
   "daily": [
     {
@@ -477,6 +477,32 @@
       "sma200": 5536.09,
       "rsi14": 70.96,
       "rsi5": 74.93
+    },
+    {
+      "date": "2026-10-02",
+      "open": 5811.0,
+      "high": 5827.0,
+      "low": 5733.0,
+      "close": 5745.0,
+      "volume": 5734000.0,
+      "sma25": 6138.92,
+      "sma75": 6280.04,
+      "sma200": 5543.09,
+      "rsi14": 70.96,
+      "rsi5": 74.93
+    },
+    {
+      "date": "2026-10-05",
+      "open": 5794.0,
+      "high": 5883.0,
+      "low": 5772.0,
+      "close": 5850.0,
+      "volume": 4002300.0,
+      "sma25": 6119.92,
+      "sma75": 6275.77,
+      "sma200": 5550.93,
+      "rsi14": 70.96,
+      "rsi5": 74.93
     }
   ],
   "corporate_events": [
@@ -489,10 +515,10 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 66.91,
-    "monthly_rsi_ma5": 71.4,
-    "spread": -4.49,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 65.94,
+    "monthly_rsi_ma5": 71.21,
+    "spread": -5.27,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -501,5 +527,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

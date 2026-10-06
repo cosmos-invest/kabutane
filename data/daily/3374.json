@@ -2,12 +2,12 @@
   "code": "3374",
   "ticker": "3374.T",
   "name": "内外テック",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 5040.0,
-    "change_from_signal_month_pct": 62.06,
-    "return_since_gc_pct": 82.34
+    "current_price": 5250.0,
+    "change_from_signal_month_pct": 68.81,
+    "return_since_gc_pct": 89.94
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 2980.8,
       "rsi14": 59.94,
       "rsi5": 61.58
+    },
+    {
+      "date": "2026-10-02",
+      "open": 5000.0,
+      "high": 5220.0,
+      "low": 4970.0,
+      "close": 5030.0,
+      "volume": 62100.0,
+      "sma25": 4261.2,
+      "sma75": 3767.09,
+      "sma200": 2995.34,
+      "rsi14": 59.94,
+      "rsi5": 61.58
+    },
+    {
+      "date": "2026-10-05",
+      "open": 5120.0,
+      "high": 5300.0,
+      "low": 5070.0,
+      "close": 5250.0,
+      "volume": 64400.0,
+      "sma25": 4304.6,
+      "sma75": 3795.76,
+      "sma200": 3011.02,
+      "rsi14": 59.94,
+      "rsi5": 61.58
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 79.69,
-    "monthly_rsi_ma5": 73.2,
-    "spread": 6.5,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 80.75,
+    "monthly_rsi_ma5": 73.41,
+    "spread": 7.34,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

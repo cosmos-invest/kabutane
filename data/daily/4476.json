@@ -2,12 +2,12 @@
   "code": "4476",
   "ticker": "4476.T",
   "name": "ＡＩ　ＣＲＯＳＳ",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1089.0,
-    "change_from_signal_month_pct": 2.74,
-    "return_since_gc_pct": 2.74
+    "current_price": 1074.0,
+    "change_from_signal_month_pct": 1.32,
+    "return_since_gc_pct": 1.32
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 1184.85,
       "rsi14": 37.31,
       "rsi5": 40.12
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1077.0,
+      "high": 1089.0,
+      "low": 1073.0,
+      "close": 1087.0,
+      "volume": 7200.0,
+      "sma25": 1104.4,
+      "sma75": 1051.03,
+      "sma200": 1181.11,
+      "rsi14": 37.31,
+      "rsi5": 40.12
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1087.0,
+      "high": 1087.0,
+      "low": 1069.0,
+      "close": 1074.0,
+      "volume": 10700.0,
+      "sma25": 1101.32,
+      "sma75": 1052.64,
+      "sma200": 1177.32,
+      "rsi14": 37.31,
+      "rsi5": 40.12
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 41.37,
-    "monthly_rsi_ma5": 40.28,
-    "spread": 1.09,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 41.01,
+    "monthly_rsi_ma5": 40.21,
+    "spread": 0.8,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

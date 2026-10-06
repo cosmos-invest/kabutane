@@ -2,12 +2,12 @@
   "code": "7235",
   "ticker": "7235.T",
   "name": "東京ラヂエーター製造",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1564.0,
-    "change_from_signal_month_pct": 2.16,
-    "return_since_gc_pct": 2.16
+    "current_price": 1523.0,
+    "change_from_signal_month_pct": -0.52,
+    "return_since_gc_pct": -0.52
   },
   "daily": [
     {
@@ -477,6 +477,32 @@
       "sma200": 1534.02,
       "rsi14": 60.62,
       "rsi5": 62.41
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1552.0,
+      "high": 1552.0,
+      "low": 1525.0,
+      "close": 1530.0,
+      "volume": 18000.0,
+      "sma25": 1562.64,
+      "sma75": 1533.99,
+      "sma200": 1534.11,
+      "rsi14": 60.62,
+      "rsi5": 62.41
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1527.0,
+      "high": 1531.0,
+      "low": 1522.0,
+      "close": 1523.0,
+      "volume": 11600.0,
+      "sma25": 1559.6,
+      "sma75": 1534.77,
+      "sma200": 1534.19,
+      "rsi14": 60.62,
+      "rsi5": 62.41
     }
   ],
   "corporate_events": [
@@ -489,17 +515,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 63.45,
-    "monthly_rsi_ma5": 63.17,
-    "spread": 0.28,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 61.5,
+    "monthly_rsi_ma5": 62.78,
+    "spread": -1.29,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

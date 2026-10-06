@@ -2,12 +2,12 @@
   "code": "6594",
   "ticker": "6594.T",
   "name": "ニデック",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 2100.0,
-    "change_from_signal_month_pct": -18.95,
-    "return_since_gc_pct": -12.39
+    "current_price": 2180.0,
+    "change_from_signal_month_pct": -15.86,
+    "return_since_gc_pct": -9.05
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 2441.32,
       "rsi14": 46.04,
       "rsi5": 47.93
+    },
+    {
+      "date": "2026-10-02",
+      "open": 2120.0,
+      "high": 2183.0,
+      "low": 2035.0,
+      "close": 2117.0,
+      "volume": 26268000.0,
+      "sma25": 2577.28,
+      "sma75": 2633.19,
+      "sma200": 2441.45,
+      "rsi14": 46.04,
+      "rsi5": 47.93
+    },
+    {
+      "date": "2026-10-05",
+      "open": 2166.0,
+      "high": 2229.0,
+      "low": 2096.0,
+      "close": 2180.0,
+      "volume": 14826800.0,
+      "sma25": 2560.88,
+      "sma75": 2625.88,
+      "sma200": 2441.99,
+      "rsi14": 46.04,
+      "rsi5": 47.93
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 40.5,
-    "monthly_rsi_ma5": 45.4,
-    "spread": -4.9,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 41.51,
+    "monthly_rsi_ma5": 45.6,
+    "spread": -4.09,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

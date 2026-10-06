@@ -2,12 +2,12 @@
   "code": "1822",
   "ticker": "1822.T",
   "name": "大豊建設",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 816.0,
-    "change_from_signal_month_pct": 2.64,
-    "return_since_gc_pct": 2.64
+    "current_price": 804.0,
+    "change_from_signal_month_pct": 1.13,
+    "return_since_gc_pct": 1.13
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 788.61,
       "rsi14": 49.12,
       "rsi5": 52.8
+    },
+    {
+      "date": "2026-10-02",
+      "open": 810.0,
+      "high": 814.0,
+      "low": 803.0,
+      "close": 804.0,
+      "volume": 173100.0,
+      "sma25": 828.08,
+      "sma75": 795.72,
+      "sma200": 788.86,
+      "rsi14": 49.12,
+      "rsi5": 52.8
+    },
+    {
+      "date": "2026-10-05",
+      "open": 805.0,
+      "high": 809.0,
+      "low": 801.0,
+      "close": 804.0,
+      "volume": 191100.0,
+      "sma25": 827.08,
+      "sma75": 796.41,
+      "sma200": 789.14,
+      "rsi14": 49.12,
+      "rsi5": 52.8
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 53.15,
-    "monthly_rsi_ma5": 51.98,
-    "spread": 1.17,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 51.75,
+    "monthly_rsi_ma5": 51.7,
+    "spread": 0.04,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

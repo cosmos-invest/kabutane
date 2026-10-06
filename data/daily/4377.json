@@ -2,12 +2,12 @@
   "code": "4377",
   "ticker": "4377.T",
   "name": "ワンキャリア",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 2441.0,
-    "change_from_signal_month_pct": 15.14,
-    "return_since_gc_pct": 24.99
+    "current_price": 2386.0,
+    "change_from_signal_month_pct": 12.55,
+    "return_since_gc_pct": 22.17
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 2161.55,
       "rsi14": 50.54,
       "rsi5": 54.75
+    },
+    {
+      "date": "2026-10-02",
+      "open": 2409.0,
+      "high": 2436.0,
+      "low": 2380.0,
+      "close": 2393.0,
+      "volume": 45200.0,
+      "sma25": 2389.28,
+      "sma75": 2190.01,
+      "sma200": 2159.82,
+      "rsi14": 50.54,
+      "rsi5": 54.75
+    },
+    {
+      "date": "2026-10-05",
+      "open": 2443.0,
+      "high": 2446.0,
+      "low": 2372.0,
+      "close": 2386.0,
+      "volume": 49300.0,
+      "sma25": 2385.0,
+      "sma75": 2198.55,
+      "sma200": 2158.24,
+      "rsi14": 50.54,
+      "rsi5": 54.75
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 59.07,
-    "monthly_rsi_ma5": 57.45,
-    "spread": 1.61,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 58.12,
+    "monthly_rsi_ma5": 57.26,
+    "spread": 0.86,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

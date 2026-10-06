@@ -2,12 +2,12 @@
   "code": "4465",
   "ticker": "4465.T",
   "name": "ニイタカ",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 2450.0,
-    "change_from_signal_month_pct": 7.22,
-    "return_since_gc_pct": 7.22
+    "current_price": 2491.0,
+    "change_from_signal_month_pct": 9.02,
+    "return_since_gc_pct": 9.02
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 2357.07,
       "rsi14": 51.03,
       "rsi5": 52.57
+    },
+    {
+      "date": "2026-10-02",
+      "open": 2454.0,
+      "high": 2484.0,
+      "low": 2451.0,
+      "close": 2472.0,
+      "volume": 6700.0,
+      "sma25": 2420.8,
+      "sma75": 2296.92,
+      "sma200": 2357.31,
+      "rsi14": 51.03,
+      "rsi5": 52.57
+    },
+    {
+      "date": "2026-10-05",
+      "open": 2474.0,
+      "high": 2509.0,
+      "low": 2474.0,
+      "close": 2491.0,
+      "volume": 8500.0,
+      "sma25": 2422.6,
+      "sma75": 2302.03,
+      "sma200": 2357.58,
+      "rsi14": 51.03,
+      "rsi5": 52.57
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 58.67,
-    "monthly_rsi_ma5": 55.33,
-    "spread": 3.33,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 60.03,
+    "monthly_rsi_ma5": 55.61,
+    "spread": 4.42,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

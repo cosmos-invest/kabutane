@@ -2,12 +2,12 @@
   "code": "9552",
   "ticker": "9552.T",
   "name": "クオンツ総研ホールディングス",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1022.0,
-    "change_from_signal_month_pct": 10.13,
-    "return_since_gc_pct": 15.74
+    "current_price": 1019.0,
+    "change_from_signal_month_pct": 9.81,
+    "return_since_gc_pct": 15.4
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 928.43,
       "rsi14": 37.66,
       "rsi5": 40.45
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1012.0,
+      "high": 1031.0,
+      "low": 995.0,
+      "close": 1000.0,
+      "volume": 200700.0,
+      "sma25": 1080.68,
+      "sma75": 986.36,
+      "sma200": 927.45,
+      "rsi14": 37.66,
+      "rsi5": 40.45
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1002.0,
+      "high": 1031.0,
+      "low": 1001.0,
+      "close": 1019.0,
+      "volume": 260000.0,
+      "sma25": 1077.64,
+      "sma75": 985.76,
+      "sma200": 926.75,
+      "rsi14": 37.66,
+      "rsi5": 40.45
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 42.05,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 42.0,
     "monthly_rsi_ma5": 41.34,
-    "spread": 0.7,
+    "spread": 0.67,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "8772",
   "ticker": "8772.T",
   "name": "アサックス",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 916.0,
-    "change_from_signal_month_pct": 9.83,
-    "return_since_gc_pct": 9.83
+    "current_price": 917.0,
+    "change_from_signal_month_pct": 9.95,
+    "return_since_gc_pct": 9.95
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 857.53,
       "rsi14": 53.5,
       "rsi5": 54.44
+    },
+    {
+      "date": "2026-10-02",
+      "open": 918.0,
+      "high": 920.0,
+      "low": 907.0,
+      "close": 907.0,
+      "volume": 3500.0,
+      "sma25": 898.44,
+      "sma75": 855.15,
+      "sma200": 857.95,
+      "rsi14": 53.5,
+      "rsi5": 54.44
+    },
+    {
+      "date": "2026-10-05",
+      "open": 912.0,
+      "high": 921.0,
+      "low": 911.0,
+      "close": 917.0,
+      "volume": 14300.0,
+      "sma25": 899.64,
+      "sma75": 856.71,
+      "sma200": 858.39,
+      "rsi14": 53.5,
+      "rsi5": 54.44
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 61.56,
-    "monthly_rsi_ma5": 57.89,
-    "spread": 3.66,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 61.63,
+    "monthly_rsi_ma5": 57.91,
+    "spread": 3.72,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

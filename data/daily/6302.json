@@ -2,12 +2,12 @@
   "code": "6302",
   "ticker": "6302.T",
   "name": "住友重機械工業",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 6106.0,
-    "change_from_signal_month_pct": 16.57,
-    "return_since_gc_pct": 16.57
+    "current_price": 6310.0,
+    "change_from_signal_month_pct": 20.47,
+    "return_since_gc_pct": 20.47
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 5229.99,
       "rsi14": 60.84,
       "rsi5": 61.43
+    },
+    {
+      "date": "2026-10-02",
+      "open": 6106.0,
+      "high": 6283.0,
+      "low": 6094.0,
+      "close": 6216.0,
+      "volume": 960800.0,
+      "sma25": 5805.68,
+      "sma75": 5566.35,
+      "sma200": 5239.23,
+      "rsi14": 60.84,
+      "rsi5": 61.43
+    },
+    {
+      "date": "2026-10-05",
+      "open": 6258.0,
+      "high": 6384.0,
+      "low": 6243.0,
+      "close": 6310.0,
+      "volume": 804800.0,
+      "sma25": 5824.48,
+      "sma75": 5577.49,
+      "sma200": 5249.27,
+      "rsi14": 60.84,
+      "rsi5": 61.43
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 67.56,
-    "monthly_rsi_ma5": 64.06,
-    "spread": 3.5,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 68.91,
+    "monthly_rsi_ma5": 64.33,
+    "spread": 4.58,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

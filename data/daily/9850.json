@@ -2,12 +2,12 @@
   "code": "9850",
   "ticker": "9850.T",
   "name": "グルメ杵屋",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 953.0,
-    "change_from_signal_month_pct": -2.56,
-    "return_since_gc_pct": -2.56
+    "current_price": 931.0,
+    "change_from_signal_month_pct": -4.81,
+    "return_since_gc_pct": -4.81
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 977.37,
       "rsi14": 43.09,
       "rsi5": 45.02
+    },
+    {
+      "date": "2026-10-02",
+      "open": 953.0,
+      "high": 954.0,
+      "low": 941.0,
+      "close": 941.0,
+      "volume": 65900.0,
+      "sma25": 984.36,
+      "sma75": 972.64,
+      "sma200": 977.28,
+      "rsi14": 43.09,
+      "rsi5": 45.02
+    },
+    {
+      "date": "2026-10-05",
+      "open": 940.0,
+      "high": 940.0,
+      "low": 931.0,
+      "close": 931.0,
+      "volume": 98800.0,
+      "sma25": 981.76,
+      "sma75": 972.4,
+      "sma200": 977.14,
+      "rsi14": 43.09,
+      "rsi5": 45.02
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 38.35,
-    "monthly_rsi_ma5": 40.36,
-    "spread": -2.01,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 35.49,
+    "monthly_rsi_ma5": 39.79,
+    "spread": -4.3,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

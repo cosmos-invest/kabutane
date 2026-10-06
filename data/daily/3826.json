@@ -2,12 +2,12 @@
   "code": "3826",
   "ticker": "3826.T",
   "name": "システムインテグレータ",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 495.0,
-    "change_from_signal_month_pct": 10.0,
-    "return_since_gc_pct": 10.0
+    "current_price": 492.0,
+    "change_from_signal_month_pct": 9.33,
+    "return_since_gc_pct": 9.33
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 468.36,
       "rsi14": 53.06,
       "rsi5": 53.6
+    },
+    {
+      "date": "2026-10-02",
+      "open": 495.0,
+      "high": 496.0,
+      "low": 489.0,
+      "close": 494.0,
+      "volume": 9700.0,
+      "sma25": 496.84,
+      "sma75": 471.32,
+      "sma200": 468.6,
+      "rsi14": 53.06,
+      "rsi5": 53.6
+    },
+    {
+      "date": "2026-10-05",
+      "open": 495.0,
+      "high": 495.0,
+      "low": 490.0,
+      "close": 492.0,
+      "volume": 6900.0,
+      "sma25": 496.56,
+      "sma75": 472.07,
+      "sma200": 468.82,
+      "rsi14": 53.06,
+      "rsi5": 53.6
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 60.29,
-    "monthly_rsi_ma5": 57.14,
-    "spread": 3.15,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 59.62,
+    "monthly_rsi_ma5": 57.0,
+    "spread": 2.61,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

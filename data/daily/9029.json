@@ -2,12 +2,12 @@
   "code": "9029",
   "ticker": "9029.T",
   "name": "ヒガシホールディングス",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1861.0,
-    "change_from_signal_month_pct": -4.07,
-    "return_since_gc_pct": -4.07
+    "current_price": 1853.0,
+    "change_from_signal_month_pct": -4.48,
+    "return_since_gc_pct": -4.48
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 1913.61,
       "rsi14": 61.69,
       "rsi5": 62.24
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1850.0,
+      "high": 1850.0,
+      "low": 1822.0,
+      "close": 1822.0,
+      "volume": 2700.0,
+      "sma25": 1852.76,
+      "sma75": 1898.83,
+      "sma200": 1913.83,
+      "rsi14": 61.69,
+      "rsi5": 62.24
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1845.0,
+      "high": 1877.0,
+      "low": 1826.0,
+      "close": 1853.0,
+      "volume": 9100.0,
+      "sma25": 1849.76,
+      "sma75": 1899.11,
+      "sma200": 1914.26,
+      "rsi14": 61.69,
+      "rsi5": 62.24
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 58.66,
-    "monthly_rsi_ma5": 60.34,
-    "spread": -1.68,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 58.41,
+    "monthly_rsi_ma5": 60.29,
+    "spread": -1.88,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

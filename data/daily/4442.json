@@ -2,12 +2,12 @@
   "code": "4442",
   "ticker": "4442.T",
   "name": "バルテス・ホールディングス",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 414.0,
-    "change_from_signal_month_pct": 0.98,
-    "return_since_gc_pct": 0.98
+    "current_price": 407.0,
+    "change_from_signal_month_pct": -0.73,
+    "return_since_gc_pct": -0.73
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 413.15,
       "rsi14": 41.87,
       "rsi5": 43.15
+    },
+    {
+      "date": "2026-10-02",
+      "open": 414.0,
+      "high": 414.0,
+      "low": 410.0,
+      "close": 411.0,
+      "volume": 24700.0,
+      "sma25": 406.0,
+      "sma75": 399.95,
+      "sma200": 413.12,
+      "rsi14": 41.87,
+      "rsi5": 43.15
+    },
+    {
+      "date": "2026-10-05",
+      "open": 413.0,
+      "high": 413.0,
+      "low": 407.0,
+      "close": 407.0,
+      "volume": 14600.0,
+      "sma25": 406.16,
+      "sma75": 400.37,
+      "sma200": 413.05,
+      "rsi14": 41.87,
+      "rsi5": 43.15
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 35.4,
-    "monthly_rsi_ma5": 34.07,
-    "spread": 1.34,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 34.48,
+    "monthly_rsi_ma5": 33.88,
+    "spread": 0.59,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "2882",
   "ticker": "2882.T",
   "name": "イートアンドホールディングス",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 2013.0,
-    "change_from_signal_month_pct": -1.13,
-    "return_since_gc_pct": -0.64
+    "current_price": 2008.0,
+    "change_from_signal_month_pct": -1.38,
+    "return_since_gc_pct": -0.89
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 2013.84,
       "rsi14": 45.75,
       "rsi5": 49.17
+    },
+    {
+      "date": "2026-10-02",
+      "open": 2005.0,
+      "high": 2012.0,
+      "low": 2000.0,
+      "close": 2007.0,
+      "volume": 13700.0,
+      "sma25": 2021.24,
+      "sma75": 2033.52,
+      "sma200": 2014.08,
+      "rsi14": 45.75,
+      "rsi5": 49.17
+    },
+    {
+      "date": "2026-10-05",
+      "open": 2003.0,
+      "high": 2013.0,
+      "low": 1998.0,
+      "close": 2008.0,
+      "volume": 13800.0,
+      "sma25": 2019.44,
+      "sma75": 2033.6,
+      "sma200": 2014.33,
+      "rsi14": 45.75,
+      "rsi5": 49.17
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 46.23,
-    "monthly_rsi_ma5": 47.71,
-    "spread": -1.48,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 45.73,
+    "monthly_rsi_ma5": 47.61,
+    "spread": -1.88,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

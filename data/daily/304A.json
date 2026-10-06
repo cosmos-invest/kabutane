@@ -2,12 +2,12 @@
   "code": "304A",
   "ticker": "304A.T",
   "name": "フォルシア",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 2142.0,
-    "change_from_signal_month_pct": 5.52,
-    "return_since_gc_pct": 15.85
+    "current_price": 2175.0,
+    "change_from_signal_month_pct": 7.14,
+    "return_since_gc_pct": 17.63
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 1891.65,
       "rsi14": 21.62,
       "rsi5": 26.94
+    },
+    {
+      "date": "2026-10-02",
+      "open": 2157.0,
+      "high": 2175.0,
+      "low": 2143.0,
+      "close": 2175.0,
+      "volume": 1800.0,
+      "sma25": 2000.08,
+      "sma75": 1932.28,
+      "sma200": 1892.46,
+      "rsi14": 21.62,
+      "rsi5": 26.94
+    },
+    {
+      "date": "2026-10-05",
+      "open": 2200.0,
+      "high": 2220.0,
+      "low": 2175.0,
+      "close": 2175.0,
+      "volume": 1400.0,
+      "sma25": 2008.4,
+      "sma75": 1938.21,
+      "sma200": 1893.46,
+      "rsi14": 21.62,
+      "rsi5": 26.94
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 31.14,
-    "monthly_rsi_ma5": 27.53,
-    "spread": 3.6,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 31.92,
+    "monthly_rsi_ma5": 27.69,
+    "spread": 4.23,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

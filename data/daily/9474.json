@@ -2,12 +2,12 @@
   "code": "9474",
   "ticker": "9474.T",
   "name": "ゼンリン",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 905.0,
-    "change_from_signal_month_pct": -0.22,
-    "return_since_gc_pct": -0.22
+    "current_price": 895.0,
+    "change_from_signal_month_pct": -1.32,
+    "return_since_gc_pct": -1.32
   },
   "daily": [
     {
@@ -477,6 +477,32 @@
       "sma200": 951.65,
       "rsi14": 43.65,
       "rsi5": 44.97
+    },
+    {
+      "date": "2026-10-02",
+      "open": 899.0,
+      "high": 899.0,
+      "low": 890.0,
+      "close": 894.0,
+      "volume": 143700.0,
+      "sma25": 914.88,
+      "sma75": 897.99,
+      "sma200": 950.91,
+      "rsi14": 43.65,
+      "rsi5": 44.97
+    },
+    {
+      "date": "2026-10-05",
+      "open": 892.0,
+      "high": 897.0,
+      "low": 890.0,
+      "close": 895.0,
+      "volume": 119900.0,
+      "sma25": 914.48,
+      "sma75": 898.59,
+      "sma200": 950.3,
+      "rsi14": 43.65,
+      "rsi5": 44.97
     }
   ],
   "corporate_events": [
@@ -489,17 +515,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 45.2,
-    "monthly_rsi_ma5": 44.89,
-    "spread": 0.31,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 44.43,
+    "monthly_rsi_ma5": 44.73,
+    "spread": -0.3,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

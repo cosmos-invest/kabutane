@@ -2,12 +2,12 @@
   "code": "5449",
   "ticker": "5449.T",
   "name": "大阪製鐵",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 2450.0,
-    "change_from_signal_month_pct": -2.23,
-    "return_since_gc_pct": -2.23
+    "current_price": 2420.0,
+    "change_from_signal_month_pct": -3.43,
+    "return_since_gc_pct": -3.43
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 2630.91,
       "rsi14": 49.27,
       "rsi5": 49.44
+    },
+    {
+      "date": "2026-10-02",
+      "open": 2450.0,
+      "high": 2465.0,
+      "low": 2423.0,
+      "close": 2433.0,
+      "volume": 15300.0,
+      "sma25": 2623.4,
+      "sma75": 2564.2,
+      "sma200": 2628.93,
+      "rsi14": 49.27,
+      "rsi5": 49.44
+    },
+    {
+      "date": "2026-10-05",
+      "open": 2447.0,
+      "high": 2457.0,
+      "low": 2408.0,
+      "close": 2420.0,
+      "volume": 19300.0,
+      "sma25": 2606.32,
+      "sma75": 2564.45,
+      "sma200": 2626.7,
+      "rsi14": 49.27,
+      "rsi5": 49.44
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 49.52,
-    "monthly_rsi_ma5": 50.2,
-    "spread": -0.68,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 49.03,
+    "monthly_rsi_ma5": 50.1,
+    "spread": -1.07,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

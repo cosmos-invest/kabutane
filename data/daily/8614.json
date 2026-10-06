@@ -2,12 +2,12 @@
   "code": "8614",
   "ticker": "8614.T",
   "name": "東洋証券",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 706.0,
-    "change_from_signal_month_pct": 6.97,
-    "return_since_gc_pct": 6.97
+    "current_price": 684.0,
+    "change_from_signal_month_pct": 3.64,
+    "return_since_gc_pct": 3.64
   },
   "daily": [
     {
@@ -477,22 +477,48 @@
       "sma200": 681.86,
       "rsi14": 57.75,
       "rsi5": 59.19
+    },
+    {
+      "date": "2026-10-02",
+      "open": 701.0,
+      "high": 702.0,
+      "low": 683.0,
+      "close": 685.0,
+      "volume": 589800.0,
+      "sma25": 718.72,
+      "sma75": 676.04,
+      "sma200": 682.28,
+      "rsi14": 57.75,
+      "rsi5": 59.19
+    },
+    {
+      "date": "2026-10-05",
+      "open": 686.0,
+      "high": 689.0,
+      "low": 680.0,
+      "close": 684.0,
+      "volume": 423200.0,
+      "sma25": 717.08,
+      "sma75": 676.85,
+      "sma200": 682.74,
+      "rsi14": 57.75,
+      "rsi5": 59.19
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 60.38,
-    "monthly_rsi_ma5": 60.09,
-    "spread": 0.29,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 58.45,
+    "monthly_rsi_ma5": 59.71,
+    "spread": -1.26,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

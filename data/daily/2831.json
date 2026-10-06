@@ -2,12 +2,12 @@
   "code": "2831",
   "ticker": "2831.T",
   "name": "はごろもフーズ",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 3665.0,
-    "change_from_signal_month_pct": -0.41,
-    "return_since_gc_pct": -0.41
+    "current_price": 3670.0,
+    "change_from_signal_month_pct": -0.27,
+    "return_since_gc_pct": -0.27
   },
   "daily": [
     {
@@ -477,6 +477,32 @@
       "sma200": 3498.35,
       "rsi14": 64.77,
       "rsi5": 72.59
+    },
+    {
+      "date": "2026-10-02",
+      "open": 3665.0,
+      "high": 3665.0,
+      "low": 3630.0,
+      "close": 3630.0,
+      "volume": 900.0,
+      "sma25": 3684.8,
+      "sma75": 3605.07,
+      "sma200": 3500.35,
+      "rsi14": 64.77,
+      "rsi5": 72.59
+    },
+    {
+      "date": "2026-10-05",
+      "open": 3615.0,
+      "high": 3670.0,
+      "low": 3600.0,
+      "close": 3670.0,
+      "volume": 1300.0,
+      "sma25": 3685.2,
+      "sma75": 3607.73,
+      "sma200": 3502.53,
+      "rsi14": 64.77,
+      "rsi5": 72.59
     }
   ],
   "corporate_events": [
@@ -489,17 +515,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 70.52,
-    "monthly_rsi_ma5": 70.82,
-    "spread": -0.3,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 71.01,
+    "monthly_rsi_ma5": 70.92,
+    "spread": 0.09,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

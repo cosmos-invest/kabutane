@@ -2,12 +2,12 @@
   "code": "4918",
   "ticker": "4918.T",
   "name": "アイビー化粧品",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 299.0,
-    "change_from_signal_month_pct": -2.61,
-    "return_since_gc_pct": -2.61
+    "current_price": 300.0,
+    "change_from_signal_month_pct": -2.28,
+    "return_since_gc_pct": -2.28
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 330.31,
       "rsi14": 43.23,
       "rsi5": 44.55
+    },
+    {
+      "date": "2026-10-02",
+      "open": 300.0,
+      "high": 300.0,
+      "low": 298.0,
+      "close": 299.0,
+      "volume": 3700.0,
+      "sma25": 298.08,
+      "sma75": 305.85,
+      "sma200": 330.14,
+      "rsi14": 43.23,
+      "rsi5": 44.55
+    },
+    {
+      "date": "2026-10-05",
+      "open": 299.0,
+      "high": 300.0,
+      "low": 295.0,
+      "close": 300.0,
+      "volume": 21600.0,
+      "sma25": 298.04,
+      "sma75": 306.37,
+      "sma200": 329.97,
+      "rsi14": 43.23,
+      "rsi5": 44.55
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 41.36,
-    "monthly_rsi_ma5": 41.06,
-    "spread": 0.3,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 41.55,
+    "monthly_rsi_ma5": 41.1,
+    "spread": 0.45,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

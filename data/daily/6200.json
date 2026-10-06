@@ -2,12 +2,12 @@
   "code": "6200",
   "ticker": "6200.T",
   "name": "インソース",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 671.0,
-    "change_from_signal_month_pct": -11.01,
-    "return_since_gc_pct": -11.01
+    "current_price": 660.0,
+    "change_from_signal_month_pct": -12.47,
+    "return_since_gc_pct": -12.47
   },
   "daily": [
     {
@@ -477,6 +477,32 @@
       "sma200": 708.59,
       "rsi14": 37.44,
       "rsi5": 44.25
+    },
+    {
+      "date": "2026-10-02",
+      "open": 666.0,
+      "high": 673.0,
+      "low": 666.0,
+      "close": 670.0,
+      "volume": 435200.0,
+      "sma25": 711.64,
+      "sma75": 680.27,
+      "sma200": 707.6,
+      "rsi14": 37.44,
+      "rsi5": 44.25
+    },
+    {
+      "date": "2026-10-05",
+      "open": 664.0,
+      "high": 667.0,
+      "low": 658.0,
+      "close": 660.0,
+      "volume": 670200.0,
+      "sma25": 708.48,
+      "sma75": 681.28,
+      "sma200": 706.68,
+      "rsi14": 37.44,
+      "rsi5": 44.25
     }
   ],
   "corporate_events": [
@@ -489,17 +515,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 39.38,
-    "monthly_rsi_ma5": 39.37,
-    "spread": 0.01,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 38.58,
+    "monthly_rsi_ma5": 39.21,
+    "spread": -0.63,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

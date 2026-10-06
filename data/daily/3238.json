@@ -2,12 +2,12 @@
   "code": "3238",
   "ticker": "3238.T",
   "name": "セントラル総合開発",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 385.0,
-    "change_from_signal_month_pct": 3.49,
-    "return_since_gc_pct": 4.34
+    "current_price": 381.0,
+    "change_from_signal_month_pct": 2.42,
+    "return_since_gc_pct": 3.25
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 387.53,
       "rsi14": 34.85,
       "rsi5": 37.54
+    },
+    {
+      "date": "2026-10-02",
+      "open": 385.0,
+      "high": 385.0,
+      "low": 380.0,
+      "close": 380.0,
+      "volume": 3200.0,
+      "sma25": 384.2,
+      "sma75": 377.71,
+      "sma200": 387.38,
+      "rsi14": 34.85,
+      "rsi5": 37.54
+    },
+    {
+      "date": "2026-10-05",
+      "open": 381.0,
+      "high": 381.0,
+      "low": 379.0,
+      "close": 381.0,
+      "volume": 2400.0,
+      "sma25": 384.12,
+      "sma75": 377.91,
+      "sma200": 387.23,
+      "rsi14": 34.85,
+      "rsi5": 37.54
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 40.57,
-    "monthly_rsi_ma5": 37.76,
-    "spread": 2.82,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 39.13,
+    "monthly_rsi_ma5": 37.47,
+    "spread": 1.66,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

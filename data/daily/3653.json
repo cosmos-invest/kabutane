@@ -2,12 +2,12 @@
   "code": "3653",
   "ticker": "3653.T",
   "name": "モルフォ",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 970.0,
-    "change_from_signal_month_pct": 53.97,
-    "return_since_gc_pct": 53.97
+    "current_price": 1028.0,
+    "change_from_signal_month_pct": 63.17,
+    "return_since_gc_pct": 63.17
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 760.76,
       "rsi14": 30.68,
       "rsi5": 32.08
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1008.0,
+      "high": 1092.0,
+      "low": 972.0,
+      "close": 983.0,
+      "volume": 944100.0,
+      "sma25": 1101.96,
+      "sma75": 795.57,
+      "sma200": 761.39,
+      "rsi14": 30.68,
+      "rsi5": 32.08
+    },
+    {
+      "date": "2026-10-05",
+      "open": 998.0,
+      "high": 1066.0,
+      "low": 972.0,
+      "close": 1028.0,
+      "volume": 861000.0,
+      "sma25": 1112.76,
+      "sma75": 801.68,
+      "sma200": 762.22,
+      "rsi14": 30.68,
+      "rsi5": 32.08
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 50.9,
-    "monthly_rsi_ma5": 45.62,
-    "spread": 5.28,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 53.11,
+    "monthly_rsi_ma5": 46.06,
+    "spread": 7.05,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "5126",
   "ticker": "5126.T",
   "name": "ポーターズ",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 1452.0,
-    "change_from_signal_month_pct": -14.08,
-    "return_since_gc_pct": 0.21
+    "current_price": 1448.0,
+    "change_from_signal_month_pct": -14.32,
+    "return_since_gc_pct": -0.07
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 1557.57,
       "rsi14": 29.48,
       "rsi5": 41.6
+    },
+    {
+      "date": "2026-10-02",
+      "open": 1453.0,
+      "high": 1453.0,
+      "low": 1450.0,
+      "close": 1450.0,
+      "volume": 1300.0,
+      "sma25": 1417.84,
+      "sma75": 1485.39,
+      "sma200": 1555.57,
+      "rsi14": 29.48,
+      "rsi5": 41.6
+    },
+    {
+      "date": "2026-10-05",
+      "open": 1450.0,
+      "high": 1450.0,
+      "low": 1448.0,
+      "close": 1448.0,
+      "volume": 200.0,
+      "sma25": 1419.56,
+      "sma75": 1485.4,
+      "sma200": 1553.83,
+      "rsi14": 29.48,
+      "rsi5": 41.6
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 34.67,
-    "monthly_rsi_ma5": 34.05,
-    "spread": 0.62,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 34.48,
+    "monthly_rsi_ma5": 34.02,
+    "spread": 0.47,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

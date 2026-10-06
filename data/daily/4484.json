@@ -2,12 +2,12 @@
   "code": "4484",
   "ticker": "4484.T",
   "name": "ランサーズ",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 286.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 287.0,
+    "change_from_signal_month_pct": 0.35,
+    "return_since_gc_pct": 0.35
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 291.81,
       "rsi14": 50.73,
       "rsi5": 52.59
+    },
+    {
+      "date": "2026-10-02",
+      "open": 288.0,
+      "high": 288.0,
+      "low": 285.0,
+      "close": 286.0,
+      "volume": 5400.0,
+      "sma25": 294.76,
+      "sma75": 285.16,
+      "sma200": 291.67,
+      "rsi14": 50.73,
+      "rsi5": 52.59
+    },
+    {
+      "date": "2026-10-05",
+      "open": 288.0,
+      "high": 289.0,
+      "low": 285.0,
+      "close": 287.0,
+      "volume": 7900.0,
+      "sma25": 294.72,
+      "sma75": 285.45,
+      "sma200": 291.53,
+      "rsi14": 50.73,
+      "rsi5": 52.59
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 53.84,
-    "monthly_rsi_ma5": 53.82,
-    "spread": 0.02,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 54.08,
+    "monthly_rsi_ma5": 53.87,
+    "spread": 0.21,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

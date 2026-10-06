@@ -2,12 +2,12 @@
   "code": "8101",
   "ticker": "8101.T",
   "name": "ＧＳＩクレオス",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 2524.0,
-    "change_from_signal_month_pct": -5.11,
-    "return_since_gc_pct": -5.11
+    "current_price": 2477.0,
+    "change_from_signal_month_pct": -6.88,
+    "return_since_gc_pct": -6.88
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 2519.01,
       "rsi14": 56.3,
       "rsi5": 62.15
+    },
+    {
+      "date": "2026-10-02",
+      "open": 2502.0,
+      "high": 2509.0,
+      "low": 2473.0,
+      "close": 2476.0,
+      "volume": 39900.0,
+      "sma25": 2631.6,
+      "sma75": 2578.91,
+      "sma200": 2519.84,
+      "rsi14": 56.3,
+      "rsi5": 62.15
+    },
+    {
+      "date": "2026-10-05",
+      "open": 2470.0,
+      "high": 2485.0,
+      "low": 2449.0,
+      "close": 2477.0,
+      "volume": 36500.0,
+      "sma25": 2621.32,
+      "sma75": 2580.52,
+      "sma200": 2520.74,
+      "rsi14": 56.3,
+      "rsi5": 62.15
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 54.77,
-    "monthly_rsi_ma5": 56.96,
-    "spread": -2.18,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 53.24,
+    "monthly_rsi_ma5": 56.65,
+    "spread": -3.41,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "6561",
   "ticker": "6561.T",
   "name": "ＨＡＮＡＴＯＵＲ　ＪＡＰＡＮ",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 841.0,
-    "change_from_signal_month_pct": 2.56,
-    "return_since_gc_pct": 6.73
+    "current_price": 827.0,
+    "change_from_signal_month_pct": 0.85,
+    "return_since_gc_pct": 4.95
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 833.21,
       "rsi14": 31.96,
       "rsi5": 34.76
+    },
+    {
+      "date": "2026-10-02",
+      "open": 829.0,
+      "high": 832.0,
+      "low": 820.0,
+      "close": 820.0,
+      "volume": 9500.0,
+      "sma25": 826.2,
+      "sma75": 816.19,
+      "sma200": 832.78,
+      "rsi14": 31.96,
+      "rsi5": 34.76
+    },
+    {
+      "date": "2026-10-05",
+      "open": 820.0,
+      "high": 827.0,
+      "low": 817.0,
+      "close": 827.0,
+      "volume": 8300.0,
+      "sma25": 826.64,
+      "sma75": 816.81,
+      "sma200": 832.3,
+      "rsi14": 31.96,
+      "rsi5": 34.76
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 29.44,
-    "monthly_rsi_ma5": 26.97,
-    "spread": 2.48,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 27.94,
+    "monthly_rsi_ma5": 26.67,
+    "spread": 1.28,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }

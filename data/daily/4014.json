@@ -2,12 +2,12 @@
   "code": "4014",
   "ticker": "4014.T",
   "name": "カラダノート",
-  "generated_at": "2026-10-02T17:15:18.292331+00:00",
-  "price_date": "2026-10-01",
+  "generated_at": "2026-10-06T17:45:51.826851+00:00",
+  "price_date": "2026-10-05",
   "record": {
-    "current_price": 454.0,
-    "change_from_signal_month_pct": -10.63,
-    "return_since_gc_pct": 8.61
+    "current_price": 441.0,
+    "change_from_signal_month_pct": -13.19,
+    "return_since_gc_pct": 5.5
   },
   "daily": [
     {
@@ -477,15 +477,41 @@
       "sma200": 457.69,
       "rsi14": 42.88,
       "rsi5": 49.65
+    },
+    {
+      "date": "2026-10-02",
+      "open": 457.0,
+      "high": 465.0,
+      "low": 445.0,
+      "close": 446.0,
+      "volume": 32300.0,
+      "sma25": 486.52,
+      "sma75": 497.05,
+      "sma200": 457.68,
+      "rsi14": 42.88,
+      "rsi5": 49.65
+    },
+    {
+      "date": "2026-10-05",
+      "open": 448.0,
+      "high": 449.0,
+      "low": 441.0,
+      "close": 441.0,
+      "volume": 31300.0,
+      "sma25": 484.08,
+      "sma75": 496.61,
+      "sma200": 457.6,
+      "rsi14": 42.88,
+      "rsi5": 49.65
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-01",
-    "monthly_rsi14": 43.59,
-    "monthly_rsi_ma5": 45.98,
-    "spread": -2.39,
+    "price_date": "2026-10-05",
+    "monthly_rsi14": 42.32,
+    "monthly_rsi_ma5": 45.73,
+    "spread": -3.4,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -494,5 +520,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-02T17:15:53.427867+00:00"
+  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
 }
