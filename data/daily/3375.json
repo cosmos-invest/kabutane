@@ -2,12 +2,12 @@
   "code": "3375",
   "ticker": "3375.T",
   "name": "ＺＯＡ",
-  "generated_at": "2026-10-06T17:45:51.826851+00:00",
-  "price_date": "2026-10-05",
+  "generated_at": "2026-10-07T18:18:16.859687+00:00",
+  "price_date": "2026-10-06",
   "record": {
-    "current_price": 1751.0,
-    "change_from_signal_month_pct": -2.29,
-    "return_since_gc_pct": -2.29
+    "current_price": 1732.0,
+    "change_from_signal_month_pct": -3.35,
+    "return_since_gc_pct": -3.35
   },
   "daily": [
     {
@@ -503,22 +503,35 @@
       "sma200": 1799.81,
       "rsi14": 53.54,
       "rsi5": 55.32
+    },
+    {
+      "date": "2026-10-06",
+      "open": 1761.0,
+      "high": 1761.0,
+      "low": 1731.0,
+      "close": 1732.0,
+      "volume": 300.0,
+      "sma25": 1774.08,
+      "sma75": 1737.03,
+      "sma200": 1800.02,
+      "rsi14": 53.54,
+      "rsi5": 55.32
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-05",
-    "monthly_rsi14": 51.51,
-    "monthly_rsi_ma5": 51.34,
-    "spread": 0.16,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-06",
+    "monthly_rsi14": 50.62,
+    "monthly_rsi_ma5": 51.17,
+    "spread": -0.54,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
+  "provisional_generated_at": "2026-10-07T18:19:35.963944+00:00"
 }

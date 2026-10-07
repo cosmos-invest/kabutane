@@ -2,12 +2,12 @@
   "code": "2937",
   "ticker": "2937.T",
   "name": "サンクゼール",
-  "generated_at": "2026-10-06T17:45:51.826851+00:00",
-  "price_date": "2026-10-05",
+  "generated_at": "2026-10-07T18:18:16.859687+00:00",
+  "price_date": "2026-10-06",
   "record": {
-    "current_price": 1708.0,
-    "change_from_signal_month_pct": -1.5,
-    "return_since_gc_pct": -1.5
+    "current_price": 1716.0,
+    "change_from_signal_month_pct": -1.04,
+    "return_since_gc_pct": -1.04
   },
   "daily": [
     {
@@ -503,22 +503,35 @@
       "sma200": 1713.19,
       "rsi14": 44.81,
       "rsi5": 46.33
+    },
+    {
+      "date": "2026-10-06",
+      "open": 1722.0,
+      "high": 1726.0,
+      "low": 1707.0,
+      "close": 1716.0,
+      "volume": 1600.0,
+      "sma25": 1752.6,
+      "sma75": 1726.64,
+      "sma200": 1713.54,
+      "rsi14": 44.81,
+      "rsi5": 46.33
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-05",
-    "monthly_rsi14": 39.27,
-    "monthly_rsi_ma5": 39.45,
-    "spread": -0.18,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-06",
+    "monthly_rsi14": 39.54,
+    "monthly_rsi_ma5": 39.51,
+    "spread": 0.03,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
+  "provisional_generated_at": "2026-10-07T18:19:35.963944+00:00"
 }

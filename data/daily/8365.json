@@ -2,12 +2,12 @@
   "code": "8365",
   "ticker": "8365.T",
   "name": "富山銀行",
-  "generated_at": "2026-10-06T17:45:51.826851+00:00",
-  "price_date": "2026-10-05",
+  "generated_at": "2026-10-07T18:18:16.859687+00:00",
+  "price_date": "2026-10-06",
   "record": {
-    "current_price": 2325.0,
-    "change_from_signal_month_pct": 1.75,
-    "return_since_gc_pct": 1.75
+    "current_price": 2369.0,
+    "change_from_signal_month_pct": 3.68,
+    "return_since_gc_pct": 3.68
   },
   "daily": [
     {
@@ -503,6 +503,19 @@
       "sma200": 2235.95,
       "rsi14": 60.26,
       "rsi5": 63.36
+    },
+    {
+      "date": "2026-10-06",
+      "open": 2330.0,
+      "high": 2369.0,
+      "low": 2329.0,
+      "close": 2369.0,
+      "volume": 6600.0,
+      "sma25": 2366.52,
+      "sma75": 2320.61,
+      "sma200": 2238.66,
+      "rsi14": 60.26,
+      "rsi5": 63.36
     }
   ],
   "corporate_events": [
@@ -515,17 +528,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-05",
-    "monthly_rsi14": 62.79,
-    "monthly_rsi_ma5": 64.26,
-    "spread": -1.47,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-06",
+    "monthly_rsi14": 64.86,
+    "monthly_rsi_ma5": 64.67,
+    "spread": 0.18,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
+  "provisional_generated_at": "2026-10-07T18:19:35.963944+00:00"
 }

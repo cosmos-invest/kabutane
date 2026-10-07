@@ -2,12 +2,12 @@
   "code": "6630",
   "ticker": "6630.T",
   "name": "ヤーマン",
-  "generated_at": "2026-10-06T17:45:51.826851+00:00",
-  "price_date": "2026-10-05",
+  "generated_at": "2026-10-07T18:18:16.859687+00:00",
+  "price_date": "2026-10-06",
   "record": {
-    "current_price": 776.0,
-    "change_from_signal_month_pct": 0.78,
-    "return_since_gc_pct": 9.3
+    "current_price": 769.0,
+    "change_from_signal_month_pct": -0.13,
+    "return_since_gc_pct": 8.31
   },
   "daily": [
     {
@@ -503,22 +503,35 @@
       "sma200": 737.46,
       "rsi14": 39.7,
       "rsi5": 44.4
+    },
+    {
+      "date": "2026-10-06",
+      "open": 770.0,
+      "high": 776.0,
+      "low": 768.0,
+      "close": 769.0,
+      "volume": 82600.0,
+      "sma25": 786.84,
+      "sma75": 763.71,
+      "sma200": 737.25,
+      "rsi14": 39.7,
+      "rsi5": 44.4
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-05",
-    "monthly_rsi14": 44.64,
-    "monthly_rsi_ma5": 44.18,
-    "spread": 0.45,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-06",
+    "monthly_rsi14": 43.76,
+    "monthly_rsi_ma5": 44.01,
+    "spread": -0.25,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
+  "provisional_generated_at": "2026-10-07T18:19:35.963944+00:00"
 }

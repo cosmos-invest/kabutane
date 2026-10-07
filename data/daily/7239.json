@@ -2,12 +2,12 @@
   "code": "7239",
   "ticker": "7239.T",
   "name": "タチエス",
-  "generated_at": "2026-10-06T17:45:51.826851+00:00",
-  "price_date": "2026-10-05",
+  "generated_at": "2026-10-07T18:18:16.859687+00:00",
+  "price_date": "2026-10-06",
   "record": {
-    "current_price": 2281.0,
-    "change_from_signal_month_pct": 0.84,
-    "return_since_gc_pct": 0.84
+    "current_price": 2310.0,
+    "change_from_signal_month_pct": 2.12,
+    "return_since_gc_pct": 2.12
   },
   "daily": [
     {
@@ -503,6 +503,19 @@
       "sma200": 2183.35,
       "rsi14": 59.17,
       "rsi5": 61.26
+    },
+    {
+      "date": "2026-10-06",
+      "open": 2293.0,
+      "high": 2318.0,
+      "low": 2282.0,
+      "close": 2310.0,
+      "volume": 87500.0,
+      "sma25": 2342.0,
+      "sma75": 2258.36,
+      "sma200": 2184.82,
+      "rsi14": 59.17,
+      "rsi5": 61.26
     }
   ],
   "corporate_events": [
@@ -515,17 +528,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-05",
-    "monthly_rsi14": 59.74,
-    "monthly_rsi_ma5": 60.58,
-    "spread": -0.84,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-06",
+    "monthly_rsi14": 61.05,
+    "monthly_rsi_ma5": 60.85,
+    "spread": 0.21,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
+  "provisional_generated_at": "2026-10-07T18:19:35.963944+00:00"
 }

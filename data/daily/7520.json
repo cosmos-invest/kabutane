@@ -2,12 +2,12 @@
   "code": "7520",
   "ticker": "7520.T",
   "name": "エコス",
-  "generated_at": "2026-10-06T17:45:51.826851+00:00",
-  "price_date": "2026-10-05",
+  "generated_at": "2026-10-07T18:18:16.859687+00:00",
+  "price_date": "2026-10-06",
   "record": {
-    "current_price": 2507.0,
-    "change_from_signal_month_pct": 1.79,
-    "return_since_gc_pct": 1.79
+    "current_price": 2452.0,
+    "change_from_signal_month_pct": -0.45,
+    "return_since_gc_pct": -0.45
   },
   "daily": [
     {
@@ -503,22 +503,35 @@
       "sma200": 2617.26,
       "rsi14": 46.8,
       "rsi5": 50.25
+    },
+    {
+      "date": "2026-10-06",
+      "open": 2500.0,
+      "high": 2517.0,
+      "low": 2452.0,
+      "close": 2452.0,
+      "volume": 13300.0,
+      "sma25": 2552.8,
+      "sma75": 2465.31,
+      "sma200": 2614.84,
+      "rsi14": 46.8,
+      "rsi5": 50.25
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-05",
-    "monthly_rsi14": 51.57,
-    "monthly_rsi_ma5": 50.96,
-    "spread": 0.61,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-06",
+    "monthly_rsi14": 49.88,
+    "monthly_rsi_ma5": 50.62,
+    "spread": -0.75,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
+  "provisional_generated_at": "2026-10-07T18:19:35.963944+00:00"
 }

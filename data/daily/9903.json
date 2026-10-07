@@ -2,12 +2,12 @@
   "code": "9903",
   "ticker": "9903.T",
   "name": "カンセキ",
-  "generated_at": "2026-10-06T17:45:51.826851+00:00",
-  "price_date": "2026-10-05",
+  "generated_at": "2026-10-07T18:18:16.859687+00:00",
+  "price_date": "2026-10-06",
   "record": {
-    "current_price": 884.0,
-    "change_from_signal_month_pct": -0.56,
-    "return_since_gc_pct": 2.91
+    "current_price": 899.0,
+    "change_from_signal_month_pct": 1.12,
+    "return_since_gc_pct": 4.66
   },
   "daily": [
     {
@@ -503,22 +503,35 @@
       "sma200": 913.96,
       "rsi14": 41.05,
       "rsi5": 41.54
+    },
+    {
+      "date": "2026-10-06",
+      "open": 884.0,
+      "high": 899.0,
+      "low": 884.0,
+      "close": 899.0,
+      "volume": 700.0,
+      "sma25": 894.24,
+      "sma75": 906.01,
+      "sma200": 914.15,
+      "rsi14": 41.05,
+      "rsi5": 41.54
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-05",
-    "monthly_rsi14": 39.42,
-    "monthly_rsi_ma5": 40.16,
-    "spread": -0.74,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-06",
+    "monthly_rsi14": 40.71,
+    "monthly_rsi_ma5": 40.41,
+    "spread": 0.3,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
+  "provisional_generated_at": "2026-10-07T18:19:35.963944+00:00"
 }

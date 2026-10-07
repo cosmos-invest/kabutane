@@ -2,12 +2,12 @@
   "code": "8097",
   "ticker": "8097.T",
   "name": "三愛オブリ",
-  "generated_at": "2026-10-06T17:45:51.826851+00:00",
-  "price_date": "2026-10-05",
+  "generated_at": "2026-10-07T18:18:16.859687+00:00",
+  "price_date": "2026-10-06",
   "record": {
-    "current_price": 2352.0,
-    "change_from_signal_month_pct": 1.16,
-    "return_since_gc_pct": 1.16
+    "current_price": 2366.0,
+    "change_from_signal_month_pct": 1.76,
+    "return_since_gc_pct": 1.76
   },
   "daily": [
     {
@@ -503,6 +503,19 @@
       "sma200": 2270.16,
       "rsi14": 60.58,
       "rsi5": 61.24
+    },
+    {
+      "date": "2026-10-06",
+      "open": 2352.0,
+      "high": 2373.0,
+      "low": 2352.0,
+      "close": 2366.0,
+      "volume": 109500.0,
+      "sma25": 2432.6,
+      "sma75": 2305.12,
+      "sma200": 2271.56,
+      "rsi14": 60.58,
+      "rsi5": 61.24
     }
   ],
   "corporate_events": [
@@ -515,17 +528,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-05",
-    "monthly_rsi14": 60.23,
-    "monthly_rsi_ma5": 60.5,
-    "spread": -0.27,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-06",
+    "monthly_rsi14": 60.87,
+    "monthly_rsi_ma5": 60.63,
+    "spread": 0.24,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
+  "provisional_generated_at": "2026-10-07T18:19:35.963944+00:00"
 }

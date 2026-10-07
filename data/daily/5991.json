@@ -2,12 +2,12 @@
   "code": "5991",
   "ticker": "5991.T",
   "name": "日本発條",
-  "generated_at": "2026-10-06T17:45:51.826851+00:00",
-  "price_date": "2026-10-05",
+  "generated_at": "2026-10-07T18:18:16.859687+00:00",
+  "price_date": "2026-10-06",
   "record": {
-    "current_price": 3661.0,
-    "change_from_signal_month_pct": 1.41,
-    "return_since_gc_pct": 2.01
+    "current_price": 3899.0,
+    "change_from_signal_month_pct": 8.01,
+    "return_since_gc_pct": 8.64
   },
   "daily": [
     {
@@ -503,6 +503,19 @@
       "sma200": 3157.42,
       "rsi14": 67.44,
       "rsi5": 68.42
+    },
+    {
+      "date": "2026-10-06",
+      "open": 3709.0,
+      "high": 3958.0,
+      "low": 3661.0,
+      "close": 3899.0,
+      "volume": 1597500.0,
+      "sma25": 3394.48,
+      "sma75": 3615.13,
+      "sma200": 3164.11,
+      "rsi14": 67.44,
+      "rsi5": 68.42
     }
   ],
   "corporate_events": [
@@ -515,17 +528,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-05",
-    "monthly_rsi14": 67.72,
-    "monthly_rsi_ma5": 68.32,
-    "spread": -0.6,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-06",
+    "monthly_rsi14": 69.9,
+    "monthly_rsi_ma5": 68.76,
+    "spread": 1.14,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
+  "provisional_generated_at": "2026-10-07T18:19:35.963944+00:00"
 }

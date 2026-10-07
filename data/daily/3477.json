@@ -2,12 +2,12 @@
   "code": "3477",
   "ticker": "3477.T",
   "name": "フォーライフ",
-  "generated_at": "2026-10-06T17:45:51.826851+00:00",
-  "price_date": "2026-10-05",
+  "generated_at": "2026-10-07T18:18:16.859687+00:00",
+  "price_date": "2026-10-06",
   "record": {
-    "current_price": 889.0,
-    "change_from_signal_month_pct": 2.18,
-    "return_since_gc_pct": 2.18
+    "current_price": 886.0,
+    "change_from_signal_month_pct": 1.84,
+    "return_since_gc_pct": 1.84
   },
   "daily": [
     {
@@ -503,6 +503,19 @@
       "sma200": 856.85,
       "rsi14": 61.14,
       "rsi5": 65.5
+    },
+    {
+      "date": "2026-10-06",
+      "open": 881.0,
+      "high": 898.0,
+      "low": 881.0,
+      "close": 886.0,
+      "volume": 1700.0,
+      "sma25": 899.6,
+      "sma75": 874.79,
+      "sma200": 857.1,
+      "rsi14": 61.14,
+      "rsi5": 65.5
     }
   ],
   "corporate_events": [
@@ -515,17 +528,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-05",
-    "monthly_rsi14": 67.53,
-    "monthly_rsi_ma5": 67.08,
-    "spread": 0.45,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-06",
+    "monthly_rsi14": 66.92,
+    "monthly_rsi_ma5": 66.96,
+    "spread": -0.04,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
+  "provisional_generated_at": "2026-10-07T18:19:35.963944+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "3627",
   "ticker": "3627.T",
   "name": "テクミラホールディングス",
-  "generated_at": "2026-10-06T17:45:51.826851+00:00",
-  "price_date": "2026-10-05",
+  "generated_at": "2026-10-07T18:18:16.859687+00:00",
+  "price_date": "2026-10-06",
   "record": {
-    "current_price": 267.0,
-    "change_from_signal_month_pct": -1.84,
-    "return_since_gc_pct": -1.84
+    "current_price": 270.0,
+    "change_from_signal_month_pct": -0.74,
+    "return_since_gc_pct": -0.74
   },
   "daily": [
     {
@@ -503,22 +503,35 @@
       "sma200": 269.05,
       "rsi14": 42.59,
       "rsi5": 42.85
+    },
+    {
+      "date": "2026-10-06",
+      "open": 270.0,
+      "high": 272.0,
+      "low": 264.0,
+      "close": 270.0,
+      "volume": 44400.0,
+      "sma25": 266.76,
+      "sma75": 268.88,
+      "sma200": 269.01,
+      "rsi14": 42.59,
+      "rsi5": 42.85
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-05",
-    "monthly_rsi14": 40.55,
-    "monthly_rsi_ma5": 40.57,
-    "spread": -0.02,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-06",
+    "monthly_rsi14": 41.04,
+    "monthly_rsi_ma5": 40.67,
+    "spread": 0.37,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
+  "provisional_generated_at": "2026-10-07T18:19:35.963944+00:00"
 }

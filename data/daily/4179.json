@@ -2,12 +2,12 @@
   "code": "4179",
   "ticker": "4179.T",
   "name": "ジーネクスト",
-  "generated_at": "2026-10-06T17:45:51.826851+00:00",
-  "price_date": "2026-10-05",
+  "generated_at": "2026-10-07T18:18:16.859687+00:00",
+  "price_date": "2026-10-06",
   "record": {
-    "current_price": 330.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 12.24
+    "current_price": 324.0,
+    "change_from_signal_month_pct": -1.82,
+    "return_since_gc_pct": 10.2
   },
   "daily": [
     {
@@ -503,15 +503,28 @@
       "sma200": 346.32,
       "rsi14": 46.61,
       "rsi5": 46.92
+    },
+    {
+      "date": "2026-10-06",
+      "open": 331.0,
+      "high": 333.0,
+      "low": 321.0,
+      "close": 324.0,
+      "volume": 45700.0,
+      "sma25": 349.52,
+      "sma75": 394.17,
+      "sma200": 346.44,
+      "rsi14": 46.61,
+      "rsi5": 46.92
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-05",
-    "monthly_rsi14": 49.14,
-    "monthly_rsi_ma5": 54.21,
-    "spread": -5.07,
+    "price_date": "2026-10-06",
+    "monthly_rsi14": 48.77,
+    "monthly_rsi_ma5": 54.13,
+    "spread": -5.37,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -520,5 +533,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
+  "provisional_generated_at": "2026-10-07T18:19:35.963944+00:00"
 }

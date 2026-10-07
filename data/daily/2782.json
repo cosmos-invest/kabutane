@@ -2,12 +2,12 @@
   "code": "2782",
   "ticker": "2782.T",
   "name": "セリア",
-  "generated_at": "2026-10-06T17:45:51.826851+00:00",
-  "price_date": "2026-10-05",
+  "generated_at": "2026-10-07T18:18:16.859687+00:00",
+  "price_date": "2026-10-06",
   "record": {
-    "current_price": 4470.0,
-    "change_from_signal_month_pct": 16.1,
-    "return_since_gc_pct": 16.1
+    "current_price": 4270.0,
+    "change_from_signal_month_pct": 10.91,
+    "return_since_gc_pct": 10.91
   },
   "daily": [
     {
@@ -503,6 +503,19 @@
       "sma200": 3896.15,
       "rsi14": 57.49,
       "rsi5": 58.82
+    },
+    {
+      "date": "2026-10-06",
+      "open": 4400.0,
+      "high": 4420.0,
+      "low": 4180.0,
+      "close": 4270.0,
+      "volume": 840900.0,
+      "sma25": 4613.2,
+      "sma75": 4119.2,
+      "sma200": 3900.65,
+      "rsi14": 57.49,
+      "rsi5": 58.82
     }
   ],
   "corporate_events": [
@@ -515,17 +528,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-05",
-    "monthly_rsi14": 64.96,
-    "monthly_rsi_ma5": 63.61,
-    "spread": 1.35,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-06",
+    "monthly_rsi14": 61.69,
+    "monthly_rsi_ma5": 62.96,
+    "spread": -1.27,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
+  "provisional_generated_at": "2026-10-07T18:19:35.963944+00:00"
 }

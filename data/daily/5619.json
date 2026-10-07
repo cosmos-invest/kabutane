@@ -2,12 +2,12 @@
   "code": "5619",
   "ticker": "5619.T",
   "name": "マーソ",
-  "generated_at": "2026-10-06T17:45:51.826851+00:00",
-  "price_date": "2026-10-05",
+  "generated_at": "2026-10-07T18:18:16.859687+00:00",
+  "price_date": "2026-10-06",
   "record": {
-    "current_price": 855.0,
-    "change_from_signal_month_pct": 1.06,
-    "return_since_gc_pct": 1.06
+    "current_price": 840.0,
+    "change_from_signal_month_pct": -0.71,
+    "return_since_gc_pct": -0.71
   },
   "daily": [
     {
@@ -503,15 +503,28 @@
       "sma200": 862.09,
       "rsi14": 23.59,
       "rsi5": 24.58
+    },
+    {
+      "date": "2026-10-06",
+      "open": 840.0,
+      "high": 840.0,
+      "low": 840.0,
+      "close": 840.0,
+      "volume": 100.0,
+      "sma25": 852.84,
+      "sma75": 842.89,
+      "sma200": 861.43,
+      "rsi14": 23.59,
+      "rsi5": 24.58
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-05",
-    "monthly_rsi14": 26.42,
-    "monthly_rsi_ma5": 25.35,
-    "spread": 1.08,
+    "price_date": "2026-10-06",
+    "monthly_rsi14": 25.84,
+    "monthly_rsi_ma5": 25.23,
+    "spread": 0.61,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -520,5 +533,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
+  "provisional_generated_at": "2026-10-07T18:19:35.963944+00:00"
 }

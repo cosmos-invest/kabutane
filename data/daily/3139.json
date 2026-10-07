@@ -2,12 +2,12 @@
   "code": "3139",
   "ticker": "3139.T",
   "name": "ラクト・ジャパン",
-  "generated_at": "2026-10-06T17:45:51.826851+00:00",
-  "price_date": "2026-10-05",
+  "generated_at": "2026-10-07T18:18:16.859687+00:00",
+  "price_date": "2026-10-06",
   "record": {
-    "current_price": 3395.0,
-    "change_from_signal_month_pct": 0.44,
-    "return_since_gc_pct": 0.44
+    "current_price": 3415.0,
+    "change_from_signal_month_pct": 1.04,
+    "return_since_gc_pct": 1.04
   },
   "daily": [
     {
@@ -503,22 +503,35 @@
       "sma200": 3446.93,
       "rsi14": 52.21,
       "rsi5": 52.71
+    },
+    {
+      "date": "2026-10-06",
+      "open": 3395.0,
+      "high": 3430.0,
+      "low": 3395.0,
+      "close": 3415.0,
+      "volume": 19200.0,
+      "sma25": 3432.6,
+      "sma75": 3393.6,
+      "sma200": 3446.68,
+      "rsi14": 52.21,
+      "rsi5": 52.71
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-05",
-    "monthly_rsi14": 54.26,
-    "monthly_rsi_ma5": 54.48,
-    "spread": -0.22,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-06",
+    "monthly_rsi14": 54.77,
+    "monthly_rsi_ma5": 54.58,
+    "spread": 0.19,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
+  "provisional_generated_at": "2026-10-07T18:19:35.963944+00:00"
 }

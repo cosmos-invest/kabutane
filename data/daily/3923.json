@@ -2,12 +2,12 @@
   "code": "3923",
   "ticker": "3923.T",
   "name": "ラクス",
-  "generated_at": "2026-10-06T17:45:51.826851+00:00",
-  "price_date": "2026-10-05",
+  "generated_at": "2026-10-07T18:18:16.859687+00:00",
+  "price_date": "2026-10-06",
   "record": {
-    "current_price": 1019.0,
-    "change_from_signal_month_pct": -3.87,
-    "return_since_gc_pct": 19.0
+    "current_price": 1047.0,
+    "change_from_signal_month_pct": -1.23,
+    "return_since_gc_pct": 22.27
   },
   "daily": [
     {
@@ -503,22 +503,35 @@
       "sma200": 948.46,
       "rsi14": 44.98,
       "rsi5": 51.16
+    },
+    {
+      "date": "2026-10-06",
+      "open": 1034.0,
+      "high": 1059.0,
+      "low": 1033.0,
+      "close": 1047.0,
+      "volume": 1117900.0,
+      "sma25": 1066.68,
+      "sma75": 1038.37,
+      "sma200": 948.04,
+      "rsi14": 44.98,
+      "rsi5": 51.16
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-05",
-    "monthly_rsi14": 48.43,
-    "monthly_rsi_ma5": 49.12,
-    "spread": -0.69,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-06",
+    "monthly_rsi14": 49.49,
+    "monthly_rsi_ma5": 49.34,
+    "spread": 0.15,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
+  "provisional_generated_at": "2026-10-07T18:19:35.963944+00:00"
 }

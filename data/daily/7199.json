@@ -2,12 +2,12 @@
   "code": "7199",
   "ticker": "7199.T",
   "name": "プレミアグループ",
-  "generated_at": "2026-10-06T17:45:51.826851+00:00",
-  "price_date": "2026-10-05",
+  "generated_at": "2026-10-07T18:18:16.859687+00:00",
+  "price_date": "2026-10-06",
   "record": {
-    "current_price": 2086.0,
-    "change_from_signal_month_pct": 1.71,
-    "return_since_gc_pct": 13.25
+    "current_price": 2119.0,
+    "change_from_signal_month_pct": 3.32,
+    "return_since_gc_pct": 15.04
   },
   "daily": [
     {
@@ -503,6 +503,19 @@
       "sma200": 1943.1,
       "rsi14": 48.5,
       "rsi5": 52.15
+    },
+    {
+      "date": "2026-10-06",
+      "open": 2099.0,
+      "high": 2125.0,
+      "low": 2087.0,
+      "close": 2119.0,
+      "volume": 185300.0,
+      "sma25": 2093.52,
+      "sma75": 2083.59,
+      "sma200": 1944.38,
+      "rsi14": 48.5,
+      "rsi5": 52.15
     }
   ],
   "corporate_events": [
@@ -515,17 +528,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-05",
-    "monthly_rsi14": 53.93,
-    "monthly_rsi_ma5": 54.23,
-    "spread": -0.31,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-06",
+    "monthly_rsi14": 55.25,
+    "monthly_rsi_ma5": 54.5,
+    "spread": 0.75,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
+  "provisional_generated_at": "2026-10-07T18:19:35.963944+00:00"
 }

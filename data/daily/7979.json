@@ -2,12 +2,12 @@
   "code": "7979",
   "ticker": "7979.T",
   "name": "松風",
-  "generated_at": "2026-10-06T17:45:51.826851+00:00",
-  "price_date": "2026-10-05",
+  "generated_at": "2026-10-07T18:18:16.859687+00:00",
+  "price_date": "2026-10-06",
   "record": {
-    "current_price": 2212.0,
-    "change_from_signal_month_pct": 4.88,
-    "return_since_gc_pct": 22.75
+    "current_price": 2270.0,
+    "change_from_signal_month_pct": 7.63,
+    "return_since_gc_pct": 25.97
   },
   "daily": [
     {
@@ -503,6 +503,19 @@
       "sma200": 1943.2,
       "rsi14": 50.02,
       "rsi5": 60.27
+    },
+    {
+      "date": "2026-10-06",
+      "open": 2229.0,
+      "high": 2282.0,
+      "low": 2228.0,
+      "close": 2270.0,
+      "volume": 66200.0,
+      "sma25": 2251.36,
+      "sma75": 2190.44,
+      "sma200": 1945.48,
+      "rsi14": 50.02,
+      "rsi5": 60.27
     }
   ],
   "corporate_events": [
@@ -515,17 +528,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-05",
-    "monthly_rsi14": 63.79,
-    "monthly_rsi_ma5": 64.14,
-    "spread": -0.36,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-06",
+    "monthly_rsi14": 65.36,
+    "monthly_rsi_ma5": 64.46,
+    "spread": 0.9,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
+  "provisional_generated_at": "2026-10-07T18:19:35.963944+00:00"
 }

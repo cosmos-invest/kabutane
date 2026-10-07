@@ -2,12 +2,12 @@
   "code": "2181",
   "ticker": "2181.T",
   "name": "パーソルホールディングス",
-  "generated_at": "2026-10-06T17:45:51.826851+00:00",
-  "price_date": "2026-10-05",
+  "generated_at": "2026-10-07T18:18:16.859687+00:00",
+  "price_date": "2026-10-06",
   "record": {
-    "current_price": 276.7,
-    "change_from_signal_month_pct": 4.89,
-    "return_since_gc_pct": 11.84
+    "current_price": 278.3,
+    "change_from_signal_month_pct": 5.5,
+    "return_since_gc_pct": 12.49
   },
   "daily": [
     {
@@ -500,7 +500,20 @@
       "volume": 7085400.0,
       "sma25": 291.44,
       "sma75": 272.44,
-      "sma200": 260.97,
+      "sma200": 260.98,
+      "rsi14": 46.59,
+      "rsi5": 52.47
+    },
+    {
+      "date": "2026-10-06",
+      "open": 280.7,
+      "high": 280.7,
+      "low": 277.8,
+      "close": 278.3,
+      "volume": 6747200.0,
+      "sma25": 290.8,
+      "sma75": 272.91,
+      "sma200": 260.98,
       "rsi14": 46.59,
       "rsi5": 52.47
     }
@@ -515,17 +528,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-05",
-    "monthly_rsi14": 54.07,
-    "monthly_rsi_ma5": 54.26,
-    "spread": -0.2,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-06",
+    "monthly_rsi14": 54.51,
+    "monthly_rsi_ma5": 54.35,
+    "spread": 0.15,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-06T17:46:26.231048+00:00"
+  "provisional_generated_at": "2026-10-07T18:19:35.963944+00:00"
 }
