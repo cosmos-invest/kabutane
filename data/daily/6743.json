@@ -2,12 +2,12 @@
   "code": "6743",
   "ticker": "6743.T",
   "name": "大同信号",
-  "generated_at": "2026-10-07T18:18:16.859687+00:00",
-  "price_date": "2026-10-06",
+  "generated_at": "2026-10-08T18:19:46.494889+00:00",
+  "price_date": "2026-10-07",
   "record": {
-    "current_price": 1070.0,
-    "change_from_signal_month_pct": 19.96,
-    "return_since_gc_pct": 19.96
+    "current_price": 1065.0,
+    "change_from_signal_month_pct": 19.39,
+    "return_since_gc_pct": 19.39
   },
   "daily": [
     {
@@ -516,15 +516,28 @@
       "sma200": 866.78,
       "rsi14": 66.76,
       "rsi5": 69.59
+    },
+    {
+      "date": "2026-10-07",
+      "open": 1094.0,
+      "high": 1094.0,
+      "low": 1065.0,
+      "close": 1065.0,
+      "volume": 24500.0,
+      "sma25": 1039.16,
+      "sma75": 952.71,
+      "sma200": 868.21,
+      "rsi14": 66.76,
+      "rsi5": 69.59
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-06",
-    "monthly_rsi14": 75.58,
-    "monthly_rsi_ma5": 72.35,
-    "spread": 3.23,
+    "price_date": "2026-10-07",
+    "monthly_rsi14": 75.41,
+    "monthly_rsi_ma5": 72.32,
+    "spread": 3.09,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -533,5 +546,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-07T18:19:35.963944+00:00"
+  "provisional_generated_at": "2026-10-08T18:20:44.178542+00:00"
 }

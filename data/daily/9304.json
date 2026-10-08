@@ -2,12 +2,12 @@
   "code": "9304",
   "ticker": "9304.T",
   "name": "澁澤倉庫",
-  "generated_at": "2026-10-07T18:18:16.859687+00:00",
-  "price_date": "2026-10-06",
+  "generated_at": "2026-10-08T18:19:46.494889+00:00",
+  "price_date": "2026-10-07",
   "record": {
-    "current_price": 2148.0,
-    "change_from_signal_month_pct": 18.09,
-    "return_since_gc_pct": 35.52
+    "current_price": 2089.0,
+    "change_from_signal_month_pct": 14.84,
+    "return_since_gc_pct": 31.8
   },
   "daily": [
     {
@@ -516,6 +516,19 @@
       "sma200": 1561.32,
       "rsi14": 75.56,
       "rsi5": 83.2
+    },
+    {
+      "date": "2026-10-07",
+      "open": 2129.0,
+      "high": 2147.0,
+      "low": 2089.0,
+      "close": 2089.0,
+      "volume": 137600.0,
+      "sma25": 2114.52,
+      "sma75": 1939.08,
+      "sma200": 1565.93,
+      "rsi14": 75.56,
+      "rsi5": 83.2
     }
   ],
   "corporate_events": [
@@ -528,17 +541,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-06",
-    "monthly_rsi14": 83.46,
-    "monthly_rsi_ma5": 82.97,
-    "spread": 0.49,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-07",
+    "monthly_rsi14": 79.76,
+    "monthly_rsi_ma5": 82.23,
+    "spread": -2.47,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-07T18:19:35.963944+00:00"
+  "provisional_generated_at": "2026-10-08T18:20:44.178542+00:00"
 }

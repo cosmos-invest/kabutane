@@ -2,12 +2,12 @@
   "code": "6178",
   "ticker": "6178.T",
   "name": "日本郵政",
-  "generated_at": "2026-10-07T18:18:16.859687+00:00",
-  "price_date": "2026-10-06",
+  "generated_at": "2026-10-08T18:19:46.494889+00:00",
+  "price_date": "2026-10-07",
   "record": {
-    "current_price": 2503.5,
-    "change_from_signal_month_pct": 5.1,
-    "return_since_gc_pct": 21.06
+    "current_price": 2429.5,
+    "change_from_signal_month_pct": 1.99,
+    "return_since_gc_pct": 17.48
   },
   "daily": [
     {
@@ -516,6 +516,19 @@
       "sma200": 2075.26,
       "rsi14": 67.12,
       "rsi5": 74.44
+    },
+    {
+      "date": "2026-10-07",
+      "open": 2476.0,
+      "high": 2491.5,
+      "low": 2429.5,
+      "close": 2429.5,
+      "volume": 4910800.0,
+      "sma25": 2499.26,
+      "sma75": 2394.8,
+      "sma200": 2079.5,
+      "rsi14": 67.12,
+      "rsi5": 74.44
     }
   ],
   "corporate_events": [
@@ -528,17 +541,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-06",
-    "monthly_rsi14": 75.78,
-    "monthly_rsi_ma5": 75.35,
-    "spread": 0.43,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-07",
+    "monthly_rsi14": 72.08,
+    "monthly_rsi_ma5": 74.61,
+    "spread": -2.53,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-07T18:19:35.963944+00:00"
+  "provisional_generated_at": "2026-10-08T18:20:44.178542+00:00"
 }

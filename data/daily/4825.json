@@ -2,12 +2,12 @@
   "code": "4825",
   "ticker": "4825.T",
   "name": "ウェザーニューズ",
-  "generated_at": "2026-10-07T18:18:16.859687+00:00",
-  "price_date": "2026-10-06",
+  "generated_at": "2026-10-08T18:19:46.494889+00:00",
+  "price_date": "2026-10-07",
   "record": {
-    "current_price": 1964.0,
-    "change_from_signal_month_pct": -2.53,
-    "return_since_gc_pct": -2.53
+    "current_price": 1960.0,
+    "change_from_signal_month_pct": -2.73,
+    "return_since_gc_pct": -2.73
   },
   "daily": [
     {
@@ -516,15 +516,28 @@
       "sma200": 2021.12,
       "rsi14": 54.21,
       "rsi5": 54.35
+    },
+    {
+      "date": "2026-10-07",
+      "open": 1960.0,
+      "high": 1979.0,
+      "low": 1956.0,
+      "close": 1960.0,
+      "volume": 176700.0,
+      "sma25": 2004.72,
+      "sma75": 2010.23,
+      "sma200": 2021.26,
+      "rsi14": 54.21,
+      "rsi5": 54.35
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-06",
-    "monthly_rsi14": 51.08,
-    "monthly_rsi_ma5": 53.25,
-    "spread": -2.17,
+    "price_date": "2026-10-07",
+    "monthly_rsi14": 50.94,
+    "monthly_rsi_ma5": 53.22,
+    "spread": -2.28,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -533,5 +546,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-07T18:19:35.963944+00:00"
+  "provisional_generated_at": "2026-10-08T18:20:44.178542+00:00"
 }

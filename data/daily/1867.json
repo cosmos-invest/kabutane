@@ -2,12 +2,12 @@
   "code": "1867",
   "ticker": "1867.T",
   "name": "植木組",
-  "generated_at": "2026-10-07T18:18:16.859687+00:00",
-  "price_date": "2026-10-06",
+  "generated_at": "2026-10-08T18:19:46.494889+00:00",
+  "price_date": "2026-10-07",
   "record": {
-    "current_price": 2733.0,
-    "change_from_signal_month_pct": 0.44,
-    "return_since_gc_pct": 0.44
+    "current_price": 2710.0,
+    "change_from_signal_month_pct": -0.4,
+    "return_since_gc_pct": -0.4
   },
   "daily": [
     {
@@ -516,15 +516,28 @@
       "sma200": 2735.41,
       "rsi14": 59.69,
       "rsi5": 61.75
+    },
+    {
+      "date": "2026-10-07",
+      "open": 2733.0,
+      "high": 2736.0,
+      "low": 2710.0,
+      "close": 2710.0,
+      "volume": 1700.0,
+      "sma25": 2717.2,
+      "sma75": 2670.21,
+      "sma200": 2735.85,
+      "rsi14": 59.69,
+      "rsi5": 61.75
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-06",
-    "monthly_rsi14": 61.59,
-    "monthly_rsi_ma5": 60.52,
-    "spread": 1.07,
+    "price_date": "2026-10-07",
+    "monthly_rsi14": 61.1,
+    "monthly_rsi_ma5": 60.42,
+    "spread": 0.68,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -533,5 +546,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-07T18:19:35.963944+00:00"
+  "provisional_generated_at": "2026-10-08T18:20:44.178542+00:00"
 }

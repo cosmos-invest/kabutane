@@ -2,12 +2,12 @@
   "code": "3843",
   "ticker": "3843.T",
   "name": "フリービット",
-  "generated_at": "2026-10-07T18:18:16.859687+00:00",
-  "price_date": "2026-10-06",
+  "generated_at": "2026-10-08T18:19:46.494889+00:00",
+  "price_date": "2026-10-07",
   "record": {
-    "current_price": 1663.0,
-    "change_from_signal_month_pct": 6.47,
-    "return_since_gc_pct": 10.72
+    "current_price": 1747.0,
+    "change_from_signal_month_pct": 11.84,
+    "return_since_gc_pct": 16.31
   },
   "daily": [
     {
@@ -516,22 +516,35 @@
       "sma200": 1576.04,
       "rsi14": 50.41,
       "rsi5": 54.28
+    },
+    {
+      "date": "2026-10-07",
+      "open": 1649.0,
+      "high": 1751.0,
+      "low": 1648.0,
+      "close": 1747.0,
+      "volume": 73400.0,
+      "sma25": 1699.4,
+      "sma75": 1628.39,
+      "sma200": 1577.07,
+      "rsi14": 50.41,
+      "rsi5": 54.28
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-06",
-    "monthly_rsi14": 56.48,
-    "monthly_rsi_ma5": 56.86,
-    "spread": -0.39,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-07",
+    "monthly_rsi14": 59.52,
+    "monthly_rsi_ma5": 57.47,
+    "spread": 2.05,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-07T18:19:35.963944+00:00"
+  "provisional_generated_at": "2026-10-08T18:20:44.178542+00:00"
 }

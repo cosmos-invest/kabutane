@@ -2,12 +2,12 @@
   "code": "3353",
   "ticker": "3353.T",
   "name": "メディカル一光グループ",
-  "generated_at": "2026-10-07T18:18:16.859687+00:00",
-  "price_date": "2026-10-06",
+  "generated_at": "2026-10-08T18:19:46.494889+00:00",
+  "price_date": "2026-10-07",
   "record": {
-    "current_price": 2819.0,
-    "change_from_signal_month_pct": -0.77,
-    "return_since_gc_pct": -0.77
+    "current_price": 2815.0,
+    "change_from_signal_month_pct": -0.92,
+    "return_since_gc_pct": -0.92
   },
   "daily": [
     {
@@ -516,22 +516,35 @@
       "sma200": 2847.93,
       "rsi14": 54.19,
       "rsi5": 54.95
+    },
+    {
+      "date": "2026-10-07",
+      "open": 2819.0,
+      "high": 2819.0,
+      "low": 2793.0,
+      "close": 2815.0,
+      "volume": 1700.0,
+      "sma25": 2799.96,
+      "sma75": 2813.32,
+      "sma200": 2848.89,
+      "rsi14": 54.19,
+      "rsi5": 54.95
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-06",
-    "monthly_rsi14": 56.0,
-    "monthly_rsi_ma5": 55.99,
-    "spread": 0.02,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-07",
+    "monthly_rsi14": 55.87,
+    "monthly_rsi_ma5": 55.96,
+    "spread": -0.09,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-07T18:19:35.963944+00:00"
+  "provisional_generated_at": "2026-10-08T18:20:44.178542+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "3177",
   "ticker": "3177.T",
   "name": "ありがとうサービス",
-  "generated_at": "2026-10-07T18:18:16.859687+00:00",
-  "price_date": "2026-10-06",
+  "generated_at": "2026-10-08T18:19:46.494889+00:00",
+  "price_date": "2026-10-07",
   "record": {
-    "current_price": 4680.0,
-    "change_from_signal_month_pct": 14.85,
-    "return_since_gc_pct": 14.85
+    "current_price": 4635.0,
+    "change_from_signal_month_pct": 13.74,
+    "return_since_gc_pct": 13.74
   },
   "daily": [
     {
@@ -516,22 +516,35 @@
       "sma200": 3779.75,
       "rsi14": 57.2,
       "rsi5": 66.53
+    },
+    {
+      "date": "2026-10-07",
+      "open": 4715.0,
+      "high": 4715.0,
+      "low": 4635.0,
+      "close": 4635.0,
+      "volume": 1300.0,
+      "sma25": 4535.8,
+      "sma75": 4136.07,
+      "sma200": 3785.6,
+      "rsi14": 57.2,
+      "rsi5": 66.53
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-06",
-    "monthly_rsi14": 68.2,
-    "monthly_rsi_ma5": 67.6,
-    "spread": 0.6,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-07",
+    "monthly_rsi14": 67.23,
+    "monthly_rsi_ma5": 67.41,
+    "spread": -0.18,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-07T18:19:35.963944+00:00"
+  "provisional_generated_at": "2026-10-08T18:20:44.178542+00:00"
 }

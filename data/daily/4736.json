@@ -2,12 +2,12 @@
   "code": "4736",
   "ticker": "4736.T",
   "name": "日本ラッド",
-  "generated_at": "2026-10-07T18:18:16.859687+00:00",
-  "price_date": "2026-10-06",
+  "generated_at": "2026-10-08T18:19:46.494889+00:00",
+  "price_date": "2026-10-07",
   "record": {
-    "current_price": 613.0,
-    "change_from_signal_month_pct": -3.46,
-    "return_since_gc_pct": -2.7
+    "current_price": 611.0,
+    "change_from_signal_month_pct": -3.78,
+    "return_since_gc_pct": -3.02
   },
   "daily": [
     {
@@ -516,15 +516,28 @@
       "sma200": 599.13,
       "rsi14": 43.63,
       "rsi5": 47.23
+    },
+    {
+      "date": "2026-10-07",
+      "open": 609.0,
+      "high": 615.0,
+      "low": 607.0,
+      "close": 611.0,
+      "volume": 1200.0,
+      "sma25": 587.96,
+      "sma75": 591.63,
+      "sma200": 598.91,
+      "rsi14": 43.63,
+      "rsi5": 47.23
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-06",
-    "monthly_rsi14": 45.02,
-    "monthly_rsi_ma5": 43.69,
-    "spread": 1.33,
+    "price_date": "2026-10-07",
+    "monthly_rsi14": 44.84,
+    "monthly_rsi_ma5": 43.65,
+    "spread": 1.19,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -533,5 +546,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-07T18:19:35.963944+00:00"
+  "provisional_generated_at": "2026-10-08T18:20:44.178542+00:00"
 }

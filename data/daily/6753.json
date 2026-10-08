@@ -2,12 +2,12 @@
   "code": "6753",
   "ticker": "6753.T",
   "name": "シャープ",
-  "generated_at": "2026-10-07T18:18:16.859687+00:00",
-  "price_date": "2026-10-06",
+  "generated_at": "2026-10-08T18:19:46.494889+00:00",
+  "price_date": "2026-10-07",
   "record": {
-    "current_price": 636.5,
-    "change_from_signal_month_pct": 2.93,
-    "return_since_gc_pct": 2.41
+    "current_price": 630.1,
+    "change_from_signal_month_pct": 1.89,
+    "return_since_gc_pct": 1.38
   },
   "daily": [
     {
@@ -344,7 +344,7 @@
       "volume": 4349400.0,
       "sma25": 646.36,
       "sma75": 633.85,
-      "sma200": 659.98,
+      "sma200": 659.99,
       "rsi14": 36.65,
       "rsi5": 38.58
     },
@@ -516,22 +516,35 @@
       "sma200": 651.82,
       "rsi14": 36.65,
       "rsi5": 38.58
+    },
+    {
+      "date": "2026-10-07",
+      "open": 639.0,
+      "high": 647.2,
+      "low": 630.1,
+      "close": 630.1,
+      "volume": 3405600.0,
+      "sma25": 652.69,
+      "sma75": 637.36,
+      "sma200": 650.95,
+      "rsi14": 36.65,
+      "rsi5": 38.58
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-06",
-    "monthly_rsi14": 41.44,
-    "monthly_rsi_ma5": 41.43,
-    "spread": 0.01,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-07",
+    "monthly_rsi14": 41.04,
+    "monthly_rsi_ma5": 41.35,
+    "spread": -0.31,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-07T18:19:35.963944+00:00"
+  "provisional_generated_at": "2026-10-08T18:20:44.178542+00:00"
 }

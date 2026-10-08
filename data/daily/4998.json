@@ -2,12 +2,12 @@
   "code": "4998",
   "ticker": "4998.T",
   "name": "フマキラー",
-  "generated_at": "2026-10-07T18:18:16.859687+00:00",
-  "price_date": "2026-10-06",
+  "generated_at": "2026-10-08T18:19:46.494889+00:00",
+  "price_date": "2026-10-07",
   "record": {
-    "current_price": 1159.0,
-    "change_from_signal_month_pct": -4.77,
-    "return_since_gc_pct": 0.09
+    "current_price": 1157.0,
+    "change_from_signal_month_pct": -4.93,
+    "return_since_gc_pct": -0.09
   },
   "daily": [
     {
@@ -516,15 +516,28 @@
       "sma200": 1159.93,
       "rsi14": 51.24,
       "rsi5": 58.3
+    },
+    {
+      "date": "2026-10-07",
+      "open": 1160.0,
+      "high": 1160.0,
+      "low": 1130.0,
+      "close": 1157.0,
+      "volume": 45500.0,
+      "sma25": 1171.44,
+      "sma75": 1180.12,
+      "sma200": 1160.16,
+      "rsi14": 51.24,
+      "rsi5": 58.3
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-06",
-    "monthly_rsi14": 51.64,
-    "monthly_rsi_ma5": 55.23,
-    "spread": -3.59,
+    "price_date": "2026-10-07",
+    "monthly_rsi14": 51.39,
+    "monthly_rsi_ma5": 55.18,
+    "spread": -3.8,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -533,5 +546,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-07T18:19:35.963944+00:00"
+  "provisional_generated_at": "2026-10-08T18:20:44.178542+00:00"
 }

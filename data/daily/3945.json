@@ -2,12 +2,12 @@
   "code": "3945",
   "ticker": "3945.T",
   "name": "スーパーバッグ",
-  "generated_at": "2026-10-07T18:18:16.859687+00:00",
-  "price_date": "2026-10-06",
+  "generated_at": "2026-10-08T18:19:46.494889+00:00",
+  "price_date": "2026-10-07",
   "record": {
-    "current_price": 2215.0,
-    "change_from_signal_month_pct": -3.36,
-    "return_since_gc_pct": -3.36
+    "current_price": 2205.0,
+    "change_from_signal_month_pct": -3.8,
+    "return_since_gc_pct": -3.8
   },
   "daily": [
     {
@@ -516,22 +516,35 @@
       "sma200": 2369.53,
       "rsi14": 44.72,
       "rsi5": 47.49
+    },
+    {
+      "date": "2026-10-07",
+      "open": 2214.0,
+      "high": 2214.0,
+      "low": 2205.0,
+      "close": 2205.0,
+      "volume": 5600.0,
+      "sma25": 2185.0,
+      "sma75": 2198.23,
+      "sma200": 2367.12,
+      "rsi14": 44.72,
+      "rsi5": 47.49
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-06",
-    "monthly_rsi14": 45.71,
-    "monthly_rsi_ma5": 45.46,
-    "spread": 0.25,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-07",
+    "monthly_rsi14": 45.31,
+    "monthly_rsi_ma5": 45.38,
+    "spread": -0.07,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-07T18:19:35.963944+00:00"
+  "provisional_generated_at": "2026-10-08T18:20:44.178542+00:00"
 }
