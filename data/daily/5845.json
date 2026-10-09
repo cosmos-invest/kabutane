@@ -2,12 +2,12 @@
   "code": "5845",
   "ticker": "5845.T",
   "name": "全保連",
-  "generated_at": "2026-10-08T18:19:46.494889+00:00",
-  "price_date": "2026-10-07",
+  "generated_at": "2026-10-09T17:53:43.581524+00:00",
+  "price_date": "2026-10-08",
   "record": {
-    "current_price": 1194.0,
-    "change_from_signal_month_pct": 1.96,
-    "return_since_gc_pct": 1.96
+    "current_price": 1176.0,
+    "change_from_signal_month_pct": 0.43,
+    "return_since_gc_pct": 0.43
   },
   "daily": [
     {
@@ -529,22 +529,35 @@
       "sma200": 1051.99,
       "rsi14": 61.37,
       "rsi5": 68.13
+    },
+    {
+      "date": "2026-10-08",
+      "open": 1193.0,
+      "high": 1193.0,
+      "low": 1176.0,
+      "close": 1176.0,
+      "volume": 26100.0,
+      "sma25": 1206.2,
+      "sma75": 1138.31,
+      "sma200": 1053.08,
+      "rsi14": 61.37,
+      "rsi5": 68.13
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-07",
-    "monthly_rsi14": 67.61,
-    "monthly_rsi_ma5": 67.18,
-    "spread": 0.43,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-08",
+    "monthly_rsi14": 66.07,
+    "monthly_rsi_ma5": 66.87,
+    "spread": -0.8,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-08T18:20:44.178542+00:00"
+  "provisional_generated_at": "2026-10-09T17:54:51.766891+00:00"
 }

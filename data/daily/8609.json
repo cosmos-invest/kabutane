@@ -2,12 +2,12 @@
   "code": "8609",
   "ticker": "8609.T",
   "name": "岡三証券グループ",
-  "generated_at": "2026-10-08T18:19:46.494889+00:00",
-  "price_date": "2026-10-07",
+  "generated_at": "2026-10-09T17:53:43.581524+00:00",
+  "price_date": "2026-10-08",
   "record": {
-    "current_price": 1224.0,
-    "change_from_signal_month_pct": 9.78,
-    "return_since_gc_pct": 9.78
+    "current_price": 1196.0,
+    "change_from_signal_month_pct": 7.26,
+    "return_since_gc_pct": 7.26
   },
   "daily": [
     {
@@ -529,22 +529,35 @@
       "sma200": 967.6,
       "rsi14": 65.57,
       "rsi5": 73.1
+    },
+    {
+      "date": "2026-10-08",
+      "open": 1219.0,
+      "high": 1219.0,
+      "low": 1179.0,
+      "close": 1196.0,
+      "volume": 551000.0,
+      "sma25": 1230.56,
+      "sma75": 1120.65,
+      "sma200": 969.95,
+      "rsi14": 65.57,
+      "rsi5": 73.1
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-07",
-    "monthly_rsi14": 75.33,
-    "monthly_rsi_ma5": 73.55,
-    "spread": 1.78,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-08",
+    "monthly_rsi14": 72.68,
+    "monthly_rsi_ma5": 73.02,
+    "spread": -0.34,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-08T18:20:44.178542+00:00"
+  "provisional_generated_at": "2026-10-09T17:54:51.766891+00:00"
 }

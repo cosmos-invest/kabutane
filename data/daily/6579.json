@@ -2,12 +2,12 @@
   "code": "6579",
   "ticker": "6579.T",
   "name": "ログリー",
-  "generated_at": "2026-10-08T18:19:46.494889+00:00",
-  "price_date": "2026-10-07",
+  "generated_at": "2026-10-09T17:53:43.581524+00:00",
+  "price_date": "2026-10-08",
   "record": {
-    "current_price": 340.0,
-    "change_from_signal_month_pct": -1.45,
-    "return_since_gc_pct": 7.59
+    "current_price": 338.0,
+    "change_from_signal_month_pct": -2.03,
+    "return_since_gc_pct": 6.96
   },
   "daily": [
     {
@@ -529,22 +529,35 @@
       "sma200": 330.75,
       "rsi14": 40.5,
       "rsi5": 42.25
+    },
+    {
+      "date": "2026-10-08",
+      "open": 332.0,
+      "high": 338.0,
+      "low": 328.0,
+      "close": 338.0,
+      "volume": 4000.0,
+      "sma25": 345.72,
+      "sma75": 347.49,
+      "sma200": 330.87,
+      "rsi14": 40.5,
+      "rsi5": 42.25
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-07",
-    "monthly_rsi14": 37.56,
-    "monthly_rsi_ma5": 37.29,
-    "spread": 0.26,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-08",
+    "monthly_rsi14": 37.07,
+    "monthly_rsi_ma5": 37.2,
+    "spread": -0.12,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-08T18:20:44.178542+00:00"
+  "provisional_generated_at": "2026-10-09T17:54:51.766891+00:00"
 }

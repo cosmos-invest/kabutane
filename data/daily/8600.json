@@ -2,12 +2,12 @@
   "code": "8600",
   "ticker": "8600.T",
   "name": "トモニホールディングス",
-  "generated_at": "2026-10-08T18:19:46.494889+00:00",
-  "price_date": "2026-10-07",
+  "generated_at": "2026-10-09T17:53:43.581524+00:00",
+  "price_date": "2026-10-08",
   "record": {
-    "current_price": 1194.0,
-    "change_from_signal_month_pct": 19.76,
-    "return_since_gc_pct": 19.76
+    "current_price": 1146.0,
+    "change_from_signal_month_pct": 14.94,
+    "return_since_gc_pct": 14.94
   },
   "daily": [
     {
@@ -529,6 +529,19 @@
       "sma200": 935.52,
       "rsi14": 70.52,
       "rsi5": 75.22
+    },
+    {
+      "date": "2026-10-08",
+      "open": 1179.0,
+      "high": 1184.0,
+      "low": 1145.0,
+      "close": 1146.0,
+      "volume": 571200.0,
+      "sma25": 1164.72,
+      "sma75": 1047.56,
+      "sma200": 937.51,
+      "rsi14": 70.52,
+      "rsi5": 75.22
     }
   ],
   "corporate_events": [
@@ -541,17 +554,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-07",
-    "monthly_rsi14": 79.59,
-    "monthly_rsi_ma5": 76.57,
-    "spread": 3.01,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-08",
+    "monthly_rsi14": 74.76,
+    "monthly_rsi_ma5": 75.61,
+    "spread": -0.85,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-08T18:20:44.178542+00:00"
+  "provisional_generated_at": "2026-10-09T17:54:51.766891+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "5990",
   "ticker": "5990.T",
   "name": "スーパーツール",
-  "generated_at": "2026-10-08T18:19:46.494889+00:00",
-  "price_date": "2026-10-07",
+  "generated_at": "2026-10-09T17:53:43.581524+00:00",
+  "price_date": "2026-10-08",
   "record": {
-    "current_price": 1926.0,
-    "change_from_signal_month_pct": -3.02,
-    "return_since_gc_pct": -3.02
+    "current_price": 1964.0,
+    "change_from_signal_month_pct": -1.11,
+    "return_since_gc_pct": -1.11
   },
   "daily": [
     {
@@ -529,6 +529,19 @@
       "sma200": 1972.0,
       "rsi14": 48.04,
       "rsi5": 49.05
+    },
+    {
+      "date": "2026-10-08",
+      "open": 1924.0,
+      "high": 1964.0,
+      "low": 1912.0,
+      "close": 1964.0,
+      "volume": 1600.0,
+      "sma25": 1944.84,
+      "sma75": 1961.8,
+      "sma200": 1972.11,
+      "rsi14": 48.04,
+      "rsi5": 49.05
     }
   ],
   "corporate_events": [
@@ -541,17 +554,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-07",
-    "monthly_rsi14": 44.87,
-    "monthly_rsi_ma5": 47.8,
-    "spread": -2.93,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-08",
+    "monthly_rsi14": 49.44,
+    "monthly_rsi_ma5": 48.71,
+    "spread": 0.73,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-08T18:20:44.178542+00:00"
+  "provisional_generated_at": "2026-10-09T17:54:51.766891+00:00"
 }

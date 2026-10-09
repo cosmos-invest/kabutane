@@ -2,12 +2,12 @@
   "code": "4406",
   "ticker": "4406.T",
   "name": "新日本理化",
-  "generated_at": "2026-10-08T18:19:46.494889+00:00",
-  "price_date": "2026-10-07",
+  "generated_at": "2026-10-09T17:53:43.581524+00:00",
+  "price_date": "2026-10-08",
   "record": {
-    "current_price": 232.0,
-    "change_from_signal_month_pct": 14.85,
-    "return_since_gc_pct": 14.85
+    "current_price": 226.0,
+    "change_from_signal_month_pct": 11.88,
+    "return_since_gc_pct": 11.88
   },
   "daily": [
     {
@@ -529,22 +529,35 @@
       "sma200": 219.57,
       "rsi14": 45.37,
       "rsi5": 47.04
+    },
+    {
+      "date": "2026-10-08",
+      "open": 231.0,
+      "high": 231.0,
+      "low": 225.0,
+      "close": 226.0,
+      "volume": 266900.0,
+      "sma25": 238.44,
+      "sma75": 224.2,
+      "sma200": 219.59,
+      "rsi14": 45.37,
+      "rsi5": 47.04
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-07",
-    "monthly_rsi14": 54.07,
-    "monthly_rsi_ma5": 53.32,
-    "spread": 0.75,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-08",
+    "monthly_rsi14": 52.21,
+    "monthly_rsi_ma5": 52.95,
+    "spread": -0.74,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-08T18:20:44.178542+00:00"
+  "provisional_generated_at": "2026-10-09T17:54:51.766891+00:00"
 }

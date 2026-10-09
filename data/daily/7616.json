@@ -2,12 +2,12 @@
   "code": "7616",
   "ticker": "7616.T",
   "name": "コロワイド",
-  "generated_at": "2026-10-08T18:19:46.494889+00:00",
-  "price_date": "2026-10-07",
+  "generated_at": "2026-10-09T17:53:43.581524+00:00",
+  "price_date": "2026-10-08",
   "record": {
-    "current_price": 2017.0,
-    "change_from_signal_month_pct": -1.97,
-    "return_since_gc_pct": 9.47
+    "current_price": 2009.5,
+    "change_from_signal_month_pct": -2.33,
+    "return_since_gc_pct": 9.06
   },
   "daily": [
     {
@@ -529,22 +529,35 @@
       "sma200": 1888.1,
       "rsi14": 50.65,
       "rsi5": 59.87
+    },
+    {
+      "date": "2026-10-08",
+      "open": 2006.0,
+      "high": 2031.5,
+      "low": 1997.0,
+      "close": 2009.5,
+      "volume": 426900.0,
+      "sma25": 2034.7,
+      "sma75": 1987.24,
+      "sma200": 1889.6,
+      "rsi14": 50.65,
+      "rsi5": 59.87
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-07",
-    "monthly_rsi14": 51.83,
-    "monthly_rsi_ma5": 51.77,
-    "spread": 0.06,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-08",
+    "monthly_rsi14": 51.5,
+    "monthly_rsi_ma5": 51.7,
+    "spread": -0.2,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-08T18:20:44.178542+00:00"
+  "provisional_generated_at": "2026-10-09T17:54:51.766891+00:00"
 }

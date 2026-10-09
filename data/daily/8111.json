@@ -2,12 +2,12 @@
   "code": "8111",
   "ticker": "8111.T",
   "name": "ゴールドウイン",
-  "generated_at": "2026-10-08T18:19:46.494889+00:00",
-  "price_date": "2026-10-07",
+  "generated_at": "2026-10-09T17:53:43.581524+00:00",
+  "price_date": "2026-10-08",
   "record": {
-    "current_price": 2142.5,
-    "change_from_signal_month_pct": -6.5,
-    "return_since_gc_pct": -6.5
+    "current_price": 2152.5,
+    "change_from_signal_month_pct": -6.07,
+    "return_since_gc_pct": -6.07
   },
   "daily": [
     {
@@ -529,6 +529,19 @@
       "sma200": 2304.68,
       "rsi14": 40.23,
       "rsi5": 43.07
+    },
+    {
+      "date": "2026-10-08",
+      "open": 2142.5,
+      "high": 2152.5,
+      "low": 2114.0,
+      "close": 2152.5,
+      "volume": 385300.0,
+      "sma25": 2123.38,
+      "sma75": 2187.77,
+      "sma200": 2300.97,
+      "rsi14": 40.23,
+      "rsi5": 43.07
     }
   ],
   "corporate_events": [
@@ -541,17 +554,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-07",
-    "monthly_rsi14": 39.36,
-    "monthly_rsi_ma5": 39.53,
-    "spread": -0.17,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-08",
+    "monthly_rsi14": 39.65,
+    "monthly_rsi_ma5": 39.58,
+    "spread": 0.06,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-08T18:20:44.178542+00:00"
+  "provisional_generated_at": "2026-10-09T17:54:51.766891+00:00"
 }

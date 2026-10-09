@@ -2,12 +2,12 @@
   "code": "5195",
   "ticker": "5195.T",
   "name": "バンドー化学",
-  "generated_at": "2026-10-08T18:19:46.494889+00:00",
-  "price_date": "2026-10-07",
+  "generated_at": "2026-10-09T17:53:43.581524+00:00",
+  "price_date": "2026-10-08",
   "record": {
-    "current_price": 2474.0,
-    "change_from_signal_month_pct": 2.1,
-    "return_since_gc_pct": 2.1
+    "current_price": 2442.0,
+    "change_from_signal_month_pct": 0.78,
+    "return_since_gc_pct": 0.78
   },
   "daily": [
     {
@@ -529,6 +529,19 @@
       "sma200": 2223.47,
       "rsi14": 60.06,
       "rsi5": 65.43
+    },
+    {
+      "date": "2026-10-08",
+      "open": 2491.0,
+      "high": 2491.0,
+      "low": 2417.0,
+      "close": 2442.0,
+      "volume": 48800.0,
+      "sma25": 2462.68,
+      "sma75": 2381.97,
+      "sma200": 2225.53,
+      "rsi14": 60.06,
+      "rsi5": 65.43
     }
   ],
   "corporate_events": [
@@ -541,17 +554,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-07",
-    "monthly_rsi14": 65.28,
-    "monthly_rsi_ma5": 64.5,
-    "spread": 0.77,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-08",
+    "monthly_rsi14": 63.93,
+    "monthly_rsi_ma5": 64.23,
+    "spread": -0.31,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-08T18:20:44.178542+00:00"
+  "provisional_generated_at": "2026-10-09T17:54:51.766891+00:00"
 }
