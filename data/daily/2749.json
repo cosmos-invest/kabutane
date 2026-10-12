@@ -2,12 +2,12 @@
   "code": "2749",
   "ticker": "2749.T",
   "name": "ＪＰホールディングス",
-  "generated_at": "2026-10-09T17:53:43.581524+00:00",
-  "price_date": "2026-10-08",
+  "generated_at": "2026-10-12T20:44:59.179491+00:00",
+  "price_date": "2026-10-09",
   "record": {
-    "current_price": 636.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 641.0,
+    "change_from_signal_month_pct": 0.79,
+    "return_since_gc_pct": 0.79
   },
   "daily": [
     {
@@ -542,22 +542,35 @@
       "sma200": 666.92,
       "rsi14": 52.3,
       "rsi5": 52.6
+    },
+    {
+      "date": "2026-10-09",
+      "open": 639.0,
+      "high": 646.0,
+      "low": 637.0,
+      "close": 641.0,
+      "volume": 164700.0,
+      "sma25": 654.2,
+      "sma75": 634.27,
+      "sma200": 666.87,
+      "rsi14": 52.3,
+      "rsi5": 52.6
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-08",
-    "monthly_rsi14": 53.68,
-    "monthly_rsi_ma5": 54.01,
-    "spread": -0.33,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-09",
+    "monthly_rsi14": 54.14,
+    "monthly_rsi_ma5": 54.1,
+    "spread": 0.04,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-09T17:54:51.766891+00:00"
+  "provisional_generated_at": "2026-10-12T20:46:05.581501+00:00"
 }

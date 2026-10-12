@@ -2,12 +2,12 @@
   "code": "9417",
   "ticker": "9417.T",
   "name": "スマートバリュー",
-  "generated_at": "2026-10-09T17:53:43.581524+00:00",
-  "price_date": "2026-10-08",
+  "generated_at": "2026-10-12T20:44:59.179491+00:00",
+  "price_date": "2026-10-09",
   "record": {
-    "current_price": 332.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": -0.9
+    "current_price": 339.0,
+    "change_from_signal_month_pct": 2.11,
+    "return_since_gc_pct": 1.19
   },
   "daily": [
     {
@@ -542,22 +542,35 @@
       "sma200": 345.86,
       "rsi14": 40.03,
       "rsi5": 42.52
+    },
+    {
+      "date": "2026-10-09",
+      "open": 330.0,
+      "high": 340.0,
+      "low": 330.0,
+      "close": 339.0,
+      "volume": 11800.0,
+      "sma25": 334.92,
+      "sma75": 333.0,
+      "sma200": 345.4,
+      "rsi14": 40.03,
+      "rsi5": 42.52
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-08",
-    "monthly_rsi14": 43.96,
-    "monthly_rsi_ma5": 44.33,
-    "spread": -0.37,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-09",
+    "monthly_rsi14": 45.17,
+    "monthly_rsi_ma5": 44.57,
+    "spread": 0.6,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-09T17:54:51.766891+00:00"
+  "provisional_generated_at": "2026-10-12T20:46:05.581501+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "137A",
   "ticker": "137A.T",
   "name": "Ｃｏｃｏｌｉｖｅ",
-  "generated_at": "2026-10-09T17:53:43.581524+00:00",
-  "price_date": "2026-10-08",
+  "generated_at": "2026-10-12T20:44:59.179491+00:00",
+  "price_date": "2026-10-09",
   "record": {
-    "current_price": 702.0,
-    "change_from_signal_month_pct": 1.15,
-    "return_since_gc_pct": -7.63
+    "current_price": 660.0,
+    "change_from_signal_month_pct": -4.9,
+    "return_since_gc_pct": -13.16
   },
   "daily": [
     {
@@ -542,22 +542,35 @@
       "sma200": 748.31,
       "rsi14": 20.34,
       "rsi5": 23.7
+    },
+    {
+      "date": "2026-10-09",
+      "open": 711.0,
+      "high": 718.0,
+      "low": 660.0,
+      "close": 660.0,
+      "volume": 40200.0,
+      "sma25": 705.2,
+      "sma75": 721.37,
+      "sma200": 746.3,
+      "rsi14": 20.34,
+      "rsi5": 23.7
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-08",
-    "monthly_rsi14": 24.25,
-    "monthly_rsi_ma5": 24.18,
-    "spread": 0.08,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-09",
+    "monthly_rsi14": 23.51,
+    "monthly_rsi_ma5": 24.03,
+    "spread": -0.52,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-09T17:54:51.766891+00:00"
+  "provisional_generated_at": "2026-10-12T20:46:05.581501+00:00"
 }

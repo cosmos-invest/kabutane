@@ -2,12 +2,12 @@
   "code": "1867",
   "ticker": "1867.T",
   "name": "植木組",
-  "generated_at": "2026-10-09T17:53:43.581524+00:00",
-  "price_date": "2026-10-08",
+  "generated_at": "2026-10-12T20:44:59.179491+00:00",
+  "price_date": "2026-10-09",
   "record": {
-    "current_price": 2698.0,
-    "change_from_signal_month_pct": -0.85,
-    "return_since_gc_pct": -0.85
+    "current_price": 2682.0,
+    "change_from_signal_month_pct": -1.43,
+    "return_since_gc_pct": -1.43
   },
   "daily": [
     {
@@ -542,22 +542,35 @@
       "sma200": 2736.14,
       "rsi14": 59.69,
       "rsi5": 61.75
+    },
+    {
+      "date": "2026-10-09",
+      "open": 2681.0,
+      "high": 2732.0,
+      "low": 2681.0,
+      "close": 2682.0,
+      "volume": 3600.0,
+      "sma25": 2713.64,
+      "sma75": 2676.04,
+      "sma200": 2736.52,
+      "rsi14": 59.69,
+      "rsi5": 61.75
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-08",
-    "monthly_rsi14": 60.76,
-    "monthly_rsi_ma5": 60.35,
-    "spread": 0.4,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-09",
+    "monthly_rsi14": 60.22,
+    "monthly_rsi_ma5": 60.25,
+    "spread": -0.02,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-09T17:54:51.766891+00:00"
+  "provisional_generated_at": "2026-10-12T20:46:05.581501+00:00"
 }

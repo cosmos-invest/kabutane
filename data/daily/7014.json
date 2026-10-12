@@ -2,12 +2,12 @@
   "code": "7014",
   "ticker": "7014.T",
   "name": "名村造船所",
-  "generated_at": "2026-10-09T17:53:43.581524+00:00",
-  "price_date": "2026-10-08",
+  "generated_at": "2026-10-12T20:44:59.179491+00:00",
+  "price_date": "2026-10-09",
   "record": {
-    "current_price": 4435.0,
-    "change_from_signal_month_pct": 2.19,
-    "return_since_gc_pct": 2.19
+    "current_price": 4635.0,
+    "change_from_signal_month_pct": 6.8,
+    "return_since_gc_pct": 6.8
   },
   "daily": [
     {
@@ -542,6 +542,19 @@
       "sma200": 4307.95,
       "rsi14": 56.7,
       "rsi5": 58.68
+    },
+    {
+      "date": "2026-10-09",
+      "open": 4400.0,
+      "high": 4640.0,
+      "low": 4390.0,
+      "close": 4635.0,
+      "volume": 1292400.0,
+      "sma25": 4754.2,
+      "sma75": 4354.6,
+      "sma200": 4311.1,
+      "rsi14": 56.7,
+      "rsi5": 58.68
     }
   ],
   "corporate_events": [
@@ -554,17 +567,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-08",
-    "monthly_rsi14": 58.08,
-    "monthly_rsi_ma5": 58.78,
-    "spread": -0.7,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-09",
+    "monthly_rsi14": 59.85,
+    "monthly_rsi_ma5": 59.13,
+    "spread": 0.72,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-09T17:54:51.766891+00:00"
+  "provisional_generated_at": "2026-10-12T20:46:05.581501+00:00"
 }

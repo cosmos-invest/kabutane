@@ -2,12 +2,12 @@
   "code": "3393",
   "ticker": "3393.T",
   "name": "スターティアホールディングス",
-  "generated_at": "2026-10-09T17:53:43.581524+00:00",
-  "price_date": "2026-10-08",
+  "generated_at": "2026-10-12T20:44:59.179491+00:00",
+  "price_date": "2026-10-09",
   "record": {
-    "current_price": 3075.0,
-    "change_from_signal_month_pct": -0.16,
-    "return_since_gc_pct": 3.12
+    "current_price": 3165.0,
+    "change_from_signal_month_pct": 2.76,
+    "return_since_gc_pct": 6.14
   },
   "daily": [
     {
@@ -542,6 +542,19 @@
       "sma200": 2924.97,
       "rsi14": 61.07,
       "rsi5": 63.96
+    },
+    {
+      "date": "2026-10-09",
+      "open": 3080.0,
+      "high": 3170.0,
+      "low": 3070.0,
+      "close": 3165.0,
+      "volume": 34000.0,
+      "sma25": 3102.32,
+      "sma75": 3063.6,
+      "sma200": 2927.66,
+      "rsi14": 61.07,
+      "rsi5": 63.96
     }
   ],
   "corporate_events": [
@@ -554,17 +567,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-08",
-    "monthly_rsi14": 61.5,
-    "monthly_rsi_ma5": 62.54,
-    "spread": -1.05,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-09",
+    "monthly_rsi14": 64.33,
+    "monthly_rsi_ma5": 63.11,
+    "spread": 1.22,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-09T17:54:51.766891+00:00"
+  "provisional_generated_at": "2026-10-12T20:46:05.581501+00:00"
 }

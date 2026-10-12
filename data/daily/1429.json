@@ -2,12 +2,12 @@
   "code": "1429",
   "ticker": "1429.T",
   "name": "日本アクア",
-  "generated_at": "2026-10-09T17:53:43.581524+00:00",
-  "price_date": "2026-10-08",
+  "generated_at": "2026-10-12T20:44:59.179491+00:00",
+  "price_date": "2026-10-09",
   "record": {
-    "current_price": 771.0,
-    "change_from_signal_month_pct": 2.39,
-    "return_since_gc_pct": 3.77
+    "current_price": 776.0,
+    "change_from_signal_month_pct": 3.05,
+    "return_since_gc_pct": 4.44
   },
   "daily": [
     {
@@ -542,22 +542,35 @@
       "sma200": 779.6,
       "rsi14": 40.67,
       "rsi5": 44.25
+    },
+    {
+      "date": "2026-10-09",
+      "open": 771.0,
+      "high": 780.0,
+      "low": 770.0,
+      "close": 776.0,
+      "volume": 33900.0,
+      "sma25": 795.84,
+      "sma75": 772.69,
+      "sma200": 779.18,
+      "rsi14": 40.67,
+      "rsi5": 44.25
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-08",
-    "monthly_rsi14": 44.04,
-    "monthly_rsi_ma5": 44.15,
-    "spread": -0.11,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-09",
+    "monthly_rsi14": 44.46,
+    "monthly_rsi_ma5": 44.24,
+    "spread": 0.22,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-09T17:54:51.766891+00:00"
+  "provisional_generated_at": "2026-10-12T20:46:05.581501+00:00"
 }

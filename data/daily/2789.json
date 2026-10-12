@@ -2,12 +2,12 @@
   "code": "2789",
   "ticker": "2789.T",
   "name": "カルラ",
-  "generated_at": "2026-10-09T17:53:43.581524+00:00",
-  "price_date": "2026-10-08",
+  "generated_at": "2026-10-12T20:44:59.179491+00:00",
+  "price_date": "2026-10-09",
   "record": {
-    "current_price": 477.0,
-    "change_from_signal_month_pct": 0.85,
-    "return_since_gc_pct": 3.02
+    "current_price": 475.0,
+    "change_from_signal_month_pct": 0.42,
+    "return_since_gc_pct": 2.59
   },
   "daily": [
     {
@@ -542,15 +542,28 @@
       "sma200": 472.54,
       "rsi14": 50.27,
       "rsi5": 54.23
+    },
+    {
+      "date": "2026-10-09",
+      "open": 477.0,
+      "high": 477.0,
+      "low": 475.0,
+      "close": 475.0,
+      "volume": 3900.0,
+      "sma25": 478.96,
+      "sma75": 473.36,
+      "sma200": 472.48,
+      "rsi14": 50.27,
+      "rsi5": 54.23
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-08",
-    "monthly_rsi14": 54.2,
-    "monthly_rsi_ma5": 54.66,
-    "spread": -0.46,
+    "price_date": "2026-10-09",
+    "monthly_rsi14": 53.5,
+    "monthly_rsi_ma5": 54.52,
+    "spread": -1.03,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -559,5 +572,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-09T17:54:51.766891+00:00"
+  "provisional_generated_at": "2026-10-12T20:46:05.581501+00:00"
 }

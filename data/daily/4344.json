@@ -2,12 +2,12 @@
   "code": "4344",
   "ticker": "4344.T",
   "name": "ソースネクスト",
-  "generated_at": "2026-10-09T17:53:43.581524+00:00",
-  "price_date": "2026-10-08",
+  "generated_at": "2026-10-12T20:44:59.179491+00:00",
+  "price_date": "2026-10-09",
   "record": {
-    "current_price": 101.0,
-    "change_from_signal_month_pct": -9.01,
-    "return_since_gc_pct": -9.01
+    "current_price": 107.0,
+    "change_from_signal_month_pct": -3.6,
+    "return_since_gc_pct": -3.6
   },
   "daily": [
     {
@@ -542,22 +542,35 @@
       "sma200": 122.95,
       "rsi14": 34.62,
       "rsi5": 34.91
+    },
+    {
+      "date": "2026-10-09",
+      "open": 101.0,
+      "high": 109.0,
+      "low": 100.0,
+      "close": 107.0,
+      "volume": 2924500.0,
+      "sma25": 106.68,
+      "sma75": 108.27,
+      "sma200": 122.7,
+      "rsi14": 34.62,
+      "rsi5": 34.91
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-08",
-    "monthly_rsi14": 34.87,
-    "monthly_rsi_ma5": 35.64,
-    "spread": -0.77,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-09",
+    "monthly_rsi14": 36.66,
+    "monthly_rsi_ma5": 35.99,
+    "spread": 0.67,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-09T17:54:51.766891+00:00"
+  "provisional_generated_at": "2026-10-12T20:46:05.581501+00:00"
 }

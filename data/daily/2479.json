@@ -2,12 +2,12 @@
   "code": "2479",
   "ticker": "2479.T",
   "name": "ジェイテック",
-  "generated_at": "2026-10-09T17:53:43.581524+00:00",
-  "price_date": "2026-10-08",
+  "generated_at": "2026-10-12T20:44:59.179491+00:00",
+  "price_date": "2026-10-09",
   "record": {
-    "current_price": 249.0,
-    "change_from_signal_month_pct": 2.47,
-    "return_since_gc_pct": 2.47
+    "current_price": 246.0,
+    "change_from_signal_month_pct": 1.23,
+    "return_since_gc_pct": 1.23
   },
   "daily": [
     {
@@ -542,22 +542,35 @@
       "sma200": 243.53,
       "rsi14": 46.74,
       "rsi5": 49.68
+    },
+    {
+      "date": "2026-10-09",
+      "open": 248.0,
+      "high": 249.0,
+      "low": 242.0,
+      "close": 246.0,
+      "volume": 83100.0,
+      "sma25": 260.96,
+      "sma75": 245.99,
+      "sma200": 243.59,
+      "rsi14": 46.74,
+      "rsi5": 49.68
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-08",
-    "monthly_rsi14": 50.28,
-    "monthly_rsi_ma5": 50.1,
-    "spread": 0.18,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-09",
+    "monthly_rsi14": 49.24,
+    "monthly_rsi_ma5": 49.9,
+    "spread": -0.65,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-09T17:54:51.766891+00:00"
+  "provisional_generated_at": "2026-10-12T20:46:05.581501+00:00"
 }

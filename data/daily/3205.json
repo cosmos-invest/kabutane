@@ -2,12 +2,12 @@
   "code": "3205",
   "ticker": "3205.T",
   "name": "ダイドーリミテッド",
-  "generated_at": "2026-10-09T17:53:43.581524+00:00",
-  "price_date": "2026-10-08",
+  "generated_at": "2026-10-12T20:44:59.179491+00:00",
+  "price_date": "2026-10-09",
   "record": {
-    "current_price": 738.0,
-    "change_from_signal_month_pct": 0.82,
-    "return_since_gc_pct": 0.82
+    "current_price": 740.0,
+    "change_from_signal_month_pct": 1.09,
+    "return_since_gc_pct": 1.09
   },
   "daily": [
     {
@@ -542,22 +542,35 @@
       "sma200": 878.59,
       "rsi14": 44.35,
       "rsi5": 44.89
+    },
+    {
+      "date": "2026-10-09",
+      "open": 736.0,
+      "high": 743.0,
+      "low": 735.0,
+      "close": 740.0,
+      "volume": 54100.0,
+      "sma25": 735.8,
+      "sma75": 736.47,
+      "sma200": 876.65,
+      "rsi14": 44.35,
+      "rsi5": 44.89
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-08",
-    "monthly_rsi14": 46.9,
-    "monthly_rsi_ma5": 46.94,
-    "spread": -0.04,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-09",
+    "monthly_rsi14": 46.98,
+    "monthly_rsi_ma5": 46.95,
+    "spread": 0.02,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-09T17:54:51.766891+00:00"
+  "provisional_generated_at": "2026-10-12T20:46:05.581501+00:00"
 }

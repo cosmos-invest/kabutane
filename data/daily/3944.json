@@ -2,12 +2,12 @@
   "code": "3944",
   "ticker": "3944.T",
   "name": "古林紙工",
-  "generated_at": "2026-10-09T17:53:43.581524+00:00",
-  "price_date": "2026-10-08",
+  "generated_at": "2026-10-12T20:44:59.179491+00:00",
+  "price_date": "2026-10-09",
   "record": {
-    "current_price": 3100.0,
-    "change_from_signal_month_pct": 14.39,
-    "return_since_gc_pct": 14.39
+    "current_price": 2960.0,
+    "change_from_signal_month_pct": 9.23,
+    "return_since_gc_pct": 9.23
   },
   "daily": [
     {
@@ -542,22 +542,35 @@
       "sma200": 2607.84,
       "rsi14": 58.84,
       "rsi5": 66.17
+    },
+    {
+      "date": "2026-10-09",
+      "open": 2960.0,
+      "high": 2960.0,
+      "low": 2960.0,
+      "close": 2960.0,
+      "volume": 300.0,
+      "sma25": 3152.2,
+      "sma75": 2866.67,
+      "sma200": 2610.95,
+      "rsi14": 58.84,
+      "rsi5": 66.17
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-08",
-    "monthly_rsi14": 70.44,
-    "monthly_rsi_ma5": 66.61,
-    "spread": 3.83,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-09",
+    "monthly_rsi14": 64.87,
+    "monthly_rsi_ma5": 65.5,
+    "spread": -0.62,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-09T17:54:51.766891+00:00"
+  "provisional_generated_at": "2026-10-12T20:46:05.581501+00:00"
 }

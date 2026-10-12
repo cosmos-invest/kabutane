@@ -2,12 +2,12 @@
   "code": "4176",
   "ticker": "4176.T",
   "name": "ココナラ",
-  "generated_at": "2026-10-09T17:53:43.581524+00:00",
-  "price_date": "2026-10-08",
+  "generated_at": "2026-10-12T20:44:59.179491+00:00",
+  "price_date": "2026-10-09",
   "record": {
-    "current_price": 268.0,
-    "change_from_signal_month_pct": 0.75,
-    "return_since_gc_pct": 0.75
+    "current_price": 273.0,
+    "change_from_signal_month_pct": 2.63,
+    "return_since_gc_pct": 2.63
   },
   "daily": [
     {
@@ -542,22 +542,35 @@
       "sma200": 285.67,
       "rsi14": 38.08,
       "rsi5": 38.57
+    },
+    {
+      "date": "2026-10-09",
+      "open": 266.0,
+      "high": 274.0,
+      "low": 265.0,
+      "close": 273.0,
+      "volume": 172600.0,
+      "sma25": 274.88,
+      "sma75": 270.07,
+      "sma200": 285.43,
+      "rsi14": 38.08,
+      "rsi5": 38.57
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-08",
-    "monthly_rsi14": 43.91,
-    "monthly_rsi_ma5": 44.17,
-    "spread": -0.26,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-09",
+    "monthly_rsi14": 44.44,
+    "monthly_rsi_ma5": 44.27,
+    "spread": 0.17,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-09T17:54:51.766891+00:00"
+  "provisional_generated_at": "2026-10-12T20:46:05.581501+00:00"
 }

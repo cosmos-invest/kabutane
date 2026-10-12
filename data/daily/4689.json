@@ -2,12 +2,12 @@
   "code": "4689",
   "ticker": "4689.T",
   "name": "ＬＩＮＥヤフー",
-  "generated_at": "2026-10-09T17:53:43.581524+00:00",
-  "price_date": "2026-10-08",
+  "generated_at": "2026-10-12T20:44:59.179491+00:00",
+  "price_date": "2026-10-09",
   "record": {
-    "current_price": 493.0,
-    "change_from_signal_month_pct": 10.34,
-    "return_since_gc_pct": 19.57
+    "current_price": 511.3,
+    "change_from_signal_month_pct": 14.44,
+    "return_since_gc_pct": 24.01
   },
   "daily": [
     {
@@ -542,22 +542,35 @@
       "sma200": 435.51,
       "rsi14": 46.46,
       "rsi5": 51.53
+    },
+    {
+      "date": "2026-10-09",
+      "open": 500.6,
+      "high": 513.0,
+      "low": 497.6,
+      "close": 511.3,
+      "volume": 20255200.0,
+      "sma25": 522.72,
+      "sma75": 486.13,
+      "sma200": 436.03,
+      "rsi14": 46.46,
+      "rsi5": 51.53
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-08",
-    "monthly_rsi14": 54.94,
-    "monthly_rsi_ma5": 55.45,
-    "spread": -0.52,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-09",
+    "monthly_rsi14": 57.67,
+    "monthly_rsi_ma5": 56.0,
+    "spread": 1.67,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-09T17:54:51.766891+00:00"
+  "provisional_generated_at": "2026-10-12T20:46:05.581501+00:00"
 }
