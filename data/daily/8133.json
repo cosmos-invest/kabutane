@@ -2,12 +2,12 @@
   "code": "8133",
   "ticker": "8133.T",
   "name": "伊藤忠エネクス",
-  "generated_at": "2026-10-12T20:44:59.179491+00:00",
-  "price_date": "2026-10-09",
+  "generated_at": "2026-10-13T18:46:49.492043+00:00",
+  "price_date": "2026-10-13",
   "record": {
-    "current_price": 2189.0,
-    "change_from_signal_month_pct": 0.88,
-    "return_since_gc_pct": 0.88
+    "current_price": 2278.0,
+    "change_from_signal_month_pct": 4.98,
+    "return_since_gc_pct": 4.98
   },
   "daily": [
     {
@@ -555,6 +555,19 @@
       "sma200": 2042.72,
       "rsi14": 62.73,
       "rsi5": 68.25
+    },
+    {
+      "date": "2026-10-13",
+      "open": 2210.0,
+      "high": 2283.0,
+      "low": 2200.0,
+      "close": 2278.0,
+      "volume": 142200.0,
+      "sma25": 2284.8,
+      "sma75": 2164.59,
+      "sma200": 2044.94,
+      "rsi14": 62.73,
+      "rsi5": 68.25
     }
   ],
   "corporate_events": [
@@ -567,17 +580,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-09",
-    "monthly_rsi14": 65.07,
-    "monthly_rsi_ma5": 66.76,
-    "spread": -1.69,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-13",
+    "monthly_rsi14": 70.35,
+    "monthly_rsi_ma5": 67.81,
+    "spread": 2.54,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-12T20:46:05.581501+00:00"
+  "provisional_generated_at": "2026-10-13T18:47:29.143575+00:00"
 }

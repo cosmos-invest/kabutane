@@ -2,12 +2,12 @@
   "code": "5192",
   "ticker": "5192.T",
   "name": "三ツ星ベルト",
-  "generated_at": "2026-10-12T20:44:59.179491+00:00",
-  "price_date": "2026-10-09",
+  "generated_at": "2026-10-13T18:46:49.492043+00:00",
+  "price_date": "2026-10-13",
   "record": {
-    "current_price": 4110.0,
-    "change_from_signal_month_pct": 0.61,
-    "return_since_gc_pct": 0.61
+    "current_price": 4210.0,
+    "change_from_signal_month_pct": 3.06,
+    "return_since_gc_pct": 3.06
   },
   "daily": [
     {
@@ -555,6 +555,19 @@
       "sma200": 4080.07,
       "rsi14": 51.92,
       "rsi5": 55.06
+    },
+    {
+      "date": "2026-10-13",
+      "open": 4135.0,
+      "high": 4210.0,
+      "low": 4125.0,
+      "close": 4210.0,
+      "volume": 56600.0,
+      "sma25": 4235.2,
+      "sma75": 4188.8,
+      "sma200": 4081.85,
+      "rsi14": 51.92,
+      "rsi5": 55.06
     }
   ],
   "corporate_events": [
@@ -567,17 +580,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-09",
-    "monthly_rsi14": 50.0,
-    "monthly_rsi_ma5": 51.56,
-    "spread": -1.56,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-13",
+    "monthly_rsi14": 52.47,
+    "monthly_rsi_ma5": 52.06,
+    "spread": 0.41,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-12T20:46:05.581501+00:00"
+  "provisional_generated_at": "2026-10-13T18:47:29.143575+00:00"
 }

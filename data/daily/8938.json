@@ -2,12 +2,12 @@
   "code": "8938",
   "ticker": "8938.T",
   "name": "グローム・ホールディングス",
-  "generated_at": "2026-10-12T20:44:59.179491+00:00",
-  "price_date": "2026-10-09",
+  "generated_at": "2026-10-13T18:46:49.492043+00:00",
+  "price_date": "2026-10-13",
   "record": {
-    "current_price": 318.0,
-    "change_from_signal_month_pct": -4.5,
-    "return_since_gc_pct": -13.11
+    "current_price": 309.0,
+    "change_from_signal_month_pct": -7.21,
+    "return_since_gc_pct": -15.57
   },
   "daily": [
     {
@@ -555,22 +555,35 @@
       "sma200": 341.72,
       "rsi14": 32.36,
       "rsi5": 34.02
+    },
+    {
+      "date": "2026-10-13",
+      "open": 310.0,
+      "high": 318.0,
+      "low": 308.0,
+      "close": 309.0,
+      "volume": 2600.0,
+      "sma25": 324.56,
+      "sma75": 333.69,
+      "sma200": 341.38,
+      "rsi14": 32.36,
+      "rsi5": 34.02
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-09",
-    "monthly_rsi14": 26.52,
-    "monthly_rsi_ma5": 26.32,
-    "spread": 0.2,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-13",
+    "monthly_rsi14": 26.12,
+    "monthly_rsi_ma5": 26.24,
+    "spread": -0.12,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-12T20:46:05.581501+00:00"
+  "provisional_generated_at": "2026-10-13T18:47:29.143575+00:00"
 }

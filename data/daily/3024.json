@@ -2,12 +2,12 @@
   "code": "3024",
   "ticker": "3024.T",
   "name": "クリエイト",
-  "generated_at": "2026-10-12T20:44:59.179491+00:00",
-  "price_date": "2026-10-09",
+  "generated_at": "2026-10-13T18:46:49.492043+00:00",
+  "price_date": "2026-10-13",
   "record": {
-    "current_price": 1160.0,
-    "change_from_signal_month_pct": 3.94,
-    "return_since_gc_pct": 3.94
+    "current_price": 1168.0,
+    "change_from_signal_month_pct": 4.66,
+    "return_since_gc_pct": 4.66
   },
   "daily": [
     {
@@ -555,6 +555,19 @@
       "sma200": 1151.77,
       "rsi14": 52.36,
       "rsi5": 54.55
+    },
+    {
+      "date": "2026-10-13",
+      "open": 1150.0,
+      "high": 1170.0,
+      "low": 1148.0,
+      "close": 1168.0,
+      "volume": 600.0,
+      "sma25": 1184.68,
+      "sma75": 1137.15,
+      "sma200": 1151.64,
+      "rsi14": 52.36,
+      "rsi5": 54.55
     }
   ],
   "corporate_events": [
@@ -567,17 +580,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-09",
-    "monthly_rsi14": 56.21,
-    "monthly_rsi_ma5": 56.71,
-    "spread": -0.51,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-13",
+    "monthly_rsi14": 56.85,
+    "monthly_rsi_ma5": 56.84,
+    "spread": 0.01,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-12T20:46:05.581501+00:00"
+  "provisional_generated_at": "2026-10-13T18:47:29.143575+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "7811",
   "ticker": "7811.T",
   "name": "中本パックス",
-  "generated_at": "2026-10-12T20:44:59.179491+00:00",
-  "price_date": "2026-10-09",
+  "generated_at": "2026-10-13T18:46:49.492043+00:00",
+  "price_date": "2026-10-13",
   "record": {
-    "current_price": 2260.0,
-    "change_from_signal_month_pct": 19.2,
-    "return_since_gc_pct": 19.2
+    "current_price": 2345.0,
+    "change_from_signal_month_pct": 23.68,
+    "return_since_gc_pct": 23.68
   },
   "daily": [
     {
@@ -555,15 +555,28 @@
       "sma200": 1953.53,
       "rsi14": 55.13,
       "rsi5": 55.44
+    },
+    {
+      "date": "2026-10-13",
+      "open": 2240.0,
+      "high": 2345.0,
+      "low": 2220.0,
+      "close": 2345.0,
+      "volume": 57900.0,
+      "sma25": 2176.32,
+      "sma75": 2013.23,
+      "sma200": 1956.11,
+      "rsi14": 55.13,
+      "rsi5": 55.44
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-09",
-    "monthly_rsi14": 69.47,
-    "monthly_rsi_ma5": 62.55,
-    "spread": 6.91,
+    "price_date": "2026-10-13",
+    "monthly_rsi14": 73.4,
+    "monthly_rsi_ma5": 63.34,
+    "spread": 10.06,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -572,5 +585,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-12T20:46:05.581501+00:00"
+  "provisional_generated_at": "2026-10-13T18:47:29.143575+00:00"
 }

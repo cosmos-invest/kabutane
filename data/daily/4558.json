@@ -2,12 +2,12 @@
   "code": "4558",
   "ticker": "4558.T",
   "name": "中京医薬品",
-  "generated_at": "2026-10-12T20:44:59.179491+00:00",
-  "price_date": "2026-10-09",
+  "generated_at": "2026-10-13T18:46:49.492043+00:00",
+  "price_date": "2026-10-13",
   "record": {
-    "current_price": 200.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 199.0,
+    "change_from_signal_month_pct": -0.5,
+    "return_since_gc_pct": -0.5
   },
   "daily": [
     {
@@ -555,6 +555,19 @@
       "sma200": 201.32,
       "rsi14": 42.21,
       "rsi5": 43.26
+    },
+    {
+      "date": "2026-10-13",
+      "open": 200.0,
+      "high": 200.0,
+      "low": 199.0,
+      "close": 199.0,
+      "volume": 7100.0,
+      "sma25": 200.16,
+      "sma75": 199.77,
+      "sma200": 201.31,
+      "rsi14": 42.21,
+      "rsi5": 43.26
     }
   ],
   "corporate_events": [
@@ -567,17 +580,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-09",
-    "monthly_rsi14": 44.09,
-    "monthly_rsi_ma5": 43.76,
-    "spread": 0.32,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-13",
+    "monthly_rsi14": 43.21,
+    "monthly_rsi_ma5": 43.59,
+    "spread": -0.38,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-12T20:46:05.581501+00:00"
+  "provisional_generated_at": "2026-10-13T18:47:29.143575+00:00"
 }

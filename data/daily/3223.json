@@ -2,12 +2,12 @@
   "code": "3223",
   "ticker": "3223.T",
   "name": "エスエルディー",
-  "generated_at": "2026-10-12T20:44:59.179491+00:00",
-  "price_date": "2026-10-09",
+  "generated_at": "2026-10-13T18:46:49.492043+00:00",
+  "price_date": "2026-10-13",
   "record": {
-    "current_price": 997.0,
-    "change_from_signal_month_pct": 8.37,
-    "return_since_gc_pct": 6.52
+    "current_price": 1000.0,
+    "change_from_signal_month_pct": 8.7,
+    "return_since_gc_pct": 6.84
   },
   "daily": [
     {
@@ -555,15 +555,28 @@
       "sma200": 962.8,
       "rsi14": 48.23,
       "rsi5": 48.38
+    },
+    {
+      "date": "2026-10-13",
+      "open": 1002.0,
+      "high": 1003.0,
+      "low": 1000.0,
+      "close": 1000.0,
+      "volume": 2400.0,
+      "sma25": 980.12,
+      "sma75": 945.41,
+      "sma200": 962.42,
+      "rsi14": 48.23,
+      "rsi5": 48.38
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-09",
-    "monthly_rsi14": 51.4,
-    "monthly_rsi_ma5": 47.68,
-    "spread": 3.72,
+    "price_date": "2026-10-13",
+    "monthly_rsi14": 51.66,
+    "monthly_rsi_ma5": 47.73,
+    "spread": 3.93,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -572,5 +585,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-12T20:46:05.581501+00:00"
+  "provisional_generated_at": "2026-10-13T18:47:29.143575+00:00"
 }

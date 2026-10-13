@@ -2,12 +2,12 @@
   "code": "8338",
   "ticker": "8338.T",
   "name": "筑波銀行",
-  "generated_at": "2026-10-12T20:44:59.179491+00:00",
-  "price_date": "2026-10-09",
+  "generated_at": "2026-10-13T18:46:49.492043+00:00",
+  "price_date": "2026-10-13",
   "record": {
-    "current_price": 785.0,
-    "change_from_signal_month_pct": 26.21,
-    "return_since_gc_pct": 26.21
+    "current_price": 780.0,
+    "change_from_signal_month_pct": 25.4,
+    "return_since_gc_pct": 25.4
   },
   "daily": [
     {
@@ -555,22 +555,35 @@
       "sma200": 625.93,
       "rsi14": 70.32,
       "rsi5": 71.59
+    },
+    {
+      "date": "2026-10-13",
+      "open": 793.0,
+      "high": 803.0,
+      "low": 774.0,
+      "close": 780.0,
+      "volume": 1147900.0,
+      "sma25": 773.8,
+      "sma75": 703.41,
+      "sma200": 627.76,
+      "rsi14": 70.32,
+      "rsi5": 71.59
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-09",
-    "monthly_rsi14": 75.04,
-    "monthly_rsi_ma5": 74.97,
-    "spread": 0.07,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-13",
+    "monthly_rsi14": 74.46,
+    "monthly_rsi_ma5": 74.85,
+    "spread": -0.39,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-12T20:46:05.581501+00:00"
+  "provisional_generated_at": "2026-10-13T18:47:29.143575+00:00"
 }

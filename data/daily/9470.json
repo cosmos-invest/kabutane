@@ -2,12 +2,12 @@
   "code": "9470",
   "ticker": "9470.T",
   "name": "学研ホールディングス",
-  "generated_at": "2026-10-12T20:44:59.179491+00:00",
-  "price_date": "2026-10-09",
+  "generated_at": "2026-10-13T18:46:49.492043+00:00",
+  "price_date": "2026-10-13",
   "record": {
-    "current_price": 1007.0,
-    "change_from_signal_month_pct": -0.98,
-    "return_since_gc_pct": 1.0
+    "current_price": 1043.0,
+    "change_from_signal_month_pct": 2.56,
+    "return_since_gc_pct": 4.61
   },
   "daily": [
     {
@@ -555,6 +555,19 @@
       "sma200": 1028.25,
       "rsi14": 47.17,
       "rsi5": 50.28
+    },
+    {
+      "date": "2026-10-13",
+      "open": 1018.0,
+      "high": 1043.0,
+      "low": 1014.0,
+      "close": 1043.0,
+      "volume": 271500.0,
+      "sma25": 1039.24,
+      "sma75": 1027.23,
+      "sma200": 1027.74,
+      "rsi14": 47.17,
+      "rsi5": 50.28
     }
   ],
   "corporate_events": [
@@ -567,17 +580,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-09",
-    "monthly_rsi14": 51.23,
-    "monthly_rsi_ma5": 53.67,
-    "spread": -2.44,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-13",
+    "monthly_rsi14": 55.01,
+    "monthly_rsi_ma5": 54.42,
+    "spread": 0.59,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-12T20:46:05.581501+00:00"
+  "provisional_generated_at": "2026-10-13T18:47:29.143575+00:00"
 }

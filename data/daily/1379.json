@@ -2,12 +2,12 @@
   "code": "1379",
   "ticker": "1379.T",
   "name": "ホクト",
-  "generated_at": "2026-10-12T20:44:59.179491+00:00",
-  "price_date": "2026-10-09",
+  "generated_at": "2026-10-13T18:46:49.492043+00:00",
+  "price_date": "2026-10-13",
   "record": {
-    "current_price": 2013.0,
-    "change_from_signal_month_pct": 3.12,
-    "return_since_gc_pct": 3.12
+    "current_price": 2049.0,
+    "change_from_signal_month_pct": 4.97,
+    "return_since_gc_pct": 4.97
   },
   "daily": [
     {
@@ -555,6 +555,19 @@
       "sma200": 1964.02,
       "rsi14": 48.58,
       "rsi5": 54.36
+    },
+    {
+      "date": "2026-10-13",
+      "open": 2030.0,
+      "high": 2058.0,
+      "low": 2025.0,
+      "close": 2049.0,
+      "volume": 58000.0,
+      "sma25": 2071.92,
+      "sma75": 2000.21,
+      "sma200": 1964.14,
+      "rsi14": 48.58,
+      "rsi5": 54.36
     }
   ],
   "corporate_events": [
@@ -567,17 +580,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-09",
-    "monthly_rsi14": 55.08,
-    "monthly_rsi_ma5": 55.75,
-    "spread": -0.68,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-13",
+    "monthly_rsi14": 57.08,
+    "monthly_rsi_ma5": 56.15,
+    "spread": 0.92,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-12T20:46:05.581501+00:00"
+  "provisional_generated_at": "2026-10-13T18:47:29.143575+00:00"
 }

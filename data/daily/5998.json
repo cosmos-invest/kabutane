@@ -2,12 +2,12 @@
   "code": "5998",
   "ticker": "5998.T",
   "name": "アドバネクス",
-  "generated_at": "2026-10-12T20:44:59.179491+00:00",
-  "price_date": "2026-10-09",
+  "generated_at": "2026-10-13T18:46:49.492043+00:00",
+  "price_date": "2026-10-13",
   "record": {
-    "current_price": 2971.0,
-    "change_from_signal_month_pct": 12.37,
-    "return_since_gc_pct": 1.82
+    "current_price": 2868.0,
+    "change_from_signal_month_pct": 8.47,
+    "return_since_gc_pct": -1.71
   },
   "daily": [
     {
@@ -555,22 +555,35 @@
       "sma200": 2281.64,
       "rsi14": 63.66,
       "rsi5": 65.09
+    },
+    {
+      "date": "2026-10-13",
+      "open": 2941.0,
+      "high": 2983.0,
+      "low": 2868.0,
+      "close": 2868.0,
+      "volume": 8700.0,
+      "sma25": 2822.84,
+      "sma75": 2733.43,
+      "sma200": 2287.55,
+      "rsi14": 63.66,
+      "rsi5": 65.09
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-09",
-    "monthly_rsi14": 68.31,
-    "monthly_rsi_ma5": 67.62,
-    "spread": 0.69,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-13",
+    "monthly_rsi14": 66.2,
+    "monthly_rsi_ma5": 67.2,
+    "spread": -1.0,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-12T20:46:05.581501+00:00"
+  "provisional_generated_at": "2026-10-13T18:47:29.143575+00:00"
 }

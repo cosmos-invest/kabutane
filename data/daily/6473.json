@@ -2,12 +2,12 @@
   "code": "6473",
   "ticker": "6473.T",
   "name": "ジェイテクト",
-  "generated_at": "2026-10-12T20:44:59.179491+00:00",
-  "price_date": "2026-10-09",
+  "generated_at": "2026-10-13T18:46:49.492043+00:00",
+  "price_date": "2026-10-13",
   "record": {
-    "current_price": 2134.0,
-    "change_from_signal_month_pct": -3.7,
-    "return_since_gc_pct": -3.7
+    "current_price": 2154.0,
+    "change_from_signal_month_pct": -2.8,
+    "return_since_gc_pct": -2.8
   },
   "daily": [
     {
@@ -555,6 +555,19 @@
       "sma200": 1957.79,
       "rsi14": 63.63,
       "rsi5": 66.45
+    },
+    {
+      "date": "2026-10-13",
+      "open": 2127.0,
+      "high": 2172.0,
+      "low": 2116.0,
+      "close": 2154.0,
+      "volume": 995000.0,
+      "sma25": 2108.86,
+      "sma75": 2097.9,
+      "sma200": 1959.74,
+      "rsi14": 63.63,
+      "rsi5": 66.45
     }
   ],
   "corporate_events": [
@@ -567,17 +580,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-09",
-    "monthly_rsi14": 62.6,
-    "monthly_rsi_ma5": 63.02,
-    "spread": -0.43,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-13",
+    "monthly_rsi14": 63.15,
+    "monthly_rsi_ma5": 63.13,
+    "spread": 0.02,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-12T20:46:05.581501+00:00"
+  "provisional_generated_at": "2026-10-13T18:47:29.143575+00:00"
 }

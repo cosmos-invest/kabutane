@@ -2,12 +2,12 @@
   "code": "9355",
   "ticker": "9355.T",
   "name": "リンコーコーポレーション",
-  "generated_at": "2026-10-12T20:44:59.179491+00:00",
-  "price_date": "2026-10-09",
+  "generated_at": "2026-10-13T18:46:49.492043+00:00",
+  "price_date": "2026-10-13",
   "record": {
-    "current_price": 2286.0,
-    "change_from_signal_month_pct": 0.35,
-    "return_since_gc_pct": 0.35
+    "current_price": 2202.0,
+    "change_from_signal_month_pct": -3.34,
+    "return_since_gc_pct": -3.34
   },
   "daily": [
     {
@@ -555,22 +555,35 @@
       "sma200": 2176.54,
       "rsi14": 70.27,
       "rsi5": 73.85
+    },
+    {
+      "date": "2026-10-13",
+      "open": 2252.0,
+      "high": 2252.0,
+      "low": 2202.0,
+      "close": 2202.0,
+      "volume": 300.0,
+      "sma25": 2215.56,
+      "sma75": 2220.23,
+      "sma200": 2177.85,
+      "rsi14": 70.27,
+      "rsi5": 73.85
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-09",
-    "monthly_rsi14": 71.97,
-    "monthly_rsi_ma5": 71.94,
-    "spread": 0.03,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-13",
+    "monthly_rsi14": 66.9,
+    "monthly_rsi_ma5": 70.92,
+    "spread": -4.02,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-12T20:46:05.581501+00:00"
+  "provisional_generated_at": "2026-10-13T18:47:29.143575+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "7504",
   "ticker": "7504.T",
   "name": "高速",
-  "generated_at": "2026-10-12T20:44:59.179491+00:00",
-  "price_date": "2026-10-09",
+  "generated_at": "2026-10-13T18:46:49.492043+00:00",
+  "price_date": "2026-10-13",
   "record": {
-    "current_price": 4600.0,
-    "change_from_signal_month_pct": 11.11,
-    "return_since_gc_pct": 35.49
+    "current_price": 4545.0,
+    "change_from_signal_month_pct": 9.78,
+    "return_since_gc_pct": 33.87
   },
   "daily": [
     {
@@ -555,6 +555,19 @@
       "sma200": 3490.34,
       "rsi14": 62.71,
       "rsi5": 73.62
+    },
+    {
+      "date": "2026-10-13",
+      "open": 4625.0,
+      "high": 4670.0,
+      "low": 4545.0,
+      "close": 4545.0,
+      "volume": 46300.0,
+      "sma25": 4479.0,
+      "sma75": 4266.6,
+      "sma200": 3498.66,
+      "rsi14": 62.71,
+      "rsi5": 73.62
     }
   ],
   "corporate_events": [
@@ -567,17 +580,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-09",
-    "monthly_rsi14": 72.9,
-    "monthly_rsi_ma5": 72.6,
-    "spread": 0.3,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-13",
+    "monthly_rsi14": 72.45,
+    "monthly_rsi_ma5": 72.51,
+    "spread": -0.06,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-12T20:46:05.581501+00:00"
+  "provisional_generated_at": "2026-10-13T18:47:29.143575+00:00"
 }
