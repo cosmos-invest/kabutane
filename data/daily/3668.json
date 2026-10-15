@@ -2,12 +2,12 @@
   "code": "3668",
   "ticker": "3668.T",
   "name": "コロプラ",
-  "generated_at": "2026-10-13T18:46:49.492043+00:00",
-  "price_date": "2026-10-13",
+  "generated_at": "2026-10-15T16:09:26.292066+00:00",
+  "price_date": "2026-10-14",
   "record": {
-    "current_price": 392.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 393.0,
+    "change_from_signal_month_pct": 0.26,
+    "return_since_gc_pct": 0.26
   },
   "daily": [
     {
@@ -568,15 +568,28 @@
       "sma200": 417.35,
       "rsi14": 35.0,
       "rsi5": 36.11
+    },
+    {
+      "date": "2026-10-14",
+      "open": 384.0,
+      "high": 397.0,
+      "low": 382.0,
+      "close": 393.0,
+      "volume": 670300.0,
+      "sma25": 422.08,
+      "sma75": 407.97,
+      "sma200": 417.18,
+      "rsi14": 35.0,
+      "rsi5": 36.11
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-13",
-    "monthly_rsi14": 38.8,
-    "monthly_rsi_ma5": 38.63,
-    "spread": 0.16,
+    "price_date": "2026-10-14",
+    "monthly_rsi14": 38.9,
+    "monthly_rsi_ma5": 38.65,
+    "spread": 0.25,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -585,5 +598,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-13T18:47:29.143575+00:00"
+  "provisional_generated_at": "2026-10-15T16:10:42.821297+00:00"
 }

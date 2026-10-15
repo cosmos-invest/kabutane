@@ -2,12 +2,12 @@
   "code": "8616",
   "ticker": "8616.T",
   "name": "東海東京フィナンシャル・ホールディングス",
-  "generated_at": "2026-10-13T18:46:49.492043+00:00",
-  "price_date": "2026-10-13",
+  "generated_at": "2026-10-15T16:09:26.292066+00:00",
+  "price_date": "2026-10-14",
   "record": {
-    "current_price": 889.0,
-    "change_from_signal_month_pct": 10.85,
-    "return_since_gc_pct": 10.85
+    "current_price": 865.0,
+    "change_from_signal_month_pct": 7.86,
+    "return_since_gc_pct": 7.86
   },
   "daily": [
     {
@@ -568,6 +568,19 @@
       "sma200": 770.54,
       "rsi14": 64.47,
       "rsi5": 69.04
+    },
+    {
+      "date": "2026-10-14",
+      "open": 890.0,
+      "high": 890.0,
+      "low": 861.0,
+      "close": 865.0,
+      "volume": 1017500.0,
+      "sma25": 888.0,
+      "sma75": 838.59,
+      "sma200": 771.49,
+      "rsi14": 64.47,
+      "rsi5": 69.04
     }
   ],
   "corporate_events": [
@@ -580,17 +593,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-13",
-    "monthly_rsi14": 70.67,
-    "monthly_rsi_ma5": 70.35,
-    "spread": 0.32,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-14",
+    "monthly_rsi14": 68.52,
+    "monthly_rsi_ma5": 69.92,
+    "spread": -1.4,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-13T18:47:29.143575+00:00"
+  "provisional_generated_at": "2026-10-15T16:10:42.821297+00:00"
 }

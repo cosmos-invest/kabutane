@@ -2,12 +2,12 @@
   "code": "4045",
   "ticker": "4045.T",
   "name": "東亞合成",
-  "generated_at": "2026-10-13T18:46:49.492043+00:00",
-  "price_date": "2026-10-13",
+  "generated_at": "2026-10-15T16:09:26.292066+00:00",
+  "price_date": "2026-10-14",
   "record": {
-    "current_price": 1817.0,
-    "change_from_signal_month_pct": 1.17,
-    "return_since_gc_pct": 1.17
+    "current_price": 1855.0,
+    "change_from_signal_month_pct": 3.29,
+    "return_since_gc_pct": 3.29
   },
   "daily": [
     {
@@ -568,22 +568,35 @@
       "sma200": 1770.44,
       "rsi14": 60.68,
       "rsi5": 62.87
+    },
+    {
+      "date": "2026-10-14",
+      "open": 1821.0,
+      "high": 1857.0,
+      "low": 1815.0,
+      "close": 1855.0,
+      "volume": 310900.0,
+      "sma25": 1814.16,
+      "sma75": 1808.46,
+      "sma200": 1771.58,
+      "rsi14": 60.68,
+      "rsi5": 62.87
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-13",
-    "monthly_rsi14": 61.96,
-    "monthly_rsi_ma5": 62.8,
-    "spread": -0.85,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-14",
+    "monthly_rsi14": 63.76,
+    "monthly_rsi_ma5": 63.16,
+    "spread": 0.59,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-13T18:47:29.143575+00:00"
+  "provisional_generated_at": "2026-10-15T16:10:42.821297+00:00"
 }

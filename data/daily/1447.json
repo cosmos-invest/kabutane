@@ -2,12 +2,12 @@
   "code": "1447",
   "ticker": "1447.T",
   "name": "ＳＡＡＦホールディングス",
-  "generated_at": "2026-10-13T18:46:49.492043+00:00",
-  "price_date": "2026-10-13",
+  "generated_at": "2026-10-15T16:09:26.292066+00:00",
+  "price_date": "2026-10-14",
   "record": {
-    "current_price": 367.0,
-    "change_from_signal_month_pct": -1.87,
-    "return_since_gc_pct": -1.87
+    "current_price": 347.0,
+    "change_from_signal_month_pct": -7.22,
+    "return_since_gc_pct": -7.22
   },
   "daily": [
     {
@@ -568,22 +568,35 @@
       "sma200": 345.67,
       "rsi14": 51.63,
       "rsi5": 56.44
+    },
+    {
+      "date": "2026-10-14",
+      "open": 359.0,
+      "high": 374.0,
+      "low": 345.0,
+      "close": 347.0,
+      "volume": 83400.0,
+      "sma25": 340.12,
+      "sma75": 359.84,
+      "sma200": 346.11,
+      "rsi14": 51.63,
+      "rsi5": 56.44
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-13",
-    "monthly_rsi14": 54.1,
-    "monthly_rsi_ma5": 53.59,
-    "spread": 0.51,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-14",
+    "monthly_rsi14": 52.26,
+    "monthly_rsi_ma5": 53.22,
+    "spread": -0.96,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-13T18:47:29.143575+00:00"
+  "provisional_generated_at": "2026-10-15T16:10:42.821297+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "2813",
   "ticker": "2813.T",
   "name": "和弘食品",
-  "generated_at": "2026-10-13T18:46:49.492043+00:00",
-  "price_date": "2026-10-13",
+  "generated_at": "2026-10-15T16:09:26.292066+00:00",
+  "price_date": "2026-10-14",
   "record": {
-    "current_price": 3935.0,
-    "change_from_signal_month_pct": -0.88,
-    "return_since_gc_pct": 23.55
+    "current_price": 3955.0,
+    "change_from_signal_month_pct": -0.38,
+    "return_since_gc_pct": 24.18
   },
   "daily": [
     {
@@ -568,22 +568,35 @@
       "sma200": 3765.15,
       "rsi14": 52.37,
       "rsi5": 52.67
+    },
+    {
+      "date": "2026-10-14",
+      "open": 3940.0,
+      "high": 3995.0,
+      "low": 3940.0,
+      "close": 3955.0,
+      "volume": 700.0,
+      "sma25": 3909.8,
+      "sma75": 3956.4,
+      "sma200": 3769.75,
+      "rsi14": 52.37,
+      "rsi5": 52.67
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-13",
-    "monthly_rsi14": 52.84,
-    "monthly_rsi_ma5": 53.02,
-    "spread": -0.18,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-14",
+    "monthly_rsi14": 53.12,
+    "monthly_rsi_ma5": 53.08,
+    "spread": 0.04,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-13T18:47:29.143575+00:00"
+  "provisional_generated_at": "2026-10-15T16:10:42.821297+00:00"
 }

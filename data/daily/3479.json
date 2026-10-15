@@ -2,12 +2,12 @@
   "code": "3479",
   "ticker": "3479.T",
   "name": "ＴＫＰ",
-  "generated_at": "2026-10-13T18:46:49.492043+00:00",
-  "price_date": "2026-10-13",
+  "generated_at": "2026-10-15T16:09:26.292066+00:00",
+  "price_date": "2026-10-14",
   "record": {
-    "current_price": 1865.0,
-    "change_from_signal_month_pct": -2.71,
-    "return_since_gc_pct": -2.71
+    "current_price": 1851.0,
+    "change_from_signal_month_pct": -3.44,
+    "return_since_gc_pct": -3.44
   },
   "daily": [
     {
@@ -568,22 +568,35 @@
       "sma200": 1870.9,
       "rsi14": 47.73,
       "rsi5": 51.59
+    },
+    {
+      "date": "2026-10-14",
+      "open": 1870.0,
+      "high": 1875.0,
+      "low": 1844.0,
+      "close": 1851.0,
+      "volume": 66900.0,
+      "sma25": 1869.28,
+      "sma75": 1837.63,
+      "sma200": 1871.23,
+      "rsi14": 47.73,
+      "rsi5": 51.59
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-13",
-    "monthly_rsi14": 47.4,
-    "monthly_rsi_ma5": 47.16,
-    "spread": 0.24,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-14",
+    "monthly_rsi14": 47.06,
+    "monthly_rsi_ma5": 47.09,
+    "spread": -0.03,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-13T18:47:29.143575+00:00"
+  "provisional_generated_at": "2026-10-15T16:10:42.821297+00:00"
 }

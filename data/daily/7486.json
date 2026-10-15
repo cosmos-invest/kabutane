@@ -2,12 +2,12 @@
   "code": "7486",
   "ticker": "7486.T",
   "name": "サンリン",
-  "generated_at": "2026-10-13T18:46:49.492043+00:00",
-  "price_date": "2026-10-13",
+  "generated_at": "2026-10-15T16:09:26.292066+00:00",
+  "price_date": "2026-10-14",
   "record": {
-    "current_price": 819.0,
-    "change_from_signal_month_pct": 2.37,
-    "return_since_gc_pct": 2.37
+    "current_price": 812.0,
+    "change_from_signal_month_pct": 1.5,
+    "return_since_gc_pct": 1.5
   },
   "daily": [
     {
@@ -568,15 +568,28 @@
       "sma200": 776.62,
       "rsi14": 57.1,
       "rsi5": 62.47
+    },
+    {
+      "date": "2026-10-14",
+      "open": 812.0,
+      "high": 824.0,
+      "low": 810.0,
+      "close": 812.0,
+      "volume": 500.0,
+      "sma25": 813.4,
+      "sma75": 798.92,
+      "sma200": 777.05,
+      "rsi14": 57.1,
+      "rsi5": 62.47
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-13",
-    "monthly_rsi14": 64.77,
-    "monthly_rsi_ma5": 63.36,
-    "spread": 1.41,
+    "price_date": "2026-10-14",
+    "monthly_rsi14": 63.19,
+    "monthly_rsi_ma5": 63.05,
+    "spread": 0.15,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -585,5 +598,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-13T18:47:29.143575+00:00"
+  "provisional_generated_at": "2026-10-15T16:10:42.821297+00:00"
 }

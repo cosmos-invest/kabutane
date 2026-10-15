@@ -2,12 +2,12 @@
   "code": "6568",
   "ticker": "6568.T",
   "name": "神戸天然物化学",
-  "generated_at": "2026-10-13T18:46:49.492043+00:00",
-  "price_date": "2026-10-13",
+  "generated_at": "2026-10-15T16:09:26.292066+00:00",
+  "price_date": "2026-10-14",
   "record": {
-    "current_price": 1239.0,
-    "change_from_signal_month_pct": -2.36,
-    "return_since_gc_pct": -5.42
+    "current_price": 1263.0,
+    "change_from_signal_month_pct": -0.47,
+    "return_since_gc_pct": -3.59
   },
   "daily": [
     {
@@ -568,6 +568,19 @@
       "sma200": 1244.31,
       "rsi14": 52.46,
       "rsi5": 52.56
+    },
+    {
+      "date": "2026-10-14",
+      "open": 1246.0,
+      "high": 1275.0,
+      "low": 1246.0,
+      "close": 1263.0,
+      "volume": 7400.0,
+      "sma25": 1236.64,
+      "sma75": 1264.09,
+      "sma200": 1245.09,
+      "rsi14": 52.46,
+      "rsi5": 52.56
     }
   ],
   "corporate_events": [
@@ -580,17 +593,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-13",
-    "monthly_rsi14": 47.77,
-    "monthly_rsi_ma5": 48.9,
-    "spread": -1.13,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-14",
+    "monthly_rsi14": 49.53,
+    "monthly_rsi_ma5": 49.25,
+    "spread": 0.28,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-13T18:47:29.143575+00:00"
+  "provisional_generated_at": "2026-10-15T16:10:42.821297+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "3097",
   "ticker": "3097.T",
   "name": "物語コーポレーション",
-  "generated_at": "2026-10-13T18:46:49.492043+00:00",
-  "price_date": "2026-10-13",
+  "generated_at": "2026-10-15T16:09:26.292066+00:00",
+  "price_date": "2026-10-14",
   "record": {
-    "current_price": 5540.0,
-    "change_from_signal_month_pct": 1.09,
-    "return_since_gc_pct": 1.09
+    "current_price": 5530.0,
+    "change_from_signal_month_pct": 0.91,
+    "return_since_gc_pct": 0.91
   },
   "daily": [
     {
@@ -568,15 +568,28 @@
       "sma200": 4883.6,
       "rsi14": 59.21,
       "rsi5": 63.77
+    },
+    {
+      "date": "2026-10-14",
+      "open": 5560.0,
+      "high": 5570.0,
+      "low": 5440.0,
+      "close": 5530.0,
+      "volume": 143000.0,
+      "sma25": 5480.0,
+      "sma75": 5346.4,
+      "sma200": 4889.23,
+      "rsi14": 59.21,
+      "rsi5": 63.77
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-13",
-    "monthly_rsi14": 59.71,
-    "monthly_rsi_ma5": 59.51,
-    "spread": 0.19,
+    "price_date": "2026-10-14",
+    "monthly_rsi14": 59.62,
+    "monthly_rsi_ma5": 59.5,
+    "spread": 0.13,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -585,5 +598,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-13T18:47:29.143575+00:00"
+  "provisional_generated_at": "2026-10-15T16:10:42.821297+00:00"
 }

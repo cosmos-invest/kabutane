@@ -2,12 +2,12 @@
   "code": "6424",
   "ticker": "6424.T",
   "name": "高見沢サイバネティックス",
-  "generated_at": "2026-10-13T18:46:49.492043+00:00",
-  "price_date": "2026-10-13",
+  "generated_at": "2026-10-15T16:09:26.292066+00:00",
+  "price_date": "2026-10-14",
   "record": {
-    "current_price": 880.0,
-    "change_from_signal_month_pct": -2.22,
-    "return_since_gc_pct": -2.22
+    "current_price": 887.0,
+    "change_from_signal_month_pct": -1.44,
+    "return_since_gc_pct": -1.44
   },
   "daily": [
     {
@@ -568,22 +568,35 @@
       "sma200": 908.45,
       "rsi14": 39.67,
       "rsi5": 41.36
+    },
+    {
+      "date": "2026-10-14",
+      "open": 882.0,
+      "high": 887.0,
+      "low": 882.0,
+      "close": 887.0,
+      "volume": 2400.0,
+      "sma25": 890.0,
+      "sma75": 890.91,
+      "sma200": 908.31,
+      "rsi14": 39.67,
+      "rsi5": 41.36
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-13",
-    "monthly_rsi14": 41.29,
-    "monthly_rsi_ma5": 41.77,
-    "spread": -0.48,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-14",
+    "monthly_rsi14": 41.99,
+    "monthly_rsi_ma5": 41.91,
+    "spread": 0.08,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-13T18:47:29.143575+00:00"
+  "provisional_generated_at": "2026-10-15T16:10:42.821297+00:00"
 }

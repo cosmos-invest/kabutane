@@ -2,12 +2,12 @@
   "code": "8848",
   "ticker": "8848.T",
   "name": "レオパレス２１",
-  "generated_at": "2026-10-13T18:46:49.492043+00:00",
-  "price_date": "2026-10-13",
+  "generated_at": "2026-10-15T16:09:26.292066+00:00",
+  "price_date": "2026-10-14",
   "record": {
-    "current_price": 1000.0,
-    "change_from_signal_month_pct": 47.71,
-    "return_since_gc_pct": 47.71
+    "current_price": 998.0,
+    "change_from_signal_month_pct": 47.42,
+    "return_since_gc_pct": 47.42
   },
   "daily": [
     {
@@ -568,15 +568,28 @@
       "sma200": 690.86,
       "rsi14": 55.27,
       "rsi5": 57.67
+    },
+    {
+      "date": "2026-10-14",
+      "open": 1000.0,
+      "high": 1001.0,
+      "low": 998.0,
+      "close": 998.0,
+      "volume": 2222200.0,
+      "sma25": 904.12,
+      "sma75": 736.07,
+      "sma200": 692.59,
+      "rsi14": 55.27,
+      "rsi5": 57.67
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-13",
-    "monthly_rsi14": 72.83,
-    "monthly_rsi_ma5": 63.53,
-    "spread": 9.29,
+    "price_date": "2026-10-14",
+    "monthly_rsi14": 72.65,
+    "monthly_rsi_ma5": 63.5,
+    "spread": 9.15,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -585,5 +598,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-13T18:47:29.143575+00:00"
+  "provisional_generated_at": "2026-10-15T16:10:42.821297+00:00"
 }

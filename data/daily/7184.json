@@ -2,12 +2,12 @@
   "code": "7184",
   "ticker": "7184.T",
   "name": "富山第一銀行",
-  "generated_at": "2026-10-13T18:46:49.492043+00:00",
-  "price_date": "2026-10-13",
+  "generated_at": "2026-10-15T16:09:26.292066+00:00",
+  "price_date": "2026-10-14",
   "record": {
-    "current_price": 3585.0,
-    "change_from_signal_month_pct": 23.15,
-    "return_since_gc_pct": 23.15
+    "current_price": 3520.0,
+    "change_from_signal_month_pct": 20.92,
+    "return_since_gc_pct": 20.92
   },
   "daily": [
     {
@@ -568,6 +568,19 @@
       "sma200": 2685.45,
       "rsi14": 72.86,
       "rsi5": 76.04
+    },
+    {
+      "date": "2026-10-14",
+      "open": 3585.0,
+      "high": 3585.0,
+      "low": 3505.0,
+      "close": 3520.0,
+      "volume": 219400.0,
+      "sma25": 3546.0,
+      "sma75": 3160.49,
+      "sma200": 2693.99,
+      "rsi14": 72.86,
+      "rsi5": 76.04
     }
   ],
   "corporate_events": [
@@ -580,17 +593,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-13",
-    "monthly_rsi14": 78.69,
-    "monthly_rsi_ma5": 77.37,
-    "spread": 1.32,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-14",
+    "monthly_rsi14": 76.9,
+    "monthly_rsi_ma5": 77.01,
+    "spread": -0.11,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-13T18:47:29.143575+00:00"
+  "provisional_generated_at": "2026-10-15T16:10:42.821297+00:00"
 }

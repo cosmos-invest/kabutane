@@ -2,12 +2,12 @@
   "code": "7792",
   "ticker": "7792.T",
   "name": "コラントッテ",
-  "generated_at": "2026-10-13T18:46:49.492043+00:00",
-  "price_date": "2026-10-13",
+  "generated_at": "2026-10-15T16:09:26.292066+00:00",
+  "price_date": "2026-10-14",
   "record": {
-    "current_price": 1482.0,
-    "change_from_signal_month_pct": 2.14,
-    "return_since_gc_pct": 2.56
+    "current_price": 1467.0,
+    "change_from_signal_month_pct": 1.1,
+    "return_since_gc_pct": 1.52
   },
   "daily": [
     {
@@ -568,6 +568,19 @@
       "sma200": 1456.59,
       "rsi14": 57.88,
       "rsi5": 59.59
+    },
+    {
+      "date": "2026-10-14",
+      "open": 1490.0,
+      "high": 1490.0,
+      "low": 1467.0,
+      "close": 1467.0,
+      "volume": 11200.0,
+      "sma25": 1480.44,
+      "sma75": 1465.64,
+      "sma200": 1456.71,
+      "rsi14": 57.88,
+      "rsi5": 59.59
     }
   ],
   "corporate_events": [
@@ -580,17 +593,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-13",
-    "monthly_rsi14": 61.19,
-    "monthly_rsi_ma5": 60.76,
-    "spread": 0.43,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-14",
+    "monthly_rsi14": 59.67,
+    "monthly_rsi_ma5": 60.45,
+    "spread": -0.78,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-13T18:47:29.143575+00:00"
+  "provisional_generated_at": "2026-10-15T16:10:42.821297+00:00"
 }

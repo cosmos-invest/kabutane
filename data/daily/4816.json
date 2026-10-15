@@ -2,12 +2,12 @@
   "code": "4816",
   "ticker": "4816.T",
   "name": "東映アニメーション",
-  "generated_at": "2026-10-13T18:46:49.492043+00:00",
-  "price_date": "2026-10-13",
+  "generated_at": "2026-10-15T16:09:26.292066+00:00",
+  "price_date": "2026-10-14",
   "record": {
-    "current_price": 2900.0,
-    "change_from_signal_month_pct": -1.29,
-    "return_since_gc_pct": -1.29
+    "current_price": 2808.0,
+    "change_from_signal_month_pct": -4.42,
+    "return_since_gc_pct": -4.42
   },
   "daily": [
     {
@@ -568,22 +568,35 @@
       "sma200": 2681.61,
       "rsi14": 44.19,
       "rsi5": 51.93
+    },
+    {
+      "date": "2026-10-14",
+      "open": 2900.0,
+      "high": 2903.0,
+      "low": 2793.0,
+      "close": 2808.0,
+      "volume": 782000.0,
+      "sma25": 2977.2,
+      "sma75": 2841.37,
+      "sma200": 2682.36,
+      "rsi14": 44.19,
+      "rsi5": 51.93
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-13",
-    "monthly_rsi14": 51.78,
-    "monthly_rsi_ma5": 51.18,
-    "spread": 0.6,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-14",
+    "monthly_rsi14": 50.01,
+    "monthly_rsi_ma5": 50.82,
+    "spread": -0.82,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-13T18:47:29.143575+00:00"
+  "provisional_generated_at": "2026-10-15T16:10:42.821297+00:00"
 }

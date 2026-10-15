@@ -2,12 +2,12 @@
   "code": "8418",
   "ticker": "8418.T",
   "name": "山口フィナンシャルグループ",
-  "generated_at": "2026-10-13T18:46:49.492043+00:00",
-  "price_date": "2026-10-13",
+  "generated_at": "2026-10-15T16:09:26.292066+00:00",
+  "price_date": "2026-10-14",
   "record": {
-    "current_price": 3436.0,
-    "change_from_signal_month_pct": 15.46,
-    "return_since_gc_pct": 20.39
+    "current_price": 3298.0,
+    "change_from_signal_month_pct": 10.82,
+    "return_since_gc_pct": 15.56
   },
   "daily": [
     {
@@ -568,6 +568,19 @@
       "sma200": 2791.06,
       "rsi14": 71.67,
       "rsi5": 75.16
+    },
+    {
+      "date": "2026-10-14",
+      "open": 3413.0,
+      "high": 3413.0,
+      "low": 3278.0,
+      "close": 3298.0,
+      "volume": 693000.0,
+      "sma25": 3365.0,
+      "sma75": 3156.45,
+      "sma200": 2796.78,
+      "rsi14": 71.67,
+      "rsi5": 75.16
     }
   ],
   "corporate_events": [
@@ -580,17 +593,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-13",
-    "monthly_rsi14": 77.44,
-    "monthly_rsi_ma5": 77.1,
-    "spread": 0.34,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-14",
+    "monthly_rsi14": 72.9,
+    "monthly_rsi_ma5": 76.2,
+    "spread": -3.3,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-13T18:47:29.143575+00:00"
+  "provisional_generated_at": "2026-10-15T16:10:42.821297+00:00"
 }

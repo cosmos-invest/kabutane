@@ -2,12 +2,12 @@
   "code": "9706",
   "ticker": "9706.T",
   "name": "日本空港ビルデング",
-  "generated_at": "2026-10-13T18:46:49.492043+00:00",
-  "price_date": "2026-10-13",
+  "generated_at": "2026-10-15T16:09:26.292066+00:00",
+  "price_date": "2026-10-14",
   "record": {
-    "current_price": 5575.0,
-    "change_from_signal_month_pct": -1.62,
-    "return_since_gc_pct": -1.62
+    "current_price": 5547.0,
+    "change_from_signal_month_pct": -2.12,
+    "return_since_gc_pct": -2.12
   },
   "daily": [
     {
@@ -568,6 +568,19 @@
       "sma200": 5173.32,
       "rsi14": 51.27,
       "rsi5": 58.24
+    },
+    {
+      "date": "2026-10-14",
+      "open": 5567.0,
+      "high": 5589.0,
+      "low": 5513.0,
+      "close": 5547.0,
+      "volume": 480600.0,
+      "sma25": 5508.0,
+      "sma75": 5512.13,
+      "sma200": 5179.27,
+      "rsi14": 51.27,
+      "rsi5": 58.24
     }
   ],
   "corporate_events": [
@@ -580,17 +593,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-13",
-    "monthly_rsi14": 52.92,
-    "monthly_rsi_ma5": 52.78,
-    "spread": 0.14,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-14",
+    "monthly_rsi14": 52.57,
+    "monthly_rsi_ma5": 52.71,
+    "spread": -0.14,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-13T18:47:29.143575+00:00"
+  "provisional_generated_at": "2026-10-15T16:10:42.821297+00:00"
 }

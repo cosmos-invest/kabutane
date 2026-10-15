@@ -2,12 +2,12 @@
   "code": "9602",
   "ticker": "9602.T",
   "name": "東宝",
-  "generated_at": "2026-10-13T18:46:49.492043+00:00",
-  "price_date": "2026-10-13",
+  "generated_at": "2026-10-15T16:09:26.292066+00:00",
+  "price_date": "2026-10-14",
   "record": {
-    "current_price": 1553.5,
-    "change_from_signal_month_pct": 2.07,
-    "return_since_gc_pct": 2.07
+    "current_price": 1518.0,
+    "change_from_signal_month_pct": -0.26,
+    "return_since_gc_pct": -0.26
   },
   "daily": [
     {
@@ -568,15 +568,28 @@
       "sma200": 1500.2,
       "rsi14": 49.42,
       "rsi5": 52.76
+    },
+    {
+      "date": "2026-10-14",
+      "open": 1535.0,
+      "high": 1541.5,
+      "low": 1501.5,
+      "close": 1518.0,
+      "volume": 3511500.0,
+      "sma25": 1576.44,
+      "sma75": 1491.18,
+      "sma200": 1499.36,
+      "rsi14": 49.42,
+      "rsi5": 52.76
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-13",
-    "monthly_rsi14": 53.02,
-    "monthly_rsi_ma5": 51.14,
-    "spread": 1.87,
+    "price_date": "2026-10-14",
+    "monthly_rsi14": 51.53,
+    "monthly_rsi_ma5": 50.84,
+    "spread": 0.68,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -585,5 +598,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-13T18:47:29.143575+00:00"
+  "provisional_generated_at": "2026-10-15T16:10:42.821297+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "1848",
   "ticker": "1848.T",
   "name": "富士ピー・エス",
-  "generated_at": "2026-10-13T18:46:49.492043+00:00",
-  "price_date": "2026-10-13",
+  "generated_at": "2026-10-15T16:09:26.292066+00:00",
+  "price_date": "2026-10-14",
   "record": {
-    "current_price": 854.0,
-    "change_from_signal_month_pct": 25.96,
-    "return_since_gc_pct": 35.56
+    "current_price": 869.0,
+    "change_from_signal_month_pct": 28.17,
+    "return_since_gc_pct": 37.94
   },
   "daily": [
     {
@@ -568,22 +568,35 @@
       "sma200": 646.78,
       "rsi14": 64.45,
       "rsi5": 71.53
+    },
+    {
+      "date": "2026-10-14",
+      "open": 859.0,
+      "high": 876.0,
+      "low": 852.0,
+      "close": 869.0,
+      "volume": 13600.0,
+      "sma25": 827.96,
+      "sma75": 727.25,
+      "sma200": 648.42,
+      "rsi14": 64.45,
+      "rsi5": 71.53
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-13",
-    "monthly_rsi14": 74.6,
-    "monthly_rsi_ma5": 75.2,
-    "spread": -0.6,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-14",
+    "monthly_rsi14": 76.66,
+    "monthly_rsi_ma5": 75.61,
+    "spread": 1.05,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-13T18:47:29.143575+00:00"
+  "provisional_generated_at": "2026-10-15T16:10:42.821297+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "4370",
   "ticker": "4370.T",
   "name": "モビルス",
-  "generated_at": "2026-10-13T18:46:49.492043+00:00",
-  "price_date": "2026-10-13",
+  "generated_at": "2026-10-15T16:09:26.292066+00:00",
+  "price_date": "2026-10-14",
   "record": {
-    "current_price": 365.0,
-    "change_from_signal_month_pct": 11.96,
-    "return_since_gc_pct": 11.96
+    "current_price": 360.0,
+    "change_from_signal_month_pct": 10.43,
+    "return_since_gc_pct": 10.43
   },
   "daily": [
     {
@@ -568,15 +568,28 @@
       "sma200": 349.94,
       "rsi14": 39.07,
       "rsi5": 40.46
+    },
+    {
+      "date": "2026-10-14",
+      "open": 359.0,
+      "high": 365.0,
+      "low": 346.0,
+      "close": 360.0,
+      "volume": 41000.0,
+      "sma25": 403.4,
+      "sma75": 345.68,
+      "sma200": 349.85,
+      "rsi14": 39.07,
+      "rsi5": 40.46
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-13",
-    "monthly_rsi14": 46.68,
-    "monthly_rsi_ma5": 45.22,
-    "spread": 1.46,
+    "price_date": "2026-10-14",
+    "monthly_rsi14": 46.23,
+    "monthly_rsi_ma5": 45.13,
+    "spread": 1.1,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -585,5 +598,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-13T18:47:29.143575+00:00"
+  "provisional_generated_at": "2026-10-15T16:10:42.821297+00:00"
 }
