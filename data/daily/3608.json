@@ -2,12 +2,12 @@
   "code": "3608",
   "ticker": "3608.T",
   "name": "ＴＳＩホールディングス",
-  "generated_at": "2026-10-15T16:09:26.292066+00:00",
-  "price_date": "2026-10-14",
+  "generated_at": "2026-10-16T15:56:00.141566+00:00",
+  "price_date": "2026-10-15",
   "record": {
-    "current_price": 1208.0,
-    "change_from_signal_month_pct": -1.79,
-    "return_since_gc_pct": -1.79
+    "current_price": 1272.0,
+    "change_from_signal_month_pct": 3.41,
+    "return_since_gc_pct": 3.41
   },
   "daily": [
     {
@@ -581,22 +581,35 @@
       "sma200": 1173.84,
       "rsi14": 59.89,
       "rsi5": 60.39
+    },
+    {
+      "date": "2026-10-15",
+      "open": 1220.0,
+      "high": 1284.0,
+      "low": 1215.0,
+      "close": 1272.0,
+      "volume": 2042400.0,
+      "sma25": 1221.96,
+      "sma75": 1226.72,
+      "sma200": 1175.1,
+      "rsi14": 59.89,
+      "rsi5": 60.39
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-14",
-    "monthly_rsi14": 57.91,
-    "monthly_rsi_ma5": 58.93,
-    "spread": -1.01,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-15",
+    "monthly_rsi14": 60.7,
+    "monthly_rsi_ma5": 59.48,
+    "spread": 1.22,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-15T16:10:42.821297+00:00"
+  "provisional_generated_at": "2026-10-16T15:56:50.082802+00:00"
 }

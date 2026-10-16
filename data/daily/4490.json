@@ -2,12 +2,12 @@
   "code": "4490",
   "ticker": "4490.T",
   "name": "ビザスク",
-  "generated_at": "2026-10-15T16:09:26.292066+00:00",
-  "price_date": "2026-10-14",
+  "generated_at": "2026-10-16T15:56:00.141566+00:00",
+  "price_date": "2026-10-15",
   "record": {
-    "current_price": 673.0,
-    "change_from_signal_month_pct": 1.2,
-    "return_since_gc_pct": 14.85
+    "current_price": 670.0,
+    "change_from_signal_month_pct": 0.75,
+    "return_since_gc_pct": 14.33
   },
   "daily": [
     {
@@ -581,15 +581,28 @@
       "sma200": 605.08,
       "rsi14": 40.74,
       "rsi5": 43.07
+    },
+    {
+      "date": "2026-10-15",
+      "open": 670.0,
+      "high": 700.0,
+      "low": 650.0,
+      "close": 670.0,
+      "volume": 21700.0,
+      "sma25": 665.12,
+      "sma75": 650.93,
+      "sma200": 606.12,
+      "rsi14": 40.74,
+      "rsi5": 43.07
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-14",
-    "monthly_rsi14": 45.02,
-    "monthly_rsi_ma5": 44.0,
-    "spread": 1.01,
+    "price_date": "2026-10-15",
+    "monthly_rsi14": 44.89,
+    "monthly_rsi_ma5": 43.98,
+    "spread": 0.91,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -598,5 +611,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-15T16:10:42.821297+00:00"
+  "provisional_generated_at": "2026-10-16T15:56:50.082802+00:00"
 }

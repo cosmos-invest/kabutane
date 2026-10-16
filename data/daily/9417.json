@@ -2,12 +2,12 @@
   "code": "9417",
   "ticker": "9417.T",
   "name": "スマートバリュー",
-  "generated_at": "2026-10-15T16:09:26.292066+00:00",
-  "price_date": "2026-10-14",
+  "generated_at": "2026-10-16T15:56:00.141566+00:00",
+  "price_date": "2026-10-15",
   "record": {
-    "current_price": 335.0,
-    "change_from_signal_month_pct": 0.9,
-    "return_since_gc_pct": 0.0
+    "current_price": 330.0,
+    "change_from_signal_month_pct": -0.6,
+    "return_since_gc_pct": -1.49
   },
   "daily": [
     {
@@ -581,15 +581,28 @@
       "sma200": 344.54,
       "rsi14": 40.03,
       "rsi5": 42.52
+    },
+    {
+      "date": "2026-10-15",
+      "open": 333.0,
+      "high": 333.0,
+      "low": 330.0,
+      "close": 330.0,
+      "volume": 1900.0,
+      "sma25": 333.76,
+      "sma75": 333.76,
+      "sma200": 344.12,
+      "rsi14": 40.03,
+      "rsi5": 42.52
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-14",
-    "monthly_rsi14": 44.42,
-    "monthly_rsi_ma5": 44.42,
-    "spread": -0.0,
+    "price_date": "2026-10-15",
+    "monthly_rsi14": 43.67,
+    "monthly_rsi_ma5": 44.27,
+    "spread": -0.6,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -598,5 +611,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-15T16:10:42.821297+00:00"
+  "provisional_generated_at": "2026-10-16T15:56:50.082802+00:00"
 }

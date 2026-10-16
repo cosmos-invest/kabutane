@@ -2,12 +2,12 @@
   "code": "5248",
   "ticker": "5248.T",
   "name": "テクノロジーズ",
-  "generated_at": "2026-10-15T16:09:26.292066+00:00",
-  "price_date": "2026-10-14",
+  "generated_at": "2026-10-16T15:56:00.141566+00:00",
+  "price_date": "2026-10-15",
   "record": {
-    "current_price": 502.0,
-    "change_from_signal_month_pct": 5.68,
-    "return_since_gc_pct": 0.0
+    "current_price": 490.0,
+    "change_from_signal_month_pct": 3.16,
+    "return_since_gc_pct": -2.39
   },
   "daily": [
     {
@@ -581,22 +581,35 @@
       "sma200": 500.66,
       "rsi14": 40.49,
       "rsi5": 41.52
+    },
+    {
+      "date": "2026-10-15",
+      "open": 498.0,
+      "high": 498.0,
+      "low": 487.0,
+      "close": 490.0,
+      "volume": 30000.0,
+      "sma25": 509.32,
+      "sma75": 507.11,
+      "sma200": 500.67,
+      "rsi14": 40.49,
+      "rsi5": 41.52
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-14",
-    "monthly_rsi14": 46.04,
-    "monthly_rsi_ma5": 45.71,
-    "spread": 0.34,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-15",
+    "monthly_rsi14": 45.13,
+    "monthly_rsi_ma5": 45.52,
+    "spread": -0.39,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-15T16:10:42.821297+00:00"
+  "provisional_generated_at": "2026-10-16T15:56:50.082802+00:00"
 }

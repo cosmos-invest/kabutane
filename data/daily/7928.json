@@ -2,12 +2,12 @@
   "code": "7928",
   "ticker": "7928.T",
   "name": "旭化学工業",
-  "generated_at": "2026-10-15T16:09:26.292066+00:00",
-  "price_date": "2026-10-14",
+  "generated_at": "2026-10-16T15:56:00.141566+00:00",
+  "price_date": "2026-10-15",
   "record": {
-    "current_price": 627.0,
-    "change_from_signal_month_pct": -0.79,
-    "return_since_gc_pct": 1.29
+    "current_price": 619.0,
+    "change_from_signal_month_pct": -2.06,
+    "return_since_gc_pct": 0.0
   },
   "daily": [
     {
@@ -581,22 +581,35 @@
       "sma200": 613.6,
       "rsi14": 53.21,
       "rsi5": 57.24
+    },
+    {
+      "date": "2026-10-15",
+      "open": 620.0,
+      "high": 620.0,
+      "low": 606.0,
+      "close": 619.0,
+      "volume": 8900.0,
+      "sma25": 614.52,
+      "sma75": 626.39,
+      "sma200": 613.81,
+      "rsi14": 53.21,
+      "rsi5": 57.24
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-14",
-    "monthly_rsi14": 56.39,
-    "monthly_rsi_ma5": 56.3,
-    "spread": 0.09,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-15",
+    "monthly_rsi14": 54.37,
+    "monthly_rsi_ma5": 55.89,
+    "spread": -1.53,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-15T16:10:42.821297+00:00"
+  "provisional_generated_at": "2026-10-16T15:56:50.082802+00:00"
 }

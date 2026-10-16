@@ -2,12 +2,12 @@
   "code": "8163",
   "ticker": "8163.T",
   "name": "ＳＲＳホールディングス",
-  "generated_at": "2026-10-15T16:09:26.292066+00:00",
-  "price_date": "2026-10-14",
+  "generated_at": "2026-10-16T15:56:00.141566+00:00",
+  "price_date": "2026-10-15",
   "record": {
-    "current_price": 1487.0,
-    "change_from_signal_month_pct": 3.7,
-    "return_since_gc_pct": 20.7
+    "current_price": 1554.0,
+    "change_from_signal_month_pct": 8.37,
+    "return_since_gc_pct": 26.14
   },
   "daily": [
     {
@@ -581,22 +581,35 @@
       "sma200": 1298.88,
       "rsi14": 54.61,
       "rsi5": 66.94
+    },
+    {
+      "date": "2026-10-15",
+      "open": 1500.0,
+      "high": 1554.0,
+      "low": 1498.0,
+      "close": 1554.0,
+      "volume": 371500.0,
+      "sma25": 1483.12,
+      "sma75": 1431.17,
+      "sma200": 1300.62,
+      "rsi14": 54.61,
+      "rsi5": 66.94
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-14",
-    "monthly_rsi14": 62.68,
-    "monthly_rsi_ma5": 63.37,
-    "spread": -0.69,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-15",
+    "monthly_rsi14": 65.12,
+    "monthly_rsi_ma5": 63.86,
+    "spread": 1.26,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-15T16:10:42.821297+00:00"
+  "provisional_generated_at": "2026-10-16T15:56:50.082802+00:00"
 }

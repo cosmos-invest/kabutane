@@ -2,12 +2,12 @@
   "code": "4116",
   "ticker": "4116.T",
   "name": "大日精化工業",
-  "generated_at": "2026-10-15T16:09:26.292066+00:00",
-  "price_date": "2026-10-14",
+  "generated_at": "2026-10-16T15:56:00.141566+00:00",
+  "price_date": "2026-10-15",
   "record": {
-    "current_price": 1318.0,
-    "change_from_signal_month_pct": 18.31,
-    "return_since_gc_pct": 18.31
+    "current_price": 1289.0,
+    "change_from_signal_month_pct": 15.71,
+    "return_since_gc_pct": 15.71
   },
   "daily": [
     {
@@ -581,6 +581,19 @@
       "sma200": 1147.08,
       "rsi14": 63.5,
       "rsi5": 65.5
+    },
+    {
+      "date": "2026-10-15",
+      "open": 1309.0,
+      "high": 1309.0,
+      "low": 1283.0,
+      "close": 1289.0,
+      "volume": 200200.0,
+      "sma25": 1311.36,
+      "sma75": 1235.24,
+      "sma200": 1148.55,
+      "rsi14": 63.5,
+      "rsi5": 65.5
     }
   ],
   "corporate_events": [
@@ -593,17 +606,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-14",
-    "monthly_rsi14": 70.55,
-    "monthly_rsi_ma5": 69.41,
-    "spread": 1.14,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-15",
+    "monthly_rsi14": 68.24,
+    "monthly_rsi_ma5": 68.95,
+    "spread": -0.71,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-15T16:10:42.821297+00:00"
+  "provisional_generated_at": "2026-10-16T15:56:50.082802+00:00"
 }

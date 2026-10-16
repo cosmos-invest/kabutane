@@ -2,12 +2,12 @@
   "code": "4235",
   "ticker": "4235.T",
   "name": "ウルトラファブリックス・ホールディングス",
-  "generated_at": "2026-10-15T16:09:26.292066+00:00",
-  "price_date": "2026-10-14",
+  "generated_at": "2026-10-16T15:56:00.141566+00:00",
+  "price_date": "2026-10-15",
   "record": {
-    "current_price": 673.0,
-    "change_from_signal_month_pct": -4.4,
-    "return_since_gc_pct": -4.4
+    "current_price": 665.0,
+    "change_from_signal_month_pct": -5.54,
+    "return_since_gc_pct": -5.54
   },
   "daily": [
     {
@@ -581,22 +581,35 @@
       "sma200": 692.84,
       "rsi14": 39.09,
       "rsi5": 41.59
+    },
+    {
+      "date": "2026-10-15",
+      "open": 673.0,
+      "high": 673.0,
+      "low": 663.0,
+      "close": 665.0,
+      "volume": 55400.0,
+      "sma25": 674.96,
+      "sma75": 682.92,
+      "sma200": 692.25,
+      "rsi14": 39.09,
+      "rsi5": 41.59
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-14",
-    "monthly_rsi14": 34.29,
-    "monthly_rsi_ma5": 34.09,
-    "spread": 0.19,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-15",
+    "monthly_rsi14": 33.84,
+    "monthly_rsi_ma5": 34.0,
+    "spread": -0.16,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-15T16:10:42.821297+00:00"
+  "provisional_generated_at": "2026-10-16T15:56:50.082802+00:00"
 }

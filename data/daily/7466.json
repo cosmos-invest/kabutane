@@ -2,12 +2,12 @@
   "code": "7466",
   "ticker": "7466.T",
   "name": "ＳＰＫ",
-  "generated_at": "2026-10-15T16:09:26.292066+00:00",
-  "price_date": "2026-10-14",
+  "generated_at": "2026-10-16T15:56:00.141566+00:00",
+  "price_date": "2026-10-15",
   "record": {
-    "current_price": 1470.0,
-    "change_from_signal_month_pct": 5.98,
-    "return_since_gc_pct": 5.98
+    "current_price": 1443.0,
+    "change_from_signal_month_pct": 4.04,
+    "return_since_gc_pct": 4.04
   },
   "daily": [
     {
@@ -581,6 +581,19 @@
       "sma200": 1307.19,
       "rsi14": 63.13,
       "rsi5": 67.87
+    },
+    {
+      "date": "2026-10-15",
+      "open": 1453.0,
+      "high": 1471.0,
+      "low": 1443.0,
+      "close": 1443.0,
+      "volume": 47600.0,
+      "sma25": 1455.04,
+      "sma75": 1403.85,
+      "sma200": 1308.65,
+      "rsi14": 63.13,
+      "rsi5": 67.87
     }
   ],
   "corporate_events": [
@@ -593,17 +606,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-14",
-    "monthly_rsi14": 69.37,
-    "monthly_rsi_ma5": 67.74,
-    "spread": 1.63,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-15",
+    "monthly_rsi14": 66.7,
+    "monthly_rsi_ma5": 67.21,
+    "spread": -0.5,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-15T16:10:42.821297+00:00"
+  "provisional_generated_at": "2026-10-16T15:56:50.082802+00:00"
 }

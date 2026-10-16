@@ -2,12 +2,12 @@
   "code": "4391",
   "ticker": "4391.T",
   "name": "ロジザード",
-  "generated_at": "2026-10-15T16:09:26.292066+00:00",
-  "price_date": "2026-10-14",
+  "generated_at": "2026-10-16T15:56:00.141566+00:00",
+  "price_date": "2026-10-15",
   "record": {
-    "current_price": 1142.0,
-    "change_from_signal_month_pct": 0.18,
-    "return_since_gc_pct": 3.54
+    "current_price": 1126.0,
+    "change_from_signal_month_pct": -1.23,
+    "return_since_gc_pct": 2.09
   },
   "daily": [
     {
@@ -581,22 +581,35 @@
       "sma200": 1109.62,
       "rsi14": 44.32,
       "rsi5": 47.28
+    },
+    {
+      "date": "2026-10-15",
+      "open": 1147.0,
+      "high": 1155.0,
+      "low": 1126.0,
+      "close": 1126.0,
+      "volume": 3000.0,
+      "sma25": 1136.28,
+      "sma75": 1133.73,
+      "sma200": 1109.63,
+      "rsi14": 44.32,
+      "rsi5": 47.28
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-14",
-    "monthly_rsi14": 51.69,
-    "monthly_rsi_ma5": 51.31,
-    "spread": 0.38,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-15",
+    "monthly_rsi14": 50.68,
+    "monthly_rsi_ma5": 51.11,
+    "spread": -0.42,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-15T16:10:42.821297+00:00"
+  "provisional_generated_at": "2026-10-16T15:56:50.082802+00:00"
 }

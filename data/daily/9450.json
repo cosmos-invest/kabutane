@@ -2,12 +2,12 @@
   "code": "9450",
   "ticker": "9450.T",
   "name": "ファイバーゲート",
-  "generated_at": "2026-10-15T16:09:26.292066+00:00",
-  "price_date": "2026-10-14",
+  "generated_at": "2026-10-16T15:56:00.141566+00:00",
+  "price_date": "2026-10-15",
   "record": {
-    "current_price": 770.0,
-    "change_from_signal_month_pct": -1.79,
-    "return_since_gc_pct": 2.26
+    "current_price": 757.0,
+    "change_from_signal_month_pct": -3.44,
+    "return_since_gc_pct": 0.53
   },
   "daily": [
     {
@@ -581,22 +581,35 @@
       "sma200": 727.01,
       "rsi14": 40.63,
       "rsi5": 45.75
+    },
+    {
+      "date": "2026-10-15",
+      "open": 769.0,
+      "high": 770.0,
+      "low": 757.0,
+      "close": 757.0,
+      "volume": 18400.0,
+      "sma25": 769.4,
+      "sma75": 771.07,
+      "sma200": 727.47,
+      "rsi14": 40.63,
+      "rsi5": 45.75
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-14",
-    "monthly_rsi14": 38.69,
-    "monthly_rsi_ma5": 38.66,
-    "spread": 0.03,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-15",
+    "monthly_rsi14": 37.78,
+    "monthly_rsi_ma5": 38.48,
+    "spread": -0.69,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-15T16:10:42.821297+00:00"
+  "provisional_generated_at": "2026-10-16T15:56:50.082802+00:00"
 }

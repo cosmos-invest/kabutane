@@ -2,12 +2,12 @@
   "code": "9213",
   "ticker": "9213.T",
   "name": "セイファート",
-  "generated_at": "2026-10-15T16:09:26.292066+00:00",
-  "price_date": "2026-10-14",
+  "generated_at": "2026-10-16T15:56:00.141566+00:00",
+  "price_date": "2026-10-15",
   "record": {
-    "current_price": 1340.0,
-    "change_from_signal_month_pct": 28.11,
-    "return_since_gc_pct": 42.55
+    "current_price": 1261.0,
+    "change_from_signal_month_pct": 20.55,
+    "return_since_gc_pct": 34.15
   },
   "daily": [
     {
@@ -581,15 +581,28 @@
       "sma200": 934.57,
       "rsi14": 52.03,
       "rsi5": 54.47
+    },
+    {
+      "date": "2026-10-15",
+      "open": 1300.0,
+      "high": 1370.0,
+      "low": 1245.0,
+      "close": 1261.0,
+      "volume": 51000.0,
+      "sma25": 1062.92,
+      "sma75": 1056.41,
+      "sma200": 936.87,
+      "rsi14": 52.03,
+      "rsi5": 54.47
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-14",
-    "monthly_rsi14": 62.01,
-    "monthly_rsi_ma5": 54.2,
-    "spread": 7.81,
+    "price_date": "2026-10-15",
+    "monthly_rsi14": 59.71,
+    "monthly_rsi_ma5": 53.74,
+    "spread": 5.96,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -598,5 +611,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-15T16:10:42.821297+00:00"
+  "provisional_generated_at": "2026-10-16T15:56:50.082802+00:00"
 }

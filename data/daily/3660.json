@@ -2,12 +2,12 @@
   "code": "3660",
   "ticker": "3660.T",
   "name": "アイスタイル",
-  "generated_at": "2026-10-15T16:09:26.292066+00:00",
-  "price_date": "2026-10-14",
+  "generated_at": "2026-10-16T15:56:00.141566+00:00",
+  "price_date": "2026-10-15",
   "record": {
-    "current_price": 458.0,
-    "change_from_signal_month_pct": 3.62,
-    "return_since_gc_pct": 3.62
+    "current_price": 449.0,
+    "change_from_signal_month_pct": 1.58,
+    "return_since_gc_pct": 1.58
   },
   "daily": [
     {
@@ -581,22 +581,35 @@
       "sma200": 446.19,
       "rsi14": 44.92,
       "rsi5": 48.17
+    },
+    {
+      "date": "2026-10-15",
+      "open": 451.0,
+      "high": 455.0,
+      "low": 445.0,
+      "close": 449.0,
+      "volume": 754700.0,
+      "sma25": 480.88,
+      "sma75": 459.97,
+      "sma200": 446.18,
+      "rsi14": 44.92,
+      "rsi5": 48.17
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-14",
-    "monthly_rsi14": 48.83,
-    "monthly_rsi_ma5": 48.67,
-    "spread": 0.16,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-15",
+    "monthly_rsi14": 48.16,
+    "monthly_rsi_ma5": 48.53,
+    "spread": -0.37,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-15T16:10:42.821297+00:00"
+  "provisional_generated_at": "2026-10-16T15:56:50.082802+00:00"
 }

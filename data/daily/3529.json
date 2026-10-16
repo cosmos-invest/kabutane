@@ -2,12 +2,12 @@
   "code": "3529",
   "ticker": "3529.T",
   "name": "アツギ",
-  "generated_at": "2026-10-15T16:09:26.292066+00:00",
-  "price_date": "2026-10-14",
+  "generated_at": "2026-10-16T15:56:00.141566+00:00",
+  "price_date": "2026-10-15",
   "record": {
-    "current_price": 1019.0,
-    "change_from_signal_month_pct": -6.34,
-    "return_since_gc_pct": -6.34
+    "current_price": 1008.0,
+    "change_from_signal_month_pct": -7.35,
+    "return_since_gc_pct": -7.35
   },
   "daily": [
     {
@@ -581,15 +581,28 @@
       "sma200": 1065.06,
       "rsi14": 53.09,
       "rsi5": 55.09
+    },
+    {
+      "date": "2026-10-15",
+      "open": 1011.0,
+      "high": 1023.0,
+      "low": 999.0,
+      "close": 1008.0,
+      "volume": 46700.0,
+      "sma25": 1029.64,
+      "sma75": 1047.45,
+      "sma200": 1063.95,
+      "rsi14": 53.09,
+      "rsi5": 55.09
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-14",
-    "monthly_rsi14": 52.09,
-    "monthly_rsi_ma5": 54.64,
-    "spread": -2.56,
+    "price_date": "2026-10-15",
+    "monthly_rsi14": 51.44,
+    "monthly_rsi_ma5": 54.52,
+    "spread": -3.08,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -598,5 +611,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-15T16:10:42.821297+00:00"
+  "provisional_generated_at": "2026-10-16T15:56:50.082802+00:00"
 }

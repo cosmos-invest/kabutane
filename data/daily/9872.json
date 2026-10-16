@@ -2,12 +2,12 @@
   "code": "9872",
   "ticker": "9872.T",
   "name": "北恵",
-  "generated_at": "2026-10-15T16:09:26.292066+00:00",
-  "price_date": "2026-10-14",
+  "generated_at": "2026-10-16T15:56:00.141566+00:00",
+  "price_date": "2026-10-15",
   "record": {
-    "current_price": 954.0,
-    "change_from_signal_month_pct": 1.27,
-    "return_since_gc_pct": 7.55
+    "current_price": 949.0,
+    "change_from_signal_month_pct": 0.74,
+    "return_since_gc_pct": 6.99
   },
   "daily": [
     {
@@ -581,15 +581,28 @@
       "sma200": 911.09,
       "rsi14": 53.24,
       "rsi5": 58.78
+    },
+    {
+      "date": "2026-10-15",
+      "open": 954.0,
+      "high": 955.0,
+      "low": 946.0,
+      "close": 949.0,
+      "volume": 4800.0,
+      "sma25": 956.0,
+      "sma75": 943.05,
+      "sma200": 911.22,
+      "rsi14": 53.24,
+      "rsi5": 58.78
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-14",
-    "monthly_rsi14": 59.8,
-    "monthly_rsi_ma5": 59.04,
-    "spread": 0.76,
+    "price_date": "2026-10-15",
+    "monthly_rsi14": 58.92,
+    "monthly_rsi_ma5": 58.86,
+    "spread": 0.06,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -598,5 +611,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-15T16:10:42.821297+00:00"
+  "provisional_generated_at": "2026-10-16T15:56:50.082802+00:00"
 }
