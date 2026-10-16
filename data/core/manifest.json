@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-13T18:51:00.715756+00:00",
+  "generated_at": "2026-10-16T16:00:08.090716+00:00",
   "scope": "TSE domestic common stocks: Prime, Standard, Growth",
   "core_count": 3695,
   "daily_coverage": 3695,
@@ -11,15 +11,15 @@
   "overlay_days": 25,
   "shard_rule": "first two characters of security code",
   "bytes": {
-    "radar": 2912004,
-    "daily_overlay": 7371000,
-    "fundamentals": 3331516,
+    "radar": 2911426,
+    "daily_overlay": 7188516,
+    "fundamentals": 3318487,
     "chart_base": 52969724
   },
   "errors": {
     "daily": 0,
     "monthly": 0,
-    "fundamentals": 172
+    "fundamentals": 0
   },
   "dividend_history_schema_version": 5,
   "dividend_history_coverage": 2941,
@@ -38,7 +38,7 @@
   "dividend_verified_streak_count": 15,
   "dividend_streak_lower_bound_count": 404,
   "dividend_history_gap_record_count": 2697,
-  "dividend_history_unknown_year_count": 18532,
+  "dividend_history_unknown_year_count": 18530,
   "dividend_partial_event_record_count": 1557,
   "dividend_partial_event_period_count": 6390,
   "dividend_streak_review_required_count": 0,
