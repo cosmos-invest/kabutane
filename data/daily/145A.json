@@ -2,12 +2,12 @@
   "code": "145A",
   "ticker": "145A.T",
   "name": "Ｌ　ｉｓ　Ｂ",
-  "generated_at": "2026-10-16T15:56:00.141566+00:00",
-  "price_date": "2026-10-15",
+  "generated_at": "2026-10-19T18:09:25.324059+00:00",
+  "price_date": "2026-10-16",
   "record": {
-    "current_price": 835.0,
-    "change_from_signal_month_pct": 1.09,
-    "return_since_gc_pct": 1.09
+    "current_price": 820.0,
+    "change_from_signal_month_pct": -0.73,
+    "return_since_gc_pct": -0.73
   },
   "daily": [
     {
@@ -594,22 +594,35 @@
       "sma200": 880.76,
       "rsi14": 39.24,
       "rsi5": 40.72
+    },
+    {
+      "date": "2026-10-16",
+      "open": 850.0,
+      "high": 850.0,
+      "low": 806.0,
+      "close": 820.0,
+      "volume": 15300.0,
+      "sma25": 877.44,
+      "sma75": 863.84,
+      "sma200": 879.76,
+      "rsi14": 39.24,
+      "rsi5": 40.72
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-15",
-    "monthly_rsi14": 41.95,
-    "monthly_rsi_ma5": 41.85,
-    "spread": 0.1,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-16",
+    "monthly_rsi14": 41.44,
+    "monthly_rsi_ma5": 41.75,
+    "spread": -0.31,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-16T15:56:50.082802+00:00"
+  "provisional_generated_at": "2026-10-19T18:10:26.363020+00:00"
 }

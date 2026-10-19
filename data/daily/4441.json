@@ -2,12 +2,12 @@
   "code": "4441",
   "ticker": "4441.T",
   "name": "トビラシステムズ",
-  "generated_at": "2026-10-16T15:56:00.141566+00:00",
-  "price_date": "2026-10-15",
+  "generated_at": "2026-10-19T18:09:25.324059+00:00",
+  "price_date": "2026-10-16",
   "record": {
-    "current_price": 1522.0,
-    "change_from_signal_month_pct": -9.4,
-    "return_since_gc_pct": 5.99
+    "current_price": 1608.0,
+    "change_from_signal_month_pct": -4.29,
+    "return_since_gc_pct": 11.98
   },
   "daily": [
     {
@@ -594,22 +594,35 @@
       "sma200": 1381.13,
       "rsi14": 61.69,
       "rsi5": 67.53
+    },
+    {
+      "date": "2026-10-16",
+      "open": 1515.0,
+      "high": 1615.0,
+      "low": 1515.0,
+      "close": 1608.0,
+      "volume": 23000.0,
+      "sma25": 1513.08,
+      "sma75": 1509.17,
+      "sma200": 1383.01,
+      "rsi14": 61.69,
+      "rsi5": 67.53
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-15",
-    "monthly_rsi14": 60.37,
-    "monthly_rsi_ma5": 61.99,
-    "spread": -1.62,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-16",
+    "monthly_rsi14": 62.55,
+    "monthly_rsi_ma5": 62.43,
+    "spread": 0.13,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-16T15:56:50.082802+00:00"
+  "provisional_generated_at": "2026-10-19T18:10:26.363020+00:00"
 }

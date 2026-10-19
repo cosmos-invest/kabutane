@@ -2,12 +2,12 @@
   "code": "9223",
   "ticker": "9223.T",
   "name": "ＡＳＮＯＶＡ",
-  "generated_at": "2026-10-16T15:56:00.141566+00:00",
-  "price_date": "2026-10-15",
+  "generated_at": "2026-10-19T18:09:25.324059+00:00",
+  "price_date": "2026-10-16",
   "record": {
-    "current_price": 376.0,
-    "change_from_signal_month_pct": -14.74,
-    "return_since_gc_pct": -14.74
+    "current_price": 382.0,
+    "change_from_signal_month_pct": -13.38,
+    "return_since_gc_pct": -13.38
   },
   "daily": [
     {
@@ -594,6 +594,19 @@
       "sma200": 456.06,
       "rsi14": 32.02,
       "rsi5": 37.39
+    },
+    {
+      "date": "2026-10-16",
+      "open": 375.0,
+      "high": 389.0,
+      "low": 375.0,
+      "close": 382.0,
+      "volume": 19200.0,
+      "sma25": 388.32,
+      "sma75": 413.27,
+      "sma200": 455.32,
+      "rsi14": 32.02,
+      "rsi5": 37.39
     }
   ],
   "corporate_events": [
@@ -606,17 +619,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-15",
-    "monthly_rsi14": 33.61,
-    "monthly_rsi_ma5": 33.83,
-    "spread": -0.22,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-16",
+    "monthly_rsi14": 34.57,
+    "monthly_rsi_ma5": 34.02,
+    "spread": 0.54,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-16T15:56:50.082802+00:00"
+  "provisional_generated_at": "2026-10-19T18:10:26.363020+00:00"
 }

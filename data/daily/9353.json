@@ -2,12 +2,12 @@
   "code": "9353",
   "ticker": "9353.T",
   "name": "櫻島埠頭",
-  "generated_at": "2026-10-16T15:56:00.141566+00:00",
-  "price_date": "2026-10-15",
+  "generated_at": "2026-10-19T18:09:25.324059+00:00",
+  "price_date": "2026-10-16",
   "record": {
-    "current_price": 2960.0,
-    "change_from_signal_month_pct": 0.85,
-    "return_since_gc_pct": 8.03
+    "current_price": 2890.0,
+    "change_from_signal_month_pct": -1.53,
+    "return_since_gc_pct": 5.47
   },
   "daily": [
     {
@@ -594,22 +594,35 @@
       "sma200": 2661.62,
       "rsi14": 61.42,
       "rsi5": 67.81
+    },
+    {
+      "date": "2026-10-16",
+      "open": 2980.0,
+      "high": 2980.0,
+      "low": 2890.0,
+      "close": 2890.0,
+      "volume": 1500.0,
+      "sma25": 2987.04,
+      "sma75": 2927.69,
+      "sma200": 2664.07,
+      "rsi14": 61.42,
+      "rsi5": 67.81
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-15",
-    "monthly_rsi14": 64.16,
-    "monthly_rsi_ma5": 63.74,
-    "spread": 0.42,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-16",
+    "monthly_rsi14": 61.85,
+    "monthly_rsi_ma5": 63.28,
+    "spread": -1.43,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-16T15:56:50.082802+00:00"
+  "provisional_generated_at": "2026-10-19T18:10:26.363020+00:00"
 }

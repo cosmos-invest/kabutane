@@ -2,12 +2,12 @@
   "code": "5930",
   "ticker": "5930.T",
   "name": "文化シヤッター",
-  "generated_at": "2026-10-16T15:56:00.141566+00:00",
-  "price_date": "2026-10-15",
+  "generated_at": "2026-10-19T18:09:25.324059+00:00",
+  "price_date": "2026-10-16",
   "record": {
-    "current_price": 1870.0,
-    "change_from_signal_month_pct": -1.79,
-    "return_since_gc_pct": -1.79
+    "current_price": 1902.0,
+    "change_from_signal_month_pct": -0.11,
+    "return_since_gc_pct": -0.11
   },
   "daily": [
     {
@@ -594,6 +594,19 @@
       "sma200": 1929.29,
       "rsi14": 48.94,
       "rsi5": 49.51
+    },
+    {
+      "date": "2026-10-16",
+      "open": 1888.0,
+      "high": 1905.0,
+      "low": 1887.0,
+      "close": 1902.0,
+      "volume": 121900.0,
+      "sma25": 1868.28,
+      "sma75": 1887.03,
+      "sma200": 1928.94,
+      "rsi14": 48.94,
+      "rsi5": 49.51
     }
   ],
   "corporate_events": [
@@ -606,17 +619,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-15",
-    "monthly_rsi14": 50.64,
-    "monthly_rsi_ma5": 51.55,
-    "spread": -0.91,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-16",
+    "monthly_rsi14": 52.01,
+    "monthly_rsi_ma5": 51.82,
+    "spread": 0.18,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-16T15:56:50.082802+00:00"
+  "provisional_generated_at": "2026-10-19T18:10:26.363020+00:00"
 }

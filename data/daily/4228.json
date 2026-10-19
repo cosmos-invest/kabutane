@@ -2,12 +2,12 @@
   "code": "4228",
   "ticker": "4228.T",
   "name": "積水化成品工業",
-  "generated_at": "2026-10-16T15:56:00.141566+00:00",
-  "price_date": "2026-10-15",
+  "generated_at": "2026-10-19T18:09:25.324059+00:00",
+  "price_date": "2026-10-16",
   "record": {
-    "current_price": 582.0,
-    "change_from_signal_month_pct": 9.81,
-    "return_since_gc_pct": 9.81
+    "current_price": 604.0,
+    "change_from_signal_month_pct": 13.96,
+    "return_since_gc_pct": 13.96
   },
   "daily": [
     {
@@ -594,6 +594,19 @@
       "sma200": 513.72,
       "rsi14": 58.9,
       "rsi5": 60.25
+    },
+    {
+      "date": "2026-10-16",
+      "open": 602.0,
+      "high": 606.0,
+      "low": 594.0,
+      "close": 604.0,
+      "volume": 128800.0,
+      "sma25": 601.96,
+      "sma75": 577.89,
+      "sma200": 514.77,
+      "rsi14": 58.9,
+      "rsi5": 60.25
     }
   ],
   "corporate_events": [
@@ -606,17 +619,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-15",
-    "monthly_rsi14": 62.14,
-    "monthly_rsi_ma5": 63.38,
-    "spread": -1.24,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-16",
+    "monthly_rsi14": 65.0,
+    "monthly_rsi_ma5": 63.95,
+    "spread": 1.04,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-16T15:56:50.082802+00:00"
+  "provisional_generated_at": "2026-10-19T18:10:26.363020+00:00"
 }
