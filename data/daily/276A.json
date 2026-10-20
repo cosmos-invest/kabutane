@@ -2,12 +2,12 @@
   "code": "276A",
   "ticker": "276A.T",
   "name": "ククレブ・アドバイザーズ",
-  "generated_at": "2026-10-19T18:09:25.324059+00:00",
-  "price_date": "2026-10-16",
+  "generated_at": "2026-10-20T16:12:27.605838+00:00",
+  "price_date": "2026-10-19",
   "record": {
-    "current_price": 4085.0,
-    "change_from_signal_month_pct": 17.55,
-    "return_since_gc_pct": 17.55
+    "current_price": 3815.0,
+    "change_from_signal_month_pct": 9.78,
+    "return_since_gc_pct": 9.78
   },
   "daily": [
     {
@@ -607,22 +607,35 @@
       "sma200": 3427.07,
       "rsi14": 57.44,
       "rsi5": 58.38
+    },
+    {
+      "date": "2026-10-19",
+      "open": 4100.0,
+      "high": 4265.0,
+      "low": 3810.0,
+      "close": 3815.0,
+      "volume": 104300.0,
+      "sma25": 4185.0,
+      "sma75": 3750.0,
+      "sma200": 3431.98,
+      "rsi14": 57.44,
+      "rsi5": 58.38
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-16",
-    "monthly_rsi14": 60.37,
-    "monthly_rsi_ma5": 59.48,
-    "spread": 0.89,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-19",
+    "monthly_rsi14": 58.54,
+    "monthly_rsi_ma5": 59.11,
+    "spread": -0.57,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-19T18:10:26.363020+00:00"
+  "provisional_generated_at": "2026-10-20T16:13:19.304814+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "3841",
   "ticker": "3841.T",
   "name": "ジーダット",
-  "generated_at": "2026-10-19T18:09:25.324059+00:00",
-  "price_date": "2026-10-16",
+  "generated_at": "2026-10-20T16:12:27.605838+00:00",
+  "price_date": "2026-10-19",
   "record": {
-    "current_price": 1296.0,
-    "change_from_signal_month_pct": 7.02,
-    "return_since_gc_pct": 5.28
+    "current_price": 1297.0,
+    "change_from_signal_month_pct": 7.1,
+    "return_since_gc_pct": 5.36
   },
   "daily": [
     {
@@ -607,15 +607,28 @@
       "sma200": 1228.2,
       "rsi14": 46.77,
       "rsi5": 48.24
+    },
+    {
+      "date": "2026-10-19",
+      "open": 1276.0,
+      "high": 1297.0,
+      "low": 1276.0,
+      "close": 1297.0,
+      "volume": 600.0,
+      "sma25": 1311.24,
+      "sma75": 1285.2,
+      "sma200": 1228.24,
+      "rsi14": 46.77,
+      "rsi5": 48.24
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-16",
-    "monthly_rsi14": 52.24,
+    "price_date": "2026-10-19",
+    "monthly_rsi14": 52.27,
     "monthly_rsi_ma5": 51.98,
-    "spread": 0.26,
+    "spread": 0.29,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -624,5 +637,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-19T18:10:26.363020+00:00"
+  "provisional_generated_at": "2026-10-20T16:13:19.304814+00:00"
 }

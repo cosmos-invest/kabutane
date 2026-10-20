@@ -2,12 +2,12 @@
   "code": "8281",
   "ticker": "8281.T",
   "name": "ゼビオホールディングス",
-  "generated_at": "2026-10-19T18:09:25.324059+00:00",
-  "price_date": "2026-10-16",
+  "generated_at": "2026-10-20T16:12:27.605838+00:00",
+  "price_date": "2026-10-19",
   "record": {
-    "current_price": 1108.0,
-    "change_from_signal_month_pct": 1.09,
-    "return_since_gc_pct": 4.73
+    "current_price": 1104.0,
+    "change_from_signal_month_pct": 0.73,
+    "return_since_gc_pct": 4.35
   },
   "daily": [
     {
@@ -607,6 +607,19 @@
       "sma200": 1074.74,
       "rsi14": 45.3,
       "rsi5": 50.26
+    },
+    {
+      "date": "2026-10-19",
+      "open": 1103.0,
+      "high": 1114.0,
+      "low": 1100.0,
+      "close": 1104.0,
+      "volume": 104000.0,
+      "sma25": 1104.16,
+      "sma75": 1118.36,
+      "sma200": 1074.99,
+      "rsi14": 45.3,
+      "rsi5": 50.26
     }
   ],
   "corporate_events": [
@@ -619,17 +632,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-16",
-    "monthly_rsi14": 51.52,
-    "monthly_rsi_ma5": 51.51,
-    "spread": 0.02,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-19",
+    "monthly_rsi14": 51.18,
+    "monthly_rsi_ma5": 51.44,
+    "spread": -0.26,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-19T18:10:26.363020+00:00"
+  "provisional_generated_at": "2026-10-20T16:13:19.304814+00:00"
 }

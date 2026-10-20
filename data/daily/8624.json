@@ -2,12 +2,12 @@
   "code": "8624",
   "ticker": "8624.T",
   "name": "いちよし証券",
-  "generated_at": "2026-10-19T18:09:25.324059+00:00",
-  "price_date": "2026-10-16",
+  "generated_at": "2026-10-20T16:12:27.605838+00:00",
+  "price_date": "2026-10-19",
   "record": {
-    "current_price": 1572.0,
-    "change_from_signal_month_pct": 0.9,
-    "return_since_gc_pct": 0.9
+    "current_price": 1545.0,
+    "change_from_signal_month_pct": -0.83,
+    "return_since_gc_pct": -0.83
   },
   "daily": [
     {
@@ -607,6 +607,19 @@
       "sma200": 1421.45,
       "rsi14": 69.17,
       "rsi5": 72.27
+    },
+    {
+      "date": "2026-10-19",
+      "open": 1556.0,
+      "high": 1598.0,
+      "low": 1499.0,
+      "close": 1545.0,
+      "volume": 400400.0,
+      "sma25": 1639.04,
+      "sma75": 1601.36,
+      "sma200": 1424.03,
+      "rsi14": 69.17,
+      "rsi5": 72.27
     }
   ],
   "corporate_events": [
@@ -614,15 +627,15 @@
       "date": "2026-09-29",
       "type": "DIVIDEND",
       "label": "配当",
-      "detail": "1株 38円"
+      "detail": "1株 42円"
     }
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-16",
-    "monthly_rsi14": 66.69,
-    "monthly_rsi_ma5": 71.12,
-    "spread": -4.43,
+    "price_date": "2026-10-19",
+    "monthly_rsi14": 65.33,
+    "monthly_rsi_ma5": 70.85,
+    "spread": -5.52,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -631,5 +644,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-19T18:10:26.363020+00:00"
+  "provisional_generated_at": "2026-10-20T16:13:19.304814+00:00"
 }

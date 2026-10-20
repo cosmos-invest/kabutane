@@ -2,12 +2,12 @@
   "code": "3935",
   "ticker": "3935.T",
   "name": "エディア",
-  "generated_at": "2026-10-19T18:09:25.324059+00:00",
-  "price_date": "2026-10-16",
+  "generated_at": "2026-10-20T16:12:27.605838+00:00",
+  "price_date": "2026-10-19",
   "record": {
-    "current_price": 730.0,
-    "change_from_signal_month_pct": 3.69,
-    "return_since_gc_pct": -0.82
+    "current_price": 753.0,
+    "change_from_signal_month_pct": 6.96,
+    "return_since_gc_pct": 2.31
   },
   "daily": [
     {
@@ -607,22 +607,35 @@
       "sma200": 719.2,
       "rsi14": 50.33,
       "rsi5": 51.45
+    },
+    {
+      "date": "2026-10-19",
+      "open": 715.0,
+      "high": 760.0,
+      "low": 715.0,
+      "close": 753.0,
+      "volume": 89300.0,
+      "sma25": 727.44,
+      "sma75": 713.72,
+      "sma200": 718.29,
+      "rsi14": 50.33,
+      "rsi5": 51.45
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-16",
-    "monthly_rsi14": 52.48,
-    "monthly_rsi_ma5": 52.48,
-    "spread": -0.0,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-19",
+    "monthly_rsi14": 53.84,
+    "monthly_rsi_ma5": 52.75,
+    "spread": 1.09,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-19T18:10:26.363020+00:00"
+  "provisional_generated_at": "2026-10-20T16:13:19.304814+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "5079",
   "ticker": "5079.T",
   "name": "ノバック",
-  "generated_at": "2026-10-19T18:09:25.324059+00:00",
-  "price_date": "2026-10-16",
+  "generated_at": "2026-10-20T16:12:27.605838+00:00",
+  "price_date": "2026-10-19",
   "record": {
-    "current_price": 2571.0,
-    "change_from_signal_month_pct": -1.68,
-    "return_since_gc_pct": -1.68
+    "current_price": 2576.0,
+    "change_from_signal_month_pct": -1.49,
+    "return_since_gc_pct": -1.49
   },
   "daily": [
     {
@@ -607,22 +607,35 @@
       "sma200": 2668.74,
       "rsi14": 46.27,
       "rsi5": 47.24
+    },
+    {
+      "date": "2026-10-19",
+      "open": 2573.0,
+      "high": 2579.0,
+      "low": 2570.0,
+      "close": 2576.0,
+      "volume": 2300.0,
+      "sma25": 2583.04,
+      "sma75": 2578.08,
+      "sma200": 2668.2,
+      "rsi14": 46.27,
+      "rsi5": 47.24
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-16",
-    "monthly_rsi14": 45.63,
-    "monthly_rsi_ma5": 45.72,
-    "spread": -0.09,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-19",
+    "monthly_rsi14": 45.76,
+    "monthly_rsi_ma5": 45.75,
+    "spread": 0.01,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-19T18:10:26.363020+00:00"
+  "provisional_generated_at": "2026-10-20T16:13:19.304814+00:00"
 }

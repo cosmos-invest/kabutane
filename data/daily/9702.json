@@ -2,12 +2,12 @@
   "code": "9702",
   "ticker": "9702.T",
   "name": "アイ・エス・ビー",
-  "generated_at": "2026-10-19T18:09:25.324059+00:00",
-  "price_date": "2026-10-16",
+  "generated_at": "2026-10-20T16:12:27.605838+00:00",
+  "price_date": "2026-10-19",
   "record": {
-    "current_price": 2487.0,
-    "change_from_signal_month_pct": 5.29,
-    "return_since_gc_pct": 37.1
+    "current_price": 2458.0,
+    "change_from_signal_month_pct": 4.06,
+    "return_since_gc_pct": 35.5
   },
   "daily": [
     {
@@ -607,22 +607,35 @@
       "sma200": 2158.11,
       "rsi14": 74.06,
       "rsi5": 76.84
+    },
+    {
+      "date": "2026-10-19",
+      "open": 2457.0,
+      "high": 2504.0,
+      "low": 2447.0,
+      "close": 2458.0,
+      "volume": 16300.0,
+      "sma25": 2440.72,
+      "sma75": 2380.96,
+      "sma200": 2161.88,
+      "rsi14": 74.06,
+      "rsi5": 76.84
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-16",
-    "monthly_rsi14": 79.18,
-    "monthly_rsi_ma5": 78.52,
-    "spread": 0.67,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-19",
+    "monthly_rsi14": 77.09,
+    "monthly_rsi_ma5": 78.1,
+    "spread": -1.0,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-19T18:10:26.363020+00:00"
+  "provisional_generated_at": "2026-10-20T16:13:19.304814+00:00"
 }

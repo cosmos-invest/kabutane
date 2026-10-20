@@ -2,12 +2,12 @@
   "code": "3426",
   "ticker": "3426.T",
   "name": "アトムリビンテック",
-  "generated_at": "2026-10-19T18:09:25.324059+00:00",
-  "price_date": "2026-10-16",
+  "generated_at": "2026-10-20T16:12:27.605838+00:00",
+  "price_date": "2026-10-19",
   "record": {
-    "current_price": 1307.0,
-    "change_from_signal_month_pct": 0.15,
-    "return_since_gc_pct": 0.15
+    "current_price": 1300.0,
+    "change_from_signal_month_pct": -0.38,
+    "return_since_gc_pct": -0.38
   },
   "daily": [
     {
@@ -607,22 +607,35 @@
       "sma200": 1307.87,
       "rsi14": 43.29,
       "rsi5": 43.62
+    },
+    {
+      "date": "2026-10-19",
+      "open": 1309.0,
+      "high": 1309.0,
+      "low": 1300.0,
+      "close": 1300.0,
+      "volume": 900.0,
+      "sma25": 1300.76,
+      "sma75": 1298.29,
+      "sma200": 1307.77,
+      "rsi14": 43.29,
+      "rsi5": 43.62
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-16",
-    "monthly_rsi14": 48.58,
-    "monthly_rsi_ma5": 47.99,
-    "spread": 0.58,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-19",
+    "monthly_rsi14": 47.44,
+    "monthly_rsi_ma5": 47.77,
+    "spread": -0.32,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-19T18:10:26.363020+00:00"
+  "provisional_generated_at": "2026-10-20T16:13:19.304814+00:00"
 }

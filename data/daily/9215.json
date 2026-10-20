@@ -2,12 +2,12 @@
   "code": "9215",
   "ticker": "9215.T",
   "name": "ＣａＳｙ",
-  "generated_at": "2026-10-19T18:09:25.324059+00:00",
-  "price_date": "2026-10-16",
+  "generated_at": "2026-10-20T16:12:27.605838+00:00",
+  "price_date": "2026-10-19",
   "record": {
-    "current_price": 969.0,
-    "change_from_signal_month_pct": 4.31,
-    "return_since_gc_pct": 4.31
+    "current_price": 960.0,
+    "change_from_signal_month_pct": 3.34,
+    "return_since_gc_pct": 3.34
   },
   "daily": [
     {
@@ -607,22 +607,35 @@
       "sma200": 921.49,
       "rsi14": 45.36,
       "rsi5": 48.13
+    },
+    {
+      "date": "2026-10-19",
+      "open": 967.0,
+      "high": 967.0,
+      "low": 959.0,
+      "close": 960.0,
+      "volume": 4700.0,
+      "sma25": 995.04,
+      "sma75": 958.47,
+      "sma200": 921.82,
+      "rsi14": 45.36,
+      "rsi5": 48.13
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-16",
-    "monthly_rsi14": 52.9,
-    "monthly_rsi_ma5": 52.4,
-    "spread": 0.5,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-19",
+    "monthly_rsi14": 52.13,
+    "monthly_rsi_ma5": 52.25,
+    "spread": -0.12,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-19T18:10:26.363020+00:00"
+  "provisional_generated_at": "2026-10-20T16:13:19.304814+00:00"
 }

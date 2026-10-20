@@ -2,12 +2,12 @@
   "code": "9853",
   "ticker": "9853.T",
   "name": "銀座ルノアール",
-  "generated_at": "2026-10-19T18:09:25.324059+00:00",
-  "price_date": "2026-10-16",
+  "generated_at": "2026-10-20T16:12:27.605838+00:00",
+  "price_date": "2026-10-19",
   "record": {
-    "current_price": 906.0,
-    "change_from_signal_month_pct": -0.33,
-    "return_since_gc_pct": -0.33
+    "current_price": 910.0,
+    "change_from_signal_month_pct": 0.11,
+    "return_since_gc_pct": 0.11
   },
   "daily": [
     {
@@ -607,22 +607,35 @@
       "sma200": 920.64,
       "rsi14": 49.45,
       "rsi5": 49.87
+    },
+    {
+      "date": "2026-10-19",
+      "open": 906.0,
+      "high": 910.0,
+      "low": 905.0,
+      "close": 910.0,
+      "volume": 3500.0,
+      "sma25": 907.56,
+      "sma75": 907.61,
+      "sma200": 920.58,
+      "rsi14": 49.45,
+      "rsi5": 49.87
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-16",
-    "monthly_rsi14": 50.02,
-    "monthly_rsi_ma5": 50.78,
-    "spread": -0.76,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-19",
+    "monthly_rsi14": 51.71,
+    "monthly_rsi_ma5": 51.12,
+    "spread": 0.59,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-19T18:10:26.363020+00:00"
+  "provisional_generated_at": "2026-10-20T16:13:19.304814+00:00"
 }

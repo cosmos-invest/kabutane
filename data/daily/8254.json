@@ -2,12 +2,12 @@
   "code": "8254",
   "ticker": "8254.T",
   "name": "さいか屋",
-  "generated_at": "2026-10-19T18:09:25.324059+00:00",
-  "price_date": "2026-10-16",
+  "generated_at": "2026-10-20T16:12:27.605838+00:00",
+  "price_date": "2026-10-19",
   "record": {
-    "current_price": 348.0,
-    "change_from_signal_month_pct": -5.69,
-    "return_since_gc_pct": 26.09
+    "current_price": 268.0,
+    "change_from_signal_month_pct": -27.37,
+    "return_since_gc_pct": -2.9
   },
   "daily": [
     {
@@ -607,22 +607,35 @@
       "sma200": 313.01,
       "rsi14": 40.46,
       "rsi5": 50.05
+    },
+    {
+      "date": "2026-10-19",
+      "open": 268.0,
+      "high": 268.0,
+      "low": 268.0,
+      "close": 268.0,
+      "volume": 10500.0,
+      "sma25": 313.72,
+      "sma75": 302.35,
+      "sma200": 312.49,
+      "rsi14": 40.46,
+      "rsi5": 50.05
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-16",
-    "monthly_rsi14": 49.29,
-    "monthly_rsi_ma5": 46.35,
-    "spread": 2.93,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-19",
+    "monthly_rsi14": 43.22,
+    "monthly_rsi_ma5": 45.14,
+    "spread": -1.92,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-19T18:10:26.363020+00:00"
+  "provisional_generated_at": "2026-10-20T16:13:19.304814+00:00"
 }
