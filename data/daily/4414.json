@@ -2,12 +2,12 @@
   "code": "4414",
   "ticker": "4414.T",
   "name": "フレクト",
-  "generated_at": "2026-10-20T16:12:27.605838+00:00",
-  "price_date": "2026-10-19",
+  "generated_at": "2026-10-21T16:27:54.738375+00:00",
+  "price_date": "2026-10-20",
   "record": {
-    "current_price": 1157.0,
-    "change_from_signal_month_pct": -7.44,
-    "return_since_gc_pct": -7.44
+    "current_price": 1155.0,
+    "change_from_signal_month_pct": -7.6,
+    "return_since_gc_pct": -7.6
   },
   "daily": [
     {
@@ -620,15 +620,28 @@
       "sma200": 1239.02,
       "rsi14": 37.02,
       "rsi5": 41.49
+    },
+    {
+      "date": "2026-10-20",
+      "open": 1154.0,
+      "high": 1183.0,
+      "low": 1130.0,
+      "close": 1155.0,
+      "volume": 25000.0,
+      "sma25": 1118.16,
+      "sma75": 1153.57,
+      "sma200": 1236.25,
+      "rsi14": 37.02,
+      "rsi5": 41.49
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-19",
-    "monthly_rsi14": 41.88,
-    "monthly_rsi_ma5": 41.44,
-    "spread": 0.44,
+    "price_date": "2026-10-20",
+    "monthly_rsi14": 41.83,
+    "monthly_rsi_ma5": 41.43,
+    "spread": 0.4,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -637,5 +650,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-20T16:13:19.304814+00:00"
+  "provisional_generated_at": "2026-10-21T16:28:46.540853+00:00"
 }

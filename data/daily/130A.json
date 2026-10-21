@@ -2,12 +2,12 @@
   "code": "130A",
   "ticker": "130A.T",
   "name": "Ｖｅｒｉｔａｓ　Ｉｎ　Ｓｉｌｉｃｏ",
-  "generated_at": "2026-10-20T16:12:27.605838+00:00",
-  "price_date": "2026-10-19",
+  "generated_at": "2026-10-21T16:27:54.738375+00:00",
+  "price_date": "2026-10-20",
   "record": {
-    "current_price": 338.0,
-    "change_from_signal_month_pct": -16.75,
-    "return_since_gc_pct": -21.58
+    "current_price": 418.0,
+    "change_from_signal_month_pct": 2.96,
+    "return_since_gc_pct": -3.02
   },
   "daily": [
     {
@@ -620,22 +620,35 @@
       "sma200": 448.05,
       "rsi14": 16.18,
       "rsi5": 16.34
+    },
+    {
+      "date": "2026-10-20",
+      "open": 370.0,
+      "high": 418.0,
+      "low": 364.0,
+      "close": 418.0,
+      "volume": 621200.0,
+      "sma25": 419.96,
+      "sma75": 422.41,
+      "sma200": 447.85,
+      "rsi14": 16.18,
+      "rsi5": 16.34
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-19",
-    "monthly_rsi14": 17.51,
-    "monthly_rsi_ma5": 17.96,
-    "spread": -0.45,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-20",
+    "monthly_rsi14": 19.08,
+    "monthly_rsi_ma5": 18.27,
+    "spread": 0.81,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-20T16:13:19.304814+00:00"
+  "provisional_generated_at": "2026-10-21T16:28:46.540853+00:00"
 }

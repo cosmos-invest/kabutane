@@ -2,12 +2,12 @@
   "code": "7919",
   "ticker": "7919.T",
   "name": "野崎印刷紙業",
-  "generated_at": "2026-10-20T16:12:27.605838+00:00",
-  "price_date": "2026-10-19",
+  "generated_at": "2026-10-21T16:27:54.738375+00:00",
+  "price_date": "2026-10-20",
   "record": {
-    "current_price": 219.0,
-    "change_from_signal_month_pct": 5.29,
-    "return_since_gc_pct": 5.29
+    "current_price": 214.0,
+    "change_from_signal_month_pct": 2.88,
+    "return_since_gc_pct": 2.88
   },
   "daily": [
     {
@@ -620,6 +620,19 @@
       "sma200": 207.5,
       "rsi14": 57.92,
       "rsi5": 60.63
+    },
+    {
+      "date": "2026-10-20",
+      "open": 222.0,
+      "high": 222.0,
+      "low": 212.0,
+      "close": 214.0,
+      "volume": 19100.0,
+      "sma25": 221.96,
+      "sma75": 214.01,
+      "sma200": 207.54,
+      "rsi14": 57.92,
+      "rsi5": 60.63
     }
   ],
   "corporate_events": [
@@ -632,17 +645,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-19",
-    "monthly_rsi14": 61.55,
-    "monthly_rsi_ma5": 60.77,
-    "spread": 0.78,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-20",
+    "monthly_rsi14": 59.13,
+    "monthly_rsi_ma5": 60.29,
+    "spread": -1.16,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-20T16:13:19.304814+00:00"
+  "provisional_generated_at": "2026-10-21T16:28:46.540853+00:00"
 }

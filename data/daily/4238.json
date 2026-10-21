@@ -2,12 +2,12 @@
   "code": "4238",
   "ticker": "4238.T",
   "name": "ミライアル",
-  "generated_at": "2026-10-20T16:12:27.605838+00:00",
-  "price_date": "2026-10-19",
+  "generated_at": "2026-10-21T16:27:54.738375+00:00",
+  "price_date": "2026-10-20",
   "record": {
-    "current_price": 1962.0,
-    "change_from_signal_month_pct": 25.45,
-    "return_since_gc_pct": 51.16
+    "current_price": 1847.0,
+    "change_from_signal_month_pct": 18.09,
+    "return_since_gc_pct": 42.3
   },
   "daily": [
     {
@@ -620,22 +620,35 @@
       "sma200": 1536.75,
       "rsi14": 54.02,
       "rsi5": 56.76
+    },
+    {
+      "date": "2026-10-20",
+      "open": 1954.0,
+      "high": 1954.0,
+      "low": 1836.0,
+      "close": 1847.0,
+      "volume": 83000.0,
+      "sma25": 1962.2,
+      "sma75": 1813.91,
+      "sma200": 1539.65,
+      "rsi14": 54.02,
+      "rsi5": 56.76
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-19",
-    "monthly_rsi14": 66.36,
-    "monthly_rsi_ma5": 63.89,
-    "spread": 2.46,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-20",
+    "monthly_rsi14": 61.85,
+    "monthly_rsi_ma5": 62.99,
+    "spread": -1.14,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-20T16:13:19.304814+00:00"
+  "provisional_generated_at": "2026-10-21T16:28:46.540853+00:00"
 }

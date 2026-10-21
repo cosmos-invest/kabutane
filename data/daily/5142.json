@@ -2,12 +2,12 @@
   "code": "5142",
   "ticker": "5142.T",
   "name": "アキレス",
-  "generated_at": "2026-10-20T16:12:27.605838+00:00",
-  "price_date": "2026-10-19",
+  "generated_at": "2026-10-21T16:27:54.738375+00:00",
+  "price_date": "2026-10-20",
   "record": {
-    "current_price": 1917.0,
-    "change_from_signal_month_pct": 47.69,
-    "return_since_gc_pct": 47.69
+    "current_price": 1805.0,
+    "change_from_signal_month_pct": 39.06,
+    "return_since_gc_pct": 39.06
   },
   "daily": [
     {
@@ -620,15 +620,28 @@
       "sma200": 1504.25,
       "rsi14": 46.08,
       "rsi5": 47.65
+    },
+    {
+      "date": "2026-10-20",
+      "open": 1910.0,
+      "high": 1918.0,
+      "low": 1786.0,
+      "close": 1805.0,
+      "volume": 127400.0,
+      "sma25": 1882.96,
+      "sma75": 1652.53,
+      "sma200": 1506.29,
+      "rsi14": 46.08,
+      "rsi5": 47.65
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-19",
-    "monthly_rsi14": 64.17,
-    "monthly_rsi_ma5": 56.29,
-    "spread": 7.88,
+    "price_date": "2026-10-20",
+    "monthly_rsi14": 60.23,
+    "monthly_rsi_ma5": 55.5,
+    "spread": 4.73,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -637,5 +650,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-20T16:13:19.304814+00:00"
+  "provisional_generated_at": "2026-10-21T16:28:46.540853+00:00"
 }

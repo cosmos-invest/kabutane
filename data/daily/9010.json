@@ -2,12 +2,12 @@
   "code": "9010",
   "ticker": "9010.T",
   "name": "富士急行",
-  "generated_at": "2026-10-20T16:12:27.605838+00:00",
-  "price_date": "2026-10-19",
+  "generated_at": "2026-10-21T16:27:54.738375+00:00",
+  "price_date": "2026-10-20",
   "record": {
-    "current_price": 2635.0,
-    "change_from_signal_month_pct": -4.01,
-    "return_since_gc_pct": 3.29
+    "current_price": 2630.0,
+    "change_from_signal_month_pct": -4.19,
+    "return_since_gc_pct": 3.1
   },
   "daily": [
     {
@@ -620,15 +620,28 @@
       "sma200": 2408.16,
       "rsi14": 44.39,
       "rsi5": 52.25
+    },
+    {
+      "date": "2026-10-20",
+      "open": 2635.0,
+      "high": 2645.0,
+      "low": 2609.0,
+      "close": 2630.0,
+      "volume": 121100.0,
+      "sma25": 2631.64,
+      "sma75": 2658.84,
+      "sma200": 2411.11,
+      "rsi14": 44.39,
+      "rsi5": 52.25
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-19",
-    "monthly_rsi14": 45.07,
-    "monthly_rsi_ma5": 45.65,
-    "spread": -0.58,
+    "price_date": "2026-10-20",
+    "monthly_rsi14": 44.98,
+    "monthly_rsi_ma5": 45.63,
+    "spread": -0.65,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -637,5 +650,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-20T16:13:19.304814+00:00"
+  "provisional_generated_at": "2026-10-21T16:28:46.540853+00:00"
 }

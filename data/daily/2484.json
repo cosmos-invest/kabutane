@@ -2,12 +2,12 @@
   "code": "2484",
   "ticker": "2484.T",
   "name": "出前館",
-  "generated_at": "2026-10-20T16:12:27.605838+00:00",
-  "price_date": "2026-10-19",
+  "generated_at": "2026-10-21T16:27:54.738375+00:00",
+  "price_date": "2026-10-20",
   "record": {
-    "current_price": 138.0,
-    "change_from_signal_month_pct": 2.22,
-    "return_since_gc_pct": 2.22
+    "current_price": 132.0,
+    "change_from_signal_month_pct": -2.22,
+    "return_since_gc_pct": -2.22
   },
   "daily": [
     {
@@ -620,15 +620,28 @@
       "sma200": 134.68,
       "rsi14": 31.99,
       "rsi5": 34.66
+    },
+    {
+      "date": "2026-10-20",
+      "open": 138.0,
+      "high": 139.0,
+      "low": 131.0,
+      "close": 132.0,
+      "volume": 737800.0,
+      "sma25": 148.92,
+      "sma75": 144.64,
+      "sma200": 134.64,
+      "rsi14": 31.99,
+      "rsi5": 34.66
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-19",
-    "monthly_rsi14": 38.74,
-    "monthly_rsi_ma5": 37.89,
-    "spread": 0.85,
+    "price_date": "2026-10-20",
+    "monthly_rsi14": 37.94,
+    "monthly_rsi_ma5": 37.73,
+    "spread": 0.21,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -637,5 +650,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-20T16:13:19.304814+00:00"
+  "provisional_generated_at": "2026-10-21T16:28:46.540853+00:00"
 }

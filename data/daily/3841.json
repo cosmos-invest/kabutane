@@ -2,12 +2,12 @@
   "code": "3841",
   "ticker": "3841.T",
   "name": "ジーダット",
-  "generated_at": "2026-10-20T16:12:27.605838+00:00",
-  "price_date": "2026-10-19",
+  "generated_at": "2026-10-21T16:27:54.738375+00:00",
+  "price_date": "2026-10-20",
   "record": {
-    "current_price": 1297.0,
-    "change_from_signal_month_pct": 7.1,
-    "return_since_gc_pct": 5.36
+    "current_price": 1285.0,
+    "change_from_signal_month_pct": 6.11,
+    "return_since_gc_pct": 4.39
   },
   "daily": [
     {
@@ -620,22 +620,35 @@
       "sma200": 1228.24,
       "rsi14": 46.77,
       "rsi5": 48.24
+    },
+    {
+      "date": "2026-10-20",
+      "open": 1282.0,
+      "high": 1286.0,
+      "low": 1282.0,
+      "close": 1285.0,
+      "volume": 400.0,
+      "sma25": 1308.48,
+      "sma75": 1286.15,
+      "sma200": 1228.28,
+      "rsi14": 46.77,
+      "rsi5": 48.24
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-19",
-    "monthly_rsi14": 52.27,
-    "monthly_rsi_ma5": 51.98,
-    "spread": 0.29,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-20",
+    "monthly_rsi14": 51.86,
+    "monthly_rsi_ma5": 51.9,
+    "spread": -0.04,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-20T16:13:19.304814+00:00"
+  "provisional_generated_at": "2026-10-21T16:28:46.540853+00:00"
 }
