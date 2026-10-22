@@ -2,12 +2,12 @@
   "code": "2831",
   "ticker": "2831.T",
   "name": "はごろもフーズ",
-  "generated_at": "2026-10-21T16:27:54.738375+00:00",
-  "price_date": "2026-10-20",
+  "generated_at": "2026-10-22T16:28:51.512908+00:00",
+  "price_date": "2026-10-21",
   "record": {
-    "current_price": 3650.0,
-    "change_from_signal_month_pct": -0.82,
-    "return_since_gc_pct": -0.82
+    "current_price": 3680.0,
+    "change_from_signal_month_pct": 0.0,
+    "return_since_gc_pct": 0.0
   },
   "daily": [
     {
@@ -633,6 +633,19 @@
       "sma200": 3519.75,
       "rsi14": 64.77,
       "rsi5": 72.59
+    },
+    {
+      "date": "2026-10-21",
+      "open": 3655.0,
+      "high": 3680.0,
+      "low": 3645.0,
+      "close": 3680.0,
+      "volume": 400.0,
+      "sma25": 3661.4,
+      "sma75": 3626.67,
+      "sma200": 3521.35,
+      "rsi14": 64.77,
+      "rsi5": 72.59
     }
   ],
   "corporate_events": [
@@ -645,17 +658,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-20",
-    "monthly_rsi14": 69.11,
-    "monthly_rsi_ma5": 70.54,
-    "spread": -1.43,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-21",
+    "monthly_rsi14": 72.0,
+    "monthly_rsi_ma5": 71.11,
+    "spread": 0.88,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-21T16:28:46.540853+00:00"
+  "provisional_generated_at": "2026-10-22T16:29:30.492302+00:00"
 }

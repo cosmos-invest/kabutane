@@ -2,12 +2,12 @@
   "code": "9042",
   "ticker": "9042.T",
   "name": "阪急阪神ホールディングス",
-  "generated_at": "2026-10-21T16:27:54.738375+00:00",
-  "price_date": "2026-10-20",
+  "generated_at": "2026-10-22T16:28:51.512908+00:00",
+  "price_date": "2026-10-21",
   "record": {
-    "current_price": 4506.0,
-    "change_from_signal_month_pct": -4.43,
-    "return_since_gc_pct": -4.43
+    "current_price": 4585.0,
+    "change_from_signal_month_pct": -2.76,
+    "return_since_gc_pct": -2.76
   },
   "daily": [
     {
@@ -633,6 +633,19 @@
       "sma200": 4496.31,
       "rsi14": 57.9,
       "rsi5": 59.24
+    },
+    {
+      "date": "2026-10-21",
+      "open": 4530.0,
+      "high": 4596.0,
+      "low": 4514.0,
+      "close": 4585.0,
+      "volume": 1214300.0,
+      "sma25": 4519.28,
+      "sma75": 4621.97,
+      "sma200": 4499.93,
+      "rsi14": 57.9,
+      "rsi5": 59.24
     }
   ],
   "corporate_events": [
@@ -645,17 +658,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-20",
-    "monthly_rsi14": 50.46,
-    "monthly_rsi_ma5": 50.78,
-    "spread": -0.32,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-21",
+    "monthly_rsi14": 52.05,
+    "monthly_rsi_ma5": 51.1,
+    "spread": 0.95,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-21T16:28:46.540853+00:00"
+  "provisional_generated_at": "2026-10-22T16:29:30.492302+00:00"
 }

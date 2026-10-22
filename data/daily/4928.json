@@ -2,12 +2,12 @@
   "code": "4928",
   "ticker": "4928.T",
   "name": "ノエビアホールディングス",
-  "generated_at": "2026-10-21T16:27:54.738375+00:00",
-  "price_date": "2026-10-20",
+  "generated_at": "2026-10-22T16:28:51.512908+00:00",
+  "price_date": "2026-10-21",
   "record": {
-    "current_price": 4680.0,
-    "change_from_signal_month_pct": -5.84,
-    "return_since_gc_pct": -5.84
+    "current_price": 4635.0,
+    "change_from_signal_month_pct": -6.74,
+    "return_since_gc_pct": -6.74
   },
   "daily": [
     {
@@ -633,6 +633,19 @@
       "sma200": 4575.3,
       "rsi14": 44.48,
       "rsi5": 55.98
+    },
+    {
+      "date": "2026-10-21",
+      "open": 4670.0,
+      "high": 4670.0,
+      "low": 4635.0,
+      "close": 4635.0,
+      "volume": 65000.0,
+      "sma25": 4640.4,
+      "sma75": 4705.27,
+      "sma200": 4575.52,
+      "rsi14": 44.48,
+      "rsi5": 55.98
     }
   ],
   "corporate_events": [
@@ -645,17 +658,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-20",
-    "monthly_rsi14": 48.43,
-    "monthly_rsi_ma5": 47.96,
-    "spread": 0.47,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-21",
+    "monthly_rsi14": 47.46,
+    "monthly_rsi_ma5": 47.76,
+    "spread": -0.31,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-21T16:28:46.540853+00:00"
+  "provisional_generated_at": "2026-10-22T16:29:30.492302+00:00"
 }

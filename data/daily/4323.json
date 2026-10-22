@@ -2,12 +2,12 @@
   "code": "4323",
   "ticker": "4323.T",
   "name": "日本システム技術",
-  "generated_at": "2026-10-21T16:27:54.738375+00:00",
-  "price_date": "2026-10-20",
+  "generated_at": "2026-10-22T16:28:51.512908+00:00",
+  "price_date": "2026-10-21",
   "record": {
-    "current_price": 1851.0,
-    "change_from_signal_month_pct": -1.59,
-    "return_since_gc_pct": -1.59
+    "current_price": 1818.0,
+    "change_from_signal_month_pct": -3.35,
+    "return_since_gc_pct": -3.35
   },
   "daily": [
     {
@@ -633,6 +633,19 @@
       "sma200": 1979.52,
       "rsi14": 48.22,
       "rsi5": 50.41
+    },
+    {
+      "date": "2026-10-21",
+      "open": 1859.0,
+      "high": 1898.0,
+      "low": 1807.0,
+      "close": 1818.0,
+      "volume": 66000.0,
+      "sma25": 1890.0,
+      "sma75": 1875.01,
+      "sma200": 1975.84,
+      "rsi14": 48.22,
+      "rsi5": 50.41
     }
   ],
   "corporate_events": [
@@ -645,17 +658,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-20",
-    "monthly_rsi14": 50.43,
-    "monthly_rsi_ma5": 50.26,
-    "spread": 0.18,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-21",
+    "monthly_rsi14": 49.57,
+    "monthly_rsi_ma5": 50.09,
+    "spread": -0.51,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-21T16:28:46.540853+00:00"
+  "provisional_generated_at": "2026-10-22T16:29:30.492302+00:00"
 }

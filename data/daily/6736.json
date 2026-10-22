@@ -2,12 +2,12 @@
   "code": "6736",
   "ticker": "6736.T",
   "name": "サン電子",
-  "generated_at": "2026-10-21T16:27:54.738375+00:00",
-  "price_date": "2026-10-20",
+  "generated_at": "2026-10-22T16:28:51.512908+00:00",
+  "price_date": "2026-10-21",
   "record": {
-    "current_price": 9740.0,
-    "change_from_signal_month_pct": -0.2,
-    "return_since_gc_pct": 12.34
+    "current_price": 9800.0,
+    "change_from_signal_month_pct": 0.41,
+    "return_since_gc_pct": 13.03
   },
   "daily": [
     {
@@ -633,22 +633,35 @@
       "sma200": 8816.9,
       "rsi14": 60.46,
       "rsi5": 63.23
+    },
+    {
+      "date": "2026-10-21",
+      "open": 9850.0,
+      "high": 9980.0,
+      "low": 9690.0,
+      "close": 9800.0,
+      "volume": 36700.0,
+      "sma25": 9728.0,
+      "sma75": 9412.93,
+      "sma200": 8821.25,
+      "rsi14": 60.46,
+      "rsi5": 63.23
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-20",
-    "monthly_rsi14": 60.82,
-    "monthly_rsi_ma5": 60.94,
-    "spread": -0.12,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-21",
+    "monthly_rsi14": 61.15,
+    "monthly_rsi_ma5": 61.01,
+    "spread": 0.14,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-21T16:28:46.540853+00:00"
+  "provisional_generated_at": "2026-10-22T16:29:30.492302+00:00"
 }

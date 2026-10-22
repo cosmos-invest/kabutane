@@ -2,12 +2,12 @@
   "code": "7791",
   "ticker": "7791.T",
   "name": "ドリームベッド",
-  "generated_at": "2026-10-21T16:27:54.738375+00:00",
-  "price_date": "2026-10-20",
+  "generated_at": "2026-10-22T16:28:51.512908+00:00",
+  "price_date": "2026-10-21",
   "record": {
-    "current_price": 815.0,
-    "change_from_signal_month_pct": 0.12,
-    "return_since_gc_pct": 0.12
+    "current_price": 809.0,
+    "change_from_signal_month_pct": -0.61,
+    "return_since_gc_pct": -0.61
   },
   "daily": [
     {
@@ -633,6 +633,19 @@
       "sma200": 826.38,
       "rsi14": 47.34,
       "rsi5": 49.5
+    },
+    {
+      "date": "2026-10-21",
+      "open": 815.0,
+      "high": 815.0,
+      "low": 809.0,
+      "close": 809.0,
+      "volume": 1100.0,
+      "sma25": 820.48,
+      "sma75": 823.49,
+      "sma200": 826.21,
+      "rsi14": 47.34,
+      "rsi5": 49.5
     }
   ],
   "corporate_events": [
@@ -645,17 +658,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-20",
-    "monthly_rsi14": 48.32,
-    "monthly_rsi_ma5": 48.21,
-    "spread": 0.12,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-21",
+    "monthly_rsi14": 47.29,
+    "monthly_rsi_ma5": 48.0,
+    "spread": -0.71,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-21T16:28:46.540853+00:00"
+  "provisional_generated_at": "2026-10-22T16:29:30.492302+00:00"
 }

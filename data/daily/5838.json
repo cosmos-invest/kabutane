@@ -2,12 +2,12 @@
   "code": "5838",
   "ticker": "5838.T",
   "name": "楽天銀行",
-  "generated_at": "2026-10-21T16:27:54.738375+00:00",
-  "price_date": "2026-10-20",
+  "generated_at": "2026-10-22T16:28:51.512908+00:00",
+  "price_date": "2026-10-21",
   "record": {
-    "current_price": 5864.0,
-    "change_from_signal_month_pct": 7.14,
-    "return_since_gc_pct": 7.14
+    "current_price": 6184.0,
+    "change_from_signal_month_pct": 12.99,
+    "return_since_gc_pct": 12.99
   },
   "daily": [
     {
@@ -633,22 +633,35 @@
       "sma200": 6224.02,
       "rsi14": 49.92,
       "rsi5": 50.08
+    },
+    {
+      "date": "2026-10-21",
+      "open": 6064.0,
+      "high": 6309.0,
+      "low": 6007.0,
+      "close": 6184.0,
+      "volume": 1788000.0,
+      "sma25": 6218.4,
+      "sma75": 5986.45,
+      "sma200": 6220.02,
+      "rsi14": 49.92,
+      "rsi5": 50.08
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-20",
-    "monthly_rsi14": 51.97,
-    "monthly_rsi_ma5": 52.31,
-    "spread": -0.34,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-21",
+    "monthly_rsi14": 54.04,
+    "monthly_rsi_ma5": 52.73,
+    "spread": 1.31,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-21T16:28:46.540853+00:00"
+  "provisional_generated_at": "2026-10-22T16:29:30.492302+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "5580",
   "ticker": "5580.T",
   "name": "プロディライト",
-  "generated_at": "2026-10-21T16:27:54.738375+00:00",
-  "price_date": "2026-10-20",
+  "generated_at": "2026-10-22T16:28:51.512908+00:00",
+  "price_date": "2026-10-21",
   "record": {
-    "current_price": 1643.0,
-    "change_from_signal_month_pct": 1.36,
-    "return_since_gc_pct": 8.81
+    "current_price": 1614.0,
+    "change_from_signal_month_pct": -0.43,
+    "return_since_gc_pct": 6.89
   },
   "daily": [
     {
@@ -633,22 +633,35 @@
       "sma200": 1591.42,
       "rsi14": 47.67,
       "rsi5": 51.79
+    },
+    {
+      "date": "2026-10-21",
+      "open": 1615.0,
+      "high": 1639.0,
+      "low": 1614.0,
+      "close": 1614.0,
+      "volume": 2700.0,
+      "sma25": 1600.84,
+      "sma75": 1634.64,
+      "sma200": 1591.63,
+      "rsi14": 47.67,
+      "rsi5": 51.79
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-20",
-    "monthly_rsi14": 55.33,
-    "monthly_rsi_ma5": 54.45,
-    "spread": 0.88,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-21",
+    "monthly_rsi14": 54.16,
+    "monthly_rsi_ma5": 54.22,
+    "spread": -0.05,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-21T16:28:46.540853+00:00"
+  "provisional_generated_at": "2026-10-22T16:29:30.492302+00:00"
 }

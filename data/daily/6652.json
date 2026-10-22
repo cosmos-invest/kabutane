@@ -2,12 +2,12 @@
   "code": "6652",
   "ticker": "6652.T",
   "name": "ＩＤＥＣ",
-  "generated_at": "2026-10-21T16:27:54.738375+00:00",
-  "price_date": "2026-10-20",
+  "generated_at": "2026-10-22T16:28:51.512908+00:00",
+  "price_date": "2026-10-21",
   "record": {
-    "current_price": 3705.0,
-    "change_from_signal_month_pct": 4.81,
-    "return_since_gc_pct": 4.81
+    "current_price": 3670.0,
+    "change_from_signal_month_pct": 3.82,
+    "return_since_gc_pct": 3.82
   },
   "daily": [
     {
@@ -633,6 +633,19 @@
       "sma200": 3333.59,
       "rsi14": 61.97,
       "rsi5": 64.19
+    },
+    {
+      "date": "2026-10-21",
+      "open": 3755.0,
+      "high": 3765.0,
+      "low": 3655.0,
+      "close": 3670.0,
+      "volume": 123200.0,
+      "sma25": 3840.2,
+      "sma75": 3614.2,
+      "sma200": 3337.53,
+      "rsi14": 61.97,
+      "rsi5": 64.19
     }
   ],
   "corporate_events": [
@@ -645,17 +658,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-20",
-    "monthly_rsi14": 64.15,
-    "monthly_rsi_ma5": 64.1,
-    "spread": 0.05,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-21",
+    "monthly_rsi14": 63.22,
+    "monthly_rsi_ma5": 63.91,
+    "spread": -0.69,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-21T16:28:46.540853+00:00"
+  "provisional_generated_at": "2026-10-22T16:29:30.492302+00:00"
 }

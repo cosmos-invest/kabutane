@@ -2,12 +2,12 @@
   "code": "4645",
   "ticker": "4645.T",
   "name": "市進ホールディングス",
-  "generated_at": "2026-10-21T16:27:54.738375+00:00",
-  "price_date": "2026-10-20",
+  "generated_at": "2026-10-22T16:28:51.512908+00:00",
+  "price_date": "2026-10-21",
   "record": {
-    "current_price": 431.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.94
+    "current_price": 434.0,
+    "change_from_signal_month_pct": 0.7,
+    "return_since_gc_pct": 1.64
   },
   "daily": [
     {
@@ -633,22 +633,35 @@
       "sma200": 434.82,
       "rsi14": 41.58,
       "rsi5": 44.19
+    },
+    {
+      "date": "2026-10-21",
+      "open": 431.0,
+      "high": 434.0,
+      "low": 431.0,
+      "close": 434.0,
+      "volume": 1400.0,
+      "sma25": 439.0,
+      "sma75": 434.49,
+      "sma200": 434.72,
+      "rsi14": 41.58,
+      "rsi5": 44.19
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-20",
-    "monthly_rsi14": 44.28,
-    "monthly_rsi_ma5": 44.71,
-    "spread": -0.43,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-21",
+    "monthly_rsi14": 45.25,
+    "monthly_rsi_ma5": 44.91,
+    "spread": 0.35,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-21T16:28:46.540853+00:00"
+  "provisional_generated_at": "2026-10-22T16:29:30.492302+00:00"
 }

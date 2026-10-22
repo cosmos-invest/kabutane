@@ -2,12 +2,12 @@
   "code": "7211",
   "ticker": "7211.T",
   "name": "三菱自動車工業",
-  "generated_at": "2026-10-21T16:27:54.738375+00:00",
-  "price_date": "2026-10-20",
+  "generated_at": "2026-10-22T16:28:51.512908+00:00",
+  "price_date": "2026-10-21",
   "record": {
-    "current_price": 353.8,
-    "change_from_signal_month_pct": -3.88,
-    "return_since_gc_pct": -3.88
+    "current_price": 350.4,
+    "change_from_signal_month_pct": -4.81,
+    "return_since_gc_pct": -4.81
   },
   "daily": [
     {
@@ -633,6 +633,19 @@
       "sma200": 358.92,
       "rsi14": 42.53,
       "rsi5": 47.33
+    },
+    {
+      "date": "2026-10-21",
+      "open": 357.2,
+      "high": 357.2,
+      "low": 349.0,
+      "close": 350.4,
+      "volume": 5338800.0,
+      "sma25": 355.67,
+      "sma75": 358.68,
+      "sma200": 358.78,
+      "rsi14": 42.53,
+      "rsi5": 47.33
     }
   ],
   "corporate_events": [
@@ -645,17 +658,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-20",
-    "monthly_rsi14": 44.4,
-    "monthly_rsi_ma5": 44.14,
-    "spread": 0.26,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-21",
+    "monthly_rsi14": 44.05,
+    "monthly_rsi_ma5": 44.07,
+    "spread": -0.03,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-21T16:28:46.540853+00:00"
+  "provisional_generated_at": "2026-10-22T16:29:30.492302+00:00"
 }

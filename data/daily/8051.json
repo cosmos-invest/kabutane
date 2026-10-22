@@ -2,12 +2,12 @@
   "code": "8051",
   "ticker": "8051.T",
   "name": "山善",
-  "generated_at": "2026-10-21T16:27:54.738375+00:00",
-  "price_date": "2026-10-20",
+  "generated_at": "2026-10-22T16:28:51.512908+00:00",
+  "price_date": "2026-10-21",
   "record": {
-    "current_price": 1877.0,
-    "change_from_signal_month_pct": 5.69,
-    "return_since_gc_pct": 21.8
+    "current_price": 1949.0,
+    "change_from_signal_month_pct": 9.74,
+    "return_since_gc_pct": 26.48
   },
   "daily": [
     {
@@ -633,6 +633,19 @@
       "sma200": 1678.64,
       "rsi14": 63.01,
       "rsi5": 67.49
+    },
+    {
+      "date": "2026-10-21",
+      "open": 1891.0,
+      "high": 1974.0,
+      "low": 1860.0,
+      "close": 1949.0,
+      "volume": 581700.0,
+      "sma25": 1976.84,
+      "sma75": 1884.71,
+      "sma200": 1681.1,
+      "rsi14": 63.01,
+      "rsi5": 67.49
     }
   ],
   "corporate_events": [
@@ -645,17 +658,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-20",
-    "monthly_rsi14": 68.11,
-    "monthly_rsi_ma5": 69.47,
-    "spread": -1.36,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-21",
+    "monthly_rsi14": 72.4,
+    "monthly_rsi_ma5": 70.33,
+    "spread": 2.07,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-21T16:28:46.540853+00:00"
+  "provisional_generated_at": "2026-10-22T16:29:30.492302+00:00"
 }

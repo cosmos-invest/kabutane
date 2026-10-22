@@ -2,12 +2,12 @@
   "code": "4931",
   "ticker": "4931.T",
   "name": "新日本製薬",
-  "generated_at": "2026-10-21T16:27:54.738375+00:00",
-  "price_date": "2026-10-20",
+  "generated_at": "2026-10-22T16:28:51.512908+00:00",
+  "price_date": "2026-10-21",
   "record": {
-    "current_price": 2018.0,
-    "change_from_signal_month_pct": -0.2,
-    "return_since_gc_pct": -0.2
+    "current_price": 2009.0,
+    "change_from_signal_month_pct": -0.64,
+    "return_since_gc_pct": -0.64
   },
   "daily": [
     {
@@ -633,6 +633,19 @@
       "sma200": 2024.59,
       "rsi14": 48.82,
       "rsi5": 50.59
+    },
+    {
+      "date": "2026-10-21",
+      "open": 2020.0,
+      "high": 2025.0,
+      "low": 2009.0,
+      "close": 2009.0,
+      "volume": 20200.0,
+      "sma25": 2008.48,
+      "sma75": 2027.07,
+      "sma200": 2024.53,
+      "rsi14": 48.82,
+      "rsi5": 50.59
     }
   ],
   "corporate_events": [
@@ -645,17 +658,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-20",
-    "monthly_rsi14": 50.55,
-    "monthly_rsi_ma5": 50.47,
-    "spread": 0.08,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-21",
+    "monthly_rsi14": 50.17,
+    "monthly_rsi_ma5": 50.4,
+    "spread": -0.23,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-21T16:28:46.540853+00:00"
+  "provisional_generated_at": "2026-10-22T16:29:30.492302+00:00"
 }
