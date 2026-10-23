@@ -2,12 +2,12 @@
   "code": "8113",
   "ticker": "8113.T",
   "name": "ユニ・チャーム",
-  "generated_at": "2026-10-22T16:28:51.512908+00:00",
-  "price_date": "2026-10-21",
+  "generated_at": "2026-10-23T16:17:18.708510+00:00",
+  "price_date": "2026-10-22",
   "record": {
-    "current_price": 996.4,
-    "change_from_signal_month_pct": -1.0,
-    "return_since_gc_pct": -1.0
+    "current_price": 1005.0,
+    "change_from_signal_month_pct": -0.15,
+    "return_since_gc_pct": -0.15
   },
   "daily": [
     {
@@ -646,15 +646,28 @@
       "sma200": 956.43,
       "rsi14": 37.18,
       "rsi5": 41.46
+    },
+    {
+      "date": "2026-10-22",
+      "open": 989.5,
+      "high": 1010.5,
+      "low": 989.0,
+      "close": 1005.0,
+      "volume": 5283900.0,
+      "sma25": 965.55,
+      "sma75": 976.54,
+      "sma200": 957.0,
+      "rsi14": 37.18,
+      "rsi5": 41.46
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-21",
-    "monthly_rsi14": 39.76,
-    "monthly_rsi_ma5": 37.03,
-    "spread": 2.74,
+    "price_date": "2026-10-22",
+    "monthly_rsi14": 40.37,
+    "monthly_rsi_ma5": 37.15,
+    "spread": 3.22,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -663,5 +676,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-22T16:29:30.492302+00:00"
+  "provisional_generated_at": "2026-10-23T16:18:04.005863+00:00"
 }

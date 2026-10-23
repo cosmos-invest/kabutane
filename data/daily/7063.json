@@ -2,12 +2,12 @@
   "code": "7063",
   "ticker": "7063.T",
   "name": "Ｂｉｒｄｍａｎ",
-  "generated_at": "2026-10-22T16:28:51.512908+00:00",
-  "price_date": "2026-10-21",
+  "generated_at": "2026-10-23T16:17:18.708510+00:00",
+  "price_date": "2026-10-22",
   "record": {
-    "current_price": 43.0,
-    "change_from_signal_month_pct": -50.0,
-    "return_since_gc_pct": -50.0
+    "current_price": 41.0,
+    "change_from_signal_month_pct": -52.33,
+    "return_since_gc_pct": -52.33
   },
   "daily": [
     {
@@ -646,15 +646,28 @@
       "sma200": 101.42,
       "rsi14": 31.29,
       "rsi5": 31.85
+    },
+    {
+      "date": "2026-10-22",
+      "open": 42.0,
+      "high": 43.0,
+      "low": 41.0,
+      "close": 41.0,
+      "volume": 190600.0,
+      "sma25": 54.96,
+      "sma75": 78.97,
+      "sma200": 100.92,
+      "rsi14": 31.29,
+      "rsi5": 31.85
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-21",
-    "monthly_rsi14": 29.13,
-    "monthly_rsi_ma5": 29.96,
-    "spread": -0.83,
+    "price_date": "2026-10-22",
+    "monthly_rsi14": 29.05,
+    "monthly_rsi_ma5": 29.94,
+    "spread": -0.9,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -663,5 +676,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-22T16:29:30.492302+00:00"
+  "provisional_generated_at": "2026-10-23T16:18:04.005863+00:00"
 }

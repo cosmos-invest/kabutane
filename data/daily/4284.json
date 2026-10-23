@@ -2,12 +2,12 @@
   "code": "4284",
   "ticker": "4284.T",
   "name": "ソルクシーズ",
-  "generated_at": "2026-10-22T16:28:51.512908+00:00",
-  "price_date": "2026-10-21",
+  "generated_at": "2026-10-23T16:17:18.708510+00:00",
+  "price_date": "2026-10-22",
   "record": {
-    "current_price": 438.0,
-    "change_from_signal_month_pct": 0.46,
-    "return_since_gc_pct": 0.46
+    "current_price": 442.0,
+    "change_from_signal_month_pct": 1.38,
+    "return_since_gc_pct": 1.38
   },
   "daily": [
     {
@@ -646,22 +646,35 @@
       "sma200": 456.0,
       "rsi14": 52.65,
       "rsi5": 52.68
+    },
+    {
+      "date": "2026-10-22",
+      "open": 435.0,
+      "high": 447.0,
+      "low": 435.0,
+      "close": 442.0,
+      "volume": 51400.0,
+      "sma25": 451.48,
+      "sma75": 444.77,
+      "sma200": 455.77,
+      "rsi14": 52.65,
+      "rsi5": 52.68
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-21",
-    "monthly_rsi14": 51.12,
-    "monthly_rsi_ma5": 51.54,
-    "spread": -0.43,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-22",
+    "monthly_rsi14": 51.72,
+    "monthly_rsi_ma5": 51.66,
+    "spread": 0.05,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-22T16:29:30.492302+00:00"
+  "provisional_generated_at": "2026-10-23T16:18:04.005863+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "8200",
   "ticker": "8200.T",
   "name": "リンガーハット",
-  "generated_at": "2026-10-22T16:28:51.512908+00:00",
-  "price_date": "2026-10-21",
+  "generated_at": "2026-10-23T16:17:18.708510+00:00",
+  "price_date": "2026-10-22",
   "record": {
-    "current_price": 2365.0,
-    "change_from_signal_month_pct": 1.03,
-    "return_since_gc_pct": 1.03
+    "current_price": 2369.0,
+    "change_from_signal_month_pct": 1.2,
+    "return_since_gc_pct": 1.2
   },
   "daily": [
     {
@@ -646,15 +646,28 @@
       "sma200": 2249.26,
       "rsi14": 47.16,
       "rsi5": 55.29
+    },
+    {
+      "date": "2026-10-22",
+      "open": 2358.0,
+      "high": 2369.0,
+      "low": 2347.0,
+      "close": 2369.0,
+      "volume": 73900.0,
+      "sma25": 2315.04,
+      "sma75": 2308.99,
+      "sma200": 2249.59,
+      "rsi14": 47.16,
+      "rsi5": 55.29
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-21",
-    "monthly_rsi14": 55.78,
-    "monthly_rsi_ma5": 51.26,
-    "spread": 4.52,
+    "price_date": "2026-10-22",
+    "monthly_rsi14": 55.99,
+    "monthly_rsi_ma5": 51.3,
+    "spread": 4.69,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -663,5 +676,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-22T16:29:30.492302+00:00"
+  "provisional_generated_at": "2026-10-23T16:18:04.005863+00:00"
 }

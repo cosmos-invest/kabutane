@@ -2,12 +2,12 @@
   "code": "5952",
   "ticker": "5952.T",
   "name": "アマテイ",
-  "generated_at": "2026-10-22T16:28:51.512908+00:00",
-  "price_date": "2026-10-21",
+  "generated_at": "2026-10-23T16:17:18.708510+00:00",
+  "price_date": "2026-10-22",
   "record": {
-    "current_price": 160.0,
-    "change_from_signal_month_pct": -14.44,
-    "return_since_gc_pct": -14.44
+    "current_price": 158.0,
+    "change_from_signal_month_pct": -15.51,
+    "return_since_gc_pct": -15.51
   },
   "daily": [
     {
@@ -646,15 +646,28 @@
       "sma200": 189.91,
       "rsi14": 54.05,
       "rsi5": 55.21
+    },
+    {
+      "date": "2026-10-22",
+      "open": 160.0,
+      "high": 161.0,
+      "low": 156.0,
+      "close": 158.0,
+      "volume": 108800.0,
+      "sma25": 180.52,
+      "sma75": 184.48,
+      "sma200": 189.77,
+      "rsi14": 54.05,
+      "rsi5": 55.21
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-21",
-    "monthly_rsi14": 42.87,
-    "monthly_rsi_ma5": 51.41,
-    "spread": -8.54,
+    "price_date": "2026-10-22",
+    "monthly_rsi14": 42.24,
+    "monthly_rsi_ma5": 51.29,
+    "spread": -9.04,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -663,5 +676,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-22T16:29:30.492302+00:00"
+  "provisional_generated_at": "2026-10-23T16:18:04.005863+00:00"
 }

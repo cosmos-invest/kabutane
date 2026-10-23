@@ -2,12 +2,12 @@
   "code": "3181",
   "ticker": "3181.T",
   "name": "買取王国",
-  "generated_at": "2026-10-22T16:28:51.512908+00:00",
-  "price_date": "2026-10-21",
+  "generated_at": "2026-10-23T16:17:18.708510+00:00",
+  "price_date": "2026-10-22",
   "record": {
-    "current_price": 1062.0,
-    "change_from_signal_month_pct": -0.47,
-    "return_since_gc_pct": 11.32
+    "current_price": 1071.0,
+    "change_from_signal_month_pct": 0.37,
+    "return_since_gc_pct": 12.26
   },
   "daily": [
     {
@@ -646,15 +646,28 @@
       "sma200": 969.52,
       "rsi14": 57.26,
       "rsi5": 62.32
+    },
+    {
+      "date": "2026-10-22",
+      "open": 1064.0,
+      "high": 1098.0,
+      "low": 1056.0,
+      "close": 1071.0,
+      "volume": 3900.0,
+      "sma25": 1059.96,
+      "sma75": 1055.28,
+      "sma200": 970.41,
+      "rsi14": 57.26,
+      "rsi5": 62.32
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-21",
-    "monthly_rsi14": 57.85,
-    "monthly_rsi_ma5": 57.26,
-    "spread": 0.59,
+    "price_date": "2026-10-22",
+    "monthly_rsi14": 58.36,
+    "monthly_rsi_ma5": 57.36,
+    "spread": 1.0,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -663,5 +676,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-22T16:29:30.492302+00:00"
+  "provisional_generated_at": "2026-10-23T16:18:04.005863+00:00"
 }

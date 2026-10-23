@@ -2,12 +2,12 @@
   "code": "3153",
   "ticker": "3153.T",
   "name": "八洲電機",
-  "generated_at": "2026-10-22T16:28:51.512908+00:00",
-  "price_date": "2026-10-21",
+  "generated_at": "2026-10-23T16:17:18.708510+00:00",
+  "price_date": "2026-10-22",
   "record": {
-    "current_price": 3055.0,
-    "change_from_signal_month_pct": 0.99,
-    "return_since_gc_pct": 0.99
+    "current_price": 3020.0,
+    "change_from_signal_month_pct": -0.17,
+    "return_since_gc_pct": -0.17
   },
   "daily": [
     {
@@ -646,15 +646,28 @@
       "sma200": 3011.55,
       "rsi14": 64.66,
       "rsi5": 65.96
+    },
+    {
+      "date": "2026-10-22",
+      "open": 3050.0,
+      "high": 3080.0,
+      "low": 3015.0,
+      "close": 3020.0,
+      "volume": 39600.0,
+      "sma25": 3095.28,
+      "sma75": 2975.77,
+      "sma200": 3011.89,
+      "rsi14": 64.66,
+      "rsi5": 65.96
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-21",
-    "monthly_rsi14": 65.34,
-    "monthly_rsi_ma5": 65.52,
-    "spread": -0.17,
+    "price_date": "2026-10-22",
+    "monthly_rsi14": 64.27,
+    "monthly_rsi_ma5": 65.3,
+    "spread": -1.03,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -663,5 +676,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-22T16:29:30.492302+00:00"
+  "provisional_generated_at": "2026-10-23T16:18:04.005863+00:00"
 }

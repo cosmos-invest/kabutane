@@ -2,12 +2,12 @@
   "code": "9416",
   "ticker": "9416.T",
   "name": "ビジョン",
-  "generated_at": "2026-10-22T16:28:51.512908+00:00",
-  "price_date": "2026-10-21",
+  "generated_at": "2026-10-23T16:17:18.708510+00:00",
+  "price_date": "2026-10-22",
   "record": {
-    "current_price": 1017.0,
-    "change_from_signal_month_pct": -1.55,
-    "return_since_gc_pct": -1.55
+    "current_price": 1026.0,
+    "change_from_signal_month_pct": -0.68,
+    "return_since_gc_pct": -0.68
   },
   "daily": [
     {
@@ -646,15 +646,28 @@
       "sma200": 1114.97,
       "rsi14": 41.3,
       "rsi5": 41.31
+    },
+    {
+      "date": "2026-10-22",
+      "open": 1017.0,
+      "high": 1033.0,
+      "low": 1017.0,
+      "close": 1026.0,
+      "volume": 311700.0,
+      "sma25": 1042.4,
+      "sma75": 1033.39,
+      "sma200": 1113.63,
+      "rsi14": 41.3,
+      "rsi5": 41.31
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-21",
-    "monthly_rsi14": 37.44,
-    "monthly_rsi_ma5": 37.44,
-    "spread": 0.0,
+    "price_date": "2026-10-22",
+    "monthly_rsi14": 37.82,
+    "monthly_rsi_ma5": 37.52,
+    "spread": 0.3,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -663,5 +676,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-22T16:29:30.492302+00:00"
+  "provisional_generated_at": "2026-10-23T16:18:04.005863+00:00"
 }

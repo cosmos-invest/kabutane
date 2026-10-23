@@ -2,12 +2,12 @@
   "code": "3696",
   "ticker": "3696.T",
   "name": "セレス",
-  "generated_at": "2026-10-22T16:28:51.512908+00:00",
-  "price_date": "2026-10-21",
+  "generated_at": "2026-10-23T16:17:18.708510+00:00",
+  "price_date": "2026-10-22",
   "record": {
-    "current_price": 2304.0,
-    "change_from_signal_month_pct": 9.04,
-    "return_since_gc_pct": 28.36
+    "current_price": 2288.0,
+    "change_from_signal_month_pct": 8.28,
+    "return_since_gc_pct": 27.47
   },
   "daily": [
     {
@@ -646,15 +646,28 @@
       "sma200": 1898.96,
       "rsi14": 48.22,
       "rsi5": 53.11
+    },
+    {
+      "date": "2026-10-22",
+      "open": 2335.0,
+      "high": 2362.0,
+      "low": 2288.0,
+      "close": 2288.0,
+      "volume": 58000.0,
+      "sma25": 2240.8,
+      "sma75": 2177.6,
+      "sma200": 1899.98,
+      "rsi14": 48.22,
+      "rsi5": 53.11
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-21",
-    "monthly_rsi14": 57.99,
-    "monthly_rsi_ma5": 55.85,
-    "spread": 2.15,
+    "price_date": "2026-10-22",
+    "monthly_rsi14": 57.72,
+    "monthly_rsi_ma5": 55.79,
+    "spread": 1.93,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -663,5 +676,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-22T16:29:30.492302+00:00"
+  "provisional_generated_at": "2026-10-23T16:18:04.005863+00:00"
 }

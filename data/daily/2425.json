@@ -2,12 +2,12 @@
   "code": "2425",
   "ticker": "2425.T",
   "name": "ケアサービス",
-  "generated_at": "2026-10-22T16:28:51.512908+00:00",
-  "price_date": "2026-10-21",
+  "generated_at": "2026-10-23T16:17:18.708510+00:00",
+  "price_date": "2026-10-22",
   "record": {
-    "current_price": 675.0,
-    "change_from_signal_month_pct": 0.15,
-    "return_since_gc_pct": 0.15
+    "current_price": 671.0,
+    "change_from_signal_month_pct": -0.45,
+    "return_since_gc_pct": -0.45
   },
   "daily": [
     {
@@ -646,15 +646,28 @@
       "sma200": 719.37,
       "rsi14": 37.04,
       "rsi5": 37.45
+    },
+    {
+      "date": "2026-10-22",
+      "open": 671.0,
+      "high": 671.0,
+      "low": 671.0,
+      "close": 671.0,
+      "volume": 100.0,
+      "sma25": 674.0,
+      "sma75": 669.21,
+      "sma200": 718.82,
+      "rsi14": 37.04,
+      "rsi5": 37.45
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-21",
-    "monthly_rsi14": 40.23,
-    "monthly_rsi_ma5": 37.82,
-    "spread": 2.41,
+    "price_date": "2026-10-22",
+    "monthly_rsi14": 39.77,
+    "monthly_rsi_ma5": 37.72,
+    "spread": 2.04,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -663,5 +676,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-22T16:29:30.492302+00:00"
+  "provisional_generated_at": "2026-10-23T16:18:04.005863+00:00"
 }

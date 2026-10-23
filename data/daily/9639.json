@@ -2,12 +2,12 @@
   "code": "9639",
   "ticker": "9639.T",
   "name": "三協フロンテア",
-  "generated_at": "2026-10-22T16:28:51.512908+00:00",
-  "price_date": "2026-10-21",
+  "generated_at": "2026-10-23T16:17:18.708510+00:00",
+  "price_date": "2026-10-22",
   "record": {
-    "current_price": 2335.0,
-    "change_from_signal_month_pct": 1.35,
-    "return_since_gc_pct": 3.23
+    "current_price": 2309.0,
+    "change_from_signal_month_pct": 0.22,
+    "return_since_gc_pct": 2.08
   },
   "daily": [
     {
@@ -646,6 +646,19 @@
       "sma200": 2231.89,
       "rsi14": 58.57,
       "rsi5": 63.62
+    },
+    {
+      "date": "2026-10-22",
+      "open": 2335.0,
+      "high": 2335.0,
+      "low": 2309.0,
+      "close": 2309.0,
+      "volume": 3300.0,
+      "sma25": 2335.24,
+      "sma75": 2326.57,
+      "sma200": 2232.84,
+      "rsi14": 58.57,
+      "rsi5": 63.62
     }
   ],
   "corporate_events": [
@@ -658,17 +671,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-21",
-    "monthly_rsi14": 63.13,
-    "monthly_rsi_ma5": 63.03,
-    "spread": 0.11,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-22",
+    "monthly_rsi14": 61.01,
+    "monthly_rsi_ma5": 62.6,
+    "spread": -1.59,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-22T16:29:30.492302+00:00"
+  "provisional_generated_at": "2026-10-23T16:18:04.005863+00:00"
 }

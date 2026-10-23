@@ -2,12 +2,12 @@
   "code": "2480",
   "ticker": "2480.T",
   "name": "システム・ロケーション",
-  "generated_at": "2026-10-22T16:28:51.512908+00:00",
-  "price_date": "2026-10-21",
+  "generated_at": "2026-10-23T16:17:18.708510+00:00",
+  "price_date": "2026-10-22",
   "record": {
-    "current_price": 1715.0,
-    "change_from_signal_month_pct": 0.88,
-    "return_since_gc_pct": 0.88
+    "current_price": 1743.0,
+    "change_from_signal_month_pct": 2.53,
+    "return_since_gc_pct": 2.53
   },
   "daily": [
     {
@@ -646,22 +646,35 @@
       "sma200": 1716.93,
       "rsi14": 60.62,
       "rsi5": 61.1
+    },
+    {
+      "date": "2026-10-22",
+      "open": 1715.0,
+      "high": 1743.0,
+      "low": 1715.0,
+      "close": 1743.0,
+      "volume": 900.0,
+      "sma25": 1774.64,
+      "sma75": 1739.97,
+      "sma200": 1717.24,
+      "rsi14": 60.62,
+      "rsi5": 61.1
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-21",
-    "monthly_rsi14": 61.16,
-    "monthly_rsi_ma5": 62.9,
-    "spread": -1.74,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-22",
+    "monthly_rsi14": 64.2,
+    "monthly_rsi_ma5": 63.51,
+    "spread": 0.7,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-22T16:29:30.492302+00:00"
+  "provisional_generated_at": "2026-10-23T16:18:04.005863+00:00"
 }

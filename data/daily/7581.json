@@ -2,12 +2,12 @@
   "code": "7581",
   "ticker": "7581.T",
   "name": "サイゼリヤ",
-  "generated_at": "2026-10-22T16:28:51.512908+00:00",
-  "price_date": "2026-10-21",
+  "generated_at": "2026-10-23T16:17:18.708510+00:00",
+  "price_date": "2026-10-22",
   "record": {
-    "current_price": 7720.0,
-    "change_from_signal_month_pct": -2.03,
-    "return_since_gc_pct": -2.03
+    "current_price": 7640.0,
+    "change_from_signal_month_pct": -3.05,
+    "return_since_gc_pct": -3.05
   },
   "daily": [
     {
@@ -646,15 +646,28 @@
       "sma200": 6298.4,
       "rsi14": 55.78,
       "rsi5": 66.75
+    },
+    {
+      "date": "2026-10-22",
+      "open": 7700.0,
+      "high": 7770.0,
+      "low": 7590.0,
+      "close": 7640.0,
+      "volume": 510300.0,
+      "sma25": 6775.2,
+      "sma75": 6964.93,
+      "sma200": 6309.3,
+      "rsi14": 55.78,
+      "rsi5": 66.75
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-21",
-    "monthly_rsi14": 61.63,
-    "monthly_rsi_ma5": 58.88,
-    "spread": 2.75,
+    "price_date": "2026-10-22",
+    "monthly_rsi14": 61.29,
+    "monthly_rsi_ma5": 58.81,
+    "spread": 2.48,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -663,5 +676,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-22T16:29:30.492302+00:00"
+  "provisional_generated_at": "2026-10-23T16:18:04.005863+00:00"
 }

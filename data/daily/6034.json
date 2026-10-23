@@ -2,12 +2,12 @@
   "code": "6034",
   "ticker": "6034.T",
   "name": "ＭＲＴ",
-  "generated_at": "2026-10-22T16:28:51.512908+00:00",
-  "price_date": "2026-10-21",
+  "generated_at": "2026-10-23T16:17:18.708510+00:00",
+  "price_date": "2026-10-22",
   "record": {
-    "current_price": 527.0,
-    "change_from_signal_month_pct": -16.48,
-    "return_since_gc_pct": -15.95
+    "current_price": 520.0,
+    "change_from_signal_month_pct": -17.59,
+    "return_since_gc_pct": -17.07
   },
   "daily": [
     {
@@ -646,15 +646,28 @@
       "sma200": 625.0,
       "rsi14": 38.43,
       "rsi5": 38.89
+    },
+    {
+      "date": "2026-10-22",
+      "open": 525.0,
+      "high": 528.0,
+      "low": 520.0,
+      "close": 520.0,
+      "volume": 4000.0,
+      "sma25": 567.64,
+      "sma75": 609.53,
+      "sma200": 624.5,
+      "rsi14": 38.43,
+      "rsi5": 38.89
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-21",
-    "monthly_rsi14": 26.33,
-    "monthly_rsi_ma5": 32.25,
-    "spread": -5.92,
+    "price_date": "2026-10-22",
+    "monthly_rsi14": 25.94,
+    "monthly_rsi_ma5": 32.17,
+    "spread": -6.23,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -663,5 +676,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-22T16:29:30.492302+00:00"
+  "provisional_generated_at": "2026-10-23T16:18:04.005863+00:00"
 }

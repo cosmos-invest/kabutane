@@ -2,12 +2,12 @@
   "code": "9044",
   "ticker": "9044.T",
   "name": "ＮＡＮＫＡＩ",
-  "generated_at": "2026-10-22T16:28:51.512908+00:00",
-  "price_date": "2026-10-21",
+  "generated_at": "2026-10-23T16:17:18.708510+00:00",
+  "price_date": "2026-10-22",
   "record": {
-    "current_price": 2981.5,
-    "change_from_signal_month_pct": -0.33,
-    "return_since_gc_pct": -0.33
+    "current_price": 3015.0,
+    "change_from_signal_month_pct": 0.79,
+    "return_since_gc_pct": 0.79
   },
   "daily": [
     {
@@ -646,6 +646,19 @@
       "sma200": 2982.34,
       "rsi14": 56.69,
       "rsi5": 57.74
+    },
+    {
+      "date": "2026-10-22",
+      "open": 2980.0,
+      "high": 3016.0,
+      "low": 2969.5,
+      "close": 3015.0,
+      "volume": 279200.0,
+      "sma25": 3074.3,
+      "sma75": 3022.21,
+      "sma200": 2982.69,
+      "rsi14": 56.69,
+      "rsi5": 57.74
     }
   ],
   "corporate_events": [
@@ -658,17 +671,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-21",
-    "monthly_rsi14": 54.11,
-    "monthly_rsi_ma5": 55.04,
-    "spread": -0.93,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-22",
+    "monthly_rsi14": 55.34,
+    "monthly_rsi_ma5": 55.28,
+    "spread": 0.06,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-22T16:29:30.492302+00:00"
+  "provisional_generated_at": "2026-10-23T16:18:04.005863+00:00"
 }

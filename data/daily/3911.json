@@ -2,12 +2,12 @@
   "code": "3911",
   "ticker": "3911.T",
   "name": "Ａｉｍｉｎｇ",
-  "generated_at": "2026-10-22T16:28:51.512908+00:00",
-  "price_date": "2026-10-21",
+  "generated_at": "2026-10-23T16:17:18.708510+00:00",
+  "price_date": "2026-10-22",
   "record": {
-    "current_price": 212.0,
-    "change_from_signal_month_pct": 15.22,
-    "return_since_gc_pct": 9.84
+    "current_price": 205.0,
+    "change_from_signal_month_pct": 11.41,
+    "return_since_gc_pct": 6.22
   },
   "daily": [
     {
@@ -646,15 +646,28 @@
       "sma200": 195.29,
       "rsi14": 38.62,
       "rsi5": 39.78
+    },
+    {
+      "date": "2026-10-22",
+      "open": 211.0,
+      "high": 214.0,
+      "low": 203.0,
+      "close": 205.0,
+      "volume": 1031500.0,
+      "sma25": 184.32,
+      "sma75": 186.05,
+      "sma200": 195.2,
+      "rsi14": 38.62,
+      "rsi5": 39.78
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-21",
-    "monthly_rsi14": 44.06,
-    "monthly_rsi_ma5": 37.52,
-    "spread": 6.54,
+    "price_date": "2026-10-22",
+    "monthly_rsi14": 42.56,
+    "monthly_rsi_ma5": 37.22,
+    "spread": 5.34,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -663,5 +676,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-22T16:29:30.492302+00:00"
+  "provisional_generated_at": "2026-10-23T16:18:04.005863+00:00"
 }

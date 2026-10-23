@@ -2,12 +2,12 @@
   "code": "1433",
   "ticker": "1433.T",
   "name": "ベステラ",
-  "generated_at": "2026-10-22T16:28:51.512908+00:00",
-  "price_date": "2026-10-21",
+  "generated_at": "2026-10-23T16:17:18.708510+00:00",
+  "price_date": "2026-10-22",
   "record": {
-    "current_price": 1204.0,
-    "change_from_signal_month_pct": 6.74,
-    "return_since_gc_pct": 6.74
+    "current_price": 1197.0,
+    "change_from_signal_month_pct": 6.12,
+    "return_since_gc_pct": 6.12
   },
   "daily": [
     {
@@ -646,22 +646,35 @@
       "sma200": 1173.88,
       "rsi14": 49.97,
       "rsi5": 51.13
+    },
+    {
+      "date": "2026-10-22",
+      "open": 1204.0,
+      "high": 1210.0,
+      "low": 1197.0,
+      "close": 1197.0,
+      "volume": 20900.0,
+      "sma25": 1200.48,
+      "sma75": 1186.69,
+      "sma200": 1173.59,
+      "rsi14": 49.97,
+      "rsi5": 51.13
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-21",
-    "monthly_rsi14": 52.74,
-    "monthly_rsi_ma5": 52.64,
-    "spread": 0.11,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-22",
+    "monthly_rsi14": 52.46,
+    "monthly_rsi_ma5": 52.58,
+    "spread": -0.12,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-22T16:29:30.492302+00:00"
+  "provisional_generated_at": "2026-10-23T16:18:04.005863+00:00"
 }

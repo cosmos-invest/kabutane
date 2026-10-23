@@ -2,12 +2,12 @@
   "code": "7246",
   "ticker": "7246.T",
   "name": "プレス工業",
-  "generated_at": "2026-10-22T16:28:51.512908+00:00",
-  "price_date": "2026-10-21",
+  "generated_at": "2026-10-23T16:17:18.708510+00:00",
+  "price_date": "2026-10-22",
   "record": {
-    "current_price": 960.0,
-    "change_from_signal_month_pct": 11.24,
-    "return_since_gc_pct": 11.24
+    "current_price": 945.0,
+    "change_from_signal_month_pct": 9.5,
+    "return_since_gc_pct": 9.5
   },
   "daily": [
     {
@@ -646,6 +646,19 @@
       "sma200": 876.95,
       "rsi14": 59.26,
       "rsi5": 61.01
+    },
+    {
+      "date": "2026-10-22",
+      "open": 962.0,
+      "high": 966.0,
+      "low": 941.0,
+      "close": 945.0,
+      "volume": 164000.0,
+      "sma25": 983.44,
+      "sma75": 937.4,
+      "sma200": 877.58,
+      "rsi14": 59.26,
+      "rsi5": 61.01
     }
   ],
   "corporate_events": [
@@ -658,17 +671,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-21",
-    "monthly_rsi14": 62.32,
-    "monthly_rsi_ma5": 61.64,
-    "spread": 0.68,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-22",
+    "monthly_rsi14": 61.16,
+    "monthly_rsi_ma5": 61.41,
+    "spread": -0.25,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-22T16:29:30.492302+00:00"
+  "provisional_generated_at": "2026-10-23T16:18:04.005863+00:00"
 }

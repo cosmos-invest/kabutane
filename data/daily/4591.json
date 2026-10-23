@@ -2,12 +2,12 @@
   "code": "4591",
   "ticker": "4591.T",
   "name": "リボミック",
-  "generated_at": "2026-10-22T16:28:51.512908+00:00",
-  "price_date": "2026-10-21",
+  "generated_at": "2026-10-23T16:17:18.708510+00:00",
+  "price_date": "2026-10-22",
   "record": {
-    "current_price": 66.0,
-    "change_from_signal_month_pct": -9.59,
-    "return_since_gc_pct": -9.59
+    "current_price": 65.0,
+    "change_from_signal_month_pct": -10.96,
+    "return_since_gc_pct": -10.96
   },
   "daily": [
     {
@@ -646,15 +646,28 @@
       "sma200": 79.42,
       "rsi14": 37.98,
       "rsi5": 39.71
+    },
+    {
+      "date": "2026-10-22",
+      "open": 65.0,
+      "high": 67.0,
+      "low": 65.0,
+      "close": 65.0,
+      "volume": 264800.0,
+      "sma25": 73.88,
+      "sma75": 76.87,
+      "sma200": 79.38,
+      "rsi14": 37.98,
+      "rsi5": 39.71
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-21",
-    "monthly_rsi14": 38.63,
-    "monthly_rsi_ma5": 39.63,
-    "spread": -1.01,
+    "price_date": "2026-10-22",
+    "monthly_rsi14": 38.32,
+    "monthly_rsi_ma5": 39.57,
+    "spread": -1.25,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -663,5 +676,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-22T16:29:30.492302+00:00"
+  "provisional_generated_at": "2026-10-23T16:18:04.005863+00:00"
 }

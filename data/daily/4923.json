@@ -2,12 +2,12 @@
   "code": "4923",
   "ticker": "4923.T",
   "name": "コタ",
-  "generated_at": "2026-10-22T16:28:51.512908+00:00",
-  "price_date": "2026-10-21",
+  "generated_at": "2026-10-23T16:17:18.708510+00:00",
+  "price_date": "2026-10-22",
   "record": {
-    "current_price": 1114.0,
-    "change_from_signal_month_pct": -8.39,
-    "return_since_gc_pct": -4.46
+    "current_price": 1116.0,
+    "change_from_signal_month_pct": -8.22,
+    "return_since_gc_pct": -4.29
   },
   "daily": [
     {
@@ -646,15 +646,28 @@
       "sma200": 1180.48,
       "rsi14": 40.46,
       "rsi5": 46.16
+    },
+    {
+      "date": "2026-10-22",
+      "open": 1114.0,
+      "high": 1124.0,
+      "low": 1112.0,
+      "close": 1116.0,
+      "volume": 33600.0,
+      "sma25": 1163.6,
+      "sma75": 1198.79,
+      "sma200": 1180.79,
+      "rsi14": 40.46,
+      "rsi5": 46.16
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-21",
-    "monthly_rsi14": 39.8,
-    "monthly_rsi_ma5": 43.86,
-    "spread": -4.06,
+    "price_date": "2026-10-22",
+    "monthly_rsi14": 39.91,
+    "monthly_rsi_ma5": 43.88,
+    "spread": -3.98,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -663,5 +676,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-22T16:29:30.492302+00:00"
+  "provisional_generated_at": "2026-10-23T16:18:04.005863+00:00"
 }

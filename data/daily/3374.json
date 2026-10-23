@@ -2,12 +2,12 @@
   "code": "3374",
   "ticker": "3374.T",
   "name": "内外テック",
-  "generated_at": "2026-10-22T16:28:51.512908+00:00",
-  "price_date": "2026-10-21",
+  "generated_at": "2026-10-23T16:17:18.708510+00:00",
+  "price_date": "2026-10-22",
   "record": {
-    "current_price": 4885.0,
-    "change_from_signal_month_pct": 57.07,
-    "return_since_gc_pct": 76.74
+    "current_price": 4625.0,
+    "change_from_signal_month_pct": 48.71,
+    "return_since_gc_pct": 67.33
   },
   "daily": [
     {
@@ -646,15 +646,28 @@
       "sma200": 3177.23,
       "rsi14": 59.94,
       "rsi5": 61.58
+    },
+    {
+      "date": "2026-10-22",
+      "open": 4885.0,
+      "high": 4925.0,
+      "low": 4615.0,
+      "close": 4625.0,
+      "volume": 49300.0,
+      "sma25": 4779.6,
+      "sma75": 4070.56,
+      "sma200": 3189.43,
+      "rsi14": 59.94,
+      "rsi5": 61.58
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-21",
-    "monthly_rsi14": 78.38,
-    "monthly_rsi_ma5": 72.93,
-    "spread": 5.45,
+    "price_date": "2026-10-22",
+    "monthly_rsi14": 73.29,
+    "monthly_rsi_ma5": 71.92,
+    "spread": 1.38,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -663,5 +676,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-22T16:29:30.492302+00:00"
+  "provisional_generated_at": "2026-10-23T16:18:04.005863+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "3969",
   "ticker": "3969.T",
   "name": "エイトレッド",
-  "generated_at": "2026-10-22T16:28:51.512908+00:00",
-  "price_date": "2026-10-21",
+  "generated_at": "2026-10-23T16:17:18.708510+00:00",
+  "price_date": "2026-10-22",
   "record": {
-    "current_price": 1395.0,
-    "change_from_signal_month_pct": -0.36,
-    "return_since_gc_pct": -0.36
+    "current_price": 1384.0,
+    "change_from_signal_month_pct": -1.14,
+    "return_since_gc_pct": -1.14
   },
   "daily": [
     {
@@ -646,6 +646,19 @@
       "sma200": 1405.06,
       "rsi14": 42.5,
       "rsi5": 45.2
+    },
+    {
+      "date": "2026-10-22",
+      "open": 1390.0,
+      "high": 1392.0,
+      "low": 1384.0,
+      "close": 1384.0,
+      "volume": 3800.0,
+      "sma25": 1395.88,
+      "sma75": 1401.04,
+      "sma200": 1404.75,
+      "rsi14": 42.5,
+      "rsi5": 45.2
     }
   ],
   "corporate_events": [
@@ -658,17 +671,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-21",
-    "monthly_rsi14": 46.65,
-    "monthly_rsi_ma5": 45.97,
-    "spread": 0.68,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-22",
+    "monthly_rsi14": 45.63,
+    "monthly_rsi_ma5": 45.76,
+    "spread": -0.13,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-22T16:29:30.492302+00:00"
+  "provisional_generated_at": "2026-10-23T16:18:04.005863+00:00"
 }

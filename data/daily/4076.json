@@ -2,12 +2,12 @@
   "code": "4076",
   "ticker": "4076.T",
   "name": "シイエヌエス",
-  "generated_at": "2026-10-22T16:28:51.512908+00:00",
-  "price_date": "2026-10-21",
+  "generated_at": "2026-10-23T16:17:18.708510+00:00",
+  "price_date": "2026-10-22",
   "record": {
-    "current_price": 1923.0,
-    "change_from_signal_month_pct": 5.78,
-    "return_since_gc_pct": 11.22
+    "current_price": 1968.0,
+    "change_from_signal_month_pct": 8.25,
+    "return_since_gc_pct": 13.82
   },
   "daily": [
     {
@@ -646,22 +646,35 @@
       "sma200": 1786.32,
       "rsi14": 53.84,
       "rsi5": 58.27
+    },
+    {
+      "date": "2026-10-22",
+      "open": 1930.0,
+      "high": 1969.0,
+      "low": 1921.0,
+      "close": 1968.0,
+      "volume": 7600.0,
+      "sma25": 1973.32,
+      "sma75": 1914.23,
+      "sma200": 1787.53,
+      "rsi14": 53.84,
+      "rsi5": 58.27
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-21",
-    "monthly_rsi14": 58.31,
-    "monthly_rsi_ma5": 58.9,
-    "spread": -0.59,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-22",
+    "monthly_rsi14": 60.93,
+    "monthly_rsi_ma5": 59.42,
+    "spread": 1.5,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-22T16:29:30.492302+00:00"
+  "provisional_generated_at": "2026-10-23T16:18:04.005863+00:00"
 }

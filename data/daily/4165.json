@@ -2,12 +2,12 @@
   "code": "4165",
   "ticker": "4165.T",
   "name": "プレイド",
-  "generated_at": "2026-10-22T16:28:51.512908+00:00",
-  "price_date": "2026-10-21",
+  "generated_at": "2026-10-23T16:17:18.708510+00:00",
+  "price_date": "2026-10-22",
   "record": {
-    "current_price": 775.0,
-    "change_from_signal_month_pct": 34.08,
-    "return_since_gc_pct": 34.08
+    "current_price": 770.0,
+    "change_from_signal_month_pct": 33.22,
+    "return_since_gc_pct": 33.22
   },
   "daily": [
     {
@@ -646,15 +646,28 @@
       "sma200": 630.67,
       "rsi14": 38.06,
       "rsi5": 40.24
+    },
+    {
+      "date": "2026-10-22",
+      "open": 774.0,
+      "high": 806.0,
+      "low": 767.0,
+      "close": 770.0,
+      "volume": 343500.0,
+      "sma25": 709.04,
+      "sma75": 652.12,
+      "sma200": 630.45,
+      "rsi14": 38.06,
+      "rsi5": 40.24
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-21",
-    "monthly_rsi14": 50.18,
-    "monthly_rsi_ma5": 45.17,
-    "spread": 5.02,
+    "price_date": "2026-10-22",
+    "monthly_rsi14": 50.01,
+    "monthly_rsi_ma5": 45.13,
+    "spread": 4.88,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -663,5 +676,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-22T16:29:30.492302+00:00"
+  "provisional_generated_at": "2026-10-23T16:18:04.005863+00:00"
 }
