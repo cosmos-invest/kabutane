@@ -2,12 +2,12 @@
   "code": "4175",
   "ticker": "4175.T",
   "name": "ｃｏｌｙ",
-  "generated_at": "2026-10-23T16:17:18.708510+00:00",
-  "price_date": "2026-10-22",
+  "generated_at": "2026-10-26T18:06:28.352565+00:00",
+  "price_date": "2026-10-23",
   "record": {
-    "current_price": 2977.0,
-    "change_from_signal_month_pct": 5.98,
-    "return_since_gc_pct": 51.27
+    "current_price": 2830.0,
+    "change_from_signal_month_pct": 0.75,
+    "return_since_gc_pct": 43.8
   },
   "daily": [
     {
@@ -659,22 +659,35 @@
       "sma200": 2272.89,
       "rsi14": 59.02,
       "rsi5": 69.94
+    },
+    {
+      "date": "2026-10-23",
+      "open": 3030.0,
+      "high": 3050.0,
+      "low": 2821.0,
+      "close": 2830.0,
+      "volume": 18400.0,
+      "sma25": 2890.28,
+      "sma75": 2808.16,
+      "sma200": 2277.33,
+      "rsi14": 59.02,
+      "rsi5": 69.94
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-22",
-    "monthly_rsi14": 76.74,
-    "monthly_rsi_ma5": 75.09,
-    "spread": 1.65,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-23",
+    "monthly_rsi14": 73.3,
+    "monthly_rsi_ma5": 74.4,
+    "spread": -1.1,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-23T16:18:04.005863+00:00"
+  "provisional_generated_at": "2026-10-26T18:07:14.812496+00:00"
 }

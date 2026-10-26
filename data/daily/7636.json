@@ -2,12 +2,12 @@
   "code": "7636",
   "ticker": "7636.T",
   "name": "ハンズマン",
-  "generated_at": "2026-10-23T16:17:18.708510+00:00",
-  "price_date": "2026-10-22",
+  "generated_at": "2026-10-26T18:06:28.352565+00:00",
+  "price_date": "2026-10-23",
   "record": {
-    "current_price": 792.0,
-    "change_from_signal_month_pct": -1.49,
-    "return_since_gc_pct": -1.49
+    "current_price": 786.0,
+    "change_from_signal_month_pct": -2.24,
+    "return_since_gc_pct": -2.24
   },
   "daily": [
     {
@@ -659,22 +659,35 @@
       "sma200": 802.75,
       "rsi14": 37.91,
       "rsi5": 41.37
+    },
+    {
+      "date": "2026-10-23",
+      "open": 794.0,
+      "high": 794.0,
+      "low": 785.0,
+      "close": 786.0,
+      "volume": 4500.0,
+      "sma25": 793.52,
+      "sma75": 790.85,
+      "sma200": 802.54,
+      "rsi14": 37.91,
+      "rsi5": 41.37
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-22",
-    "monthly_rsi14": 35.74,
-    "monthly_rsi_ma5": 35.24,
-    "spread": 0.51,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-23",
+    "monthly_rsi14": 34.77,
+    "monthly_rsi_ma5": 35.04,
+    "spread": -0.27,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-23T16:18:04.005863+00:00"
+  "provisional_generated_at": "2026-10-26T18:07:14.812496+00:00"
 }

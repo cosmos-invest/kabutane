@@ -2,12 +2,12 @@
   "code": "254A",
   "ticker": "254A.T",
   "name": "ＡＩフュージョンキャピタルグループ",
-  "generated_at": "2026-10-23T16:17:18.708510+00:00",
-  "price_date": "2026-10-22",
+  "generated_at": "2026-10-26T18:06:28.352565+00:00",
+  "price_date": "2026-10-23",
   "record": {
-    "current_price": 1287.0,
-    "change_from_signal_month_pct": 9.44,
-    "return_since_gc_pct": 9.44
+    "current_price": 1040.0,
+    "change_from_signal_month_pct": -11.56,
+    "return_since_gc_pct": -11.56
   },
   "daily": [
     {
@@ -659,22 +659,35 @@
       "sma200": 1046.75,
       "rsi14": 51.88,
       "rsi5": 56.23
+    },
+    {
+      "date": "2026-10-23",
+      "open": 1107.0,
+      "high": 1270.0,
+      "low": 1020.0,
+      "close": 1040.0,
+      "volume": 812100.0,
+      "sma25": 1151.92,
+      "sma75": 1185.05,
+      "sma200": 1047.62,
+      "rsi14": 51.88,
+      "rsi5": 56.23
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-22",
-    "monthly_rsi14": 59.35,
-    "monthly_rsi_ma5": 55.74,
-    "spread": 3.61,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-23",
+    "monthly_rsi14": 50.74,
+    "monthly_rsi_ma5": 54.02,
+    "spread": -3.28,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-23T16:18:04.005863+00:00"
+  "provisional_generated_at": "2026-10-26T18:07:14.812496+00:00"
 }

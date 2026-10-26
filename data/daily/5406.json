@@ -2,12 +2,12 @@
   "code": "5406",
   "ticker": "5406.T",
   "name": "神戸製鋼所",
-  "generated_at": "2026-10-23T16:17:18.708510+00:00",
-  "price_date": "2026-10-22",
+  "generated_at": "2026-10-26T18:06:28.352565+00:00",
+  "price_date": "2026-10-23",
   "record": {
-    "current_price": 2023.0,
-    "change_from_signal_month_pct": -2.6,
-    "return_since_gc_pct": -2.6
+    "current_price": 2018.0,
+    "change_from_signal_month_pct": -2.84,
+    "return_since_gc_pct": -2.84
   },
   "daily": [
     {
@@ -659,6 +659,19 @@
       "sma200": 2030.84,
       "rsi14": 55.6,
       "rsi5": 58.97
+    },
+    {
+      "date": "2026-10-23",
+      "open": 2009.5,
+      "high": 2022.0,
+      "low": 1997.5,
+      "close": 2018.0,
+      "volume": 2286300.0,
+      "sma25": 2024.4,
+      "sma75": 2006.41,
+      "sma200": 2030.78,
+      "rsi14": 55.6,
+      "rsi5": 58.97
     }
   ],
   "corporate_events": [
@@ -671,17 +684,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-22",
-    "monthly_rsi14": 54.51,
-    "monthly_rsi_ma5": 54.36,
-    "spread": 0.16,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-23",
+    "monthly_rsi14": 54.31,
+    "monthly_rsi_ma5": 54.32,
+    "spread": -0.0,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-23T16:18:04.005863+00:00"
+  "provisional_generated_at": "2026-10-26T18:07:14.812496+00:00"
 }

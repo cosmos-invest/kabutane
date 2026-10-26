@@ -2,12 +2,12 @@
   "code": "6776",
   "ticker": "6776.T",
   "name": "天昇電気工業",
-  "generated_at": "2026-10-23T16:17:18.708510+00:00",
-  "price_date": "2026-10-22",
+  "generated_at": "2026-10-26T18:06:28.352565+00:00",
+  "price_date": "2026-10-23",
   "record": {
-    "current_price": 283.0,
-    "change_from_signal_month_pct": 5.2,
-    "return_since_gc_pct": 5.2
+    "current_price": 279.0,
+    "change_from_signal_month_pct": 3.72,
+    "return_since_gc_pct": 3.72
   },
   "daily": [
     {
@@ -659,22 +659,35 @@
       "sma200": 273.07,
       "rsi14": 44.03,
       "rsi5": 44.08
+    },
+    {
+      "date": "2026-10-23",
+      "open": 280.0,
+      "high": 282.0,
+      "low": 276.0,
+      "close": 279.0,
+      "volume": 30400.0,
+      "sma25": 289.64,
+      "sma75": 279.24,
+      "sma200": 273.19,
+      "rsi14": 44.03,
+      "rsi5": 44.08
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-22",
-    "monthly_rsi14": 48.84,
-    "monthly_rsi_ma5": 48.09,
-    "spread": 0.75,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-23",
+    "monthly_rsi14": 47.78,
+    "monthly_rsi_ma5": 47.88,
+    "spread": -0.1,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-23T16:18:04.005863+00:00"
+  "provisional_generated_at": "2026-10-26T18:07:14.812496+00:00"
 }

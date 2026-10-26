@@ -2,12 +2,12 @@
   "code": "8016",
   "ticker": "8016.T",
   "name": "オンワードホールディングス",
-  "generated_at": "2026-10-23T16:17:18.708510+00:00",
-  "price_date": "2026-10-22",
+  "generated_at": "2026-10-26T18:06:28.352565+00:00",
+  "price_date": "2026-10-23",
   "record": {
-    "current_price": 748.0,
-    "change_from_signal_month_pct": -1.97,
-    "return_since_gc_pct": -1.97
+    "current_price": 767.0,
+    "change_from_signal_month_pct": 0.52,
+    "return_since_gc_pct": 0.52
   },
   "daily": [
     {
@@ -659,22 +659,35 @@
       "sma200": 746.25,
       "rsi14": 60.28,
       "rsi5": 62.52
+    },
+    {
+      "date": "2026-10-23",
+      "open": 760.0,
+      "high": 775.0,
+      "low": 758.0,
+      "close": 767.0,
+      "volume": 1125300.0,
+      "sma25": 727.16,
+      "sma75": 740.85,
+      "sma200": 746.52,
+      "rsi14": 60.28,
+      "rsi5": 62.52
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-22",
-    "monthly_rsi14": 58.72,
-    "monthly_rsi_ma5": 59.0,
-    "spread": -0.28,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-23",
+    "monthly_rsi14": 60.28,
+    "monthly_rsi_ma5": 59.32,
+    "spread": 0.97,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-23T16:18:04.005863+00:00"
+  "provisional_generated_at": "2026-10-26T18:07:14.812496+00:00"
 }

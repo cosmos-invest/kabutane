@@ -2,12 +2,12 @@
   "code": "6662",
   "ticker": "6662.T",
   "name": "ユビテック",
-  "generated_at": "2026-10-23T16:17:18.708510+00:00",
-  "price_date": "2026-10-22",
+  "generated_at": "2026-10-26T18:06:28.352565+00:00",
+  "price_date": "2026-10-23",
   "record": {
-    "current_price": 223.0,
-    "change_from_signal_month_pct": 2.29,
-    "return_since_gc_pct": 2.29
+    "current_price": 220.0,
+    "change_from_signal_month_pct": 0.92,
+    "return_since_gc_pct": 0.92
   },
   "daily": [
     {
@@ -659,22 +659,35 @@
       "sma200": 226.28,
       "rsi14": 42.53,
       "rsi5": 42.6
+    },
+    {
+      "date": "2026-10-23",
+      "open": 222.0,
+      "high": 222.0,
+      "low": 220.0,
+      "close": 220.0,
+      "volume": 8000.0,
+      "sma25": 224.76,
+      "sma75": 222.09,
+      "sma200": 226.1,
+      "rsi14": 42.53,
+      "rsi5": 42.6
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-22",
-    "monthly_rsi14": 42.8,
-    "monthly_rsi_ma5": 42.48,
-    "spread": 0.32,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-23",
+    "monthly_rsi14": 41.71,
+    "monthly_rsi_ma5": 42.26,
+    "spread": -0.55,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-23T16:18:04.005863+00:00"
+  "provisional_generated_at": "2026-10-26T18:07:14.812496+00:00"
 }

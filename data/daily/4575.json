@@ -2,12 +2,12 @@
   "code": "4575",
   "ticker": "4575.T",
   "name": "キャンバス",
-  "generated_at": "2026-10-23T16:17:18.708510+00:00",
-  "price_date": "2026-10-22",
+  "generated_at": "2026-10-26T18:06:28.352565+00:00",
+  "price_date": "2026-10-23",
   "record": {
-    "current_price": 723.0,
-    "change_from_signal_month_pct": -1.9,
-    "return_since_gc_pct": -1.9
+    "current_price": 736.0,
+    "change_from_signal_month_pct": -0.14,
+    "return_since_gc_pct": -0.14
   },
   "daily": [
     {
@@ -659,22 +659,35 @@
       "sma200": 745.22,
       "rsi14": 42.46,
       "rsi5": 46.09
+    },
+    {
+      "date": "2026-10-23",
+      "open": 720.0,
+      "high": 749.0,
+      "low": 701.0,
+      "close": 736.0,
+      "volume": 136200.0,
+      "sma25": 750.44,
+      "sma75": 756.4,
+      "sma200": 744.91,
+      "rsi14": 42.46,
+      "rsi5": 46.09
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-22",
-    "monthly_rsi14": 44.51,
-    "monthly_rsi_ma5": 44.68,
-    "spread": -0.17,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-23",
+    "monthly_rsi14": 44.95,
+    "monthly_rsi_ma5": 44.76,
+    "spread": 0.18,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-23T16:18:04.005863+00:00"
+  "provisional_generated_at": "2026-10-26T18:07:14.812496+00:00"
 }
