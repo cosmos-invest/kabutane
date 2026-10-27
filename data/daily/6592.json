@@ -2,12 +2,12 @@
   "code": "6592",
   "ticker": "6592.T",
   "name": "マブチモーター",
-  "generated_at": "2026-10-26T18:06:28.352565+00:00",
-  "price_date": "2026-10-23",
+  "generated_at": "2026-10-27T17:14:52.331677+00:00",
+  "price_date": "2026-10-26",
   "record": {
-    "current_price": 1717.5,
-    "change_from_signal_month_pct": 3.15,
-    "return_since_gc_pct": 3.15
+    "current_price": 1738.0,
+    "change_from_signal_month_pct": 4.38,
+    "return_since_gc_pct": 4.38
   },
   "daily": [
     {
@@ -672,22 +672,35 @@
       "sma200": 1628.31,
       "rsi14": 61.82,
       "rsi5": 64.85
+    },
+    {
+      "date": "2026-10-26",
+      "open": 1720.0,
+      "high": 1759.0,
+      "low": 1720.0,
+      "close": 1738.0,
+      "volume": 1046300.0,
+      "sma25": 1740.5,
+      "sma75": 1702.84,
+      "sma200": 1629.72,
+      "rsi14": 61.82,
+      "rsi5": 64.85
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-23",
-    "monthly_rsi14": 64.84,
-    "monthly_rsi_ma5": 64.85,
-    "spread": -0.01,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-26",
+    "monthly_rsi14": 65.83,
+    "monthly_rsi_ma5": 65.05,
+    "spread": 0.78,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-26T18:07:14.812496+00:00"
+  "provisional_generated_at": "2026-10-27T17:16:03.156491+00:00"
 }

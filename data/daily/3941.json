@@ -2,12 +2,12 @@
   "code": "3941",
   "ticker": "3941.T",
   "name": "レンゴー",
-  "generated_at": "2026-10-26T18:06:28.352565+00:00",
-  "price_date": "2026-10-23",
+  "generated_at": "2026-10-27T17:14:52.331677+00:00",
+  "price_date": "2026-10-26",
   "record": {
-    "current_price": 1597.5,
-    "change_from_signal_month_pct": 7.07,
-    "return_since_gc_pct": 7.07
+    "current_price": 1590.0,
+    "change_from_signal_month_pct": 6.57,
+    "return_since_gc_pct": 6.57
   },
   "daily": [
     {
@@ -672,6 +672,19 @@
       "sma200": 1414.71,
       "rsi14": 63.23,
       "rsi5": 66.31
+    },
+    {
+      "date": "2026-10-26",
+      "open": 1608.0,
+      "high": 1615.0,
+      "low": 1586.0,
+      "close": 1590.0,
+      "volume": 939200.0,
+      "sma25": 1543.64,
+      "sma75": 1532.87,
+      "sma200": 1416.67,
+      "rsi14": 63.23,
+      "rsi5": 66.31
     }
   ],
   "corporate_events": [
@@ -684,17 +697,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-23",
-    "monthly_rsi14": 65.96,
-    "monthly_rsi_ma5": 65.86,
-    "spread": 0.11,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-26",
+    "monthly_rsi14": 65.76,
+    "monthly_rsi_ma5": 65.82,
+    "spread": -0.05,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-26T18:07:14.812496+00:00"
+  "provisional_generated_at": "2026-10-27T17:16:03.156491+00:00"
 }

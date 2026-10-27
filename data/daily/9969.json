@@ -2,12 +2,12 @@
   "code": "9969",
   "ticker": "9969.T",
   "name": "ショクブン",
-  "generated_at": "2026-10-26T18:06:28.352565+00:00",
-  "price_date": "2026-10-23",
+  "generated_at": "2026-10-27T17:14:52.331677+00:00",
+  "price_date": "2026-10-26",
   "record": {
-    "current_price": 230.0,
-    "change_from_signal_month_pct": -2.54,
-    "return_since_gc_pct": -2.54
+    "current_price": 231.0,
+    "change_from_signal_month_pct": -2.12,
+    "return_since_gc_pct": -2.12
   },
   "daily": [
     {
@@ -672,15 +672,28 @@
       "sma200": 241.21,
       "rsi14": 41.76,
       "rsi5": 43.92
+    },
+    {
+      "date": "2026-10-26",
+      "open": 230.0,
+      "high": 233.0,
+      "low": 230.0,
+      "close": 231.0,
+      "volume": 7000.0,
+      "sma25": 235.04,
+      "sma75": 235.24,
+      "sma200": 241.11,
+      "rsi14": 41.76,
+      "rsi5": 43.92
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-23",
-    "monthly_rsi14": 41.89,
-    "monthly_rsi_ma5": 43.96,
-    "spread": -2.08,
+    "price_date": "2026-10-26",
+    "monthly_rsi14": 42.38,
+    "monthly_rsi_ma5": 44.06,
+    "spread": -1.68,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -689,5 +702,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-26T18:07:14.812496+00:00"
+  "provisional_generated_at": "2026-10-27T17:16:03.156491+00:00"
 }

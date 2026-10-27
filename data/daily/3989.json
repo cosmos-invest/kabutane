@@ -2,12 +2,12 @@
   "code": "3989",
   "ticker": "3989.T",
   "name": "シェアリングテクノロジー",
-  "generated_at": "2026-10-26T18:06:28.352565+00:00",
-  "price_date": "2026-10-23",
+  "generated_at": "2026-10-27T17:14:52.331677+00:00",
+  "price_date": "2026-10-26",
   "record": {
-    "current_price": 1547.0,
-    "change_from_signal_month_pct": 15.45,
-    "return_since_gc_pct": 10.66
+    "current_price": 1533.0,
+    "change_from_signal_month_pct": 14.4,
+    "return_since_gc_pct": 9.66
   },
   "daily": [
     {
@@ -672,22 +672,35 @@
       "sma200": 1276.56,
       "rsi14": 60.27,
       "rsi5": 62.13
+    },
+    {
+      "date": "2026-10-26",
+      "open": 1534.0,
+      "high": 1537.0,
+      "low": 1529.0,
+      "close": 1533.0,
+      "volume": 271900.0,
+      "sma25": 1545.72,
+      "sma75": 1493.05,
+      "sma200": 1278.2,
+      "rsi14": 60.27,
+      "rsi5": 62.13
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-23",
-    "monthly_rsi14": 64.65,
-    "monthly_rsi_ma5": 64.24,
-    "spread": 0.41,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-26",
+    "monthly_rsi14": 64.05,
+    "monthly_rsi_ma5": 64.12,
+    "spread": -0.07,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-26T18:07:14.812496+00:00"
+  "provisional_generated_at": "2026-10-27T17:16:03.156491+00:00"
 }
