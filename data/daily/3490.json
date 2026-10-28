@@ -2,12 +2,12 @@
   "code": "3490",
   "ticker": "3490.T",
   "name": "アズ企画設計",
-  "generated_at": "2026-10-27T17:14:52.331677+00:00",
-  "price_date": "2026-10-26",
+  "generated_at": "2026-10-28T17:48:35.546013+00:00",
+  "price_date": "2026-10-27",
   "record": {
-    "current_price": 3070.0,
-    "change_from_signal_month_pct": -1.6,
-    "return_since_gc_pct": 3.02
+    "current_price": 3095.0,
+    "change_from_signal_month_pct": -0.8,
+    "return_since_gc_pct": 3.86
   },
   "daily": [
     {
@@ -685,22 +685,35 @@
       "sma200": 2975.32,
       "rsi14": 61.77,
       "rsi5": 67.67
+    },
+    {
+      "date": "2026-10-27",
+      "open": 3080.0,
+      "high": 3095.0,
+      "low": 3080.0,
+      "close": 3095.0,
+      "volume": 200.0,
+      "sma25": 3114.2,
+      "sma75": 3102.13,
+      "sma200": 2976.17,
+      "rsi14": 61.77,
+      "rsi5": 67.67
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-26",
-    "monthly_rsi14": 63.13,
-    "monthly_rsi_ma5": 63.33,
-    "spread": -0.2,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-27",
+    "monthly_rsi14": 63.86,
+    "monthly_rsi_ma5": 63.48,
+    "spread": 0.38,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-27T17:16:03.156491+00:00"
+  "provisional_generated_at": "2026-10-28T17:49:23.135954+00:00"
 }

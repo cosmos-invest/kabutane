@@ -2,12 +2,12 @@
   "code": "6988",
   "ticker": "6988.T",
   "name": "日東電工",
-  "generated_at": "2026-10-27T17:14:52.331677+00:00",
-  "price_date": "2026-10-26",
+  "generated_at": "2026-10-28T17:48:35.546013+00:00",
+  "price_date": "2026-10-27",
   "record": {
-    "current_price": 3608.0,
-    "change_from_signal_month_pct": 8.51,
-    "return_since_gc_pct": 8.51
+    "current_price": 3600.0,
+    "change_from_signal_month_pct": 8.27,
+    "return_since_gc_pct": 8.27
   },
   "daily": [
     {
@@ -685,6 +685,19 @@
       "sma200": 3350.03,
       "rsi14": 53.06,
       "rsi5": 57.1
+    },
+    {
+      "date": "2026-10-27",
+      "open": 3614.0,
+      "high": 3653.0,
+      "low": 3595.0,
+      "close": 3600.0,
+      "volume": 3553800.0,
+      "sma25": 3565.48,
+      "sma75": 3435.65,
+      "sma200": 3349.24,
+      "rsi14": 53.06,
+      "rsi5": 57.1
     }
   ],
   "corporate_events": [
@@ -692,15 +705,15 @@
       "date": "2026-09-29",
       "type": "DIVIDEND",
       "label": "配当",
-      "detail": "1株 32円"
+      "detail": "1株 36円"
     }
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-26",
-    "monthly_rsi14": 62.18,
-    "monthly_rsi_ma5": 59.15,
-    "spread": 3.03,
+    "price_date": "2026-10-27",
+    "monthly_rsi14": 62.06,
+    "monthly_rsi_ma5": 59.13,
+    "spread": 2.93,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -709,5 +722,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-27T17:16:03.156491+00:00"
+  "provisional_generated_at": "2026-10-28T17:49:23.135954+00:00"
 }

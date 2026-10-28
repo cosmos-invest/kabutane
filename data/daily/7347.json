@@ -2,12 +2,12 @@
   "code": "7347",
   "ticker": "7347.T",
   "name": "マーキュリアホールディングス",
-  "generated_at": "2026-10-27T17:14:52.331677+00:00",
-  "price_date": "2026-10-26",
+  "generated_at": "2026-10-28T17:48:35.546013+00:00",
+  "price_date": "2026-10-27",
   "record": {
-    "current_price": 792.0,
-    "change_from_signal_month_pct": 1.8,
-    "return_since_gc_pct": 6.02
+    "current_price": 778.0,
+    "change_from_signal_month_pct": 0.0,
+    "return_since_gc_pct": 4.15
   },
   "daily": [
     {
@@ -685,22 +685,35 @@
       "sma200": 773.83,
       "rsi14": 44.91,
       "rsi5": 48.35
+    },
+    {
+      "date": "2026-10-27",
+      "open": 793.0,
+      "high": 798.0,
+      "low": 778.0,
+      "close": 778.0,
+      "volume": 22100.0,
+      "sma25": 800.64,
+      "sma75": 790.44,
+      "sma200": 773.43,
+      "rsi14": 44.91,
+      "rsi5": 48.35
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-26",
-    "monthly_rsi14": 49.95,
-    "monthly_rsi_ma5": 49.69,
-    "spread": 0.26,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-27",
+    "monthly_rsi14": 48.7,
+    "monthly_rsi_ma5": 49.44,
+    "spread": -0.74,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-27T17:16:03.156491+00:00"
+  "provisional_generated_at": "2026-10-28T17:49:23.135954+00:00"
 }

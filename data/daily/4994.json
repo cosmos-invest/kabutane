@@ -2,12 +2,12 @@
   "code": "4994",
   "ticker": "4994.T",
   "name": "大成ラミックグループ",
-  "generated_at": "2026-10-27T17:14:52.331677+00:00",
-  "price_date": "2026-10-26",
+  "generated_at": "2026-10-28T17:48:35.546013+00:00",
+  "price_date": "2026-10-27",
   "record": {
-    "current_price": 2636.0,
-    "change_from_signal_month_pct": 4.19,
-    "return_since_gc_pct": 9.11
+    "current_price": 2595.0,
+    "change_from_signal_month_pct": 2.57,
+    "return_since_gc_pct": 7.41
   },
   "daily": [
     {
@@ -685,6 +685,19 @@
       "sma200": 2552.89,
       "rsi14": 41.0,
       "rsi5": 47.87
+    },
+    {
+      "date": "2026-10-27",
+      "open": 2630.0,
+      "high": 2630.0,
+      "low": 2595.0,
+      "close": 2595.0,
+      "volume": 14800.0,
+      "sma25": 2613.0,
+      "sma75": 2646.01,
+      "sma200": 2552.51,
+      "rsi14": 41.0,
+      "rsi5": 47.87
     }
   ],
   "corporate_events": [
@@ -697,17 +710,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-26",
-    "monthly_rsi14": 49.59,
-    "monthly_rsi_ma5": 48.99,
-    "spread": 0.6,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-27",
+    "monthly_rsi14": 48.37,
+    "monthly_rsi_ma5": 48.74,
+    "spread": -0.37,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-27T17:16:03.156491+00:00"
+  "provisional_generated_at": "2026-10-28T17:49:23.135954+00:00"
 }

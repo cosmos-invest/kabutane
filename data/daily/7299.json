@@ -2,12 +2,12 @@
   "code": "7299",
   "ticker": "7299.T",
   "name": "フジオーゼックス",
-  "generated_at": "2026-10-27T17:14:52.331677+00:00",
-  "price_date": "2026-10-26",
+  "generated_at": "2026-10-28T17:48:35.546013+00:00",
+  "price_date": "2026-10-27",
   "record": {
-    "current_price": 1790.0,
-    "change_from_signal_month_pct": -3.3,
-    "return_since_gc_pct": -3.3
+    "current_price": 1870.0,
+    "change_from_signal_month_pct": 1.03,
+    "return_since_gc_pct": 1.03
   },
   "daily": [
     {
@@ -685,6 +685,19 @@
       "sma200": 1852.6,
       "rsi14": 59.8,
       "rsi5": 60.47
+    },
+    {
+      "date": "2026-10-27",
+      "open": 1807.0,
+      "high": 1870.0,
+      "low": 1781.0,
+      "close": 1870.0,
+      "volume": 25100.0,
+      "sma25": 1769.44,
+      "sma75": 1813.68,
+      "sma200": 1852.6,
+      "rsi14": 59.8,
+      "rsi5": 60.47
     }
   ],
   "corporate_events": [
@@ -692,22 +705,22 @@
       "date": "2026-09-29",
       "type": "DIVIDEND",
       "label": "配当",
-      "detail": "1株 24円"
+      "detail": "1株 30円"
     }
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-26",
-    "monthly_rsi14": 58.76,
-    "monthly_rsi_ma5": 59.18,
-    "spread": -0.42,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-27",
+    "monthly_rsi14": 60.97,
+    "monthly_rsi_ma5": 59.63,
+    "spread": 1.35,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-27T17:16:03.156491+00:00"
+  "provisional_generated_at": "2026-10-28T17:49:23.135954+00:00"
 }

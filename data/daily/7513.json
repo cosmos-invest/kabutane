@@ -2,12 +2,12 @@
   "code": "7513",
   "ticker": "7513.T",
   "name": "コジマ",
-  "generated_at": "2026-10-27T17:14:52.331677+00:00",
-  "price_date": "2026-10-26",
+  "generated_at": "2026-10-28T17:48:35.546013+00:00",
+  "price_date": "2026-10-27",
   "record": {
-    "current_price": 1403.0,
-    "change_from_signal_month_pct": 1.74,
-    "return_since_gc_pct": 1.74
+    "current_price": 1385.0,
+    "change_from_signal_month_pct": 0.44,
+    "return_since_gc_pct": 0.44
   },
   "daily": [
     {
@@ -685,15 +685,28 @@
       "sma200": 1334.64,
       "rsi14": 64.24,
       "rsi5": 64.77
+    },
+    {
+      "date": "2026-10-27",
+      "open": 1400.0,
+      "high": 1403.0,
+      "low": 1372.0,
+      "close": 1385.0,
+      "volume": 227300.0,
+      "sma25": 1448.52,
+      "sma75": 1405.71,
+      "sma200": 1335.57,
+      "rsi14": 64.24,
+      "rsi5": 64.77
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-26",
-    "monthly_rsi14": 64.53,
-    "monthly_rsi_ma5": 65.74,
-    "spread": -1.21,
+    "price_date": "2026-10-27",
+    "monthly_rsi14": 63.25,
+    "monthly_rsi_ma5": 65.49,
+    "spread": -2.24,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -702,5 +715,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-27T17:16:03.156491+00:00"
+  "provisional_generated_at": "2026-10-28T17:49:23.135954+00:00"
 }

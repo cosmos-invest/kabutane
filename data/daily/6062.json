@@ -2,12 +2,12 @@
   "code": "6062",
   "ticker": "6062.T",
   "name": "チャーム・ケア・コーポレーション",
-  "generated_at": "2026-10-27T17:14:52.331677+00:00",
-  "price_date": "2026-10-26",
+  "generated_at": "2026-10-28T17:48:35.546013+00:00",
+  "price_date": "2026-10-27",
   "record": {
-    "current_price": 1404.0,
-    "change_from_signal_month_pct": 3.46,
-    "return_since_gc_pct": 3.46
+    "current_price": 1382.0,
+    "change_from_signal_month_pct": 1.84,
+    "return_since_gc_pct": 1.84
   },
   "daily": [
     {
@@ -685,22 +685,35 @@
       "sma200": 1350.61,
       "rsi14": 51.77,
       "rsi5": 52.73
+    },
+    {
+      "date": "2026-10-27",
+      "open": 1396.0,
+      "high": 1399.0,
+      "low": 1382.0,
+      "close": 1382.0,
+      "volume": 52600.0,
+      "sma25": 1405.2,
+      "sma75": 1393.55,
+      "sma200": 1351.09,
+      "rsi14": 51.77,
+      "rsi5": 52.73
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-26",
-    "monthly_rsi14": 55.76,
-    "monthly_rsi_ma5": 55.05,
-    "spread": 0.71,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-27",
+    "monthly_rsi14": 54.54,
+    "monthly_rsi_ma5": 54.8,
+    "spread": -0.27,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-27T17:16:03.156491+00:00"
+  "provisional_generated_at": "2026-10-28T17:49:23.135954+00:00"
 }
