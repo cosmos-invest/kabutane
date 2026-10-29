@@ -2,8 +2,8 @@
   "code": "3121",
   "ticker": "3121.T",
   "name": "マーチャント・バンカーズ",
-  "generated_at": "2026-10-28T17:48:35.546013+00:00",
-  "price_date": "2026-10-27",
+  "generated_at": "2026-10-29T17:55:35.510421+00:00",
+  "price_date": "2026-10-28",
   "record": {
     "current_price": 238.0,
     "change_from_signal_month_pct": 4.85,
@@ -698,12 +698,32 @@
       "sma200": 229.49,
       "rsi14": 40.08,
       "rsi5": 42.76
+    },
+    {
+      "date": "2026-10-28",
+      "open": 236.0,
+      "high": 241.0,
+      "low": 235.0,
+      "close": 238.0,
+      "volume": 79900.0,
+      "sma25": 250.72,
+      "sma75": 244.72,
+      "sma200": 229.68,
+      "rsi14": 40.08,
+      "rsi5": 42.76
     }
   ],
-  "corporate_events": [],
+  "corporate_events": [
+    {
+      "date": "2026-10-29",
+      "type": "DIVIDEND",
+      "label": "配当",
+      "detail": "1株 3円"
+    }
+  ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-27",
+    "price_date": "2026-10-28",
     "monthly_rsi14": 46.02,
     "monthly_rsi_ma5": 45.94,
     "spread": 0.08,
@@ -715,5 +735,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-28T17:49:23.135954+00:00"
+  "provisional_generated_at": "2026-10-29T17:56:08.516912+00:00"
 }

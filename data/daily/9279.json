@@ -2,12 +2,12 @@
   "code": "9279",
   "ticker": "9279.T",
   "name": "ギフトホールディングス",
-  "generated_at": "2026-10-28T17:48:35.546013+00:00",
-  "price_date": "2026-10-27",
+  "generated_at": "2026-10-29T17:55:35.510421+00:00",
+  "price_date": "2026-10-28",
   "record": {
-    "current_price": 2257.0,
-    "change_from_signal_month_pct": -56.0,
-    "return_since_gc_pct": -56.0
+    "current_price": 2232.0,
+    "change_from_signal_month_pct": -56.49,
+    "return_since_gc_pct": -56.49
   },
   "daily": [
     {
@@ -698,15 +698,35 @@
       "sma200": 3730.32,
       "rsi14": 66.12,
       "rsi5": 71.38
+    },
+    {
+      "date": "2026-10-28",
+      "open": 2242.0,
+      "high": 2260.0,
+      "low": 2224.0,
+      "close": 2232.0,
+      "volume": 931300.0,
+      "sma25": 2154.8,
+      "sma75": 3021.93,
+      "sma200": 3724.0,
+      "rsi14": 66.12,
+      "rsi5": 71.38
     }
   ],
-  "corporate_events": [],
+  "corporate_events": [
+    {
+      "date": "2026-10-29",
+      "type": "DIVIDEND",
+      "label": "配当",
+      "detail": "1株 8円"
+    }
+  ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-27",
-    "monthly_rsi14": 40.44,
-    "monthly_rsi_ma5": 50.27,
-    "spread": -9.83,
+    "price_date": "2026-10-28",
+    "monthly_rsi14": 40.2,
+    "monthly_rsi_ma5": 50.22,
+    "spread": -10.03,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -715,5 +735,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-28T17:49:23.135954+00:00"
+  "provisional_generated_at": "2026-10-29T17:56:08.516912+00:00"
 }

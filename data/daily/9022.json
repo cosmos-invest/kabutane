@@ -2,12 +2,12 @@
   "code": "9022",
   "ticker": "9022.T",
   "name": "東海旅客鉄道",
-  "generated_at": "2026-10-28T17:48:35.546013+00:00",
-  "price_date": "2026-10-27",
+  "generated_at": "2026-10-29T17:55:35.510421+00:00",
+  "price_date": "2026-10-28",
   "record": {
-    "current_price": 3864.0,
-    "change_from_signal_month_pct": -3.11,
-    "return_since_gc_pct": -3.11
+    "current_price": 3770.0,
+    "change_from_signal_month_pct": -5.47,
+    "return_since_gc_pct": -5.47
   },
   "daily": [
     {
@@ -698,6 +698,19 @@
       "sma200": 3951.24,
       "rsi14": 51.12,
       "rsi5": 54.94
+    },
+    {
+      "date": "2026-10-28",
+      "open": 3844.0,
+      "high": 3857.0,
+      "low": 3767.0,
+      "close": 3770.0,
+      "volume": 3208600.0,
+      "sma25": 3745.56,
+      "sma75": 3824.05,
+      "sma200": 3948.26,
+      "rsi14": 51.12,
+      "rsi5": 54.94
     }
   ],
   "corporate_events": [
@@ -705,22 +718,22 @@
       "date": "2026-09-29",
       "type": "DIVIDEND",
       "label": "配当",
-      "detail": "1株 16円"
+      "detail": "1株 17円"
     }
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-27",
-    "monthly_rsi14": 51.81,
-    "monthly_rsi_ma5": 50.9,
-    "spread": 0.91,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-28",
+    "monthly_rsi14": 50.23,
+    "monthly_rsi_ma5": 50.58,
+    "spread": -0.35,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-28T17:49:23.135954+00:00"
+  "provisional_generated_at": "2026-10-29T17:56:08.516912+00:00"
 }

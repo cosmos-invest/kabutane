@@ -2,12 +2,12 @@
   "code": "3080",
   "ticker": "3080.T",
   "name": "ジェーソン",
-  "generated_at": "2026-10-28T17:48:35.546013+00:00",
-  "price_date": "2026-10-27",
+  "generated_at": "2026-10-29T17:55:35.510421+00:00",
+  "price_date": "2026-10-28",
   "record": {
-    "current_price": 832.0,
-    "change_from_signal_month_pct": 6.8,
-    "return_since_gc_pct": 6.8
+    "current_price": 830.0,
+    "change_from_signal_month_pct": 6.55,
+    "return_since_gc_pct": 6.55
   },
   "daily": [
     {
@@ -698,15 +698,28 @@
       "sma200": 786.62,
       "rsi14": 60.33,
       "rsi5": 63.34
+    },
+    {
+      "date": "2026-10-28",
+      "open": 832.0,
+      "high": 837.0,
+      "low": 830.0,
+      "close": 830.0,
+      "volume": 2800.0,
+      "sma25": 833.76,
+      "sma75": 808.53,
+      "sma200": 786.83,
+      "rsi14": 60.33,
+      "rsi5": 63.34
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-27",
-    "monthly_rsi14": 68.06,
-    "monthly_rsi_ma5": 65.21,
-    "spread": 2.85,
+    "price_date": "2026-10-28",
+    "monthly_rsi14": 67.63,
+    "monthly_rsi_ma5": 65.12,
+    "spread": 2.51,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -715,5 +728,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-28T17:49:23.135954+00:00"
+  "provisional_generated_at": "2026-10-29T17:56:08.516912+00:00"
 }

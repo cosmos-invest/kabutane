@@ -2,12 +2,12 @@
   "code": "5533",
   "ticker": "5533.T",
   "name": "エリッツホールディングス",
-  "generated_at": "2026-10-28T17:48:35.546013+00:00",
-  "price_date": "2026-10-27",
+  "generated_at": "2026-10-29T17:55:35.510421+00:00",
+  "price_date": "2026-10-28",
   "record": {
-    "current_price": 2010.0,
-    "change_from_signal_month_pct": -1.18,
-    "return_since_gc_pct": -1.18
+    "current_price": 2050.0,
+    "change_from_signal_month_pct": 0.79,
+    "return_since_gc_pct": 0.79
   },
   "daily": [
     {
@@ -698,6 +698,19 @@
       "sma200": 1985.28,
       "rsi14": 39.37,
       "rsi5": 42.68
+    },
+    {
+      "date": "2026-10-28",
+      "open": 2000.0,
+      "high": 2050.0,
+      "low": 2000.0,
+      "close": 2050.0,
+      "volume": 500.0,
+      "sma25": 2075.0,
+      "sma75": 2050.07,
+      "sma200": 1986.18,
+      "rsi14": 39.37,
+      "rsi5": 42.68
     }
   ],
   "corporate_events": [
@@ -710,17 +723,17 @@
   ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-27",
-    "monthly_rsi14": 47.53,
-    "monthly_rsi_ma5": 48.35,
-    "spread": -0.82,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-28",
+    "monthly_rsi14": 49.4,
+    "monthly_rsi_ma5": 48.72,
+    "spread": 0.68,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-28T17:49:23.135954+00:00"
+  "provisional_generated_at": "2026-10-29T17:56:08.516912+00:00"
 }

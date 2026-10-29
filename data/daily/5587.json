@@ -2,12 +2,12 @@
   "code": "5587",
   "ticker": "5587.T",
   "name": "インバウンドプラットフォーム",
-  "generated_at": "2026-10-28T17:48:35.546013+00:00",
-  "price_date": "2026-10-27",
+  "generated_at": "2026-10-29T17:55:35.510421+00:00",
+  "price_date": "2026-10-28",
   "record": {
-    "current_price": 809.0,
-    "change_from_signal_month_pct": -15.29,
-    "return_since_gc_pct": -0.86
+    "current_price": 785.0,
+    "change_from_signal_month_pct": -17.8,
+    "return_since_gc_pct": -3.8
   },
   "daily": [
     {
@@ -698,22 +698,35 @@
       "sma200": 816.77,
       "rsi14": 35.76,
       "rsi5": 42.88
+    },
+    {
+      "date": "2026-10-28",
+      "open": 809.0,
+      "high": 809.0,
+      "low": 781.0,
+      "close": 785.0,
+      "volume": 16700.0,
+      "sma25": 829.92,
+      "sma75": 845.03,
+      "sma200": 816.61,
+      "rsi14": 35.76,
+      "rsi5": 42.88
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-27",
-    "monthly_rsi14": 39.38,
-    "monthly_rsi_ma5": 39.34,
-    "spread": 0.04,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-28",
+    "monthly_rsi14": 38.77,
+    "monthly_rsi_ma5": 39.22,
+    "spread": -0.45,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-28T17:49:23.135954+00:00"
+  "provisional_generated_at": "2026-10-29T17:56:08.516912+00:00"
 }

@@ -2,8 +2,8 @@
   "code": "1383",
   "ticker": "1383.T",
   "name": "ベルグアース",
-  "generated_at": "2026-10-28T17:48:35.546013+00:00",
-  "price_date": "2026-10-27",
+  "generated_at": "2026-10-29T17:55:35.510421+00:00",
+  "price_date": "2026-10-28",
   "record": {
     "current_price": 3045.0,
     "change_from_signal_month_pct": 0.83,
@@ -698,12 +698,32 @@
       "sma200": 3069.97,
       "rsi14": 46.51,
       "rsi5": 48.78
+    },
+    {
+      "date": "2026-10-28",
+      "open": 3045.0,
+      "high": 3070.0,
+      "low": 3045.0,
+      "close": 3045.0,
+      "volume": 2400.0,
+      "sma25": 3057.6,
+      "sma75": 3013.71,
+      "sma200": 3069.37,
+      "rsi14": 46.51,
+      "rsi5": 48.78
     }
   ],
-  "corporate_events": [],
+  "corporate_events": [
+    {
+      "date": "2026-10-29",
+      "type": "DIVIDEND",
+      "label": "配当",
+      "detail": "1株 10円"
+    }
+  ],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-27",
+    "price_date": "2026-10-28",
     "monthly_rsi14": 49.46,
     "monthly_rsi_ma5": 47.24,
     "spread": 2.22,
@@ -715,5 +735,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-28T17:49:23.135954+00:00"
+  "provisional_generated_at": "2026-10-29T17:56:08.516912+00:00"
 }
