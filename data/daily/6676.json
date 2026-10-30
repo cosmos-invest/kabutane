@@ -2,12 +2,12 @@
   "code": "6676",
   "ticker": "6676.T",
   "name": "ＢＵＦＦＡＬＯ",
-  "generated_at": "2026-10-29T17:55:35.510421+00:00",
-  "price_date": "2026-10-28",
+  "generated_at": "2026-10-30T17:37:54.492547+00:00",
+  "price_date": "2026-10-29",
   "record": {
-    "current_price": 3665.0,
-    "change_from_signal_month_pct": 33.71,
-    "return_since_gc_pct": 33.71
+    "current_price": 3445.0,
+    "change_from_signal_month_pct": 25.68,
+    "return_since_gc_pct": 25.68
   },
   "daily": [
     {
@@ -711,22 +711,28 @@
       "sma200": 2707.28,
       "rsi14": 68.05,
       "rsi5": 71.15
-    }
-  ],
-  "corporate_events": [
+    },
     {
-      "date": "2026-09-29",
-      "type": "DIVIDEND",
-      "label": "配当",
-      "detail": "1株 30円"
+      "date": "2026-10-29",
+      "open": 3640.0,
+      "high": 3640.0,
+      "low": 3410.0,
+      "close": 3445.0,
+      "volume": 114800.0,
+      "sma25": 3571.8,
+      "sma75": 3119.43,
+      "sma200": 2712.37,
+      "rsi14": 68.05,
+      "rsi5": 71.15
     }
   ],
+  "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-28",
-    "monthly_rsi14": 80.33,
-    "monthly_rsi_ma5": 74.93,
-    "spread": 5.4,
+    "price_date": "2026-10-29",
+    "monthly_rsi14": 77.2,
+    "monthly_rsi_ma5": 74.3,
+    "spread": 2.89,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -735,5 +741,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-29T17:56:08.516912+00:00"
+  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
 }

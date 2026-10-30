@@ -2,12 +2,12 @@
   "code": "6724",
   "ticker": "6724.T",
   "name": "セイコーエプソン",
-  "generated_at": "2026-10-29T17:55:35.510421+00:00",
-  "price_date": "2026-10-28",
+  "generated_at": "2026-10-30T17:37:54.492547+00:00",
+  "price_date": "2026-10-29",
   "record": {
-    "current_price": 3431.0,
-    "change_from_signal_month_pct": 16.31,
-    "return_since_gc_pct": 63.65
+    "current_price": 3379.0,
+    "change_from_signal_month_pct": 14.54,
+    "return_since_gc_pct": 61.17
   },
   "daily": [
     {
@@ -711,22 +711,28 @@
       "sma200": 2603.79,
       "rsi14": 56.48,
       "rsi5": 64.81
-    }
-  ],
-  "corporate_events": [
+    },
     {
-      "date": "2026-09-29",
-      "type": "DIVIDEND",
-      "label": "配当",
-      "detail": "1株 40円"
+      "date": "2026-10-29",
+      "open": 3398.0,
+      "high": 3447.0,
+      "low": 3321.0,
+      "close": 3379.0,
+      "volume": 2998600.0,
+      "sma25": 3334.36,
+      "sma75": 3145.85,
+      "sma200": 2610.77,
+      "rsi14": 56.48,
+      "rsi5": 64.81
     }
   ],
+  "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-28",
-    "monthly_rsi14": 71.34,
-    "monthly_rsi_ma5": 66.98,
-    "spread": 4.37,
+    "price_date": "2026-10-29",
+    "monthly_rsi14": 70.7,
+    "monthly_rsi_ma5": 66.85,
+    "spread": 3.85,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -735,5 +741,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-29T17:56:08.516912+00:00"
+  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "4684",
   "ticker": "4684.T",
   "name": "オービック",
-  "generated_at": "2026-10-29T17:55:35.510421+00:00",
-  "price_date": "2026-10-28",
+  "generated_at": "2026-10-30T17:37:54.492547+00:00",
+  "price_date": "2026-10-29",
   "record": {
-    "current_price": 6042.0,
-    "change_from_signal_month_pct": 33.52,
-    "return_since_gc_pct": 33.52
+    "current_price": 6000.0,
+    "change_from_signal_month_pct": 32.6,
+    "return_since_gc_pct": 32.6
   },
   "daily": [
     {
@@ -711,22 +711,28 @@
       "sma200": 4406.1,
       "rsi14": 41.98,
       "rsi5": 50.02
-    }
-  ],
-  "corporate_events": [
+    },
     {
-      "date": "2026-09-29",
-      "type": "DIVIDEND",
-      "label": "配当",
-      "detail": "1株 47円"
+      "date": "2026-10-29",
+      "open": 5911.0,
+      "high": 6068.0,
+      "low": 5823.0,
+      "close": 6000.0,
+      "volume": 5853400.0,
+      "sma25": 5435.8,
+      "sma75": 4909.59,
+      "sma200": 4411.49,
+      "rsi14": 41.98,
+      "rsi5": 50.02
     }
   ],
+  "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-28",
-    "monthly_rsi14": 64.04,
-    "monthly_rsi_ma5": 51.52,
-    "spread": 12.52,
+    "price_date": "2026-10-29",
+    "monthly_rsi14": 63.72,
+    "monthly_rsi_ma5": 51.46,
+    "spread": 12.26,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -735,5 +741,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-29T17:56:08.516912+00:00"
+  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
 }

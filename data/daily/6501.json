@@ -2,12 +2,12 @@
   "code": "6501",
   "ticker": "6501.T",
   "name": "日立製作所",
-  "generated_at": "2026-10-29T17:55:35.510421+00:00",
-  "price_date": "2026-10-28",
+  "generated_at": "2026-10-30T17:37:54.492547+00:00",
+  "price_date": "2026-10-29",
   "record": {
-    "current_price": 5620.0,
-    "change_from_signal_month_pct": 6.7,
-    "return_since_gc_pct": 6.7
+    "current_price": 5071.0,
+    "change_from_signal_month_pct": -3.72,
+    "return_since_gc_pct": -3.72
   },
   "daily": [
     {
@@ -711,29 +711,35 @@
       "sma200": 5116.85,
       "rsi14": 58.77,
       "rsi5": 60.68
-    }
-  ],
-  "corporate_events": [
+    },
     {
-      "date": "2026-09-29",
-      "type": "DIVIDEND",
-      "label": "配当",
-      "detail": "1株 32円"
+      "date": "2026-10-29",
+      "open": 5320.0,
+      "high": 5345.0,
+      "low": 4968.0,
+      "close": 5071.0,
+      "volume": 45384300.0,
+      "sma25": 5613.28,
+      "sma75": 5361.27,
+      "sma200": 5117.69,
+      "rsi14": 58.77,
+      "rsi5": 60.68
     }
   ],
+  "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-28",
-    "monthly_rsi14": 63.91,
-    "monthly_rsi_ma5": 61.07,
-    "spread": 2.83,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-29",
+    "monthly_rsi14": 57.7,
+    "monthly_rsi_ma5": 59.83,
+    "spread": -2.13,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-29T17:56:08.516912+00:00"
+  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
 }

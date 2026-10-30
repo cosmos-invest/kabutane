@@ -2,12 +2,12 @@
   "code": "6144",
   "ticker": "6144.T",
   "name": "西部電機",
-  "generated_at": "2026-10-29T17:55:35.510421+00:00",
-  "price_date": "2026-10-28",
+  "generated_at": "2026-10-30T17:37:54.492547+00:00",
+  "price_date": "2026-10-29",
   "record": {
-    "current_price": 2616.0,
-    "change_from_signal_month_pct": -18.12,
-    "return_since_gc_pct": -18.12
+    "current_price": 2719.0,
+    "change_from_signal_month_pct": -14.9,
+    "return_since_gc_pct": -14.9
   },
   "daily": [
     {
@@ -711,22 +711,28 @@
       "sma200": 2853.36,
       "rsi14": 70.61,
       "rsi5": 75.07
-    }
-  ],
-  "corporate_events": [
+    },
     {
-      "date": "2026-09-29",
-      "type": "DIVIDEND",
-      "label": "配当",
-      "detail": "1株 45円"
+      "date": "2026-10-29",
+      "open": 2666.0,
+      "high": 2719.0,
+      "low": 2640.0,
+      "close": 2719.0,
+      "volume": 4600.0,
+      "sma25": 2656.52,
+      "sma75": 2844.84,
+      "sma200": 2852.24,
+      "rsi14": 70.61,
+      "rsi5": 75.07
     }
   ],
+  "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-28",
-    "monthly_rsi14": 56.26,
-    "monthly_rsi_ma5": 65.89,
-    "spread": -9.62,
+    "price_date": "2026-10-29",
+    "monthly_rsi14": 59.3,
+    "monthly_rsi_ma5": 66.49,
+    "spread": -7.19,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -735,5 +741,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-29T17:56:08.516912+00:00"
+  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
 }

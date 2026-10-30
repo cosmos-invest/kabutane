@@ -2,12 +2,12 @@
   "code": "9020",
   "ticker": "9020.T",
   "name": "東日本旅客鉄道",
-  "generated_at": "2026-10-29T17:55:35.510421+00:00",
-  "price_date": "2026-10-28",
+  "generated_at": "2026-10-30T17:37:54.492547+00:00",
+  "price_date": "2026-10-29",
   "record": {
-    "current_price": 3502.0,
-    "change_from_signal_month_pct": -4.73,
-    "return_since_gc_pct": -4.73
+    "current_price": 3523.0,
+    "change_from_signal_month_pct": -4.16,
+    "return_since_gc_pct": -4.16
   },
   "daily": [
     {
@@ -711,22 +711,28 @@
       "sma200": 3613.36,
       "rsi14": 55.54,
       "rsi5": 59.68
-    }
-  ],
-  "corporate_events": [
+    },
     {
-      "date": "2026-09-29",
-      "type": "DIVIDEND",
-      "label": "配当",
-      "detail": "1株 42円"
+      "date": "2026-10-29",
+      "open": 3500.0,
+      "high": 3539.0,
+      "low": 3497.0,
+      "close": 3523.0,
+      "volume": 5101400.0,
+      "sma25": 3453.36,
+      "sma75": 3519.63,
+      "sma200": 3610.32,
+      "rsi14": 55.54,
+      "rsi5": 59.68
     }
   ],
+  "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-28",
-    "monthly_rsi14": 53.53,
-    "monthly_rsi_ma5": 54.3,
-    "spread": -0.77,
+    "price_date": "2026-10-29",
+    "monthly_rsi14": 54.03,
+    "monthly_rsi_ma5": 54.4,
+    "spread": -0.37,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -735,5 +741,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-29T17:56:08.516912+00:00"
+  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
 }

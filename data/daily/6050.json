@@ -2,12 +2,12 @@
   "code": "6050",
   "ticker": "6050.T",
   "name": "イー・ガーディアン",
-  "generated_at": "2026-10-29T17:55:35.510421+00:00",
-  "price_date": "2026-10-28",
+  "generated_at": "2026-10-30T17:37:54.492547+00:00",
+  "price_date": "2026-10-29",
   "record": {
-    "current_price": 1623.0,
-    "change_from_signal_month_pct": -5.47,
-    "return_since_gc_pct": -3.68
+    "current_price": 1561.0,
+    "change_from_signal_month_pct": -9.09,
+    "return_since_gc_pct": -7.36
   },
   "daily": [
     {
@@ -711,22 +711,28 @@
       "sma200": 1689.41,
       "rsi14": 41.91,
       "rsi5": 44.28
-    }
-  ],
-  "corporate_events": [
+    },
     {
-      "date": "2026-09-29",
-      "type": "DIVIDEND",
-      "label": "配当",
-      "detail": "1株 38円"
+      "date": "2026-10-29",
+      "open": 1620.0,
+      "high": 1620.0,
+      "low": 1561.0,
+      "close": 1561.0,
+      "volume": 223500.0,
+      "sma25": 1673.72,
+      "sma75": 1733.32,
+      "sma200": 1688.87,
+      "rsi14": 41.91,
+      "rsi5": 44.28
     }
   ],
+  "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-28",
-    "monthly_rsi14": 38.31,
-    "monthly_rsi_ma5": 40.33,
-    "spread": -2.02,
+    "price_date": "2026-10-29",
+    "monthly_rsi14": 36.59,
+    "monthly_rsi_ma5": 39.99,
+    "spread": -3.4,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -735,5 +741,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-29T17:56:08.516912+00:00"
+  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
 }

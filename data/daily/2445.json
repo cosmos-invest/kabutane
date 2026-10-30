@@ -2,12 +2,12 @@
   "code": "2445",
   "ticker": "2445.T",
   "name": "タカミヤ",
-  "generated_at": "2026-10-29T17:55:35.510421+00:00",
-  "price_date": "2026-10-28",
+  "generated_at": "2026-10-30T17:37:54.492547+00:00",
+  "price_date": "2026-10-29",
   "record": {
-    "current_price": 371.0,
-    "change_from_signal_month_pct": -11.88,
-    "return_since_gc_pct": -11.88
+    "current_price": 378.0,
+    "change_from_signal_month_pct": -10.21,
+    "return_since_gc_pct": -10.21
   },
   "daily": [
     {
@@ -711,22 +711,28 @@
       "sma200": 409.02,
       "rsi14": 46.79,
       "rsi5": 50.98
-    }
-  ],
-  "corporate_events": [
+    },
     {
-      "date": "2026-09-29",
-      "type": "DIVIDEND",
-      "label": "配当",
-      "detail": "1株 6円"
+      "date": "2026-10-29",
+      "open": 372.0,
+      "high": 378.0,
+      "low": 370.0,
+      "close": 378.0,
+      "volume": 390200.0,
+      "sma25": 385.28,
+      "sma75": 401.04,
+      "sma200": 408.81,
+      "rsi14": 46.79,
+      "rsi5": 50.98
     }
   ],
+  "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-28",
-    "monthly_rsi14": 41.41,
-    "monthly_rsi_ma5": 45.44,
-    "spread": -4.02,
+    "price_date": "2026-10-29",
+    "monthly_rsi14": 42.48,
+    "monthly_rsi_ma5": 45.65,
+    "spread": -3.17,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -735,5 +741,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-29T17:56:08.516912+00:00"
+  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
 }

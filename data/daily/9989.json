@@ -2,12 +2,12 @@
   "code": "9989",
   "ticker": "9989.T",
   "name": "サンドラッグ",
-  "generated_at": "2026-10-29T17:55:35.510421+00:00",
-  "price_date": "2026-10-28",
+  "generated_at": "2026-10-30T17:37:54.492547+00:00",
+  "price_date": "2026-10-29",
   "record": {
-    "current_price": 3548.0,
-    "change_from_signal_month_pct": -6.14,
-    "return_since_gc_pct": -6.14
+    "current_price": 3562.0,
+    "change_from_signal_month_pct": -5.77,
+    "return_since_gc_pct": -5.77
   },
   "daily": [
     {
@@ -711,22 +711,28 @@
       "sma200": 3857.07,
       "rsi14": 41.86,
       "rsi5": 42.71
-    }
-  ],
-  "corporate_events": [
+    },
     {
-      "date": "2026-09-29",
-      "type": "DIVIDEND",
-      "label": "配当",
-      "detail": "1株 66円"
+      "date": "2026-10-29",
+      "open": 3573.0,
+      "high": 3583.0,
+      "low": 3545.0,
+      "close": 3562.0,
+      "volume": 1023000.0,
+      "sma25": 3597.28,
+      "sma75": 3698.12,
+      "sma200": 3853.34,
+      "rsi14": 41.86,
+      "rsi5": 42.71
     }
   ],
+  "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-28",
-    "monthly_rsi14": 37.28,
-    "monthly_rsi_ma5": 39.93,
-    "spread": -2.65,
+    "price_date": "2026-10-29",
+    "monthly_rsi14": 37.54,
+    "monthly_rsi_ma5": 39.98,
+    "spread": -2.44,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -735,5 +741,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-29T17:56:08.516912+00:00"
+  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
 }

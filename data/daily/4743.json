@@ -2,12 +2,12 @@
   "code": "4743",
   "ticker": "4743.T",
   "name": "アイティフォー",
-  "generated_at": "2026-10-29T17:55:35.510421+00:00",
-  "price_date": "2026-10-28",
+  "generated_at": "2026-10-30T17:37:54.492547+00:00",
+  "price_date": "2026-10-29",
   "record": {
-    "current_price": 1605.0,
-    "change_from_signal_month_pct": -6.79,
-    "return_since_gc_pct": -6.79
+    "current_price": 1582.0,
+    "change_from_signal_month_pct": -8.13,
+    "return_since_gc_pct": -8.13
   },
   "daily": [
     {
@@ -711,22 +711,28 @@
       "sma200": 1670.22,
       "rsi14": 62.28,
       "rsi5": 62.9
-    }
-  ],
-  "corporate_events": [
+    },
     {
-      "date": "2026-09-29",
-      "type": "DIVIDEND",
-      "label": "配当",
-      "detail": "1株 40円"
+      "date": "2026-10-29",
+      "open": 1605.0,
+      "high": 1613.0,
+      "low": 1582.0,
+      "close": 1582.0,
+      "volume": 334100.0,
+      "sma25": 1633.68,
+      "sma75": 1660.23,
+      "sma200": 1669.56,
+      "rsi14": 62.28,
+      "rsi5": 62.9
     }
   ],
+  "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-28",
-    "monthly_rsi14": 55.5,
-    "monthly_rsi_ma5": 58.78,
-    "spread": -3.27,
+    "price_date": "2026-10-29",
+    "monthly_rsi14": 54.0,
+    "monthly_rsi_ma5": 58.47,
+    "spread": -4.47,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -735,5 +741,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-29T17:56:08.516912+00:00"
+  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
 }

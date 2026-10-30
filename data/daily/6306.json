@@ -2,12 +2,12 @@
   "code": "6306",
   "ticker": "6306.T",
   "name": "日工",
-  "generated_at": "2026-10-29T17:55:35.510421+00:00",
-  "price_date": "2026-10-28",
+  "generated_at": "2026-10-30T17:37:54.492547+00:00",
+  "price_date": "2026-10-29",
   "record": {
-    "current_price": 946.0,
-    "change_from_signal_month_pct": -3.67,
-    "return_since_gc_pct": 10.64
+    "current_price": 951.0,
+    "change_from_signal_month_pct": -3.16,
+    "return_since_gc_pct": 11.23
   },
   "daily": [
     {
@@ -711,22 +711,28 @@
       "sma200": 892.51,
       "rsi14": 62.37,
       "rsi5": 71.12
-    }
-  ],
-  "corporate_events": [
+    },
     {
-      "date": "2026-09-29",
-      "type": "DIVIDEND",
-      "label": "配当",
-      "detail": "1株 21円"
+      "date": "2026-10-29",
+      "open": 946.0,
+      "high": 951.0,
+      "low": 935.0,
+      "close": 951.0,
+      "volume": 408400.0,
+      "sma25": 991.4,
+      "sma75": 991.11,
+      "sma200": 893.32,
+      "rsi14": 62.37,
+      "rsi5": 71.12
     }
   ],
+  "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-28",
-    "monthly_rsi14": 63.06,
-    "monthly_rsi_ma5": 69.78,
-    "spread": -6.72,
+    "price_date": "2026-10-29",
+    "monthly_rsi14": 63.68,
+    "monthly_rsi_ma5": 69.9,
+    "spread": -6.23,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -735,5 +741,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-29T17:56:08.516912+00:00"
+  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
 }

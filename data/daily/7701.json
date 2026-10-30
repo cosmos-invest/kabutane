@@ -2,12 +2,12 @@
   "code": "7701",
   "ticker": "7701.T",
   "name": "島津製作所",
-  "generated_at": "2026-10-29T17:55:35.510421+00:00",
-  "price_date": "2026-10-28",
+  "generated_at": "2026-10-30T17:37:54.492547+00:00",
+  "price_date": "2026-10-29",
   "record": {
-    "current_price": 4494.0,
-    "change_from_signal_month_pct": 9.77,
-    "return_since_gc_pct": 9.18
+    "current_price": 4448.0,
+    "change_from_signal_month_pct": 8.65,
+    "return_since_gc_pct": 8.07
   },
   "daily": [
     {
@@ -711,22 +711,28 @@
       "sma200": 4011.55,
       "rsi14": 47.58,
       "rsi5": 51.5
-    }
-  ],
-  "corporate_events": [
+    },
     {
-      "date": "2026-09-29",
-      "type": "DIVIDEND",
-      "label": "配当",
-      "detail": "1株 27円"
+      "date": "2026-10-29",
+      "open": 4460.0,
+      "high": 4504.0,
+      "low": 4419.0,
+      "close": 4448.0,
+      "volume": 2654000.0,
+      "sma25": 4222.88,
+      "sma75": 4108.57,
+      "sma200": 4012.95,
+      "rsi14": 47.58,
+      "rsi5": 51.5
     }
   ],
+  "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-28",
-    "monthly_rsi14": 57.81,
-    "monthly_rsi_ma5": 52.47,
-    "spread": 5.33,
+    "price_date": "2026-10-29",
+    "monthly_rsi14": 57.14,
+    "monthly_rsi_ma5": 52.34,
+    "spread": 4.8,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -735,5 +741,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-29T17:56:08.516912+00:00"
+  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
 }

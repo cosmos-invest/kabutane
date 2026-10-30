@@ -2,12 +2,12 @@
   "code": "3359",
   "ticker": "3359.T",
   "name": "ｃｏｔｔａ",
-  "generated_at": "2026-10-29T17:55:35.510421+00:00",
-  "price_date": "2026-10-28",
+  "generated_at": "2026-10-30T17:37:54.492547+00:00",
+  "price_date": "2026-10-29",
   "record": {
-    "current_price": 485.0,
-    "change_from_signal_month_pct": -6.19,
-    "return_since_gc_pct": -6.19
+    "current_price": 479.0,
+    "change_from_signal_month_pct": -7.35,
+    "return_since_gc_pct": -7.35
   },
   "daily": [
     {
@@ -711,22 +711,28 @@
       "sma200": 515.11,
       "rsi14": 52.35,
       "rsi5": 53.12
-    }
-  ],
-  "corporate_events": [
+    },
     {
-      "date": "2026-09-29",
-      "type": "DIVIDEND",
-      "label": "配当",
-      "detail": "1株 10円"
+      "date": "2026-10-29",
+      "open": 485.0,
+      "high": 485.0,
+      "low": 479.0,
+      "close": 479.0,
+      "volume": 22300.0,
+      "sma25": 493.44,
+      "sma75": 512.76,
+      "sma200": 515.0,
+      "rsi14": 52.35,
+      "rsi5": 53.12
     }
   ],
+  "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-28",
-    "monthly_rsi14": 48.13,
-    "monthly_rsi_ma5": 51.14,
-    "spread": -3.01,
+    "price_date": "2026-10-29",
+    "monthly_rsi14": 47.42,
+    "monthly_rsi_ma5": 50.99,
+    "spread": -3.58,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -735,5 +741,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-29T17:56:08.516912+00:00"
+  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
 }

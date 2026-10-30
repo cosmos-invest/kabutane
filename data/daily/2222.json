@@ -2,12 +2,12 @@
   "code": "2222",
   "ticker": "2222.T",
   "name": "寿スピリッツ",
-  "generated_at": "2026-10-29T17:55:35.510421+00:00",
-  "price_date": "2026-10-28",
+  "generated_at": "2026-10-30T17:37:54.492547+00:00",
+  "price_date": "2026-10-29",
   "record": {
-    "current_price": 2485.0,
-    "change_from_signal_month_pct": -2.28,
-    "return_since_gc_pct": 23.48
+    "current_price": 2442.5,
+    "change_from_signal_month_pct": -3.95,
+    "return_since_gc_pct": 21.37
   },
   "daily": [
     {
@@ -711,22 +711,28 @@
       "sma200": 2236.05,
       "rsi14": 56.28,
       "rsi5": 64.91
-    }
-  ],
-  "corporate_events": [
+    },
     {
-      "date": "2026-09-29",
-      "type": "DIVIDEND",
-      "label": "配当",
-      "detail": "1株 10円"
+      "date": "2026-10-29",
+      "open": 2508.0,
+      "high": 2517.5,
+      "low": 2442.5,
+      "close": 2442.5,
+      "volume": 1360200.0,
+      "sma25": 2535.64,
+      "sma75": 2582.39,
+      "sma200": 2239.1,
+      "rsi14": 56.28,
+      "rsi5": 64.91
     }
   ],
+  "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-28",
-    "monthly_rsi14": 56.89,
-    "monthly_rsi_ma5": 60.13,
-    "spread": -3.24,
+    "price_date": "2026-10-29",
+    "monthly_rsi14": 56.02,
+    "monthly_rsi_ma5": 59.95,
+    "spread": -3.93,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -735,5 +741,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-29T17:56:08.516912+00:00"
+  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "7551",
   "ticker": "7551.T",
   "name": "ウェッズ",
-  "generated_at": "2026-10-29T17:55:35.510421+00:00",
-  "price_date": "2026-10-28",
+  "generated_at": "2026-10-30T17:37:54.492547+00:00",
+  "price_date": "2026-10-29",
   "record": {
-    "current_price": 660.0,
-    "change_from_signal_month_pct": -9.09,
-    "return_since_gc_pct": -9.09
+    "current_price": 656.0,
+    "change_from_signal_month_pct": -9.64,
+    "return_since_gc_pct": -9.64
   },
   "daily": [
     {
@@ -711,22 +711,28 @@
       "sma200": 691.2,
       "rsi14": 63.33,
       "rsi5": 66.03
-    }
-  ],
-  "corporate_events": [
+    },
     {
-      "date": "2026-09-29",
-      "type": "DIVIDEND",
-      "label": "配当",
-      "detail": "1株 10円"
+      "date": "2026-10-29",
+      "open": 656.0,
+      "high": 656.0,
+      "low": 656.0,
+      "close": 656.0,
+      "volume": 400.0,
+      "sma25": 664.84,
+      "sma75": 697.64,
+      "sma200": 691.17,
+      "rsi14": 63.33,
+      "rsi5": 66.03
     }
   ],
+  "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-28",
-    "monthly_rsi14": 50.01,
-    "monthly_rsi_ma5": 59.55,
-    "spread": -9.54,
+    "price_date": "2026-10-29",
+    "monthly_rsi14": 49.2,
+    "monthly_rsi_ma5": 59.39,
+    "spread": -10.19,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -735,5 +741,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-29T17:56:08.516912+00:00"
+  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
 }

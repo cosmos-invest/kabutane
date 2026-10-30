@@ -2,12 +2,12 @@
   "code": "6473",
   "ticker": "6473.T",
   "name": "ジェイテクト",
-  "generated_at": "2026-10-29T17:55:35.510421+00:00",
-  "price_date": "2026-10-28",
+  "generated_at": "2026-10-30T17:37:54.492547+00:00",
+  "price_date": "2026-10-29",
   "record": {
-    "current_price": 2083.5,
-    "change_from_signal_month_pct": -5.98,
-    "return_since_gc_pct": -5.98
+    "current_price": 2051.5,
+    "change_from_signal_month_pct": -7.42,
+    "return_since_gc_pct": -7.42
   },
   "daily": [
     {
@@ -711,22 +711,28 @@
       "sma200": 1979.26,
       "rsi14": 63.63,
       "rsi5": 66.45
-    }
-  ],
-  "corporate_events": [
+    },
     {
-      "date": "2026-09-29",
-      "type": "DIVIDEND",
-      "label": "配当",
-      "detail": "1株 35円"
+      "date": "2026-10-29",
+      "open": 2078.0,
+      "high": 2091.0,
+      "low": 1890.0,
+      "close": 2051.5,
+      "volume": 5135900.0,
+      "sma25": 2114.3,
+      "sma75": 2101.75,
+      "sma200": 1980.84,
+      "rsi14": 63.63,
+      "rsi5": 66.45
     }
   ],
+  "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-28",
-    "monthly_rsi14": 60.87,
-    "monthly_rsi_ma5": 62.68,
-    "spread": -1.8,
+    "price_date": "2026-10-29",
+    "monthly_rsi14": 59.83,
+    "monthly_rsi_ma5": 62.47,
+    "spread": -2.64,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -735,5 +741,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-29T17:56:08.516912+00:00"
+  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
 }

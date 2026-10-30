@@ -2,12 +2,12 @@
   "code": "9008",
   "ticker": "9008.T",
   "name": "京王電鉄",
-  "generated_at": "2026-10-29T17:55:35.510421+00:00",
-  "price_date": "2026-10-28",
+  "generated_at": "2026-10-30T17:37:54.492547+00:00",
+  "price_date": "2026-10-29",
   "record": {
-    "current_price": 752.7,
-    "change_from_signal_month_pct": -7.05,
-    "return_since_gc_pct": -7.05
+    "current_price": 749.6,
+    "change_from_signal_month_pct": -7.43,
+    "return_since_gc_pct": -7.43
   },
   "daily": [
     {
@@ -630,7 +630,7 @@
       "volume": 1291100.0,
       "sma25": 768.9,
       "sma75": 773.34,
-      "sma200": 777.7,
+      "sma200": 777.69,
       "rsi14": 46.65,
       "rsi5": 52.25
     },
@@ -708,25 +708,31 @@
       "volume": 1619600.0,
       "sma25": 760.13,
       "sma75": 774.58,
-      "sma200": 776.37,
+      "sma200": 776.36,
+      "rsi14": 46.65,
+      "rsi5": 52.25
+    },
+    {
+      "date": "2026-10-29",
+      "open": 752.0,
+      "high": 755.4,
+      "low": 746.6,
+      "close": 749.6,
+      "volume": 7992700.0,
+      "sma25": 758.9,
+      "sma75": 774.54,
+      "sma200": 776.06,
       "rsi14": 46.65,
       "rsi5": 52.25
     }
   ],
-  "corporate_events": [
-    {
-      "date": "2026-09-29",
-      "type": "DIVIDEND",
-      "label": "配当",
-      "detail": "1株 11円"
-    }
-  ],
+  "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-28",
-    "monthly_rsi14": 43.84,
-    "monthly_rsi_ma5": 45.41,
-    "spread": -1.57,
+    "price_date": "2026-10-29",
+    "monthly_rsi14": 43.53,
+    "monthly_rsi_ma5": 45.35,
+    "spread": -1.82,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -735,5 +741,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-29T17:56:08.516912+00:00"
+  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
 }

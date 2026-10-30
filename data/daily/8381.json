@@ -2,12 +2,12 @@
   "code": "8381",
   "ticker": "8381.T",
   "name": "山陰合同銀行",
-  "generated_at": "2026-10-29T17:55:35.510421+00:00",
-  "price_date": "2026-10-28",
+  "generated_at": "2026-10-30T17:37:54.492547+00:00",
+  "price_date": "2026-10-29",
   "record": {
-    "current_price": 2080.0,
-    "change_from_signal_month_pct": -10.96,
-    "return_since_gc_pct": 62.63
+    "current_price": 2116.0,
+    "change_from_signal_month_pct": -9.42,
+    "return_since_gc_pct": 65.44
   },
   "daily": [
     {
@@ -711,22 +711,28 @@
       "sma200": 2092.93,
       "rsi14": 80.9,
       "rsi5": 85.66
-    }
-  ],
-  "corporate_events": [
+    },
     {
-      "date": "2026-09-29",
-      "type": "DIVIDEND",
-      "label": "配当",
-      "detail": "1株 34円"
+      "date": "2026-10-29",
+      "open": 2106.0,
+      "high": 2140.0,
+      "low": 2089.0,
+      "close": 2116.0,
+      "volume": 3166500.0,
+      "sma25": 2373.04,
+      "sma75": 2472.01,
+      "sma200": 2096.06,
+      "rsi14": 80.9,
+      "rsi5": 85.66
     }
   ],
+  "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-28",
-    "monthly_rsi14": 61.35,
-    "monthly_rsi_ma5": 81.41,
-    "spread": -20.06,
+    "price_date": "2026-10-29",
+    "monthly_rsi14": 62.58,
+    "monthly_rsi_ma5": 81.65,
+    "spread": -19.07,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -735,5 +741,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-29T17:56:08.516912+00:00"
+  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
 }

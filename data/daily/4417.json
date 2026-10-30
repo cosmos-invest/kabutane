@@ -2,12 +2,12 @@
   "code": "4417",
   "ticker": "4417.T",
   "name": "グローバルセキュリティエキスパート",
-  "generated_at": "2026-10-29T17:55:35.510421+00:00",
-  "price_date": "2026-10-28",
+  "generated_at": "2026-10-30T17:37:54.492547+00:00",
+  "price_date": "2026-10-29",
   "record": {
-    "current_price": 8250.0,
-    "change_from_signal_month_pct": 80.13,
-    "return_since_gc_pct": 140.17
+    "current_price": 7980.0,
+    "change_from_signal_month_pct": 74.24,
+    "return_since_gc_pct": 132.31
   },
   "daily": [
     {
@@ -672,22 +672,28 @@
       "sma200": 3747.26,
       "rsi14": 55.4,
       "rsi5": 67.75
-    }
-  ],
-  "corporate_events": [
+    },
     {
-      "date": "2026-09-29",
-      "type": "DIVIDEND",
-      "label": "配当",
-      "detail": "1株 24.55円"
+      "date": "2026-10-29",
+      "open": 7830.0,
+      "high": 8140.0,
+      "low": 7470.0,
+      "close": 7980.0,
+      "volume": 303700.0,
+      "sma25": 6685.6,
+      "sma75": 5233.8,
+      "sma200": 3771.24,
+      "rsi14": 55.4,
+      "rsi5": 67.75
     }
   ],
+  "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-28",
-    "monthly_rsi14": 83.85,
-    "monthly_rsi_ma5": 71.67,
-    "spread": 12.18,
+    "price_date": "2026-10-29",
+    "monthly_rsi14": 83.23,
+    "monthly_rsi_ma5": 71.55,
+    "spread": 11.68,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -696,5 +702,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-29T17:56:08.516912+00:00"
+  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
 }

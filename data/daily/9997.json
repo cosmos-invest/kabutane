@@ -2,12 +2,12 @@
   "code": "9997",
   "ticker": "9997.T",
   "name": "ベルーナ",
-  "generated_at": "2026-10-29T17:55:35.510421+00:00",
-  "price_date": "2026-10-28",
+  "generated_at": "2026-10-30T17:37:54.492547+00:00",
+  "price_date": "2026-10-29",
   "record": {
-    "current_price": 984.0,
-    "change_from_signal_month_pct": -8.38,
-    "return_since_gc_pct": 3.91
+    "current_price": 982.0,
+    "change_from_signal_month_pct": -8.57,
+    "return_since_gc_pct": 3.7
   },
   "daily": [
     {
@@ -711,22 +711,28 @@
       "sma200": 975.08,
       "rsi14": 54.04,
       "rsi5": 64.9
-    }
-  ],
-  "corporate_events": [
+    },
     {
-      "date": "2026-09-29",
-      "type": "DIVIDEND",
-      "label": "配当",
-      "detail": "1株 19.5円"
+      "date": "2026-10-29",
+      "open": 989.0,
+      "high": 989.0,
+      "low": 972.0,
+      "close": 982.0,
+      "volume": 718800.0,
+      "sma25": 1038.72,
+      "sma75": 1045.4,
+      "sma200": 975.0,
+      "rsi14": 54.04,
+      "rsi5": 64.9
     }
   ],
+  "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-28",
-    "monthly_rsi14": 54.72,
-    "monthly_rsi_ma5": 60.92,
-    "spread": -6.2,
+    "price_date": "2026-10-29",
+    "monthly_rsi14": 54.54,
+    "monthly_rsi_ma5": 60.89,
+    "spread": -6.35,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -735,5 +741,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-29T17:56:08.516912+00:00"
+  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
 }

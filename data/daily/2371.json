@@ -2,12 +2,12 @@
   "code": "2371",
   "ticker": "2371.T",
   "name": "カカクコム",
-  "generated_at": "2026-10-29T17:55:35.510421+00:00",
-  "price_date": "2026-10-28",
+  "generated_at": "2026-10-30T17:37:54.492547+00:00",
+  "price_date": "2026-10-29",
   "record": {
-    "current_price": 3747.0,
-    "change_from_signal_month_pct": 1.54,
-    "return_since_gc_pct": 80.71
+    "current_price": 3718.0,
+    "change_from_signal_month_pct": 0.76,
+    "return_since_gc_pct": 79.31
   },
   "daily": [
     {
@@ -711,22 +711,35 @@
       "sma200": 2964.2,
       "rsi14": 59.74,
       "rsi5": 67.97
+    },
+    {
+      "date": "2026-10-29",
+      "open": 3747.0,
+      "high": 3750.0,
+      "low": 3718.0,
+      "close": 3718.0,
+      "volume": 2663500.0,
+      "sma25": 3787.8,
+      "sma75": 3724.79,
+      "sma200": 2971.23,
+      "rsi14": 59.74,
+      "rsi5": 67.97
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-28",
-    "monthly_rsi14": 68.99,
-    "monthly_rsi_ma5": 68.89,
-    "spread": 0.11,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-29",
+    "monthly_rsi14": 68.31,
+    "monthly_rsi_ma5": 68.75,
+    "spread": -0.44,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-29T17:56:08.516912+00:00"
+  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
 }

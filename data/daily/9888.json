@@ -2,12 +2,12 @@
   "code": "9888",
   "ticker": "9888.T",
   "name": "ＵＥＸ",
-  "generated_at": "2026-10-29T17:55:35.510421+00:00",
-  "price_date": "2026-10-28",
+  "generated_at": "2026-10-30T17:37:54.492547+00:00",
+  "price_date": "2026-10-29",
   "record": {
-    "current_price": 1333.0,
-    "change_from_signal_month_pct": 30.05,
-    "return_since_gc_pct": 45.84
+    "current_price": 1308.0,
+    "change_from_signal_month_pct": 27.61,
+    "return_since_gc_pct": 43.11
   },
   "daily": [
     {
@@ -711,22 +711,28 @@
       "sma200": 970.89,
       "rsi14": 49.26,
       "rsi5": 59.0
-    }
-  ],
-  "corporate_events": [
+    },
     {
-      "date": "2026-09-29",
-      "type": "DIVIDEND",
-      "label": "配当",
-      "detail": "1株 30円"
+      "date": "2026-10-29",
+      "open": 1347.0,
+      "high": 1355.0,
+      "low": 1303.0,
+      "close": 1308.0,
+      "volume": 64700.0,
+      "sma25": 1254.84,
+      "sma75": 1189.81,
+      "sma200": 973.5,
+      "rsi14": 49.26,
+      "rsi5": 59.0
     }
   ],
+  "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-28",
-    "monthly_rsi14": 66.99,
-    "monthly_rsi_ma5": 62.28,
-    "spread": 4.71,
+    "price_date": "2026-10-29",
+    "monthly_rsi14": 66.21,
+    "monthly_rsi_ma5": 62.13,
+    "spread": 4.08,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -735,5 +741,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-29T17:56:08.516912+00:00"
+  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
 }

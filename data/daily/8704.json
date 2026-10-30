@@ -2,12 +2,12 @@
   "code": "8704",
   "ticker": "8704.T",
   "name": "トレイダーズホールディングス",
-  "generated_at": "2026-10-29T17:55:35.510421+00:00",
-  "price_date": "2026-10-28",
+  "generated_at": "2026-10-30T17:37:54.492547+00:00",
+  "price_date": "2026-10-29",
   "record": {
-    "current_price": 1254.0,
-    "change_from_signal_month_pct": 0.56,
-    "return_since_gc_pct": 5.11
+    "current_price": 1233.0,
+    "change_from_signal_month_pct": -1.12,
+    "return_since_gc_pct": 3.35
   },
   "daily": [
     {
@@ -711,22 +711,28 @@
       "sma200": 1179.47,
       "rsi14": 60.69,
       "rsi5": 64.82
-    }
-  ],
-  "corporate_events": [
+    },
     {
-      "date": "2026-09-29",
-      "type": "DIVIDEND",
-      "label": "配当",
-      "detail": "1株 22円"
+      "date": "2026-10-29",
+      "open": 1246.0,
+      "high": 1261.0,
+      "low": 1228.0,
+      "close": 1233.0,
+      "volume": 148600.0,
+      "sma25": 1342.8,
+      "sma75": 1335.19,
+      "sma200": 1180.88,
+      "rsi14": 60.69,
+      "rsi5": 64.82
     }
   ],
+  "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-28",
-    "monthly_rsi14": 58.64,
-    "monthly_rsi_ma5": 63.86,
-    "spread": -5.22,
+    "price_date": "2026-10-29",
+    "monthly_rsi14": 57.59,
+    "monthly_rsi_ma5": 63.65,
+    "spread": -6.05,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -735,5 +741,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-29T17:56:08.516912+00:00"
+  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
 }

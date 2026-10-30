@@ -2,12 +2,12 @@
   "code": "7148",
   "ticker": "7148.T",
   "name": "ＦＰＧ",
-  "generated_at": "2026-10-29T17:55:35.510421+00:00",
-  "price_date": "2026-10-28",
+  "generated_at": "2026-10-30T17:37:54.492547+00:00",
+  "price_date": "2026-10-29",
   "record": {
-    "current_price": 1613.0,
-    "change_from_signal_month_pct": -5.78,
-    "return_since_gc_pct": -5.78
+    "current_price": 1597.0,
+    "change_from_signal_month_pct": -6.72,
+    "return_since_gc_pct": -6.72
   },
   "daily": [
     {
@@ -711,22 +711,28 @@
       "sma200": 1721.03,
       "rsi14": 39.39,
       "rsi5": 43.29
-    }
-  ],
-  "corporate_events": [
+    },
     {
-      "date": "2026-09-29",
-      "type": "DIVIDEND",
-      "label": "配当",
-      "detail": "1株 46.35円"
+      "date": "2026-10-29",
+      "open": 1613.0,
+      "high": 1618.0,
+      "low": 1588.0,
+      "close": 1597.0,
+      "volume": 864400.0,
+      "sma25": 1634.64,
+      "sma75": 1642.15,
+      "sma200": 1719.41,
+      "rsi14": 39.39,
+      "rsi5": 43.29
     }
   ],
+  "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-28",
-    "monthly_rsi14": 42.35,
-    "monthly_rsi_ma5": 43.0,
-    "spread": -0.65,
+    "price_date": "2026-10-29",
+    "monthly_rsi14": 41.96,
+    "monthly_rsi_ma5": 42.93,
+    "spread": -0.96,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -735,5 +741,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-29T17:56:08.516912+00:00"
+  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
 }

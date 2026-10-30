@@ -2,12 +2,12 @@
   "code": "2411",
   "ticker": "2411.T",
   "name": "ゲンダイエージェンシー",
-  "generated_at": "2026-10-29T17:55:35.510421+00:00",
-  "price_date": "2026-10-28",
+  "generated_at": "2026-10-30T17:37:54.492547+00:00",
+  "price_date": "2026-10-29",
   "record": {
-    "current_price": 445.0,
-    "change_from_signal_month_pct": -3.68,
-    "return_since_gc_pct": -3.68
+    "current_price": 441.0,
+    "change_from_signal_month_pct": -4.55,
+    "return_since_gc_pct": -4.55
   },
   "daily": [
     {
@@ -711,22 +711,28 @@
       "sma200": 466.82,
       "rsi14": 60.3,
       "rsi5": 60.37
-    }
-  ],
-  "corporate_events": [
+    },
     {
-      "date": "2026-09-29",
-      "type": "DIVIDEND",
-      "label": "配当",
-      "detail": "1株 12円"
+      "date": "2026-10-29",
+      "open": 445.0,
+      "high": 445.0,
+      "low": 440.0,
+      "close": 441.0,
+      "volume": 20900.0,
+      "sma25": 457.24,
+      "sma75": 463.52,
+      "sma200": 466.7,
+      "rsi14": 60.3,
+      "rsi5": 60.37
     }
   ],
+  "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-28",
-    "monthly_rsi14": 52.36,
-    "monthly_rsi_ma5": 57.34,
-    "spread": -4.98,
+    "price_date": "2026-10-29",
+    "monthly_rsi14": 51.15,
+    "monthly_rsi_ma5": 57.1,
+    "spread": -5.95,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -735,5 +741,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-29T17:56:08.516912+00:00"
+  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
 }

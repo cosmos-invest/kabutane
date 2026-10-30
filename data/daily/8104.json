@@ -2,12 +2,12 @@
   "code": "8104",
   "ticker": "8104.T",
   "name": "クワザワホールディングス",
-  "generated_at": "2026-10-29T17:55:35.510421+00:00",
-  "price_date": "2026-10-28",
+  "generated_at": "2026-10-30T17:37:54.492547+00:00",
+  "price_date": "2026-10-29",
   "record": {
-    "current_price": 774.0,
-    "change_from_signal_month_pct": 11.85,
-    "return_since_gc_pct": 23.25
+    "current_price": 750.0,
+    "change_from_signal_month_pct": 8.38,
+    "return_since_gc_pct": 19.43
   },
   "daily": [
     {
@@ -711,22 +711,35 @@
       "sma200": 656.51,
       "rsi14": 50.8,
       "rsi5": 57.69
+    },
+    {
+      "date": "2026-10-29",
+      "open": 775.0,
+      "high": 775.0,
+      "low": 750.0,
+      "close": 750.0,
+      "volume": 10800.0,
+      "sma25": 776.88,
+      "sma75": 724.32,
+      "sma200": 657.07,
+      "rsi14": 50.8,
+      "rsi5": 57.69
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-28",
-    "monthly_rsi14": 62.89,
-    "monthly_rsi_ma5": 61.95,
-    "spread": 0.94,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-29",
+    "monthly_rsi14": 60.44,
+    "monthly_rsi_ma5": 61.46,
+    "spread": -1.03,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-29T17:56:08.516912+00:00"
+  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
 }

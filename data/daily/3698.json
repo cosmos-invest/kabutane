@@ -2,12 +2,12 @@
   "code": "3698",
   "ticker": "3698.T",
   "name": "ＣＲＩ・ミドルウェア",
-  "generated_at": "2026-10-29T17:55:35.510421+00:00",
-  "price_date": "2026-10-28",
+  "generated_at": "2026-10-30T17:37:54.492547+00:00",
+  "price_date": "2026-10-29",
   "record": {
-    "current_price": 1222.0,
-    "change_from_signal_month_pct": 3.3,
-    "return_since_gc_pct": 19.69
+    "current_price": 1227.0,
+    "change_from_signal_month_pct": 3.72,
+    "return_since_gc_pct": 20.18
   },
   "daily": [
     {
@@ -711,22 +711,28 @@
       "sma200": 1100.27,
       "rsi14": 49.89,
       "rsi5": 53.79
-    }
-  ],
-  "corporate_events": [
+    },
     {
-      "date": "2026-09-29",
-      "type": "DIVIDEND",
-      "label": "配当",
-      "detail": "1株 14円"
+      "date": "2026-10-29",
+      "open": 1230.0,
+      "high": 1230.0,
+      "low": 1213.0,
+      "close": 1227.0,
+      "volume": 3400.0,
+      "sma25": 1220.56,
+      "sma75": 1198.79,
+      "sma200": 1100.91,
+      "rsi14": 49.89,
+      "rsi5": 53.79
     }
   ],
+  "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-28",
-    "monthly_rsi14": 53.77,
-    "monthly_rsi_ma5": 53.72,
-    "spread": 0.04,
+    "price_date": "2026-10-29",
+    "monthly_rsi14": 54.01,
+    "monthly_rsi_ma5": 53.77,
+    "spread": 0.24,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -735,5 +741,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-29T17:56:08.516912+00:00"
+  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
 }

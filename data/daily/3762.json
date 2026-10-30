@@ -2,12 +2,12 @@
   "code": "3762",
   "ticker": "3762.T",
   "name": "テクマトリックス",
-  "generated_at": "2026-10-29T17:55:35.510421+00:00",
-  "price_date": "2026-10-28",
+  "generated_at": "2026-10-30T17:37:54.492547+00:00",
+  "price_date": "2026-10-29",
   "record": {
-    "current_price": 3565.0,
-    "change_from_signal_month_pct": 74.58,
-    "return_since_gc_pct": 74.58
+    "current_price": 3385.0,
+    "change_from_signal_month_pct": 65.77,
+    "return_since_gc_pct": 65.77
   },
   "daily": [
     {
@@ -711,22 +711,28 @@
       "sma200": 2111.57,
       "rsi14": 44.58,
       "rsi5": 51.03
-    }
-  ],
-  "corporate_events": [
+    },
     {
-      "date": "2026-09-29",
-      "type": "DIVIDEND",
-      "label": "配当",
-      "detail": "1株 22円"
+      "date": "2026-10-29",
+      "open": 3455.0,
+      "high": 3515.0,
+      "low": 3340.0,
+      "close": 3385.0,
+      "volume": 1190600.0,
+      "sma25": 3030.44,
+      "sma75": 2501.19,
+      "sma200": 2116.81,
+      "rsi14": 44.58,
+      "rsi5": 51.03
     }
   ],
+  "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-28",
-    "monthly_rsi14": 74.89,
-    "monthly_rsi_ma5": 58.4,
-    "spread": 16.49,
+    "price_date": "2026-10-29",
+    "monthly_rsi14": 73.33,
+    "monthly_rsi_ma5": 58.09,
+    "spread": 15.24,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -735,5 +741,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-29T17:56:08.516912+00:00"
+  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
 }

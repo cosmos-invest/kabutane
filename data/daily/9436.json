@@ -2,12 +2,12 @@
   "code": "9436",
   "ticker": "9436.T",
   "name": "沖縄セルラー電話",
-  "generated_at": "2026-10-29T17:55:35.510421+00:00",
-  "price_date": "2026-10-28",
+  "generated_at": "2026-10-30T17:37:54.492547+00:00",
+  "price_date": "2026-10-29",
   "record": {
-    "current_price": 3345.0,
-    "change_from_signal_month_pct": -13.57,
-    "return_since_gc_pct": -8.86
+    "current_price": 3190.0,
+    "change_from_signal_month_pct": -17.57,
+    "return_since_gc_pct": -13.08
   },
   "daily": [
     {
@@ -711,22 +711,28 @@
       "sma200": 3600.87,
       "rsi14": 85.8,
       "rsi5": 87.8
-    }
-  ],
-  "corporate_events": [
+    },
     {
-      "date": "2026-09-29",
-      "type": "DIVIDEND",
-      "label": "配当",
-      "detail": "1株 35円"
+      "date": "2026-10-29",
+      "open": 3320.0,
+      "high": 3375.0,
+      "low": 3165.0,
+      "close": 3190.0,
+      "volume": 3364200.0,
+      "sma25": 3756.6,
+      "sma75": 3938.13,
+      "sma200": 3602.66,
+      "rsi14": 85.8,
+      "rsi5": 87.8
     }
   ],
+  "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-28",
-    "monthly_rsi14": 59.1,
-    "monthly_rsi_ma5": 82.53,
-    "spread": -23.43,
+    "price_date": "2026-10-29",
+    "monthly_rsi14": 55.46,
+    "monthly_rsi_ma5": 81.8,
+    "spread": -26.34,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -735,5 +741,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-29T17:56:08.516912+00:00"
+  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
 }

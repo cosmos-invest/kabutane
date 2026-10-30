@@ -2,12 +2,12 @@
   "code": "167A",
   "ticker": "167A.T",
   "name": "リョーサン菱洋ホールディングス",
-  "generated_at": "2026-10-29T17:55:35.510421+00:00",
-  "price_date": "2026-10-28",
+  "generated_at": "2026-10-30T17:37:54.492547+00:00",
+  "price_date": "2026-10-29",
   "record": {
-    "current_price": 3385.0,
-    "change_from_signal_month_pct": 15.37,
-    "return_since_gc_pct": 15.37
+    "current_price": 3325.0,
+    "change_from_signal_month_pct": 13.33,
+    "return_since_gc_pct": 13.33
   },
   "daily": [
     {
@@ -711,22 +711,28 @@
       "sma200": 3024.97,
       "rsi14": 49.1,
       "rsi5": 51.32
-    }
-  ],
-  "corporate_events": [
+    },
     {
-      "date": "2026-09-29",
-      "type": "DIVIDEND",
-      "label": "配当",
-      "detail": "1株 70円"
+      "date": "2026-10-29",
+      "open": 3415.0,
+      "high": 3415.0,
+      "low": 3305.0,
+      "close": 3325.0,
+      "volume": 199500.0,
+      "sma25": 3324.0,
+      "sma75": 3144.36,
+      "sma200": 3026.07,
+      "rsi14": 49.1,
+      "rsi5": 51.32
     }
   ],
+  "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-28",
-    "monthly_rsi14": 57.57,
-    "monthly_rsi_ma5": 52.41,
-    "spread": 5.16,
+    "price_date": "2026-10-29",
+    "monthly_rsi14": 56.52,
+    "monthly_rsi_ma5": 52.2,
+    "spread": 4.33,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -735,5 +741,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-29T17:56:08.516912+00:00"
+  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
 }

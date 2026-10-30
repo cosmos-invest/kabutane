@@ -2,12 +2,12 @@
   "code": "6588",
   "ticker": "6588.T",
   "name": "東芝テック",
-  "generated_at": "2026-10-29T17:55:35.510421+00:00",
-  "price_date": "2026-10-28",
+  "generated_at": "2026-10-30T17:37:54.492547+00:00",
+  "price_date": "2026-10-29",
   "record": {
-    "current_price": 3010.0,
-    "change_from_signal_month_pct": -4.9,
-    "return_since_gc_pct": -4.9
+    "current_price": 2957.0,
+    "change_from_signal_month_pct": -6.57,
+    "return_since_gc_pct": -6.57
   },
   "daily": [
     {
@@ -711,29 +711,35 @@
       "sma200": 2970.33,
       "rsi14": 46.57,
       "rsi5": 51.34
-    }
-  ],
-  "corporate_events": [
+    },
     {
-      "date": "2026-09-29",
-      "type": "DIVIDEND",
-      "label": "配当",
-      "detail": "1株 20円"
+      "date": "2026-10-29",
+      "open": 2996.0,
+      "high": 2996.0,
+      "low": 2913.0,
+      "close": 2957.0,
+      "volume": 167100.0,
+      "sma25": 2967.56,
+      "sma75": 3020.0,
+      "sma200": 2971.41,
+      "rsi14": 46.57,
+      "rsi5": 51.34
     }
   ],
+  "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-28",
-    "monthly_rsi14": 48.92,
-    "monthly_rsi_ma5": 48.89,
-    "spread": 0.02,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-29",
+    "monthly_rsi14": 47.98,
+    "monthly_rsi_ma5": 48.71,
+    "spread": -0.72,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-29T17:56:08.516912+00:00"
+  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
 }

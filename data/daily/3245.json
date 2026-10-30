@@ -2,12 +2,12 @@
   "code": "3245",
   "ticker": "3245.T",
   "name": "ディア・ライフ",
-  "generated_at": "2026-10-29T17:55:35.510421+00:00",
-  "price_date": "2026-10-28",
+  "generated_at": "2026-10-30T17:37:54.492547+00:00",
+  "price_date": "2026-10-29",
   "record": {
-    "current_price": 907.0,
-    "change_from_signal_month_pct": -16.87,
-    "return_since_gc_pct": -16.87
+    "current_price": 897.0,
+    "change_from_signal_month_pct": -17.78,
+    "return_since_gc_pct": -17.78
   },
   "daily": [
     {
@@ -711,22 +711,28 @@
       "sma200": 1064.46,
       "rsi14": 49.67,
       "rsi5": 53.27
-    }
-  ],
-  "corporate_events": [
+    },
     {
-      "date": "2026-09-29",
-      "type": "DIVIDEND",
-      "label": "配当",
-      "detail": "1株 64円"
+      "date": "2026-10-29",
+      "open": 908.0,
+      "high": 908.0,
+      "low": 862.0,
+      "close": 897.0,
+      "volume": 1527100.0,
+      "sma25": 952.8,
+      "sma75": 1055.45,
+      "sma200": 1063.3,
+      "rsi14": 49.67,
+      "rsi5": 53.27
     }
   ],
+  "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-28",
-    "monthly_rsi14": 42.18,
-    "monthly_rsi_ma5": 48.77,
-    "spread": -6.59,
+    "price_date": "2026-10-29",
+    "monthly_rsi14": 41.73,
+    "monthly_rsi_ma5": 48.68,
+    "spread": -6.95,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -735,5 +741,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-29T17:56:08.516912+00:00"
+  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "5445",
   "ticker": "5445.T",
   "name": "東京鐵鋼",
-  "generated_at": "2026-10-29T17:55:35.510421+00:00",
-  "price_date": "2026-10-28",
+  "generated_at": "2026-10-30T17:37:54.492547+00:00",
+  "price_date": "2026-10-29",
   "record": {
-    "current_price": 1906.0,
-    "change_from_signal_month_pct": -0.83,
-    "return_since_gc_pct": -0.83
+    "current_price": 1897.0,
+    "change_from_signal_month_pct": -1.3,
+    "return_since_gc_pct": -1.3
   },
   "daily": [
     {
@@ -711,22 +711,28 @@
       "sma200": 1981.24,
       "rsi14": 53.69,
       "rsi5": 55.16
-    }
-  ],
-  "corporate_events": [
+    },
     {
-      "date": "2026-09-29",
-      "type": "DIVIDEND",
-      "label": "配当",
-      "detail": "1株 40円"
+      "date": "2026-10-29",
+      "open": 1907.0,
+      "high": 1911.0,
+      "low": 1894.0,
+      "close": 1897.0,
+      "volume": 127100.0,
+      "sma25": 1970.8,
+      "sma75": 1986.48,
+      "sma200": 1980.42,
+      "rsi14": 53.69,
+      "rsi5": 55.16
     }
   ],
+  "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-28",
-    "monthly_rsi14": 53.62,
-    "monthly_rsi_ma5": 56.15,
-    "spread": -2.53,
+    "price_date": "2026-10-29",
+    "monthly_rsi14": 53.25,
+    "monthly_rsi_ma5": 56.08,
+    "spread": -2.82,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -735,5 +741,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-29T17:56:08.516912+00:00"
+  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
 }

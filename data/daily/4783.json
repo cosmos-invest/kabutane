@@ -2,12 +2,12 @@
   "code": "4783",
   "ticker": "4783.T",
   "name": "ＮＣＤ",
-  "generated_at": "2026-10-29T17:55:35.510421+00:00",
-  "price_date": "2026-10-28",
+  "generated_at": "2026-10-30T17:37:54.492547+00:00",
+  "price_date": "2026-10-29",
   "record": {
-    "current_price": 2485.0,
-    "change_from_signal_month_pct": -0.12,
-    "return_since_gc_pct": -0.12
+    "current_price": 2452.0,
+    "change_from_signal_month_pct": -1.45,
+    "return_since_gc_pct": -1.45
   },
   "daily": [
     {
@@ -711,22 +711,28 @@
       "sma200": 2705.59,
       "rsi14": 50.96,
       "rsi5": 51.05
-    }
-  ],
-  "corporate_events": [
+    },
     {
-      "date": "2026-09-29",
-      "type": "DIVIDEND",
-      "label": "配当",
-      "detail": "1株 60円"
+      "date": "2026-10-29",
+      "open": 2478.0,
+      "high": 2481.0,
+      "low": 2435.0,
+      "close": 2452.0,
+      "volume": 11100.0,
+      "sma25": 2478.16,
+      "sma75": 2528.91,
+      "sma200": 2702.82,
+      "rsi14": 50.96,
+      "rsi5": 51.05
     }
   ],
+  "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-28",
-    "monthly_rsi14": 51.63,
-    "monthly_rsi_ma5": 52.63,
-    "spread": -1.0,
+    "price_date": "2026-10-29",
+    "monthly_rsi14": 51.0,
+    "monthly_rsi_ma5": 52.5,
+    "spread": -1.5,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -735,5 +741,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-29T17:56:08.516912+00:00"
+  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
 }

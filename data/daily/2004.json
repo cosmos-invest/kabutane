@@ -2,12 +2,12 @@
   "code": "2004",
   "ticker": "2004.T",
   "name": "昭和産業",
-  "generated_at": "2026-10-29T17:55:35.510421+00:00",
-  "price_date": "2026-10-28",
+  "generated_at": "2026-10-30T17:37:54.492547+00:00",
+  "price_date": "2026-10-29",
   "record": {
-    "current_price": 3875.0,
-    "change_from_signal_month_pct": 9.15,
-    "return_since_gc_pct": 14.31
+    "current_price": 3985.0,
+    "change_from_signal_month_pct": 12.25,
+    "return_since_gc_pct": 17.55
   },
   "daily": [
     {
@@ -711,22 +711,28 @@
       "sma200": 3413.93,
       "rsi14": 57.06,
       "rsi5": 63.19
-    }
-  ],
-  "corporate_events": [
+    },
     {
-      "date": "2026-09-29",
-      "type": "DIVIDEND",
-      "label": "配当",
-      "detail": "1株 70円"
+      "date": "2026-10-29",
+      "open": 3895.0,
+      "high": 3985.0,
+      "low": 3885.0,
+      "close": 3985.0,
+      "volume": 806600.0,
+      "sma25": 3845.4,
+      "sma75": 3725.0,
+      "sma200": 3418.78,
+      "rsi14": 57.06,
+      "rsi5": 63.19
     }
   ],
+  "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-28",
-    "monthly_rsi14": 68.87,
-    "monthly_rsi_ma5": 65.04,
-    "spread": 3.83,
+    "price_date": "2026-10-29",
+    "monthly_rsi14": 70.65,
+    "monthly_rsi_ma5": 65.4,
+    "spread": 5.25,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -735,5 +741,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-29T17:56:08.516912+00:00"
+  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
 }

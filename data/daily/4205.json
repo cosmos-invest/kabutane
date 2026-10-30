@@ -2,12 +2,12 @@
   "code": "4205",
   "ticker": "4205.T",
   "name": "日本ゼオン",
-  "generated_at": "2026-10-29T17:55:35.510421+00:00",
-  "price_date": "2026-10-28",
+  "generated_at": "2026-10-30T17:37:54.492547+00:00",
+  "price_date": "2026-10-29",
   "record": {
-    "current_price": 2264.5,
-    "change_from_signal_month_pct": 0.15,
-    "return_since_gc_pct": 3.43
+    "current_price": 2247.0,
+    "change_from_signal_month_pct": -0.62,
+    "return_since_gc_pct": 2.63
   },
   "daily": [
     {
@@ -711,22 +711,28 @@
       "sma200": 2138.91,
       "rsi14": 62.78,
       "rsi5": 65.55
-    }
-  ],
-  "corporate_events": [
+    },
     {
-      "date": "2026-09-29",
-      "type": "DIVIDEND",
-      "label": "配当",
-      "detail": "1株 39円"
+      "date": "2026-10-29",
+      "open": 2272.5,
+      "high": 2300.0,
+      "low": 2191.5,
+      "close": 2247.0,
+      "volume": 4059500.0,
+      "sma25": 2357.46,
+      "sma75": 2359.13,
+      "sma200": 2141.2,
+      "rsi14": 62.78,
+      "rsi5": 65.55
     }
   ],
+  "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-28",
-    "monthly_rsi14": 59.8,
-    "monthly_rsi_ma5": 64.88,
-    "spread": -5.08,
+    "price_date": "2026-10-29",
+    "monthly_rsi14": 59.27,
+    "monthly_rsi_ma5": 64.78,
+    "spread": -5.51,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -735,5 +741,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-29T17:56:08.516912+00:00"
+  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
 }

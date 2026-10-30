@@ -2,12 +2,12 @@
   "code": "5991",
   "ticker": "5991.T",
   "name": "日本発條",
-  "generated_at": "2026-10-29T17:55:35.510421+00:00",
-  "price_date": "2026-10-28",
+  "generated_at": "2026-10-30T17:37:54.492547+00:00",
+  "price_date": "2026-10-29",
   "record": {
-    "current_price": 3062.0,
-    "change_from_signal_month_pct": -15.18,
-    "return_since_gc_pct": -14.68
+    "current_price": 3084.0,
+    "change_from_signal_month_pct": -14.57,
+    "return_since_gc_pct": -14.07
   },
   "daily": [
     {
@@ -711,22 +711,28 @@
       "sma200": 3229.57,
       "rsi14": 67.44,
       "rsi5": 68.42
-    }
-  ],
-  "corporate_events": [
+    },
     {
-      "date": "2026-09-29",
-      "type": "DIVIDEND",
-      "label": "配当",
-      "detail": "1株 33円"
+      "date": "2026-10-29",
+      "open": 3049.0,
+      "high": 3084.0,
+      "low": 2962.5,
+      "close": 3084.0,
+      "volume": 1712800.0,
+      "sma25": 3439.56,
+      "sma75": 3486.69,
+      "sma200": 3232.41,
+      "rsi14": 67.44,
+      "rsi5": 68.42
     }
   ],
+  "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-28",
-    "monthly_rsi14": 58.18,
-    "monthly_rsi_ma5": 66.41,
-    "spread": -8.23,
+    "price_date": "2026-10-29",
+    "monthly_rsi14": 58.55,
+    "monthly_rsi_ma5": 66.49,
+    "spread": -7.94,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -735,5 +741,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-29T17:56:08.516912+00:00"
+  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
 }

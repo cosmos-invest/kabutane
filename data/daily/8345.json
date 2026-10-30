@@ -2,12 +2,12 @@
   "code": "8345",
   "ticker": "8345.T",
   "name": "岩手銀行",
-  "generated_at": "2026-10-29T17:55:35.510421+00:00",
-  "price_date": "2026-10-28",
+  "generated_at": "2026-10-30T17:37:54.492547+00:00",
+  "price_date": "2026-10-29",
   "record": {
-    "current_price": 2115.0,
-    "change_from_signal_month_pct": -1.86,
-    "return_since_gc_pct": -1.86
+    "current_price": 2191.0,
+    "change_from_signal_month_pct": 1.67,
+    "return_since_gc_pct": 1.67
   },
   "daily": [
     {
@@ -711,22 +711,28 @@
       "sma200": 2009.67,
       "rsi14": 79.31,
       "rsi5": 80.99
-    }
-  ],
-  "corporate_events": [
+    },
     {
-      "date": "2026-09-29",
-      "type": "DIVIDEND",
-      "label": "配当",
-      "detail": "1株 29円"
+      "date": "2026-10-29",
+      "open": 2104.0,
+      "high": 2191.0,
+      "low": 2103.0,
+      "close": 2191.0,
+      "volume": 1648300.0,
+      "sma25": 2461.32,
+      "sma75": 2406.44,
+      "sma200": 2014.12,
+      "rsi14": 79.31,
+      "rsi5": 80.99
     }
   ],
+  "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-28",
-    "monthly_rsi14": 62.57,
-    "monthly_rsi_ma5": 79.12,
-    "spread": -16.56,
+    "price_date": "2026-10-29",
+    "monthly_rsi14": 64.42,
+    "monthly_rsi_ma5": 79.49,
+    "spread": -15.07,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -735,5 +741,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-29T17:56:08.516912+00:00"
+  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
 }

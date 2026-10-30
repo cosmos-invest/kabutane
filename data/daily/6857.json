@@ -2,12 +2,12 @@
   "code": "6857",
   "ticker": "6857.T",
   "name": "アドバンテスト",
-  "generated_at": "2026-10-29T17:55:35.510421+00:00",
-  "price_date": "2026-10-28",
+  "generated_at": "2026-10-30T17:37:54.492547+00:00",
+  "price_date": "2026-10-29",
   "record": {
-    "current_price": 34930.0,
-    "change_from_signal_month_pct": 7.48,
-    "return_since_gc_pct": 8.01
+    "current_price": 37030.0,
+    "change_from_signal_month_pct": 13.94,
+    "return_since_gc_pct": 14.5
   },
   "daily": [
     {
@@ -711,22 +711,28 @@
       "sma200": 28819.97,
       "rsi14": 68.75,
       "rsi5": 71.92
-    }
-  ],
-  "corporate_events": [
+    },
     {
-      "date": "2026-09-29",
-      "type": "DIVIDEND",
-      "label": "配当",
-      "detail": "1株 49円"
+      "date": "2026-10-29",
+      "open": 36500.0,
+      "high": 38120.0,
+      "low": 35800.0,
+      "close": 37030.0,
+      "volume": 24991600.0,
+      "sma25": 36207.6,
+      "sma75": 33509.67,
+      "sma200": 28906.95,
+      "rsi14": 68.75,
+      "rsi5": 71.92
     }
   ],
+  "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-28",
-    "monthly_rsi14": 73.69,
-    "monthly_rsi_ma5": 72.58,
-    "spread": 1.12,
+    "price_date": "2026-10-29",
+    "monthly_rsi14": 75.3,
+    "monthly_rsi_ma5": 72.9,
+    "spread": 2.4,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -735,5 +741,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-29T17:56:08.516912+00:00"
+  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
 }
