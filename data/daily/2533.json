@@ -2,12 +2,12 @@
   "code": "2533",
   "ticker": "2533.T",
   "name": "オエノンホールディングス",
-  "generated_at": "2026-10-30T17:37:54.492547+00:00",
-  "price_date": "2026-10-29",
+  "generated_at": "2026-11-02T21:18:00.587439+00:00",
+  "price_date": "2026-10-30",
   "record": {
-    "current_price": 455.0,
-    "change_from_signal_month_pct": -7.14,
-    "return_since_gc_pct": -7.33
+    "current_price": 485.0,
+    "change_from_signal_month_pct": -1.02,
+    "return_since_gc_pct": -1.22
   },
   "daily": [
     {
@@ -724,22 +724,35 @@
       "sma200": 470.17,
       "rsi14": 50.37,
       "rsi5": 53.66
+    },
+    {
+      "date": "2026-10-30",
+      "open": 477.0,
+      "high": 495.0,
+      "low": 476.0,
+      "close": 485.0,
+      "volume": 442600.0,
+      "sma25": 474.8,
+      "sma75": 476.84,
+      "sma200": 470.11,
+      "rsi14": 50.37,
+      "rsi5": 53.66
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-29",
-    "monthly_rsi14": 47.75,
-    "monthly_rsi_ma5": 50.53,
-    "spread": -2.78,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-30",
+    "monthly_rsi14": 51.65,
+    "monthly_rsi_ma5": 51.31,
+    "spread": 0.34,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
+  "provisional_generated_at": "2026-11-02T21:18:32.516426+00:00"
 }

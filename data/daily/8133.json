@@ -2,12 +2,12 @@
   "code": "8133",
   "ticker": "8133.T",
   "name": "伊藤忠エネクス",
-  "generated_at": "2026-10-30T17:37:54.492547+00:00",
-  "price_date": "2026-10-29",
+  "generated_at": "2026-11-02T21:18:00.587439+00:00",
+  "price_date": "2026-10-30",
   "record": {
-    "current_price": 2236.0,
-    "change_from_signal_month_pct": 3.04,
-    "return_since_gc_pct": 3.04
+    "current_price": 2170.0,
+    "change_from_signal_month_pct": 0.0,
+    "return_since_gc_pct": 0.0
   },
   "daily": [
     {
@@ -724,22 +724,35 @@
       "sma200": 2068.47,
       "rsi14": 62.73,
       "rsi5": 68.25
+    },
+    {
+      "date": "2026-10-30",
+      "open": 2250.0,
+      "high": 2280.0,
+      "low": 2156.0,
+      "close": 2170.0,
+      "volume": 218000.0,
+      "sma25": 2260.68,
+      "sma75": 2208.76,
+      "sma200": 2069.68,
+      "rsi14": 62.73,
+      "rsi5": 68.25
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-29",
-    "monthly_rsi14": 68.15,
-    "monthly_rsi_ma5": 67.38,
-    "spread": 0.78,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-30",
+    "monthly_rsi14": 63.9,
+    "monthly_rsi_ma5": 66.52,
+    "spread": -2.62,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
+  "provisional_generated_at": "2026-11-02T21:18:32.516426+00:00"
 }

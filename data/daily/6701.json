@@ -2,12 +2,12 @@
   "code": "6701",
   "ticker": "6701.T",
   "name": "日本電気",
-  "generated_at": "2026-10-30T17:37:54.492547+00:00",
-  "price_date": "2026-10-29",
+  "generated_at": "2026-11-02T21:18:00.587439+00:00",
+  "price_date": "2026-10-30",
   "record": {
-    "current_price": 4954.0,
-    "change_from_signal_month_pct": 4.51,
-    "return_since_gc_pct": 4.51
+    "current_price": 4850.0,
+    "change_from_signal_month_pct": 2.32,
+    "return_since_gc_pct": 2.32
   },
   "daily": [
     {
@@ -724,15 +724,28 @@
       "sma200": 4552.09,
       "rsi14": 55.39,
       "rsi5": 61.45
+    },
+    {
+      "date": "2026-10-30",
+      "open": 4954.0,
+      "high": 4998.0,
+      "low": 4734.0,
+      "close": 4850.0,
+      "volume": 9502700.0,
+      "sma25": 5116.0,
+      "sma75": 4817.71,
+      "sma200": 4549.17,
+      "rsi14": 55.39,
+      "rsi5": 61.45
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-29",
-    "monthly_rsi14": 62.98,
-    "monthly_rsi_ma5": 60.56,
-    "spread": 2.42,
+    "price_date": "2026-10-30",
+    "monthly_rsi14": 62.01,
+    "monthly_rsi_ma5": 60.37,
+    "spread": 1.64,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -741,5 +754,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
+  "provisional_generated_at": "2026-11-02T21:18:32.516426+00:00"
 }

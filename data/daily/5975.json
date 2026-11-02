@@ -2,12 +2,12 @@
   "code": "5975",
   "ticker": "5975.T",
   "name": "東プレ",
-  "generated_at": "2026-10-30T17:37:54.492547+00:00",
-  "price_date": "2026-10-29",
+  "generated_at": "2026-11-02T21:18:00.587439+00:00",
+  "price_date": "2026-10-30",
   "record": {
-    "current_price": 3190.0,
-    "change_from_signal_month_pct": 13.0,
-    "return_since_gc_pct": 13.0
+    "current_price": 3170.0,
+    "change_from_signal_month_pct": 12.29,
+    "return_since_gc_pct": 12.29
   },
   "daily": [
     {
@@ -724,15 +724,28 @@
       "sma200": 2791.11,
       "rsi14": 59.12,
       "rsi5": 62.41
+    },
+    {
+      "date": "2026-10-30",
+      "open": 3205.0,
+      "high": 3255.0,
+      "low": 3155.0,
+      "close": 3170.0,
+      "volume": 76400.0,
+      "sma25": 3322.4,
+      "sma75": 3143.37,
+      "sma200": 2795.0,
+      "rsi14": 59.12,
+      "rsi5": 62.41
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-29",
-    "monthly_rsi14": 64.78,
-    "monthly_rsi_ma5": 64.99,
-    "spread": -0.21,
+    "price_date": "2026-10-30",
+    "monthly_rsi14": 64.3,
+    "monthly_rsi_ma5": 64.9,
+    "spread": -0.59,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -741,5 +754,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
+  "provisional_generated_at": "2026-11-02T21:18:32.516426+00:00"
 }

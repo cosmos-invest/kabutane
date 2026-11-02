@@ -2,12 +2,12 @@
   "code": "2175",
   "ticker": "2175.T",
   "name": "エス・エム・エス",
-  "generated_at": "2026-10-30T17:37:54.492547+00:00",
-  "price_date": "2026-10-29",
+  "generated_at": "2026-11-02T21:18:00.587439+00:00",
+  "price_date": "2026-10-30",
   "record": {
-    "current_price": 2509.0,
-    "change_from_signal_month_pct": 13.68,
-    "return_since_gc_pct": 53.55
+    "current_price": 2588.0,
+    "change_from_signal_month_pct": 17.26,
+    "return_since_gc_pct": 58.38
   },
   "daily": [
     {
@@ -724,22 +724,35 @@
       "sma200": 2052.44,
       "rsi14": 53.56,
       "rsi5": 58.85
+    },
+    {
+      "date": "2026-10-30",
+      "open": 2618.0,
+      "high": 2666.0,
+      "low": 2498.0,
+      "close": 2588.0,
+      "volume": 598400.0,
+      "sma25": 2637.84,
+      "sma75": 2494.95,
+      "sma200": 2058.63,
+      "rsi14": 53.56,
+      "rsi5": 58.85
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-29",
-    "monthly_rsi14": 61.67,
-    "monthly_rsi_ma5": 61.87,
-    "spread": -0.2,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-30",
+    "monthly_rsi14": 63.99,
+    "monthly_rsi_ma5": 62.34,
+    "spread": 1.65,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
+  "provisional_generated_at": "2026-11-02T21:18:32.516426+00:00"
 }

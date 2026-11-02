@@ -2,12 +2,12 @@
   "code": "3583",
   "ticker": "3583.T",
   "name": "オーベクス",
-  "generated_at": "2026-10-30T17:37:54.492547+00:00",
-  "price_date": "2026-10-29",
+  "generated_at": "2026-11-02T21:18:00.587439+00:00",
+  "price_date": "2026-10-30",
   "record": {
-    "current_price": 1345.0,
-    "change_from_signal_month_pct": 6.16,
-    "return_since_gc_pct": 6.16
+    "current_price": 1340.0,
+    "change_from_signal_month_pct": 5.76,
+    "return_since_gc_pct": 5.76
   },
   "daily": [
     {
@@ -724,15 +724,28 @@
       "sma200": 1300.61,
       "rsi14": 52.42,
       "rsi5": 52.98
+    },
+    {
+      "date": "2026-10-30",
+      "open": 1362.0,
+      "high": 1380.0,
+      "low": 1332.0,
+      "close": 1340.0,
+      "volume": 700.0,
+      "sma25": 1352.6,
+      "sma75": 1330.04,
+      "sma200": 1300.71,
+      "rsi14": 52.42,
+      "rsi5": 52.98
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-29",
-    "monthly_rsi14": 60.06,
-    "monthly_rsi_ma5": 57.13,
-    "spread": 2.93,
+    "price_date": "2026-10-30",
+    "monthly_rsi14": 59.53,
+    "monthly_rsi_ma5": 57.02,
+    "spread": 2.5,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -741,5 +754,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
+  "provisional_generated_at": "2026-11-02T21:18:32.516426+00:00"
 }

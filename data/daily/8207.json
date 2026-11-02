@@ -2,12 +2,12 @@
   "code": "8207",
   "ticker": "8207.T",
   "name": "テンアライド",
-  "generated_at": "2026-10-30T17:37:54.492547+00:00",
-  "price_date": "2026-10-29",
+  "generated_at": "2026-11-02T21:18:00.587439+00:00",
+  "price_date": "2026-10-30",
   "record": {
-    "current_price": 290.0,
-    "change_from_signal_month_pct": -1.36,
-    "return_since_gc_pct": 0.69
+    "current_price": 289.0,
+    "change_from_signal_month_pct": -1.7,
+    "return_since_gc_pct": 0.35
   },
   "daily": [
     {
@@ -724,15 +724,28 @@
       "sma200": 290.9,
       "rsi14": 50.32,
       "rsi5": 53.92
+    },
+    {
+      "date": "2026-10-30",
+      "open": 290.0,
+      "high": 290.0,
+      "low": 289.0,
+      "close": 289.0,
+      "volume": 10100.0,
+      "sma25": 290.64,
+      "sma75": 294.69,
+      "sma200": 290.91,
+      "rsi14": 50.32,
+      "rsi5": 53.92
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-29",
-    "monthly_rsi14": 49.23,
-    "monthly_rsi_ma5": 51.25,
-    "spread": -2.03,
+    "price_date": "2026-10-30",
+    "monthly_rsi14": 48.67,
+    "monthly_rsi_ma5": 51.14,
+    "spread": -2.47,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -741,5 +754,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
+  "provisional_generated_at": "2026-11-02T21:18:32.516426+00:00"
 }

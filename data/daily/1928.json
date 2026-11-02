@@ -2,12 +2,12 @@
   "code": "1928",
   "ticker": "1928.T",
   "name": "積水ハウス",
-  "generated_at": "2026-10-30T17:37:54.492547+00:00",
-  "price_date": "2026-10-29",
+  "generated_at": "2026-11-02T21:18:00.587439+00:00",
+  "price_date": "2026-10-30",
   "record": {
-    "current_price": 3398.0,
-    "change_from_signal_month_pct": -2.58,
-    "return_since_gc_pct": -2.58
+    "current_price": 3482.0,
+    "change_from_signal_month_pct": -0.17,
+    "return_since_gc_pct": -0.17
   },
   "daily": [
     {
@@ -724,22 +724,35 @@
       "sma200": 3467.18,
       "rsi14": 51.87,
       "rsi5": 53.63
+    },
+    {
+      "date": "2026-10-30",
+      "open": 3453.0,
+      "high": 3482.0,
+      "low": 3435.0,
+      "close": 3482.0,
+      "volume": 2407400.0,
+      "sma25": 3393.36,
+      "sma75": 3427.79,
+      "sma200": 3467.07,
+      "rsi14": 51.87,
+      "rsi5": 53.63
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-29",
-    "monthly_rsi14": 51.49,
-    "monthly_rsi_ma5": 52.21,
-    "spread": -0.72,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-30",
+    "monthly_rsi14": 54.12,
+    "monthly_rsi_ma5": 52.73,
+    "spread": 1.39,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
+  "provisional_generated_at": "2026-11-02T21:18:32.516426+00:00"
 }

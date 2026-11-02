@@ -2,12 +2,12 @@
   "code": "7254",
   "ticker": "7254.T",
   "name": "ユニバンス",
-  "generated_at": "2026-10-30T17:37:54.492547+00:00",
-  "price_date": "2026-10-29",
+  "generated_at": "2026-11-02T21:18:00.587439+00:00",
+  "price_date": "2026-10-30",
   "record": {
-    "current_price": 803.0,
-    "change_from_signal_month_pct": 0.25,
-    "return_since_gc_pct": 0.25
+    "current_price": 800.0,
+    "change_from_signal_month_pct": -0.12,
+    "return_since_gc_pct": -0.12
   },
   "daily": [
     {
@@ -724,15 +724,28 @@
       "sma200": 797.12,
       "rsi14": 62.25,
       "rsi5": 62.76
+    },
+    {
+      "date": "2026-10-30",
+      "open": 802.0,
+      "high": 802.0,
+      "low": 795.0,
+      "close": 800.0,
+      "volume": 1500.0,
+      "sma25": 808.96,
+      "sma75": 808.37,
+      "sma200": 797.08,
+      "rsi14": 62.25,
+      "rsi5": 62.76
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-29",
-    "monthly_rsi14": 62.19,
-    "monthly_rsi_ma5": 63.08,
-    "spread": -0.89,
+    "price_date": "2026-10-30",
+    "monthly_rsi14": 61.9,
+    "monthly_rsi_ma5": 63.02,
+    "spread": -1.12,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -741,5 +754,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
+  "provisional_generated_at": "2026-11-02T21:18:32.516426+00:00"
 }

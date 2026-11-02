@@ -2,12 +2,12 @@
   "code": "4634",
   "ticker": "4634.T",
   "name": "ａｒｔｉｅｎｃｅ",
-  "generated_at": "2026-10-30T17:37:54.492547+00:00",
-  "price_date": "2026-10-29",
+  "generated_at": "2026-11-02T21:18:00.587439+00:00",
+  "price_date": "2026-10-30",
   "record": {
-    "current_price": 5040.0,
-    "change_from_signal_month_pct": 13.0,
-    "return_since_gc_pct": 16.8
+    "current_price": 4995.0,
+    "change_from_signal_month_pct": 12.0,
+    "return_since_gc_pct": 15.76
   },
   "daily": [
     {
@@ -724,22 +724,35 @@
       "sma200": 4324.12,
       "rsi14": 64.88,
       "rsi5": 69.06
+    },
+    {
+      "date": "2026-10-30",
+      "open": 5020.0,
+      "high": 5090.0,
+      "low": 4965.0,
+      "close": 4995.0,
+      "volume": 103500.0,
+      "sma25": 5069.4,
+      "sma75": 4915.4,
+      "sma200": 4331.85,
+      "rsi14": 64.88,
+      "rsi5": 69.06
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-29",
-    "monthly_rsi14": 73.52,
-    "monthly_rsi_ma5": 72.72,
-    "spread": 0.8,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-30",
+    "monthly_rsi14": 72.44,
+    "monthly_rsi_ma5": 72.51,
+    "spread": -0.07,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
+  "provisional_generated_at": "2026-11-02T21:18:32.516426+00:00"
 }

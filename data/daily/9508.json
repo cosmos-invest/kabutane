@@ -2,12 +2,12 @@
   "code": "9508",
   "ticker": "9508.T",
   "name": "九州電力",
-  "generated_at": "2026-10-30T17:37:54.492547+00:00",
-  "price_date": "2026-10-29",
+  "generated_at": "2026-11-02T21:18:00.587439+00:00",
+  "price_date": "2026-10-30",
   "record": {
-    "current_price": 2038.5,
-    "change_from_signal_month_pct": 14.59,
-    "return_since_gc_pct": 14.59
+    "current_price": 1972.0,
+    "change_from_signal_month_pct": 10.85,
+    "return_since_gc_pct": 10.85
   },
   "daily": [
     {
@@ -724,22 +724,35 @@
       "sma200": 1827.56,
       "rsi14": 58.09,
       "rsi5": 59.91
+    },
+    {
+      "date": "2026-10-30",
+      "open": 2015.5,
+      "high": 2020.0,
+      "low": 1963.0,
+      "close": 1972.0,
+      "volume": 1964000.0,
+      "sma25": 2003.54,
+      "sma75": 1958.68,
+      "sma200": 1828.95,
+      "rsi14": 58.09,
+      "rsi5": 59.91
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-29",
-    "monthly_rsi14": 66.14,
-    "monthly_rsi_ma5": 64.17,
-    "spread": 1.97,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-10-30",
+    "monthly_rsi14": 63.28,
+    "monthly_rsi_ma5": 63.6,
+    "spread": -0.32,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
+  "provisional_generated_at": "2026-11-02T21:18:32.516426+00:00"
 }

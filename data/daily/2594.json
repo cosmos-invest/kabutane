@@ -2,12 +2,12 @@
   "code": "2594",
   "ticker": "2594.T",
   "name": "キーコーヒー",
-  "generated_at": "2026-10-30T17:37:54.492547+00:00",
-  "price_date": "2026-10-29",
+  "generated_at": "2026-11-02T21:18:00.587439+00:00",
+  "price_date": "2026-10-30",
   "record": {
-    "current_price": 1966.0,
-    "change_from_signal_month_pct": -1.75,
-    "return_since_gc_pct": -0.2
+    "current_price": 2012.0,
+    "change_from_signal_month_pct": 0.55,
+    "return_since_gc_pct": 2.13
   },
   "daily": [
     {
@@ -724,22 +724,35 @@
       "sma200": 1985.07,
       "rsi14": 44.52,
       "rsi5": 49.17
+    },
+    {
+      "date": "2026-10-30",
+      "open": 1995.0,
+      "high": 2012.0,
+      "low": 1983.0,
+      "close": 2012.0,
+      "volume": 165900.0,
+      "sma25": 1979.68,
+      "sma75": 1997.61,
+      "sma200": 1985.1,
+      "rsi14": 44.52,
+      "rsi5": 49.17
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-29",
-    "monthly_rsi14": 44.34,
-    "monthly_rsi_ma5": 47.39,
-    "spread": -3.05,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-30",
+    "monthly_rsi14": 49.87,
+    "monthly_rsi_ma5": 48.49,
+    "spread": 1.38,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
+  "provisional_generated_at": "2026-11-02T21:18:32.516426+00:00"
 }

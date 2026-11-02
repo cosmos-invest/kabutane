@@ -2,12 +2,12 @@
   "code": "8522",
   "ticker": "8522.T",
   "name": "名古屋銀行",
-  "generated_at": "2026-10-30T17:37:54.492547+00:00",
-  "price_date": "2026-10-29",
+  "generated_at": "2026-11-02T21:18:00.587439+00:00",
+  "price_date": "2026-10-30",
   "record": {
-    "current_price": 6060.0,
-    "change_from_signal_month_pct": -6.91,
-    "return_since_gc_pct": -6.91
+    "current_price": 5980.0,
+    "change_from_signal_month_pct": -8.14,
+    "return_since_gc_pct": -8.14
   },
   "daily": [
     {
@@ -724,15 +724,28 @@
       "sma200": 6049.07,
       "rsi14": 84.62,
       "rsi5": 87.01
+    },
+    {
+      "date": "2026-10-30",
+      "open": 6010.0,
+      "high": 6130.0,
+      "low": 5910.0,
+      "close": 5980.0,
+      "volume": 138700.0,
+      "sma25": 6581.2,
+      "sma75": 6754.53,
+      "sma200": 6057.0,
+      "rsi14": 84.62,
+      "rsi5": 87.01
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-29",
-    "monthly_rsi14": 66.13,
-    "monthly_rsi_ma5": 83.31,
-    "spread": -17.18,
+    "price_date": "2026-10-30",
+    "monthly_rsi14": 65.13,
+    "monthly_rsi_ma5": 83.11,
+    "spread": -17.98,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -741,5 +754,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
+  "provisional_generated_at": "2026-11-02T21:18:32.516426+00:00"
 }

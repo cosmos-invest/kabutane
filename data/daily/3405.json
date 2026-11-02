@@ -2,12 +2,12 @@
   "code": "3405",
   "ticker": "3405.T",
   "name": "クラレ",
-  "generated_at": "2026-10-30T17:37:54.492547+00:00",
-  "price_date": "2026-10-29",
+  "generated_at": "2026-11-02T21:18:00.587439+00:00",
+  "price_date": "2026-10-30",
   "record": {
-    "current_price": 1840.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 1847.0,
+    "change_from_signal_month_pct": 0.38,
+    "return_since_gc_pct": 0.38
   },
   "daily": [
     {
@@ -724,15 +724,28 @@
       "sma200": 1736.38,
       "rsi14": 49.02,
       "rsi5": 55.07
+    },
+    {
+      "date": "2026-10-30",
+      "open": 1831.5,
+      "high": 1866.0,
+      "low": 1830.5,
+      "close": 1847.0,
+      "volume": 1203600.0,
+      "sma25": 1827.32,
+      "sma75": 1825.04,
+      "sma200": 1737.62,
+      "rsi14": 49.02,
+      "rsi5": 55.07
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-29",
-    "monthly_rsi14": 53.94,
-    "monthly_rsi_ma5": 52.52,
-    "spread": 1.41,
+    "price_date": "2026-10-30",
+    "monthly_rsi14": 54.21,
+    "monthly_rsi_ma5": 52.58,
+    "spread": 1.63,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -741,5 +754,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
+  "provisional_generated_at": "2026-11-02T21:18:32.516426+00:00"
 }

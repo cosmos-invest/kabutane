@@ -2,12 +2,12 @@
   "code": "6249",
   "ticker": "6249.T",
   "name": "ゲームカードホールディングス",
-  "generated_at": "2026-10-30T17:37:54.492547+00:00",
-  "price_date": "2026-10-29",
+  "generated_at": "2026-11-02T21:18:00.587439+00:00",
+  "price_date": "2026-10-30",
   "record": {
-    "current_price": 2641.0,
-    "change_from_signal_month_pct": 0.19,
-    "return_since_gc_pct": 0.19
+    "current_price": 2747.0,
+    "change_from_signal_month_pct": 4.21,
+    "return_since_gc_pct": 4.21
   },
   "daily": [
     {
@@ -724,22 +724,35 @@
       "sma200": 2700.95,
       "rsi14": 47.94,
       "rsi5": 50.61
+    },
+    {
+      "date": "2026-10-30",
+      "open": 2630.0,
+      "high": 2748.0,
+      "low": 2630.0,
+      "close": 2747.0,
+      "volume": 7400.0,
+      "sma25": 2723.32,
+      "sma75": 2722.09,
+      "sma200": 2700.07,
+      "rsi14": 47.94,
+      "rsi5": 50.61
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-10",
-    "price_date": "2026-10-29",
-    "monthly_rsi14": 45.0,
-    "monthly_rsi_ma5": 45.42,
-    "spread": -0.42,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-10-30",
+    "monthly_rsi14": 47.16,
+    "monthly_rsi_ma5": 45.85,
+    "spread": 1.31,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-10-30T17:39:20.198414+00:00"
+  "provisional_generated_at": "2026-11-02T21:18:32.516426+00:00"
 }
