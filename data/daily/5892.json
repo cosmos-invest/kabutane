@@ -2,12 +2,12 @@
   "code": "5892",
   "ticker": "5892.T",
   "name": "ｙｕｔｏｒｉ",
-  "generated_at": "2026-11-02T21:18:00.587439+00:00",
-  "price_date": "2026-10-30",
+  "generated_at": "2026-11-03T18:58:25.064937+00:00",
+  "price_date": "2026-11-02",
   "record": {
-    "current_price": 2537.0,
-    "change_from_signal_month_pct": 19.84,
-    "return_since_gc_pct": 19.84
+    "current_price": 2510.0,
+    "change_from_signal_month_pct": 18.56,
+    "return_since_gc_pct": 18.56
   },
   "daily": [
     {
@@ -737,22 +737,35 @@
       "sma200": 2377.89,
       "rsi14": 47.73,
       "rsi5": 48.13
+    },
+    {
+      "date": "2026-11-02",
+      "open": 2537.0,
+      "high": 2569.0,
+      "low": 2431.0,
+      "close": 2510.0,
+      "volume": 49200.0,
+      "sma25": 2834.04,
+      "sma75": 2534.63,
+      "sma200": 2377.97,
+      "rsi14": 47.73,
+      "rsi5": 48.13
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-10",
-    "price_date": "2026-10-30",
-    "monthly_rsi14": 51.46,
-    "monthly_rsi_ma5": 51.19,
-    "spread": 0.26,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "month": "2026-11",
+    "price_date": "2026-11-02",
+    "monthly_rsi14": 51.19,
+    "monthly_rsi_ma5": 51.94,
+    "spread": -0.75,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-02T21:18:32.516426+00:00"
+  "provisional_generated_at": "2026-11-03T18:59:37.012268+00:00"
 }

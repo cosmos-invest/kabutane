@@ -2,12 +2,12 @@
   "code": "8098",
   "ticker": "8098.T",
   "name": "稲畑産業",
-  "generated_at": "2026-11-02T21:18:00.587439+00:00",
-  "price_date": "2026-10-30",
+  "generated_at": "2026-11-03T18:58:25.064937+00:00",
+  "price_date": "2026-11-02",
   "record": {
-    "current_price": 4430.0,
-    "change_from_signal_month_pct": 11.73,
-    "return_since_gc_pct": 11.73
+    "current_price": 4350.0,
+    "change_from_signal_month_pct": 9.71,
+    "return_since_gc_pct": 9.71
   },
   "daily": [
     {
@@ -737,22 +737,35 @@
       "sma200": 4088.38,
       "rsi14": 62.86,
       "rsi5": 64.01
+    },
+    {
+      "date": "2026-11-02",
+      "open": 4400.0,
+      "high": 4430.0,
+      "low": 4330.0,
+      "close": 4350.0,
+      "volume": 95100.0,
+      "sma25": 4420.6,
+      "sma75": 4288.67,
+      "sma200": 4091.15,
+      "rsi14": 62.86,
+      "rsi5": 64.01
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-10",
-    "price_date": "2026-10-30",
-    "monthly_rsi14": 71.66,
-    "monthly_rsi_ma5": 68.01,
-    "spread": 3.65,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "month": "2026-11",
+    "price_date": "2026-11-02",
+    "monthly_rsi14": 68.21,
+    "monthly_rsi_ma5": 69.43,
+    "spread": -1.21,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-02T21:18:32.516426+00:00"
+  "provisional_generated_at": "2026-11-03T18:59:37.012268+00:00"
 }

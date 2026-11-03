@@ -2,12 +2,12 @@
   "code": "6551",
   "ticker": "6551.T",
   "name": "ツナググループ・ホールディングス",
-  "generated_at": "2026-11-02T21:18:00.587439+00:00",
-  "price_date": "2026-10-30",
+  "generated_at": "2026-11-03T18:58:25.064937+00:00",
+  "price_date": "2026-11-02",
   "record": {
-    "current_price": 611.0,
-    "change_from_signal_month_pct": 0.16,
-    "return_since_gc_pct": 0.16
+    "current_price": 610.0,
+    "change_from_signal_month_pct": 0.0,
+    "return_since_gc_pct": 0.0
   },
   "daily": [
     {
@@ -737,22 +737,35 @@
       "sma200": 631.52,
       "rsi14": 43.36,
       "rsi5": 45.18
+    },
+    {
+      "date": "2026-11-02",
+      "open": 610.0,
+      "high": 616.0,
+      "low": 605.0,
+      "close": 610.0,
+      "volume": 18200.0,
+      "sma25": 605.56,
+      "sma75": 604.63,
+      "sma200": 630.79,
+      "rsi14": 43.36,
+      "rsi5": 45.18
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-10",
-    "price_date": "2026-10-30",
-    "monthly_rsi14": 41.52,
-    "monthly_rsi_ma5": 40.2,
-    "spread": 1.32,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "month": "2026-11",
+    "price_date": "2026-11-02",
+    "monthly_rsi14": 41.44,
+    "monthly_rsi_ma5": 41.74,
+    "spread": -0.3,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-02T21:18:32.516426+00:00"
+  "provisional_generated_at": "2026-11-03T18:59:37.012268+00:00"
 }

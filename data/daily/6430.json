@@ -2,12 +2,12 @@
   "code": "6430",
   "ticker": "6430.T",
   "name": "ダイコク電機",
-  "generated_at": "2026-11-02T21:18:00.587439+00:00",
-  "price_date": "2026-10-30",
+  "generated_at": "2026-11-03T18:58:25.064937+00:00",
+  "price_date": "2026-11-02",
   "record": {
-    "current_price": 2376.0,
-    "change_from_signal_month_pct": -3.49,
-    "return_since_gc_pct": -3.49
+    "current_price": 2352.0,
+    "change_from_signal_month_pct": -4.47,
+    "return_since_gc_pct": -4.47
   },
   "daily": [
     {
@@ -737,22 +737,35 @@
       "sma200": 2438.39,
       "rsi14": 41.53,
       "rsi5": 45.59
+    },
+    {
+      "date": "2026-11-02",
+      "open": 2377.0,
+      "high": 2388.0,
+      "low": 2343.0,
+      "close": 2352.0,
+      "volume": 17300.0,
+      "sma25": 2348.64,
+      "sma75": 2415.31,
+      "sma200": 2435.66,
+      "rsi14": 41.53,
+      "rsi5": 45.59
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-10",
-    "price_date": "2026-10-30",
-    "monthly_rsi14": 37.51,
-    "monthly_rsi_ma5": 37.14,
-    "spread": 0.37,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "month": "2026-11",
+    "price_date": "2026-11-02",
+    "monthly_rsi14": 37.13,
+    "monthly_rsi_ma5": 38.1,
+    "spread": -0.97,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-02T21:18:32.516426+00:00"
+  "provisional_generated_at": "2026-11-03T18:59:37.012268+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "9064",
   "ticker": "9064.T",
   "name": "ヤマトホールディングス",
-  "generated_at": "2026-11-02T21:18:00.587439+00:00",
-  "price_date": "2026-10-30",
+  "generated_at": "2026-11-03T18:58:25.064937+00:00",
+  "price_date": "2026-11-02",
   "record": {
-    "current_price": 1969.5,
-    "change_from_signal_month_pct": -4.83,
-    "return_since_gc_pct": 7.36
+    "current_price": 1967.5,
+    "change_from_signal_month_pct": -4.93,
+    "return_since_gc_pct": 7.25
   },
   "daily": [
     {
@@ -737,22 +737,35 @@
       "sma200": 1908.13,
       "rsi14": 42.41,
       "rsi5": 51.27
+    },
+    {
+      "date": "2026-11-02",
+      "open": 1982.0,
+      "high": 1986.5,
+      "low": 1958.0,
+      "close": 1967.5,
+      "volume": 979000.0,
+      "sma25": 2022.02,
+      "sma75": 1992.06,
+      "sma200": 1906.68,
+      "rsi14": 42.41,
+      "rsi5": 51.27
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-10",
-    "price_date": "2026-10-30",
-    "monthly_rsi14": 44.85,
-    "monthly_rsi_ma5": 44.16,
-    "spread": 0.68,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "month": "2026-11",
+    "price_date": "2026-11-02",
+    "monthly_rsi14": 44.78,
+    "monthly_rsi_ma5": 45.55,
+    "spread": -0.77,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-02T21:18:32.516426+00:00"
+  "provisional_generated_at": "2026-11-03T18:59:37.012268+00:00"
 }

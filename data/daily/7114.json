@@ -2,12 +2,12 @@
   "code": "7114",
   "ticker": "7114.T",
   "name": "フーディソン",
-  "generated_at": "2026-11-02T21:18:00.587439+00:00",
-  "price_date": "2026-10-30",
+  "generated_at": "2026-11-03T18:58:25.064937+00:00",
+  "price_date": "2026-11-02",
   "record": {
-    "current_price": 745.0,
-    "change_from_signal_month_pct": -5.7,
-    "return_since_gc_pct": -5.7
+    "current_price": 742.0,
+    "change_from_signal_month_pct": -6.08,
+    "return_since_gc_pct": -6.08
   },
   "daily": [
     {
@@ -737,22 +737,35 @@
       "sma200": 805.58,
       "rsi14": 32.14,
       "rsi5": 34.59
+    },
+    {
+      "date": "2026-11-02",
+      "open": 745.0,
+      "high": 745.0,
+      "low": 737.0,
+      "close": 742.0,
+      "volume": 1000.0,
+      "sma25": 775.0,
+      "sma75": 777.97,
+      "sma200": 805.24,
+      "rsi14": 32.14,
+      "rsi5": 34.59
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-10",
-    "price_date": "2026-10-30",
-    "monthly_rsi14": 33.62,
-    "monthly_rsi_ma5": 33.1,
-    "spread": 0.52,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "month": "2026-11",
+    "price_date": "2026-11-02",
+    "monthly_rsi14": 33.49,
+    "monthly_rsi_ma5": 34.35,
+    "spread": -0.86,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-02T21:18:32.516426+00:00"
+  "provisional_generated_at": "2026-11-03T18:59:37.012268+00:00"
 }

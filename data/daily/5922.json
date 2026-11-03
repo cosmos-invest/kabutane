@@ -2,8 +2,8 @@
   "code": "5922",
   "ticker": "5922.T",
   "name": "那須電機鉄工",
-  "generated_at": "2026-11-02T21:18:00.587439+00:00",
-  "price_date": "2026-10-30",
+  "generated_at": "2026-11-03T18:58:25.064937+00:00",
+  "price_date": "2026-11-02",
   "record": {
     "current_price": 20010.0,
     "change_from_signal_month_pct": 0.55,
@@ -737,22 +737,35 @@
       "sma200": 19094.05,
       "rsi14": 67.68,
       "rsi5": 68.67
+    },
+    {
+      "date": "2026-11-02",
+      "open": 19900.0,
+      "high": 20090.0,
+      "low": 19900.0,
+      "close": 20010.0,
+      "volume": 700.0,
+      "sma25": 19984.8,
+      "sma75": 19896.53,
+      "sma200": 19106.1,
+      "rsi14": 67.68,
+      "rsi5": 68.67
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-10",
-    "price_date": "2026-10-30",
+    "month": "2026-11",
+    "price_date": "2026-11-02",
     "monthly_rsi14": 69.13,
-    "monthly_rsi_ma5": 68.24,
-    "spread": 0.89,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "monthly_rsi_ma5": 69.42,
+    "spread": -0.29,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-02T21:18:32.516426+00:00"
+  "provisional_generated_at": "2026-11-03T18:59:37.012268+00:00"
 }

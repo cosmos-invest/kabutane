@@ -2,12 +2,12 @@
   "code": "4015",
   "ticker": "4015.T",
   "name": "ペイクラウドホールディングス",
-  "generated_at": "2026-11-02T21:18:00.587439+00:00",
-  "price_date": "2026-10-30",
+  "generated_at": "2026-11-03T18:58:25.064937+00:00",
+  "price_date": "2026-11-02",
   "record": {
-    "current_price": 523.0,
-    "change_from_signal_month_pct": -3.33,
-    "return_since_gc_pct": 2.95
+    "current_price": 489.0,
+    "change_from_signal_month_pct": -9.61,
+    "return_since_gc_pct": -3.74
   },
   "daily": [
     {
@@ -737,22 +737,35 @@
       "sma200": 498.5,
       "rsi14": 42.3,
       "rsi5": 46.74
+    },
+    {
+      "date": "2026-11-02",
+      "open": 518.0,
+      "high": 519.0,
+      "low": 484.0,
+      "close": 489.0,
+      "volume": 63000.0,
+      "sma25": 526.36,
+      "sma75": 534.2,
+      "sma200": 498.3,
+      "rsi14": 42.3,
+      "rsi5": 46.74
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-10",
-    "price_date": "2026-10-30",
-    "monthly_rsi14": 44.68,
-    "monthly_rsi_ma5": 44.29,
-    "spread": 0.39,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "month": "2026-11",
+    "price_date": "2026-11-02",
+    "monthly_rsi14": 42.31,
+    "monthly_rsi_ma5": 44.13,
+    "spread": -1.82,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-02T21:18:32.516426+00:00"
+  "provisional_generated_at": "2026-11-03T18:59:37.012268+00:00"
 }

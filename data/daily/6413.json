@@ -2,12 +2,12 @@
   "code": "6413",
   "ticker": "6413.T",
   "name": "理想科学工業",
-  "generated_at": "2026-11-02T21:18:00.587439+00:00",
-  "price_date": "2026-10-30",
+  "generated_at": "2026-11-03T18:58:25.064937+00:00",
+  "price_date": "2026-11-02",
   "record": {
-    "current_price": 1070.0,
-    "change_from_signal_month_pct": 1.9,
-    "return_since_gc_pct": 1.9
+    "current_price": 1050.0,
+    "change_from_signal_month_pct": 0.0,
+    "return_since_gc_pct": 0.0
   },
   "daily": [
     {
@@ -737,22 +737,35 @@
       "sma200": 1106.14,
       "rsi14": 37.62,
       "rsi5": 39.98
+    },
+    {
+      "date": "2026-11-02",
+      "open": 1072.0,
+      "high": 1072.0,
+      "low": 1043.0,
+      "close": 1050.0,
+      "volume": 65400.0,
+      "sma25": 1063.68,
+      "sma75": 1072.23,
+      "sma200": 1105.04,
+      "rsi14": 37.62,
+      "rsi5": 39.98
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-10",
-    "price_date": "2026-10-30",
-    "monthly_rsi14": 45.22,
-    "monthly_rsi_ma5": 43.46,
-    "spread": 1.76,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "month": "2026-11",
+    "price_date": "2026-11-02",
+    "monthly_rsi14": 44.23,
+    "monthly_rsi_ma5": 44.76,
+    "spread": -0.54,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-02T21:18:32.516426+00:00"
+  "provisional_generated_at": "2026-11-03T18:59:37.012268+00:00"
 }

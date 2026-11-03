@@ -2,12 +2,12 @@
   "code": "4678",
   "ticker": "4678.T",
   "name": "秀英予備校",
-  "generated_at": "2026-11-02T21:18:00.587439+00:00",
-  "price_date": "2026-10-30",
+  "generated_at": "2026-11-03T18:58:25.064937+00:00",
+  "price_date": "2026-11-02",
   "record": {
-    "current_price": 332.0,
-    "change_from_signal_month_pct": 2.47,
-    "return_since_gc_pct": 2.47
+    "current_price": 329.0,
+    "change_from_signal_month_pct": 1.54,
+    "return_since_gc_pct": 1.54
   },
   "daily": [
     {
@@ -737,22 +737,35 @@
       "sma200": 323.88,
       "rsi14": 51.64,
       "rsi5": 53.54
+    },
+    {
+      "date": "2026-11-02",
+      "open": 329.0,
+      "high": 333.0,
+      "low": 329.0,
+      "close": 329.0,
+      "volume": 2300.0,
+      "sma25": 330.56,
+      "sma75": 327.92,
+      "sma200": 324.0,
+      "rsi14": 51.64,
+      "rsi5": 53.54
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-10",
-    "price_date": "2026-10-30",
-    "monthly_rsi14": 52.29,
-    "monthly_rsi_ma5": 50.55,
-    "spread": 1.74,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "month": "2026-11",
+    "price_date": "2026-11-02",
+    "monthly_rsi14": 51.17,
+    "monthly_rsi_ma5": 51.74,
+    "spread": -0.57,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-02T21:18:32.516426+00:00"
+  "provisional_generated_at": "2026-11-03T18:59:37.012268+00:00"
 }

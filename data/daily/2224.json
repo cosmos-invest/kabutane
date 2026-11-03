@@ -2,12 +2,12 @@
   "code": "2224",
   "ticker": "2224.T",
   "name": "コモ",
-  "generated_at": "2026-11-02T21:18:00.587439+00:00",
-  "price_date": "2026-10-30",
+  "generated_at": "2026-11-03T18:58:25.064937+00:00",
+  "price_date": "2026-11-02",
   "record": {
-    "current_price": 3830.0,
-    "change_from_signal_month_pct": 3.79,
-    "return_since_gc_pct": 3.79
+    "current_price": 3850.0,
+    "change_from_signal_month_pct": 4.34,
+    "return_since_gc_pct": 4.34
   },
   "daily": [
     {
@@ -737,15 +737,28 @@
       "sma200": 3681.0,
       "rsi14": 62.85,
       "rsi5": 64.43
+    },
+    {
+      "date": "2026-11-02",
+      "open": 3830.0,
+      "high": 3850.0,
+      "low": 3830.0,
+      "close": 3850.0,
+      "volume": 1200.0,
+      "sma25": 3815.8,
+      "sma75": 3735.73,
+      "sma200": 3683.1,
+      "rsi14": 62.85,
+      "rsi5": 64.43
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
-    "month": "2026-10",
-    "price_date": "2026-10-30",
-    "monthly_rsi14": 68.33,
-    "monthly_rsi_ma5": 65.92,
-    "spread": 2.41,
+    "month": "2026-11",
+    "price_date": "2026-11-02",
+    "monthly_rsi14": 68.86,
+    "monthly_rsi_ma5": 66.96,
+    "spread": 1.9,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -754,5 +767,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-02T21:18:32.516426+00:00"
+  "provisional_generated_at": "2026-11-03T18:59:37.012268+00:00"
 }
