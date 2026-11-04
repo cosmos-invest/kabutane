@@ -1,0 +1,284 @@
+{
+  "schema_version": "kabutane_daily_events_v1",
+  "generated_at": "2026-11-04T19:16:56.753617+00:00",
+  "snapshot_date": "2026-11-04",
+  "previous_snapshot_date": "2026-11-02",
+  "comparison_state": "compared",
+  "signal_version": "tv_wilder_rsi14_sma5_v1",
+  "signal_month": "2026-07",
+  "summary": {
+    "event_count": 11,
+    "high_count": 1,
+    "medium_count": 0,
+    "low_count": 10,
+    "signal_count": 1,
+    "ranking_count": 10,
+    "price_count": 0,
+    "performance_count": 0
+  },
+  "events": [
+    {
+      "event_id": "2026-11-04:PROVISIONAL_DC:2795:c6cbe50222c1",
+      "date": "2026-11-04",
+      "type": "PROVISIONAL_DC",
+      "category": "signal",
+      "severity": "high",
+      "priority": 92,
+      "code": "2795",
+      "ticker": "2795.T",
+      "name": "日本プリメックス",
+      "market": "スタンダード",
+      "sector": "卸売業",
+      "title": "暫定DCを検出",
+      "detail": "当月途中の最新日足で試算した月足RSIが、正式判定と異なる側へ動いています。月末確定までは参考情報です。",
+      "before": {
+        "status": "CONTINUE",
+        "spread": 0.79
+      },
+      "after": {
+        "status": "DC",
+        "spread": -1.51,
+        "price_date": "2026-11-04"
+      }
+    },
+    {
+      "event_id": "2026-11-04:RANK_MOVE:2152:ce764a590ff4",
+      "date": "2026-11-04",
+      "type": "RANK_MOVE",
+      "category": "ranking",
+      "severity": "low",
+      "priority": 55,
+      "code": "2152",
+      "ticker": "2152.T",
+      "name": "幼児活動研究会",
+      "market": "スタンダード",
+      "sector": "サービス業",
+      "title": "順位が低下",
+      "detail": "GC後リターン順位が 1101位 → 1334位（233位変動）。",
+      "before": {
+        "rank": 1101
+      },
+      "after": {
+        "rank": 1334,
+        "move": -233
+      }
+    },
+    {
+      "event_id": "2026-11-04:RANK_MOVE:2795:440abafef5c8",
+      "date": "2026-11-04",
+      "type": "RANK_MOVE",
+      "category": "ranking",
+      "severity": "low",
+      "priority": 55,
+      "code": "2795",
+      "ticker": "2795.T",
+      "name": "日本プリメックス",
+      "market": "スタンダード",
+      "sector": "卸売業",
+      "title": "順位が低下",
+      "detail": "GC後リターン順位が 758位 → 831位（73位変動）。",
+      "before": {
+        "rank": 758
+      },
+      "after": {
+        "rank": 831,
+        "move": -73
+      }
+    },
+    {
+      "event_id": "2026-11-04:RANK_MOVE:2903:542fb53c3667",
+      "date": "2026-11-04",
+      "type": "RANK_MOVE",
+      "category": "ranking",
+      "severity": "low",
+      "priority": 55,
+      "code": "2903",
+      "ticker": "2903.T",
+      "name": "シノブフーズ",
+      "market": "スタンダード",
+      "sector": "食料品",
+      "title": "順位が低下",
+      "detail": "GC後リターン順位が 1793位 → 1827位（34位変動）。",
+      "before": {
+        "rank": 1793
+      },
+      "after": {
+        "rank": 1827,
+        "move": -34
+      }
+    },
+    {
+      "event_id": "2026-11-04:RANK_MOVE:4356:4871d2f9a46b",
+      "date": "2026-11-04",
+      "type": "RANK_MOVE",
+      "category": "ranking",
+      "severity": "low",
+      "priority": 55,
+      "code": "4356",
+      "ticker": "4356.T",
+      "name": "応用技術",
+      "market": "スタンダード",
+      "sector": "情報・通信業",
+      "title": "順位が低下",
+      "detail": "GC後リターン順位が 1328位 → 1461位（133位変動）。",
+      "before": {
+        "rank": 1328
+      },
+      "after": {
+        "rank": 1461,
+        "move": -133
+      }
+    },
+    {
+      "event_id": "2026-11-04:RANK_MOVE:5958:7b8a3ab89107",
+      "date": "2026-11-04",
+      "type": "RANK_MOVE",
+      "category": "ranking",
+      "severity": "low",
+      "priority": 55,
+      "code": "5958",
+      "ticker": "5958.T",
+      "name": "三洋工業",
+      "market": "スタンダード",
+      "sector": "金属製品",
+      "title": "順位が上昇",
+      "detail": "GC後リターン順位が 1572位 → 1488位（84位変動）。",
+      "before": {
+        "rank": 1572
+      },
+      "after": {
+        "rank": 1488,
+        "move": 84
+      }
+    },
+    {
+      "event_id": "2026-11-04:RANK_MOVE:6497:ea8063e1822b",
+      "date": "2026-11-04",
+      "type": "RANK_MOVE",
+      "category": "ranking",
+      "severity": "low",
+      "priority": 55,
+      "code": "6497",
+      "ticker": "6497.T",
+      "name": "ハマイ",
+      "market": "スタンダード",
+      "sector": "機械",
+      "title": "順位が低下",
+      "detail": "GC後リターン順位が 714位 → 769位（55位変動）。",
+      "before": {
+        "rank": 714
+      },
+      "after": {
+        "rank": 769,
+        "move": -55
+      }
+    },
+    {
+      "event_id": "2026-11-04:RANK_MOVE:7031:135e8124257a",
+      "date": "2026-11-04",
+      "type": "RANK_MOVE",
+      "category": "ranking",
+      "severity": "low",
+      "priority": 55,
+      "code": "7031",
+      "ticker": "7031.T",
+      "name": "インバウンドテック",
+      "market": "グロース",
+      "sector": "サービス業",
+      "title": "順位が上昇",
+      "detail": "GC後リターン順位が 1487位 → 1407位（80位変動）。",
+      "before": {
+        "rank": 1487
+      },
+      "after": {
+        "rank": 1407,
+        "move": 80
+      }
+    },
+    {
+      "event_id": "2026-11-04:RANK_MOVE:7062:f9468c78c42a",
+      "date": "2026-11-04",
+      "type": "RANK_MOVE",
+      "category": "ranking",
+      "severity": "low",
+      "priority": 55,
+      "code": "7062",
+      "ticker": "7062.T",
+      "name": "フレアス",
+      "market": "グロース",
+      "sector": "サービス業",
+      "title": "順位が低下",
+      "detail": "GC後リターン順位が 1840位 → 1849位（9位変動）。",
+      "before": {
+        "rank": 1840
+      },
+      "after": {
+        "rank": 1849,
+        "move": -9
+      }
+    },
+    {
+      "event_id": "2026-11-04:RANK_MOVE:7446:fd1d351245dd",
+      "date": "2026-11-04",
+      "type": "RANK_MOVE",
+      "category": "ranking",
+      "severity": "low",
+      "priority": 55,
+      "code": "7446",
+      "ticker": "7446.T",
+      "name": "東北化学薬品",
+      "market": "スタンダード",
+      "sector": "卸売業",
+      "title": "順位が低下",
+      "detail": "GC後リターン順位が 935位 → 944位（9位変動）。",
+      "before": {
+        "rank": 935
+      },
+      "after": {
+        "rank": 944,
+        "move": -9
+      }
+    },
+    {
+      "event_id": "2026-11-04:RANK_MOVE:7565:897356701013",
+      "date": "2026-11-04",
+      "type": "RANK_MOVE",
+      "category": "ranking",
+      "severity": "low",
+      "priority": 55,
+      "code": "7565",
+      "ticker": "7565.T",
+      "name": "萬世電機",
+      "market": "スタンダード",
+      "sector": "卸売業",
+      "title": "順位が上昇",
+      "detail": "GC後リターン順位が 1430位 → 1204位（226位変動）。",
+      "before": {
+        "rank": 1430
+      },
+      "after": {
+        "rank": 1204,
+        "move": 226
+      }
+    }
+  ],
+  "rules": {
+    "price_move_threshold_pct": 3.0,
+    "rank_move_threshold": 5,
+    "near_cross_threshold_pt": 1.0,
+    "positive_return_milestones_pct": [
+      10.0,
+      20.0,
+      30.0,
+      50.0,
+      100.0
+    ],
+    "negative_return_milestones_pct": [
+      -10.0,
+      -20.0,
+      -30.0,
+      -50.0
+    ]
+  },
+  "cost_policy": "paid_api_disabled"
+}
