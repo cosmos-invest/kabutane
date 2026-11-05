@@ -2,12 +2,12 @@
   "code": "7461",
   "ticker": "7461.T",
   "name": "キムラ",
-  "generated_at": "2026-11-04T19:15:10.314669+00:00",
-  "price_date": "2026-11-02",
+  "generated_at": "2026-11-05T19:21:35.672378+00:00",
+  "price_date": "2026-11-04",
   "record": {
-    "current_price": 472.0,
-    "change_from_signal_month_pct": 1.72,
-    "return_since_gc_pct": 1.72
+    "current_price": 465.0,
+    "change_from_signal_month_pct": 0.22,
+    "return_since_gc_pct": 0.22
   },
   "daily": [
     {
@@ -750,22 +750,35 @@
       "sma200": 477.13,
       "rsi14": 41.57,
       "rsi5": 42.95
+    },
+    {
+      "date": "2026-11-04",
+      "open": 471.0,
+      "high": 471.0,
+      "low": 460.0,
+      "close": 465.0,
+      "volume": 5000.0,
+      "sma25": 469.72,
+      "sma75": 472.73,
+      "sma200": 476.95,
+      "rsi14": 41.57,
+      "rsi5": 42.95
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-02",
-    "monthly_rsi14": 44.75,
-    "monthly_rsi_ma5": 44.41,
-    "spread": 0.34,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-04",
+    "monthly_rsi14": 43.04,
+    "monthly_rsi_ma5": 44.07,
+    "spread": -1.02,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-04T19:16:20.908301+00:00"
+  "provisional_generated_at": "2026-11-05T19:22:39.482796+00:00"
 }

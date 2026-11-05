@@ -2,12 +2,12 @@
   "code": "2001",
   "ticker": "2001.T",
   "name": "ニップン",
-  "generated_at": "2026-11-04T19:15:10.314669+00:00",
-  "price_date": "2026-11-02",
+  "generated_at": "2026-11-05T19:21:35.672378+00:00",
+  "price_date": "2026-11-04",
   "record": {
-    "current_price": 2928.0,
-    "change_from_signal_month_pct": 4.24,
-    "return_since_gc_pct": 4.35
+    "current_price": 2890.0,
+    "change_from_signal_month_pct": 2.88,
+    "return_since_gc_pct": 2.99
   },
   "daily": [
     {
@@ -750,15 +750,28 @@
       "sma200": 2767.24,
       "rsi14": 65.63,
       "rsi5": 67.61
+    },
+    {
+      "date": "2026-11-04",
+      "open": 2948.0,
+      "high": 2977.0,
+      "low": 2874.0,
+      "close": 2890.0,
+      "volume": 342800.0,
+      "sma25": 2836.12,
+      "sma75": 2874.51,
+      "sma200": 2769.51,
+      "rsi14": 65.63,
+      "rsi5": 67.61
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-02",
-    "monthly_rsi14": 67.42,
-    "monthly_rsi_ma5": 67.44,
-    "spread": -0.02,
+    "price_date": "2026-11-04",
+    "monthly_rsi14": 65.57,
+    "monthly_rsi_ma5": 67.07,
+    "spread": -1.5,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -767,5 +780,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-04T19:16:20.908301+00:00"
+  "provisional_generated_at": "2026-11-05T19:22:39.482796+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "9889",
   "ticker": "9889.T",
   "name": "ＪＢＣＣホールディングス",
-  "generated_at": "2026-11-04T19:15:10.314669+00:00",
-  "price_date": "2026-11-02",
+  "generated_at": "2026-11-05T19:21:35.672378+00:00",
+  "price_date": "2026-11-04",
   "record": {
-    "current_price": 2015.0,
-    "change_from_signal_month_pct": 24.69,
-    "return_since_gc_pct": 62.24
+    "current_price": 1928.0,
+    "change_from_signal_month_pct": 19.31,
+    "return_since_gc_pct": 55.23
   },
   "daily": [
     {
@@ -750,22 +750,35 @@
       "sma200": 1479.42,
       "rsi14": 54.31,
       "rsi5": 66.23
+    },
+    {
+      "date": "2026-11-04",
+      "open": 2014.0,
+      "high": 2020.0,
+      "low": 1917.0,
+      "close": 1928.0,
+      "volume": 252800.0,
+      "sma25": 2002.24,
+      "sma75": 1763.01,
+      "sma200": 1481.0,
+      "rsi14": 54.31,
+      "rsi5": 66.23
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-02",
-    "monthly_rsi14": 72.22,
-    "monthly_rsi_ma5": 70.16,
-    "spread": 2.06,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-04",
+    "monthly_rsi14": 68.39,
+    "monthly_rsi_ma5": 69.4,
+    "spread": -1.01,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-04T19:16:20.908301+00:00"
+  "provisional_generated_at": "2026-11-05T19:22:39.482796+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "6165",
   "ticker": "6165.T",
   "name": "パンチ工業",
-  "generated_at": "2026-11-04T19:15:10.314669+00:00",
-  "price_date": "2026-11-02",
+  "generated_at": "2026-11-05T19:21:35.672378+00:00",
+  "price_date": "2026-11-04",
   "record": {
-    "current_price": 547.0,
-    "change_from_signal_month_pct": 8.96,
-    "return_since_gc_pct": 8.96
+    "current_price": 538.0,
+    "change_from_signal_month_pct": 7.17,
+    "return_since_gc_pct": 7.17
   },
   "daily": [
     {
@@ -750,22 +750,35 @@
       "sma200": 516.61,
       "rsi14": 55.29,
       "rsi5": 55.81
+    },
+    {
+      "date": "2026-11-04",
+      "open": 547.0,
+      "high": 547.0,
+      "low": 524.0,
+      "close": 538.0,
+      "volume": 135400.0,
+      "sma25": 564.68,
+      "sma75": 538.16,
+      "sma200": 516.85,
+      "rsi14": 55.29,
+      "rsi5": 55.81
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-02",
-    "monthly_rsi14": 61.11,
-    "monthly_rsi_ma5": 60.61,
-    "spread": 0.5,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-04",
+    "monthly_rsi14": 59.4,
+    "monthly_rsi_ma5": 60.26,
+    "spread": -0.87,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-04T19:16:20.908301+00:00"
+  "provisional_generated_at": "2026-11-05T19:22:39.482796+00:00"
 }

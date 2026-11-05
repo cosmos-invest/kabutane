@@ -2,12 +2,12 @@
   "code": "7931",
   "ticker": "7931.T",
   "name": "未来工業",
-  "generated_at": "2026-11-04T19:15:10.314669+00:00",
-  "price_date": "2026-11-02",
+  "generated_at": "2026-11-05T19:21:35.672378+00:00",
+  "price_date": "2026-11-04",
   "record": {
-    "current_price": 3605.0,
-    "change_from_signal_month_pct": 6.03,
-    "return_since_gc_pct": 6.03
+    "current_price": 3560.0,
+    "change_from_signal_month_pct": 4.71,
+    "return_since_gc_pct": 4.71
   },
   "daily": [
     {
@@ -750,22 +750,35 @@
       "sma200": 3335.24,
       "rsi14": 45.29,
       "rsi5": 51.04
+    },
+    {
+      "date": "2026-11-04",
+      "open": 3670.0,
+      "high": 3680.0,
+      "low": 3500.0,
+      "close": 3560.0,
+      "volume": 40700.0,
+      "sma25": 3565.2,
+      "sma75": 3555.07,
+      "sma200": 3335.81,
+      "rsi14": 45.29,
+      "rsi5": 51.04
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-02",
-    "monthly_rsi14": 54.06,
-    "monthly_rsi_ma5": 53.84,
-    "spread": 0.22,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-04",
+    "monthly_rsi14": 53.09,
+    "monthly_rsi_ma5": 53.65,
+    "spread": -0.56,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-04T19:16:20.908301+00:00"
+  "provisional_generated_at": "2026-11-05T19:22:39.482796+00:00"
 }

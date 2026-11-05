@@ -2,12 +2,12 @@
   "code": "7067",
   "ticker": "7067.T",
   "name": "ブランディングテクノロジー",
-  "generated_at": "2026-11-04T19:15:10.314669+00:00",
-  "price_date": "2026-11-02",
+  "generated_at": "2026-11-05T19:21:35.672378+00:00",
+  "price_date": "2026-11-04",
   "record": {
-    "current_price": 1050.0,
-    "change_from_signal_month_pct": 5.53,
-    "return_since_gc_pct": 5.53
+    "current_price": 1030.0,
+    "change_from_signal_month_pct": 3.52,
+    "return_since_gc_pct": 3.52
   },
   "daily": [
     {
@@ -750,22 +750,35 @@
       "sma200": 1018.76,
       "rsi14": 47.54,
       "rsi5": 48.69
+    },
+    {
+      "date": "2026-11-04",
+      "open": 1050.0,
+      "high": 1050.0,
+      "low": 1030.0,
+      "close": 1030.0,
+      "volume": 500.0,
+      "sma25": 1069.52,
+      "sma75": 1042.48,
+      "sma200": 1018.47,
+      "rsi14": 47.54,
+      "rsi5": 48.69
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-02",
-    "monthly_rsi14": 51.8,
-    "monthly_rsi_ma5": 51.51,
-    "spread": 0.29,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-04",
+    "monthly_rsi14": 50.78,
+    "monthly_rsi_ma5": 51.31,
+    "spread": -0.53,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-04T19:16:20.908301+00:00"
+  "provisional_generated_at": "2026-11-05T19:22:39.482796+00:00"
 }

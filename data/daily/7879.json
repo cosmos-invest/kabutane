@@ -2,12 +2,12 @@
   "code": "7879",
   "ticker": "7879.T",
   "name": "ノダ",
-  "generated_at": "2026-11-04T19:15:10.314669+00:00",
-  "price_date": "2026-11-02",
+  "generated_at": "2026-11-05T19:21:35.672378+00:00",
+  "price_date": "2026-11-04",
   "record": {
-    "current_price": 664.0,
-    "change_from_signal_month_pct": 2.79,
-    "return_since_gc_pct": 2.79
+    "current_price": 655.0,
+    "change_from_signal_month_pct": 1.39,
+    "return_since_gc_pct": 1.39
   },
   "daily": [
     {
@@ -750,22 +750,35 @@
       "sma200": 668.91,
       "rsi14": 34.36,
       "rsi5": 34.43
+    },
+    {
+      "date": "2026-11-04",
+      "open": 660.0,
+      "high": 664.0,
+      "low": 652.0,
+      "close": 655.0,
+      "volume": 21500.0,
+      "sma25": 670.24,
+      "sma75": 664.31,
+      "sma200": 668.79,
+      "rsi14": 34.36,
+      "rsi5": 34.43
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-02",
-    "monthly_rsi14": 36.07,
-    "monthly_rsi_ma5": 35.95,
-    "spread": 0.12,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-04",
+    "monthly_rsi14": 35.19,
+    "monthly_rsi_ma5": 35.77,
+    "spread": -0.59,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-04T19:16:20.908301+00:00"
+  "provisional_generated_at": "2026-11-05T19:22:39.482796+00:00"
 }

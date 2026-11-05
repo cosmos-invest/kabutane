@@ -2,12 +2,12 @@
   "code": "3182",
   "ticker": "3182.T",
   "name": "オイシックス",
-  "generated_at": "2026-11-04T19:15:10.314669+00:00",
-  "price_date": "2026-11-02",
+  "generated_at": "2026-11-05T19:21:35.672378+00:00",
+  "price_date": "2026-11-04",
   "record": {
-    "current_price": 1645.0,
-    "change_from_signal_month_pct": 0.98,
-    "return_since_gc_pct": 11.68
+    "current_price": 1635.0,
+    "change_from_signal_month_pct": 0.37,
+    "return_since_gc_pct": 11.0
   },
   "daily": [
     {
@@ -750,15 +750,28 @@
       "sma200": 1520.13,
       "rsi14": 47.64,
       "rsi5": 52.67
+    },
+    {
+      "date": "2026-11-04",
+      "open": 1646.0,
+      "high": 1677.0,
+      "low": 1629.0,
+      "close": 1635.0,
+      "volume": 170600.0,
+      "sma25": 1646.04,
+      "sma75": 1646.4,
+      "sma200": 1520.9,
+      "rsi14": 47.64,
+      "rsi5": 52.67
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-02",
-    "monthly_rsi14": 53.42,
-    "monthly_rsi_ma5": 54.14,
-    "spread": -0.72,
+    "price_date": "2026-11-04",
+    "monthly_rsi14": 52.94,
+    "monthly_rsi_ma5": 54.04,
+    "spread": -1.1,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -767,5 +780,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-04T19:16:20.908301+00:00"
+  "provisional_generated_at": "2026-11-05T19:22:39.482796+00:00"
 }

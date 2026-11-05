@@ -2,12 +2,12 @@
   "code": "7399",
   "ticker": "7399.T",
   "name": "ナンシン",
-  "generated_at": "2026-11-04T19:15:10.314669+00:00",
-  "price_date": "2026-11-02",
+  "generated_at": "2026-11-05T19:21:35.672378+00:00",
+  "price_date": "2026-11-04",
   "record": {
-    "current_price": 606.0,
-    "change_from_signal_month_pct": 1.68,
-    "return_since_gc_pct": 1.68
+    "current_price": 599.0,
+    "change_from_signal_month_pct": 0.5,
+    "return_since_gc_pct": 0.5
   },
   "daily": [
     {
@@ -750,15 +750,28 @@
       "sma200": 599.51,
       "rsi14": 53.64,
       "rsi5": 56.15
+    },
+    {
+      "date": "2026-11-04",
+      "open": 611.0,
+      "high": 611.0,
+      "low": 595.0,
+      "close": 599.0,
+      "volume": 3100.0,
+      "sma25": 610.32,
+      "sma75": 607.21,
+      "sma200": 599.47,
+      "rsi14": 53.64,
+      "rsi5": 56.15
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-02",
-    "monthly_rsi14": 58.12,
-    "monthly_rsi_ma5": 58.86,
-    "spread": -0.73,
+    "price_date": "2026-11-04",
+    "monthly_rsi14": 56.42,
+    "monthly_rsi_ma5": 58.51,
+    "spread": -2.1,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -767,5 +780,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-04T19:16:20.908301+00:00"
+  "provisional_generated_at": "2026-11-05T19:22:39.482796+00:00"
 }

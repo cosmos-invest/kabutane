@@ -2,12 +2,12 @@
   "code": "8700",
   "ticker": "8700.T",
   "name": "丸八証券",
-  "generated_at": "2026-11-04T19:15:10.314669+00:00",
-  "price_date": "2026-11-02",
+  "generated_at": "2026-11-05T19:21:35.672378+00:00",
+  "price_date": "2026-11-04",
   "record": {
-    "current_price": 2025.0,
-    "change_from_signal_month_pct": 2.53,
-    "return_since_gc_pct": 2.53
+    "current_price": 1980.0,
+    "change_from_signal_month_pct": 0.25,
+    "return_since_gc_pct": 0.25
   },
   "daily": [
     {
@@ -750,15 +750,28 @@
       "sma200": 1859.45,
       "rsi14": 64.79,
       "rsi5": 71.96
+    },
+    {
+      "date": "2026-11-04",
+      "open": 2033.0,
+      "high": 2033.0,
+      "low": 1980.0,
+      "close": 1980.0,
+      "volume": 3600.0,
+      "sma25": 2037.64,
+      "sma75": 2023.72,
+      "sma200": 1860.81,
+      "rsi14": 64.79,
+      "rsi5": 71.96
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-02",
-    "monthly_rsi14": 67.44,
-    "monthly_rsi_ma5": 71.77,
-    "spread": -4.33,
+    "price_date": "2026-11-04",
+    "monthly_rsi14": 64.75,
+    "monthly_rsi_ma5": 71.23,
+    "spread": -6.47,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -767,5 +780,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-04T19:16:20.908301+00:00"
+  "provisional_generated_at": "2026-11-05T19:22:39.482796+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "8159",
   "ticker": "8159.T",
   "name": "立花エレテック",
-  "generated_at": "2026-11-04T19:15:10.314669+00:00",
-  "price_date": "2026-11-02",
+  "generated_at": "2026-11-05T19:21:35.672378+00:00",
+  "price_date": "2026-11-04",
   "record": {
-    "current_price": 4580.0,
-    "change_from_signal_month_pct": 32.37,
-    "return_since_gc_pct": 42.9
+    "current_price": 4400.0,
+    "change_from_signal_month_pct": 27.17,
+    "return_since_gc_pct": 37.29
   },
   "daily": [
     {
@@ -750,22 +750,35 @@
       "sma200": 3469.64,
       "rsi14": 57.87,
       "rsi5": 64.55
+    },
+    {
+      "date": "2026-11-04",
+      "open": 4580.0,
+      "high": 4580.0,
+      "low": 4280.0,
+      "close": 4400.0,
+      "volume": 66200.0,
+      "sma25": 4582.6,
+      "sma75": 4122.6,
+      "sma200": 3475.68,
+      "rsi14": 57.87,
+      "rsi5": 64.55
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-02",
-    "monthly_rsi14": 73.89,
-    "monthly_rsi_ma5": 72.5,
-    "spread": 1.39,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-04",
+    "monthly_rsi14": 69.57,
+    "monthly_rsi_ma5": 71.64,
+    "spread": -2.07,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-04T19:16:20.908301+00:00"
+  "provisional_generated_at": "2026-11-05T19:22:39.482796+00:00"
 }

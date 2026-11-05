@@ -2,12 +2,12 @@
   "code": "1762",
   "ticker": "1762.T",
   "name": "高松コンストラクショングループ",
-  "generated_at": "2026-11-04T19:15:10.314669+00:00",
-  "price_date": "2026-11-02",
+  "generated_at": "2026-11-05T19:21:35.672378+00:00",
+  "price_date": "2026-11-04",
   "record": {
-    "current_price": 4110.0,
-    "change_from_signal_month_pct": 10.04,
-    "return_since_gc_pct": 10.04
+    "current_price": 4085.0,
+    "change_from_signal_month_pct": 9.37,
+    "return_since_gc_pct": 9.37
   },
   "daily": [
     {
@@ -750,22 +750,35 @@
       "sma200": 3812.07,
       "rsi14": 55.95,
       "rsi5": 58.23
+    },
+    {
+      "date": "2026-11-04",
+      "open": 4135.0,
+      "high": 4190.0,
+      "low": 4035.0,
+      "close": 4085.0,
+      "volume": 48700.0,
+      "sma25": 4035.2,
+      "sma75": 3989.87,
+      "sma200": 3812.18,
+      "rsi14": 55.95,
+      "rsi5": 58.23
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-02",
-    "monthly_rsi14": 61.8,
-    "monthly_rsi_ma5": 61.75,
-    "spread": 0.05,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-04",
+    "monthly_rsi14": 61.24,
+    "monthly_rsi_ma5": 61.64,
+    "spread": -0.4,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-04T19:16:20.908301+00:00"
+  "provisional_generated_at": "2026-11-05T19:22:39.482796+00:00"
 }

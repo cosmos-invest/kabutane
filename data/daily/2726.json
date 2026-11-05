@@ -2,12 +2,12 @@
   "code": "2726",
   "ticker": "2726.T",
   "name": "パルグループホールディングス",
-  "generated_at": "2026-11-04T19:15:10.314669+00:00",
-  "price_date": "2026-11-02",
+  "generated_at": "2026-11-05T19:21:35.672378+00:00",
+  "price_date": "2026-11-04",
   "record": {
-    "current_price": 1467.0,
-    "change_from_signal_month_pct": -1.87,
-    "return_since_gc_pct": -1.87
+    "current_price": 1478.0,
+    "change_from_signal_month_pct": -1.14,
+    "return_since_gc_pct": -1.14
   },
   "daily": [
     {
@@ -750,22 +750,35 @@
       "sma200": 1508.84,
       "rsi14": 46.52,
       "rsi5": 47.57
+    },
+    {
+      "date": "2026-11-04",
+      "open": 1462.0,
+      "high": 1492.0,
+      "low": 1458.0,
+      "close": 1478.0,
+      "volume": 633600.0,
+      "sma25": 1445.96,
+      "sma75": 1470.81,
+      "sma200": 1506.3,
+      "rsi14": 46.52,
+      "rsi5": 47.57
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-02",
-    "monthly_rsi14": 46.72,
-    "monthly_rsi_ma5": 46.92,
-    "spread": -0.2,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-04",
+    "monthly_rsi14": 47.01,
+    "monthly_rsi_ma5": 46.97,
+    "spread": 0.03,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-04T19:16:20.908301+00:00"
+  "provisional_generated_at": "2026-11-05T19:22:39.482796+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "6757",
   "ticker": "6757.T",
   "name": "ＯＳＧコーポレーション",
-  "generated_at": "2026-11-04T19:15:10.314669+00:00",
-  "price_date": "2026-11-02",
+  "generated_at": "2026-11-05T19:21:35.672378+00:00",
+  "price_date": "2026-11-04",
   "record": {
-    "current_price": 904.0,
-    "change_from_signal_month_pct": 4.15,
-    "return_since_gc_pct": 4.15
+    "current_price": 889.0,
+    "change_from_signal_month_pct": 2.42,
+    "return_since_gc_pct": 2.42
   },
   "daily": [
     {
@@ -750,22 +750,35 @@
       "sma200": 861.64,
       "rsi14": 46.71,
       "rsi5": 49.77
+    },
+    {
+      "date": "2026-11-04",
+      "open": 904.0,
+      "high": 904.0,
+      "low": 887.0,
+      "close": 889.0,
+      "volume": 1600.0,
+      "sma25": 906.04,
+      "sma75": 888.96,
+      "sma200": 861.08,
+      "rsi14": 46.71,
+      "rsi5": 49.77
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-02",
-    "monthly_rsi14": 53.92,
-    "monthly_rsi_ma5": 52.88,
-    "spread": 1.04,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-04",
+    "monthly_rsi14": 52.59,
+    "monthly_rsi_ma5": 52.61,
+    "spread": -0.02,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-04T19:16:20.908301+00:00"
+  "provisional_generated_at": "2026-11-05T19:22:39.482796+00:00"
 }
