@@ -2,12 +2,12 @@
   "code": "9895",
   "ticker": "9895.T",
   "name": "コンセック",
-  "generated_at": "2026-11-05T19:21:35.672378+00:00",
-  "price_date": "2026-11-04",
+  "generated_at": "2026-11-06T18:46:47.289204+00:00",
+  "price_date": "2026-11-05",
   "record": {
-    "current_price": 1256.0,
-    "change_from_signal_month_pct": -1.02,
-    "return_since_gc_pct": -1.02
+    "current_price": 1246.0,
+    "change_from_signal_month_pct": -1.81,
+    "return_since_gc_pct": -1.81
   },
   "daily": [
     {
@@ -763,15 +763,28 @@
       "sma200": 1267.81,
       "rsi14": 52.04,
       "rsi5": 52.83
+    },
+    {
+      "date": "2026-11-05",
+      "open": 1256.0,
+      "high": 1256.0,
+      "low": 1240.0,
+      "close": 1246.0,
+      "volume": 1200.0,
+      "sma25": 1252.12,
+      "sma75": 1264.63,
+      "sma200": 1267.89,
+      "rsi14": 52.04,
+      "rsi5": 52.83
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-04",
-    "monthly_rsi14": 52.4,
-    "monthly_rsi_ma5": 53.44,
-    "spread": -1.05,
+    "price_date": "2026-11-05",
+    "monthly_rsi14": 50.83,
+    "monthly_rsi_ma5": 53.13,
+    "spread": -2.3,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -780,5 +793,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-05T19:22:39.482796+00:00"
+  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "8214",
   "ticker": "8214.T",
   "name": "ＡＯＫＩホールディングス",
-  "generated_at": "2026-11-05T19:21:35.672378+00:00",
-  "price_date": "2026-11-04",
+  "generated_at": "2026-11-06T18:46:47.289204+00:00",
+  "price_date": "2026-11-05",
   "record": {
-    "current_price": 1724.0,
-    "change_from_signal_month_pct": 0.12,
-    "return_since_gc_pct": 0.12
+    "current_price": 1780.0,
+    "change_from_signal_month_pct": 3.37,
+    "return_since_gc_pct": 3.37
   },
   "daily": [
     {
@@ -763,22 +763,35 @@
       "sma200": 1700.59,
       "rsi14": 57.54,
       "rsi5": 61.13
+    },
+    {
+      "date": "2026-11-05",
+      "open": 1757.0,
+      "high": 1793.0,
+      "low": 1750.0,
+      "close": 1780.0,
+      "volume": 241800.0,
+      "sma25": 1716.32,
+      "sma75": 1722.36,
+      "sma200": 1700.26,
+      "rsi14": 57.54,
+      "rsi5": 61.13
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-04",
-    "monthly_rsi14": 59.0,
-    "monthly_rsi_ma5": 59.79,
-    "spread": -0.78,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-05",
+    "monthly_rsi14": 61.38,
+    "monthly_rsi_ma5": 60.26,
+    "spread": 1.12,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-05T19:22:39.482796+00:00"
+  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
 }

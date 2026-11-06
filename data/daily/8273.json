@@ -2,12 +2,12 @@
   "code": "8273",
   "ticker": "8273.T",
   "name": "イズミ",
-  "generated_at": "2026-11-05T19:21:35.672378+00:00",
-  "price_date": "2026-11-04",
+  "generated_at": "2026-11-06T18:46:47.289204+00:00",
+  "price_date": "2026-11-05",
   "record": {
-    "current_price": 951.0,
-    "change_from_signal_month_pct": -5.0,
-    "return_since_gc_pct": -1.04
+    "current_price": 988.0,
+    "change_from_signal_month_pct": -1.3,
+    "return_since_gc_pct": 2.81
   },
   "daily": [
     {
@@ -763,22 +763,35 @@
       "sma200": 990.57,
       "rsi14": 42.25,
       "rsi5": 46.47
+    },
+    {
+      "date": "2026-11-05",
+      "open": 977.0,
+      "high": 993.0,
+      "low": 977.0,
+      "close": 988.0,
+      "volume": 572100.0,
+      "sma25": 932.88,
+      "sma75": 984.12,
+      "sma200": 990.48,
+      "rsi14": 42.25,
+      "rsi5": 46.47
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-04",
-    "monthly_rsi14": 41.7,
-    "monthly_rsi_ma5": 43.2,
-    "spread": -1.49,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-05",
+    "monthly_rsi14": 45.25,
+    "monthly_rsi_ma5": 43.91,
+    "spread": 1.34,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-05T19:22:39.482796+00:00"
+  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "3733",
   "ticker": "3733.T",
   "name": "ソフトウェア・サービス",
-  "generated_at": "2026-11-05T19:21:35.672378+00:00",
-  "price_date": "2026-11-04",
+  "generated_at": "2026-11-06T18:46:47.289204+00:00",
+  "price_date": "2026-11-05",
   "record": {
-    "current_price": 11600.0,
-    "change_from_signal_month_pct": 5.26,
-    "return_since_gc_pct": 5.26
+    "current_price": 11520.0,
+    "change_from_signal_month_pct": 4.54,
+    "return_since_gc_pct": 4.54
   },
   "daily": [
     {
@@ -763,6 +763,19 @@
       "sma200": 11711.4,
       "rsi14": 42.31,
       "rsi5": 43.45
+    },
+    {
+      "date": "2026-11-05",
+      "open": 11600.0,
+      "high": 11670.0,
+      "low": 11460.0,
+      "close": 11520.0,
+      "volume": 4100.0,
+      "sma25": 11606.4,
+      "sma75": 11624.93,
+      "sma200": 11701.6,
+      "rsi14": 42.31,
+      "rsi5": 43.45
     }
   ],
   "corporate_events": [
@@ -775,17 +788,17 @@
   ],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-04",
-    "monthly_rsi14": 48.21,
-    "monthly_rsi_ma5": 48.12,
-    "spread": 0.09,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-05",
+    "monthly_rsi14": 47.76,
+    "monthly_rsi_ma5": 48.03,
+    "spread": -0.26,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-05T19:22:39.482796+00:00"
+  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
 }

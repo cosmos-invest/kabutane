@@ -2,12 +2,12 @@
   "code": "5105",
   "ticker": "5105.T",
   "name": "ＴＯＹＯ　ＴＩＲＥ",
-  "generated_at": "2026-11-05T19:21:35.672378+00:00",
-  "price_date": "2026-11-04",
+  "generated_at": "2026-11-06T18:46:47.289204+00:00",
+  "price_date": "2026-11-05",
   "record": {
-    "current_price": 3987.0,
-    "change_from_signal_month_pct": -6.85,
-    "return_since_gc_pct": -6.85
+    "current_price": 4319.0,
+    "change_from_signal_month_pct": 0.91,
+    "return_since_gc_pct": 0.91
   },
   "daily": [
     {
@@ -763,22 +763,35 @@
       "sma200": 3967.21,
       "rsi14": 57.91,
       "rsi5": 62.87
+    },
+    {
+      "date": "2026-11-05",
+      "open": 4244.0,
+      "high": 4360.0,
+      "low": 4207.0,
+      "close": 4319.0,
+      "volume": 1954600.0,
+      "sma25": 4054.6,
+      "sma75": 3931.6,
+      "sma200": 3967.34,
+      "rsi14": 57.91,
+      "rsi5": 62.87
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-04",
-    "monthly_rsi14": 57.05,
-    "monthly_rsi_ma5": 57.6,
-    "spread": -0.55,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-05",
+    "monthly_rsi14": 61.08,
+    "monthly_rsi_ma5": 58.41,
+    "spread": 2.68,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-05T19:22:39.482796+00:00"
+  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
 }

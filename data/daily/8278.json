@@ -2,12 +2,12 @@
   "code": "8278",
   "ticker": "8278.T",
   "name": "フジ",
-  "generated_at": "2026-11-05T19:21:35.672378+00:00",
-  "price_date": "2026-11-04",
+  "generated_at": "2026-11-06T18:46:47.289204+00:00",
+  "price_date": "2026-11-05",
   "record": {
-    "current_price": 2008.0,
-    "change_from_signal_month_pct": -1.03,
-    "return_since_gc_pct": -1.03
+    "current_price": 2102.0,
+    "change_from_signal_month_pct": 3.6,
+    "return_since_gc_pct": 3.6
   },
   "daily": [
     {
@@ -763,22 +763,35 @@
       "sma200": 2041.03,
       "rsi14": 49.69,
       "rsi5": 50.01
+    },
+    {
+      "date": "2026-11-05",
+      "open": 2031.0,
+      "high": 2102.0,
+      "low": 2031.0,
+      "close": 2102.0,
+      "volume": 199200.0,
+      "sma25": 1970.64,
+      "sma75": 2015.17,
+      "sma200": 2041.09,
+      "rsi14": 49.69,
+      "rsi5": 50.01
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-04",
-    "monthly_rsi14": 49.91,
-    "monthly_rsi_ma5": 51.0,
-    "spread": -1.09,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-05",
+    "monthly_rsi14": 57.05,
+    "monthly_rsi_ma5": 52.42,
+    "spread": 4.63,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-05T19:22:39.482796+00:00"
+  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
 }

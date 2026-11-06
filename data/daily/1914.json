@@ -2,12 +2,12 @@
   "code": "1914",
   "ticker": "1914.T",
   "name": "日本基礎技術",
-  "generated_at": "2026-11-05T19:21:35.672378+00:00",
-  "price_date": "2026-11-04",
+  "generated_at": "2026-11-06T18:46:47.289204+00:00",
+  "price_date": "2026-11-05",
   "record": {
-    "current_price": 840.0,
-    "change_from_signal_month_pct": 15.23,
-    "return_since_gc_pct": 15.23
+    "current_price": 838.0,
+    "change_from_signal_month_pct": 14.95,
+    "return_since_gc_pct": 14.95
   },
   "daily": [
     {
@@ -763,22 +763,35 @@
       "sma200": 727.68,
       "rsi14": 55.52,
       "rsi5": 56.98
+    },
+    {
+      "date": "2026-11-05",
+      "open": 840.0,
+      "high": 855.0,
+      "low": 838.0,
+      "close": 838.0,
+      "volume": 23500.0,
+      "sma25": 809.36,
+      "sma75": 776.95,
+      "sma200": 728.47,
+      "rsi14": 55.52,
+      "rsi5": 56.98
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-04",
-    "monthly_rsi14": 63.14,
-    "monthly_rsi_ma5": 63.06,
-    "spread": 0.07,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-05",
+    "monthly_rsi14": 62.93,
+    "monthly_rsi_ma5": 63.02,
+    "spread": -0.09,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-05T19:22:39.482796+00:00"
+  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
 }

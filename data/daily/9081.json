@@ -2,12 +2,12 @@
   "code": "9081",
   "ticker": "9081.T",
   "name": "神奈川中央交通",
-  "generated_at": "2026-11-05T19:21:35.672378+00:00",
-  "price_date": "2026-11-04",
+  "generated_at": "2026-11-06T18:46:47.289204+00:00",
+  "price_date": "2026-11-05",
   "record": {
-    "current_price": 3925.0,
-    "change_from_signal_month_pct": 1.42,
-    "return_since_gc_pct": 10.72
+    "current_price": 3965.0,
+    "change_from_signal_month_pct": 2.45,
+    "return_since_gc_pct": 11.85
   },
   "daily": [
     {
@@ -763,22 +763,35 @@
       "sma200": 3665.65,
       "rsi14": 48.09,
       "rsi5": 59.16
+    },
+    {
+      "date": "2026-11-05",
+      "open": 3955.0,
+      "high": 4040.0,
+      "low": 3905.0,
+      "close": 3965.0,
+      "volume": 18700.0,
+      "sma25": 3774.2,
+      "sma75": 3877.33,
+      "sma200": 3666.78,
+      "rsi14": 48.09,
+      "rsi5": 59.16
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-04",
-    "monthly_rsi14": 58.36,
-    "monthly_rsi_ma5": 59.08,
-    "spread": -0.72,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-05",
+    "monthly_rsi14": 59.28,
+    "monthly_rsi_ma5": 59.27,
+    "spread": 0.02,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-05T19:22:39.482796+00:00"
+  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
 }

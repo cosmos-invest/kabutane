@@ -2,12 +2,12 @@
   "code": "7619",
   "ticker": "7619.T",
   "name": "田中商事",
-  "generated_at": "2026-11-05T19:21:35.672378+00:00",
-  "price_date": "2026-11-04",
+  "generated_at": "2026-11-06T18:46:47.289204+00:00",
+  "price_date": "2026-11-05",
   "record": {
-    "current_price": 1000.0,
-    "change_from_signal_month_pct": 8.93,
-    "return_since_gc_pct": 8.93
+    "current_price": 998.0,
+    "change_from_signal_month_pct": 8.71,
+    "return_since_gc_pct": 8.71
   },
   "daily": [
     {
@@ -763,15 +763,28 @@
       "sma200": 917.46,
       "rsi14": 60.76,
       "rsi5": 64.47
+    },
+    {
+      "date": "2026-11-05",
+      "open": 1000.0,
+      "high": 1000.0,
+      "low": 994.0,
+      "close": 998.0,
+      "volume": 3700.0,
+      "sma25": 1009.88,
+      "sma75": 974.57,
+      "sma200": 917.88,
+      "rsi14": 60.76,
+      "rsi5": 64.47
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-04",
-    "monthly_rsi14": 69.3,
-    "monthly_rsi_ma5": 68.71,
-    "spread": 0.59,
+    "price_date": "2026-11-05",
+    "monthly_rsi14": 68.98,
+    "monthly_rsi_ma5": 68.64,
+    "spread": 0.33,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -780,5 +793,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-05T19:22:39.482796+00:00"
+  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "8158",
   "ticker": "8158.T",
   "name": "ソーダニッカ",
-  "generated_at": "2026-11-05T19:21:35.672378+00:00",
-  "price_date": "2026-11-04",
+  "generated_at": "2026-11-06T18:46:47.289204+00:00",
+  "price_date": "2026-11-05",
   "record": {
-    "current_price": 1272.0,
-    "change_from_signal_month_pct": 5.47,
-    "return_since_gc_pct": 13.37
+    "current_price": 1351.0,
+    "change_from_signal_month_pct": 12.02,
+    "return_since_gc_pct": 20.41
   },
   "daily": [
     {
@@ -763,22 +763,35 @@
       "sma200": 1178.43,
       "rsi14": 52.05,
       "rsi5": 59.26
+    },
+    {
+      "date": "2026-11-05",
+      "open": 1302.0,
+      "high": 1393.0,
+      "low": 1257.0,
+      "close": 1351.0,
+      "volume": 413200.0,
+      "sma25": 1320.44,
+      "sma75": 1298.37,
+      "sma200": 1179.62,
+      "rsi14": 52.05,
+      "rsi5": 59.26
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-04",
-    "monthly_rsi14": 60.17,
-    "monthly_rsi_ma5": 62.6,
-    "spread": -2.43,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-05",
+    "monthly_rsi14": 64.7,
+    "monthly_rsi_ma5": 63.51,
+    "spread": 1.19,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-05T19:22:39.482796+00:00"
+  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
 }

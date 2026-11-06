@@ -2,12 +2,12 @@
   "code": "6465",
   "ticker": "6465.T",
   "name": "ホシザキ",
-  "generated_at": "2026-11-05T19:21:35.672378+00:00",
-  "price_date": "2026-11-04",
+  "generated_at": "2026-11-06T18:46:47.289204+00:00",
+  "price_date": "2026-11-05",
   "record": {
-    "current_price": 5388.0,
-    "change_from_signal_month_pct": -5.54,
-    "return_since_gc_pct": 2.28
+    "current_price": 5590.0,
+    "change_from_signal_month_pct": -2.0,
+    "return_since_gc_pct": 6.11
   },
   "daily": [
     {
@@ -763,22 +763,35 @@
       "sma200": 5314.8,
       "rsi14": 49.82,
       "rsi5": 55.65
+    },
+    {
+      "date": "2026-11-05",
+      "open": 5421.0,
+      "high": 5592.0,
+      "low": 5415.0,
+      "close": 5590.0,
+      "volume": 530400.0,
+      "sma25": 5340.36,
+      "sma75": 5474.29,
+      "sma200": 5316.52,
+      "rsi14": 49.82,
+      "rsi5": 55.65
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-04",
-    "monthly_rsi14": 49.14,
-    "monthly_rsi_ma5": 50.44,
-    "spread": -1.3,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-05",
+    "monthly_rsi14": 52.07,
+    "monthly_rsi_ma5": 51.02,
+    "spread": 1.05,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-05T19:22:39.482796+00:00"
+  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "8013",
   "ticker": "8013.T",
   "name": "ナイガイ",
-  "generated_at": "2026-11-05T19:21:35.672378+00:00",
-  "price_date": "2026-11-04",
+  "generated_at": "2026-11-06T18:46:47.289204+00:00",
+  "price_date": "2026-11-05",
   "record": {
-    "current_price": 379.0,
-    "change_from_signal_month_pct": 3.84,
-    "return_since_gc_pct": 3.84
+    "current_price": 376.0,
+    "change_from_signal_month_pct": 3.01,
+    "return_since_gc_pct": 3.01
   },
   "daily": [
     {
@@ -763,15 +763,28 @@
       "sma200": 337.63,
       "rsi14": 63.18,
       "rsi5": 64.85
+    },
+    {
+      "date": "2026-11-05",
+      "open": 384.0,
+      "high": 384.0,
+      "low": 376.0,
+      "close": 376.0,
+      "volume": 3900.0,
+      "sma25": 380.52,
+      "sma75": 369.31,
+      "sma200": 337.95,
+      "rsi14": 63.18,
+      "rsi5": 64.85
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-04",
-    "monthly_rsi14": 64.3,
-    "monthly_rsi_ma5": 63.8,
-    "spread": 0.5,
+    "price_date": "2026-11-05",
+    "monthly_rsi14": 63.83,
+    "monthly_rsi_ma5": 63.71,
+    "spread": 0.12,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -780,5 +793,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-05T19:22:39.482796+00:00"
+  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
 }

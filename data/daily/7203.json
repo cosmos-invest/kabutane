@@ -2,12 +2,12 @@
   "code": "7203",
   "ticker": "7203.T",
   "name": "トヨタ自動車",
-  "generated_at": "2026-11-05T19:21:35.672378+00:00",
-  "price_date": "2026-11-04",
+  "generated_at": "2026-11-06T18:46:47.289204+00:00",
+  "price_date": "2026-11-05",
   "record": {
-    "current_price": 3028.0,
-    "change_from_signal_month_pct": -1.27,
-    "return_since_gc_pct": -1.27
+    "current_price": 3533.0,
+    "change_from_signal_month_pct": 15.19,
+    "return_since_gc_pct": 15.19
   },
   "daily": [
     {
@@ -763,22 +763,35 @@
       "sma200": 3151.36,
       "rsi14": 50.92,
       "rsi5": 52.03
+    },
+    {
+      "date": "2026-11-05",
+      "open": 3168.0,
+      "high": 3533.0,
+      "low": 3164.0,
+      "close": 3533.0,
+      "volume": 105239100.0,
+      "sma25": 3034.9,
+      "sma75": 3024.07,
+      "sma200": 3152.55,
+      "rsi14": 50.92,
+      "rsi5": 52.03
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-04",
-    "monthly_rsi14": 51.4,
-    "monthly_rsi_ma5": 51.88,
-    "spread": -0.48,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-05",
+    "monthly_rsi14": 58.97,
+    "monthly_rsi_ma5": 53.4,
+    "spread": 5.58,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-05T19:22:39.482796+00:00"
+  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
 }

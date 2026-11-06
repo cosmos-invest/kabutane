@@ -2,12 +2,12 @@
   "code": "9025",
   "ticker": "9025.T",
   "name": "鴻池運輸",
-  "generated_at": "2026-11-05T19:21:35.672378+00:00",
-  "price_date": "2026-11-04",
+  "generated_at": "2026-11-06T18:46:47.289204+00:00",
+  "price_date": "2026-11-05",
   "record": {
-    "current_price": 2917.0,
-    "change_from_signal_month_pct": -2.51,
-    "return_since_gc_pct": -2.51
+    "current_price": 3025.0,
+    "change_from_signal_month_pct": 1.1,
+    "return_since_gc_pct": 1.1
   },
   "daily": [
     {
@@ -763,22 +763,35 @@
       "sma200": 2961.12,
       "rsi14": 50.59,
       "rsi5": 54.77
+    },
+    {
+      "date": "2026-11-05",
+      "open": 2994.0,
+      "high": 3035.0,
+      "low": 2983.0,
+      "close": 3025.0,
+      "volume": 100900.0,
+      "sma25": 2864.8,
+      "sma75": 2893.45,
+      "sma200": 2960.15,
+      "rsi14": 50.59,
+      "rsi5": 54.77
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-04",
-    "monthly_rsi14": 52.02,
-    "monthly_rsi_ma5": 52.3,
-    "spread": -0.28,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-05",
+    "monthly_rsi14": 54.92,
+    "monthly_rsi_ma5": 52.88,
+    "spread": 2.04,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-05T19:22:39.482796+00:00"
+  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
 }

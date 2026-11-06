@@ -2,12 +2,12 @@
   "code": "9007",
   "ticker": "9007.T",
   "name": "小田急電鉄",
-  "generated_at": "2026-11-05T19:21:35.672378+00:00",
-  "price_date": "2026-11-04",
+  "generated_at": "2026-11-06T18:46:47.289204+00:00",
+  "price_date": "2026-11-05",
   "record": {
-    "current_price": 1765.0,
-    "change_from_signal_month_pct": -0.03,
-    "return_since_gc_pct": 5.88
+    "current_price": 1850.0,
+    "change_from_signal_month_pct": 4.79,
+    "return_since_gc_pct": 10.98
   },
   "daily": [
     {
@@ -763,15 +763,28 @@
       "sma200": 1702.57,
       "rsi14": 47.47,
       "rsi5": 53.03
+    },
+    {
+      "date": "2026-11-05",
+      "open": 1790.0,
+      "high": 1850.0,
+      "low": 1790.0,
+      "close": 1850.0,
+      "volume": 1994100.0,
+      "sma25": 1738.84,
+      "sma75": 1753.13,
+      "sma200": 1703.3,
+      "rsi14": 47.47,
+      "rsi5": 53.03
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-04",
-    "monthly_rsi14": 50.75,
-    "monthly_rsi_ma5": 50.23,
-    "spread": 0.52,
+    "price_date": "2026-11-05",
+    "monthly_rsi14": 54.93,
+    "monthly_rsi_ma5": 51.06,
+    "spread": 3.86,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -780,5 +793,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-05T19:22:39.482796+00:00"
+  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
 }
