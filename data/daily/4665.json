@@ -2,12 +2,12 @@
   "code": "4665",
   "ticker": "4665.T",
   "name": "ダスキン",
-  "generated_at": "2026-11-06T18:46:47.289204+00:00",
-  "price_date": "2026-11-05",
+  "generated_at": "2026-11-09T21:51:58.727458+00:00",
+  "price_date": "2026-11-09",
   "record": {
-    "current_price": 4926.0,
-    "change_from_signal_month_pct": 10.77,
-    "return_since_gc_pct": 13.01
+    "current_price": 4740.0,
+    "change_from_signal_month_pct": 6.59,
+    "return_since_gc_pct": 8.74
   },
   "daily": [
     {
@@ -776,22 +776,48 @@
       "sma200": 4375.01,
       "rsi14": 60.46,
       "rsi5": 65.5
+    },
+    {
+      "date": "2026-11-06",
+      "open": 4870.0,
+      "high": 4917.0,
+      "low": 4729.0,
+      "close": 4750.0,
+      "volume": 138700.0,
+      "sma25": 4724.44,
+      "sma75": 4636.41,
+      "sma200": 4377.27,
+      "rsi14": 60.46,
+      "rsi5": 65.5
+    },
+    {
+      "date": "2026-11-09",
+      "open": 4702.0,
+      "high": 4742.0,
+      "low": 4645.0,
+      "close": 4740.0,
+      "volume": 273000.0,
+      "sma25": 4727.72,
+      "sma75": 4639.72,
+      "sma200": 4379.4,
+      "rsi14": 60.46,
+      "rsi5": 65.5
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-05",
-    "monthly_rsi14": 72.36,
-    "monthly_rsi_ma5": 69.42,
-    "spread": 2.93,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-09",
+    "monthly_rsi14": 68.03,
+    "monthly_rsi_ma5": 68.56,
+    "spread": -0.53,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
+  "provisional_generated_at": "2026-11-09T21:53:12.735752+00:00"
 }

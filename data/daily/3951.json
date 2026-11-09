@@ -2,12 +2,12 @@
   "code": "3951",
   "ticker": "3951.T",
   "name": "朝日印刷",
-  "generated_at": "2026-11-06T18:46:47.289204+00:00",
-  "price_date": "2026-11-05",
+  "generated_at": "2026-11-09T21:51:58.727458+00:00",
+  "price_date": "2026-11-09",
   "record": {
-    "current_price": 895.0,
-    "change_from_signal_month_pct": 1.24,
-    "return_since_gc_pct": 1.24
+    "current_price": 888.0,
+    "change_from_signal_month_pct": 0.45,
+    "return_since_gc_pct": 0.45
   },
   "daily": [
     {
@@ -776,22 +776,48 @@
       "sma200": 882.39,
       "rsi14": 44.87,
       "rsi5": 49.64
+    },
+    {
+      "date": "2026-11-06",
+      "open": 880.0,
+      "high": 880.0,
+      "low": 863.0,
+      "close": 865.0,
+      "volume": 43200.0,
+      "sma25": 886.32,
+      "sma75": 892.87,
+      "sma200": 882.2,
+      "rsi14": 44.87,
+      "rsi5": 49.64
+    },
+    {
+      "date": "2026-11-09",
+      "open": 867.0,
+      "high": 888.0,
+      "low": 867.0,
+      "close": 888.0,
+      "volume": 23500.0,
+      "sma25": 886.2,
+      "sma75": 893.04,
+      "sma200": 882.12,
+      "rsi14": 44.87,
+      "rsi5": 49.64
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-05",
-    "monthly_rsi14": 53.02,
-    "monthly_rsi_ma5": 52.3,
-    "spread": 0.72,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-09",
+    "monthly_rsi14": 51.45,
+    "monthly_rsi_ma5": 51.98,
+    "spread": -0.53,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
+  "provisional_generated_at": "2026-11-09T21:53:12.735752+00:00"
 }

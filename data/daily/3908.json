@@ -2,12 +2,12 @@
   "code": "3908",
   "ticker": "3908.T",
   "name": "コラボス",
-  "generated_at": "2026-11-06T18:46:47.289204+00:00",
-  "price_date": "2026-11-05",
+  "generated_at": "2026-11-09T21:51:58.727458+00:00",
+  "price_date": "2026-11-09",
   "record": {
-    "current_price": 357.0,
-    "change_from_signal_month_pct": 3.48,
-    "return_since_gc_pct": 3.48
+    "current_price": 369.0,
+    "change_from_signal_month_pct": 6.96,
+    "return_since_gc_pct": 6.96
   },
   "daily": [
     {
@@ -776,22 +776,48 @@
       "sma200": 350.52,
       "rsi14": 47.67,
       "rsi5": 50.61
+    },
+    {
+      "date": "2026-11-06",
+      "open": 355.0,
+      "high": 361.0,
+      "low": 334.0,
+      "close": 345.0,
+      "volume": 13800.0,
+      "sma25": 370.6,
+      "sma75": 357.8,
+      "sma200": 350.78,
+      "rsi14": 47.67,
+      "rsi5": 50.61
+    },
+    {
+      "date": "2026-11-09",
+      "open": 369.0,
+      "high": 369.0,
+      "low": 361.0,
+      "close": 369.0,
+      "volume": 4700.0,
+      "sma25": 370.88,
+      "sma75": 358.17,
+      "sma200": 351.15,
+      "rsi14": 47.67,
+      "rsi5": 50.61
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-05",
-    "monthly_rsi14": 51.95,
-    "monthly_rsi_ma5": 52.53,
-    "spread": -0.58,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-09",
+    "monthly_rsi14": 53.89,
+    "monthly_rsi_ma5": 52.92,
+    "spread": 0.97,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
+  "provisional_generated_at": "2026-11-09T21:53:12.735752+00:00"
 }

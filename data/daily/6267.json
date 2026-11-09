@@ -2,12 +2,12 @@
   "code": "6267",
   "ticker": "6267.T",
   "name": "ゼネラルパッカー",
-  "generated_at": "2026-11-06T18:46:47.289204+00:00",
-  "price_date": "2026-11-05",
+  "generated_at": "2026-11-09T21:51:58.727458+00:00",
+  "price_date": "2026-11-09",
   "record": {
-    "current_price": 4185.0,
-    "change_from_signal_month_pct": 6.22,
-    "return_since_gc_pct": 6.22
+    "current_price": 4095.0,
+    "change_from_signal_month_pct": 3.93,
+    "return_since_gc_pct": 3.93
   },
   "daily": [
     {
@@ -776,22 +776,48 @@
       "sma200": 3937.75,
       "rsi14": 63.99,
       "rsi5": 66.1
+    },
+    {
+      "date": "2026-11-06",
+      "open": 4115.0,
+      "high": 4115.0,
+      "low": 4095.0,
+      "close": 4095.0,
+      "volume": 900.0,
+      "sma25": 4200.8,
+      "sma75": 4082.4,
+      "sma200": 3937.62,
+      "rsi14": 63.99,
+      "rsi5": 66.1
+    },
+    {
+      "date": "2026-11-09",
+      "open": 4095.0,
+      "high": 4095.0,
+      "low": 4095.0,
+      "close": 4095.0,
+      "volume": 200.0,
+      "sma25": 4196.8,
+      "sma75": 4085.0,
+      "sma200": 3937.85,
+      "rsi14": 63.99,
+      "rsi5": 66.1
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-05",
-    "monthly_rsi14": 70.11,
-    "monthly_rsi_ma5": 69.32,
-    "spread": 0.8,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-09",
+    "monthly_rsi14": 66.44,
+    "monthly_rsi_ma5": 68.58,
+    "spread": -2.14,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
+  "provisional_generated_at": "2026-11-09T21:53:12.735752+00:00"
 }

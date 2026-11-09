@@ -2,12 +2,12 @@
   "code": "2208",
   "ticker": "2208.T",
   "name": "ブルボン",
-  "generated_at": "2026-11-06T18:46:47.289204+00:00",
-  "price_date": "2026-11-05",
+  "generated_at": "2026-11-09T21:51:58.727458+00:00",
+  "price_date": "2026-11-09",
   "record": {
-    "current_price": 3040.0,
-    "change_from_signal_month_pct": -3.8,
-    "return_since_gc_pct": -3.8
+    "current_price": 3035.0,
+    "change_from_signal_month_pct": -3.96,
+    "return_since_gc_pct": -3.96
   },
   "daily": [
     {
@@ -776,15 +776,41 @@
       "sma200": 3045.97,
       "rsi14": 64.41,
       "rsi5": 65.44
+    },
+    {
+      "date": "2026-11-06",
+      "open": 3025.0,
+      "high": 3030.0,
+      "low": 2963.0,
+      "close": 2963.0,
+      "volume": 20200.0,
+      "sma25": 3016.72,
+      "sma75": 3082.37,
+      "sma200": 3047.6,
+      "rsi14": 64.41,
+      "rsi5": 65.44
+    },
+    {
+      "date": "2026-11-09",
+      "open": 2979.0,
+      "high": 3035.0,
+      "low": 2979.0,
+      "close": 3035.0,
+      "volume": 6900.0,
+      "sma25": 3017.32,
+      "sma75": 3081.04,
+      "sma200": 3049.61,
+      "rsi14": 64.41,
+      "rsi5": 65.44
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-05",
-    "monthly_rsi14": 60.42,
-    "monthly_rsi_ma5": 61.86,
-    "spread": -1.44,
+    "price_date": "2026-11-09",
+    "monthly_rsi14": 60.2,
+    "monthly_rsi_ma5": 61.81,
+    "spread": -1.61,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -793,5 +819,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
+  "provisional_generated_at": "2026-11-09T21:53:12.735752+00:00"
 }

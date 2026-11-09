@@ -2,12 +2,12 @@
   "code": "4751",
   "ticker": "4751.T",
   "name": "サイバーエージェント",
-  "generated_at": "2026-11-06T18:46:47.289204+00:00",
-  "price_date": "2026-11-05",
+  "generated_at": "2026-11-09T21:51:58.727458+00:00",
+  "price_date": "2026-11-09",
   "record": {
-    "current_price": 1350.0,
-    "change_from_signal_month_pct": -7.25,
-    "return_since_gc_pct": -0.88
+    "current_price": 1325.0,
+    "change_from_signal_month_pct": -8.97,
+    "return_since_gc_pct": -2.72
   },
   "daily": [
     {
@@ -776,22 +776,48 @@
       "sma200": 1341.73,
       "rsi14": 51.02,
       "rsi5": 55.85
+    },
+    {
+      "date": "2026-11-06",
+      "open": 1320.0,
+      "high": 1329.5,
+      "low": 1274.5,
+      "close": 1283.5,
+      "volume": 5737700.0,
+      "sma25": 1275.14,
+      "sma75": 1316.65,
+      "sma200": 1341.17,
+      "rsi14": 51.02,
+      "rsi5": 55.85
+    },
+    {
+      "date": "2026-11-09",
+      "open": 1308.0,
+      "high": 1339.5,
+      "low": 1299.5,
+      "close": 1325.0,
+      "volume": 4881100.0,
+      "sma25": 1278.6,
+      "sma75": 1314.39,
+      "sma200": 1340.8,
+      "rsi14": 51.02,
+      "rsi5": 55.85
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-05",
-    "monthly_rsi14": 52.55,
-    "monthly_rsi_ma5": 51.83,
-    "spread": 0.72,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-09",
+    "monthly_rsi14": 51.52,
+    "monthly_rsi_ma5": 51.63,
+    "spread": -0.1,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
+  "provisional_generated_at": "2026-11-09T21:53:12.735752+00:00"
 }

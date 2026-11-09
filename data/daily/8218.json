@@ -2,12 +2,12 @@
   "code": "8218",
   "ticker": "8218.T",
   "name": "コメリ",
-  "generated_at": "2026-11-06T18:46:47.289204+00:00",
-  "price_date": "2026-11-05",
+  "generated_at": "2026-11-09T21:51:58.727458+00:00",
+  "price_date": "2026-11-09",
   "record": {
-    "current_price": 4060.0,
-    "change_from_signal_month_pct": 5.18,
-    "return_since_gc_pct": 14.21
+    "current_price": 3970.0,
+    "change_from_signal_month_pct": 2.85,
+    "return_since_gc_pct": 11.67
   },
   "daily": [
     {
@@ -776,15 +776,41 @@
       "sma200": 3624.3,
       "rsi14": 56.25,
       "rsi5": 62.51
+    },
+    {
+      "date": "2026-11-06",
+      "open": 4030.0,
+      "high": 4035.0,
+      "low": 3885.0,
+      "close": 3895.0,
+      "volume": 125900.0,
+      "sma25": 3858.8,
+      "sma75": 3834.87,
+      "sma200": 3626.43,
+      "rsi14": 56.25,
+      "rsi5": 62.51
+    },
+    {
+      "date": "2026-11-09",
+      "open": 3935.0,
+      "high": 3995.0,
+      "low": 3915.0,
+      "close": 3970.0,
+      "volume": 91900.0,
+      "sma25": 3868.0,
+      "sma75": 3841.33,
+      "sma200": 3628.93,
+      "rsi14": 56.25,
+      "rsi5": 62.51
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-05",
-    "monthly_rsi14": 65.39,
-    "monthly_rsi_ma5": 62.76,
-    "spread": 2.63,
+    "price_date": "2026-11-09",
+    "monthly_rsi14": 63.84,
+    "monthly_rsi_ma5": 62.45,
+    "spread": 1.39,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -793,5 +819,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
+  "provisional_generated_at": "2026-11-09T21:53:12.735752+00:00"
 }

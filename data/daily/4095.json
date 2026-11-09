@@ -2,12 +2,12 @@
   "code": "4095",
   "ticker": "4095.T",
   "name": "日本パーカライジング",
-  "generated_at": "2026-11-06T18:46:47.289204+00:00",
-  "price_date": "2026-11-05",
+  "generated_at": "2026-11-09T21:51:58.727458+00:00",
+  "price_date": "2026-11-09",
   "record": {
-    "current_price": 1765.0,
-    "change_from_signal_month_pct": 6.26,
-    "return_since_gc_pct": 4.13
+    "current_price": 1710.0,
+    "change_from_signal_month_pct": 2.95,
+    "return_since_gc_pct": 0.88
   },
   "daily": [
     {
@@ -776,22 +776,48 @@
       "sma200": 1621.18,
       "rsi14": 63.2,
       "rsi5": 67.33
+    },
+    {
+      "date": "2026-11-06",
+      "open": 1725.0,
+      "high": 1728.0,
+      "low": 1671.0,
+      "close": 1683.0,
+      "volume": 286300.0,
+      "sma25": 1780.0,
+      "sma75": 1743.75,
+      "sma200": 1622.4,
+      "rsi14": 63.2,
+      "rsi5": 67.33
+    },
+    {
+      "date": "2026-11-09",
+      "open": 1716.0,
+      "high": 1740.0,
+      "low": 1691.0,
+      "close": 1710.0,
+      "volume": 206000.0,
+      "sma25": 1777.24,
+      "sma75": 1744.8,
+      "sma200": 1623.71,
+      "rsi14": 63.2,
+      "rsi5": 67.33
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-05",
-    "monthly_rsi14": 70.41,
-    "monthly_rsi_ma5": 70.21,
-    "spread": 0.2,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-09",
+    "monthly_rsi14": 65.54,
+    "monthly_rsi_ma5": 69.24,
+    "spread": -3.69,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
+  "provisional_generated_at": "2026-11-09T21:53:12.735752+00:00"
 }

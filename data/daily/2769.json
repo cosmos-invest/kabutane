@@ -2,12 +2,12 @@
   "code": "2769",
   "ticker": "2769.T",
   "name": "ヴィレッジヴァンガードコーポレーション",
-  "generated_at": "2026-11-06T18:46:47.289204+00:00",
-  "price_date": "2026-11-05",
+  "generated_at": "2026-11-09T21:51:58.727458+00:00",
+  "price_date": "2026-11-09",
   "record": {
-    "current_price": 920.0,
-    "change_from_signal_month_pct": 2.91,
-    "return_since_gc_pct": 6.85
+    "current_price": 905.0,
+    "change_from_signal_month_pct": 1.23,
+    "return_since_gc_pct": 5.11
   },
   "daily": [
     {
@@ -776,22 +776,48 @@
       "sma200": 918.15,
       "rsi14": 26.88,
       "rsi5": 34.61
+    },
+    {
+      "date": "2026-11-06",
+      "open": 911.0,
+      "high": 915.0,
+      "low": 890.0,
+      "close": 900.0,
+      "volume": 27700.0,
+      "sma25": 931.64,
+      "sma75": 915.84,
+      "sma200": 917.73,
+      "rsi14": 26.88,
+      "rsi5": 34.61
+    },
+    {
+      "date": "2026-11-09",
+      "open": 900.0,
+      "high": 906.0,
+      "low": 898.0,
+      "close": 905.0,
+      "volume": 14200.0,
+      "sma25": 930.28,
+      "sma75": 916.09,
+      "sma200": 917.36,
+      "rsi14": 26.88,
+      "rsi5": 34.61
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-05",
-    "monthly_rsi14": 39.68,
-    "monthly_rsi_ma5": 38.72,
-    "spread": 0.97,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-09",
+    "monthly_rsi14": 37.71,
+    "monthly_rsi_ma5": 38.32,
+    "spread": -0.61,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
+  "provisional_generated_at": "2026-11-09T21:53:12.735752+00:00"
 }

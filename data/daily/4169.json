@@ -2,12 +2,12 @@
   "code": "4169",
   "ticker": "4169.T",
   "name": "ＥＮＥＣＨＡＮＧＥ",
-  "generated_at": "2026-11-06T18:46:47.289204+00:00",
-  "price_date": "2026-11-05",
+  "generated_at": "2026-11-09T21:51:58.727458+00:00",
+  "price_date": "2026-11-09",
   "record": {
-    "current_price": 255.0,
-    "change_from_signal_month_pct": 6.69,
-    "return_since_gc_pct": 6.69
+    "current_price": 278.0,
+    "change_from_signal_month_pct": 16.32,
+    "return_since_gc_pct": 16.32
   },
   "daily": [
     {
@@ -776,22 +776,48 @@
       "sma200": 259.4,
       "rsi14": 39.21,
       "rsi5": 40.37
+    },
+    {
+      "date": "2026-11-06",
+      "open": 235.0,
+      "high": 253.0,
+      "low": 228.0,
+      "close": 244.0,
+      "volume": 426900.0,
+      "sma25": 263.16,
+      "sma75": 262.01,
+      "sma200": 259.15,
+      "rsi14": 39.21,
+      "rsi5": 40.37
+    },
+    {
+      "date": "2026-11-09",
+      "open": 257.0,
+      "high": 287.0,
+      "low": 257.0,
+      "close": 278.0,
+      "volume": 1068100.0,
+      "sma25": 263.8,
+      "sma75": 262.77,
+      "sma200": 259.12,
+      "rsi14": 39.21,
+      "rsi5": 40.37
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-05",
-    "monthly_rsi14": 35.54,
-    "monthly_rsi_ma5": 35.62,
-    "spread": -0.08,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-09",
+    "monthly_rsi14": 37.44,
+    "monthly_rsi_ma5": 36.0,
+    "spread": 1.44,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
+  "provisional_generated_at": "2026-11-09T21:53:12.735752+00:00"
 }

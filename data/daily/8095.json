@@ -2,12 +2,12 @@
   "code": "8095",
   "ticker": "8095.T",
   "name": "アステナホールディングス",
-  "generated_at": "2026-11-06T18:46:47.289204+00:00",
-  "price_date": "2026-11-05",
+  "generated_at": "2026-11-09T21:51:58.727458+00:00",
+  "price_date": "2026-11-09",
   "record": {
-    "current_price": 554.0,
-    "change_from_signal_month_pct": 9.7,
-    "return_since_gc_pct": 11.02
+    "current_price": 540.0,
+    "change_from_signal_month_pct": 6.93,
+    "return_since_gc_pct": 8.22
   },
   "daily": [
     {
@@ -776,22 +776,48 @@
       "sma200": 503.18,
       "rsi14": 50.71,
       "rsi5": 53.98
+    },
+    {
+      "date": "2026-11-06",
+      "open": 534.0,
+      "high": 542.0,
+      "low": 534.0,
+      "close": 538.0,
+      "volume": 295900.0,
+      "sma25": 536.88,
+      "sma75": 528.72,
+      "sma200": 503.44,
+      "rsi14": 50.71,
+      "rsi5": 53.98
+    },
+    {
+      "date": "2026-11-09",
+      "open": 547.0,
+      "high": 549.0,
+      "low": 539.0,
+      "close": 540.0,
+      "volume": 565800.0,
+      "sma25": 536.64,
+      "sma75": 529.09,
+      "sma200": 503.72,
+      "rsi14": 50.71,
+      "rsi5": 53.98
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-05",
-    "monthly_rsi14": 61.48,
-    "monthly_rsi_ma5": 60.23,
-    "spread": 1.25,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-09",
+    "monthly_rsi14": 58.36,
+    "monthly_rsi_ma5": 59.61,
+    "spread": -1.25,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
+  "provisional_generated_at": "2026-11-09T21:53:12.735752+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "9722",
   "ticker": "9722.T",
   "name": "藤田観光",
-  "generated_at": "2026-11-06T18:46:47.289204+00:00",
-  "price_date": "2026-11-05",
+  "generated_at": "2026-11-09T21:51:58.727458+00:00",
+  "price_date": "2026-11-09",
   "record": {
-    "current_price": 2859.0,
-    "change_from_signal_month_pct": 41.82,
-    "return_since_gc_pct": 41.82
+    "current_price": 2820.0,
+    "change_from_signal_month_pct": 39.88,
+    "return_since_gc_pct": 39.88
   },
   "daily": [
     {
@@ -776,22 +776,48 @@
       "sma200": 2329.83,
       "rsi14": 51.5,
       "rsi5": 52.54
+    },
+    {
+      "date": "2026-11-06",
+      "open": 2715.0,
+      "high": 2847.0,
+      "low": 2668.0,
+      "close": 2803.0,
+      "volume": 435100.0,
+      "sma25": 3044.52,
+      "sma75": 2661.97,
+      "sma200": 2330.26,
+      "rsi14": 51.5,
+      "rsi5": 52.54
+    },
+    {
+      "date": "2026-11-09",
+      "open": 2833.0,
+      "high": 2919.0,
+      "low": 2808.0,
+      "close": 2820.0,
+      "volume": 204700.0,
+      "sma25": 3037.32,
+      "sma75": 2674.05,
+      "sma200": 2331.01,
+      "rsi14": 51.5,
+      "rsi5": 52.54
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-05",
-    "monthly_rsi14": 63.53,
-    "monthly_rsi_ma5": 63.42,
-    "spread": 0.11,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-09",
+    "monthly_rsi14": 62.67,
+    "monthly_rsi_ma5": 63.25,
+    "spread": -0.58,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
+  "provisional_generated_at": "2026-11-09T21:53:12.735752+00:00"
 }

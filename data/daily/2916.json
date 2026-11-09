@@ -2,12 +2,12 @@
   "code": "2916",
   "ticker": "2916.T",
   "name": "仙波糖化工業",
-  "generated_at": "2026-11-06T18:46:47.289204+00:00",
-  "price_date": "2026-11-05",
+  "generated_at": "2026-11-09T21:51:58.727458+00:00",
+  "price_date": "2026-11-09",
   "record": {
-    "current_price": 759.0,
-    "change_from_signal_month_pct": 4.83,
-    "return_since_gc_pct": 3.69
+    "current_price": 730.0,
+    "change_from_signal_month_pct": 0.83,
+    "return_since_gc_pct": -0.27
   },
   "daily": [
     {
@@ -776,22 +776,48 @@
       "sma200": 727.78,
       "rsi14": 48.06,
       "rsi5": 49.24
+    },
+    {
+      "date": "2026-11-06",
+      "open": 744.0,
+      "high": 744.0,
+      "low": 730.0,
+      "close": 730.0,
+      "volume": 900.0,
+      "sma25": 725.6,
+      "sma75": 735.41,
+      "sma200": 727.81,
+      "rsi14": 48.06,
+      "rsi5": 49.24
+    },
+    {
+      "date": "2026-11-09",
+      "open": 728.0,
+      "high": 745.0,
+      "low": 728.0,
+      "close": 730.0,
+      "volume": 1300.0,
+      "sma25": 725.72,
+      "sma75": 735.35,
+      "sma200": 727.8,
+      "rsi14": 48.06,
+      "rsi5": 49.24
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-05",
-    "monthly_rsi14": 57.35,
-    "monthly_rsi_ma5": 52.51,
-    "spread": 4.85,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-09",
+    "monthly_rsi14": 51.21,
+    "monthly_rsi_ma5": 51.28,
+    "spread": -0.07,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
+  "provisional_generated_at": "2026-11-09T21:53:12.735752+00:00"
 }

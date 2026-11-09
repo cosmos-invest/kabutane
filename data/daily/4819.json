@@ -2,12 +2,12 @@
   "code": "4819",
   "ticker": "4819.T",
   "name": "デジタルガレージ",
-  "generated_at": "2026-11-06T18:46:47.289204+00:00",
-  "price_date": "2026-11-05",
+  "generated_at": "2026-11-09T21:51:58.727458+00:00",
+  "price_date": "2026-11-09",
   "record": {
-    "current_price": 2434.0,
-    "change_from_signal_month_pct": 1.0,
-    "return_since_gc_pct": 1.0
+    "current_price": 2242.0,
+    "change_from_signal_month_pct": -6.97,
+    "return_since_gc_pct": -6.97
   },
   "daily": [
     {
@@ -776,22 +776,48 @@
       "sma200": 2240.31,
       "rsi14": 35.96,
       "rsi5": 41.7
+    },
+    {
+      "date": "2026-11-06",
+      "open": 2297.0,
+      "high": 2312.0,
+      "low": 2203.0,
+      "close": 2210.0,
+      "volume": 246200.0,
+      "sma25": 2433.6,
+      "sma75": 2344.75,
+      "sma200": 2237.96,
+      "rsi14": 35.96,
+      "rsi5": 41.7
+    },
+    {
+      "date": "2026-11-09",
+      "open": 2265.0,
+      "high": 2302.0,
+      "low": 2242.0,
+      "close": 2242.0,
+      "volume": 191400.0,
+      "sma25": 2426.44,
+      "sma75": 2344.01,
+      "sma200": 2235.91,
+      "rsi14": 35.96,
+      "rsi5": 41.7
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-05",
-    "monthly_rsi14": 42.04,
-    "monthly_rsi_ma5": 41.31,
-    "spread": 0.73,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-09",
+    "monthly_rsi14": 39.68,
+    "monthly_rsi_ma5": 40.84,
+    "spread": -1.16,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
+  "provisional_generated_at": "2026-11-09T21:53:12.735752+00:00"
 }

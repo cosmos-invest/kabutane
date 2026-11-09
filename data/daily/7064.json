@@ -2,12 +2,12 @@
   "code": "7064",
   "ticker": "7064.T",
   "name": "ハウテレビジョン",
-  "generated_at": "2026-11-06T18:46:47.289204+00:00",
-  "price_date": "2026-11-05",
+  "generated_at": "2026-11-09T21:51:58.727458+00:00",
+  "price_date": "2026-11-09",
   "record": {
-    "current_price": 1010.0,
-    "change_from_signal_month_pct": 21.54,
-    "return_since_gc_pct": 21.54
+    "current_price": 914.0,
+    "change_from_signal_month_pct": 9.99,
+    "return_since_gc_pct": 9.99
   },
   "daily": [
     {
@@ -776,22 +776,48 @@
       "sma200": 978.18,
       "rsi14": 39.18,
       "rsi5": 39.23
+    },
+    {
+      "date": "2026-11-06",
+      "open": 1000.0,
+      "high": 1000.0,
+      "low": 914.0,
+      "close": 914.0,
+      "volume": 12500.0,
+      "sma25": 1010.12,
+      "sma75": 949.57,
+      "sma200": 975.8,
+      "rsi14": 39.18,
+      "rsi5": 39.23
+    },
+    {
+      "date": "2026-11-09",
+      "open": 914.0,
+      "high": 914.0,
+      "low": 914.0,
+      "close": 914.0,
+      "volume": 0.0,
+      "sma25": 1005.8,
+      "sma75": 950.12,
+      "sma200": 973.54,
+      "rsi14": 39.18,
+      "rsi5": 39.23
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-05",
-    "monthly_rsi14": 44.86,
-    "monthly_rsi_ma5": 42.64,
-    "spread": 2.22,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-09",
+    "monthly_rsi14": 41.68,
+    "monthly_rsi_ma5": 42.01,
+    "spread": -0.32,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
+  "provisional_generated_at": "2026-11-09T21:53:12.735752+00:00"
 }

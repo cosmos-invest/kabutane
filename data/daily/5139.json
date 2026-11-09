@@ -2,12 +2,12 @@
   "code": "5139",
   "ticker": "5139.T",
   "name": "オープンワーク",
-  "generated_at": "2026-11-06T18:46:47.289204+00:00",
-  "price_date": "2026-11-05",
+  "generated_at": "2026-11-09T21:51:58.727458+00:00",
+  "price_date": "2026-11-09",
   "record": {
-    "current_price": 919.0,
-    "change_from_signal_month_pct": 0.66,
-    "return_since_gc_pct": -1.61
+    "current_price": 898.0,
+    "change_from_signal_month_pct": -1.64,
+    "return_since_gc_pct": -3.85
   },
   "daily": [
     {
@@ -776,15 +776,41 @@
       "sma200": 948.72,
       "rsi14": 48.55,
       "rsi5": 48.77
+    },
+    {
+      "date": "2026-11-06",
+      "open": 904.0,
+      "high": 904.0,
+      "low": 877.0,
+      "close": 889.0,
+      "volume": 59800.0,
+      "sma25": 919.16,
+      "sma75": 926.77,
+      "sma200": 947.63,
+      "rsi14": 48.55,
+      "rsi5": 48.77
+    },
+    {
+      "date": "2026-11-09",
+      "open": 887.0,
+      "high": 904.0,
+      "low": 887.0,
+      "close": 898.0,
+      "volume": 16700.0,
+      "sma25": 917.36,
+      "sma75": 926.57,
+      "sma200": 946.66,
+      "rsi14": 48.55,
+      "rsi5": 48.77
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-05",
-    "monthly_rsi14": 46.18,
-    "monthly_rsi_ma5": 46.61,
-    "spread": -0.43,
+    "price_date": "2026-11-09",
+    "monthly_rsi14": 45.05,
+    "monthly_rsi_ma5": 46.38,
+    "spread": -1.33,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -793,5 +819,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
+  "provisional_generated_at": "2026-11-09T21:53:12.735752+00:00"
 }

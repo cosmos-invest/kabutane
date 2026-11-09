@@ -2,12 +2,12 @@
   "code": "7134",
   "ticker": "7134.T",
   "name": "アップガレージグループ",
-  "generated_at": "2026-11-06T18:46:47.289204+00:00",
-  "price_date": "2026-11-05",
+  "generated_at": "2026-11-09T21:51:58.727458+00:00",
+  "price_date": "2026-11-09",
   "record": {
-    "current_price": 1359.0,
-    "change_from_signal_month_pct": -1.66,
-    "return_since_gc_pct": 11.85
+    "current_price": 1432.0,
+    "change_from_signal_month_pct": 3.62,
+    "return_since_gc_pct": 17.86
   },
   "daily": [
     {
@@ -776,22 +776,48 @@
       "sma200": 1223.74,
       "rsi14": 58.71,
       "rsi5": 68.38
+    },
+    {
+      "date": "2026-11-06",
+      "open": 1320.0,
+      "high": 1371.0,
+      "low": 1320.0,
+      "close": 1330.0,
+      "volume": 23200.0,
+      "sma25": 1404.36,
+      "sma75": 1406.87,
+      "sma200": 1224.69,
+      "rsi14": 58.71,
+      "rsi5": 68.38
+    },
+    {
+      "date": "2026-11-09",
+      "open": 1437.0,
+      "high": 1459.0,
+      "low": 1401.0,
+      "close": 1432.0,
+      "volume": 23500.0,
+      "sma25": 1404.56,
+      "sma75": 1407.15,
+      "sma200": 1226.17,
+      "rsi14": 58.71,
+      "rsi5": 68.38
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-05",
-    "monthly_rsi14": 63.79,
-    "monthly_rsi_ma5": 66.5,
-    "spread": -2.71,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-09",
+    "monthly_rsi14": 67.49,
+    "monthly_rsi_ma5": 67.24,
+    "spread": 0.25,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
+  "provisional_generated_at": "2026-11-09T21:53:12.735752+00:00"
 }

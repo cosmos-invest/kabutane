@@ -2,12 +2,12 @@
   "code": "2146",
   "ticker": "2146.T",
   "name": "ＵＴグループ",
-  "generated_at": "2026-11-06T18:46:47.289204+00:00",
-  "price_date": "2026-11-05",
+  "generated_at": "2026-11-09T21:51:58.727458+00:00",
+  "price_date": "2026-11-09",
   "record": {
-    "current_price": 242.0,
-    "change_from_signal_month_pct": 31.52,
-    "return_since_gc_pct": 31.52
+    "current_price": 224.0,
+    "change_from_signal_month_pct": 21.74,
+    "return_since_gc_pct": 21.74
   },
   "daily": [
     {
@@ -776,22 +776,48 @@
       "sma200": 203.68,
       "rsi14": 50.37,
       "rsi5": 50.95
+    },
+    {
+      "date": "2026-11-06",
+      "open": 229.0,
+      "high": 232.0,
+      "low": 219.0,
+      "close": 224.0,
+      "volume": 6137400.0,
+      "sma25": 242.72,
+      "sma75": 224.19,
+      "sma200": 203.78,
+      "rsi14": 50.37,
+      "rsi5": 50.95
+    },
+    {
+      "date": "2026-11-09",
+      "open": 227.0,
+      "high": 228.0,
+      "low": 223.0,
+      "close": 224.0,
+      "volume": 2815400.0,
+      "sma25": 242.12,
+      "sma75": 224.77,
+      "sma200": 203.85,
+      "rsi14": 50.37,
+      "rsi5": 50.95
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-05",
-    "monthly_rsi14": 66.11,
-    "monthly_rsi_ma5": 63.3,
-    "spread": 2.81,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-09",
+    "monthly_rsi14": 59.63,
+    "monthly_rsi_ma5": 62.0,
+    "spread": -2.37,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
+  "provisional_generated_at": "2026-11-09T21:53:12.735752+00:00"
 }

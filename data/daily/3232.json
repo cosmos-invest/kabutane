@@ -2,12 +2,12 @@
   "code": "3232",
   "ticker": "3232.T",
   "name": "三重交通グループホールディングス",
-  "generated_at": "2026-11-06T18:46:47.289204+00:00",
-  "price_date": "2026-11-05",
+  "generated_at": "2026-11-09T21:51:58.727458+00:00",
+  "price_date": "2026-11-09",
   "record": {
-    "current_price": 584.0,
-    "change_from_signal_month_pct": 5.42,
-    "return_since_gc_pct": 5.42
+    "current_price": 577.0,
+    "change_from_signal_month_pct": 4.15,
+    "return_since_gc_pct": 4.15
   },
   "daily": [
     {
@@ -776,22 +776,48 @@
       "sma200": 557.52,
       "rsi14": 49.47,
       "rsi5": 53.41
+    },
+    {
+      "date": "2026-11-06",
+      "open": 565.0,
+      "high": 590.0,
+      "low": 564.0,
+      "close": 576.0,
+      "volume": 386500.0,
+      "sma25": 566.48,
+      "sma75": 572.56,
+      "sma200": 557.65,
+      "rsi14": 49.47,
+      "rsi5": 53.41
+    },
+    {
+      "date": "2026-11-09",
+      "open": 577.0,
+      "high": 582.0,
+      "low": 570.0,
+      "close": 577.0,
+      "volume": 181400.0,
+      "sma25": 567.2,
+      "sma75": 573.03,
+      "sma200": 557.78,
+      "rsi14": 49.47,
+      "rsi5": 53.41
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-05",
-    "monthly_rsi14": 54.84,
-    "monthly_rsi_ma5": 54.22,
-    "spread": 0.61,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-09",
+    "monthly_rsi14": 53.81,
+    "monthly_rsi_ma5": 54.02,
+    "spread": -0.2,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
+  "provisional_generated_at": "2026-11-09T21:53:12.735752+00:00"
 }

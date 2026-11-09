@@ -2,12 +2,12 @@
   "code": "4475",
   "ticker": "4475.T",
   "name": "ＨＥＮＮＧＥ",
-  "generated_at": "2026-11-06T18:46:47.289204+00:00",
-  "price_date": "2026-11-05",
+  "generated_at": "2026-11-09T21:51:58.727458+00:00",
+  "price_date": "2026-11-09",
   "record": {
-    "current_price": 1811.0,
-    "change_from_signal_month_pct": 39.09,
-    "return_since_gc_pct": 63.74
+    "current_price": 2340.0,
+    "change_from_signal_month_pct": 79.72,
+    "return_since_gc_pct": 111.57
   },
   "daily": [
     {
@@ -776,22 +776,48 @@
       "sma200": 1293.54,
       "rsi14": 44.68,
       "rsi5": 51.21
+    },
+    {
+      "date": "2026-11-06",
+      "open": 1957.0,
+      "high": 2211.0,
+      "low": 1957.0,
+      "close": 2211.0,
+      "volume": 2099600.0,
+      "sma25": 1995.68,
+      "sma75": 1689.45,
+      "sma200": 1298.01,
+      "rsi14": 44.68,
+      "rsi5": 51.21
+    },
+    {
+      "date": "2026-11-09",
+      "open": 2411.0,
+      "high": 2530.0,
+      "low": 2340.0,
+      "close": 2340.0,
+      "volume": 3450900.0,
+      "sma25": 2017.84,
+      "sma75": 1703.04,
+      "sma200": 1303.09,
+      "rsi14": 44.68,
+      "rsi5": 51.21
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-05",
-    "monthly_rsi14": 59.67,
-    "monthly_rsi_ma5": 60.78,
-    "spread": -1.11,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-09",
+    "monthly_rsi14": 71.51,
+    "monthly_rsi_ma5": 63.15,
+    "spread": 8.36,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
+  "provisional_generated_at": "2026-11-09T21:53:12.735752+00:00"
 }

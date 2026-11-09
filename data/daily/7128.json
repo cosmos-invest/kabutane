@@ -2,12 +2,12 @@
   "code": "7128",
   "ticker": "7128.T",
   "name": "ユニソルホールディングス",
-  "generated_at": "2026-11-06T18:46:47.289204+00:00",
-  "price_date": "2026-11-05",
+  "generated_at": "2026-11-09T21:51:58.727458+00:00",
+  "price_date": "2026-11-09",
   "record": {
-    "current_price": 2953.0,
-    "change_from_signal_month_pct": 3.07,
-    "return_since_gc_pct": 3.07
+    "current_price": 2877.0,
+    "change_from_signal_month_pct": 0.42,
+    "return_since_gc_pct": 0.42
   },
   "daily": [
     {
@@ -776,22 +776,48 @@
       "sma200": 2457.12,
       "rsi14": 48.33,
       "rsi5": 64.39
+    },
+    {
+      "date": "2026-11-06",
+      "open": 2913.0,
+      "high": 2914.0,
+      "low": 2829.0,
+      "close": 2848.0,
+      "volume": 104500.0,
+      "sma25": 2964.04,
+      "sma75": 2871.6,
+      "sma200": 2459.72,
+      "rsi14": 48.33,
+      "rsi5": 64.39
+    },
+    {
+      "date": "2026-11-09",
+      "open": 2860.0,
+      "high": 2908.0,
+      "low": 2853.0,
+      "close": 2877.0,
+      "volume": 69500.0,
+      "sma25": 2962.08,
+      "sma75": 2875.36,
+      "sma200": 2462.39,
+      "rsi14": 48.33,
+      "rsi5": 64.39
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-05",
-    "monthly_rsi14": 63.31,
-    "monthly_rsi_ma5": 62.3,
-    "spread": 1.01,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-09",
+    "monthly_rsi14": 60.58,
+    "monthly_rsi_ma5": 61.76,
+    "spread": -1.18,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
+  "provisional_generated_at": "2026-11-09T21:53:12.735752+00:00"
 }

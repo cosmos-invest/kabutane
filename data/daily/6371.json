@@ -2,12 +2,12 @@
   "code": "6371",
   "ticker": "6371.T",
   "name": "椿本チエイン",
-  "generated_at": "2026-11-06T18:46:47.289204+00:00",
-  "price_date": "2026-11-05",
+  "generated_at": "2026-11-09T21:51:58.727458+00:00",
+  "price_date": "2026-11-09",
   "record": {
-    "current_price": 2638.0,
-    "change_from_signal_month_pct": 2.01,
-    "return_since_gc_pct": 2.01
+    "current_price": 2540.0,
+    "change_from_signal_month_pct": -1.78,
+    "return_since_gc_pct": -1.78
   },
   "daily": [
     {
@@ -776,15 +776,41 @@
       "sma200": 2561.07,
       "rsi14": 63.87,
       "rsi5": 64.28
+    },
+    {
+      "date": "2026-11-06",
+      "open": 2522.0,
+      "high": 2526.0,
+      "low": 2481.0,
+      "close": 2518.0,
+      "volume": 301000.0,
+      "sma25": 2642.28,
+      "sma75": 2661.8,
+      "sma200": 2561.94,
+      "rsi14": 63.87,
+      "rsi5": 64.28
+    },
+    {
+      "date": "2026-11-09",
+      "open": 2568.0,
+      "high": 2597.0,
+      "low": 2530.0,
+      "close": 2540.0,
+      "volume": 260200.0,
+      "sma25": 2637.72,
+      "sma75": 2660.59,
+      "sma200": 2562.72,
+      "rsi14": 63.87,
+      "rsi5": 64.28
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-05",
-    "monthly_rsi14": 64.33,
-    "monthly_rsi_ma5": 65.64,
-    "spread": -1.31,
+    "price_date": "2026-11-09",
+    "monthly_rsi14": 60.43,
+    "monthly_rsi_ma5": 64.86,
+    "spread": -4.43,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -793,5 +819,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
+  "provisional_generated_at": "2026-11-09T21:53:12.735752+00:00"
 }

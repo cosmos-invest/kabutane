@@ -2,12 +2,12 @@
   "code": "3190",
   "ticker": "3190.T",
   "name": "ホットマン",
-  "generated_at": "2026-11-06T18:46:47.289204+00:00",
-  "price_date": "2026-11-05",
+  "generated_at": "2026-11-09T21:51:58.727458+00:00",
+  "price_date": "2026-11-09",
   "record": {
-    "current_price": 571.0,
-    "change_from_signal_month_pct": -1.04,
-    "return_since_gc_pct": -0.17
+    "current_price": 566.0,
+    "change_from_signal_month_pct": -1.91,
+    "return_since_gc_pct": -1.05
   },
   "daily": [
     {
@@ -776,15 +776,41 @@
       "sma200": 575.0,
       "rsi14": 43.04,
       "rsi5": 46.89
+    },
+    {
+      "date": "2026-11-06",
+      "open": 568.0,
+      "high": 571.0,
+      "low": 560.0,
+      "close": 565.0,
+      "volume": 4900.0,
+      "sma25": 573.76,
+      "sma75": 579.6,
+      "sma200": 574.94,
+      "rsi14": 43.04,
+      "rsi5": 46.89
+    },
+    {
+      "date": "2026-11-09",
+      "open": 563.0,
+      "high": 568.0,
+      "low": 563.0,
+      "close": 566.0,
+      "volume": 1400.0,
+      "sma25": 573.72,
+      "sma75": 579.45,
+      "sma200": 574.91,
+      "rsi14": 43.04,
+      "rsi5": 46.89
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-05",
-    "monthly_rsi14": 41.34,
-    "monthly_rsi_ma5": 42.28,
-    "spread": -0.94,
+    "price_date": "2026-11-09",
+    "monthly_rsi14": 39.31,
+    "monthly_rsi_ma5": 41.88,
+    "spread": -2.57,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -793,5 +819,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
+  "provisional_generated_at": "2026-11-09T21:53:12.735752+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "4431",
   "ticker": "4431.T",
   "name": "スマレジ",
-  "generated_at": "2026-11-06T18:46:47.289204+00:00",
-  "price_date": "2026-11-05",
+  "generated_at": "2026-11-09T21:51:58.727458+00:00",
+  "price_date": "2026-11-09",
   "record": {
-    "current_price": 3675.0,
-    "change_from_signal_month_pct": 15.2,
-    "return_since_gc_pct": 36.06
+    "current_price": 3525.0,
+    "change_from_signal_month_pct": 10.5,
+    "return_since_gc_pct": 30.51
   },
   "daily": [
     {
@@ -776,15 +776,41 @@
       "sma200": 2849.18,
       "rsi14": 47.41,
       "rsi5": 57.36
+    },
+    {
+      "date": "2026-11-06",
+      "open": 3345.0,
+      "high": 3470.0,
+      "low": 3320.0,
+      "close": 3395.0,
+      "volume": 133700.0,
+      "sma25": 3767.8,
+      "sma75": 3461.27,
+      "sma200": 2850.68,
+      "rsi14": 47.41,
+      "rsi5": 57.36
+    },
+    {
+      "date": "2026-11-09",
+      "open": 3465.0,
+      "high": 3580.0,
+      "low": 3465.0,
+      "close": 3525.0,
+      "volume": 32400.0,
+      "sma25": 3771.4,
+      "sma75": 3469.6,
+      "sma200": 2852.93,
+      "rsi14": 47.41,
+      "rsi5": 57.36
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-05",
-    "monthly_rsi14": 59.94,
-    "monthly_rsi_ma5": 60.22,
-    "spread": -0.29,
+    "price_date": "2026-11-09",
+    "monthly_rsi14": 57.73,
+    "monthly_rsi_ma5": 59.78,
+    "spread": -2.05,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -793,5 +819,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
+  "provisional_generated_at": "2026-11-09T21:53:12.735752+00:00"
 }

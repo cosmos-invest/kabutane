@@ -2,12 +2,12 @@
   "code": "6069",
   "ticker": "6069.T",
   "name": "トレンダーズ",
-  "generated_at": "2026-11-06T18:46:47.289204+00:00",
-  "price_date": "2026-11-05",
+  "generated_at": "2026-11-09T21:51:58.727458+00:00",
+  "price_date": "2026-11-09",
   "record": {
-    "current_price": 655.0,
-    "change_from_signal_month_pct": -2.53,
-    "return_since_gc_pct": -2.53
+    "current_price": 625.0,
+    "change_from_signal_month_pct": -6.99,
+    "return_since_gc_pct": -6.99
   },
   "daily": [
     {
@@ -776,15 +776,41 @@
       "sma200": 722.51,
       "rsi14": 36.3,
       "rsi5": 37.86
+    },
+    {
+      "date": "2026-11-06",
+      "open": 636.0,
+      "high": 641.0,
+      "low": 592.0,
+      "close": 605.0,
+      "volume": 96000.0,
+      "sma25": 655.44,
+      "sma75": 668.92,
+      "sma200": 720.42,
+      "rsi14": 36.3,
+      "rsi5": 37.86
+    },
+    {
+      "date": "2026-11-09",
+      "open": 615.0,
+      "high": 640.0,
+      "low": 609.0,
+      "close": 625.0,
+      "volume": 26100.0,
+      "sma25": 653.88,
+      "sma75": 668.32,
+      "sma200": 718.39,
+      "rsi14": 36.3,
+      "rsi5": 37.86
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-05",
-    "monthly_rsi14": 36.82,
-    "monthly_rsi_ma5": 37.29,
-    "spread": -0.47,
+    "price_date": "2026-11-09",
+    "monthly_rsi14": 35.13,
+    "monthly_rsi_ma5": 36.95,
+    "spread": -1.82,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -793,5 +819,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
+  "provisional_generated_at": "2026-11-09T21:53:12.735752+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "2224",
   "ticker": "2224.T",
   "name": "コモ",
-  "generated_at": "2026-11-06T18:46:47.289204+00:00",
-  "price_date": "2026-11-05",
+  "generated_at": "2026-11-09T21:51:58.727458+00:00",
+  "price_date": "2026-11-09",
   "record": {
-    "current_price": 3855.0,
-    "change_from_signal_month_pct": 4.47,
-    "return_since_gc_pct": 4.47
+    "current_price": 3845.0,
+    "change_from_signal_month_pct": 4.2,
+    "return_since_gc_pct": 4.2
   },
   "daily": [
     {
@@ -776,15 +776,41 @@
       "sma200": 3686.78,
       "rsi14": 62.85,
       "rsi5": 64.43
+    },
+    {
+      "date": "2026-11-06",
+      "open": 3835.0,
+      "high": 3840.0,
+      "low": 3820.0,
+      "close": 3825.0,
+      "volume": 2300.0,
+      "sma25": 3821.8,
+      "sma75": 3742.53,
+      "sma200": 3688.28,
+      "rsi14": 62.85,
+      "rsi5": 64.43
+    },
+    {
+      "date": "2026-11-09",
+      "open": 3850.0,
+      "high": 3850.0,
+      "low": 3825.0,
+      "close": 3845.0,
+      "volume": 2300.0,
+      "sma25": 3823.6,
+      "sma75": 3744.8,
+      "sma200": 3689.8,
+      "rsi14": 62.85,
+      "rsi5": 64.43
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-05",
-    "monthly_rsi14": 68.99,
-    "monthly_rsi_ma5": 66.98,
-    "spread": 2.01,
+    "price_date": "2026-11-09",
+    "monthly_rsi14": 68.73,
+    "monthly_rsi_ma5": 66.93,
+    "spread": 1.8,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -793,5 +819,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
+  "provisional_generated_at": "2026-11-09T21:53:12.735752+00:00"
 }

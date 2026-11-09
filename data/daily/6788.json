@@ -2,12 +2,12 @@
   "code": "6788",
   "ticker": "6788.T",
   "name": "日本トリム",
-  "generated_at": "2026-11-06T18:46:47.289204+00:00",
-  "price_date": "2026-11-05",
+  "generated_at": "2026-11-09T21:51:58.727458+00:00",
+  "price_date": "2026-11-09",
   "record": {
-    "current_price": 5530.0,
-    "change_from_signal_month_pct": 16.05,
-    "return_since_gc_pct": 16.05
+    "current_price": 5400.0,
+    "change_from_signal_month_pct": 13.33,
+    "return_since_gc_pct": 13.33
   },
   "daily": [
     {
@@ -776,15 +776,41 @@
       "sma200": 4757.85,
       "rsi14": 54.54,
       "rsi5": 60.49
+    },
+    {
+      "date": "2026-11-06",
+      "open": 5430.0,
+      "high": 5430.0,
+      "low": 5260.0,
+      "close": 5270.0,
+      "volume": 18300.0,
+      "sma25": 5276.0,
+      "sma75": 5028.27,
+      "sma200": 4759.1,
+      "rsi14": 54.54,
+      "rsi5": 60.49
+    },
+    {
+      "date": "2026-11-09",
+      "open": 5370.0,
+      "high": 5470.0,
+      "low": 5370.0,
+      "close": 5400.0,
+      "volume": 5900.0,
+      "sma25": 5280.0,
+      "sma75": 5037.87,
+      "sma200": 4761.73,
+      "rsi14": 54.54,
+      "rsi5": 60.49
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-05",
-    "monthly_rsi14": 70.37,
-    "monthly_rsi_ma5": 65.99,
-    "spread": 4.39,
+    "price_date": "2026-11-09",
+    "monthly_rsi14": 68.95,
+    "monthly_rsi_ma5": 65.7,
+    "spread": 3.25,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -793,5 +819,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
+  "provisional_generated_at": "2026-11-09T21:53:12.735752+00:00"
 }

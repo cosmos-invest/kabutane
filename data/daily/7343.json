@@ -2,12 +2,12 @@
   "code": "7343",
   "ticker": "7343.T",
   "name": "ブロードマインド",
-  "generated_at": "2026-11-06T18:46:47.289204+00:00",
-  "price_date": "2026-11-05",
+  "generated_at": "2026-11-09T21:51:58.727458+00:00",
+  "price_date": "2026-11-09",
   "record": {
-    "current_price": 1291.0,
-    "change_from_signal_month_pct": 5.47,
-    "return_since_gc_pct": 5.47
+    "current_price": 1268.0,
+    "change_from_signal_month_pct": 3.59,
+    "return_since_gc_pct": 3.59
   },
   "daily": [
     {
@@ -776,22 +776,48 @@
       "sma200": 1262.21,
       "rsi14": 47.12,
       "rsi5": 48.64
+    },
+    {
+      "date": "2026-11-06",
+      "open": 1291.0,
+      "high": 1293.0,
+      "low": 1260.0,
+      "close": 1266.0,
+      "volume": 6400.0,
+      "sma25": 1304.84,
+      "sma75": 1278.23,
+      "sma200": 1261.73,
+      "rsi14": 47.12,
+      "rsi5": 48.64
+    },
+    {
+      "date": "2026-11-09",
+      "open": 1266.0,
+      "high": 1293.0,
+      "low": 1210.0,
+      "close": 1268.0,
+      "volume": 10000.0,
+      "sma25": 1303.04,
+      "sma75": 1279.24,
+      "sma200": 1261.29,
+      "rsi14": 47.12,
+      "rsi5": 48.64
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-05",
-    "monthly_rsi14": 53.12,
-    "monthly_rsi_ma5": 52.85,
-    "spread": 0.27,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-09",
+    "monthly_rsi14": 51.92,
+    "monthly_rsi_ma5": 52.61,
+    "spread": -0.69,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
+  "provisional_generated_at": "2026-11-09T21:53:12.735752+00:00"
 }

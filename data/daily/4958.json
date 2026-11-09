@@ -2,12 +2,12 @@
   "code": "4958",
   "ticker": "4958.T",
   "name": "長谷川香料",
-  "generated_at": "2026-11-06T18:46:47.289204+00:00",
-  "price_date": "2026-11-05",
+  "generated_at": "2026-11-09T21:51:58.727458+00:00",
+  "price_date": "2026-11-09",
   "record": {
-    "current_price": 3395.0,
-    "change_from_signal_month_pct": 4.46,
-    "return_since_gc_pct": 17.15
+    "current_price": 3330.0,
+    "change_from_signal_month_pct": 2.46,
+    "return_since_gc_pct": 14.91
   },
   "daily": [
     {
@@ -776,22 +776,48 @@
       "sma200": 3111.14,
       "rsi14": 52.88,
       "rsi5": 59.1
+    },
+    {
+      "date": "2026-11-06",
+      "open": 3300.0,
+      "high": 3300.0,
+      "low": 3225.0,
+      "close": 3250.0,
+      "volume": 115400.0,
+      "sma25": 3374.2,
+      "sma75": 3341.0,
+      "sma200": 3113.0,
+      "rsi14": 52.88,
+      "rsi5": 59.1
+    },
+    {
+      "date": "2026-11-09",
+      "open": 3290.0,
+      "high": 3345.0,
+      "low": 3260.0,
+      "close": 3330.0,
+      "volume": 70900.0,
+      "sma25": 3373.4,
+      "sma75": 3342.0,
+      "sma200": 3115.28,
+      "rsi14": 52.88,
+      "rsi5": 59.1
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-05",
-    "monthly_rsi14": 60.28,
-    "monthly_rsi_ma5": 58.82,
-    "spread": 1.46,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-09",
+    "monthly_rsi14": 57.68,
+    "monthly_rsi_ma5": 58.3,
+    "spread": -0.62,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
+  "provisional_generated_at": "2026-11-09T21:53:12.735752+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "9882",
   "ticker": "9882.T",
   "name": "イエローハット",
-  "generated_at": "2026-11-06T18:46:47.289204+00:00",
-  "price_date": "2026-11-05",
+  "generated_at": "2026-11-09T21:51:58.727458+00:00",
+  "price_date": "2026-11-09",
   "record": {
-    "current_price": 1770.0,
-    "change_from_signal_month_pct": -2.16,
-    "return_since_gc_pct": 0.57
+    "current_price": 1745.0,
+    "change_from_signal_month_pct": -3.54,
+    "return_since_gc_pct": -0.85
   },
   "daily": [
     {
@@ -776,22 +776,48 @@
       "sma200": 1680.73,
       "rsi14": 61.62,
       "rsi5": 67.52
+    },
+    {
+      "date": "2026-11-06",
+      "open": 1741.0,
+      "high": 1750.0,
+      "low": 1689.0,
+      "close": 1702.0,
+      "volume": 236100.0,
+      "sma25": 1633.36,
+      "sma75": 1723.63,
+      "sma200": 1680.92,
+      "rsi14": 61.62,
+      "rsi5": 67.52
+    },
+    {
+      "date": "2026-11-09",
+      "open": 1742.0,
+      "high": 1755.0,
+      "low": 1733.0,
+      "close": 1745.0,
+      "volume": 217800.0,
+      "sma25": 1636.56,
+      "sma75": 1722.53,
+      "sma200": 1681.38,
+      "rsi14": 61.62,
+      "rsi5": 67.52
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-05",
-    "monthly_rsi14": 61.72,
-    "monthly_rsi_ma5": 61.63,
-    "spread": 0.09,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-09",
+    "monthly_rsi14": 60.83,
+    "monthly_rsi_ma5": 61.45,
+    "spread": -0.63,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
+  "provisional_generated_at": "2026-11-09T21:53:12.735752+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "4118",
   "ticker": "4118.T",
   "name": "カネカ",
-  "generated_at": "2026-11-06T18:46:47.289204+00:00",
-  "price_date": "2026-11-05",
+  "generated_at": "2026-11-09T21:51:58.727458+00:00",
+  "price_date": "2026-11-09",
   "record": {
-    "current_price": 6257.0,
-    "change_from_signal_month_pct": 9.43,
-    "return_since_gc_pct": 13.33
+    "current_price": 6142.0,
+    "change_from_signal_month_pct": 7.42,
+    "return_since_gc_pct": 11.25
   },
   "daily": [
     {
@@ -776,22 +776,48 @@
       "sma200": 5468.9,
       "rsi14": 67.5,
       "rsi5": 71.78
+    },
+    {
+      "date": "2026-11-06",
+      "open": 6012.0,
+      "high": 6056.0,
+      "low": 5940.0,
+      "close": 6016.0,
+      "volume": 714800.0,
+      "sma25": 6098.56,
+      "sma75": 6032.95,
+      "sma200": 5476.4,
+      "rsi14": 67.5,
+      "rsi5": 71.78
+    },
+    {
+      "date": "2026-11-09",
+      "open": 6087.0,
+      "high": 6229.0,
+      "low": 6043.0,
+      "close": 6142.0,
+      "volume": 282800.0,
+      "sma25": 6102.2,
+      "sma75": 6038.84,
+      "sma200": 5484.31,
+      "rsi14": 67.5,
+      "rsi5": 71.78
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-05",
-    "monthly_rsi14": 73.54,
-    "monthly_rsi_ma5": 73.1,
-    "spread": 0.44,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-09",
+    "monthly_rsi14": 71.12,
+    "monthly_rsi_ma5": 72.61,
+    "spread": -1.49,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
+  "provisional_generated_at": "2026-11-09T21:53:12.735752+00:00"
 }

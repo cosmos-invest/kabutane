@@ -2,12 +2,12 @@
   "code": "8541",
   "ticker": "8541.T",
   "name": "愛媛銀行",
-  "generated_at": "2026-11-06T18:46:47.289204+00:00",
-  "price_date": "2026-11-05",
+  "generated_at": "2026-11-09T21:51:58.727458+00:00",
+  "price_date": "2026-11-09",
   "record": {
-    "current_price": 3250.0,
-    "change_from_signal_month_pct": 16.86,
-    "return_since_gc_pct": 52.08
+    "current_price": 3070.0,
+    "change_from_signal_month_pct": 10.39,
+    "return_since_gc_pct": 43.66
   },
   "daily": [
     {
@@ -776,15 +776,41 @@
       "sma200": 2342.04,
       "rsi14": 71.13,
       "rsi5": 81.87
+    },
+    {
+      "date": "2026-11-06",
+      "open": 2970.0,
+      "high": 3070.0,
+      "low": 2889.0,
+      "close": 2956.0,
+      "volume": 266500.0,
+      "sma25": 3429.44,
+      "sma75": 3181.03,
+      "sma200": 2348.97,
+      "rsi14": 71.13,
+      "rsi5": 81.87
+    },
+    {
+      "date": "2026-11-09",
+      "open": 2975.0,
+      "high": 3250.0,
+      "low": 2975.0,
+      "close": 3070.0,
+      "volume": 130800.0,
+      "sma25": 3409.24,
+      "sma75": 3189.68,
+      "sma200": 2356.34,
+      "rsi14": 71.13,
+      "rsi5": 81.87
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-05",
-    "monthly_rsi14": 74.24,
-    "monthly_rsi_ma5": 83.37,
-    "spread": -9.14,
+    "price_date": "2026-11-09",
+    "monthly_rsi14": 69.84,
+    "monthly_rsi_ma5": 82.5,
+    "spread": -12.66,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -793,5 +819,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
+  "provisional_generated_at": "2026-11-09T21:53:12.735752+00:00"
 }

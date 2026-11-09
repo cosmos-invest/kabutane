@@ -2,12 +2,12 @@
   "code": "2871",
   "ticker": "2871.T",
   "name": "ニチレイ",
-  "generated_at": "2026-11-06T18:46:47.289204+00:00",
-  "price_date": "2026-11-05",
+  "generated_at": "2026-11-09T21:51:58.727458+00:00",
+  "price_date": "2026-11-09",
   "record": {
-    "current_price": 2257.0,
-    "change_from_signal_month_pct": 2.43,
-    "return_since_gc_pct": 3.96
+    "current_price": 2138.0,
+    "change_from_signal_month_pct": -2.97,
+    "return_since_gc_pct": -1.52
   },
   "daily": [
     {
@@ -776,22 +776,48 @@
       "sma200": 2045.6,
       "rsi14": 54.79,
       "rsi5": 60.48
+    },
+    {
+      "date": "2026-11-06",
+      "open": 2256.0,
+      "high": 2257.0,
+      "low": 2120.5,
+      "close": 2129.5,
+      "volume": 1532200.0,
+      "sma25": 2132.24,
+      "sma75": 2159.3,
+      "sma200": 2047.12,
+      "rsi14": 54.79,
+      "rsi5": 60.48
+    },
+    {
+      "date": "2026-11-09",
+      "open": 2170.0,
+      "high": 2183.0,
+      "low": 2136.5,
+      "close": 2138.0,
+      "volume": 1684800.0,
+      "sma25": 2133.2,
+      "sma75": 2160.79,
+      "sma200": 2048.7,
+      "rsi14": 54.79,
+      "rsi5": 60.48
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-05",
-    "monthly_rsi14": 61.25,
-    "monthly_rsi_ma5": 59.0,
-    "spread": 2.25,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-09",
+    "monthly_rsi14": 57.4,
+    "monthly_rsi_ma5": 58.23,
+    "spread": -0.84,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
+  "provisional_generated_at": "2026-11-09T21:53:12.735752+00:00"
 }

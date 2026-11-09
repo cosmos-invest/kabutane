@@ -2,12 +2,12 @@
   "code": "7906",
   "ticker": "7906.T",
   "name": "ヨネックス",
-  "generated_at": "2026-11-06T18:46:47.289204+00:00",
-  "price_date": "2026-11-05",
+  "generated_at": "2026-11-09T21:51:58.727458+00:00",
+  "price_date": "2026-11-09",
   "record": {
-    "current_price": 2578.0,
-    "change_from_signal_month_pct": -0.96,
-    "return_since_gc_pct": -0.96
+    "current_price": 2464.0,
+    "change_from_signal_month_pct": -5.34,
+    "return_since_gc_pct": -5.34
   },
   "daily": [
     {
@@ -776,22 +776,48 @@
       "sma200": 2784.41,
       "rsi14": 48.87,
       "rsi5": 49.62
+    },
+    {
+      "date": "2026-11-06",
+      "open": 2478.0,
+      "high": 2524.0,
+      "low": 2371.0,
+      "close": 2380.0,
+      "volume": 789300.0,
+      "sma25": 2387.96,
+      "sma75": 2523.39,
+      "sma200": 2779.28,
+      "rsi14": 48.87,
+      "rsi5": 49.62
+    },
+    {
+      "date": "2026-11-09",
+      "open": 2439.0,
+      "high": 2503.0,
+      "low": 2425.0,
+      "close": 2464.0,
+      "volume": 567900.0,
+      "sma25": 2393.76,
+      "sma75": 2520.55,
+      "sma200": 2774.98,
+      "rsi14": 48.87,
+      "rsi5": 49.62
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-05",
-    "monthly_rsi14": 49.83,
-    "monthly_rsi_ma5": 48.93,
-    "spread": 0.89,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-09",
+    "monthly_rsi14": 48.21,
+    "monthly_rsi_ma5": 48.61,
+    "spread": -0.4,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
+  "provisional_generated_at": "2026-11-09T21:53:12.735752+00:00"
 }

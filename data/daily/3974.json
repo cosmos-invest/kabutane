@@ -2,12 +2,12 @@
   "code": "3974",
   "ticker": "3974.T",
   "name": "ＳＣＡＴ",
-  "generated_at": "2026-11-06T18:46:47.289204+00:00",
-  "price_date": "2026-11-05",
+  "generated_at": "2026-11-09T21:51:58.727458+00:00",
+  "price_date": "2026-11-09",
   "record": {
-    "current_price": 701.0,
-    "change_from_signal_month_pct": 5.1,
-    "return_since_gc_pct": 5.1
+    "current_price": 568.0,
+    "change_from_signal_month_pct": -14.84,
+    "return_since_gc_pct": -14.84
   },
   "daily": [
     {
@@ -776,6 +776,32 @@
       "sma200": 607.01,
       "rsi14": 62.75,
       "rsi5": 69.91
+    },
+    {
+      "date": "2026-11-06",
+      "open": 680.0,
+      "high": 812.0,
+      "low": 551.0,
+      "close": 558.0,
+      "volume": 513000.0,
+      "sma25": 668.68,
+      "sma75": 661.48,
+      "sma200": 606.92,
+      "rsi14": 62.75,
+      "rsi5": 69.91
+    },
+    {
+      "date": "2026-11-09",
+      "open": 559.0,
+      "high": 590.0,
+      "low": 558.0,
+      "close": 568.0,
+      "volume": 43900.0,
+      "sma25": 665.08,
+      "sma75": 660.93,
+      "sma200": 606.88,
+      "rsi14": 62.75,
+      "rsi5": 69.91
     }
   ],
   "corporate_events": [
@@ -788,17 +814,17 @@
   ],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-05",
-    "monthly_rsi14": 70.61,
-    "monthly_rsi_ma5": 68.23,
-    "spread": 2.38,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-09",
+    "monthly_rsi14": 50.91,
+    "monthly_rsi_ma5": 64.29,
+    "spread": -13.37,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
+  "provisional_generated_at": "2026-11-09T21:53:12.735752+00:00"
 }

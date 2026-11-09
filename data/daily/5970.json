@@ -2,12 +2,12 @@
   "code": "5970",
   "ticker": "5970.T",
   "name": "ジーテクト",
-  "generated_at": "2026-11-06T18:46:47.289204+00:00",
-  "price_date": "2026-11-05",
+  "generated_at": "2026-11-09T21:51:58.727458+00:00",
+  "price_date": "2026-11-09",
   "record": {
-    "current_price": 2179.0,
-    "change_from_signal_month_pct": 0.74,
-    "return_since_gc_pct": -1.49
+    "current_price": 2109.0,
+    "change_from_signal_month_pct": -2.5,
+    "return_since_gc_pct": -4.66
   },
   "daily": [
     {
@@ -776,15 +776,41 @@
       "sma200": 2068.92,
       "rsi14": 55.96,
       "rsi5": 60.28
+    },
+    {
+      "date": "2026-11-06",
+      "open": 2079.0,
+      "high": 2118.0,
+      "low": 2069.0,
+      "close": 2093.0,
+      "volume": 170000.0,
+      "sma25": 2165.32,
+      "sma75": 2214.56,
+      "sma200": 2069.32,
+      "rsi14": 55.96,
+      "rsi5": 60.28
+    },
+    {
+      "date": "2026-11-09",
+      "open": 2130.0,
+      "high": 2136.0,
+      "low": 2097.0,
+      "close": 2109.0,
+      "volume": 75600.0,
+      "sma25": 2160.32,
+      "sma75": 2214.72,
+      "sma200": 2069.63,
+      "rsi14": 55.96,
+      "rsi5": 60.28
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-05",
-    "monthly_rsi14": 57.04,
-    "monthly_rsi_ma5": 59.46,
-    "spread": -2.42,
+    "price_date": "2026-11-09",
+    "monthly_rsi14": 54.66,
+    "monthly_rsi_ma5": 58.98,
+    "spread": -4.32,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -793,5 +819,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
+  "provisional_generated_at": "2026-11-09T21:53:12.735752+00:00"
 }

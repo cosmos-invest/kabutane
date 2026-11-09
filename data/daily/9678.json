@@ -2,12 +2,12 @@
   "code": "9678",
   "ticker": "9678.T",
   "name": "カナモト",
-  "generated_at": "2026-11-06T18:46:47.289204+00:00",
-  "price_date": "2026-11-05",
+  "generated_at": "2026-11-09T21:51:58.727458+00:00",
+  "price_date": "2026-11-09",
   "record": {
-    "current_price": 5780.0,
-    "change_from_signal_month_pct": 10.31,
-    "return_since_gc_pct": 32.57
+    "current_price": 5590.0,
+    "change_from_signal_month_pct": 6.68,
+    "return_since_gc_pct": 28.21
   },
   "daily": [
     {
@@ -776,6 +776,32 @@
       "sma200": 4887.48,
       "rsi14": 78.54,
       "rsi5": 80.11
+    },
+    {
+      "date": "2026-11-06",
+      "open": 5730.0,
+      "high": 5740.0,
+      "low": 5340.0,
+      "close": 5420.0,
+      "volume": 188500.0,
+      "sma25": 5506.8,
+      "sma75": 5418.53,
+      "sma200": 4894.65,
+      "rsi14": 78.54,
+      "rsi5": 80.11
+    },
+    {
+      "date": "2026-11-09",
+      "open": 5500.0,
+      "high": 5630.0,
+      "low": 5450.0,
+      "close": 5590.0,
+      "volume": 72200.0,
+      "sma25": 5515.6,
+      "sma75": 5425.07,
+      "sma200": 4902.62,
+      "rsi14": 78.54,
+      "rsi5": 80.11
     }
   ],
   "corporate_events": [
@@ -788,17 +814,17 @@
   ],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-05",
-    "monthly_rsi14": 79.82,
-    "monthly_rsi_ma5": 79.47,
-    "spread": 0.35,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-09",
+    "monthly_rsi14": 76.51,
+    "monthly_rsi_ma5": 78.81,
+    "spread": -2.29,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
+  "provisional_generated_at": "2026-11-09T21:53:12.735752+00:00"
 }

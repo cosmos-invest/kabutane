@@ -2,12 +2,12 @@
   "code": "4635",
   "ticker": "4635.T",
   "name": "東京インキ",
-  "generated_at": "2026-11-06T18:46:47.289204+00:00",
-  "price_date": "2026-11-05",
+  "generated_at": "2026-11-09T21:51:58.727458+00:00",
+  "price_date": "2026-11-09",
   "record": {
-    "current_price": 1919.0,
-    "change_from_signal_month_pct": 37.17,
-    "return_since_gc_pct": 37.17
+    "current_price": 2247.0,
+    "change_from_signal_month_pct": 60.61,
+    "return_since_gc_pct": 60.61
   },
   "daily": [
     {
@@ -776,22 +776,48 @@
       "sma200": 1612.99,
       "rsi14": 60.31,
       "rsi5": 61.87
+    },
+    {
+      "date": "2026-11-06",
+      "open": 1802.0,
+      "high": 2105.0,
+      "low": 1780.0,
+      "close": 2076.0,
+      "volume": 457900.0,
+      "sma25": 1973.84,
+      "sma75": 1924.4,
+      "sma200": 1615.99,
+      "rsi14": 60.31,
+      "rsi5": 61.87
+    },
+    {
+      "date": "2026-11-09",
+      "open": 2170.0,
+      "high": 2318.0,
+      "low": 2152.0,
+      "close": 2247.0,
+      "volume": 287200.0,
+      "sma25": 1982.52,
+      "sma75": 1935.76,
+      "sma200": 1619.6,
+      "rsi14": 60.31,
+      "rsi5": 61.87
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-05",
-    "monthly_rsi14": 67.82,
-    "monthly_rsi_ma5": 69.55,
-    "spread": -1.73,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-09",
+    "monthly_rsi14": 73.63,
+    "monthly_rsi_ma5": 70.71,
+    "spread": 2.92,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
+  "provisional_generated_at": "2026-11-09T21:53:12.735752+00:00"
 }

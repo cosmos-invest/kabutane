@@ -2,12 +2,12 @@
   "code": "7231",
   "ticker": "7231.T",
   "name": "トピー工業",
-  "generated_at": "2026-11-06T18:46:47.289204+00:00",
-  "price_date": "2026-11-05",
+  "generated_at": "2026-11-09T21:51:58.727458+00:00",
+  "price_date": "2026-11-09",
   "record": {
-    "current_price": 3040.0,
-    "change_from_signal_month_pct": 3.47,
-    "return_since_gc_pct": 3.47
+    "current_price": 3130.0,
+    "change_from_signal_month_pct": 6.54,
+    "return_since_gc_pct": 6.54
   },
   "daily": [
     {
@@ -776,22 +776,48 @@
       "sma200": 3027.59,
       "rsi14": 55.1,
       "rsi5": 56.17
+    },
+    {
+      "date": "2026-11-06",
+      "open": 2851.0,
+      "high": 3040.0,
+      "low": 2833.0,
+      "close": 2980.0,
+      "volume": 94100.0,
+      "sma25": 3011.6,
+      "sma75": 3013.72,
+      "sma200": 3026.14,
+      "rsi14": 55.1,
+      "rsi5": 56.17
+    },
+    {
+      "date": "2026-11-09",
+      "open": 3030.0,
+      "high": 3145.0,
+      "low": 2990.0,
+      "close": 3130.0,
+      "volume": 83000.0,
+      "sma25": 3014.0,
+      "sma75": 3016.97,
+      "sma200": 3025.29,
+      "rsi14": 55.1,
+      "rsi5": 56.17
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-05",
-    "monthly_rsi14": 56.63,
-    "monthly_rsi_ma5": 56.92,
-    "spread": -0.29,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-09",
+    "monthly_rsi14": 58.31,
+    "monthly_rsi_ma5": 57.26,
+    "spread": 1.06,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
+  "provisional_generated_at": "2026-11-09T21:53:12.735752+00:00"
 }

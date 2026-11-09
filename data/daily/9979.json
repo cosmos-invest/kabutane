@@ -2,12 +2,12 @@
   "code": "9979",
   "ticker": "9979.T",
   "name": "大庄",
-  "generated_at": "2026-11-06T18:46:47.289204+00:00",
-  "price_date": "2026-11-05",
+  "generated_at": "2026-11-09T21:51:58.727458+00:00",
+  "price_date": "2026-11-09",
   "record": {
-    "current_price": 1009.0,
-    "change_from_signal_month_pct": -9.91,
-    "return_since_gc_pct": -9.91
+    "current_price": 1008.0,
+    "change_from_signal_month_pct": -10.0,
+    "return_since_gc_pct": -10.0
   },
   "daily": [
     {
@@ -776,15 +776,41 @@
       "sma200": 1085.19,
       "rsi14": 44.79,
       "rsi5": 49.76
+    },
+    {
+      "date": "2026-11-06",
+      "open": 993.0,
+      "high": 1005.0,
+      "low": 987.0,
+      "close": 990.0,
+      "volume": 83800.0,
+      "sma25": 1003.48,
+      "sma75": 1053.88,
+      "sma200": 1084.17,
+      "rsi14": 44.79,
+      "rsi5": 49.76
+    },
+    {
+      "date": "2026-11-09",
+      "open": 998.0,
+      "high": 1008.0,
+      "low": 997.0,
+      "close": 1008.0,
+      "volume": 47700.0,
+      "sma25": 1003.72,
+      "sma75": 1052.79,
+      "sma200": 1083.3,
+      "rsi14": 44.79,
+      "rsi5": 49.76
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-05",
-    "monthly_rsi14": 41.82,
-    "monthly_rsi_ma5": 44.05,
-    "spread": -2.23,
+    "price_date": "2026-11-09",
+    "monthly_rsi14": 41.71,
+    "monthly_rsi_ma5": 44.02,
+    "spread": -2.31,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -793,5 +819,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
+  "provisional_generated_at": "2026-11-09T21:53:12.735752+00:00"
 }

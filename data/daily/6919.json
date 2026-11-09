@@ -2,12 +2,12 @@
   "code": "6919",
   "ticker": "6919.T",
   "name": "ケル",
-  "generated_at": "2026-11-06T18:46:47.289204+00:00",
-  "price_date": "2026-11-05",
+  "generated_at": "2026-11-09T21:51:58.727458+00:00",
+  "price_date": "2026-11-09",
   "record": {
-    "current_price": 1389.0,
-    "change_from_signal_month_pct": -1.98,
-    "return_since_gc_pct": -1.98
+    "current_price": 1424.0,
+    "change_from_signal_month_pct": 0.49,
+    "return_since_gc_pct": 0.49
   },
   "daily": [
     {
@@ -776,22 +776,48 @@
       "sma200": 1436.71,
       "rsi14": 45.73,
       "rsi5": 46.82
+    },
+    {
+      "date": "2026-11-06",
+      "open": 1370.0,
+      "high": 1490.0,
+      "low": 1333.0,
+      "close": 1410.0,
+      "volume": 83500.0,
+      "sma25": 1402.64,
+      "sma75": 1412.6,
+      "sma200": 1436.34,
+      "rsi14": 45.73,
+      "rsi5": 46.82
+    },
+    {
+      "date": "2026-11-09",
+      "open": 1420.0,
+      "high": 1439.0,
+      "low": 1411.0,
+      "close": 1424.0,
+      "volume": 20600.0,
+      "sma25": 1403.12,
+      "sma75": 1413.19,
+      "sma200": 1435.97,
+      "rsi14": 45.73,
+      "rsi5": 46.82
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-05",
-    "monthly_rsi14": 42.66,
-    "monthly_rsi_ma5": 43.89,
-    "spread": -1.23,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-09",
+    "monthly_rsi14": 45.29,
+    "monthly_rsi_ma5": 44.42,
+    "spread": 0.87,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
+  "provisional_generated_at": "2026-11-09T21:53:12.735752+00:00"
 }

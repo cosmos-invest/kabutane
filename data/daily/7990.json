@@ -2,12 +2,12 @@
   "code": "7990",
   "ticker": "7990.T",
   "name": "グローブライド",
-  "generated_at": "2026-11-06T18:46:47.289204+00:00",
-  "price_date": "2026-11-05",
+  "generated_at": "2026-11-09T21:51:58.727458+00:00",
+  "price_date": "2026-11-09",
   "record": {
-    "current_price": 2618.0,
-    "change_from_signal_month_pct": 2.63,
-    "return_since_gc_pct": 2.63
+    "current_price": 2522.0,
+    "change_from_signal_month_pct": -1.14,
+    "return_since_gc_pct": -1.14
   },
   "daily": [
     {
@@ -776,15 +776,41 @@
       "sma200": 2349.99,
       "rsi14": 53.86,
       "rsi5": 58.34
+    },
+    {
+      "date": "2026-11-06",
+      "open": 2518.0,
+      "high": 2533.0,
+      "low": 2457.0,
+      "close": 2481.0,
+      "volume": 97200.0,
+      "sma25": 2432.68,
+      "sma75": 2460.52,
+      "sma200": 2351.32,
+      "rsi14": 53.86,
+      "rsi5": 58.34
+    },
+    {
+      "date": "2026-11-09",
+      "open": 2485.0,
+      "high": 2566.0,
+      "low": 2485.0,
+      "close": 2522.0,
+      "volume": 76200.0,
+      "sma25": 2438.68,
+      "sma75": 2461.59,
+      "sma200": 2352.84,
+      "rsi14": 53.86,
+      "rsi5": 58.34
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-05",
-    "monthly_rsi14": 60.26,
-    "monthly_rsi_ma5": 58.34,
-    "spread": 1.91,
+    "price_date": "2026-11-09",
+    "monthly_rsi14": 57.95,
+    "monthly_rsi_ma5": 57.88,
+    "spread": 0.07,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -793,5 +819,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-06T18:47:36.512436+00:00"
+  "provisional_generated_at": "2026-11-09T21:53:12.735752+00:00"
 }
