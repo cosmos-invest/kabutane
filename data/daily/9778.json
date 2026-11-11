@@ -2,12 +2,12 @@
   "code": "9778",
   "ticker": "9778.T",
   "name": "昴",
-  "generated_at": "2026-11-10T19:11:41.057149+00:00",
-  "price_date": "2026-11-09",
+  "generated_at": "2026-11-11T19:09:15.044239+00:00",
+  "price_date": "2026-11-10",
   "record": {
-    "current_price": 5410.0,
-    "change_from_signal_month_pct": -4.42,
-    "return_since_gc_pct": -2.7
+    "current_price": 5420.0,
+    "change_from_signal_month_pct": -4.24,
+    "return_since_gc_pct": -2.52
   },
   "daily": [
     {
@@ -802,15 +802,28 @@
       "sma200": 5705.65,
       "rsi14": 33.81,
       "rsi5": 36.31
+    },
+    {
+      "date": "2026-11-10",
+      "open": 5420.0,
+      "high": 5490.0,
+      "low": 5420.0,
+      "close": 5420.0,
+      "volume": 600.0,
+      "sma25": 5543.2,
+      "sma75": 5605.73,
+      "sma200": 5699.6,
+      "rsi14": 33.81,
+      "rsi5": 36.31
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-09",
-    "monthly_rsi14": 33.68,
-    "monthly_rsi_ma5": 36.06,
-    "spread": -2.38,
+    "price_date": "2026-11-10",
+    "monthly_rsi14": 33.83,
+    "monthly_rsi_ma5": 36.09,
+    "spread": -2.26,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -819,5 +832,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-10T19:12:19.875788+00:00"
+  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
 }

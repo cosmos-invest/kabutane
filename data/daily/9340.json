@@ -2,12 +2,12 @@
   "code": "9340",
   "ticker": "9340.T",
   "name": "アソインターナショナル",
-  "generated_at": "2026-11-10T19:11:41.057149+00:00",
-  "price_date": "2026-11-09",
+  "generated_at": "2026-11-11T19:09:15.044239+00:00",
+  "price_date": "2026-11-10",
   "record": {
-    "current_price": 768.0,
-    "change_from_signal_month_pct": 5.21,
-    "return_since_gc_pct": 5.21
+    "current_price": 815.0,
+    "change_from_signal_month_pct": 11.64,
+    "return_since_gc_pct": 11.64
   },
   "daily": [
     {
@@ -802,22 +802,35 @@
       "sma200": 720.38,
       "rsi14": 58.27,
       "rsi5": 61.67
+    },
+    {
+      "date": "2026-11-10",
+      "open": 780.0,
+      "high": 818.0,
+      "low": 772.0,
+      "close": 815.0,
+      "volume": 20100.0,
+      "sma25": 792.2,
+      "sma75": 764.16,
+      "sma200": 720.85,
+      "rsi14": 58.27,
+      "rsi5": 61.67
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-09",
-    "monthly_rsi14": 63.81,
-    "monthly_rsi_ma5": 66.05,
-    "spread": -2.24,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-10",
+    "monthly_rsi14": 68.52,
+    "monthly_rsi_ma5": 66.99,
+    "spread": 1.53,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-10T19:12:19.875788+00:00"
+  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
 }

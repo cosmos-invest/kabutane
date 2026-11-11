@@ -2,12 +2,12 @@
   "code": "6497",
   "ticker": "6497.T",
   "name": "ハマイ",
-  "generated_at": "2026-11-10T19:11:41.057149+00:00",
-  "price_date": "2026-11-09",
+  "generated_at": "2026-11-11T19:09:15.044239+00:00",
+  "price_date": "2026-11-10",
   "record": {
-    "current_price": 1350.0,
-    "change_from_signal_month_pct": -1.39,
-    "return_since_gc_pct": -1.39
+    "current_price": 1325.0,
+    "change_from_signal_month_pct": -3.21,
+    "return_since_gc_pct": -3.21
   },
   "daily": [
     {
@@ -802,15 +802,28 @@
       "sma200": 1368.54,
       "rsi14": 63.28,
       "rsi5": 65.59
+    },
+    {
+      "date": "2026-11-10",
+      "open": 1351.0,
+      "high": 1351.0,
+      "low": 1322.0,
+      "close": 1325.0,
+      "volume": 5300.0,
+      "sma25": 1428.16,
+      "sma75": 1425.59,
+      "sma200": 1369.04,
+      "rsi14": 63.28,
+      "rsi5": 65.59
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-09",
-    "monthly_rsi14": 58.69,
-    "monthly_rsi_ma5": 66.9,
-    "spread": -8.21,
+    "price_date": "2026-11-10",
+    "monthly_rsi14": 56.45,
+    "monthly_rsi_ma5": 66.45,
+    "spread": -10.0,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -819,5 +832,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-10T19:12:19.875788+00:00"
+  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
 }

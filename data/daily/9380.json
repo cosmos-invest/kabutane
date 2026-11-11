@@ -2,12 +2,12 @@
   "code": "9380",
   "ticker": "9380.T",
   "name": "東海運",
-  "generated_at": "2026-11-10T19:11:41.057149+00:00",
-  "price_date": "2026-11-09",
+  "generated_at": "2026-11-11T19:09:15.044239+00:00",
+  "price_date": "2026-11-10",
   "record": {
-    "current_price": 432.0,
-    "change_from_signal_month_pct": 3.85,
-    "return_since_gc_pct": 3.85
+    "current_price": 445.0,
+    "change_from_signal_month_pct": 6.97,
+    "return_since_gc_pct": 6.97
   },
   "daily": [
     {
@@ -802,22 +802,35 @@
       "sma200": 421.93,
       "rsi14": 64.38,
       "rsi5": 65.68
+    },
+    {
+      "date": "2026-11-10",
+      "open": 435.0,
+      "high": 445.0,
+      "low": 434.0,
+      "close": 445.0,
+      "volume": 16300.0,
+      "sma25": 447.56,
+      "sma75": 437.07,
+      "sma200": 422.06,
+      "rsi14": 64.38,
+      "rsi5": 65.68
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-09",
-    "monthly_rsi14": 65.71,
-    "monthly_rsi_ma5": 68.91,
-    "spread": -3.2,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-10",
+    "monthly_rsi14": 70.14,
+    "monthly_rsi_ma5": 69.79,
+    "spread": 0.35,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-10T19:12:19.875788+00:00"
+  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
 }

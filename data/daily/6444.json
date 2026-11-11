@@ -2,12 +2,12 @@
   "code": "6444",
   "ticker": "6444.T",
   "name": "サンデン",
-  "generated_at": "2026-11-10T19:11:41.057149+00:00",
-  "price_date": "2026-11-09",
+  "generated_at": "2026-11-11T19:09:15.044239+00:00",
+  "price_date": "2026-11-10",
   "record": {
-    "current_price": 159.0,
-    "change_from_signal_month_pct": -3.05,
-    "return_since_gc_pct": -3.05
+    "current_price": 177.0,
+    "change_from_signal_month_pct": 7.93,
+    "return_since_gc_pct": 7.93
   },
   "daily": [
     {
@@ -802,15 +802,28 @@
       "sma200": 166.96,
       "rsi14": 50.23,
       "rsi5": 50.7
+    },
+    {
+      "date": "2026-11-10",
+      "open": 163.0,
+      "high": 178.0,
+      "low": 161.0,
+      "close": 177.0,
+      "volume": 130800.0,
+      "sma25": 172.48,
+      "sma75": 179.16,
+      "sma200": 167.16,
+      "rsi14": 50.23,
+      "rsi5": 50.7
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-09",
-    "monthly_rsi14": 48.94,
-    "monthly_rsi_ma5": 53.53,
-    "spread": -4.59,
+    "price_date": "2026-11-10",
+    "monthly_rsi14": 53.5,
+    "monthly_rsi_ma5": 54.44,
+    "spread": -0.94,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -819,5 +832,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-10T19:12:19.875788+00:00"
+  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
 }

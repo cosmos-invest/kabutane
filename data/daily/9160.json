@@ -2,12 +2,12 @@
   "code": "9160",
   "ticker": "9160.T",
   "name": "オンザページ",
-  "generated_at": "2026-11-10T19:11:41.057149+00:00",
-  "price_date": "2026-11-09",
+  "generated_at": "2026-11-11T19:09:15.044239+00:00",
+  "price_date": "2026-11-10",
   "record": {
-    "current_price": 309.0,
-    "change_from_signal_month_pct": 1.31,
-    "return_since_gc_pct": 1.31
+    "current_price": 321.0,
+    "change_from_signal_month_pct": 5.25,
+    "return_since_gc_pct": 5.25
   },
   "daily": [
     {
@@ -802,15 +802,28 @@
       "sma200": 308.71,
       "rsi14": 33.54,
       "rsi5": 37.39
+    },
+    {
+      "date": "2026-11-10",
+      "open": 311.0,
+      "high": 321.0,
+      "low": 310.0,
+      "close": 321.0,
+      "volume": 21600.0,
+      "sma25": 324.56,
+      "sma75": 322.65,
+      "sma200": 308.75,
+      "rsi14": 33.54,
+      "rsi5": 37.39
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-09",
-    "monthly_rsi14": 44.06,
-    "monthly_rsi_ma5": 46.94,
-    "spread": -2.88,
+    "price_date": "2026-11-10",
+    "monthly_rsi14": 47.39,
+    "monthly_rsi_ma5": 47.61,
+    "spread": -0.22,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -819,5 +832,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-10T19:12:19.875788+00:00"
+  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
 }

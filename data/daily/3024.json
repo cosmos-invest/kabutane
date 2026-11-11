@@ -2,12 +2,12 @@
   "code": "3024",
   "ticker": "3024.T",
   "name": "クリエイト",
-  "generated_at": "2026-11-10T19:11:41.057149+00:00",
-  "price_date": "2026-11-09",
+  "generated_at": "2026-11-11T19:09:15.044239+00:00",
+  "price_date": "2026-11-10",
   "record": {
-    "current_price": 1110.0,
-    "change_from_signal_month_pct": -0.54,
-    "return_since_gc_pct": -0.54
+    "current_price": 1133.0,
+    "change_from_signal_month_pct": 1.52,
+    "return_since_gc_pct": 1.52
   },
   "daily": [
     {
@@ -802,15 +802,28 @@
       "sma200": 1145.69,
       "rsi14": 52.36,
       "rsi5": 54.55
+    },
+    {
+      "date": "2026-11-10",
+      "open": 1120.0,
+      "high": 1134.0,
+      "low": 1120.0,
+      "close": 1133.0,
+      "volume": 400.0,
+      "sma25": 1157.32,
+      "sma75": 1161.93,
+      "sma200": 1145.13,
+      "rsi14": 52.36,
+      "rsi5": 54.55
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-09",
-    "monthly_rsi14": 52.2,
-    "monthly_rsi_ma5": 57.51,
-    "spread": -5.31,
+    "price_date": "2026-11-10",
+    "monthly_rsi14": 53.96,
+    "monthly_rsi_ma5": 57.86,
+    "spread": -3.91,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -819,5 +832,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-10T19:12:19.875788+00:00"
+  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
 }

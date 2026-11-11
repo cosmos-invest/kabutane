@@ -2,12 +2,12 @@
   "code": "4912",
   "ticker": "4912.T",
   "name": "ライオン",
-  "generated_at": "2026-11-10T19:11:41.057149+00:00",
-  "price_date": "2026-11-09",
+  "generated_at": "2026-11-11T19:09:15.044239+00:00",
+  "price_date": "2026-11-10",
   "record": {
-    "current_price": 2118.5,
-    "change_from_signal_month_pct": 24.03,
-    "return_since_gc_pct": 23.56
+    "current_price": 2131.5,
+    "change_from_signal_month_pct": 24.8,
+    "return_since_gc_pct": 24.32
   },
   "daily": [
     {
@@ -802,15 +802,28 @@
       "sma200": 1716.89,
       "rsi14": 52.19,
       "rsi5": 54.65
+    },
+    {
+      "date": "2026-11-10",
+      "open": 2084.5,
+      "high": 2160.5,
+      "low": 2074.5,
+      "close": 2131.5,
+      "volume": 2385000.0,
+      "sma25": 1846.26,
+      "sma75": 1806.88,
+      "sma200": 1719.26,
+      "rsi14": 52.19,
+      "rsi5": 54.65
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-09",
-    "monthly_rsi14": 65.05,
-    "monthly_rsi_ma5": 57.85,
-    "spread": 7.2,
+    "price_date": "2026-11-10",
+    "monthly_rsi14": 65.35,
+    "monthly_rsi_ma5": 57.91,
+    "spread": 7.44,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -819,5 +832,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-10T19:12:19.875788+00:00"
+  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
 }

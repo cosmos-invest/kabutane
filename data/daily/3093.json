@@ -2,12 +2,12 @@
   "code": "3093",
   "ticker": "3093.T",
   "name": "トレジャー・ファクトリー",
-  "generated_at": "2026-11-10T19:11:41.057149+00:00",
-  "price_date": "2026-11-09",
+  "generated_at": "2026-11-11T19:09:15.044239+00:00",
+  "price_date": "2026-11-10",
   "record": {
-    "current_price": 1818.0,
-    "change_from_signal_month_pct": -13.22,
-    "return_since_gc_pct": -2.15
+    "current_price": 1873.0,
+    "change_from_signal_month_pct": -10.6,
+    "return_since_gc_pct": 0.81
   },
   "daily": [
     {
@@ -802,15 +802,28 @@
       "sma200": 1890.37,
       "rsi14": 57.23,
       "rsi5": 60.43
+    },
+    {
+      "date": "2026-11-10",
+      "open": 1835.0,
+      "high": 1882.0,
+      "low": 1831.0,
+      "close": 1873.0,
+      "volume": 98200.0,
+      "sma25": 1882.6,
+      "sma75": 1976.07,
+      "sma200": 1890.77,
+      "rsi14": 57.23,
+      "rsi5": 60.43
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-09",
-    "monthly_rsi14": 51.18,
-    "monthly_rsi_ma5": 55.28,
-    "spread": -4.1,
+    "price_date": "2026-11-10",
+    "monthly_rsi14": 52.73,
+    "monthly_rsi_ma5": 55.59,
+    "spread": -2.86,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -819,5 +832,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-10T19:12:19.875788+00:00"
+  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
 }

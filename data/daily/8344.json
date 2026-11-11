@@ -2,12 +2,12 @@
   "code": "8344",
   "ticker": "8344.T",
   "name": "山形銀行",
-  "generated_at": "2026-11-10T19:11:41.057149+00:00",
-  "price_date": "2026-11-09",
+  "generated_at": "2026-11-11T19:09:15.044239+00:00",
+  "price_date": "2026-11-10",
   "record": {
-    "current_price": 3950.0,
-    "change_from_signal_month_pct": 5.61,
-    "return_since_gc_pct": 27.63
+    "current_price": 4250.0,
+    "change_from_signal_month_pct": 13.64,
+    "return_since_gc_pct": 37.32
   },
   "daily": [
     {
@@ -802,15 +802,28 @@
       "sma200": 3473.01,
       "rsi14": 78.4,
       "rsi5": 84.39
+    },
+    {
+      "date": "2026-11-10",
+      "open": 4115.0,
+      "high": 4290.0,
+      "low": 4095.0,
+      "close": 4250.0,
+      "volume": 192900.0,
+      "sma25": 4660.4,
+      "sma75": 4605.8,
+      "sma200": 3483.64,
+      "rsi14": 78.4,
+      "rsi5": 84.39
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-09",
-    "monthly_rsi14": 62.49,
-    "monthly_rsi_ma5": 79.81,
-    "spread": -17.33,
+    "price_date": "2026-11-10",
+    "monthly_rsi14": 66.19,
+    "monthly_rsi_ma5": 80.55,
+    "spread": -14.37,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -819,5 +832,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-10T19:12:19.875788+00:00"
+  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
 }

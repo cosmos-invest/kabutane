@@ -2,12 +2,12 @@
   "code": "9046",
   "ticker": "9046.T",
   "name": "神戸電鉄",
-  "generated_at": "2026-11-10T19:11:41.057149+00:00",
-  "price_date": "2026-11-09",
+  "generated_at": "2026-11-11T19:09:15.044239+00:00",
+  "price_date": "2026-11-10",
   "record": {
-    "current_price": 2266.0,
-    "change_from_signal_month_pct": -7.92,
-    "return_since_gc_pct": -7.92
+    "current_price": 2269.0,
+    "change_from_signal_month_pct": -7.8,
+    "return_since_gc_pct": -7.8
   },
   "daily": [
     {
@@ -802,15 +802,28 @@
       "sma200": 2437.72,
       "rsi14": 42.37,
       "rsi5": 45.93
+    },
+    {
+      "date": "2026-11-10",
+      "open": 2263.0,
+      "high": 2279.0,
+      "low": 2258.0,
+      "close": 2269.0,
+      "volume": 14900.0,
+      "sma25": 2300.44,
+      "sma75": 2410.19,
+      "sma200": 2436.32,
+      "rsi14": 42.37,
+      "rsi5": 45.93
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-09",
-    "monthly_rsi14": 36.11,
-    "monthly_rsi_ma5": 41.01,
-    "spread": -4.9,
+    "price_date": "2026-11-10",
+    "monthly_rsi14": 36.23,
+    "monthly_rsi_ma5": 41.04,
+    "spread": -4.81,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -819,5 +832,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-10T19:12:19.875788+00:00"
+  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
 }

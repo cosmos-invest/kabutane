@@ -2,12 +2,12 @@
   "code": "3402",
   "ticker": "3402.T",
   "name": "東レ",
-  "generated_at": "2026-11-10T19:11:41.057149+00:00",
-  "price_date": "2026-11-09",
+  "generated_at": "2026-11-11T19:09:15.044239+00:00",
+  "price_date": "2026-11-10",
   "record": {
-    "current_price": 1234.5,
-    "change_from_signal_month_pct": 6.61,
-    "return_since_gc_pct": 6.61
+    "current_price": 1320.0,
+    "change_from_signal_month_pct": 13.99,
+    "return_since_gc_pct": 13.99
   },
   "daily": [
     {
@@ -802,22 +802,35 @@
       "sma200": 1188.54,
       "rsi14": 58.31,
       "rsi5": 58.41
+    },
+    {
+      "date": "2026-11-10",
+      "open": 1257.5,
+      "high": 1338.0,
+      "low": 1215.0,
+      "close": 1320.0,
+      "volume": 14061500.0,
+      "sma25": 1220.9,
+      "sma75": 1240.21,
+      "sma200": 1189.46,
+      "rsi14": 58.31,
+      "rsi5": 58.41
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-09",
-    "monthly_rsi14": 58.99,
-    "monthly_rsi_ma5": 59.71,
-    "spread": -0.72,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-10",
+    "monthly_rsi14": 62.38,
+    "monthly_rsi_ma5": 60.39,
+    "spread": 1.99,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-10T19:12:19.875788+00:00"
+  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
 }

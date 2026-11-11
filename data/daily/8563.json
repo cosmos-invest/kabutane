@@ -2,12 +2,12 @@
   "code": "8563",
   "ticker": "8563.T",
   "name": "大東銀行",
-  "generated_at": "2026-11-10T19:11:41.057149+00:00",
-  "price_date": "2026-11-09",
+  "generated_at": "2026-11-11T19:09:15.044239+00:00",
+  "price_date": "2026-11-10",
   "record": {
-    "current_price": 1061.0,
-    "change_from_signal_month_pct": 4.02,
-    "return_since_gc_pct": 4.02
+    "current_price": 1111.0,
+    "change_from_signal_month_pct": 8.92,
+    "return_since_gc_pct": 8.92
   },
   "daily": [
     {
@@ -802,15 +802,28 @@
       "sma200": 1061.51,
       "rsi14": 59.72,
       "rsi5": 61.7
+    },
+    {
+      "date": "2026-11-10",
+      "open": 1091.0,
+      "high": 1118.0,
+      "low": 1075.0,
+      "close": 1111.0,
+      "volume": 22600.0,
+      "sma25": 1204.96,
+      "sma75": 1150.07,
+      "sma200": 1062.3,
+      "rsi14": 59.72,
+      "rsi5": 61.7
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-09",
-    "monthly_rsi14": 57.84,
-    "monthly_rsi_ma5": 65.1,
-    "spread": -7.26,
+    "price_date": "2026-11-10",
+    "monthly_rsi14": 61.14,
+    "monthly_rsi_ma5": 65.76,
+    "spread": -4.61,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -819,5 +832,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-10T19:12:19.875788+00:00"
+  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
 }

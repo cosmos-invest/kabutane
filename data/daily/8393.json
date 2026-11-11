@@ -2,12 +2,12 @@
   "code": "8393",
   "ticker": "8393.T",
   "name": "宮崎銀行",
-  "generated_at": "2026-11-10T19:11:41.057149+00:00",
-  "price_date": "2026-11-09",
+  "generated_at": "2026-11-11T19:09:15.044239+00:00",
+  "price_date": "2026-11-10",
   "record": {
-    "current_price": 2271.0,
-    "change_from_signal_month_pct": -2.91,
-    "return_since_gc_pct": -2.91
+    "current_price": 2409.0,
+    "change_from_signal_month_pct": 2.99,
+    "return_since_gc_pct": 2.99
   },
   "daily": [
     {
@@ -802,15 +802,28 @@
       "sma200": 2149.67,
       "rsi14": 81.89,
       "rsi5": 83.58
+    },
+    {
+      "date": "2026-11-10",
+      "open": 2370.0,
+      "high": 2454.0,
+      "low": 2337.0,
+      "close": 2409.0,
+      "volume": 294700.0,
+      "sma25": 2495.96,
+      "sma75": 2542.65,
+      "sma200": 2154.55,
+      "rsi14": 81.89,
+      "rsi5": 83.58
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-09",
-    "monthly_rsi14": 64.55,
-    "monthly_rsi_ma5": 78.52,
-    "spread": -13.97,
+    "price_date": "2026-11-10",
+    "monthly_rsi14": 68.25,
+    "monthly_rsi_ma5": 79.26,
+    "spread": -11.01,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -819,5 +832,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-10T19:12:19.875788+00:00"
+  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
 }

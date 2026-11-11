@@ -2,12 +2,12 @@
   "code": "4019",
   "ticker": "4019.T",
   "name": "スタメン",
-  "generated_at": "2026-11-10T19:11:41.057149+00:00",
-  "price_date": "2026-11-09",
+  "generated_at": "2026-11-11T19:09:15.044239+00:00",
+  "price_date": "2026-11-10",
   "record": {
-    "current_price": 623.0,
-    "change_from_signal_month_pct": -0.32,
-    "return_since_gc_pct": 1.8
+    "current_price": 637.0,
+    "change_from_signal_month_pct": 1.92,
+    "return_since_gc_pct": 4.08
   },
   "daily": [
     {
@@ -802,15 +802,28 @@
       "sma200": 637.3,
       "rsi14": 40.92,
       "rsi5": 41.99
+    },
+    {
+      "date": "2026-11-10",
+      "open": 633.0,
+      "high": 648.0,
+      "low": 625.0,
+      "close": 637.0,
+      "volume": 46300.0,
+      "sma25": 623.36,
+      "sma75": 628.4,
+      "sma200": 636.78,
+      "rsi14": 40.92,
+      "rsi5": 41.99
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-09",
-    "monthly_rsi14": 42.45,
-    "monthly_rsi_ma5": 42.41,
-    "spread": 0.05,
+    "price_date": "2026-11-10",
+    "monthly_rsi14": 43.24,
+    "monthly_rsi_ma5": 42.57,
+    "spread": 0.68,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -819,5 +832,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-10T19:12:19.875788+00:00"
+  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
 }

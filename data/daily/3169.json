@@ -2,12 +2,12 @@
   "code": "3169",
   "ticker": "3169.T",
   "name": "ミサワ",
-  "generated_at": "2026-11-10T19:11:41.057149+00:00",
-  "price_date": "2026-11-09",
+  "generated_at": "2026-11-11T19:09:15.044239+00:00",
+  "price_date": "2026-11-10",
   "record": {
-    "current_price": 689.0,
-    "change_from_signal_month_pct": 5.84,
-    "return_since_gc_pct": 6.16
+    "current_price": 688.0,
+    "change_from_signal_month_pct": 5.68,
+    "return_since_gc_pct": 6.01
   },
   "daily": [
     {
@@ -802,15 +802,28 @@
       "sma200": 658.74,
       "rsi14": 49.99,
       "rsi5": 50.26
+    },
+    {
+      "date": "2026-11-10",
+      "open": 687.0,
+      "high": 691.0,
+      "low": 687.0,
+      "close": 688.0,
+      "volume": 2600.0,
+      "sma25": 693.88,
+      "sma75": 677.01,
+      "sma200": 658.71,
+      "rsi14": 49.99,
+      "rsi5": 50.26
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-09",
-    "monthly_rsi14": 57.24,
-    "monthly_rsi_ma5": 56.34,
-    "spread": 0.89,
+    "price_date": "2026-11-10",
+    "monthly_rsi14": 56.98,
+    "monthly_rsi_ma5": 56.29,
+    "spread": 0.69,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -819,5 +832,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-10T19:12:19.875788+00:00"
+  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
 }

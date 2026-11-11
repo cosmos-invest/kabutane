@@ -2,12 +2,12 @@
   "code": "2734",
   "ticker": "2734.T",
   "name": "サーラコーポレーション",
-  "generated_at": "2026-11-10T19:11:41.057149+00:00",
-  "price_date": "2026-11-09",
+  "generated_at": "2026-11-11T19:09:15.044239+00:00",
+  "price_date": "2026-11-10",
   "record": {
-    "current_price": 1143.0,
-    "change_from_signal_month_pct": -0.26,
-    "return_since_gc_pct": -0.26
+    "current_price": 1135.0,
+    "change_from_signal_month_pct": -0.96,
+    "return_since_gc_pct": -0.96
   },
   "daily": [
     {
@@ -802,15 +802,28 @@
       "sma200": 1111.65,
       "rsi14": 55.94,
       "rsi5": 60.83
+    },
+    {
+      "date": "2026-11-10",
+      "open": 1145.0,
+      "high": 1147.0,
+      "low": 1131.0,
+      "close": 1135.0,
+      "volume": 168100.0,
+      "sma25": 1131.68,
+      "sma75": 1175.61,
+      "sma200": 1111.89,
+      "rsi14": 55.94,
+      "rsi5": 60.83
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-09",
-    "monthly_rsi14": 58.07,
-    "monthly_rsi_ma5": 61.57,
-    "spread": -3.51,
+    "price_date": "2026-11-10",
+    "monthly_rsi14": 57.45,
+    "monthly_rsi_ma5": 61.45,
+    "spread": -3.99,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -819,5 +832,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-10T19:12:19.875788+00:00"
+  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
 }

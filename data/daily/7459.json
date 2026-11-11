@@ -2,12 +2,12 @@
   "code": "7459",
   "ticker": "7459.T",
   "name": "メディパルホールディングス",
-  "generated_at": "2026-11-10T19:11:41.057149+00:00",
-  "price_date": "2026-11-09",
+  "generated_at": "2026-11-11T19:09:15.044239+00:00",
+  "price_date": "2026-11-10",
   "record": {
-    "current_price": 3196.0,
-    "change_from_signal_month_pct": 10.86,
-    "return_since_gc_pct": 10.86
+    "current_price": 3189.0,
+    "change_from_signal_month_pct": 10.61,
+    "return_since_gc_pct": 10.61
   },
   "daily": [
     {
@@ -802,22 +802,35 @@
       "sma200": 2880.43,
       "rsi14": 58.1,
       "rsi5": 59.29
+    },
+    {
+      "date": "2026-11-10",
+      "open": 3236.0,
+      "high": 3263.0,
+      "low": 3169.0,
+      "close": 3189.0,
+      "volume": 500200.0,
+      "sma25": 3190.58,
+      "sma75": 3000.62,
+      "sma200": 2881.99,
+      "rsi14": 58.1,
+      "rsi5": 59.29
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-09",
-    "monthly_rsi14": 61.65,
-    "monthly_rsi_ma5": 61.63,
-    "spread": 0.02,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-10",
+    "monthly_rsi14": 61.44,
+    "monthly_rsi_ma5": 61.59,
+    "spread": -0.15,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-10T19:12:19.875788+00:00"
+  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
 }

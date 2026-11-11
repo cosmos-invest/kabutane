@@ -2,12 +2,12 @@
   "code": "8346",
   "ticker": "8346.T",
   "name": "東邦銀行",
-  "generated_at": "2026-11-10T19:11:41.057149+00:00",
-  "price_date": "2026-11-09",
+  "generated_at": "2026-11-11T19:09:15.044239+00:00",
+  "price_date": "2026-11-10",
   "record": {
-    "current_price": 859.0,
-    "change_from_signal_month_pct": -0.12,
-    "return_since_gc_pct": 10.7
+    "current_price": 909.0,
+    "change_from_signal_month_pct": 5.7,
+    "return_since_gc_pct": 17.14
   },
   "daily": [
     {
@@ -802,15 +802,28 @@
       "sma200": 809.07,
       "rsi14": 78.71,
       "rsi5": 83.35
+    },
+    {
+      "date": "2026-11-10",
+      "open": 889.0,
+      "high": 921.0,
+      "low": 882.0,
+      "close": 909.0,
+      "volume": 1018900.0,
+      "sma25": 991.04,
+      "sma75": 980.43,
+      "sma200": 810.7,
+      "rsi14": 78.71,
+      "rsi5": 83.35
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-09",
-    "monthly_rsi14": 63.45,
-    "monthly_rsi_ma5": 78.92,
-    "spread": -15.47,
+    "price_date": "2026-11-10",
+    "monthly_rsi14": 67.11,
+    "monthly_rsi_ma5": 79.66,
+    "spread": -12.55,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -819,5 +832,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-10T19:12:19.875788+00:00"
+  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
 }

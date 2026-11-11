@@ -2,12 +2,12 @@
   "code": "8628",
   "ticker": "8628.T",
   "name": "松井証券",
-  "generated_at": "2026-11-10T19:11:41.057149+00:00",
-  "price_date": "2026-11-09",
+  "generated_at": "2026-11-11T19:09:15.044239+00:00",
+  "price_date": "2026-11-10",
   "record": {
-    "current_price": 1005.0,
-    "change_from_signal_month_pct": -4.19,
-    "return_since_gc_pct": -4.19
+    "current_price": 1010.0,
+    "change_from_signal_month_pct": -3.72,
+    "return_since_gc_pct": -3.72
   },
   "daily": [
     {
@@ -802,15 +802,28 @@
       "sma200": 1011.56,
       "rsi14": 67.83,
       "rsi5": 73.06
+    },
+    {
+      "date": "2026-11-10",
+      "open": 1017.0,
+      "high": 1028.0,
+      "low": 1008.0,
+      "close": 1010.0,
+      "volume": 827500.0,
+      "sma25": 1069.08,
+      "sma75": 1109.87,
+      "sma200": 1012.13,
+      "rsi14": 67.83,
+      "rsi5": 73.06
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-09",
-    "monthly_rsi14": 57.81,
-    "monthly_rsi_ma5": 66.97,
-    "spread": -9.16,
+    "price_date": "2026-11-10",
+    "monthly_rsi14": 58.27,
+    "monthly_rsi_ma5": 67.06,
+    "spread": -8.79,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -819,5 +832,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-10T19:12:19.875788+00:00"
+  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
 }

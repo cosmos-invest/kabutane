@@ -2,12 +2,12 @@
   "code": "8360",
   "ticker": "8360.T",
   "name": "山梨中央銀行",
-  "generated_at": "2026-11-10T19:11:41.057149+00:00",
-  "price_date": "2026-11-09",
+  "generated_at": "2026-11-11T19:09:15.044239+00:00",
+  "price_date": "2026-11-10",
   "record": {
-    "current_price": 1165.0,
-    "change_from_signal_month_pct": -81.91,
-    "return_since_gc_pct": -81.15
+    "current_price": 1241.0,
+    "change_from_signal_month_pct": -80.73,
+    "return_since_gc_pct": -79.92
   },
   "daily": [
     {
@@ -802,15 +802,28 @@
       "sma200": 4801.63,
       "rsi14": 84.9,
       "rsi5": 87.36
+    },
+    {
+      "date": "2026-11-10",
+      "open": 1222.0,
+      "high": 1261.0,
+      "low": 1207.0,
+      "close": 1241.0,
+      "volume": 672400.0,
+      "sma25": 1322.16,
+      "sma75": 3494.23,
+      "sma200": 4784.84,
+      "rsi14": 84.9,
+      "rsi5": 87.36
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-09",
-    "monthly_rsi14": 35.58,
-    "monthly_rsi_ma5": 46.64,
-    "spread": -11.06,
+    "price_date": "2026-11-10",
+    "monthly_rsi14": 35.95,
+    "monthly_rsi_ma5": 46.72,
+    "spread": -10.76,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -819,5 +832,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-10T19:12:19.875788+00:00"
+  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
 }

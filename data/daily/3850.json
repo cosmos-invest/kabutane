@@ -2,12 +2,12 @@
   "code": "3850",
   "ticker": "3850.T",
   "name": "エヌ・ティ・ティ・データ・イントラマート",
-  "generated_at": "2026-11-10T19:11:41.057149+00:00",
-  "price_date": "2026-11-09",
+  "generated_at": "2026-11-11T19:09:15.044239+00:00",
+  "price_date": "2026-11-10",
   "record": {
-    "current_price": 3200.0,
-    "change_from_signal_month_pct": 0.16,
-    "return_since_gc_pct": 7.42
+    "current_price": 3360.0,
+    "change_from_signal_month_pct": 5.16,
+    "return_since_gc_pct": 12.79
   },
   "daily": [
     {
@@ -802,15 +802,28 @@
       "sma200": 3247.05,
       "rsi14": 47.78,
       "rsi5": 53.2
+    },
+    {
+      "date": "2026-11-10",
+      "open": 3205.0,
+      "high": 3400.0,
+      "low": 3200.0,
+      "close": 3360.0,
+      "volume": 31700.0,
+      "sma25": 3687.6,
+      "sma75": 3569.51,
+      "sma200": 3244.72,
+      "rsi14": 47.78,
+      "rsi5": 53.2
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-09",
-    "monthly_rsi14": 51.72,
-    "monthly_rsi_ma5": 56.13,
-    "spread": -4.4,
+    "price_date": "2026-11-10",
+    "monthly_rsi14": 53.66,
+    "monthly_rsi_ma5": 56.51,
+    "spread": -2.86,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -819,5 +832,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-10T19:12:19.875788+00:00"
+  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
 }

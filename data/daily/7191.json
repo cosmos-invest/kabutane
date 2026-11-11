@@ -2,12 +2,12 @@
   "code": "7191",
   "ticker": "7191.T",
   "name": "イントラスト",
-  "generated_at": "2026-11-10T19:11:41.057149+00:00",
-  "price_date": "2026-11-09",
+  "generated_at": "2026-11-11T19:09:15.044239+00:00",
+  "price_date": "2026-11-10",
   "record": {
-    "current_price": 1127.0,
-    "change_from_signal_month_pct": 0.09,
-    "return_since_gc_pct": 0.09
+    "current_price": 1148.0,
+    "change_from_signal_month_pct": 1.95,
+    "return_since_gc_pct": 1.95
   },
   "daily": [
     {
@@ -802,15 +802,28 @@
       "sma200": 1132.28,
       "rsi14": 59.3,
       "rsi5": 60.81
+    },
+    {
+      "date": "2026-11-10",
+      "open": 1140.0,
+      "high": 1152.0,
+      "low": 1128.0,
+      "close": 1148.0,
+      "volume": 25300.0,
+      "sma25": 1144.2,
+      "sma75": 1154.13,
+      "sma200": 1132.07,
+      "rsi14": 59.3,
+      "rsi5": 60.81
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-09",
-    "monthly_rsi14": 56.99,
-    "monthly_rsi_ma5": 60.18,
-    "spread": -3.19,
+    "price_date": "2026-11-10",
+    "monthly_rsi14": 59.09,
+    "monthly_rsi_ma5": 60.6,
+    "spread": -1.51,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -819,5 +832,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-10T19:12:19.875788+00:00"
+  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
 }

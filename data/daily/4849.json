@@ -2,12 +2,12 @@
   "code": "4849",
   "ticker": "4849.T",
   "name": "エン",
-  "generated_at": "2026-11-10T19:11:41.057149+00:00",
-  "price_date": "2026-11-09",
+  "generated_at": "2026-11-11T19:09:15.044239+00:00",
+  "price_date": "2026-11-10",
   "record": {
-    "current_price": 1822.0,
-    "change_from_signal_month_pct": 42.01,
-    "return_since_gc_pct": 46.11
+    "current_price": 1819.0,
+    "change_from_signal_month_pct": 41.78,
+    "return_since_gc_pct": 45.87
   },
   "daily": [
     {
@@ -802,15 +802,28 @@
       "sma200": 1372.04,
       "rsi14": 30.52,
       "rsi5": 36.73
+    },
+    {
+      "date": "2026-11-10",
+      "open": 1829.0,
+      "high": 1843.0,
+      "low": 1800.0,
+      "close": 1819.0,
+      "volume": 132300.0,
+      "sma25": 1809.4,
+      "sma75": 1625.36,
+      "sma200": 1373.46,
+      "rsi14": 30.52,
+      "rsi5": 36.73
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-09",
-    "monthly_rsi14": 53.92,
-    "monthly_rsi_ma5": 49.27,
-    "spread": 4.65,
+    "price_date": "2026-11-10",
+    "monthly_rsi14": 53.83,
+    "monthly_rsi_ma5": 49.26,
+    "spread": 4.58,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -819,5 +832,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-10T19:12:19.875788+00:00"
+  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
 }

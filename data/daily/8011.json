@@ -2,12 +2,12 @@
   "code": "8011",
   "ticker": "8011.T",
   "name": "三陽商会",
-  "generated_at": "2026-11-10T19:11:41.057149+00:00",
-  "price_date": "2026-11-09",
+  "generated_at": "2026-11-11T19:09:15.044239+00:00",
+  "price_date": "2026-11-10",
   "record": {
-    "current_price": 1236.0,
-    "change_from_signal_month_pct": -74.78,
-    "return_since_gc_pct": -70.04
+    "current_price": 1252.0,
+    "change_from_signal_month_pct": -74.45,
+    "return_since_gc_pct": -69.65
   },
   "daily": [
     {
@@ -802,15 +802,28 @@
       "sma200": 3278.76,
       "rsi14": 64.89,
       "rsi5": 72.38
+    },
+    {
+      "date": "2026-11-10",
+      "open": 1253.0,
+      "high": 1264.0,
+      "low": 1248.0,
+      "close": 1252.0,
+      "volume": 114400.0,
+      "sma25": 1236.04,
+      "sma75": 2000.46,
+      "sma200": 3263.9,
+      "rsi14": 64.89,
+      "rsi5": 72.38
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-09",
-    "monthly_rsi14": 35.62,
-    "monthly_rsi_ma5": 43.32,
-    "spread": -7.7,
+    "price_date": "2026-11-10",
+    "monthly_rsi14": 35.79,
+    "monthly_rsi_ma5": 43.35,
+    "spread": -7.56,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -819,5 +832,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-10T19:12:19.875788+00:00"
+  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
 }

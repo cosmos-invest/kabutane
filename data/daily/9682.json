@@ -2,12 +2,12 @@
   "code": "9682",
   "ticker": "9682.T",
   "name": "ＤＴＳ",
-  "generated_at": "2026-11-10T19:11:41.057149+00:00",
-  "price_date": "2026-11-09",
+  "generated_at": "2026-11-11T19:09:15.044239+00:00",
+  "price_date": "2026-11-10",
   "record": {
-    "current_price": 1186.0,
-    "change_from_signal_month_pct": 2.42,
-    "return_since_gc_pct": 2.42
+    "current_price": 1165.0,
+    "change_from_signal_month_pct": 0.6,
+    "return_since_gc_pct": 0.6
   },
   "daily": [
     {
@@ -802,15 +802,28 @@
       "sma200": 1098.01,
       "rsi14": 45.8,
       "rsi5": 55.31
+    },
+    {
+      "date": "2026-11-10",
+      "open": 1182.0,
+      "high": 1183.0,
+      "low": 1161.0,
+      "close": 1165.0,
+      "volume": 404300.0,
+      "sma25": 1170.04,
+      "sma75": 1127.63,
+      "sma200": 1097.35,
+      "rsi14": 45.8,
+      "rsi5": 55.31
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-09",
-    "monthly_rsi14": 58.09,
-    "monthly_rsi_ma5": 56.49,
-    "spread": 1.6,
+    "price_date": "2026-11-10",
+    "monthly_rsi14": 56.24,
+    "monthly_rsi_ma5": 56.12,
+    "spread": 0.12,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -819,5 +832,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-10T19:12:19.875788+00:00"
+  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "9854",
   "ticker": "9854.T",
   "name": "愛眼",
-  "generated_at": "2026-11-10T19:11:41.057149+00:00",
-  "price_date": "2026-11-09",
+  "generated_at": "2026-11-11T19:09:15.044239+00:00",
+  "price_date": "2026-11-10",
   "record": {
-    "current_price": 276.0,
-    "change_from_signal_month_pct": 6.15,
-    "return_since_gc_pct": 4.15
+    "current_price": 288.0,
+    "change_from_signal_month_pct": 10.77,
+    "return_since_gc_pct": 8.68
   },
   "daily": [
     {
@@ -802,22 +802,35 @@
       "sma200": 256.43,
       "rsi14": 67.03,
       "rsi5": 67.45
+    },
+    {
+      "date": "2026-11-10",
+      "open": 279.0,
+      "high": 288.0,
+      "low": 277.0,
+      "close": 288.0,
+      "volume": 28500.0,
+      "sma25": 274.4,
+      "sma75": 276.4,
+      "sma200": 256.77,
+      "rsi14": 67.03,
+      "rsi5": 67.45
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-09",
-    "monthly_rsi14": 65.02,
-    "monthly_rsi_ma5": 67.6,
-    "spread": -2.58,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-10",
+    "monthly_rsi14": 69.03,
+    "monthly_rsi_ma5": 68.4,
+    "spread": 0.63,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-10T19:12:19.875788+00:00"
+  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
 }

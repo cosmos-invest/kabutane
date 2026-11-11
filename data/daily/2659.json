@@ -2,12 +2,12 @@
   "code": "2659",
   "ticker": "2659.T",
   "name": "サンエー",
-  "generated_at": "2026-11-10T19:11:41.057149+00:00",
-  "price_date": "2026-11-09",
+  "generated_at": "2026-11-11T19:09:15.044239+00:00",
+  "price_date": "2026-11-10",
   "record": {
-    "current_price": 3285.0,
-    "change_from_signal_month_pct": 0.92,
-    "return_since_gc_pct": 0.92
+    "current_price": 3280.0,
+    "change_from_signal_month_pct": 0.77,
+    "return_since_gc_pct": 0.77
   },
   "daily": [
     {
@@ -802,15 +802,28 @@
       "sma200": 3187.44,
       "rsi14": 62.59,
       "rsi5": 63.2
+    },
+    {
+      "date": "2026-11-10",
+      "open": 3270.0,
+      "high": 3280.0,
+      "low": 3250.0,
+      "close": 3280.0,
+      "volume": 206800.0,
+      "sma25": 3173.6,
+      "sma75": 3270.53,
+      "sma200": 3188.74,
+      "rsi14": 62.59,
+      "rsi5": 63.2
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-09",
-    "monthly_rsi14": 60.67,
-    "monthly_rsi_ma5": 61.55,
-    "spread": -0.87,
+    "price_date": "2026-11-10",
+    "monthly_rsi14": 60.53,
+    "monthly_rsi_ma5": 61.52,
+    "spread": -0.99,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -819,5 +832,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-10T19:12:19.875788+00:00"
+  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "4372",
   "ticker": "4372.T",
   "name": "ユミルリンク",
-  "generated_at": "2026-11-10T19:11:41.057149+00:00",
-  "price_date": "2026-11-09",
+  "generated_at": "2026-11-11T19:09:15.044239+00:00",
+  "price_date": "2026-11-10",
   "record": {
-    "current_price": 1048.0,
-    "change_from_signal_month_pct": -19.2,
-    "return_since_gc_pct": -9.66
+    "current_price": 985.0,
+    "change_from_signal_month_pct": -24.06,
+    "return_since_gc_pct": -15.09
   },
   "daily": [
     {
@@ -802,15 +802,28 @@
       "sma200": 1234.66,
       "rsi14": 40.93,
       "rsi5": 48.74
+    },
+    {
+      "date": "2026-11-10",
+      "open": 1030.0,
+      "high": 1059.0,
+      "low": 968.0,
+      "close": 985.0,
+      "volume": 20400.0,
+      "sma25": 1193.88,
+      "sma75": 1271.07,
+      "sma200": 1232.46,
+      "rsi14": 40.93,
+      "rsi5": 48.74
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-09",
-    "monthly_rsi14": 36.61,
-    "monthly_rsi_ma5": 45.78,
-    "spread": -9.17,
+    "price_date": "2026-11-10",
+    "monthly_rsi14": 34.28,
+    "monthly_rsi_ma5": 45.32,
+    "spread": -11.03,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -819,5 +832,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-10T19:12:19.875788+00:00"
+  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
 }
