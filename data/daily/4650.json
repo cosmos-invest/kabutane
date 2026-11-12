@@ -2,12 +2,12 @@
   "code": "4650",
   "ticker": "4650.T",
   "name": "ＳＤエンターテイメント",
-  "generated_at": "2026-11-11T19:09:15.044239+00:00",
-  "price_date": "2026-11-10",
+  "generated_at": "2026-11-12T19:26:19.407183+00:00",
+  "price_date": "2026-11-11",
   "record": {
-    "current_price": 269.0,
-    "change_from_signal_month_pct": 0.37,
-    "return_since_gc_pct": 0.37
+    "current_price": 270.0,
+    "change_from_signal_month_pct": 0.75,
+    "return_since_gc_pct": 0.75
   },
   "daily": [
     {
@@ -815,22 +815,35 @@
       "sma200": 274.84,
       "rsi14": 41.68,
       "rsi5": 43.61
+    },
+    {
+      "date": "2026-11-11",
+      "open": 269.0,
+      "high": 270.0,
+      "low": 268.0,
+      "close": 270.0,
+      "volume": 800.0,
+      "sma25": 270.28,
+      "sma75": 269.91,
+      "sma200": 274.69,
+      "rsi14": 41.68,
+      "rsi5": 43.61
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-10",
-    "monthly_rsi14": 46.0,
-    "monthly_rsi_ma5": 46.06,
-    "spread": -0.06,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-11",
+    "monthly_rsi14": 46.49,
+    "monthly_rsi_ma5": 46.16,
+    "spread": 0.33,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
+  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
 }

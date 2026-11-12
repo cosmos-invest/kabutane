@@ -2,12 +2,12 @@
   "code": "4929",
   "ticker": "4929.T",
   "name": "アジュバンホールディングス",
-  "generated_at": "2026-11-11T19:09:15.044239+00:00",
-  "price_date": "2026-11-10",
+  "generated_at": "2026-11-12T19:26:19.407183+00:00",
+  "price_date": "2026-11-11",
   "record": {
-    "current_price": 740.0,
-    "change_from_signal_month_pct": -0.13,
-    "return_since_gc_pct": -0.13
+    "current_price": 738.0,
+    "change_from_signal_month_pct": -0.4,
+    "return_since_gc_pct": -0.4
   },
   "daily": [
     {
@@ -815,22 +815,35 @@
       "sma200": 754.18,
       "rsi14": 37.13,
       "rsi5": 38.91
+    },
+    {
+      "date": "2026-11-11",
+      "open": 740.0,
+      "high": 740.0,
+      "low": 737.0,
+      "close": 738.0,
+      "volume": 800.0,
+      "sma25": 739.96,
+      "sma75": 739.63,
+      "sma200": 754.0,
+      "rsi14": 37.13,
+      "rsi5": 38.91
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-10",
-    "monthly_rsi14": 37.73,
-    "monthly_rsi_ma5": 37.38,
-    "spread": 0.34,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-11",
+    "monthly_rsi14": 37.09,
+    "monthly_rsi_ma5": 37.26,
+    "spread": -0.17,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
+  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
 }

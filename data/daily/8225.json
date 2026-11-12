@@ -2,12 +2,12 @@
   "code": "8225",
   "ticker": "8225.T",
   "name": "タカチホ",
-  "generated_at": "2026-11-11T19:09:15.044239+00:00",
-  "price_date": "2026-11-10",
+  "generated_at": "2026-11-12T19:26:19.407183+00:00",
+  "price_date": "2026-11-11",
   "record": {
-    "current_price": 3490.0,
-    "change_from_signal_month_pct": -6.43,
-    "return_since_gc_pct": -6.43
+    "current_price": 3600.0,
+    "change_from_signal_month_pct": -3.49,
+    "return_since_gc_pct": -3.49
   },
   "daily": [
     {
@@ -815,15 +815,28 @@
       "sma200": 3560.72,
       "rsi14": 53.21,
       "rsi5": 58.99
+    },
+    {
+      "date": "2026-11-11",
+      "open": 3600.0,
+      "high": 3700.0,
+      "low": 3600.0,
+      "close": 3600.0,
+      "volume": 300.0,
+      "sma25": 3630.8,
+      "sma75": 3608.27,
+      "sma200": 3560.3,
+      "rsi14": 53.21,
+      "rsi5": 58.99
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-10",
-    "monthly_rsi14": 53.97,
-    "monthly_rsi_ma5": 57.01,
-    "spread": -3.04,
+    "price_date": "2026-11-11",
+    "monthly_rsi14": 56.41,
+    "monthly_rsi_ma5": 57.5,
+    "spread": -1.09,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -832,5 +845,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
+  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "6379",
   "ticker": "6379.T",
   "name": "レイズネクスト",
-  "generated_at": "2026-11-11T19:09:15.044239+00:00",
-  "price_date": "2026-11-10",
+  "generated_at": "2026-11-12T19:26:19.407183+00:00",
+  "price_date": "2026-11-11",
   "record": {
-    "current_price": 958.0,
-    "change_from_signal_month_pct": -67.09,
-    "return_since_gc_pct": -67.09
+    "current_price": 954.0,
+    "change_from_signal_month_pct": -67.23,
+    "return_since_gc_pct": -67.23
   },
   "daily": [
     {
@@ -815,15 +815,28 @@
       "sma200": 2120.92,
       "rsi14": 63.71,
       "rsi5": 74.35
+    },
+    {
+      "date": "2026-11-11",
+      "open": 953.0,
+      "high": 963.0,
+      "low": 944.0,
+      "close": 954.0,
+      "volume": 343100.0,
+      "sma25": 993.08,
+      "sma75": 1670.52,
+      "sma200": 2113.01,
+      "rsi14": 63.71,
+      "rsi5": 74.35
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-10",
-    "monthly_rsi14": 36.21,
-    "monthly_rsi_ma5": 44.11,
-    "spread": -7.9,
+    "price_date": "2026-11-11",
+    "monthly_rsi14": 36.16,
+    "monthly_rsi_ma5": 44.1,
+    "spread": -7.94,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -832,5 +845,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
+  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
 }

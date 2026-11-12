@@ -2,12 +2,12 @@
   "code": "4023",
   "ticker": "4023.T",
   "name": "クレハ",
-  "generated_at": "2026-11-11T19:09:15.044239+00:00",
-  "price_date": "2026-11-10",
+  "generated_at": "2026-11-12T19:26:19.407183+00:00",
+  "price_date": "2026-11-11",
   "record": {
-    "current_price": 4310.0,
-    "change_from_signal_month_pct": 0.47,
-    "return_since_gc_pct": 0.47
+    "current_price": 4265.0,
+    "change_from_signal_month_pct": -0.58,
+    "return_since_gc_pct": -0.58
   },
   "daily": [
     {
@@ -815,15 +815,28 @@
       "sma200": 4200.25,
       "rsi14": 57.7,
       "rsi5": 61.78
+    },
+    {
+      "date": "2026-11-11",
+      "open": 4350.0,
+      "high": 4375.0,
+      "low": 4145.0,
+      "close": 4265.0,
+      "volume": 459700.0,
+      "sma25": 4019.8,
+      "sma75": 4244.47,
+      "sma200": 4199.4,
+      "rsi14": 57.7,
+      "rsi5": 61.78
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-10",
-    "monthly_rsi14": 58.92,
-    "monthly_rsi_ma5": 59.61,
-    "spread": -0.69,
+    "price_date": "2026-11-11",
+    "monthly_rsi14": 58.35,
+    "monthly_rsi_ma5": 59.5,
+    "spread": -1.15,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -832,5 +845,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
+  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
 }

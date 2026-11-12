@@ -2,12 +2,12 @@
   "code": "7883",
   "ticker": "7883.T",
   "name": "サンメッセ",
-  "generated_at": "2026-11-11T19:09:15.044239+00:00",
-  "price_date": "2026-11-10",
+  "generated_at": "2026-11-12T19:26:19.407183+00:00",
+  "price_date": "2026-11-11",
   "record": {
-    "current_price": 380.0,
-    "change_from_signal_month_pct": -2.56,
-    "return_since_gc_pct": 2.15
+    "current_price": 386.0,
+    "change_from_signal_month_pct": -1.03,
+    "return_since_gc_pct": 3.76
   },
   "daily": [
     {
@@ -815,15 +815,28 @@
       "sma200": 387.13,
       "rsi14": 55.11,
       "rsi5": 62.43
+    },
+    {
+      "date": "2026-11-11",
+      "open": 382.0,
+      "high": 389.0,
+      "low": 382.0,
+      "close": 386.0,
+      "volume": 9600.0,
+      "sma25": 415.36,
+      "sma75": 411.71,
+      "sma200": 387.23,
+      "rsi14": 55.11,
+      "rsi5": 62.43
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-10",
-    "monthly_rsi14": 50.26,
-    "monthly_rsi_ma5": 64.24,
-    "spread": -13.99,
+    "price_date": "2026-11-11",
+    "monthly_rsi14": 51.81,
+    "monthly_rsi_ma5": 64.56,
+    "spread": -12.74,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -832,5 +845,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
+  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
 }

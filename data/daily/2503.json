@@ -2,12 +2,12 @@
   "code": "2503",
   "ticker": "2503.T",
   "name": "キリンホールディングス",
-  "generated_at": "2026-11-11T19:09:15.044239+00:00",
-  "price_date": "2026-11-10",
+  "generated_at": "2026-11-12T19:26:19.407183+00:00",
+  "price_date": "2026-11-11",
   "record": {
-    "current_price": 3060.0,
-    "change_from_signal_month_pct": 3.62,
-    "return_since_gc_pct": 12.56
+    "current_price": 3011.0,
+    "change_from_signal_month_pct": 1.96,
+    "return_since_gc_pct": 10.76
   },
   "daily": [
     {
@@ -815,22 +815,35 @@
       "sma200": 2735.12,
       "rsi14": 64.88,
       "rsi5": 70.68
+    },
+    {
+      "date": "2026-11-11",
+      "open": 3060.0,
+      "high": 3106.0,
+      "low": 2989.0,
+      "close": 3011.0,
+      "volume": 3549400.0,
+      "sma25": 2922.32,
+      "sma75": 2932.84,
+      "sma200": 2738.18,
+      "rsi14": 64.88,
+      "rsi5": 70.68
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-10",
-    "monthly_rsi14": 68.82,
-    "monthly_rsi_ma5": 68.61,
-    "spread": 0.21,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-11",
+    "monthly_rsi14": 67.83,
+    "monthly_rsi_ma5": 68.41,
+    "spread": -0.58,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
+  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
 }

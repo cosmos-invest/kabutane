@@ -2,12 +2,12 @@
   "code": "6342",
   "ticker": "6342.T",
   "name": "太平製作所",
-  "generated_at": "2026-11-11T19:09:15.044239+00:00",
-  "price_date": "2026-11-10",
+  "generated_at": "2026-11-12T19:26:19.407183+00:00",
+  "price_date": "2026-11-11",
   "record": {
-    "current_price": 2860.0,
-    "change_from_signal_month_pct": 0.28,
-    "return_since_gc_pct": 0.28
+    "current_price": 2906.0,
+    "change_from_signal_month_pct": 1.89,
+    "return_since_gc_pct": 1.89
   },
   "daily": [
     {
@@ -815,22 +815,35 @@
       "sma200": 2898.04,
       "rsi14": 49.19,
       "rsi5": 51.27
+    },
+    {
+      "date": "2026-11-11",
+      "open": 2910.0,
+      "high": 2910.0,
+      "low": 2860.0,
+      "close": 2906.0,
+      "volume": 300.0,
+      "sma25": 2854.72,
+      "sma75": 2900.07,
+      "sma200": 2898.32,
+      "rsi14": 49.19,
+      "rsi5": 51.27
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-10",
-    "monthly_rsi14": 51.21,
-    "monthly_rsi_ma5": 52.26,
-    "spread": -1.04,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-11",
+    "monthly_rsi14": 52.61,
+    "monthly_rsi_ma5": 52.54,
+    "spread": 0.08,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
+  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
 }

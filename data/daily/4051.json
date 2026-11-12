@@ -2,12 +2,12 @@
   "code": "4051",
   "ticker": "4051.T",
   "name": "ＧＭＯフィナンシャルゲート",
-  "generated_at": "2026-11-11T19:09:15.044239+00:00",
-  "price_date": "2026-11-10",
+  "generated_at": "2026-11-12T19:26:19.407183+00:00",
+  "price_date": "2026-11-11",
   "record": {
-    "current_price": 6320.0,
-    "change_from_signal_month_pct": -1.56,
-    "return_since_gc_pct": 19.47
+    "current_price": 6160.0,
+    "change_from_signal_month_pct": -4.05,
+    "return_since_gc_pct": 16.45
   },
   "daily": [
     {
@@ -815,22 +815,35 @@
       "sma200": 5938.15,
       "rsi14": 47.68,
       "rsi5": 50.74
+    },
+    {
+      "date": "2026-11-11",
+      "open": 6240.0,
+      "high": 6340.0,
+      "low": 6140.0,
+      "close": 6160.0,
+      "volume": 9900.0,
+      "sma25": 6234.4,
+      "sma75": 6290.93,
+      "sma200": 5943.45,
+      "rsi14": 47.68,
+      "rsi5": 50.74
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-10",
-    "monthly_rsi14": 47.16,
-    "monthly_rsi_ma5": 46.71,
-    "spread": 0.45,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-11",
+    "monthly_rsi14": 45.86,
+    "monthly_rsi_ma5": 46.45,
+    "spread": -0.59,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
+  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
 }

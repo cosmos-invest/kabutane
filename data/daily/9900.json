@@ -2,12 +2,12 @@
   "code": "9900",
   "ticker": "9900.T",
   "name": "サガミホールディングス",
-  "generated_at": "2026-11-11T19:09:15.044239+00:00",
-  "price_date": "2026-11-10",
+  "generated_at": "2026-11-12T19:26:19.407183+00:00",
+  "price_date": "2026-11-11",
   "record": {
-    "current_price": 1352.0,
-    "change_from_signal_month_pct": -34.84,
-    "return_since_gc_pct": -34.84
+    "current_price": 1361.0,
+    "change_from_signal_month_pct": -34.41,
+    "return_since_gc_pct": -34.41
   },
   "daily": [
     {
@@ -815,22 +815,35 @@
       "sma200": 1591.9,
       "rsi14": 53.34,
       "rsi5": 65.09
+    },
+    {
+      "date": "2026-11-11",
+      "open": 1340.0,
+      "high": 1364.0,
+      "low": 1331.0,
+      "close": 1361.0,
+      "volume": 112600.0,
+      "sma25": 1174.84,
+      "sma75": 1278.94,
+      "sma200": 1589.12,
+      "rsi14": 53.34,
+      "rsi5": 65.09
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-10",
-    "monthly_rsi14": 43.84,
-    "monthly_rsi_ma5": 43.9,
-    "spread": -0.06,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-11",
+    "monthly_rsi14": 44.08,
+    "monthly_rsi_ma5": 43.95,
+    "spread": 0.13,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
+  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
 }

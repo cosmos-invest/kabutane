@@ -2,12 +2,12 @@
   "code": "3765",
   "ticker": "3765.T",
   "name": "ガンホー・オンライン・エンターテイメント",
-  "generated_at": "2026-11-11T19:09:15.044239+00:00",
-  "price_date": "2026-11-10",
+  "generated_at": "2026-11-12T19:26:19.407183+00:00",
+  "price_date": "2026-11-11",
   "record": {
-    "current_price": 2465.0,
-    "change_from_signal_month_pct": 1.78,
-    "return_since_gc_pct": 1.78
+    "current_price": 2436.0,
+    "change_from_signal_month_pct": 0.58,
+    "return_since_gc_pct": 0.58
   },
   "daily": [
     {
@@ -815,22 +815,35 @@
       "sma200": 2443.98,
       "rsi14": 41.38,
       "rsi5": 44.97
+    },
+    {
+      "date": "2026-11-11",
+      "open": 2454.0,
+      "high": 2490.0,
+      "low": 2430.0,
+      "close": 2436.0,
+      "volume": 158800.0,
+      "sma25": 2411.84,
+      "sma75": 2441.79,
+      "sma200": 2443.12,
+      "rsi14": 41.38,
+      "rsi5": 44.97
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-10",
-    "monthly_rsi14": 47.82,
-    "monthly_rsi_ma5": 47.42,
-    "spread": 0.4,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-11",
+    "monthly_rsi14": 47.05,
+    "monthly_rsi_ma5": 47.27,
+    "spread": -0.22,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
+  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
 }

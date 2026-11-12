@@ -2,12 +2,12 @@
   "code": "1866",
   "ticker": "1866.T",
   "name": "北野建設",
-  "generated_at": "2026-11-11T19:09:15.044239+00:00",
-  "price_date": "2026-11-10",
+  "generated_at": "2026-11-12T19:26:19.407183+00:00",
+  "price_date": "2026-11-11",
   "record": {
-    "current_price": 1068.0,
-    "change_from_signal_month_pct": -7.05,
-    "return_since_gc_pct": -7.05
+    "current_price": 1181.0,
+    "change_from_signal_month_pct": 2.79,
+    "return_since_gc_pct": 2.79
   },
   "daily": [
     {
@@ -815,22 +815,35 @@
       "sma200": 1207.88,
       "rsi14": 50.03,
       "rsi5": 51.42
+    },
+    {
+      "date": "2026-11-11",
+      "open": 1170.0,
+      "high": 1185.0,
+      "low": 1138.0,
+      "close": 1181.0,
+      "volume": 43900.0,
+      "sma25": 1075.36,
+      "sma75": 1125.32,
+      "sma200": 1206.19,
+      "rsi14": 50.03,
+      "rsi5": 51.42
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-10",
-    "monthly_rsi14": 47.2,
-    "monthly_rsi_ma5": 50.33,
-    "spread": -3.13,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-11",
+    "monthly_rsi14": 53.12,
+    "monthly_rsi_ma5": 51.52,
+    "spread": 1.6,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
+  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
 }

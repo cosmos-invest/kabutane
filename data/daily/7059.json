@@ -2,12 +2,12 @@
   "code": "7059",
   "ticker": "7059.T",
   "name": "コプロ・ホールディングス",
-  "generated_at": "2026-11-11T19:09:15.044239+00:00",
-  "price_date": "2026-11-10",
+  "generated_at": "2026-11-12T19:26:19.407183+00:00",
+  "price_date": "2026-11-11",
   "record": {
-    "current_price": 906.0,
-    "change_from_signal_month_pct": 11.3,
-    "return_since_gc_pct": 11.3
+    "current_price": 909.0,
+    "change_from_signal_month_pct": 11.67,
+    "return_since_gc_pct": 11.67
   },
   "daily": [
     {
@@ -815,22 +815,35 @@
       "sma200": 889.6,
       "rsi14": 46.24,
       "rsi5": 47.38
+    },
+    {
+      "date": "2026-11-11",
+      "open": 909.0,
+      "high": 909.0,
+      "low": 900.0,
+      "close": 909.0,
+      "volume": 47600.0,
+      "sma25": 913.84,
+      "sma75": 901.12,
+      "sma200": 888.94,
+      "rsi14": 46.24,
+      "rsi5": 47.38
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-10",
-    "monthly_rsi14": 51.9,
-    "monthly_rsi_ma5": 52.04,
-    "spread": -0.14,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-11",
+    "monthly_rsi14": 52.1,
+    "monthly_rsi_ma5": 52.08,
+    "spread": 0.02,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
+  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
 }

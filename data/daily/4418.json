@@ -2,12 +2,12 @@
   "code": "4418",
   "ticker": "4418.T",
   "name": "ＪＤＳＣ",
-  "generated_at": "2026-11-11T19:09:15.044239+00:00",
-  "price_date": "2026-11-10",
+  "generated_at": "2026-11-12T19:26:19.407183+00:00",
+  "price_date": "2026-11-11",
   "record": {
-    "current_price": 1025.0,
-    "change_from_signal_month_pct": 27.33,
-    "return_since_gc_pct": 27.33
+    "current_price": 976.0,
+    "change_from_signal_month_pct": 21.24,
+    "return_since_gc_pct": 21.24
   },
   "daily": [
     {
@@ -815,15 +815,28 @@
       "sma200": 905.26,
       "rsi14": 42.5,
       "rsi5": 44.78
+    },
+    {
+      "date": "2026-11-11",
+      "open": 995.0,
+      "high": 1001.0,
+      "low": 955.0,
+      "close": 976.0,
+      "volume": 245100.0,
+      "sma25": 1065.04,
+      "sma75": 1012.95,
+      "sma200": 904.22,
+      "rsi14": 42.5,
+      "rsi5": 44.78
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-10",
-    "monthly_rsi14": 50.98,
-    "monthly_rsi_ma5": 51.22,
-    "spread": -0.24,
+    "price_date": "2026-11-11",
+    "monthly_rsi14": 49.58,
+    "monthly_rsi_ma5": 50.94,
+    "spread": -1.36,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -832,5 +845,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
+  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
 }

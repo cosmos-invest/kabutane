@@ -2,12 +2,12 @@
   "code": "4432",
   "ticker": "4432.T",
   "name": "ウイングアーク１ｓｔ",
-  "generated_at": "2026-11-11T19:09:15.044239+00:00",
-  "price_date": "2026-11-10",
+  "generated_at": "2026-11-12T19:26:19.407183+00:00",
+  "price_date": "2026-11-11",
   "record": {
-    "current_price": 3525.0,
-    "change_from_signal_month_pct": 10.5,
-    "return_since_gc_pct": 10.5
+    "current_price": 3510.0,
+    "change_from_signal_month_pct": 10.03,
+    "return_since_gc_pct": 10.03
   },
   "daily": [
     {
@@ -815,15 +815,28 @@
       "sma200": 2941.99,
       "rsi14": 42.29,
       "rsi5": 52.3
+    },
+    {
+      "date": "2026-11-11",
+      "open": 3500.0,
+      "high": 3550.0,
+      "low": 3495.0,
+      "close": 3510.0,
+      "volume": 82700.0,
+      "sma25": 3601.4,
+      "sma75": 3354.81,
+      "sma200": 2942.09,
+      "rsi14": 42.29,
+      "rsi5": 52.3
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-10",
-    "monthly_rsi14": 56.31,
-    "monthly_rsi_ma5": 55.26,
-    "spread": 1.05,
+    "price_date": "2026-11-11",
+    "monthly_rsi14": 56.06,
+    "monthly_rsi_ma5": 55.21,
+    "spread": 0.84,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -832,5 +845,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
+  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
 }

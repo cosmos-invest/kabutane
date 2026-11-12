@@ -2,12 +2,12 @@
   "code": "7362",
   "ticker": "7362.T",
   "name": "Ｔ．Ｓ．Ｉ",
-  "generated_at": "2026-11-11T19:09:15.044239+00:00",
-  "price_date": "2026-11-10",
+  "generated_at": "2026-11-12T19:26:19.407183+00:00",
+  "price_date": "2026-11-11",
   "record": {
-    "current_price": 860.0,
-    "change_from_signal_month_pct": -2.05,
-    "return_since_gc_pct": 2.63
+    "current_price": 876.0,
+    "change_from_signal_month_pct": -0.23,
+    "return_since_gc_pct": 4.53
   },
   "daily": [
     {
@@ -815,22 +815,35 @@
       "sma200": 838.24,
       "rsi14": 39.37,
       "rsi5": 43.29
+    },
+    {
+      "date": "2026-11-11",
+      "open": 870.0,
+      "high": 876.0,
+      "low": 855.0,
+      "close": 876.0,
+      "volume": 300.0,
+      "sma25": 852.6,
+      "sma75": 865.92,
+      "sma200": 838.57,
+      "rsi14": 39.37,
+      "rsi5": 43.29
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-10",
-    "monthly_rsi14": 44.14,
-    "monthly_rsi_ma5": 44.95,
-    "spread": -0.81,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-11",
+    "monthly_rsi14": 46.19,
+    "monthly_rsi_ma5": 45.36,
+    "spread": 0.83,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
+  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "8919",
   "ticker": "8919.T",
   "name": "カチタス",
-  "generated_at": "2026-11-11T19:09:15.044239+00:00",
-  "price_date": "2026-11-10",
+  "generated_at": "2026-11-12T19:26:19.407183+00:00",
+  "price_date": "2026-11-11",
   "record": {
-    "current_price": 3455.0,
-    "change_from_signal_month_pct": 1.77,
-    "return_since_gc_pct": 1.77
+    "current_price": 3300.0,
+    "change_from_signal_month_pct": -2.8,
+    "return_since_gc_pct": -2.8
   },
   "daily": [
     {
@@ -815,15 +815,28 @@
       "sma200": 3363.65,
       "rsi14": 60.76,
       "rsi5": 61.56
+    },
+    {
+      "date": "2026-11-11",
+      "open": 3350.0,
+      "high": 3460.0,
+      "low": 3270.0,
+      "close": 3300.0,
+      "volume": 771800.0,
+      "sma25": 3400.0,
+      "sma75": 3479.33,
+      "sma200": 3363.78,
+      "rsi14": 60.76,
+      "rsi5": 61.56
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-10",
-    "monthly_rsi14": 58.68,
-    "monthly_rsi_ma5": 61.04,
-    "spread": -2.36,
+    "price_date": "2026-11-11",
+    "monthly_rsi14": 55.95,
+    "monthly_rsi_ma5": 60.49,
+    "spread": -4.54,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -832,5 +845,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
+  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
 }

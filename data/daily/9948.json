@@ -2,12 +2,12 @@
   "code": "9948",
   "ticker": "9948.T",
   "name": "アークス",
-  "generated_at": "2026-11-11T19:09:15.044239+00:00",
-  "price_date": "2026-11-10",
+  "generated_at": "2026-11-12T19:26:19.407183+00:00",
+  "price_date": "2026-11-11",
   "record": {
-    "current_price": 3645.0,
-    "change_from_signal_month_pct": 0.83,
-    "return_since_gc_pct": 0.83
+    "current_price": 3610.0,
+    "change_from_signal_month_pct": -0.14,
+    "return_since_gc_pct": -0.14
   },
   "daily": [
     {
@@ -815,15 +815,28 @@
       "sma200": 3566.62,
       "rsi14": 62.35,
       "rsi5": 63.08
+    },
+    {
+      "date": "2026-11-11",
+      "open": 3645.0,
+      "high": 3670.0,
+      "low": 3610.0,
+      "close": 3610.0,
+      "volume": 83700.0,
+      "sma25": 3506.4,
+      "sma75": 3606.67,
+      "sma200": 3567.55,
+      "rsi14": 62.35,
+      "rsi5": 63.08
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-10",
-    "monthly_rsi14": 60.98,
-    "monthly_rsi_ma5": 61.87,
-    "spread": -0.89,
+    "price_date": "2026-11-11",
+    "monthly_rsi14": 60.24,
+    "monthly_rsi_ma5": 61.72,
+    "spread": -1.48,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -832,5 +845,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
+  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
 }

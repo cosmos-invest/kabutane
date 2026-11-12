@@ -2,12 +2,12 @@
   "code": "7228",
   "ticker": "7228.T",
   "name": "デイトナ",
-  "generated_at": "2026-11-11T19:09:15.044239+00:00",
-  "price_date": "2026-11-10",
+  "generated_at": "2026-11-12T19:26:19.407183+00:00",
+  "price_date": "2026-11-11",
   "record": {
-    "current_price": 4440.0,
-    "change_from_signal_month_pct": 16.54,
-    "return_since_gc_pct": 16.84
+    "current_price": 4410.0,
+    "change_from_signal_month_pct": 15.75,
+    "return_since_gc_pct": 16.05
   },
   "daily": [
     {
@@ -815,15 +815,28 @@
       "sma200": 3853.5,
       "rsi14": 53.18,
       "rsi5": 54.33
+    },
+    {
+      "date": "2026-11-11",
+      "open": 4440.0,
+      "high": 4500.0,
+      "low": 4380.0,
+      "close": 4410.0,
+      "volume": 5300.0,
+      "sma25": 4022.4,
+      "sma75": 3987.33,
+      "sma200": 3856.2,
+      "rsi14": 53.18,
+      "rsi5": 54.33
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-10",
-    "monthly_rsi14": 68.13,
-    "monthly_rsi_ma5": 61.0,
-    "spread": 7.13,
+    "price_date": "2026-11-11",
+    "monthly_rsi14": 67.65,
+    "monthly_rsi_ma5": 60.91,
+    "spread": 6.74,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -832,5 +845,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
+  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "9006",
   "ticker": "9006.T",
   "name": "京浜急行電鉄",
-  "generated_at": "2026-11-11T19:09:15.044239+00:00",
-  "price_date": "2026-11-10",
+  "generated_at": "2026-11-12T19:26:19.407183+00:00",
+  "price_date": "2026-11-11",
   "record": {
-    "current_price": 1590.5,
-    "change_from_signal_month_pct": 2.15,
-    "return_since_gc_pct": 2.15
+    "current_price": 1556.5,
+    "change_from_signal_month_pct": -0.03,
+    "return_since_gc_pct": -0.03
   },
   "daily": [
     {
@@ -815,22 +815,35 @@
       "sma200": 1539.76,
       "rsi14": 56.51,
       "rsi5": 58.85
+    },
+    {
+      "date": "2026-11-11",
+      "open": 1589.0,
+      "high": 1594.5,
+      "low": 1556.5,
+      "close": 1556.5,
+      "volume": 521900.0,
+      "sma25": 1557.12,
+      "sma75": 1554.18,
+      "sma200": 1539.74,
+      "rsi14": 56.51,
+      "rsi5": 58.85
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-10",
-    "monthly_rsi14": 59.8,
-    "monthly_rsi_ma5": 58.43,
-    "spread": 1.37,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-11",
+    "monthly_rsi14": 56.21,
+    "monthly_rsi_ma5": 57.71,
+    "spread": -1.5,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
+  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
 }

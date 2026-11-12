@@ -2,12 +2,12 @@
   "code": "2267",
   "ticker": "2267.T",
   "name": "ヤクルト本社",
-  "generated_at": "2026-11-11T19:09:15.044239+00:00",
-  "price_date": "2026-11-10",
+  "generated_at": "2026-11-12T19:26:19.407183+00:00",
+  "price_date": "2026-11-11",
   "record": {
-    "current_price": 2840.5,
-    "change_from_signal_month_pct": 0.76,
-    "return_since_gc_pct": 16.22
+    "current_price": 2810.5,
+    "change_from_signal_month_pct": -0.3,
+    "return_since_gc_pct": 15.0
   },
   "daily": [
     {
@@ -815,15 +815,28 @@
       "sma200": 2734.63,
       "rsi14": 46.11,
       "rsi5": 49.71
+    },
+    {
+      "date": "2026-11-11",
+      "open": 2839.0,
+      "high": 2864.5,
+      "low": 2809.0,
+      "close": 2810.5,
+      "volume": 733000.0,
+      "sma25": 2817.84,
+      "sma75": 2827.11,
+      "sma200": 2736.01,
+      "rsi14": 46.11,
+      "rsi5": 49.71
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-10",
-    "monthly_rsi14": 48.51,
-    "monthly_rsi_ma5": 46.55,
-    "spread": 1.96,
+    "price_date": "2026-11-11",
+    "monthly_rsi14": 47.14,
+    "monthly_rsi_ma5": 46.28,
+    "spread": 0.87,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -832,5 +845,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
+  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
 }

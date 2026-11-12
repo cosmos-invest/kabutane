@@ -2,12 +2,12 @@
   "code": "6570",
   "ticker": "6570.T",
   "name": "共和コーポレーション",
-  "generated_at": "2026-11-11T19:09:15.044239+00:00",
-  "price_date": "2026-11-10",
+  "generated_at": "2026-11-12T19:26:19.407183+00:00",
+  "price_date": "2026-11-11",
   "record": {
-    "current_price": 4455.0,
-    "change_from_signal_month_pct": 111.54,
-    "return_since_gc_pct": 169.51
+    "current_price": 3755.0,
+    "change_from_signal_month_pct": 78.3,
+    "return_since_gc_pct": 127.16
   },
   "daily": [
     {
@@ -815,22 +815,35 @@
       "sma200": 2246.77,
       "rsi14": 71.48,
       "rsi5": 82.6
+    },
+    {
+      "date": "2026-11-11",
+      "open": 4500.0,
+      "high": 4960.0,
+      "low": 3755.0,
+      "close": 3755.0,
+      "volume": 302100.0,
+      "sma25": 4255.8,
+      "sma75": 3603.44,
+      "sma200": 2259.34,
+      "rsi14": 71.48,
+      "rsi5": 82.6
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-10",
-    "monthly_rsi14": 93.26,
-    "monthly_rsi_ma5": 90.22,
-    "spread": 3.04,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-11",
+    "monthly_rsi14": 80.29,
+    "monthly_rsi_ma5": 87.63,
+    "spread": -7.34,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
+  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "3628",
   "ticker": "3628.T",
   "name": "データホライゾン",
-  "generated_at": "2026-11-11T19:09:15.044239+00:00",
-  "price_date": "2026-11-10",
+  "generated_at": "2026-11-12T19:26:19.407183+00:00",
+  "price_date": "2026-11-11",
   "record": {
-    "current_price": 710.0,
-    "change_from_signal_month_pct": 16.58,
-    "return_since_gc_pct": 3.65
+    "current_price": 711.0,
+    "change_from_signal_month_pct": 16.75,
+    "return_since_gc_pct": 3.8
   },
   "daily": [
     {
@@ -815,15 +815,28 @@
       "sma200": 572.0,
       "rsi14": 44.17,
       "rsi5": 47.79
+    },
+    {
+      "date": "2026-11-11",
+      "open": 679.0,
+      "high": 713.0,
+      "low": 670.0,
+      "close": 711.0,
+      "volume": 12700.0,
+      "sma25": 704.72,
+      "sma75": 657.19,
+      "sma200": 572.98,
+      "rsi14": 44.17,
+      "rsi5": 47.79
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-10",
-    "monthly_rsi14": 44.66,
-    "monthly_rsi_ma5": 42.57,
-    "spread": 2.08,
+    "price_date": "2026-11-11",
+    "monthly_rsi14": 44.7,
+    "monthly_rsi_ma5": 42.58,
+    "spread": 2.12,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -832,5 +845,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
+  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
 }

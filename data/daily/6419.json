@@ -2,12 +2,12 @@
   "code": "6419",
   "ticker": "6419.T",
   "name": "マースグループホールディングス",
-  "generated_at": "2026-11-11T19:09:15.044239+00:00",
-  "price_date": "2026-11-10",
+  "generated_at": "2026-11-12T19:26:19.407183+00:00",
+  "price_date": "2026-11-11",
   "record": {
-    "current_price": 3225.0,
-    "change_from_signal_month_pct": 2.71,
-    "return_since_gc_pct": 2.71
+    "current_price": 3185.0,
+    "change_from_signal_month_pct": 1.43,
+    "return_since_gc_pct": 1.43
   },
   "daily": [
     {
@@ -815,22 +815,35 @@
       "sma200": 3090.2,
       "rsi14": 48.4,
       "rsi5": 53.53
+    },
+    {
+      "date": "2026-11-11",
+      "open": 3225.0,
+      "high": 3235.0,
+      "low": 3170.0,
+      "close": 3185.0,
+      "volume": 38900.0,
+      "sma25": 3130.44,
+      "sma75": 3147.35,
+      "sma200": 3089.66,
+      "rsi14": 48.4,
+      "rsi5": 53.53
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-10",
-    "monthly_rsi14": 54.44,
-    "monthly_rsi_ma5": 54.03,
-    "spread": 0.41,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-11",
+    "monthly_rsi14": 53.3,
+    "monthly_rsi_ma5": 53.8,
+    "spread": -0.5,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
+  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "7172",
   "ticker": "7172.T",
   "name": "ジャパンインベストメントアドバイザー",
-  "generated_at": "2026-11-11T19:09:15.044239+00:00",
-  "price_date": "2026-11-10",
+  "generated_at": "2026-11-12T19:26:19.407183+00:00",
+  "price_date": "2026-11-11",
   "record": {
-    "current_price": 2133.0,
-    "change_from_signal_month_pct": -0.61,
-    "return_since_gc_pct": -0.61
+    "current_price": 2148.0,
+    "change_from_signal_month_pct": 0.09,
+    "return_since_gc_pct": 0.09
   },
   "daily": [
     {
@@ -815,22 +815,35 @@
       "sma200": 2076.95,
       "rsi14": 58.87,
       "rsi5": 59.89
+    },
+    {
+      "date": "2026-11-11",
+      "open": 2128.0,
+      "high": 2154.0,
+      "low": 2127.0,
+      "close": 2148.0,
+      "volume": 129300.0,
+      "sma25": 2122.16,
+      "sma75": 2105.41,
+      "sma200": 2076.7,
+      "rsi14": 58.87,
+      "rsi5": 59.89
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-10",
-    "monthly_rsi14": 58.39,
-    "monthly_rsi_ma5": 58.59,
-    "spread": -0.19,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-11",
+    "monthly_rsi14": 58.73,
+    "monthly_rsi_ma5": 58.65,
+    "spread": 0.08,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
+  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "9506",
   "ticker": "9506.T",
   "name": "東北電力",
-  "generated_at": "2026-11-11T19:09:15.044239+00:00",
-  "price_date": "2026-11-10",
+  "generated_at": "2026-11-12T19:26:19.407183+00:00",
+  "price_date": "2026-11-11",
   "record": {
-    "current_price": 1283.5,
-    "change_from_signal_month_pct": 8.73,
-    "return_since_gc_pct": 8.73
+    "current_price": 1291.5,
+    "change_from_signal_month_pct": 9.4,
+    "return_since_gc_pct": 9.4
   },
   "daily": [
     {
@@ -815,22 +815,35 @@
       "sma200": 1181.6,
       "rsi14": 49.6,
       "rsi5": 53.65
+    },
+    {
+      "date": "2026-11-11",
+      "open": 1271.5,
+      "high": 1306.5,
+      "low": 1271.5,
+      "close": 1291.5,
+      "volume": 2405000.0,
+      "sma25": 1279.38,
+      "sma75": 1287.0,
+      "sma200": 1182.14,
+      "rsi14": 49.6,
+      "rsi5": 53.65
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-10",
-    "monthly_rsi14": 57.36,
-    "monthly_rsi_ma5": 57.41,
-    "spread": -0.05,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-11",
+    "monthly_rsi14": 57.79,
+    "monthly_rsi_ma5": 57.5,
+    "spread": 0.29,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
+  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
 }

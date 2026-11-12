@@ -2,12 +2,12 @@
   "code": "4448",
   "ticker": "4448.T",
   "name": "ｋｕｂｅｌｌ",
-  "generated_at": "2026-11-11T19:09:15.044239+00:00",
-  "price_date": "2026-11-10",
+  "generated_at": "2026-11-12T19:26:19.407183+00:00",
+  "price_date": "2026-11-11",
   "record": {
-    "current_price": 327.0,
-    "change_from_signal_month_pct": 8.64,
-    "return_since_gc_pct": 13.15
+    "current_price": 330.0,
+    "change_from_signal_month_pct": 9.63,
+    "return_since_gc_pct": 14.19
   },
   "daily": [
     {
@@ -815,22 +815,35 @@
       "sma200": 313.71,
       "rsi14": 34.83,
       "rsi5": 36.73
+    },
+    {
+      "date": "2026-11-11",
+      "open": 329.0,
+      "high": 336.0,
+      "low": 321.0,
+      "close": 330.0,
+      "volume": 24100.0,
+      "sma25": 341.72,
+      "sma75": 339.45,
+      "sma200": 313.19,
+      "rsi14": 34.83,
+      "rsi5": 36.73
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-10",
-    "monthly_rsi14": 34.85,
-    "monthly_rsi_ma5": 34.96,
-    "spread": -0.11,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-11",
+    "monthly_rsi14": 35.08,
+    "monthly_rsi_ma5": 35.01,
+    "spread": 0.07,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-11T19:09:47.379817+00:00"
+  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
 }
