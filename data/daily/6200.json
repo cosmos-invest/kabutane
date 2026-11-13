@@ -2,12 +2,12 @@
   "code": "6200",
   "ticker": "6200.T",
   "name": "インソース",
-  "generated_at": "2026-11-12T19:26:19.407183+00:00",
-  "price_date": "2026-11-11",
+  "generated_at": "2026-11-13T19:04:07.942431+00:00",
+  "price_date": "2026-11-12",
   "record": {
-    "current_price": 678.0,
-    "change_from_signal_month_pct": -10.08,
-    "return_since_gc_pct": -10.08
+    "current_price": 679.0,
+    "change_from_signal_month_pct": -9.95,
+    "return_since_gc_pct": -9.95
   },
   "daily": [
     {
@@ -828,15 +828,28 @@
       "sma200": 685.93,
       "rsi14": 37.44,
       "rsi5": 44.25
+    },
+    {
+      "date": "2026-11-12",
+      "open": 678.0,
+      "high": 681.0,
+      "low": 669.0,
+      "close": 679.0,
+      "volume": 274600.0,
+      "sma25": 689.68,
+      "sma75": 709.25,
+      "sma200": 685.07,
+      "rsi14": 37.44,
+      "rsi5": 44.25
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-11",
-    "monthly_rsi14": 39.9,
-    "monthly_rsi_ma5": 40.93,
-    "spread": -1.03,
+    "price_date": "2026-11-12",
+    "monthly_rsi14": 39.98,
+    "monthly_rsi_ma5": 40.94,
+    "spread": -0.96,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -845,5 +858,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
+  "provisional_generated_at": "2026-11-13T19:05:24.943907+00:00"
 }

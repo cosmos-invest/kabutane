@@ -2,12 +2,12 @@
   "code": "9930",
   "ticker": "9930.T",
   "name": "北沢産業",
-  "generated_at": "2026-11-12T19:26:19.407183+00:00",
-  "price_date": "2026-11-11",
+  "generated_at": "2026-11-13T19:04:07.942431+00:00",
+  "price_date": "2026-11-12",
   "record": {
-    "current_price": 386.0,
-    "change_from_signal_month_pct": 2.12,
-    "return_since_gc_pct": 7.52
+    "current_price": 389.0,
+    "change_from_signal_month_pct": 2.91,
+    "return_since_gc_pct": 8.36
   },
   "daily": [
     {
@@ -828,22 +828,35 @@
       "sma200": 367.71,
       "rsi14": 52.15,
       "rsi5": 56.16
+    },
+    {
+      "date": "2026-11-12",
+      "open": 387.0,
+      "high": 396.0,
+      "low": 384.0,
+      "close": 389.0,
+      "volume": 9000.0,
+      "sma25": 381.08,
+      "sma75": 388.63,
+      "sma200": 367.86,
+      "rsi14": 52.15,
+      "rsi5": 56.16
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-11",
-    "monthly_rsi14": 55.96,
-    "monthly_rsi_ma5": 56.42,
-    "spread": -0.47,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-12",
+    "monthly_rsi14": 56.61,
+    "monthly_rsi_ma5": 56.55,
+    "spread": 0.05,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
+  "provisional_generated_at": "2026-11-13T19:05:24.943907+00:00"
 }

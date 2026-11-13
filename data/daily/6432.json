@@ -2,12 +2,12 @@
   "code": "6432",
   "ticker": "6432.T",
   "name": "竹内製作所",
-  "generated_at": "2026-11-12T19:26:19.407183+00:00",
-  "price_date": "2026-11-11",
+  "generated_at": "2026-11-13T19:04:07.942431+00:00",
+  "price_date": "2026-11-12",
   "record": {
-    "current_price": 7630.0,
-    "change_from_signal_month_pct": 2.42,
-    "return_since_gc_pct": 2.42
+    "current_price": 7500.0,
+    "change_from_signal_month_pct": 0.67,
+    "return_since_gc_pct": 0.67
   },
   "daily": [
     {
@@ -828,22 +828,35 @@
       "sma200": 7156.55,
       "rsi14": 59.78,
       "rsi5": 62.83
+    },
+    {
+      "date": "2026-11-12",
+      "open": 7630.0,
+      "high": 7680.0,
+      "low": 7480.0,
+      "close": 7500.0,
+      "volume": 213000.0,
+      "sma25": 7626.0,
+      "sma75": 7520.93,
+      "sma200": 7161.0,
+      "rsi14": 59.78,
+      "rsi5": 62.83
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-11",
-    "monthly_rsi14": 61.9,
-    "monthly_rsi_ma5": 61.74,
-    "spread": 0.16,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-12",
+    "monthly_rsi14": 60.55,
+    "monthly_rsi_ma5": 61.47,
+    "spread": -0.92,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
+  "provisional_generated_at": "2026-11-13T19:05:24.943907+00:00"
 }

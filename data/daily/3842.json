@@ -2,12 +2,12 @@
   "code": "3842",
   "ticker": "3842.T",
   "name": "ネクストジェン",
-  "generated_at": "2026-11-12T19:26:19.407183+00:00",
-  "price_date": "2026-11-11",
+  "generated_at": "2026-11-13T19:04:07.942431+00:00",
+  "price_date": "2026-11-12",
   "record": {
-    "current_price": 1202.0,
-    "change_from_signal_month_pct": 21.41,
-    "return_since_gc_pct": 21.41
+    "current_price": 1200.0,
+    "change_from_signal_month_pct": 21.21,
+    "return_since_gc_pct": 21.21
   },
   "daily": [
     {
@@ -828,15 +828,28 @@
       "sma200": 1058.25,
       "rsi14": 50.04,
       "rsi5": 51.27
+    },
+    {
+      "date": "2026-11-12",
+      "open": 1202.0,
+      "high": 1209.0,
+      "low": 1200.0,
+      "close": 1200.0,
+      "volume": 900.0,
+      "sma25": 1295.44,
+      "sma75": 1164.61,
+      "sma200": 1059.07,
+      "rsi14": 50.04,
+      "rsi5": 51.27
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-11",
-    "monthly_rsi14": 57.61,
-    "monthly_rsi_ma5": 58.97,
-    "spread": -1.36,
+    "price_date": "2026-11-12",
+    "monthly_rsi14": 57.52,
+    "monthly_rsi_ma5": 58.95,
+    "spread": -1.43,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -845,5 +858,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
+  "provisional_generated_at": "2026-11-13T19:05:24.943907+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "7458",
   "ticker": "7458.T",
   "name": "第一興商",
-  "generated_at": "2026-11-12T19:26:19.407183+00:00",
-  "price_date": "2026-11-11",
+  "generated_at": "2026-11-13T19:04:07.942431+00:00",
+  "price_date": "2026-11-12",
   "record": {
-    "current_price": 1787.0,
-    "change_from_signal_month_pct": -1.3,
-    "return_since_gc_pct": 4.38
+    "current_price": 1816.0,
+    "change_from_signal_month_pct": 0.3,
+    "return_since_gc_pct": 6.07
   },
   "daily": [
     {
@@ -828,22 +828,35 @@
       "sma200": 1734.82,
       "rsi14": 46.67,
       "rsi5": 53.02
+    },
+    {
+      "date": "2026-11-12",
+      "open": 1782.0,
+      "high": 1822.0,
+      "low": 1768.0,
+      "close": 1816.0,
+      "volume": 283800.0,
+      "sma25": 1748.26,
+      "sma75": 1807.85,
+      "sma200": 1735.43,
+      "rsi14": 46.67,
+      "rsi5": 53.02
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-11",
-    "monthly_rsi14": 45.13,
-    "monthly_rsi_ma5": 45.29,
-    "spread": -0.15,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-12",
+    "monthly_rsi14": 46.58,
+    "monthly_rsi_ma5": 45.58,
+    "spread": 1.01,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
+  "provisional_generated_at": "2026-11-13T19:05:24.943907+00:00"
 }

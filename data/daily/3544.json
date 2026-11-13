@@ -2,12 +2,12 @@
   "code": "3544",
   "ticker": "3544.T",
   "name": "サツドラホールディングス",
-  "generated_at": "2026-11-12T19:26:19.407183+00:00",
-  "price_date": "2026-11-11",
+  "generated_at": "2026-11-13T19:04:07.942431+00:00",
+  "price_date": "2026-11-12",
   "record": {
-    "current_price": 1256.0,
-    "change_from_signal_month_pct": 0.8,
-    "return_since_gc_pct": -3.38
+    "current_price": 1250.0,
+    "change_from_signal_month_pct": 0.32,
+    "return_since_gc_pct": -3.85
   },
   "daily": [
     {
@@ -828,22 +828,35 @@
       "sma200": 1039.91,
       "rsi14": 62.69,
       "rsi5": 73.79
+    },
+    {
+      "date": "2026-11-12",
+      "open": 1249.0,
+      "high": 1250.0,
+      "low": 1249.0,
+      "close": 1250.0,
+      "volume": 5500.0,
+      "sma25": 1247.6,
+      "sma75": 1248.68,
+      "sma200": 1042.01,
+      "rsi14": 62.69,
+      "rsi5": 73.79
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-11",
-    "monthly_rsi14": 74.67,
-    "monthly_rsi_ma5": 74.49,
-    "spread": 0.18,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-12",
+    "monthly_rsi14": 74.41,
+    "monthly_rsi_ma5": 74.43,
+    "spread": -0.02,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
+  "provisional_generated_at": "2026-11-13T19:05:24.943907+00:00"
 }

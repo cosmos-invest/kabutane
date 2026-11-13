@@ -2,12 +2,12 @@
   "code": "9976",
   "ticker": "9976.T",
   "name": "セキチュー",
-  "generated_at": "2026-11-12T19:26:19.407183+00:00",
-  "price_date": "2026-11-11",
+  "generated_at": "2026-11-13T19:04:07.942431+00:00",
+  "price_date": "2026-11-12",
   "record": {
-    "current_price": 1031.0,
-    "change_from_signal_month_pct": -2.27,
-    "return_since_gc_pct": -1.81
+    "current_price": 1036.0,
+    "change_from_signal_month_pct": -1.8,
+    "return_since_gc_pct": -1.33
   },
   "daily": [
     {
@@ -828,15 +828,28 @@
       "sma200": 1055.81,
       "rsi14": 41.69,
       "rsi5": 44.91
+    },
+    {
+      "date": "2026-11-12",
+      "open": 1035.0,
+      "high": 1036.0,
+      "low": 1035.0,
+      "close": 1036.0,
+      "volume": 800.0,
+      "sma25": 1058.6,
+      "sma75": 1069.69,
+      "sma200": 1055.66,
+      "rsi14": 41.69,
+      "rsi5": 44.91
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-11",
-    "monthly_rsi14": 43.08,
-    "monthly_rsi_ma5": 47.82,
-    "spread": -4.74,
+    "price_date": "2026-11-12",
+    "monthly_rsi14": 43.75,
+    "monthly_rsi_ma5": 47.96,
+    "spread": -4.21,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -845,5 +858,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
+  "provisional_generated_at": "2026-11-13T19:05:24.943907+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "7462",
   "ticker": "7462.T",
   "name": "ＣＡＰＩＴＡ",
-  "generated_at": "2026-11-12T19:26:19.407183+00:00",
-  "price_date": "2026-11-11",
+  "generated_at": "2026-11-13T19:04:07.942431+00:00",
+  "price_date": "2026-11-12",
   "record": {
-    "current_price": 361.0,
-    "change_from_signal_month_pct": -10.2,
-    "return_since_gc_pct": 4.64
+    "current_price": 359.0,
+    "change_from_signal_month_pct": -10.7,
+    "return_since_gc_pct": 4.06
   },
   "daily": [
     {
@@ -828,15 +828,28 @@
       "sma200": 340.05,
       "rsi14": 69.07,
       "rsi5": 78.25
+    },
+    {
+      "date": "2026-11-12",
+      "open": 361.0,
+      "high": 365.0,
+      "low": 359.0,
+      "close": 359.0,
+      "volume": 10800.0,
+      "sma25": 375.36,
+      "sma75": 390.49,
+      "sma200": 340.32,
+      "rsi14": 69.07,
+      "rsi5": 78.25
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-11",
-    "monthly_rsi14": 65.94,
-    "monthly_rsi_ma5": 72.94,
-    "spread": -7.01,
+    "price_date": "2026-11-12",
+    "monthly_rsi14": 65.44,
+    "monthly_rsi_ma5": 72.84,
+    "spread": -7.4,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -845,5 +858,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
+  "provisional_generated_at": "2026-11-13T19:05:24.943907+00:00"
 }

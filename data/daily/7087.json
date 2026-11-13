@@ -2,12 +2,12 @@
   "code": "7087",
   "ticker": "7087.T",
   "name": "ウイルテック",
-  "generated_at": "2026-11-12T19:26:19.407183+00:00",
-  "price_date": "2026-11-11",
+  "generated_at": "2026-11-13T19:04:07.942431+00:00",
+  "price_date": "2026-11-12",
   "record": {
-    "current_price": 1350.0,
-    "change_from_signal_month_pct": 0.22,
-    "return_since_gc_pct": 0.22
+    "current_price": 1417.0,
+    "change_from_signal_month_pct": 5.2,
+    "return_since_gc_pct": 5.2
   },
   "daily": [
     {
@@ -828,22 +828,35 @@
       "sma200": 1345.38,
       "rsi14": 66.73,
       "rsi5": 67.76
+    },
+    {
+      "date": "2026-11-12",
+      "open": 1406.0,
+      "high": 1425.0,
+      "low": 1392.0,
+      "close": 1417.0,
+      "volume": 40300.0,
+      "sma25": 1351.52,
+      "sma75": 1376.99,
+      "sma200": 1345.65,
+      "rsi14": 66.73,
+      "rsi5": 67.76
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-11",
-    "monthly_rsi14": 64.22,
-    "monthly_rsi_ma5": 66.99,
-    "spread": -2.77,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-12",
+    "monthly_rsi14": 67.98,
+    "monthly_rsi_ma5": 67.74,
+    "spread": 0.24,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
+  "provisional_generated_at": "2026-11-13T19:05:24.943907+00:00"
 }

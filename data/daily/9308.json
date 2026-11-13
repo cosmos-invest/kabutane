@@ -2,12 +2,12 @@
   "code": "9308",
   "ticker": "9308.T",
   "name": "乾汽船",
-  "generated_at": "2026-11-12T19:26:19.407183+00:00",
-  "price_date": "2026-11-11",
+  "generated_at": "2026-11-13T19:04:07.942431+00:00",
+  "price_date": "2026-11-12",
   "record": {
-    "current_price": 2388.0,
-    "change_from_signal_month_pct": 26.35,
-    "return_since_gc_pct": 26.35
+    "current_price": 2241.0,
+    "change_from_signal_month_pct": 18.57,
+    "return_since_gc_pct": 18.57
   },
   "daily": [
     {
@@ -828,22 +828,35 @@
       "sma200": 1752.91,
       "rsi14": 53.97,
       "rsi5": 60.54
+    },
+    {
+      "date": "2026-11-12",
+      "open": 2363.0,
+      "high": 2403.0,
+      "low": 2225.0,
+      "close": 2241.0,
+      "volume": 121500.0,
+      "sma25": 2235.4,
+      "sma75": 2147.31,
+      "sma200": 1757.26,
+      "rsi14": 53.97,
+      "rsi5": 60.54
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-11",
-    "monthly_rsi14": 67.33,
-    "monthly_rsi_ma5": 66.51,
-    "spread": 0.82,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-12",
+    "monthly_rsi14": 63.58,
+    "monthly_rsi_ma5": 65.76,
+    "spread": -2.17,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
+  "provisional_generated_at": "2026-11-13T19:05:24.943907+00:00"
 }

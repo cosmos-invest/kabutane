@@ -2,12 +2,12 @@
   "code": "8343",
   "ticker": "8343.T",
   "name": "秋田銀行",
-  "generated_at": "2026-11-12T19:26:19.407183+00:00",
-  "price_date": "2026-11-11",
+  "generated_at": "2026-11-13T19:04:07.942431+00:00",
+  "price_date": "2026-11-12",
   "record": {
-    "current_price": 1470.0,
-    "change_from_signal_month_pct": -79.75,
-    "return_since_gc_pct": -78.51
+    "current_price": 1452.0,
+    "change_from_signal_month_pct": -80.0,
+    "return_since_gc_pct": -78.77
   },
   "daily": [
     {
@@ -828,15 +828,28 @@
       "sma200": 5056.57,
       "rsi14": 79.64,
       "rsi5": 84.78
+    },
+    {
+      "date": "2026-11-12",
+      "open": 1461.0,
+      "high": 1477.0,
+      "low": 1432.0,
+      "close": 1452.0,
+      "volume": 382200.0,
+      "sma25": 1512.76,
+      "sma75": 3909.69,
+      "sma200": 5040.64,
+      "rsi14": 79.64,
+      "rsi5": 84.78
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-11",
-    "monthly_rsi14": 38.0,
-    "monthly_rsi_ma5": 48.11,
-    "spread": -10.12,
+    "price_date": "2026-11-12",
+    "monthly_rsi14": 37.92,
+    "monthly_rsi_ma5": 48.1,
+    "spread": -10.18,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -845,5 +858,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
+  "provisional_generated_at": "2026-11-13T19:05:24.943907+00:00"
 }

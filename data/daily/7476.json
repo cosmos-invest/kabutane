@@ -2,12 +2,12 @@
   "code": "7476",
   "ticker": "7476.T",
   "name": "アズワン",
-  "generated_at": "2026-11-12T19:26:19.407183+00:00",
-  "price_date": "2026-11-11",
+  "generated_at": "2026-11-13T19:04:07.942431+00:00",
+  "price_date": "2026-11-12",
   "record": {
-    "current_price": 2484.0,
-    "change_from_signal_month_pct": 3.28,
-    "return_since_gc_pct": 9.67
+    "current_price": 2518.0,
+    "change_from_signal_month_pct": 4.7,
+    "return_since_gc_pct": 11.17
   },
   "daily": [
     {
@@ -828,22 +828,35 @@
       "sma200": 2333.05,
       "rsi14": 40.91,
       "rsi5": 48.25
+    },
+    {
+      "date": "2026-11-12",
+      "open": 2513.0,
+      "high": 2524.0,
+      "low": 2486.0,
+      "close": 2518.0,
+      "volume": 105700.0,
+      "sma25": 2548.54,
+      "sma75": 2490.0,
+      "sma200": 2333.57,
+      "rsi14": 40.91,
+      "rsi5": 48.25
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-11",
-    "monthly_rsi14": 50.56,
-    "monthly_rsi_ma5": 51.17,
-    "spread": -0.6,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-12",
+    "monthly_rsi14": 51.78,
+    "monthly_rsi_ma5": 51.41,
+    "spread": 0.37,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
+  "provisional_generated_at": "2026-11-13T19:05:24.943907+00:00"
 }

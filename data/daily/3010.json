@@ -2,12 +2,12 @@
   "code": "3010",
   "ticker": "3010.T",
   "name": "ポラリス・ホールディングス",
-  "generated_at": "2026-11-12T19:26:19.407183+00:00",
-  "price_date": "2026-11-11",
+  "generated_at": "2026-11-13T19:04:07.942431+00:00",
+  "price_date": "2026-11-12",
   "record": {
-    "current_price": 194.0,
-    "change_from_signal_month_pct": -0.51,
-    "return_since_gc_pct": -1.52
+    "current_price": 191.0,
+    "change_from_signal_month_pct": -2.05,
+    "return_since_gc_pct": -3.05
   },
   "daily": [
     {
@@ -828,22 +828,35 @@
       "sma200": 184.97,
       "rsi14": 48.9,
       "rsi5": 51.86
+    },
+    {
+      "date": "2026-11-12",
+      "open": 193.0,
+      "high": 193.0,
+      "low": 190.0,
+      "close": 191.0,
+      "volume": 186200.0,
+      "sma25": 189.56,
+      "sma75": 191.09,
+      "sma200": 184.97,
+      "rsi14": 48.9,
+      "rsi5": 51.86
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-11",
-    "monthly_rsi14": 51.7,
-    "monthly_rsi_ma5": 51.21,
-    "spread": 0.49,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-12",
+    "monthly_rsi14": 50.85,
+    "monthly_rsi_ma5": 51.04,
+    "spread": -0.19,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
+  "provisional_generated_at": "2026-11-13T19:05:24.943907+00:00"
 }

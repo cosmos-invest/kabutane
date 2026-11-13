@@ -2,12 +2,12 @@
   "code": "3040",
   "ticker": "3040.T",
   "name": "ソリトンシステムズ",
-  "generated_at": "2026-11-12T19:26:19.407183+00:00",
-  "price_date": "2026-11-11",
+  "generated_at": "2026-11-13T19:04:07.942431+00:00",
+  "price_date": "2026-11-12",
   "record": {
-    "current_price": 2963.0,
-    "change_from_signal_month_pct": 51.95,
-    "return_since_gc_pct": 51.95
+    "current_price": 2606.0,
+    "change_from_signal_month_pct": 33.64,
+    "return_since_gc_pct": 33.64
   },
   "daily": [
     {
@@ -828,22 +828,35 @@
       "sma200": 2180.26,
       "rsi14": 60.98,
       "rsi5": 61.19
+    },
+    {
+      "date": "2026-11-12",
+      "open": 3000.0,
+      "high": 3000.0,
+      "low": 2595.0,
+      "close": 2606.0,
+      "volume": 686900.0,
+      "sma25": 3088.16,
+      "sma75": 2582.99,
+      "sma200": 2182.55,
+      "rsi14": 60.98,
+      "rsi5": 61.19
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-11",
-    "monthly_rsi14": 76.16,
-    "monthly_rsi_ma5": 72.43,
-    "spread": 3.73,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-12",
+    "monthly_rsi14": 65.53,
+    "monthly_rsi_ma5": 70.3,
+    "spread": -4.77,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
+  "provisional_generated_at": "2026-11-13T19:05:24.943907+00:00"
 }

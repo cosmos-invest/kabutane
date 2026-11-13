@@ -2,12 +2,12 @@
   "code": "4420",
   "ticker": "4420.T",
   "name": "イーソル",
-  "generated_at": "2026-11-12T19:26:19.407183+00:00",
-  "price_date": "2026-11-11",
+  "generated_at": "2026-11-13T19:04:07.942431+00:00",
+  "price_date": "2026-11-12",
   "record": {
-    "current_price": 820.0,
-    "change_from_signal_month_pct": 14.53,
-    "return_since_gc_pct": 15.82
+    "current_price": 816.0,
+    "change_from_signal_month_pct": 13.97,
+    "return_since_gc_pct": 15.25
   },
   "daily": [
     {
@@ -828,15 +828,28 @@
       "sma200": 695.21,
       "rsi14": 50.88,
       "rsi5": 55.47
+    },
+    {
+      "date": "2026-11-12",
+      "open": 815.0,
+      "high": 820.0,
+      "low": 813.0,
+      "close": 816.0,
+      "volume": 14900.0,
+      "sma25": 814.04,
+      "sma75": 787.4,
+      "sma200": 696.46,
+      "rsi14": 50.88,
+      "rsi5": 55.47
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-11",
-    "monthly_rsi14": 58.55,
-    "monthly_rsi_ma5": 59.61,
-    "spread": -1.06,
+    "price_date": "2026-11-12",
+    "monthly_rsi14": 58.35,
+    "monthly_rsi_ma5": 59.57,
+    "spread": -1.22,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -845,5 +858,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
+  "provisional_generated_at": "2026-11-13T19:05:24.943907+00:00"
 }

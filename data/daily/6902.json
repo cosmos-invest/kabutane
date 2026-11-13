@@ -2,12 +2,12 @@
   "code": "6902",
   "ticker": "6902.T",
   "name": "デンソー",
-  "generated_at": "2026-11-12T19:26:19.407183+00:00",
-  "price_date": "2026-11-11",
+  "generated_at": "2026-11-13T19:04:07.942431+00:00",
+  "price_date": "2026-11-12",
   "record": {
-    "current_price": 1880.5,
-    "change_from_signal_month_pct": -4.42,
-    "return_since_gc_pct": -4.42
+    "current_price": 1916.5,
+    "change_from_signal_month_pct": -2.59,
+    "return_since_gc_pct": -2.59
   },
   "daily": [
     {
@@ -828,22 +828,35 @@
       "sma200": 1956.7,
       "rsi14": 43.21,
       "rsi5": 45.87
+    },
+    {
+      "date": "2026-11-12",
+      "open": 1878.0,
+      "high": 1916.5,
+      "low": 1877.0,
+      "close": 1916.5,
+      "volume": 6184700.0,
+      "sma25": 1862.36,
+      "sma75": 1909.03,
+      "sma200": 1954.9,
+      "rsi14": 43.21,
+      "rsi5": 45.87
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-11",
-    "monthly_rsi14": 41.79,
-    "monthly_rsi_ma5": 42.03,
-    "spread": -0.24,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-12",
+    "monthly_rsi14": 43.56,
+    "monthly_rsi_ma5": 42.39,
+    "spread": 1.18,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
+  "provisional_generated_at": "2026-11-13T19:05:24.943907+00:00"
 }

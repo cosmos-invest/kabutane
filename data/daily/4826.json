@@ -2,12 +2,12 @@
   "code": "4826",
   "ticker": "4826.T",
   "name": "ＣＩＪ",
-  "generated_at": "2026-11-12T19:26:19.407183+00:00",
-  "price_date": "2026-11-11",
+  "generated_at": "2026-11-13T19:04:07.942431+00:00",
+  "price_date": "2026-11-12",
   "record": {
-    "current_price": 511.0,
-    "change_from_signal_month_pct": -0.97,
-    "return_since_gc_pct": -0.97
+    "current_price": 510.0,
+    "change_from_signal_month_pct": -1.16,
+    "return_since_gc_pct": -1.16
   },
   "daily": [
     {
@@ -828,15 +828,28 @@
       "sma200": 516.77,
       "rsi14": 56.63,
       "rsi5": 59.86
+    },
+    {
+      "date": "2026-11-12",
+      "open": 511.0,
+      "high": 515.0,
+      "low": 505.0,
+      "close": 510.0,
+      "volume": 136100.0,
+      "sma25": 542.08,
+      "sma75": 534.75,
+      "sma200": 516.51,
+      "rsi14": 56.63,
+      "rsi5": 59.86
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-11",
-    "monthly_rsi14": 55.62,
-    "monthly_rsi_ma5": 59.69,
-    "spread": -4.07,
+    "price_date": "2026-11-12",
+    "monthly_rsi14": 55.39,
+    "monthly_rsi_ma5": 59.65,
+    "spread": -4.25,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -845,5 +858,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
+  "provisional_generated_at": "2026-11-13T19:05:24.943907+00:00"
 }

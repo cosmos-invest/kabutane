@@ -2,12 +2,12 @@
   "code": "4820",
   "ticker": "4820.T",
   "name": "イーエムシステムズ",
-  "generated_at": "2026-11-12T19:26:19.407183+00:00",
-  "price_date": "2026-11-11",
+  "generated_at": "2026-11-13T19:04:07.942431+00:00",
+  "price_date": "2026-11-12",
   "record": {
-    "current_price": 560.0,
-    "change_from_signal_month_pct": 0.36,
-    "return_since_gc_pct": 0.36
+    "current_price": 569.0,
+    "change_from_signal_month_pct": 1.97,
+    "return_since_gc_pct": 1.97
   },
   "daily": [
     {
@@ -828,22 +828,35 @@
       "sma200": 602.85,
       "rsi14": 37.39,
       "rsi5": 38.83
+    },
+    {
+      "date": "2026-11-12",
+      "open": 560.0,
+      "high": 569.0,
+      "low": 560.0,
+      "close": 569.0,
+      "volume": 49300.0,
+      "sma25": 558.64,
+      "sma75": 571.41,
+      "sma200": 601.77,
+      "rsi14": 37.39,
+      "rsi5": 38.83
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-11",
-    "monthly_rsi14": 38.99,
-    "monthly_rsi_ma5": 39.63,
-    "spread": -0.65,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-12",
+    "monthly_rsi14": 39.91,
+    "monthly_rsi_ma5": 39.82,
+    "spread": 0.1,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
+  "provisional_generated_at": "2026-11-13T19:05:24.943907+00:00"
 }

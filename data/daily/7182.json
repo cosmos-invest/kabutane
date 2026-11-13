@@ -2,12 +2,12 @@
   "code": "7182",
   "ticker": "7182.T",
   "name": "ゆうちょ銀行",
-  "generated_at": "2026-11-12T19:26:19.407183+00:00",
-  "price_date": "2026-11-11",
+  "generated_at": "2026-11-13T19:04:07.942431+00:00",
+  "price_date": "2026-11-12",
   "record": {
-    "current_price": 3200.0,
-    "change_from_signal_month_pct": 2.86,
-    "return_since_gc_pct": 2.86
+    "current_price": 3151.0,
+    "change_from_signal_month_pct": 1.29,
+    "return_since_gc_pct": 1.29
   },
   "daily": [
     {
@@ -828,15 +828,28 @@
       "sma200": 3014.94,
       "rsi14": 70.8,
       "rsi5": 73.51
+    },
+    {
+      "date": "2026-11-12",
+      "open": 3182.0,
+      "high": 3208.0,
+      "low": 3136.0,
+      "close": 3151.0,
+      "volume": 5336800.0,
+      "sma25": 3078.78,
+      "sma75": 3214.73,
+      "sma200": 3017.95,
+      "rsi14": 70.8,
+      "rsi5": 73.51
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-11",
-    "monthly_rsi14": 66.47,
-    "monthly_rsi_ma5": 71.95,
-    "spread": -5.48,
+    "price_date": "2026-11-12",
+    "monthly_rsi14": 65.84,
+    "monthly_rsi_ma5": 71.82,
+    "spread": -5.98,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -845,5 +858,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
+  "provisional_generated_at": "2026-11-13T19:05:24.943907+00:00"
 }

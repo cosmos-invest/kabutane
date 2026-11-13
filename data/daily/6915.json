@@ -2,12 +2,12 @@
   "code": "6915",
   "ticker": "6915.T",
   "name": "千代田インテグレ",
-  "generated_at": "2026-11-12T19:26:19.407183+00:00",
-  "price_date": "2026-11-11",
+  "generated_at": "2026-11-13T19:04:07.942431+00:00",
+  "price_date": "2026-11-12",
   "record": {
-    "current_price": 3260.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 3280.0,
+    "change_from_signal_month_pct": 0.61,
+    "return_since_gc_pct": 0.61
   },
   "daily": [
     {
@@ -828,15 +828,28 @@
       "sma200": 3297.6,
       "rsi14": 54.09,
       "rsi5": 55.7
+    },
+    {
+      "date": "2026-11-12",
+      "open": 3250.0,
+      "high": 3300.0,
+      "low": 3250.0,
+      "close": 3280.0,
+      "volume": 15800.0,
+      "sma25": 3327.2,
+      "sma75": 3395.53,
+      "sma200": 3297.35,
+      "rsi14": 54.09,
+      "rsi5": 55.7
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-11",
-    "monthly_rsi14": 52.54,
-    "monthly_rsi_ma5": 56.8,
-    "spread": -4.26,
+    "price_date": "2026-11-12",
+    "monthly_rsi14": 53.01,
+    "monthly_rsi_ma5": 56.89,
+    "spread": -3.88,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -845,5 +858,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
+  "provisional_generated_at": "2026-11-13T19:05:24.943907+00:00"
 }

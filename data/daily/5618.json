@@ -2,12 +2,12 @@
   "code": "5618",
   "ticker": "5618.T",
   "name": "ナイル",
-  "generated_at": "2026-11-12T19:26:19.407183+00:00",
-  "price_date": "2026-11-11",
+  "generated_at": "2026-11-13T19:04:07.942431+00:00",
+  "price_date": "2026-11-12",
   "record": {
-    "current_price": 264.0,
-    "change_from_signal_month_pct": -11.11,
-    "return_since_gc_pct": -11.11
+    "current_price": 261.0,
+    "change_from_signal_month_pct": -12.12,
+    "return_since_gc_pct": -12.12
   },
   "daily": [
     {
@@ -828,15 +828,28 @@
       "sma200": 300.15,
       "rsi14": 30.54,
       "rsi5": 30.73
+    },
+    {
+      "date": "2026-11-12",
+      "open": 264.0,
+      "high": 264.0,
+      "low": 261.0,
+      "close": 261.0,
+      "volume": 6000.0,
+      "sma25": 282.2,
+      "sma75": 288.12,
+      "sma200": 299.88,
+      "rsi14": 30.54,
+      "rsi5": 30.73
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-11",
-    "monthly_rsi14": 29.77,
-    "monthly_rsi_ma5": 30.7,
-    "spread": -0.93,
+    "price_date": "2026-11-12",
+    "monthly_rsi14": 29.61,
+    "monthly_rsi_ma5": 30.67,
+    "spread": -1.06,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -845,5 +858,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
+  "provisional_generated_at": "2026-11-13T19:05:24.943907+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "1826",
   "ticker": "1826.T",
   "name": "佐田建設",
-  "generated_at": "2026-11-12T19:26:19.407183+00:00",
-  "price_date": "2026-11-11",
+  "generated_at": "2026-11-13T19:04:07.942431+00:00",
+  "price_date": "2026-11-12",
   "record": {
-    "current_price": 1086.0,
-    "change_from_signal_month_pct": -1.81,
-    "return_since_gc_pct": -1.81
+    "current_price": 1088.0,
+    "change_from_signal_month_pct": -1.63,
+    "return_since_gc_pct": -1.63
   },
   "daily": [
     {
@@ -828,22 +828,35 @@
       "sma200": 1096.04,
       "rsi14": 52.81,
       "rsi5": 56.0
+    },
+    {
+      "date": "2026-11-12",
+      "open": 1096.0,
+      "high": 1096.0,
+      "low": 1079.0,
+      "close": 1088.0,
+      "volume": 10300.0,
+      "sma25": 1073.12,
+      "sma75": 1080.85,
+      "sma200": 1095.57,
+      "rsi14": 52.81,
+      "rsi5": 56.0
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-11",
-    "monthly_rsi14": 56.36,
-    "monthly_rsi_ma5": 56.46,
-    "spread": -0.1,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-12",
+    "monthly_rsi14": 56.49,
+    "monthly_rsi_ma5": 56.49,
+    "spread": 0.0,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
+  "provisional_generated_at": "2026-11-13T19:05:24.943907+00:00"
 }

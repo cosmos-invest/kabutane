@@ -2,12 +2,12 @@
   "code": "8118",
   "ticker": "8118.T",
   "name": "キング",
-  "generated_at": "2026-11-12T19:26:19.407183+00:00",
-  "price_date": "2026-11-11",
+  "generated_at": "2026-11-13T19:04:07.942431+00:00",
+  "price_date": "2026-11-12",
   "record": {
-    "current_price": 1150.0,
-    "change_from_signal_month_pct": -7.18,
-    "return_since_gc_pct": -7.33
+    "current_price": 1149.0,
+    "change_from_signal_month_pct": -7.26,
+    "return_since_gc_pct": -7.41
   },
   "daily": [
     {
@@ -828,15 +828,28 @@
       "sma200": 1142.02,
       "rsi14": 80.21,
       "rsi5": 81.5
+    },
+    {
+      "date": "2026-11-12",
+      "open": 1132.0,
+      "high": 1169.0,
+      "low": 1132.0,
+      "close": 1149.0,
+      "volume": 1700.0,
+      "sma25": 1150.72,
+      "sma75": 1184.61,
+      "sma200": 1143.13,
+      "rsi14": 80.21,
+      "rsi5": 81.5
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-11",
-    "monthly_rsi14": 66.06,
-    "monthly_rsi_ma5": 73.05,
-    "spread": -6.99,
+    "price_date": "2026-11-12",
+    "monthly_rsi14": 66.0,
+    "monthly_rsi_ma5": 73.03,
+    "spread": -7.04,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -845,5 +858,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
+  "provisional_generated_at": "2026-11-13T19:05:24.943907+00:00"
 }

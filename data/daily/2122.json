@@ -2,12 +2,12 @@
   "code": "2122",
   "ticker": "2122.T",
   "name": "インタースペース",
-  "generated_at": "2026-11-12T19:26:19.407183+00:00",
-  "price_date": "2026-11-11",
+  "generated_at": "2026-11-13T19:04:07.942431+00:00",
+  "price_date": "2026-11-12",
   "record": {
-    "current_price": 1294.0,
-    "change_from_signal_month_pct": -7.64,
-    "return_since_gc_pct": -0.46
+    "current_price": 1305.0,
+    "change_from_signal_month_pct": -6.85,
+    "return_since_gc_pct": 0.38
   },
   "daily": [
     {
@@ -828,15 +828,28 @@
       "sma200": 1321.48,
       "rsi14": 62.35,
       "rsi5": 68.04
+    },
+    {
+      "date": "2026-11-12",
+      "open": 1294.0,
+      "high": 1308.0,
+      "low": 1288.0,
+      "close": 1305.0,
+      "volume": 3100.0,
+      "sma25": 1318.4,
+      "sma75": 1390.99,
+      "sma200": 1321.79,
+      "rsi14": 62.35,
+      "rsi5": 68.04
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-11",
-    "monthly_rsi14": 57.89,
-    "monthly_rsi_ma5": 64.93,
-    "spread": -7.04,
+    "price_date": "2026-11-12",
+    "monthly_rsi14": 58.71,
+    "monthly_rsi_ma5": 65.1,
+    "spread": -6.38,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -845,5 +858,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
+  "provisional_generated_at": "2026-11-13T19:05:24.943907+00:00"
 }

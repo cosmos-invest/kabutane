@@ -2,12 +2,12 @@
   "code": "3926",
   "ticker": "3926.T",
   "name": "オープンドア",
-  "generated_at": "2026-11-12T19:26:19.407183+00:00",
-  "price_date": "2026-11-11",
+  "generated_at": "2026-11-13T19:04:07.942431+00:00",
+  "price_date": "2026-11-12",
   "record": {
-    "current_price": 419.0,
-    "change_from_signal_month_pct": 11.44,
-    "return_since_gc_pct": 28.13
+    "current_price": 418.0,
+    "change_from_signal_month_pct": 11.17,
+    "return_since_gc_pct": 27.83
   },
   "daily": [
     {
@@ -828,15 +828,28 @@
       "sma200": 354.57,
       "rsi14": 32.31,
       "rsi5": 38.69
+    },
+    {
+      "date": "2026-11-12",
+      "open": 418.0,
+      "high": 424.0,
+      "low": 411.0,
+      "close": 418.0,
+      "volume": 15900.0,
+      "sma25": 426.0,
+      "sma75": 418.07,
+      "sma200": 354.98,
+      "rsi14": 32.31,
+      "rsi5": 38.69
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-11",
-    "monthly_rsi14": 41.87,
-    "monthly_rsi_ma5": 39.93,
-    "spread": 1.94,
+    "price_date": "2026-11-12",
+    "monthly_rsi14": 41.78,
+    "monthly_rsi_ma5": 39.91,
+    "spread": 1.87,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -845,5 +858,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
+  "provisional_generated_at": "2026-11-13T19:05:24.943907+00:00"
 }

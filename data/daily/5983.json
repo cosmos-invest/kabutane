@@ -2,12 +2,12 @@
   "code": "5983",
   "ticker": "5983.T",
   "name": "イワブチ",
-  "generated_at": "2026-11-12T19:26:19.407183+00:00",
-  "price_date": "2026-11-11",
+  "generated_at": "2026-11-13T19:04:07.942431+00:00",
+  "price_date": "2026-11-12",
   "record": {
-    "current_price": 14130.0,
-    "change_from_signal_month_pct": -5.55,
-    "return_since_gc_pct": 2.76
+    "current_price": 14980.0,
+    "change_from_signal_month_pct": 0.13,
+    "return_since_gc_pct": 8.95
   },
   "daily": [
     {
@@ -828,22 +828,35 @@
       "sma200": 13504.3,
       "rsi14": 73.98,
       "rsi5": 78.18
+    },
+    {
+      "date": "2026-11-12",
+      "open": 14250.0,
+      "high": 15000.0,
+      "low": 14250.0,
+      "close": 14980.0,
+      "volume": 4500.0,
+      "sma25": 14821.2,
+      "sma75": 14275.87,
+      "sma200": 13517.95,
+      "rsi14": 73.98,
+      "rsi5": 78.18
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-11",
-    "monthly_rsi14": 66.7,
-    "monthly_rsi_ma5": 71.23,
-    "spread": -4.53,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-12",
+    "monthly_rsi14": 72.51,
+    "monthly_rsi_ma5": 72.39,
+    "spread": 0.11,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-12T19:27:09.559777+00:00"
+  "provisional_generated_at": "2026-11-13T19:05:24.943907+00:00"
 }
