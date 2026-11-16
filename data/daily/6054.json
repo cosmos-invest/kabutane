@@ -2,12 +2,12 @@
   "code": "6054",
   "ticker": "6054.T",
   "name": "リブセンス",
-  "generated_at": "2026-11-13T19:04:07.942431+00:00",
-  "price_date": "2026-11-12",
+  "generated_at": "2026-11-16T21:32:40.328603+00:00",
+  "price_date": "2026-11-13",
   "record": {
-    "current_price": 103.0,
-    "change_from_signal_month_pct": -9.65,
-    "return_since_gc_pct": -9.65
+    "current_price": 101.0,
+    "change_from_signal_month_pct": -11.4,
+    "return_since_gc_pct": -11.4
   },
   "daily": [
     {
@@ -841,15 +841,28 @@
       "sma200": 116.64,
       "rsi14": 36.38,
       "rsi5": 37.54
+    },
+    {
+      "date": "2026-11-13",
+      "open": 103.0,
+      "high": 104.0,
+      "low": 101.0,
+      "close": 101.0,
+      "volume": 29000.0,
+      "sma25": 107.64,
+      "sma75": 111.48,
+      "sma200": 116.53,
+      "rsi14": 36.38,
+      "rsi5": 37.54
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-12",
-    "monthly_rsi14": 27.26,
-    "monthly_rsi_ma5": 28.73,
-    "spread": -1.47,
+    "price_date": "2026-11-13",
+    "monthly_rsi14": 26.8,
+    "monthly_rsi_ma5": 28.64,
+    "spread": -1.83,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -858,5 +871,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-13T19:05:24.943907+00:00"
+  "provisional_generated_at": "2026-11-16T21:33:31.862070+00:00"
 }

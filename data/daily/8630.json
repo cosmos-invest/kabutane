@@ -2,12 +2,12 @@
   "code": "8630",
   "ticker": "8630.T",
   "name": "ＳＯＭＰＯホールディングス",
-  "generated_at": "2026-11-13T19:04:07.942431+00:00",
-  "price_date": "2026-11-12",
+  "generated_at": "2026-11-16T21:32:40.328603+00:00",
+  "price_date": "2026-11-13",
   "record": {
-    "current_price": 7200.0,
-    "change_from_signal_month_pct": 1.22,
-    "return_since_gc_pct": 1.22
+    "current_price": 7290.0,
+    "change_from_signal_month_pct": 2.49,
+    "return_since_gc_pct": 2.49
   },
   "daily": [
     {
@@ -841,22 +841,35 @@
       "sma200": 6333.22,
       "rsi14": 77.8,
       "rsi5": 82.75
+    },
+    {
+      "date": "2026-11-13",
+      "open": 7265.0,
+      "high": 7295.0,
+      "low": 7189.0,
+      "close": 7290.0,
+      "volume": 3040000.0,
+      "sma25": 6980.08,
+      "sma75": 6895.21,
+      "sma200": 6341.16,
+      "rsi14": 77.8,
+      "rsi5": 82.75
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-12",
-    "monthly_rsi14": 77.96,
-    "monthly_rsi_ma5": 78.28,
-    "spread": -0.32,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-13",
+    "monthly_rsi14": 78.49,
+    "monthly_rsi_ma5": 78.38,
+    "spread": 0.11,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-13T19:05:24.943907+00:00"
+  "provisional_generated_at": "2026-11-16T21:33:31.862070+00:00"
 }

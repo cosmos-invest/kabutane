@@ -2,12 +2,12 @@
   "code": "7388",
   "ticker": "7388.T",
   "name": "ＦＰパートナー",
-  "generated_at": "2026-11-13T19:04:07.942431+00:00",
-  "price_date": "2026-11-12",
+  "generated_at": "2026-11-16T21:32:40.328603+00:00",
+  "price_date": "2026-11-16",
   "record": {
-    "current_price": 2299.0,
-    "change_from_signal_month_pct": 4.45,
-    "return_since_gc_pct": 4.45
+    "current_price": 2248.0,
+    "change_from_signal_month_pct": 2.14,
+    "return_since_gc_pct": 2.14
   },
   "daily": [
     {
@@ -841,22 +841,48 @@
       "sma200": 2264.08,
       "rsi14": 45.62,
       "rsi5": 45.71
+    },
+    {
+      "date": "2026-11-13",
+      "open": 2302.0,
+      "high": 2304.0,
+      "low": 2276.0,
+      "close": 2276.0,
+      "volume": 47600.0,
+      "sma25": 2298.2,
+      "sma75": 2274.48,
+      "sma200": 2263.59,
+      "rsi14": 45.62,
+      "rsi5": 45.71
+    },
+    {
+      "date": "2026-11-16",
+      "open": 2284.0,
+      "high": 2289.0,
+      "low": 2244.0,
+      "close": 2248.0,
+      "volume": 78400.0,
+      "sma25": 2297.32,
+      "sma75": 2275.96,
+      "sma200": 2262.99,
+      "rsi14": 45.62,
+      "rsi5": 45.71
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-12",
-    "monthly_rsi14": 45.74,
-    "monthly_rsi_ma5": 45.56,
-    "spread": 0.19,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-16",
+    "monthly_rsi14": 44.75,
+    "monthly_rsi_ma5": 45.36,
+    "spread": -0.61,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-13T19:05:24.943907+00:00"
+  "provisional_generated_at": "2026-11-16T21:33:31.862070+00:00"
 }

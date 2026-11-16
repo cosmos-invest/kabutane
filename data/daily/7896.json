@@ -2,12 +2,12 @@
   "code": "7896",
   "ticker": "7896.T",
   "name": "セブン工業",
-  "generated_at": "2026-11-13T19:04:07.942431+00:00",
-  "price_date": "2026-11-12",
+  "generated_at": "2026-11-16T21:32:40.328603+00:00",
+  "price_date": "2026-11-16",
   "record": {
-    "current_price": 497.0,
-    "change_from_signal_month_pct": -2.36,
-    "return_since_gc_pct": -2.36
+    "current_price": 508.0,
+    "change_from_signal_month_pct": -0.2,
+    "return_since_gc_pct": -0.2
   },
   "daily": [
     {
@@ -841,22 +841,48 @@
       "sma200": 513.75,
       "rsi14": 49.16,
       "rsi5": 49.36
+    },
+    {
+      "date": "2026-11-13",
+      "open": 496.0,
+      "high": 498.0,
+      "low": 494.0,
+      "close": 498.0,
+      "volume": 1200.0,
+      "sma25": 498.36,
+      "sma75": 503.84,
+      "sma200": 513.53,
+      "rsi14": 49.16,
+      "rsi5": 49.36
+    },
+    {
+      "date": "2026-11-16",
+      "open": 500.0,
+      "high": 508.0,
+      "low": 500.0,
+      "close": 508.0,
+      "volume": 2000.0,
+      "sma25": 498.68,
+      "sma75": 503.84,
+      "sma200": 513.38,
+      "rsi14": 49.16,
+      "rsi5": 49.36
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-12",
-    "monthly_rsi14": 45.55,
-    "monthly_rsi_ma5": 46.73,
-    "spread": -1.18,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-16",
+    "monthly_rsi14": 49.53,
+    "monthly_rsi_ma5": 47.52,
+    "spread": 2.01,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-13T19:05:24.943907+00:00"
+  "provisional_generated_at": "2026-11-16T21:33:31.862070+00:00"
 }

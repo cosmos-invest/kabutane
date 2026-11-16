@@ -2,12 +2,12 @@
   "code": "6820",
   "ticker": "6820.T",
   "name": "アイコム",
-  "generated_at": "2026-11-13T19:04:07.942431+00:00",
-  "price_date": "2026-11-12",
+  "generated_at": "2026-11-16T21:32:40.328603+00:00",
+  "price_date": "2026-11-13",
   "record": {
-    "current_price": 3630.0,
-    "change_from_signal_month_pct": 10.5,
-    "return_since_gc_pct": 10.5
+    "current_price": 3650.0,
+    "change_from_signal_month_pct": 11.11,
+    "return_since_gc_pct": 11.11
   },
   "daily": [
     {
@@ -841,22 +841,35 @@
       "sma200": 3247.95,
       "rsi14": 53.68,
       "rsi5": 58.58
+    },
+    {
+      "date": "2026-11-13",
+      "open": 3660.0,
+      "high": 3660.0,
+      "low": 3625.0,
+      "close": 3650.0,
+      "volume": 8000.0,
+      "sma25": 3602.0,
+      "sma75": 3544.6,
+      "sma200": 3250.78,
+      "rsi14": 53.68,
+      "rsi5": 58.58
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-12",
-    "monthly_rsi14": 61.87,
-    "monthly_rsi_ma5": 62.0,
-    "spread": -0.12,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-13",
+    "monthly_rsi14": 62.28,
+    "monthly_rsi_ma5": 62.08,
+    "spread": 0.2,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-13T19:05:24.943907+00:00"
+  "provisional_generated_at": "2026-11-16T21:33:31.862070+00:00"
 }

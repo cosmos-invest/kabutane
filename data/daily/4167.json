@@ -2,12 +2,12 @@
   "code": "4167",
   "ticker": "4167.T",
   "name": "ココペリ",
-  "generated_at": "2026-11-13T19:04:07.942431+00:00",
-  "price_date": "2026-11-12",
+  "generated_at": "2026-11-16T21:32:40.328603+00:00",
+  "price_date": "2026-11-16",
   "record": {
-    "current_price": 323.0,
-    "change_from_signal_month_pct": 12.15,
-    "return_since_gc_pct": 12.15
+    "current_price": 316.0,
+    "change_from_signal_month_pct": 9.72,
+    "return_since_gc_pct": 9.72
   },
   "daily": [
     {
@@ -841,15 +841,41 @@
       "sma200": 305.49,
       "rsi14": 32.23,
       "rsi5": 32.66
+    },
+    {
+      "date": "2026-11-13",
+      "open": 324.0,
+      "high": 332.0,
+      "low": 324.0,
+      "close": 328.0,
+      "volume": 7400.0,
+      "sma25": 316.84,
+      "sma75": 319.89,
+      "sma200": 305.57,
+      "rsi14": 32.23,
+      "rsi5": 32.66
+    },
+    {
+      "date": "2026-11-16",
+      "open": 320.0,
+      "high": 344.0,
+      "low": 293.0,
+      "close": 316.0,
+      "volume": 40800.0,
+      "sma25": 316.6,
+      "sma75": 320.16,
+      "sma200": 305.59,
+      "rsi14": 32.23,
+      "rsi5": 32.66
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-12",
-    "monthly_rsi14": 46.44,
-    "monthly_rsi_ma5": 45.42,
-    "spread": 1.01,
+    "price_date": "2026-11-16",
+    "monthly_rsi14": 45.61,
+    "monthly_rsi_ma5": 45.26,
+    "spread": 0.35,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -858,5 +884,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-13T19:05:24.943907+00:00"
+  "provisional_generated_at": "2026-11-16T21:33:31.862070+00:00"
 }

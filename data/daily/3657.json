@@ -2,12 +2,12 @@
   "code": "3657",
   "ticker": "3657.T",
   "name": "ポールトゥウィンホールディングス",
-  "generated_at": "2026-11-13T19:04:07.942431+00:00",
-  "price_date": "2026-11-12",
+  "generated_at": "2026-11-16T21:32:40.328603+00:00",
+  "price_date": "2026-11-13",
   "record": {
-    "current_price": 339.0,
-    "change_from_signal_month_pct": 1.8,
-    "return_since_gc_pct": 13.0
+    "current_price": 347.0,
+    "change_from_signal_month_pct": 4.2,
+    "return_since_gc_pct": 15.67
   },
   "daily": [
     {
@@ -841,22 +841,35 @@
       "sma200": 324.45,
       "rsi14": 31.8,
       "rsi5": 37.22
+    },
+    {
+      "date": "2026-11-13",
+      "open": 339.0,
+      "high": 351.0,
+      "low": 338.0,
+      "close": 347.0,
+      "volume": 364400.0,
+      "sma25": 342.08,
+      "sma75": 350.35,
+      "sma200": 324.48,
+      "rsi14": 31.8,
+      "rsi5": 37.22
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-12",
-    "monthly_rsi14": 38.5,
-    "monthly_rsi_ma5": 39.16,
-    "spread": -0.66,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-13",
+    "monthly_rsi14": 40.21,
+    "monthly_rsi_ma5": 39.5,
+    "spread": 0.71,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-13T19:05:24.943907+00:00"
+  "provisional_generated_at": "2026-11-16T21:33:31.862070+00:00"
 }

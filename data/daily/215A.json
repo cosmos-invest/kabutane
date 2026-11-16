@@ -2,12 +2,12 @@
   "code": "215A",
   "ticker": "215A.T",
   "name": "タイミー",
-  "generated_at": "2026-11-13T19:04:07.942431+00:00",
-  "price_date": "2026-11-12",
+  "generated_at": "2026-11-16T21:32:40.328603+00:00",
+  "price_date": "2026-11-13",
   "record": {
-    "current_price": 1414.0,
-    "change_from_signal_month_pct": -3.55,
-    "return_since_gc_pct": -7.1
+    "current_price": 1422.0,
+    "change_from_signal_month_pct": -3.0,
+    "return_since_gc_pct": -6.57
   },
   "daily": [
     {
@@ -841,15 +841,28 @@
       "sma200": 1372.13,
       "rsi14": 48.76,
       "rsi5": 51.33
+    },
+    {
+      "date": "2026-11-13",
+      "open": 1440.0,
+      "high": 1460.0,
+      "low": 1422.0,
+      "close": 1422.0,
+      "volume": 754600.0,
+      "sma25": 1457.36,
+      "sma75": 1501.55,
+      "sma200": 1372.09,
+      "rsi14": 48.76,
+      "rsi5": 51.33
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-12",
-    "monthly_rsi14": 49.71,
-    "monthly_rsi_ma5": 51.69,
-    "spread": -1.98,
+    "price_date": "2026-11-13",
+    "monthly_rsi14": 49.86,
+    "monthly_rsi_ma5": 51.72,
+    "spread": -1.86,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -858,5 +871,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-13T19:05:24.943907+00:00"
+  "provisional_generated_at": "2026-11-16T21:33:31.862070+00:00"
 }

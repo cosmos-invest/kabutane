@@ -2,12 +2,12 @@
   "code": "3461",
   "ticker": "3461.T",
   "name": "パルマ",
-  "generated_at": "2026-11-13T19:04:07.942431+00:00",
-  "price_date": "2026-11-12",
+  "generated_at": "2026-11-16T21:32:40.328603+00:00",
+  "price_date": "2026-11-13",
   "record": {
-    "current_price": 543.0,
-    "change_from_signal_month_pct": -7.18,
-    "return_since_gc_pct": -3.04
+    "current_price": 561.0,
+    "change_from_signal_month_pct": -4.1,
+    "return_since_gc_pct": 0.18
   },
   "daily": [
     {
@@ -841,15 +841,28 @@
       "sma200": 567.0,
       "rsi14": 62.6,
       "rsi5": 65.62
+    },
+    {
+      "date": "2026-11-13",
+      "open": 551.0,
+      "high": 590.0,
+      "low": 540.0,
+      "close": 561.0,
+      "volume": 45300.0,
+      "sma25": 549.16,
+      "sma75": 586.28,
+      "sma200": 567.04,
+      "rsi14": 62.6,
+      "rsi5": 65.62
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-12",
-    "monthly_rsi14": 54.03,
-    "monthly_rsi_ma5": 61.75,
-    "spread": -7.72,
+    "price_date": "2026-11-13",
+    "monthly_rsi14": 57.07,
+    "monthly_rsi_ma5": 62.36,
+    "spread": -5.28,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -858,5 +871,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-13T19:05:24.943907+00:00"
+  "provisional_generated_at": "2026-11-16T21:33:31.862070+00:00"
 }

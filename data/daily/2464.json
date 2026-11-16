@@ -2,12 +2,12 @@
   "code": "2464",
   "ticker": "2464.T",
   "name": "Ａｏｂａ‐ＢＢＴ",
-  "generated_at": "2026-11-13T19:04:07.942431+00:00",
-  "price_date": "2026-11-12",
+  "generated_at": "2026-11-16T21:32:40.328603+00:00",
+  "price_date": "2026-11-13",
   "record": {
-    "current_price": 354.0,
-    "change_from_signal_month_pct": 7.6,
-    "return_since_gc_pct": 7.6
+    "current_price": 360.0,
+    "change_from_signal_month_pct": 9.42,
+    "return_since_gc_pct": 9.42
   },
   "daily": [
     {
@@ -841,22 +841,35 @@
       "sma200": 343.26,
       "rsi14": 41.46,
       "rsi5": 42.78
+    },
+    {
+      "date": "2026-11-13",
+      "open": 356.0,
+      "high": 361.0,
+      "low": 351.0,
+      "close": 360.0,
+      "volume": 18600.0,
+      "sma25": 359.28,
+      "sma75": 358.87,
+      "sma200": 343.36,
+      "rsi14": 41.46,
+      "rsi5": 42.78
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-12",
-    "monthly_rsi14": 50.85,
-    "monthly_rsi_ma5": 52.47,
-    "spread": -1.62,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-13",
+    "monthly_rsi14": 53.13,
+    "monthly_rsi_ma5": 52.93,
+    "spread": 0.2,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-13T19:05:24.943907+00:00"
+  "provisional_generated_at": "2026-11-16T21:33:31.862070+00:00"
 }

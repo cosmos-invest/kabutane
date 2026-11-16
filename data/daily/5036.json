@@ -2,12 +2,12 @@
   "code": "5036",
   "ticker": "5036.T",
   "name": "日本ビジネスシステムズ",
-  "generated_at": "2026-11-13T19:04:07.942431+00:00",
-  "price_date": "2026-11-12",
+  "generated_at": "2026-11-16T21:32:40.328603+00:00",
+  "price_date": "2026-11-13",
   "record": {
-    "current_price": 1725.0,
-    "change_from_signal_month_pct": 7.81,
-    "return_since_gc_pct": 7.81
+    "current_price": 1566.0,
+    "change_from_signal_month_pct": -2.12,
+    "return_since_gc_pct": -2.12
   },
   "daily": [
     {
@@ -841,22 +841,35 @@
       "sma200": 1604.08,
       "rsi14": 54.61,
       "rsi5": 55.9
+    },
+    {
+      "date": "2026-11-13",
+      "open": 1602.0,
+      "high": 1628.0,
+      "low": 1552.0,
+      "close": 1566.0,
+      "volume": 313300.0,
+      "sma25": 1779.32,
+      "sma75": 1645.15,
+      "sma200": 1602.83,
+      "rsi14": 54.61,
+      "rsi5": 55.9
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-12",
-    "monthly_rsi14": 57.93,
-    "monthly_rsi_ma5": 57.36,
-    "spread": 0.56,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-13",
+    "monthly_rsi14": 53.17,
+    "monthly_rsi_ma5": 56.41,
+    "spread": -3.25,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-13T19:05:24.943907+00:00"
+  "provisional_generated_at": "2026-11-16T21:33:31.862070+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "5843",
   "ticker": "5843.T",
   "name": "ニッポンインシュア",
-  "generated_at": "2026-11-13T19:04:07.942431+00:00",
-  "price_date": "2026-11-12",
+  "generated_at": "2026-11-16T21:32:40.328603+00:00",
+  "price_date": "2026-11-13",
   "record": {
-    "current_price": 2258.0,
-    "change_from_signal_month_pct": -5.52,
-    "return_since_gc_pct": -5.52
+    "current_price": 2479.0,
+    "change_from_signal_month_pct": 3.72,
+    "return_since_gc_pct": 3.72
   },
   "daily": [
     {
@@ -841,22 +841,35 @@
       "sma200": 2337.12,
       "rsi14": 57.52,
       "rsi5": 58.99
+    },
+    {
+      "date": "2026-11-13",
+      "open": 2268.0,
+      "high": 2529.0,
+      "low": 2245.0,
+      "close": 2479.0,
+      "volume": 29400.0,
+      "sma25": 2232.32,
+      "sma75": 2320.75,
+      "sma200": 2336.86,
+      "rsi14": 57.52,
+      "rsi5": 58.99
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-12",
-    "monthly_rsi14": 55.12,
-    "monthly_rsi_ma5": 56.85,
-    "spread": -1.73,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-13",
+    "monthly_rsi14": 59.3,
+    "monthly_rsi_ma5": 57.69,
+    "spread": 1.61,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-13T19:05:24.943907+00:00"
+  "provisional_generated_at": "2026-11-16T21:33:31.862070+00:00"
 }

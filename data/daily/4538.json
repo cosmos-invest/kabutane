@@ -2,12 +2,12 @@
   "code": "4538",
   "ticker": "4538.T",
   "name": "扶桑薬品工業",
-  "generated_at": "2026-11-13T19:04:07.942431+00:00",
-  "price_date": "2026-11-12",
+  "generated_at": "2026-11-16T21:32:40.328603+00:00",
+  "price_date": "2026-11-16",
   "record": {
-    "current_price": 2177.0,
-    "change_from_signal_month_pct": 0.09,
-    "return_since_gc_pct": 0.09
+    "current_price": 2194.0,
+    "change_from_signal_month_pct": 0.87,
+    "return_since_gc_pct": 0.87
   },
   "daily": [
     {
@@ -841,22 +841,48 @@
       "sma200": 2224.71,
       "rsi14": 47.12,
       "rsi5": 47.56
+    },
+    {
+      "date": "2026-11-13",
+      "open": 2162.0,
+      "high": 2210.0,
+      "low": 2162.0,
+      "close": 2201.0,
+      "volume": 13100.0,
+      "sma25": 2120.6,
+      "sma75": 2196.56,
+      "sma200": 2223.74,
+      "rsi14": 47.12,
+      "rsi5": 47.56
+    },
+    {
+      "date": "2026-11-16",
+      "open": 2238.0,
+      "high": 2238.0,
+      "low": 2189.0,
+      "close": 2194.0,
+      "volume": 21600.0,
+      "sma25": 2123.76,
+      "sma75": 2196.44,
+      "sma200": 2222.98,
+      "rsi14": 47.12,
+      "rsi5": 47.56
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-12",
-    "monthly_rsi14": 48.62,
-    "monthly_rsi_ma5": 48.97,
-    "spread": -0.36,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-16",
+    "monthly_rsi14": 49.25,
+    "monthly_rsi_ma5": 49.1,
+    "spread": 0.15,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-13T19:05:24.943907+00:00"
+  "provisional_generated_at": "2026-11-16T21:33:31.862070+00:00"
 }

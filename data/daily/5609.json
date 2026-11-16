@@ -2,12 +2,12 @@
   "code": "5609",
   "ticker": "5609.T",
   "name": "日本鋳造",
-  "generated_at": "2026-11-13T19:04:07.942431+00:00",
-  "price_date": "2026-11-12",
+  "generated_at": "2026-11-16T21:32:40.328603+00:00",
+  "price_date": "2026-11-13",
   "record": {
-    "current_price": 953.0,
-    "change_from_signal_month_pct": 2.92,
-    "return_since_gc_pct": 7.2
+    "current_price": 971.0,
+    "change_from_signal_month_pct": 4.86,
+    "return_since_gc_pct": 9.22
   },
   "daily": [
     {
@@ -841,22 +841,35 @@
       "sma200": 899.41,
       "rsi14": 52.88,
       "rsi5": 57.06
+    },
+    {
+      "date": "2026-11-13",
+      "open": 956.0,
+      "high": 975.0,
+      "low": 956.0,
+      "close": 971.0,
+      "volume": 9300.0,
+      "sma25": 968.4,
+      "sma75": 940.11,
+      "sma200": 899.98,
+      "rsi14": 52.88,
+      "rsi5": 57.06
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-12",
-    "monthly_rsi14": 55.73,
-    "monthly_rsi_ma5": 56.76,
-    "spread": -1.03,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-13",
+    "monthly_rsi14": 58.28,
+    "monthly_rsi_ma5": 57.27,
+    "spread": 1.01,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-13T19:05:24.943907+00:00"
+  "provisional_generated_at": "2026-11-16T21:33:31.862070+00:00"
 }

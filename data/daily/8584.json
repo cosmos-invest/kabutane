@@ -2,12 +2,12 @@
   "code": "8584",
   "ticker": "8584.T",
   "name": "ジャックス",
-  "generated_at": "2026-11-13T19:04:07.942431+00:00",
-  "price_date": "2026-11-12",
+  "generated_at": "2026-11-16T21:32:40.328603+00:00",
+  "price_date": "2026-11-13",
   "record": {
-    "current_price": 3470.0,
-    "change_from_signal_month_pct": -7.34,
-    "return_since_gc_pct": -7.34
+    "current_price": 3520.0,
+    "change_from_signal_month_pct": -6.01,
+    "return_since_gc_pct": -6.01
   },
   "daily": [
     {
@@ -841,22 +841,35 @@
       "sma200": 3820.65,
       "rsi14": 42.63,
       "rsi5": 43.51
+    },
+    {
+      "date": "2026-11-13",
+      "open": 3470.0,
+      "high": 3520.0,
+      "low": 3425.0,
+      "close": 3520.0,
+      "volume": 152700.0,
+      "sma25": 3406.2,
+      "sma75": 3613.47,
+      "sma200": 3816.25,
+      "rsi14": 42.63,
+      "rsi5": 43.51
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-12",
-    "monthly_rsi14": 39.13,
-    "monthly_rsi_ma5": 39.86,
-    "spread": -0.73,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-13",
+    "monthly_rsi14": 40.22,
+    "monthly_rsi_ma5": 40.08,
+    "spread": 0.14,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-13T19:05:24.943907+00:00"
+  "provisional_generated_at": "2026-11-16T21:33:31.862070+00:00"
 }

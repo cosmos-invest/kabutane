@@ -2,12 +2,12 @@
   "code": "6538",
   "ticker": "6538.T",
   "name": "ディスラプターズ",
-  "generated_at": "2026-11-13T19:04:07.942431+00:00",
-  "price_date": "2026-11-12",
+  "generated_at": "2026-11-16T21:32:40.328603+00:00",
+  "price_date": "2026-11-16",
   "record": {
-    "current_price": 226.0,
-    "change_from_signal_month_pct": -5.04,
-    "return_since_gc_pct": -5.04
+    "current_price": 269.0,
+    "change_from_signal_month_pct": 13.03,
+    "return_since_gc_pct": 13.03
   },
   "daily": [
     {
@@ -841,22 +841,48 @@
       "sma200": 254.68,
       "rsi14": 46.16,
       "rsi5": 46.26
+    },
+    {
+      "date": "2026-11-13",
+      "open": 224.0,
+      "high": 228.0,
+      "low": 219.0,
+      "close": 222.0,
+      "volume": 60200.0,
+      "sma25": 228.2,
+      "sma75": 240.23,
+      "sma200": 253.97,
+      "rsi14": 46.16,
+      "rsi5": 46.26
+    },
+    {
+      "date": "2026-11-16",
+      "open": 270.0,
+      "high": 289.0,
+      "low": 261.0,
+      "close": 269.0,
+      "volume": 1068300.0,
+      "sma25": 229.6,
+      "sma75": 240.64,
+      "sma200": 253.46,
+      "rsi14": 46.16,
+      "rsi5": 46.26
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-12",
-    "monthly_rsi14": 45.08,
-    "monthly_rsi_ma5": 46.86,
-    "spread": -1.79,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-16",
+    "monthly_rsi14": 53.01,
+    "monthly_rsi_ma5": 48.45,
+    "spread": 4.56,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-13T19:05:24.943907+00:00"
+  "provisional_generated_at": "2026-11-16T21:33:31.862070+00:00"
 }

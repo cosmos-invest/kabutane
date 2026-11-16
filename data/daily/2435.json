@@ -2,12 +2,12 @@
   "code": "2435",
   "ticker": "2435.T",
   "name": "シダー",
-  "generated_at": "2026-11-13T19:04:07.942431+00:00",
-  "price_date": "2026-11-12",
+  "generated_at": "2026-11-16T21:32:40.328603+00:00",
+  "price_date": "2026-11-16",
   "record": {
-    "current_price": 199.0,
-    "change_from_signal_month_pct": -6.57,
-    "return_since_gc_pct": -6.57
+    "current_price": 200.0,
+    "change_from_signal_month_pct": -6.1,
+    "return_since_gc_pct": -6.1
   },
   "daily": [
     {
@@ -841,15 +841,41 @@
       "sma200": 211.72,
       "rsi14": 47.15,
       "rsi5": 47.33
+    },
+    {
+      "date": "2026-11-13",
+      "open": 200.0,
+      "high": 205.0,
+      "low": 190.0,
+      "close": 200.0,
+      "volume": 39900.0,
+      "sma25": 200.92,
+      "sma75": 207.11,
+      "sma200": 211.65,
+      "rsi14": 47.15,
+      "rsi5": 47.33
+    },
+    {
+      "date": "2026-11-16",
+      "open": 202.0,
+      "high": 202.0,
+      "low": 185.0,
+      "close": 200.0,
+      "volume": 76100.0,
+      "sma25": 200.8,
+      "sma75": 207.0,
+      "sma200": 211.57,
+      "rsi14": 47.15,
+      "rsi5": 47.33
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-12",
-    "monthly_rsi14": 35.46,
-    "monthly_rsi_ma5": 38.63,
-    "spread": -3.17,
+    "price_date": "2026-11-16",
+    "monthly_rsi14": 35.89,
+    "monthly_rsi_ma5": 38.72,
+    "spread": -2.83,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -858,5 +884,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-13T19:05:24.943907+00:00"
+  "provisional_generated_at": "2026-11-16T21:33:31.862070+00:00"
 }

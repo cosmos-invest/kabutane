@@ -2,12 +2,12 @@
   "code": "5962",
   "ticker": "5962.T",
   "name": "浅香工業",
-  "generated_at": "2026-11-13T19:04:07.942431+00:00",
-  "price_date": "2026-11-12",
+  "generated_at": "2026-11-16T21:32:40.328603+00:00",
+  "price_date": "2026-11-13",
   "record": {
-    "current_price": 2390.0,
-    "change_from_signal_month_pct": 19.2,
-    "return_since_gc_pct": 19.2
+    "current_price": 2307.0,
+    "change_from_signal_month_pct": 15.06,
+    "return_since_gc_pct": 15.06
   },
   "daily": [
     {
@@ -841,22 +841,35 @@
       "sma200": 1982.39,
       "rsi14": 60.18,
       "rsi5": 62.09
+    },
+    {
+      "date": "2026-11-13",
+      "open": 2390.0,
+      "high": 2390.0,
+      "low": 2211.0,
+      "close": 2307.0,
+      "volume": 2600.0,
+      "sma25": 2239.72,
+      "sma75": 2115.95,
+      "sma200": 1985.1,
+      "rsi14": 60.18,
+      "rsi5": 62.09
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-12",
-    "monthly_rsi14": 70.61,
-    "monthly_rsi_ma5": 68.02,
-    "spread": 2.6,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-13",
+    "monthly_rsi14": 66.56,
+    "monthly_rsi_ma5": 67.21,
+    "spread": -0.65,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-13T19:05:24.943907+00:00"
+  "provisional_generated_at": "2026-11-16T21:33:31.862070+00:00"
 }

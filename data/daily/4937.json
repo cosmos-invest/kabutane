@@ -2,12 +2,12 @@
   "code": "4937",
   "ticker": "4937.T",
   "name": "Ｗａｑｏｏ",
-  "generated_at": "2026-11-13T19:04:07.942431+00:00",
-  "price_date": "2026-11-12",
+  "generated_at": "2026-11-16T21:32:40.328603+00:00",
+  "price_date": "2026-11-13",
   "record": {
-    "current_price": 2310.0,
-    "change_from_signal_month_pct": 55.35,
-    "return_since_gc_pct": 46.95
+    "current_price": 2115.0,
+    "change_from_signal_month_pct": 42.23,
+    "return_since_gc_pct": 34.54
   },
   "daily": [
     {
@@ -841,22 +841,35 @@
       "sma200": 1729.46,
       "rsi14": 50.42,
       "rsi5": 51.28
+    },
+    {
+      "date": "2026-11-13",
+      "open": 2200.0,
+      "high": 2288.0,
+      "low": 2106.0,
+      "close": 2115.0,
+      "volume": 32900.0,
+      "sma25": 2296.56,
+      "sma75": 2203.81,
+      "sma200": 1732.96,
+      "rsi14": 50.42,
+      "rsi5": 51.28
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-12",
-    "monthly_rsi14": 64.56,
-    "monthly_rsi_ma5": 62.83,
-    "spread": 1.74,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-13",
+    "monthly_rsi14": 60.17,
+    "monthly_rsi_ma5": 61.95,
+    "spread": -1.78,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-13T19:05:24.943907+00:00"
+  "provisional_generated_at": "2026-11-16T21:33:31.862070+00:00"
 }

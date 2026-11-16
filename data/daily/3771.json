@@ -2,12 +2,12 @@
   "code": "3771",
   "ticker": "3771.T",
   "name": "システムリサーチ",
-  "generated_at": "2026-11-13T19:04:07.942431+00:00",
-  "price_date": "2026-11-12",
+  "generated_at": "2026-11-16T21:32:40.328603+00:00",
+  "price_date": "2026-11-13",
   "record": {
-    "current_price": 1858.0,
-    "change_from_signal_month_pct": 1.14,
-    "return_since_gc_pct": 1.14
+    "current_price": 1911.0,
+    "change_from_signal_month_pct": 4.03,
+    "return_since_gc_pct": 4.03
   },
   "daily": [
     {
@@ -841,22 +841,35 @@
       "sma200": 1824.14,
       "rsi14": 50.13,
       "rsi5": 54.23
+    },
+    {
+      "date": "2026-11-13",
+      "open": 1885.0,
+      "high": 1921.0,
+      "low": 1865.0,
+      "close": 1911.0,
+      "volume": 63200.0,
+      "sma25": 1913.04,
+      "sma75": 1894.28,
+      "sma200": 1823.61,
+      "rsi14": 50.13,
+      "rsi5": 54.23
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-12",
-    "monthly_rsi14": 54.2,
-    "monthly_rsi_ma5": 55.58,
-    "spread": -1.38,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-13",
+    "monthly_rsi14": 56.32,
+    "monthly_rsi_ma5": 56.01,
+    "spread": 0.32,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-13T19:05:24.943907+00:00"
+  "provisional_generated_at": "2026-11-16T21:33:31.862070+00:00"
 }

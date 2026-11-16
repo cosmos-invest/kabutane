@@ -2,12 +2,12 @@
   "code": "6425",
   "ticker": "6425.T",
   "name": "ユニバーサルエンターテインメント",
-  "generated_at": "2026-11-13T19:04:07.942431+00:00",
-  "price_date": "2026-11-12",
+  "generated_at": "2026-11-16T21:32:40.328603+00:00",
+  "price_date": "2026-11-13",
   "record": {
-    "current_price": 659.0,
-    "change_from_signal_month_pct": -1.35,
-    "return_since_gc_pct": -1.35
+    "current_price": 648.0,
+    "change_from_signal_month_pct": -2.99,
+    "return_since_gc_pct": -2.99
   },
   "daily": [
     {
@@ -841,22 +841,35 @@
       "sma200": 716.5,
       "rsi14": 30.1,
       "rsi5": 31.23
+    },
+    {
+      "date": "2026-11-13",
+      "open": 657.0,
+      "high": 660.0,
+      "low": 637.0,
+      "close": 648.0,
+      "volume": 282500.0,
+      "sma25": 656.72,
+      "sma75": 692.8,
+      "sma200": 715.8,
+      "rsi14": 30.1,
+      "rsi5": 31.23
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-12",
-    "monthly_rsi14": 29.17,
-    "monthly_rsi_ma5": 29.0,
-    "spread": 0.17,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-13",
+    "monthly_rsi14": 28.34,
+    "monthly_rsi_ma5": 28.84,
+    "spread": -0.49,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-13T19:05:24.943907+00:00"
+  "provisional_generated_at": "2026-11-16T21:33:31.862070+00:00"
 }
