@@ -2,12 +2,12 @@
   "code": "6554",
   "ticker": "6554.T",
   "name": "エスユーエス",
-  "generated_at": "2026-11-16T21:32:40.328603+00:00",
-  "price_date": "2026-11-13",
+  "generated_at": "2026-11-17T20:21:35.983581+00:00",
+  "price_date": "2026-11-16",
   "record": {
-    "current_price": 1070.0,
-    "change_from_signal_month_pct": 2.0,
-    "return_since_gc_pct": 2.0
+    "current_price": 1167.0,
+    "change_from_signal_month_pct": 11.25,
+    "return_since_gc_pct": 11.25
   },
   "daily": [
     {
@@ -854,22 +854,35 @@
       "sma200": 1058.66,
       "rsi14": 51.4,
       "rsi5": 54.57
+    },
+    {
+      "date": "2026-11-16",
+      "open": 1205.0,
+      "high": 1205.0,
+      "low": 1158.0,
+      "close": 1167.0,
+      "volume": 66000.0,
+      "sma25": 1092.16,
+      "sma75": 1089.17,
+      "sma200": 1058.59,
+      "rsi14": 51.4,
+      "rsi5": 54.57
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-13",
-    "monthly_rsi14": 53.3,
-    "monthly_rsi_ma5": 56.04,
-    "spread": -2.73,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-16",
+    "monthly_rsi14": 61.65,
+    "monthly_rsi_ma5": 57.71,
+    "spread": 3.94,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-16T21:33:31.862070+00:00"
+  "provisional_generated_at": "2026-11-17T20:22:49.640829+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "9215",
   "ticker": "9215.T",
   "name": "ＣａＳｙ",
-  "generated_at": "2026-11-16T21:32:40.328603+00:00",
-  "price_date": "2026-11-13",
+  "generated_at": "2026-11-17T20:21:35.983581+00:00",
+  "price_date": "2026-11-16",
   "record": {
-    "current_price": 998.0,
-    "change_from_signal_month_pct": 7.43,
-    "return_since_gc_pct": 7.43
+    "current_price": 985.0,
+    "change_from_signal_month_pct": 6.03,
+    "return_since_gc_pct": 6.03
   },
   "daily": [
     {
@@ -854,15 +854,28 @@
       "sma200": 926.88,
       "rsi14": 45.36,
       "rsi5": 48.13
+    },
+    {
+      "date": "2026-11-16",
+      "open": 1000.0,
+      "high": 1010.0,
+      "low": 985.0,
+      "close": 985.0,
+      "volume": 4000.0,
+      "sma25": 982.04,
+      "sma75": 975.44,
+      "sma200": 927.29,
+      "rsi14": 45.36,
+      "rsi5": 48.13
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-13",
-    "monthly_rsi14": 55.26,
-    "monthly_rsi_ma5": 54.25,
-    "spread": 1.01,
+    "price_date": "2026-11-16",
+    "monthly_rsi14": 54.24,
+    "monthly_rsi_ma5": 54.05,
+    "spread": 0.19,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -871,5 +884,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-16T21:33:31.862070+00:00"
+  "provisional_generated_at": "2026-11-17T20:22:49.640829+00:00"
 }

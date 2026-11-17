@@ -2,12 +2,12 @@
   "code": "9160",
   "ticker": "9160.T",
   "name": "オンザページ",
-  "generated_at": "2026-11-16T21:32:40.328603+00:00",
-  "price_date": "2026-11-13",
+  "generated_at": "2026-11-17T20:21:35.983581+00:00",
+  "price_date": "2026-11-16",
   "record": {
-    "current_price": 330.0,
-    "change_from_signal_month_pct": 8.2,
-    "return_since_gc_pct": 8.2
+    "current_price": 318.0,
+    "change_from_signal_month_pct": 4.26,
+    "return_since_gc_pct": 4.26
   },
   "daily": [
     {
@@ -854,22 +854,35 @@
       "sma200": 308.85,
       "rsi14": 33.54,
       "rsi5": 37.39
+    },
+    {
+      "date": "2026-11-16",
+      "open": 291.0,
+      "high": 332.0,
+      "low": 291.0,
+      "close": 318.0,
+      "volume": 440800.0,
+      "sma25": 323.56,
+      "sma75": 323.83,
+      "sma200": 308.86,
+      "rsi14": 33.54,
+      "rsi5": 37.39
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-13",
-    "monthly_rsi14": 50.22,
-    "monthly_rsi_ma5": 48.17,
-    "spread": 2.05,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-16",
+    "monthly_rsi14": 46.51,
+    "monthly_rsi_ma5": 47.43,
+    "spread": -0.92,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-16T21:33:31.862070+00:00"
+  "provisional_generated_at": "2026-11-17T20:22:49.640829+00:00"
 }

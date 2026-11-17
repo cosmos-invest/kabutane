@@ -2,12 +2,12 @@
   "code": "4052",
   "ticker": "4052.T",
   "name": "フィーチャ",
-  "generated_at": "2026-11-16T21:32:40.328603+00:00",
-  "price_date": "2026-11-13",
+  "generated_at": "2026-11-17T20:21:35.983581+00:00",
+  "price_date": "2026-11-16",
   "record": {
-    "current_price": 678.0,
-    "change_from_signal_month_pct": 98.25,
-    "return_since_gc_pct": 98.25
+    "current_price": 654.0,
+    "change_from_signal_month_pct": 91.23,
+    "return_since_gc_pct": 91.23
   },
   "daily": [
     {
@@ -854,15 +854,28 @@
       "sma200": 448.24,
       "rsi14": 30.77,
       "rsi5": 40.36
+    },
+    {
+      "date": "2026-11-16",
+      "open": 748.0,
+      "high": 768.0,
+      "low": 645.0,
+      "close": 654.0,
+      "volume": 349300.0,
+      "sma25": 739.36,
+      "sma75": 736.49,
+      "sma200": 450.01,
+      "rsi14": 30.77,
+      "rsi5": 40.36
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-13",
-    "monthly_rsi14": 54.22,
-    "monthly_rsi_ma5": 57.44,
-    "spread": -3.22,
+    "price_date": "2026-11-16",
+    "monthly_rsi14": 53.36,
+    "monthly_rsi_ma5": 57.26,
+    "spread": -3.91,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -871,5 +884,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-16T21:33:31.862070+00:00"
+  "provisional_generated_at": "2026-11-17T20:22:49.640829+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "8395",
   "ticker": "8395.T",
   "name": "佐賀銀行",
-  "generated_at": "2026-11-16T21:32:40.328603+00:00",
-  "price_date": "2026-11-13",
+  "generated_at": "2026-11-17T20:21:35.983581+00:00",
+  "price_date": "2026-11-16",
   "record": {
-    "current_price": 6070.0,
-    "change_from_signal_month_pct": 8.39,
-    "return_since_gc_pct": 8.39
+    "current_price": 5850.0,
+    "change_from_signal_month_pct": 4.46,
+    "return_since_gc_pct": 4.46
   },
   "daily": [
     {
@@ -854,15 +854,28 @@
       "sma200": 5576.62,
       "rsi14": 78.66,
       "rsi5": 81.32
+    },
+    {
+      "date": "2026-11-16",
+      "open": 6160.0,
+      "high": 6170.0,
+      "low": 5820.0,
+      "close": 5850.0,
+      "volume": 52500.0,
+      "sma25": 6206.8,
+      "sma75": 6358.8,
+      "sma200": 5582.98,
+      "rsi14": 78.66,
+      "rsi5": 81.32
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-13",
-    "monthly_rsi14": 70.29,
-    "monthly_rsi_ma5": 80.31,
-    "spread": -10.02,
+    "price_date": "2026-11-16",
+    "monthly_rsi14": 67.12,
+    "monthly_rsi_ma5": 79.68,
+    "spread": -12.55,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -871,5 +884,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-16T21:33:31.862070+00:00"
+  "provisional_generated_at": "2026-11-17T20:22:49.640829+00:00"
 }

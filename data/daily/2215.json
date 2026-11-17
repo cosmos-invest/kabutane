@@ -2,12 +2,12 @@
   "code": "2215",
   "ticker": "2215.T",
   "name": "第一屋製パン",
-  "generated_at": "2026-11-16T21:32:40.328603+00:00",
-  "price_date": "2026-11-13",
+  "generated_at": "2026-11-17T20:21:35.983581+00:00",
+  "price_date": "2026-11-16",
   "record": {
-    "current_price": 622.0,
-    "change_from_signal_month_pct": 2.3,
-    "return_since_gc_pct": 2.3
+    "current_price": 620.0,
+    "change_from_signal_month_pct": 1.97,
+    "return_since_gc_pct": 1.97
   },
   "daily": [
     {
@@ -854,15 +854,28 @@
       "sma200": 609.3,
       "rsi14": 50.45,
       "rsi5": 51.35
+    },
+    {
+      "date": "2026-11-16",
+      "open": 622.0,
+      "high": 623.0,
+      "low": 615.0,
+      "close": 620.0,
+      "volume": 30100.0,
+      "sma25": 619.44,
+      "sma75": 615.52,
+      "sma200": 609.26,
+      "rsi14": 50.45,
+      "rsi5": 51.35
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-13",
-    "monthly_rsi14": 58.88,
-    "monthly_rsi_ma5": 58.17,
-    "spread": 0.71,
+    "price_date": "2026-11-16",
+    "monthly_rsi14": 58.53,
+    "monthly_rsi_ma5": 58.11,
+    "spread": 0.43,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -871,5 +884,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-16T21:33:31.862070+00:00"
+  "provisional_generated_at": "2026-11-17T20:22:49.640829+00:00"
 }

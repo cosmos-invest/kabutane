@@ -2,12 +2,12 @@
   "code": "9221",
   "ticker": "9221.T",
   "name": "フルハシＥＰＯ",
-  "generated_at": "2026-11-16T21:32:40.328603+00:00",
-  "price_date": "2026-11-13",
+  "generated_at": "2026-11-17T20:21:35.983581+00:00",
+  "price_date": "2026-11-16",
   "record": {
-    "current_price": 1115.0,
-    "change_from_signal_month_pct": -10.23,
-    "return_since_gc_pct": -10.23
+    "current_price": 1106.0,
+    "change_from_signal_month_pct": -10.95,
+    "return_since_gc_pct": -10.95
   },
   "daily": [
     {
@@ -854,15 +854,28 @@
       "sma200": 1213.54,
       "rsi14": 56.64,
       "rsi5": 58.37
+    },
+    {
+      "date": "2026-11-16",
+      "open": 1107.0,
+      "high": 1114.0,
+      "low": 1106.0,
+      "close": 1106.0,
+      "volume": 14700.0,
+      "sma25": 1114.44,
+      "sma75": 1161.76,
+      "sma200": 1211.79,
+      "rsi14": 56.64,
+      "rsi5": 58.37
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-13",
-    "monthly_rsi14": 50.81,
-    "monthly_rsi_ma5": 53.71,
-    "spread": -2.9,
+    "price_date": "2026-11-16",
+    "monthly_rsi14": 50.23,
+    "monthly_rsi_ma5": 53.6,
+    "spread": -3.37,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -871,5 +884,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-16T21:33:31.862070+00:00"
+  "provisional_generated_at": "2026-11-17T20:22:49.640829+00:00"
 }

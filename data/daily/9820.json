@@ -2,12 +2,12 @@
   "code": "9820",
   "ticker": "9820.T",
   "name": "エムティジェネックス",
-  "generated_at": "2026-11-16T21:32:40.328603+00:00",
-  "price_date": "2026-11-13",
+  "generated_at": "2026-11-17T20:21:35.983581+00:00",
+  "price_date": "2026-11-16",
   "record": {
-    "current_price": 4345.0,
-    "change_from_signal_month_pct": 17.43,
-    "return_since_gc_pct": 17.43
+    "current_price": 4340.0,
+    "change_from_signal_month_pct": 17.3,
+    "return_since_gc_pct": 17.3
   },
   "daily": [
     {
@@ -854,15 +854,28 @@
       "sma200": 3653.2,
       "rsi14": 60.61,
       "rsi5": 63.5
+    },
+    {
+      "date": "2026-11-16",
+      "open": 4345.0,
+      "high": 4350.0,
+      "low": 4140.0,
+      "close": 4340.0,
+      "volume": 2300.0,
+      "sma25": 3700.0,
+      "sma75": 3752.93,
+      "sma200": 3657.25,
+      "rsi14": 60.61,
+      "rsi5": 63.5
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-13",
-    "monthly_rsi14": 70.78,
-    "monthly_rsi_ma5": 66.61,
-    "spread": 4.18,
+    "price_date": "2026-11-16",
+    "monthly_rsi14": 70.73,
+    "monthly_rsi_ma5": 66.59,
+    "spread": 4.13,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -871,5 +884,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-16T21:33:31.862070+00:00"
+  "provisional_generated_at": "2026-11-17T20:22:49.640829+00:00"
 }

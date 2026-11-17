@@ -2,12 +2,12 @@
   "code": "6103",
   "ticker": "6103.T",
   "name": "オークマ",
-  "generated_at": "2026-11-16T21:32:40.328603+00:00",
-  "price_date": "2026-11-13",
+  "generated_at": "2026-11-17T20:21:35.983581+00:00",
+  "price_date": "2026-11-16",
   "record": {
-    "current_price": 4220.0,
-    "change_from_signal_month_pct": -14.66,
-    "return_since_gc_pct": -8.76
+    "current_price": 3935.0,
+    "change_from_signal_month_pct": -20.42,
+    "return_since_gc_pct": -14.92
   },
   "daily": [
     {
@@ -854,15 +854,28 @@
       "sma200": 4460.23,
       "rsi14": 56.94,
       "rsi5": 61.74
+    },
+    {
+      "date": "2026-11-16",
+      "open": 4205.0,
+      "high": 4205.0,
+      "low": 3935.0,
+      "close": 3935.0,
+      "volume": 726000.0,
+      "sma25": 4459.0,
+      "sma75": 4722.47,
+      "sma200": 4459.93,
+      "rsi14": 56.94,
+      "rsi5": 61.74
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-13",
-    "monthly_rsi14": 52.31,
-    "monthly_rsi_ma5": 57.7,
-    "spread": -5.39,
+    "price_date": "2026-11-16",
+    "monthly_rsi14": 49.25,
+    "monthly_rsi_ma5": 57.09,
+    "spread": -7.84,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -871,5 +884,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-16T21:33:31.862070+00:00"
+  "provisional_generated_at": "2026-11-17T20:22:49.640829+00:00"
 }

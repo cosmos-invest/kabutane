@@ -2,12 +2,12 @@
   "code": "8341",
   "ticker": "8341.T",
   "name": "七十七銀行",
-  "generated_at": "2026-11-16T21:32:40.328603+00:00",
-  "price_date": "2026-11-13",
+  "generated_at": "2026-11-17T20:21:35.983581+00:00",
+  "price_date": "2026-11-16",
   "record": {
-    "current_price": 3514.0,
-    "change_from_signal_month_pct": 0.54,
-    "return_since_gc_pct": 0.54
+    "current_price": 3412.0,
+    "change_from_signal_month_pct": -2.37,
+    "return_since_gc_pct": -2.37
   },
   "daily": [
     {
@@ -854,15 +854,28 @@
       "sma200": 3403.43,
       "rsi14": 80.98,
       "rsi5": 83.57
+    },
+    {
+      "date": "2026-11-16",
+      "open": 3514.0,
+      "high": 3518.0,
+      "low": 3402.0,
+      "close": 3412.0,
+      "volume": 587600.0,
+      "sma25": 3574.32,
+      "sma75": 3780.99,
+      "sma200": 3406.25,
+      "rsi14": 80.98,
+      "rsi5": 83.57
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-13",
-    "monthly_rsi14": 67.22,
-    "monthly_rsi_ma5": 79.14,
-    "spread": -11.92,
+    "price_date": "2026-11-16",
+    "monthly_rsi14": 64.78,
+    "monthly_rsi_ma5": 78.65,
+    "spread": -13.87,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -871,5 +884,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-16T21:33:31.862070+00:00"
+  "provisional_generated_at": "2026-11-17T20:22:49.640829+00:00"
 }

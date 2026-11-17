@@ -2,12 +2,12 @@
   "code": "8136",
   "ticker": "8136.T",
   "name": "サンリオ",
-  "generated_at": "2026-11-16T21:32:40.328603+00:00",
-  "price_date": "2026-11-13",
+  "generated_at": "2026-11-17T20:21:35.983581+00:00",
+  "price_date": "2026-11-16",
   "record": {
-    "current_price": 1109.5,
-    "change_from_signal_month_pct": -12.81,
-    "return_since_gc_pct": 0.86
+    "current_price": 1111.0,
+    "change_from_signal_month_pct": -12.69,
+    "return_since_gc_pct": 1.0
   },
   "daily": [
     {
@@ -854,15 +854,28 @@
       "sma200": 1092.08,
       "rsi14": 50.99,
       "rsi5": 58.08
+    },
+    {
+      "date": "2026-11-16",
+      "open": 1122.0,
+      "high": 1122.5,
+      "low": 1074.0,
+      "close": 1111.0,
+      "volume": 16359900.0,
+      "sma25": 1242.76,
+      "sma75": 1241.57,
+      "sma200": 1092.98,
+      "rsi14": 50.99,
+      "rsi5": 58.08
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-13",
-    "monthly_rsi14": 51.54,
-    "monthly_rsi_ma5": 55.71,
-    "spread": -4.17,
+    "price_date": "2026-11-16",
+    "monthly_rsi14": 51.59,
+    "monthly_rsi_ma5": 55.72,
+    "spread": -4.13,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -871,5 +884,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-16T21:33:31.862070+00:00"
+  "provisional_generated_at": "2026-11-17T20:22:49.640829+00:00"
 }

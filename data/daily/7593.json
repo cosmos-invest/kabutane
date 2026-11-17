@@ -2,12 +2,12 @@
   "code": "7593",
   "ticker": "7593.T",
   "name": "ＶＴホールディングス",
-  "generated_at": "2026-11-16T21:32:40.328603+00:00",
-  "price_date": "2026-11-13",
+  "generated_at": "2026-11-17T20:21:35.983581+00:00",
+  "price_date": "2026-11-16",
   "record": {
-    "current_price": 501.0,
-    "change_from_signal_month_pct": 1.83,
-    "return_since_gc_pct": 1.83
+    "current_price": 523.0,
+    "change_from_signal_month_pct": 6.3,
+    "return_since_gc_pct": 6.3
   },
   "daily": [
     {
@@ -854,22 +854,35 @@
       "sma200": 499.65,
       "rsi14": 44.63,
       "rsi5": 49.41
+    },
+    {
+      "date": "2026-11-16",
+      "open": 518.0,
+      "high": 532.0,
+      "low": 517.0,
+      "close": 523.0,
+      "volume": 742100.0,
+      "sma25": 499.84,
+      "sma75": 510.69,
+      "sma200": 499.54,
+      "rsi14": 44.63,
+      "rsi5": 49.41
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-13",
-    "monthly_rsi14": 50.0,
-    "monthly_rsi_ma5": 51.39,
-    "spread": -1.38,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-16",
+    "monthly_rsi14": 53.44,
+    "monthly_rsi_ma5": 52.07,
+    "spread": 1.36,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-16T21:33:31.862070+00:00"
+  "provisional_generated_at": "2026-11-17T20:22:49.640829+00:00"
 }

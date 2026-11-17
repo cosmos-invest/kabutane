@@ -2,12 +2,12 @@
   "code": "4118",
   "ticker": "4118.T",
   "name": "カネカ",
-  "generated_at": "2026-11-16T21:32:40.328603+00:00",
-  "price_date": "2026-11-13",
+  "generated_at": "2026-11-17T20:21:35.983581+00:00",
+  "price_date": "2026-11-16",
   "record": {
-    "current_price": 6533.0,
-    "change_from_signal_month_pct": 14.25,
-    "return_since_gc_pct": 18.33
+    "current_price": 6435.0,
+    "change_from_signal_month_pct": 12.54,
+    "return_since_gc_pct": 16.55
   },
   "daily": [
     {
@@ -854,15 +854,28 @@
       "sma200": 5517.94,
       "rsi14": 67.5,
       "rsi5": 71.78
+    },
+    {
+      "date": "2026-11-16",
+      "open": 6596.0,
+      "high": 6635.0,
+      "low": 6435.0,
+      "close": 6435.0,
+      "volume": 280900.0,
+      "sma25": 6171.56,
+      "sma75": 6080.92,
+      "sma200": 5526.86,
+      "rsi14": 67.5,
+      "rsi5": 71.78
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-13",
-    "monthly_rsi14": 75.82,
-    "monthly_rsi_ma5": 73.55,
-    "spread": 2.27,
+    "price_date": "2026-11-16",
+    "monthly_rsi14": 75.06,
+    "monthly_rsi_ma5": 73.4,
+    "spread": 1.66,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -871,5 +884,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-16T21:33:31.862070+00:00"
+  "provisional_generated_at": "2026-11-17T20:22:49.640829+00:00"
 }

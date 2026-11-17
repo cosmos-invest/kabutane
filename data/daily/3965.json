@@ -2,12 +2,12 @@
   "code": "3965",
   "ticker": "3965.T",
   "name": "キャピタル・アセット・プランニング",
-  "generated_at": "2026-11-16T21:32:40.328603+00:00",
-  "price_date": "2026-11-13",
+  "generated_at": "2026-11-17T20:21:35.983581+00:00",
+  "price_date": "2026-11-16",
   "record": {
-    "current_price": 872.0,
-    "change_from_signal_month_pct": 1.4,
-    "return_since_gc_pct": 1.4
+    "current_price": 883.0,
+    "change_from_signal_month_pct": 2.67,
+    "return_since_gc_pct": 2.67
   },
   "daily": [
     {
@@ -854,22 +854,35 @@
       "sma200": 851.21,
       "rsi14": 54.25,
       "rsi5": 55.74
+    },
+    {
+      "date": "2026-11-16",
+      "open": 872.0,
+      "high": 895.0,
+      "low": 872.0,
+      "close": 883.0,
+      "volume": 9000.0,
+      "sma25": 856.64,
+      "sma75": 871.73,
+      "sma200": 851.32,
+      "rsi14": 54.25,
+      "rsi5": 55.74
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-13",
-    "monthly_rsi14": 54.46,
-    "monthly_rsi_ma5": 54.94,
-    "spread": -0.48,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-16",
+    "monthly_rsi14": 55.61,
+    "monthly_rsi_ma5": 55.17,
+    "spread": 0.44,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-16T21:33:31.862070+00:00"
+  "provisional_generated_at": "2026-11-17T20:22:49.640829+00:00"
 }

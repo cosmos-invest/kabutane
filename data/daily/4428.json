@@ -2,12 +2,12 @@
   "code": "4428",
   "ticker": "4428.T",
   "name": "シノプス",
-  "generated_at": "2026-11-16T21:32:40.328603+00:00",
-  "price_date": "2026-11-13",
+  "generated_at": "2026-11-17T20:21:35.983581+00:00",
+  "price_date": "2026-11-16",
   "record": {
-    "current_price": 706.0,
-    "change_from_signal_month_pct": -0.28,
-    "return_since_gc_pct": -0.28
+    "current_price": 653.0,
+    "change_from_signal_month_pct": -7.77,
+    "return_since_gc_pct": -7.77
   },
   "daily": [
     {
@@ -854,22 +854,35 @@
       "sma200": 694.64,
       "rsi14": 35.85,
       "rsi5": 40.32
+    },
+    {
+      "date": "2026-11-16",
+      "open": 703.0,
+      "high": 703.0,
+      "low": 648.0,
+      "close": 653.0,
+      "volume": 8800.0,
+      "sma25": 697.76,
+      "sma75": 703.93,
+      "sma200": 693.94,
+      "rsi14": 35.85,
+      "rsi5": 40.32
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-13",
-    "monthly_rsi14": 40.24,
-    "monthly_rsi_ma5": 40.17,
-    "spread": 0.07,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-16",
+    "monthly_rsi14": 36.99,
+    "monthly_rsi_ma5": 39.52,
+    "spread": -2.53,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-16T21:33:31.862070+00:00"
+  "provisional_generated_at": "2026-11-17T20:22:49.640829+00:00"
 }

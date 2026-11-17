@@ -2,12 +2,12 @@
   "code": "6238",
   "ticker": "6238.T",
   "name": "フリュー",
-  "generated_at": "2026-11-16T21:32:40.328603+00:00",
-  "price_date": "2026-11-13",
+  "generated_at": "2026-11-17T20:21:35.983581+00:00",
+  "price_date": "2026-11-16",
   "record": {
-    "current_price": 1505.0,
-    "change_from_signal_month_pct": 8.51,
-    "return_since_gc_pct": 19.63
+    "current_price": 1660.0,
+    "change_from_signal_month_pct": 19.68,
+    "return_since_gc_pct": 31.96
   },
   "daily": [
     {
@@ -854,15 +854,28 @@
       "sma200": 1324.38,
       "rsi14": 61.45,
       "rsi5": 64.69
+    },
+    {
+      "date": "2026-11-16",
+      "open": 1585.0,
+      "high": 1692.0,
+      "low": 1576.0,
+      "close": 1660.0,
+      "volume": 816700.0,
+      "sma25": 1472.8,
+      "sma75": 1431.19,
+      "sma200": 1327.42,
+      "rsi14": 61.45,
+      "rsi5": 64.69
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-13",
-    "monthly_rsi14": 63.68,
-    "monthly_rsi_ma5": 60.48,
-    "spread": 3.2,
+    "price_date": "2026-11-16",
+    "monthly_rsi14": 69.97,
+    "monthly_rsi_ma5": 61.74,
+    "spread": 8.23,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -871,5 +884,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-16T21:33:31.862070+00:00"
+  "provisional_generated_at": "2026-11-17T20:22:49.640829+00:00"
 }

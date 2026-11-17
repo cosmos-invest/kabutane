@@ -2,12 +2,12 @@
   "code": "3983",
   "ticker": "3983.T",
   "name": "オロ",
-  "generated_at": "2026-11-16T21:32:40.328603+00:00",
-  "price_date": "2026-11-13",
+  "generated_at": "2026-11-17T20:21:35.983581+00:00",
+  "price_date": "2026-11-16",
   "record": {
-    "current_price": 1911.0,
-    "change_from_signal_month_pct": -13.65,
-    "return_since_gc_pct": -4.35
+    "current_price": 1903.0,
+    "change_from_signal_month_pct": -14.01,
+    "return_since_gc_pct": -4.75
   },
   "daily": [
     {
@@ -854,15 +854,28 @@
       "sma200": 2007.97,
       "rsi14": 42.5,
       "rsi5": 47.86
+    },
+    {
+      "date": "2026-11-16",
+      "open": 1911.0,
+      "high": 1929.0,
+      "low": 1903.0,
+      "close": 1903.0,
+      "volume": 39700.0,
+      "sma25": 1897.52,
+      "sma75": 2002.21,
+      "sma200": 2006.15,
+      "rsi14": 42.5,
+      "rsi5": 47.86
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-13",
-    "monthly_rsi14": 43.5,
-    "monthly_rsi_ma5": 44.82,
-    "spread": -1.33,
+    "price_date": "2026-11-16",
+    "monthly_rsi14": 43.28,
+    "monthly_rsi_ma5": 44.78,
+    "spread": -1.5,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -871,5 +884,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-16T21:33:31.862070+00:00"
+  "provisional_generated_at": "2026-11-17T20:22:49.640829+00:00"
 }

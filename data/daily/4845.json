@@ -2,12 +2,12 @@
   "code": "4845",
   "ticker": "4845.T",
   "name": "スカラ",
-  "generated_at": "2026-11-16T21:32:40.328603+00:00",
-  "price_date": "2026-11-13",
+  "generated_at": "2026-11-17T20:21:35.983581+00:00",
+  "price_date": "2026-11-16",
   "record": {
-    "current_price": 318.0,
-    "change_from_signal_month_pct": -4.79,
-    "return_since_gc_pct": -4.79
+    "current_price": 327.0,
+    "change_from_signal_month_pct": -2.1,
+    "return_since_gc_pct": -2.1
   },
   "daily": [
     {
@@ -854,22 +854,35 @@
       "sma200": 345.24,
       "rsi14": 25.33,
       "rsi5": 26.22
+    },
+    {
+      "date": "2026-11-16",
+      "open": 320.0,
+      "high": 328.0,
+      "low": 319.0,
+      "close": 327.0,
+      "volume": 91300.0,
+      "sma25": 323.36,
+      "sma75": 338.07,
+      "sma200": 344.95,
+      "rsi14": 25.33,
+      "rsi5": 26.22
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-13",
-    "monthly_rsi14": 26.21,
-    "monthly_rsi_ma5": 27.38,
-    "spread": -1.17,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-16",
+    "monthly_rsi14": 28.65,
+    "monthly_rsi_ma5": 27.87,
+    "spread": 0.78,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-16T21:33:31.862070+00:00"
+  "provisional_generated_at": "2026-11-17T20:22:49.640829+00:00"
 }
