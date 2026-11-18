@@ -2,12 +2,12 @@
   "code": "2215",
   "ticker": "2215.T",
   "name": "第一屋製パン",
-  "generated_at": "2026-11-17T20:21:35.983581+00:00",
-  "price_date": "2026-11-16",
+  "generated_at": "2026-11-18T19:52:08.539440+00:00",
+  "price_date": "2026-11-17",
   "record": {
-    "current_price": 620.0,
-    "change_from_signal_month_pct": 1.97,
-    "return_since_gc_pct": 1.97
+    "current_price": 617.0,
+    "change_from_signal_month_pct": 1.48,
+    "return_since_gc_pct": 1.48
   },
   "daily": [
     {
@@ -867,22 +867,35 @@
       "sma200": 609.26,
       "rsi14": 50.45,
       "rsi5": 51.35
+    },
+    {
+      "date": "2026-11-17",
+      "open": 620.0,
+      "high": 620.0,
+      "low": 617.0,
+      "close": 617.0,
+      "volume": 8200.0,
+      "sma25": 619.48,
+      "sma75": 615.75,
+      "sma200": 609.26,
+      "rsi14": 50.45,
+      "rsi5": 51.35
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-16",
-    "monthly_rsi14": 58.53,
-    "monthly_rsi_ma5": 58.11,
-    "spread": 0.43,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-17",
+    "monthly_rsi14": 57.93,
+    "monthly_rsi_ma5": 57.98,
+    "spread": -0.06,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-17T20:22:49.640829+00:00"
+  "provisional_generated_at": "2026-11-18T19:52:57.212599+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "2791",
   "ticker": "2791.T",
   "name": "大黒天物産",
-  "generated_at": "2026-11-17T20:21:35.983581+00:00",
-  "price_date": "2026-11-16",
+  "generated_at": "2026-11-18T19:52:08.539440+00:00",
+  "price_date": "2026-11-17",
   "record": {
-    "current_price": 4080.0,
-    "change_from_signal_month_pct": -9.23,
-    "return_since_gc_pct": -9.23
+    "current_price": 3985.0,
+    "change_from_signal_month_pct": -11.35,
+    "return_since_gc_pct": -11.35
   },
   "daily": [
     {
@@ -867,22 +867,35 @@
       "sma200": 4578.48,
       "rsi14": 35.1,
       "rsi5": 35.87
+    },
+    {
+      "date": "2026-11-17",
+      "open": 4085.0,
+      "high": 4100.0,
+      "low": 3965.0,
+      "close": 3985.0,
+      "volume": 83700.0,
+      "sma25": 3853.8,
+      "sma75": 4300.13,
+      "sma200": 4571.7,
+      "rsi14": 35.1,
+      "rsi5": 35.87
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-16",
-    "monthly_rsi14": 37.57,
-    "monthly_rsi_ma5": 37.28,
-    "spread": 0.29,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-17",
+    "monthly_rsi14": 36.65,
+    "monthly_rsi_ma5": 37.1,
+    "spread": -0.44,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-17T20:22:49.640829+00:00"
+  "provisional_generated_at": "2026-11-18T19:52:57.212599+00:00"
 }

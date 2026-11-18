@@ -2,12 +2,12 @@
   "code": "5930",
   "ticker": "5930.T",
   "name": "文化シヤッター",
-  "generated_at": "2026-11-17T20:21:35.983581+00:00",
-  "price_date": "2026-11-16",
+  "generated_at": "2026-11-18T19:52:08.539440+00:00",
+  "price_date": "2026-11-17",
   "record": {
-    "current_price": 1907.0,
-    "change_from_signal_month_pct": 0.16,
-    "return_since_gc_pct": 0.16
+    "current_price": 1888.0,
+    "change_from_signal_month_pct": -0.84,
+    "return_since_gc_pct": -0.84
   },
   "daily": [
     {
@@ -867,22 +867,35 @@
       "sma200": 1910.6,
       "rsi14": 48.94,
       "rsi5": 49.51
+    },
+    {
+      "date": "2026-11-17",
+      "open": 1895.0,
+      "high": 1912.0,
+      "low": 1877.0,
+      "close": 1888.0,
+      "volume": 105000.0,
+      "sma25": 1881.96,
+      "sma75": 1875.45,
+      "sma200": 1909.75,
+      "rsi14": 48.94,
+      "rsi5": 49.51
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-16",
-    "monthly_rsi14": 52.26,
-    "monthly_rsi_ma5": 51.66,
-    "spread": 0.6,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-17",
+    "monthly_rsi14": 51.4,
+    "monthly_rsi_ma5": 51.49,
+    "spread": -0.09,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-17T20:22:49.640829+00:00"
+  "provisional_generated_at": "2026-11-18T19:52:57.212599+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "8217",
   "ticker": "8217.T",
   "name": "オークワ",
-  "generated_at": "2026-11-17T20:21:35.983581+00:00",
-  "price_date": "2026-11-16",
+  "generated_at": "2026-11-18T19:52:08.539440+00:00",
+  "price_date": "2026-11-17",
   "record": {
-    "current_price": 785.0,
-    "change_from_signal_month_pct": -2.73,
-    "return_since_gc_pct": -2.73
+    "current_price": 781.0,
+    "change_from_signal_month_pct": -3.22,
+    "return_since_gc_pct": -3.22
   },
   "daily": [
     {
@@ -867,22 +867,35 @@
       "sma200": 804.76,
       "rsi14": 41.24,
       "rsi5": 44.1
+    },
+    {
+      "date": "2026-11-17",
+      "open": 785.0,
+      "high": 786.0,
+      "low": 776.0,
+      "close": 781.0,
+      "volume": 39900.0,
+      "sma25": 773.72,
+      "sma75": 788.87,
+      "sma200": 804.25,
+      "rsi14": 41.24,
+      "rsi5": 44.1
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-16",
-    "monthly_rsi14": 43.76,
-    "monthly_rsi_ma5": 43.31,
-    "spread": 0.44,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-17",
+    "monthly_rsi14": 43.19,
+    "monthly_rsi_ma5": 43.2,
+    "spread": -0.01,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-17T20:22:49.640829+00:00"
+  "provisional_generated_at": "2026-11-18T19:52:57.212599+00:00"
 }
