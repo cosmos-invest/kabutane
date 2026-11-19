@@ -2,12 +2,12 @@
   "code": "5302",
   "ticker": "5302.T",
   "name": "日本カーボン",
-  "generated_at": "2026-11-18T19:52:08.539440+00:00",
-  "price_date": "2026-11-17",
+  "generated_at": "2026-11-19T19:52:19.439039+00:00",
+  "price_date": "2026-11-18",
   "record": {
-    "current_price": 4745.0,
-    "change_from_signal_month_pct": 0.21,
-    "return_since_gc_pct": 0.21
+    "current_price": 4725.0,
+    "change_from_signal_month_pct": -0.21,
+    "return_since_gc_pct": -0.21
   },
   "daily": [
     {
@@ -880,15 +880,28 @@
       "sma200": 4828.77,
       "rsi14": 53.42,
       "rsi5": 54.33
+    },
+    {
+      "date": "2026-11-18",
+      "open": 4790.0,
+      "high": 4815.0,
+      "low": 4680.0,
+      "close": 4725.0,
+      "volume": 41100.0,
+      "sma25": 4879.0,
+      "sma75": 4980.33,
+      "sma200": 4829.35,
+      "rsi14": 53.42,
+      "rsi5": 54.33
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-17",
-    "monthly_rsi14": 52.4,
-    "monthly_rsi_ma5": 57.08,
-    "spread": -4.68,
+    "price_date": "2026-11-18",
+    "monthly_rsi14": 52.03,
+    "monthly_rsi_ma5": 57.01,
+    "spread": -4.98,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -897,5 +910,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-18T19:52:57.212599+00:00"
+  "provisional_generated_at": "2026-11-19T19:53:35.384602+00:00"
 }

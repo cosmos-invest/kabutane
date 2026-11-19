@@ -2,12 +2,12 @@
   "code": "4776",
   "ticker": "4776.T",
   "name": "サイボウズ",
-  "generated_at": "2026-11-18T19:52:08.539440+00:00",
-  "price_date": "2026-11-17",
+  "generated_at": "2026-11-19T19:52:19.439039+00:00",
+  "price_date": "2026-11-18",
   "record": {
-    "current_price": 3095.0,
-    "change_from_signal_month_pct": 14.84,
-    "return_since_gc_pct": 21.9
+    "current_price": 2983.0,
+    "change_from_signal_month_pct": 10.69,
+    "return_since_gc_pct": 17.49
   },
   "daily": [
     {
@@ -880,22 +880,35 @@
       "sma200": 2556.45,
       "rsi14": 45.61,
       "rsi5": 51.47
+    },
+    {
+      "date": "2026-11-18",
+      "open": 3070.0,
+      "high": 3100.0,
+      "low": 2927.0,
+      "close": 2983.0,
+      "volume": 194500.0,
+      "sma25": 3101.92,
+      "sma75": 3012.43,
+      "sma200": 2558.89,
+      "rsi14": 45.61,
+      "rsi5": 51.47
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-17",
-    "monthly_rsi14": 55.19,
-    "monthly_rsi_ma5": 54.13,
-    "spread": 1.06,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-18",
+    "monthly_rsi14": 53.79,
+    "monthly_rsi_ma5": 53.85,
+    "spread": -0.06,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-18T19:52:57.212599+00:00"
+  "provisional_generated_at": "2026-11-19T19:53:35.384602+00:00"
 }

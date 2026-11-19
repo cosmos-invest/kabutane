@@ -2,12 +2,12 @@
   "code": "9872",
   "ticker": "9872.T",
   "name": "北恵",
-  "generated_at": "2026-11-18T19:52:08.539440+00:00",
-  "price_date": "2026-11-17",
+  "generated_at": "2026-11-19T19:52:19.439039+00:00",
+  "price_date": "2026-11-18",
   "record": {
-    "current_price": 952.0,
-    "change_from_signal_month_pct": 1.06,
-    "return_since_gc_pct": 7.33
+    "current_price": 951.0,
+    "change_from_signal_month_pct": 0.96,
+    "return_since_gc_pct": 7.22
   },
   "daily": [
     {
@@ -880,15 +880,35 @@
       "sma200": 915.97,
       "rsi14": 53.24,
       "rsi5": 58.78
+    },
+    {
+      "date": "2026-11-18",
+      "open": 950.0,
+      "high": 960.0,
+      "low": 949.0,
+      "close": 951.0,
+      "volume": 63800.0,
+      "sma25": 955.16,
+      "sma75": 955.19,
+      "sma200": 916.24,
+      "rsi14": 53.24,
+      "rsi5": 58.78
     }
   ],
-  "corporate_events": [],
+  "corporate_events": [
+    {
+      "date": "2026-11-19",
+      "type": "DIVIDEND",
+      "label": "配当",
+      "detail": "1株 28円"
+    }
+  ],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-17",
-    "monthly_rsi14": 59.4,
-    "monthly_rsi_ma5": 60.26,
-    "spread": -0.86,
+    "price_date": "2026-11-18",
+    "monthly_rsi14": 59.27,
+    "monthly_rsi_ma5": 60.23,
+    "spread": -0.96,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -897,5 +917,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-18T19:52:57.212599+00:00"
+  "provisional_generated_at": "2026-11-19T19:53:35.384602+00:00"
 }

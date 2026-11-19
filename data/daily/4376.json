@@ -2,12 +2,12 @@
   "code": "4376",
   "ticker": "4376.T",
   "name": "くふうカンパニーホールディングス",
-  "generated_at": "2026-11-18T19:52:08.539440+00:00",
-  "price_date": "2026-11-17",
+  "generated_at": "2026-11-19T19:52:19.439039+00:00",
+  "price_date": "2026-11-18",
   "record": {
-    "current_price": 173.0,
-    "change_from_signal_month_pct": 11.61,
-    "return_since_gc_pct": 2.37
+    "current_price": 163.0,
+    "change_from_signal_month_pct": 5.16,
+    "return_since_gc_pct": -3.55
   },
   "daily": [
     {
@@ -880,22 +880,35 @@
       "sma200": 163.53,
       "rsi14": 33.53,
       "rsi5": 34.76
+    },
+    {
+      "date": "2026-11-18",
+      "open": 173.0,
+      "high": 173.0,
+      "low": 160.0,
+      "close": 163.0,
+      "volume": 152500.0,
+      "sma25": 176.16,
+      "sma75": 170.76,
+      "sma200": 163.53,
+      "rsi14": 33.53,
+      "rsi5": 34.76
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-17",
-    "monthly_rsi14": 42.08,
-    "monthly_rsi_ma5": 40.79,
-    "spread": 1.29,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-18",
+    "monthly_rsi14": 39.88,
+    "monthly_rsi_ma5": 40.35,
+    "spread": -0.46,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-18T19:52:57.212599+00:00"
+  "provisional_generated_at": "2026-11-19T19:53:35.384602+00:00"
 }

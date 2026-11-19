@@ -2,12 +2,12 @@
   "code": "7590",
   "ticker": "7590.T",
   "name": "タカショー",
-  "generated_at": "2026-11-18T19:52:08.539440+00:00",
-  "price_date": "2026-11-17",
+  "generated_at": "2026-11-19T19:52:19.439039+00:00",
+  "price_date": "2026-11-18",
   "record": {
-    "current_price": 385.0,
-    "change_from_signal_month_pct": -1.53,
-    "return_since_gc_pct": -3.02
+    "current_price": 388.0,
+    "change_from_signal_month_pct": -0.77,
+    "return_since_gc_pct": -2.27
   },
   "daily": [
     {
@@ -880,22 +880,35 @@
       "sma200": 394.82,
       "rsi14": 34.56,
       "rsi5": 35.82
+    },
+    {
+      "date": "2026-11-18",
+      "open": 388.0,
+      "high": 389.0,
+      "low": 385.0,
+      "close": 388.0,
+      "volume": 22300.0,
+      "sma25": 388.4,
+      "sma75": 395.28,
+      "sma200": 394.72,
+      "rsi14": 34.56,
+      "rsi5": 35.82
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-17",
-    "monthly_rsi14": 33.53,
-    "monthly_rsi_ma5": 34.09,
-    "spread": -0.56,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-18",
+    "monthly_rsi14": 34.64,
+    "monthly_rsi_ma5": 34.31,
+    "spread": 0.32,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-18T19:52:57.212599+00:00"
+  "provisional_generated_at": "2026-11-19T19:53:35.384602+00:00"
 }

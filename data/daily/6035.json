@@ -2,12 +2,12 @@
   "code": "6035",
   "ticker": "6035.T",
   "name": "アイ・アールジャパンホールディングス",
-  "generated_at": "2026-11-18T19:52:08.539440+00:00",
-  "price_date": "2026-11-17",
+  "generated_at": "2026-11-19T19:52:19.439039+00:00",
+  "price_date": "2026-11-18",
   "record": {
-    "current_price": 727.0,
-    "change_from_signal_month_pct": 1.68,
-    "return_since_gc_pct": 1.68
+    "current_price": 714.0,
+    "change_from_signal_month_pct": -0.14,
+    "return_since_gc_pct": -0.14
   },
   "daily": [
     {
@@ -880,22 +880,35 @@
       "sma200": 741.64,
       "rsi14": 34.18,
       "rsi5": 34.58
+    },
+    {
+      "date": "2026-11-18",
+      "open": 729.0,
+      "high": 729.0,
+      "low": 714.0,
+      "close": 714.0,
+      "volume": 29500.0,
+      "sma25": 736.04,
+      "sma75": 733.8,
+      "sma200": 741.22,
+      "rsi14": 34.18,
+      "rsi5": 34.58
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-17",
-    "monthly_rsi14": 30.41,
-    "monthly_rsi_ma5": 30.22,
-    "spread": 0.19,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-18",
+    "monthly_rsi14": 29.83,
+    "monthly_rsi_ma5": 30.1,
+    "spread": -0.28,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-18T19:52:57.212599+00:00"
+  "provisional_generated_at": "2026-11-19T19:53:35.384602+00:00"
 }

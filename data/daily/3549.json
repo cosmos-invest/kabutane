@@ -2,12 +2,12 @@
   "code": "3549",
   "ticker": "3549.T",
   "name": "クスリのアオキホールディングス",
-  "generated_at": "2026-11-18T19:52:08.539440+00:00",
-  "price_date": "2026-11-17",
+  "generated_at": "2026-11-19T19:52:19.439039+00:00",
+  "price_date": "2026-11-18",
   "record": {
-    "current_price": 5150.0,
-    "change_from_signal_month_pct": 28.11,
-    "return_since_gc_pct": 28.11
+    "current_price": 4949.0,
+    "change_from_signal_month_pct": 23.11,
+    "return_since_gc_pct": 23.11
   },
   "daily": [
     {
@@ -880,15 +880,35 @@
       "sma200": 3973.51,
       "rsi14": 52.81,
       "rsi5": 57.28
+    },
+    {
+      "date": "2026-11-18",
+      "open": 5100.0,
+      "high": 5100.0,
+      "low": 4946.0,
+      "close": 4949.0,
+      "volume": 207600.0,
+      "sma25": 4620.32,
+      "sma75": 4244.67,
+      "sma200": 3976.39,
+      "rsi14": 52.81,
+      "rsi5": 57.28
     }
   ],
-  "corporate_events": [],
+  "corporate_events": [
+    {
+      "date": "2026-11-19",
+      "type": "DIVIDEND",
+      "label": "配当",
+      "detail": "1株 32円"
+    }
+  ],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-17",
-    "monthly_rsi14": 67.41,
-    "monthly_rsi_ma5": 58.44,
-    "spread": 8.97,
+    "price_date": "2026-11-18",
+    "monthly_rsi14": 65.72,
+    "monthly_rsi_ma5": 58.1,
+    "spread": 7.62,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -897,5 +917,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-18T19:52:57.212599+00:00"
+  "provisional_generated_at": "2026-11-19T19:53:35.384602+00:00"
 }

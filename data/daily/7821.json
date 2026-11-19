@@ -2,12 +2,12 @@
   "code": "7821",
   "ticker": "7821.T",
   "name": "前田工繊",
-  "generated_at": "2026-11-18T19:52:08.539440+00:00",
-  "price_date": "2026-11-17",
+  "generated_at": "2026-11-19T19:52:19.439039+00:00",
+  "price_date": "2026-11-18",
   "record": {
-    "current_price": 2072.0,
-    "change_from_signal_month_pct": 5.45,
-    "return_since_gc_pct": 5.45
+    "current_price": 2009.0,
+    "change_from_signal_month_pct": 2.24,
+    "return_since_gc_pct": 2.24
   },
   "daily": [
     {
@@ -880,22 +880,35 @@
       "sma200": 1947.32,
       "rsi14": 50.18,
       "rsi5": 53.66
+    },
+    {
+      "date": "2026-11-18",
+      "open": 2050.0,
+      "high": 2060.0,
+      "low": 1985.0,
+      "close": 2009.0,
+      "volume": 355200.0,
+      "sma25": 2118.44,
+      "sma75": 2029.43,
+      "sma200": 1947.64,
+      "rsi14": 50.18,
+      "rsi5": 53.66
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-17",
-    "monthly_rsi14": 56.01,
-    "monthly_rsi_ma5": 55.47,
-    "spread": 0.53,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-18",
+    "monthly_rsi14": 53.81,
+    "monthly_rsi_ma5": 55.03,
+    "spread": -1.22,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-18T19:52:57.212599+00:00"
+  "provisional_generated_at": "2026-11-19T19:53:35.384602+00:00"
 }

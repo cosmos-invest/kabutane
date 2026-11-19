@@ -2,12 +2,12 @@
   "code": "2117",
   "ticker": "2117.T",
   "name": "ウェルネオシュガー",
-  "generated_at": "2026-11-18T19:52:08.539440+00:00",
-  "price_date": "2026-11-17",
+  "generated_at": "2026-11-19T19:52:19.439039+00:00",
+  "price_date": "2026-11-18",
   "record": {
-    "current_price": 2821.0,
-    "change_from_signal_month_pct": 2.03,
-    "return_since_gc_pct": 2.03
+    "current_price": 2793.0,
+    "change_from_signal_month_pct": 1.01,
+    "return_since_gc_pct": 1.01
   },
   "daily": [
     {
@@ -880,22 +880,35 @@
       "sma200": 2775.51,
       "rsi14": 59.08,
       "rsi5": 60.44
+    },
+    {
+      "date": "2026-11-18",
+      "open": 2820.0,
+      "high": 2837.0,
+      "low": 2793.0,
+      "close": 2793.0,
+      "volume": 20800.0,
+      "sma25": 2777.32,
+      "sma75": 2794.35,
+      "sma200": 2774.95,
+      "rsi14": 59.08,
+      "rsi5": 60.44
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-17",
-    "monthly_rsi14": 60.42,
-    "monthly_rsi_ma5": 60.22,
-    "spread": 0.2,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-18",
+    "monthly_rsi14": 59.47,
+    "monthly_rsi_ma5": 60.03,
+    "spread": -0.56,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-18T19:52:57.212599+00:00"
+  "provisional_generated_at": "2026-11-19T19:53:35.384602+00:00"
 }

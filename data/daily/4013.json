@@ -2,12 +2,12 @@
   "code": "4013",
   "ticker": "4013.T",
   "name": "勤次郎",
-  "generated_at": "2026-11-18T19:52:08.539440+00:00",
-  "price_date": "2026-11-17",
+  "generated_at": "2026-11-19T19:52:19.439039+00:00",
+  "price_date": "2026-11-18",
   "record": {
-    "current_price": 703.0,
-    "change_from_signal_month_pct": -2.9,
-    "return_since_gc_pct": 10.71
+    "current_price": 675.0,
+    "change_from_signal_month_pct": -6.77,
+    "return_since_gc_pct": 6.3
   },
   "daily": [
     {
@@ -880,22 +880,35 @@
       "sma200": 709.87,
       "rsi14": 44.0,
       "rsi5": 47.59
+    },
+    {
+      "date": "2026-11-18",
+      "open": 696.0,
+      "high": 697.0,
+      "low": 666.0,
+      "close": 675.0,
+      "volume": 38900.0,
+      "sma25": 761.36,
+      "sma75": 705.56,
+      "sma200": 707.2,
+      "rsi14": 44.0,
+      "rsi5": 47.59
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-17",
-    "monthly_rsi14": 47.1,
-    "monthly_rsi_ma5": 46.53,
-    "spread": 0.56,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-18",
+    "monthly_rsi14": 46.06,
+    "monthly_rsi_ma5": 46.33,
+    "spread": -0.26,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-18T19:52:57.212599+00:00"
+  "provisional_generated_at": "2026-11-19T19:53:35.384602+00:00"
 }
