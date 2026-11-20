@@ -2,12 +2,12 @@
   "code": "8254",
   "ticker": "8254.T",
   "name": "さいか屋",
-  "generated_at": "2026-11-19T19:52:19.439039+00:00",
-  "price_date": "2026-11-18",
+  "generated_at": "2026-11-20T19:31:32.768898+00:00",
+  "price_date": "2026-11-19",
   "record": {
-    "current_price": 247.0,
-    "change_from_signal_month_pct": -33.06,
-    "return_since_gc_pct": -10.51
+    "current_price": 245.0,
+    "change_from_signal_month_pct": -33.6,
+    "return_since_gc_pct": -11.23
   },
   "daily": [
     {
@@ -893,15 +893,28 @@
       "sma200": 296.12,
       "rsi14": 40.46,
       "rsi5": 50.05
+    },
+    {
+      "date": "2026-11-19",
+      "open": 246.0,
+      "high": 248.0,
+      "low": 245.0,
+      "close": 245.0,
+      "volume": 8100.0,
+      "sma25": 253.32,
+      "sma75": 293.35,
+      "sma200": 295.27,
+      "rsi14": 40.46,
+      "rsi5": 50.05
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-18",
-    "monthly_rsi14": 42.0,
-    "monthly_rsi_ma5": 44.85,
-    "spread": -2.85,
+    "price_date": "2026-11-19",
+    "monthly_rsi14": 41.82,
+    "monthly_rsi_ma5": 44.82,
+    "spread": -3.0,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -910,5 +923,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-19T19:53:35.384602+00:00"
+  "provisional_generated_at": "2026-11-20T19:32:10.027534+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "9331",
   "ticker": "9331.T",
   "name": "キャスター",
-  "generated_at": "2026-11-19T19:52:19.439039+00:00",
-  "price_date": "2026-11-18",
+  "generated_at": "2026-11-20T19:31:32.768898+00:00",
+  "price_date": "2026-11-19",
   "record": {
-    "current_price": 560.0,
-    "change_from_signal_month_pct": -22.65,
-    "return_since_gc_pct": -19.42
+    "current_price": 540.0,
+    "change_from_signal_month_pct": -25.41,
+    "return_since_gc_pct": -22.3
   },
   "daily": [
     {
@@ -893,15 +893,28 @@
       "sma200": 731.38,
       "rsi14": 33.8,
       "rsi5": 35.9
+    },
+    {
+      "date": "2026-11-19",
+      "open": 530.0,
+      "high": 540.0,
+      "low": 521.0,
+      "close": 540.0,
+      "volume": 1800.0,
+      "sma25": 548.08,
+      "sma75": 661.57,
+      "sma200": 729.91,
+      "rsi14": 33.8,
+      "rsi5": 35.9
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-18",
-    "monthly_rsi14": 31.8,
-    "monthly_rsi_ma5": 33.63,
-    "spread": -1.83,
+    "price_date": "2026-11-19",
+    "monthly_rsi14": 30.3,
+    "monthly_rsi_ma5": 33.33,
+    "spread": -3.03,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -910,5 +923,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-19T19:53:35.384602+00:00"
+  "provisional_generated_at": "2026-11-20T19:32:10.027534+00:00"
 }

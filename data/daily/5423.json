@@ -2,12 +2,12 @@
   "code": "5423",
   "ticker": "5423.T",
   "name": "東京製鐵",
-  "generated_at": "2026-11-19T19:52:19.439039+00:00",
-  "price_date": "2026-11-18",
+  "generated_at": "2026-11-20T19:31:32.768898+00:00",
+  "price_date": "2026-11-19",
   "record": {
-    "current_price": 1733.0,
-    "change_from_signal_month_pct": -2.2,
-    "return_since_gc_pct": -2.2
+    "current_price": 1741.0,
+    "change_from_signal_month_pct": -1.75,
+    "return_since_gc_pct": -1.75
   },
   "daily": [
     {
@@ -893,22 +893,35 @@
       "sma200": 1693.35,
       "rsi14": 56.51,
       "rsi5": 58.68
+    },
+    {
+      "date": "2026-11-19",
+      "open": 1722.0,
+      "high": 1745.0,
+      "low": 1716.0,
+      "close": 1741.0,
+      "volume": 416500.0,
+      "sma25": 1722.36,
+      "sma75": 1716.35,
+      "sma200": 1694.41,
+      "rsi14": 56.51,
+      "rsi5": 58.68
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-18",
-    "monthly_rsi14": 55.77,
-    "monthly_rsi_ma5": 56.0,
-    "spread": -0.22,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-19",
+    "monthly_rsi14": 56.27,
+    "monthly_rsi_ma5": 56.09,
+    "spread": 0.17,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-19T19:53:35.384602+00:00"
+  "provisional_generated_at": "2026-11-20T19:32:10.027534+00:00"
 }

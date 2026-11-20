@@ -2,12 +2,12 @@
   "code": "3237",
   "ticker": "3237.T",
   "name": "イントランス",
-  "generated_at": "2026-11-19T19:52:19.439039+00:00",
-  "price_date": "2026-11-18",
+  "generated_at": "2026-11-20T19:31:32.768898+00:00",
+  "price_date": "2026-11-19",
   "record": {
-    "current_price": 62.0,
-    "change_from_signal_month_pct": -32.61,
-    "return_since_gc_pct": -4.62
+    "current_price": 52.0,
+    "change_from_signal_month_pct": -43.48,
+    "return_since_gc_pct": -20.0
   },
   "daily": [
     {
@@ -893,15 +893,28 @@
       "sma200": 79.44,
       "rsi14": 45.98,
       "rsi5": 53.5
+    },
+    {
+      "date": "2026-11-19",
+      "open": 61.0,
+      "high": 62.0,
+      "low": 49.0,
+      "close": 52.0,
+      "volume": 1234600.0,
+      "sma25": 69.44,
+      "sma75": 87.39,
+      "sma200": 79.37,
+      "rsi14": 45.98,
+      "rsi5": 53.5
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-18",
-    "monthly_rsi14": 43.95,
-    "monthly_rsi_ma5": 52.06,
-    "spread": -8.11,
+    "price_date": "2026-11-19",
+    "monthly_rsi14": 40.89,
+    "monthly_rsi_ma5": 51.45,
+    "spread": -10.55,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -910,5 +923,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-19T19:53:35.384602+00:00"
+  "provisional_generated_at": "2026-11-20T19:32:10.027534+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "6325",
   "ticker": "6325.T",
   "name": "タカキタ",
-  "generated_at": "2026-11-19T19:52:19.439039+00:00",
-  "price_date": "2026-11-18",
+  "generated_at": "2026-11-20T19:31:32.768898+00:00",
+  "price_date": "2026-11-19",
   "record": {
-    "current_price": 409.0,
-    "change_from_signal_month_pct": 2.0,
-    "return_since_gc_pct": 2.0
+    "current_price": 406.0,
+    "change_from_signal_month_pct": 1.25,
+    "return_since_gc_pct": 1.25
   },
   "daily": [
     {
@@ -893,15 +893,28 @@
       "sma200": 404.66,
       "rsi14": 45.48,
       "rsi5": 46.09
+    },
+    {
+      "date": "2026-11-19",
+      "open": 408.0,
+      "high": 408.0,
+      "low": 400.0,
+      "close": 406.0,
+      "volume": 8600.0,
+      "sma25": 407.56,
+      "sma75": 411.84,
+      "sma200": 404.64,
+      "rsi14": 45.48,
+      "rsi5": 46.09
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-18",
-    "monthly_rsi14": 47.92,
-    "monthly_rsi_ma5": 48.69,
-    "spread": -0.78,
+    "price_date": "2026-11-19",
+    "monthly_rsi14": 46.98,
+    "monthly_rsi_ma5": 48.51,
+    "spread": -1.52,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -910,5 +923,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-19T19:53:35.384602+00:00"
+  "provisional_generated_at": "2026-11-20T19:32:10.027534+00:00"
 }

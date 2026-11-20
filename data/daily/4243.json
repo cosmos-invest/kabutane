@@ -2,12 +2,12 @@
   "code": "4243",
   "ticker": "4243.T",
   "name": "ニックス",
-  "generated_at": "2026-11-19T19:52:19.439039+00:00",
-  "price_date": "2026-11-18",
+  "generated_at": "2026-11-20T19:31:32.768898+00:00",
+  "price_date": "2026-11-19",
   "record": {
-    "current_price": 812.0,
-    "change_from_signal_month_pct": -11.55,
-    "return_since_gc_pct": -9.88
+    "current_price": 803.0,
+    "change_from_signal_month_pct": -12.53,
+    "return_since_gc_pct": -10.88
   },
   "daily": [
     {
@@ -893,15 +893,28 @@
       "sma200": 923.74,
       "rsi14": 58.11,
       "rsi5": 59.59
+    },
+    {
+      "date": "2026-11-19",
+      "open": 812.0,
+      "high": 812.0,
+      "low": 803.0,
+      "close": 803.0,
+      "volume": 5600.0,
+      "sma25": 934.48,
+      "sma75": 989.04,
+      "sma200": 923.5,
+      "rsi14": 58.11,
+      "rsi5": 59.59
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-18",
-    "monthly_rsi14": 46.33,
-    "monthly_rsi_ma5": 60.84,
-    "spread": -14.51,
+    "price_date": "2026-11-19",
+    "monthly_rsi14": 45.79,
+    "monthly_rsi_ma5": 60.73,
+    "spread": -14.94,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -910,5 +923,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-19T19:53:35.384602+00:00"
+  "provisional_generated_at": "2026-11-20T19:32:10.027534+00:00"
 }

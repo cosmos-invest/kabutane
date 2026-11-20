@@ -2,12 +2,12 @@
   "code": "8511",
   "ticker": "8511.T",
   "name": "日本証券金融",
-  "generated_at": "2026-11-19T19:52:19.439039+00:00",
-  "price_date": "2026-11-18",
+  "generated_at": "2026-11-20T19:31:32.768898+00:00",
+  "price_date": "2026-11-19",
   "record": {
-    "current_price": 2205.0,
-    "change_from_signal_month_pct": -7.66,
-    "return_since_gc_pct": -5.65
+    "current_price": 2216.0,
+    "change_from_signal_month_pct": -7.2,
+    "return_since_gc_pct": -5.18
   },
   "daily": [
     {
@@ -893,15 +893,28 @@
       "sma200": 2291.68,
       "rsi14": 64.14,
       "rsi5": 67.77
+    },
+    {
+      "date": "2026-11-19",
+      "open": 2185.0,
+      "high": 2226.0,
+      "low": 2175.0,
+      "close": 2216.0,
+      "volume": 240500.0,
+      "sma25": 2144.88,
+      "sma75": 2343.12,
+      "sma200": 2291.86,
+      "rsi14": 64.14,
+      "rsi5": 67.77
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-18",
-    "monthly_rsi14": 56.58,
-    "monthly_rsi_ma5": 63.74,
-    "spread": -7.16,
+    "price_date": "2026-11-19",
+    "monthly_rsi14": 56.88,
+    "monthly_rsi_ma5": 63.8,
+    "spread": -6.92,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -910,5 +923,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-19T19:53:35.384602+00:00"
+  "provisional_generated_at": "2026-11-20T19:32:10.027534+00:00"
 }

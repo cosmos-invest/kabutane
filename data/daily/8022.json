@@ -2,12 +2,12 @@
   "code": "8022",
   "ticker": "8022.T",
   "name": "美津濃",
-  "generated_at": "2026-11-19T19:52:19.439039+00:00",
-  "price_date": "2026-11-18",
+  "generated_at": "2026-11-20T19:31:32.768898+00:00",
+  "price_date": "2026-11-19",
   "record": {
-    "current_price": 4080.0,
-    "change_from_signal_month_pct": 10.42,
-    "return_since_gc_pct": 10.42
+    "current_price": 4295.0,
+    "change_from_signal_month_pct": 16.24,
+    "return_since_gc_pct": 16.24
   },
   "daily": [
     {
@@ -893,22 +893,35 @@
       "sma200": 3739.2,
       "rsi14": 61.48,
       "rsi5": 65.34
+    },
+    {
+      "date": "2026-11-19",
+      "open": 4125.0,
+      "high": 4395.0,
+      "low": 4125.0,
+      "close": 4295.0,
+      "volume": 816300.0,
+      "sma25": 4315.2,
+      "sma75": 4154.53,
+      "sma200": 3744.28,
+      "rsi14": 61.48,
+      "rsi5": 65.34
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-18",
-    "monthly_rsi14": 66.39,
-    "monthly_rsi_ma5": 68.75,
-    "spread": -2.36,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-19",
+    "monthly_rsi14": 71.46,
+    "monthly_rsi_ma5": 69.77,
+    "spread": 1.69,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-19T19:53:35.384602+00:00"
+  "provisional_generated_at": "2026-11-20T19:32:10.027534+00:00"
 }

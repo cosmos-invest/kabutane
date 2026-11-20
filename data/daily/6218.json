@@ -2,12 +2,12 @@
   "code": "6218",
   "ticker": "6218.T",
   "name": "エンシュウ",
-  "generated_at": "2026-11-19T19:52:19.439039+00:00",
-  "price_date": "2026-11-18",
+  "generated_at": "2026-11-20T19:31:32.768898+00:00",
+  "price_date": "2026-11-19",
   "record": {
-    "current_price": 630.0,
-    "change_from_signal_month_pct": 0.64,
-    "return_since_gc_pct": 10.33
+    "current_price": 624.0,
+    "change_from_signal_month_pct": -0.32,
+    "return_since_gc_pct": 9.28
   },
   "daily": [
     {
@@ -893,15 +893,28 @@
       "sma200": 607.83,
       "rsi14": 52.18,
       "rsi5": 57.32
+    },
+    {
+      "date": "2026-11-19",
+      "open": 630.0,
+      "high": 631.0,
+      "low": 624.0,
+      "close": 624.0,
+      "volume": 300.0,
+      "sma25": 649.4,
+      "sma75": 648.39,
+      "sma200": 608.22,
+      "rsi14": 52.18,
+      "rsi5": 57.32
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-18",
-    "monthly_rsi14": 54.01,
-    "monthly_rsi_ma5": 57.94,
-    "spread": -3.93,
+    "price_date": "2026-11-19",
+    "monthly_rsi14": 53.06,
+    "monthly_rsi_ma5": 57.75,
+    "spread": -4.69,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -910,5 +923,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-19T19:53:35.384602+00:00"
+  "provisional_generated_at": "2026-11-20T19:32:10.027534+00:00"
 }

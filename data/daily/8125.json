@@ -2,12 +2,12 @@
   "code": "8125",
   "ticker": "8125.T",
   "name": "ワキタ",
-  "generated_at": "2026-11-19T19:52:19.439039+00:00",
-  "price_date": "2026-11-18",
+  "generated_at": "2026-11-20T19:31:32.768898+00:00",
+  "price_date": "2026-11-19",
   "record": {
-    "current_price": 1940.0,
-    "change_from_signal_month_pct": 0.94,
-    "return_since_gc_pct": 0.94
+    "current_price": 1922.0,
+    "change_from_signal_month_pct": 0.0,
+    "return_since_gc_pct": 0.0
   },
   "daily": [
     {
@@ -893,22 +893,35 @@
       "sma200": 1883.82,
       "rsi14": 53.51,
       "rsi5": 58.2
+    },
+    {
+      "date": "2026-11-19",
+      "open": 1926.0,
+      "high": 1935.0,
+      "low": 1906.0,
+      "close": 1922.0,
+      "volume": 118000.0,
+      "sma25": 1886.72,
+      "sma75": 1918.65,
+      "sma200": 1883.23,
+      "rsi14": 53.51,
+      "rsi5": 58.2
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-18",
-    "monthly_rsi14": 59.27,
-    "monthly_rsi_ma5": 58.88,
-    "spread": 0.39,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-19",
+    "monthly_rsi14": 58.48,
+    "monthly_rsi_ma5": 58.72,
+    "spread": -0.25,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-19T19:53:35.384602+00:00"
+  "provisional_generated_at": "2026-11-20T19:32:10.027534+00:00"
 }

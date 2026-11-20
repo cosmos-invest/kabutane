@@ -2,12 +2,12 @@
   "code": "5032",
   "ticker": "5032.T",
   "name": "ＡＮＹＣＯＬＯＲ",
-  "generated_at": "2026-11-19T19:52:19.439039+00:00",
-  "price_date": "2026-11-18",
+  "generated_at": "2026-11-20T19:31:32.768898+00:00",
+  "price_date": "2026-11-19",
   "record": {
-    "current_price": 2937.0,
-    "change_from_signal_month_pct": 12.18,
-    "return_since_gc_pct": 12.18
+    "current_price": 2975.0,
+    "change_from_signal_month_pct": 13.64,
+    "return_since_gc_pct": 13.64
   },
   "daily": [
     {
@@ -893,6 +893,19 @@
       "sma200": 3069.83,
       "rsi14": 42.04,
       "rsi5": 42.58
+    },
+    {
+      "date": "2026-11-19",
+      "open": 2982.0,
+      "high": 3015.0,
+      "low": 2940.0,
+      "close": 2975.0,
+      "volume": 352400.0,
+      "sma25": 3160.88,
+      "sma75": 3020.57,
+      "sma200": 3061.36,
+      "rsi14": 42.04,
+      "rsi5": 42.58
     }
   ],
   "corporate_events": [
@@ -905,17 +918,17 @@
   ],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-18",
-    "monthly_rsi14": 44.52,
-    "monthly_rsi_ma5": 44.6,
-    "spread": -0.08,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-19",
+    "monthly_rsi14": 44.82,
+    "monthly_rsi_ma5": 44.66,
+    "spread": 0.16,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-19T19:53:35.384602+00:00"
+  "provisional_generated_at": "2026-11-20T19:32:10.027534+00:00"
 }

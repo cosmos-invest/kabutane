@@ -2,12 +2,12 @@
   "code": "2379",
   "ticker": "2379.T",
   "name": "ディップ",
-  "generated_at": "2026-11-19T19:52:19.439039+00:00",
-  "price_date": "2026-11-18",
+  "generated_at": "2026-11-20T19:31:32.768898+00:00",
+  "price_date": "2026-11-19",
   "record": {
-    "current_price": 1514.0,
-    "change_from_signal_month_pct": -18.6,
-    "return_since_gc_pct": -18.78
+    "current_price": 1527.0,
+    "change_from_signal_month_pct": -17.9,
+    "return_since_gc_pct": -18.08
   },
   "daily": [
     {
@@ -893,15 +893,28 @@
       "sma200": 1836.83,
       "rsi14": 35.32,
       "rsi5": 36.24
+    },
+    {
+      "date": "2026-11-19",
+      "open": 1502.0,
+      "high": 1538.0,
+      "low": 1502.0,
+      "close": 1527.0,
+      "volume": 241900.0,
+      "sma25": 1525.04,
+      "sma75": 1724.19,
+      "sma200": 1833.86,
+      "rsi14": 35.32,
+      "rsi5": 36.24
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-18",
-    "monthly_rsi14": 28.25,
-    "monthly_rsi_ma5": 31.52,
-    "spread": -3.27,
+    "price_date": "2026-11-19",
+    "monthly_rsi14": 28.81,
+    "monthly_rsi_ma5": 31.63,
+    "spread": -2.82,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -910,5 +923,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-19T19:53:35.384602+00:00"
+  "provisional_generated_at": "2026-11-20T19:32:10.027534+00:00"
 }

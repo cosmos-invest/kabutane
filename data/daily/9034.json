@@ -2,12 +2,12 @@
   "code": "9034",
   "ticker": "9034.T",
   "name": "南総通運",
-  "generated_at": "2026-11-19T19:52:19.439039+00:00",
-  "price_date": "2026-11-18",
+  "generated_at": "2026-11-20T19:31:32.768898+00:00",
+  "price_date": "2026-11-19",
   "record": {
-    "current_price": 1595.0,
-    "change_from_signal_month_pct": -1.54,
-    "return_since_gc_pct": -1.54
+    "current_price": 1616.0,
+    "change_from_signal_month_pct": -0.25,
+    "return_since_gc_pct": -0.25
   },
   "daily": [
     {
@@ -893,15 +893,28 @@
       "sma200": 1609.07,
       "rsi14": 66.0,
       "rsi5": 67.98
+    },
+    {
+      "date": "2026-11-19",
+      "open": 1590.0,
+      "high": 1616.0,
+      "low": 1582.0,
+      "close": 1616.0,
+      "volume": 1700.0,
+      "sma25": 1620.32,
+      "sma75": 1633.97,
+      "sma200": 1609.11,
+      "rsi14": 66.0,
+      "rsi5": 67.98
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-18",
-    "monthly_rsi14": 64.35,
-    "monthly_rsi_ma5": 67.66,
-    "spread": -3.31,
+    "price_date": "2026-11-19",
+    "monthly_rsi14": 66.33,
+    "monthly_rsi_ma5": 68.05,
+    "spread": -1.73,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -910,5 +923,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-19T19:53:35.384602+00:00"
+  "provisional_generated_at": "2026-11-20T19:32:10.027534+00:00"
 }

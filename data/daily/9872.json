@@ -2,12 +2,12 @@
   "code": "9872",
   "ticker": "9872.T",
   "name": "北恵",
-  "generated_at": "2026-11-19T19:52:19.439039+00:00",
-  "price_date": "2026-11-18",
+  "generated_at": "2026-11-20T19:31:32.768898+00:00",
+  "price_date": "2026-11-19",
   "record": {
-    "current_price": 951.0,
-    "change_from_signal_month_pct": 0.96,
-    "return_since_gc_pct": 7.22
+    "current_price": 874.0,
+    "change_from_signal_month_pct": -7.22,
+    "return_since_gc_pct": -1.47
   },
   "daily": [
     {
@@ -893,6 +893,19 @@
       "sma200": 916.24,
       "rsi14": 53.24,
       "rsi5": 58.78
+    },
+    {
+      "date": "2026-11-19",
+      "open": 878.0,
+      "high": 897.0,
+      "low": 865.0,
+      "close": 874.0,
+      "volume": 142900.0,
+      "sma25": 951.96,
+      "sma75": 954.24,
+      "sma200": 916.12,
+      "rsi14": 53.24,
+      "rsi5": 58.78
     }
   ],
   "corporate_events": [
@@ -905,10 +918,10 @@
   ],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-18",
-    "monthly_rsi14": 59.27,
-    "monthly_rsi_ma5": 60.23,
-    "spread": -0.96,
+    "price_date": "2026-11-19",
+    "monthly_rsi14": 47.66,
+    "monthly_rsi_ma5": 57.91,
+    "spread": -10.25,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -917,5 +930,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-19T19:53:35.384602+00:00"
+  "provisional_generated_at": "2026-11-20T19:32:10.027534+00:00"
 }

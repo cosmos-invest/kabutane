@@ -2,12 +2,12 @@
   "code": "8439",
   "ticker": "8439.T",
   "name": "東京センチュリー",
-  "generated_at": "2026-11-19T19:52:19.439039+00:00",
-  "price_date": "2026-11-18",
+  "generated_at": "2026-11-20T19:31:32.768898+00:00",
+  "price_date": "2026-11-19",
   "record": {
-    "current_price": 2641.5,
-    "change_from_signal_month_pct": 0.71,
-    "return_since_gc_pct": 11.83
+    "current_price": 2632.0,
+    "change_from_signal_month_pct": 0.34,
+    "return_since_gc_pct": 11.43
   },
   "daily": [
     {
@@ -893,15 +893,28 @@
       "sma200": 2403.62,
       "rsi14": 69.06,
       "rsi5": 75.25
+    },
+    {
+      "date": "2026-11-19",
+      "open": 2645.0,
+      "high": 2663.5,
+      "low": 2627.0,
+      "close": 2632.0,
+      "volume": 552400.0,
+      "sma25": 2562.08,
+      "sma75": 2595.87,
+      "sma200": 2405.95,
+      "rsi14": 69.06,
+      "rsi5": 75.25
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-18",
-    "monthly_rsi14": 70.99,
-    "monthly_rsi_ma5": 73.29,
-    "spread": -2.29,
+    "price_date": "2026-11-19",
+    "monthly_rsi14": 70.8,
+    "monthly_rsi_ma5": 73.25,
+    "spread": -2.45,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -910,5 +923,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-19T19:53:35.384602+00:00"
+  "provisional_generated_at": "2026-11-20T19:32:10.027534+00:00"
 }

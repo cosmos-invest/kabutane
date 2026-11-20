@@ -2,12 +2,12 @@
   "code": "4490",
   "ticker": "4490.T",
   "name": "ビザスク",
-  "generated_at": "2026-11-19T19:52:19.439039+00:00",
-  "price_date": "2026-11-18",
+  "generated_at": "2026-11-20T19:31:32.768898+00:00",
+  "price_date": "2026-11-19",
   "record": {
-    "current_price": 589.0,
-    "change_from_signal_month_pct": -11.43,
-    "return_since_gc_pct": 0.51
+    "current_price": 563.0,
+    "change_from_signal_month_pct": -15.34,
+    "return_since_gc_pct": -3.92
   },
   "daily": [
     {
@@ -893,15 +893,28 @@
       "sma200": 628.78,
       "rsi14": 40.74,
       "rsi5": 43.07
+    },
+    {
+      "date": "2026-11-19",
+      "open": 583.0,
+      "high": 587.0,
+      "low": 548.0,
+      "close": 563.0,
+      "volume": 73600.0,
+      "sma25": 698.92,
+      "sma75": 676.49,
+      "sma200": 628.52,
+      "rsi14": 40.74,
+      "rsi5": 43.07
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-18",
-    "monthly_rsi14": 41.99,
-    "monthly_rsi_ma5": 44.66,
-    "spread": -2.67,
+    "price_date": "2026-11-19",
+    "monthly_rsi14": 41.07,
+    "monthly_rsi_ma5": 44.48,
+    "spread": -3.41,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -910,5 +923,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-19T19:53:35.384602+00:00"
+  "provisional_generated_at": "2026-11-20T19:32:10.027534+00:00"
 }
