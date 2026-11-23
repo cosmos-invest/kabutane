@@ -2,12 +2,12 @@
   "code": "2491",
   "ticker": "2491.T",
   "name": "バリューコマース",
-  "generated_at": "2026-11-20T19:31:32.768898+00:00",
-  "price_date": "2026-11-19",
+  "generated_at": "2026-11-23T23:14:18.061570+00:00",
+  "price_date": "2026-11-20",
   "record": {
-    "current_price": 421.0,
-    "change_from_signal_month_pct": -10.99,
-    "return_since_gc_pct": -9.85
+    "current_price": 417.0,
+    "change_from_signal_month_pct": -11.84,
+    "return_since_gc_pct": -10.71
   },
   "daily": [
     {
@@ -906,22 +906,35 @@
       "sma200": 461.55,
       "rsi14": 23.31,
       "rsi5": 25.38
+    },
+    {
+      "date": "2026-11-20",
+      "open": 424.0,
+      "high": 425.0,
+      "low": 411.0,
+      "close": 417.0,
+      "volume": 212100.0,
+      "sma25": 416.64,
+      "sma75": 451.32,
+      "sma200": 460.33,
+      "rsi14": 23.31,
+      "rsi5": 25.38
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-19",
-    "monthly_rsi14": 26.53,
-    "monthly_rsi_ma5": 26.49,
-    "spread": 0.04,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-20",
+    "monthly_rsi14": 26.05,
+    "monthly_rsi_ma5": 26.4,
+    "spread": -0.35,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-20T19:32:10.027534+00:00"
+  "provisional_generated_at": "2026-11-23T23:14:53.427099+00:00"
 }

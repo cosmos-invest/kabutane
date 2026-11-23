@@ -2,12 +2,12 @@
   "code": "3201",
   "ticker": "3201.T",
   "name": "日本毛織",
-  "generated_at": "2026-11-20T19:31:32.768898+00:00",
-  "price_date": "2026-11-19",
+  "generated_at": "2026-11-23T23:14:18.061570+00:00",
+  "price_date": "2026-11-20",
   "record": {
-    "current_price": 1964.0,
-    "change_from_signal_month_pct": 2.72,
-    "return_since_gc_pct": 2.72
+    "current_price": 1900.0,
+    "change_from_signal_month_pct": -0.63,
+    "return_since_gc_pct": -0.63
   },
   "daily": [
     {
@@ -906,15 +906,28 @@
       "sma200": 1899.37,
       "rsi14": 59.39,
       "rsi5": 62.81
+    },
+    {
+      "date": "2026-11-20",
+      "open": 1942.0,
+      "high": 1958.0,
+      "low": 1892.0,
+      "close": 1900.0,
+      "volume": 171500.0,
+      "sma25": 2053.04,
+      "sma75": 1997.04,
+      "sma200": 1899.4,
+      "rsi14": 59.39,
+      "rsi5": 62.81
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-19",
-    "monthly_rsi14": 60.88,
-    "monthly_rsi_ma5": 63.43,
-    "spread": -2.55,
+    "price_date": "2026-11-20",
+    "monthly_rsi14": 58.0,
+    "monthly_rsi_ma5": 62.85,
+    "spread": -4.86,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -923,5 +936,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-20T19:32:10.027534+00:00"
+  "provisional_generated_at": "2026-11-23T23:14:53.427099+00:00"
 }

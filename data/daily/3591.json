@@ -2,12 +2,12 @@
   "code": "3591",
   "ticker": "3591.T",
   "name": "ワコールホールディングス",
-  "generated_at": "2026-11-20T19:31:32.768898+00:00",
-  "price_date": "2026-11-19",
+  "generated_at": "2026-11-23T23:14:18.061570+00:00",
+  "price_date": "2026-11-20",
   "record": {
-    "current_price": 4000.0,
-    "change_from_signal_month_pct": -9.13,
-    "return_since_gc_pct": -9.13
+    "current_price": 3870.0,
+    "change_from_signal_month_pct": -12.09,
+    "return_since_gc_pct": -12.09
   },
   "daily": [
     {
@@ -906,22 +906,35 @@
       "sma200": 4252.53,
       "rsi14": 48.2,
       "rsi5": 48.35
+    },
+    {
+      "date": "2026-11-20",
+      "open": 3938.0,
+      "high": 3962.0,
+      "low": 3844.0,
+      "close": 3870.0,
+      "volume": 116600.0,
+      "sma25": 3725.92,
+      "sma75": 3940.08,
+      "sma200": 4250.0,
+      "rsi14": 48.2,
+      "rsi5": 48.35
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-19",
-    "monthly_rsi14": 45.06,
-    "monthly_rsi_ma5": 43.55,
-    "spread": 1.51,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-20",
+    "monthly_rsi14": 42.92,
+    "monthly_rsi_ma5": 43.12,
+    "spread": -0.21,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-20T19:32:10.027534+00:00"
+  "provisional_generated_at": "2026-11-23T23:14:53.427099+00:00"
 }

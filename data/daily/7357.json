@@ -2,12 +2,12 @@
   "code": "7357",
   "ticker": "7357.T",
   "name": "ジオコード",
-  "generated_at": "2026-11-20T19:31:32.768898+00:00",
-  "price_date": "2026-11-19",
+  "generated_at": "2026-11-23T23:14:18.061570+00:00",
+  "price_date": "2026-11-20",
   "record": {
-    "current_price": 1775.0,
-    "change_from_signal_month_pct": 6.35,
-    "return_since_gc_pct": 8.23
+    "current_price": 1741.0,
+    "change_from_signal_month_pct": 4.31,
+    "return_since_gc_pct": 6.16
   },
   "daily": [
     {
@@ -906,22 +906,35 @@
       "sma200": 1623.25,
       "rsi14": 68.84,
       "rsi5": 71.4
+    },
+    {
+      "date": "2026-11-20",
+      "open": 1775.0,
+      "high": 1775.0,
+      "low": 1741.0,
+      "close": 1741.0,
+      "volume": 3000.0,
+      "sma25": 1714.36,
+      "sma75": 1723.35,
+      "sma200": 1623.61,
+      "rsi14": 68.84,
+      "rsi5": 71.4
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-19",
-    "monthly_rsi14": 73.62,
-    "monthly_rsi_ma5": 73.17,
-    "spread": 0.45,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-20",
+    "monthly_rsi14": 72.69,
+    "monthly_rsi_ma5": 72.98,
+    "spread": -0.29,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-20T19:32:10.027534+00:00"
+  "provisional_generated_at": "2026-11-23T23:14:53.427099+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "4118",
   "ticker": "4118.T",
   "name": "カネカ",
-  "generated_at": "2026-11-20T19:31:32.768898+00:00",
-  "price_date": "2026-11-19",
+  "generated_at": "2026-11-23T23:14:18.061570+00:00",
+  "price_date": "2026-11-20",
   "record": {
-    "current_price": 6234.0,
-    "change_from_signal_month_pct": 9.02,
-    "return_since_gc_pct": 12.91
+    "current_price": 5984.0,
+    "change_from_signal_month_pct": 4.65,
+    "return_since_gc_pct": 8.39
   },
   "daily": [
     {
@@ -906,22 +906,35 @@
       "sma200": 5550.82,
       "rsi14": 67.5,
       "rsi5": 71.78
+    },
+    {
+      "date": "2026-11-20",
+      "open": 6145.0,
+      "high": 6233.0,
+      "low": 5960.0,
+      "close": 5984.0,
+      "volume": 340800.0,
+      "sma25": 6196.8,
+      "sma75": 6104.48,
+      "sma200": 5557.4,
+      "rsi14": 67.5,
+      "rsi5": 71.78
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-19",
-    "monthly_rsi14": 73.33,
-    "monthly_rsi_ma5": 73.05,
-    "spread": 0.28,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-20",
+    "monthly_rsi14": 67.54,
+    "monthly_rsi_ma5": 71.9,
+    "spread": -4.35,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-20T19:32:10.027534+00:00"
+  "provisional_generated_at": "2026-11-23T23:14:53.427099+00:00"
 }

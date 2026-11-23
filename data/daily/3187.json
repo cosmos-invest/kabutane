@@ -2,12 +2,12 @@
   "code": "3187",
   "ticker": "3187.T",
   "name": "ミラタップ",
-  "generated_at": "2026-11-20T19:31:32.768898+00:00",
-  "price_date": "2026-11-19",
+  "generated_at": "2026-11-23T23:14:18.061570+00:00",
+  "price_date": "2026-11-20",
   "record": {
-    "current_price": 370.0,
-    "change_from_signal_month_pct": 18.21,
-    "return_since_gc_pct": 18.21
+    "current_price": 361.0,
+    "change_from_signal_month_pct": 15.34,
+    "return_since_gc_pct": 15.34
   },
   "daily": [
     {
@@ -906,22 +906,35 @@
       "sma200": 301.27,
       "rsi14": 36.54,
       "rsi5": 45.16
+    },
+    {
+      "date": "2026-11-20",
+      "open": 365.0,
+      "high": 365.0,
+      "low": 352.0,
+      "close": 361.0,
+      "volume": 21100.0,
+      "sma25": 372.92,
+      "sma75": 371.01,
+      "sma200": 301.77,
+      "rsi14": 36.54,
+      "rsi5": 45.16
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-19",
-    "monthly_rsi14": 50.16,
-    "monthly_rsi_ma5": 49.41,
-    "spread": 0.76,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-20",
+    "monthly_rsi14": 49.16,
+    "monthly_rsi_ma5": 49.2,
+    "spread": -0.05,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-20T19:32:10.027534+00:00"
+  "provisional_generated_at": "2026-11-23T23:14:53.427099+00:00"
 }

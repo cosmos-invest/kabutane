@@ -2,12 +2,12 @@
   "code": "7619",
   "ticker": "7619.T",
   "name": "田中商事",
-  "generated_at": "2026-11-20T19:31:32.768898+00:00",
-  "price_date": "2026-11-19",
+  "generated_at": "2026-11-23T23:14:18.061570+00:00",
+  "price_date": "2026-11-20",
   "record": {
-    "current_price": 1001.0,
-    "change_from_signal_month_pct": 9.04,
-    "return_since_gc_pct": 9.04
+    "current_price": 965.0,
+    "change_from_signal_month_pct": 5.12,
+    "return_since_gc_pct": 5.12
   },
   "daily": [
     {
@@ -906,22 +906,35 @@
       "sma200": 923.36,
       "rsi14": 60.76,
       "rsi5": 64.47
+    },
+    {
+      "date": "2026-11-20",
+      "open": 1001.0,
+      "high": 1001.0,
+      "low": 960.0,
+      "close": 965.0,
+      "volume": 22200.0,
+      "sma25": 1013.76,
+      "sma75": 989.72,
+      "sma200": 923.62,
+      "rsi14": 60.76,
+      "rsi5": 64.47
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-19",
-    "monthly_rsi14": 69.46,
-    "monthly_rsi_ma5": 68.74,
-    "spread": 0.72,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-20",
+    "monthly_rsi14": 64.07,
+    "monthly_rsi_ma5": 67.66,
+    "spread": -3.59,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-20T19:32:10.027534+00:00"
+  "provisional_generated_at": "2026-11-23T23:14:53.427099+00:00"
 }

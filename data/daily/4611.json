@@ -2,12 +2,12 @@
   "code": "4611",
   "ticker": "4611.T",
   "name": "大日本塗料",
-  "generated_at": "2026-11-20T19:31:32.768898+00:00",
-  "price_date": "2026-11-19",
+  "generated_at": "2026-11-23T23:14:18.061570+00:00",
+  "price_date": "2026-11-20",
   "record": {
-    "current_price": 1785.0,
-    "change_from_signal_month_pct": 27.59,
-    "return_since_gc_pct": 27.59
+    "current_price": 1730.0,
+    "change_from_signal_month_pct": 23.66,
+    "return_since_gc_pct": 23.66
   },
   "daily": [
     {
@@ -906,22 +906,35 @@
       "sma200": 1434.16,
       "rsi14": 54.55,
       "rsi5": 60.05
+    },
+    {
+      "date": "2026-11-20",
+      "open": 1785.0,
+      "high": 1785.0,
+      "low": 1721.0,
+      "close": 1730.0,
+      "volume": 184500.0,
+      "sma25": 1767.8,
+      "sma75": 1614.41,
+      "sma200": 1435.89,
+      "rsi14": 54.55,
+      "rsi5": 60.05
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-19",
-    "monthly_rsi14": 67.93,
-    "monthly_rsi_ma5": 67.52,
-    "spread": 0.41,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-20",
+    "monthly_rsi14": 65.16,
+    "monthly_rsi_ma5": 66.97,
+    "spread": -1.8,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-20T19:32:10.027534+00:00"
+  "provisional_generated_at": "2026-11-23T23:14:53.427099+00:00"
 }
