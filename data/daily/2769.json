@@ -2,12 +2,12 @@
   "code": "2769",
   "ticker": "2769.T",
   "name": "ヴィレッジヴァンガードコーポレーション",
-  "generated_at": "2026-11-23T23:14:18.061570+00:00",
-  "price_date": "2026-11-20",
+  "generated_at": "2026-11-24T21:51:40.041089+00:00",
+  "price_date": "2026-11-24",
   "record": {
-    "current_price": 912.0,
-    "change_from_signal_month_pct": 2.01,
-    "return_since_gc_pct": 5.92
+    "current_price": 910.0,
+    "change_from_signal_month_pct": 1.79,
+    "return_since_gc_pct": 5.69
   },
   "daily": [
     {
@@ -919,22 +919,35 @@
       "sma200": 914.45,
       "rsi14": 26.88,
       "rsi5": 34.61
+    },
+    {
+      "date": "2026-11-24",
+      "open": 910.0,
+      "high": 912.0,
+      "low": 910.0,
+      "close": 910.0,
+      "volume": 12600.0,
+      "sma25": 920.68,
+      "sma75": 919.48,
+      "sma200": 914.12,
+      "rsi14": 26.88,
+      "rsi5": 34.61
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-20",
-    "monthly_rsi14": 38.61,
-    "monthly_rsi_ma5": 38.5,
-    "spread": 0.1,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-24",
+    "monthly_rsi14": 38.35,
+    "monthly_rsi_ma5": 38.45,
+    "spread": -0.1,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-23T23:14:53.427099+00:00"
+  "provisional_generated_at": "2026-11-24T21:52:35.785028+00:00"
 }

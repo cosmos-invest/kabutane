@@ -2,12 +2,12 @@
   "code": "3169",
   "ticker": "3169.T",
   "name": "ミサワ",
-  "generated_at": "2026-11-23T23:14:18.061570+00:00",
-  "price_date": "2026-11-20",
+  "generated_at": "2026-11-24T21:51:40.041089+00:00",
+  "price_date": "2026-11-24",
   "record": {
-    "current_price": 689.0,
-    "change_from_signal_month_pct": 5.84,
-    "return_since_gc_pct": 6.16
+    "current_price": 680.0,
+    "change_from_signal_month_pct": 4.45,
+    "return_since_gc_pct": 4.78
   },
   "daily": [
     {
@@ -919,22 +919,35 @@
       "sma200": 658.35,
       "rsi14": 49.99,
       "rsi5": 50.26
+    },
+    {
+      "date": "2026-11-24",
+      "open": 680.0,
+      "high": 681.0,
+      "low": 680.0,
+      "close": 680.0,
+      "volume": 4200.0,
+      "sma25": 690.24,
+      "sma75": 681.77,
+      "sma200": 658.25,
+      "rsi14": 49.99,
+      "rsi5": 50.26
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-20",
-    "monthly_rsi14": 57.24,
-    "monthly_rsi_ma5": 56.34,
-    "spread": 0.89,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-24",
+    "monthly_rsi14": 55.01,
+    "monthly_rsi_ma5": 55.9,
+    "spread": -0.89,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-23T23:14:53.427099+00:00"
+  "provisional_generated_at": "2026-11-24T21:52:35.785028+00:00"
 }

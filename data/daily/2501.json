@@ -2,12 +2,12 @@
   "code": "2501",
   "ticker": "2501.T",
   "name": "サッポロビール",
-  "generated_at": "2026-11-23T23:14:18.061570+00:00",
-  "price_date": "2026-11-20",
+  "generated_at": "2026-11-24T21:51:40.041089+00:00",
+  "price_date": "2026-11-24",
   "record": {
-    "current_price": 2191.0,
-    "change_from_signal_month_pct": 8.92,
-    "return_since_gc_pct": 7.93
+    "current_price": 2173.5,
+    "change_from_signal_month_pct": 8.05,
+    "return_since_gc_pct": 7.07
   },
   "daily": [
     {
@@ -919,15 +919,28 @@
       "sma200": 1845.07,
       "rsi14": 63.06,
       "rsi5": 66.64
+    },
+    {
+      "date": "2026-11-24",
+      "open": 2192.0,
+      "high": 2207.5,
+      "low": 2151.0,
+      "close": 2173.5,
+      "volume": 1248900.0,
+      "sma25": 2124.16,
+      "sma75": 1969.28,
+      "sma200": 1847.42,
+      "rsi14": 63.06,
+      "rsi5": 66.64
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-20",
-    "monthly_rsi14": 67.64,
-    "monthly_rsi_ma5": 63.52,
-    "spread": 4.12,
+    "price_date": "2026-11-24",
+    "monthly_rsi14": 67.3,
+    "monthly_rsi_ma5": 63.45,
+    "spread": 3.85,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -936,5 +949,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-23T23:14:53.427099+00:00"
+  "provisional_generated_at": "2026-11-24T21:52:35.785028+00:00"
 }

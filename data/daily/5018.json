@@ -2,12 +2,12 @@
   "code": "5018",
   "ticker": "5018.T",
   "name": "ＭＯＲＥＳＣＯ",
-  "generated_at": "2026-11-23T23:14:18.061570+00:00",
-  "price_date": "2026-11-20",
+  "generated_at": "2026-11-24T21:51:40.041089+00:00",
+  "price_date": "2026-11-24",
   "record": {
-    "current_price": 2510.0,
-    "change_from_signal_month_pct": 15.94,
-    "return_since_gc_pct": 15.94
+    "current_price": 2681.0,
+    "change_from_signal_month_pct": 23.83,
+    "return_since_gc_pct": 23.83
   },
   "daily": [
     {
@@ -919,22 +919,35 @@
       "sma200": 2124.68,
       "rsi14": 63.66,
       "rsi5": 68.15
+    },
+    {
+      "date": "2026-11-24",
+      "open": 2610.0,
+      "high": 2692.0,
+      "low": 2608.0,
+      "close": 2681.0,
+      "volume": 38500.0,
+      "sma25": 2801.6,
+      "sma75": 2493.04,
+      "sma200": 2128.71,
+      "rsi14": 63.66,
+      "rsi5": 68.15
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-20",
-    "monthly_rsi14": 67.61,
-    "monthly_rsi_ma5": 70.69,
-    "spread": -3.08,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-24",
+    "monthly_rsi14": 73.35,
+    "monthly_rsi_ma5": 71.84,
+    "spread": 1.51,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-23T23:14:53.427099+00:00"
+  "provisional_generated_at": "2026-11-24T21:52:35.785028+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "5122",
   "ticker": "5122.T",
   "name": "オカモト",
-  "generated_at": "2026-11-23T23:14:18.061570+00:00",
-  "price_date": "2026-11-20",
+  "generated_at": "2026-11-24T21:51:40.041089+00:00",
+  "price_date": "2026-11-24",
   "record": {
-    "current_price": 6030.0,
-    "change_from_signal_month_pct": 0.5,
-    "return_since_gc_pct": 0.5
+    "current_price": 6170.0,
+    "change_from_signal_month_pct": 2.83,
+    "return_since_gc_pct": 2.83
   },
   "daily": [
     {
@@ -919,15 +919,28 @@
       "sma200": 5893.3,
       "rsi14": 58.11,
       "rsi5": 61.45
+    },
+    {
+      "date": "2026-11-24",
+      "open": 6070.0,
+      "high": 6170.0,
+      "low": 6030.0,
+      "close": 6170.0,
+      "volume": 16000.0,
+      "sma25": 6142.8,
+      "sma75": 6240.67,
+      "sma200": 5895.8,
+      "rsi14": 58.11,
+      "rsi5": 61.45
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-20",
-    "monthly_rsi14": 58.52,
-    "monthly_rsi_ma5": 61.59,
-    "spread": -3.08,
+    "price_date": "2026-11-24",
+    "monthly_rsi14": 61.24,
+    "monthly_rsi_ma5": 62.13,
+    "spread": -0.9,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -936,5 +949,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-23T23:14:53.427099+00:00"
+  "provisional_generated_at": "2026-11-24T21:52:35.785028+00:00"
 }

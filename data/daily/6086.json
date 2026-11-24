@@ -2,12 +2,12 @@
   "code": "6086",
   "ticker": "6086.T",
   "name": "シンメンテホールディングス",
-  "generated_at": "2026-11-23T23:14:18.061570+00:00",
-  "price_date": "2026-11-20",
+  "generated_at": "2026-11-24T21:51:40.041089+00:00",
+  "price_date": "2026-11-24",
   "record": {
-    "current_price": 1026.0,
-    "change_from_signal_month_pct": -1.63,
-    "return_since_gc_pct": -1.63
+    "current_price": 1015.0,
+    "change_from_signal_month_pct": -2.68,
+    "return_since_gc_pct": -2.68
   },
   "daily": [
     {
@@ -919,22 +919,35 @@
       "sma200": 1064.82,
       "rsi14": 55.16,
       "rsi5": 55.54
+    },
+    {
+      "date": "2026-11-24",
+      "open": 1056.0,
+      "high": 1056.0,
+      "low": 1000.0,
+      "close": 1015.0,
+      "volume": 21300.0,
+      "sma25": 1015.84,
+      "sma75": 1025.07,
+      "sma200": 1063.85,
+      "rsi14": 55.16,
+      "rsi5": 55.54
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-20",
-    "monthly_rsi14": 53.48,
-    "monthly_rsi_ma5": 53.47,
-    "spread": 0.01,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-24",
+    "monthly_rsi14": 52.62,
+    "monthly_rsi_ma5": 53.3,
+    "spread": -0.67,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-23T23:14:53.427099+00:00"
+  "provisional_generated_at": "2026-11-24T21:52:35.785028+00:00"
 }

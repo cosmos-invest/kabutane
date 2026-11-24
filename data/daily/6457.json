@@ -2,12 +2,12 @@
   "code": "6457",
   "ticker": "6457.T",
   "name": "グローリー",
-  "generated_at": "2026-11-23T23:14:18.061570+00:00",
-  "price_date": "2026-11-20",
+  "generated_at": "2026-11-24T21:51:40.041089+00:00",
+  "price_date": "2026-11-24",
   "record": {
-    "current_price": 4973.0,
-    "change_from_signal_month_pct": 8.79,
-    "return_since_gc_pct": 8.79
+    "current_price": 5144.0,
+    "change_from_signal_month_pct": 12.54,
+    "return_since_gc_pct": 12.54
   },
   "daily": [
     {
@@ -919,22 +919,35 @@
       "sma200": 4338.94,
       "rsi14": 68.79,
       "rsi5": 73.51
+    },
+    {
+      "date": "2026-11-24",
+      "open": 5043.0,
+      "high": 5195.0,
+      "low": 5008.0,
+      "close": 5144.0,
+      "volume": 285300.0,
+      "sma25": 4986.92,
+      "sma75": 4751.88,
+      "sma200": 4344.27,
+      "rsi14": 68.79,
+      "rsi5": 73.51
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-20",
-    "monthly_rsi14": 68.33,
-    "monthly_rsi_ma5": 69.21,
-    "spread": -0.89,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-24",
+    "monthly_rsi14": 70.57,
+    "monthly_rsi_ma5": 69.66,
+    "spread": 0.91,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-23T23:14:53.427099+00:00"
+  "provisional_generated_at": "2026-11-24T21:52:35.785028+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "4613",
   "ticker": "4613.T",
   "name": "関西ペイント",
-  "generated_at": "2026-11-23T23:14:18.061570+00:00",
-  "price_date": "2026-11-20",
+  "generated_at": "2026-11-24T21:51:40.041089+00:00",
+  "price_date": "2026-11-24",
   "record": {
-    "current_price": 2889.5,
-    "change_from_signal_month_pct": 2.03,
-    "return_since_gc_pct": 9.1
+    "current_price": 2898.5,
+    "change_from_signal_month_pct": 2.35,
+    "return_since_gc_pct": 9.44
   },
   "daily": [
     {
@@ -919,22 +919,35 @@
       "sma200": 2668.67,
       "rsi14": 54.57,
       "rsi5": 61.7
+    },
+    {
+      "date": "2026-11-24",
+      "open": 2928.0,
+      "high": 2930.5,
+      "low": 2885.0,
+      "close": 2898.5,
+      "volume": 869400.0,
+      "sma25": 2945.54,
+      "sma75": 2891.93,
+      "sma200": 2670.38,
+      "rsi14": 54.57,
+      "rsi5": 61.7
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-20",
-    "monthly_rsi14": 61.38,
-    "monthly_rsi_ma5": 61.38,
-    "spread": -0.0,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-24",
+    "monthly_rsi14": 61.71,
+    "monthly_rsi_ma5": 61.45,
+    "spread": 0.26,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-23T23:14:53.427099+00:00"
+  "provisional_generated_at": "2026-11-24T21:52:35.785028+00:00"
 }

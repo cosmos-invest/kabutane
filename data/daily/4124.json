@@ -2,12 +2,12 @@
   "code": "4124",
   "ticker": "4124.T",
   "name": "大阪油化工業",
-  "generated_at": "2026-11-23T23:14:18.061570+00:00",
-  "price_date": "2026-11-20",
+  "generated_at": "2026-11-24T21:51:40.041089+00:00",
+  "price_date": "2026-11-24",
   "record": {
-    "current_price": 2842.0,
-    "change_from_signal_month_pct": 5.26,
-    "return_since_gc_pct": 5.26
+    "current_price": 3210.0,
+    "change_from_signal_month_pct": 18.89,
+    "return_since_gc_pct": 18.89
   },
   "daily": [
     {
@@ -919,22 +919,35 @@
       "sma200": 2698.1,
       "rsi14": 59.05,
       "rsi5": 59.89
+    },
+    {
+      "date": "2026-11-24",
+      "open": 3155.0,
+      "high": 3225.0,
+      "low": 3100.0,
+      "close": 3210.0,
+      "volume": 18700.0,
+      "sma25": 2861.12,
+      "sma75": 2896.33,
+      "sma200": 2701.92,
+      "rsi14": 59.05,
+      "rsi5": 59.89
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-20",
-    "monthly_rsi14": 60.45,
-    "monthly_rsi_ma5": 62.16,
-    "spread": -1.71,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-24",
+    "monthly_rsi14": 67.34,
+    "monthly_rsi_ma5": 63.54,
+    "spread": 3.8,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-23T23:14:53.427099+00:00"
+  "provisional_generated_at": "2026-11-24T21:52:35.785028+00:00"
 }

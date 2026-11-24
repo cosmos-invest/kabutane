@@ -2,12 +2,12 @@
   "code": "3994",
   "ticker": "3994.T",
   "name": "マネーフォワード",
-  "generated_at": "2026-11-23T23:14:18.061570+00:00",
-  "price_date": "2026-11-20",
+  "generated_at": "2026-11-24T21:51:40.041089+00:00",
+  "price_date": "2026-11-24",
   "record": {
-    "current_price": 6314.0,
-    "change_from_signal_month_pct": 15.75,
-    "return_since_gc_pct": 33.63
+    "current_price": 6470.0,
+    "change_from_signal_month_pct": 18.61,
+    "return_since_gc_pct": 36.93
   },
   "daily": [
     {
@@ -919,22 +919,35 @@
       "sma200": 4952.39,
       "rsi14": 48.44,
       "rsi5": 54.93
+    },
+    {
+      "date": "2026-11-24",
+      "open": 6403.0,
+      "high": 6494.0,
+      "low": 6293.0,
+      "close": 6470.0,
+      "volume": 254900.0,
+      "sma25": 6986.28,
+      "sma75": 6366.03,
+      "sma200": 4963.6,
+      "rsi14": 48.44,
+      "rsi5": 54.93
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-20",
-    "monthly_rsi14": 56.95,
-    "monthly_rsi_ma5": 57.62,
-    "spread": -0.67,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-24",
+    "monthly_rsi14": 57.98,
+    "monthly_rsi_ma5": 57.83,
+    "spread": 0.15,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-23T23:14:53.427099+00:00"
+  "provisional_generated_at": "2026-11-24T21:52:35.785028+00:00"
 }

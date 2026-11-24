@@ -2,12 +2,12 @@
   "code": "2883",
   "ticker": "2883.T",
   "name": "大冷",
-  "generated_at": "2026-11-23T23:14:18.061570+00:00",
-  "price_date": "2026-11-20",
+  "generated_at": "2026-11-24T21:51:40.041089+00:00",
+  "price_date": "2026-11-24",
   "record": {
-    "current_price": 1961.0,
-    "change_from_signal_month_pct": -1.9,
-    "return_since_gc_pct": -1.9
+    "current_price": 1960.0,
+    "change_from_signal_month_pct": -1.95,
+    "return_since_gc_pct": -1.95
   },
   "daily": [
     {
@@ -919,15 +919,28 @@
       "sma200": 1990.73,
       "rsi14": 57.04,
       "rsi5": 58.74
+    },
+    {
+      "date": "2026-11-24",
+      "open": 1961.0,
+      "high": 1963.0,
+      "low": 1960.0,
+      "close": 1960.0,
+      "volume": 1500.0,
+      "sma25": 1962.32,
+      "sma75": 1994.11,
+      "sma200": 1990.53,
+      "rsi14": 57.04,
+      "rsi5": 58.74
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-20",
-    "monthly_rsi14": 47.38,
-    "monthly_rsi_ma5": 51.79,
-    "spread": -4.42,
+    "price_date": "2026-11-24",
+    "monthly_rsi14": 47.18,
+    "monthly_rsi_ma5": 51.75,
+    "spread": -4.58,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -936,5 +949,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-23T23:14:53.427099+00:00"
+  "provisional_generated_at": "2026-11-24T21:52:35.785028+00:00"
 }
