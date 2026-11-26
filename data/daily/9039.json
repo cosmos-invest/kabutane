@@ -2,12 +2,12 @@
   "code": "9039",
   "ticker": "9039.T",
   "name": "サカイ引越センター",
-  "generated_at": "2026-11-25T20:57:49.844502+00:00",
-  "price_date": "2026-11-24",
+  "generated_at": "2026-11-26T20:49:44.512221+00:00",
+  "price_date": "2026-11-25",
   "record": {
-    "current_price": 2953.0,
-    "change_from_signal_month_pct": -0.81,
-    "return_since_gc_pct": 1.51
+    "current_price": 3010.0,
+    "change_from_signal_month_pct": 1.11,
+    "return_since_gc_pct": 3.47
   },
   "daily": [
     {
@@ -932,22 +932,35 @@
       "sma200": 2917.53,
       "rsi14": 56.64,
       "rsi5": 59.68
+    },
+    {
+      "date": "2026-11-25",
+      "open": 2955.0,
+      "high": 3020.0,
+      "low": 2954.0,
+      "close": 3010.0,
+      "volume": 40000.0,
+      "sma25": 3030.76,
+      "sma75": 2998.25,
+      "sma200": 2918.09,
+      "rsi14": 56.64,
+      "rsi5": 59.68
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-24",
-    "monthly_rsi14": 55.58,
-    "monthly_rsi_ma5": 57.45,
-    "spread": -1.87,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-25",
+    "monthly_rsi14": 58.3,
+    "monthly_rsi_ma5": 57.99,
+    "spread": 0.3,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-25T20:58:39.190151+00:00"
+  "provisional_generated_at": "2026-11-26T20:50:49.248360+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "8362",
   "ticker": "8362.T",
   "name": "福井銀行",
-  "generated_at": "2026-11-25T20:57:49.844502+00:00",
-  "price_date": "2026-11-24",
+  "generated_at": "2026-11-26T20:49:44.512221+00:00",
+  "price_date": "2026-11-25",
   "record": {
-    "current_price": 5570.0,
-    "change_from_signal_month_pct": -1.94,
-    "return_since_gc_pct": 48.53
+    "current_price": 5000.0,
+    "change_from_signal_month_pct": -11.97,
+    "return_since_gc_pct": 33.33
   },
   "daily": [
     {
@@ -932,15 +932,28 @@
       "sma200": 5310.89,
       "rsi14": 81.9,
       "rsi5": 87.82
+    },
+    {
+      "date": "2026-11-25",
+      "open": 5370.0,
+      "high": 5370.0,
+      "low": 4900.0,
+      "close": 5000.0,
+      "volume": 187300.0,
+      "sma25": 6394.8,
+      "sma75": 6959.73,
+      "sma200": 5321.74,
+      "rsi14": 81.9,
+      "rsi5": 87.82
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-24",
-    "monthly_rsi14": 61.85,
-    "monthly_rsi_ma5": 82.64,
-    "spread": -20.79,
+    "price_date": "2026-11-25",
+    "monthly_rsi14": 57.51,
+    "monthly_rsi_ma5": 81.77,
+    "spread": -24.26,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -949,5 +962,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-25T20:58:39.190151+00:00"
+  "provisional_generated_at": "2026-11-26T20:50:49.248360+00:00"
 }

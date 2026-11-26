@@ -2,12 +2,12 @@
   "code": "147A",
   "ticker": "147A.T",
   "name": "ソラコム",
-  "generated_at": "2026-11-25T20:57:49.844502+00:00",
-  "price_date": "2026-11-24",
+  "generated_at": "2026-11-26T20:49:44.512221+00:00",
+  "price_date": "2026-11-25",
   "record": {
-    "current_price": 964.0,
-    "change_from_signal_month_pct": -8.54,
-    "return_since_gc_pct": -18.79
+    "current_price": 956.0,
+    "change_from_signal_month_pct": -9.3,
+    "return_since_gc_pct": -19.46
   },
   "daily": [
     {
@@ -932,22 +932,35 @@
       "sma200": 1010.22,
       "rsi14": 40.49,
       "rsi5": 42.61
+    },
+    {
+      "date": "2026-11-25",
+      "open": 949.0,
+      "high": 964.0,
+      "low": 937.0,
+      "close": 956.0,
+      "volume": 74600.0,
+      "sma25": 939.28,
+      "sma75": 982.81,
+      "sma200": 1009.55,
+      "rsi14": 40.49,
+      "rsi5": 42.61
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-24",
-    "monthly_rsi14": 41.02,
-    "monthly_rsi_ma5": 40.96,
-    "spread": 0.06,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-25",
+    "monthly_rsi14": 40.7,
+    "monthly_rsi_ma5": 40.9,
+    "spread": -0.19,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-25T20:58:39.190151+00:00"
+  "provisional_generated_at": "2026-11-26T20:50:49.248360+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "5253",
   "ticker": "5253.T",
   "name": "カバー",
-  "generated_at": "2026-11-25T20:57:49.844502+00:00",
-  "price_date": "2026-11-24",
+  "generated_at": "2026-11-26T20:49:44.512221+00:00",
+  "price_date": "2026-11-25",
   "record": {
-    "current_price": 1202.0,
-    "change_from_signal_month_pct": -17.67,
-    "return_since_gc_pct": -17.67
+    "current_price": 1207.0,
+    "change_from_signal_month_pct": -17.33,
+    "return_since_gc_pct": -17.33
   },
   "daily": [
     {
@@ -932,15 +932,28 @@
       "sma200": 1533.64,
       "rsi14": 43.48,
       "rsi5": 44.73
+    },
+    {
+      "date": "2026-11-25",
+      "open": 1212.0,
+      "high": 1223.0,
+      "low": 1192.0,
+      "close": 1207.0,
+      "volume": 976000.0,
+      "sma25": 1453.4,
+      "sma75": 1543.65,
+      "sma200": 1531.52,
+      "rsi14": 43.48,
+      "rsi5": 44.73
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-24",
-    "monthly_rsi14": 38.21,
-    "monthly_rsi_ma5": 42.61,
-    "spread": -4.4,
+    "price_date": "2026-11-25",
+    "monthly_rsi14": 38.28,
+    "monthly_rsi_ma5": 42.62,
+    "spread": -4.34,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -949,5 +962,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-25T20:58:39.190151+00:00"
+  "provisional_generated_at": "2026-11-26T20:50:49.248360+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "3996",
   "ticker": "3996.T",
   "name": "サインポスト",
-  "generated_at": "2026-11-25T20:57:49.844502+00:00",
-  "price_date": "2026-11-24",
+  "generated_at": "2026-11-26T20:49:44.512221+00:00",
+  "price_date": "2026-11-25",
   "record": {
-    "current_price": 207.0,
-    "change_from_signal_month_pct": 6.15,
-    "return_since_gc_pct": 6.15
+    "current_price": 203.0,
+    "change_from_signal_month_pct": 4.1,
+    "return_since_gc_pct": 4.1
   },
   "daily": [
     {
@@ -932,22 +932,35 @@
       "sma200": 216.93,
       "rsi14": 30.02,
       "rsi5": 31.43
+    },
+    {
+      "date": "2026-11-25",
+      "open": 204.0,
+      "high": 205.0,
+      "low": 201.0,
+      "close": 203.0,
+      "volume": 31400.0,
+      "sma25": 224.32,
+      "sma75": 214.97,
+      "sma200": 216.59,
+      "rsi14": 30.02,
+      "rsi5": 31.43
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-24",
-    "monthly_rsi14": 38.44,
-    "monthly_rsi_ma5": 38.34,
-    "spread": 0.1,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-25",
+    "monthly_rsi14": 38.04,
+    "monthly_rsi_ma5": 38.26,
+    "spread": -0.23,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-25T20:58:39.190151+00:00"
+  "provisional_generated_at": "2026-11-26T20:50:49.248360+00:00"
 }

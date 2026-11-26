@@ -2,12 +2,12 @@
   "code": "2201",
   "ticker": "2201.T",
   "name": "森永製菓",
-  "generated_at": "2026-11-25T20:57:49.844502+00:00",
-  "price_date": "2026-11-24",
+  "generated_at": "2026-11-26T20:49:44.512221+00:00",
+  "price_date": "2026-11-25",
   "record": {
-    "current_price": 2465.5,
-    "change_from_signal_month_pct": -6.65,
-    "return_since_gc_pct": -6.65
+    "current_price": 2535.0,
+    "change_from_signal_month_pct": -4.01,
+    "return_since_gc_pct": -4.01
   },
   "daily": [
     {
@@ -932,22 +932,35 @@
       "sma200": 2600.45,
       "rsi14": 51.25,
       "rsi5": 51.94
+    },
+    {
+      "date": "2026-11-25",
+      "open": 2499.5,
+      "high": 2559.0,
+      "low": 2495.5,
+      "close": 2535.0,
+      "volume": 414800.0,
+      "sma25": 2465.02,
+      "sma75": 2479.5,
+      "sma200": 2599.58,
+      "rsi14": 51.25,
+      "rsi5": 51.94
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-24",
-    "monthly_rsi14": 44.98,
-    "monthly_rsi_ma5": 45.07,
-    "spread": -0.08,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-25",
+    "monthly_rsi14": 47.85,
+    "monthly_rsi_ma5": 45.64,
+    "spread": 2.21,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-25T20:58:39.190151+00:00"
+  "provisional_generated_at": "2026-11-26T20:50:49.248360+00:00"
 }

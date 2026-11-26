@@ -2,12 +2,12 @@
   "code": "4465",
   "ticker": "4465.T",
   "name": "ニイタカ",
-  "generated_at": "2026-11-25T20:57:49.844502+00:00",
-  "price_date": "2026-11-24",
+  "generated_at": "2026-11-26T20:49:44.512221+00:00",
+  "price_date": "2026-11-25",
   "record": {
-    "current_price": 2476.0,
-    "change_from_signal_month_pct": 8.36,
-    "return_since_gc_pct": 8.36
+    "current_price": 2450.0,
+    "change_from_signal_month_pct": 7.22,
+    "return_since_gc_pct": 7.22
   },
   "daily": [
     {
@@ -932,22 +932,35 @@
       "sma200": 2361.18,
       "rsi14": 51.03,
       "rsi5": 52.57
+    },
+    {
+      "date": "2026-11-25",
+      "open": 2467.0,
+      "high": 2472.0,
+      "low": 2435.0,
+      "close": 2450.0,
+      "volume": 28900.0,
+      "sma25": 2526.64,
+      "sma75": 2456.89,
+      "sma200": 2361.12,
+      "rsi14": 51.03,
+      "rsi5": 52.57
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-24",
-    "monthly_rsi14": 58.67,
-    "monthly_rsi_ma5": 57.94,
-    "spread": 0.73,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-25",
+    "monthly_rsi14": 57.46,
+    "monthly_rsi_ma5": 57.69,
+    "spread": -0.23,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-25T20:58:39.190151+00:00"
+  "provisional_generated_at": "2026-11-26T20:50:49.248360+00:00"
 }

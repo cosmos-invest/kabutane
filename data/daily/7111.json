@@ -2,12 +2,12 @@
   "code": "7111",
   "ticker": "7111.T",
   "name": "ＩＮＥＳＴ",
-  "generated_at": "2026-11-25T20:57:49.844502+00:00",
-  "price_date": "2026-11-24",
+  "generated_at": "2026-11-26T20:49:44.512221+00:00",
+  "price_date": "2026-11-25",
   "record": {
-    "current_price": 555.0,
-    "change_from_signal_month_pct": 11.0,
-    "return_since_gc_pct": 11.0
+    "current_price": 541.0,
+    "change_from_signal_month_pct": 8.2,
+    "return_since_gc_pct": 8.2
   },
   "daily": [
     {
@@ -932,22 +932,35 @@
       "sma200": 499.59,
       "rsi14": 38.2,
       "rsi5": 40.79
+    },
+    {
+      "date": "2026-11-25",
+      "open": 555.0,
+      "high": 555.0,
+      "low": 540.0,
+      "close": 541.0,
+      "volume": 6300.0,
+      "sma25": 580.24,
+      "sma75": 549.41,
+      "sma200": 499.57,
+      "rsi14": 38.2,
+      "rsi5": 40.79
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-24",
-    "monthly_rsi14": 46.19,
-    "monthly_rsi_ma5": 46.14,
-    "spread": 0.05,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-25",
+    "monthly_rsi14": 45.57,
+    "monthly_rsi_ma5": 46.01,
+    "spread": -0.44,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-25T20:58:39.190151+00:00"
+  "provisional_generated_at": "2026-11-26T20:50:49.248360+00:00"
 }

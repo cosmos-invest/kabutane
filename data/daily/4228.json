@@ -2,12 +2,12 @@
   "code": "4228",
   "ticker": "4228.T",
   "name": "積水化成品工業",
-  "generated_at": "2026-11-25T20:57:49.844502+00:00",
-  "price_date": "2026-11-24",
+  "generated_at": "2026-11-26T20:49:44.512221+00:00",
+  "price_date": "2026-11-25",
   "record": {
-    "current_price": 702.0,
-    "change_from_signal_month_pct": 32.45,
-    "return_since_gc_pct": 32.45
+    "current_price": 673.0,
+    "change_from_signal_month_pct": 26.98,
+    "return_since_gc_pct": 26.98
   },
   "daily": [
     {
@@ -932,22 +932,35 @@
       "sma200": 545.66,
       "rsi14": 58.9,
       "rsi5": 60.25
+    },
+    {
+      "date": "2026-11-25",
+      "open": 694.0,
+      "high": 700.0,
+      "low": 668.0,
+      "close": 673.0,
+      "volume": 320900.0,
+      "sma25": 666.24,
+      "sma75": 626.77,
+      "sma200": 546.92,
+      "rsi14": 58.9,
+      "rsi5": 60.25
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-24",
-    "monthly_rsi14": 70.1,
-    "monthly_rsi_ma5": 67.53,
-    "spread": 2.57,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-25",
+    "monthly_rsi14": 66.61,
+    "monthly_rsi_ma5": 66.83,
+    "spread": -0.22,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-25T20:58:39.190151+00:00"
+  "provisional_generated_at": "2026-11-26T20:50:49.248360+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "9340",
   "ticker": "9340.T",
   "name": "アソインターナショナル",
-  "generated_at": "2026-11-25T20:57:49.844502+00:00",
-  "price_date": "2026-11-24",
+  "generated_at": "2026-11-26T20:49:44.512221+00:00",
+  "price_date": "2026-11-25",
   "record": {
-    "current_price": 798.0,
-    "change_from_signal_month_pct": 9.32,
-    "return_since_gc_pct": 9.32
+    "current_price": 785.0,
+    "change_from_signal_month_pct": 7.53,
+    "return_since_gc_pct": 7.53
   },
   "daily": [
     {
@@ -932,22 +932,35 @@
       "sma200": 724.08,
       "rsi14": 58.27,
       "rsi5": 61.67
+    },
+    {
+      "date": "2026-11-25",
+      "open": 790.0,
+      "high": 795.0,
+      "low": 767.0,
+      "close": 785.0,
+      "volume": 3100.0,
+      "sma25": 789.08,
+      "sma75": 775.08,
+      "sma200": 724.41,
+      "rsi14": 58.27,
+      "rsi5": 61.67
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-24",
-    "monthly_rsi14": 67.34,
-    "monthly_rsi_ma5": 66.75,
-    "spread": 0.59,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-25",
+    "monthly_rsi14": 66.24,
+    "monthly_rsi_ma5": 66.53,
+    "spread": -0.29,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-25T20:58:39.190151+00:00"
+  "provisional_generated_at": "2026-11-26T20:50:49.248360+00:00"
 }

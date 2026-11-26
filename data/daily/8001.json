@@ -2,12 +2,12 @@
   "code": "8001",
   "ticker": "8001.T",
   "name": "伊藤忠商事",
-  "generated_at": "2026-11-25T20:57:49.844502+00:00",
-  "price_date": "2026-11-24",
+  "generated_at": "2026-11-26T20:49:44.512221+00:00",
+  "price_date": "2026-11-25",
   "record": {
-    "current_price": 2216.5,
-    "change_from_signal_month_pct": 10.05,
-    "return_since_gc_pct": 10.05
+    "current_price": 2268.0,
+    "change_from_signal_month_pct": 12.61,
+    "return_since_gc_pct": 12.61
   },
   "daily": [
     {
@@ -932,22 +932,35 @@
       "sma200": 2075.81,
       "rsi14": 62.93,
       "rsi5": 64.09
+    },
+    {
+      "date": "2026-11-25",
+      "open": 2229.5,
+      "high": 2279.5,
+      "low": 2206.0,
+      "close": 2268.0,
+      "volume": 12562400.0,
+      "sma25": 2323.22,
+      "sma75": 2220.67,
+      "sma200": 2077.32,
+      "rsi14": 62.93,
+      "rsi5": 64.09
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-24",
-    "monthly_rsi14": 66.56,
-    "monthly_rsi_ma5": 68.21,
-    "spread": -1.65,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-25",
+    "monthly_rsi14": 69.27,
+    "monthly_rsi_ma5": 68.75,
+    "spread": 0.52,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-25T20:58:39.190151+00:00"
+  "provisional_generated_at": "2026-11-26T20:50:49.248360+00:00"
 }

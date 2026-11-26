@@ -2,12 +2,12 @@
   "code": "8052",
   "ticker": "8052.T",
   "name": "椿本興業",
-  "generated_at": "2026-11-25T20:57:49.844502+00:00",
-  "price_date": "2026-11-24",
+  "generated_at": "2026-11-26T20:49:44.512221+00:00",
+  "price_date": "2026-11-25",
   "record": {
-    "current_price": 2915.0,
-    "change_from_signal_month_pct": 1.64,
-    "return_since_gc_pct": 1.64
+    "current_price": 2949.0,
+    "change_from_signal_month_pct": 2.82,
+    "return_since_gc_pct": 2.82
   },
   "daily": [
     {
@@ -932,22 +932,35 @@
       "sma200": 2848.08,
       "rsi14": 58.9,
       "rsi5": 61.32
+    },
+    {
+      "date": "2026-11-25",
+      "open": 2925.0,
+      "high": 2968.0,
+      "low": 2913.0,
+      "close": 2949.0,
+      "volume": 43600.0,
+      "sma25": 2976.8,
+      "sma75": 2929.36,
+      "sma200": 2848.69,
+      "rsi14": 58.9,
+      "rsi5": 61.32
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-24",
-    "monthly_rsi14": 61.7,
-    "monthly_rsi_ma5": 62.73,
-    "spread": -1.03,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-25",
+    "monthly_rsi14": 63.09,
+    "monthly_rsi_ma5": 63.0,
+    "spread": 0.09,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-25T20:58:39.190151+00:00"
+  "provisional_generated_at": "2026-11-26T20:50:49.248360+00:00"
 }

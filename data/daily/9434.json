@@ -2,12 +2,12 @@
   "code": "9434",
   "ticker": "9434.T",
   "name": "ソフトバンク",
-  "generated_at": "2026-11-25T20:57:49.844502+00:00",
-  "price_date": "2026-11-24",
+  "generated_at": "2026-11-26T20:49:44.512221+00:00",
+  "price_date": "2026-11-25",
   "record": {
-    "current_price": 238.0,
-    "change_from_signal_month_pct": 6.54,
-    "return_since_gc_pct": 6.54
+    "current_price": 237.9,
+    "change_from_signal_month_pct": 6.49,
+    "return_since_gc_pct": 6.49
   },
   "daily": [
     {
@@ -932,22 +932,35 @@
       "sma200": 224.63,
       "rsi14": 56.67,
       "rsi5": 59.39
+    },
+    {
+      "date": "2026-11-25",
+      "open": 239.9,
+      "high": 240.1,
+      "low": 236.1,
+      "close": 237.9,
+      "volume": 98564000.0,
+      "sma25": 239.13,
+      "sma75": 239.25,
+      "sma200": 224.77,
+      "rsi14": 56.67,
+      "rsi5": 59.39
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-24",
-    "monthly_rsi14": 63.72,
+    "price_date": "2026-11-25",
+    "monthly_rsi14": 63.68,
     "monthly_rsi_ma5": 63.69,
-    "spread": 0.03,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "spread": -0.0,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-25T20:58:39.190151+00:00"
+  "provisional_generated_at": "2026-11-26T20:50:49.248360+00:00"
 }

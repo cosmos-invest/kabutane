@@ -2,12 +2,12 @@
   "code": "4204",
   "ticker": "4204.T",
   "name": "積水化学工業",
-  "generated_at": "2026-11-25T20:57:49.844502+00:00",
-  "price_date": "2026-11-24",
+  "generated_at": "2026-11-26T20:49:44.512221+00:00",
+  "price_date": "2026-11-25",
   "record": {
-    "current_price": 2594.0,
-    "change_from_signal_month_pct": -2.66,
-    "return_since_gc_pct": -2.66
+    "current_price": 2621.5,
+    "change_from_signal_month_pct": -1.63,
+    "return_since_gc_pct": -1.63
   },
   "daily": [
     {
@@ -932,22 +932,35 @@
       "sma200": 2604.99,
       "rsi14": 50.12,
       "rsi5": 54.74
+    },
+    {
+      "date": "2026-11-25",
+      "open": 2599.0,
+      "high": 2632.5,
+      "low": 2592.0,
+      "close": 2621.5,
+      "volume": 920600.0,
+      "sma25": 2624.26,
+      "sma75": 2592.18,
+      "sma200": 2604.39,
+      "rsi14": 50.12,
+      "rsi5": 54.74
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-24",
-    "monthly_rsi14": 51.64,
-    "monthly_rsi_ma5": 51.84,
-    "spread": -0.2,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-25",
+    "monthly_rsi14": 52.48,
+    "monthly_rsi_ma5": 52.01,
+    "spread": 0.47,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-25T20:58:39.190151+00:00"
+  "provisional_generated_at": "2026-11-26T20:50:49.248360+00:00"
 }
