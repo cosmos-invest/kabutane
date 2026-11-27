@@ -2,12 +2,12 @@
   "code": "6522",
   "ticker": "6522.T",
   "name": "アスタリスク",
-  "generated_at": "2026-11-26T20:49:44.512221+00:00",
-  "price_date": "2026-11-25",
+  "generated_at": "2026-11-27T20:34:18.122540+00:00",
+  "price_date": "2026-11-26",
   "record": {
-    "current_price": 552.0,
-    "change_from_signal_month_pct": -65.3,
-    "return_since_gc_pct": -58.5
+    "current_price": 570.0,
+    "change_from_signal_month_pct": -64.17,
+    "return_since_gc_pct": -57.14
   },
   "daily": [
     {
@@ -945,15 +945,28 @@
       "sma200": 1102.04,
       "rsi14": 65.28,
       "rsi5": 69.59
+    },
+    {
+      "date": "2026-11-26",
+      "open": 552.0,
+      "high": 586.0,
+      "low": 551.0,
+      "close": 570.0,
+      "volume": 124600.0,
+      "sma25": 702.32,
+      "sma75": 1271.55,
+      "sma200": 1102.91,
+      "rsi14": 65.28,
+      "rsi5": 69.59
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-25",
-    "monthly_rsi14": 45.32,
-    "monthly_rsi_ma5": 59.71,
-    "spread": -14.39,
+    "price_date": "2026-11-26",
+    "monthly_rsi14": 45.56,
+    "monthly_rsi_ma5": 59.76,
+    "spread": -14.21,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -962,5 +975,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-26T20:50:49.248360+00:00"
+  "provisional_generated_at": "2026-11-27T20:35:01.255736+00:00"
 }

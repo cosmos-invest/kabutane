@@ -2,12 +2,12 @@
   "code": "2305",
   "ticker": "2305.T",
   "name": "スタジオアリス",
-  "generated_at": "2026-11-26T20:49:44.512221+00:00",
-  "price_date": "2026-11-25",
+  "generated_at": "2026-11-27T20:34:18.122540+00:00",
+  "price_date": "2026-11-26",
   "record": {
-    "current_price": 1853.0,
-    "change_from_signal_month_pct": -6.51,
-    "return_since_gc_pct": -0.16
+    "current_price": 1838.0,
+    "change_from_signal_month_pct": -7.27,
+    "return_since_gc_pct": -0.97
   },
   "daily": [
     {
@@ -945,22 +945,35 @@
       "sma200": 1883.23,
       "rsi14": 37.77,
       "rsi5": 48.0
+    },
+    {
+      "date": "2026-11-26",
+      "open": 1853.0,
+      "high": 1859.0,
+      "low": 1832.0,
+      "close": 1838.0,
+      "volume": 14300.0,
+      "sma25": 1819.64,
+      "sma75": 1852.33,
+      "sma200": 1882.46,
+      "rsi14": 37.77,
+      "rsi5": 48.0
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-25",
-    "monthly_rsi14": 41.69,
-    "monthly_rsi_ma5": 41.35,
-    "spread": 0.33,
-    "active": true,
-    "status": "CONTINUE",
-    "changed_from_confirmed": false,
+    "price_date": "2026-11-26",
+    "monthly_rsi14": 40.52,
+    "monthly_rsi_ma5": 41.12,
+    "spread": -0.6,
+    "active": false,
+    "status": "DC",
+    "changed_from_confirmed": true,
     "confirmed_month": "2026-07",
     "confirmed_status": "CONTINUE",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-26T20:50:49.248360+00:00"
+  "provisional_generated_at": "2026-11-27T20:35:01.255736+00:00"
 }

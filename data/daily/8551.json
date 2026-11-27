@@ -2,12 +2,12 @@
   "code": "8551",
   "ticker": "8551.T",
   "name": "北日本銀行",
-  "generated_at": "2026-11-26T20:49:44.512221+00:00",
-  "price_date": "2026-11-25",
+  "generated_at": "2026-11-27T20:34:18.122540+00:00",
+  "price_date": "2026-11-26",
   "record": {
-    "current_price": 1884.0,
-    "change_from_signal_month_pct": -71.67,
-    "return_since_gc_pct": -65.11
+    "current_price": 1870.0,
+    "change_from_signal_month_pct": -71.88,
+    "return_since_gc_pct": -65.37
   },
   "daily": [
     {
@@ -945,15 +945,28 @@
       "sma200": 4654.01,
       "rsi14": 70.47,
       "rsi5": 78.52
+    },
+    {
+      "date": "2026-11-26",
+      "open": 1869.0,
+      "high": 1902.0,
+      "low": 1853.0,
+      "close": 1870.0,
+      "volume": 67200.0,
+      "sma25": 2224.84,
+      "sma75": 3619.88,
+      "sma200": 4639.01,
+      "rsi14": 70.47,
+      "rsi5": 78.52
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-25",
-    "monthly_rsi14": 38.71,
-    "monthly_rsi_ma5": 49.05,
-    "spread": -10.34,
+    "price_date": "2026-11-26",
+    "monthly_rsi14": 38.64,
+    "monthly_rsi_ma5": 49.03,
+    "spread": -10.39,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -962,5 +975,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-26T20:50:49.248360+00:00"
+  "provisional_generated_at": "2026-11-27T20:35:01.255736+00:00"
 }

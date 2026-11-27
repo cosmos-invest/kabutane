@@ -2,12 +2,12 @@
   "code": "6083",
   "ticker": "6083.T",
   "name": "ＥＲＩホールディングス",
-  "generated_at": "2026-11-26T20:49:44.512221+00:00",
-  "price_date": "2026-11-25",
+  "generated_at": "2026-11-27T20:34:18.122540+00:00",
+  "price_date": "2026-11-26",
   "record": {
-    "current_price": 1140.0,
-    "change_from_signal_month_pct": -27.62,
-    "return_since_gc_pct": -27.62
+    "current_price": 1153.0,
+    "change_from_signal_month_pct": -26.79,
+    "return_since_gc_pct": -26.79
   },
   "daily": [
     {
@@ -945,15 +945,35 @@
       "sma200": 1450.13,
       "rsi14": 61.81,
       "rsi5": 65.63
+    },
+    {
+      "date": "2026-11-26",
+      "open": 1110.0,
+      "high": 1179.0,
+      "low": 1110.0,
+      "close": 1153.0,
+      "volume": 206100.0,
+      "sma25": 1289.6,
+      "sma75": 1486.09,
+      "sma200": 1448.62,
+      "rsi14": 61.81,
+      "rsi5": 65.63
     }
   ],
-  "corporate_events": [],
+  "corporate_events": [
+    {
+      "date": "2026-11-27",
+      "type": "DIVIDEND",
+      "label": "配当",
+      "detail": "1株 22円"
+    }
+  ],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-25",
-    "monthly_rsi14": 48.65,
-    "monthly_rsi_ma5": 60.23,
-    "spread": -11.58,
+    "price_date": "2026-11-26",
+    "monthly_rsi14": 48.98,
+    "monthly_rsi_ma5": 60.29,
+    "spread": -11.31,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -962,5 +982,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-26T20:50:49.248360+00:00"
+  "provisional_generated_at": "2026-11-27T20:35:01.255736+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "7997",
   "ticker": "7997.T",
   "name": "くろがね工作所",
-  "generated_at": "2026-11-26T20:49:44.512221+00:00",
-  "price_date": "2026-11-25",
+  "generated_at": "2026-11-27T20:34:18.122540+00:00",
+  "price_date": "2026-11-26",
   "record": {
-    "current_price": 1206.0,
-    "change_from_signal_month_pct": 14.1,
-    "return_since_gc_pct": 23.82
+    "current_price": 1175.0,
+    "change_from_signal_month_pct": 11.16,
+    "return_since_gc_pct": 20.64
   },
   "daily": [
     {
@@ -945,15 +945,35 @@
       "sma200": 1039.92,
       "rsi14": 56.98,
       "rsi5": 60.47
+    },
+    {
+      "date": "2026-11-26",
+      "open": 1205.0,
+      "high": 1246.0,
+      "low": 1175.0,
+      "close": 1175.0,
+      "volume": 31900.0,
+      "sma25": 1192.92,
+      "sma75": 1131.69,
+      "sma200": 1041.09,
+      "rsi14": 56.98,
+      "rsi5": 60.47
     }
   ],
-  "corporate_events": [],
+  "corporate_events": [
+    {
+      "date": "2026-11-27",
+      "type": "DIVIDEND",
+      "label": "配当",
+      "detail": "1株 40円"
+    }
+  ],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-25",
-    "monthly_rsi14": 67.04,
-    "monthly_rsi_ma5": 63.69,
-    "spread": 3.35,
+    "price_date": "2026-11-26",
+    "monthly_rsi14": 64.68,
+    "monthly_rsi_ma5": 63.22,
+    "spread": 1.46,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -962,5 +982,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-26T20:50:49.248360+00:00"
+  "provisional_generated_at": "2026-11-27T20:35:01.255736+00:00"
 }

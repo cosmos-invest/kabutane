@@ -2,12 +2,12 @@
   "code": "3160",
   "ticker": "3160.T",
   "name": "大光",
-  "generated_at": "2026-11-26T20:49:44.512221+00:00",
-  "price_date": "2026-11-25",
+  "generated_at": "2026-11-27T20:34:18.122540+00:00",
+  "price_date": "2026-11-26",
   "record": {
-    "current_price": 568.0,
-    "change_from_signal_month_pct": -2.24,
-    "return_since_gc_pct": -2.24
+    "current_price": 565.0,
+    "change_from_signal_month_pct": -2.75,
+    "return_since_gc_pct": -2.75
   },
   "daily": [
     {
@@ -945,15 +945,35 @@
       "sma200": 578.38,
       "rsi14": 45.97,
       "rsi5": 47.84
+    },
+    {
+      "date": "2026-11-26",
+      "open": 569.0,
+      "high": 569.0,
+      "low": 565.0,
+      "close": 565.0,
+      "volume": 106200.0,
+      "sma25": 576.0,
+      "sma75": 578.41,
+      "sma200": 578.39,
+      "rsi14": 45.97,
+      "rsi5": 47.84
     }
   ],
-  "corporate_events": [],
+  "corporate_events": [
+    {
+      "date": "2026-11-27",
+      "type": "DIVIDEND",
+      "label": "配当",
+      "detail": "1株 7.5円"
+    }
+  ],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-25",
-    "monthly_rsi14": 45.81,
-    "monthly_rsi_ma5": 48.05,
-    "spread": -2.23,
+    "price_date": "2026-11-26",
+    "monthly_rsi14": 45.11,
+    "monthly_rsi_ma5": 47.9,
+    "spread": -2.8,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -962,5 +982,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-26T20:50:49.248360+00:00"
+  "provisional_generated_at": "2026-11-27T20:35:01.255736+00:00"
 }

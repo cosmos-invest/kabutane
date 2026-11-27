@@ -2,12 +2,12 @@
   "code": "9651",
   "ticker": "9651.T",
   "name": "日本プロセス",
-  "generated_at": "2026-11-26T20:49:44.512221+00:00",
-  "price_date": "2026-11-25",
+  "generated_at": "2026-11-27T20:34:18.122540+00:00",
+  "price_date": "2026-11-26",
   "record": {
-    "current_price": 1826.0,
-    "change_from_signal_month_pct": -4.45,
-    "return_since_gc_pct": -4.45
+    "current_price": 1836.0,
+    "change_from_signal_month_pct": -3.92,
+    "return_since_gc_pct": -3.92
   },
   "daily": [
     {
@@ -945,15 +945,35 @@
       "sma200": 1862.42,
       "rsi14": 66.81,
       "rsi5": 68.28
+    },
+    {
+      "date": "2026-11-26",
+      "open": 1827.0,
+      "high": 1853.0,
+      "low": 1827.0,
+      "close": 1836.0,
+      "volume": 27600.0,
+      "sma25": 1849.96,
+      "sma75": 1935.95,
+      "sma200": 1862.61,
+      "rsi14": 66.81,
+      "rsi5": 68.28
     }
   ],
-  "corporate_events": [],
+  "corporate_events": [
+    {
+      "date": "2026-11-27",
+      "type": "DIVIDEND",
+      "label": "配当",
+      "detail": "1株 46円"
+    }
+  ],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-25",
-    "monthly_rsi14": 59.16,
-    "monthly_rsi_ma5": 66.12,
-    "spread": -6.96,
+    "price_date": "2026-11-26",
+    "monthly_rsi14": 59.69,
+    "monthly_rsi_ma5": 66.22,
+    "spread": -6.53,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -962,5 +982,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-26T20:50:49.248360+00:00"
+  "provisional_generated_at": "2026-11-27T20:35:01.255736+00:00"
 }

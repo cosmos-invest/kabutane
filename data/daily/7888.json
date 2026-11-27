@@ -2,12 +2,12 @@
   "code": "7888",
   "ticker": "7888.T",
   "name": "三光合成",
-  "generated_at": "2026-11-26T20:49:44.512221+00:00",
-  "price_date": "2026-11-25",
+  "generated_at": "2026-11-27T20:34:18.122540+00:00",
+  "price_date": "2026-11-26",
   "record": {
-    "current_price": 759.0,
-    "change_from_signal_month_pct": -21.99,
-    "return_since_gc_pct": -21.99
+    "current_price": 767.0,
+    "change_from_signal_month_pct": -21.17,
+    "return_since_gc_pct": -21.17
   },
   "daily": [
     {
@@ -945,15 +945,35 @@
       "sma200": 876.55,
       "rsi14": 54.73,
       "rsi5": 60.17
+    },
+    {
+      "date": "2026-11-26",
+      "open": 763.0,
+      "high": 777.0,
+      "low": 762.0,
+      "close": 767.0,
+      "volume": 473700.0,
+      "sma25": 804.12,
+      "sma75": 867.01,
+      "sma200": 875.61,
+      "rsi14": 54.73,
+      "rsi5": 60.17
     }
   ],
-  "corporate_events": [],
+  "corporate_events": [
+    {
+      "date": "2026-11-27",
+      "type": "DIVIDEND",
+      "label": "配当",
+      "detail": "1株 16円"
+    }
+  ],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-25",
-    "monthly_rsi14": 47.41,
-    "monthly_rsi_ma5": 53.69,
-    "spread": -6.28,
+    "price_date": "2026-11-26",
+    "monthly_rsi14": 47.79,
+    "monthly_rsi_ma5": 53.77,
+    "spread": -5.98,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -962,5 +982,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-26T20:50:49.248360+00:00"
+  "provisional_generated_at": "2026-11-27T20:35:01.255736+00:00"
 }

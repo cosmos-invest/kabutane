@@ -2,12 +2,12 @@
   "code": "7879",
   "ticker": "7879.T",
   "name": "ノダ",
-  "generated_at": "2026-11-26T20:49:44.512221+00:00",
-  "price_date": "2026-11-25",
+  "generated_at": "2026-11-27T20:34:18.122540+00:00",
+  "price_date": "2026-11-26",
   "record": {
-    "current_price": 644.0,
-    "change_from_signal_month_pct": -0.31,
-    "return_since_gc_pct": -0.31
+    "current_price": 633.0,
+    "change_from_signal_month_pct": -2.01,
+    "return_since_gc_pct": -2.01
   },
   "daily": [
     {
@@ -945,15 +945,35 @@
       "sma200": 666.52,
       "rsi14": 34.36,
       "rsi5": 34.43
+    },
+    {
+      "date": "2026-11-26",
+      "open": 638.0,
+      "high": 642.0,
+      "low": 633.0,
+      "close": 633.0,
+      "volume": 20500.0,
+      "sma25": 656.08,
+      "sma75": 664.45,
+      "sma200": 666.34,
+      "rsi14": 34.36,
+      "rsi5": 34.43
     }
   ],
-  "corporate_events": [],
+  "corporate_events": [
+    {
+      "date": "2026-11-27",
+      "type": "DIVIDEND",
+      "label": "配当",
+      "detail": "1株 15円"
+    }
+  ],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-25",
-    "monthly_rsi14": 34.16,
-    "monthly_rsi_ma5": 35.57,
-    "spread": -1.41,
+    "price_date": "2026-11-26",
+    "monthly_rsi14": 33.19,
+    "monthly_rsi_ma5": 35.37,
+    "spread": -2.18,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -962,5 +982,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-26T20:50:49.248360+00:00"
+  "provisional_generated_at": "2026-11-27T20:35:01.255736+00:00"
 }

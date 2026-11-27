@@ -2,12 +2,12 @@
   "code": "5527",
   "ticker": "5527.T",
   "name": "ｐｒｏｐｅｒｔｙ　ｔｅｃｈｎｏｌｏｇｉｅｓ",
-  "generated_at": "2026-11-26T20:49:44.512221+00:00",
-  "price_date": "2026-11-25",
+  "generated_at": "2026-11-27T20:34:18.122540+00:00",
+  "price_date": "2026-11-26",
   "record": {
-    "current_price": 833.0,
-    "change_from_signal_month_pct": 22.68,
-    "return_since_gc_pct": 22.68
+    "current_price": 829.0,
+    "change_from_signal_month_pct": 22.09,
+    "return_since_gc_pct": 22.09
   },
   "daily": [
     {
@@ -945,15 +945,35 @@
       "sma200": 715.92,
       "rsi14": 53.72,
       "rsi5": 54.62
+    },
+    {
+      "date": "2026-11-26",
+      "open": 820.0,
+      "high": 830.0,
+      "low": 806.0,
+      "close": 829.0,
+      "volume": 201000.0,
+      "sma25": 846.84,
+      "sma75": 777.2,
+      "sma200": 716.4,
+      "rsi14": 53.72,
+      "rsi5": 54.62
     }
   ],
-  "corporate_events": [],
+  "corporate_events": [
+    {
+      "date": "2026-11-27",
+      "type": "DIVIDEND",
+      "label": "配当",
+      "detail": "1株 32円"
+    }
+  ],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-25",
-    "monthly_rsi14": 66.78,
-    "monthly_rsi_ma5": 63.15,
-    "spread": 3.64,
+    "price_date": "2026-11-26",
+    "monthly_rsi14": 66.33,
+    "monthly_rsi_ma5": 63.06,
+    "spread": 3.27,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -962,5 +982,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-26T20:50:49.248360+00:00"
+  "provisional_generated_at": "2026-11-27T20:35:01.255736+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "9882",
   "ticker": "9882.T",
   "name": "イエローハット",
-  "generated_at": "2026-11-26T20:49:44.512221+00:00",
-  "price_date": "2026-11-25",
+  "generated_at": "2026-11-27T20:34:18.122540+00:00",
+  "price_date": "2026-11-26",
   "record": {
-    "current_price": 1763.0,
-    "change_from_signal_month_pct": -2.54,
-    "return_since_gc_pct": 0.17
+    "current_price": 1758.0,
+    "change_from_signal_month_pct": -2.82,
+    "return_since_gc_pct": -0.11
   },
   "daily": [
     {
@@ -945,15 +945,28 @@
       "sma200": 1685.2,
       "rsi14": 61.62,
       "rsi5": 67.52
+    },
+    {
+      "date": "2026-11-26",
+      "open": 1766.0,
+      "high": 1768.0,
+      "low": 1745.0,
+      "close": 1758.0,
+      "volume": 143400.0,
+      "sma25": 1697.68,
+      "sma75": 1712.21,
+      "sma200": 1685.58,
+      "rsi14": 61.62,
+      "rsi5": 67.52
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-25",
-    "monthly_rsi14": 61.48,
-    "monthly_rsi_ma5": 61.58,
-    "spread": -0.11,
+    "price_date": "2026-11-26",
+    "monthly_rsi14": 61.3,
+    "monthly_rsi_ma5": 61.55,
+    "spread": -0.25,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -962,5 +975,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-26T20:50:49.248360+00:00"
+  "provisional_generated_at": "2026-11-27T20:35:01.255736+00:00"
 }

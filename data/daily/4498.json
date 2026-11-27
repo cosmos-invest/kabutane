@@ -2,12 +2,12 @@
   "code": "4498",
   "ticker": "4498.T",
   "name": "サイバートラスト",
-  "generated_at": "2026-11-26T20:49:44.512221+00:00",
-  "price_date": "2026-11-25",
+  "generated_at": "2026-11-27T20:34:18.122540+00:00",
+  "price_date": "2026-11-26",
   "record": {
-    "current_price": 1574.0,
-    "change_from_signal_month_pct": 26.63,
-    "return_since_gc_pct": 26.63
+    "current_price": 1610.0,
+    "change_from_signal_month_pct": 29.53,
+    "return_since_gc_pct": 29.53
   },
   "daily": [
     {
@@ -945,22 +945,35 @@
       "sma200": 1308.9,
       "rsi14": 47.15,
       "rsi5": 51.5
+    },
+    {
+      "date": "2026-11-26",
+      "open": 1534.0,
+      "high": 1636.0,
+      "low": 1534.0,
+      "close": 1610.0,
+      "volume": 634900.0,
+      "sma25": 1955.56,
+      "sma75": 1524.83,
+      "sma200": 1310.56,
+      "rsi14": 47.15,
+      "rsi5": 51.5
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-25",
-    "monthly_rsi14": 55.19,
-    "monthly_rsi_ma5": 55.65,
-    "spread": -0.47,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-26",
+    "monthly_rsi14": 55.94,
+    "monthly_rsi_ma5": 55.8,
+    "spread": 0.13,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-26T20:50:49.248360+00:00"
+  "provisional_generated_at": "2026-11-27T20:35:01.255736+00:00"
 }

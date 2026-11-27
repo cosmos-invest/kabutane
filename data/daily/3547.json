@@ -2,12 +2,12 @@
   "code": "3547",
   "ticker": "3547.T",
   "name": "ユニシアホールディングス",
-  "generated_at": "2026-11-26T20:49:44.512221+00:00",
-  "price_date": "2026-11-25",
+  "generated_at": "2026-11-27T20:34:18.122540+00:00",
+  "price_date": "2026-11-26",
   "record": {
-    "current_price": 1868.0,
-    "change_from_signal_month_pct": 5.96,
-    "return_since_gc_pct": 5.96
+    "current_price": 1861.0,
+    "change_from_signal_month_pct": 5.56,
+    "return_since_gc_pct": 5.56
   },
   "daily": [
     {
@@ -945,15 +945,35 @@
       "sma200": 1836.91,
       "rsi14": 48.58,
       "rsi5": 49.57
+    },
+    {
+      "date": "2026-11-26",
+      "open": 1868.0,
+      "high": 1871.0,
+      "low": 1857.0,
+      "close": 1861.0,
+      "volume": 126900.0,
+      "sma25": 1927.24,
+      "sma75": 1902.79,
+      "sma200": 1837.17,
+      "rsi14": 48.58,
+      "rsi5": 49.57
     }
   ],
-  "corporate_events": [],
+  "corporate_events": [
+    {
+      "date": "2026-11-27",
+      "type": "DIVIDEND",
+      "label": "配当",
+      "detail": "1株 17円"
+    }
+  ],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-25",
-    "monthly_rsi14": 52.05,
-    "monthly_rsi_ma5": 52.58,
-    "spread": -0.53,
+    "price_date": "2026-11-26",
+    "monthly_rsi14": 51.85,
+    "monthly_rsi_ma5": 52.54,
+    "spread": -0.69,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -962,5 +982,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-26T20:50:49.248360+00:00"
+  "provisional_generated_at": "2026-11-27T20:35:01.255736+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "4406",
   "ticker": "4406.T",
   "name": "新日本理化",
-  "generated_at": "2026-11-26T20:49:44.512221+00:00",
-  "price_date": "2026-11-25",
+  "generated_at": "2026-11-27T20:34:18.122540+00:00",
+  "price_date": "2026-11-26",
   "record": {
-    "current_price": 230.0,
-    "change_from_signal_month_pct": 13.86,
-    "return_since_gc_pct": 13.86
+    "current_price": 242.0,
+    "change_from_signal_month_pct": 19.8,
+    "return_since_gc_pct": 19.8
   },
   "daily": [
     {
@@ -945,22 +945,35 @@
       "sma200": 217.97,
       "rsi14": 45.37,
       "rsi5": 47.04
+    },
+    {
+      "date": "2026-11-26",
+      "open": 231.0,
+      "high": 244.0,
+      "low": 231.0,
+      "close": 242.0,
+      "volume": 717800.0,
+      "sma25": 222.88,
+      "sma75": 233.36,
+      "sma200": 218.03,
+      "rsi14": 45.37,
+      "rsi5": 47.04
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-25",
-    "monthly_rsi14": 53.33,
-    "monthly_rsi_ma5": 54.54,
-    "spread": -1.21,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-26",
+    "monthly_rsi14": 56.41,
+    "monthly_rsi_ma5": 55.16,
+    "spread": 1.25,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-26T20:50:49.248360+00:00"
+  "provisional_generated_at": "2026-11-27T20:35:01.255736+00:00"
 }

@@ -2,12 +2,12 @@
   "code": "3988",
   "ticker": "3988.T",
   "name": "ＳＹＳホールディングス",
-  "generated_at": "2026-11-26T20:49:44.512221+00:00",
-  "price_date": "2026-11-25",
+  "generated_at": "2026-11-27T20:34:18.122540+00:00",
+  "price_date": "2026-11-26",
   "record": {
-    "current_price": 549.0,
-    "change_from_signal_month_pct": 0.0,
-    "return_since_gc_pct": 0.0
+    "current_price": 556.0,
+    "change_from_signal_month_pct": 1.28,
+    "return_since_gc_pct": 1.28
   },
   "daily": [
     {
@@ -945,22 +945,35 @@
       "sma200": 545.79,
       "rsi14": 51.48,
       "rsi5": 52.92
+    },
+    {
+      "date": "2026-11-26",
+      "open": 552.0,
+      "high": 569.0,
+      "low": 552.0,
+      "close": 556.0,
+      "volume": 3600.0,
+      "sma25": 550.48,
+      "sma75": 555.09,
+      "sma200": 545.74,
+      "rsi14": 51.48,
+      "rsi5": 52.92
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-25",
-    "monthly_rsi14": 54.61,
-    "monthly_rsi_ma5": 55.24,
-    "spread": -0.63,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-26",
+    "monthly_rsi14": 55.78,
+    "monthly_rsi_ma5": 55.48,
+    "spread": 0.31,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-26T20:50:49.248360+00:00"
+  "provisional_generated_at": "2026-11-27T20:35:01.255736+00:00"
 }

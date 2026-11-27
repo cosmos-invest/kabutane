@@ -2,12 +2,12 @@
   "code": "5697",
   "ticker": "5697.T",
   "name": "サンユウ",
-  "generated_at": "2026-11-26T20:49:44.512221+00:00",
-  "price_date": "2026-11-25",
+  "generated_at": "2026-11-27T20:34:18.122540+00:00",
+  "price_date": "2026-11-26",
   "record": {
-    "current_price": 811.0,
-    "change_from_signal_month_pct": 10.19,
-    "return_since_gc_pct": 10.19
+    "current_price": 827.0,
+    "change_from_signal_month_pct": 12.36,
+    "return_since_gc_pct": 12.36
   },
   "daily": [
     {
@@ -945,22 +945,35 @@
       "sma200": 760.25,
       "rsi14": 60.01,
       "rsi5": 62.75
+    },
+    {
+      "date": "2026-11-26",
+      "open": 813.0,
+      "high": 845.0,
+      "low": 813.0,
+      "close": 827.0,
+      "volume": 5300.0,
+      "sma25": 837.12,
+      "sma75": 823.47,
+      "sma200": 760.41,
+      "rsi14": 60.01,
+      "rsi5": 62.75
     }
   ],
   "corporate_events": [],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-25",
-    "monthly_rsi14": 66.44,
-    "monthly_rsi_ma5": 66.65,
-    "spread": -0.21,
-    "active": false,
-    "status": "DC",
-    "changed_from_confirmed": true,
+    "price_date": "2026-11-26",
+    "monthly_rsi14": 68.29,
+    "monthly_rsi_ma5": 67.02,
+    "spread": 1.27,
+    "active": true,
+    "status": "CONTINUE",
+    "changed_from_confirmed": false,
     "confirmed_month": "2026-07",
     "confirmed_status": "NEW",
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-26T20:50:49.248360+00:00"
+  "provisional_generated_at": "2026-11-27T20:35:01.255736+00:00"
 }

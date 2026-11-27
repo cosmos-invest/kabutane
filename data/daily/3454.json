@@ -2,12 +2,12 @@
   "code": "3454",
   "ticker": "3454.T",
   "name": "ファーストブラザーズ",
-  "generated_at": "2026-11-26T20:49:44.512221+00:00",
-  "price_date": "2026-11-25",
+  "generated_at": "2026-11-27T20:34:18.122540+00:00",
+  "price_date": "2026-11-26",
   "record": {
-    "current_price": 1220.0,
-    "change_from_signal_month_pct": -3.56,
-    "return_since_gc_pct": -3.56
+    "current_price": 1186.0,
+    "change_from_signal_month_pct": -6.25,
+    "return_since_gc_pct": -6.25
   },
   "daily": [
     {
@@ -945,15 +945,35 @@
       "sma200": 1225.11,
       "rsi14": 56.75,
       "rsi5": 61.63
+    },
+    {
+      "date": "2026-11-26",
+      "open": 1220.0,
+      "high": 1230.0,
+      "low": 1186.0,
+      "close": 1186.0,
+      "volume": 127300.0,
+      "sma25": 1244.28,
+      "sma75": 1259.13,
+      "sma200": 1225.13,
+      "rsi14": 56.75,
+      "rsi5": 61.63
     }
   ],
-  "corporate_events": [],
+  "corporate_events": [
+    {
+      "date": "2026-11-27",
+      "type": "DIVIDEND",
+      "label": "配当",
+      "detail": "1株 17円"
+    }
+  ],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-25",
-    "monthly_rsi14": 54.71,
-    "monthly_rsi_ma5": 59.61,
-    "spread": -4.89,
+    "price_date": "2026-11-26",
+    "monthly_rsi14": 51.69,
+    "monthly_rsi_ma5": 59.0,
+    "spread": -7.31,
     "active": false,
     "status": "DC",
     "changed_from_confirmed": true,
@@ -962,5 +982,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-26T20:50:49.248360+00:00"
+  "provisional_generated_at": "2026-11-27T20:35:01.255736+00:00"
 }

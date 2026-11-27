@@ -2,12 +2,12 @@
   "code": "7083",
   "ticker": "7083.T",
   "name": "ＡＨＣグループ",
-  "generated_at": "2026-11-26T20:49:44.512221+00:00",
-  "price_date": "2026-11-25",
+  "generated_at": "2026-11-27T20:34:18.122540+00:00",
+  "price_date": "2026-11-26",
   "record": {
-    "current_price": 1392.0,
-    "change_from_signal_month_pct": 31.57,
-    "return_since_gc_pct": 81.72
+    "current_price": 1498.0,
+    "change_from_signal_month_pct": 41.59,
+    "return_since_gc_pct": 95.56
   },
   "daily": [
     {
@@ -945,15 +945,35 @@
       "sma200": 1000.53,
       "rsi14": 46.74,
       "rsi5": 53.55
+    },
+    {
+      "date": "2026-11-26",
+      "open": 1380.0,
+      "high": 1498.0,
+      "low": 1353.0,
+      "close": 1498.0,
+      "volume": 20300.0,
+      "sma25": 1517.92,
+      "sma75": 1289.64,
+      "sma200": 1003.75,
+      "rsi14": 46.74,
+      "rsi5": 53.55
     }
   ],
-  "corporate_events": [],
+  "corporate_events": [
+    {
+      "date": "2026-11-27",
+      "type": "DIVIDEND",
+      "label": "配当",
+      "detail": "1株 12円"
+    }
+  ],
   "provisional_signal": {
     "month": "2026-11",
-    "price_date": "2026-11-25",
-    "monthly_rsi14": 61.66,
-    "monthly_rsi_ma5": 60.31,
-    "spread": 1.35,
+    "price_date": "2026-11-26",
+    "monthly_rsi14": 65.31,
+    "monthly_rsi_ma5": 61.04,
+    "spread": 4.27,
     "active": true,
     "status": "CONTINUE",
     "changed_from_confirmed": false,
@@ -962,5 +982,5 @@
     "source": "latest_daily_close",
     "is_provisional": true
   },
-  "provisional_generated_at": "2026-11-26T20:50:49.248360+00:00"
+  "provisional_generated_at": "2026-11-27T20:35:01.255736+00:00"
 }
